@@ -1,13 +1,43 @@
-# 🏠 Home Assistant 中文站 - 即将璀璨登场 ✨
+<div style="background: linear-gradient(135deg, #41BDF5, #0D47A1); padding: 2rem; border-radius: 8px; color: white;">
 
-🌟 欢迎来到 Home Assistant 中文世界！我们正在为您精心打造一个全方位的智能家居中文平台 🌈
+# Home Assistant 中文站
 
-📱 **手机客户端** - 随时随地掌控您的智能家居  
-💻 **电脑客户端** - 专业级智能家居管理体验  
-⚡ **ESPHome** - 打造专属智能设备的完整指南  
-📚 **中文文档** - 全面、易懂的技术指南  
-💡 **最佳实践** - 来自全球智能家居达人的经验分享  
-❓ **常见问题** - 快速解决您的使用疑惑  
+<p style="font-size: 1.1rem; margin-bottom: 1.5rem;">欢迎来到 Home Assistant 中文社区！我们致力于为中文用户提供全面的智能家居解决方案和技术支持。</p>
 
-🎉 精彩内容，即将呈现！  
-⏳ 敬请期待，我们很快与您相见！ 🚀
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 4px;">
+<h3>📱 移动端应用</h3>
+<p>通过手机随时随地控制您的智能家居</p>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 4px;">
+<h3>💻 桌面端管理</h3>
+<p>提供专业级的智能家居管理界面</p>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 4px;">
+<h3>⚡ ESPHome 支持</h3>
+<p>完整的智能设备开发指南</p>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 4px;">
+<h3>📚 中文文档</h3>
+<p>系统化的技术文档和教程</p>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 4px;">
+<h3>💡 最佳实践</h3>
+<p>来自全球智能家居专家的经验分享</p>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 4px;">
+<h3>❓ 常见问题</h3>
+<p>快速解决使用中的常见问题</p>
+</div>
+
+</div>
+
+<p style="text-align: center; margin-top: 2rem; font-size: 1.1rem;">我们正在不断完善中文站的内容和服务，期待为您提供更好的智能家居体验！</p>
+
+</div>
