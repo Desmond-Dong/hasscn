@@ -1,8 +1,8 @@
-<div style="background: linear-gradient(135deg, #41BDF5, #0D47A1); min-height: 100vh; padding: 2rem; color: white;">
+<div style="background: linear-gradient(135deg, #41BDF5, #0D47A1); height: 100%;width: 100%; padding: 10rem; color: white;">
 
 <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">Home Assistant中国最顶（页面内容AI随机生成的）</h1>
 
-<div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 8px;">
+<div style="background: rgba(42, 53, 85, 0.1); padding: 2rem; border-radius: 8px;">
 
 # Home Assistant 中文站
 - 本站内容纯为虚构，如有雷同，纯属巧合
