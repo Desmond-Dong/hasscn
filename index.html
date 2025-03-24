@@ -1,119 +1,123 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Home Assistant 中文社区</title>
-</head>
-<body style="
-    background: linear-gradient(135deg, #41BDF5, #0D47A1); 
-    height: 100vh; 
-    width: 100vw; 
-    padding: 10rem; 
-    color: white; 
-    margin: 0; 
-    box-sizing: border-box; 
-    overflow: hidden;
-">
+    <style>
+        body {
+            background: linear-gradient(135deg, #41BDF5, #0D47A1);
+            height: 100vh;
+            width: 100vw;
+            padding: 10rem;
+            color: white;
+            margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
 
-    <h1 style="
-        text-align: center; 
-        font-size: 2.5rem; 
-        margin-bottom: 2rem;
-    ">
-        Home Assistant中国最顶（页面内容AI随机生成的）
+        .main-container {
+            background: rgba(42, 53, 85, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">
+        Home Assistant 中文站
     </h1>
-    
-    <div style="
-        background: rgba(42, 53, 85, 0.1); 
-        padding: 2rem; 
-        border-radius: 8px;
-    ">
-        <h2>Home Assistant 中文站</h2>
-        <p>本站内容纯为虚构，如有雷同，纯属巧合</p>
-        
-        <p style="
-            font-size: 1.1rem; 
-            margin-bottom: 1.5rem;
-        ">
-            欢迎来到 Home Assistant 中文社区！我们致力于为中文用户提供全面的智能家居解决方案和技术支持。
+
+    <div class="main-container">
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+            欢迎来到 Home Assistant 中文站！我们致力于为国内用户提供本地化定制系统和完善的中文文档支持。
         </p>
-        
-        <div style="
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 1rem;
-        ">
-                    <a href="OSCN/index.html" style="
-                    color: inherit; 
-                    text-decoration: none;
-                ">
-            <div style="
-                background: rgba(255, 255, 255, 0.1); 
-                padding: 1rem; 
-                border-radius: 4px;
-            ">
-                <h3>🛠️ 中国定制版系统</h3>
-                <p>定制系统，可以无特殊网络升级安装各类集成，加载项</p>
-            </div>
-</a>
-            <a href="https://ha-doc.hasscn.top" style="
-                color: inherit; 
-                text-decoration: none;
-            ">
-                <div style="
-                    background: rgba(255, 255, 255, 0.1); 
-                    padding: 1rem; 
-                    border-radius: 4px;
-                ">
-                    <h3>📚 官方文档（汉化）</h3>
-                    <p>系统化的技术文档和教程</p>
+
+        <div class="grid-container">
+            <a href="OSCN/index.html">
+                <div class="card">
+                    <h2>🛠️ 中国定制版系统</h2>
+                    <h3>专为中国用户优化</h3>
+                    <p>无需特殊网络环境，快速安装各类集成和加载项</p>
                 </div>
             </a>
 
-            <div style="
-                background: rgba(255, 255, 255, 0.1); 
-                padding: 1rem; 
-                border-radius: 4px;
-            ">
-                <h3>📱 移动端文档（汉化）</h3>
-                <p>通过手机随时随地控制您的设备</p>
+            <a href="https://ha-doc.hasscn.top">
+                <div class="card">
+                    <h2>📚 官方文档</h2>
+                    <h3>全面中文技术文档</h3>
+                    <p>从入门到精通，提供详细的使用指南和教程</p>
+                </div>
+            </a>
+
+            <div class="card">
+                <h2>📱 移动端</h2>
+                <h3>随时随地掌控智能家居</h3>
+                <p>支持iOS和Android，提供便捷的移动控制体验</p>
             </div>
-            
-            <div style="
-                background: rgba(255, 255, 255, 0.1); 
-                padding: 1rem; 
-                border-radius: 4px;
-            ">
-                <h3>💻 桌面端文档（汉化）</h3>
-                <p>提供专业级的客户端说明</p>
+
+            <div class="card">
+                <h2>💻 桌面端</h2>
+                <h3>专业桌面客户端</h3>
+                <p>支持Windows、macOS和Linux，提供更强大的管理功能</p>
             </div>
-            
-            <div style="
-                background: rgba(255, 255, 255, 0.1); 
-                padding: 1rem; 
-                border-radius: 4px;
-            ">
-                <h3>⚡ ESPHome 文档（汉化）</h3>
-                <p>完整的智能设备开发指南</p>
+
+            <div class="card">
+                <h2>🧩 HACS</h2>
+                <h3>社区插件商店</h3>
+                <p>轻松安装和管理社区开发的插件和主题</p>
+            </div>
+
+            <div class="card">
+                <h2>🛠️ ESPHome</h2>
+                <h3>智能设备固件开发</h3>
+                <p>快速创建和部署自定义智能设备固件</p>
+            </div>
+
+            <div class="card">
+                <h2>🧮 Node Red</h2>
+                <h3>可视化自动化</h3>
+                <p>通过图形化界面创建复杂的自动化流程</p>
+            </div>
+            <div class="card">
+                <h2>❤️ 支持我们</h2>
+                <h3>助力项目发展</h3>
+                <p>您的支持将帮助我们持续改进和提供更好的服务</p>
             </div>
         </div>
-        
-        <p style="
-            text-align: center; 
-            margin-top: 2rem; 
-            font-size: 2.1rem;
-        ">
-            正在不断完善中文站的内容
-        </p>
     </div>
+
     <script>
         var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?861929bdb98476134bbae53567c75414";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?861929bdb98476134bbae53567c75414";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
         })();
-        </script>
-        
+    </script>
 </body>
+
 </html>
