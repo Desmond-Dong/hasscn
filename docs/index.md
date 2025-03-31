@@ -4,10 +4,10 @@ pageType: home
 hero:
   name: Home Assistant
   text: 中文站
-  tagline:  致力于为国内用户提供本地化完善的中文文档。 
+  tagline:  致力于为国内用户提供全面而优质的中文文档。
   actions:
 #    - theme: brand
-#      text: Quick Start
+#      text: 快速入门
 #      link: /guide/
 #    - theme: alt
 #      text: GitHub
@@ -19,25 +19,25 @@ hero:
     alt: Logo
 features:
   - title: 📚 官方文档
-    details: 从入门到精通，提供详细的使用指南和教程
+    details: 从基础到高级，提供详尽的使用指南与教程，助您轻松上手。
     icon: 📖 
     link: https://ha-doc.hasscn.top/
   - title: 📱 移动端
-    details: 支持iOS, Wear OS和Android，提供便捷的移动控制体验
+    details: 支持iOS、Wear OS和Android，带来便捷的移动控制体验，随时随地掌控家居。
     icon: 📲
     link: https://companion.hasscn.top/
   - title: 🧮 Node Red
-    details: 通过图形化界面创建复杂的自动化流程
+    details: 通过直观的图形化界面，轻松创建复杂的自动化流程，提升智能家居的灵活性。
     icon: 🛠️
     link: https://nodered.hasscn.top/
   - title: 🧩 HA加载项
-    details: 总数量超400个属于国人专属的加载项商店
+    details: 超过400个专为国内用户定制的加载项，丰富您的智能家居功能。
     icon: 🧰
     link: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons
   - title: 🛠️ ESPHome
-    details: 快速创建和部署自定义智能设备固件
+    details: 快速创建和部署个性化的智能设备固件，轻松实现智能家居的定制化。
     icon: ⚙️
   - title: ❤️ 国内专属资源
-    details: 为了让你更好更快速的使用HA
+    details: 为您提供更高效、更便捷的HA使用体验，助力智能生活。
     icon: 💡
 ---
