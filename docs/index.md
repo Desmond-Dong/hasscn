@@ -4,7 +4,7 @@ pageType: home
 hero:
   name: Home Assistant
   text: 中文站
-  tagline:  致力于为国内用户提供全面而优质的中文文档。
+  tagline:  致力于为国内用户提供全面而优质的中文服务。
   actions:
 #    - theme: brand
 #      text: 快速入门
