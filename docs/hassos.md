@@ -30,23 +30,4 @@ layout: doc
 具体跟官方有啥不一样，一目了然，随便审核代码，无污染，无后门
 
 ## 下载地址
-| 名称 | 下载链接 |
-|------|----------|
-| haos_generic-aarch64-15.2.dev0.img.xz | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-aarch64-15.2.dev0.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-aarch64-15.2.dev0.img.xz) |
-| haos_generic-aarch64-15.2.dev0.qcow2.xz | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-aarch64-15.2.dev0.qcow2.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-aarch64-15.2.dev0.qcow2.xz) |
-| haos_generic-aarch64-15.2.dev0.raucb | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-aarch64-15.2.dev0.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-aarch64-15.2.dev0.raucb) |
-| haos_generic-aarch64-15.2.dev0.vmdk.zip | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-aarch64-15.2.dev0.vmdk.zip) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-aarch64-15.2.dev0.vmdk.zip) |
-| haos_generic-x86-64-15.2.dev0.img.xz | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-x86-64-15.2.dev0.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-x86-64-15.2.dev0.img.xz) |
-| haos_generic-x86-64-15.2.dev0.raucb | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-x86-64-15.2.dev0.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_generic-x86-64-15.2.dev0.raucb) |
-| haos_ova-15.2.dev0.ova | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.ova) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.ova) |
-| haos_ova-15.2.dev0.qcow2.xz | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.qcow2.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.qcow2.xz) |
-| haos_ova-15.2.dev0.raucb | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.raucb) |
-| haos_ova-15.2.dev0.vdi.zip | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.vdi.zip) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.vdi.zip) |
-| haos_ova-15.2.dev0.vhdx.zip | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.vhdx.zip) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.vhdx.zip) |
-| haos_ova-15.2.dev0.vmdk.zip | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.vmdk.zip) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_ova-15.2.dev0.vmdk.zip) |
-| haos_rpi3-64-15.2.dev0.img.xz | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi3-64-15.2.dev0.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi3-64-15.2.dev0.img.xz) |
-| haos_rpi3-64-15.2.dev0.raucb | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi3-64-15.2.dev0.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi3-64-15.2.dev0.raucb) |
-| haos_rpi4-64-15.2.dev0.img.xz | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi4-64-15.2.dev0.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi4-64-15.2.dev0.img.xz) |
-| haos_rpi4-64-15.2.dev0.raucb | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi4-64-15.2.dev0.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi4-64-15.2.dev0.raucb) |
-| haos_rpi5-64-15.2.dev0.img.xz | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi5-64-15.2.dev0.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi5-64-15.2.dev0.img.xz) |
-| haos_rpi5-64-15.2.dev0.raucb | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi5-64-15.2.dev0.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/latest/download/haos_rpi5-64-15.2.dev0.raucb) |
+https://github.com/ha-china/HAOS-CN/releases
