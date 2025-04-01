@@ -17,3 +17,5 @@
 | 稳定版 | 安装包 | [国内加速](https://gh-proxy.com/https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe) \| [原始链接](https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe) |
 
 > 提示：国内用户无法访问GitHub的用户建议选择"国内加速"链接以获得更快的下载速度，国际用户可直接使用原始链接。
+
+

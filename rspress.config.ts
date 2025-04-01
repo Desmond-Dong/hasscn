@@ -36,27 +36,14 @@ export default defineConfig({
       },
     ],
     // sidebar: {
-    //   '/guide/': [
-    //     {
-    //       text: '入门指南',
-    //       link: '/guide',
-    //     },
-    //   ],
     //   '/hassos/': [
     //     {
     //       text: 'Home Assistant 中国版',
     //       link: '/hassos',
     //     },
-    //   ],
-    //   '/sponsor/': [
-    //     {
-    //       text: '关于此站',
-    //       link: '/sponsor',
-    //     },
-    //   ],
     // },
     footer: {
-      message: 'Copyright © 2024 Home Assistant 中文站 | 浙ICP备2025160066号',
+      message: 'Copyright © 2025 Home Assistant 中文站 | 浙ICP备2025160066号',
     },
   },
 });
