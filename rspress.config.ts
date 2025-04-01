@@ -10,13 +10,13 @@ export default defineConfig({
     dark: '/home-assistant-wordmark-with-margins-color-on-dark.png',
   },
   themeConfig: {
-    // socialLinks: [
-    //   {
-    //     icon: 'github',
-    //     mode: 'link',
-    //     content: 'https://github.com/desmond-dong',
-    //   },
-    // ],
+     socialLinks: [
+       {
+         icon: 'wechat',
+         mode: 'link',
+         content: '/community.html',
+       },
+     ],
     nav: [
       {
         text: '首页',
@@ -35,26 +35,26 @@ export default defineConfig({
         link: '/sponsor',
       },
     ],
-    sidebar: {
-      '/guide/': [
-        {
-          text: '入门指南',
-          link: '/guide',
-        },
-      ],
-      '/hassos/': [
-        {
-          text: 'Home Assistant 中国版',
-          link: '/hassos',
-        },
-      ],
-      '/sponsor/': [
-        {
-          text: '关于此站',
-          link: '/sponsor',
-        },
-      ],
-    },
+    // sidebar: {
+    //   '/guide/': [
+    //     {
+    //       text: '入门指南',
+    //       link: '/guide',
+    //     },
+    //   ],
+    //   '/hassos/': [
+    //     {
+    //       text: 'Home Assistant 中国版',
+    //       link: '/hassos',
+    //     },
+    //   ],
+    //   '/sponsor/': [
+    //     {
+    //       text: '关于此站',
+    //       link: '/sponsor',
+    //     },
+    //   ],
+    // },
     footer: {
       message: 'Copyright © 2024 Home Assistant 中文站 | 浙ICP备2025160066号',
     },
