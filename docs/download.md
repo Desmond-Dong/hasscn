@@ -5,9 +5,9 @@
 | 版本   | 类型       | 版本号  | 下载链接                                                                 |
 |--------|------------|---------|--------------------------------------------------------------------------|
 | 稳定版 | 原生安卓系统 | 2025.1.2 | [国内加速](https://gh-proxy.com/https://github.com/home-assistant/android/releases/latest/download/app-full-release.apk) \| [原始链接](https://github.com/home-assistant/android/releases/latest/download/app-full-release.apk) |
-| 稳定版 | 魔改安卓系统 | 2025.1.2 | [国内加速](https://gh-proxy.com/https://github.com/home-assistant/android/releases/latest/download/app-minimal-release.apk) \| [原始链接](https://github.com/home-assistant/android/releases/latest/download/app-minimal-release.apk) |
+| 稳定版 | 国内安卓系统 | 2025.1.2 | [国内加速](https://gh-proxy.com/https://github.com/home-assistant/android/releases/latest/download/app-minimal-release.apk) \| [原始链接](https://github.com/home-assistant/android/releases/latest/download/app-minimal-release.apk) |
 | 测试版 | 原生安卓系统| 2025.3.5 | [国内加速](https://gh-proxy.com/https://github.com/home-assistant/android/releases/download/2025.3.5/app-full-release.apk) \| [原始链接](https://github.com/home-assistant/android/releases/download/2025.3.5/app-full-release.apk) |
-| 测试版 | 魔改安卓系统 | 2025.3.5 | [国内加速](https://gh-proxy.com/https://github.com/home-assistant/android/releases/download/2025.3.5/app-minimal-release.apk) \| [原始链接](https://github.com/home-assistant/android/releases/download/2025.3.5/app-minimal-release.apk) |
+| 测试版 | 国内安卓系统 | 2025.3.5 | [国内加速](https://gh-proxy.com/https://github.com/home-assistant/android/releases/download/2025.3.5/app-minimal-release.apk) \| [原始链接](https://github.com/home-assistant/android/releases/download/2025.3.5/app-minimal-release.apk) |
 
 > 新手建议使用稳定版，虽然版本功能更新没这么快，但是不容易出现异常情况。
 
@@ -46,4 +46,10 @@
 | haos_rpi5-64-15.1.raucb | 15.1 | 161 MB | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_rpi5-64-15.1.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_rpi5-64-15.1.raucb) |
 | haos_yellow-15.1.img.xz | 15.1 | 285 MB | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_yellow-15.1.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_yellow-15.1.img.xz) |
 | haos_yellow-15.1.raucb | 15.1 | 152 MB | [国内加速](https://gh-proxy.com/https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_yellow-15.1.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_yellow-15.1.raucb) |
+
+
+
+
+
+
 

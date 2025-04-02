@@ -35,26 +35,24 @@ export default defineConfig({
         link: '/',
       },
       {
-        text: 'Home Assistant 中国专区',
+        text: '中国专区',
         link: '/hassos',
       },
 
       {
-        text: 'Home Assistant 下载专区',
+        text: '下载专区',
         link: '/download',
       },
       {
-        text: '助力发展',
+        text: '支持我',
         link: '/sponsor',
       },
+      {
+        text: '关于',
+        link: '/about',
+      },
     ],
-    // sidebar: {
-    //   '/hassos/': [
-    //     {
-    //       text: 'Home Assistant 中国版',
-    //       link: '/hassos',
-    //     },
-    // },
+   
     
     footer: {
       message: 'Copyright © 2025 Home Assistant 中文站 | 浙ICP备2025160066号',

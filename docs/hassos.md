@@ -59,7 +59,7 @@ layout: doc
 
 ## 🖥️ Home Assistant Supervised 中国版
 
-### 👨‍💻 版本作者：[Alone](https://anlo.ng/)
+### 👨‍💻 版本修改作者：[Alone](https://anlo.ng/)
 
 ### ⚠️ 系统要求
 请确保您已了解[系统要求](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md)
@@ -130,7 +130,7 @@ wget -O homeassistant-supervised.deb https://github.com/hasscc/supervised-instal
 apt install ./homeassistant-supervised.deb
 ```
 
-### 支持的机器类型
+### 🖥️ 支持的机器类型
 
 - generic-x86-64
 - odroid-c2
@@ -151,7 +151,7 @@ apt install ./homeassistant-supervised.deb
 - tinker
 - khadas-vim3
 
-### 配置说明
+### ⚙️ 配置说明
 
 默认的 `$DATA_SHARE` 路径是 `/var/lib/homeassistant`（之前是 `/usr/share/hassio`）。
 该路径用于存储所有与 Home Assistant 相关的内容。
@@ -161,13 +161,13 @@ apt install ./homeassistant-supervised.deb
 ```bash
 DATA_SHARE=/my/own/homeassistant dpkg --force-confdef --force-confold -i homeassistant-supervised.deb
 ```
-### 问题排查
+### 🛠️ 问题排查
 
 如果遇到问题，可以使用 `journalctl -f` 查看系统日志。如果您不熟悉 Linux 系统及其问题排查方法，我们建议您使用 Home Assistant OS。
 
-## **Home Assistant Supervised(Docker) 中国版**
+## **🏠 Home Assistant Supervised(Docker) 中国版**
 
-### 此版本修改作者：[Alone](https://anlo.ng/)
+### 👨‍💻 版本修改作者：[Alone](https://anlo.ng/)
 
 > 通过Docker安装[Home Assistant Supervised](https://github.com/hasscc/supervised-installer) (HassIO)，并对国内网络环境进行优化
 
@@ -181,7 +181,7 @@ DATA_SHARE=/my/own/homeassistant dpkg --force-confdef --force-confold -i homeass
 | 备　份 |  ✅  |     ✅     |     ✅    |  ✅  |
 
 
-### Compose 安装
+### 🐳 Compose 安装
 
 ```bash
 HASSIO=/usr/share/hassio
@@ -198,7 +198,7 @@ docker compose up -d
 > 仅当`DEFAULT_TZ=Asia/Shanghai`时才会对国内网络环境进行优化
 
 
-### 命令安装
+### 🖥️ 命令安装
 
 ```bash
 # 新建用于存储容器及镜像等数据的卷，对存储驱动有特殊要求，因此不能挂载到本地目录
@@ -225,8 +225,7 @@ docker run -d \
 > 
 > 通过`http://192.168.xx.xx:8123`进入Home Assistant
 
-
-### 问题排查
+### 🛠️ 问题排查
 
 > 如果提示无网络连接`no host internet connection`，请尝试在[网络配置](https://my.home-assistant.io/redirect/network/)中禁用IPv6
 > 
@@ -242,5 +241,5 @@ docker exec -it hass-super ha core start
 ```
 
 
-### 鸣谢
+### 🎉 鸣谢
 - [NJU Mirror](https://doc.nju.edu.cn/books/e1654/page/ghcr)
