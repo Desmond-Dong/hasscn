@@ -35,11 +35,12 @@ export default defineConfig({
         link: '/',
       },
       {
-        text: 'HAOS中国版',
+        text: 'Home Assistant 中国专区',
         link: '/hassos',
       },
+
       {
-        text: '下载专区',
+        text: 'Home Assistant 下载专区',
         link: '/download',
       },
       {
