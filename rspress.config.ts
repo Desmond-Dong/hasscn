@@ -9,6 +9,18 @@ export default defineConfig({
     light: '/home-assistant-wordmark-with-margins-color-on-light.png',
     dark: '/home-assistant-wordmark-with-margins-color-on-dark.png',
   },
+  builderConfig: {
+    html: {
+      tags: [
+        {
+          tag: 'script',
+          attrs: {
+            src: 'https://hm.baidu.com/hm.js?861929bdb98476134bbae53567c75414',
+          },
+        },
+      ],
+    },
+  },
   themeConfig: {
      socialLinks: [
        {
@@ -42,6 +54,7 @@ export default defineConfig({
     //       link: '/hassos',
     //     },
     // },
+    
     footer: {
       message: 'Copyright © 2025 Home Assistant 中文站 | 浙ICP备2025160066号',
     },
