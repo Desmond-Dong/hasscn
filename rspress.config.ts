@@ -44,6 +44,10 @@ export default defineConfig({
         link: '/download',
       },
       {
+        text: '快速问答',
+        link: '/QandA',
+      },
+      {
         text: '支持我',
         link: '/sponsor',
       },
@@ -51,6 +55,7 @@ export default defineConfig({
         text: '关于',
         link: '/about',
       },
+
     ],
    
     
