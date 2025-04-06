@@ -12,7 +12,7 @@ layout: doc
 
 - 💡除了下载静像换成了国内的，确实有一些区别 （目的只有一个，为了加速）
 - 💡移除了所有国内不稳定或者无法访问的官方自带的加载项源（ [官方加载项](https://github.com/home-assistant/addons) ，[官方社区加载项](https://github.com/hassio-addons/repository) ，[音乐助手](https://github.com/music-assistant/home-assistant-addon)），换成了加速源 [查看链接](https://gitee.com/desmond_GT/hassio-addons)
-- 💡同时集成了极速版HACS(Alone),免github帐号，免科学无损使用HACS
+- 💡同时集成了极速版HACS(Alone)[HACS China](https://github.com/hacs-china), 免github帐号，免科学无损使用HACS
 
 **🗨️ 国内已经有冬瓜版了，你为什么重复劳动？**
 
