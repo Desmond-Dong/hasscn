@@ -1,15 +1,16 @@
 ---
 layout: doc
 ---
-# Home Assistant OS 优化版
+## Home Assistant OS 极速版
+> 名称剽窃至HACS极速版（因为HACS极速版就是加速了HACS的连接与使用，我这OS也是一样的作用，因此取名极速版
 
-**🗨️ 为什么制作中国版？** 
+ **🗨️ 为什么制作极速版？** 
 
 - 💡看到太多的网友没法正常使用 Home Assistant 原版，无论是系统初始化，还是升级。
 
 **🗨️ 这个版本和官方原版有什么区别？**
 
-- 💡除了下载静像换成了国内的，确实有一些区别
+- 💡除了下载静像换成了国内的，确实有一些区别 （目的只有一个，为了加速）
 - 💡移除了所有国内不稳定或者无法访问的官方自带的加载项源（ [官方加载项](https://github.com/home-assistant/addons) ，[官方社区加载项](https://github.com/hassio-addons/repository) ，[音乐助手](https://github.com/music-assistant/home-assistant-addon)），换成了加速源 [查看链接](https://gitee.com/desmond_GT/hassio-addons)
 - 💡同时集成了极速版HACS(Alone),免github帐号，免科学无损使用HACS
 

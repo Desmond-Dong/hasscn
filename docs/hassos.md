@@ -2,11 +2,11 @@
 layout: doc
 ---
 
-# 🏠 Home Assistant 针对国人优化衍生版本
+# 🏠 Home Assistant 针对国人优化各种极速版
 
 > 🌈 专为中国用户打造，彻底解决因网络导致的使用困难
 
-## 🎯 Home Assistant OS CN（公测：名称还没想好，都叫极速版？）
+## **🎯 Home Assistant OS 极速版**
 
 > **⚠️ 注意：** 既然是公测版，肯定是还有一些不太确定的 **bug** 存在，请勿当正式版使用！
 
@@ -59,7 +59,7 @@ layout: doc
 ### 📥 [系统镜像下载](download#中国优化版系统镜像下载)
 ---
 
-## 🖥️ Home Assistant Supervised CN
+## **🖥️ Home Assistant Supervised 极速版**
 
 ### 👨‍💻 版本修改作者：[Alone](https://anlo.ng/)
 
@@ -167,7 +167,7 @@ DATA_SHARE=/my/own/homeassistant dpkg --force-confdef --force-confold -i homeass
 
 如果遇到问题，可以使用 `journalctl -f` 查看系统日志。如果您不熟悉 Linux 系统及其问题排查方法，我们建议您使用 Home Assistant OS。
 
-## **🏠 Home Assistant Supervised(Docker) CN**
+## **🏠 Home Assistant Supervised(Docker) 极速版**
 
 ### 👨‍💻 版本修改作者：[Alone](https://anlo.ng/)
 
@@ -245,3 +245,4 @@ docker exec -it hass-super ha core start
 
 ### 🎉 鸣谢
 - [NJU Mirror](https://doc.nju.edu.cn/books/e1654/page/ghcr)
+
