@@ -6,9 +6,9 @@ hero:
   text: 中文站
   tagline:  致力于为国内用户提供全面而优质的中文服务。
   actions:
-#    - theme: brand
-#      text: 快速入门
-#      link: /guide/
+    - theme: brand
+      text: HAOS 极速版
+      link: how-to
 #    - theme: alt
 #      text: GitHub
 #      link: https://github.com/web-infra-dev/rspress
