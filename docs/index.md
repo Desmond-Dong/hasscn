@@ -4,7 +4,7 @@ pageType: home
 hero:
   name: Home Assistant
   text: 中文站
-  tagline:  致力于为国内用户提供全面而优质的中文服务。
+  tagline:  乘众人之智，则无不任也；用众人之力，则无不胜也
   actions:
     - theme: brand
       text: HAOS 极速版
