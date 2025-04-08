@@ -3,7 +3,7 @@ pageType: home
 
 hero:
   name: Home Assistant
-  text: 中文站
+  text: 众人拾柴火焰高
   tagline:  乘众人之智，则无不任也；用众人之力，则无不胜也
   actions:
     - theme: brand

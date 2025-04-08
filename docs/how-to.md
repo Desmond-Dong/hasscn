@@ -3,6 +3,7 @@ layout: doc
 ---
 
 ## 如何与官方系统互转
+> 最推荐的方式还是先备份，然后重新安装，再还原，这样系统最干净。
 
 ### **保留配置从官方系统切换至 Home Assistant OS 极速版** 🌟
 
@@ -72,3 +73,34 @@ ls /mnt/data/supervisor/homeassistant/custom_components/hacs/ -lh
 
 🛠️ 最后，请删除这些加载项，并在加速源中重新安装即可。
 ![加载项修复](./images/addons.png)
+
+### 常见问题
+
+#### 如何验证切换是否成功？
+- 最容易确定的就是加载项商店，点击下面这个按钮，进入到你的加载项商店
+[![加载项商店](./images/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
+
+如果看到的官方商店变成了这样全中文的，那是100%成功了
+![商店截图](./images/store.png)
+
+#### 发现我还在原系统怎么办？
+首先不要怕，系统肯定刷进去了，因为Home Assistant是A/B 轮流启动的，所以很有可能正好你把系统刷在了B区，结果启动是A区
+第一行与第二行都试一下
+![启动界面](./images/grub.png)
+
+#### 应用商店没变一定是没成功吗？
+不一定，可以通过以下命令来看有没有成功,如果ota这一行已经是`https://ota.hasscn.top`了就表示已经成功了
+```bash
+login
+cat /mnt/data/supervisor/updater.json
+```
+![](./images/mirrow.png)
+
+#### 那我更系统更换成功了为什么我的加载项商店没有变
+你有加载项无法在系统切换的时候清空，最好的方式就是把已经损坏的加载项先删除，然后运行以下命令
+```bash
+login
+rm -rf /mnt/data/supervisor/addons
+reboot
+```
+
