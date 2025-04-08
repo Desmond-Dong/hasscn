@@ -101,15 +101,6 @@ cat /mnt/data/supervisor/updater.json
 第一行与第二行都试一下
 ![启动界面](./images/grub.png)
 
-#### 应用商店没变一定是没成功吗？
-不一定，可以通过以下命令来看有没有成功,如果ota这一行已经是`https://ota.hasscn.top`了就表示已经成功了
 
 
-#### 那我更系统更换成功了为什么我的加载项商店没有变
-你有加载项无法在系统切换的时候清空，最好的方式就是把已经损坏的加载项先删除，然后运行以下命令
-```bash
-login
-rm -rf /mnt/data/supervisor/addons
-reboot
-```
 
