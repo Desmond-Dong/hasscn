@@ -52,6 +52,9 @@
 | haos_rpi5-64-15.1.raucb | 15.1 | 161 MB | [国内加速](https://ota.hasscn.top/15.1/haos_rpi5-64-15.1.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_rpi5-64-15.1.raucb) |
 | haos_yellow-15.1.img.xz | 15.1 | 285 MB | [国内加速](https://ota.hasscn.top/15.1/haos_yellow-15.1.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_yellow-15.1.img.xz) |
 | haos_yellow-15.1.raucb | 15.1 | 152 MB | [国内加速](https://ota.hasscn.top/15.1/haos_yellow-15.1.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_yellow-15.1.raucb) |
+| haos_panther-x2-15.1.img.xz | 15.1 | 330 MB | [国内加速](https://ota.hasscn.top/15.1/haos_panther-x2-15.1.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_panther-x2-15.1.img.xz) |
+| haos_panther-x2-15.1.raucb  | 15.1 | 202 MB | [国内加速](https://ota.hasscn.top/15.1/haos_panther-x2-15.1.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.1/haos_panther-x2-15.1.raucb) |
+
 
 
 
