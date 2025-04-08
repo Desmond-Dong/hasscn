@@ -71,17 +71,30 @@ ls /mnt/data/supervisor/homeassistant/custom_components/hacs/ -lh
 
 ![HACS 安装](./images/hacs-install.png)
 
-🛠️ 最后，请删除这些加载项，并在加速源中重新安装即可。
-![加载项修复](./images/addons.png)
+--- 
+> 此问题在最新版的upgrade.sh里已经得到了极大的优化，可能不会出现这个问题，或者只有少量的加载项会有这个问题
+
+> 视你加载项的安装情况而定
+
+> 🛠️ 最后，请删除这些加载项，并在加速源中重新安装即可。
+> ![加载项修复](./images/addons.png)
+
+---
 
 ### 常见问题
 
 #### 如何验证切换是否成功？
 - 最容易确定的就是加载项商店，点击下面这个按钮，进入到你的加载项商店
+
 [![加载项商店](./images/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
 
-如果看到的官方商店变成了这样全中文的，那是100%成功了
+如果看到的官方商店变成了这样全中文的，并且系统终端ota地址也变成了我的域名
 ![商店截图](./images/store.png)
+```bash
+login
+cat /mnt/data/supervisor/updater.json
+```
+![](./images/mirrow.png)
 
 #### 发现我还在原系统怎么办？
 首先不要怕，系统肯定刷进去了，因为Home Assistant是A/B 轮流启动的，所以很有可能正好你把系统刷在了B区，结果启动是A区
@@ -90,11 +103,7 @@ ls /mnt/data/supervisor/homeassistant/custom_components/hacs/ -lh
 
 #### 应用商店没变一定是没成功吗？
 不一定，可以通过以下命令来看有没有成功,如果ota这一行已经是`https://ota.hasscn.top`了就表示已经成功了
-```bash
-login
-cat /mnt/data/supervisor/updater.json
-```
-![](./images/mirrow.png)
+
 
 #### 那我更系统更换成功了为什么我的加载项商店没有变
 你有加载项无法在系统切换的时候清空，最好的方式就是把已经损坏的加载项先删除，然后运行以下命令
