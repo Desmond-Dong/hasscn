@@ -55,16 +55,8 @@ layout: doc
 - 💡 欢迎用户提交设备适配需求
 - 🤝 共同完善生态建设
 
-升级速度演示
-<iframe 
-    src="https://player.bilibili.com/player.html?isOutside=true&aid=114329697391538&bvid=BV1judBY2ES7&cid=29389750530&p=1" 
-    scrolling="no" 
-    border="0" 
-    frameborder="no" 
-    framespacing="0" 
-    allowfullscreen="true"
-    style="width: 100%; height: 500px;"
-></iframe>
+#### [升级速度演示](https://www.bilibili.com/video/BV1judBY2ES7?t=82.3)
+
 
 
 ### 📥 [系统镜像下载](download#中国优化版系统镜像下载)
