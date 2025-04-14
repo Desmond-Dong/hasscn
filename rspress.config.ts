@@ -28,6 +28,11 @@ export default defineConfig({
          mode: 'link',
          content: '/community.html',
        },
+       {
+        icon: 'github',
+        mode: 'link',
+        content: 'https://github.com/ha-china/',
+      },
      ],
     nav: [
       {

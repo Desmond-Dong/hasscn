@@ -11,7 +11,7 @@ hero:
       link: how-to
 #    - theme: alt
 #      text: GitHub
-#      link: https://github.com/web-infra-dev/rspress
+#      link: https://github.com/ha-china/
   image:
     src: 
       light: /home-assistant-wordmark-vertical-color-on-light.png
