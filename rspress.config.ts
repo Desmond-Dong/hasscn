@@ -33,11 +33,6 @@ export default defineConfig({
         mode: 'link',
         content: 'https://github.com/ha-china/',
       },
-      {
-        icon: 'gitee',
-        mode: 'link',
-        content: 'https://gitee.com/ha-china/',
-      },
      ],
     nav: [
       {
