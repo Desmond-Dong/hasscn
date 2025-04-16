@@ -65,7 +65,13 @@ export default defineConfig({
    
     
     footer: {
-      message: 'Copyright © 2025 Home Assistant 中文站 | [浙ICP备2025160066号](https://beian.miit.gov.cn/)',
+      message: 'Copyright © 2025 Home Assistant 中文站 | 浙ICP备2025160066号',
+      links: [
+        {
+          text: '浙ICP备2025160066号',
+          url: 'https://beian.miit.gov.cn/',
+        },
+      ],
     },
   },
 });
