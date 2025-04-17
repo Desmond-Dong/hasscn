@@ -63,7 +63,9 @@ export default defineConfig({
 
     ],
    
-    
+    head: [
+     '<meta name="referrer" content="origin-when-cross-origin" />',
+    ],
     footer: {
       message: 'Copyright © 2025 Home Assistant 中文站 | <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2025160066号</a>',
     },
