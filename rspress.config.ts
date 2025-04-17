@@ -11,6 +11,7 @@ export default defineConfig({
   },
   builderConfig: {
     html: {
+      head: {
         tags: [
           {
             tag: 'meta',
