@@ -1,8 +1,5 @@
 --- 
-head:
-  - - meta
-    - name: referrer
-      content: origin-when-cross-origin
+layout: doc 
 ---
 
 # 资源下载
