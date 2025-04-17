@@ -68,4 +68,8 @@ export default defineConfig({
       message: 'Copyright © 2025 Home Assistant 中文站 | <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2025160066号</a>',
     },
   },
+  head: [
+    '<meta name="referrer" content="origin-when-cross-origin" />',
+    
+  ]
 });
