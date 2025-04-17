@@ -69,7 +69,6 @@ export default defineConfig({
     },
   },
   head: [
-    '<meta name="referrer" content="origin-when-cross-origin" />',
-    
+    ['meta', { name: 'referrer', content: 'origin-when-cross-origin' }],
   ]
 });
