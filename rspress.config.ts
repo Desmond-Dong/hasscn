@@ -11,22 +11,22 @@ export default defineConfig({
   },
   builderConfig: {
     html: {
-      head: {
-        meta: [
+        tags: [
           {
-            name: 'referrer',
-            content: 'origin-when-cross-origin',
+            tag: 'meta',
+            attrs: {
+              name: 'referrer',
+              content: 'origin-when-cross-origin',
+            },
+          },
+          {
+            tag: 'script',
+            attrs: {
+              src: 'https://hm.baidu.com/hm.js?861929bdb98476134bbae53567c75414',
+            },
           },
         ],
       },
-      tags: [
-        {
-          tag: 'script',
-          attrs: {
-            src: 'https://hm.baidu.com/hm.js?861929bdb98476134bbae53567c75414',
-          },
-        },
-      ],
     },
   },
   themeConfig: {
