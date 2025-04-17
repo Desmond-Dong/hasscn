@@ -1,5 +1,4 @@
 --- 
-layout: doc 
 head:
   - - meta
     - name: referrer
