@@ -9,10 +9,18 @@ export default defineConfig({
     light: '/home-assistant-wordmark-with-margins-color-on-light.png',
     dark: '/home-assistant-wordmark-with-margins-color-on-dark.png',
   },
-  head: [
-    ['meta', { name: 'referrer', content: 'origin-when-cross-origin' }],
-    ['script', { src: 'https://hm.baidu.com/hm.js?861929bdb98476134bbae53567c75414' }]
-  ],
+  builderConfig: {
+    html: {
+      tags: [
+        {
+          tag: 'script',
+          attrs: {
+            src: 'https://hm.baidu.com/hm.js?861929bdb98476134bbae53567c75414',
+          },
+        },
+      ],
+    },
+  },
   themeConfig: {
      socialLinks: [
        {
@@ -54,7 +62,8 @@ export default defineConfig({
       },
 
     ],
-
+   
+    
     footer: {
       message: 'Copyright © 2025 Home Assistant 中文站 | <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2025160066号</a>',
     },

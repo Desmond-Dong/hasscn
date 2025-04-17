@@ -1,3 +1,11 @@
+--- 
+layout: doc 
+head:
+  - - meta
+    - name: referrer
+      content: origin-when-cross-origin
+---
+
 # 资源下载
 
 ## 安卓客户端下载
