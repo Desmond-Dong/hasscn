@@ -1,14 +1,10 @@
-// .rspress/theme/layout.tsx
-import DefaultTheme from 'rspress/theme';
-import type { ReactNode } from 'react';
+import Theme from 'rspress/theme';
 
-const { Layout: DefaultLayout } = DefaultTheme;
+const Layout = () => <Theme.Layout beforeNavTitle={<div>some content</div>} />;
 
-export default function Layout(props: { children: ReactNode }) {
-  return (
-    <>
-      <meta name="referrer" content="origin-when-cross-origin" />
-      <DefaultLayout {...props} />
-    </>
-  );
-}
+export default {
+  ...Theme,
+  Layout,
+};
+
+export * from 'rspress/theme';
