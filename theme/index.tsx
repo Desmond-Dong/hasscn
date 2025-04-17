@@ -1,6 +1,13 @@
 import Theme from 'rspress/theme';
+import { Helmet } from 'react-helmet';
 
-const Layout = () => <Theme.Layout beforeNavTitle={<div>some content</div>} />;
+const Layout = () => (
+  <>
+    <Helmet>
+      <meta name="referrer" content="origin-when-cross-origin" />
+    </Helmet>
+  </>
+);
 
 export default {
   ...Theme,
