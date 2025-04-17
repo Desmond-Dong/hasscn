@@ -11,4 +11,5 @@ export default function Layout(props: { children: ReactNode }) {
       <DefaultLayout {...props} />
     </>
   );
-}
+};
+export * from 'rspress/theme';
