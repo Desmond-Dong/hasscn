@@ -36,28 +36,19 @@ layout: doc
 |----|----|---|
 | haos_generic-aarch64-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.img.xz) |
 | haos_generic-aarch64-15.2.qcow2.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.qcow2.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.qcow2.xz) |
-| haos_generic-aarch64-15.2.raucb | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.raucb) |
 | haos_generic-aarch64-15.2.vmdk.zip | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.vmdk.zip) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.vmdk.zip) |
 | haos_generic-x86-64-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_generic-x86-64-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-x86-64-15.2.img.xz) |
-| haos_generic-x86-64-15.2.raucb | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_generic-x86-64-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-x86-64-15.2.raucb) |
 | haos_green-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_green-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_green-15.2.img.xz) |
-| haos_green-15.2.raucb | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_green-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_green-15.2.raucb) |
 | haos_ova-15.2.ova | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_ova-15.2.ova) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_ova-15.2.ova) |
 | haos_ova-15.2.qcow2.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_ova-15.2.qcow2.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_ova-15.2.qcow2.xz) |
-| haos_ova-15.2.raucb | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_ova-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_ova-15.2.raucb) |
 | haos_ova-15.2.vdi.zip | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_ova-15.2.vdi.zip) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_ova-15.2.vdi.zip) |
 | haos_ova-15.2.vhdx.zip | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_ova-15.2.vhdx.zip) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_ova-15.2.vhdx.zip) |
 | haos_ova-15.2.vmdk.zip | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_ova-15.2.vmdk.zip) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_ova-15.2.vmdk.zip) |
 | haos_rpi3-64-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_rpi3-64-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_rpi3-64-15.2.img.xz) |
-| haos_rpi3-64-15.2.raucb | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_rpi3-64-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_rpi3-64-15.2.raucb) |
 | haos_rpi4-64-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_rpi4-64-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_rpi4-64-15.2.img.xz) |
-| haos_rpi4-64-15.2.raucb | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_rpi4-64-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_rpi4-64-15.2.raucb) |
 | haos_rpi5-64-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_rpi5-64-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_rpi5-64-15.2.img.xz) |
-| haos_rpi5-64-15.2.raucb | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_rpi5-64-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_rpi5-64-15.2.raucb) |
 | haos_yellow-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_yellow-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_yellow-15.2.img.xz) |
-| haos_yellow-15.2.raucb | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_yellow-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_yellow-15.2.raucb) |
 | haos_panther-x2-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_panther-x2-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_panther-x2-15.2.img.xz) |
-| haos_panther-x2-15.2.raucb  | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_panther-x2-15.2.raucb) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_panther-x2-15.2.raucb) |
 
 
 
