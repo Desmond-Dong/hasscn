@@ -32,6 +32,8 @@ layout: doc
 
 > 加速链接与OTA服务器由 **山东丁马生物科技有限公司（主）** 和 **https://4299.net 4299云计算（备）**提供赞助
 
+> 后台扫描的太多了，加了WAF防火墙，如果发现国内加速点无法下载，请告诉我
+
 | 文件名 | 版本 | 下载链接 |
 |----|----|---|
 | haos_generic-aarch64-15.2.img.xz | 15.2 | [国内加速](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.img.xz) \| [原始链接](https://github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.img.xz) |
