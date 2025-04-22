@@ -60,6 +60,10 @@ export default defineConfig({
         text: '关于',
         link: '/about',
       },
+      {
+        text: '服务器状态',
+        link: 'https://status.hasscn.top/status/1',
+      },
 
     ],
    
