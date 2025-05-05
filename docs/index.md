@@ -7,11 +7,11 @@ hero:
   tagline:  乘众人之智，则无不任也；用众人之力，则无不胜也
   actions:
     - theme: brand
-      text: HAOS 极速版
+      text: HAOS极速版
       link: how-to
-#    - theme: alt
-#      text: GitHub
-#      link: https://github.com/ha-china/
+    - theme: alt
+      text: 系统简介
+      link: introduction
   image:
     src: 
       light: /home-assistant-wordmark-vertical-color-on-light.png

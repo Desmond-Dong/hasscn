@@ -67,7 +67,7 @@ ls /mnt/data/supervisor/homeassistant/custom_components/hacs/ -lh
 
 > 💡 如果您之前安装了普通版 HACS，并希望在无特殊网络环境下充分体验其功能，建议您覆盖安装 HACS 极速版，以确保最佳性能和兼容性。🔄 [点击此处查看安装方式](https://gitee.com/hacs-china/)
 
-✅ 安装完成后，您可以在集成中手动添加 HACS 极速版。
+✅ 安装完成后，您可以在集成中直接手动添加 HACS 极速版。
 
 ![HACS 安装](./images/hacs-install.png)
 
