@@ -9,10 +9,10 @@ layout: doc
 
 | 版本   | 类型       | 版本号  | 下载链接                                                                 |
 |--------|------------|---------|--------------------------------------------------------------------------|
-| 稳定版 | 原生安卓系统 | 2025.1.2 | [国内加速](https://ghfast.top/https://ghfast.top/github.com/home-assistant/android/releases/latest/download/app-full-release.apk) \| [原始链接](https://ghfast.top/github.com/home-assistant/android/releases/latest/download/app-full-release.apk) |
-| 稳定版 | 国内安卓系统 | 2025.1.2 | [国内加速](https://ghfast.top/https://ghfast.top/github.com/home-assistant/android/releases/latest/download/app-minimal-release.apk) \| [原始链接](https://ghfast.top/github.com/home-assistant/android/releases/latest/download/app-minimal-release.apk) |
-| 测试版 | 原生安卓系统| 2025.3.5 | [国内加速](https://ghfast.top/https://ghfast.top/github.com/home-assistant/android/releases/download/2025.3.5/app-full-release.apk) \| [原始链接](https://ghfast.top/github.com/home-assistant/android/releases/download/2025.3.5/app-full-release.apk) |
-| 测试版 | 国内安卓系统 | 2025.3.5 | [国内加速](https://ghfast.top/https://ghfast.top/github.com/home-assistant/android/releases/download/2025.3.5/app-minimal-release.apk) \| [原始链接](https://ghfast.top/github.com/home-assistant/android/releases/download/2025.3.5/app-minimal-release.apk) |
+| 稳定版 | 原生安卓系统 | 2025.4.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.4.3/app-full-release.apk)  |
+| 稳定版 | 国内安卓系统 | 2025.4.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.4.3/app-minimal-release.apk) |
+| 测试版 | 原生安卓系统| 2025.4.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.4.3/app-full-release.apk)  |
+| 测试版 | 国内安卓系统 | 2025.3.4 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.4.3/app-minimal-release.apk) |
 
 > 新手建议使用稳定版，虽然版本功能更新没这么快，但是不容易出现异常情况。
 
@@ -22,7 +22,7 @@ layout: doc
 
 | 版本   | 类型   | 版本号| 下载链接                                                            |
 |--------|--------|-------|-------------------------------------------------------------------|
-| 稳定版 | 安装包 | 2.1.1 | [国内加速](https://ghfast.top/https://ghfast.top/github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe) \| [原始链接](https://ghfast.top/github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe) |
+| 稳定版 | 安装包 | 2.1.1 | [国内加速](https://ghfast.top/https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe)  |
 
 > 提示：国内用户无法访问GitHub的用户建议选择"国内加速"链接以获得更快的下载速度，国际用户可直接使用原始链接。
 
