@@ -11,8 +11,8 @@ layout: doc
 |--------|------------|---------|--------------------------------------------------------------------------|
 | 稳定版 | 原生安卓系统 | 2025.4.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.4.3/app-full-release.apk)  |
 | 稳定版 | 国内安卓系统 | 2025.4.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.4.3/app-minimal-release.apk) |
-| 测试版 | 原生安卓系统| 2025.4.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.4.3/app-full-release.apk)  |
-| 测试版 | 国内安卓系统 | 2025.3.4 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.4.3/app-minimal-release.apk) |
+| 测试版 | 原生安卓系统| 2025.5.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.5.3/app-full-release.apk)  |
+| 测试版 | 国内安卓系统 | 2025.5.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.5.3/app-minimal-release.apk) |
 
 > 新手建议使用稳定版，虽然版本功能更新没这么快，但是不容易出现异常情况。
 
