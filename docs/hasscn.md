@@ -207,3 +207,6 @@ curl -fsSL get.hacs.vip | bash
 
 - [极速版和官方HACS的差别有那些？](https://github.com/hacs-china/integration/compare/main...china)
 
+---
+
+[其它官方已弃用的安装方式](deprecated)
