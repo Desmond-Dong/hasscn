@@ -6,12 +6,14 @@ layout: doc
 
 > 🌈 专为中国用户打造，彻底解决因网络导致的使用困难
 
-## **🎯 Home Assistant OS 极速版**
-
+## **🎯 Home Assistant OS 极速版** [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/)
+> 如果打的开Github，点个Star吧
 
 如遇到 bug，请通过以下方式反馈：
 - 在微信中留言
 - 在 GitHub 上提 [issue](https://github.com/ha-china/HAOS-CN/issues)
+
+
 
 
 ### ✨ 核心亮点
@@ -62,12 +64,12 @@ layout: doc
 ### 📥 [系统镜像下载](download#中国优化版系统镜像下载)
 ---
 
-## HACS 极速版
+## HACS 极速版 [![stars](https://img.shields.io/github/stars/hacs-china/integration)](https://github.com/hacs-china/integration/stargazers)
 ### 👨‍💻 版本修改作者：[Alone](https://anlo.ng/)
 
 [![version](https://img.shields.io/github/v/release/hacs-china/integration)](https://github.com/hacs-china/integration/releases/latest?include_prereleases)
 [![releases](https://img.shields.io/github/downloads/hacs-china/integration/total)](https://github.com/hacs-china/integration/releases)
-[![stars](https://img.shields.io/github/stars/hacs-china/integration)](https://github.com/hacs-china/integration/stargazers)
+
 
 [HACS](https://hacs.xyz)是一款优秀的 [Home Assistant](https://www.home-assistant.io) 集成商店，然而国人想要使用它下载插件或前端卡片却困难重重，主要原因就是国内的网络环境。
 本项目使用了[gitmirror.com](https://gitmirror.com)和[fastgit.org](https://fastgit.org)等提供的Github代理服务，可以让大家更快的下载商店里的插件。
@@ -209,4 +211,4 @@ curl -fsSL get.hacs.vip | bash
 
 ---
 
-[其它官方已弃用的安装方式](deprecated)
+## [其它官方已弃用的安装方式](deprecated)
