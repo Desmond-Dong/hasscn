@@ -6,8 +6,9 @@ layout: doc
 
 > 🌈 专为中国用户打造，彻底解决因网络导致的使用困难
 
-## **🎯 Home Assistant OS 极速版** [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/)
-> 如果打的开Github，点个Star吧
+## **🎯 Home Assistant OS 极速版** 
+> 如果打的开Github，点个Star吧 [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/)
+
 
 如遇到 bug，请通过以下方式反馈：
 - 在微信中留言
