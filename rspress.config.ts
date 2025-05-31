@@ -1,5 +1,4 @@
 import * as path from 'node:path';
-import BilibiliIframe from '@/components/BilibiliIframe';
 import { defineConfig } from 'rspress/config';
 
 export default defineConfig({

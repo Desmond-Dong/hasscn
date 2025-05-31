@@ -59,7 +59,6 @@ layout: doc
 - 🤝 共同完善生态建设
 #### [初始化速度演示](https://www.bilibili.com/video/BV1tr7VzCE35/?share_source=copy_web&vd_source=9b5dc5e48277a13da484e0352d3707e9)
 
-<BilibiliIframe />
 
 #### [升级速度演示](https://www.bilibili.com/video/BV1judBY2ES7?t=82.3)
 
