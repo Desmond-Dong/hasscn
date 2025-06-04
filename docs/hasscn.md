@@ -27,6 +27,7 @@ layout: doc
 #### 📚 HACS 极速版 [Alone](https://anlo.ng/)
 - ⚡ 内置 HACS 极速版，集成安装零报错
 - 🔍 支持在集成中直接搜索添加 HACS [Gitee 源](https://gitee.com/hacs-china/)
+- 🚀 集成安装完成后，可直接添加HACS，或[一键快速添加](https://my.home-assistant.io/redirect/config_flow_start/?domain=hacs)
 
 
 #### 📱 海量加载项支持
