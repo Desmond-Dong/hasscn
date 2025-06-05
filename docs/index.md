@@ -34,9 +34,10 @@ features:
     details: 超过400个专为国内用户定制的加载项，丰富您的智能家居功能。
     icon: 🧰
     link: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons
-  - title: 🛠️ ESPHome （未开始汉化）
+  - title: 🛠️ Home Assistant 开发者文档
     details: 快速创建和部署个性化的智能设备固件，轻松实现智能家居的定制化。
-    icon: ⚙️
+    icon: 🖥️
+    link:/developers/
   - title: ❤️ HASS Agent 汉化手册
     details: 专为Windows用户打造的桌面客户端，提供系统状态监控、快捷命令执行等功能。
     icon: 💡
