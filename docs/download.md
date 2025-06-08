@@ -51,6 +51,7 @@ layout: doc
 | haos_rpi5-64-15.2.img.xz | 15.2 | [国内加速 - 丁马](https://ota.hasscn.top/15.2/haos_rpi5-64-15.2.img.xz) \| [国内加速 - 4299](https://ota1.hasscn.top/15.2/haos_rpi5-64-15.2.img.xz) \| [原始链接](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_rpi5-64-15.2.img.xz) |
 | haos_yellow-15.2.img.xz | 15.2 | [国内加速 - 丁马](https://ota.hasscn.top/15.2/haos_yellow-15.2.img.xz) \| [国内加速 - 4299](https://ota1.hasscn.top/15.2/haos_yellow-15.2.img.xz) \| [原始链接](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_yellow-15.2.img.xz) |
 | haos_panther-x2-15.2.img.xz | 15.2 | [国内加速 - 丁马](https://ota.hasscn.top/15.2/haos_panther-x2-15.2.img.xz) \| [国内加速 - 4299](https://ota1.hasscn.top/15.2/haos_panther-x2-15.2.img.xz) \| [原始链接](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_panther-x2-15.2.img.xz) |
+| haos_ihost-15.2.img.xz | 15.2 | [国内加速 - 丁马](https://ota.hasscn.top/15.2/haos_ihost-15.2.img.xz) \| [国内加速 - 4299](https://ota1.hasscn.top/15.2/haos_ihost-15.2.img.xz) \| [原始链接](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_ihost-15.2.img.xz) |
 
 
 
