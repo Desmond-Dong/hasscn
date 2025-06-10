@@ -2,6 +2,15 @@ import * as path from 'node:path';
 import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
+  locales: [
+
+    {
+      lang: 'zh',
+      label: '简体中文',
+      title: 'Home Assistant 中文站',
+      description: 'Home Assistant 中文站',
+    },
+  ],
   root: path.join(__dirname, 'docs'),
   title: 'Home Assistant 中文站',
   icon: '/icon.png',
