@@ -2,7 +2,7 @@
 layout: doc 
 ---
 
-# 资源下载
+# Home Assistant 相关资源下载
 
 ## 安卓客户端下载
 > 加速链接采用第三方公开平台 **https://ghfast.top**
