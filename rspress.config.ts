@@ -3,7 +3,8 @@ import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
-  title: 'Home Assistant 中文站',
+  title: 'Home Assistant 中文站 | Home Assistant 中文网 | 公众号：老王杂谈说',
+  description: '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版',
   icon: '/icon.png',
   logo: {
     light: '/home-assistant-wordmark-with-margins-color-on-light.png',
