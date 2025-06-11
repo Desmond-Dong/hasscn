@@ -41,6 +41,10 @@ export default defineConfig({
         link: '/',
       },
       {
+        text: '重要事件',
+        link: '/MajorEvents',
+      },
+      {
         text: '中国专区',
         link: '/hasscn',
       },
