@@ -31,6 +31,8 @@ layout: doc
 
 
 #### 📱 海量加载项支持
+> 点个Star吧  [![star](https://gitee.com/desmond_GT/hassio-addons/badge/star.svg?theme=dark)](https://gitee.com/desmond_GT/hassio-addons/blob/main/README.md)
+
 - 📦 内置 400+ 中国版加载项
 - 🖱️ 一键安装，流畅升级
 - ✅ 彻底解决：
@@ -179,37 +181,6 @@ curl -fsSL get.hacs.vip | bash
 > ![download hacs](./images/hacs-china.png)
 
 
-### 代理
-
-> **Note**
-> 
-> 自v1.27.1.3开始，HACS极速版支持自定义Github API地址，如果你的HACS无法加载集成列表和集成详情，修改此选项会有所改善。
-> 此前的版本仅能解决集成下载不了，而该版本后能解决大部分Github访问不了导致的大部分问题。
-> 
-> 不过遗憾的是，首次安装HACS时的授权过程仍然还不能被加速，如果你在授权过程中一直转圈，请稍后再试或使用其他科学的方式。
-
-- 社区提供的免费代理：
-  - `https://ghapi.hacs.vip` - [@al-one](https://github.com/al-one)
-  - `https://ghapi-cf.hacs.vip/api` - [@al-one](https://github.com/al-one)
-  - `https://hacs-china.chrome7.com/api` - [@goxofy](https://github.com/goxofy)
-  - `https://hacs-china.casen.tk/api` - [@CasenChan](https://github.com/CasenChan)
-
-> **Note**
-> 
-> 以上地址由贡献者免费提供，是由`Cloudflare Worker`搭建，每个代理每天有10万次请求次数限制，请随机使用上面的代理。
-> 我们建议你使用自己的域名创建代理，当然也可以使用[`freenom.com`](https://freenom.com)的免费域名。
-
-- 创建自己的代理：
-  - 登陆或注册[`Cloudflare`](https://cloudflare.com)添加自己的域名，并修改域名的NS记录
-  - [创建`Worker`服务](https://dash.cloudflare.com/?account=workers)，选择`HTTP 处理程序`
-  - 复制[`index.js`](https://raw.githubusercontent.com/hacs-china/gh-proxy/master/index.js)中的代码，并张贴至Worker的代码编辑器中
-  - 部署并在触发器中添加自定义域名，Worker分配的域名是无法被访问的
-  - 访问`https://your.mirror.domain/api/`检查是否生效
-  - 在HA的集成与服务页面找到已添加的HACS，点击`选项`
-  - 填入地址`https://your.mirror.domain/api`
-
-
-<a name="faq"></a>
 ### 常见问题
 
 - [极速版和官方HACS的差别有那些？](https://github.com/hacs-china/integration/compare/main...china)
