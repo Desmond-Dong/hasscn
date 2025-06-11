@@ -30,7 +30,7 @@ layout: doc
   发布 **Home Assistant OS 极速版**（正式版）
 
 - 🌏 **2025年5月**  
-  间接受官方委托，举办 **Home Assistant Community Day**  
+  受委托，举办 **Home Assistant Community Day**  
   > 全球人数最多，阵容强大
 
 - 🤝 **2025年6月**  
