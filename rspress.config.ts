@@ -81,6 +81,5 @@ export default defineConfig({
     ['meta', { name: 'referrer', content: 'origin-when-cross-origin' }],
     ['meta', { name: 'author', content: '老王杂谈说' }],
     ['meta', { name: 'keywords', content: 'Home Assistant,Home Assistant 中文网，Home Assistant 中文站，Home Assistant OS 极速版，老王杂谈说，HAOS，Nodered' }],
-    ['meta', { name: 'description', content: '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版' }],
   ]
 });
