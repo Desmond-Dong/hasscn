@@ -1,5 +1,5 @@
 --- 
-layout: doc 
+layout: custom 
 ---
 
 # Home Assistant 相关资源下载
