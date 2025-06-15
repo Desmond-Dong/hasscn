@@ -89,11 +89,10 @@ ls /mnt/data/supervisor/homeassistant/custom_components/hacs/ -lh
 
 [![加载项商店](./images/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
 
-如果看到的官方商店变成了这样全中文的，并且系统终端ota地址也变成了我的域名
+如果看到的官方商店变成了这样全中文的，并且系统启动界面看到了下面这句话
 ![商店截图](./images/store.png)
-```bash
-login
-cat /mnt/data/supervisor/updater.json
+```
+This is an open source version, commercial use without permission is prohibited
 ```
 ![](./images/mirrow.png)
 
@@ -102,6 +101,11 @@ cat /mnt/data/supervisor/updater.json
 第一行与第二行都试一下
 ![启动界面](./images/grub.png)
 
-
-
-
+如果这个界面一闪而过你没有机会选择，在系统启动成功后可以通过命令切换A分区还是B
+```bash
+ha os boot-slot A
+```
+然后再重启系统
+``` bash
+ha host reboot
+```
