@@ -55,6 +55,7 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 
 :::tip
 **自动：** 如果您之前未安装HACS，系统将在此次切换中默认为您安装HACS极速版；如果您已安装，系统将自动跳过此步骤（无论您使用的是原版还是极速版）。
+
 💡 如果您之前安装了普通版 HACS，并希望在无特殊网络环境下充分体验其功能，建议您覆盖安装 HACS 极速版，以确保最佳性能和兼容性。🔄 [点击此处查看安装方式](https://gitee.com/hacs-china/)
 :::
 
