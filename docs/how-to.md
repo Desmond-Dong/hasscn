@@ -47,24 +47,9 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 一旦所有状态均为绿色，您便可以通过以下地址访问系统：
 - [http://homeassistant.local:8123](http://homeassistant.local:8123)
 
-> **可选：** 如果您之前未安装HACS，系统将在此次切换中默认为您安装HACS极速版；如果您已安装，系统将自动跳过此步骤（无论您使用的是原版还是极速版）。
+> **自动：** 如果您之前未安装HACS，系统将在此次切换中默认为您安装HACS极速版；如果您已安装，系统将自动跳过此步骤（无论您使用的是原版还是极速版）。
 
-请在终端中**依次**输入以下命令以进行检查：
 
-**提示：** 当命令较长时，只需在每个斜杠（/）后输入前几个字母，然后按Tab键即可，直到与下面的内容对应上。
-
-```bash
-login
-ls /mnt/data/supervisor/homeassistant/custom_components/hacs/ -lh
-```
-
-🟢 **绿色框**：如果显示 `hacs.zip`，则表示 HACS 尚未成功安装。  
-🟡 **黄色框**：如果显示一系列内容，则表示 HACS 已成功安装。  
-
-- 🔍 请确保最终显示的状态为黄色框。
-- ⚠️ 自动安装 HACS 仅会执行一次；如果安装失败，您需要手动进行后续安装。
-
-![HACS 安装](./images/hacs.png)
 
 > 💡 如果您之前安装了普通版 HACS，并希望在无特殊网络环境下充分体验其功能，建议您覆盖安装 HACS 极速版，以确保最佳性能和兼容性。🔄 [点击此处查看安装方式](https://gitee.com/hacs-china/)
 
@@ -85,16 +70,20 @@ ls /mnt/data/supervisor/homeassistant/custom_components/hacs/ -lh
 ### 常见问题
 
 #### 如何验证切换是否成功？
-- 最容易确定的就是加载项商店，点击下面这个按钮，进入到你的加载项商店
-
-[![加载项商店](./images/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
-
-如果看到的官方商店变成了这样全中文的，并且系统启动界面看到了下面这句话
-![商店截图](./images/store.png)
+- 如果系统启动界面看到了下面这句话
 ```
 This is an open source version, commercial use without permission is prohibited
 ```
 ![](./images/mirrow.png)
+- 并且看到的官方商店变成了这样全中文的
+> 点击下面这个按钮，进入到你的加载项商店
+[![加载项商店](./images/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
+![商店截图](./images/store.png)
+
+
+
+
+
 
 #### 发现我还在原系统怎么办？
 首先不要怕，系统肯定刷进去了，因为Home Assistant是A/B 轮流启动的，所以很有可能正好你把系统刷在了B区，结果启动是A区
@@ -103,7 +92,7 @@ This is an open source version, commercial use without permission is prohibited
 
 如果这个界面一闪而过你没有机会选择，在系统启动成功后可以通过命令切换A分区还是B
 ```bash
-ha os boot-slot A
+ha os boot-slot A #如果你上一次启动的是slot B那这命令行保持不换，如果上一次启动的是slot A则把命令里的A换成B
 ```
 然后再重启系统
 ``` bash
