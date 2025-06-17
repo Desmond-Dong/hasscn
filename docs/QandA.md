@@ -13,7 +13,9 @@ layout: doc
 
 :::tip 这个版本和官方原版有什么区别？
 除了下载静像换成了国内的，确实有一些区别 （目的只有一个，为了加速）
+
 移除了所有国内不稳定或者无法访问的官方自带的加载项源（ [官方加载项](https://github.com/home-assistant/addons) ，[官方社区加载项](https://github.com/hassio-addons/repository) ，[音乐助手](https://github.com/music-assistant/home-assistant-addon)），换成了加速源 [查看链接](https://gitee.com/desmond_GT/hassio-addons)
+
 同时集成了极速版HACS(Alone)[HACS China](https://github.com/hacs-china), 免github帐号，免科学无损使用HACS
 :::
 
@@ -50,12 +52,13 @@ layout: doc
 
 :::tip 现有的源如果失效，切换系统源需要重新安装吗？
 不需要
-
-::::::tip 你会停更这个系统吗
+:::
+:::tip 你会停更这个系统吗
 不会，95%以上的步骤全部自动化。哪怕我别的事忙的不可开交，这个系统也能自动编译分发。
 
 ::::::tip 我是公司可以用这个免费系统吗
 小公司数量少（10个终端以内）的没问题，当然如果你愿意[支持我](sponsor)一下则是更好。
+
 数量大的公司不建议，毕竟这里面所有的加速节点都是取别人献的爱心，大量的设备通信对于提供免费服务的人或者公司是一个额外的负担，并且拿免费的资源盈利对于开源环境是不健康的，也不尊重的，我还是觉得你私有化部署会更好一点，如果你需要寻求帮助，可以微信后台给我留言或 [给我发邮件](mailto:djhui@live.cn)。
 
 
