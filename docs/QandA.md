@@ -3,7 +3,7 @@ layout: doc
 ---
 # Home Assistant OS 极速版
 :::info
-名称剽窃自《HACS极速版》（因为HACS极速版就是加速了HACS的连接与使用，我这OS也是一样的作用，因此取名极速版
+名称剽窃自《HACS极速版》因为HACS极速版就是加速了HACS的连接与使用，我这OS也是一样的作用，因此取名极速版
 :::
 
 
