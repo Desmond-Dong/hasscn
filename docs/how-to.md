@@ -26,8 +26,11 @@ layout: doc
 
 - [![备份](./images/backup.svg)](https://my.home-assistant.io/redirect/backup/) 
 - [![备份配置](./images/backup_config.svg)](https://my.home-assistant.io/redirect/backup_config/)
+:::info
+🔄 请注意，迁移完成后，有可能会出现部分加载项需重新安装，而其他数据将保持不变。
+:::
 
-🔄 请注意，迁移完成后，所有加载项需重新安装，而其他数据将保持不变。
+
 
 请运行以下命令（若命令执行成功，系统将自动重启；若失败，则不会对系统造成任何更改）：
 

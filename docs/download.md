@@ -5,7 +5,10 @@ layout: custom
 # Home Assistant 相关资源下载
 
 ## 安卓客户端下载
-> 加速链接采用第三方公开平台 **https://ghfast.top**
+:::info
+加速链接采用第三方公开平台 `https://ghfast.top`
+:::
+> 
 
 | 版本   | 类型       | 版本号  | 下载链接                                                                 |
 |--------|------------|---------|--------------------------------------------------------------------------|
@@ -14,25 +17,35 @@ layout: custom
 | 测试版 | 原生安卓系统| 2025.5.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.5.3/app-full-release.apk)  |
 | 测试版 | 国内安卓系统 | 2025.5.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.5.3/app-minimal-release.apk) |
 
-> 新手建议使用稳定版，虽然版本功能更新没这么快，但是不容易出现异常情况。
+:::tip
+新手建议使用稳定版，虽然版本功能更新没这么快，但是不容易出现异常情况。
+:::
 
 ## Windows 客户端下载
 
-> 加速链接采用第三方公开平台 **https://ghfast.top**
+:::info
+加速链接采用第三方公开平台 `https://ghfast.top`
+:::
 
 | 版本   | 类型   | 版本号| 下载链接                                                            |
 |--------|--------|-------|-------------------------------------------------------------------|
 | 稳定版 | 安装包 | 2.1.1 | [国内加速](https://ghfast.top/https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe)  |
 
-> 提示：国内用户无法访问GitHub的用户建议选择"国内加速"链接以获得更快的下载速度，国际用户可直接使用原始。
+:::tip
+提示：国内用户无法访问GitHub的用户建议选择"国内加速"链接以获得更快的下载速度，国际用户可直接使用原始。
+:::
 
 ## 中国优化版系统镜像下载
 
-> 原始采用**https://ghfast.top**加速 (建议用此下载)
+:::info
+原始采用`https://ghfast.top`加速 (建议)
 
-> 国内链接与OTA服务器由 **https://4299.net 4299云计算**提供赞助
+国内链接与OTA服务器由 `https://4299.net 4299云计算`提供赞助
 
-> 后台扫描的太多了，加了WAF防火墙，如果请求次数太多无法下载，请采用原始，原始已经做了国内优化，普通网络也可以下载
+后台扫描的太多了，加了WAF防火墙，如果请求次数太多无法下载，请采用原始，原始已经做了国内优化，普通网络也可以下载
+:::
+
+
 
 | 文件名 | 下载链接 | 文件HASH (SHA256) |
 |----|---|----|
