@@ -9,7 +9,9 @@ layout: doc
 :::
 
 ## **🎯 Home Assistant OS 极速版** 
-> 如果打的开Github，点个Star吧 [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/)
+:::info
+如果你打的开Github，点个Star吧 [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/)
+:::
 
 
 如遇到 bug，请通过以下方式反馈：
@@ -33,7 +35,10 @@ layout: doc
 
 
 #### 📱 海量加载项支持
-> 点个Star吧  [![star](https://gitee.com/desmond_GT/hassio-addons/badge/star.svg?theme=dark)](https://gitee.com/desmond_GT/hassio-addons/blob/main/README.md)
+:::info
+点个Star吧  [![star](https://gitee.com/desmond_GT/hassio-addons/badge/star.svg?theme=dark)](https://gitee.com/desmond_GT/hassio-addons/blob/main/README.md)
+:::
+
 
 - 📦 内置 400+ 中国版加载项
 - 🖱️ 一键安装，流畅升级
@@ -74,7 +79,9 @@ layout: doc
 ---
 
 ## HACS 极速版 [![stars](https://img.shields.io/github/stars/hacs-china/integration)](https://github.com/hacs-china/integration/stargazers)
-### 👨‍💻 版本修改作者：[Alone](https://anlo.ng/)
+:::info
+版本修改作者：[Alone](https://anlo.ng/)
+:::
 
 [![version](https://img.shields.io/github/v/release/hacs-china/integration)](https://github.com/hacs-china/integration/releases/latest?include_prereleases)
 [![releases](https://img.shields.io/github/downloads/hacs-china/integration/total)](https://github.com/hacs-china/integration/releases)
@@ -83,14 +90,22 @@ layout: doc
 [HACS](https://hacs.xyz)是一款优秀的 [Home Assistant](https://www.home-assistant.io) 集成商店，然而国人想要使用它下载插件或前端卡片却困难重重，主要原因就是国内的网络环境。
 本项目使用了[gitmirror.com](https://gitmirror.com)和[fastgit.org](https://fastgit.org)等提供的Github代理服务，可以让大家更快的下载商店里的插件。
 
-> HACS极速版是依赖于有github帐号的玩家共享token来实现免帐号使用的，如果您愿意共享您的token，请[点此](https://tokenhub.hacs.vip/)来帮助有需要的人
+:::tip 我们需要你的帮助
+HACS极速版是依赖于有github帐号的玩家共享token来实现免帐号使用的，如果您愿意共享您的token，请[点此](https://tokenhub.hacs.vip/)来帮助有需要的人
+:::
+
 
 <a name="install"></a>
 ### 安装/更新
 
-> 本项目是HACS官方集成的修改版，安装本项目会覆盖官方的集成，但是无需重新配置集成(共用一套配置)，因此你可以放心安装。如果想切换到官方版本，使用官方的shell命令再安装即可。
->
-> 以下几种方法任选其一！
+:::tip
+本项目是HACS官方集成的修改版，安装本项目会覆盖官方的集成，但是无需重新配置集成(共用一套配置)，因此你可以放心安装。如果想切换到官方版本，使用官方的shell命令再安装即可。
+:::
+
+:::warning
+以下几种方法任选其一！
+:::
+
 
 #### 方法1️⃣: 使用命令安装
 
