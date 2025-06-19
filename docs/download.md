@@ -1,8 +1,11 @@
 --- 
-layout: custom 
+layout: doc
 ---
 
 # Home Assistant 相关资源下载
+:::danger
+请使用`中国大陆的网络`下载以下内容，否则可能导致速度不佳，文件损坏或者下载中断
+:::
 
 ## 安卓客户端下载
 :::info
