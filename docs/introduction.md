@@ -41,7 +41,7 @@ layout: doc
 ---
 
 ### 🤖 智能安装体验
-- 🚦 系统启动时**自动**检测网络并安装 **🇨🇳 HACS 极速版**
+- 🚦 系统启动时**自动**检测网络并安装 ![](https://img.shields.io/badge/HACS-%E6%9E%81%E9%80%9F%E7%89%88-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)
 
 ---
 :::info
