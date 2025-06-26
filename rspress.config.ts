@@ -81,14 +81,13 @@ export default defineConfig({
             text: '重要事件',
             link: '/MajorEvents',
           },
+          {
+            text: '服务器状态',
+            link: 'https://status.hasscn.top/status/1',
+          },
         ]
         
       },
-      {
-        text: '服务器状态',
-        link: 'https://status.hasscn.top/status/1',
-      },
-
     ],
    
     
