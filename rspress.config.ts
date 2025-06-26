@@ -42,10 +42,6 @@ export default defineConfig({
         link: '/',
       },
       {
-        text: '重要事件',
-        link: '/MajorEvents',
-      },
-      {
         text: '中国专区',
         items: [
           {
@@ -73,7 +69,17 @@ export default defineConfig({
       },
       {
         text: '关于',
-        link: '/about',
+        items: [
+          {
+            text: '关于本站',
+            link: '/about',
+          },
+          {
+            text: '重要事件',
+            link: '/MajorEvents',
+          },
+        ]
+        
       },
       {
         text: '服务器状态',
