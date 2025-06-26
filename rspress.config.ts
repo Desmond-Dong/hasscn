@@ -47,7 +47,16 @@ export default defineConfig({
       },
       {
         text: '中国专区',
-        link: '/hasscn',
+        items: [
+          {
+            text: 'HAOS 极速版',
+            link: '/hasscn',
+          },
+          {
+            text: 'HACS 极速版',
+            link: '/hacscn',
+          },
+        ]
       },
 
       {
