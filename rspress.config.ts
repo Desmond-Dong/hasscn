@@ -45,16 +45,19 @@ export default defineConfig({
         text: '中国专区',
         items: [
           {
-            text: 'HAOS 极速版',
+            text: 'Home Assistant OS 极速版',
             link: '/hasscn',
           },
           {
-            text: 'HACS 极速版',
+            text: 'HACS 极速版 (by Alone)',
             link: '/hacscn',
+          },
+          {
+            text: '品牌榜',
+            link: '/brand',
           },
         ]
       },
-
       {
         text: '下载专区',
         link: '/download',
