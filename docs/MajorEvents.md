@@ -38,8 +38,6 @@ layout: doc
 
 :::tip 2025年5月 
 受委托，举办 `Home Assistant Community Day`  
-
-全球人数最多，阵容强大
 :::
 
 :::tip 2025年6月 
