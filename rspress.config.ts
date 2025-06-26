@@ -53,7 +53,7 @@ export default defineConfig({
             link: '/hacscn',
           },
           {
-            text: '品牌榜',
+            text: '品牌目录',
             link: '/brand',
           },
         ]
