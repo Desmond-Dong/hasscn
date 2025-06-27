@@ -4,7 +4,10 @@ layout: doc
 
 # 🏠 Home Assistant OS 极速版
 :::info
-如果你打的开Github，点个Star吧 <a href="https://github.com/ha-china/HAOS-CN/"><img src="https://img.shields.io/github/stars/ha-china/HAOS-CN" alt="stars"></a>
+
+| 如果你打的开Github，点个Star吧 | [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/) |
+|----|----|
+
 :::
 
 
