@@ -41,7 +41,7 @@ layout: doc
 ## 中国优化版系统镜像下载
 
 :::info
-原始加速采用`https://ghfast.top`加速 (建议)
+原始加速采用`https://ghfast.top`加速 (`建议使用`)
 
 国内链接与OTA服务器由 `https://4299.net 4299云计算`提供赞助
 
