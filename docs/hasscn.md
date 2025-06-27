@@ -4,7 +4,6 @@ layout: doc
 
 # 🏠 Home Assistant OS 极速版
 :::info
-
 | 如果你打的开Github，点个Star吧 | [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/) |
 |----|----|
 
@@ -33,7 +32,10 @@ layout: doc
 
 #### 📱 海量加载项支持
 :::info
-点个Star吧  [![star](https://gitee.com/desmond_GT/hassio-addons/badge/star.svg?theme=dark)](https://gitee.com/desmond_GT/hassio-addons/blob/main/README.md)
+
+| 点个Star吧 | [![star](https://gitee.com/desmond_GT/hassio-addons/badge/star.svg?theme=dark)](https://gitee.com/desmond_GT/hassio-addons/blob/main/README.md) |
+|----|----|
+
 :::
 
 
