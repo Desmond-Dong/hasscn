@@ -128,4 +128,4 @@ curl -fsSL get.hacs.vip | bash
 
 ---
 
-## [其它官方已弃用的安装方式](deprecated)
+
