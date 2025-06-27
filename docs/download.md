@@ -52,7 +52,7 @@ layout: doc
 
 | 文件名 | 下载链接 | 备注 |文件HASH (SHA256) |
 |----|---|---|----|
-| generic-aarch64-15.2.img.xz | [4299](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.img.xz) \|[原始](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.img.xz) | arm 64,UTM |633eadbedd88bc677ce0fcd09a25a414c69dccf2c32021553d280d936959d6ac |
+| generic-aarch64-15.2.img.xz | [4299](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.img.xz) \|[原始](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.img.xz) | Mac Mini, arm 64,UTM |633eadbedd88bc677ce0fcd09a25a414c69dccf2c32021553d280d936959d6ac |
 | generic-aarch64-15.2.qcow2.xz | [4299](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.qcow2.xz) \|[原始](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.qcow2.xz) | arm pve |59e68a72a4a6cef5c758ac6ace15520b69c44ac0f5ce40cc8cfbab18148b8e82|
 | generic-aarch64-15.2.vmdk.zip | [4299](https://ota.hasscn.top/15.2/haos_generic-aarch64-15.2.vmdk.zip) \|[原始](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-aarch64-15.2.vmdk.zip) |arm vmware, esxi |2967224739d2b72413842513b0f7d9dcd270f18fcd114509183f74c1dca37440|
 | generic-x86-64-15.2.img.xz | [4299](https://ota.hasscn.top/15.2/haos_generic-x86-64-15.2.img.xz) \|[原始](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/15.2/haos_generic-x86-64-15.2.img.xz) |x86物理机直装 |5087c3e02ffaab1b6e7fde1e297cfbaa9d7fe7e46f531086c52b30fb39a991cf|
