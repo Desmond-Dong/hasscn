@@ -86,7 +86,7 @@ export default defineConfig({
             link: '/MajorEvents',
           },
           {
-            text: '服务器状态',
+            text: '服务器状态(China Only)',
             link: 'https://status.hasscn.top/status/1',
           },
         ]
