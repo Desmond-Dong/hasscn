@@ -84,8 +84,14 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 
 ### 常见问题
 
-#### 如何验证切换是否成功？
-- 如果系统启动界面看到了下面这句话
+
+
+:::tip 如何验证切换是否成功？
+
+如果系统启动界面看到了下面这句话
+
+:::
+
 ```
 This is an open source version, commercial use without permission is prohibited
 ```
@@ -97,12 +103,15 @@ This is an open source version, commercial use without permission is prohibited
 
 
 
+:::tip 发现我还在原系统怎么办？
 
-
-
-#### 发现我还在原系统怎么办？
 首先不要怕，系统肯定刷进去了，因为Home Assistant是A/B 轮流启动的，所以很有可能正好你把系统刷在了B区，结果启动是A区
 第一行与第二行都试一下
+
+:::
+
+
+
 ![启动界面](./images/grub.png)
 
 如果这个界面一闪而过你没有机会选择，在系统启动成功后可以通过命令切换A分区还是B
