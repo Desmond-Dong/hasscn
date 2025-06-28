@@ -23,7 +23,8 @@ layout: doc
 :::
 
 
-[![备份](./images/backup.svg)](https://my.home-assistant.io/redirect/backup/) [![备份配置](./images/backup_config.svg)](https://my.home-assistant.io/redirect/backup_config/)
+| [![备份](./images/backup.svg)](https://my.home-assistant.io/redirect/backup/) | [![备份配置](./images/backup_config.svg)](https://my.home-assistant.io/redirect/backup_config/)| 
+|---|---|
 
 :::info
 
