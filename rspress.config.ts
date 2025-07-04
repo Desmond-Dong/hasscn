@@ -18,7 +18,10 @@ export default defineConfig({
         {
           tag: 'script',
           attrs: {
-            src: 'https://hm.baidu.com/hm.js?861929bdb98476134bbae53567c75414',
+            src: '//sdk.51.la/js-sdk-pro.min.js?id=3MhQABjxy4RZQ6Ig&ck=3MhQABjxy4RZQ6Ig',
+            id:'LA_COLLECT',
+            charset:'UTF-8',
+
           },
         },
       ],
