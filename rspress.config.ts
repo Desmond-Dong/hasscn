@@ -85,6 +85,10 @@ export default defineConfig({
             link: '/about',
           },
           {
+            text: '搜索引擎',
+            link: '/no-baidu',
+          },
+          {
             text: '重要事件',
             link: '/MajorEvents',
           },
