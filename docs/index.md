@@ -41,5 +41,5 @@ features:
   - title: ❤️ HASS Agent 汉化手册
     details: 专为Windows用户打造的桌面客户端，提供系统状态监控、快捷命令执行等功能。
     icon: 💡
-    link: /hass-agent/getting-started/
+    link: /hass-agent/
 ---
