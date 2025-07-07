@@ -4,11 +4,9 @@ layout: doc
 
 # 🏠 HACS 极速版 [![stars](https://img.shields.io/github/stars/hacs-china/integration)](https://github.com/hacs-china/integration/stargazers)
 :::info
-版本修改作者：[Alone](https://anlo.ng/)
+版本修改作者：[Alone](https://anlo.ng/)，如果你已经是`Home Assistant OS 极速版`则无需重复安装，已内置
 :::
 
-[![version](https://img.shields.io/github/v/release/hacs-china/integration)](https://github.com/hacs-china/integration/releases/latest?include_prereleases)
-[![releases](https://img.shields.io/github/downloads/hacs-china/integration/total)](https://github.com/hacs-china/integration/releases)
 
 
 [HACS](https://hacs.xyz)是一款优秀的 [Home Assistant](https://www.home-assistant.io) 集成商店，然而国人想要使用它下载插件或前端卡片却困难重重，主要原因就是国内的网络环境。
@@ -19,7 +17,7 @@ HACS极速版是依赖于有github帐号的玩家共享token来实现免帐号�
 :::
 
 
-<a name="install"></a>
+
 ### 安装/更新
 
 :::tip
@@ -118,14 +116,5 @@ curl -fsSL get.hacs.vip | bash
 - 重启HA
 - [添加HACS集成](https://my.home-assistant.io/redirect/config_flow_start/?domain=hacs) (仅首次安装)
 
-> ⚠️ 请不要通过下图中的位置下载HACS，会缺少文件
-> ![download hacs](./images/hacs-china.png)
-
-
-### 常见问题
-
-- [极速版和官方HACS的差别有那些？](https://github.com/hacs-china/integration/compare/main...china)
-
----
 
 
