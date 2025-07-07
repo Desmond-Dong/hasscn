@@ -53,9 +53,14 @@ export default defineConfig({
             link: '/hasscn',
           },
           {
+            text: 'Home Assistant OS 加载项',
+            link: '/addoncn',
+          },
+          {
             text: 'HACS 极速版 (by Alone)',
             link: '/hacscn',
-          },{
+          },
+          {
             text: '官方已弃用的安装方式',
             link: '/deprecated',
           },
