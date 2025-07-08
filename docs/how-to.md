@@ -23,7 +23,7 @@ layout: doc
 :::
 
 
-| [![备份](./images/backup.svg)](https://my.home-assistant.io/redirect/backup/) | [![备份配置](./images/backup_config.svg)](https://my.home-assistant.io/redirect/backup_config/)| 
+| [![备份](https://img.shields.io/badge/Backup-My%20Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/backup/) | [![备份配置](https://img.shields.io/badge/Backup%20Conf%20Of-My%20Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/backup_config/)| 
 |---|---|
 
 :::info
@@ -98,7 +98,7 @@ This is an open source version, commercial use without permission is prohibited
 ![](./images/mirrow.png)
 - 并且看到的官方商店变成了这样全中文的
 > 点击下面这个按钮，进入到你的加载项商店
-[![加载项商店](./images/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
+[![加载项商店](https://img.shields.io/badge/Add--on%20Store-Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_store/)
 ![商店截图](./images/store.png)
 
 
