@@ -15,10 +15,10 @@ layout: doc
 
 | 版本   | 类型       | 版本号  | 下载链接                                                                 |
 |--------|------------|---------|--------------------------------------------------------------------------|
-| 稳定版 | 原生安卓系统 | 2025.5.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.5.3/app-full-release.apk)  |
-| 稳定版 | 国内安卓系统 | 2025.5.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.5.3/app-minimal-release.apk) |
-| 测试版 | 原生安卓系统| 2025.6.5 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.6.5/app-full-release.apk)  |
-| 测试版 | 国内安卓系统 | 2025.6.5 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.6.5/app-minimal-release.apk) |
+| 稳定版 | 原生安卓系统 | 2025.6.6 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.6.6/app-full-release.apk)  |
+| 稳定版 | 国内安卓系统 | 2025.6.6 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.6.6/app-minimal-release.apk) |
+| 测试版 | 原生安卓系统| 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/app-full-release.apk)  |
+| 测试版 | 国内安卓系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/app-minimal-release.apk) |
 
 :::tip
 新手建议使用稳定版，虽然版本功能更新没这么快，但是不容易出现异常情况。
