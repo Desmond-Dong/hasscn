@@ -14,7 +14,11 @@ layout: doc
 - 在微信中留言
 - 在 GitHub 上提 [issue](https://github.com/ha-china/HAOS-CN/issues)
 
+:::info
 
+仅对最终用户提供稳定版通道，不提供Beta版与dev版
+
+:::
 
 
 ### ✨ 核心亮点
