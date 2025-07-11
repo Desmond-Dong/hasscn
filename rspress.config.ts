@@ -50,7 +50,7 @@ export default defineConfig({
         items: [
           {
             text: 'Home Assistant OS 极速版',
-            link: '/hasscn',
+            link: '/haoscn',
           },
           {
             text: 'Home Assistant OS 加载项',
