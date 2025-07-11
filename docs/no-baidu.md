@@ -10,13 +10,15 @@ layout: doc
 
 :::
 
-:::danger
+:::danger 禁止百度
 
 本站不支持`百度`搜索 (拒绝百度，从我做起)
 
 所有通过`百度`进来的任何页面都会定向到此页
 
 如果你是`百度`进来的，请从上面导航栏重新开始
+
+如果你是`百度`浏览器访问，请更换浏览器
 
 ![no-baidu](./images/baidu-logo-black-transparent.png)
 
