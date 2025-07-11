@@ -58,6 +58,7 @@ layout: doc
 :::info
 | 点个Star吧 | [![star](https://gitee.com/desmond_GT/hassio-addons/badge/star.svg?theme=dark)](https://gitee.com/desmond_GT/hassio-addons/blob/main/README.md) |
 |----|----|
+
 :::
 
 - 📦 内置 400+ 中国版加载项
