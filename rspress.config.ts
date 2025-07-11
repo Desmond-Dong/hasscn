@@ -88,9 +88,6 @@ export default defineConfig({
           {
             text: '关于本站',
             link: '/about',
-          },{
-            text: '更新记录',
-            link: '/Changelog',
           },
           {
             text: '搜索引擎',
