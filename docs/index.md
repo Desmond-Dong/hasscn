@@ -10,8 +10,8 @@ hero:
       text: HAOS极速版
       link: how-to
     - theme: alt
-      text: 系统简介
-      link: introduction
+      text: 更新日志
+      link: Changelog
   image:
     src: 
       light: /home-assistant-wordmark-vertical-color-on-light.png

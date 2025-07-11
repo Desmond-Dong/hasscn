@@ -4,11 +4,7 @@ layout: doc
 
 # 🏠 Home Assistant OS 极速版 · 极致体验为你而来
 
-:::info
-| 如果你打的开Github，点个Star吧 | [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/) |
-|----|----|
 
-:::
 
 :::tip 如遇到 bug，请通过以下方式反馈 
 在[微信公众号](about.html#微信公众号)后台留言  
@@ -17,6 +13,8 @@ layout: doc
 
 :::info
 仅对最终用户提供稳定版通道，不提供 Beta 版与 dev 版
+| 如果你打的开Github，点个Star吧 | [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/) |
+|----|----|
 :::
 
 ---
