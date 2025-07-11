@@ -114,9 +114,15 @@ This is an open source version, commercial use without permission is prohibited
 
 ![启动界面](./images/grub.png)
 
-如果这个界面一闪而过你没有机会选择，在系统启动成功后可以通过命令切换A分区还是B
+如果这个界面一闪而过你没有机会选择,甚至都`没有看清`在哪个slot启动的，在系统启动成功后可以通过命令切换A分区还是B
 ```bash
-ha os boot-slot A #如果你上一次启动的是slot B那这命令行保持不换，如果上一次启动的是slot A则把命令里的A换成B
+#下面这个命令可以查看当前slot
+ha os info 
+#----------------------------
+#boot: B 找到这一行看现在是A还是B
+#------------------------------------------
+#然后下面的命令就反着来，上面显示A，下面就B，上面显示B，下面就A
+ha os boot-slot A
 ```
 然后再重启系统
 ``` bash
