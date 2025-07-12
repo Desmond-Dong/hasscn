@@ -3,7 +3,7 @@ layout: doc
 ---
 
 # Home Assistant 相关资源下载
-:::danger
+:::danger China Only
 请使用`中国大陆的网络`下载以下内容，否则可能导致速度不佳，文件损坏或者下载中断
 :::
 
@@ -34,8 +34,8 @@ layout: doc
 |--------|--------|-------|-------------------------------------------------------------------|
 | 稳定版 | 安装包 | 2.1.1 | [国内加速](https://ghfast.top/https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe)  |
 
-:::tip
-提示：国内用户无法访问GitHub的用户建议选择"国内加速"链接以获得更快的下载速度，国际用户可直接使用原始。
+:::tip 提示
+国内用户无法访问GitHub的用户建议选择"国内加速"链接以获得更快的下载速度，国际用户可直接使用原始。
 :::
 
 ## 中国优化版系统镜像下载

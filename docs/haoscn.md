@@ -11,7 +11,7 @@ layout: doc
 在 GitHub 上提 [issue](https://github.com/ha-china/HAOS-CN/issues)
 :::
 
-:::info
+:::info 
 仅对最终用户提供稳定版通道，不提供 Beta 版与 dev 版
 | `如果你打的开Github，点个Star吧` | [![stars](https://img.shields.io/github/stars/ha-china/HAOS-CN)](https://github.com/ha-china/HAOS-CN/) |
 |----|----|

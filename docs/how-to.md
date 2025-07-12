@@ -12,9 +12,9 @@ layout: doc
 
 📖 **如果您觉得手册过于繁琐，且家中设备不多，您也可以选择简单直接的[重装](https://ha-doc.hasscn.top/installation/)方式。**
 
-:::warning
+:::warning 重要提示：
 
-🖥️ **重要提示：** 所有操作均需在系统终端中进行，请注意，这不是网页上的 Terminal。
+🖥️  **所有操作均需在系统终端中进行，请注意，这不是网页上的 Terminal。**
 
 💻 **请使用连接显示器的界面；如果您在虚拟机中，请使用虚拟机控制台的界面。**
 
@@ -26,9 +26,9 @@ layout: doc
 | [![备份](https://img.shields.io/badge/Backup-My%20Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/backup/) | [![备份配置](https://img.shields.io/badge/Backup%20Conf%20Of-My%20Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/backup_config/)| 
 |---|---|
 
-:::info
+:::info 请注意
 
-🔄 请注意，迁移完成后，有可能会出现部分加载项需重新安装，而其他数据将保持不变。
+🔄 迁移完成后，有可能会出现部分加载项需重新安装，而其他数据将保持不变。
 
 :::
 
@@ -58,7 +58,7 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 一旦所有状态均为绿色，您便可以通过以下地址访问系统：
 - [http://homeassistant.local:8123](http://homeassistant.local:8123)
 
-:::tip
+:::tip HACS 极速版
 **自动：** 如果您之前未安装HACS，系统将在此次切换中默认为您安装HACS极速版；如果您已安装，系统将自动跳过此步骤（无论您使用的是原版还是极速版）。
 
 💡 如果您之前安装了普通版 HACS，并希望在无特殊网络环境下充分体验其功能，建议您覆盖安装 HACS 极速版，以确保最佳性能和兼容性。🔄 [点击此处查看安装方式](https://gitee.com/hacs-china/)

@@ -3,7 +3,7 @@ layout: doc
 ---
 
 # 🏠 HACS 极速版 [![stars](https://img.shields.io/github/stars/hacs-china/integration)](https://github.com/hacs-china/integration/stargazers)
-:::info
+:::info 版权
 版本修改作者：[Alone](https://anlo.ng/)，如果你已经是`Home Assistant OS 极速版`则无需重复安装，已内置
 :::
 
