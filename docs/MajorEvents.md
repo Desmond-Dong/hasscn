@@ -3,7 +3,7 @@ layout: doc
 ---
 
 # ✨ 主要事件
-:::note
+:::note 历史回顾
 记录 Home Assistant 中文站以及公众号发展历程的重要时刻
 :::
 
