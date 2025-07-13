@@ -7,8 +7,8 @@ layout: doc
 
 
 :::tip 如遇到 bug，请通过以下方式反馈 
-在[微信公众号](about.html#微信公众号)后台留言  
-在 GitHub 上提 [issue](https://github.com/ha-china/HAOS-CN/issues)
+在[`微信公众号`](about.html#微信公众号)后台`留言`或者`GitHub`上提 [`issue`](https://github.com/ha-china/HAOS-CN/issues)
+
 :::
 
 :::info 
