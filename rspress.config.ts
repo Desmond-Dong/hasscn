@@ -39,6 +39,11 @@ export default defineConfig({
         mode: 'link',
         content: 'https://github.com/ha-china/',
       },
+      {
+        icon: 'bilibili',
+        mode: 'link',
+        content: 'https://space.bilibili.com/358562782',
+      },
      ],
     nav: [
       {
