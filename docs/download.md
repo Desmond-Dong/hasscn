@@ -12,18 +12,14 @@ layout: doc
 加速链接采用第三方公开平台 `https://ghfast.top`
 :::
 
-| 版本   | 类型       | 版本号  | 下载链接                                                                 |
-|--------|------------|---------|--------------------------------------------------------------------------|
-| 稳定版 | 原生安卓系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/app-full-release.apk)  |
-| 稳定版 | 国内安卓系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/app-minimal-release.apk) |
-| 稳定版 | 原生安卓车机系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/automotive-full-release.apk) |
-| 稳定版 | 国内安卓车机系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/automotive-minimal-release.apk) |
-| 稳定版 | Wear OS 穿戴设备 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/wear-release.apk) |
-| 测试版 | 原生安卓系统| 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/app-full-release.apk)  |
-| 测试版 | 国内安卓系统 | 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/app-minimal-release.apk) |
-| 测试版 | 原生安卓车机系统 | 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/automotive-full-release.apk) |
-| 测试版 | 国内安卓车机系统 | 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/automotive-minimal-release.apk) |
-| 测试版 | Wear OS 穿戴设备 | 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/wear-release.apk) |
+| 版本   | 类型       | 版本号  | 下载链接                                                                 | 版本   | 类型       | 版本号  | 下载链接                                                                 |
+|--------|------------|---------|--------------------------------------------------------------------------|--------|------------|---------|--------------------------------------------------------------------------|
+| 稳定版 | 原生安卓系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/app-full-release.apk)  |测试版 | 原生安卓系统| 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/app-full-release.apk)  |
+| 稳定版 | 国内安卓系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/app-minimal-release.apk) |测试版 | 国内安卓系统 | 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/app-minimal-release.apk) |
+| 稳定版 | 原生安卓车机系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/automotive-full-release.apk) |测试版 | 原生安卓车机系统 | 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/automotive-full-release.apk) |
+| 稳定版 | 国内安卓车机系统 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/automotive-minimal-release.apk) |测试版 | 国内安卓车机系统 | 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/automotive-minimal-release.apk) |
+| 稳定版 | Wear OS 穿戴设备 | 2025.7.1 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.1/wear-release.apk) |测试版 | Wear OS 穿戴设备 | 2025.7.3 | [国内加速](https://ghfast.top/https://github.com/home-assistant/android/releases/download/2025.7.3/wear-release.apk) |
+
 
 :::tip
 新手建议使用稳定版，虽然版本功能更新没这么快，但是不容易出现异常情况。
