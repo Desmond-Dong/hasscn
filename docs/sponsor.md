@@ -10,9 +10,11 @@ layout: doc
 - **🛠️ 优化用户体验**  
 
 ## 🎯 支持方式 
-- 💾 服务器支持 [给我发邮件](mailto:djhui@live.cn)
+- ~~💾 服务器支持 [给我发邮件](mailto:djhui@live.cn)~~
 - 🛠️ 技术支持 [给我发邮件](mailto:djhui@live.cn)(或者直接提交[GitHub仓库](https://github.com/ha-china/HAOS-CN))
 - 📱 公众号支持 - 关注，点赞，转发，互动
+- 🚀  [加载项提交](https://github.com/ha-china/hassio-addons-dev)
+- 🚀  [机型适配提交](https://github.com/ha-china/HAOS-CN-DEV)
 - ⭐ [GitHub仓库](https://github.com/ha-china/HAOS-CN)点`Star`
 - 💳 扫码支持
 
@@ -57,6 +59,9 @@ layout: doc
 |北辰·纪实婚礼摄影师         |5.00           | 2025-06-06 |                          |
 |袁乾罡         |1.00           | 2025-06-06 |                          |
 |明日         |1.00           | 2025-06-06 |                          |
+|起子         |66.00           | 2025-07-24 |                          |
+
+
 
 
 > 📌 温馨提示：助力名单将不定期更新，感谢您的支持！
