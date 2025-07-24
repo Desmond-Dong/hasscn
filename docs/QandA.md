@@ -8,11 +8,11 @@ layout: doc
 
 
 :::tip 为什么制作极速版？ 
-看到太多的网友没法正常使用 Home Assistant 原版，无论是系统初始化，还是升级。
+看到太多的网友没法正常使用 Home Assistant 原版，无论是系统初始化，还是升级，因此力所能及的想做一些方便大家的事情。
 :::
 
 :::tip 这个版本和官方原版有什么区别？
-除了下载静像换成了国内的，确实有一些区别 （目的只有一个，为了加速）
+除了下载静像换成了国内的，确实有一些区别 （目的只有一个，为了加速），具体可参考[这里](/haoscn) 或者[这里](/Changelog)
 
 移除了所有国内不稳定或者无法访问的官方自带的加载项源（ [官方加载项](https://github.com/home-assistant/addons) ，[官方社区加载项](https://github.com/hassio-addons/repository) ，[音乐助手](https://github.com/music-assistant/home-assistant-addon)），换成了加速源 [查看链接](https://gitee.com/desmond_GT/hassio-addons)
 
