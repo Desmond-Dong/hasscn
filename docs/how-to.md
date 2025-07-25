@@ -43,7 +43,9 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 ```
 :::tip 系统重启后，请通过浏览器访问以下地址：
 [http://homeassistant.local:4357](http://homeassistant.local:4357) 
+
 [http://HA_IP:4357](http://HA_IP:4357) 
+
 :::
 
 :::tip 初始状态可能会显示如下，请耐心等待，系统将自动完成初始化。
@@ -63,7 +65,9 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 ![状态监控](./images/4357.png)
 
 一旦所有状态均为绿色，您便可以通过以下地址访问系统：
+
 - [http://homeassistant.local:8123](http://homeassistant.local:8123)
+
 :::
 
 
