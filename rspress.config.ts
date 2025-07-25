@@ -1,8 +1,10 @@
 import * as path from 'node:path';
 import { defineConfig } from 'rspress/config';
+import { pluginPreview } from '@rspress/plugin-preview';
 
 export default defineConfig({
   mediumZoom: false,
+  plugins: [pluginPreview()],
   root: path.join(__dirname, 'docs'),
   theme: 'theme/index.ts',
   title: 'Home Assistant 中文站 | Home Assistant 中文网 | 公众号：老王杂谈说',
