@@ -1,10 +1,13 @@
 import * as path from 'node:path';
 import { defineConfig } from 'rspress/config';
 import sitemap from "rspress-plugin-sitemap";
+import { pluginFontOpenSans } from 'rspress-plugin-font-open-sans';
 
 export default defineConfig({
   mediumZoom: false,
-  plugins: [ sitemap({
+  plugins: [ 
+    pluginFontOpenSans(),
+    sitemap({
     domain: "https://www.hasscn.top",
     customMaps: {
       "/sitemap": {
