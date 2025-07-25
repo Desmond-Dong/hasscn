@@ -1,10 +1,22 @@
 import * as path from 'node:path';
 import { defineConfig } from 'rspress/config';
-import { pluginPreview } from '@rspress/plugin-preview';
+import sitemap from "rspress-plugin-sitemap";
 
 export default defineConfig({
   mediumZoom: false,
-  plugins: [pluginPreview()],
+  plugins: [ sitemap({
+    domain: "https://www.hasscn.top",
+    customMaps: {
+      "/sitemap": {
+        loc: "/sitemap",
+        lastmod: "2024-04-27T07:44:43.422Z",
+        priority: "0.7",
+        changefreq: "always",
+      },
+    },
+    defaultChangeFreq: "monthly",
+    defaultPriority: "0.5",
+  }),],
   root: path.join(__dirname, 'docs'),
   theme: 'theme/index.ts',
   title: 'Home Assistant 中文站 | Home Assistant 中文网 | 公众号：老王杂谈说',
