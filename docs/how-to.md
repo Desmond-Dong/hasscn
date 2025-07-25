@@ -20,43 +20,54 @@ layout: doc
 
 🔒 **在执行命令之前，请务必做好备份，以防万一，并在备份配置的底部妥善保存恢复密码。**
 
+| [![备份](https://img.shields.io/badge/Backup-My%20Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/backup/) | [![备份配置](https://img.shields.io/badge/Backup%20Conf%20Of-My%20Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/backup_config/)| 
+|---|---|
+
 :::
 
 
-| [![备份](https://img.shields.io/badge/Backup-My%20Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/backup/) | [![备份配置](https://img.shields.io/badge/Backup%20Conf%20Of-My%20Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/backup_config/)| 
-|---|---|
+
 
 :::info 请注意
 
 🔄 迁移完成后，有可能会出现部分加载项需重新安装，而其他数据将保持不变。
 
+请运行以下命令（若命令执行成功，系统将自动重启；若失败，则不会对系统造成任何更改）：
+
 :::
 
-
-
-请运行以下命令（若命令执行成功，系统将自动重启；若失败，则不会对系统造成任何更改）：
 
 ```bash
 login
 curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 ```
-- 🔄 系统重启后，请通过浏览器访问以下地址：
-  - [http://homeassistant.local:4357](http://homeassistant.local:4357) 
-  - [http://HA_IP:4357](http://HA_IP:4357) 
-  初始状态可能会显示如下，请耐心等待，系统将自动完成初始化。
+:::info 系统重启后，请通过浏览器访问以下地址：
+[http://homeassistant.local:4357](http://homeassistant.local:4357) 
+[http://HA_IP:4357](http://HA_IP:4357) 
+:::
+
+:::info 初始状态可能会显示如下，请耐心等待，系统将自动完成初始化。
 
 ![状态监控](./images/4357-1.png)
 
-- 🖥️ 终端界面可能会显示类似状态，这属于正常现象。
+:::
+
+:::info 终端界面可能会显示类似状态，这属于正常现象。
 
 ![](./images/terminal.png)
 
-请持续等待，直到所有状态指示变为绿色（可能需要刷新浏览器以查看状态更新）。
+:::
+
+:::info 请持续等待，直到所有状态指示变为绿色（可能需要刷新浏览器以查看状态更新）。
+
 
 ![状态监控](./images/4357.png)
 
 一旦所有状态均为绿色，您便可以通过以下地址访问系统：
 - [http://homeassistant.local:8123](http://homeassistant.local:8123)
+:::
+
+
 
 :::tip HACS 极速版
 **自动：** 如果您之前未安装HACS，系统将在此次切换中默认为您安装HACS极速版；如果您已安装，系统将自动跳过此步骤（无论您使用的是原版还是极速版）。
