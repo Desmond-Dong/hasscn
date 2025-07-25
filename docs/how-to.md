@@ -85,11 +85,9 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 
 :::
 
-:::note
+:::note 可能会出现的情况
 
 此问题在最新版的`upgrade.sh`里已经得到了极大的优化，可能不会出现这个问题，或者只有少量的加载项会有这个问题
-
-视你加载项的安装情况而定
 
 🛠️ 最后，请删除这些加载项，并在加速源中重新安装即可。
 ![加载项修复](./images/addons.png)
