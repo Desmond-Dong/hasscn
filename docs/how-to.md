@@ -28,7 +28,7 @@ layout: doc
 
 
 
-:::info 请注意
+:::note 请注意
 
 🔄 迁移完成后，有可能会出现部分加载项需重新安装，而其他数据将保持不变。
 
@@ -41,26 +41,26 @@ layout: doc
 login
 curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 ```
-:::tip 系统重启后，请通过浏览器访问以下地址：
+:::note 系统重启后，请通过浏览器访问以下地址：
 [http://homeassistant.local:4357](http://homeassistant.local:4357) 
 
 [http://HA_IP:4357](http://HA_IP:4357) 
 
 :::
 
-:::tip 初始状态可能会显示如下，请耐心等待，系统将自动完成初始化。
+:::note 初始状态可能会显示如下，请耐心等待，系统将自动完成初始化。
 
 ![状态监控](./images/4357-1.png)
 
 :::
 
-:::tip 终端界面可能会显示类似状态，这属于正常现象。
+:::note 终端界面可能会显示类似状态，这属于正常现象。
 
 ![](./images/terminal.png)
 
 :::
 
-:::tip 请持续等待，直到所有状态指示变为绿色（可能需要刷新浏览器以查看状态更新）。
+:::note 请持续等待，直到所有状态指示变为绿色（可能需要刷新浏览器以查看状态更新）。
 
 ![状态监控](./images/4357.png)
 
@@ -78,15 +78,16 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 💡 如果您之前安装了普通版 HACS，并希望在无特殊网络环境下充分体验其功能，建议您覆盖安装 HACS 极速版，以确保最佳性能和兼容性。🔄 [点击此处查看安装方式](https://gitee.com/hacs-china/)
 :::
 
-:::tip 安装完成后，您可以在集成中直接手动添加 HACS 极速版或者一键快速添加。
+:::note 安装完成后，您可以在集成中直接手动添加 HACS 极速版或者一键快速添加。
 
 [`一键快速添加`](https://my.home-assistant.io/redirect/config_flow_start/?domain=hacs)
 ![HACS 安装](./images/hacs-install.png)
 
 :::
+
 :::note
 
-此问题在最新版的upgrade.sh里已经得到了极大的优化，可能不会出现这个问题，或者只有少量的加载项会有这个问题
+此问题在最新版的`upgrade.sh`里已经得到了极大的优化，可能不会出现这个问题，或者只有少量的加载项会有这个问题
 
 视你加载项的安装情况而定
 
