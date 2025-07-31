@@ -61,9 +61,6 @@ layout: doc
 - 群主不参与任何群友之间的交易，不参与任何群友之间的纠纷，不参与任何群友之间的矛盾
 
 ## 📲 入群流程
-1. 扫描下方二维码
-2. 通过验证
-3. 提供入群所需信息
+扫描下方二维码
 
-
-![community](./images/community.jpg)
+![community](./images/community.png)
