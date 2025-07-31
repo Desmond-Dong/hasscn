@@ -5,7 +5,7 @@ layout: doc
 :::info 名称由来
 中文名：`Home Assistant OS 极速版` 名称剽窃自《HACS极速版》因为HACS极速版就是加速了HACS的连接与使用，我这OS也是一样的作用
 
-英文名：`🇨🇳 Home Assistant OS Turbo`, 一方面体现速度上的优势，另一方面标识中国
+英文名：`🇨🇳 Home Assistant OS Turbo`，一方面体现速度上的优势，另一方面标识中国
 :::
 
 
@@ -18,7 +18,7 @@ layout: doc
 
 移除了所有国内不稳定或者无法访问的官方自带的加载项源（ [官方加载项](https://github.com/home-assistant/addons) ，[官方社区加载项](https://github.com/hassio-addons/repository) ，[音乐助手](https://github.com/music-assistant/home-assistant-addon)），换成了加速源 [查看链接](https://gitee.com/desmond_GT/hassio-addons)
 
-同时集成了极速版HACS(Alone)[HACS China](https://github.com/hacs-china), 免github帐号，免科学无损使用HACS
+同时集成了极速版HACS(Alone)[HACS China](https://github.com/hacs-china)，免github帐号，免科学无损使用HACS
 :::
 
 :::tip 国内已经有冬瓜版了，你为什么重复劳动？
