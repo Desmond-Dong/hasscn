@@ -69,6 +69,7 @@ layout: doc
 | yellow-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_yellow-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_yellow-16.0.img.xz) |Home Assistant Yellow | aa471c470b29822cecac4ed156098a2495e2537123c28584d97a2e75347d71c5 |
 | panther-x2-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_panther-x2-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_panther-x2-16.0.img.xz) |黑豹 x2 | e5121a63b4e0ea2b222b3f35a61e4d352c757cf62a9674b26321395c051f2549 |
 | ihost-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_ihost-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_ihost-16.0.img.xz) |Sonoff iHost | 217a87e5ec2b3963d01a47cbc84b1671f3cfc14d82451d0849dee0eede972a9c |
+| orangepi-cm4-16.0.img.xz | [ghfast](https://ghfast.top/https://github.com/ha-china/HAOS-CN/releases/download/16.0/haos_orangepi-cm4-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_orangepi-cm4-16.0.img.xz) | 硬件版本1.3 | b0fd77b9071a2841d66ace76802a85c386afb66502e0f87c9ccb11f351cad301 |
 
 
 
