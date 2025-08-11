@@ -67,7 +67,7 @@ export default defineConfig({
       },
       {
         icon: {
-          svg: '<svg>images/gitee.svg</svg>',
+          svg: '<svg>gitee.svg</svg>',
         },
         mode: 'link',
         content: 'hhttps://gitee.com/desmond_GT/hassio-addons',
