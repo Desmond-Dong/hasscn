@@ -71,7 +71,8 @@ export default defineConfig({
         },
         mode: 'link',
         content: 'hhttps://gitee.com/desmond_GT/hassio-addons',
-     ],
+     
+        }      ],
     nav: [
       {
         text: '首页',
