@@ -57,7 +57,7 @@ layout: doc
 | aarch64-16.0.qcow2.xz |[ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_generic-aarch64-16.0.qcow2.xz) \| [4299](https://ota.hasscn.top/16.0/haos_generic-aarch64-16.0.qcow2.xz) | arm pve |b4e52a32465bc8166f907c58081a3fe61cddcd5e6793645e667248f5a9b4f918 |
 | aarch64-16.0.vmdk.zip | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_generic-aarch64-16.0.vmdk.zip) \| [4299](https://ota.hasscn.top/16.0/haos_generic-aarch64-16.0.vmdk.zip) |arm vmware, esxi |a3a4823cb9a64f27b7ef1480b2202c5570e9c8cff9da986f36417ac132f74d03 |
 | x86-64-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_generic-x86-64-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_generic-x86-64-16.0.img.xz) |x86物理机直装 |75cd96106567c504405653350906970fdf864702b73fbfba1ab5b5b0866eddec |
-| green-16.0.img.xz |[ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_green-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_green-16.0.img.xz) |Home Assistant Green | 5212380db333698a64cce863487fffaaf300641ab6c2aaf4dec3219af3da001a |
+| green-16.0.img.xz |[ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_green-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_green-16.0.img.xz) |HA Green | 5212380db333698a64cce863487fffaaf300641ab6c2aaf4dec3219af3da001a |
 | ova-16.0.ova |[ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_ova-16.0.ova) \| [4299](https://ota.hasscn.top/16.0/haos_ova-16.0.ova) | vmware, esxi | cf35a6e60ade9d3007afe7f2c897b44289b59c5276a68fa1b01302662bd2e04f |
 | ova-16.0.qcow2.xz |[ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_ova-16.0.qcow2.xz) \| [4299](https://ota.hasscn.top/16.0/haos_ova-16.0.qcow2.xz) |pve, 飞牛 | aaeeba428cce949b2dac6440e14fdf8381e1ac5348c62e180175741e25683370 |
 | ova-16.0.vdi.zip | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_ova-16.0.vdi.zip) \| [4299](https://ota.hasscn.top/16.0/haos_ova-16.0.vdi.zip) |Hyper-V 老版本| 5315990af34041569f3ed2d76cebaf568c6f2382d51aeafc93cbfa1a807befa9 |
@@ -66,14 +66,10 @@ layout: doc
 | rpi3-64-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_rpi3-64-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_rpi3-64-16.0.img.xz) |树莓派3 | 241b43054ad3446895d039a5708d69baf5304dd29851f4bbc6ac1eeced875b46 |
 | rpi4-64-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_rpi4-64-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_rpi4-64-16.0.img.xz) |树莓派4 | 23ad3febbd37ea1f8619b85f14d645fcf32ee955b5a653067b3d98d3b3d523d6 |
 | rpi5-64-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_rpi5-64-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_rpi5-64-16.0.img.xz) |树莓派5 | bb1a514ad3a63c527603ba354d0f2045aafaca9954d3eccd726f0fab05c58700 |
-| yellow-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_yellow-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_yellow-16.0.img.xz) |Home Assistant Yellow | aa471c470b29822cecac4ed156098a2495e2537123c28584d97a2e75347d71c5 |
+| yellow-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_yellow-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_yellow-16.0.img.xz) |HA Yellow | aa471c470b29822cecac4ed156098a2495e2537123c28584d97a2e75347d71c5 |
 | panther-x2-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_panther-x2-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_panther-x2-16.0.img.xz) |黑豹 x2 | e5121a63b4e0ea2b222b3f35a61e4d352c757cf62a9674b26321395c051f2549 |
 | ihost-16.0.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.0/haos_ihost-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_ihost-16.0.img.xz) |Sonoff iHost | 217a87e5ec2b3963d01a47cbc84b1671f3cfc14d82451d0849dee0eede972a9c |
 | orangepi-cm4-16.0.img.xz | [ghfast](https://ghfast.top/https://github.com/ha-china/HAOS-CN/releases/download/16.0/haos_orangepi-cm4-16.0.img.xz) \| [4299](https://ota.hasscn.top/16.0/haos_orangepi-cm4-16.0.img.xz) | 硬件版本1.3 | b0fd77b9071a2841d66ace76802a85c386afb66502e0f87c9ccb11f351cad301 |
-
-
-
-
 
 
 
