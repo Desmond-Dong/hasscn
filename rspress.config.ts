@@ -94,13 +94,18 @@ export default defineConfig({
             text: 'HACS 极速版 (by Alone)',
             link: '/hacscn',
           },
-          {
-            text: '官方已弃用的安装方式',
-            link: '/deprecated',
-          },
+
           {
             text: '品牌目录',
             link: '/brand',
+          },
+          {
+            text: '集成目录',
+            link: '/integrations',
+          },
+          {
+            text: '官方已弃用的安装方式',
+            link: '/deprecated',
           },
         ]
       },
