@@ -74,7 +74,7 @@ layout: doc
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | ZhipuAI | [![ZhipuAI](https://img.shields.io/badge/HACS-ZhipuAI-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=knoop7&repository=zhipuai&category=integration) | 支持智谱AI大模型接入 |
-| Extended OpenAI Conversation | [![Extended OpenAI Conversation](https://img.shields.io/badge/HACS-Extended__OpenAI__Conversation-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=jekalmin&repository=extended_openai_conversation&category=integration) | 支持多轮对话、上下文记忆等高级功能 |
+| Extended OpenAI | [![Extended OpenAI Conversation](https://img.shields.io/badge/HACS-Extended__OpenAI__Conversation-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=jekalmin&repository=extended_openai_conversation&category=integration) | 支持多轮对话、上下文记忆等高级功能 |
 
 ### 离家在家检测
 
@@ -107,6 +107,8 @@ layout: doc
 | 老黄历 | [![ha_laohuangli](https://img.shields.io/badge/HACS-laohuangli-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=knoop7&repository=ha_laohuangli&category=integration) | 在 Home Assistant 中显示每日老黄历信息，适合国人使用 |
 
 ### 调试测试
+| 集成名称 | HACS 安装链接 | 相关说明 |
+|--|--|--|
 | Virtual | [![Virtual](https://img.shields.io/badge/HACS-Virtual-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=twrecked&repository=hass-virtual&category=integration) | 创建虚拟传感器、开关等，便于调试和自动化测试 |
 
 
