@@ -30,10 +30,10 @@ features:
     details: 通过直观的图形化界面，轻松创建复杂的自动化流程，提升智能家居的灵活性。
     icon: 🛠️
     link: https://nodered.hasscn.top/
-  - title: 🧩 HA加载项
-    details: 超过400个专为国内用户定制的加载项，丰富您的智能家居功能。
-    icon: 🧰
-    link: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons
+  - title: 🔌 热门集成推荐
+    details: 精选国内常用集成，便捷一键安装，快速扩展智能家居功能。
+    icon: 🧩
+    link: /integrations
   - title: 🛠️ Home Assistant 开发者文档
     details: 快速创建和部署个性化的智能设备固件，轻松实现智能家居的定制化。
     icon: 🖥️
