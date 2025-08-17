@@ -37,8 +37,7 @@ layout: doc
 | Midea AC LAN | [![Midea AC LAN](https://img.shields.io/badge/HACS-Midea%20AC%20LAN-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=wuwentao&repository=midea_ac_lan&category=integration) | 美的空调本地接入，无需云端，支持多型号美的空调，适合追求本地化的用户 |
 | 小燕 | [![Terncy](https://img.shields.io/badge/HACS-Terncy-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=rxwen&repository=homeassistant-terncy-component&category=integration) | 支持 小燕智能家居设备接入 |
 | TCL Home | [![TCL Home](https://img.shields.io/badge/HACS-TCL%20Home-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nemesa&repository=ha-tcl-home-unofficial-integration&category=integration) | 支持 TCL 智能家居设备的接入，适用于 TCL 空调等设备 |
-
-| Buspro (HDL) | [![Buspro](https://img.shields.io/badge/HACS-Buspro%20(HDL)-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=eyesoft&repository=home_assistant_buspro&category=integration) | 支持 HDL Buspro 智能家居设备本地接入，适合有 HDL 总线设备的用户 |
+| Buspro (HDL) | [![Buspro](https://img.shields.io/badge/HACS-Buspro%20(HDL)-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=eyesoft&repository=home_assistant_buspro&category=integration) | 支持河东设备本地接入，适合有河东总线设备的用户 |
 
 
 
