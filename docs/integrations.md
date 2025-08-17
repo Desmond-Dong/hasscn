@@ -8,7 +8,7 @@ layout: doc
 
 :::info 收集国人常用集成
 
-所有的集成采用[HACS](hacscn)一键添加的方式公布在此页面，本页面最佳浏览方式为电脑页面
+所有的集成采用[HACS](hacscn)一键添加的方式公布在此页面，本页面最佳浏览方式为电脑页面，本页面确实花费了一些，如果这个页面帮助到了你，请点[此处支持我](sponsor)
 
 :::
 
@@ -16,8 +16,8 @@ layout: doc
 ## 🌟 常用集成（排名不分先后，逐步收录中）
 
 ### 天气类
-[![天气预报](https://img.shields.io/badge/HACS-天气预报-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=hasscc&repository=tianqi&category=integration)
-[![和风天气](https://img.shields.io/badge/HACS-和风天气-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=c1pher-cn&repository=heweather&category=integration)
+|[![天气预报](https://img.shields.io/badge/HACS-天气预报-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=hasscc&repository=tianqi&category=integration)|[![和风天气](https://img.shields.io/badge/HACS-和风天气-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=c1pher-cn&repository=heweather&category=integration)|
+|--|--|
 
 ### 设备集成
 
@@ -34,8 +34,8 @@ layout: doc
 [![hass-edge-tts](https://img.shields.io/badge/HACS-hass--edge--tts-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=hasscc&repository=hass-edge-tts&category=integration) 
 
 ### 平台及服务监控
-[![proxmoxve](https://img.shields.io/badge/HACS-proxmoxve-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=dougiteixeira&repository=proxmoxve&category=integration) 
-[![homeassistant-ssh](https://img.shields.io/badge/HACS-homeassistant--ssh-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=zhbjsh&repository=homeassistant-ssh&category=integration)
+|[![proxmoxve](https://img.shields.io/badge/HACS-proxmoxve-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=dougiteixeira&repository=proxmoxve&category=integration) | [![homeassistant-ssh](https://img.shields.io/badge/HACS-homeassistant--ssh-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=zhbjsh&repository=homeassistant-ssh&category=integration) |
+|-|-|
 
 ### 通知类
 [![Bemfa WeChat](https://img.shields.io/badge/HACS-Bemfa%20WeChat-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Desmond-Dong&repository=bemfa_wechat&category=integration)
