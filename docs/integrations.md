@@ -8,7 +8,7 @@ layout: doc
 
 :::info 收集国人常用集成
 
-本页面不包含Core内置集成，所有的集成采用[HACS](hacscn)一键添加的方式，本页面最佳浏览方式为电脑页面
+本页面不包含Core内置集成，所有的集成采用[HACS](hacscn)一键添加的方式，如果你还未安装HACS，请先安装HACS，否则可能导致链接无法工作，本页面最佳浏览方式为电脑页面
 
 :::
 
@@ -30,6 +30,7 @@ layout: doc
 | tuya-local | [![tuya-local](https://img.shields.io/badge/HACS-tuya--local-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=make-all&repository=tuya-local&category=integration) | 本地接入涂鸦设备，无需云端，响应更快 |
 | Xiaomi Miot Auto | [![Xiaomi Miot Auto](https://img.shields.io/badge/HACS-Xiaomi%20Miot%20Auto-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=al-one&repository=hass-xiaomi-miot&category=integration) | 支持小米生态多种设备自动接入 |
 | Xiaomi Home | [![Xiaomi Home](https://img.shields.io/badge/HACS-Xiaomi%20Home-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=XiaoMi&repository=ha_xiaomi_home&category=integration) | 另一款小米设备集成，支持多品牌子设备 |
+| XiaomiGateway3 | [![XiaomiGateway3](https://img.shields.io/badge/HACS-XiaomiGateway3-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=AlexxIT&repository=XiaomiGateway3&category=integration) | 支持小米网关3及相关子设备本地接入，适合 Zigbee/蓝牙设备管理 |
 | SonoffLAN | [![SonoffLAN](https://img.shields.io/badge/HACS-SonoffLAN-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=AlexxIT&repository=SonoffLAN&category=integration) | 局域网接入 Sonoff 设备，无需云端，速度快 |
 | HisenseHA | [![HisenseHA](https://img.shields.io/badge/HACS-HisenseHA-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=manymuch&repository=HisenseHA&category=integration) | 海信电视/空调等设备本地接入，支持多种型号 |
 | Haier | [![Haier](https://img.shields.io/badge/HACS-Haier-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=banto6&repository=haier&category=integration) | 海尔空调/家电本地接入，支持多种型号，适合国内用户 |
