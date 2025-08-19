@@ -90,7 +90,7 @@ export default defineConfig({
           },
           {
             text: '移动App汉化',
-            link: '/companion/',
+            link: 'https://www.hasscn.top/companion/',
           },
           {
             text: 'Node Red 网页汉化',
@@ -98,11 +98,11 @@ export default defineConfig({
           },
           {
             text: 'Home Assistant 开发者文档',
-            link: '/developers/',
+            link: 'https://www.hasscn.top/developers/',
           },
           {
             text: 'HASS Agent 汉化手册',
-            link: '/hass-agent/',
+            link: 'https://www.hasscn.top/hass-agent/',
           },
         ],
       },
