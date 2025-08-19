@@ -19,11 +19,11 @@ hero:
     alt: Logo
 features:
   - title: 📚 Home Assistant OS 极速版
-    details: 极速安装与优化，专为中国用户定制的 Home Assistant OS 版本，体验更流畅的智能家居系统。
+    details: 专为中国用户优化的 Home Assistant OS 版本，享受极速丝滑的体验
     icon: 🚀
     link: /haoscn 
   - title: 📱 Home Assistant OS 加载项
-    details: 丰富的官方与第三方加载项，轻松扩展 Home Assistant 功能，满足多样化智能需求。
+    details: 丰富的官方与第三方加载项，轻松扩展 Home Assistant 功能。
     icon: 🧩
     link: /addoncn
   - title: 🧮 HACS 极速版 (by Alone)
