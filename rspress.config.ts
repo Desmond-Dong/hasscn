@@ -6,24 +6,24 @@ import readingTime from 'rspress-plugin-reading-time';
 
 export default defineConfig({
   mediumZoom: false,
-  plugins: [ 
+  plugins: [
     pluginFontOpenSans(),
     readingTime({
       defaultLocale: 'zh-CN',
     }),
     sitemap({
-    domain: "https://www.hasscn.top",
-    customMaps: {
-      "/sitemap": {
-        loc: "/sitemap",
-        lastmod: "2024-04-27T07:44:43.422Z",
-        priority: "0.7",
-        changefreq: "always",
+      domain: "https://www.hasscn.top",
+      customMaps: {
+        "/sitemap": {
+          loc: "/sitemap",
+          lastmod: "2024-04-27T07:44:43.422Z",
+          priority: "0.7",
+          changefreq: "always",
+        },
       },
-    },
-    defaultChangeFreq: "monthly",
-    defaultPriority: "0.5",
-  }),],
+      defaultChangeFreq: "monthly",
+      defaultPriority: "0.5",
+    }),],
   root: path.join(__dirname, 'docs'),
   theme: 'theme/index.ts',
   title: 'Home Assistant 中文站 | Home Assistant 中文网 | 公众号：老王杂谈说',
@@ -40,8 +40,8 @@ export default defineConfig({
           tag: 'script',
           attrs: {
             src: '//sdk.51.la/js-sdk-pro.min.js?id=3MhQABjxy4RZQ6Ig&ck=3MhQABjxy4RZQ6Ig',
-            id:'LA_COLLECT',
-            charset:'UTF-8',
+            id: 'LA_COLLECT',
+            charset: 'UTF-8',
 
           },
         },
@@ -49,13 +49,13 @@ export default defineConfig({
     },
   },
   themeConfig: {
-     socialLinks: [
-       {
-         icon: 'wechat',
-         mode: 'link',
-         content: '/community.html',
-       },
-       {
+    socialLinks: [
+      {
+        icon: 'wechat',
+        mode: 'link',
+        content: '/community.html',
+      },
+      {
         icon: 'github',
         mode: 'link',
         content: 'https://github.com/ha-china/',
@@ -71,43 +71,39 @@ export default defineConfig({
         },
         mode: 'link',
         content: 'https://gitee.com/desmond_GT/hassio-addons',
-     
-        }
-      ],
+
+      }
+    ],
     nav: [
       {
         text: '首页',
         link: '/',
       },
       {
-        text: '中国专区',
+
+        text: '汉化专区',
         items: [
           {
-            text: 'Home Assistant OS 极速版',
-            link: '/haoscn',
+            text: '官方网页汉化',
+            link: 'https://ha-doc.hasscn.top',
           },
           {
-            text: 'Home Assistant OS 加载项',
-            link: '/addoncn',
+            text: '移动App汉化',
+            link: '/companion/',
           },
           {
-            text: 'HACS 极速版 (by Alone)',
-            link: '/hacscn',
-          },
-
-          {
-            text: '品牌目录',
-            link: '/brand',
+            text: 'Node Red 网页汉化',
+            link: 'https://nodered.hasscn.top/',
           },
           {
-            text: '集成目录',
-            link: '/integrations',
+            text: 'Home Assistant 开发者文档',
+            link: '/developers/',
           },
           {
-            text: '官方已弃用的安装方式',
-            link: '/deprecated',
+            text: 'HASS Agent 汉化手册',
+            link: '/hass-agent/',
           },
-        ]
+        ],
       },
       {
         text: '下载专区',
@@ -141,11 +137,11 @@ export default defineConfig({
             link: 'https://status.hasscn.top/status/1',
           },
         ]
-        
+
       },
     ],
-   
-    
+
+
     footer: {
       message: 'Copyright © 2025 Home Assistant 中文站 | <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2025160066号</a>',
     },
