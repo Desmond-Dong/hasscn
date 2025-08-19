@@ -87,27 +87,22 @@ export default defineConfig({
           {
             text: '官方网页汉化',
             link: 'https://ha-doc.hasscn.top',
-            mode: 'link',
           },
           {
             text: '移动App汉化',
             link: 'https://www.hasscn.top/companion/',
-            mode: 'link',
           },
           {
             text: 'Node Red 网页汉化',
             link: 'https://nodered.hasscn.top/',
-            mode: 'link',
           },
           {
             text: 'Home Assistant 开发者文档',
             link: 'https://www.hasscn.top/developers/',
-            mode: 'link',
           },
           {
             text: 'HASS Agent 汉化手册',
             link: 'https://www.hasscn.top/hass-agent/',
-            mode: 'link',
           },
         ],
       },
