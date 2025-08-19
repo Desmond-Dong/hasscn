@@ -8,12 +8,16 @@ layout: doc
 > 📝 有些更新并非一开始没有优化到位，是随着官方的升级导致的一些对国内使用有影响的内容需要重新优化
 
 
+:::tip 2025年8月19日
+🚀🇨🇳 优化：移除一处`加载项的的定义`，提升启动运行速度
+:::
+
 :::tip 2025年8月6日
-🇨🇳 优化：将OS错误日志上报切换至国内`自有服务器`
+📝🇨🇳 优化：将 OS 错误日志上报切换至国内`自有服务器`
 :::
 
 :::tip 2025年7月10日
-🇨🇳 优化：将加载项构建隔离镜像`docker.io/library/docker`迁移至`docker.m.daocloud.io/library/docker`，加速构建体验
+🐳🇨🇳 优化：将加载项构建隔离镜像 `docker.io/library/docker` 迁移至 `docker.m.daocloud.io/library/docker`，加速构建体验
 :::
 
 :::info 2025年6月18日
