@@ -73,4 +73,10 @@ layout: doc
 | yellow-16.1.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.1/haos_yellow-16.1.img.xz) \| [4299](https://ota.hasscn.top/16.1/haos_yellow-16.1.img.xz) |HA Yellow | 5dd58b2fb3db3f0f9b8d6a76582a88951d2d45f6b62800b4e5fef38175d523b3 |
 
 
+## Green 恢复出厂设置优化版
 
+:::info
+此固件将恢复出厂设置的固件替换成了`Home Assistant OS 极速版`，更适合中国环境下使用，恢复方法[请看这](https://mp.weixin.qq.com/s/QZKFLsyAbJ9zgqu9EIKXKw)
+:::
+
+固件下载地址： [4299](https://ota.hasscn.top/green_factory_CN.img.xz)
