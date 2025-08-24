@@ -38,8 +38,8 @@ features:
     details: 汇总主流国产智能家居品牌，便于查找与对接本地设备。
     icon: 🏷️
     link: /brand
-  - title: ❤️ 已弃用的安装方式
-    details: 历史安装教程归档，供有特殊需求的用户参考。
-    icon: 🗂️
-    link: /deprecated
+  - title: ❤️ 我的小店
+    details: 精选Home Assistant产品，欢迎选购支持本站
+    icon: 🛒
+    link: https://store.weixin.qq.com/shop/b/mAEQVitlFgoE0Rp
 ---
