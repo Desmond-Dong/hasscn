@@ -51,7 +51,7 @@ layout: doc
 
 
 
-| 文件名 | 下载链接 | 备注 |文件HASH (SHA256) |
+| 文件名 | 下载链接 | 备注（刷机方式） |文件HASH (SHA256) |
 |----|---|---|----|
 | aarch64-16.1.img.xz | [ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.1/haos_generic-aarch64-16.1.img.xz) \| [4299](https://ota.hasscn.top/16.1/haos_generic-aarch64-16.1.img.xz) | Mac Mini, arm 64,UTM |b6eab3a7752053c2e960bae5364848b81f298621588989597ca8d88e6444c002 |
 | aarch64-16.1.qcow2.xz |[ghfast](https://ghfast.top/github.com/ha-china/HAOS-CN/releases/download/16.1/haos_generic-aarch64-16.1.qcow2.xz) \| [4299](https://ota.hasscn.top/16.1/haos_generic-aarch64-16.1.qcow2.xz) | arm pve | a18114f02ae2fe66b86123b940d77304c6808287057478445864b7c7a8e9bfe1|
@@ -79,7 +79,7 @@ layout: doc
 所有的刷机程序固件均为`Home Assistant OS 极速版`，更适合中国环境下使用。
 :::
 
-| 文件名 | 下载链接 | 备注 |文件HASH (SHA256) |
+| 文件名 | 下载链接 | 备注（刷机方式） |文件HASH (SHA256) |
 |----|---|---|----|
 | green_factory_CN.img.xz | [4299](https://ota.hasscn.top/green_factory_CN.img.xz) | [Home Assistant Green](https://mp.weixin.qq.com/s/QZKFLsyAbJ9zgqu9EIKXKw) | 1a5299d0189d0fcce59ad488e08476180cf87bcb71176b8a887c2bdd29257de1 |
 
