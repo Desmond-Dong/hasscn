@@ -7,7 +7,7 @@
 
 ## 操作前必读
 
-- 一台 iHost 且 iHost 系统版本需至少为 V2.5.1
+- 一台 iHost 且 iHost 系统版本需至少为 `V2.5.1`
 - 建议使用[一个 Application Class 2](https://www.sdcard.org/developers/overview/application/index.html) 的 SD Card。检查卡上的标签 A2，A2 类卡的性能更好，尤其是在小型读写操作中，更适合主机应用程序，SD Card 存储空间至少 32 GB
 - iHost 处理器为32位
 
@@ -27,7 +27,6 @@
 
 
 
-
 ### 操作步骤
 
 推荐使用 [Balena Etcher](https://etcher.balena.io/) 或 [Raspberry Pi Imager](https://www.raspberrypi.com/software/) 烧录镜像，二者选其一即可
@@ -39,7 +38,7 @@
 
 ![img](../images/ihost/etcher-main-cn.png)
 
-- "从文件烧录" -> 选择下载到本地的 HA over iHost 的镜像文件
+- "从文件烧录" -> 选择下载到本地的`Home Assistant OS 极速版`镜像文件
 
 ![img](../images/ihost/etcher-select-file-cn.png)
 
@@ -47,7 +46,7 @@
 
 ![img](../images/ihost/etcher-select-target-cn.png)
 
-- 点击"现在烧录！"开始将下载的"HA over iHost"镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card
+- 点击"现在烧录！"开始将下载的`Home Assistant OS 极速版`镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card
 
 #### Raspberry Pi Imager
 
@@ -60,7 +59,7 @@
 
 ![img](../images/ihost/pi-imager-device-cn.png)
 
-- "选择操作系统" -> 选择 Use custom> 选择下载到本地的 HA over iHost 的镜像文件
+- "选择操作系统" -> 选择 Use custom> 选择下载到本地的`Home Assistant OS 极速版`镜像文件
 
 ![img](../images/ihost/pi-imager-os-cn.png)
 
@@ -80,7 +79,7 @@
 
 ![img](../images/ihost/pi-imager-flashing-cn.png)
 
-- 开始将下载的"HA over iHost"镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card
+- 开始将下载的`Home Assistant OS 极速版`镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card
 
 ## 在 iHost 中启动 Home Assistant
 
