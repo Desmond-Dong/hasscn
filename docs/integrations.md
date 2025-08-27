@@ -112,6 +112,11 @@ layout: doc
 | Virtual | [![Virtual](https://img.shields.io/badge/HACS-Virtual-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=twrecked&repository=hass-virtual&category=integration) | 创建虚拟传感器、开关等，便于调试和自动化测试 |
 
 
+### NAS
+| 集成名称 | HACS 安装链接 | 相关说明 |
+|--|--|--|
+| 飞牛 NAS | [![fn_nas](https://img.shields.io/badge/HACS-飞牛__nas-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=anxms&repository=fn_nas&category=integration) | 飞牛 NAS 设备集成，支持状态监控与管理|
+| 绿联 | [![iYan UGNAS](https://img.shields.io/badge/HACS-绿联__NAS-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=flamestsui&repository=iyan_ugnas&category=integration) | 绿联设备集成，支持状态监控与管理 |
 
 
 
