@@ -118,7 +118,11 @@ layout: doc
 | 飞牛 NAS | [![fn_nas](https://img.shields.io/badge/HACS-飞牛__nas-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=anxms&repository=fn_nas&category=integration) | 飞牛 NAS 设备集成，支持状态监控与管理|
 | 绿联 | [![iYan UGNAS](https://img.shields.io/badge/HACS-绿联__NAS-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=flamestsui&repository=iyan_ugnas&category=integration) | 绿联设备集成，支持状态监控与管理 |
 
+### 监控，门铃，门销
 
+| 集成名称 | HACS 安装链接 | 相关说明 |
+|--|--|--|
+| HikConnect | [![HikConnect](https://img.shields.io/badge/HACS-HikConnect-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=tomasbedrich&repository=home-assistant-hikconnect&category=integration) | 海康威视 Hik-Connect 监控摄像头、门铃等设备接入，支持实时视频流、事件通知等功能 |
 
 
 
