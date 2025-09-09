@@ -98,7 +98,7 @@ layout: doc
 | AsusRouter | [![AsusRouter](https://img.shields.io/badge/HACS-AsusRouter-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Vaskivskyi&repository=ha-asusrouter&category=integration) | 华硕路由器集成，支持设备状态、流量等信息 |
 | Netgear | [![Netgear](https://img.shields.io/badge/HACS-Netgear-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=rroller&repository=netgear&category=integration) | 网件路由器集成，支持设备与网络状态监控 |
 | TP-Link Router | [![TP-Link Router](https://img.shields.io/badge/HACS-TP--Link__Router-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=AlexandrErohin&repository=home-assistant-tplink-router&category=integration) | 支持 TP-Link 路由器设备状态、流量、在线设备等信息监控 |
-| OpenWrt Monitor | [![OpenWrt Monitor](https://img.shields.io/badge/HACS-OpenWrt__Monitor-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Desmond-Dong&repository=ha-openwrt&category=integration) | OpenWrt 路由器系统与网络监控，支持 24.10+，基于 Ubus API，适合家庭/软路由用户 |
+| OpenWrt | [![OpenWrt Ubus](https://img.shields.io/badge/HACS-OpenWrt-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=FUjr&repository=homeassistant-openwrt-ubus&category=integration) | 通过 Ubus API 集成 OpenWrt 路由器，支持设备状态、流量、在线设备等信息监控，适合软路由/家庭网络管理 |
 
 
 
