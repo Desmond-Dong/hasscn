@@ -37,7 +37,7 @@ layout: doc
 :::
 
 :::tip 系统编译开源吗？
-现在开，未来也开，一直开源 [Github 地址](https://github.com/ha-china/HAOS-CN)
+现在开，未来也开，**一直开源** [Github 地址](https://github.com/ha-china/HAOS-CN)，但不保证整个`编译过程`是是开放的，以防止有心之人占为己有（已有发生）
 :::
 
 :::tip 为什么选择开源，没选择闭源？
