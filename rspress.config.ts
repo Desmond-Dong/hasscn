@@ -103,6 +103,10 @@ export default defineConfig({
             text: 'HASS Agent 汉化手册',
             link: 'https://www.hasscn.top/hass-agent/',
           },
+          {
+            text: 'ESPHome 准备开始',
+            link: 'https://www.hasscn.top/esphome/',
+          },
         ],
       },
       {
