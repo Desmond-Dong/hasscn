@@ -20,7 +20,7 @@ hero:
   image:
     src:
       light: /Weixin Image_20250915103333_263_16.jpg
-      dark: Weixin Image_20250915103333_263_16.jpg
+      dark: /Weixin Image_20250915103333_263_16.jpg
 features:
   - title: 📚 Home Assistant OS 极速版
     details: 专为中国用户优化的 Home Assistant OS 版本，享受极速丝滑的体验
