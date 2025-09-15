@@ -17,7 +17,9 @@ hero:
       light: /home-assistant-wordmark-vertical-color-on-light.png
       dark: /home-assistant-wordmark-vertical-color-on-dark.png
     alt: Logo
-[](/Weixin Image_20250915103333_263_16.jpg)
+
+
+
 features:
   - title: 📚 Home Assistant OS 极速版
     details: 专为中国用户优化的 Home Assistant OS 版本，享受极速丝滑的体验
@@ -43,4 +45,6 @@ features:
     details: 精选Home Assistant产品，欢迎选购支持本站
     icon: 🛒
     link: https://store.weixin.qq.com/shop/b/mAEQVitlFgoE0Rp
+
+
 ---
