@@ -18,7 +18,10 @@ hero:
       dark: /home-assistant-wordmark-vertical-color-on-dark.png
     alt: Logo
 
-
+  image:
+    src: 
+      light: /Image_20250915103333_263_16.jpg
+      dark: /Image_20250915103333_263_16.jpg
 
 features:
   - title: 📚 Home Assistant OS 极速版
@@ -46,5 +49,5 @@ features:
     icon: 🛒
     link: https://store.weixin.qq.com/shop/b/mAEQVitlFgoE0Rp
 
-[](/Weixin Image_20250915103333_263_16.jpg)
+
 ---
