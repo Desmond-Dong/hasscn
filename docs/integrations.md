@@ -15,11 +15,13 @@ layout: doc
 
 ## 🌟 常用集成（排名不分先后，逐步收录中）
 
-### 天气类
+### 天气空气类
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | 天气预报 | [![天气预报](https://img.shields.io/badge/HACS-天气预报-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=hasscc&repository=tianqi&category=integration) | 支持国内主流天气数据，界面友好，适合大部分用户 |
 | 和风天气 | [![和风天气](https://img.shields.io/badge/HACS-和风天气-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=c1pher-cn&repository=heweather&category=integration) | 基于和风天气 API，数据丰富，支持多种天气信息展示 |
+| 青萍空气检测仪 | [![青萍空气检测仪](https://img.shields.io/badge/HACS-青萍空气检测仪-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=synodriver&repository=homeassistant_custom_components&category=integration) | 支持青萍空气检测仪数据接入 |
+
 
 ### 设备集成
 
