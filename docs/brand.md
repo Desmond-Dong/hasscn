@@ -26,6 +26,7 @@ layout: doc
 | Modbus (485) | | | |
 | BT-Home | | | |
 | BLE | | | 不是所有的BLE都可以，对应生态环境的BLE才行 |
+| 易微联 、 Sonoff | | | |
 | Apple (HomeKit) | | | 苹果 |
 | MQTT | | | 部分需要自定义转化成实体 |
 | ESPHome | | https://www.esphome.io/ | Home Assistant的亲儿子 |
