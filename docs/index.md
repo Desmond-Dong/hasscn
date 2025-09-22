@@ -12,17 +12,13 @@ hero:
     - theme: alt
       text: 更新日志
       link: Changelog
-#  image:
-#    src: 
-#      light: /home-assistant-wordmark-vertical-color-on-light.png
-#      dark: /home-assistant-wordmark-vertical-color-on-dark.png
-#    alt: Logo
-
   image:
     src: 
-      light: /Image_20250915103333_263_16.jpg
-      dark: /Image_20250915103333_263_16.jpg
+      light: /home-assistant-wordmark-vertical-color-on-light.png
+      dark: /home-assistant-wordmark-vertical-color-on-dark.png
     alt: Logo
+
+
 
 features:
   - title: 📚 Home Assistant OS 极速版
