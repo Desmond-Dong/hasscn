@@ -28,6 +28,7 @@ layout: doc
 
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
+| SonoffLAN | [![SonoffLAN](https://img.shields.io/badge/HACS-SonoffLAN-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=AlexxIT&repository=SonoffLAN&category=integration) | 支持 易微联/Sonoff 设备本地/云端接入，支持多账号、传感器、温控器等 |
 | BLE Monitor | [![BLE Monitor](https://img.shields.io/badge/HACS-BLE%20Monitor-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=custom-components&repository=ble_monitor&category=integration) | 支持蓝牙设备数据采集，适用于多种蓝牙传感器 |
 | tuya-local | [![tuya-local](https://img.shields.io/badge/HACS-tuya--local-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=make-all&repository=tuya-local&category=integration) | 本地接入涂鸦设备，无需云端，响应更快 |
 | Xiaomi Miot Auto | [![Xiaomi Miot Auto](https://img.shields.io/badge/HACS-Xiaomi%20Miot%20Auto-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=al-one&repository=hass-xiaomi-miot&category=integration) | 支持小米生态多种设备自动接入 |
