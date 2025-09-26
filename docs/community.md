@@ -12,6 +12,7 @@ layout: doc
 - ✅ **关注本公众号**：[扫码关注](/about#微信公众号)
 - ✅ **明确身份**（商家/个人）  
   *注：商家指以Home Assistant为商业化产品盈利的机构或公司*
+- ✅ **填写入群申请表**：[点击填写](https://doc.weixin.qq.com/smartsheet/form/1_wp930jdgAAJHCjP6OsrJLjdS6j2eVFeg_7a6361)
 
 
 ---
@@ -69,7 +70,7 @@ layout: doc
 - ⚠️ 违反群规者将被立即移除
 - 🤖 群内禁止发送不合规内容（如小程序、语音/视频消息、聊天记录转发、超长消息、刷屏等）
 - 🧹 群满时将根据活跃度和公告遵守度移除成员，优先级：未填写同意书/不同意公告 → 未改名 → 未关注公众号 → 未发言
-- 📝 入群同意书：[点击填写](https://doc.weixin.qq.com/smartsheet/form/1_wp930jdgAAJHCjP6OsrJLjdS6j2eVFeg_67df92)
+- 📝 入群同意书（填过申请表的无需再填）：[点击填写](https://doc.weixin.qq.com/smartsheet/form/1_wp930jdgAAJHCjP6OsrJLjdS6j2eVFeg_67df92)
 
 ---
 
