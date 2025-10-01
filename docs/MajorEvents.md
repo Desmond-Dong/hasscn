@@ -50,7 +50,9 @@ layout: doc
 
 :::tip 2025年9月 
 Home Assistant OS 极速版重要服务器迁移到 `自架服务器`，不再依赖于公共服务器
+
 :::
+
 ---
 
 :::note
