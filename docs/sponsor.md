@@ -13,8 +13,8 @@ layout: doc
 - ~~💾 服务器支持 [给我发邮件](mailto:djhui@live.cn)~~
 - 🛠️ 技术支持 [给我发邮件](mailto:djhui@live.cn)(或者直接提交[GitHub讨论区](https://github.com/orgs/ha-china/discussions))
 - 📱 公众号支持 - 关注，点赞，转发，互动
-- 🚀  [加载项提交](https://github.com/ha-china/hassio-addons-dev)
-- 🚀  [机型适配提交](https://github.com/ha-china/HAOS-CN-DEV)
+- 🚀  [加载项提交](https://github.com/ha-china/HAOS-CN)
+- 🚀  [机型适配提交](https://github.com/ha-china/HAOS-CN)
 - ⭐ [GitHub仓库](https://github.com/ha-china/HAOS-CN)点`Star`
 - 💳 扫码支持
 
