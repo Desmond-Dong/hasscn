@@ -12,9 +12,10 @@ layout: doc
 - ✅ **关注本公众号**：[扫码关注](/about#微信公众号)
 - ✅ **明确身份**（商家/个人）  
   *注：商家指以Home Assistant为商业化产品盈利的机构或公司*
-- ✅ **填写入群申请表**：[点击填写](https://doc.weixin.qq.com/smartsheet/form/1_wp930jdgAAJHCjP6OsrJLjdS6j2eVFeg_7a6361)
+- ✅ **填写入群申请表**：[点击填写](https://doc.weixin.qq.com/smartsheet/form/1_wp930jdgAAJHCjP6OsrJLjdS6j2eVFeg_7a6361) （`手机端请在微信中打开此链接`）
 > ⚠️ **注意：**  
 根据之前的教训：为避免只为了问一个眼前的问题，解决完了就成僵尸了，然后真正想要一起沟通的人被分割在了2个群，特在申请表中增加了`入群门槛`，让真正想进群沟通的人能在一个群里
+
 
 ---
 
@@ -61,7 +62,6 @@ layout: doc
 - 🕰️ 未及时回复请耐心等待，可能群友正忙或问题描述不清
 - 🤖 公众号已接入AI助手（可直接对话），建议先问AI，AI无法解决再请教群友
 - 📚 知识库：[点击打开](https://ima.qq.com/wiki/?shareId=65fd12acb33dba9197c9134e5bd00f703cce40a7d973dc52b76a347dee22e15f)
-- 🌏 官网：https://www.hasscn.top
 
 ---
 
