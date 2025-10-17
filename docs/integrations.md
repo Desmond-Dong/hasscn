@@ -43,6 +43,8 @@ layout: doc
 | Buspro (HDL) | [![Buspro](https://img.shields.io/badge/HACS-Buspro%20(HDL)-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=eyesoft&repository=home_assistant_buspro&category=integration) | 支持河东设备本地接入，适合有河东总线设备的用户 |
 | AqaraGateway | [![AqaraGateway](https://img.shields.io/badge/HACS-AqaraGateway-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=niceboygithub&repository=AqaraGateway&category=integration) | 支持 Aqara 网关及子设备本地接入，适合米家/绿米生态用户 |
 | Midea Meiju Codec | [![Midea Meiju Codec](https://img.shields.io/badge/HACS-Midea%20Meiju%20Codec-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sususweet&repository=midea-meiju-codec&category=integration) | 支持美的美居设备本地接入，适用于美的/美居空调等设备，提升本地化体验 |
+| VivoHomeBridge | [![VivoHomeBridge](https://img.shields.io/badge/HACS-VivoHomeBridge-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=vivo&repository=ha_vivohomebridge&category=integration) | 支持接入 vivo 智能家居生态设备，支持多种型号设备，适合国内用户 |
+
 
 
 
