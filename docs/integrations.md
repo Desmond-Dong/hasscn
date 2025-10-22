@@ -81,7 +81,7 @@ layout: doc
 
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
-| ZhipuAI | [![ZhipuAI](https://img.shields.io/badge/HACS-ZhipuAI-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=knoop7&repository=zhipuai&category=integration) | 支持智谱AI大模型接入 |
+| zhipuai | [![zhipuai](https://img.shields.io/badge/HACS-zhipuai-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Desmond-Dong&repository=zhipuai&category=integration) | 支持接入智谱清言等大模型，实现中文对话与问答能力 |
 | Extended OpenAI | [![Extended OpenAI Conversation](https://img.shields.io/badge/HACS-Extended__OpenAI__Conversation-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=jekalmin&repository=extended_openai_conversation&category=integration) | 支持多轮对话、上下文记忆等高级功能 |
 
 ### 离家在家检测
