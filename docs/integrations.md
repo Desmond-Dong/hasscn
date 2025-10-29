@@ -90,11 +90,13 @@ layout: doc
 |--|--|--|
 | iPhoneDetect | [![iPhoneDetect](https://img.shields.io/badge/HACS-iPhoneDetect-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=mudape&repository=iphonedetect&category=integration) | 基于局域网检测 iPhone 是否在家，适合家庭成员自动离家/回家状态判断 |
 
-### 暖通类
+### 多媒体
 
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
-| Adaptive Climate | [![Adaptive Climate](https://img.shields.io/badge/HACS-Adaptive%20Climate-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=msinhore&repository=adaptive_climate&category=integration) | 智能调节空调/暖气，自动适应环境变化，提高舒适度与节能 |
+| Emby-HA | [![Emby-HA](https://img.shields.io/badge/HACS-Emby--HA-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=buynow2010&repository=Emby-HA&category=integration) | 集成 Emby 媒体服务器，支持媒体库同步与播放控制 |
+| Moviepilot-HA | [![Moviepilot-HA](https://img.shields.io/badge/HACS-Moviepilot--HA-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=buynow2010&repository=Moviepilot-HA&category=integration) | 实现Moviepilot系统监控与状态跟踪 |
+
 
 ### 网络管理
 | 集成名称 | HACS 安装链接 | 相关说明 |
