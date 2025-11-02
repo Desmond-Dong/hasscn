@@ -111,6 +111,12 @@ layout: doc
 | OpenWrt | [![OpenWrt Ubus](https://img.shields.io/badge/HACS-OpenWrt-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=FUjr&repository=homeassistant-openwrt-ubus&category=integration) | 通过 Ubus API 集成 OpenWrt 路由器，支持设备状态、流量、在线设备等信息监控，适合软路由/家庭网络管理 |
 
 
+### 暖通空调
+
+| 集成名称 | HACS 安装链接 | 相关说明 |
+|--|--|--|
+| GreeClimate | [![GreeClimate](https://img.shields.io/badge/HACS-GreeClimate-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=RobHofmann&repository=HomeAssistant-GreeClimateComponent&category=integration) | 集成格力空调，支持 WiFi 空调的远程开关、温度和模式控制 |
+
 
 ### 日历
 
