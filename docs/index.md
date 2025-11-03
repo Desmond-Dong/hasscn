@@ -41,10 +41,10 @@ features:
     details: 汇总主流国产智能家居品牌，便于查找与对接本地设备。
     icon: 🏷️
     link: /brand
-  - title: ❤️ 我的小店
-    details: 精选Home Assistant产品，欢迎选购支持本站
+  - title: ❤️ 汉化蓝图
+    details: 精选蓝图汉化资源，助您轻松实现蓝图使用。
     icon: 🛒
-    link: https://store.weixin.qq.com/shop/b/mAEQVitlFgoE0Rp
+    link: /blueprints
 
 
 ---
