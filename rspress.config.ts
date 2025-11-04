@@ -7,11 +7,7 @@ import readingTime from 'rspress-plugin-reading-time';
 export default defineConfig({
   mediumZoom: false,
   trailingSlash: true,
-  mdx: {
-    experimental: {
-      mdxRs: false,
-    },
-  },
+
   markdown: {
     dangerouslySetRawContent: true,
   },
