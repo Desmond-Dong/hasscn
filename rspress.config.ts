@@ -12,6 +12,9 @@ export default defineConfig({
       mdxRs: false,
     },
   },
+  markdown: {
+    dangerouslySetRawContent: true,
+  },
   plugins: [
     pluginFontOpenSans(),
     readingTime({
