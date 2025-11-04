@@ -101,41 +101,34 @@ layout: doc
 ---
 
 ### 🎬 速度演示
-<div style="display: flex; flex-direction: column; gap: 20px; margin: 20px 0;">
-  <div>
-    <h4>初始化速度演示</h4>
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe
-        src="//player.bilibili.com/player.html?bvid=BV1tr7VzCE35&page=1"
-        scrolling="no"
-        border="0"
-        frameborder="no"
-        framespacing="0"
-        allowfullscreen="true"
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      >
-      </iframe>
-    </div>
-    <p>家庭宽带：1G约1~1.5分钟，500M约3分钟，100M约5分钟</p>
-  </div>
 
-  <div>
-    <h4>升级速度演示</h4>
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe
-        src="//player.bilibili.com/player.html?bvid=BV1judBY2ES7&page=1&autoplay=false"
-        scrolling="no"
-        border="0"
-        frameborder="no"
-        framespacing="0"
-        allowfullscreen="true"
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      >
-      </iframe>
-    </div>
-    <p>升级速度与初始化类似</p>
-  </div>
-</div>
+export const VideoPlayer = ({ src, width = "100%", height = "400" }) => {
+  return (
+    <iframe
+      src={src}
+      width={width}
+      height={height}
+      scrolling="no"
+      border="0"
+      frameborder="no"
+      framespacing="0"
+      allowfullscreen="true"
+      style="border-radius: 8px;"
+    />
+  );
+};
+
+**初始化速度演示**
+
+<VideoPlayer src="//player.bilibili.com/player.html?bvid=BV1tr7VzCE35&page=1" />
+
+家庭宽带：1G约1~1.5分钟，500M约3分钟，100M约5分钟
+
+**升级速度演示**
+
+<VideoPlayer src="//player.bilibili.com/player.html?bvid=BV1judBY2ES7&page=1" />
+
+升级速度与初始化类似
 
 ---
 
