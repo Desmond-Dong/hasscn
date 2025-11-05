@@ -8,6 +8,27 @@ export default defineConfig({
   mediumZoom: false,
   trailingSlash: true,
 
+  // Enable automatic route generation for better SEO
+  autoGenerateSidebar: true,
+
+  // Configure meta tags for better Chinese SEO
+  transformHead: ({ pageData }) => {
+    const frontmatter = pageData?.frontmatter;
+    const title = frontmatter?.title || 'Home Assistant 中文网';
+    const description = frontmatter?.description || '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版';
+
+    return [
+      ['meta', { name: 'title', content: title }],
+      ['meta', { name: 'description', content: description }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { name: 'article:author', content: '老王杂谈说' }],
+      ['meta', { name: 'article:section', content: 'Home Assistant' }],
+      ['meta', { name: 'baidu_union_verify', content: '' }],
+      ['meta', { name: 'og:locale', content: 'zh_CN' }],
+    ];
+  },
+
   plugins: [
     pluginFontOpenSans(),
     readingTime({
@@ -16,14 +37,34 @@ export default defineConfig({
     sitemap({
       domain: "https://www.hasscn.top",
       customMaps: {
-        "/sitemap": {
-          loc: "/sitemap",
+        "/": {
+          loc: "/",
+          priority: "1.0",
+          changefreq: "daily",
+        },
+        "/haoscn": {
+          loc: "/haoscn",
+          priority: "0.9",
+          changefreq: "weekly",
+        },
+        "/QandA": {
+          loc: "/QandA",
+          priority: "0.8",
+          changefreq: "weekly",
+        },
+        "/about": {
+          loc: "/about",
           priority: "0.7",
-          changefreq: "always",
+          changefreq: "monthly",
+        },
+        "/download": {
+          loc: "/download",
+          priority: "0.9",
+          changefreq: "weekly",
         },
       },
       defaultChangeFreq: "monthly",
-      defaultPriority: "0.5",
+      defaultPriority: "0.6",
     }),],
   root: path.join(__dirname, 'docs'),
   theme: 'theme/index.ts',
@@ -152,7 +193,45 @@ export default defineConfig({
   head: [
     ['meta', { name: 'referrer', content: 'origin-when-cross-origin' }],
     ['meta', { name: 'author', content: '老王杂谈说' }],
-    ['meta', { name: 'keywords', content: 'Home Assistant,Home Assistant 中文网，Home Assistant 中文站，Home Assistant OS 极速版，老王杂谈说，HAOS，Nodered' }],
+    ['meta', { name: 'keywords', content: 'Home Assistant,Home Assistant 中文网，Home Assistant 中文站，Home Assistant OS 极速版，老王杂谈说，HAOS，Nodered，智能家居，开源智能家居，IoT，家庭助理，智能生活' }],
+    ['meta', { property: 'og:title', content: 'Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说' }],
+    ['meta', { property: 'og:description', content: '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: 'https://www.hasscn.top' }],
+    ['meta', { property: 'og:image', content: 'https://www.hasscn.top/icon.png' }],
+    ['meta', { property: 'og:site_name', content: 'Home Assistant 中文网' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    ['meta', { name: 'robots', content: 'index,follow' }],
+    ['meta', { name: 'language', content: 'zh-CN' }],
+    ['meta', { name: 'geo.region', content: 'CN' }],
+    ['meta', { name: 'geo.country', content: 'China' }],
+    ['meta', { name: 'baidu-site-verification', content: '' }],
+    ['meta', { name: '360-site-verification', content: '' }],
+    ['meta', { name: 'sogou_site_verification', content: '' }],
+    ['meta', { name: 'shenma-site-verification', content: '' }],
+    ['link', { rel: 'canonical', href: 'https://www.hasscn.top' }],
+    ['link', { rel: 'alternate', hreflang: 'zh-CN', href: 'https://www.hasscn.top' }],
+    ['script', { type: 'application/ld+json' }, JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Home Assistant 中文网",
+      "description": "打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版",
+      "url": "https://www.hasscn.top",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hasscn.top/icon.png"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.hasscn.top/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "老王杂谈说",
+        "url": "https://www.hasscn.top"
+      }
+    })],
   ],
   markdown: {
     dangerouslySetRawContent: true,

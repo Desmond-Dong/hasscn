@@ -1,5 +1,15 @@
 ---
 pageType: home
+title: "Home Assistant 中文网 - 开源智能家居平台 | 老王杂谈说"
+description: "Home Assistant 中文网提供最全面的 Home Assistant 中文资源，包括 Home Assistant OS 极速版、HACS 极速版、汉化插件、加载项推荐等，专为中国用户优化"
+keywords: "Home Assistant, 智能家居, 开源智能家居, Home Assistant 中文, HAOS, HACS, 老王杂谈说, 物联网"
+og:
+  title: "Home Assistant 中文网 - 开源智能家居平台"
+  description: "提供最全面的 Home Assistant 中文资源，包括 Home Assistant OS 极速版、HACS 极速版、汉化插件等"
+  type: "website"
+  image: "/icon.png"
+  locale: "zh_CN"
+  site_name: "Home Assistant 中文网"
 
 hero:
   name: Home Assistant

@@ -1,5 +1,15 @@
---- 
-layout: doc 
+---
+layout: doc
+title: "Home Assistant OS 极速版介绍 - 专为中国用户优化"
+description: "Home Assistant OS 极速版详细介绍，专为国内用户深度优化，带来前所未有的丝滑流畅体验，包含网络加速、系统配置优化等功能"
+keywords: "Home Assistant OS 极速版, 系统介绍, 网络加速, 中国优化, 系统配置, 智能家居系统"
+og:
+  title: "Home Assistant OS 极速版介绍 - 专为中国用户优化"
+  description: "Home Assistant OS 极速版详细介绍，专为国内用户深度优化，带来前所未有的丝滑流畅体验"
+  type: "article"
+  image: "/icon.png"
+  locale: "zh_CN"
+  site_name: "Home Assistant 中文网"
 ---
 
 # ✨ Home Assistant OS 极速版 · 极致体验为你而来

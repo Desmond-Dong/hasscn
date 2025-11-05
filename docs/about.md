@@ -1,5 +1,15 @@
 ---
 layout: doc
+title: "关于 Home Assistant 中文网 - 老王杂谈说"
+description: "了解 Home Assistant 中文网的建站初衷、项目说明、内容更新和版权声明，致力于为中国用户提供最好的 Home Assistant 学习平台"
+keywords: "Home Assistant 中文网, 老王杂谈说, 关于我们, 开源项目, 智能家居, 汉化"
+og:
+  title: "关于 Home Assistant 中文网 - 老王杂谈说"
+  description: "了解 Home Assistant 中文网的建站初衷、项目说明、内容更新和版权声明，致力于为中国用户提供最好的 Home Assistant 学习平台"
+  type: "article"
+  image: "/icon.png"
+  locale: "zh_CN"
+  site_name: "Home Assistant 中文网"
 ---
 
 # 🏠 关于

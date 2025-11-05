@@ -1,5 +1,15 @@
 ---
 layout: doc
+title: "Home Assistant OS 极速版 - 常见问题解答"
+description: "Home Assistant OS 极速版常见问题解答，包含安装、配置、使用等各方面的详细解答"
+keywords: "Home Assistant OS 极速版, FAQ, 常见问题, 安装教程, 配置指南"
+og:
+  title: "Home Assistant OS 极速版 - 常见问题解答"
+  description: "Home Assistant OS 极速版常见问题解答，包含安装、配置、使用等各方面的详细解答"
+  type: "article"
+  image: "/icon.png"
+  locale: "zh_CN"
+  site_name: "Home Assistant 中文网"
 ---
 # Home Assistant OS 极速版
 :::info 名称由来
