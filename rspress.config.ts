@@ -7,11 +7,7 @@ import readingTime from 'rspress-plugin-reading-time';
 export default defineConfig({
   mediumZoom: false,
   trailingSlash: true,
-  mdx: {
-    experimental: {
-      mdxRs: false,
-    },
-  },
+
   plugins: [
     pluginFontOpenSans(),
     readingTime({
@@ -149,8 +145,9 @@ export default defineConfig({
 
       },
     ],
-
-
+    markdown: {
+      dangerouslySetRawContent: true,
+    },
     footer: {
       message: 'Copyright © 2025 Home Assistant 中文站（老王杂谈说） | <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2025160066号</a> | <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010902004199" target="_blank">浙公网安备33010902004199号</a>',
     },
