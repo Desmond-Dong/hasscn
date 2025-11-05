@@ -145,9 +145,6 @@ export default defineConfig({
 
       },
     ],
-    markdown: {
-      dangerouslySetRawContent: true,
-    },
     footer: {
       message: 'Copyright © 2025 Home Assistant 中文站（老王杂谈说） | <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2025160066号</a> | <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010902004199" target="_blank">浙公网安备33010902004199号</a>',
     },
@@ -156,5 +153,8 @@ export default defineConfig({
     ['meta', { name: 'referrer', content: 'origin-when-cross-origin' }],
     ['meta', { name: 'author', content: '老王杂谈说' }],
     ['meta', { name: 'keywords', content: 'Home Assistant,Home Assistant 中文网，Home Assistant 中文站，Home Assistant OS 极速版，老王杂谈说，HAOS，Nodered' }],
-      ]
+  ],
+  markdown: {
+    dangerouslySetRawContent: true,
+  },
 });
