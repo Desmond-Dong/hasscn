@@ -149,6 +149,11 @@ export default defineConfig({
             text: 'ESPHome 准备开始',
             link: 'https://www.hasscn.top/esphome/',
           },
+          {
+            text: '其它汉化资源',
+            link: 'https://gitee.com/ha-china/Translated/',
+          },
+          
         ],
       },
       {
@@ -158,6 +163,10 @@ export default defineConfig({
       {
         text: '快速问答',
         link: '/QandA',
+      },
+      {
+        text: '测评专区',
+        link: '/evaluation/index',
       },
       {
         text: '支持我',
