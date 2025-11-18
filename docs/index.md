@@ -24,8 +24,10 @@ hero:
       link: Changelog
   image:
     src: 
-      light: /home-assistant-wordmark-vertical-color-on-light.png
-      dark: /home-assistant-wordmark-vertical-color-on-dark.png
+#      light: /home-assistant-wordmark-vertical-color-on-light.png
+#      dark: /home-assistant-wordmark-vertical-color-on-dark.png
+      light: /stream.png
+      dark: /stream.png
     alt: Logo
 
 
