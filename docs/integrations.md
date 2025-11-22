@@ -128,7 +128,7 @@ layout: doc
 ### 调试测试
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
-| Virtual | [![Virtual](https://img.shields.io/badge/HACS-Virtual-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=twrecked&repository=hass-virtual&category=integration) | 创建虚拟传感器、开关等，便于调试和自动化测试 |
+| Virtual Devices | [![Virtual Devices](https://img.shields.io/badge/HACS-virtual__devices-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=virtual_devices&category=integration) | 创建虚拟传感器、开关等，便于调试、自动化和测试（[源码](https://github.com/ha-china/virtual_devices)） |
 
 
 ### NAS
