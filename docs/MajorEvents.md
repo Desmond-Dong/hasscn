@@ -37,7 +37,7 @@ layout: doc
 :::
 
 :::tip 2025年5月 
-受委托，举办 `Home Assistant Community Day`  
+受委托，举办 `Home Assistant Community Day` [官网链接](https://www.home-assistant.io/blog/2025/06/24/community-day-2025-wrap-up/)
 :::
 
 :::tip 2025年6月 
