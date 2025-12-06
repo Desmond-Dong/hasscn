@@ -6,7 +6,9 @@ layout: doc
 
 ## 📝 申请表
 
-- ✅ **填写申请表**：[点击填写](https://doc.weixin.qq.com/smartsheet/form/1_wp930jdgAAJHCjP6OsrJLjdS6j2eVFeg_7a6361) （`手机端请在微信中打开此链接`）
+- ✅ **解释**：因为有不同的人有不同的需求联系我，为了节约大家时间，以申请表的方式申请
+- ✅ **填写申请表**：[点击填写](https://doc.weixin.qq.com/smartsheet/form/1_wp930jdgAAJHCjP6OsrJLjdS6j2eVFeg_7a6361) （`手机端请在微信中打开此链接`） 
+  > 申请`玩家进阶群`请认真阅读本页面全部内容，并按要求填写申请表
 - ✅ **扫码添加管理员**：页面底部有管理员二维码
 
 ## 📋 入群须知
