@@ -111,7 +111,8 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 :::
 
 ```
-This is an open source version, commercial use without permission is prohibited
+OTA service kindly sponsored by Coolkit: https://www.coolkit.cn/
+Official Website: https://www.hasscn.top
 ```
 ![](./images/mirrow.png)
 - 并且看到的官方商店变成了这样全中文的
