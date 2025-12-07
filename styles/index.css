@@ -1,0 +1,140 @@
+/* 全局样式文件 - 页面宽度自定义 */
+
+/* 修改CSS变量以增加内容宽度 */
+:root {
+  --rp-content-max-width: 1200px !important;
+}
+
+/* 扩大主内容区域的宽度 */
+.rp-doc-layout__doc-container {
+  max-width: 1200px !important;
+}
+
+/* 调整左边栏宽度和位置 */
+.rp-doc-layout__sidebar {
+  width: 240px !important;
+  min-width: 240px !important;
+  max-width: 240px !important;
+  margin-left: 0 !important; /* 移除自动计算的左边距 */
+}
+
+/* 减少右侧大纲栏宽度 */
+.rp-doc-layout__aside {
+  width: 200px !important;
+  min-width: 200px !important;
+  max-width: 200px !important;
+}
+
+/* 调整主要内容区域，充分利用可用空间 */
+main.rspress-doc {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* 调整容器布局以使用全宽度并居中 */
+@media (min-width: 1280px) {
+  /* 让整个容器居中 */
+  .rp-doc-layout__container {
+    justify-content: center !important;
+    max-width: 100vw !important;
+  }
+
+  .rp-doc-layout__doc {
+    max-width: min(100%, 1400px) !important;
+    flex: 1 !important;
+  }
+
+  .rp-doc-layout__sidebar {
+    margin-left: 0 !important;
+  }
+
+  .rp-doc-layout__outline {
+    margin-right: 0 !important;
+    width: 200px !important; /* 进一步缩小右侧大纲宽度 */
+  }
+}
+
+/* 充分利用大屏幕空间 */
+@media (min-width: 1920px) {
+  /* 让整个容器居中 */
+  .rp-doc-layout__container {
+    justify-content: center !important;
+  }
+
+  .rp-doc-layout__doc-container {
+    max-width: 1600px !important;
+  }
+
+  main.rspress-doc {
+    max-width: 1600px !important;
+  }
+
+  /* 调整CSS变量以匹配更大的内容宽度 */
+  :root {
+    --rp-content-max-width: 1600px !important;
+  }
+}
+
+/* 超宽屏幕优化 */
+@media (min-width: 2560px) {
+  /* 让整个容器居中 */
+  .rp-doc-layout__container {
+    justify-content: center !important;
+  }
+
+  .rp-doc-layout__doc-container {
+    max-width: 1800px !important;
+  }
+
+  main.rspress-doc {
+    max-width: 1800px !important;
+  }
+
+  :root {
+    --rp-content-max-width: 1800px !important;
+  }
+}
+
+/* 首页特性卡片图标优化 */
+.rp-home-feature__item-wrapper > .rp-home-feature__card > div:first-child {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.rp-home-feature__icon {
+  font-size: 36px !important;
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 18px !important;
+  background-color: var(--rp-c-bg-soft) !important;
+  border: 3px solid var(--rp-c-divider-light) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rp-home-feature__card:hover .rp-home-feature__icon {
+  transform: scale(1.1) !important;
+  background-color: var(--rp-c-brand) !important;
+  color: white !important;
+  border-color: var(--rp-c-brand) !important;
+}
+
+/* 响应式宽度调整 */
+@media (max-width: 1400px) {
+  .rp-doc-layout__doc-container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rp-doc-layout__doc-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rp-doc-layout__doc-container {
+    padding: 0 12px;
+  }
+}

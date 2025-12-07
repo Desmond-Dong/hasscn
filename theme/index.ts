@@ -1,10 +1,7 @@
-import * as DefaultTheme from 'rspress/theme';  // 全量引入命名导出
-import './custom.css';
+import { Layout } from '@rspress/core/theme';
 
-// 继续导出命名导出（可选）
-export * from 'rspress/theme';
+// 导出所有核心主题组件
+export * from '@rspress/core/theme';
 
-// 补上默认导出（这是关键）
-export default {
-  ...DefaultTheme,
-};
+// 导出Layout组件
+export { Layout };
