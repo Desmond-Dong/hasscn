@@ -7,7 +7,7 @@
 ### 安装驱动
 安装驱动比较简单，打开之后直接点驱动安装即可
 
-![](../../images/orangepi/drivers.png)
+![](../images/orangepi/drivers.png)
 
 ### 刷机前准备
 - 拔掉电源线
@@ -16,7 +16,7 @@
 - 按住刷机按钮然后通电
 - 确保下面*不是*没有发现设备，而是有设备列表的
 
-![](../../images/orangepi/flash.jpg)
+![](../images/orangepi/flash.jpg)
 这个软件界面并不是这么好友，点三个点下面的空白处选择对应的文件
 - 第一行，Loader里选择下载包里面的`MiniLoaderAll.bin`文件
 - 第二行EMMC选择**解压**后的`Home Assistant OS 极速版`固件 (扩展名为.img)
@@ -25,4 +25,4 @@
 
 当右边空白框出现如下界面则表示开始刷写了，等到他100%即可
 
-![](../../images/orangepi/progress.png)
+![](../images/orangepi/progress.png)

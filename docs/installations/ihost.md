@@ -36,15 +36,15 @@
 - 将 SD Card 接入读卡器中，并插在电脑上(Windows/MacOS/Linux)
 - 运行 Balena Etcher
 
-![img](../../images/ihost/etcher-main-cn.png)
+![img](../images/ihost/etcher-main-cn.png)
 
 - "从文件烧录" -> 选择下载到本地的`Home Assistant OS 极速版`镜像文件
 
-![img](../../images/ihost/etcher-select-file-cn.png)
+![img](../images/ihost/etcher-select-file-cn.png)
 
 - "选择目标磁盘" -> 选择您所插入的 SD Card [!!!请注意不要选错磁盘!!!]
 
-![img](../../images/ihost/etcher-select-target-cn.png)
+![img](../images/ihost/etcher-select-target-cn.png)
 
 - 点击"现在烧录！"开始将下载的`Home Assistant OS 极速版`镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card
 
@@ -53,31 +53,31 @@
 - 将 SD Card 接入读卡器中，并插在电脑上(Windows/MacOS/Linux)
 - 运行  Raspberry Pi Imager
 
-![img](../../images/ihost/pi-imager-main-cn.png)
+![img](../images/ihost/pi-imager-main-cn.png)
 
 - "选择设备" -> 选择 No filtering
 
-![img](../../images/ihost/pi-imager-device-cn.png)
+![img](../images/ihost/pi-imager-device-cn.png)
 
 - "选择操作系统" -> 选择 Use custom> 选择下载到本地的`Home Assistant OS 极速版`镜像文件
 
-![img](../../images/ihost/pi-imager-os-cn.png)
+![img](../images/ihost/pi-imager-os-cn.png)
 
-![img](../../images/ihost/pi-imager-custom-cn.png)
+![img](../images/ihost/pi-imager-custom-cn.png)
 
 - "选择SD卡" -> 选择您所插入的 SD Card [!!!请注意不要选错磁盘!!!]
 
-![img](../../images/ihost/pi-imager-storage-cn.png)
+![img](../images/ihost/pi-imager-storage-cn.png)
 
 - 点击"NEXT"-> 允许清空SD卡的所有数据 
 
-![img](../../images/ihost/pi-imager-settings-cn.png)
+![img](../images/ihost/pi-imager-settings-cn.png)
 
-![img](../../images/ihost/pi-imager-clear-cn.png)
+![img](../images/ihost/pi-imager-clear-cn.png)
 
-![img](../../images/ihost/pi-imager-confirm-cn.png)
+![img](../images/ihost/pi-imager-confirm-cn.png)
 
-![img](../../images/ihost/pi-imager-flashing-cn.png)
+![img](../images/ihost/pi-imager-flashing-cn.png)
 
 - 开始将下载的`Home Assistant OS 极速版`镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card
 
@@ -93,7 +93,7 @@
 - 给 iHost 连接网线并上电，在通电同时不断按下静音按键 ♪ ，直至 iHost 的灯条出现蓝色呼吸，系统将开始改变为 SD Card 卡上的 Home Assistant；
 
 
-![img](../../images/ihost/boot-blue-light.gif)
+![img](../images/ihost/boot-blue-light.gif)
 
 - 在看到蓝色呼吸灯的十分钟内，您将能够访问您的新 Home Assistant，第一次启动需要的时间会长一点
 
@@ -110,7 +110,7 @@
 - 如果 10分钟内没有正常访问，则可能是图像写入不正确，请尝试再次刷写 SD 卡，甚至可能尝试不同的 SD 卡。
 - 若在通电5秒后未看到蓝色呼吸灯即进入失败（指示灯显示红色呼吸），您需要再次断电重启来尝试从SD Card卡启动Home assistant
 
-![img](../../images/ihost/boot-failure.gif)
+![img](../images/ihost/boot-failure.gif)
 
 此时您不需要单击静音按键，因为 iHost 会记住您上一次是从TF卡启动 Home assisatnt，在您断电重启后会自动尝试从SD Card卡启动 Home assistant 。
 
@@ -118,7 +118,7 @@
 
 - 若需要切换回 eWeLink CUBE，重复此通电及按键操作（在通电后3s内不断按下静音按键）即可，切换 eWeLink-CUBE 系统成功后，灯条灯效从蓝色呼吸改为红色跑马灯
 
-![img](../../images/ihost/switch-back.gif)
+![img](../images/ihost/switch-back.gif)
 
 注:
 
@@ -134,7 +134,7 @@
 
   可通过在Home Assistant 安装运行 "iHost Hardware Control"add-on 来控制 iHost 机身上的按键和指示灯效果，该 add-on 会将按键和指示灯分别注册为设备和不同的实体，可利用Home Assistant 中的自动化来控制按键和指示灯的不同效果
 
-  ![img](../../images/ihost/ihost-hardware-control-cn.png)
+  ![img](../images/ihost/ihost-hardware-control-cn.png)
 
 - 蓝牙 
 
@@ -142,7 +142,7 @@
   - 相关信息:设置->设备与服务->已配置->Bluetooth
   - 识别方式:自动
 
-![img](../../images/ihost/bluetooth-settings-cn.png)
+![img](../images/ihost/bluetooth-settings-cn.png)
 
 - WiFi  
 
@@ -150,7 +150,7 @@
   - 相关信息:设置->系统->网络->配置网络接口->WLAN0
   - 识别方式:自动
 
-![img](../../images/ihost/wifi-settings-cn.png)
+![img](../images/ihost/wifi-settings-cn.png)
 
 - Zigbee 协调器
 
@@ -158,5 +158,5 @@
   - 相关信息:设置->系统->硬件->全部硬件->/dev/ttyS4
   - 识别方式:使用ZHA或者Z2M
 
-![img](../../images/ihost/zigbee-settings-cn.png)
+![img](../images/ihost/zigbee-settings-cn.png)
 
