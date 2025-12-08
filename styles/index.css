@@ -1,4 +1,52 @@
-/* 全局样式文件 - 页面宽度自定义 */
+/* 全局样式文件 - 页面宽度自定义和字体优化 */
+
+:root {
+  --rp-content-max-width: 1200px !important;
+  /* 优化的字体配置 - 不依赖外部字体 */
+  --rp-font-family-base: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, "SF Pro Display", system-ui, -apple-system, sans-serif !important;
+  --rp-font-family-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo", "Consolas", monospace !important;
+}
+
+/* 应用更好的字体到全局 */
+body {
+  font-family: var(--rp-font-family-base) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+/* 代码字体优化 */
+code, pre, .rp-code {
+  font-family: var(--rp-font-family-mono) !important;
+  font-size: 0.9em !important;
+  line-height: 1.5 !important;
+}
+
+/* 标题字体优化 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--rp-font-family-base) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* 段落字体优化 */
+p {
+  font-family: var(--rp-font-family-base) !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+}
+
+/* 表格字体优化 */
+table td, table th {
+  font-family: var(--rp-font-family-base) !important;
+}
+
+/* 导航字体优化 */
+.rp-nav-menu__item {
+  font-family: var(--rp-font-family-base) !important;
+  font-weight: 500 !important;
+}
 
 /* 修改CSS变量以增加内容宽度 */
 :root {
@@ -106,18 +154,138 @@ main.rspress-doc {
   font-size: 36px !important;
   width: 72px !important;
   height: 72px !important;
-  border-radius: 18px !important;
-  background-color: var(--rp-c-bg-soft) !important;
-  border: 3px solid var(--rp-c-divider-light) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   transition: all 0.3s ease !important;
 }
 
 .rp-home-feature__card:hover .rp-home-feature__icon {
   transform: scale(1.1) !important;
-  background-color: var(--rp-c-brand) !important;
-  color: white !important;
-  border-color: var(--rp-c-brand) !important;
+  background-color: transparent !important;
+  color: var(--rp-c-brand) !important;
+}
+
+/* 修复图片链接在同一行显示的问题 */
+.rp-doc a img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.rp-doc a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  vertical-align: middle !important;
+  text-decoration: none !important;
+}
+
+/* 针对表格中的链接进行特殊处理 */
+.rp-doc table a {
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  text-decoration: none !important;
+}
+
+/* 特别处理包含图片的链接，去除下划线 */
+.rp-doc a:has(img) {
+  text-decoration: none !important;
+}
+
+/* 针对包含图片的链接的hover状态也去除下划线 */
+.rp-doc a:has(img):hover {
+  text-decoration: none !important;
+}
+
+/* 修复Markdown中图片和文字在同一行显示的问题 */
+.rp-doc p:has(img) {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
+
+/* 针对段落中的图片进行特殊处理 */
+.rp-doc p img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  margin-right: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+/* 针对同一段落中的文字进行特殊处理 */
+.rp-doc p:has(img) > *:not(img) {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  white-space: normal !important;
+}
+
+/* 特别处理只有图片和少量文字的段落 */
+.rp-doc p:has(img):has(> img:first-child):has(> :last-child:not(img)) {
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+}
+
+/* 修复表格中图片和链接在同一行显示的问题 */
+.rp-doc table td:has(img):has(a) {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
+
+/* 针对只有图片的表格单元格，保持原有布局 */
+.rp-doc table td:has(img):not(:has(a)) {
+  display: table-cell !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+/* 针对表格单元格中的图片进行特殊处理 */
+.rp-doc table td img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  margin-right: 8px !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+}
+
+/* 特别处理赞助二维码表格，保持原有大小 */
+.rp-doc table tr:nth-child(2) td img {
+  max-height: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* 专门处理包含logo的表格单元格，限制logo大小 */
+.rp-doc table td:has(img[src*="logo"]) img,
+.rp-doc table td:has(img[src*="coolkit"]) img {
+  max-height: 24px !important;
+  width: auto !important;
+}
+
+/* 针对表格单元格中的链接进行特殊处理 */
+.rp-doc table td:has(img) a {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+}
+
+/* 针对表格单元格中的文字进行特殊处理 */
+.rp-doc table td:has(img) > *:not(img):not(a) {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
 }
 
 /* 响应式宽度调整 */

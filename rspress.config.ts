@@ -1,7 +1,6 @@
 import * as path from 'node:path';
 import { defineConfig } from 'rspress/config';
 import sitemap from "rspress-plugin-sitemap";
-import { pluginFontOpenSans } from 'rspress-plugin-font-open-sans';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -31,7 +30,6 @@ export default defineConfig({
   ],
 
   plugins: [
-    pluginFontOpenSans(),
     sitemap({
       domain: "https://www.hasscn.top",
       defaultChangeFreq: "monthly",
@@ -68,10 +66,10 @@ export default defineConfig({
     },
   },
 
+  mediumZoom: false,
   themeConfig: {
     darkMode: true,
     enableAppearanceAnimation: true,
-    disableImageZoom: true,
     locales: [
       {
         lang: 'zh',

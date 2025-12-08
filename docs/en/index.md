@@ -13,8 +13,8 @@ og:
 
 hero:
   name: Home Assistant
-  text: Many hands make light work
-  tagline: With everyone's wisdom, nothing is impossible; with everyone's strength, nothing is unbeatable
+  text: Awaken your home
+  tagline: Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts.
   actions:
     - theme: brand
       text: Quick Migration
