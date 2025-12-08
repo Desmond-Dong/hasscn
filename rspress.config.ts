@@ -71,6 +71,7 @@ export default defineConfig({
   themeConfig: {
     darkMode: true,
     enableAppearanceAnimation: true,
+    disableImageZoom: true,
     locales: [
       {
         lang: 'zh',
