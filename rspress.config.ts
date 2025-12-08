@@ -5,7 +5,7 @@ import sitemap from "rspress-plugin-sitemap";
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
   lang: 'zh',
-  title: 'Home Assistant - 开源智能家居平台 | 老王杂谈说',
+  title: 'Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说',
   icon: '/icon.png',
   logo: {
     light: '/home-assistant-wordmark-with-margins-color-on-light.png',
