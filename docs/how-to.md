@@ -84,6 +84,7 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 :::note 安装完成后，您可以在集成中直接手动添加 HACS 极速版或者一键快速添加。
 
 [`一键快速添加`](https://my.home-assistant.io/redirect/config_flow_start/?domain=hacs)
+
 ![HACS 安装](./images/hacs-install.png)
 
 :::
@@ -93,6 +94,7 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 此问题在最新版的`upgrade.sh`里已经得到了极大的优化，可能不会出现这个问题，或者只有少量的加载项会有这个问题
 
 🛠️ 最后，请删除这些加载项，并在加速源中重新安装即可。
+
 ![加载项修复](./images/addons.png)
 
 :::
@@ -117,7 +119,9 @@ Official Website: https://www.hasscn.top
 ![](./images/mirrow.png)
 - 并且看到的官方商店变成了这样全中文的
 > 点击下面这个按钮，进入到你的加载项商店
+
 [![加载项商店](https://img.shields.io/badge/Add--on%20Store-Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_store/)
+
 ![商店截图](./images/store.png)
 
 
