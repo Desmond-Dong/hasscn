@@ -194,6 +194,35 @@ main.rspress-doc {
   margin: 0 !important;
 }
 
+/* 解决Windows浏览器无法显示国旗emoji的问题 */
+.rp-nav-menu__item {
+  font-family: var(--rp-font-family-base), "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Twemoji", "EmojiOne Color" !important;
+}
+
+/* 为国旗emoji提供备用字体支持 */
+.emoji-country {
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Twemoji", "EmojiOne Color", system-ui, sans-serif !important;
+}
+
+/* 如果仍然不显示，可以用CSS图片替代方案 */
+.nav-flag-cn::before {
+  content: "🇨🇳";
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif !important;
+}
+
+/* 针对特定浏览器使用CSS变量 */
+@supports not (-webkit-font-smoothing: antialiased) {
+  /* 非webkit浏览器的备用方案 */
+  .nav-flag-cn::before {
+    content: "中";
+    background: linear-gradient(to bottom, #DE2910, #DE2910 50%, #FFDE00 50%, #FFDE00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+  }
+}
+
 /* 修复图片链接在同一行显示的问题 */
 .rp-doc a img {
   display: inline-block !important;
