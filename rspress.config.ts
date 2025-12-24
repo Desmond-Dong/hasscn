@@ -91,10 +91,6 @@ export default defineConfig({
                 link: '/companion/',
               },
               {
-                text: 'nodeRedWebLocalization',
-                link: 'https://nodered.hasscn.top/',
-              },
-              {
                 text: 'homeAssistantDeveloperDocs',
                 link: '/developers/',
               },
