@@ -97,3 +97,8 @@ og:
 |----|---|---|----|
 | green_factory_CN.img.xz | [酷宅科技](https://ota.hasscn.top/green_factory_CN.img.xz) | [Home Assistant Green](https://mp.weixin.qq.com/s/QZKFLsyAbJ9zgqu9EIKXKw) | 1a5299d0189d0fcce59ad488e08476180cf87bcb71176b8a887c2bdd29257de1 |
 
+## 加入群聊沟通
+
+:::info
+因为有不同的群提供，如果你在使用上有任何问题，可以点击页面右上角微信图标进入群聊，直接贴群聊二维码有7天有效期的问题，所以采用申请表的方式也解决有效期的问题
+:::
