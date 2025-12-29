@@ -14,18 +14,18 @@ export default defineConfig({
 
   globalStyles: path.join(__dirname, 'styles/index.css'),
 
+  markdown: {
+    mdxRs: {
+      importSource: 'react',
+    },
+  },
+
   locales: [
     {
       lang: 'zh',
       label: '🇨🇳 简体中文',
       title: 'Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说',
       description: '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版',
-    },
-    {
-      lang: 'en',
-      label: '🇺🇸 English',
-      title: 'Home Assistant China',
-      description: 'China-optimized Home Assistant website for global users',
     },
   ],
 
@@ -147,86 +147,6 @@ export default defineConfig({
           },
           ],
       },
-      {
-        lang: 'en',
-        outlineTitle: 'On This Page',
-        nav: [
-          {
-            text: 'home',
-            link: '/en/',
-          },
-          {
-            text: 'localization',
-            items: [
-              {
-                text: 'officialWebLocalization',
-                link: 'https://ha-doc.hasscn.top',
-              },
-              {
-                text: 'mobileAppLocalization',
-                link: '/companion/',
-              },
-              {
-                text: 'nodeRedWebLocalization',
-                link: 'https://nodered.hasscn.top/',
-              },
-              {
-                text: 'homeAssistantDeveloperDocs',
-                link: '/developers/',
-              },
-              {
-                text: 'hassAgentLocalization',
-                link: '/hass-agent/',
-              },
-              {
-                text: 'esphomeGettingStarted',
-                link: '/esphome/',
-              },
-              {
-                text: 'otherResources',
-                link: 'https://gitee.com/ha-china/Translated/',
-              },
-            ],
-          },
-          {
-            text: 'downloads',
-            link: '/en/download',
-          },
-          {
-            text: 'qa',
-            link: '/en/QandA',
-          },
-          {
-            text: 'reviews',
-            link: '/en/evaluation/index',
-          },
-          {
-            text: 'sponsor',
-            link: '/en/sponsor',
-          },
-          {
-            text: 'about',
-            items: [
-              {
-                text: 'aboutSite',
-                link: '/en/about',
-              },
-              {
-                text: 'searchEngine',
-                link: '/en/no-baidu',
-              },
-              {
-                text: 'majorEvents',
-                link: '/en/MajorEvents',
-              },
-              {
-                text: 'serverStatus',
-                link: 'https://status.hasscn.top/status/1',
-              },
-            ],
-          },
-          ],
-      },
     ],
     socialLinks: [
       {
@@ -273,6 +193,5 @@ export default defineConfig({
     ['meta', { name: 'shenma-site-verification', content: '' }],
     ['link', { rel: 'canonical', href: 'https://www.hasscn.top' }],
     ['link', { rel: 'alternate', hreflang: 'zh-CN', href: 'https://www.hasscn.top' }],
-    ['link', { rel: 'alternate', hreflang: 'en-US', href: 'https://www.hasscn.top/en/' }],
     ],
 });
