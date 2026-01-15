@@ -43,7 +43,7 @@ og:
 
 | 版本   | 类型   | 版本号| 下载链接                                                            |
 |--------|--------|-------|-------------------------------------------------------------------|
-| 稳定版 | 安装包 | 2.1.1 | [国内加速](https://ghfast.top/https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe)  |
+| 稳定版 | 安装包 | v0.2.5 | [国内加速](https://ghfast.top/https://github.com/ha-china/ha-windows/releases/download/v0.2.5/HomeAssistantWindows.exe)  |
 
 :::tip 提示
 国内用户无法访问GitHub的用户建议选择"国内加速"链接以获得更快的下载速度，国际用户可直接使用原始。
