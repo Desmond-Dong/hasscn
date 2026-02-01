@@ -1,6 +1,5 @@
 import * as path from 'node:path';
-import { defineConfig } from 'rspress/config';
-import sitemap from "rspress-plugin-sitemap";
+import { defineConfig } from '@rspress/core';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -15,9 +14,7 @@ export default defineConfig({
   globalStyles: path.join(__dirname, 'styles/index.css'),
 
   markdown: {
-    mdxRs: {
-      importSource: 'react',
-    },
+    // Rspress 2.0 不再支持 mdxRs，已迁移到 JS MDX 解析器
   },
 
   locales: [
@@ -27,14 +24,6 @@ export default defineConfig({
       title: 'Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说',
       description: '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版',
     },
-  ],
-
-  plugins: [
-    sitemap({
-      domain: "https://www.hasscn.top",
-      defaultChangeFreq: "monthly",
-      defaultPriority: "0.6",
-    }),
   ],
 
   builderConfig: {

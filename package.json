@@ -3,18 +3,16 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "build": "rspress build",
+    "build": "node node_modules/@rspress/core/dist/cli/index.js build",
     "check": "biome check --write",
-    "dev": "rspress dev",
+    "dev": "node node_modules/@rspress/core/dist/cli/index.js dev",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "preview": "rspress preview"
+    "preview": "node node_modules/@rspress/core/dist/cli/index.js preview"
   },
   "dependencies": {
-    "rspress": "^1.44.0",
-    "rspress-plugin-font-open-sans": "^1.0.3",
-    "rspress-plugin-reading-time": "^0.3.0",
-    "rspress-plugin-sitemap": "^1.2.1",
+    "@rspress/core": "^2.0.0",
+    "@rspress/plugin-sitemap": "^2.0.1",
     "vfile": "^6.0.3",
     "vfile-message": "^4.0.3"
   },
