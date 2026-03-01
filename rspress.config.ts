@@ -88,7 +88,7 @@ export default defineConfig({
                 link: '/hass-agent/',
               },
               {
-                text: 'esphomeGettingStarted',
+                text: 'esphome',
                 link: '/esphome/',
               },
               {
