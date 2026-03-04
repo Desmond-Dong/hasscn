@@ -2,6 +2,7 @@ import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
 import { pluginSitemap } from "@rspress/plugin-sitemap";
 import { musicAssistantSidebar } from './scripts/sidebar-config';
+import { analyticsPlugin } from './scripts/analytics-plugin';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -23,6 +24,7 @@ export default defineConfig({
       defaultChangeFreq: "monthly",
       defaultPriority: "0.6",
     }),
+    analyticsPlugin(),
   ],
 
   builderConfig: {
@@ -34,22 +36,6 @@ export default defineConfig({
             rel: 'stylesheet',
             href: '/css/home-assistant-theme.css',
           },
-        },
-        // 51.la 统计代码 - 合并 SDK 加载和初始化
-        {
-          tag: 'script',
-          children: `
-(function() {
-  var script = document.createElement('script');
-  script.charset = 'UTF-8';
-  script.id = 'LA_COLLECT';
-  script.src = 'https://sdk.51.la/js-sdk-pro.min.js';
-  document.head.appendChild(script);
-  script.onload = function() {
-    LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"});
-  };
-})();
-`,
         },
       ],
     },
