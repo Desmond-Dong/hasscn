@@ -1,5 +1,7 @@
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
+import { pluginSitemap } from "@rspress/plugin-sitemap";
+import { musicAssistantSidebar } from './scripts/sidebar-config';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -13,17 +15,14 @@ export default defineConfig({
 
   globalStyles: path.join(__dirname, 'styles/index.css'),
 
-  markdown: {
-    // Rspress 2.0 不再支持 mdxRs，已迁移到 JS MDX 解析器
-  },
+  description: '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版',
 
-  locales: [
-    {
-      lang: 'zh',
-      label: '🇨🇳 简体中文',
-      title: 'Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说',
-      description: '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版',
-    },
+  plugins: [
+    pluginSitemap({
+      siteUrl: "https://www.hasscn.top",
+      defaultChangeFreq: "monthly",
+      defaultPriority: "0.6",
+    }),
   ],
 
   builderConfig: {
@@ -44,13 +43,6 @@ export default defineConfig({
             charset: 'UTF-8',
           },
         },
-        {
-          tag: 'script',
-          attrs: {
-            src: '/js/bilingual-nav.js',
-            defer: 'true',
-          },
-        },
       ],
     },
   },
@@ -59,84 +51,93 @@ export default defineConfig({
   themeConfig: {
     darkMode: true,
     enableAppearanceAnimation: true,
-    locales: [
+    outlineTitle: '页面大纲',
+    nav: [
       {
-        lang: 'zh',
-        outlineTitle: '页面大纲',
-        nav: [
+        text: '首页',
+        link: '/',
+      },
+      {
+        text: '汉化专区',
+        items: [
           {
-            text: 'home',
-            link: '/',
+            text: '官方网页汉化',
+            link: 'https://ha-doc.hasscn.top',
           },
           {
-            text: 'localization',
-            items: [
-              {
-                text: 'officialWebLocalization',
-                link: 'https://ha-doc.hasscn.top',
-              },
-              {
-                text: 'mobileAppLocalization',
-                link: '/companion/',
-              },
-              {
-                text: 'homeAssistantDeveloperDocs',
-                link: '/developers/',
-              },
-              {
-                text: 'hassAgentLocalization',
-                link: '/hass-agent/',
-              },
-              {
-                text: 'esphome',
-                link: '/esphome/',
-              },
-              {
-                text: 'otherResources',
-                link: 'https://gitee.com/ha-china/Translated/',
-              },
-            ],
+            text: '移动App汉化',
+            link: '/companion/',
           },
           {
-            text: 'downloads',
-            link: '/download',
+            text: 'Node Red 网页汉化',
+            link: 'https://nodered.hasscn.top/',
           },
           {
-            text: 'qa',
-            link: '/QandA',
+            text: 'Home Assistant 开发者文档',
+            link: '/developers/',
           },
           {
-            text: 'reviews',
-            link: '/evaluation/index',
+            text: 'HASS Agent 汉化手册',
+            link: '/hass-agent/',
           },
           {
-            text: 'sponsor',
-            link: '/sponsor',
+            text: 'ESPHome 准备开始',
+            link: '/esphome/',
           },
           {
-            text: 'about',
-            items: [
-              {
-                text: 'aboutSite',
-                link: '/about',
-              },
-              {
-                text: 'searchEngine',
-                link: '/no-baidu',
-              },
-              {
-                text: 'majorEvents',
-                link: '/MajorEvents',
-              },
-              {
-                text: 'serverStatus',
-                link: 'https://status.hasscn.top/status/1',
-              },
-            ],
+            text: 'Music Assistant',
+            link: '/music-assistant/',
           },
-          ],
+          {
+            text: '其它汉化资源',
+            link: 'https://gitee.com/ha-china/Translated/',
+          },
+        ],
+      },
+      {
+        text: '下载专区',
+        link: '/download',
+      },
+      {
+        text: '快速问答',
+        link: '/QandA',
+      },
+      {
+        text: '测评专区',
+        link: '/evaluation/index',
+      },
+      {
+        text: '支持我',
+        link: '/sponsor',
+      },
+      {
+        text: '关于',
+        items: [
+          {
+            text: '关于本站',
+            link: '/about',
+          },
+          {
+            text: '搜索引擎',
+            link: '/no-baidu',
+          },
+          {
+            text: '重要事件',
+            link: '/MajorEvents',
+          },
+          {
+            text: '服务器状态(China Only)',
+            link: 'https://status.hasscn.top/status/1',
+          },
+        ],
       },
     ],
+    
+    // 多侧边栏配置
+    sidebar: {
+      '/music-assistant/': musicAssistantSidebar,
+    },
+
     socialLinks: [
       {
         icon: 'wechat',
@@ -181,6 +182,5 @@ export default defineConfig({
     ['meta', { name: 'sogou_site_verification', content: '' }],
     ['meta', { name: 'shenma-site-verification', content: '' }],
     ['link', { rel: 'canonical', href: 'https://www.hasscn.top' }],
-    ['link', { rel: 'alternate', hreflang: 'zh-CN', href: 'https://www.hasscn.top' }],
     ],
 });
