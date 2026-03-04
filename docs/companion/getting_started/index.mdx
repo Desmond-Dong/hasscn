@@ -1,0 +1,151 @@
+---
+title: 入门指南
+id: getting-started
+---
+
+## 系统要求
+
+| 平台 | 最低版本 | 备注 |
+|----------|-----------------|-------|
+| ![iOS](/companion-assets/iOS.svg) iOS | iOS 15+ | iPhone 6s 或更新机型 |
+| ![Android](/companion-assets/android.svg) Android | Android 6+ | 提供 `完整版` 和 `精简版` [两种版本](/companion/core/android-flavors) |
+
+需要 [Home Assistant](https://www.home-assistant.io/installation/) 0.104.0 或更新版本。了解更多关于 [Home Assistant Cloud](https://support.nabucasa.com/hc/en-us/categories/24734619902749) 和 [远程访问](https://support.nabucasa.com/hc/en-us/sections/26496346499997)。
+
+## 设置步骤
+
+如果您与 Home Assistant 服务器在同一网络，应用会自动检测到它。或者，如果您的 Home Assistant 服务器已配置 [远程访问](https://www.home-assistant.io/docs/configuration/remote/)，您可以从任何位置设置应用。
+
+### 逐步设置
+
+1. **下载应用**：获取 [Home Assistant Companion 应用](/download)。
+
+2. **欢迎界面**：打开应用，选择 **连接到我的 Home Assistant 服务器** 开始设置。
+
+3. **网络发现**：应用会搜索您网络上的 Home Assistant 服务器。
+
+   <details>
+   <summary>**自动发现服务器**</summary>
+
+   如果只发现一个 Home Assistant 服务器，应用会自动提示您连接。
+
+   <img alt="Home Assistant Companion 应用显示单个已发现的服务器准备连接" src="/companion-assets/OneServerFound.png" width="400"/>
+
+   </details>
+
+   <details>
+   <summary>**发现多个服务器**</summary>
+
+   如果发现多个 Home Assistant 服务器，您会看到一个列表供选择。点击您要连接的服务器。
+
+   <img alt="Home Assistant Companion 应用显示多个已发现服务器的列表供选择" src="/companion-assets/MultipleServerFound.png" width="400"/>
+
+   </details>
+
+   <details>
+   <summary>**未发现服务器或远程连接**</summary>
+
+   如果未发现服务器，或者您从家庭网络外部连接：
+
+   1. 点击 **手动输入地址**
+   2. 输入您的 Home Assistant URL
+
+   <div style={{display: 'flex', gap: '1rem', alignItems: 'flex-start'}}>
+     <img alt="Home Assistant Companion 应用显示未发现服务器，带有手动输入地址按钮" src="/companion-assets/NoServerFound.png" style={{height: '400px', width: 'auto'}}/>
+     <img alt="Home Assistant Companion 应用手动服务器输入界面，带有 URL 输入框" src="/companion-assets/ManualServer.png" style={{height: '400px', width: 'auto'}}/>
+   </div>
+
+   :::tip
+   推荐使用 [Home Assistant Cloud](https://www.nabucasa.com/config/remote/) 远程访问来实现安全的远程连接。
+   :::
+
+   </details>
+
+4. **登录**：输入您的 Home Assistant 凭据进行身份验证。
+
+   :::info
+   始终使用您的 Home Assistant 凭据登录。如果您启用了 [可信网络](https://www.home-assistant.io/docs/authentication/providers/#trusted-networks)，请避免在应用中使用它，否则应用只能在可信网络上工作。
+   :::
+
+5. **设备命名**：为您的设备选择一个名称，它将显示在 Home Assistant 中。此名称用于标识您的设备实体，以及在自动化和操作中。
+
+6. **位置权限**：应用会请求位置访问权限以启用自动化和安全连接。
+
+   - 位置共享可启用 [自动化](/companion/core/location)，例如当您离开家时关闭暖气
+   - 您的位置数据保留在家中，永远不会发送给第三方
+   - 位置还有助于加强您与 Home Assistant 连接的安全性
+   - 选择 **共享我的位置** 或 **不共享我的位置**
+
+   <details>
+   <summary>**Android**</summary>
+
+   应用需要 **位置：始终允许** 和 **附近的设备** 权限，以便后台位置更新正常工作。
+
+   <div style={{display: 'flex', gap: '0.5rem', alignItems: 'flex-start', flexWrap: 'wrap', justifyContent: 'center'}}>
+      <img alt="Home Assistant 应用位置共享提示" src="/companion-assets/android/enable_location_tracking.png" style={{height: '280px', width: 'auto'}}/>
+      <img alt="Android 位置权限对话框" src="/companion-assets/android/location_permission.png" style={{height: '280px', width: 'auto'}}/>
+      <img alt="Android 附近设备权限对话框" src="/companion-assets/android/nearby_permission.png" style={{height: '280px', width: 'auto'}}/>
+      <img alt="Android 系统位置权限设置为始终允许" src="/companion-assets/android/sys_location_permission.png" style={{height: '280px', width: 'auto'}}/>
+   </div>
+   </details>
+
+   <details>
+   <summary>**iOS**</summary>
+
+   您的设备会显示标准的位置权限对话框。
+   - 选择 **允许一次**、**使用应用时允许** 或 **不允许**
+   - 要获得完整功能，包括后台自动化，请选择 **使用应用时允许**，然后在下一个提示中选择 **始终允许**
+   </details>
+
+7. **连接安全级别**：如果使用非加密 URL（如本地 IP 地址），请选择安全级别：
+   - **最安全**：仅当您在家庭网络时允许非加密连接（需要位置权限）
+   - **较不安全**：允许来自任何网络的非加密连接（不建议在公共网络使用）
+   - 了解更多关于 [连接安全级别](/companion/getting_started/connection_security_level)
+
+8. **设置您的家庭网络**（仅限最安全）：如果您在上一步选择了 **最安全**，系统会要求您确认您的家庭网络。
+
+    - 应用会检测您当前的 Wi-Fi 网络 (SSID) 并将其预填为您的家庭网络
+    - ![Android](/companion-assets/android.svg) 在 Android 上，您还可以使用 VPN 或以太网作为可信网络
+    - 这允许应用知道您何时在家，可以安全地使用非加密连接
+    - 您稍后可以在 [**设置**](https://my.home-assistant.io/redirect/config/) > **Companion 应用** > **[您的服务器]** 中添加其他可信网络
+
+9. **设置完成**：应用会完成连接并带您进入 Home Assistant 仪表板。
+
+:::tip
+如果您在设置应用时遇到困难，请参阅 [故障排除指南](/companion/troubleshooting/setup)。
+:::
+
+### 通知
+
+设置完成后，系统会要求您启用通知。这允许 Home Assistant 向您发送自动化警报、提醒和更新通知。
+
+:::info
+在 iOS 上，系统还会要求您允许 **关键通知**。这些是高优先级警报，即使您的设备处于静音模式或启用了勿扰模式，也会播放声音。
+:::
+
+了解更多关于如何从 Home Assistant [发送通知](/companion/notifications/basic)。
+
+## 添加其他服务器
+
+:::note
+需要 Home Assistant 2021.10 或更新版本。
+:::
+
+设置好第一个服务器后，您可以添加其他 Home Assistant 服务器：
+
+1. 在 Companion 应用中，进入 [**设置**](https://my.home-assistant.io/redirect/config/) > **Companion 应用**。
+2. 选择 **添加服务器**。
+   - 同一局域网上的服务器会自动被发现。
+3. 如果服务器未列出，点击 **手动输入地址** 并提供 URL。
+
+## TLS 客户端认证
+
+![Android](/companion-assets/android.svg)
+
+如果您的 Home Assistant 需要 TLS 客户端认证（因为它位于配置为执行 TLS 客户端认证的反向代理后面），应用会请求证书。如果没有安装或提供匹配的证书，您可能会看到错误或空白屏幕，具体取决于您的设置。
+
+请参阅您的设备和 Android 版本文档以安装证书。确保将证书安装为"VPN 和应用用户证书"。Pixel 手机的示例可在此处找到：[添加和删除证书](https://support.google.com/pixelphone/answer/2844832?hl=en)。
+
+:::info
+Wear OS 不支持使用已安装的证书进行认证。应用无法自动将证书传输到 Wear OS 应用，因此在 Wear OS 应用引导过程中会要求您提供证书。证书和密钥需要以 PKCS12 格式作为单个文件提供。如果这不起作用，请参阅 [故障排除步骤](/companion/troubleshooting/networking.md#tls-client-authentication)。
+:::

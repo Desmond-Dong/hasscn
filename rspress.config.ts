@@ -1,7 +1,7 @@
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
 import { pluginSitemap } from "@rspress/plugin-sitemap";
-import { musicAssistantSidebar } from './scripts/sidebar-config';
+import { musicAssistantSidebar, companionSidebar } from './scripts/sidebar-config';
 import { analyticsPlugin } from './scripts/analytics-plugin';
 
 export default defineConfig({
@@ -130,6 +130,7 @@ export default defineConfig({
     // 多侧边栏配置
     sidebar: {
       '/music-assistant/': musicAssistantSidebar,
+      '/companion/': companionSidebar,
     },
 
     socialLinks: [

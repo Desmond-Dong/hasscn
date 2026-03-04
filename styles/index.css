@@ -345,6 +345,28 @@ main.rspress-doc {
   margin: 0 !important;
 }
 
+/* Companion 文档图标深色模式支持 */
+/* 在深色模式下反转图标颜色 */
+[data-theme="dark"] .rp-doc img[src*="/companion-assets/iOS.svg"],
+[data-theme="dark"] .rp-doc img[src*="/companion-assets/android.svg"],
+[data-theme="dark"] .rp-doc img[src*="/companion-assets/apple.svg"],
+[data-theme="dark"] .rp-doc img[src*="/companion-assets/macOS.svg"],
+html.dark .rp-doc img[src*="/companion-assets/iOS.svg"],
+html.dark .rp-doc img[src*="/companion-assets/android.svg"],
+html.dark .rp-doc img[src*="/companion-assets/apple.svg"],
+html.dark .rp-doc img[src*="/companion-assets/macOS.svg"] {
+  filter: invert(1) !important;
+}
+
+/* 在右侧目录(TOC)中隐藏图标，只显示文字 */
+.rp-doc-layout__aside img,
+.rp-outline-item img,
+.rp-toc img,
+[class*="outline"] img,
+[class*="toc"] img {
+  display: none !important;
+}
+
 /* 响应式宽度调整 */
 @media (max-width: 1400px) {
   .rp-doc-layout__doc-container {
