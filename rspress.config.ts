@@ -38,10 +38,14 @@ export default defineConfig({
         {
           tag: 'script',
           attrs: {
-            src: '//sdk.51.la/js-sdk-pro.min.js?id=3MhQABjxy4RZQ6Ig&ck=3MhQABjxy4RZQ6Ig',
+            src: '//sdk.51.la/js-sdk-pro.min.js',
             id: 'LA_COLLECT',
             charset: 'UTF-8',
           },
+        },
+        {
+          tag: 'script',
+          children: 'LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})',
         },
       ],
     },
@@ -81,7 +85,7 @@ export default defineConfig({
             link: '/hass-agent/',
           },
           {
-            text: 'ESPHome 准备开始',
+            text: 'ESPHome',
             link: '/esphome/',
           },
           {
