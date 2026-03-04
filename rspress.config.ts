@@ -35,17 +35,21 @@ export default defineConfig({
             href: '/css/home-assistant-theme.css',
           },
         },
+        // 51.la 统计代码 - 合并 SDK 加载和初始化
         {
           tag: 'script',
-          attrs: {
-            src: '//sdk.51.la/js-sdk-pro.min.js',
-            id: 'LA_COLLECT',
-            charset: 'UTF-8',
-          },
-        },
-        {
-          tag: 'script',
-          children: 'LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})',
+          children: `
+(function() {
+  var script = document.createElement('script');
+  script.charset = 'UTF-8';
+  script.id = 'LA_COLLECT';
+  script.src = 'https://sdk.51.la/js-sdk-pro.min.js';
+  document.head.appendChild(script);
+  script.onload = function() {
+    LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"});
+  };
+})();
+`,
         },
       ],
     },
