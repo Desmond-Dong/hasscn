@@ -98,10 +98,6 @@ export default defineConfig({
             link: '/addoncn',
           },
           {
-            text: '汉化蓝图',
-            link: '/blueprints',
-          },
-          {
             text: 'Home Assistant 开发者文档',
             link: '/developers/',
           },
