@@ -32,7 +32,7 @@ hero:
 features:
   - title: 📱 配套应用
     details: 提供 Home Assistant 配套应用文档与使用说明，帮助你更好地配置移动端能力。
-    icon: 🈶
+    icon: 📱
     link: /companion/
   - title: 🎵 Music Assistant
     details: 汇总 Music Assistant 汉化文档与配置教程，快速搭建本地智能音乐系统。
@@ -50,8 +50,8 @@ features:
     details: 汇总主流国产智能家居品牌，便于查找与对接本地设备。
     icon: 🏷️
     link: /brand
-  - title: 🌐 官方网页汉化
-    details: 提供 Home Assistant 官方文档与网页汉化入口，查阅中文资料更高效。
-    icon: 📘
-    link: https://ha-doc.hasscn.top
+  - title: ❤️ 汉化蓝图
+    details: 精选蓝图汉化资源，助您轻松实现蓝图使用。
+    icon: 🛒
+    link: /blueprints
 ---
