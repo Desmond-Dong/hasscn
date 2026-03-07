@@ -83,19 +83,23 @@ export default defineConfig({
         link: '/',
       },
       {
-        text: '汉化专区',
+        text: '汉化资源',
         items: [
           {
             text: '官方网页汉化',
             link: 'https://ha-doc.hasscn.top',
           },
           {
-            text: '移动App汉化',
-            link: '/companion/',
+            text: 'HACS 极速版',
+            link: '/hacscn',
           },
           {
-            text: 'Node Red 网页汉化',
-            link: 'https://nodered.hasscn.top/',
+            text: 'Home Assistant OS 加载项',
+            link: '/addoncn',
+          },
+          {
+            text: '汉化蓝图',
+            link: '/blueprints',
           },
           {
             text: 'Home Assistant 开发者文档',
@@ -104,14 +108,6 @@ export default defineConfig({
           {
             text: 'HASS Agent 汉化手册',
             link: '/hass-agent/',
-          },
-          {
-            text: 'ESPHome',
-            link: '/esphome/',
-          },
-          {
-            text: 'Music Assistant',
-            link: '/music-assistant/',
           },
           {
             text: '其它汉化资源',

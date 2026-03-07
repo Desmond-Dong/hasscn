@@ -1,11 +1,11 @@
 ---
 pageType: home
-title: 'Home Assistant 中文网 - 开源智能家居平台 | 老王杂谈说'
-description: 'Home Assistant 中文网提供最全面的 Home Assistant 中文资源，包括 Home Assistant OS 极速版、HACS 极速版、汉化插件、加载项推荐等，专为中国用户优化'
+title: 'Home Assistant 中文网 - 汉化资源与安装指南 | 老王杂谈说'
+description: 'Home Assistant 中文网提供面向中国用户的汉化资源与实战指南，涵盖 Home Assistant、移动 App、Music Assistant、ESPHome 及本土化部署经验'
 keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中国社区, Home Assistant 中文, Music Assistant, ESPHome, HAOS, HACS, 智能家居, 开源智能家居, 物联网'
 og:
-  title: 'Home Assistant 中文网 - 开源智能家居平台'
-  description: '提供最全面的 Home Assistant 中文资源，包括 Home Assistant OS 极速版、HACS 极速版、汉化插件等'
+  title: 'Home Assistant 中文网 - 汉化资源与安装指南'
+  description: '聚焦 Home Assistant 中文内容与本土化实践，覆盖移动 App、Music Assistant、ESPHome 等核心资源'
   type: 'website'
   image: '/icon.png'
   locale: 'zh_CN'
@@ -30,18 +30,18 @@ hero:
     alt: Logo
 
 features:
-  - title: 📚 Home Assistant OS 极速版
-    details: 专为中国用户优化的 Home Assistant OS 版本，享受极速丝滑的体验
-    icon: 🚀
-    link: /haoscn
-  - title: 📱 Home Assistant OS 加载项
-    details: 丰富的官方与第三方加载项，轻松扩展 Home Assistant 功能。
-    icon: 🧩
-    link: /addoncn
-  - title: 🧮 HACS 极速版 (by Alone)
-    details: 极速访问 HACS 社区插件与主题，一键安装，打造个性化智能家居体验。
-    icon: ⚡
-    link: /hacscn
+  - title: 📱 配套应用
+    details: 提供 Home Assistant 配套应用文档与使用说明，帮助你更好地配置移动端能力。
+    icon: 🈶
+    link: /companion/
+  - title: 🎵 Music Assistant
+    details: 汇总 Music Assistant 汉化文档与配置教程，快速搭建本地智能音乐系统。
+    icon: 🎧
+    link: /music-assistant/
+  - title: 🔧 ESPHome
+    details: 整理 ESPHome 中文教程与设备示例，帮助你低成本接入更多智能硬件。
+    icon: 📟
+    link: /esphome/
   - title: 🔌 热门集成推荐
     details: 精选高频使用的国内外集成，助您快速连接各类智能设备。
     icon: 🔗
@@ -50,8 +50,8 @@ features:
     details: 汇总主流国产智能家居品牌，便于查找与对接本地设备。
     icon: 🏷️
     link: /brand
-  - title: ❤️ 汉化蓝图
-    details: 精选蓝图汉化资源，助您轻松实现蓝图使用。
-    icon: 🛒
-    link: /blueprints
+  - title: 🌐 官方网页汉化
+    details: 提供 Home Assistant 官方文档与网页汉化入口，查阅中文资料更高效。
+    icon: 📘
+    link: https://ha-doc.hasscn.top
 ---
