@@ -1,15 +1,15 @@
 ---
 layout: doc
-title: "关于 Home Assistant 中文网 - 老王杂谈说"
-description: "了解 Home Assistant 中文网的建站初衷、项目说明、内容更新和版权声明，致力于为中国用户提供最好的 Home Assistant 学习平台"
-keywords: "Home Assistant 中文网, 老王杂谈说, 关于我们, 开源项目, 智能家居, 汉化"
+title: '关于 Home Assistant 中文网 - 老王杂谈说'
+description: '了解 Home Assistant 中文网的建站初衷、项目说明、内容更新和版权声明，致力于为中国用户提供最好的 Home Assistant 学习平台'
+keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中国社区, Home Assistant 中文, Home Assistant 中文网, 关于我们, 开源项目, 智能家居, 汉化'
 og:
-  title: "关于 Home Assistant 中文网 - 老王杂谈说"
-  description: "了解 Home Assistant 中文网的建站初衷、项目说明、内容更新和版权声明，致力于为中国用户提供最好的 Home Assistant 学习平台"
-  type: "article"
-  image: "/icon.png"
-  locale: "zh_CN"
-  site_name: "Home Assistant 中文网"
+  title: '关于 Home Assistant 中文网 - 老王杂谈说'
+  description: '了解 Home Assistant 中文网的建站初衷、项目说明、内容更新和版权声明，致力于为中国用户提供最好的 Home Assistant 学习平台'
+  type: 'article'
+  image: '/icon.png'
+  locale: 'zh_CN'
+  site_name: 'Home Assistant 中文网'
 ---
 
 # 🏠 关于
@@ -18,33 +18,29 @@ og:
 一个开源界的混子，IT运维及管理背景，非专业码哥，技术只是纯兴趣
 :::
 
-
-
-
 ### 🎯 建站初衷
 
 - **🌐 本土化支持**：方便用户快速找到并使用本土化内容
 - **🚀 简化使用**：让用户无需复杂知识即可轻松上手 Home Assistant
 
-
 ## 🌟 项目说明
 
-- **🎯 项目性质**：非盈利个人项目，专注知识分享与经验交流  
-- **🚀 项目目标**：打造最适合中国用户的Home Assistant学习平台  
-- **💡 项目特色**：本土化优化，解决国内用户使用痛点  
-- **🤝 参与方式**：欢迎贡献与反馈，共建Home Assistant社区  
+- **🎯 项目性质**：非盈利个人项目，专注知识分享与经验交流
+- **🚀 项目目标**：打造最适合中国用户的Home Assistant学习平台
+- **💡 项目特色**：本土化优化，解决国内用户使用痛点
+- **🤝 参与方式**：欢迎贡献与反馈，共建Home Assistant社区
 
 ## 📚 内容说明
 
-- **📖 文档状态**：持续更新中，部分内容可能尚未完成翻译  
-- **🕒 更新频率**：根据用户需求调整优先级不定期更新  
-- **📝 翻译支持**：如需特定内容翻译，请通过微信公众号联系我们  
+- **📖 文档状态**：持续更新中，部分内容可能尚未完成翻译
+- **🕒 更新频率**：根据用户需求调整优先级不定期更新
+- **📝 翻译支持**：如需特定内容翻译，请通过微信公众号联系我们
 
 ## ⚖️ 版权声明
 
-- **©️ 原内容版权**：归原作者所有  
-- **📜 翻译版权**：归《老王杂谈说》所有  
-- **🔗 引用说明**：引用时请注明出处，尊重原作者劳动成果  
+- **©️ 原内容版权**：归原作者所有
+- **📜 翻译版权**：归《老王杂谈说》所有
+- **🔗 引用说明**：引用时请注明出处，尊重原作者劳动成果
 
 ### 微信公众号
 

@@ -1,20 +1,20 @@
 ---
 pageType: home
-title: "Home Assistant 中文网 - 开源智能家居平台 | 老王杂谈说"
-description: "Home Assistant 中文网提供最全面的 Home Assistant 中文资源，包括 Home Assistant OS 极速版、HACS 极速版、汉化插件、加载项推荐等，专为中国用户优化"
-keywords: "Home Assistant, 智能家居, 开源智能家居, Home Assistant 中文, HAOS, HACS, 老王杂谈说, 物联网"
+title: 'Home Assistant 中文网 - 开源智能家居平台 | 老王杂谈说'
+description: 'Home Assistant 中文网提供最全面的 Home Assistant 中文资源，包括 Home Assistant OS 极速版、HACS 极速版、汉化插件、加载项推荐等，专为中国用户优化'
+keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中国社区, Home Assistant 中文, Music Assistant, ESPHome, HAOS, HACS, 智能家居, 开源智能家居, 物联网'
 og:
-  title: "Home Assistant 中文网 - 开源智能家居平台"
-  description: "提供最全面的 Home Assistant 中文资源，包括 Home Assistant OS 极速版、HACS 极速版、汉化插件等"
-  type: "website"
-  image: "/icon.png"
-  locale: "zh_CN"
-  site_name: "Home Assistant 中文网"
+  title: 'Home Assistant 中文网 - 开源智能家居平台'
+  description: '提供最全面的 Home Assistant 中文资源，包括 Home Assistant OS 极速版、HACS 极速版、汉化插件等'
+  type: 'website'
+  image: '/icon.png'
+  locale: 'zh_CN'
+  site_name: 'Home Assistant 中文网'
 
 hero:
   name: Home Assistant
   text: 众人拾柴火焰高
-  tagline:  乘众人之智，则无不任也；用众人之力，则无不胜也
+  tagline: 乘众人之智，则无不任也；用众人之力，则无不胜也
   actions:
     - theme: brand
       text: 无损转换
@@ -23,19 +23,17 @@ hero:
       text: 更新日志
       link: Changelog
   image:
-    src: 
+    src:
       light: /home-assistant-wordmark-vertical-color-on-light.png
       dark: /home-assistant-wordmark-vertical-color-on-dark.png
 
     alt: Logo
 
-
-
 features:
   - title: 📚 Home Assistant OS 极速版
     details: 专为中国用户优化的 Home Assistant OS 版本，享受极速丝滑的体验
     icon: 🚀
-    link: /haoscn 
+    link: /haoscn
   - title: 📱 Home Assistant OS 加载项
     details: 丰富的官方与第三方加载项，轻松扩展 Home Assistant 功能。
     icon: 🧩
@@ -56,6 +54,4 @@ features:
     details: 精选蓝图汉化资源，助您轻松实现蓝图使用。
     icon: 🛒
     link: /blueprints
-
-
 ---

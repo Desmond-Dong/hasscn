@@ -1,17 +1,19 @@
 ---
 layout: doc
-title: "Home Assistant OS 极速版 - 常见问题解答"
-description: "Home Assistant OS 极速版常见问题解答，包含安装、配置、使用等各方面的详细解答"
-keywords: "Home Assistant OS 极速版, FAQ, 常见问题, 安装教程, 配置指南"
+title: 'Home Assistant OS 极速版 - 常见问题解答'
+description: 'Home Assistant OS 极速版常见问题解答，包含安装、配置、使用等各方面的详细解答'
+keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中国社区, Home Assistant 中文, Home Assistant OS 极速版, FAQ, 常见问题, 安装教程, 配置指南'
 og:
-  title: "Home Assistant OS 极速版 - 常见问题解答"
-  description: "Home Assistant OS 极速版常见问题解答，包含安装、配置、使用等各方面的详细解答"
-  type: "article"
-  image: "/icon.png"
-  locale: "zh_CN"
-  site_name: "Home Assistant 中文网"
+  title: 'Home Assistant OS 极速版 - 常见问题解答'
+  description: 'Home Assistant OS 极速版常见问题解答，包含安装、配置、使用等各方面的详细解答'
+  type: 'article'
+  image: '/icon.png'
+  locale: 'zh_CN'
+  site_name: 'Home Assistant 中文网'
 ---
+
 # Home Assistant OS 极速版
+
 :::info 名称由来
 中文名：`Home Assistant OS 极速版` 名称剽窃自《HACS极速版》因为HACS极速版就是加速了HACS的连接与使用，我这OS也是一样的作用
 
@@ -19,8 +21,7 @@ og:
 
 :::
 
-
-:::tip 为什么制作极速版？ 
+:::tip 为什么制作极速版？
 看到太多的网友没法正常使用 Home Assistant 原版，无论是系统初始化，还是升级，因此力所能及的想做一些方便大家的事情。
 :::
 
@@ -40,7 +41,6 @@ og:
 :::tip 这个版本和冬瓜的版本有什么区别？
 最大的区别就是闭源与开源的区别，具体我不知道，我没有办法去评估一个闭源的产品代码里具体有什么。
 :::
-
 
 :::tip 目前支持哪些硬件？将来会不会适配官方以外的硬件？
 目前仅编译了官方默认支持的硬件，等版本稳定之后，会考虑编译更多的固件。但是因为手里没有对应的硬件，所以这个进度可能不会太快，当然如果有人正好手里有，能提交到我的仓库，这样进度会快一点。
@@ -62,7 +62,6 @@ og:
 :::tip 这个加速方案会失效吗？
 应该不会，系统里只能做一个加速方案，手头有备用链接
 :::
-
 
 :::tip 如果公开的加速方案都失效了怎么办？
 我会去寻求赞助（不仅仅是服务器的赞助，还有技术支持的赞助）采用自建服务器的方式来部署
@@ -92,16 +91,3 @@ og:
 :::tip 你现在最缺的资源是什么
 有爱的人，有能力有设备能适配机型愿意奉献的人才。
 :::
-
-
-
-
-
-
-
-
-
-
-
-
-
