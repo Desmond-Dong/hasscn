@@ -30,6 +30,10 @@ hero:
     alt: Logo
 
 features:
+  - title: 📚 Home Assistant OS 极速版
+    details: 专为中国用户优化的 Home Assistant OS 版本，享受极速丝滑的体验。
+    icon: 🚀
+    link: /haoscn
   - title: 📱 配套应用
     details: 提供 Home Assistant 配套应用文档与使用说明，帮助你更好地配置移动端能力。
     icon: 📱
@@ -50,8 +54,4 @@ features:
     details: 汇总主流国产智能家居品牌，便于查找与对接本地设备。
     icon: 🏷️
     link: /brand
-  - title: ❤️ 汉化蓝图
-    details: 精选蓝图汉化资源，助您轻松实现蓝图使用。
-    icon: 🛒
-    link: /blueprints
 ---
