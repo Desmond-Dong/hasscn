@@ -58,14 +58,22 @@ jobs:
           commit_message: 'build: publish latest site output'
 
       - name: Publish build output to Gitee
-        uses: peaceiris/actions-gh-pages@v4
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          deploy_key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
-          external_repository: desmond_GT/website
-          publish_dir: ./doc_build
-          publish_branch: build
-          force_orphan: true
-          enable_jekyll: false
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          commit_message: 'build: sync latest site output'
+          ssh-private-key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+
+      - name: Sync build output to Gitee build branch
+        run: |
+          ssh-keyscan gitee.com >> ~/.ssh/known_hosts
+          tmp_dir="$(mktemp -d)"
+          cp -R doc_build/. "$tmp_dir/"
+          cd "$tmp_dir"
+          git init
+          git checkout -b build
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          touch .nojekyll
+          git add -A
+          git commit -m "build: sync latest site output"
+          git remote add origin git@gitee.com:desmond_GT/website.git
+          git push origin build --force
