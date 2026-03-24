@@ -1,0 +1,122 @@
+---
+title: Tuya
+description: 关于如何在 Home Assistant 中设置涂鸦中心的说明。
+ha_category:
+  - Binary sensor
+  - Camera
+  - Climate
+  - Cover
+  - Doorbell
+  - Event
+  - Fan
+  - Humidifier
+  - Light
+  - Number
+  - Scene
+  - Select
+  - Siren
+  - Switch
+  - Vacuum
+  - Valve
+ha_iot_class: Cloud Push
+ha_release: 0.74
+ha_config_flow: true
+ha_domain: tuya
+ha_codeowners:
+  - '@Tuya'
+  - '@zlinoliver'
+ha_platforms:
+  - alarm_control_panel
+  - binary_sensor
+  - button
+  - camera
+  - climate
+  - cover
+  - diagnostics
+  - event
+  - fan
+  - humidifier
+  - light
+  - number
+  - scene
+  - select
+  - sensor
+  - siren
+  - switch
+  - vacuum
+  - valve
+ha_dhcp: true
+ha_integration_type: hub
+---
+
+**Tuya** 集成将您添加到涂鸦智能和涂鸦智能生活应用程序中的所有 Powered by Tuya 设备集成在一起。
+
+除门锁和远程平台外，涂鸦集成支持所有 Home Assistant 平台。
+
+## 先决条件
+
+您需要安装涂鸦智能或智能生活应用程序，并创建账户且至少向该账户添加一个设备。
+
+在设置过程中，您需要：
+- 第二个屏幕（如手机、平板电脑或另一台电脑）来显示配置期间出现的二维码
+- 在移动设备上安装智能生活或涂鸦智能应用程序以扫描二维码
+
+### 获取登录用户代码
+
+要登录，您需要从智能生活/涂鸦智能应用程序获取您的**用户代码**。您可以通过打开应用程序找到它：
+
+1. 在标签栏上，选择**我**。
+2. 选择右上角的**⚙️（齿轮）**图标。
+3. 点击**账户与安全**。
+4. 底部将显示**用户代码**；您在设置此集成时需要它。
+
+
+:::note 配置
+此集成可通过 UI 配置。前往 **设置 > 设备与服务** 添加。
+:::
+
+### 扫描二维码
+
+在智能生活应用程序中扫描二维码：
+1. 打开智能生活应用程序
+2. 点击**+**按钮或**添加设备**
+3. 选择**扫描**或查找二维码扫描器选项
+4. 扫描 Home Assistant 屏幕上显示的二维码
+
+通过智能生活或涂鸦智能应用程序向您的涂鸦账户添加新设备后，您需要在 Home Assistant 中重新加载涂鸦集成以显示新设备：
+
+1. 前往 **[设置 > 设备与服务](https://my.home-assistant.io/redirect/integrations/)**
+2. 找到涂鸦集成
+3. 点击三点菜单
+4. 选择**重新加载**
+
+## 场景
+
+涂鸦在其应用程序中支持场景。这些允许触发各种设备的一些更复杂的模式，如灯光变换效果。在涂鸦应用程序中创建的场景将在集成下次更新时自动出现在 Home Assistant 的场景列表中。
+
+## 故障排除
+
+### 不支持的设备或缺少设备功能
+
+此集成依赖于[涂鸦提供的官方 Python SDK](https://github.com/tuya/tuya-device-sharing-sdk)，该 SDK 不暴露 SmartLife 中可用的所有功能。
+
+SDK 提供的数据点在 Home Assistant 设备诊断 JSON 文件中可见，位于 `status`、`status_range` 和 `function` 键下：
+
+1. 前往 **[设置 > 设备与服务](https://my.home-assistant.io/redirect/integrations/)**
+2. 找到涂鸦集成
+3. 选择设备
+4. 在设备信息下，点击三点菜单
+5. 选择**下载诊断**
+6. 打开诊断文件，手动检查 `status`、`status_range` 和 `function` 键
+
+如果 `status`、`status_range` 和 `function` 都为空，则只有涂鸦内声明的场景（如果有）将在 Home Assistant 中可用。
+
+### 集成每次重新加载后需要重新认证
+
+当涂鸦更新 iot.tuya.com 的条款和条件时，集成将需要重复认证。
+
+要解决此问题：
+
+1. 登录 [iot.tuya.com](https://iot.tuya.com)，并接受条款和条件。
+2. 重启 Home Assistant。
+3. 重新配置涂鸦集成。

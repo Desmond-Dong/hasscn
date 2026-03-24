@@ -1,0 +1,25 @@
+---
+title: Diagnostics
+description: 诊断集成可以提供集成和设备信息以用于调试目的。
+ha_category:
+  - Other
+ha_release: 2022.2
+ha_quality_scale: internal
+ha_domain: diagnostics
+ha_codeowners:
+  - '@home-assistant/core'
+ha_integration_type: system
+---
+
+**Diagnostics** 集成提供了一种从设备或集成下载诊断数据以在问题报告中分享的方法。在报告问题时分享诊断数据可以让开发者更快地诊断和修复您报告的问题。
+
+<p class='img'>
+<img class="no-shadow" src='/home-assistant/images/blog/2022-02/diagnostics.png' alt='Sonos 设备页面中“下载诊断”按钮的截图'>
+设备页面上下载诊断按钮的截图
+</p>
+
+诊断数据由集成提供，可以在设备页面和集成仪表板上下载为文本文件。
+
+集成需要从诊断数据中删除敏感信息，您可以在发送到公共问题之前打开文本文件进行检查。
+
+诊断集成默认启用，无需任何操作来启用它。但是，并非所有集成都提供下载诊断数据的功能。

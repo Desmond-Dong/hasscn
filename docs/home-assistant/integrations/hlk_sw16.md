@@ -1,0 +1,23 @@
+---
+title: Hi-Link HLK-SW16
+description: 关于如何将 HLK-SW16 继电器集成到 Home Assistant 的说明。
+ha_category:
+  - DIY
+  - Switch
+ha_release: 0.84
+ha_iot_class: Local Push
+ha_codeowners:
+  - '@jameshilliard'
+ha_domain: hlk_sw16
+ha_config_flow: true
+ha_platforms:
+  - switch
+ha_integration_type: device
+---
+
+The HLK-SW16 by [Hi-Link](http://www.hlktech.net/) is a simple networkable 16 port relay device.
+
+
+:::note 配置
+此集成可通过 UI 配置。前往 **设置 > 设备与服务** 添加。
+:::

@@ -1,0 +1,271 @@
+---
+title: ecobee
+description: 关于如何在 Home Assistant 中集成 ecobee 恒温器和传感器的说明。
+ha_category:
+  - Binary sensor
+  - Climate
+  - Humidifier
+  - Notifications
+  - Number
+  - Sensor
+  - Switch
+  - Weather
+ha_release: 0.9
+ha_iot_class: Cloud Polling
+ha_config_flow: true
+ha_domain: ecobee
+ha_platforms:
+  - binary_sensor
+  - climate
+  - humidifier
+  - notify
+  - number
+  - sensor
+  - switch
+  - weather
+ha_zeroconf: true
+ha_homekit: true
+ha_integration_type: hub
+---
+
+**ecobee** integration 允许您控制和查看来自 [ecobee](https://ecobee.com) 恒温器的传感器数据。
+
+## 前提步骤
+
+您需要从 ecobee 的[开发者网站](https://www.ecobee.com/developers/)获取 API 密钥才能使用此集成。要获取密钥，您的恒温器必须在 ecobee 网站上注册（您在安装恒温器时可能已经完成了此操作）。完成这些后，请执行以下步骤。
+
+:::warning
+自 2024 年 3 月 28 日起，ecobee 不再接受新的开发者订阅，现有的开发者账户也无法创建新的 API 密钥。何时会再次允许尚无 ETA。现有的 API 密钥将继续运行。
+
+在此期间，您可以使用 [HomeKit Device](/home-assistant/integrations/homekit_controller/) 集成作为功能完整的替代方案。
+
+:::
+1. 在[开发者网站](https://www.ecobee.com/home/developer/loginDeveloper.jsp)上点击 **Become a developer** 链接。
+2. 使用您的 ecobee 凭据登录。（确保已禁用多重身份验证以满足开发者登录表单的限制。如果您已启用 MFA，Web 门户不支持禁用它。iOS 和 Android 应用程序可以在 Account > Account Security 下禁用。成为开发者后您可以重新启用 MFA。）
+3. 接受 SDK 协议。
+4. 填写字段。
+5. 点击 **save**。
+
+登录常规消费者门户，点击右上角的溢出菜单按钮。您将看到一个名为 **Developer** 的新选项。现在可以创建应用程序以与 Home Assistant 集成。
+
+1. 从右上角的汉堡菜单中选择 **Developer** 选项。
+2. 选择 **Create New**。
+3. 完成右侧的表单。（这两个字段都不会被 Home Assistant 引用）
+    - Name：必须在所有 ecobee 用户中唯一。
+    - Summary：不需要唯一。
+4. 点击 *Authorization method* 并选择 **ecobee PIN**。
+5. 点击 **Create**。
+
+您的新应用程序现在将显示在左侧。点击应用程序后，API 密钥将显示在右侧。复制此密钥并在下面的配置部分中使用。点击 **X** 关闭 Developer 部分。
+
+## 配置
+
+1. 在 [**设置** > **设备与服务**](https://my.home-assistant.io/redirect/integrations/) 菜单中，点击 **+**，然后在弹出菜单中选择 "ecobee"。
+2. 在弹出框中，输入您从 ecobee [开发者门户](https://www.ecobee.com/developers)获取的 API 密钥。
+3. 在下一个弹出框中，您将看到一个以破折号分隔的唯一 8 字符代码（格式：XXXX-XXXX），您需要在 [ecobee 消费者门户](https://www.ecobee.com/consumerportal/index.html)中授权它。您可以通过登录，从汉堡菜单中选择 **My Apps**，点击左侧的 **Add Application**，输入来自 Home Assistant 的 PIN 代码，点击 **Validate**，然后点击右下角的 **Add Application** 来完成此操作。
+4. 在 ecobee 授权应用程序后，返回 Home Assistant 并点击 **Submit**。如果授权成功，将创建一个配置条目，您的恒温器、通风设备和传感器将在 Home Assistant 中可用。
+
+## 手动配置
+
+如果您更喜欢在 "`configuration.yaml`" 文件中设置集成，请按如下方式添加您的 API 密钥（和可选参数）（但是，您仍必须通过 **集成** 面板完成授权）。
+:::tip
+更改配置后需要重启 Home Assistant。
+:::
+
+```yaml
+# 示例 configuration.yaml 条目
+ecobee:
+  api_key: YOUR_API_KEY
+```
+
+```yaml
+api_key:
+  description: 您的 ecobee API 密钥。这只在集成初始设置时需要。注册后可以将其删除。如果您在 ecobee 门户中撤销了密钥，您需要删除 **集成** 面板中现有的 `ecobee` 配置，更新此项，然后再次配置集成。
+  required: false
+  type: string
+```
+
+<p class='img'>
+  <img src='/home-assistant/images/screenshots/ecobee-sensor-badges.png' />
+  <img src='/home-assistant/images/screenshots/ecobee-thermostat-card.png' />
+</p>
+
+您必须[重启 Home Assistant](/home-assistant/docs/configuration/#reloading-changes)才能使更改生效。重启后，转到 [**设置** > **设备与服务**](https://my.home-assistant.io/redirect/integrations/) 并选择该集成。然后，选择 **配置** 并继续按照上述 **自动配置** 授权应用程序，从第 2 步开始。
+
+## 通知
+
+`ecobee` 通知平台允许您向 ecobee 恒温器发送通知。对于发现的每个恒温器，将添加一个 `notify` 实体。
+
+示例动作：
+
+```yaml
+action: notify.send_message
+data:
+  message: "你好，这是你的恒温器。"
+  entity_id: notify.ecobee
+```
+
+要使用通知，请参阅[自动化入门页面](/home-assistant/getting-started/automation/)。
+
+## 恒温器
+
+### 概念
+
+ecobee 恒温器支持以下关键概念。
+
+_目标温度_ 是设备试图达到的温度。目标温度由当前活动的气候确定，或者可能被保持设置覆盖。当恒温器不处于自动模式时，只有一个目标温度。当恒温器处于自动 HVAC 模式时，有一对目标温度：较低的目标温度确定最低所需温度，而较高的目标温度确定最高所需温度（恒温器将在制热和制冷之间切换以将温度保持在这些限制内）。
+
+_气候_ 是恒温器旨在达到的预定义或用户定义的预设集合。ecobee 恒温器提供三种预定义气候：Home、Away 和 Sleep。Ecobee 将这些称为_舒适设置_。用户可以定义额外的气候。
+
+_预设_ 是对当前活动气候中定义的目标温度的覆盖。预设模式中目标的温度可能是明确设置的（温度预设），可能来自参考气候（home、away、sleep 等），也可能来自恒温器定义的假期。所有保持都是临时的。温度和气候保持在其程序中定义的下一个气候转换时过期。假期保持从定义的假期期间开始时开始，在假期期间结束时过期。
+
+当处于_外出预设_时，目标温度被外出气候定义的目标温度永久覆盖。外出预设是模拟假期模式的简单方法。
+
+设备的 _HVAC 模式_ 是 ecobee 恒温器提供的当前活动操作模式：制热、制冷、自动和关闭。
+
+_目标湿度_ 是当连接加湿器并处于手动控制或"开"模式时恒温器的湿度设定点。
+
+在配置了辅助加热的恒温器上，将出现一个 aux_heat_only 开关。当此开关打开时，ecobee 恒温器 HVAC 模式将更改为"Aux"。但是，Home Assistant 将反映恒温器处于"制热"模式。关闭 aux_heat_only 开关将使恒温器恢复到上次活动的 HVAC 模式（制热、自动等）。
+
+### 属性
+
+ecobee 气候实体有一些额外的属性来表示恒温器的状态。
+
+| 名称                | 描述                                                                                                                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fan`               | 风扇当前是开还是关：`on` / `off`。                                                                                                                                                  |
+| `climate_mode`      | 这是活动的气候模式，或者如果没有覆盖活动则将是活动的气候模式。                                                                                                             |
+| `equipment_running` | 这是当前运行的设备的逗号分隔列表。                                                                                                                            |
+| `fan_min_on_time`   | 风扇每小时运行的最短时间（分钟）。这由最小风扇运行时间设置确定，可以在 ecobee 应用程序或恒温器本身上更改。 |
+
+
+## 通风设备
+
+### 概念
+
+ecobee 恒温器支持添加附件。如果您有空气交换器（通风设备、HRV 或 ERV），您可以通过最小在家时间和最小外出时间数字来控制它。
+
+### 开关
+
+`ventilator 20 min` 开关的行为类似于物理 ecobee 设备中的开关。打开时，通风设备运行 20 分钟。关闭时，它停止通风设备。
+
+*注意：这不与 `ventilator min time` 交互*
+
+### 数字
+
+| 名称                          | 描述                                                                                                                                                                                                                        |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ventilator_min_on_time_home` | 您在家时通风设备每小时运行的最短时间（分钟）。这由最小通风设备运行时间设置确定，可以在 ecobee 应用程序或恒温器本身上更改。 |
+| `ventilator_min_on_time_away` | 您外出时通风设备每小时运行的最短时间（分钟）。这由最小通风设备运行时间设置确定，可以在 ecobee 应用程序或恒温器本身上更改。 |
+
+
+## 辅助加热
+
+### 概念
+
+当 HVAC 系统配备热泵时，通常包含某种形式的辅助加热。这也可能被称为"紧急加热"。您可以控制恒温器是否仅请求辅助加热，并调整热泵压缩机不再使用的室外温度，例如，响应于混合系统中的公用事业成本或太阳能发电。混合系统指的是不使用电力作为辅助加热的系统（天然气、丙烷等）。这更多适用于空气源热泵而不是地热。
+
+### 开关
+
+提供 `Auxiliary heat only` 开关以禁用压缩机（热泵）的使用，仅使用辅助加热器。请谨慎使用此设置，因为使用效率较低的加热源可能会产生额外的公用事业费用。
+
+### 数字
+
+`Compressor minimum temperature` 数字表示压缩机（热泵）不运行的室外温度。这以您在 Home Assistant 中选择的温度单位表示；但是，ecobee 仅允许以 5 华氏度为增量进行配置。这也显示在恒温器用户界面中。当室外温度低于此值时，将仅使用辅助加热。请谨慎使用此设置，因为使用效率较低的加热源可能会产生额外的公用事业费用。
+
+在调整此值之前检查您的热泵用户手册；不要将其调整到低于热泵的额定最低工作温度。**未能遵守额定最低工作温度可能会导致系统损坏**
+
+## 动作
+
+除了 Home Assistant [Climate](/home-assistant/integrations/climate/) 集成提供的标准动作外，ecobee 集成还提供以下额外动作：
+
+- `ecobee.create_vacation`
+- `ecobee.delete_vacation`
+- `ecobee.resume_program`
+- `ecobee.set_fan_min_on_time`
+- `ecobee.set_dst_mode`
+- `ecobee.set_mic_mode`
+- `ecobee.set_occupancy_modes`
+- `ecobee.set_sensors_in_climate`
+
+### 动作：创建假期
+
+`ecobee.create_vacation` 动作允许您在选定的 ecobee 恒温器上创建假期。
+
+| 数据属性 | 可选 | 描述                                                                                          |
+| ---------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `entity_id`            | 否       | 要在其上创建假期的 ecobee 恒温器                                                    |
+| `vacation_name`        | 否       | 要创建的假期名称。在恒温器上必须唯一                                     |
+| `cool_temp`            | 否       | 假期期间的制冷温度                                                              |
+| `heat_temp`            | 否       | 假期期间的制热温度                                                              |
+| `start_date`           | 是      | 假期开始的日期，格式为 YYYY-MM-DD                                                        |
+| `start_time`           | 是      | 假期开始的时间，本地时区。必须为 24 小时格式 (HH:MM:SS)                |
+| `end_date`             | 是      | 假期结束的日期，格式为 YYYY-MM-DD（如果未提供，则为从现在起 14 天）                       |
+| `end_time`             | 是      | 假期结束的时间，本地时区。必须为 24 小时格式 (HH:MM:SS)                  |
+| `fan_mode`             | 是      | 假期期间恒温器的风扇模式（auto 或 on）（如果未提供则为 auto）                   |
+| `fan_min_on_time`      | 是      | 假期期间每小时运行风扇的最小分钟数（0 到 60）（如果未提供则为 0） |
+
+### 动作：删除假期
+
+`ecobee.delete_vacation` 动作允许您在选定的 ecobee 恒温器上删除假期。
+
+| 数据属性 | 可选 | 描述                                       |
+| ---------------------- | -------- | ------------------------------------------------- |
+| `entity_id`            | 否       | 要在其上删除假期的 ecobee 恒温器 |
+| `vacation_name`        | 否       | 要删除的假期名称                    |
+
+### 动作：恢复程序
+
+`ecobee.resume_program` 动作允许您恢复预设的标准活动日程。这将取消任何手动温度设置或选定的预设。这不会取消假期事件，请使用 `delete_vacation`。
+
+| 数据属性 | 可选 | 描述                                                                                                                |
+| ---------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `entity_id`            | 是      | 指向要控制的气候设备 `entity_id` 的字符串或字符串列表。省略以针对所有 ecobee 恒温器。 |
+| `resume_all`           | 否       | `true` 将恢复标准日程。`false` 将仅取消最新的活动事件，这不常用。       |
+
+### 动作：设置风扇最短运行时间
+
+`ecobee.set_fan_min_on_time` 动作允许您设置风扇每小时运行的最短时间。
+
+| 数据属性 | 可选 | 描述                                                                                                                 |
+| ---------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `entity_id`            | 是      | 指向要控制的气候设备 `entity_id` 的字符串或字符串列表。省略以针对所有 ecobee 恒温器。 |
+| `fan_min_on_time`      | 否       | 整数（例如  5）                                                                                                          |
+
+### 动作：设置夏令时模式
+
+`ecobee.set_dst_mode` 动作允许您启用/禁用自动夏令时。
+
+| 数据属性 | 可选 | 描述                                                                                          |
+| ---------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `entity_id`            | 是      | 要在其上设置夏令时模式的 ecobee 恒温器。省略以针对所有 ecobee 恒温器。 |
+| `dst_enabled`          | 否       | true 或 false                                                                                        |
+
+### 动作：设置麦克风模式
+
+`ecobee.set_mic_mode` 动作允许您启用/禁用 Alexa 麦克风（仅适用于 ecobee 4）。
+
+| 数据属性 | 可选 | 描述                                                                            |
+| ---------------------- | -------- | -------------------------------------------------------------------------------------- |
+| `entity_id`            | 是      | 要在其上设置麦克风模式的 ecobee 恒温器。省略以针对所有 ecobee 恒温器。 |
+| `mic_enabled`          | 否       | true 或 false                                                                          |
+
+### 动作：设置占用模式
+
+`ecobee.set_occupancy_modes` 动作允许您启用/禁用智能家居/外出和跟随我模式。
+
+| 数据属性 | 可选 | 描述                                                                               |
+| ---------------------- | -------- | ----------------------------------------------------------------------------------------- |
+| `entity_id`            | 是      | 要在其上设置占用模式的 ecobee 恒温器。省略以针对所有 ecobee 恒温器。 |
+| `auto_away`            | 是      | true 或 false                                                                             |
+| `follow_me`            | 是      | true 或 false                                                                             |
+
+### 动作：在气候中设置传感器
+
+`ecobee.set_sensors_in_climate` 动作允许您设置特定气候程序中恒温器上哪些传感器处于活动状态。
+
+| 服务数据属性 | 可选 | 描述                                                                                                                                         |
+| ---------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `entity_id`            | 否       | 要在其上设置活动传感器的 ecobee 恒温器。                                                                                                |
+| `preset_mode`          | 是      | 要设置传感器活动的气候程序名称（默认为当前活动程序）。                                                     |
+| `sensors`              | 否       | 要设置为参与气候的传感器。这是传感器/恒温器的设备 ID。这些可以在 available_sensors 属性中找到。 |
