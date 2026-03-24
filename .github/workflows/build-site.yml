@@ -28,13 +28,22 @@ jobs:
           cache: npm
 
       - name: Clean tracked dependencies
-        run: rm -rf node_modules doc_build
+        run: |
+          rm -rf node_modules doc_build
+          git clean -fdx node_modules || true
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build site
-        run: npm run build
+        run: npx rspress build
+
+      - name: Upload build output artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: doc-build
+          path: doc_build
 
       - name: Publish build output to site-build branch
         uses: peaceiris/actions-gh-pages@v4
