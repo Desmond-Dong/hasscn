@@ -1,0 +1,46 @@
+---
+title: AirGradient 加入 Works with Home Assistant
+description: 他们为该计划带来了室内和室外空气质量监测仪。
+---
+
+<img src='/home-assistant/images/blog/2025-08-airgradient/art.jpg' style='border: 0;box-shadow: none;' alt="AirGradient 加入 Works with Home Assistant">
+
+我们很高兴地宣布，[AirGradient](https://www.airgradient.com/) 是加入快速发展的 [Works With Home Assistant](https://works-with.home-assistant.io/) 计划的最新制造商！他们将空气质量监测仪带到了项目中，有室内和室外两种型号。
+AirGradient 是该计划的第一个合作伙伴，专注于构建先进的室内和室外空气质量监测器。他们还因其强大的技术、对开源的关注以及对世界各地当地空气质量项目的奉献而在我们的社区中广为人知。
+<!--more-->
+
+## 呼吸新鲜空气
+AirGradient 是第一个在泰国境外运营的合作伙伴，他们最初开始制造空气监测器来帮助当地社区。他们积极支持泰国本土以及全球的空气质量改善项目。 AirGradient 捐赠监视器并与各种不同的组织和非政府组织合作，包括 [UNICEF](https://www.airgradient.com/博客/open-source-to-change-the-world/)。这些监测器通常放置在学校中，帮助年轻人更好地了解并努力保护他们的空气质量。
+<p class='img'><img src='/home-assistant/images/blog/2025-08-airgradient/outdoors.webp' style='border: 0;box-shadow: none;' alt="越南户外安装的露天监测仪">越南的露天监测仪</p>
+
+社区是我们与 AirGradient 合作的核心。他们的硬件和软件都是开源的，就像我们自己的一样。此外，他们在集成 Home Assistant 方面发挥了积极作用，将[他们的本地 Wi-Fi 集成](/home-assistant/integrations/airgradient/) 提升到了我们的[集成质量等级](/home-assistant/docs/quality_scale/)，不仅达到了金牌级别，而且达到了白金级别。](/home-assistant/docs/quality_scale/) 与我们所有_Works With_ 合作伙伴一样，设备完全在本地工作，无需云连接。更重要的是，他们真正拥抱智能家居的 DIY 方面，他们的设备可以完全组装或作为自己构建的套件！
+AirGradient 的开放方法甚至扩展到其用户社区收集的数据。虽然完全可选，但用户可以与世界分享他们的空气质量读数（他们[将其可视化为令人惊叹的地图](https://www.airgradient.com/map/?zoom=1\&lat=49.2125578\&long=16.62662018\&org=ag\&meas=rco2)）。每次用户选择分享他们的数据时，这张有用的空气质量地图都会增长，对于温控研究人员、学生或任何关心当地空气质量的人来说，这是一个极好的开放资源。如果您所在的区域是地图上的空白点，那就更有理由购买 AirGradient 户外显示器。
+<img src='/home-assistant/images/blog/2025-08-airgradient/visual-map.webp' style='border: 0;box-shadow: none;' alt="在线 AirGradient 空气质量地图">
+
+每个套件都配有螺丝刀，设计方便维修。传感器坏了？换出来吧需要更新固件吗？自己闪一下吧可持续发展是 Open Home Foundation 的核心指导原则之一，我们喜欢内置的可修复性。AirGradient 还将至少 1% 的年销售额捐赠给非营利组织和社区直接捐赠。事实上，他们要求我们在此博客中加入对我们社区的公开邀请：如果您认为您有一个本地项目可以从开源空气质量监测器中受益，请通过[此链接](https://www.airgradient.com/support/)与我们联系。
+<div class="alert">
+    <p>“我们很高兴加入 Works With Home Assistant 计划，因为它与我们的开源理念完美契合。Home Assistant 代表了我们所信仰的相同价值观 - 本地控制、隐私和社区驱动的创新。我们共同证明开放系统不仅能更好地为用户服务，还能为地球创造更好的结果。”</p>
+<em style="text-align: right; display: block;">- Achim Haug，AirGradient 创始人兼首席执行官</em>
+</div>
+
+## 认证设备
+如果您是[与家庭助理一起工作](https://works-with.home-assistant.io/) 的新手，与某些认证计划不同，它不仅仅是一个徽章。我们在内部严格测试产品并向制造商提供反馈，以确保产品开箱即可轻松使用并提供无缝体验。 Works With 计划由 [开放家庭基金会](https://www.openhomefoundation.org/) 运营，并由 [家庭助理云](/home-assistant/cloud/) 订阅者的支持提供资金。
+AirGradient 已向我们认证了以下设备：  
+- [AirGradient One - 室内空气质量监测仪](https://www.airgradient.com/indoor/)
+- [AirGradient 露天 - 室外空气质量监测仪](https://www.airgradient.com/outdoor/)
+<p class="img"><img src='/home-assistant/images/blog/2025-08-airgradient/kitchen-counter.webp' style='border: 0;box-shadow: none;' alt="放在厨房柜台上的一台 AirGradient One">最后，有一个指标可以准确显示您的晚餐烧焦的程度</p>
+
+当我们谈论与智能家居相关的可持续性时，很容易关注能源管理和减少碳影响。然而，借助 AirGradient，您可以深入了解二氧化碳和其他空气污染物排放的影响，更好地了解您、您的家人和朋友每天呼吸的气体。他们拥有由大气化学家和公共卫生专家组成的内部科学团队，确保监测仪准确无误，并且每个完全组装的监测仪都在专用测试室中进行测试。
+无论您是想了解您的新家具是否会将危险的挥发性有机化合物排放到空气中，还是臭蜡烛是否会加剧过敏，用例都是无穷无尽的。 AirGradient One 还具有内置显示屏，其中包含详细数据和一组 LED，可一目了然地显示总体空气质量。两种设备均可测量二氧化碳、挥发性有机化合物、氮氧化物、颗粒物、温度和湿度。 AirGradient 还在其网站上提供了有用的文档，帮助您了解这些测量值以及它们对您家庭的影响。
+这些设备不仅可以为您提供有关进出家中空气的深入信息，而且还可以解锁强大的自动化功能。我们经常看到这些设备与门窗打开/close传感器、空气净化器、除湿器或空调配合使用，以减少家中宠物或地毯上的颗粒物。
+## 消除误会
+我们很高兴与 AirGradient 合作。他们的使命很重要，他们开放和可持续的做法正是我们所乐见的。像这样的合作伙伴关系只有在 [Home Assistant Cloud](/home-assistant/cloud/) 订阅者的支持下才有可能实现。 Open Home Foundation 的许多人今天都拿起了 AirGradient 监测器并分享我们的空气质量数据，我们希望您能在地图上加入我们！
+## 常见问题解答
+**问：如果我的设备未在“与 Home Assistant 配合使用”下列出，这是否意味着它不受支持？**
+答：不！这只是意味着它没有经过我们团队的测试计划或者不符合计划的要求。它可能运行得很好，但稍后会添加到测试计划中，或者它可能会在我们目前未在该计划下测试的不同连接类型下工作。
+**问：好的，那么 Works With 计划的重点是什么？**
+答：它强调了我们所知道的与家庭助理配合良好的设备以及长期承诺为这些设备提供支持的品牌。认证协议规定，设备必须在家庭助理中具有完整的功能，无需云即可在本地运行，并且将长期持续这样做。
+**问：这些设备是如何测试的？**
+答：此列表中的所有设备均使用标准 HA Green Hub 以及本地 AirGradient 集成和 Wi-Fi 网络进行测试。 HA 将在它们加入您的网络后自动发现它们（按照设备的说明将其添加到 WiFi）。如果您有其他设置，那不是问题，但我们会针对这些设置进行测试，因为它们是我们团队在生态系统中进行认证的最有效方式。
+**问：您会在该计划中添加更多 AirGradient 设备吗？**
+答：为什么不呢！我们很高兴与 AirGradient 团队建立密切的关系，共同开发任何即将发布的版本或添加此处尚未列出的更多产品。

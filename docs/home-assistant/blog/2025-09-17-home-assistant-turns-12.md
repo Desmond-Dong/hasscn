@@ -1,0 +1,93 @@
+---
+title: Home Assistant 12 岁生日快乐！
+description: 今年我们会分享一些来自社区的故事，以及关于我们成长的若干数据。
+---
+
+<img src='/home-assistant/images/blog/2025-09-12th-anniversary/art.webp' style='border: 0;box-shadow: none;' alt="Home Assistant 12th Anniversary">
+
+每年 9 月，我们都会庆祝 Home Assistant 在 2013 年提交第一个 PR 的纪念日——在 12 岁生日这次，我们再次把重心放回社区。上个月，我们征集了“Home Assistant 如何帮助到你”的投稿，今天就会挑选我们最喜欢的一些与大家分享！我们也会回顾过去一年项目中的重要里程碑，这些都离不开大家的贡献，同时还会看看接下来社区会迎来哪些新变化。<!--more-->
+
+## 这是大家共同的努力
+
+当我（Missy Quarry）在 2024 年 2 月加入并担任社区与社交媒体经理时，我对像 Home Assistant 这样规模的开源项目究竟如何管理社区，还很陌生。在过去 18 个月里，我看到来自各行各业的 Home Assistant 社区成员——无论是喜欢 DIY 的折腾党，还是只是想让家里变得更方便一点的人——都在以自己的方式做出贡献。你们分享自己的故事、激励其他人，也帮助项目不断成长。对于这次 12 周年，我想庆祝这些贡献，不论规模大小、复杂与否。😌
+
+在开始庆祝你们这些精彩贡献，以及它们如何塑造 Open Home Foundation 所管理的各个项目之前，我先给你们带来几个生日礼物。🎁
+
+首先，我非常高兴地分享我们的[全新社区网站](/home-assistant/community)！目前它还是一个简洁的信息中心，方便你快速找到社区相关内容，但未来几个月里我们还会持续扩展。你会在这里看到官方社区平台链接、活动信息以及 meetup 详情，包括作为主办方如何报销部分费用。未来我还希望加入我们已知的地区性社区链接，并展示更多像今天这样要分享的故事。
+
+*觉得这个新页面还少了点什么？欢迎[告诉我](mailto:community@openhomefoundation.org)！*
+
+接下来，我们一直在努力让更多开发过程公开进行。去年 9 月，我重新设计了 Discord 服务器，并把 *Developer* 分类设成需要角色才能看到。这虽然带来了一些管理上的便利，但也让公开开发变得更困难，因为频道被隐藏在角色之后，所以我们现在要做出调整。
+
+从本周开始，Developer 分类对所有成员都变成了**只读**。想提前窥探 Home Assistant 的未来？可以前往 [#projects 频道](https://discord.com/channels/330944238910963714/1346914401508392980)，看看贡献者们都在讨论什么！想加入进来，贡献你的反馈或技能？我已经为这个频道创建了[一条说明帖](https://discord.com/channels/330944238910963714/1346952081881436331)，解释如何给自己分配 Developer 或 Designer 角色，并解锁在各个主题帖中发言的权限。
+
+现在，让我们来看看这些投稿故事吧……🤩
+
+## 幸福结局
+
+在我看来，Home Assistant 最棒的一点就是它的灵活性——你可以把各种各样的设备接进来，并利用这些数据打造真正符合你家需求的体验。这也正是我想听听社区大家如何在自己家中使用它来改善生活的原因。以下是我最喜欢的投稿，希望其中某一个能启发你的下一个项目。✨
+
+- [一个提升 Home Approval Factor 的咖啡自动化](https://jordan.roher.me/projects/home-automation/)。☕️ Jordan 做了一个晨间自动化，避免咖啡研磨机把他一大早的心情也一起磨掉。
+- u/katschung 通过[制作一个复古游戏风格的平面图仪表盘](https://www.reddit.com/r/homeassistant/comments/1hrkku1/pokemon_style_floorplan/)，成功让女友完全接受了 Home Assistant。🕹️
+- Sythsaz 用 Home Assistant 来确保他们家的狗狗按时吃饭。🐾 “*我设法做到了这样一套流程：狗粮会自动发邮件给兽医，邮件回复内容再自动写进我的日历，这样我就知道一袋狗粮能吃多久，还会把收据保存到 Google Drive。*”
+- 受到 [PowerDisplayESPHome](https://github.com/johannyren/PowerDisplayESPHome/tree/main) 启发，JannickBlmndl [做了一个 LED 矩阵屏](https://gitlab.com/JannickBlmndl/ESPHome-Dynamic-Prices-LEDMatrix)，帮助家里根据实时能源价格更灵活地用电，从而提升可持续性。📊
+- 澳大利亚墨尔本的 [Tano Spirits](https://www.youtube.com/@TanoSpirits) 使用 Home Assistant 自动化他们的日式烧酎蒸馏厂，灵感则来自新加坡的一家小型酿造公司。🍻
+- 几年前，HillPhantom 觉得 Home Assistant 还没有准备好适配自己的需求。但在过去一年里，他已经把 Ollama 和 Home Assistant Voice Preview Edition 配好了，还制作了如何在 Home Assistant 中自制 [mmWave 雷达传感器](https://www.youtube.com/watch?v=Gb-4l93st8A) 的教程。👋🏻
+- 仅仅几周时间里，Pieter van Kampen 就整合了 190 台支持语音控制的设备以及来自 KNX 家庭系统的 1200 多个活跃实体，并创建了超过 30 个自动化，从割草到根据太阳位置和强度控制遮阳，一应俱全。🪟
+- MB 使用 Zigbee 按钮帮助收集孩子睡眠出现问题后的数据，供医生分析。这为后续诊断提供了非常好的洞察，他们甚至在进一步检查期间也能远程继续使用这一系统。📈
+- Graham Hosking 在我们之前就把自动化玩出了新高度，他做了 [AI automation Suggester](https://github.com/ITSpecialist111/ai_automation_suggester) 和 [automation Inspector](https://github.com/ITSpecialist111/automation-Inspector)。这些工具可以帮你减轻脑力负担，想出新的巧妙自动化！🤖
+- Wessam Lauf 在成功搭好自己的设置后彻底掉进了 Home Assistant 的兔子洞。受到 Graphite 主题启发，再加上一点 LLM vibe-coding，他为自己写了一个主题模板：[Frosted Glass](https://github.com/wessamlauf/homeassistant-frosted-glass-themes)，现在已经可以通过 [HACS](https://www.hacs.xyz/) 获取。🎨
+- 我们很多人都会把家“拟人化”，比如在一天里五样东西同时坏掉时会跟房子说“冷静点”。Biofects 则把这件事认真做了出来，为他的家创建了这个 [Home Assistant 头像](https://streamable.com/hnoc63)（这里还有一个额外附送的噩梦燃料[初版](https://streamable.com/xah2va)）。🫣
+
+## 开发者！👏🏻 开发者！👏🏻 开发者！👏🏻
+
+我们的社区当然不只有开发者，但如果没有一个充满活力且积极投入的开发者社区，我们也不可能成为 GitHub 上[最大的开源项目](https://github.blog/news-insights/octoverse/octoverse-2024/)之一。这艘船很大程度上正是靠他们的贡献才能持续航行，我们也由衷感谢他们所付出的一切。
+
+也正因如此，当基金会开放新职位时，我们非常希望能采访社区成员。我们已经聘用了多位来自社区的成员，比如 [Joostlek](https://github.com/joostlek)（设计了新的[integrations Quality Scale](https://developers.home-assistant.io/docs/core/integrations-quality-scale/)，并帮助新集成进入核心）、[Timo](https://github.com/TimoPtr)（我们首位 Android 开发者，专注于[打磨 Android 应用](/home-assistant/blog/2025/07/23/companion-app-for-android/)）、以及 [Maxim](https://github.com/maximmaxim345)（来自 Music Assistant 社区的优秀开发者，同时参与 Music Assistant 和 ESPHome，也是我们团队最新成员之一）。他们现在在基金会中的工作方式深受其影响，但真正为他们铺路的，是他们在加入基金会之前作为社区成员所做的贡献。这只是基金会近来若干新成员中的一小部分例子。
+
+（你最近有看过我们的 [jobs 页面](https://jobs.ashbyhq.com/openhomefoundation/) 吗？也许会有你感兴趣的职位 👀）
+
+在社区贡献者以及与 Nabu Casa 共同进行硬件设计的努力下，我们成功推出了几款新的硬件产品。[Home Assistant Voice Preview Edition](/home-assistant/voice-pe/) 让来自世界各地的语言专家参与进来，帮助我们确保语言覆盖达到行业顶尖水平。多亏了贡献者，我们支持希腊语、冰岛语，以及最近新增的爱尔兰语 Gaeilge！😎 上个月发布 [Connect ZWA-2](/home-assistant/connect/zwa-2/) 时，也有社区贡献者帮助我们完成发布准备。真心地说，没有你们的支持与投入，这些都不可能实现。
+
+下面是一些来自 GitHub 贡献者的有趣数据（[核心仓库提交统计](https://github.com/home-assistant/core/graphs/contributors?from=9%2F9%2F2023)）：
+
+- 过去 12 个月（9 月至 8 月）：14,385
+- 再前一个 12 个月：14,503
+
+特别祝贺 [bdraco](https://github.com/bdraco)，就在上周，他的提交数已经超过了 Home Assistant 创始人 [balloob](https://github.com/balloob)，成为提交次数最多的贡献者！
+
+<div class="contain nb">
+    <img src="/home-assistant/images/blog/2025-09-12th-anniversary/contributors.webp" alt="Top 8 contributors of all time for home-assistant/core" style="width:100%;max-width:700px;">
+    home-assistant/core 历史贡献前 8 名 👏🏻
+</div>
+
+这也只是让你窥见维护 Home Assistant 所需大量工作的一个小窗口——我们可不只有 core 这一个仓库，而每一份贡献都非常珍贵。
+
+另外，从社区投稿里还有一个值得荣誉提名的开发者故事——我实在不能把 Joostlek 的（笑话）投稿漏掉。🤣
+
+- 我们自己的“开发者关系主管”（他自称的）Joost Lekkerkerker 表示，Home Assistant 让他不至于流落街头。他刚刚上线了自己的[新博客](https://joostlek.dev/what-is-a-smart-home/)，分享他对智能家居的看法，以及他是如何因为看了我踩坑路径灯的经历，而决定不要去买 Tuya Wi-Fi 灯的。
+
+## 我们衷心感谢
+
+社区是我们工作的核心，也是 Home Assistant 的心脏。正因为你们在意，并愿意投入宝贵时间支持我们的共同成功，我们才能不断前进。无论你是因为想从大科技公司的监控中夺回更多隐私、因为被“把这么多选择整合进一个应用”所吸引，还是因为需要一个系统来追踪自己的可持续生活努力而来到这里——你每天都在支持我们的价值观。感谢你选择了我们，也感谢你为支持基金会和我们维护的项目所做的一切。
+
+特别感谢所有 [Home Assistant Cloud](/home-assistant/cloud/) 订阅者，以及购买过官方 Home Assistant 硬件的每一个人。正是这些支持推动了 Home Assistant（以及 ESPHome、Music Assistant 等许多项目）的全职开发，也是确保这些项目持续获得新功能的最简单方式！
+
+接下来我们还会为你带来更多内容。不久之后，我们计划宣布一个新的周边商店 👕。明年上半年，我会公布 Home Assistant Community Day 2026 的时间。我们也已经在和 Nabu Casa 一起筹备下一次令人兴奋的硬件发布（暂时不剧透……）。此外，还有我们计划参加的行业活动、State of the Open Home，以及更多内容。我很期待在未来 12 个月继续带着大家走过我们已经开始构建的这段旅程，也始终期待迎来又一年精彩的社区贡献。😌
+
+<script>
+    if (!document.cookie.split('; ').find(row => row.startsWith('12th-blog-confetti='))) {
+        const d = new Date();
+        d.setTime(d.getTime() + (24*60*60*1000)); // Once a day only
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = "12th-blog-confetti=1;" + expires + ";path=/";
+
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js';
+        script.onload = () => {
+            // launch confetti. Full screen, bottom anchor
+            confetti({ particleCount: 500, gravity: 1, spread: 120, scalar: 1.5, startVelocity: 150, ticks: 200, angle: 90, origin: { y: 1.4, x: 0.5 }});
+        };
+        document.head.appendChild(script);
+    }
+</script>
