@@ -1,0 +1,205 @@
+---
+title: '语音之年 - 第 4 章：唤醒词'
+description: 使用唤醒词激活你的语音助手，并了解如何创建你自己的唤醒词
+---
+
+<p><img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/social.png' class='no-shadow' /></p>
+
+今年是 Home Assistant 的[语音之年](https://www.home-assistant.io/博客/2022/12/20/year-of-voice/)。我们在 2023 年的目标，是让你可以用自己的语言，通过说话来控制 Home Assistant。
+
+我们带来了一个好消息：唤醒词终于来了！经过 4 个章节之后，我们终于补上了 Home Assistant 语音能力中的最后一块基础拼图。
+
+在[第 1 章](https://www.home-assistant.io/博客/2023/01/26/year-of-the-voice-chapter-1/)中，我们从文本命令开始，比如“打开厨房灯光”和“open garage door”。现在，我们已经[支持 56 种语言](https://ohf-voice.github.io/intents/)，并有 188 位贡献者在帮助翻译常见的智能家居命令，让每个人都能受益。
+
+[第 2 章](https://www.home-assistant.io/博客/2023/04/27/year-of-the-voice-chapter-2/)介绍了语音命令中的音频部分：包括语音转文字和文字转语音。这其中既包含用于最大化隐私保护的本地方案，也包含对 Home Assistant Cloud 的支持，从而带来出色的速度和语言覆盖。最后，在[第 3 章](https://www.home-assistant.io/博客/2023/07/20/year-of-the-voice-chapter-3/)中，我们加入了将 Home Assistant 设为 Android 手机和手表默认助手的能力。
+
+到了第 4 章，我们现在已经把唤醒词处理加入到了 Home Assistant 内部。唤醒词是一类特殊的词语或短语，用来告诉语音助手接下来将要说出一条命令。比如：Hey Google、Hey Siri 或 Alexa。
+
+Home Assistant 的唤醒词能力建立在 David Scripka 创建的新项目 [openWakeWord] 之上。这个项目具备真实世界中的准确率，可以运行在常见硬件上，而且任何人都可以在一小时内、免费地[训练一个属于自己的基础唤醒词模型][own-wake-word]。
+
+如果你今天就想试试唤醒词，请按照我们更新后的指南，来构建[13 美元语音助手][13-教程]。
+
+<lite-youtube videoid="ziebKt4XLZQ" videotitle="在 Home Assistant 中演示 13 美元 ATOM Echo 的唤醒词"></lite-youtube>
+
+<lite-youtube videoid="vQ7Hmeume9g" videotitle="在 Home Assistant 中演示基于 ESPHome 的 3D 打印机器人唤醒词"></lite-youtube>
+
+如果你想观看这篇博客文章对应的视频讲解，包括现场演示，可以查看[我们的直播回放。](https://www.youtube.com/watch?v=YzgYYkOrnhQ)
+
+<!--more-->
+
+## Home Assistant 中的唤醒词
+
+唤醒词很难实现。它们基于 AI，对误触发的容忍空间极小，而且必须运行得非常快：要跟实时进入的音频一样快。你不可能接受一个语音助手在听到唤醒词 5 秒后才开始监听后续命令。语音卫星硬件通常并没有很强的算力，所以唤醒词引擎需要硬件专家来优化模型，让它们运行顺畅。
+
+我们不想把自己限制在单一类型的硬件上，所以决定换一种思路：把唤醒词检测放到 Home Assistant 内部完成。语音卫星设备会持续采样你房间中的当前音频，检测是否存在语音。当它检测到语音后，就会把音频发送到 Home Assistant，由 Home Assistant 检查是否说出了唤醒词，并处理后续命令。
+
+<p class='img'>
+<img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/wake-word-architecture.png'>
+唤醒词架构概览
+</p>
+
+这种方式的优点是，任何能够串流音频的设备都可以变成语音卫星，即使它本身没有足够性能在本地完成唤醒词检测也没关系。这也让我们的开发者社区可以更轻松地尝试新的唤醒词模型，因为他们无需先把模型缩小到足以运行在低功耗语音卫星设备上的程度。
+
+如果你想亲自试试，请按照我们更新后的教程来[创建你自己的 13 美元语音助手][13-教程]。
+
+<lite-youtube videoid="ziebKt4XLZQ" videotitle="在 Home Assistant 中演示 13 美元 ATOM Echo 的唤醒词"></lite-youtube>
+
+这种方式当然也有缺点。第一个问题是采集到的音频质量并不一致。带有多个麦克风和音频处理芯片的免提扬声器，能把人声采集得很干净。那种只有一个麦克风、而且没有后处理的设备呢？效果就没那么好了。我们会通过 Home Assistant 内部的音频后处理来弥补较差的音频质量，同时你也可以使用更强的语音转文字模型来提升准确率，比如 Home Assistant Cloud 附带的那个模型。
+
+另一个缺点是，每个语音卫星在串流音频时，都会持续占用 Home Assistant 内部的资源。按照我们当前的方法，用户可以在不压垮树莓派 4 的前提下运行 5 个语音卫星（假设所有卫星都同时在串流）。为了进一步扩展，我们已经更新了 [Wyoming 协议][wyoming]，让你可以把唤醒词检测运行在外部服务器上。
+
+_Wyoming 是我们的协议，用来让语音助手的某些部分运行在其他程序和/或其他计算机上。_
+
+<p class='img'>
+<img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/pick-wake-word.png'>
+你可以为每个已配置的语音助手选择要监听的唤醒词
+</p>
+
+## openWakeWord
+
+对于内置唤醒词，我们依赖 David Scripka 开发的 [openWakeWord]。它是一个技术上的杰作，创建时围绕 4 个目标：
+
+- 足够快，能用于真实世界
+- 足够准确，能用于真实世界
+- 具有简单的模型架构和推理流程
+- 训练新模型时几乎不需要手动收集数据
+
+为了实现这些目标，openWakeWord 构建在一个由 Google 训练的开源音频嵌入模型之上，并使用我们的文字转语音系统 [Piper] 进行微调。Piper 被用来为每个唤醒词生成成千上万段音频片段，并通过独特的方法制造出无穷无尽、风格各异的说话者变化。随后，这些音频会被增强处理，让它们听起来像是在不同类型的房间中、以特定距离对着麦克风说出，并带有不同的语速。最后，这些片段还会与音乐、环境音和对话等背景噪声混合，再送入训练流程中，生成最终的唤醒词模型。
+
+<p class='img'>
+<img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/open-wake-word-architecture.png'>
+openWakeWord 训练流程概览。
+</p>
+
+Home Assistant 以附加组件的形式运行 openWakeWord，并默认提供多种唤醒词模型，其中包括我们的 “Okay Nabu” 模型。点击下面的按钮即可安装它。
+
+安装完成后，这个附加组件会通过 Wyoming 集成被自动发现。
+
+openWakeWord 目前只支持英语唤醒词。这是因为我们缺少其他语言、并且包含大量不同说话者的模型。一旦每种语言都有更多多说话者模型可用，就可以为其他语言训练出类似模型。
+
+_如果你没有运行 Home Assistant OS，openWakeWord 也提供了 [Docker 容器](https://github.com/rhasspy/wyoming-openwakeword#Docker-image)。容器运行后，你需要添加 Wyoming 集成，并把它指向对应的 IP 地址和端口（通常是 10400）。_
+
+## 创建你自己的唤醒词
+
+openWakeWord 的独特之处，在于它可以用 Piper 生成的模拟语音片段，对 Google 基于真实人声片段训练出来的模型进行微调。这意味着，即使不从真人那里收集样本，你也可以创建自己的唤醒词（当然，真实样本仍然可以进一步提升效果）。
+
+David 创建了一个 Google Colab 笔记本，用来生成你自己的 openWakeWord 模型。输入你想要的唤醒词，大约一个小时后，你就能得到自己的唤醒词模型（使用的是所有 Google Colab 用户都可免费使用的计算资源）。
+
+如果你想开始，请查看我们的新教程：[“创建你自己的唤醒词”][own-wake-word]。
+
+使用这个笔记本生成的模型会有相当不错的表现，但不会像 Home Assistant 自带的那些模型那样优秀，因为后者经过了大量而深入的训练。
+
+<p class='img'>
+<img src="/home-assistant/images/assist/wake_word_enter_target_word.png">
+唤醒词生成笔记本截图
+</p>
+
+## 其他唤醒词引擎
+
+在 Home Assistant 中，我们提供默认方案，但也允许你配置语音助手的每一个组成部分。唤醒词也不例外。
+
+唤醒词引擎既可以通过添加为一个集成来接入 Home Assistant，也可以作为独立程序运行，并通过[Wyoming 协议][wyoming]与 Home Assistant 通信。
+
+<p class='img'>
+<img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/wake-word-integration.png'>
+唤醒词如何集成进 Home Assistant
+</p>
+
+举个例子，我们也提供了 Porcupine（v1）唤醒词引擎。它支持 29 个唤醒词，涵盖英语、法语、西班牙语和德语，包括 Computer、Framboise、Manzana 和 Stachelschwein。
+
+## 重用与再利用：创建语音卫星的不同方式
+
+我们构建语音助手时，始终围绕 Open Home 愿景：一个重视隐私、选择权和可持续性的智能家居。在可持续性相关讨论中，经常被提到的两个词就是重用和再利用。
+
+由于语音卫星只负责采集音频，所以你“旧科技”抽屉里许多闲置设备，都可以获得新的生命与用途，成为 Home Assistant 的语音卫星。
+
+如果你通过 USB 采集音频，我们建议使用 USB 免提扬声器，因为它们内置音频处理芯片，能够清理音频并增强人声。它们通常还带有扬声器，外形上也很符合人们对语音卫星的想象。在我们的测试中，[Anker PowerConf S330] 的表现非常出色。不过，在接入 Home Assistant 前，它需要先进行一次固件更新。
+
+_一些 USB 免提扬声器可能需要配合带供电的 USB 集线器，因为树莓派的 USB 端口供电能力有限。_
+
+## 将 Home Assistant 本机变成语音卫星
+
+你可以把运行 Home Assistant 的设备配置为采集音频，并将其变成一个语音助手。要做到这一点，你需要接入一个 USB 麦克风或免提扬声器，并配置 Assist microphone 附加组件。你的 Home Assistant 设备可能需要重启之后，麦克风才能正常使用。
+
+<p class='img'>
+<img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/assist-microphone-addon.png'>
+搭配免提扬声器的 Home Assistant Blue
+</p>
+
+## 使用 ESPHome，让任意 ESP32 变成语音卫星
+
+[ESPHome] 是我们的固件方案，让你可以轻松为智能家居创建各种设备。在语音之年 - 第 2 章中，我们已经为 ESPHome 加入了支持，让用户按下按钮时可以发送语音命令。
+
+今天，这项支持又进一步扩展，现在任何带有 i2s 麦克风的 ESP32 设备，都可以成为 Home Assistant 的语音卫星。
+
+<p class='img'>
+<img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/ESP32-breadboard.jpeg'>
+面包板上的语音助手。
+</p>
+
+推荐配件：
+
+- 麦克风：[M5Stack PDM MEMS Microphone Unit (SPM1423)](https://shop.m5stack.com/products/pdm-microphone-unit-spm1423) 或 [INMP441 Omnidirectional i2s microphone](https://www.amazon.com/dp/B0821521CV)
+- DAC/Amp：[MAX98357 I2S 3W Class D Amp DAC](https://www.aliexpress.us/item/3256804094226058.html)
+
+[示例配置](https://github.com/esphome/firmware/blob/main/voice-assistant/m5stack-atom-echo.yaml)
+
+_这种方法要求你具备一些配置 ESPHome 设备的基础经验。_
+
+## 让任意旧树莓派变成语音卫星
+
+我们已经提供了 [homeassistant-satellite](https://github.com/synesthesiam/homeassistant-satellite)，你可以把 USB 麦克风或免提扬声器接到一台旧树莓派，或者任意其他 Linux 计算机上，然后把它变成 Home Assistant 的语音卫星。
+
+<lite-youtube videoid="JeyZ4HQARMc" videotitle="在 Home Assistant 中演示树莓派和自定义 ESP32 开发板的唤醒词"></lite-youtube>
+
+_虽然任何 Linux 计算机都可以使用，但我们更建议选择基于 ARM 的处理器，因为它们功耗要低得多。_
+
+_这种方法要求你知道如何在 Linux 系统上安装应用程序。_
+
+## 面向研究人员的语音办公时间
+
+我们希望 Home Assistant 能成为开发新型唤醒词、语音转文字和文字转语音引擎的研究人员的平台。接入 Home Assistant 后，你就可以把自己的模型放到真实世界场景中的语音助手里测试。Home Assistant 社区热爱新技术，也非常乐于尝试并提供反馈。
+
+各种引擎都可以通过[Wyoming 协议][wyoming]接入 Home Assistant 的语音流水线。Wyoming 协议虽然小巧，但对第一次接入的开发者来说，正确实现它仍然会有些棘手。如果你正是这样的人，欢迎通过 [voice@nabucasa.com](mailto:voice@nabucasa.com) 联系我们，我们会帮助你完成集成。
+
+## 接下来会做什么
+
+现在，语音助手各个部分的基础都已经就位，我们接下来要做什么，也就更容易分享了。
+
+我们希望朝着支持人们在其他语音助手上最常使用的那些任务继续前进。这包括支持多个购物清单、计时器，以及天气预报。
+
+为了提升准确率，openWakeWord 支持使用用户通过自己语音卫星录制的音频，对模型进行进一步微调。我们希望让用户能够轻松录下自己的声音，并由 Home Assistant 创建出这个增强版模型。
+
+在语音卫星这一侧，我们会集成更高级的音频处理，以进一步提升唤醒词和语音转文字的准确率。我们还会再次尝试让唤醒词运行在 ESPHome 内部。
+
+这些语音卫星改进会需要更先进的硬件，而我们的目标是 ESP32 S3 Box 3。这是已经停产的 ESP32 S3 Box（以及 lite 版本）的新一代产品。Espressif 告诉我们，它很快就会恢复供货。
+
+如果你已经拥有某个 ESP32 S3 Box 变体，你可以安装[我们的 ESPHome 配置](https://github.com/esphome/firmware/tree/main/voice-assistant)，并随着后续更新持续获得这些改进。
+
+## 这一章到这里！
+
+我们希望你会喜欢这些唤醒词，也希望你会在家里各处部署语音卫星。欢迎告诉我们你的体验，并与我们分享使用感受。
+
+第 5 章见！
+
+## 谢谢你
+
+特别感谢 David Scripka 带来的 openWakeWord。也感谢 Jesse Hills 在 Mike 和我探索唤醒词架构、并帮助 ESPHome 找到定位时给予的耐心与支持。还要感谢 Nabu Casa 所有帮助制作和审核今天内容的同事。
+
+感谢 Home Assistant 社区订阅 [Home Assistant Cloud][nabucasa]，从而支持语音之年，以及 Home Assistant、ESPHome 和其他项目的整体开发。
+
+感谢我们的各语言负责人，把句子支持扩展到了这么多不同语言。
+
+<p class='img'>
+<img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/ha-support.png' alt="感谢你支持 Home Assistant 项目">
+</p>
+
+[wyoming]: https://github.com/rhasspy/wyoming
+[13-教程]: /voice_control/thirteen-usd-voice-remote/
+[openWakeWord]: https://github.com/dscripka/openWakeWord
+[Piper]: https://github.com/rhasspy/piper/
+[own-wake-word]: /voice_control/create_wake_word/
+[my-wake-word-addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=core_openwakeword
+[Anker PowerConf S330]: https://www.amazon.com/dp/B09FJ7LWX4
+[ESPHome]: https://esphome.io
+[nabucasa]: https://www.nabucasa.com
