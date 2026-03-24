@@ -45,14 +45,6 @@ jobs:
           name: doc-build
           path: doc_build
 
-      - name: Setup SSH for Gitee
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
-
-      - name: Add Gitee to known hosts
-        run: ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-
       - name: Publish build output to site-build branch
         uses: peaceiris/actions-gh-pages@v4
         with:
