@@ -45,6 +45,14 @@ jobs:
           name: doc-build
           path: doc_build
 
+      - name: Setup SSH for Gitee
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+
+      - name: Add Gitee to known hosts
+        run: ssh-keyscan gitee.com >> ~/.ssh/known_hosts
+
       - name: Publish build output to site-build branch
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -56,3 +64,16 @@ jobs:
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
           commit_message: 'build: publish latest site output'
+
+      - name: Publish build output to Gitee
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+          external_repository: desmond_GT/website
+          publish_dir: ./doc_build
+          publish_branch: build
+          force_orphan: true
+          enable_jekyll: false
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: 'build: sync latest site output'
