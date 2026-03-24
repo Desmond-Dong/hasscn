@@ -34,6 +34,10 @@ features:
     details: 专为中国用户优化的 Home Assistant OS 版本，享受极速丝滑的体验。
     icon: 🚀
     link: /haoscn
+  - title: 🏠 Home Assistant 文档
+    details: 进入 Home Assistant 中文文档专区，查看安装、入门、集成与进阶使用内容。
+    icon: 🏠
+    link: /home-assistant/index
   - title: 📱 配套应用
     details: 提供 Home Assistant 配套应用文档与使用说明，帮助你更好地配置移动端能力。
     icon: 📱
@@ -50,8 +54,4 @@ features:
     details: 精选高频使用的国内外集成，助您快速连接各类智能设备。
     icon: 🔗
     link: /integrations
-  - title: 🛠️ 国内品牌目录
-    details: 汇总主流国产智能家居品牌，便于查找与对接本地设备。
-    icon: 🏷️
-    link: /brand
 ---

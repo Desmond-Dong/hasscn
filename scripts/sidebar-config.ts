@@ -3,6 +3,8 @@
 
 import type { SidebarGroup } from '@rspress/core';
 
+export { homeAssistantSidebar } from './home-assistant-sidebar';
+
 export const musicAssistantSidebar: SidebarGroup[] = [
   {
     text: 'Music Assistant',

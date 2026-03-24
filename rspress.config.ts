@@ -3,8 +3,11 @@ import { defineConfig } from '@rspress/core';
 import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { analyticsPlugin } from './scripts/analytics-plugin';
+import { globalNav } from './scripts/nav-config';
+import mdiIconPlugin from './scripts/remark-mdi-icon';
 import {
   companionSidebar,
+  homeAssistantSidebar,
   musicAssistantSidebar,
 } from './scripts/sidebar-config';
 
@@ -34,6 +37,13 @@ export default defineConfig({
   description:
     '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版',
 
+  markdown: {
+    remarkPlugins: [mdiIconPlugin],
+    link: {
+      checkDeadLinks: false,
+    },
+  },
+
   plugins: [
     pluginSitemap({
       siteUrl: 'https://www.hasscn.top',
@@ -61,6 +71,13 @@ export default defineConfig({
     html: {
       tags: [
         {
+          tag: 'script',
+          attrs: {
+            src: 'https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js',
+            type: 'module',
+          },
+        },
+        {
           tag: 'link',
           attrs: {
             rel: 'stylesheet',
@@ -77,85 +94,11 @@ export default defineConfig({
     enableAppearanceAnimation: true,
     llmsUI: true,
     outlineTitle: '页面大纲',
-    nav: [
-      {
-        text: '首页',
-        link: '/',
-      },
-      {
-        text: '汉化资源',
-        items: [
-          {
-            text: '官方网页汉化',
-            link: 'https://ha-doc.hasscn.top',
-          },
-          {
-            text: 'HACS 极速版',
-            link: '/hacscn',
-          },
-          {
-            text: 'Home Assistant OS 加载项',
-            link: '/addoncn',
-          },
-          {
-            text: '汉化蓝图',
-            link: '/blueprints',
-          },
-          {
-            text: 'Home Assistant 开发者文档',
-            link: '/developers/',
-          },
-          {
-            text: 'HASS Agent 汉化手册',
-            link: '/hass-agent/',
-          },
-          {
-            text: '其它汉化资源',
-            link: 'https://gitee.com/ha-china/Translated/',
-          },
-        ],
-      },
-      {
-        text: '下载专区',
-        link: '/download',
-      },
-      {
-        text: '快速问答',
-        link: '/QandA',
-      },
-      {
-        text: '测评专区',
-        link: '/evaluation/index',
-      },
-      {
-        text: '支持我',
-        link: '/sponsor',
-      },
-      {
-        text: '关于',
-        items: [
-          {
-            text: '关于本站',
-            link: '/about',
-          },
-          {
-            text: '搜索引擎',
-            link: '/no-baidu',
-          },
-          {
-            text: '重要事件',
-            link: '/MajorEvents',
-          },
-          {
-            text: '服务器状态(China Only)',
-            link: 'https://status.hasscn.top/status/1',
-          },
-        ],
-      },
-    ],
+    nav: globalNav,
 
     // 多侧边栏配置
     sidebar: {
+      ...homeAssistantSidebar,
       '/music-assistant/': musicAssistantSidebar,
       '/companion/': companionSidebar,
     },

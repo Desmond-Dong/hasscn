@@ -1,7 +1,32 @@
-import { Layout } from '@rspress/core/theme-original';
+import { useLocation, useSite } from '@rspress/core/runtime';
+import {
+  type LayoutProps,
+  Layout as OriginalLayout,
+} from '@rspress/core/theme-original';
+import { createElement } from 'react';
+import { globalNav, homeAssistantNav } from '../scripts/nav-config';
 
 // 导出所有核心主题组件
 export * from '@rspress/core/theme-original';
 
-// 导出Layout组件
+function resolveNavByPathname(pathname: string) {
+  if (pathname.startsWith('/home-assistant')) {
+    return homeAssistantNav;
+  }
+
+  return globalNav;
+}
+
+function Layout(props: LayoutProps) {
+  const { pathname } = useLocation();
+  const { site } = useSite();
+
+  site.themeConfig = {
+    ...site.themeConfig,
+    nav: resolveNavByPathname(pathname),
+  };
+
+  return createElement(OriginalLayout, props);
+}
+
 export { Layout };
