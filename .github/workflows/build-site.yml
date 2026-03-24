@@ -1,4 +1,4 @@
-name: Build And Publish Site
+name: Build Site
 
 on:
   push:
@@ -56,24 +56,3 @@ jobs:
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
           commit_message: 'build: publish latest site output'
-
-      - name: Publish build output to Gitee
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
-
-      - name: Sync build output to Gitee build branch
-        run: |
-          ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-          tmp_dir="$(mktemp -d)"
-          cp -R doc_build/. "$tmp_dir/"
-          cd "$tmp_dir"
-          git init
-          git checkout -b build
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          touch .nojekyll
-          git add -A
-          git commit -m "build: sync latest site output"
-          git remote add origin git@gitee.com:desmond_GT/website.git
-          git push origin build --force

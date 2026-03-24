@@ -1,0 +1,37 @@
+name: Sync Site Build To Gitee
+
+on:
+  push:
+    branches:
+      - site-build
+  workflow_dispatch:
+
+concurrency:
+  group: sync-gitee-build
+  cancel-in-progress: true
+
+jobs:
+  sync-gitee:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout site-build branch
+        uses: actions/checkout@v4
+        with:
+          ref: site-build
+          fetch-depth: 1
+
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+
+      - name: Sync site-build to Gitee build branch
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan gitee.com >> ~/.ssh/known_hosts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          touch .nojekyll
+          git remote add gitee git@gitee.com:desmond_GT/website.git
+          git push gitee HEAD:build --force
