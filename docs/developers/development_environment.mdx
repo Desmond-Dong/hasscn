@@ -1,0 +1,159 @@
+---
+title: "设置开发环境"
+---
+
+如果你想为 Home Assistant 开发新功能或新集成，需要先配置好开发环境。下面介绍具体的设置方法。
+
+## 使用 Visual Studio Code + devcontainer 进行开发
+
+请先阅读[devcontainer 开发环境](/setup_devcontainer_environment)指南，搭建合适的开发环境。
+
+:::note
+由于此方法依赖容器，你可能会遇到把 USB 设备和适配器（如板载 Bluetooth、Zigbee 等）暴露给容器进行测试的困难。在 Linux 主机上开发时可以做到这一点；但如果你使用 Windows 或 macOS 电脑开发，则无法直接访问这类硬件。
+:::
+
+**先决条件**
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [git](https://git-scm.com/)
+
+**入门：**
+
+1. 前往 [Home Assistant Core 仓库](https://github.com/home-assistant/core)并点击 **Fork**。
+2. 复制你的 fork 仓库 URL。
+3. 在 Visual Studio Code 中使用 “Dev Containers: Clone Repository in Container Volume...” 打开该仓库。
+4. 浏览器或系统可能会提示你用 Visual Studio Code 打开链接，确认即可。
+5. 当 Visual Studio Code 询问是否安装相关远程扩展时，点击“**Install**”。
+6. 开发容器镜像会开始构建，这可能需要几分钟。完成后即可使用开发环境。
+7. 你可以按以下步骤验证开发容器是否已正确设置：
+   1. 在 Visual Studio Code 中打开命令面板：
+      - macOS：`Shift`+`Command`+`P`
+      - Windows/Linux：`Ctrl`+`Shift`+`P`
+   2. 选择 **Tasks: Run Task** -> **Run Home Assistant Core**。
+   3. 终端会打开并开始输出日志。检查是否有错误，并等待输出稳定下来。
+   4. 在浏览器中访问 `http://localhost:8123`，你应该会看到 Home Assistant 的初始设置界面。
+
+以后如果你想重新进入开发环境：打开 Visual Studio Code，点击侧边栏中的 **Remote Explorer**，然后在顶部选择 **Containers**。
+
+**故障排除**
+
+- 如果容器因过期依赖或之前构建的 devcontainer 而无法构建，可能是因为它正在使用仓库的旧分支。请按以下步骤处理：
+- 确保你的 GitHub 分支与 Home Assistant Core 主仓库保持同步。
+- 在终端中运行 `docker buildx prune`，清理本地 Docker 构建缓存。
+- 如果仍然构建失败：
+- 选择“在恢复容器中打开配置”。
+- 打开终端（如果尚未打开）。
+- 运行 `git pull upstream dev`，确保已拉取最新版本。
+- 在 Visual Studio Code 中打开命令面板：`Shift`+`Command`+`P`（macOS）或 `Ctrl`+`Shift`+`P`（Windows/Linux）。
+- 选择“Dev Containers: Rebuild Container”。
+
+### 任务
+
+开发容器自带一些有用的任务来辅助开发。你可以通过 `Shift`+`Command`+`P`（macOS）或 `Ctrl`+`Shift`+`P`（Windows/Linux）打开命令面板，选择 **Tasks: Run Task**，再选中要执行的任务。
+
+如果某个任务当前正在运行（例如文档中的 `Preview`），可以打开命令面板，选择“**Tasks: Restart Running Task**”，然后选中要重启的任务。
+
+### 使用 Visual Studio Code 进行调试
+
+如果开发容器配置正确，它默认就支持调试。所需的调试配置已经准备好，因此按下 F5 就应当启动 Home Assistant。代码中的断点也应能正常命中，调试器会在断点处暂停。
+
+你也可以按照[这里](https://www.home-assistant.io/integrations/debugpy/)描述的流程，调试远程 Home Assistant 实例（例如生产环境实例）。
+
+## 手动环境
+
+_只有在你不想使用 devcontainers 时，才需要下面这些说明。_
+
+你也可以搭建更传统的开发环境。请根据你的操作系统查看对应部分，并确保 Python 版本为 3.14.2 或更高。
+
+:::note
+如果你在未安装正确 Python 版本的情况下继续操作，最终得到的虚拟环境将与 Home Assistant 不兼容。安装正确版本后，请删除 `venv` 目录，并重新执行安装，以便使用正确版本重新创建虚拟环境。
+:::
+
+### 在 Ubuntu/Debian 上开发
+
+安装 Core 依赖。
+
+```shell
+sudo apt-get update
+sudo apt-get install python3-pip python3-dev python3-venv autoconf libssl-dev libxml2-dev libxslt1-dev libjpeg-dev libffi-dev libudev-dev zlib1g-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libswresample-dev libavfilter-dev ffmpeg libgammu-dev build-essential
+```
+
+### 在 Fedora 上开发
+
+安装 Core 依赖。
+
+```shell
+sudo dnf update
+sudo dnf install python3-pip python3-devel python3-virtualenv autoconf openssl-devel libxml2-devel libxslt-devel libjpeg-turbo-devel libffi-devel systemd-devel zlib-devel pkgconf-pkg-config libavformat-free-devel libavcodec-free-devel libavdevice-free-devel libavutil-free-devel libswscale-free-devel ffmpeg-free-devel libavfilter-free-devel ffmpeg-free gcc gcc-c++ cmake
+```
+
+### 在 Arch / Manjaro 上开发
+
+安装 Core 依赖。
+
+```shell
+sudo pacman -Sy base-devel python python-pip python-virtualenv autoconf libxml2 libxslt libjpeg-turbo libffi systemd zlib pkgconf ffmpeg gcc cmake
+```
+
+### 在 Windows 上开发
+
+要在 Windows 上开发，你需要使用 Linux 子系统（WSL）。请按照 [WSL 安装说明](https://learn.microsoft.com/windows/wsl/install)操作，并从 Microsoft Store 安装 Ubuntu。进入 Linux 环境后，再按 Linux 相关说明继续。
+
+在 WSL 中工作时，请确保把所有代码仓库都放在 WSL 文件系统内，以避免文件权限问题。
+
+:::tip
+如果在 WSL 中无法通过 [http://localhost:8123](http://localhost:8123) 打开开发实例，请在 WSL 终端中运行 `ip addr show eth0`，找到 `eth0` 适配器的 `inet` 地址。然后使用该地址（不要包含 CIDR 后缀）访问开发实例。例如，如果 `inet` 显示为 `172.20.37.6/20`，请访问 [http://172.20.37.6:8123](http://172.20.37.6:8123)。
+:::
+
+:::tip
+WSL 的默认网络模式是 NAT。这有一些缺点，例如 Home Assistant 无法发现网络中的设备，也很难从局域网访问 Home Assistant。另一种选择是把网络模式设为“镜像”，这样 WSL 会使用与宿主机相同的网络接口（甚至共享同一个 IP），并带来多播支持等优势，从而可以通过 mDNS 发现设备。
+
+有关启用方法，请参阅 [WSL 镜像模式网络文档](https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking)。
+:::
+
+
+### 在 macOS 上开发
+
+安装 [Homebrew](https://brew.sh/)，然后用它安装依赖：
+
+```shell
+brew install python3 autoconf ffmpeg cmake make
+```
+
+如果你在运行下面的 `script/setup` 脚本时遇到 `cryptography` 的构建问题，请参考 cryptography 文档中的[安装说明](https://cryptography.io/en/latest/installation/#building-cryptography-on-macos)。
+
+### 设置本地存储库
+
+访问 [Home Assistant Core 仓库](https://github.com/home-assistant/core)并点击 **Fork**。
+完成后，使用以下命令设置源码的本地副本：
+
+```shell
+git clone https://github.com/YOUR_GIT_USERNAME/name_of_your_fork
+cd name_of_your_fork
+git remote add upstream https://github.com/home-assistant/core.git
+```
+
+使用仓库提供的 `setup` 脚本安装依赖。
+
+```shell
+script/setup
+```
+
+这会创建一个虚拟环境并安装所有必需依赖。现在你就可以开始了。
+
+每次打开新的终端会话时，都需要先激活虚拟环境：
+
+```shell
+source .venv/bin/activate
+```
+
+之后你可以这样运行 Home Assistant：
+
+```shell
+hass -c config
+```
+
+如果你在 *macOS* 上运行此命令时遇到崩溃（`SIGKILL`），可能是因为缺少 Bluetooth 权限。你可以为终端应用授予该权限来解决此问题（**系统偏好设置** -> **安全和隐私** -> **Bluetooth**）。
+
+Home Assistant 的配置保存在仓库根目录下的 `config` 目录中。

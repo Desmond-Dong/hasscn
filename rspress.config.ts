@@ -7,6 +7,7 @@ import { globalNav } from './scripts/nav-config';
 import mdiIconPlugin from './scripts/remark-mdi-icon';
 import {
   companionSidebar,
+  developersSidebar,
   homeAssistantSidebar,
   musicAssistantSidebar,
 } from './scripts/sidebar-config';
@@ -99,6 +100,7 @@ export default defineConfig({
     // 多侧边栏配置
     sidebar: {
       ...homeAssistantSidebar,
+      '/developers/': developersSidebar,
       '/music-assistant/': musicAssistantSidebar,
       '/companion/': companionSidebar,
     },

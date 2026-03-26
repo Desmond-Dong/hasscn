@@ -3,6 +3,7 @@
 
 import type { SidebarGroup } from '@rspress/core';
 
+export { developersSidebar } from './developers-sidebar';
 export { homeAssistantSidebar } from './home-assistant-sidebar';
 
 export const musicAssistantSidebar: SidebarGroup[] = [
@@ -30,9 +31,18 @@ export const musicAssistantSidebar: SidebarGroup[] = [
     collapsed: true,
     items: [
       { text: '个人资料设置', link: '/music-assistant/settings/profile' },
-      { text: '音乐提供者设置', link: '/music-assistant/settings/music-provider-settings' },
-      { text: '播放器提供者设置', link: '/music-assistant/settings/player-provider' },
-      { text: '单个播放器设置', link: '/music-assistant/settings/individual-player' },
+      {
+        text: '音乐提供者设置',
+        link: '/music-assistant/settings/music-provider-settings',
+      },
+      {
+        text: '播放器提供者设置',
+        link: '/music-assistant/settings/player-provider',
+      },
+      {
+        text: '单个播放器设置',
+        link: '/music-assistant/settings/individual-player',
+      },
       { text: '系统设置', link: '/music-assistant/settings/core' },
       { text: '远程访问', link: '/music-assistant/settings/remote-access' },
       { text: '用户界面', link: '/music-assistant/settings/user-interface' },
@@ -57,36 +67,84 @@ export const musicAssistantSidebar: SidebarGroup[] = [
     collapsed: true,
     items: [
       { text: '概述', link: '/music-assistant/music-providers/index' },
-      { text: 'Apple Music', link: '/music-assistant/music-providers/apple-music' },
-      { text: 'ARD Audiothek', link: '/music-assistant/music-providers/ard-audiothek' },
-      { text: 'Audible 有声书', link: '/music-assistant/music-providers/audible' },
-      { text: 'Audiobookshelf', link: '/music-assistant/music-providers/audiobookshelf' },
-      { text: 'BBC Sounds', link: '/music-assistant/music-providers/bbc-sounds' },
+      {
+        text: 'Apple Music',
+        link: '/music-assistant/music-providers/apple-music',
+      },
+      {
+        text: 'ARD Audiothek',
+        link: '/music-assistant/music-providers/ard-audiothek',
+      },
+      {
+        text: 'Audible 有声书',
+        link: '/music-assistant/music-providers/audible',
+      },
+      {
+        text: 'Audiobookshelf',
+        link: '/music-assistant/music-providers/audiobookshelf',
+      },
+      {
+        text: 'BBC Sounds',
+        link: '/music-assistant/music-providers/bbc-sounds',
+      },
       { text: '内置', link: '/music-assistant/music-providers/builtin' },
       { text: 'Deezer', link: '/music-assistant/music-providers/deezer' },
-      { text: 'DI.fm 网络', link: '/music-assistant/music-providers/digitally-incorporated' },
-      { text: 'gPodder 播客', link: '/music-assistant/music-providers/gpodder' },
-      { text: 'iBroadcast', link: '/music-assistant/music-providers/ibroadcast' },
-      { text: 'Internet Archive', link: '/music-assistant/music-providers/internet-archive' },
-      { text: 'iTunes 播客', link: '/music-assistant/music-providers/itunes-podcast' },
+      {
+        text: 'DI.fm 网络',
+        link: '/music-assistant/music-providers/digitally-incorporated',
+      },
+      {
+        text: 'gPodder 播客',
+        link: '/music-assistant/music-providers/gpodder',
+      },
+      {
+        text: 'iBroadcast',
+        link: '/music-assistant/music-providers/ibroadcast',
+      },
+      {
+        text: 'Internet Archive',
+        link: '/music-assistant/music-providers/internet-archive',
+      },
+      {
+        text: 'iTunes 播客',
+        link: '/music-assistant/music-providers/itunes-podcast',
+      },
       { text: 'Jellyfin', link: '/music-assistant/music-providers/jellyfin' },
       { text: '文件系统', link: '/music-assistant/music-providers/filesystem' },
       { text: 'NicoNico', link: '/music-assistant/music-providers/niconico' },
       { text: 'Nugs.net', link: '/music-assistant/music-providers/nugs' },
       { text: 'Phish.in', link: '/music-assistant/music-providers/phishin' },
       { text: 'Plex', link: '/music-assistant/music-providers/plex' },
-      { text: 'Podcast Index', link: '/music-assistant/music-providers/podcast-index' },
-      { text: 'Podcast RSS', link: '/music-assistant/music-providers/podcastfeed' },
+      {
+        text: 'Podcast Index',
+        link: '/music-assistant/music-providers/podcast-index',
+      },
+      {
+        text: 'Podcast RSS',
+        link: '/music-assistant/music-providers/podcastfeed',
+      },
       { text: 'Qobuz', link: '/music-assistant/music-providers/qobuz' },
-      { text: 'Radio Browser', link: '/music-assistant/music-providers/radio-browser' },
-      { text: 'Radio Paradise', link: '/music-assistant/music-providers/radio-paradise' },
+      {
+        text: 'Radio Browser',
+        link: '/music-assistant/music-providers/radio-browser',
+      },
+      {
+        text: 'Radio Paradise',
+        link: '/music-assistant/music-providers/radio-paradise',
+      },
       { text: 'SiriusXM', link: '/music-assistant/music-providers/siriusxm' },
-      { text: 'SoundCloud', link: '/music-assistant/music-providers/soundcloud' },
+      {
+        text: 'SoundCloud',
+        link: '/music-assistant/music-providers/soundcloud',
+      },
       { text: 'Spotify', link: '/music-assistant/music-providers/spotify' },
       { text: 'Subsonic', link: '/music-assistant/music-providers/subsonic' },
       { text: 'Tidal', link: '/music-assistant/music-providers/tidal' },
       { text: 'TuneIn', link: '/music-assistant/music-providers/tunein' },
-      { text: 'YouTube Music', link: '/music-assistant/music-providers/youtube-music' },
+      {
+        text: 'YouTube Music',
+        link: '/music-assistant/music-providers/youtube-music',
+      },
     ],
   },
   {
@@ -99,15 +157,24 @@ export const musicAssistantSidebar: SidebarGroup[] = [
       { text: 'Alexa', link: '/music-assistant/player-support/alexa' },
       { text: 'Bluesound', link: '/music-assistant/player-support/bluesound' },
       { text: 'DLNA/UPnP', link: '/music-assistant/player-support/dlna' },
-      { text: 'Fully Kiosk', link: '/music-assistant/player-support/fully-kiosk' },
-      { text: 'Google Cast', link: '/music-assistant/player-support/google-cast' },
+      {
+        text: 'Fully Kiosk',
+        link: '/music-assistant/player-support/fully-kiosk',
+      },
+      {
+        text: 'Google Cast',
+        link: '/music-assistant/player-support/google-cast',
+      },
       { text: 'Home Assistant', link: '/music-assistant/player-support/ha' },
       { text: 'MusicCast', link: '/music-assistant/player-support/musiccast' },
       { text: 'Roku', link: '/music-assistant/player-support/roku' },
       { text: 'Sendspin', link: '/music-assistant/player-support/sendspin' },
       { text: 'Snapcast', link: '/music-assistant/player-support/snapcast' },
       { text: 'Sonos', link: '/music-assistant/player-support/sonos' },
-      { text: 'Squeezelite', link: '/music-assistant/player-support/squeezelite' },
+      {
+        text: 'Squeezelite',
+        link: '/music-assistant/player-support/squeezelite',
+      },
     ],
   },
   {
@@ -115,12 +182,24 @@ export const musicAssistantSidebar: SidebarGroup[] = [
     collapsible: true,
     collapsed: true,
     items: [
-      { text: 'AirPlay 接收器', link: '/music-assistant/plugins/airplay-receiver' },
+      {
+        text: 'AirPlay 接收器',
+        link: '/music-assistant/plugins/airplay-receiver',
+      },
       { text: 'LastFM 记录', link: '/music-assistant/plugins/lastfm_scrobble' },
-      { text: 'Listenbrainz 记录', link: '/music-assistant/plugins/listenbrainz_scrobble' },
+      {
+        text: 'Listenbrainz 记录',
+        link: '/music-assistant/plugins/listenbrainz_scrobble',
+      },
       { text: 'Plex Connect', link: '/music-assistant/plugins/plex-connect' },
-      { text: 'Spotify Connect', link: '/music-assistant/plugins/spotify-connect' },
-      { text: 'Subsonic 记录', link: '/music-assistant/plugins/subsonic_scrobble' },
+      {
+        text: 'Spotify Connect',
+        link: '/music-assistant/plugins/spotify-connect',
+      },
+      {
+        text: 'Subsonic 记录',
+        link: '/music-assistant/plugins/subsonic_scrobble',
+      },
       { text: 'VBAN 接收器', link: '/music-assistant/plugins/vban-receiver' },
     ],
   },
@@ -164,18 +243,25 @@ export const musicAssistantSidebar: SidebarGroup[] = [
     text: '移动设备',
     collapsible: true,
     collapsed: true,
-    items: [
-      { text: '通用信息', link: '/music-assistant/mobile/index' },
-    ],
+    items: [{ text: '通用信息', link: '/music-assistant/mobile/index' }],
   },
   {
     text: '博客',
     collapsible: true,
     collapsed: true,
     items: [
-      { text: 'Music Assistant 2.0', link: '/music-assistant/blog/2024/05/09/music-assistant-2' },
-      { text: '下一个大热门', link: '/music-assistant/blog/2025/03/05/music-assistants-next-big-hit' },
-      { text: '2.7 - 占领电波', link: '/music-assistant/blog/2025/12/17/music-assistant-2-7' },
+      {
+        text: 'Music Assistant 2.0',
+        link: '/music-assistant/blog/2024/05/09/music-assistant-2',
+      },
+      {
+        text: '下一个大热门',
+        link: '/music-assistant/blog/2025/03/05/music-assistants-next-big-hit',
+      },
+      {
+        text: '2.7 - 占领电波',
+        link: '/music-assistant/blog/2025/12/17/music-assistant-2-7',
+      },
     ],
   },
 ];
@@ -184,9 +270,7 @@ export const musicAssistantSidebar: SidebarGroup[] = [
 export const companionSidebar: SidebarGroup[] = [
   {
     text: 'Companion Apps',
-    items: [
-      { text: '概述', link: '/companion/index' },
-    ],
+    items: [{ text: '概述', link: '/companion/index' }],
   },
   {
     text: '入门指南',
@@ -194,7 +278,10 @@ export const companionSidebar: SidebarGroup[] = [
     collapsed: true,
     items: [
       { text: '入门指南', link: '/companion/getting_started/index' },
-      { text: '连接安全级别', link: '/companion/getting_started/connection_security_level' },
+      {
+        text: '连接安全级别',
+        link: '/companion/getting_started/connection_security_level',
+      },
     ],
   },
   {
@@ -233,12 +320,30 @@ export const companionSidebar: SidebarGroup[] = [
     collapsed: true,
     items: [
       { text: '集成概述', link: '/companion/integrations/index' },
-      { text: 'Android 设备控制', link: '/companion/integrations/android-device-controls' },
-      { text: 'Android 主屏幕启动器', link: '/companion/integrations/android-home-app-launcher' },
-      { text: 'Android 快速设置', link: '/companion/integrations/android-quick-settings' },
-      { text: 'Android 快捷方式', link: '/companion/integrations/android-shortcuts' },
-      { text: 'Android WebView', link: '/companion/integrations/android-webview' },
-      { text: 'Android Widgets', link: '/companion/integrations/android-widgets' },
+      {
+        text: 'Android 设备控制',
+        link: '/companion/integrations/android-device-controls',
+      },
+      {
+        text: 'Android 主屏幕启动器',
+        link: '/companion/integrations/android-home-app-launcher',
+      },
+      {
+        text: 'Android 快速设置',
+        link: '/companion/integrations/android-quick-settings',
+      },
+      {
+        text: 'Android 快捷方式',
+        link: '/companion/integrations/android-shortcuts',
+      },
+      {
+        text: 'Android WebView',
+        link: '/companion/integrations/android-webview',
+      },
+      {
+        text: 'Android Widgets',
+        link: '/companion/integrations/android-widgets',
+      },
       { text: '应用事件', link: '/companion/integrations/app-events' },
       { text: '手势', link: '/companion/integrations/gestures' },
       { text: '触觉反馈', link: '/companion/integrations/haptics' },
@@ -248,7 +353,10 @@ export const companionSidebar: SidebarGroup[] = [
       { text: '主题', link: '/companion/integrations/theming' },
       { text: '通用链接', link: '/companion/integrations/universal-links' },
       { text: 'URL 处理器', link: '/companion/integrations/url-handler' },
-      { text: 'X-Callback-URL', link: '/companion/integrations/x-callback-url' },
+      {
+        text: 'X-Callback-URL',
+        link: '/companion/integrations/x-callback-url',
+      },
     ],
   },
   {
@@ -274,25 +382,19 @@ export const companionSidebar: SidebarGroup[] = [
     text: 'Android Auto',
     collapsible: true,
     collapsed: true,
-    items: [
-      { text: 'Android Auto', link: '/companion/android-auto/index' },
-    ],
+    items: [{ text: 'Android Auto', link: '/companion/android-auto/index' }],
   },
   {
     text: 'CarPlay',
     collapsible: true,
     collapsed: true,
-    items: [
-      { text: 'CarPlay', link: '/companion/carplay/index' },
-    ],
+    items: [{ text: 'CarPlay', link: '/companion/carplay/index' }],
   },
   {
     text: 'Meta Quest',
     collapsible: true,
     collapsed: true,
-    items: [
-      { text: 'Meta Quest', link: '/companion/meta-quest/index' },
-    ],
+    items: [{ text: 'Meta Quest', link: '/companion/meta-quest/index' }],
   },
   {
     text: '故障排除',
@@ -303,7 +405,10 @@ export const companionSidebar: SidebarGroup[] = [
       { text: '错误信息', link: '/companion/troubleshooting/errors' },
       { text: '网络问题', link: '/companion/troubleshooting/networking' },
       { text: '集成问题', link: '/companion/troubleshooting/integrations' },
-      { text: 'Beta 版本清理', link: '/companion/troubleshooting/beta-cleaning' },
+      {
+        text: 'Beta 版本清理',
+        link: '/companion/troubleshooting/beta-cleaning',
+      },
       { text: '更多帮助', link: '/companion/troubleshooting/more-help' },
     ],
   },
@@ -311,8 +416,6 @@ export const companionSidebar: SidebarGroup[] = [
     text: '截图展示',
     collapsible: true,
     collapsed: true,
-    items: [
-      { text: 'Android 截图展示', link: '/companion/gallery/index' },
-    ],
+    items: [{ text: 'Android 截图展示', link: '/companion/gallery/index' }],
   },
 ];
