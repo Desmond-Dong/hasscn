@@ -1,15 +1,15 @@
 ---
 pageType: home
-title: "Music Assistant - 音乐流媒体服务 | Home Assistant 中文网"
-description: "Music Assistant 是一个开源的音乐流媒体服务，专为 Home Assistant 设计，支持多种音乐源和播放设备"
-keywords: "Music Assistant, 音乐流媒体, Home Assistant, 智能家居音乐, Spotify, Chromecast, Sonos"
+title: 'Music Assistant 中文文档 - 音乐流媒体与多房间播放 | 老王杂谈说'
+description: 'Music Assistant 中文文档聚焦 Home Assistant 音乐流媒体服务，涵盖音乐源、播放器支持、安装配置与多房间播放。'
+keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Music Assistant, Music Assistant 中文, 音乐流媒体, 多房间播放, Spotify, Chromecast, Sonos'
 og:
-  title: "Music Assistant - 音乐流媒体服务"
-  description: "开源的音乐流媒体服务，专为 Home Assistant 设计"
-  type: "website"
-  image: "/assets/banner.png"
-  locale: "zh_CN"
-  site_name: "Home Assistant 中文网"
+  title: 'Music Assistant 中文文档 - 音乐流媒体与多房间播放'
+  description: '面向 Home Assistant 用户的 Music Assistant 中文文档，覆盖安装、音乐源、播放器与使用指南。'
+  type: 'website'
+  image: '/assets/banner.png'
+  locale: 'zh_CN'
+  site_name: 'Home Assistant 中文网'
 
 hero:
   name: Music Assistant
@@ -51,5 +51,4 @@ features:
     details: 自动匹配不同音乐源中的同一首歌曲，无缝切换音源
     icon: 🔗
     link: /music-assistant/usage/
-
 ---

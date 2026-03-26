@@ -1,13 +1,20 @@
+---
+title: 已弃用内容说明
+description: 本页收录已被官方弃用的 Home Assistant 安装方式，仅供历史参考。
+---
 
 # 官方已经确定弃用
+
 ## **🖥️ Home Assistant Supervised 极速版**
 
 ### 👨‍💻 版本修改作者：[Alone](https://anlo.ng/)
 
 ### ⚠️ 系统要求
+
 请确保您已了解[系统要求](https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md)
 
 ### 📖 简介
+
 此安装方法可在常规操作系统上提供完整的 Home Assistant 体验。这意味着将使用 Home Assistant 方法中的所有组件，除了 Home Assistant 操作系统。该系统将运行 Home Assistant Supervisor。Supervisor 不仅仅是一个应用程序，它是一个管理整个系统的完整设备。如果设置不再符合预期值，它将进行清理、修复或将设置重置为默认值。
 
 由于不使用 Home Assistant 操作系统，用户需要负责确保所有必需的组件都已安装并维护。所需的组件及其版本会随着时间的推移而变化。Home Assistant Supervised 作为社区支持的 DIY 解决方案的基础，按原样提供。我们只接受在全新安装、完全更新且没有额外软件包的 Debian 系统上重现的问题的错误报告。
@@ -104,6 +111,7 @@ apt install ./homeassistant-supervised.deb
 ```bash
 DATA_SHARE=/my/own/homeassistant dpkg --force-confdef --force-confold -i homeassistant-supervised.deb
 ```
+
 ### 🛠️ 问题排查
 
 如果遇到问题，可以使用 `journalctl -f` 查看系统日志。如果您不熟悉 Linux 系统及其问题排查方法，我们建议您使用 Home Assistant OS。
@@ -115,14 +123,13 @@ DATA_SHARE=/my/own/homeassistant dpkg --force-confdef --force-confold -i homeass
 > 通过Docker安装[Home Assistant Supervised](https://github.com/hasscc/supervised-installer) (HassIO)，并对国内网络环境进行优化
 
 | 　　　 | HAOS | Supervised | Container | Core |
-|:-----:|:----:|:----------:|:---------:|:----:|
-| 自动化 |  ✅  |     ✅     |     ✅    |  ✅  |
-| 仪表盘 |  ✅  |     ✅     |     ✅    |  ✅  |
-| 集　成 |  ✅  |     ✅     |     ✅    |  ✅  |
-| 加载项 |  ✅  |     ✅     |     ❌    |  ❌  |
-| 升　级 |  ✅  |     ✅     |     ❌    |  ❌  |
-| 备　份 |  ✅  |     ✅     |     ✅    |  ✅  |
-
+| :----: | :--: | :--------: | :-------: | :--: |
+| 自动化 |  ✅  |     ✅     |    ✅     |  ✅  |
+| 仪表盘 |  ✅  |     ✅     |    ✅     |  ✅  |
+| 集　成 |  ✅  |     ✅     |    ✅     |  ✅  |
+| 加载项 |  ✅  |     ✅     |    ❌     |  ❌  |
+| 升　级 |  ✅  |     ✅     |    ❌     |  ❌  |
+| 备　份 |  ✅  |     ✅     |    ✅     |  ✅  |
 
 ### 🐳 Compose 安装
 
@@ -135,11 +142,10 @@ docker compose up -d
 ```
 
 > `/usr/share/hassio`用于存储HassIO数据，包括HA配置及Add-ons配置等，可更改为其他路径
-> 
+>
 > `compose.yml`中的`docker_lib`用于存储HassIO容器及镜像等数据，会占用较大的空间，且对存储驱动有特殊要求，不要挂载到本地目录
-> 
+>
 > 仅当`DEFAULT_TZ=Asia/Shanghai`时才会对国内网络环境进行优化
-
 
 ### 🖥️ 命令安装
 
@@ -163,15 +169,15 @@ docker run -d \
 ```
 
 > 首次安装时，需要较长时间安装环境及拉取镜像，请耐心等待
-> 
+>
 > 通过`http://192.168.xx.xx:4357`可以查看系统状态
-> 
+>
 > 通过`http://192.168.xx.xx:8123`进入Home Assistant
 
 ### 🛠️ 问题排查
 
 > 如果提示无网络连接`no host internet connection`，请尝试在[网络配置](https://my.home-assistant.io/redirect/network/)中禁用IPv6
-> 
+>
 > 如果安装后超过10分钟仍然无法进入Home Assistant，请尝试执行以下命令查看日志
 
 ```bash
@@ -183,7 +189,6 @@ docker exec -it hass-super ha core info
 docker exec -it hass-super ha core start
 ```
 
-
 ### 🎉 鸣谢
-- [NJU Mirror](https://doc.nju.edu.cn/books/e1654/page/ghcr)
 
+- [NJU Mirror](https://doc.nju.edu.cn/books/e1654/page/ghcr)

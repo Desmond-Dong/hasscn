@@ -1,15 +1,15 @@
 ---
 pageType: home
-title: "Home Assistant Companion Apps - 移动端伴侣应用 | Home Assistant 中文网"
-description: "Home Assistant Companion Apps 让您随时随地控制智能家居，支持 iOS、Android、Apple Watch、Wear OS 等多平台"
-keywords: "Home Assistant, Companion App, 移动应用, iOS, Android, Apple Watch, Wear OS, 智能家居, 远程控制"
+title: 'Home Assistant 配套应用文档 - iOS、Android 与移动端接入 | 老王杂谈说'
+description: 'Home Assistant 配套应用中文文档，覆盖 iOS、Android、通知、位置、传感器、快捷控制与远程访问。'
+keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中文, Companion App, Home Assistant 配套应用, iOS, Android, Apple Watch, Wear OS, 远程控制'
 og:
-  title: "Home Assistant Companion Apps - 移动端伴侣应用"
-  description: "随时随地控制您的智能家居，支持多平台通知和传感器集成"
-  type: "website"
-  image: "/companion-img/hero-image.png"
-  locale: "zh_CN"
-  site_name: "Home Assistant 中文网"
+  title: 'Home Assistant 配套应用文档 - iOS、Android 与移动端接入'
+  description: '面向 Home Assistant 用户的配套应用中文文档，覆盖通知、传感器、位置和移动端能力。'
+  type: 'website'
+  image: '/companion-img/hero-image.png'
+  locale: 'zh_CN'
+  site_name: 'Home Assistant 中文网'
 
 hero:
   name: Companion Apps
@@ -51,5 +51,4 @@ features:
     details: 无需 VPN 即可远程访问您的 Home Assistant 实例，随时随地控制智能家居
     icon: 🏠
     link: /companion/getting_started/connection_security_level
-
 ---

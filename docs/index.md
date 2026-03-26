@@ -1,11 +1,11 @@
 ---
 pageType: home
-title: 'Home Assistant 中文网 - 汉化资源与安装指南 | 老王杂谈说'
-description: 'Home Assistant 中文网提供面向中国用户的汉化资源与实战指南，涵盖 Home Assistant、移动 App、Music Assistant、ESPHome 及本土化部署经验'
-keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中国社区, Home Assistant 中文, Music Assistant, ESPHome, HAOS, HACS, 智能家居, 开源智能家居, 物联网'
+title: 'Home Assistant 中文网 - 汉化资源、文档与安装指南 | 老王杂谈说'
+description: 'Home Assistant 中文网为中国用户提供 Home Assistant 安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。'
+keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中国社区, Home Assistant 中文, Music Assistant, ESPHome, Home Assistant 开发者文档, HAOS, HACS, 智能家居, 开源智能家居, 物联网'
 og:
-  title: 'Home Assistant 中文网 - 汉化资源与安装指南'
-  description: '聚焦 Home Assistant 中文内容与本土化实践，覆盖移动 App、Music Assistant、ESPHome 等核心资源'
+  title: 'Home Assistant 中文网 - 汉化资源、文档与安装指南'
+  description: '聚焦 Home Assistant 中文内容与本土化实践，覆盖安装、配套应用、Music Assistant、ESPHome 与开发者文档'
   type: 'website'
   image: '/icon.png'
   locale: 'zh_CN'

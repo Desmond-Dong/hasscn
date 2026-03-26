@@ -1,6 +1,15 @@
 ---
 pageType: home
-title: Home Assistant 开发者文档
+title: Home Assistant 开发者文档 - 集成、前端与 API 开发指南 | 老王杂谈说
+description: 面向 Home Assistant 开发者的中文参考文档，覆盖集成开发、前端、自定义能力、语音、Supervisor、操作系统与 API。
+keywords: Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 开发者文档, Home Assistant 集成开发, Home Assistant API, Home Assistant 前端开发, Home Assistant Supervisor
+og:
+  title: Home Assistant 开发者文档 - 集成、前端与 API 开发指南
+  description: 面向 Home Assistant 开发者的中文参考站，覆盖 Core、前端、语音、系统与 API 开发。
+  type: website
+  image: /icon.png
+  locale: zh_CN
+  site_name: Home Assistant 中文网
 hero:
   name: Home Assistant 开发者文档
   text: 面向集成、前端、语音与系统开发的中文参考站

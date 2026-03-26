@@ -1,5 +1,7 @@
 ---
 layout: doc
+title: 搜索引擎访问说明
+description: Home Assistant 中文网建议使用更稳定的搜索引擎访问本站内容，并说明部分搜索入口的访问限制。
 ---
 
 # 搜索引擎
@@ -20,8 +22,6 @@ layout: doc
 
 🚫 如果你正在使用 `百度浏览器`，请更换为其他浏览器
 
-
 ![no-baidu](./images/baidu-logo-black-transparent.png)
 
 :::
-

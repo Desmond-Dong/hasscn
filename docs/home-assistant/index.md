@@ -1,6 +1,15 @@
 ---
 pageType: home
+title: Home Assistant 中文文档 - 安装、集成与使用指南 | 老王杂谈说
 description: 将本地控制与隐私放在首位的开源家庭自动化平台，由全球创客与 DIY 爱好者社区共同驱动。
+keywords: Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中文, Home Assistant 安装, Home Assistant 集成, Home Assistant 教程, 智能家居
+og:
+  title: Home Assistant 中文文档 - 安装、集成与使用指南
+  description: 涵盖 Home Assistant 安装部署、集成目录、仪表盘、语音控制与常见使用场景的中文文档专区。
+  type: website
+  image: /home-assistant/images/frontpage/hero_screenshot.png
+  locale: zh_CN
+  site_name: Home Assistant 中文网
 hero:
   name: Home Assistant
   text: 唤醒你的家

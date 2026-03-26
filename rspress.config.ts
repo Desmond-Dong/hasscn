@@ -36,7 +36,7 @@ export default defineConfig({
   globalStyles: path.join(__dirname, 'styles/index.css'),
 
   description:
-    '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版',
+    'Home Assistant 中文网聚焦 Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。',
 
   markdown: {
     remarkPlugins: [mdiIconPlugin],
@@ -55,7 +55,7 @@ export default defineConfig({
       llmsTxt: {
         name: 'llms.txt',
         onTitleGenerate: ({ title, description }) => {
-          return `# ${title}\n\n> ${description}\n\n本站聚焦 Home Assistant 中文内容、安装部署与本土化实践，作者品牌为老王杂谈说。\n`;
+          return `# ${title}\n\n> ${description}\n\n本站聚焦 Home Assistant 中文内容、安装部署、本土化实践，以及 Music Assistant、ESPHome、配套应用与开发者文档。\n`;
         },
       },
       exclude: ({ page }) => {
@@ -138,12 +138,19 @@ export default defineConfig({
   head: [
     ['meta', { name: 'referrer', content: 'origin-when-cross-origin' }],
     ['meta', { name: 'author', content: '老王杂谈说' }],
+    ['meta', { name: 'application-name', content: 'Home Assistant 中文网' }],
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-title', content: 'Home Assistant 中文网' },
+    ],
+    ['meta', { name: 'format-detection', content: 'telephone=no' }],
+    ['meta', { name: 'theme-color', content: '#18bcf2' }],
     [
       'meta',
       {
         name: 'keywords',
         content:
-          'Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,Node-RED,智能家居,开源智能家居,IoT,家庭助理',
+          'Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理',
       },
     ],
     [
@@ -159,20 +166,41 @@ export default defineConfig({
       {
         property: 'og:description',
         content:
-          '打造开源最全的免费的Home Assistant中文站以及国内专用的Home Assistant OS极速版',
+          'Home Assistant 中文网聚焦 Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。',
       },
     ],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:url', content: 'https://www.hasscn.top' }],
+    ['meta', { property: 'og:site_name', content: 'Home Assistant 中文网' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
     [
       'meta',
       { property: 'og:image', content: 'https://www.hasscn.top/icon.png' },
     ],
-    ['meta', { name: 'robots', content: 'index,follow' }],
-    ['meta', { name: 'baidu-site-verification', content: '' }],
-    ['meta', { name: '360-site-verification', content: '' }],
-    ['meta', { name: 'sogou_site_verification', content: '' }],
-    ['meta', { name: 'shenma-site-verification', content: '' }],
-    ['link', { rel: 'canonical', href: 'https://www.hasscn.top' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    [
+      'meta',
+      { name: 'twitter:title', content: 'Home Assistant 中文网 | 老王杂谈说' },
+    ],
+    [
+      'meta',
+      {
+        name: 'twitter:description',
+        content:
+          'Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。',
+      },
+    ],
+    [
+      'meta',
+      { name: 'twitter:image', content: 'https://www.hasscn.top/icon.png' },
+    ],
+    [
+      'meta',
+      {
+        name: 'robots',
+        content:
+          'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
+      },
+    ],
   ],
 });
