@@ -4,7 +4,11 @@ import {
   Layout as OriginalLayout,
 } from '@rspress/core/theme-original';
 import { createElement } from 'react';
-import { globalNav, homeAssistantNav } from '../scripts/nav-config';
+import {
+  developersNav,
+  globalNav,
+  homeAssistantNav,
+} from '../scripts/nav-config';
 
 // 导出所有核心主题组件
 export * from '@rspress/core/theme-original';
@@ -12,6 +16,10 @@ export * from '@rspress/core/theme-original';
 function resolveNavByPathname(pathname: string) {
   if (pathname.startsWith('/home-assistant')) {
     return homeAssistantNav;
+  }
+
+  if (pathname.startsWith('/developers')) {
+    return developersNav;
   }
 
   return globalNav;

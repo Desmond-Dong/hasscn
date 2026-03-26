@@ -19,8 +19,8 @@ export const globalNav = [
         link: '/blueprints',
       },
       {
-        text: 'Home Assistant 开发者文档',
-        link: '/developers/',
+        text: '热门集成推荐',
+        link: '/integrations',
       },
       {
         text: 'HASS Agent 汉化手册',
@@ -126,6 +126,66 @@ export const homeAssistantNav = [
       {
         text: '博客',
         link: '/home-assistant/blog/index',
+      },
+    ],
+  },
+];
+
+export const developersNav = [
+  {
+    text: '返回首页',
+    link: '/',
+  },
+  {
+    text: '开发者首页',
+    link: '/developers/',
+  },
+  {
+    text: '架构',
+    link: '/developers/architecture_index',
+  },
+  {
+    text: 'Core',
+    link: '/developers/development_index',
+  },
+  {
+    text: '创建集成',
+    link: '/developers/creating_component_index',
+  },
+  {
+    text: '前端',
+    link: '/developers/frontend',
+  },
+  {
+    text: '语音',
+    link: '/developers/voice/overview',
+  },
+  {
+    text: '更多',
+    items: [
+      {
+        text: 'API',
+        link: '/developers/api_lib_index',
+      },
+      {
+        text: 'Supervisor',
+        link: '/developers/supervisor',
+      },
+      {
+        text: '操作系统',
+        link: '/developers/operating-system',
+      },
+      {
+        text: 'Android',
+        link: '/developers/android',
+      },
+      {
+        text: 'Apps',
+        link: '/developers/apps',
+      },
+      {
+        text: '文档规范',
+        link: '/developers/documenting',
       },
     ],
   },

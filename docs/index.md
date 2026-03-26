@@ -50,8 +50,8 @@ features:
     details: 整理 ESPHome 中文教程与设备示例，帮助你低成本接入更多智能硬件。
     icon: 📟
     link: /esphome/
-  - title: 🔌 热门集成推荐
-    details: 精选高频使用的国内外集成，助您快速连接各类智能设备。
-    icon: 🔗
-    link: /integrations
+  - title: 🧑‍💻 开发者文档
+    details: 汇总 Home Assistant 开发者中文文档，覆盖集成、前端、语音、系统与 API 开发。
+    icon: 🧑‍💻
+    link: /developers/
 ---
