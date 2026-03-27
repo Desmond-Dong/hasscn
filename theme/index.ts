@@ -12,6 +12,7 @@ import {
 
 // 导出所有核心主题组件
 export * from '@rspress/core/theme-original';
+export { LlmsViewOptions } from './LlmsViewOptions';
 
 function resolveNavByPathname(pathname: string) {
   if (pathname.startsWith('/home-assistant')) {
