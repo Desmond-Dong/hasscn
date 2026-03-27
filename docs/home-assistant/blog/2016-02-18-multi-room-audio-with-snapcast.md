@@ -1,6 +1,8 @@
 ---
 title: Multi-房间 audio with Snapcast, Mopidy, and Home Assistant
+description: '你是否想在家里的每个房间听音乐，并且由一个音源统一控制？那多房间音频就是你要找的方案。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Multi-房间 audio with Snapcast, Mopidy, and Home Assistant
 
 你是否想在家里的每个房间听音乐，并且由一个音源统一控制？那多房间音频就是你要找的方案。
 

@@ -1,6 +1,6 @@
 ---
 title: Local to-do
-description: 关于如何在 Home Assistant 中使用本地待办事项列表的说明。
+description: 'Local to-do list 集成可让您在 Home Assistant 中创建待办事项列表。 待办事项列表会显示在 To-do list 仪表板中，用于跟踪各项任务及其是否已完成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - To-do list
 ha_iot_class: Local Polling
@@ -18,6 +18,7 @@ related:
   - docs: /dashboards/todo-list/
     title: To-do list card
 ---
+# Local to-do
 
 **Local to-do list** 集成可让您在 Home Assistant 中创建待办事项列表。
 待办事项列表会显示在 **To-do list** 仪表板中，用于跟踪各项任务及其是否已完成。

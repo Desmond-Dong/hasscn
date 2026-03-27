@@ -1,6 +1,6 @@
 ---
 title: Feedreader
-description: 关于如何将 RSS 订阅集成到 Home Assistant 的说明。
+description: '添加一个 RSS/Atom 订阅读取器，每小时轮询一次订阅源，并将新条目发送到事件总线。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Event
   - Other
@@ -17,6 +17,7 @@ related:
 ha_codeowners:
   - '@mib1185'
 ---
+# Feedreader
 
 添加一个 RSS/Atom 订阅读取器，每小时轮询一次订阅源，并将新条目发送到事件总线。
 

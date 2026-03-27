@@ -2,6 +2,7 @@
 title: Set up encryption using Let's Encrypt
 description: Tutorial how to encrypt your connection with Home Assistant.
 ---
+# Set up encryption using Let's Encrypt
 
 :::note
 这篇博客文章中的说明已过时。请查看<a href='/home-assistant/博客/2017/09/27/effortless-encryption-with-lets-encrypt-and-duckdns/'>新说明</a>。

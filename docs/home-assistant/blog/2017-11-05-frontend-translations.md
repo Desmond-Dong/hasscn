@@ -1,7 +1,8 @@
 ---
 title: Translating Home Assistant
-description: Introduction to the new translation 集成 with Lokalise.
+description: '<p class=''img'' <img src=''/home-assistant/images/blog/2017-11-0.57/languages.png'' alt=''The Home Assistant 侧边栏 in 12 different languages'' The Home Assistant。'
 ---
+# Translating Home Assistant
 
 <p class='img'>
 <img src='/home-assistant/images/blog/2017-11-0.57/languages.png' alt='The Home Assistant 侧边栏 in 12 different languages'>

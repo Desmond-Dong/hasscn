@@ -1,6 +1,6 @@
 ---
 title: Nuki Matter
-description: "使用 Matter 集成控制您的 Nuki Matter 设备。"
+description: 'Nuki(https://nuki.io) is a member of the Works with Home Assistant partner program for their Matter products. Nuki is committed to making sure their。'
 
 ha_category:
   - Lock
@@ -18,6 +18,7 @@ ha_iot_standard:
 works_with:
   - matter
 ---
+# Nuki Matter
 
 [Nuki](https://nuki.io) is a member of the Works with Home Assistant partner program for their Matter products. Nuki is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

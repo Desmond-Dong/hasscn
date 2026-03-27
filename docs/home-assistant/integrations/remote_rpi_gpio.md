@@ -1,6 +1,6 @@
 ---
 title: Raspberry Pi Remote GPIO
-description: 有关如何将远程 Raspberry Pi 的 GPIO 功能集成到 Home Assistant 中的说明。
+description: 'Raspberry Pi Remote GPIO 集成是 Home Assistant 中所有相关 GPIO 平台的基础。有关各个平台的配置，请参阅对应章节。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - DIY
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Raspberry Pi Remote GPIO
 
 **Raspberry Pi Remote GPIO** 集成是 Home Assistant 中所有相关 GPIO 平台的基础。有关各个平台的配置，请参阅对应章节。
 

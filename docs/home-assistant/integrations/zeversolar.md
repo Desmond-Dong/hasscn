@@ -1,6 +1,6 @@
 ---
 title: Zeversolar
-description: 关于如何在 Home Assistant 中配置 Zeversolar 集成的说明。
+description: 'Zeversolar 集成使用设备的本地 IP 来获取当前功率和今日总发电量等信息。 此集成可让您收集并保存数据，从而查看 Zeversolar 发电情况的历史概览。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
 ha_release: 2023.2
@@ -14,6 +14,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@kvanzuijlen'
 ---
+# Zeversolar
 
 **Zeversolar** 集成使用设备的本地 IP 来获取当前功率和今日总发电量等信息。
 此集成可让您收集并保存数据，从而查看 Zeversolar 发电情况的历史概览。

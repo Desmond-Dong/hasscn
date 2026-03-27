@@ -1,7 +1,9 @@
 ---
 title: "安卓持续集成与交付"
+description: '本文档概述了 Android 部署项目的持续集成 (CI) 和持续交付 (CD) 流程。我们使用 GitHub 操作 作为我们的 CI/CD 平台，配置了许多工作流程以确保代码质量、自动化构建和简化。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "持续集成和交付"
 ---
+# 安卓持续集成与交付
 
 ## Android持续集成与交付
 

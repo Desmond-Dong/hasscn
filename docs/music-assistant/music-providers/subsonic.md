@@ -1,7 +1,7 @@
 ---
 title: "Subsonic"
+description: 'Music Assistant 支持按照 <a href="https://opensubsonic.netlify.app/" target="blank" rel="noopener noreferrer"Open Subsonic API 定义</a工作的音乐服务器。'
 ---
-
 # Open Subsonic 提供者 <img src="/assets/icons/subsonic_icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持按照 <a href="https://opensubsonic.netlify.app/" target="_blank" rel="noopener noreferrer">Open Subsonic API 定义</a>工作的音乐服务器。该实现已针对 Gonic 和 Navidrome 进行了测试，但应该适用于任何实现。此组件由 <a href="https://github.com/khers" target="_blank" rel="noopener noreferrer">khers</a> 贡献和维护。

@@ -1,6 +1,6 @@
 ---
 title: Remote Python Debugger
-description: 用于 Visual Studio Code 的远程 Python 调试器 (debugpy)
+description: 'Remote Python debugger 集成允许您将 Visual Studio Code Python 调试工具与远程 Home Assistant 实例一起使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Utility
 ha_release: 0.112
@@ -14,6 +14,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Remote Python Debugger
 
 **Remote Python debugger** 集成允许您将 Visual Studio Code Python 调试工具与远程 Home Assistant 实例一起使用。
 

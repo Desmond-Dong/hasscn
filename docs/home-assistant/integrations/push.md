@@ -1,6 +1,6 @@
 ---
 title: Push
-description: 说明如何在 Home Assistant 中使用推送相机。
+description: 'Push 集成允许您将通过 HTTP POST 发送到 Home Assistant 的图像作为摄像头接入。因此，外部应用、守护进程或脚本可以通过 Home Assistant “推流” 图像。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Camera
 ha_iot_class: Local Push
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Push
 
 **Push** 集成允许您将通过 HTTP POST 发送到 Home Assistant 的图像作为摄像头接入。因此，外部应用、守护进程或脚本可以通过 Home Assistant “推流” 图像。
 

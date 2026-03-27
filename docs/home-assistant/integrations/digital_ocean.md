@@ -1,6 +1,6 @@
 ---
 title: Digital Ocean
-description: 关于在 Home Assistant 中集成 Digital Ocean 的说明。
+description: 'Digital Ocean 集成允许您从 Home Assistant 访问有关您的 Digital Ocean(https://www.digitalocean.com/) droplets 的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Switch
@@ -19,6 +19,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Digital Ocean
 
 **Digital Ocean** 集成允许您从 Home Assistant 访问有关您的 [Digital Ocean](https://www.digitalocean.com/) droplets 的信息。
 

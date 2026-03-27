@@ -1,6 +1,6 @@
 ---
 title: Ambient Weather Network
-description: 关于如何在 Home Assistant 中集成 Ambient Weather Network 气象站的说明。
+description: 'Ambient Weather Network 集成通过 Ambient Weather Network(https://ambientweather.net) 获取本地气象站信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Weather
 ha_release: 2024.5
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Ambient Weather Network
 
 **Ambient Weather Network** 集成通过 [Ambient Weather Network](https://ambientweather.net) 获取本地气象站信息。
 

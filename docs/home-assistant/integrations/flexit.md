@@ -1,6 +1,6 @@
 ---
 title: Flexit
-description: 关于如何将 Flexit 空调设备集成到 Home Assistant 的说明。
+description: '将 Flexit(https://www.flexit.no/en/) 空调装置集成到家庭助理中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.47
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Flexit
 
 将 [Flexit](https://www.flexit.no/en/) 空调装置集成到家庭助理中。
 

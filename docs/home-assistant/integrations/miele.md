@@ -1,6 +1,6 @@
 ---
 title: Miele
-description: 关于如何在 Home Assistant 中设置 Miele 集成的说明。
+description: 'Miele 集成允许你通过官方第三方 API(https://www.miele.com/developer)集成家用电器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -33,6 +33,7 @@ ha_integration_type: hub
 ha_zeroconf: true
 ha_quality_scale: platinum
 ---
+# Miele
 
 **Miele** 集成允许你通过[官方第三方 API](https://www.miele.com/developer)集成家用电器。
 

@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 行为准则 2.0
-description: Home Assistant 行为准则已更新，更好地保护我们当前和未来的社区。
+description: '2017 年 1 月 21 日，Home Assistant 宣布(/home-assistant/blog/2017/01/21/home-assistant-governance/)我们已实施行为准则。我们希望通过这篇博客告知你：我们正在更新行为准则。'
 ---
+# Home Assistant 行为准则 2.0
 
 2017 年 1 月 21 日，Home Assistant [宣布](/home-assistant/blog/2017/01/21/home-assistant-governance/)我们已实施行为准则。我们希望通过这篇博客告知你：我们正在更新行为准则。
 

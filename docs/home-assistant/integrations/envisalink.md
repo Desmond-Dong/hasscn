@@ -19,6 +19,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Envisalink
 
 **Envisalink** 集成允许拥有 DSC 或 Honeywell 报警面板的 Home Assistant 用户，将报警系统及其传感器接入 Home Assistant，从而为家庭提供更丰富的信息。Home Assistant 与报警面板之间的连接是通过 Eyez On 生产的一种设备实现的，这个设备被称为 Envisalink。Envisalink evl3 和 evl4 板为报警面板提供 TCP/IP 接口，并模拟一个报警键盘。该板卡还公开了一个基于原始 TCP/IP 的 API，本集成正是构建在该 API 之上。目前最新型号是 Envisalink 4，本集成同时支持 evl3 和 evl4。
 

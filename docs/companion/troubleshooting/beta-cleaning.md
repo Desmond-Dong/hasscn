@@ -1,7 +1,9 @@
 ---
 title: "Beta 测试：构建之间的清理"
+description: '<img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" / 参与过 2.0 版本 Beta 测试的用户可能经历了许多构建，并获得了一些现在已经冗余的传感器。'
 id: 'resetting'
 ---
+# Beta 测试：构建之间的清理
 
 <img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" /> 参与过 2.0 版本 Beta 测试的用户可能经历了许多构建，并获得了一些现在已经冗余的传感器。<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /> 安装了 [Play Store Beta 构建](https://play.google.com/apps/testing/io.homeassistant.companion.android) 的 Android 用户也可能发现他们需要重新开始一个新的集成来清理问题。以下步骤将允许您从 Home Assistant 实例中彻底删除以前构建的所有痕迹，并重新开始运行。
 

@@ -1,8 +1,9 @@
 ---
 title: Zooz 加入 Works with Home Assistant
-description: 拥有大量 Z-Wave 设备可供选择，支持选择长距离
+description: '<img src=''/home-assistant/images/blog/2025-07-zooz/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Zooz 加入 Works with Home Assistant"。'
   地区，为您的智能家居开辟了许多新的选择。
 ---
+# Zooz 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-07-zooz/art.jpg' style='border: 0;box-shadow: none;' alt="Zooz 加入 Works with Home Assistant">
 

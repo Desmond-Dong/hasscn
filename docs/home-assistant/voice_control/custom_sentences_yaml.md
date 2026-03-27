@@ -1,6 +1,8 @@
 ---
 title: 在 configuration.yaml 中设置自定义语句
+description: '你可以在 configuration.yaml 文件中的 conversation(/home-assistant/integrations/conversation/) 配置里添加意图和语句：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 在 configuration.yaml 中设置自定义语句
 
 你可以在 `configuration.yaml` 文件中的 [`conversation`](/home-assistant/integrations/conversation/) 配置里添加意图和语句：
 

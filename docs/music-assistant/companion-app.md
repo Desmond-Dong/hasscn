@@ -1,7 +1,7 @@
 ---
 title: "桌面伴侣应用"
+description: '!latest version(https://img.shields.io/github/release/music-assistant/desktop-app?displayname=tag&includeprereleases&label=Latest%20version)(https://github。'
 ---
-
 # Music Assistant 桌面应用
 
 [![latest version](https://img.shields.io/github/release/music-assistant/desktop-app?display_name=tag&include_prereleases&label=Latest%20version)](https://github.com/music-assistant/desktop-app/releases/latest)

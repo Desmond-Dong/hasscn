@@ -1,7 +1,8 @@
 ---
 title: 关于蓝图架构
-description: 蓝图架构简介。
+description: '蓝图架构目前根据其域支持三种类型的架构：automation(/home-assistant/docs/automation/yaml/)；script；以及 template(/home-assistant/integrations/template/using-blueprints)。'
 ---
+# 关于蓝图架构
 
 ## 蓝图架构
 

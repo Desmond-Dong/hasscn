@@ -1,6 +1,6 @@
 ---
 title: Greenwave Reality
-description: 关于如何在 Home Assistant 中设置 Greenwave Reality 灯的说明。
+description: '此集成通过与 Greenwave Reality（TCP Connected）网关通信，让您可以控制所有已注册到该网关的灯泡和灯具。灯泡和灯具可以在适用于 Android 和 iOS 的 TCP Lighting App 中创建和修改。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Light
 ha_release: 0.61
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Greenwave Reality
 
 此集成通过与 Greenwave Reality（TCP Connected）网关通信，让您可以控制所有已注册到该网关的灯泡和灯具。灯泡和灯具可以在适用于 Android 和 iOS 的 TCP Lighting App 中创建和修改。
 

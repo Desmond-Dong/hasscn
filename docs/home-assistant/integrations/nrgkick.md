@@ -1,6 +1,6 @@
 ---
 title: NRGkick
-description: "使用本地 REST JSON API 集成 NRGkick Gen2 移动电动汽车充电器。"
+description: 'The NRGkick integration allows you to monitor the NRGkick(https://www.nrgkick.com/) mobile EV charger (Wallbox) by DiniTech with Home Assistant. The。'
 
 ha_category:
   - Energy
@@ -22,6 +22,7 @@ related:
   - url: https://www.nrgkick.com/
     title: NRGkick Website
 ---
+# NRGkick
 
 The **NRGkick** integration allows you to monitor the [NRGkick](https://www.nrgkick.com/) mobile EV charger (Wallbox) by DiniTech with Home Assistant. The wallbox is smart home friendly and allows detailed monitoring with 80+ data points.
 

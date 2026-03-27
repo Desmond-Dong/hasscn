@@ -1,6 +1,6 @@
 ---
 title: Sanix
-description: 有关如何将 Sanix 设备集成到 Home Assistant 中的说明。
+description: 'Sanix 集成可让您从 BIT Complex(https://bitcomplex.pl/) 生产的 Sanix 设备获取水位/污水液位传感器测量值。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Switch
 ha_release: 2024.5
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Sanix
 
 **Sanix** 集成可让您从 [BIT Complex](https://bitcomplex.pl/) 生产的 Sanix 设备获取水位/污水液位传感器测量值。
 

@@ -1,6 +1,6 @@
 ---
 title: IntelliFire
-description: 关于 Home Assistant 的 IntelliFire 壁炉集成说明。
+description: 'IntelliFire Wi-Fi fireplace modules provide app-based and Alexa control to various fireplaces. The modules do expose an unencrypted HTTP endpoint on the。'
 ha_category:
   - Binary sensor
   - Climate
@@ -26,6 +26,7 @@ ha_platforms:
 ha_dhcp: true
 ha_integration_type: device
 ---
+# IntelliFire
 
 IntelliFire Wi-Fi fireplace modules provide app-based and Alexa control to various fireplaces. The modules do expose an unencrypted HTTP endpoint on the network that provides status information. This integration will read that URL and create a set of sensors displaying the current fireplace state.
 

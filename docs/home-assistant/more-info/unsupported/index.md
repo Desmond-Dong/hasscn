@@ -1,5 +1,6 @@
 ---
 title: 不支持
+description: 'Home Assistant 不支持状态文档索引，汇总 AppArmor、Docker、NetworkManager、OS-Agent 与系统架构等不受支持情况的说明。'
 ---
 
 # 不支持

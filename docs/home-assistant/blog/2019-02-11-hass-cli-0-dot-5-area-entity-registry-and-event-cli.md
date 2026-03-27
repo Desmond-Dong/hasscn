@@ -1,7 +1,8 @@
 ---
 title: 'hass-cli 0.5: 区域, 设备 Registry and event CLI'
-description: Bulk editing for 区域!
+description: 'With Home Assistant 0.87hass-087 out we got 区域 and 设备 Registry UI thus it is time to do a 发布 of hass-cli that allows you to operate on these in a。'
 ---
+# hass-cli 0.5: 区域, 设备 Registry and event CLI
 
 With [Home Assistant 0.87][hass-087] out we got 区域 and 设备 Registry UI thus
 it is time to do a 发布 of `hass-cli` that allows you to operate on these in a terminal.

@@ -2,6 +2,7 @@
 title: Using MQTT with Home Assistant
 description: This post describes three different ways to use MQTT with Home Assistant.
 ---
+# Using MQTT with Home Assistant
 
 {::options coderay_line_numbers="table" /}
 

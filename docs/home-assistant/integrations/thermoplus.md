@@ -1,6 +1,6 @@
 ---
 title: ThermoPlus
-description: 使用 ThermoBeacon 集成连接和控制您的 ThermoPlus 设备
+description: '此集成由 Motionblinds(/home-assistant/integrations/motionblinds/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 2022.9
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Local Push
 ---
+# ThermoPlus
 
 :::note
 此集成由 [Motionblinds](/home-assistant/integrations/motion_blinds/) 集成支持。

@@ -1,7 +1,8 @@
 ---
 title: Docker Hub 速率限制
-description: Docker Hub 正在对您可以执行的拉取次数进行速率限制。
+description: 'Docker Hub 对您可以从其容器注册表获取容器信息的次数进行了限制。在此阅读更多关于其处理方式的信息Docker-rate-limit。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Docker Hub 速率限制
 
 ## 问题
 

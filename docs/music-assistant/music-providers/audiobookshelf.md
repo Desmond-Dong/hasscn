@@ -1,7 +1,7 @@
 ---
 title: "Audiobookshelf"
+description: 'Music Assistant 支持 <a href="https://www.audiobookshelf.org/" target="blank" rel="noopener noreferrer"audiobookshelf</a。由 <a href="https://github.com/fmunke。'
 ---
-
 # audiobookshelf 提供者 <img src="/assets/icons/audiobookshelf-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 <a href="https://www.audiobookshelf.org/" target="_blank" rel="noopener noreferrer">audiobookshelf</a>。由 <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a> 贡献和维护。

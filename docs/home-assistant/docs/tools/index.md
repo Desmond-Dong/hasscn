@@ -1,7 +1,7 @@
 ---
 title: 工具
+description: 'Home Assistant 提供多种工具帮助您配置和调试系统。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 工具
 
 Home Assistant 提供多种工具帮助您配置和调试系统。

@@ -1,6 +1,6 @@
 ---
 title: Queensland Bushfire Alert
-description: 有关如何将 Queensland Bushfire Alert 警报源集成到 Home Assistant 中的说明。
+description: 'Queensland Bushfire Alert 集成可接入包含昆士兰州山火警报(https://www.qfes.qld.gov.au/Current-Incidents)的 GeoRSS feed。它会从 feed 中获取警报，并按照与 Home Assistant 位置的距离进行筛选后显示相关信息。'
 ha_category:
   - Geolocation
 ha_iot_class: Cloud Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Queensland Bushfire Alert
 
 **Queensland Bushfire Alert** 集成可接入包含昆士兰州[山火警报](https://www.qfes.qld.gov.au/Current-Incidents)的 GeoRSS feed。它会从 feed 中获取警报，并按照与 Home Assistant 位置的距离进行筛选后显示相关信息。
 

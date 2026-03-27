@@ -1,6 +1,6 @@
 ---
 title: GeoRSS
-description: 关于如何在 Home Assistant 中设置 GeoRSS 传感器的说明。
+description: 'GeoRSS 集成会从 GeoRSS feed 中获取事件，并根据与 Home Assistant 位置的距离进行筛选，再按类别分组显示这些事件的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# GeoRSS
 
 **GeoRSS** 集成会从 GeoRSS feed 中获取事件，并根据与 Home Assistant 位置的距离进行筛选，再按类别分组显示这些事件的信息。
 

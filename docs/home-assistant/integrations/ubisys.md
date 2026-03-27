@@ -1,6 +1,6 @@
 ---
 title: Ubisys
-description: 使用 Zigbee 集成控制您的 Ubisys Zigbee 设备。
+description: 'Ubisys(https://www.ubisys.com/) 致力于确保其产品保持最新状态，并可在 Home Assistant 中直接使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: '2026.3'
 ha_iot_class: Local Push
 ha_category:
@@ -14,6 +14,7 @@ ha_platforms:
 ha_iot_standard: zigbee
 ha_brand: true
 ---
+# Ubisys
 
 [Ubisys](https://www.ubisys.com/) 致力于确保其产品保持最新状态，并可在 Home Assistant 中直接使用。
 

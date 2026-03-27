@@ -3,6 +3,7 @@ title: 'Community Highlights: 17th edition'
 description: know when your washing machine is ready with a blueprint, get started
   with the battery state card and bring your smart assistant to the kitchen with Holodeck
 ---
+# Community Highlights: 17th edition
 
 For me personally a small milestone: it’s already the 10th community highlight
 that I have written. Please let me know in the comments what you think. Some

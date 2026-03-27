@@ -1,6 +1,6 @@
 ---
 title: Kostal Plenticore Solar Inverter
-description: 关于如何在 Home Assistant 中集成 Kostal Plenticore 太阳能逆变器的说明。
+description: 'Kostal Plenticore 集成可让您从 Kostal Plenticore(https://www.kostal-solar-electric.com/) 太阳能逆变器获取数据，并将其接入 Home Assistant。它还允许您修改逆变器的部分设置值。'
 ha_category:
   - Energy
 ha_release: 2021.5
@@ -17,6 +17,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Kostal Plenticore Solar Inverter
 
 **Kostal Plenticore** 集成可让您从 [Kostal Plenticore](https://www.kostal-solar-electric.com/) 太阳能逆变器获取数据，并将其接入 Home Assistant。它还允许您修改逆变器的部分设置值。
 

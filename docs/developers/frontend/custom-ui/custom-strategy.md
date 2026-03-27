@@ -1,6 +1,8 @@
 ---
 title: "自定义策略"
+description: '于 Home Assistant 2021.5 引入。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 自定义策略
 
 _于 Home Assistant 2021.5 引入。_
 

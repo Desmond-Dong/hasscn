@@ -3,6 +3,7 @@ title: Linux 动作 Show special about Home Assistant
 description: Our founder Paulus Schoutsen is interviewed by Chris Fisher about home
   自动化, Hass.io and the new Home Assistant podcast.
 ---
+# Linux 动作 Show special about Home Assistant
 
 Our founder Paulus Schoutsen is interviewed by Chris Fisher for a Linux 动作 Show special about home 自动化, [Hass.io] and the new [Home Assistant podcast].
 

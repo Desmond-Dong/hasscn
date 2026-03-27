@@ -1,12 +1,13 @@
 ---
 title: "MQTT Vacuum"
-description: "有关如何将支持 MQTT 的 Vacuum 集成到 Home Assistant 中的说明。"
+description: 'The MQTT Vacuum integration allows you to control your MQTT-enabled vacuum. The initial state of the MQTT vacuum entity will set to unknown and can be。'
 
 ha_category:
   - Vacuum
 ha_release: 0.54
 ha_domain: mqtt
 ---
+# MQTT Vacuum
 
 The **MQTT Vacuum** integration allows you to control your MQTT-enabled vacuum.
 The initial state of the MQTT vacuum entity will set to `unknown` and can be reset by a device by sending a `null` payload as state.

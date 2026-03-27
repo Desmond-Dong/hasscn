@@ -1,12 +1,13 @@
 ---
 title: "MQTT binary sensor"
-description: "关于如何在 Home Assistant 中集成 MQTT 二值传感器的说明。"
+description: 'MQTT 二值传感器集成使用接收到的 MQTT 消息将二值传感器的状态设置为 on、off 或 unknown。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
 ha_release: 0.9
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT binary sensor
 
 **MQTT 二值传感器**集成使用接收到的 MQTT 消息将二值传感器的状态设置为 `on`、`off` 或 `unknown`。
 

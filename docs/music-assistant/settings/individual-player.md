@@ -1,7 +1,7 @@
 ---
 title: "单个播放器设置"
+description: '单个播放器设置通常相当广泛。下图显示了各个部分的典型标题，下面的小节将对它们进行扩展。群组有相同的部分，但可用的设置较少。并非所有播放器都列出了所有设置。可以参考播放器汇总表(/music-assistant/player-support/)来识别特定播放器类型应有的一些功能，否则请访问播放器的设置页面。'
 ---
-
 # 单个播放器设置 <img src="/assets/icons/settings-players-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 单个播放器设置通常相当广泛。下图显示了各个部分的典型标题，下面的小节将对它们进行扩展。群组有相同的部分，但可用的设置较少。并非所有播放器都列出了所有设置。可以参考[播放器汇总表](/music-assistant/player-support/)来识别特定播放器类型应有的一些功能，否则请访问播放器的设置页面。

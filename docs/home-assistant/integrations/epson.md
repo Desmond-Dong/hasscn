@@ -1,6 +1,6 @@
 ---
 title: Epson
-description: 关于将 Epson 投影仪集成到 Home Assistant 的说明。
+description: 'Epson 集成允许您从 Home Assistant 控制 Epson 投影仪。 初始配置期间设备必须开机。 当您首次添加设备时，请在按照集成步骤操作之前将其开机。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.72
@@ -13,6 +13,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# Epson
 
 **Epson** 集成允许您从 Home Assistant 控制 Epson 投影仪。
 **初始配置期间设备必须开机。**

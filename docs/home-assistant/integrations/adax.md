@@ -1,6 +1,6 @@
 ---
 title: Adax
-description: 关于将 Adax 加热器集成到 Home Assistant 的说明。
+description: 'Adax integration 将 Adax 加热器集成到 Home Assistant 中，可以配置为使用本地或云接口。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: integration
 ---
+# Adax
 
 **Adax** integration 将 Adax 加热器集成到 Home Assistant 中，可以配置为使用本地或云接口。
 

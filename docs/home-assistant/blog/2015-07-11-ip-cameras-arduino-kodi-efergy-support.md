@@ -1,7 +1,8 @@
 ---
 title: 现已支持 IP 摄像头、Arduino、Kodi 和 Efergy 能耗监测器
-description: 新增对 IP 摄像头、Arduino、Kodi 和 Efergy 监测器的支持
+description: '又过了一个月，Home Assistant 迎来了一批很棒的新功能。本月发布由 balloob(https://github.com/balloob)、ettisan(https://github.com/ettisan)、fabaff(https://github.com/fabaff)、gyran(htt。'
 ---
+# 现已支持 IP 摄像头、Arduino、Kodi 和 Efergy 能耗监测器
 
 又过了一个月，Home Assistant 迎来了一批很棒的新功能。本月发布由 [balloob](https://github.com/balloob)、[ettisan](https://github.com/ettisan)、[fabaff](https://github.com/fabaff)、[gyran](https://github.com/gyran)、[jamespcole](https://github.com/jamespcole)、[michaelarnauts](https://github.com/michaelarnauts)、[miniconfig](https://github.com/miniconfig) 和 [rmkraus](https://github.com/rmkraus) 共同实现。
 

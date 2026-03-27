@@ -1,6 +1,6 @@
 ---
 title: Sesame Smart Lock
-description: 有关如何将 CANDY HOUSE 的 Sesame 集成到 Home Assistant 的说明。
+description: 'Sesame Smart Lock 集成可让您控制由 CANDY HOUSE, Inc. 生产的 Sesame(https://candyhouse.co/) 智能锁。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Lock
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Sesame Smart Lock
 
 **Sesame Smart Lock** 集成可让您控制由 CANDY HOUSE, Inc. 生产的 [Sesame](https://candyhouse.co/) 智能锁。
 

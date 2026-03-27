@@ -1,6 +1,6 @@
 ---
 title: EBox
-description: 关于如何在 Home Assistant 中集成 EBox 数据使用量的说明。
+description: '将您的 EBox(https://client.ebox.ca/) 账户信息集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_release: 0.39
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# EBox
 
 将您的 [EBox](https://client.ebox.ca/) 账户信息集成到 Home Assistant 中。
 

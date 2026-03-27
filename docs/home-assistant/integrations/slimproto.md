@@ -13,6 +13,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# SlimProto (Squeezebox players)
 
 **SlimProto** 集成允许您直接通过 Home Assistant 控制 [Squeezebox](https://en.wikipedia.org/wiki/Squeezebox_%28network_music_player%29) 音乐播放器，而无需 Logitech Media Server 之类的外部媒体服务器。借助该集成，您可以控制 Squeezebox 硬件设备，如 Classic、Transporter、Duet、Boom、Radio 和 Touch，也可以控制软件播放器，如 [Squeezelite](https://github.com/ralph-irving/squeezelite)、[PiCorePlayer](https://www.picoreplayer.org/) 或 [Max2Play](https://www.max2play.com/en/)。对于真正热衷 DIY 的玩家，甚至还有 [ESP32 版本的播放器](https://github.com/sle118/squeezelite-esp32)。
 

@@ -1,7 +1,8 @@
 ---
 title: 使用 Discovery 快速启动你的配置
-description: Home Assistant 现在可以自动检测并配置网络中的部分设备。
+description: '大多数人都不喜欢手动配置。大家希望开箱即用。我们即将介绍的新 discovery 组件，目标正是实现这一点。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 使用 Discovery 快速启动你的配置
 
 大多数人都不喜欢手动配置。大家希望开箱即用。我们即将介绍的新 discovery 组件，目标正是实现这一点。
 

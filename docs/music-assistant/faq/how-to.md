@@ -1,6 +1,6 @@
 ---
 title: 常见问题 - 我该如何...？
-description: Music Assistant 的常见用途
+description: '对于播放列表、艺术家、专辑和广播，您可以直接使用名称。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
 # 我该如何...？
 

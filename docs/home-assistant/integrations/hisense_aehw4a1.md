@@ -1,6 +1,6 @@
 ---
 title: Hisense AEH-W4A1
-description: 关于如何设置海信 AEH W4A1 WiFi 空调模块的说明。
+description: 'Hisense AEH-W4A1 是一款 Wi-Fi 模块，可为部分海信空调及其贴牌机型（如 Smart Cool、Beko 等）提供 Wi-Fi 连接能力。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.103
 ha_category:
   - Climate
@@ -13,6 +13,7 @@ ha_platforms:
   - climate
 ha_integration_type: hub
 ---
+# Hisense AEH-W4A1
 
 Hisense AEH-W4A1 是一款 Wi-Fi 模块，可为部分海信空调及其贴牌机型（如 Smart Cool、Beko 等）提供 Wi-Fi 连接能力。
 

@@ -1,7 +1,9 @@
 ---
 title: "贡献模板句子"
+description: '模板句子需要提交到我们的 GitHub Intents 仓库(https://github.com/home-assistant/intents)。这些句子会由语言负责人(/developers/voice/language-leaders)审核，正确后将被合并。你既可以贡献新句子，也可以改进现有句子。'
 sidebar_label: "贡献句子"
 ---
+# 贡献模板句子
 
 模板句子需要提交到我们的 [GitHub Intents 仓库](https://github.com/home-assistant/intents)。这些句子会由[语言负责人](/developers/voice/language-leaders)审核，正确后将被合并。你既可以贡献新句子，也可以改进现有句子。
 

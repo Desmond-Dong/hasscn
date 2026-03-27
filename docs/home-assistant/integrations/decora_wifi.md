@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Leviton Decora Wi-Fi
 
 通过 MyLeviton API 支持 [Leviton Decora Wi-Fi](https://leviton.com/products/residential/smart-home/smart-switches) 调光器和开关。
 

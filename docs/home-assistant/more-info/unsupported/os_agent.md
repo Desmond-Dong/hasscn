@@ -1,7 +1,8 @@
 ---
 title: OS-Agent 问题
-description: 关于缺少 OS-Agent 为何将安装标记为不支持的更多信息。
+description: 'OS-Agent 是 Supervisor 在主机上处理额外任务的方式，没有它，Supervisor 将无法完成其任务和职责。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# OS-Agent 问题
 
 ## 问题
 

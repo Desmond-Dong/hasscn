@@ -1,6 +1,6 @@
 ---
 title: EverLights
-description: 关于如何在 Home Assistant 中设置 EverLights 的说明。
+description: 'EverLights(https://myeverlights.com/) 是安装在房屋檐槽或泛水板上的永久性圣诞灯。本集成可以将某个分区中的所有 LED 设置为同一种颜色，或者激活此前已保存到控制盒中的图案效果。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Light
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# EverLights
 
 [EverLights](https://myeverlights.com/) 是安装在房屋檐槽或泛水板上的永久性圣诞灯。本集成可以将某个分区中的所有 LED 设置为同一种颜色，或者激活此前已保存到控制盒中的图案效果。
 

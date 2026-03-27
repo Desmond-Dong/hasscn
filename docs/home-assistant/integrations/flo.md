@@ -1,6 +1,6 @@
 ---
 title: Flo
-description: 关于如何将 Flo by Moen 集成到 Home Assistant 的说明。
+description: 'Flo 集成集成了 Flo by Moen smart water shutoff valves(https://www.moen.com/flo) 进入家庭助理。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Flo
 
 **Flo** 集成集成了
 [Flo by Moen smart water shutoff valves](https://www.moen.com/flo) 进入家庭助理。

@@ -1,6 +1,6 @@
 ---
 title: Foursquare
-description: 关于如何将 Foursquare API 集成到 Home Assistant 的说明。
+description: 'Foursquare 集成可接收来自 Foursquare Real-Time API(https://developer.foursquare.com/overview/realtime) 的推送，并提供一个在 Swarm 中为用户签到的动作。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Social
 ha_release: 0.26
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Foursquare
 
 **Foursquare** 集成可接收来自 Foursquare [Real-Time API](https://developer.foursquare.com/overview/realtime) 的推送，并提供一个在 Swarm 中为用户签到的动作。
 

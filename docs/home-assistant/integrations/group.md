@@ -1,6 +1,6 @@
 ---
 title: Group
-description: 关于如何在 Home Assistant 中设置组的说明。
+description: 'Group 集成可让你将多个实体组合成一个实体。组内成员实体可以作为一个整体进行控制和监控。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -38,6 +38,7 @@ ha_platforms:
   - valve
 ha_integration_type: helper
 ---
+# Group
 
 **Group** 集成可让你将多个实体组合成一个实体。组内成员实体可以作为一个整体进行控制和监控。
 

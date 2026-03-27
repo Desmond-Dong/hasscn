@@ -1,7 +1,8 @@
 ---
 title: "Music Assistant 2.7 - 占领电波"
-description: "全新视觉改版、新功能和提供商，以及自建流媒体协议，这是我们最大的更新！"
+description: '过去几个月我们一直在幕后精心谱曲，积累到宏大的高潮。今天，节拍终于在 Music Assistant(https://www.music-assistant.io/) 最大的更新上落下。通过 2.7 版本，Music Assistant 正在全新亮相——全新视觉改版、排行榜级别的新功能和提供商阵容。'
 ---
+# Music Assistant 2.7 - 占领电波
 
 过去几个月我们一直在幕后精心谱曲，积累到宏大的高潮。今天，节拍终于在 [Music Assistant](https://www.music-assistant.io/) 最大的更新上落下。通过 **2.7 版本**，Music Assistant 正在全新亮相——全新视觉改版、排行榜级别的新功能和提供商阵容，以及我们自己*打造*的全新流媒体协议。
 

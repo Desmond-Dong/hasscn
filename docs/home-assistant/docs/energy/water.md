@@ -1,7 +1,8 @@
 ---
 title: 集成您的用水量
-description: 了解如何将您的用水信息添加到 Home Assistant 家庭能源管理中。
+description: 'Home Assistant 允许您在家庭能源管理中跟踪您的用水量。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 集成您的用水量
 
 Home Assistant 允许您在家庭能源管理中跟踪您的用水量。
 

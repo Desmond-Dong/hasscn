@@ -1,6 +1,6 @@
 ---
 title: Entur
-description: 关于如何设置挪威公共交通出发监测的说明。
+description: 'Entur 集成为挪威任何公交站、汽车渡轮码头、火车站、机场和客运渡轮码头的下一次出发提供实时出发信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_release: 0.84
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: legacy
 ---
+# Entur
 
 **Entur** 集成为挪威任何公交站、汽车渡轮码头、火车站、机场和客运渡轮码头的下一次出发提供实时出发信息。
 

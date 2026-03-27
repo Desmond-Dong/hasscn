@@ -1,6 +1,6 @@
 ---
 title: Bayesian
-description: 关于如何在 Home Assistant 中集成阈值贝叶斯传感器的说明。
+description: '贝叶斯传感器是一个虚拟二值传感器，通过使用概率组合其他传感器的状态来确定其状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Utility
@@ -18,6 +18,7 @@ related:
     title: Configuration file
 ha_config_flow: true
 ---
+# Bayesian
 
 **贝叶斯**传感器是一个虚拟二值传感器，通过使用概率组合其他传感器的状态来确定其状态。
 

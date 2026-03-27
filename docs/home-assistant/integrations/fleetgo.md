@@ -1,6 +1,6 @@
 ---
 title: FleetGO
-description: 关于如何使用 FleetGO 作为设备跟踪器的说明。
+description: 'FleetGO 集成允许您将配备 FleetGO(https://fleetgo.com) 硬件的车辆集成到 Home Assistant 中。它可以让您查看车辆的某些详细信息，还可以在地图上显示您的车辆。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Car
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# FleetGO
 
 **FleetGO** 集成允许您将配备 [FleetGO](https://fleetgo.com) 硬件的车辆集成到 Home Assistant 中。它可以让您查看车辆的某些详细信息，还可以在地图上显示您的车辆。
 

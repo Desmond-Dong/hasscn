@@ -1,6 +1,6 @@
 ---
 title: Schluter
-description: 有关如何将 Schluter DITRA-HEAT-E-WiFi 恒温器集成到 Home Assistant 的说明。
+description: 'Schluter 集成允许您在 Home Assistant 中接入 Schluter-DITRA-HEAT-E-WiFi(https://www.schluter.com/schluter-us/enUS/ditra-heat-wifi) 电地暖恒温器。'
 ha_category:
   - Climate
 ha_release: 0.108
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Schluter
 
 **Schluter** 集成允许您在 Home Assistant 中接入 [Schluter-DITRA-HEAT-E-WiFi](https://www.schluter.com/schluter-us/en_US/ditra-heat-wifi) 电地暖恒温器。
 

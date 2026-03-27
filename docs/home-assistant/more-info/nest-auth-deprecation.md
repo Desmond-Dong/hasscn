@@ -2,7 +2,6 @@
 title: Nest 桌面认证弃用
 description: Nest Home Assistant 集成推荐的主要认证方法称为桌面、已安装应用或 OOB 认证，已于 2022 年 2 月 28 日对新用户弃用，并将于 2022 年 10 月 3 日对所有用户禁用。
 ---
-
 Nest Home Assistant 集成推荐的主要认证方法称为*桌面*、*已安装应用*或 *OOB* 认证，已于 2022 年 2 月 28 日对新用户弃用，并将于 2022 年 10 月 3 日对所有用户禁用。请参阅 [Google 开发者博客](https://developers.googleblog.com/2022/02/making-oauth-flows-safer.html#disallowed-oob)了解公告详情。
 
 **现有用户必须在 2022 年 10 月 3 日之前升级到 *Web Auth* 凭据。**

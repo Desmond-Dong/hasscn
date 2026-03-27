@@ -1,7 +1,8 @@
 ---
 title: ODROID
-description: 在 ODROID 上安装 Home Assistant
+description: '本指南介绍如何在 ODROID 设备上安装 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# ODROID
 
 ## 安装 Home Assistant Operating System
 

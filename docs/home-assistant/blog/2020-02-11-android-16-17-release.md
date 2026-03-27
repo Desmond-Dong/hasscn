@@ -3,6 +3,7 @@ title: Home Assistant Companion for Android 1.6 and 1.7
 description: Today we're releasing a big update for our Android companion app including
   actionable 通知, requesting location updates, 传感器 and more
 ---
+# Home Assistant Companion for Android 1.6 and 1.7
 
 在过去一周里，我们为 Home Assistant Companion for Android 带来了一些很棒的新功能和改进。我想借这个机会，重点介绍一下 1.6 和 1.7 版本中最近加入的内容。
 

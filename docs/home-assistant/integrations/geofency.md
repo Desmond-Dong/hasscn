@@ -1,6 +1,6 @@
 ---
 title: Geofency
-description: 关于如何使用 Geofency 在 Home Assistant 中跟踪设备的说明。
+description: '此集成用于接入 Geofency(https://www.geofency.com/)。Geofency 是一款付费 iOS 应用，允许用户配置在进入或离开地理围栏或 iBeacon 区域时发送请求。您可以将其配置为与 Home Assistant 配合使用，以更新您的位置。'
 ha_category:
   - Presence detection
 ha_release: 0.53
@@ -14,6 +14,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Geofency
 
 此集成用于接入 [Geofency](https://www.geofency.com/)。Geofency 是一款付费 iOS 应用，允许用户配置在进入或离开地理围栏或 iBeacon 区域时发送请求。您可以将其配置为与 Home Assistant 配合使用，以更新您的位置。
 

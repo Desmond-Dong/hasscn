@@ -1,6 +1,6 @@
 ---
 title: ATEN Rack PDU
-description: 关于将 ATEN 机架 PDU 集成到 Home Assistant 的说明。
+description: 'ATEN Rack PDU 集成允许您从 Home Assistant 控制 ATEN 机架 PDU(https://www.aten.com/eu/en/products/energy-intelligence-pduupsracks/rack-pdu/)。'
 ha_category:
   - Switch
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# ATEN Rack PDU
 
 **ATEN Rack PDU** 集成允许您从 Home Assistant 控制 [ATEN 机架 PDU](https://www.aten.com/eu/en/products/energy-intelligence-pduupsracks/rack-pdu/)。
 

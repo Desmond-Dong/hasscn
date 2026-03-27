@@ -1,6 +1,6 @@
 ---
 title: eSterownik eCoal.pl Boiler
-description: 关于如何将 eSterownik.pl eCoal.pl 控制器集成到 Home Assistant 的说明。
+description: 'eSterownik eCoal.pl Boiler 集成是由 esterownik.pl eCoal boiler controller(https://esterownik.pl/nasze-produkty/ecoal) 管理的泵和传感器的基础。'
 ha_category:
   - Water heater
 ha_release: 0.87
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# eSterownik eCoal.pl Boiler
 
 **eSterownik eCoal.pl Boiler** 集成是由 [esterownik.pl eCoal boiler controller](https://esterownik.pl/nasze-produkty/ecoal) 管理的泵和传感器的基础。
 

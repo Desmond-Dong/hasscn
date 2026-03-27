@@ -1,7 +1,9 @@
 ---
 title: "概览"
+description: 'Home Assistant 与 Apple Watch 深度集成。您可以直接在表盘上以复杂功能的形式显示 Home Assistant 信息，并且从应用版本 2024.9 开始，可以运行脚本、激活场景和 iOS 操作。 本页属于 Home Assistant 配套应用文档。'
 id: "apple-watch"
 ---
+# 概览
 
 Home Assistant 与 Apple Watch 深度集成。您可以直接在表盘上以复杂功能的形式显示 Home Assistant 信息，并且从应用版本 2024.9 开始，可以运行脚本、激活场景和 iOS 操作。
 

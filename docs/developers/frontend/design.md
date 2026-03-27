@@ -1,7 +1,9 @@
 ---
 title: "前端设计"
+description: '我们维护了一个设计门户 https://design.home-assistant.io(https://design.home-assistant.io)，其中提供了前端多个方面的信息，例如：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "设计"
 ---
+# 前端设计
 
 我们维护了一个设计门户 [https://design.home-assistant.io](https://design.home-assistant.io)，其中提供了前端多个方面的信息，例如：
 

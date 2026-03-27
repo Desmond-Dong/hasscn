@@ -1,6 +1,6 @@
 ---
 title: Ness Alarm
-description: "有关如何将 Ness D8x/D16x 报警系统与 Home Assistant 集成的说明。"
+description: 'The Ness Alarm integration allows Home Assistant users who own a Ness D8x/D16x alarm system to leverage their alarm system and its sensors to provide Home。'
 
 ha_category:
   - Alarm
@@ -21,6 +21,7 @@ related:
 ha_quality_scale: legacy
 ha_config_flow: true
 ---
+# Ness Alarm
 
 The **Ness Alarm** integration allows Home Assistant users who own a Ness D8x/D16x alarm system to leverage their alarm system and its sensors to provide Home Assistant with information about their homes. Connectivity between Home Assistant and the alarm is accomplished through an IP232 module that must be connected to the alarm.
 

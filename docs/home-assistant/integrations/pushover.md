@@ -1,6 +1,6 @@
 ---
 title: Pushover
-description: 有关如何将 Pushover 通知添加到 Home Assistant 的说明。
+description: 'Pushover 动作(https://pushover.net/)是 notify 集成的平台之一。它允许各个集成通过 Pushover 向用户发送消息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: pre 0.7
@@ -13,6 +13,7 @@ ha_integration_type: service
 ha_codeowners:
   - '@engrbm87'
 ---
+# Pushover
 
 [Pushover 动作](https://pushover.net/)是 notify 集成的平台之一。它允许各个集成通过 Pushover 向用户发送消息。
 

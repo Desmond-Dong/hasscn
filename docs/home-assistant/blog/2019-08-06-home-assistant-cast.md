@@ -1,7 +1,8 @@
 ---
 title: Home Assistant Cast
-description: 在 Chromecast 或带屏 Google Assistant 设备上显示 Home Assistant。
+description: '<p class=''img'' <img src=''/home-assistant/images/blog/2019-08-home-assistant-cast/hero.png'' alt=''Picture of a Google Nest Hub with the Home Assistant UI on。'
 ---
+# Home Assistant Cast
 
 <p class='img'>
 <img src='/home-assistant/images/blog/2019-08-home-assistant-cast/hero.png' alt='Picture of a Google Nest Hub with the Home Assistant UI on it.'>

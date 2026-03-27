@@ -1,6 +1,6 @@
 ---
 title: Lightwave
-description: 关于如何将 Lightwave 设备与 Home Assistant 集成的说明。
+description: 'The Lightwave integration links Home Assistant with your Lightwave Connect Series WiFi link for controlling Lightwave lights, switches and TRVs. 本页属于 Home。'
 ha_category:
   - Hub
   - Light
@@ -19,7 +19,6 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
-
 The **Lightwave** integration links Home Assistant with your Lightwave Connect Series WiFi link for controlling Lightwave lights, switches and TRVs.
 
 This integration is for Connect Series WiFi links and does not support Smart Series devices, for more information see [Smart and Connect Series](https://support.lightwaverf.com/knowledge/about-smart-and-connect-series).  

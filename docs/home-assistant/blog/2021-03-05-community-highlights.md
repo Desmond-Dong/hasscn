@@ -3,6 +3,7 @@ title: 'Community Highlights: 11th edition'
 description: Automatically take snapshots of movement on your camera, build your own
   birdhouse with a weather station or get started with your lighting in the garden.
 ---
+# Community Highlights: 11th edition
 
 The 11th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

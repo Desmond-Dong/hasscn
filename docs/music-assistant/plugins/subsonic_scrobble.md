@@ -1,8 +1,7 @@
 ---
 title: Subsonic Scrobbler 插件
-description: 将播放记录 scrobble 到 Subsonic 媒体服务器
+description: 'Music Assistant 可以将播放的曲目报告给 Subsonic 媒体服务器(/music-assistant/music-providers/subsonic/)。由 <a href="https://github.com/clusters" target="blank"。'
 ---
-
 # Subsonic Scrobbler <img src="/assets/icons/subsonic_icon.png" alt="预览图片" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant 可以将播放的曲目报告给 [Subsonic 媒体服务器](/music-assistant/music-providers/subsonic/)。由 <a href="https://github.com/clusters" target="_blank" rel="noopener noreferrer">Clusters</a> 贡献和维护。

@@ -1,6 +1,6 @@
 ---
 title: De Lijn
-description: 关于如何将 De Lijn（佛兰德斯公共交通公司）发车时间集成到 Home Assistant 的说明。
+description: 'De Lijn 集成将为您提供佛兰德斯（比利时）De Lijn 公共交通网络特定站点的下一班公交、有轨电车或地铁的发车时间。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.97
 ha_category:
   - Sensor
@@ -18,6 +18,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# De Lijn
 
 **De Lijn** 集成将为您提供佛兰德斯（比利时）De Lijn 公共交通网络特定站点的下一班公交、有轨电车或地铁的发车时间。
 

@@ -1,7 +1,8 @@
 ---
 title: 六周年快乐
-description: 感谢社区，让 Home Assistant 成为一个特别的地方。
+description: '<img src=''/home-assistant/images/blog/2019-09-birthday/top.png'' style=''border: 0;box-shadow: none;''。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 六周年快乐
 
 <img src='/home-assistant/images/blog/2019-09-birthday/top.png' style='border: 0;box-shadow: none;'>
 

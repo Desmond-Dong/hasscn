@@ -1,6 +1,6 @@
 ---
 title: Netdata
-description: "有关如何将 Netdata 集成到 Home Assistant 中的说明。"
+description: 'The Netdata integration allows you to display information collected by Netdata(https://www.netdata.cloud/). 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - System monitor
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Netdata
 
 The **Netdata** integration allows you to display information collected by [Netdata](https://www.netdata.cloud/).
 

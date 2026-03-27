@@ -1,6 +1,6 @@
 ---
 title: NextBus
-description: "有关如何在 Home Assistant 中使用 Nextbus 公共交通数据的说明。"
+description: 'The NextBus integration will give you the next departure time and associated data from your public transit station/stop. The data comes from。'
 
 ha_category:
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# NextBus
 
 The **NextBus** integration will give you the next departure time and associated data from your public transit station/stop. The data comes from [NextBus](https://www.nextbus.com), which provides real time transit data for a number of transit authorities.
 

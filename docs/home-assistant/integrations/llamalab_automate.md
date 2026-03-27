@@ -1,6 +1,6 @@
 ---
 title: LlamaLab Automate
-description: 关于如何将 LlamaLab Automate 通知添加到 Home Assistant 的说明。
+description: 'The LlamaLab Automate integration uses Googles Cloud Messaging Services to push messages from Home Assistant to your Android device running the LlamaLab。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# LlamaLab Automate
 
 The **LlamaLab Automate** integration uses Googles Cloud Messaging Services to push messages from Home Assistant to your Android device running the LlamaLab [Automate](https://llamalab.com/automate/) app. This can serve as an alternative to Tasker + AutoRemote.
 

@@ -1,7 +1,7 @@
 ---
 title: 脚本
+description: '脚本是可以在 Home Assistant 中执行的自动化动作序列。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 脚本
 
 脚本是可以在 Home Assistant 中执行的自动化动作序列。

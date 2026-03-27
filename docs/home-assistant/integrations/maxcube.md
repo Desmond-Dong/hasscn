@@ -1,6 +1,6 @@
 ---
 title: eQ-3 MAX!
-description: 关于如何通过 eQ-3 MAX! Cube 将 eQ-3 MAX! 组件与 Home Assistant 集成的说明。
+description: 'Home Assistant 的 eQ-3 MAX! 集成允许您通过 eQ-3 MAX! Cube 连接 eQ-3 MAX! 组件。这些组件通过 TCP 连接到 eQ-3 MAX! Cube，并会自动在 Home Assistant 中提供所有受支持的集成。每个设备的名称由 MAX! 房间名和设备名拼接而成。'
 ha_category:
   - Binary sensor
   - Climate
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# eQ-3 MAX!
 
 Home Assistant 的 **eQ-3 MAX!** 集成允许您通过 eQ-3 MAX! Cube 连接 eQ-3 MAX! 组件。这些组件通过 TCP 连接到 eQ-3 MAX! Cube，并会自动在 Home Assistant 中提供所有受支持的集成。每个设备的名称由 MAX! 房间名和设备名拼接而成。
 

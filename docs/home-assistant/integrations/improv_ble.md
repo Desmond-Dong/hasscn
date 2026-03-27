@@ -1,6 +1,6 @@
 ---
 title: Improv via BLE
-description: 通过 BLE 的 Improv 集成允许将通过 BLE 实现 Improv 的设备连接到 Wi-Fi。
+description: 'Improv via BLE 集成允许将通过 BLE 实现 Improv 的设备连接到 Wi-Fi。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2023.11
 ha_bluetooth: true
 ha_category:
@@ -12,6 +12,7 @@ ha_integration_type: device
 ha_iot_class: Local Polling
 ha_config_flow: true
 ---
+# Improv via BLE
 
 **Improv via BLE** 集成允许将通过 BLE 实现 Improv 的设备连接到 Wi-Fi。
 

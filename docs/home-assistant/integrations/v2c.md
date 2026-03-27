@@ -1,6 +1,6 @@
 ---
 title: V2C
-description: 关于如何将 V2C Trydan 电动汽车充电设备与 Home Assistant 集成的说明。
+description: 'V2C 集成允许您在 Home Assistant 中监控和控制本地的 V2C(https://v2charge.com/trydan/) Trydan 电动车供电设备（EVSE）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Car
 ha_release: '2023.12'
@@ -17,6 +17,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# V2C
 
 **V2C** 集成允许您在 Home Assistant 中监控和控制本地的 [V2C](https://v2charge.com/trydan/) Trydan 电动车供电设备（EVSE）。
 

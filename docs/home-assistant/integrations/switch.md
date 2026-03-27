@@ -1,6 +1,6 @@
 ---
 title: Switch
-description: 有关如何使用 Home Assistant 设置开关的说明。
+description: 'Switch 集成管理开关实体的状态，并允许您控制它们。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Switch
 ha_release: 0.7
@@ -17,6 +17,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Switch
 
 **Switch** 集成管理开关实体的状态，并允许您控制它们。
 

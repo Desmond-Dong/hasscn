@@ -1,6 +1,6 @@
 ---
 title: Eliqonline
-description: 关于如何在 Home Assistant 中集成 Eliqonline 设备的说明。
+description: 'Integrate your ELIQ Online(https://eliq.io/) smart meter information into Home Assistant. To get an access token(https://my.eliq.io/user/settings/api) and。'
 ha_category:
   - Energy
 ha_release: '0.10'
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Eliqonline
 
 Integrate your [ELIQ Online](https://eliq.io/) smart meter information into Home Assistant. To get an [access token](https://my.eliq.io/user/settings/api) and the [Channel ID](https://my.eliq.io/user/settings/locations), log in to your account.
 

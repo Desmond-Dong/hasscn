@@ -1,6 +1,6 @@
 ---
 title: Möhlenhoff Alpha 2
-description: 关于如何将 Möhlenhoff Alpha 2 温控系统集成到 Home Assistant 的说明。
+description: 'The Möhlenhoff Alpha 2 integration allows you to control a Möhlenhoff Alpha 2(https://dev.moehlenhoff.de/en/products/room-by-room-control/oem-alpha-2-syste。'
 
 ha_category:
   - Climate
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Möhlenhoff Alpha 2
 
 The **Möhlenhoff Alpha 2** integration allows you to control a [Möhlenhoff Alpha 2](https://dev.moehlenhoff.de/en/products/room-by-room-control/oem-alpha-2-system)
 

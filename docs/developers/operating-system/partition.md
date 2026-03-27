@@ -1,7 +1,9 @@
 ---
 title: "分区"
+description: 'Home Assistant Operating System（HAOS）的分区布局与 Linux 系统中通常使用的布局略有不同。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 分区
 ---
+# 分区
 
 Home Assistant Operating System（HAOS）的分区布局与 Linux 系统中通常使用的布局略有不同。
 

@@ -3,6 +3,7 @@ title: Why we use web components and Polymer
 description: In this blog post I talk about the reasoning to use web components and
   Polymer.
 ---
+# Why we use web components and Polymer
 
 我一直想写这篇文章，因为我们经常被问到类似的问题：_“为什么 Home Assistant 要用 Polymer？为什么不用 React、Redux 之类的？”_
 

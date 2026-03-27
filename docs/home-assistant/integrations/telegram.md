@@ -1,6 +1,6 @@
 ---
 title: Telegram
-description: 有关如何将 Telegram 通知添加到 Home Assistant 的说明。
+description: 'Telegram 集成已被标记为弃用，未来将被移除。 请改用 Telegram bot integration(/home-assistant/integrations/telegrambot)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: 0.7.5
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Telegram
 
 :::warning
 **Telegram** 集成已被标记为弃用，未来将被移除。

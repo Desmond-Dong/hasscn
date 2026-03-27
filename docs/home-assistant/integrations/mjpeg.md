@@ -1,6 +1,6 @@
 ---
 title: MJPEG IP Camera
-description: 关于如何在 Home Assistant 中集成 IP 摄像头的说明。
+description: 'MJPEG IP Camera 集成允许您将支持通过 MJPEG（Motion JPEG）方式输出视频流的 IP 摄像头接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Camera
 ha_release: pre 0.7
@@ -11,6 +11,7 @@ ha_platforms:
   - camera
 ha_integration_type: integration
 ---
+# MJPEG IP Camera
 
 **MJPEG IP Camera** 集成允许您将支持通过 MJPEG（Motion JPEG）方式输出视频流的 IP 摄像头接入 Home Assistant。
 

@@ -1,6 +1,6 @@
 ---
 title: IamMeter
-description: 关于如何在 Home Assistant 中集成 IAMMETER 传感器的说明。
+description: 'IAMMETER(https://www.iammeter.com/) 提供双向单相电表（WEM3080(https://www.iammeter.com/products/single-phase-meter)）和双向三相电力监测器（WEM3080T(https://www.iammeter.com/pro。'
 ha_category:
   - Energy
   - Sensor
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# IamMeter
 
 [IAMMETER](https://www.iammeter.com/) 提供双向单相电表（[WEM3080](https://www.iammeter.com/products/single-phase-meter)）和双向三相电力监测器（[WEM3080T](https://www.iammeter.com/products/three-phase-meter)）。这两种设备都可以集成到 Home Assistant。
 [WEM3050T](https://www.iammeter.com/products/3phase-meter-3050t) 是 IAMMETER 于 2023 年 11 月发布的最新三相/分相电表。

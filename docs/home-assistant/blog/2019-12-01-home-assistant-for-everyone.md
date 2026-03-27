@@ -1,7 +1,8 @@
 ---
 title: 面向所有人的 Home Assistant
-description: 让它更简单。我们正在让 Home Assistant 更易使用、更易配置，也更易参与贡献。
+description: '通过 Home Assistant，我们希望在后台默默提供帮助，让人们更自在地生活。2016 年我写过一篇关于理想家庭自动化(https://www.home-assistant.io/博客/2016/01/19/perfect-home-automation/)的文章，详细说明了这一观点。'
 ---
+# 面向所有人的 Home Assistant
 
 通过 Home Assistant，我们希望在后台默默提供帮助，让人们更自在地生活。2016 年我写过一篇关于[理想家庭自动化](https://www.home-assistant.io/博客/2016/01/19/perfect-home-automation/)的文章，详细说明了这一观点。从那以后我们一直在朝这个方向努力。
 

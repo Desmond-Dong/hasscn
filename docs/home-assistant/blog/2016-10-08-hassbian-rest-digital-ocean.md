@@ -3,6 +3,7 @@ title: '0.30: More Async, HASSbian, Digital Ocean, statistics, REST'
 description: More asynchronous, HASSbian 图像, Support for Digital Ocean, statistics,
   Västtrafik public transport, and Hacktoberfest.
 ---
+# 0.30: More Async, HASSbian, Digital Ocean, statistics, REST
 
 没错，只过了九天我们就发布了 0.30。别担心，我们会尽量保持常规发布节奏，不会变成天天发版。
 

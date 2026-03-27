@@ -1,7 +1,9 @@
 ---
 title: "安卓风格"
+description: '仅:app 和:automotive 模块受这些风格影响。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "品味"
 ---
+# 安卓风格
 
 :::info
 仅`:app` 和`:automotive` 模块受这些风格影响。

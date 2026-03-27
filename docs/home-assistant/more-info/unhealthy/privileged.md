@@ -1,7 +1,8 @@
 ---
 title: 特权
-description: 关于不以特权模式运行为何将安装标记为不健康的更多信息。
+description: 'Supervisor 需要对主机上的 Docker 运行时拥有特权访问权限，才能执行它需要执行的所有操作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 特权
 
 ## 问题
 

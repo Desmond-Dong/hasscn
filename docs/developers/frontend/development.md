@@ -1,7 +1,9 @@
 ---
 title: "前端开发"
+description: 'Home Assistant 前端使用 Web Components 构建。关于我们技术选型的更多背景，请参阅这篇博客文章(https://developers.home-assistant.io/blog/2019/05/22/internet-of-things-and-the-modern-web.ht。'
 sidebar_label: "开发"
 ---
+# 前端开发
 
 Home Assistant 前端使用 Web Components 构建。关于我们技术选型的更多背景，请[参阅这篇博客文章](https://developers.home-assistant.io/blog/2019/05/22/internet-of-things-and-the-modern-web.html)。
 

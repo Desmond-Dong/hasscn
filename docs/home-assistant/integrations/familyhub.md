@@ -1,6 +1,6 @@
 ---
 title: Samsung Family Hub
-description: 关于在 Home Assistant 中集成 Samsung Family Hub 冰箱摄像头的说明。
+description: 'Samsung Family Hub 集成允许您在 Home Assistant 中获取 Samsung Family Hub refrigerator(https://www.samsung.com/us/explore/family-hub-refrigerator/connected-hub/)。'
 ha_category:
   - Camera
 ha_release: '0.70'
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Samsung Family Hub
 
 **Samsung Family Hub** 集成允许您在 Home Assistant 中获取 [Samsung Family Hub refrigerator](https://www.samsung.com/us/explore/family-hub-refrigerator/connected-hub/) 内部的图像。
 

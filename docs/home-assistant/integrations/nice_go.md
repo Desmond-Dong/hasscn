@@ -1,6 +1,6 @@
 ---
 title: Nice G.O.
-description: "控制 Nice G.O. 车库门"
+description: 'The Nice G.O. integration is used to integrate with Nice/Linear(https://linear-solutions.com/) and Mighty Mule(https://mightymule.com/) products. This。'
 
 ha_release: '2024.9'
 ha_category:
@@ -21,6 +21,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Nice G.O.
 
 The **Nice G.O.** integration is used to integrate with [Nice/Linear](https://linear-solutions.com/) and [Mighty Mule](https://mightymule.com/) products.
 This integration is used for garage doors and gate openers created by these companies.

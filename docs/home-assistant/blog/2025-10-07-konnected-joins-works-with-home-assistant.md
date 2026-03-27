@@ -1,7 +1,8 @@
 ---
 title: Konnected 加入 Works with Home Assistant
-description: Konnected 将智能车库门开门器和报警面板带入该计划。
+description: '<img src=''/home-assistant/images/blog/2025-10-konnected/art.webp'' style=''border: 0;box-shadow: none;'' alt="Konnected joins Works with Home Assistant"。'
 ---
+# Konnected 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-10-konnected/art.webp' style='border: 0;box-shadow: none;' alt="Konnected joins Works with Home Assistant">
 

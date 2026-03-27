@@ -1,6 +1,6 @@
 ---
 title: No-IP.com
-description: "让您的计算机向 NO-IP.com 动态 DNS 注册。"
+description: 'With the No-IP.com integration you can keep your current IP address in sync with your NO-IP.com(https://www.noip.com) hostname or domain. 本页属于 Home。'
 
 ha_category:
   - Network
@@ -13,6 +13,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# No-IP.com
 
 With the **No-IP.com** integration you can keep your current IP address in sync with your [NO-IP.com](https://www.noip.com)  hostname or domain.  
 

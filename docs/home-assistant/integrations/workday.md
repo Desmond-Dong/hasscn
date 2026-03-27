@@ -1,6 +1,6 @@
 ---
 title: Workday
-description: 配置工作日二值传感器的步骤。
+description: 'Workday 集成用于指示当天是否为工作日。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Calendar
@@ -19,6 +19,7 @@ ha_platforms:
   - diagnostics
 ha_integration_type: service
 ---
+# Workday
 
 **Workday** 集成用于指示当天是否为工作日。
 

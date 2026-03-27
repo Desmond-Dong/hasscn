@@ -1,7 +1,9 @@
 ---
 title: “到底是什么？！”的月份2024年
-description: 有没有想过“家庭助理到底是什么？！”片刻？这个月，我们想了解一下您的“到底是什么？！”瞬间...
+description: '<a href=''https://community.home-assistant.io/c/month-of-what-the-heck/61''<img src=''/home-assistant/images/blog/2024-12-01-the-month-of-what-the-heck/social。'
 ---
+# “到底是什么？！”的月份2024年
+
 <a href='https://community.home-assistant.io/c/month-of-what-the-heck/61'><img src='/home-assistant/images/blog/2024-12-01-the-month-of-what-the-heck/social.jpg' style='border: 0;box-shadow: none;'></a>
 
 **TL;DR**：整个 12 月🎄，我们都愿意分享任何问题、想法、

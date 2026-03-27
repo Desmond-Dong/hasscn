@@ -18,6 +18,7 @@ ha_codeowners:
   - '@joncar'
 ha_integration_type: hub
 ---
+# LiteJet
 
 LiteJet 是一种早于大多数家庭自动化技术出现的集中式照明系统。所有灯具和墙壁开关都连接到一个中央面板。该中央面板带有串口接口，允许计算机通过 LiteJet 的第三方协议控制系统。Home Assistant 集成了 LiteJet 第三方协议，因此您可以查看状态并控制已连接的灯具。此集成还支持 Centralite Elegance 和 Centralite Jetstream。
 

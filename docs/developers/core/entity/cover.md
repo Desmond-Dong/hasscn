@@ -1,7 +1,9 @@
 ---
 title: 覆盖实体
+description: '盖子实体控制开口或盖子，例如车库门或窗帘。平台实体派生自homeassistant.components.cover.CoverEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/cover/init.。'
 sidebar_label: 覆盖
 ---
+# 覆盖实体
 
 盖子实体控制开口或盖子，例如车库门或窗帘。平台实体派生自[`homeassistant.components.cover.CoverEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/cover/__init__.py)。
 

@@ -1,6 +1,6 @@
 ---
 title: SRP Energy
-description: 如何将 SRP Energy 集成到 Home Assistant 中。
+description: 'The SRP Energy integration shows information from SRP hourly energy usage report for their customers. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_release: 2020.12
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# SRP Energy
 
 The **SRP Energy** integration shows information from SRP hourly energy usage report for their customers.
 

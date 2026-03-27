@@ -1,6 +1,8 @@
 ---
 title: "扩展 WebSocket API"
+description: '作为一个组件，你可能有一些想要提供给前端使用的信息。例如，media player 可能希望提供专辑封面供前端显示。我们的前端通过 websocket API 与后端通信，而它可以通过自定义命令进行扩展。 本页属于 Home Assistant 开发者文档。'
 ---
+# 扩展 WebSocket API
 
 作为一个组件，你可能有一些想要提供给前端使用的信息。例如，media player 可能希望提供专辑封面供前端显示。我们的前端通过 websocket API 与后端通信，而它可以通过自定义命令进行扩展。
 

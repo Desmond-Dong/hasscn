@@ -1,6 +1,6 @@
 ---
 title: Keymitt MicroBot Push
-description: 关于如何设置 MicroBot Push 的说明。
+description: '此集成可让您在本地控制 MicroBot Push（此前由 Naran 生产，现归入 Keymitt 品牌）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Switch
 ha_release: '2022.10'
@@ -14,6 +14,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: device
 ---
+# Keymitt MicroBot Push
 
 此集成可让您在本地控制 MicroBot Push（此前由 Naran 生产，现归入 Keymitt 品牌）。
 

@@ -1,6 +1,6 @@
 ---
 title: Channels
-description: 关于如何将 Channels 集成到 Home Assistant 的说明。
+description: 'Channels 集成允许您从 Home Assistant 控制 Channels(https://getchannels.com/)。可以在网络上运行的 Channels 实例上播放、暂停、快进或跳过广告。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.65
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Channels
 
 **Channels** 集成允许您从 Home Assistant 控制 [Channels](https://getchannels.com/)。可以在网络上运行的 Channels 实例上播放、暂停、快进或跳过广告。
 

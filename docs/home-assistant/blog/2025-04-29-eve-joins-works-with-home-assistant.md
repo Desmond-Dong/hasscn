@@ -1,7 +1,8 @@
 ---
 title: Eve 加入 Works with Home Assistant
-description: 他们为多款 Matter-over-Thread 设备完成了认证，其中包括一款很酷的户外天气传感器和智能供暖设备。
+description: '<img src=''/home-assistant/images/blog/2025-04-eve/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Eve and Home Assistant collaboration banner"。'
 ---
+# Eve 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-04-eve/art.jpg' style='border: 0;box-shadow: none;' alt="Eve and Home Assistant collaboration banner">
 

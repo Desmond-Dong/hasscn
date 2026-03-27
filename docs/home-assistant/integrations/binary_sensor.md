@@ -1,6 +1,6 @@
 ---
 title: Binary sensor
-description: 关于如何在 Home Assistant 中设置二值传感器的说明。
+description: '二值传感器与其他传感器(/home-assistant/integrations/sensor)类似，它们监控不同实体的状态和条件。二值传感器的不同之处在于它们只能返回两个互斥值中的一个。例如，窗户的二值传感器可能报告 open 或 closed 值，开关报告 on 或 off。'
 ha_category:
   - Binary sensor
 ha_release: 0.9
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Binary sensor
 
 二值传感器与其他[传感器](/home-assistant/integrations/sensor)类似，它们监控不同实体的状态和条件。二值传感器的不同之处在于它们只能返回两个互斥值中的一个。例如，窗户的二值传感器可能报告 `open` 或 `closed` 值，开关报告 `on` 或 `off`，条件报告 `true` 或 `false`。
 

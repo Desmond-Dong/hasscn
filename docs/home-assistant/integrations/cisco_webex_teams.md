@@ -1,6 +1,6 @@
 ---
 title: Cisco Webex Teams
-description: 关于如何将 Cisco Webex 通知添加到 Home Assistant 的说明。
+description: 'Cisco Webex Teams 集成允许您从 Home Assistant 向 Cisco Webex(https://www.webex.com/suite/messaging.html)（以前称为 Cisco Spark 或 Cisco Webex Teams）发送富文本通知。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Cisco Webex Teams
 
 **Cisco Webex Teams** 集成允许您从 Home Assistant 向 [Cisco Webex](https://www.webex.com/suite/messaging.html)（以前称为 Cisco Spark 或 Cisco Webex Teams）发送富文本通知。
 

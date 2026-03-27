@@ -1,6 +1,6 @@
 ---
 title: Flume
-description: 关于 flume 传感器的文档。
+description: 'Flume 集成将向您显示给定设备 ID 的当前 Flume(https://flumewater.com/) 状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -21,6 +21,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Flume
 
 **Flume** 集成将向您显示给定设备 ID 的当前 [Flume](https://flumewater.com/) 状态。
 

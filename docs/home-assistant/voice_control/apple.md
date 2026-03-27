@@ -1,6 +1,8 @@
 ---
 title: Apple 设备上的 Assist
+description: 'Assist 可用于 iPhone、iPad 和 MacBook。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Apple 设备上的 Assist
 
 ## iPhone 上的 Assist
 

@@ -1,6 +1,6 @@
 ---
 title: Smart Meter B Route
-description: 使用 B 路线集成您的智能电表。
+description: 'The Smart Meter B Route integration allows you to access the data of your smart meter using the B Route protocol. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Energy
   - Sensor
@@ -15,6 +15,7 @@ ha_config_flow: true
 ha_integration_type: device
 ha_quality_scale: bronze
 ---
+# Smart Meter B Route
 
 The **Smart Meter B Route** integration allows you to access the data of your smart meter using the B Route protocol.
 

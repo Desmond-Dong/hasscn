@@ -1,7 +1,7 @@
 ---
 title: "Fully Kiosk"
+description: 'Music Assistant 支持流式传输到运行 Fully Kiosk Browser Android 应用程序的设备。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # Fully Kiosk 浏览器 <img src="/assets/icons/fully-kiosk.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持流式传输到运行 Fully Kiosk Browser Android 应用程序的设备

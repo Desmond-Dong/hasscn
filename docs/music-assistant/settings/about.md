@@ -1,7 +1,7 @@
 ---
 title: "关于"
+description: '此页面有一系列关于 MA 服务器的有用统计信息以及有用信息的链接。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 关于 <img src="/assets/icons/about-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 此页面有一系列关于 MA 服务器的有用统计信息以及有用信息的链接

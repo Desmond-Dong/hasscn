@@ -1,7 +1,8 @@
 ---
 title: 10 years Home Assistant
-description: ''
+description: '10 years Home Assistant。本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更、社区动态与重要公告。'
 ---
+# 10 years Home Assistant
 
 TL; DR:
 

@@ -1,6 +1,6 @@
 ---
 title: Brottsplatskartan
-description: 关于如何将 brottsplatskartan.se 集成到 Home Assistant 的说明。
+description: 'Brottsplatskartan 集成允许跟踪特定区域发生的已报告事件。事件包括向 Brottsplatskartan(https://brottsplatskartan.se) 报告的任何内容。传感器仅统计当天的事件。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
   - Social
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Brottsplatskartan
 
 **Brottsplatskartan** 集成允许跟踪特定区域发生的已报告事件。事件包括向 [Brottsplatskartan](https://brottsplatskartan.se) 报告的任何内容。传感器仅统计当天的事件。
 

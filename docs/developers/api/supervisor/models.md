@@ -1,6 +1,8 @@
 ---
 title: "模型"
+description: '这些模型用于描述 Supervisor API 返回的对象。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 模型
 
 这些模型用于描述 Supervisor API 返回的对象。
 

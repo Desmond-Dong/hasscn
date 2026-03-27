@@ -1,6 +1,6 @@
 ---
 title: OneDrive
-description: "有关如何设置 OneDrive 以用于备份的说明。"
+description: '此集成允许您将 OneDrive(https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage) 用于 Home Assistant 备份(/home-assistant/common-tasks/general/bac。'
 
 ha_release: 2025.2
 ha_category:
@@ -19,6 +19,7 @@ ha_platforms:
   - diagnostics
   - sensor
 ---
+# OneDrive
 
 此集成允许您将 [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage) 用于 [Home Assistant 备份](/home-assistant/common-tasks/general/#backups)，也可用于将普通文件上传到 OneDrive。
 

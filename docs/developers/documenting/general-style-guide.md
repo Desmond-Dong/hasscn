@@ -1,6 +1,8 @@
 ---
 title: "文档写作风格指南"
+description: 'Home Assistant 文档使用 Markdown 编写，并遵循 GitHub Flavored Markdown 规范(https://github.github.com/gfm/)。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 文档写作风格指南
 
 Home Assistant 文档使用 Markdown 编写，并遵循 [GitHub Flavored Markdown 规范](https://github.github.com/gfm/)。
 

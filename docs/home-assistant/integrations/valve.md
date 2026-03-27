@@ -1,6 +1,6 @@
 ---
 title: Valve
-description: 关于如何将阀门集成到 Home Assistant 的说明。
+description: 'Home Assistant 中的 Valve 实体提供了用于控制阀门的接口，例如水阀、燃气阀或空气阀。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Valve
 ha_release: 2024.1
@@ -15,6 +15,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Valve
 
 Home Assistant 中的 **Valve** 实体提供了用于控制阀门的接口，例如水阀、燃气阀或空气阀。
 

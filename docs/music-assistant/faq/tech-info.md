@@ -1,8 +1,7 @@
 ---
 title: Technical Information
-description: 有关某些 MA 功能的深入信息
+description: '本部分包含有关 Music Assistant 工作原理的更深入技术信息，供感兴趣的人参考。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 技术信息
 
 本部分包含有关 Music Assistant 工作原理的更深入技术信息，供感兴趣的人参考。

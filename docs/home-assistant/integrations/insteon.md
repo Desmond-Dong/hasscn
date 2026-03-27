@@ -1,6 +1,6 @@
 ---
 title: Insteon
-description: 关于如何在 Home Assistant 中本地设置 Insteon 调制解调器（PLM 或 Hub）的说明。
+description: 'Insteon 应用（Director 或 Insteon for Hub）是付费服务，使用 Insteon 云来控制 Insteon Hub。Home Assistant 不要求你使用 Insteon 应用，但如果需要，也可以与该应用配合使用。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Cover
@@ -26,6 +26,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_dhcp: true
 ---
+# Insteon
 
 :::important
 Insteon 应用（Director 或 Insteon for Hub）是付费服务，使用 Insteon 云来控制 Insteon Hub。Home Assistant 不要求你使用 Insteon 应用，但如果需要，也可以与该应用配合使用。

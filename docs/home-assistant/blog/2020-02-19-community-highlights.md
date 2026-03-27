@@ -1,7 +1,8 @@
 ---
 title: 'Community Highlights: 3rd edition'
-description: VS Code 插件, beta, traffic indicator
+description: 'It''s time for the third installment of our revamped community highlights. We got some really great stuff again. 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Community Highlights: 3rd edition
 
 It's time for the third installment of our revamped community highlights. We got some really great stuff again.
 

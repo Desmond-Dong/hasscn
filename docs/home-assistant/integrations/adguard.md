@@ -1,6 +1,6 @@
 ---
 title: AdGuard Home
-description: 关于将 AdGuard Home 与 Home Assistant 集成的说明。
+description: 'AdGuard Home integration 允许您在 Home Assistant 中控制和监控您的 AdGuard Home(https://adguard.com/adguard-home/overview.html) 实例。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Network
   - Sensor
@@ -18,6 +18,7 @@ ha_platforms:
   - update
 ha_integration_type: service
 ---
+# AdGuard Home
 
 **AdGuard Home** integration 允许您在 Home Assistant 中控制和监控您的 [AdGuard Home](https://adguard.com/adguard-home/overview.html) 实例。
 

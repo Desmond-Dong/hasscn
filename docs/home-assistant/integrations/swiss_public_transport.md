@@ -1,6 +1,6 @@
 ---
 title: Swiss public transport
-description: 有关如何在 Home Assistant 中集成在瑞士旅行的时间表数据的说明。
+description: 'The Swiss public transport integration will give you the next three departure times from a given location to another one in Switzerland. 本页属于 Home。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Swiss public transport
 
 The **Swiss public transport** integration will give you the next three departure times from a given location to another one in Switzerland.
 

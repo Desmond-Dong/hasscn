@@ -1,7 +1,9 @@
 ---
 title: 应用事件
+description: '为了帮助运行自动化，例如清除应用图标角标，或您可能希望根据应用使用情况触发的其他任务，Home Assistant 伴侣应用会在某些情况下向 Home Assistant 事件总线(https://www.home-assistant.io/docs/configuration/events/)触发不同的事件。'
 id: 'app-events'
 ---
+# 应用事件
 
 ## 概述
 

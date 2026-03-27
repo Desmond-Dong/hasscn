@@ -1,7 +1,7 @@
 ---
 title: "Roku Media Assistant"
+description: 'Media Assistant 是一个实用程序，允许您通过深层链接在 Roku 设备上流式传输/播放本地和托管的媒体。更多信息（包括示例和文档）可以在 <a href="https://medievalapple.net/Media-Assistant" target="blank"。'
 ---
-
 # Roku Media Assistant <img src="/assets/icons/roku-media-assistant-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Media Assistant 是一个实用程序，允许您通过深层链接在 Roku 设备上流式传输/播放本地和托管的媒体。更多信息（包括示例和文档）可以在 <a href="https://medievalapple.net/Media-Assistant" target="_blank" rel="noopener noreferrer">Media Assistant 网站</a>上找到。

@@ -1,6 +1,6 @@
 ---
 title: Apple iCloud
-description: 关于如何使用 iCloud 在 Home Assistant 中跟踪设备的说明。
+description: 'Apple iCloud 集成允许您使用 iCloud(https://www.icloud.com/) 服务检测存在。iCloud 允许用户在 iOS 设备上跟踪其位置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Apple iCloud
 
 **Apple iCloud** 集成允许您使用 [iCloud](https://www.icloud.com/) 服务检测存在。iCloud 允许用户在 iOS 设备上跟踪其位置。
 

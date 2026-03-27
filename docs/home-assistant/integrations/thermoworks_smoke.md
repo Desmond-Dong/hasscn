@@ -1,6 +1,6 @@
 ---
 title: ThermoWorks Smoke
-description: 提取与 Smoke Gateway 连接的 ThermoWorks 烟雾温度计的温度数据。
+description: 'ThermoWorks Smoke 集成会拉取您的 ThermoWorks Smoke Thermometer(https://www.thermoworks.com/Smoke) 的数据。 这需要一个已连接互联网的 Smoke WiFi Gateway(https://www.thermoworks.com。'
 ha_category:
   - Sensor
 ha_release: 0.81
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# ThermoWorks Smoke
 
 **ThermoWorks Smoke** 集成会拉取您的 [ThermoWorks Smoke Thermometer](https://www.thermoworks.com/Smoke) 的数据。
 这需要一个已连接互联网的 [Smoke WiFi Gateway](https://www.thermoworks.com/Smoke-Gateway)。

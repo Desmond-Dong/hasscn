@@ -1,6 +1,6 @@
 ---
 title: Linksys Smart Wi-Fi
-description: 关于如何将 Linksys Smart Wi-Fi 路由器集成到 Home Assistant 的说明。
+description: 'Linksys Smart Wi-Fi 集成通过查看连接到 Linksys Smart Wi-Fi 路由器的设备来提供存在检测功能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Linksys Smart Wi-Fi
 
 **Linksys Smart Wi-Fi** 集成通过查看连接到 Linksys Smart Wi-Fi 路由器的设备来提供存在检测功能。
 

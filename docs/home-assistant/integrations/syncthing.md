@@ -1,6 +1,6 @@
 ---
 title: Syncthing
-description: 有关如何将 Syncthing 集成到 Home Assistant 中的说明。
+description: 'Syncthing(https://syncthing.net/) is a continuous file synchronization program. It synchronizes files between two or more computers in real-time。'
 ha_category:
   - Downloading
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Syncthing
 
 [Syncthing](https://syncthing.net/) is a continuous file synchronization program. It synchronizes files between two or more computers 
 in real-time, safely protected from prying eyes.

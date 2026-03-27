@@ -1,6 +1,6 @@
 ---
 title: Tado
-description: 有关如何将 Tado 设备与 Home Assistant 集成的说明。
+description: 'Tado 集成平台用作与 my.tado.com(https://my.tado.com/) 网站交互的接口。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -27,6 +27,7 @@ ha_platforms:
 ha_dhcp: true
 ha_integration_type: hub
 ---
+# Tado
 
 **Tado** 集成平台用作与 [my.tado.com](https://my.tado.com/) 网站交互的接口。
 

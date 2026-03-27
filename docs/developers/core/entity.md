@@ -1,7 +1,9 @@
 ---
 title: 实体
+description: '有关实体的一般介绍，请参阅实体架构(/developers/architecture/devices-and-services)。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 介绍
 ---
+# 实体
 
 有关实体的一般介绍，请参阅[实体架构](/developers/architecture/devices-and-services)。
 

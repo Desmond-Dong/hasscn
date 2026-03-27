@@ -1,6 +1,6 @@
 ---
 title: Facebook Messenger
-description: 关于如何将 Facebook 用户通知添加到 Home Assistant 的说明。
+description: 'Facebook Messenger 集成可通过 Facebook(https://facebook.com) 提供支持，使用 Facebook Messenger 发送通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: 0.36
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Facebook Messenger
 
 **Facebook Messenger** 集成可通过 [Facebook](https://facebook.com) 提供支持，使用 Facebook Messenger 发送通知。
 

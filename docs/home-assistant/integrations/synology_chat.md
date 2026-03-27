@@ -1,6 +1,6 @@
 ---
 title: Synology Chat
-description: 有关如何将 Synology Chat Bot 通知添加到 Home Assistant 的说明。
+description: 'Synology Chat 集成允许您以 Synology Chat 机器人的方式，将通知发送到您的 Synology Chat(https://www.synology.com/en-us/dsm/feature/chat) 实例。 本页属于 Home Assistant 中文文档。'
 ha_iot_class: Cloud Push
 ha_release: 0.65
 ha_category:
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Synology Chat
 
 **Synology Chat** 集成允许您以 Synology Chat 机器人的方式，将通知发送到您的 [Synology Chat](https://www.synology.com/en-us/dsm/feature/chat) 实例。
 

@@ -1,6 +1,6 @@
 ---
 title: Philips TV
-description: 关于如何将 Philips 电视添加到 Home Assistant 的说明。
+description: 'Philips TV 集成允许您控制支持 jointSPACE(http://jointspace.sourceforge.net/) JSON-API 的 Philips 电视。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Light
@@ -22,6 +22,7 @@ ha_platforms:
 ha_integration_type: device
 ha_zeroconf: true
 ---
+# Philips TV
 
 **Philips TV** 集成允许您控制支持 [jointSPACE](http://jointspace.sourceforge.net/) JSON-API 的 Philips 电视。
 

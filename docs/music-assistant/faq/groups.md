@@ -1,8 +1,7 @@
 ---
 title: Frequently Asked Questions - Groups
-description: Music Assistant 中的播放器分组功能
+description: 'Frequently Asked Questions - Groups。本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器支持、安装配置、多房间播放与使用说明。'
 ---
-
 # 组
 
 > [!CAUTION]

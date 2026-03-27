@@ -3,6 +3,7 @@ title: Leviton joins as a Works with Home Assistant partner
 description: Leviton has become the first Works with Home Assistant partner using
   the Z-Wave badge
 ---
+# Leviton joins as a Works with Home Assistant partner
 
 <img src='/home-assistant/images/blog/2022-07-27-leviton-partner/social-image.jpg' alt="Leviton Partnership Social image" class='no-shadow'>
 <br><br>

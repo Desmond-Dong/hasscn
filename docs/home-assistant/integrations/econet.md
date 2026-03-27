@@ -1,6 +1,6 @@
 ---
 title: Rheem EcoNet Products
-description: 关于如何将 Rheem EcoNet 热水器集成到 Home Assistant 的说明。
+description: 'The EcoNet integration is consuming the information provided by a EcoNet enabled Rheem water heater or thermostat(https://www.rheem.com/econet). 本页属于 Home。'
 ha_category:
   - Binary sensor
   - Climate
@@ -21,6 +21,7 @@ ha_platforms:
   - water_heater
 ha_integration_type: hub
 ---
+# Rheem EcoNet Products
 
 The **EcoNet** integration is consuming the information provided by a [EcoNet enabled Rheem water heater or thermostat](https://www.rheem.com/econet).
 

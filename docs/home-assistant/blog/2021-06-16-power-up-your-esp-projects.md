@@ -4,6 +4,7 @@ title: 'Power-up your ESP8266 and ESP32 projects: browser-based installation and
 description: 'Power-up your ESP8266 and ESP32 projects: browser-based installation,
   configure Wi-Fi via Bluetooth LE and a renewed ESPHome dashboard!'
 ---
+# Power-up your ESP8266 and ESP32 projects: browser-based installation and configure
 
 ESP8266 and ESP32 are microcontrollers made by the Chinese company Espressif.
 Microcontrollers are teeny tiny computers with little processor power,

@@ -1,12 +1,13 @@
 ---
 title: "RESTful binary sensor"
-description: "关于如何将 REST 二值传感器集成到 Home Assistant 的说明。"
+description: 'RESTful 二值传感器集成使用设备、应用程序或 Web 服务通过 RESTful API(https://en.wikipedia.org/wiki/Representationalstatetransfer) 提供的端点。该二值传感器支持 GET 和 POST 请求。'
 ha_category:
   - Binary sensor
 ha_release: "0.10"
 ha_iot_class: Local Polling
 ha_domain: rest
 ---
+# RESTful binary sensor
 
 **RESTful 二值传感器**集成使用设备、应用程序或 Web 服务通过 [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer) 提供的端点。该二值传感器支持 GET 和 POST 请求。
 

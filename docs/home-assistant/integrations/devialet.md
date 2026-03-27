@@ -1,6 +1,6 @@
 ---
 title: Devialet
-description: 关于如何将 Devialet 设备集成到 Home Assistant 的说明。
+description: 'Devialet 集成允许您从 Home Assistant 控制 Devialet(https://www.devialet.com) 无线扬声器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media Player
 ha_release: 2023.11
@@ -15,6 +15,7 @@ ha_platforms:
   - diagnostics
   - media_player
 ---
+# Devialet
 
 **Devialet** 集成允许您从 Home Assistant 控制 [Devialet](https://www.devialet.com) 无线扬声器。
 

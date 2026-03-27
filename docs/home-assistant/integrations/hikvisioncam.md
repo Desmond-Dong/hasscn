@@ -1,6 +1,6 @@
 ---
 title: Hikvision
-description: 关于如何将海康威视摄像头开关集成到 Home Assistant 的说明。
+description: 'Hikvision 集成允许您控制 海康威视(https://www.hikvision.com/) 摄像头上的移动检测设置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Switch
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Hikvision
 
 **Hikvision** 集成允许您控制 [海康威视](https://www.hikvision.com/) 摄像头上的移动检测设置。
 

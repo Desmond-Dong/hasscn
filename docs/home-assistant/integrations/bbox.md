@@ -1,6 +1,6 @@
 ---
 title: Bbox
-description: 关于如何将 Bouygues Bbox 路由器集成到 Home Assistant 的说明。
+description: 'Bbox 集成使用法国互联网提供商 Bouygues Telecom 的 Bbox 调制解调器路由器(https://www.bouyguestelecom.fr/offres-internet/bbox-fit)。传感器主要是带宽测量。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Network
   - Presence detection
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Bbox
 
 **Bbox** 集成使用法国互联网提供商 Bouygues Telecom 的 [Bbox 调制解调器路由器](https://www.bouyguestelecom.fr/offres-internet/bbox-fit)。传感器主要是带宽测量。
 

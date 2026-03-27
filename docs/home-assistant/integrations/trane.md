@@ -1,6 +1,6 @@
 ---
 title: Trane Local
-description: 通过本地网络本地控制 Trane 和 American Standard 温控器。
+description: 'The Trane Local integration allows you to locally control Trane(https://www.trane.com/) and American Standard(https://www.americanstandardair.com/)。'
 ha_category:
   - Climate
   - Switch
@@ -19,6 +19,7 @@ related:
   - docs: /integrations/nexia/
     title: Nexia (Cloud)
 ---
+# Trane Local
 
 The **Trane Local** integration allows you to locally control [Trane](https://www.trane.com/) and [American Standard](https://www.americanstandardair.com/) thermostats over your local network using a direct <abbr title="mutual TLS">mTLS</abbr> connection. No cloud connection is required.
 

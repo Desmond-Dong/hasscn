@@ -1,7 +1,9 @@
 ---
 title: "传感器"
+description: '除了提供位置服务(location.md)外，Companion 应用还向 Home Assistant 添加了多个额外的传感器。如果您不想要 devicetracker 实体但仍想让传感器更新，只需在实体注册表(https://www.home-assistant.io/integrations/confi。'
 id: 'sensors'
 ---
+# 传感器
 
 除了提供[位置服务](location.md)外，Companion 应用还向 Home Assistant 添加了多个额外的传感器。如果您不想要 `device_tracker` 实体但仍想让传感器更新，只需在[实体注册表](https://www.home-assistant.io/integrations/config/#entity-registry)中禁用该实体即可停止位置更新并保持传感器更新。
 

@@ -1,6 +1,6 @@
 ---
 title: Niko Home Control
-description: "有关如何将 Niko Home Control 1 灯集成到 Home Assistant 的说明。"
+description: 'The Niko Home Control integration allows you to integrate your Niko connected controller (with Home Control 1)(https://www.niko.eu/enus/products/niko-home-。'
 
 ha_codeowners:
   - '@VandeurenGlenn'
@@ -23,6 +23,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Niko Home Control
 
 The **Niko Home Control** integration allows you to integrate your [Niko connected controller (with Home Control 1)](https://www.niko.eu/enus/products/niko-home-control) into Home Assistant.
 

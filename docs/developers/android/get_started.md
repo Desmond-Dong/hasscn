@@ -1,7 +1,9 @@
 ---
 title: "安卓入门"
+description: '欢迎使用 Home Assistant Android 开发指南！本文档将帮助您设置环境、分叉存储库并构建您的第一个应用程序。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "开始使用"
 ---
+# 安卓入门
 
 ## Home Assistant Android开发入门
 

@@ -1,6 +1,6 @@
 ---
 title: Google Assistant SDK
-description: 关于如何在 Home Assistant 中使用 Google Assistant SDK 的说明。
+description: 'Google Assistant SDK 集成允许 Home Assistant 与 Google Assistant 交互。如果你希望使用 Google Assistant（例如通过手机或 Google Home 设备）来控制 Home Assistant 管理的设备。'
 ha_category:
   - Notifications
   - Voice
@@ -19,6 +19,7 @@ google_dev_console_link: https://console.developers.google.com/apis/api/embedded
 api: Google Assistant API
 api_link: https://console.developers.google.com/apis/api/embeddedassistant.googleapis.com/overview
 ---
+# Google Assistant SDK
 
 **Google Assistant SDK** 集成允许 Home Assistant 与 Google Assistant 交互。如果你希望使用 Google Assistant（例如通过手机或 Google Home 设备）来控制 Home Assistant 管理的设备，那么你需要使用 [Google Assistant](/home-assistant/integrations/google_assistant) 集成。
 

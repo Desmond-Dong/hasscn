@@ -1,6 +1,6 @@
 ---
 title: Portainer
-description: 有关如何将 Portainer 与 Home Assistant 集成的说明。
+description: 'The Portainer integration is used as an interface to the Portainer API(https://docs.portainer.io/api). Portainer is a lightweight management UI that。'
 ha_category:
   - Binary sensor
   - Button
@@ -21,6 +21,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# Portainer
 
 The **Portainer** integration is used as an interface to the [Portainer API](https://docs.portainer.io/api).
 Portainer is a lightweight management UI that allows you to easily manage your Docker containers, images, networks, and volumes. It works on every Docker host or Swarm cluster.

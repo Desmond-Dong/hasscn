@@ -1,6 +1,6 @@
 ---
 title: Thomson
-description: 有关如何将 Thomson 路由器集成到 Home Assistant 的说明。
+description: 'Thomson produced networking equipment (under the brand name SpeedTouch) till 2010 and was then renamed to Technicolor. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Presence detection
 ha_release: 0.7
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Thomson
 
 Thomson produced networking equipment (under the brand name SpeedTouch) till 2010 and was then renamed to Technicolor.
 

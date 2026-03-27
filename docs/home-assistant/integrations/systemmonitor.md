@@ -1,6 +1,6 @@
 ---
 title: System monitor
-description: 有关如何监控 Home Assistant 主机的说明。
+description: 'The System monitor integration allows you to monitor disk usage, memory usage, network usage, CPU usage, and running processes on which Home Assistant is。'
 ha_category:
   - System monitor
 ha_release: pre 0.7
@@ -15,6 +15,7 @@ ha_integration_type: integration
 ha_codeowners:
   - '@gjohansson-ST'
 ---
+# System monitor
 
 The **System monitor** integration allows you to monitor disk usage, memory usage, network usage, CPU usage, and running processes on which Home Assistant is running.
 

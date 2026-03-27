@@ -1,6 +1,6 @@
 ---
 title: Mythic Beasts DNS
-description: 让您的 Mythic Beasts DNS 保持最新。
+description: '通过 Mythic Beasts DNS 集成，您可以自动更新 Mythic Beasts(https://www.mythic-beasts.com/) 上的动态 DNS 记录。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_release: 0.85
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Mythic Beasts DNS
 
 通过 **Mythic Beasts DNS** 集成，您可以自动更新 [Mythic Beasts](https://www.mythic-beasts.com/) 上的动态 DNS 记录。
 

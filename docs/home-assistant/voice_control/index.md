@@ -1,6 +1,8 @@
 ---
 title: 与 Home Assistant 对话 - 让系统运行起来
+description: '本节将帮助你设置 Assist，也就是 Home Assistant 的语音助手。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 与 Home Assistant 对话 - 让系统运行起来
 
 本节将帮助你设置 Assist，也就是 Home Assistant 的语音助手。
 

@@ -15,6 +15,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_dhcp: true
 ---
+# Aladdin Connect
 
 **Aladdin Connect** integration 允许您通过 Home Assistant 打开、关闭和检查 Genie Aladdin Connect 车库门的状态。它还会报告开启器备用电池的电量。
 

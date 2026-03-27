@@ -1,7 +1,9 @@
 ---
 title: 日期/时间实体
+description: 'datetime 是一个允许用户向集成输入时间戳的实体。平台实体派生自homeassistant.components.datetime.DateTimeEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/component。'
 sidebar_label: 日期/时间
 ---
+# 日期/时间实体
 
 `datetime` 是一个允许用户向集成输入时间戳的实体。平台实体派生自[`homeassistant.components.datetime.DateTimeEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/datetime/__init__.py)
 

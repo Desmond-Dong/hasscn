@@ -2,6 +2,7 @@
 title: Connect ZWA-2 随处可用：通过 Wi-Fi 或 PoE 使用 Z-Wave
 description: 我们推出便携式 Z-Wave，这是一套实验性固件，让你可以通过内置 Wi-Fi 使用 Z-Wave，甚至还能加入 PoE。
 ---
+# Connect ZWA-2 随处可用：通过 Wi-Fi 或 PoE 使用 Z-Wave
 
 <img src='/home-assistant/images/blog/2025-10-z-wave-portable/art.png' style='border: 0;box-shadow: none;' alt="Portable Z-Wave">
 

@@ -2,6 +2,7 @@
 title: Set up Hass.io on top of a virtual machine
 description: A how-to about using Hass.io on x86_64 hardware in a virtualized way.
 ---
+# Set up Hass.io on top of a virtual machine
 
 The 图像 for the 树莓派 family and the Intel NUC are an easy way to get started with [Hass.io](/home-assistant/getting-started). For a test or if you have a system which is already hosting virtual machines then the [**Hass.io installer**](/home-assistant/installation/) is an option to use Hass.io in a virtualized environment. In this guide the host is a Fedora 27 system with [libvirt](https://libvirt.org/) support and the guest will be running Debian 9. Hass.io will be 已安装 on the guest.
 

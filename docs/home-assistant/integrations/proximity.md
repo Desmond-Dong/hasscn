@@ -1,6 +1,6 @@
 ---
 title: Proximity
-description: 有关如何在 Home Assistant 中设置接近监控的说明。
+description: 'Proximity 集成可让您监控设备或人员与特定区域(/home-assistant/integrations/zone/)的接近程度以及移动方向。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
   - Presence detection
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_config_flow: true
 ---
+# Proximity
 
 **Proximity** 集成可让您监控设备或人员与特定[区域](/home-assistant/integrations/zone/)的接近程度以及移动方向。
 

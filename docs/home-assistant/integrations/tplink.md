@@ -1,6 +1,6 @@
 ---
 title: TP-Link Smart Home
-description: 关于将 TP-Link 智能家居设备集成到 Home Assistant 的说明。
+description: 'TP-Link Smart Home 集成可让你控制 TP-Link Kasa Smart Home 设备(https://www.kasasmart.com/)和 TP-Link Tapo 设备(https://www.tapo.com/)，包括摄像头、门铃、铃声设备、灯光、插座、墙壁开关、扫地机器人、Hu。'
 ha_category:
   - Binary sensor
   - Button
@@ -41,6 +41,7 @@ ha_dhcp: true
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
+# TP-Link Smart Home
 
 **TP-Link Smart Home** 集成可让你控制 [TP-Link Kasa Smart Home 设备](https://www.kasasmart.com/)和 [TP-Link Tapo 设备](https://www.tapo.com/)，包括摄像头、门铃、铃声设备、灯光、插座、墙壁开关、扫地机器人、Hub 及 Hub 挂载设备。
 

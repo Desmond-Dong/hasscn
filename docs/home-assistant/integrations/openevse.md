@@ -1,6 +1,6 @@
 ---
 title: OpenEVSE
-description: "有关如何将 OpenEVSE 充电站与 Home Assistant 集成的说明。"
+description: 'OpenEVSE integration 允许您监控配备基于 ESP8266/ESP32 Wi-Fi 连接功能的 OpenEVSE(https://openevse.com/) 电动车充电站。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Car
@@ -20,6 +20,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: bronze
 ---
+# OpenEVSE
 
 **OpenEVSE** integration 允许您监控配备基于 ESP8266/ESP32 Wi-Fi 连接功能的 [OpenEVSE](https://openevse.com/) 电动车充电站。
 

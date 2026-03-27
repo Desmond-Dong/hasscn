@@ -1,6 +1,6 @@
 ---
 title: Husqvarna Automower BLE
-description: 关于如何将 Husqvarna Automower BLE 割草机器人集成到 Home Assistant 的说明。
+description: 'Husqvarna Automower BLE 集成通过本地蓝牙连接与 Husqvarna Automower 割草机通信。这使您无需账号、云端或网络连接即可连接并控制 Automower。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Lawn Mower
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: device
 ha_domain: husqvarna_automower_ble
 ---
+# Husqvarna Automower BLE
 
 **Husqvarna Automower BLE** 集成通过本地蓝牙连接与 Husqvarna Automower 割草机通信。这使您无需账号、云端或网络连接即可连接并控制 Automower。
 

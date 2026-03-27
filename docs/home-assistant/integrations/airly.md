@@ -1,6 +1,6 @@
 ---
 title: Airly
-description: 关于在 Home Assistant 中集成 Airly 的说明。
+description: 'Airly integration 使用 Airly(https://airly.org/) 网络服务作为您所在位置的空气质量数据来源。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Health
 ha_release: 0.101
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Airly
 
 **Airly** integration 使用 [Airly](https://airly.org/) 网络服务作为您所在位置的空气质量数据来源。
 

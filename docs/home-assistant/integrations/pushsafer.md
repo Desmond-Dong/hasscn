@@ -1,6 +1,6 @@
 ---
 title: Pushsafer
-description: 有关如何将 Pushsafer 通知添加到 Home Assistant 的说明。
+description: 'Pushsafer 服务(https://www.pushsafer.com/)是 notify 集成的平台之一。它允许您通过 Pushsafer 向用户发送消息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Pushsafer
 
 [Pushsafer 服务](https://www.pushsafer.com/)是 notify 集成的平台之一。它允许您通过 Pushsafer 向用户发送消息。
 

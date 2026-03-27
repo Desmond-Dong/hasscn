@@ -1,7 +1,9 @@
 ---
 title: "操作"
+description: '<img src="/companion-assets/apple.svg" alt="Apple" style="height: 1em; vertical-align: middle;" / 专属。 本页属于 Home Assistant 配套应用文档。'
 id: "actions"
 ---
+# 操作
 
 <img src="/companion-assets/apple.svg" alt="Apple" style="height: 1em; vertical-align: middle;" /> 专属
 

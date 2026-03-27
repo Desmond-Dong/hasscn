@@ -1,7 +1,8 @@
 ---
 title: 'Demo: Genie, privacy-preserving virtual assistant by Stanford'
-description: The demo from the State of the Open Home.
+description: '上周我们举办了开放家庭现状(/home-assistant/状态-of-the-open-home/)活动，其中包含了 Genie(https://genie.stanford.edu) 的演示。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Demo: Genie, privacy-preserving virtual assistant by Stanford
 
 上周我们举办了[开放家庭现状](/home-assistant/状态-of-the-open-home/)活动，其中包含了 [Genie](https://genie.stanford.edu) 的演示。
 

@@ -1,6 +1,6 @@
 ---
 title: Lidarr
-description: 关于如何将 Lidarr 与 Home Assistant 集成的说明
+description: 'Lidarr 集成会从指定的 Lidarr(https://lidarr.audio/) 实例拉取数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Downloading
 ha_release: '2022.10'
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Lidarr
 
 **Lidarr** 集成会从指定的 [Lidarr](https://lidarr.audio/) 实例拉取数据。
 

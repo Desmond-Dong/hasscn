@@ -1,6 +1,6 @@
 ---
 title: qBittorrent
-description: 关于如何在 Home Assistant 中集成 qBittorrent 传感器的说明。
+description: 'qBittorrent integration 允许您在 Home Assistant 中监控 qBittorrent(https://www.qbittorrent.org/) 的下载，并根据信息设置自动化。 您可以通过 Alternative speed 开关控制备用速度。'
 ha_category:
   - Downloading
 ha_release: 0.84
@@ -15,6 +15,7 @@ ha_platforms:
   - switch
 ha_integration_type: service
 ---
+# qBittorrent
 
 **qBittorrent** integration 允许您在 Home Assistant 中监控 [qBittorrent](https://www.qbittorrent.org/) 的下载，并根据信息设置自动化。
 您可以通过 `Alternative speed` 开关控制备用速度。

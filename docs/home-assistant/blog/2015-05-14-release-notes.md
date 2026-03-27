@@ -2,6 +2,7 @@
 title: 2015 年 5 月 14 日发布说明
 description: 介绍 MySensors、InstaPush、Notify My Android、OpenWeatherMap 和 Jabber 支持。
 ---
+# 2015 年 5 月 14 日发布说明
 
 距离上次发布已经过去将近忙碌的三周。我们终于完成了内部日期时间格式统一为 UTC 的重构。过程中我们新增了大量测试覆盖，以确保迁移平稳完成。关于向后不兼容的变更，请查看[UTC 重构博文](/home-assistant/blog/2015/05/09/utc-time-zone-awareness/#backwards-incompatible-stuff)。
 

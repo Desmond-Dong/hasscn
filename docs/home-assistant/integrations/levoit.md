@@ -1,6 +1,6 @@
 ---
 title: Levoit
-description: 使用 VeSync 集成连接和控制您的 Levoit 设备
+description: '此集成由 VeSync(/home-assistant/integrations/vesync/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Fan
   - Light
@@ -33,6 +33,7 @@ ha_platforms:
   - update
 ha_iot_class: Cloud Polling
 ---
+# Levoit
 
 :::note
 此集成由 [VeSync](/home-assistant/integrations/vesync/) 集成支持。

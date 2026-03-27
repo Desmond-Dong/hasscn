@@ -1,7 +1,8 @@
 ---
 title: Hardware Contest 2017
-description: Voting period for Hardware Contest 2017 started
+description: '我们的 Hardware Contest 2017hardware 一共收到了四份投稿。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Hardware Contest 2017
 
 我们的 [Hardware Contest 2017][hardware] 一共收到了四份投稿。
 

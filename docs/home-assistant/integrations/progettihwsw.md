@@ -1,6 +1,6 @@
 ---
 title: ProgettiHWSW Automation
-description: 有关如何将 ProgettiHWSW 远程继电器板集成到 Home Assistant 中的说明。
+description: 'ProgettiHWSW Automation 集成将 ProgettiHWSW 板卡的自动化能力带入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - DIY
@@ -16,6 +16,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# ProgettiHWSW Automation
 
 **ProgettiHWSW Automation** 集成将 ProgettiHWSW 板卡的自动化能力带入 Home Assistant。
 

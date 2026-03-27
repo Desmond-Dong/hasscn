@@ -1,6 +1,6 @@
 ---
 title: SAJ Solar Inverter
-description: 有关如何将 SAJ 太阳能逆变器连接到 Home Assistant 的说明。
+description: 'SAJ Solar Inverter 集成会轮询 SAJ(https://www.saj-electric.com/) 太阳能逆变器，并在 Home Assistant 中将这些数值显示为传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# SAJ Solar Inverter
 
 **SAJ Solar Inverter** 集成会轮询 [SAJ](https://www.saj-electric.com/) 太阳能逆变器，并在 Home Assistant 中将这些数值显示为传感器。
 

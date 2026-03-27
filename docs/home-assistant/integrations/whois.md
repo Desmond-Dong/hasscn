@@ -1,6 +1,6 @@
 ---
 title: Whois
-description: 关于如何在 Home Assistant 中集成 WHOIS 查询传感器的说明。
+description: 'Whois 集成可让您每天对自己拥有的域名执行 WHOIS 查询。它会提供 expirationdate、nameservers 和 registrar 等信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_release: 0.57
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Whois
 
 **Whois** 集成可让您每天对自己拥有的域名执行 WHOIS 查询。它会提供 `expiration_date`、`name_servers` 和 `registrar` 等信息。
 

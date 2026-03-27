@@ -1,6 +1,8 @@
 ---
 title: ESP32-S3-BOX 语音助手
+description: '本教程将指导您把 ESP32-S3-BOX、ESP32-S3-BOX-3(B) 或 ESP32-S3-BOX-Lite 变成 Home Assistant 语音助手。请注意，文中的 ESP32-S3-BOX 也可能泛指这 3 种产品型号。 本页属于 Home Assistant 中文文档。'
 ---
+# ESP32-S3-BOX 语音助手
 
 本教程将指导您把 ESP32-S3-BOX、ESP32-S3-BOX-3(B) 或 ESP32-S3-BOX-Lite 变成 Home Assistant 语音助手。请注意，文中的 ESP32-S3-BOX 也可能泛指这 3 种产品型号。
 

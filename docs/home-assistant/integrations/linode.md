@@ -1,6 +1,6 @@
 ---
 title: Linode
-description: 关于如何在 Home Assistant 中设置 Linode 的说明。
+description: 'Linode 集成可让您在 Home Assistant 中访问 Linode(https://linode.com) 系统的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Switch
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Linode
 
 **Linode** 集成可让您在 Home Assistant 中访问 [Linode](https://linode.com) 系统的信息。
 

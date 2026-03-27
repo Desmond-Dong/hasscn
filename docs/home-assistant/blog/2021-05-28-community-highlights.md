@@ -3,6 +3,7 @@ title: 'Community Highlights: 23rd edition'
 description: Get a reminder so you don't forget to take your medicine, swipe through
   your cards and control your lights from a (proof of concept) 2D game
 ---
+# Community Highlights: 23rd edition
 
 The 23rd edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, which we thought was worth sharing.

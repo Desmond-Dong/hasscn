@@ -1,6 +1,6 @@
 ---
 title: Ambient Radio Weather Network
-description: 关于如何在 Home Assistant 中集成 ARWN 的说明。
+description: 'Ambient Radio Weather Network 集成是 Ambient Radio Weather Network(https://github.com/sdague/arwn) 项目的客户端。它收集气象站数据并将其在 MQTT 子树中提供。'
 ha_category:
   - Sensor
 ha_release: 0.31
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Ambient Radio Weather Network
 
 **Ambient Radio Weather Network** 集成是 [Ambient Radio Weather Network](https://github.com/sdague/arwn) 项目的客户端。它收集气象站数据并将其在 MQTT 子树中提供。
 

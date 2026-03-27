@@ -1,6 +1,6 @@
 ---
 title: Yale Home
-description: 关于如何将 Yale 设备集成到 Home Assistant 的说明。
+description: 'The Yale integration allows you to integrate your Yale(https://www.assaabloy.com/vn/en/solutions/products/yale) devices in Home Assistant. 本页属于 Home。'
 ha_category:
   - Binary sensor
   - Button
@@ -26,6 +26,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Yale Home
 
 The **Yale** integration allows you to integrate your [Yale](https://www.assaabloy.com/vn/en/solutions/products/yale) devices in Home Assistant.
 

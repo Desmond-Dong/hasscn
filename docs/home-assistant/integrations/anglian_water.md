@@ -1,6 +1,6 @@
 ---
 title: Anglian Water
-description: Anglian Water 集成允许您在 Home Assistant 中访问智能水表数据。
+description: 'Anglian Water 集成用于与 Anglian Water(https://www.anglianwater.co.uk) 的智能水表进行集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2025.12
 ha_iot_class: Cloud Polling
 ha_codeowners:
@@ -14,6 +14,7 @@ ha_category:
 ha_quality_scale: bronze
 ha_config_flow: true
 ---
+# Anglian Water
 
 **Anglian Water** 集成用于与 [Anglian Water](https://www.anglianwater.co.uk) 的智能水表进行集成。
 

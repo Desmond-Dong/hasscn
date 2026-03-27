@@ -1,7 +1,9 @@
 ---
 title: "Home Assistant 语音概览"
+description: '构建语音助手是一项复杂的任务，需要多种技术协同工作。本页概述了 Home Assistant 语音体系中的主要组成部分，以及它们如何相互配合。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 概览
 ---
+# Home Assistant 语音概览
 
 构建语音助手是一项复杂的任务，需要多种技术协同工作。本页概述了 Home Assistant 语音体系中的主要组成部分，以及它们如何相互配合。
 

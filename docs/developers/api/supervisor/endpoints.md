@@ -1,6 +1,9 @@
 ---
 title: "端点"
+description: 'import ApiEndpoint from ''@site/static/js/apiendpoint.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 端点
+
 import ApiEndpoint from '@site/static/js/api_endpoint.jsx'
 
 带有 :lock: 标记的 API 端点需要使用 `Bearer` token 形式的授权请求头。

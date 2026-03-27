@@ -1,6 +1,6 @@
 ---
 title: Denon Network Receivers
-description: 关于如何将 Denon 网络接收器集成到 Home Assistant 的说明。
+description: 'Denon Network Receivers integration 允许您从 Home Assistant 控制 Denon 网络接收器。您的设备可能由 Denon AVR 平台支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Denon Network Receivers
 
 **Denon Network Receivers** integration 允许您从 Home Assistant 控制 Denon 网络接收器。您的设备可能由 [Denon AVR] 平台支持。
 

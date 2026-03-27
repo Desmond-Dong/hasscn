@@ -1,6 +1,6 @@
 ---
 title: madVR Envy
-description: 关于如何将 madVR Envy 集成到 Home Assistant 的说明。
+description: 'madVR Envy 集成可用于自动化和控制 madVR Envy 设备(https://madvrenvy.com)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary Sensor
   - Remote
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# madVR Envy
 
 **madVR Envy** 集成可用于自动化和控制 [madVR Envy 设备](https://madvrenvy.com)。
 

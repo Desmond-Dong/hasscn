@@ -1,6 +1,6 @@
 ---
 title: Cookidoo
-description: 关于如何将 Cookidoo 待办事项列表与 Home Assistant 集成的说明。
+description: 'Cookidoo 集成允许您在 Home Assistant 中与 Cookidoo Thermomix 官方食谱平台(https://cookidoo.international/)的购物清单进行交互。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Calendar
   - Calendar
@@ -34,6 +34,7 @@ related:
     title: Vorwerk GmbH
 ha_quality_scale: silver
 ---
+# Cookidoo
 
 **Cookidoo** 集成允许您在 Home Assistant 中与 [Cookidoo Thermomix 官方食谱平台](https://cookidoo.international/)的购物清单进行交互。
 

@@ -1,6 +1,6 @@
 ---
 title: My integration
-description: 集成文档的示例文档结构和文本块。
+description: '<!--- 集成文档模板提供了文档结构以及各部分的示例内容。示例内容仅供参考，可能不适用于您的集成，或至少需要进行调整。 --。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2025.3
 ha_iot_class: Local Push
 ha_codeowners:
@@ -17,6 +17,7 @@ related:
   - docs: /docs/tools/quick-search/#my-links
     title: My link
 ---
+# My integration
 
 <!--- 集成文档模板提供了文档结构以及各部分的示例内容。示例内容仅供参考，可能不适用于您的集成，或至少需要进行调整。 -->
 

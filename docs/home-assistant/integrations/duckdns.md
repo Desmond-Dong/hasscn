@@ -1,6 +1,6 @@
 ---
 title: Duck DNS
-description: 保持您的公共 IP 地址与 Duck DNS 子域名同步。
+description: 'Duck DNS 集成让您的 Duck DNS 子域名与您当前的公共 IP 地址保持同步。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_iot_class: Cloud Polling
@@ -12,6 +12,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_quality_scale: platinum
 ---
+# Duck DNS
 
 **Duck DNS** 集成让您的 Duck DNS 子域名与您当前的公共 IP 地址保持同步。
 

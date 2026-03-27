@@ -1,12 +1,13 @@
 ---
 title: "MQTT Cover"
-description: "关于如何将 MQTT 遮盖集成到 Home Assistant 的说明。"
+description: 'MQTT cover 集成允许您控制 MQTT 遮盖（如百叶窗、卷帘或车库门）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Cover
 ha_iot_class: Configurable
 ha_release: 0.18
 ha_domain: mqtt
 ---
+# MQTT Cover
 
 **MQTT cover** 集成允许您控制 MQTT 遮盖（如百叶窗、卷帘或车库门）。
 

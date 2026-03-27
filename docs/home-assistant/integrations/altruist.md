@@ -1,6 +1,6 @@
 ---
 title: Altruist
-description: 关于在 Home Assistant 中设置 Altruist 传感器的说明。
+description: 'Altruist 集成将 Home Assistant 连接到 空气质量传感器 "Altruist"(https://robonomics.network/devices/altruist/) —— 一种专为去中心化环境监测而设计的设备。它通过 HTTP 从传感器捕获噪音、灰尘和温度数据。'
 ha_category:
   - Health
   - Sensor
@@ -17,6 +17,7 @@ ha_integration_type: device
 ha_zeroconf: true
 ha_quality_scale: bronze
 ---
+# Altruist
 
 **Altruist** 集成将 Home Assistant 连接到 [空气质量传感器 "Altruist"](https://robonomics.network/devices/altruist/) —— 一种专为去中心化环境监测而设计的设备。它通过 HTTP 从传感器捕获噪音、灰尘和温度数据，使其成为 Home Assistant 中本地可用的实体。
 

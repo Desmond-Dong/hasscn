@@ -1,8 +1,7 @@
 ---
 title: "Internet Archive"
+description: 'Music Assistant 支持 Internet Archive。此组件由 <a href="https://github.com/ozgav" target="blank" rel="noopener noreferrer"Gavin</a 贡献和维护。'
 ---
-
-
 # Internet Archive 提供者 <img src="/assets/icons/internet-archive-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 Internet Archive。此组件由 <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a> 贡献和维护。

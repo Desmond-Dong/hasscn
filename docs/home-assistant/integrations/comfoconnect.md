@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Zehnder ComfoAir Q
 
 **Zehnder ComfoAir Q** 集成允许您从 Home Assistant 控制 Zehnder ComfoAir [Q350](https://products.zehnder-systems.com/en/product/zehnder-comfoair-q350-tr)/[Q450](https://products.zehnder-systems.com/en/product/zehnder-comfoair-q450-tr)/[Q600](https://products.zehnder-systems.com/en/product/zehnder-comfoair-q600-st) 通风设备。您需要一个 [ComfoConnect LAN C](https://www.zehnder.co.uk/products-and-systems/comfortable-indoor-ventilation/ms-comfoair-q/ideal-control#node-21233) 网桥将设备连接到您的本地网络。
 

@@ -1,6 +1,6 @@
 ---
 title: Thinking Cleaner
-description: 有关如何将 ThinkingCleaner 集成到 Home Assistant 中的说明。
+description: 'Home Assistant 目前支持以下设备类型：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Switch
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Thinking Cleaner
 
 Home Assistant 目前支持以下设备类型：
 

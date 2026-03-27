@@ -1,7 +1,8 @@
 ---
 title: 操作系统
-description: 关于 OS 为何将安装标记为不支持的更多信息。
+description: 'Home Assistant Supervisor 仅在 Home Assistant OS 上受支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 操作系统
 
 ## 问题
 

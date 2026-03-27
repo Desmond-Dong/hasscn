@@ -1,6 +1,8 @@
 ---
 title: 实体注册表
+description: '实体注册表是 Home Assistant 用于跟踪实体的注册表。任何添加到 Home Assistant 的实体，只要指定了uniqueid 属性(/developers/core/entitygeneric-properties)，就会在注册表中登记。'
 ---
+# 实体注册表
 
 实体注册表是 Home Assistant 用于跟踪实体的注册表。任何添加到 Home Assistant 的实体，只要指定了[`unique_id` 属性](/developers/core/entity#generic-properties)，就会在注册表中登记。
 

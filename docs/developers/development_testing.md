@@ -1,6 +1,8 @@
 ---
 title: "测试你的代码"
+description: '如开发规范(/developers/developmentguidelines)中所述，请检查所有代码，确认以下事项：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 测试你的代码
 
 如[开发规范](/developers/development_guidelines)中所述，请检查所有代码，确认以下事项：
 

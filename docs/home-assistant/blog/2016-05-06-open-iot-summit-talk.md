@@ -2,6 +2,7 @@
 title: '演讲：使用 Home Assistant 自动化您的家庭 (OpenIoT Summit)'
 description: Paulus 在四月初的 OpenIoT Summit 上发表的关于如何使用 Home Assistant 自动化您家庭的演讲视频。
 ---
+# 演讲：使用 Home Assistant 自动化您的家庭 (OpenIoT Summit)
 
 四月初，我在圣地亚哥的 OpenIoT Summit 上发表了关于 Home Assistant 的演讲。我介绍了 Home Assistant 的架构，并解释了如何开始集成您的设备。非常感谢我的雇主 AppFolio（[我们正在招聘！]）让我参加此次活动。[幻灯片。]
 

@@ -1,6 +1,6 @@
 ---
 title: HomeSeer
-description: 使用 Z-Wave 集成连接和控制您的 HomeSeer Z-Wave 设备
+description: 'HomeSeer(https://homeseer.com/) 凭借其 Z-Wave 产品加入了 Works with Home Assistant 合作伙伴计划。虽然 HomeSeer 也提供自有家庭自动化软件，但他们仍致力于确保其产品保持更新，并可在 Home Assistant 中直接使用。'
 ha_release: '2023.4'
 ha_iot_class: Local Push
 ha_category:
@@ -20,6 +20,7 @@ ha_platforms:
 ha_iot_standard: zwave
 ha_brand: true
 ---
+# HomeSeer
 
 [HomeSeer](https://homeseer.com/) 凭借其 Z-Wave 产品加入了 Works with Home Assistant 合作伙伴计划。虽然 HomeSeer 也提供自有家庭自动化软件，但他们仍致力于确保其产品保持更新，并可在 Home Assistant 中直接使用。
 

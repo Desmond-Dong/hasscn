@@ -1,6 +1,6 @@
 ---
 title: Twilio SMS
-description: 关于如何将 Twilio 短信通知添加到 Home Assistant 的说明。
+description: 'Twilio SMS 集成可让你通过 Twilio(https://twilio.com) 发送短信通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: '0.20'
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Twilio SMS
 
 **Twilio SMS** 集成可让你通过 [Twilio](https://twilio.com) 发送短信通知。
 

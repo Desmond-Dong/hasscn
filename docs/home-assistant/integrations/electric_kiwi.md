@@ -1,6 +1,6 @@
 ---
 title: Electric Kiwi
-description: 关于如何在 Home Assistant 中设置 Electric Kiwi 服务的说明。
+description: 'Electric Kiwi(https://www.electrickiwi.co.nz/) is an independent power and broadband company in New Zealand, offering variable rates for peak, shoulder。'
 ha_category:
   - Energy
 ha_release: '2023.8'
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# Electric Kiwi
 
 [Electric Kiwi](https://www.electrickiwi.co.nz/) is an independent power and broadband company in New Zealand, offering variable rates for peak, shoulder, and off-peak pricing with a selectable hour of free power. 
 

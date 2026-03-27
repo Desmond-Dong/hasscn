@@ -1,7 +1,7 @@
 ---
 title: "SoundCloud"
+description: 'Music Assistant 支持 Soundcloud。由 <a href="https://github.com/gieljnssns" target="blank" rel="noopener noreferrer"gieljnssns</a 贡献。'
 ---
-
 # SoundCloud 提供者 <img src="/assets/icons/soundcloud-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 Soundcloud。由 <a href="https://github.com/gieljnssns" target="_blank" rel="noopener noreferrer">gieljnssns</a> 贡献。由 <a href="https://github.com/robsonke" target="_blank" rel="noopener noreferrer">robsonke</a> 维护。

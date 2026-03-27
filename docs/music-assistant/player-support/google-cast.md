@@ -1,7 +1,7 @@
 ---
 title: "Google Cast"
+description: 'Music Assistant 完全支持基于 Google Cast 的设备。这包括 Google 自己的硬件如 Google Nest 扬声器，但还有许多其他品牌也内置了"Chromecast"支持，如 Harman Kardon、JBL、Canton 等。'
 ---
-
 # Google Cast <img src="/assets/icons/chromecast-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 完全支持基于 Google Cast 的设备。这包括 Google 自己的硬件如 Google Nest 扬声器，但还有许多其他品牌也内置了"Chromecast"支持，如 Harman Kardon、JBL、Canton 等。

@@ -1,6 +1,6 @@
 ---
 title: Lektrico Charging Station
-description: 关于如何将 Lektrico 充电站与 Home Assistant 集成的说明。
+description: 'Lektrico Charging Station 集成可将您的 Lektrico Charging Station(https://lektri.co) 接入 Home Assistant，并让您对其进行监控。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: '2024.10'
@@ -19,6 +19,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Lektrico Charging Station
 
 **Lektrico Charging Station** 集成可将您的 [Lektrico Charging Station](https://lektri.co) 接入 Home Assistant，并让您对其进行监控。
 

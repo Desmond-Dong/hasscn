@@ -1,7 +1,8 @@
 ---
 title: 'Home Assistant Companion Android 应用：新功能'
-description: Home Assistant Companion Android 应用 2.3.0 的新变化
+description: '大家好，距离我们上次更新移动应用动态已经很久了，所以现在是时候再来一次！这次我们重点聊 Android 应用的新内容。过去几个版本更新了不少东西，我们会把直到刚刚发布到 Google Play 商店的 2.3.0 版本为止的内容都覆盖到。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Home Assistant Companion Android 应用：新功能
 
 大家好，距离我们上次更新移动应用动态已经很久了，所以现在是时候再来一次！这次我们重点聊 Android 应用的新内容。过去几个版本更新了不少东西，我们会把直到刚刚发布到 Google Play 商店的 2.3.0 版本为止的内容都覆盖到。
 

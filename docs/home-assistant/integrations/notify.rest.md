@@ -1,12 +1,13 @@
 ---
 title: "RESTful Notifications"
-description: "有关如何向 Home Assistant 添加 RESTful 通知的说明。"
+description: 'The RESTful Notifications integration allows you to deliver RESTful(https://en.wikipedia.org/wiki/Representationalstatetransfer) notifications from Home。'
 
 ha_category:
   - Notifications
 ha_release: 0.13
 ha_domain: rest
 ---
+# RESTful Notifications
 
 The **RESTful Notifications** integration allows you to deliver [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) notifications from Home Assistant to another party.
 

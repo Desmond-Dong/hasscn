@@ -1,6 +1,6 @@
 ---
 title: Zerproc
-description: 关于在 Home Assistant 中集成 Zerproc 蓝牙灯的说明。
+description: '此集成发现附近的 Zerproc 灯并将其添加到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_iot_class: Local Polling
@@ -13,6 +13,7 @@ ha_platforms:
   - light
 ha_integration_type: hub
 ---
+# Zerproc
 
 此集成发现附近的 Zerproc 灯并将其添加到 Home Assistant。
 

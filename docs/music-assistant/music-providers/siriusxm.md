@@ -1,7 +1,7 @@
 ---
 title: "SiriusXM"
+description: 'Music Assistant 支持从 SiriusXM 流式传输直播电台。由 <a href="https://github.com/btoconnor" target="blank" rel="noopener noreferrer"btoconnor</a 贡献和维护。'
 ---
-
 # SiriusXM 提供者 <img src="/assets/icons/siriusxm-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持从 SiriusXM 流式传输直播电台。由 <a href="https://github.com/btoconnor" target="_blank" rel="noopener noreferrer">btoconnor</a> 贡献和维护。

@@ -1,6 +1,6 @@
 ---
 title: SmartThings
-description: 有关在 Home Assistant 中设置 SmartThings 的说明。
+description: 'SmartThings(https://www.samsung.com/smartthings/) 是一个可连接三星设备和第三方设备的家庭自动化平台。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 featured: true
 ha_category:
   - Binary sensor
@@ -52,6 +52,7 @@ ha_codeowners:
   - '@joostlek'
 ha_quality_scale: bronze
 ---
+# SmartThings
 
 [SmartThings](https://www.samsung.com/smartthings/) 是一个可连接三星设备和第三方设备的家庭自动化平台。
 

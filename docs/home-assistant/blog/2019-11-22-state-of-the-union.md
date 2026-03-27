@@ -2,6 +2,7 @@
 title: '2019 State of the Union：回顾'
 description: ING 接待了 150 位 Home Assistant 社区成员，共同了解 Home Assistant 的方向与原因。
 ---
+# 2019 State of the Union：回顾
 
 2019 年 11 月 13 日，150 位 Home Assistant 社区成员齐聚阿姆斯特丹 [ING](https://www.ing.com)，参加 Home Assistant 2019 State of the Union。
 

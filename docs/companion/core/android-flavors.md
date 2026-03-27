@@ -1,7 +1,9 @@
 ---
 title: "Android 版本"
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" / Android 应用提供两种不同的版本：完整版（full）或 精简版（minimal）。'
 id: 'android-flavors'
 ---
+# Android 版本
 
 <img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /> Android 应用提供两种不同的版本：`完整版`（full）或 `精简版`（minimal）。应用的 `完整版` 通过 [Play 商店](https://play.google.com/store/apps/details?id=io.homeassistant.companion.android) 提供，因为它需要 Google Play 服务，所以具有完整的功能集。`完整版` 同时提供正式版和[测试版](https://play.google.com/apps/testing/io.homeassistant.companion.android)。
 

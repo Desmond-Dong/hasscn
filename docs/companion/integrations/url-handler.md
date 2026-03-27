@@ -1,7 +1,9 @@
 ---
 title: "URL 处理器"
+description: 'Home Assistant 支持通过 URL 从其他应用打开。 本页属于 Home Assistant 配套应用文档，适合查阅 iOS、Android、通知、传感器与移动端能力。'
 id: 'url-handler'
 ---
+# URL 处理器
 
 Home Assistant 支持通过 URL 从其他应用打开。
 

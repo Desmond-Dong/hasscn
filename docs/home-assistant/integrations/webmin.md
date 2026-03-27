@@ -1,6 +1,6 @@
 ---
 title: Webmin
-description: 关于如何在 Home Assistant 中设置 Webmin 的说明。
+description: 'Webmin(https://webmin.com) 是一个基于 Web 的 Unix 类服务器系统管理界面。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: 2024.3
@@ -14,6 +14,7 @@ ha_platforms:
   - diagnostics
   - sensor
 ---
+# Webmin
 
 [Webmin](https://webmin.com) 是一个基于 Web 的 Unix 类服务器系统管理界面。
 

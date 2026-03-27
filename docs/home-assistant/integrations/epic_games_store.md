@@ -1,6 +1,6 @@
 ---
 title: Epic Games Store
-description: 关于如何将 Epic Games Store 服务集成到 Home Assistant 的说明。
+description: 'The Epic Games Store integration integrates the Epic Games Store(https://store.epicgames.com/) service into Home Assistant. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Calendar
 ha_release: 2024.5
@@ -14,6 +14,7 @@ ha_platforms:
   - calendar
 ha_integration_type: service
 ---
+# Epic Games Store
 
 The **Epic Games Store** integration integrates the [Epic Games Store](https://store.epicgames.com/) service into Home Assistant.
 

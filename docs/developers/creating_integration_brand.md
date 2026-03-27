@@ -1,6 +1,8 @@
 ---
 title: "品牌"
+description: '一个商业品牌可能对应多个集成，它们分别支持该品牌下的不同产品。此外，品牌也可能生产支持通用物联网标准的设备，例如 Zigbee 或 Z-Wave 设备。 第一种情况的例子是：Google 有多个集成分别支持不同产品，例如 Google Calendar（google 集成）和 Google。'
 ---
+# 品牌
 
 一个商业品牌可能对应多个集成，它们分别支持该品牌下的不同产品。此外，品牌也可能生产支持通用物联网标准的设备，例如 Zigbee 或 Z-Wave 设备。
 第一种情况的例子是：Google 有多个集成分别支持不同产品，例如 Google Calendar（`google` 集成）和 Google Sheets（`google_sheets` 集成）。

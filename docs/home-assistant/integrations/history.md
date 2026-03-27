@@ -1,6 +1,6 @@
 ---
 title: History
-description: 关于如何为 Home Assistant 启用历史支持的说明。
+description: 'History 集成会跟踪 Home Assistant 中发生的一切，并允许您浏览这些记录。它依赖 recorder(/home-assistant/integrations/recorder/) 集成来存储数据，并使用相同的数据库设置。 如果某些实体被排除在记录之外， 这些实体将不会有任何历史记录可用。'
 ha_category:
   - History
 ha_release: pre 0.7
@@ -15,6 +15,7 @@ related:
   - url: https://data.home-assistant.io
     title: Home Assistant Data Science Portal
 ---
+# History
 
 **History** 集成会跟踪 Home Assistant 中发生的一切，并允许您浏览这些记录。它依赖 [`recorder`](/home-assistant/integrations/recorder/) 集成来存储数据，并使用相同的数据库设置。
 如果某些实体被排除在记录之外，

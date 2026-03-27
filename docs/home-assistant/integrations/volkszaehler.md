@@ -1,6 +1,6 @@
 ---
 title: Volkszaehler
-description: 关于如何将 Volkszaehler 传感器集成到 Home Assistant 的说明。
+description: 'Volkszaehler 集成会使用 Volkszaehler(https://wiki.volkszaehler.org/) API 提供的系统信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Volkszaehler
 
 **Volkszaehler** 集成会使用 [Volkszaehler](https://wiki.volkszaehler.org/) API 提供的系统信息。
 

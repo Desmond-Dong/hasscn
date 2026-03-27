@@ -1,6 +1,6 @@
 ---
 title: Folder watcher
-description: 用于监控文件系统变化的集成。
+description: '文件夹观察程序集成添加了 Watchdog(https://pythonhosted.org/watchdog/) 文件系统监控。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_iot_class: Local Polling
@@ -12,6 +12,7 @@ ha_platforms:
 ha_domain: folder_watcher
 ha_integration_type: integration
 ---
+# Folder watcher
 
 **文件夹观察程序**集成添加了 [Watchdog](https://pythonhosted.org/watchdog/) 文件系统监控。
 

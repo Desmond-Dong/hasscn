@@ -1,6 +1,6 @@
 ---
 title: MVG
-description: 关于如何将慕尼黑公共交通发车时间集成到 Home Assistant 的说明。
+description: 'The MVG integration will give you the departure time of the next bus, tram, subway, or train at the next station or stop in the Munich public transport。'
 
 ha_category:
   - Transport
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# MVG
 
 The **MVG** integration will give you the departure time of the next bus, tram, subway, or train at the next station or stop in the Munich public transport network. Additional details such as the line number and destination are present in the attributes.
 

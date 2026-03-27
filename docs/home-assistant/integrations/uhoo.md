@@ -1,6 +1,6 @@
 ---
 title: uHoo
-description: 关于如何将 uHoo 与 Home Assistant 集成的说明
+description: 'The uHoo integration lets you integrate uHoo(https://getuhoo.com) devices into Home Assistant. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2026.2
 ha_iot_class: Cloud Polling
 ha_codeowners:
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_config_flow: true
 ---
+# uHoo
 
 The **uHoo** integration lets you integrate [uHoo](https://getuhoo.com) devices into Home Assistant.
 

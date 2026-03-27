@@ -1,6 +1,6 @@
 ---
 title: Microsoft Teams
-description: 关于如何向 Microsoft Teams 频道发送通知的说明。
+description: 'Microsoft Teams 集成允许您将通知从 Home Assistant 发送到 Microsoft Teams(https://www.microsoft.com/microsoft-teams/group-chat-software) 的团队频道。'
 
 ha_category:
   - Notifications
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Microsoft Teams
 
 **Microsoft Teams** 集成允许您将通知从 Home Assistant 发送到 [Microsoft Teams](https://www.microsoft.com/microsoft-teams/group-chat-software) 的团队频道。
 

@@ -1,6 +1,6 @@
 ---
 title: EHEIM Digital
-description: 关于如何在 Home Assistant 中设置 EHEIM Digital 的说明。
+description: 'EHEIM Digital 集成允许您从 Home Assistant 控制 EHEIM Digital(https://eheim.com/enGB/aquatics/eheim-digital/) 智能水族设备。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Climate
   - Light
@@ -28,6 +28,7 @@ ha_platforms:
 ha_quality_scale: platinum
 ha_zeroconf: true
 ---
+# EHEIM Digital
 
 **EHEIM Digital** 集成允许您从 Home Assistant 控制 [EHEIM Digital](https://eheim.com/en_GB/aquatics/eheim-digital/) 智能水族设备。
 

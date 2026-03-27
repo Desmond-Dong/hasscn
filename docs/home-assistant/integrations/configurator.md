@@ -1,6 +1,6 @@
 ---
 title: Configurator
-description: 关于如何将配置器集成到您的集成中的说明。
+description: 'Configurator。本页属于 Home Assistant 中文文档，适合查阅安装部署、集成配置、自动化、仪表盘与日常使用说明。'
 ha_category:
   - Other
 ha_release: 0.7
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_domain: configurator
 ha_integration_type: system
 ---
+# Configurator
 
 :::caution
 此集成面向开发者。

@@ -1,6 +1,6 @@
 ---
 title: "MQTT notify"
-description: "有关如何将 MQTT 通知实体集成到 Home Assistant 的说明。"
+description: 'The MQTT notify integration lets you send an MQTT message when the sendmessage action is called. This can be used to expose a action of a remote device。'
 
 ha_category:
   - Notifications
@@ -8,6 +8,7 @@ ha_release: 2024.5
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT notify
 
 The **MQTT notify** integration lets you send an MQTT message when the `send_message` action is called. This can be used to expose a action of a remote device that allows processing a message, such as showing it on a screen.
 

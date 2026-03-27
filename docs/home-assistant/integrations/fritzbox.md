@@ -27,6 +27,7 @@ ha_codeowners:
   - '@flabbamann'
 ha_integration_type: hub
 ---
+# FRITZ!SmartHome
 
 Home Assistant 的 **FRITZ!SmartHome** 集成允许您集成 [FRITZ! Smart Home](https://fritz.com/en/collections/smart-home/)（_前 AVM FRITZ!DECT_）设备，如插头、恒温器或快门驱动器，还可以触发所谓的智能家居模板（_包含相同类型智能家居设备的设置_）。
 

@@ -1,6 +1,6 @@
 ---
 title: IFTTT
-description: 关于如何在 Home Assistant 中设置 IFTTT 的说明。
+description: 'IFTTT(https://ifttt.com) 是一项 Web 服务，可让您创建由简单条件语句组成的链式自动化，也就是所谓的“Applets”。借助 IFTTT 集成，您可以通过 "Webhooks" 服务（此前称为 "Maker" 渠道）触发 applet。'
 ha_category:
   - Automation
 ha_iot_class: Cloud Push
@@ -11,6 +11,7 @@ ha_platforms:
   - alarm_control_panel
 ha_integration_type: integration
 ---
+# IFTTT
 
 [IFTTT](https://ifttt.com) 是一项 Web 服务，可让您创建由简单条件语句组成的链式自动化，也就是所谓的“Applets”。借助 IFTTT 集成，您可以通过 **"Webhooks"** 服务（此前称为 **"Maker"** 渠道）触发 applet。这需要 [Pro 方案](https://ifttt.com/plans)或更高版本。
 

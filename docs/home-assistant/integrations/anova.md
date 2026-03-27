@@ -1,6 +1,6 @@
 ---
 title: Anova
-description: 关于将 Anova Wi-Fi Sous Vide 集成到 Home Assistant 的说明。
+description: 'Anova 集成允许您控制具有 Wi-Fi 功能的 Anova(https://anovaculinary.com/pages/find-your-anova-precision-cooker) 低温慢煮机。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Push
@@ -13,6 +13,7 @@ ha_integration_type: hub
 ha_platforms:
   - sensor
 ---
+# Anova
 
 **Anova** 集成允许您控制具有 Wi-Fi 功能的 [Anova](https://anovaculinary.com/pages/find-your-anova-precision-cooker) 低温慢煮机。
 

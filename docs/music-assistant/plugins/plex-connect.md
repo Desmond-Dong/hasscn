@@ -1,8 +1,7 @@
 ---
 title: Plex Connect 插件
-description: Plex Connect 插件的功能和说明
+description: 'Music Assistant 可以将 MA 播放器暴露给 Plex 客户端（如 Plexamp）进行发现和控制。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # Plex Connect <img src="/assets/icons/plex-connect-icon.svg" alt="预览图片" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant 可以将 MA 播放器暴露给 Plex 客户端（如 Plexamp）进行发现和控制。

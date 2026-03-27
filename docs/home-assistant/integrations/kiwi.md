@@ -1,6 +1,6 @@
 ---
 title: KIWI
-description: 关于如何集成 KIWI 智能锁和智能门禁的说明。
+description: 'KIWI 集成可让您打开 KIWI 智能锁和智能门禁设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Lock
 ha_release: 0.72
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# KIWI
 
 **KIWI** 集成可让您打开 KIWI 智能锁和智能门禁设备。
 

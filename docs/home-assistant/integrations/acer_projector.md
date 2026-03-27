@@ -1,6 +1,6 @@
 ---
 title: Acer Projector
-description: 关于将 Acer 投影仪开关集成到 Home Assistant 的说明。
+description: 'Acer Projector 集成允许您控制通过 RS232 连接的 Acer(https://www.acer.com/) 投影仪的状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Multimedia
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Acer Projector
 
 **Acer Projector** 集成允许您控制通过 RS232 连接的 [Acer](https://www.acer.com/) 投影仪的状态。
 

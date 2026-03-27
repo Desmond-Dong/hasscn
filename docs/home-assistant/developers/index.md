@@ -1,8 +1,7 @@
 ---
 title: 开发者
-description: Home Assistant 开发者资源与贡献指南
+description: 'Home Assistant 是一个开源项目，由全球开发者社区共同维护。我们欢迎所有形式的贡献，无论是代码、文档、翻译还是问题反馈。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 开发者
 
 Home Assistant 是一个开源项目，由全球开发者社区共同维护。我们欢迎所有形式的贡献，无论是代码、文档、翻译还是问题反馈。

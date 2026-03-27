@@ -1,6 +1,6 @@
 ---
 title: AirVisual Pro
-description: 关于如何在 Home Assistant 中使用 AirVisual Pro 设备的说明。
+description: 'AirVisual Pro 集成允许您从 AirVisual Node/Pro 设备(https://www.iqair.com/air-quality-monitors/airvisual-pro) 获取数据。与设备的通信通过本地网络进行。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Health
 ha_release: 2023.1
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# AirVisual Pro
 
 **AirVisual Pro** 集成允许您从 [AirVisual Node/Pro 设备](https://www.iqair.com/air-quality-monitors/airvisual-pro) 获取数据。与设备的通信通过本地网络进行。
 

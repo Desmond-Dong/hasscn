@@ -3,6 +3,7 @@ title: Deprecating Python 3.4 support
 description: Starting release 0.55, Python 3.4 support will be deprecated. Support
   is planned to be removed at the beginning of 2018.
 ---
+# Deprecating Python 3.4 support
 
 **更新 February 16, 2018**:
 Home Assistant 0.64 will be the last 发布 to support Python 3.4. Starting with 发布 0.65, Home Assistant will require a minimum 版本 of Python 3.5.3.

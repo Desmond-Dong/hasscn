@@ -1,6 +1,6 @@
 ---
 title: PlayStation Network
-description: 有关为 Home Assistant 启用 PlayStation Network 支持的说明
+description: 'The PlayStation Network integration enables you to seamlessly integrate information from your currently playing game in Home Assistant. 本页属于 Home。'
 ha_category:
   - Binary sensor
   - Media player
@@ -26,6 +26,7 @@ related:
     title: Playstation
 ha_dhcp: true
 ---
+# PlayStation Network
 
 The **PlayStation Network** integration enables you to seamlessly integrate information from your currently playing game in Home Assistant.
 

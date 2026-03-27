@@ -1,8 +1,9 @@
 ---
 title: 'State of the Open Home 2026：来荷兰乌得勒支现场参加吧！'
-description: 4 月 8 日，来荷兰乌得勒支参加 State of the Open Home 2026。
+description: '<img src=''/home-assistant/images/blog/2026-01-state-of-the-open-home-2026/art.webp'' style=''border: 0;box-shadow: none;'' alt="State of the Open Home。'
   一起庆祝、交流，并了解未来方向——访问我们的网站获取更多信息！
 ---
+# State of the Open Home 2026：来荷兰乌得勒支现场参加吧！
 
 <img src='/home-assistant/images/blog/2026-01-state-of-the-open-home-2026/art.webp' style='border: 0;box-shadow: none;' alt="State of the Open Home 2026：来乌得勒支现场参加吧！">
 

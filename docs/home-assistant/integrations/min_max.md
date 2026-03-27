@@ -1,6 +1,6 @@
 ---
 title: Min/Max
-description: 关于如何将最小/最大值传感器集成到 Home Assistant 的说明。
+description: 'Min/Max 集成会读取其他传感器的状态，以计算收集到的状态中的最小值、最大值、最新值（last）、平均值、中位数、范围和总和。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Helper
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: helper
 ---
+# Min/Max
 
 **Min/Max** 集成会读取其他传感器的状态，以计算收集到的状态中的最小值、最大值、最新值（last）、平均值、中位数、范围和总和。
 

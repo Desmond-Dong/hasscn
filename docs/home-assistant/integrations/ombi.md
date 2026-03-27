@@ -1,6 +1,6 @@
 ---
 title: Ombi
-description: "有关如何在 Home Assistant 中设置 Ombi 集成的说明。"
+description: 'The Ombi integration monitors data from your Ombi(https://ombi.io) instance. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Sensor
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Ombi
 
 The **Ombi** integration monitors data from your [Ombi](https://ombi.io) instance.
 

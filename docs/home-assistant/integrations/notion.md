@@ -1,6 +1,6 @@
 ---
 title: Notion
-description: "如何将 Notion 套件集成到 Home Assistant 中。"
+description: 'The Notion integration retrieves data from Notion(https://getnotion.com) wireless home monitoring sensor kits. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Binary sensor
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Notion
 
 The **Notion** integration retrieves data from [Notion](https://getnotion.com) wireless
 home monitoring sensor kits.

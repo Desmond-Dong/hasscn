@@ -1,6 +1,6 @@
 ---
 title: Steam
-description: 有关如何在 Home Assistant 中设置 Steam 传感器的说明。
+description: 'Steam 集成可让您跟踪公开 Steam(https://steamcommunity.com) 账户的在线状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Social
 ha_config_flow: true
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: service
 ---
+# Steam
 
 **Steam** 集成可让您跟踪公开 [Steam](https://steamcommunity.com) 账户的在线状态。
 

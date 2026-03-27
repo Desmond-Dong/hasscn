@@ -3,6 +3,7 @@ title: '0.29: 🎈 Async, SleepIQ, OpenALPR, EmonCMS, stocks, and plants'
 description: Move to asynchronous, Support for SleepIQ, OpenALPR, and EmonCMS, and
   other goodies.
 ---
+# 0.29: 🎈 Async, SleepIQ, OpenALPR, EmonCMS, stocks, and plants
 
 两周前，也就是 9 月 17 日，是我们三周年纪念日。Home Assistant 在这三年里，已经从一个“日落时帮我开灯”的简单脚本，成长为一个超棒的开源项目，并拥有开源社区里最棒的社区成员。这个发布包含了由 **50** 位不同贡献者带来的新功能、问题修复和性能优化！我们在 GitHub 上的 Fork 数也突破了 1000，势头十足！
 

@@ -1,6 +1,6 @@
 ---
 title: Iperf3
-description: 关于如何在 Home Assistant 中使用 Iperf3 测量网络带宽的说明。
+description: 'Iperf3 集成允许您针对私有或公共 Iperf3(https://software.es.net/iperf/index.html) 服务器测量网络带宽性能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - System monitor
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Iperf3
 
 **Iperf3** 集成允许您针对私有或公共 [Iperf3](https://software.es.net/iperf/index.html) 服务器测量网络带宽性能。
 

@@ -1,6 +1,8 @@
 ---
 title: 别名 - 实体、区域和楼层
+description: 'Assist 会使用你的实体、区域和楼层名称，以及你配置的所有别名。已配置的别名不仅会被 Assist 使用，如果你设置了 Google Assistant，也可以在那里使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 别名 - 实体、区域和楼层
 
 Assist 会使用你的实体、区域和楼层名称，以及你配置的所有别名。已配置的别名不仅会被 Assist 使用，如果你设置了 Google Assistant，也可以在那里使用。
 

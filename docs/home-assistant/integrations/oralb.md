@@ -1,6 +1,6 @@
 ---
 title: Oral-B
-description: 有关如何将 Oral-B 设备集成到 Home Assistant 的说明。
+description: '将 Oral-B(https://oralb.com/) 设备集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_bluetooth: true
@@ -15,7 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
-
+# Oral-B
 
 将 [Oral-B](https://oralb.com/) 设备集成到 Home Assistant 中。
 

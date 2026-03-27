@@ -1,6 +1,6 @@
 ---
 title: Namecheap DynamicDNS
-description: "让您的 namecheap 动态 DNS 保持最新"
+description: 'With the Namecheap DynamicDNS integration you can automatically update your dynamic DNS entry hosted by Namecheap''s FreeDNS(https://www.namecheap.com/store。'
 
 ha_category:
   - Network
@@ -16,6 +16,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_quality_scale: platinum
 ---
+# Namecheap DynamicDNS
 
 With the **Namecheap DynamicDNS** integration you can automatically update your dynamic DNS entry hosted by Namecheap's [FreeDNS](https://www.namecheap.com/store/domains/freedns/) or [PremiumDNS](https://www.namecheap.com/security/premiumdns/) services.
 

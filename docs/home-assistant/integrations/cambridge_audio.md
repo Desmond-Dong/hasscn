@@ -1,6 +1,6 @@
 ---
 title: Cambridge Audio
-description: 关于如何将 Cambridge Audio 接收器集成到 Home Assistant 的说明。
+description: 'Cambridge Audio 集成允许您控制所有支持 StreamMagic(https://www.cambridgeaudio.com/usa/en/products/streammagic) 应用的接收器和流媒体播放器。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Media player
   - Select
@@ -19,6 +19,7 @@ ha_integration_type: device
 ha_zeroconf: true
 ha_quality_scale: platinum
 ---
+# Cambridge Audio
 
 **Cambridge Audio** 集成允许您控制所有支持 [StreamMagic](https://www.cambridgeaudio.com/usa/en/products/streammagic) 应用的接收器和流媒体播放器。
 

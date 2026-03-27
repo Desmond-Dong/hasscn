@@ -1,6 +1,6 @@
 ---
 title: Melnor Bluetooth
-description: 关于在 Home Assistant 中设置 Melnor 蓝牙设备的说明。
+description: 'The Melnor Bluetooth integration allows you to control your Melnor Bluetooth watering valves. The devices are set up through Bluetooth and don''t need any。'
 ha_category:
   - Sensor
   - Switch
@@ -18,6 +18,7 @@ ha_platforms:
   - time
 ha_integration_type: device
 ---
+# Melnor Bluetooth
 
 The **Melnor Bluetooth** integration allows you to control your Melnor Bluetooth watering valves.
 The devices are set up through Bluetooth and don't need any additional bridge or gateway.

@@ -1,7 +1,9 @@
 ---
 title: Home Assistant 操作系统
+description: 'Home Assistant Operating System（HAOS）是一个专为运行 Home Assistant 打造的操作系统，适用于单板计算机和 x86-64 系统。它的目标是提供稳定、低维护成本的运行环境。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: 简介
 ---
+# Home Assistant 操作系统
 
 Home Assistant Operating System（HAOS）是一个专为运行 Home Assistant 打造的操作系统，适用于单板计算机和 x86-64 系统。它的目标是提供稳定、低维护成本的运行环境。
 

@@ -1,6 +1,6 @@
 ---
 title: Risco
-description: 有关如何使用 Risco Cloud 将 Risco 警报集成到 HA 的说明。
+description: '此集成可通过以下两种方式之一连接 Risco 报警系统：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_integration_type: integration
 ---
+# Risco
 
 此集成可通过以下两种方式之一连接 Risco 报警系统：
 

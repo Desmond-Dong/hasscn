@@ -1,6 +1,6 @@
 ---
 title: Actiontec
-description: 关于将 Actiontec 路由器集成到 Home Assistant 的说明。
+description: 'Actiontec 集成允许您通过查看连接到 Actiontec(https://www.actiontec.com/) 设备的设备来检测存在。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Actiontec
 
 **Actiontec** 集成允许您通过查看连接到 [Actiontec](https://www.actiontec.com/) 设备的设备来检测存在。
 

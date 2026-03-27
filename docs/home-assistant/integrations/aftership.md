@@ -1,6 +1,6 @@
 ---
 title: AfterShip
-description: 关于在 Home Assistant 中设置 AfterShip 传感器的说明。
+description: 'AfterShip 集成允许通过 AfterShip(https://www.aftership.com) 跟踪包裹，该服务支持全球 490 多家承运商。使用跟踪 API 功能需要 Pro 计划。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Postal service
 ha_release: 0.85
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: service
 ha_config_flow: true
 ---
+# AfterShip
 
 **AfterShip** 集成允许通过 [AfterShip](https://www.aftership.com) 跟踪包裹，该服务支持全球 490 多家承运商。使用跟踪 API 功能需要 Pro 计划。
 

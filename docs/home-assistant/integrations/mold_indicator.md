@@ -1,6 +1,6 @@
 ---
 title: Mold Indicator
-description: 关于如何在 Home Assistant 中使用霉菌生长指示集成的说明
+description: 'The Mold Indicator integration uses data from two temperature sensors and a humidity sensor to predict the humidity near a cold surface. High humidity may。'
 ha_category:
   - Environment
   - Helper
@@ -16,6 +16,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Mold Indicator
 
 The **Mold Indicator** integration uses data from two temperature sensors and a humidity sensor to predict the humidity near a cold surface. High humidity may lead to mold growth at more than ~70% and causes condensation at 100%.
 

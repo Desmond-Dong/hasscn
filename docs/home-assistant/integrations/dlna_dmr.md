@@ -1,6 +1,6 @@
 ---
 title: DLNA Digital Media Renderer
-description: 关于将 DLNA DMR 设备集成到 Home Assistant 的说明。
+description: 'DLNA Digital Media Renderer 集成允许您控制 DLNA Digital Media Renderer(https://www.dlna.org/)，例如支持 DLNA 的电视或收音机。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.76
@@ -14,6 +14,7 @@ ha_platforms:
 ha_ssdp: true
 ha_integration_type: device
 ---
+# DLNA Digital Media Renderer
 
 **DLNA Digital Media Renderer** 集成允许您控制 [DLNA Digital Media Renderer](https://www.dlna.org/)，例如支持 DLNA 的电视或收音机。
 

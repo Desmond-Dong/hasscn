@@ -1,6 +1,6 @@
 ---
 title: HDFury
-description: 关于如何在 Home Assistant 中集成 HDFury 设备的说明。
+description: 'HDFury 集成允许您控制和监控您的 HDFury(https://hdfury.com/) 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_iot_class: Local Polling
 ha_config_flow: true
 ha_release: 2026.2
@@ -24,6 +24,7 @@ ha_integration_type: device
 ha_quality_scale: platinum
 ha_zeroconf: true
 ---
+# HDFury
 
 **HDFury** 集成允许您控制和监控您的 [HDFury](https://hdfury.com/) 设备。
 

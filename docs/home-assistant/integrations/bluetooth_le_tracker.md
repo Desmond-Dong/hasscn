@@ -1,6 +1,6 @@
 ---
 title: Bluetooth LE Tracker
-description: 关于在 Home Assistant 中集成蓝牙低功耗跟踪的说明。
+description: '此集成在启动时和定期间隔中发现新设备，并根据 intervalseconds 值定期跟踪蓝牙低功耗设备。设备之间不需要配对。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Bluetooth LE Tracker
 
 此集成在启动时和定期间隔中发现新设备，并根据 interval_seconds 值定期跟踪蓝牙低功耗设备。设备之间不需要配对。
 

@@ -1,6 +1,6 @@
 ---
 title: Bosch SHC
-description: 集成 Bosch SHC。
+description: 'Bosch SHC 集成允许您将 Bosch Smart Home Controller(https://www.bosch-smarthome.com) 连接到 Home Assistant，以控制和监控您的 Bosch 智能家居设备。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Cover
@@ -21,6 +21,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: hub
 ---
+# Bosch SHC
 
 **Bosch SHC** 集成允许您将 [Bosch Smart Home Controller](https://www.bosch-smarthome.com) 连接到 Home Assistant，以控制和监控您的 Bosch 智能家居设备。
 

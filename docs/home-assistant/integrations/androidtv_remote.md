@@ -1,6 +1,6 @@
 ---
 title: Android TV Remote
-description: 关于将 Android TV Remote 集成到 Home Assistant 的说明。
+description: 'Android TV Remote 集成允许您控制 Android TV 并启动应用程序。为此，Android TV 设备需要安装 Android TV Remote Service(https://play.google.com/store/apps/details?id=com.google.androi。'
 ha_category:
   - Media player
   - Remote
@@ -19,6 +19,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
+# Android TV Remote
 
 **Android TV Remote** 集成允许您控制 Android TV 并启动应用程序。为此，Android TV 设备需要安装 [Android TV Remote Service](https://play.google.com/store/apps/details?id=com.google.android.tv.remote.service)，该服务在大多数设备上已预装（Fire TV 设备是一个明显的例外）。
 

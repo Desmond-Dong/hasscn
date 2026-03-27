@@ -1,6 +1,6 @@
 ---
 title: ZhongHong
-description: 关于如何在 Home Assistant 中集成中弘支持温控器的说明。
+description: 'ZhongHong 集成可让您通过 Home Assistant 控制 Zhonghong HVAC Gateway Controller 温控器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.72
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# ZhongHong
 
 **ZhongHong** 集成可让您通过 Home Assistant 控制 Zhonghong HVAC Gateway Controller 温控器。
 

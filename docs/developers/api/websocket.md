@@ -1,6 +1,8 @@
 ---
 title: "WebSocket API"
+description: 'Home Assistant 在 /api/websocket 提供 WebSocket API。任何实现了 WebSocket 的客户端都可以通过它从 Home Assistant 实例持续接收信息。我们维护了一个用于前端的 JavaScript library(https://github.com/hom。'
 ---
+# WebSocket API
 
 Home Assistant 在 `/api/websocket` 提供 WebSocket API。任何实现了 WebSocket 的客户端都可以通过它从 Home Assistant 实例持续接收信息。我们维护了一个用于前端的 [JavaScript library](https://github.com/home-assistant/home-assistant-js-websocket)。
 

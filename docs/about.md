@@ -11,7 +11,6 @@ og:
   locale: 'zh_CN'
   site_name: 'Home Assistant 中文网'
 ---
-
 # 🏠 关于
 
 :::tip 📱 关于我

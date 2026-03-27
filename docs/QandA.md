@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 'Home Assistant OS 极速版 - 常见问题解答'
-description: 'Home Assistant OS 极速版常见问题解答，包含安装、配置、使用等各方面的详细解答'
+description: '中文名：Home Assistant OS 极速版 名称剽窃自《HACS极速版》因为HACS极速版就是加速了HACS的连接与使用，我这OS也是一样的作用。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中国社区, Home Assistant 中文, Home Assistant OS 极速版, FAQ, 常见问题, 安装教程, 配置指南'
 og:
   title: 'Home Assistant OS 极速版 - 常见问题解答'
@@ -11,7 +11,6 @@ og:
   locale: 'zh_CN'
   site_name: 'Home Assistant 中文网'
 ---
-
 # Home Assistant OS 极速版
 
 :::info 名称由来

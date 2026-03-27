@@ -1,6 +1,6 @@
 ---
 title: World Air Quality Index (WAQI)
-description: 关于如何将空气质量指数 (WAQI) 数据集成到 Home Assistant 的说明。
+description: 'World Air Quality Index (WAQI) 集成会查询 World Air Quality Index(https://aqicn.org/city/beijing/) 服务，以检查指定位置的 AQI 数值。查询结果会作为传感器添加到 Home Assistant 中。'
 ha_category:
   - Health
 ha_release: 0.34
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: service
 ha_config_flow: true
 ---
+# World Air Quality Index (WAQI)
 
 **World Air Quality Index (WAQI)** 集成会查询 [World Air Quality Index](https://aqicn.org/city/beijing/) 服务，以检查指定位置的 AQI 数值。查询结果会作为传感器添加到 Home Assistant 中。
 

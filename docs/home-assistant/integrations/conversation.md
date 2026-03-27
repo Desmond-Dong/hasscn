@@ -1,6 +1,6 @@
 ---
 title: Conversation
-description: 关于如何与 Home Assistant 进行对话的说明。
+description: 'Conversation 集成允许您与 Home Assistant 进行对话。您可以通过在前端按下麦克风（仅支持部分浏览器，不支持 iOS）或通过调用带有转录文本的 conversation.process 动作来进行对话。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Voice
 ha_release: 0.7
@@ -12,6 +12,7 @@ ha_codeowners:
 ha_domain: conversation
 ha_integration_type: entity
 ---
+# Conversation
 
 **Conversation** 集成允许您与 Home Assistant 进行对话。您可以通过在前端按下麦克风（仅支持部分浏览器，不支持 iOS）或通过调用带有转录文本的 `conversation.process` 动作来进行对话。
 

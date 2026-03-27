@@ -1,6 +1,6 @@
 ---
 title: Pico TTS
-description: 有关如何使用 Home Assistant 设置 Pico 文本转语音的说明。
+description: 'Pico TTS 集成使用 Pico TTS 库(https://github.com/naggety/picotts) 以自然的语音朗读文本。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Text-to-speech
 ha_iot_class: Local Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Pico TTS
 
 **Pico TTS** 集成使用 [Pico TTS 库](https://github.com/naggety/picotts) 以自然的语音朗读文本。
 

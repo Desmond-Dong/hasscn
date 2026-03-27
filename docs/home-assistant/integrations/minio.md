@@ -1,6 +1,6 @@
 ---
 title: Minio
-description: 用于与 Minio 对象存储交互的集成。
+description: '此集成添加了与 Minio(https://min.io) 交互的能力。 它还支持监听存储桶通知：参阅文档(https://docs.min.io/docs/minio-client-complete-guide.htmlwatch)。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Utility
 ha_iot_class: Cloud Push
@@ -11,6 +11,7 @@ ha_domain: minio
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Minio
 
 此集成添加了与 [Minio](https://min.io) 交互的能力。
 它还支持监听存储桶通知：[参阅文档](https://docs.min.io/docs/minio-client-complete-guide.html#watch)

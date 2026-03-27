@@ -1,7 +1,8 @@
 ---
 title: 'Android 2021.12: Wear OS Beta!'
-description: Wear OS Beta, Instant Update Widgets and more!
+description: 'Hey Everyone! It''s time for the December 2021 Android 发布. It has been a while since the last Android 发布 as the team has been very busy working on many new。'
 ---
+# Android 2021.12: Wear OS Beta!
 
 ![Screenshot of the Android app](/home-assistant/images/blog/2021-12-21-android-december-2021/Companion.png)
 

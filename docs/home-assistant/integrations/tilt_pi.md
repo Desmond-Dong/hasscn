@@ -1,6 +1,6 @@
 ---
 title: Tilt Pi
-description: 关于如何配置 Tilt Pi 的说明。
+description: 'The Tilt Pi integration allows you to connect a Tilt Pi to Home Assistant to automatically discover Tilt Hydrometer devices. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
 ha_release: '2025.7'
@@ -17,6 +17,7 @@ related:
     title: Tilt Pi product page
 ha_integration_type: hub
 ---
+# Tilt Pi
 
 The **Tilt Pi** integration allows you to connect a Tilt Pi to Home Assistant to
 automatically discover Tilt Hydrometer devices.

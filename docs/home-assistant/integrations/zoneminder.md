@@ -1,6 +1,6 @@
 ---
 title: ZoneMinder
-description: 如何将 ZoneMinder 集成到 Home Assistant 中。
+description: 'ZoneMinder 集成将您的 ZoneMinder(https://www.zoneminder.com) 实例与 Home Assistant 进行设置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Camera
@@ -24,6 +24,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# ZoneMinder
 
 **ZoneMinder** 集成将您的 [ZoneMinder](https://www.zoneminder.com) 实例与 Home Assistant 进行设置。
 

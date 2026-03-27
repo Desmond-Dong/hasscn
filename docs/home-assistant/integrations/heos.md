@@ -1,6 +1,6 @@
 ---
 title: Denon HEOS
-description: 关于如何将 Denon HEOS 集成到 Home Assistant 的说明。
+description: 'Denon HEOS 集成用于将 HEOS(https://www.denon.com/en-gb/category/heos/) 系统连接到 Home Assistant。HEOS 是一个无线音频生态系统， 可让您将音乐串流到 Denon(https://www.denon.com/en-us/catego。'
 ha_category:
   - Media player
 ha_release: 0.92
@@ -17,6 +17,7 @@ ha_integration_type: hub
 ha_quality_scale: platinum
 ha_zeroconf: true
 ---
+# Denon HEOS
 
 **Denon HEOS** 集成用于将 [HEOS](https://www.denon.com/en-gb/category/heos/) 系统连接到 Home Assistant。HEOS 是一个无线音频生态系统，
 可让您将音乐串流到 [Denon](https://www.denon.com/en-us/category/heos/) 和 [Marantz](https://www.marantz.com/en/world-of-marantz/heos-built-in.html) 的 HEOS Built-in 产品。

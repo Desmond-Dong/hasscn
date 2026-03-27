@@ -1,6 +1,8 @@
 ---
 title: "语言负责人"
+description: 'Home Assistant 是一个全球化项目。我们希望确保每个人都能使用自己的母语来使用 Home Assistant。因此，我们为每种语言设立了语言负责人来主导维护工作。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 语言负责人
 
 Home Assistant 是一个全球化项目。我们希望确保每个人都能使用自己的母语来使用 Home Assistant。因此，我们为每种语言设立了语言负责人来主导维护工作。
 

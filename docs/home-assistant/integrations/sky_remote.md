@@ -1,6 +1,6 @@
 ---
 title: Sky Remote Control
-description: Sky Remote 集成允许您通过 Home Assistant 控制 Sky box。
+description: 'Sky Remote Control 集成可让您使用 Home Assistant 控制 Sky(https://www.sky.com/) 机顶盒。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Remote
 ha_release: 2024.12
@@ -17,6 +17,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Sky Remote Control
 
 **Sky Remote Control** 集成可让您使用 Home Assistant 控制 [Sky](https://www.sky.com/) 机顶盒。
 

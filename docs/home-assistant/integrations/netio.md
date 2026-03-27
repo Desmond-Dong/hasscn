@@ -1,6 +1,6 @@
 ---
 title: Netio
-description: "有关如何将 Netio 交换机集成到 Home Assistant 的说明。"
+description: 'The Netio integration allows you to control your Netio(https://www.netio-products.com/en/overview/) Netio4, Netio4 All, and Netio 230B. These are smart。'
 
 ha_category:
   - Switch
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Netio
 
 The **Netio** integration allows you to control your [Netio](https://www.netio-products.com/en/overview/) Netio4, Netio4 All, and Netio 230B. These are smart outlets controllable through Ethernet and/or Wi-Fi that reports consumptions (Netio4all). This integration requires Telnet to be enabled on the Netio device.
 

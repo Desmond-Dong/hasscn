@@ -4,6 +4,7 @@ description: Teach your kids when it's the right time to get up with a blueprint
   display your 3D printer with a card in Lovelace and get started building your own
   weather station.
 ---
+# Community Highlights: 24th edition
 
 The 24th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, which we thought was worth sharing.

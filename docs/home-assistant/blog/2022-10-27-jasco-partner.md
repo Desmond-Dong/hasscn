@@ -3,6 +3,7 @@ title: Jasco joins Works with Home Assistant
 description: Jasco join the Works with Home Assistant partner program as a Z-Wave
   partner.
 ---
+# Jasco joins Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2022-10-27-jasco-partner/jasco-top.png' alt="Jasco and Works with Home Assistant logos" class='no-shadow'>
 <br><br>

@@ -1,6 +1,6 @@
 ---
 title: Telegram 机器人
-description: Telegram 机器人支持
+description: '在移动或桌面设备上使用 Telegram 向 Home Assistant 发送消息或命令，或从 Home Assistant 接收消息或命令。 此集成创建通知操作，可用于发送、编辑、接收消息，或从 Telegram 机器人账户(https://core.telegram.org/bots) 下载附件。'
 ha_category:
   - Notifications
 ha_release: 0.42
@@ -16,6 +16,7 @@ ha_platforms:
   - event
   - notify
 ---
+# Telegram 机器人
 
 在移动或桌面设备上使用 Telegram 向 Home Assistant 发送消息或命令，或从 Home Assistant 接收消息或命令。
 此集成创建通知操作，可用于发送、编辑、接收消息，或从 [Telegram 机器人账户](https://core.telegram.org/bots) 下载附件。

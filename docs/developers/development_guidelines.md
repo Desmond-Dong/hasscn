@@ -1,6 +1,8 @@
 ---
 title: "开发规范"
+description: 'Home Assistant 对所有提交的代码都严格要求遵循 PEP 8 风格指南(https://peps.python.org/pep-0008/) 和 PEP 257（文档字符串约定）(https://peps.python.org/pep-0257/)。'
 ---
+# 开发规范
 
 Home Assistant 对所有提交的代码都严格要求遵循 [PEP 8 风格指南](https://peps.python.org/pep-0008/) 和 [PEP 257（文档字符串约定）](https://peps.python.org/pep-0257/)。
 

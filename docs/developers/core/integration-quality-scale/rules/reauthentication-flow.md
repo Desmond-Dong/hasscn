@@ -1,5 +1,6 @@
 ---
 title: "需要通过界面重新验证"
+description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 related_rules:
   - config-flow
   - test-before-configure
@@ -7,6 +8,8 @@ related_rules:
   - test-before-setup
   - reconfiguration-flow
 ---
+# 需要通过界面重新验证
+
 import RelatedRules from './_includes/related_rules.jsx'
 
 ## 推理

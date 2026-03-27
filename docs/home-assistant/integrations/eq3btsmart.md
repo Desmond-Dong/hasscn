@@ -1,6 +1,6 @@
 ---
 title: eQ-3 Bluetooth Smart Thermostats
-description: 关于将 eQ-3 Bluetooth Smart 温控器集成到 Home Assistant 的说明。
+description: 'eQ-3 Bluetooth Smart Thermostats 集成允许您集成 eQ-3 Bluetooth Smart 温控器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_iot_class: Local Polling
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
   - switch
 ---
+# eQ-3 Bluetooth Smart Thermostats
 
 **eQ-3 Bluetooth Smart Thermostats** 集成允许您集成 eQ-3 Bluetooth Smart 温控器。
 

@@ -1,6 +1,6 @@
 ---
 title: Garages Amsterdam
-description: 关于如何在 Home Assistant 中集成阿姆斯特丹停车场的说明。
+description: 'Garages Amsterdam 集成使用阿姆斯特丹市政府提供的 API，来获取荷兰阿姆斯特丹停车场的占用情况。您可以通过多次添加此集成来跟踪多个停车场。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Garages Amsterdam
 
 **Garages Amsterdam** 集成使用阿姆斯特丹市政府提供的 API，来获取荷兰阿姆斯特丹停车场的占用情况。您可以通过多次添加此集成来跟踪多个停车场。
 

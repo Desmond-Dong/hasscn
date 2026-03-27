@@ -1,6 +1,8 @@
 ---
 title: "意图"
+description: '有关意图，请参阅 Home Assistant Core 文档中的以下内容：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 意图
 
 有关意图，请参阅 Home Assistant Core 文档中的以下内容：
 

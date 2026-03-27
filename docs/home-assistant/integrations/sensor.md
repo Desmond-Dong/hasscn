@@ -1,6 +1,6 @@
 ---
 title: Sensor
-description: 有关如何使用 Home Assistant 设置传感器的说明。
+description: '传感器是 Home Assistant 中的一项基础集成。它们用于监控各种实体的状态与条件。实体可以有很多种类型，例如：报告电量的运动传感器等物理设备、获取天气温度的 Web 服务、根据 GPS 位置计算太阳高度角的内置功能，甚至是你自定义的用于报告笔记本可用空间的传感器。'
 ha_category:
   - Sensor
 ha_release: 0.7
@@ -15,6 +15,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Sensor
 
 传感器是 Home Assistant 中的一项基础集成。它们用于监控各种实体的状态与条件。实体可以有很多种类型，例如：报告电量的运动传感器等物理设备、获取天气温度的 Web 服务、根据 GPS 位置计算太阳高度角的内置功能，甚至是你自定义的用于报告笔记本可用空间的传感器。它们本质上都是在上报不同类型信息的_对象_。
 

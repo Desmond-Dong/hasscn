@@ -1,6 +1,6 @@
 ---
 title: Sony PlayStation 4
-description: 有关如何将 Sony PlayStation 4 集成到 Home Assistant 的说明。
+description: 'Sony PlayStation 4 集成可让你控制 Sony PlayStation 4 主机(https://www.playstation.com/ps4/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.89
@@ -13,6 +13,7 @@ ha_platforms:
   - media_player
 ha_integration_type: hub
 ---
+# Sony PlayStation 4
 
 **Sony PlayStation 4** 集成可让你控制 [Sony PlayStation 4 主机](https://www.playstation.com/ps4/)。
 

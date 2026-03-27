@@ -1,7 +1,9 @@
 ---
 title: "Hardkernel ODROID-C4"
+description: 'ODROID-C4 的支持在很大程度上基于 Odroid-C2 和 N2 的配置。考虑到这些 SoC 的相似性，以及 Linux 内核中相近的支持程度，C4 理论上不应带来太多意外。不过，Home Assistant 对它的支持仍应视为实验性。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: ODROID-C4
 ---
+# Hardkernel ODROID-C4
 
 ## 实验性支持
 

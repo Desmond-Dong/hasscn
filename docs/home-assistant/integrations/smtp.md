@@ -1,6 +1,6 @@
 ---
 title: SMTP
-description: 有关如何向 Home Assistant 添加电子邮件通知的说明。
+description: 'SMTP 集成可让您将 Home Assistant 的通知发送给电子邮件收件人。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# SMTP
 
 **SMTP** 集成可让您将 Home Assistant 的通知发送给电子邮件收件人。
 

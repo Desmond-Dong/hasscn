@@ -1,6 +1,6 @@
 ---
 title: Repairs
-description: Home Assistant 修复功能会通知您在 Home Assistant 安装中发现的问题。
+description: 'Home Assistant Repairs 集成会通知您在 Home Assistant 实例中发现的问题，这些问题应当被修复，以确保您的实例现在和未来都能保持健康稳定运行。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2022.8
 ha_category:
   - Other
@@ -10,6 +10,7 @@ ha_domain: repairs
 ha_integration_type: system
 ha_quality_scale: internal
 ---
+# Repairs
 
 **Home Assistant Repairs** 集成会通知您在 Home Assistant 实例中发现的问题，这些问题应当被修复，以确保您的实例现在和未来都能保持健康稳定运行。
 

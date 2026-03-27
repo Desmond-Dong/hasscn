@@ -1,6 +1,6 @@
 ---
 title: "IFTTT 报警控制面板"
-description: "关于如何将 IFTTT 控制的安全系统集成到 Home Assistant 的说明。"
+description: 'IFTTT 集成允许您集成没有开放 API 但可以通过 IFTTT(https://ifttt.com/explore) 控制的安全系统。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
 ha_release: 0.66
@@ -9,6 +9,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# IFTTT 报警控制面板
 
 **IFTTT** 集成允许您集成没有开放 API 但可以通过 [IFTTT](https://ifttt.com/explore) 控制的安全系统。
 

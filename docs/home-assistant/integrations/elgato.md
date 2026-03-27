@@ -1,6 +1,6 @@
 ---
 title: Elgato Light
-description: 关于如何将 Elgato Light 集成到 Home Assistant 的说明。
+description: 'Elgato(https://www.elgato.com/) 灯光为高端工作室照明树立了标杆。这些 LED 灯专为流媒体和内容创作者设计和制造，其中许多人在 YouTube 和 Twitch 等平台上运营。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_release: 0.104
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Elgato Light
 
 [Elgato](https://www.elgato.com/) 灯光为高端工作室照明树立了标杆。这些 LED 灯专为流媒体和内容创作者设计和制造，其中许多人在 YouTube 和 Twitch 等平台上运营。
 

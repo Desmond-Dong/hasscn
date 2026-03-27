@@ -1,6 +1,6 @@
 ---
 title: Comelit SimpleHome
-description: 关于如何将 Comelit SimpleHome 智能家居设备集成到 Home Assistant 的说明。
+description: 'Comelit SimpleHome 集成允许您控制您的 Comelit 智能家居设备(https://comelitgroup.it/installatore/offerta/home-building-automation/)。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Alarm
   - Climate
@@ -28,6 +28,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# Comelit SimpleHome
 
 **Comelit SimpleHome** 集成允许您控制您的 [Comelit 智能家居设备](https://comelitgroup.it/installatore/offerta/home-building-automation/)。
 

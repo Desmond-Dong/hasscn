@@ -1,6 +1,6 @@
 ---
 title: Tankerkoenig
-description: 有关如何将 Tankerkoenig 传感器集成到 Home Assistant 中的说明。
+description: 'The Tankerkoenig integration allows you to monitor the fuel prices with tankerkoenig.de(https://www.tankerkoenig.de/) from within Home Assistant and setup。'
 ha_category:
   - Energy
   - Sensor
@@ -22,6 +22,7 @@ related:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# Tankerkoenig
 
 The **Tankerkoenig** integration allows you to monitor the fuel prices with [tankerkoenig.de](https://www.tankerkoenig.de/) from within Home Assistant and setup automations based on the information.
 

@@ -1,6 +1,6 @@
 ---
 title: NZBGet
-description: 有关如何将 NZBGet 集成到 Home Assistant 中的说明。
+description: 'NZBGet 集成允许您在 Home Assistant 中通过 NZBGet(https://nzbget.net/) 监控和控制下载任务。它还允许您基于这些信息设置自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Downloading
 ha_iot_class: Local Polling
@@ -14,7 +14,7 @@ ha_platforms:
   - switch
 ha_integration_type: service
 ---
-
+# NZBGet
 
 **NZBGet** 集成允许您在 Home Assistant 中通过 [NZBGet](https://nzbget.net/) 监控和控制下载任务。它还允许您基于这些信息设置自动化。
 

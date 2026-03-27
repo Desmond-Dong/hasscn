@@ -1,6 +1,6 @@
 ---
 title: SCSGate
-description: 有关如何将 SCSGate 集成到 Home Assistant 的说明。
+description: 'The SCSGate integration support the SCSGate(https://translate.google.com/translate?hl=en&sl=it&tl=en&u=http%3A%2F%2Fguidopic.altervista.org%2Feibscsgt%2Fin。'
 ha_category:
   - Cover
   - Hub
@@ -19,6 +19,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# SCSGate
 
 The **SCSGate** integration support the [SCSGate](https://translate.google.com/translate?hl=en&sl=it&tl=en&u=http%3A%2F%2Fguidopic.altervista.org%2Feibscsgt%2Finterface.html) device. This a home-brew device allows to interact with the MyHome system from BTicino/Legrande.
 

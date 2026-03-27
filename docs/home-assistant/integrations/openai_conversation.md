@@ -1,6 +1,6 @@
 ---
 title: OpenAI
-description: "有关如何将 OpenAI 集成为对话代理的说明"
+description: 'OpenAI 集成为 Home Assistant 添加了一个由 OpenAI(https://www.openai.com) 提供支持的对话代理。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - AI
@@ -25,6 +25,7 @@ related:
     title: OpenAI
 ha_quality_scale: bronze
 ---
+# OpenAI
 
 **OpenAI** 集成为 Home Assistant 添加了一个由 [OpenAI](https://www.openai.com) 提供支持的对话代理。
 

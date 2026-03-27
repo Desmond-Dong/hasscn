@@ -1,6 +1,6 @@
 ---
 title: eGauge
-description: eGauge 能源监测器
+description: 'eGauge 集成用于与 eGauge 能源监测器(https://www.egauge.net)集成。eGauge 为住宅和商业应用提供能源监测器。它们通常与太阳能装置一起使用。eGauge 集成可以将 eGauge 设备的传感器读数公开到 Home Assistant 中。'
 ha_release: 2026.1
 ha_category:
   - Energy
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_config_flow: true
 ---
+# eGauge
 
 **eGauge** 集成用于与 [eGauge 能源监测器](https://www.egauge.net)集成。eGauge 为住宅和商业应用提供能源监测器。它们通常与太阳能装置一起使用。eGauge 集成可以将 eGauge 设备的传感器读数公开到 Home Assistant 中，包括与能源仪表板配合使用的电能表。
 

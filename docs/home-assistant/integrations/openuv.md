@@ -1,6 +1,6 @@
 ---
 title: OpenUV
-description: 有关如何将 OpenUV 集成到 Home Assistant 中的说明。
+description: 'OpenUV 集成会显示来自 openuv.io(https://www.openuv.io/) 的紫外线和臭氧数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Health
@@ -17,7 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
-
+# OpenUV
 
 **OpenUV** 集成会显示来自 [openuv.io](https://www.openuv.io/) 的紫外线和臭氧数据。
 

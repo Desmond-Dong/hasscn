@@ -1,7 +1,8 @@
 ---
 title: 立即报名参加 2025 Community Day
-description: 5 月 24 日，一起来参加世界各地举行的线下聚会。
+description: '<img src=''/home-assistant/images/blog/2025-04-community-day/art.png'' style=''border: 0;box-shadow: none;'' alt="Community Day - May 24th" style=''border:。'
 ---
+# 立即报名参加 2025 Community Day
 
 <img src='/home-assistant/images/blog/2025-04-community-day/art.png' style='border: 0;box-shadow: none;' alt="Community Day - May 24th" style='border: 0;box-shadow: none;'>
 

@@ -1,6 +1,6 @@
 ---
 title: RaspyRFM
-description: 有关如何将 RaspyRFM 交换机集成到 Home Assistant 的说明。
+description: 'The RaspyRFM integration adds support for cheap RC 433 MHz outlets via one of the supported gateways. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Switch
 ha_release: 0.85
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# RaspyRFM
 
 The **RaspyRFM** integration adds support for cheap RC 433 MHz outlets via one of the supported gateways.
 

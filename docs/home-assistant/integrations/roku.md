@@ -1,6 +1,6 @@
 ---
 title: Roku
-description: 说明如何将 Roku 设备集成到 Home Assistant 中。
+description: 'Roku 集成允许你控制 Roku(https://www.roku.com/) 媒体播放设备。该集成仅支持 Roku 媒体播放设备（如电视棒、流媒体盒子和电视）。其他智能家居产品（如灯泡和摄像头）属于不同的生态系统，不在此集成支持范围内。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Hub
@@ -25,6 +25,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Roku
 
 **Roku** 集成允许你控制 [Roku](https://www.roku.com/) 媒体播放设备。该集成仅支持 Roku 媒体播放设备（如电视棒、流媒体盒子和电视）。其他智能家居产品（如灯泡和摄像头）属于不同的生态系统，不在此集成支持范围内。
 

@@ -1,6 +1,6 @@
 ---
 title: Kodi
-description: 关于如何将 Kodi 集成到 Home Assistant 的说明。
+description: 'Kodi 集成可让您在 Home Assistant 中控制 Kodi(https://kodi.tv/) 多媒体系统。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
   - Media source
@@ -17,6 +17,7 @@ ha_platforms:
   - notify
 ha_integration_type: service
 ---
+# Kodi
 
 **Kodi** 集成可让您在 Home Assistant 中控制 [Kodi](https://kodi.tv/) 多媒体系统。
 

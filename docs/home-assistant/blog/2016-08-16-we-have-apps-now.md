@@ -1,7 +1,8 @@
 ---
 title: We Have Apps Now
-description: A new subsystem that allows 自动化 to be coded using Python
+description: '我一直在开发一个新的子系统，用来补充 Home Assistant 的自动化与脚本组件。AppDaemon 是一个 Python 守护进程，它会消费来自 Home Assistant 的事件，并将这些事件传递给称为 “Apps” 的 Python 代码片段。'
 ---
+# We Have Apps Now
 
 我一直在开发一个新的子系统，用来补充 Home Assistant 的自动化与脚本组件。`AppDaemon` 是一个 Python 守护进程，它会消费来自 Home Assistant 的事件，并将这些事件传递给称为 “Apps” 的 Python 代码片段。一个 App 是一个 Python 类，可以由 `AppDaemon` 实例化一次或多次，并为各种系统事件注册回调。它也能够查看和设置状态，以及调用服务。该 API 提供了非常丰富的环境，既适合家庭自动化任务，也能充分利用 Python 的全部能力。
 

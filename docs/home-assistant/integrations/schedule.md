@@ -1,6 +1,6 @@
 ---
 title: Schedule
-description: 有关如何在 Home Assistant 中制定每周计划的说明。
+description: 'The Schedule integration provides a way to create a weekly schedule entity in Home Assistant, consisting of time blocks with defined start and end times.。'
 ha_category:
   - Automation
   - Helper
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: schedule
 ha_integration_type: helper
 ---
+# Schedule
 
 The **Schedule** integration provides a way to create a weekly schedule entity in Home Assistant, consisting of time blocks with defined start and end times. The schedule is active when a time block starts and becomes inactive when it ends, allowing it to be used for triggering or making decisions in automations and scripts.
 

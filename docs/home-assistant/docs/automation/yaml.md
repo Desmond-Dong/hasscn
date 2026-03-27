@@ -1,7 +1,8 @@
 ---
 title: 自动化 YAML
-description: 如何在 YAML 中使用自动化集成。
+description: '自动化在 Home Assistant 中可以通过界面创建，但会以 YAML 格式存储。如果你想编辑某个自动化的 YAML，请选择该自动化，打开右上角菜单，然后选择 以 YAML 编辑。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 自动化 YAML
 
 自动化在 Home Assistant 中可以通过界面创建，但会以 YAML 格式存储。如果你想编辑某个自动化的 YAML，请选择该自动化，打开右上角菜单，然后选择 **以 YAML 编辑**。
 

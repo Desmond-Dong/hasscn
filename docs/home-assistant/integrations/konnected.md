@@ -1,6 +1,6 @@
 ---
 title: Konnected.io (传统版)
-description: 使用基于 NodeMCU 的 Konnected 报警面板连接有线报警传感器和警报器
+description: 'Konnected.io (传统版) 集成允许您将有线传感器和开关连接到 Konnected 报警面板，或运行开源 Konnected 软件(https://github.com/konnected-io/konnected-security)的基于 NodeMCU ESP8226 的设备。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -19,6 +19,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Konnected.io (传统版)
 
 **Konnected.io (传统版)** 集成允许您将有线传感器和开关连接到 Konnected 报警面板，或运行[开源 Konnected 软件](https://github.com/konnected-io/konnected-security)的基于 NodeMCU ESP8226 的设备。重复使用旧式或预装报警系统安装中的有线传感器和警报器，并将它们直接集成到 Home Assistant 中。
 

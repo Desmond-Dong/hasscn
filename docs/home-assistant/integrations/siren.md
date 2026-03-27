@@ -1,6 +1,6 @@
 ---
 title: Siren
-description: 有关如何在 Home Assistant 中设置警报器设备的说明。
+description: 'Siren 集成用于控制和监控警号/提示音设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Siren
 ha_release: '2021.8'
@@ -11,6 +11,7 @@ ha_codeowners:
   - '@raman325'
 ha_integration_type: entity
 ---
+# Siren
 
 **Siren** 集成用于控制和监控警号/提示音设备。
 

@@ -1,7 +1,7 @@
 ---
 title: "Qobuz"
+description: 'Music Assistant 完全支持 <a href="https://www.qobuz.com/" target="blank" rel="noopener noreferrer"Qobuz</a，包括 Qobuz 优秀的 HiRes 目录！。'
 ---
-
 # Qobuz 提供者 <img src="/assets/icons/qobuz-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 完全支持 <a href="https://www.qobuz.com/" target="_blank" rel="noopener noreferrer">Qobuz</a>，包括 Qobuz 优秀的 HiRes 目录！

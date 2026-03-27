@@ -1,8 +1,7 @@
 ---
 title: VBAN Receiver 插件
-description: VBAN Receiver 插件的功能和说明
+description: 'Music Assistant 可以作为 VBAN 协议（通过 UDP 传输 PCM 音频）接收器。由 <a href="https://github.com/sprocket-9" target="blank" rel="noopener noreferrer"sprocket-9</a 贡献和维护。'
 ---
-
 # VBAN Receiver <img src="/assets/icons/vban-icon.svg" alt="预览图片" style="width: 126px; float: right;" loading="lazy" />
 
 Music Assistant 可以作为 VBAN 协议（通过 UDP 传输 PCM 音频）接收器。由 <a href="https://github.com/sprocket-9" target="_blank" rel="noopener noreferrer">sprocket-9</a> 贡献和维护。

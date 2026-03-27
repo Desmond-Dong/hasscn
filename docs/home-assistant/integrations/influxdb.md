@@ -1,6 +1,6 @@
 ---
 title: InfluxDB
-description: 在 InfluxDB 中记录事件。
+description: 'InfluxDB 集成可将所有状态变更传输到外部 InfluxDB(https://influxdata.com/) 数据库。该集成支持：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - History
   - Sensor
@@ -19,6 +19,7 @@ related:
 ha_quality_scale: legacy
 ha_config_flow: true
 ---
+# InfluxDB
 
 **InfluxDB** 集成可将所有状态变更传输到外部 [InfluxDB](https://influxdata.com/) 数据库。该集成支持：
 

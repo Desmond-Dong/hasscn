@@ -1,6 +1,6 @@
 ---
 title: Remote
-description: 有关如何使用 Home Assistant 设置遥控器的说明。
+description: 'Remote 集成用于管理遥控器实体的状态，并允许您控制它们。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.34
 ha_domain: remote
 ha_category:
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Remote
 
 **Remote** 集成用于管理遥控器实体的状态，并允许您控制它们。
 

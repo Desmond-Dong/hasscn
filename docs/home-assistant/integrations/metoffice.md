@@ -1,6 +1,6 @@
 ---
 title: Met Office
-description: 关于如何将英国气象局天气状况集成到 Home Assistant 的说明。
+description: 'The Met Office weather integration uses the Met Office''s DataHub API(https://www.metoffice.gov.uk/services/data/met-office-weather-datahub) for weather。'
 ha_category:
   - Weather
 ha_release: 0.42
@@ -15,6 +15,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Met Office
 
 The **Met Office** weather integration uses the Met Office's [DataHub API](https://www.metoffice.gov.uk/services/data/met-office-weather-datahub) for weather data.
 

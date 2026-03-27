@@ -3,6 +3,7 @@ title: Participating in Hacktoberfest
 description: Home Assistant will be participating in Hacktoberfest to help people
   to get started with open-source.
 ---
+# Participating in Hacktoberfest
 
 For the second year in a row, Home Assistant will be participating in [Hacktoberfest]. Hacktoberfest is an event organized by DigitalOcean and GitHub to support and celebrate 开源. The idea is that 开源 projects like Home Assistant will gather a bunch of entry-level bugs, features, and 文档 enhancements and that you, a current or future contributor, will help us fix them. If you submit four pull-requests during October, you will have earned yourself a limited edition Hacktoberfest T-shirt!
 

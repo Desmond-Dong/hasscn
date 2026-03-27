@@ -1,6 +1,6 @@
 ---
 title: ESPHome
-description: 使用原生 ESPHome API 支持 ESPHome 设备。
+description: 'ESPHome 集成允许 ESPHome(https://esphome.io) 设备通过 原生 ESPHome API(https://esphome.io/components/api/) 直接连接到 Home Assistant。 本页属于 Home Assistant 中文文档。'
 featured: true
 ha_category:
   - Alarm
@@ -44,6 +44,7 @@ ha_integration_type: device
 ha_dhcp: true
 ha_quality_scale: platinum
 ---
+# ESPHome
 
 ## 概述
 

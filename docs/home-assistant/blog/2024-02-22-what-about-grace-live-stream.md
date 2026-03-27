@@ -2,6 +2,8 @@
 title: 格蕾丝呢？下周请收看我们的特别直播！
 description: 为什么恩典对我们很重要？嗯，我们习惯以科技界有影响力的女性来命名我们的项目。我们一直在做一些特别的事情，迫不及待地想向您展示！
 ---
+# 格蕾丝呢？下周请收看我们的特别直播！
+
 格蕾丝是谁？ Grace Hopper 是一位计算机科学家、数学家和美国海军上将，她对哈佛 Mark I 计算机、COBOL 和 UNIVAC I 的开创性工作和贡献为计算机编程和技术领域做出了重大贡献。
 
 <lite-youtube videoid="XyBy0ckkiDU" videotitle="What about Grace? - Chapter 1"></lite-youtube>

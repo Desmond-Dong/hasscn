@@ -2,6 +2,7 @@
 title: Silicon Labs 与 Nabu Casa 达成官方合作，支持开源
 description: Silicon Labs 是 Z-Wave 背后的公司，也是 Z-Wave、Zigbee、Thread 等所用芯片的设计方，如今已与 Nabu Casa 建立官方合作关系。我们的工作对 Z-Wave 生态的发展至关重要，而这次合作也让 Silicon Labs 对此给予了认可。作为合作伙伴，我们现在可以与 Silicon Labs 协作报告错误，并优先推动问题修复。
 ---
+# Silicon Labs 与 Nabu Casa 达成官方合作，支持开源
 
 [Silicon Labs](https://www.silabs.com/) 已与 [Nabu Casa](https://www.nabucasa.com/) 建立官方合作关系，为我们的开源项目和硬件工作提供支持。
 

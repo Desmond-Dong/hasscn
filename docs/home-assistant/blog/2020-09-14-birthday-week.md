@@ -1,8 +1,9 @@
 ---
 title: 家庭助理七岁生日快乐！ 🎉
-description: 这周我们就满七岁了，我们将用一周的凉爽来庆祝这一天
+description: '本周家庭助理七岁了，狂野！这一切都是从我在太阳落山并且有人在家时自动打开我的 Hue 灯光开始的，现在我们在这里。 😎。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
   发布。请密切关注博客以获取最新信息。
 ---
+# 家庭助理七岁生日快乐！ 🎉
 
 ![Celebration graphic](/home-assistant/images/blog/2020-09-14-birthday-week/social.png)
 

@@ -1,6 +1,6 @@
 ---
 title: Duke Energy
-description: 关于在 Home Assistant 中集成 Duke Energy 的说明。
+description: 'Duke Energy 集成允许您从 Duke Energy(https://www.duke-energy.com/) 获取能源信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_release: '2024.10'
@@ -11,6 +11,7 @@ ha_domain: duke_energy
 ha_config_flow: true
 ha_integration_type: service
 ---
+# Duke Energy
 
 **Duke Energy** 集成允许您从 [Duke Energy](https://www.duke-energy.com/) 获取能源信息。
 

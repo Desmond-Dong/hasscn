@@ -1,6 +1,6 @@
 ---
 title: London Underground
-description: 在 Home Assistant 中显示伦敦地铁和地上铁线路的当前状态。
+description: 'London Underground 集成会显示伦敦地铁线路、地上铁线路以及 DLR 的状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_config_flow: true
 ---
+# London Underground
 
 **London Underground** 集成会显示伦敦地铁线路、地上铁线路以及 DLR 的状态。
 

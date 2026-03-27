@@ -1,7 +1,9 @@
 ---
 title: 时间实体
+description: 'time 是一个允许用户输入积分时间的实体。平台实体派生自homeassistant.components.time.TimeEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/time/init.py。'
 sidebar_label: 时间
 ---
+# 时间实体
 
 `time` 是一个允许用户输入积分时间的实体。平台实体派生自[`homeassistant.components.time.TimeEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/time/__init__.py)
 

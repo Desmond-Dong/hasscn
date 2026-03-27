@@ -1,6 +1,6 @@
 ---
 title: Elgato Avea
-description: 关于如何将 Elgato Avea 与 Home Assistant 集成的说明。
+description: 'Elgato Avea(https://www.evehome.com/en/news/elgato-avea-transform-your-home) 是一款制造商不再支持的蓝牙灯泡。avea 集成允许您使用 Home Assistant 控制所有 Avea 灯泡。'
 ha_category:
   - Light
 ha_release: 0.97
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Elgato Avea
 
 [Elgato Avea](https://www.evehome.com/en/news/elgato-avea-transform-your-home) 是一款制造商不再支持的蓝牙灯泡。`avea` 集成允许您使用 Home Assistant 控制所有 Avea 灯泡。
 

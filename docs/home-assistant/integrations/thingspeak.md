@@ -1,6 +1,6 @@
 ---
 title: ThingSpeak
-description: 在 ThingSpeak 中记录一个实体
+description: 'ThingSpeak 集成让 Home Assistant 可以与 ThingSpeak API(https://thingspeak.mathworks.com/) 通信。 目前它一次只能记录一个实体，这很适合测试用途。如需长期存储，建议使用 InfluxDB。'
 ha_category:
   - History
 ha_iot_class: Cloud Push
@@ -9,6 +9,7 @@ ha_domain: thingspeak
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# ThingSpeak
 
 **ThingSpeak** 集成让 Home Assistant 可以与 [ThingSpeak API](https://thingspeak.mathworks.com/) 通信。
 目前它一次只能记录一个实体，这很适合测试用途。如需长期存储，建议使用 [InfluxDB 集成](/home-assistant/integrations/influxdb/)。

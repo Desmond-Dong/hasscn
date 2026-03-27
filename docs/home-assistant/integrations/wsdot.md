@@ -1,6 +1,6 @@
 ---
 title: Washington State Department of Transportation (WSDOT)
-description: 关于如何将 WSDOT 数据集成到您的家庭的说明。
+description: 'The Washington State Department of Transportation (WSDOT) integration will give you travel time information from the Washington State Department of。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -18,6 +18,7 @@ ha_config_flow: true
 ha_codeowners:
   - '@ucodery'
 ---
+# Washington State Department of Transportation (WSDOT)
 
 The **Washington State Department of Transportation (WSDOT)** integration will give you travel time information from the [Washington State Department of Transportation (WSDOT)](https://wsdot.com/).
 

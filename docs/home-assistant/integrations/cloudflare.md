@@ -1,6 +1,6 @@
 ---
 title: Cloudflare
-description: 自动更新您的 Cloudflare DNS 记录。
+description: '通过 Cloudflare 集成，您可以让您的 Cloudflare DNS 记录保持最新。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_release: 0.74
@@ -12,6 +12,7 @@ ha_domain: cloudflare
 ha_config_flow: true
 ha_integration_type: service
 ---
+# Cloudflare
 
 通过 **Cloudflare** 集成，您可以让您的 Cloudflare DNS 记录保持最新。
 

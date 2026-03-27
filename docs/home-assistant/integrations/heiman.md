@@ -1,6 +1,6 @@
 ---
 title: Heiman
-description: 使用 Matter 集成连接和控制您的 Heiman Matter 设备
+description: 'Heiman(https://www.heimantech.com/) is a member of the Works with Home Assistant partner program for their Matter products. Heiman is committed to making。'
 ha_release: '2026.2'
 ha_iot_class: Local Push
 ha_category:
@@ -16,6 +16,7 @@ ha_platforms:
 ha_iot_standard: matter
 ha_brand: true
 ---
+# Heiman
 
 [Heiman](https://www.heimantech.com/) is a member of the Works with Home Assistant partner program for their Matter products. Heiman is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

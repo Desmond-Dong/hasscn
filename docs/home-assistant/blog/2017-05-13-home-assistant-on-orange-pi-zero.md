@@ -1,7 +1,8 @@
 ---
 title: Home Assistant on an Orange Pi Zero
-description: Installing Home Assistant on a Orange Pi Zero with armbian.
+description: 'This blog post is about setting up Home Assistant on an Orange Pi Zero(http://www.orangepi.org/orangepizero/). Like the setup on a Raspberry Pi。'
 ---
+# Home Assistant on an Orange Pi Zero
 
 This blog post is about setting up Home Assistant on an [Orange Pi Zero](http://www.orangepi.org/orangepizero/). Like the setup on a [Raspberry Pi Zero](/home-assistant/blog/2017/05/01/home-assistant-on-raspberry-pi-zero-in-30-minutes/), it will only take a couple of minutes to get a fully functional, super-cheap Home Assistant hub for less than 18 euros, including a case and power supply. Reasons to use an Orange Pi Zero, besides the price, are the built-in Ethernet port and its availability.
 

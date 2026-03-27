@@ -1,7 +1,8 @@
 ---
 title: 我的集成没有显示出来
-description: 我的集成没有显示出来
+description: '当集成没有显示出来时，可能有多种原因。在尝试以下任何步骤之前，请务必先查看日志(/home-assistant/integrations/logger/viewing-logs)，确认是否存在与您要设置的集成相关的错误。 本页属于 Home Assistant 中文文档。'
 ---
+# 我的集成没有显示出来
 
 当集成没有显示出来时，可能有多种原因。在尝试以下任何步骤之前，请务必先查看[日志](/home-assistant/integrations/logger/#viewing-logs)，确认是否存在与您要设置的集成相关的错误。
 

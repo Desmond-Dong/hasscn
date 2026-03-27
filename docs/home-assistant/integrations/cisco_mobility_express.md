@@ -1,6 +1,6 @@
 ---
 title: Cisco Mobility Express
-description: 关于如何将 Cisco Mobility Express 无线控制器集成到 Home Assistant 的说明。
+description: '这是一个用于 Cisco(https://www.cisco.com) Mobility Express 无线控制器的存在检测扫描器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: '0.90'
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Cisco Mobility Express
 
 这是一个用于 [Cisco](https://www.cisco.com) Mobility Express 无线控制器的存在检测扫描器。
 

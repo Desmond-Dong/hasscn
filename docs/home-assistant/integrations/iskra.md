@@ -1,6 +1,6 @@
 ---
 title: iskra
-description: 关于如何将 Iskra 电表连接到 Home Assistant 的说明。
+description: 'The Iskra(https://www.iskra.eu/) integration allows you to connect Iskra energy meters and power quality analyzers to Home Assistant. Data is polled using。'
 ha_release: '2024.10'
 ha_category:
   - Energy
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# iskra
 
 The [Iskra](https://www.iskra.eu/) integration allows you to connect Iskra energy meters and power quality analyzers to Home Assistant. Data is polled using Modbus TCP or the Iskra Smart Gateway's REST API.
 

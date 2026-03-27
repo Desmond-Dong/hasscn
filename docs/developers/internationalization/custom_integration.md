@@ -1,6 +1,8 @@
 ---
 title: "自定义 集成 本地化"
+description: '与 home-assistant 存储库中合并的本地化字符串不同，自定义 集成 无法利用 Lokalise 进行用户提交的翻译。但是，自定义 集成 作者仍然可以在其 集成 中包含翻译。这些将从与 集成 源相邻的 translations 目录中读取。它们在 translations 目录中被命名为。'
 ---
+# 自定义 集成 本地化
 
 ## 翻译字符串
 

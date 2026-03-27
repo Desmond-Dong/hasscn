@@ -1,6 +1,8 @@
 ---
 title: 入门 - 本地
+description: '使用 Assist 最简单、最高效的方式，是利用 Home Assistant Cloud(/home-assistant/voicecontrol/voiceremotecloudassistant/) 中提供的语音服务，包括语音转文本和文本转语音。'
 ---
+# 入门 - 本地
 
 使用 Assist 最简单、最高效的方式，是利用 [Home Assistant Cloud](/home-assistant/voice_control/voice_remote_cloud_assistant/) 中提供的语音服务，包括语音转文本和文本转语音。
 

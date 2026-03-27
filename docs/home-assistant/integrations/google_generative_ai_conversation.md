@@ -1,6 +1,6 @@
 ---
 title: Google Gemini
-description: 关于如何将 Google Gemini 集成为对话代理的说明
+description: 'The Google Gemini integration adds a conversation agent, speech-to-text, and text-to-speech entities powered by Google Gemini(https://ai.google.dev/) to。'
 ha_category:
   - AI
   - Speech-to-text
@@ -29,6 +29,7 @@ related:
   - url: https://ai.google.dev/
     title: Google AI
 ---
+# Google Gemini
 
 The **Google Gemini** integration adds a conversation agent, speech-to-text, and text-to-speech entities powered by [Google Gemini](https://ai.google.dev/) to Home Assistant. The conversation agent can optionally be allowed to control Home Assistant.
 

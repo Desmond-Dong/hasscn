@@ -1,6 +1,6 @@
 ---
 title: HVV Departures
-description: 在 Home Assistant 中显示汉堡的公交、火车和轮渡出发信息。
+description: 'HVV Departures 集成会显示汉堡的公交、火车和轮渡出发信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# HVV Departures
 
 **HVV Departures** 集成会显示汉堡的公交、火车和轮渡出发信息。
 

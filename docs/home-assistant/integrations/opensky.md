@@ -1,6 +1,6 @@
 ---
 title: OpenSky Network
-description: 有关如何将 OpenSky Network 集成到 Home Assistant 的说明。
+description: 'OpenSky 集成允许您跟踪指定区域上空的航班。它使用来自 OpenSky Network(https://opensky-network.org/) 公共 API 的众包数据，并会在航班进入或离开定义区域时触发 Home Assistant 事件。'
 ha_category:
   - Transport
 ha_release: 0.43
@@ -13,7 +13,7 @@ ha_codeowners:
   - '@joostlek'
 ha_config_flow: true
 ---
-
+# OpenSky Network
 
 **OpenSky** 集成允许您跟踪指定区域上空的航班。它使用来自 [OpenSky Network](https://opensky-network.org/) 公共 API 的众包数据，并会在航班进入或离开定义区域时触发 Home Assistant 事件。
 

@@ -1,6 +1,6 @@
 ---
 title: Dialogflow
-description: 关于如何将 Dialogflow 与 Home Assistant 集成的说明。
+description: 'Dialogflow 集成设计用于 Dialogflow(https://cloud.google.com/dialogflow/docs/) 的 webhook(https://cloud.google.com/dialogflow/es/docs/fulfillment-webhook) 集成。'
 ha_category:
   - Voice
 ha_release: 0.56
@@ -12,6 +12,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Dialogflow
 
 **Dialogflow** 集成设计用于 [Dialogflow](https://cloud.google.com/dialogflow/docs/) 的 [webhook](https://cloud.google.com/dialogflow/es/docs/fulfillment-webhook) 集成。在用户说出每个短语后，Dialogflow 会向 webhook 发送一个动作和参数。
 

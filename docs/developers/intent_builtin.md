@@ -1,7 +1,9 @@
 ---
 title: "内置意图"
+description: 'import intents from ''!!yaml-loader!../intents/intents.yaml'';。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 toc_max_heading_level: 2
 ---
+# 内置意图
 
 import intents from '!!yaml-loader!../intents/intents.yaml';
 

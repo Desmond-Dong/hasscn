@@ -1,7 +1,9 @@
 ---
 title: "Hardkernel ODROID-C2"
+description: 'eMMC 支持是透明提供的。像刷写 SD 卡一样将镜像刷到 eMMC 板上即可。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: ODROID-C2
 ---
+# Hardkernel ODROID-C2
 
 ## eMMC
 

@@ -1,8 +1,7 @@
 ---
 title: 社区扩展
-description: HA 卡片或仪表板集合
+description: '这是社区开发的 Music Assistant HA 卡片或仪表板集合。请查看链接的仓库（仓库标题已链接）以获取这些项目的说明和状态。这些项目的复杂程度各不相同。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 概述 <img src="/assets/icons/community-extensions-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 这是社区开发的 Music Assistant HA 卡片或仪表板集合。请查看链接的仓库（仓库标题已链接）以获取这些项目的说明和状态。这些项目的复杂程度各不相同。
 ***************************************************************

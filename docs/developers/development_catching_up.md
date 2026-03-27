@@ -1,6 +1,8 @@
 ---
 title: "赶上现实"
+description: '如果需要一段时间来开发您的功能，并且您想赶上当前 Home Assistant dev 分支中的功能，您可以使用 git merge 或 git rebase。 您可以在下面找到有关如何使用 git merge 进行操作的说明。这将在本地提取最新的 Home Assistant 更改。'
 ---
+# 赶上现实
 
 如果需要一段时间来开发您的功能，并且您想赶上当前 Home Assistant `dev` 分支中的功能，您可以使用 `git merge` 或 `git rebase`。
 您可以在下面找到有关如何使用 `git merge` 进行操作的说明。这将在本地提取最新的 Home Assistant 更改，并通过创建合并提交将它们合并到您的分支中。

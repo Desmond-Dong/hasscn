@@ -1,6 +1,6 @@
 ---
 title: Derivative
-description: 关于如何在 Home Assistant 中集成导数传感器的说明。
+description: 'Derivative（Wikipedia(https://en.wikipedia.org/wiki/Derivative)）集成会创建一个传感器，用于估算另一个传感器（即 源传感器）所提供数值的导数。导数传感器会在 源传感器 发生变化时更新。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Energy
   - Helper
@@ -20,6 +20,7 @@ ha_platforms:
 ha_integration_type: helper
 ha_quality_scale: internal
 ---
+# Derivative
 
 Derivative（[Wikipedia](https://en.wikipedia.org/wiki/Derivative)）集成会创建一个传感器，用于估算另一个传感器（即 **源传感器**）所提供数值的导数。导数传感器会在 **源传感器** 发生变化时更新。
 

@@ -1,6 +1,6 @@
 ---
 title: AirTouch 5
-description: 关于如何将 AirTouch 5 空调控制器集成到 Home Assistant 的说明。
+description: 'AirTouch 5 integration 允许您控制使用 AirTouch 5(https://www.airtouch.net.au/smart-air-conditioning/airtouch-5/) 控制器的管道式空调系统。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Climate
 ha_release: 2024.2
@@ -14,6 +14,7 @@ ha_platforms:
   - cover
 ha_integration_type: hub
 ---
+# AirTouch 5
 
 **AirTouch 5** integration 允许您控制使用 [AirTouch 5](https://www.airtouch.net.au/smart-air-conditioning/airtouch-5/) 控制器的管道式空调系统。
 

@@ -1,6 +1,6 @@
 ---
 title: Aqara
-description: 使用 Matter 集成连接和控制您的 Aqara Matter 设备
+description: 'Aqara(https://www.aqara.com/) is a member of the Works with Home Assistant partner program for their Matter products. Aqara is committed to making sure。'
 ha_release: '2024.10'
 ha_iot_class: Local Push
 ha_category:
@@ -20,6 +20,7 @@ ha_platforms:
 ha_iot_standard: matter
 ha_brand: true
 ---
+# Aqara
 
 [Aqara](https://www.aqara.com/) is a member of the Works with Home Assistant partner program for their Matter products. Aqara is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

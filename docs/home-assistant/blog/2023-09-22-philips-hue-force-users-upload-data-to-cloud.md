@@ -1,7 +1,8 @@
 ---
 title: '[10 月 2 日更新：数据共享将变为可选] Philips Hue 将强制用户把数据上传到 Hue 云端'
-description: 想要控制你的灯光，你很快就必须创建账户，并与 Hue 云端共享你的数据。
+description: '10 月 2 日更新： 在与 The Verge 的对话(https://www.theverge.com/2023/9/28/23892761/philips-hue-app-account-changes)中，Philips Hue 宣布他们将更新隐私政策。'
 ---
+# [10 月 2 日更新：数据共享将变为可选] Philips Hue 将强制用户把数据上传到 Hue 云端
 
 **10 月 2 日更新：** 在与 [The Verge 的对话](https://www.theverge.com/2023/9/28/23892761/philips-hue-app-account-changes)中，Philips Hue 宣布他们将更新隐私政策，使与 Philips Hue 共享使用数据变为需要用户同意的可选项。
 

@@ -1,7 +1,8 @@
 ---
 title: Home Assistant T 恤到货了！
-description: '在大家一再敲碗之后，我们终于松口了：Home Assistant T 恤正式上线！'
+description: '<p class=''img'' <img src=''/home-assistant/images/blog/2017-02-shirts/beard.png'' / 留着胡子、带着纹身的酷哥，穿着全新的蓝色 Home Assistant T 恤blue-us。 </p。'
 ---
+# Home Assistant T 恤到货了！
 
 <p class='img'>
   <img src='/home-assistant/images/blog/2017-02-shirts/beard.png' />

@@ -1,6 +1,6 @@
 ---
 title: VersaSense
-description: 集成您的 VersaSense MicroPnP 设备。
+description: 'The VersaSense integration supports the VersaSense Edge Gateway. The gateway is able to control hubs and their peripherals (sensors and actuators) in the。'
 date: 2019-11-19 14:00
 ha_release: 0.103
 ha_category:
@@ -20,6 +20,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# VersaSense
 
 The **VersaSense** integration supports the VersaSense Edge Gateway. The gateway is able to control hubs and their peripherals (sensors and actuators) in the mesh network.
 

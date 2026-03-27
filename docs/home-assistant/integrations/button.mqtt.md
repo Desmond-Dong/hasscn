@@ -1,12 +1,13 @@
 ---
 title: "MQTT button"
-description: "关于如何将 MQTT 按钮集成到 Home Assistant 的说明。"
+description: 'MQTT 按钮集成允许您在前端按下按钮或调用按钮按下操作时发送 MQTT 消息。这可用于公开远程设备的某些服务，例如重启。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Button
 ha_release: 2021.12
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT button
 
 **MQTT 按钮**集成允许您在前端按下按钮或调用按钮按下操作时发送 MQTT 消息。这可用于公开远程设备的某些服务，例如重启。
 

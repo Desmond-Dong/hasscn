@@ -1,6 +1,6 @@
 ---
 title: Piper
-description: 使用怀俄明协议集成连接和控制您的 Piper 设备
+description: '此虚拟集成由 Wyoming Protocol(/home-assistant/integrations/wyoming/) 集成提供支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Voice
 ha_domain: piper
@@ -24,6 +24,7 @@ ha_platforms:
 ha_iot_class: Local Push
 ha_zeroconf: true
 ---
+# Piper
 
 :::note
 此虚拟集成由 [Wyoming Protocol](/home-assistant/integrations/wyoming/) 集成提供支持。

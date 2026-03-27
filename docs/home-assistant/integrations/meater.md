@@ -1,6 +1,6 @@
 ---
 title: Meater
-description: 关于如何在 Home Assistant 中集成 Meater 温度探针的说明。
+description: 'The Meater integration allows for communicating with the Meater Temperature Probe(https://meater.com/) from Apption Labs. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
 ha_release: 2022.5
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Meater
 
 The **Meater** integration allows for communicating with the [Meater Temperature Probe](https://meater.com/) from Apption Labs.
 

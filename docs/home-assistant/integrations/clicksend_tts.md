@@ -1,6 +1,6 @@
 ---
 title: ClickSend TTS
-description: 关于如何将 ClickSend 文字转语音 (TTS) 通知添加到 Home Assistant 的说明。
+description: 'ClickSend TTS 集成使用 ClickSend(https://clicksend.com) 从 Home Assistant 发送文字转语音 (TTS) 通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# ClickSend TTS
 
 **ClickSend TTS** 集成使用 [ClickSend](https://clicksend.com) 从 Home Assistant 发送文字转语音 (TTS) 通知。
 

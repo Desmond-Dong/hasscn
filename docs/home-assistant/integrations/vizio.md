@@ -1,6 +1,6 @@
 ---
 title: VIZIO SmartCast
-description: 关于如何将 VIZIO SmartCast 电视和条形音箱集成到 Home Assistant 的说明。
+description: 'VIZIO SmartCast 集成允许您控制兼容 SmartCast(https://www.vizio.com/smartcast-app) 的电视和条形音箱（2016 年及之后的型号）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.49
@@ -14,6 +14,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# VIZIO SmartCast
 
 **VIZIO SmartCast** 集成允许您控制兼容 [SmartCast](https://www.vizio.com/smartcast-app) 的电视和条形音箱（2016 年及之后的型号）。
 

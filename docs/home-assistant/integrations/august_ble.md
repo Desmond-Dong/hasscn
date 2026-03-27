@@ -1,6 +1,6 @@
 ---
 title: August Bluetooth
-description: 使用 Yale Access 蓝牙集成连接和控制您的 August 蓝牙设备
+description: 'August(https://august.com/) 门锁可通过蓝牙接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Lock
@@ -20,6 +20,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Local Push
 ---
+# August Bluetooth
 
 [August](https://august.com/) 门锁可通过蓝牙接入 Home Assistant。
 

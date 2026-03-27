@@ -1,7 +1,9 @@
 ---
 title: 开关实体
+description: '开关实体用于打开或关闭某个对象，例如继电器。平台实体派生自homeassistant.components.switch.SwitchEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/switch/i。'
 sidebar_label: 开关
 ---
+# 开关实体
 
 开关实体用于打开或关闭某个对象，例如继电器。平台实体派生自[`homeassistant.components.switch.SwitchEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/switch/__init__.py)。
 如果要表示具有开/关状态但无法控制的对象，例如只能上报状态、无法通过 Home Assistant 控制的墙壁开关，更适合使用二进制传感器。

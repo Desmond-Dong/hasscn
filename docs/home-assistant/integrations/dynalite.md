@@ -1,6 +1,6 @@
 ---
 title: Philips Dynalite
-description: 关于在 Home Assistant 中设置 Philips Dynalite 的说明。
+description: 'Philips Dynalite 支持作为集线器集成到 Home Assistant 中，可以驱动灯光、开关和遮盖平台。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Cover
   - Hub
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_integration_type: integration
 ---
+# Philips Dynalite
 
 Philips Dynalite 支持作为集线器集成到 Home Assistant 中，可以驱动灯光、开关和遮盖平台。
 

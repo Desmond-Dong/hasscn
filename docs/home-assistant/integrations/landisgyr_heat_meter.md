@@ -1,6 +1,6 @@
 ---
 title: Landis+Gyr Heat Meter
-description: 关于如何将 Landis+Gyr 热表设备集成到 Home Assistant 的说明。
+description: 'Home Assistant 的 Landis+Gyr Heat Meter 集成可让您读取 Landis & Gyr Ultraheat 设备的仪表数值。这些设备通常用于区域供热。该集成已在 Landis & Gyr Ultraheat 50 (UH50)（型号 LUGCUH50）上完成测试。'
 ha_category:
   - Energy
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Landis+Gyr Heat Meter
 
 Home Assistant 的 **Landis+Gyr Heat Meter** 集成可让您读取 Landis & Gyr Ultraheat 设备的仪表数值。这些设备通常用于区域供热。该集成已在 Landis & Gyr Ultraheat 50 (UH50)（型号 LUGCUH50）上完成测试，其他型号也很可能可用。
 

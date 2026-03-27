@@ -1,6 +1,8 @@
 ---
 title: "注册资源"
+description: '如果你想使用自定义 cards、strategies 或 views 扩展 Home Assistant 界面，就需要加载外部资源。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 注册资源
 
 如果你想使用自定义 cards、strategies 或 views 扩展 Home Assistant 界面，就需要加载外部资源。
 

@@ -1,7 +1,9 @@
 ---
 title: 网页卡片
-description: 网页卡片允许您将喜爱的网页直接嵌入到 Home Assistant 中。
+description: '网页卡片允许您将喜爱的网页直接嵌入到 Home Assistant 中。您也可以嵌入存储在 <config-directory/www 文件夹中的文件，并使用 /local/<file 引用它们。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 网页卡片
+
 网页卡片允许您将喜爱的网页直接嵌入到 Home Assistant 中。您也可以嵌入存储在 `<config-directory>/www` 文件夹中的文件，并使用 `/local/<file>` 引用它们。
 
 网页卡片用于[网页仪表盘](/home-assistant/dashboards/dashboard/#webpage-dashboard)。

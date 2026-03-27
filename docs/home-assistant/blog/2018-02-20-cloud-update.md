@@ -1,7 +1,8 @@
 ---
 title: 云服务更新
-description: Alexa 技能现已在德国、英国、加拿大、澳大利亚和印度上线。
+description: '我们很高兴地宣布，Home Assistant 技能现已在加拿大、英国、德国、印度和澳大利亚上线！请在 Amazon Alexa 技能商店alexa skill 中查看。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 云服务更新
 
 我们很高兴地宣布，Home Assistant 技能现已在加拿大、英国、德国、印度和澳大利亚上线！请在 [Amazon Alexa 技能商店][alexa skill] 中查看。
 

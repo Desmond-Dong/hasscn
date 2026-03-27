@@ -1,6 +1,8 @@
 ---
 title: "添加更多信息对话框"
+description: '当用户点按或点击任意 card 时，会显示一个 more info dialog。该对话框的头部会是 state card，后面跟着该实体最近 24 小时的历史记录。其下方会渲染该实体的 more info 组件。more info 组件可以显示更多信息，或提供更多控制方式。'
 ---
+# 添加更多信息对话框
 
 当用户点按或点击任意 card 时，会显示一个 more info dialog。该对话框的头部会是 state card，后面跟着该实体最近 24 小时的历史记录。其下方会渲染该实体的 more info 组件。more info 组件可以显示更多信息，或提供更多控制方式。
 

@@ -1,7 +1,9 @@
 ---
 title: 真空实体
+description: '平台实体派生自homeassistant.components.vacuum.StateVacuumEntity(https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/vacuum/init.。'
 sidebar_label: 真空
 ---
+# 真空实体
 
 平台实体派生自[`homeassistant.components.vacuum.StateVacuumEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/vacuum/__init__.py)
 

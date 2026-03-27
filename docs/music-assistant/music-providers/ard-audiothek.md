@@ -1,7 +1,7 @@
 ---
 title: "ARD Audiothek"
+description: 'Music Assistant 支持从 <a href="https://www.ardaudiothek.de/" target="blank" rel="noopener noreferrer"ARD Audiothek</a 流式传输。由 <a。'
 ---
-
 # ARD Audiothek 提供者 <img src="/assets/icons/ard-audiothek.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持从 <a href="https://www.ardaudiothek.de/" target="_blank" rel="noopener noreferrer">ARD Audiothek</a> 流式传输。由 <a href="https://github.com/jfeil" target="_blank" rel="noopener noreferrer">Jan Feil</a> 贡献和维护。

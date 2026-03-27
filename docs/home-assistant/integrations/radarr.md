@@ -1,6 +1,6 @@
 ---
 title: Radarr
-description: 有关如何将 Radarr 传感器与 Home Assistant 集成的说明
+description: 'The Radarr integration pulls data from a given Radarr(https://radarr.video/) instance. Your API key can be found in Settings General in the Radarr Web UI.。'
 ha_category:
   - Downloading
 ha_release: 0.47
@@ -15,6 +15,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: service
 ---
+# Radarr
 
 The **Radarr** integration pulls data from a given [Radarr](https://radarr.video/) instance.
 Your API key can be found in Settings > General in the Radarr Web UI.

@@ -1,6 +1,6 @@
 ---
 title: Apache Kafka
-description: 将数据和事件发送到 Apache Kafka。
+description: 'Apache Kafka 集成会将所有状态变更发送到 Apache Kafka(https://kafka.apache.org/) 主题。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - History
 ha_release: 0.97
@@ -11,6 +11,7 @@ ha_iot_class: Local Push
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Apache Kafka
 
 **Apache Kafka** 集成会将所有状态变更发送到 [Apache Kafka](https://kafka.apache.org/) 主题。
 

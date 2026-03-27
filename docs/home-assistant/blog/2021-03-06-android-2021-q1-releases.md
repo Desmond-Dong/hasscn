@@ -2,6 +2,7 @@
 title: Home Assistant Companion Android App 2021 Q1 Releases
 description: 2021 Q1 Updates for the Home Assistant Companion Android App
 ---
+# Home Assistant Companion Android App 2021 Q1 Releases
 
 Hey everyone! It has been quite some time since we last provided an 更新 on all that is new with the Android app. You may have already noticed that we had changed our 发布 versioning to match that of Home Assistant 核心. In fact, we will be attempting to align our releases more closely to 核心 releases. This way we can start supporting brand new features quickly, like the recently released [My Home Assistant](https://my.home-assistant.io).
 

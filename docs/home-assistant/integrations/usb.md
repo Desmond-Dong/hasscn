@@ -1,6 +1,6 @@
 ---
 title: USB Discovery
-description: 发现主机上的 USB 设备。
+description: 'USB Discovery 集成会检测新连接的 USB 设备。发现的设备会显示在配置面板中“集成”页面的已发现区域。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Utility
 ha_iot_class: Local Push
@@ -11,6 +11,7 @@ ha_codeowners:
   - '@bdraco'
 ha_integration_type: system
 ---
+# USB Discovery
 
 **USB Discovery** 集成会检测新连接的 USB 设备。发现的设备会显示在配置面板中“集成”页面的已发现区域。
 

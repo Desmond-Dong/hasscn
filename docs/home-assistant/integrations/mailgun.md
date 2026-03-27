@@ -1,6 +1,6 @@
 ---
 title: Mailgun
-description: 关于如何将 Mailgun 邮件通知添加到 Home Assistant 的说明。
+description: '要接收来自 Mailgun 的 webhook，您的 Home Assistant 实例必须能从公网访问，并且需要正确配置(/home-assistant/integrations/homeassistant/allowlistexternalurls)外部 URL。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -11,6 +11,7 @@ ha_platforms:
   - notify
 ha_integration_type: service
 ---
+# Mailgun
 
 要接收来自 Mailgun 的 webhook，您的 Home Assistant 实例必须能从公网访问，并且需要正确[配置](/home-assistant/integrations/homeassistant/#allowlist_external_urls)外部 URL。
 

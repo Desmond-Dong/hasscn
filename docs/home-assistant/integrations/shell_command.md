@@ -1,6 +1,6 @@
 ---
 title: Shell Command
-description: 有关如何将 Shell 命令集成到 Home Assistant 中的说明。
+description: '此集成可以将普通的 shell 命令公开为操作。这些操作可以在脚本script或自动化automation中调用。 Shell 命令名称不允许使用驼峰命名，请仅使用小写字母，并用下划线分隔名称。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
 ha_iot_class: Local Push
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: shell_command
 ha_integration_type: integration
 ---
+# Shell Command
 
 此集成可以将普通的 shell 命令公开为操作。这些操作可以在[脚本][script]或[自动化][automation]中调用。
 Shell 命令名称不允许使用驼峰命名，请仅使用小写字母，并用下划线分隔名称。

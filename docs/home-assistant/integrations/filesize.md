@@ -1,6 +1,6 @@
 ---
 title: File size
-description: 用于监控文件大小的集成。
+description: '文件大小集成用于显示文件的大小（以 MB 为单位）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Utility
@@ -14,6 +14,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_integration_type: integration
 ---
+# File size
 
 **文件大小**集成用于显示文件的大小（以 MB 为单位）。
 

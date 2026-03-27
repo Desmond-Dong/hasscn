@@ -1,8 +1,9 @@
 ---
 title: 我们的语音助手的下一个迭代就在这里 - 语音第 10 章
-description: 这个新工具为低端硬件带来了快速的本地语音处理，
+description: '<img src=''/home-assistant/images/blog/2025-06-voice-chapter-10/art.png'' style=''border: 0;box-shadow: none;'' alt="我们正在进行的声音系列的第 10 章"。'
   以及一些有用的新语音和人工智能功能
 ---
+# 我们的语音助手的下一个迭代就在这里 - 语音第 10 章
 
 <img src='/home-assistant/images/blog/2025-06-voice-chapter-10/art.png' style='border: 0;box-shadow: none;' alt="我们正在进行的声音系列的第 10 章">
 

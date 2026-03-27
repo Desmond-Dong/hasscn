@@ -1,7 +1,8 @@
 ---
 title: 模板、日期与时间
-description: 在 Home Assistant 中使用模板处理秒和年份。
+description: '这个 拉取请求(https://github.com/home-assistant/home-assistant/pull/9868) 很清楚地展示了：如果文档写得不够好，会发生什么。简而言之，这篇文章讲的是 模板(/home-assistant/docs/configuration/templating/)。'
 ---
+# 模板、日期与时间
 
 这个 [拉取请求](https://github.com/home-assistant/home-assistant/pull/9868) 很清楚地展示了：如果文档写得不够好，会发生什么。简而言之，这篇文章讲的是 [模板](/home-assistant/docs/configuration/templating/)，以及当相关内容没有被记录下来时，人们会如何开始想出各种有创意的方法来解决问题。假设我们想获取当前年份，可以使用下面几种方法：
 

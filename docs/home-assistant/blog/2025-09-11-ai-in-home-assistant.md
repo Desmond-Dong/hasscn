@@ -1,7 +1,8 @@
 ---
 title: 构建由 AI 驱动的本地智能家居
-description: 在过去一年里，我们在让 AI 成为家庭中的强大工具方面取得了重大进展。
+description: '<img src=''/home-assistant/images/blog/2025-09-ai/art.webp'' style=''border: 0;box-shadow: none;'' alt="Building the AI-powered local smart home"。'
 ---
+# 构建由 AI 驱动的本地智能家居
 
 <img src='/home-assistant/images/blog/2025-09-ai/art.webp' style='border: 0;box-shadow: none;' alt="Building the AI-powered local smart home">
 

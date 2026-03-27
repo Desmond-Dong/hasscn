@@ -4,6 +4,7 @@ description: The new release of Home Assistant includes a lot of upgrades to how
   handle 脚本 and make them available in a wide range of new components including
   自动化 and alexa.
 ---
+# 0.19: Empowering 脚本 and Alexa
 
 这次发布很重磅。到目前为止，我们的自动化和脚本一直比较静态。从今天开始，它们会变得更动态一些。
 

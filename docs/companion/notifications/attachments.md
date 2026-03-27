@@ -1,7 +1,9 @@
 ---
 title: "标准附件"
+description: '通知可以包含图像、视频或音频文件附件，与通知一起显示。请参阅支持的媒体表格(supported-media-types)了解各平台的支持情况。 本页属于 Home Assistant 配套应用文档，适合查阅 iOS、Android、通知、传感器与移动端能力。'
 id: notification-attachments
 ---
+# 标准附件
 
 通知可以包含图像、视频或音频文件附件，与通知一起显示。请参阅[支持的媒体表格](#supported-media-types)了解各平台的支持情况。
 

@@ -1,6 +1,6 @@
 ---
 title: LOQED Touch Smart Lock
-description: 关于如何集成 Loqed Touch 智能锁的说明
+description: '将您的 LOQED Touch 智能锁接入 Home Assistant。锁状态一旦变化，就会立即通知 Home Assistant，而您也可以自行更改锁状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Lock
 ha_release: 2023.7
@@ -15,6 +15,7 @@ ha_config_flow: true
 ha_integration_type: device
 ha_zeroconf: true
 ---
+# LOQED Touch Smart Lock
 
 将您的 LOQED Touch 智能锁接入 Home Assistant。锁状态一旦变化，就会立即通知 Home Assistant，而您也可以自行更改锁状态。
 

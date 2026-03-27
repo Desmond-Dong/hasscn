@@ -1,6 +1,6 @@
 ---
 title: BlueMaestro
-description: 关于如何将 BlueMaestro 设备集成到 Home Assistant 的说明。
+description: '将 BlueMaestro(https://www.sigmawit.com/) 设备集成到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_bluetooth: true
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# BlueMaestro
 
 将 [BlueMaestro](https://www.sigmawit.com/) 设备集成到 Home Assistant。
 

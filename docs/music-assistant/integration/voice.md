@@ -1,7 +1,7 @@
 ---
 title: "语音控制"
+description: 'Home Assistant 对音乐/媒体控制的（意图）支持非常有限，并且不支持通过语音启动音乐播放。虽然这已在计划中添加，但仍有很多关于如何创建一种通用方式来原生提供该支持（与所有媒体播放器集成一起工作）的问题需要研究。 本页属于 Music Assistant 中文文档。'
 ---
-
 # 语音控制 <img src="/assets/icons/voice-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Home Assistant 对音乐/媒体控制的（意图）支持非常有限，并且不支持通过语音启动音乐播放。虽然这已在计划中添加，但仍有很多关于如何创建一种通用方式来原生提供该支持（与所有媒体播放器集成一起工作）的问题需要研究。

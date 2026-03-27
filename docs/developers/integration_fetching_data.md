@@ -1,6 +1,8 @@
 ---
 title: "获取数据"
+description: '你的集成需要从 API 获取数据并提供给 Home Assistant。这个 API 可能通过网络（本地或云端）、套接字、由 USB 设备暴露出来的串口等方式访问。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 获取数据
 
 你的集成需要从 API 获取数据并提供给 Home Assistant。这个 API 可能通过网络（本地或云端）、套接字、由 USB 设备暴露出来的串口等方式访问。
 

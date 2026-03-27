@@ -1,12 +1,13 @@
 ---
 title: "MQTT Camera"
-description: "关于如何将 MQTT 图像消息作为摄像头在 Home Assistant 中使用的说明。"
+description: 'MQTT 摄像头集成允许您将通过 MQTT 发送的图像文件内容作为摄像头集成到 Home Assistant 中。每次收到配置中 topic 下的消息时，Home Assistant 中显示的图像也会更新。在 topic 上收到的消息应包含图像文件的完整内容，例如 JPEG 图像，不含任何额外编码或元数据。'
 ha_category:
   - Camera
 ha_release: 0.43
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Camera
 
 **MQTT 摄像头**集成允许您将通过 MQTT 发送的图像文件内容作为摄像头集成到 Home Assistant 中。每次收到配置中 `topic` 下的消息时，Home Assistant 中显示的图像也会更新。在 `topic` 上收到的消息应包含图像文件的完整内容，例如 JPEG 图像，不含任何额外编码或元数据。
 

@@ -1,6 +1,6 @@
 ---
 title: RESTful Command
-description: 有关如何将 REST 命令集成到 Home Assistant 中的说明。
+description: '此集成可以将常规 REST 命令暴露为操作。操作可以从 script 或 automation 中调用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
 ha_release: 0.36
@@ -10,6 +10,7 @@ ha_integration_type: integration
 ha_codeowners:
   - '@jpbede'
 ---
+# RESTful Command
 
 此集成可以将常规 REST 命令暴露为操作。操作可以从 [script] 或 [automation] 中调用。
 

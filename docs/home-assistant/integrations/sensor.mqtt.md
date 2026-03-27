@@ -1,6 +1,6 @@
 ---
 title: "MQTT Sensor"
-description: "有关如何在 Home Assistant 中集成 MQTT 传感器的说明。"
+description: 'MQTT Sensor 集成使用 MQTT 消息负载作为传感器值。如果此 statetopic 中的消息以 RETAIN 标志发布，传感器会立即收到最后一次已知值的更新。否则，初始状态将是未定义的。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Sensor
@@ -8,6 +8,7 @@ ha_release: 0.7
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Sensor
 
 **MQTT Sensor** 集成使用 MQTT 消息负载作为传感器值。如果此 `state_topic` 中的消息以 *RETAIN* 标志发布，传感器会立即收到最后一次已知值的更新。否则，初始状态将是未定义的。
 

@@ -1,6 +1,6 @@
 ---
 title: "MQTT Scene"
-description: "有关如何将 MQTT 场景集成到 Home Assistant 的说明。"
+description: 'The MQTT Scene integration lets you control your MQTT enabled scenes. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Scene
@@ -8,6 +8,7 @@ ha_release: 2020.12
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Scene
 
 The **MQTT Scene** integration lets you control your MQTT enabled scenes.
 

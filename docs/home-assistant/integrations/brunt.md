@@ -1,6 +1,6 @@
 ---
 title: Brunt Blind Engine
-description: 关于如何在 Home Assistant 中设置 Brunt Blind Engine 的说明。
+description: 'Brunt Blind Engine 集成允许控制 Brunt(https://www.brunt.co) 的盲窗引擎。要使用它，您需要一个 Brunt 应用账户。您账户中注册的所有 Brunt 盲窗设备将自动添加到您的 Home Assistant 中，名称与 Brunt 应用中给定的一致。'
 ha_category:
   - Cover
 ha_release: 0.75
@@ -13,6 +13,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: hub
 ---
+# Brunt Blind Engine
 
 **Brunt Blind Engine** 集成允许控制 [Brunt](https://www.brunt.co) 的盲窗引擎。要使用它，您需要一个 Brunt 应用账户。您账户中注册的所有 Brunt 盲窗设备将自动添加到您的 Home Assistant 中，名称与 Brunt 应用中给定的一致。
 

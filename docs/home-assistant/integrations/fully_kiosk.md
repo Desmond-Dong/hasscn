@@ -1,6 +1,6 @@
 ---
 title: Fully Kiosk Browser
-description: 关于如何将 Fully Kiosk Browser 与 Home Assistant 集成的说明
+description: 'Fully Kiosk Browser(https://www.fully-kiosk.com) 是一款功能强大的 Android 设备信息亭浏览器。它提供多种用于监控和控制 Android 设备的功能。通过此集成，您可以在 Home Assistant 中控制设备并查看其状态。'
 ha_category:
   - Binary sensor
   - Camera
@@ -28,6 +28,7 @@ ha_integration_type: device
 ha_dhcp: true
 ha_quality_scale: bronze
 ---
+# Fully Kiosk Browser
 
 [Fully Kiosk Browser](https://www.fully-kiosk.com) 是一款功能强大的 Android 设备信息亭浏览器。它提供多种用于监控和控制 Android 设备的功能。通过此集成，您可以在 Home Assistant 中控制设备并查看其状态。
 

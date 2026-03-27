@@ -1,6 +1,6 @@
 ---
 title: Command line
-description: 关于如何在 Home Assistant 中集成命令行工具的说明。
+description: 'Command line 集成提供了执行特定命令以获取数据或控制设备的功能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Cover
@@ -24,6 +24,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Command line
 
 **Command line** 集成提供了执行特定命令以获取数据或控制设备的功能。
 

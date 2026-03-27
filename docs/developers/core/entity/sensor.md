@@ -1,7 +1,9 @@
 ---
 title: 传感器实体
+description: '传感器是提供一些信息的只读实体。信息具有价值，并且可选地具有测量单位。平台实体派生自homeassistant.components.sensor.SensorEntity(https://github.com/home-assistant/home-assistant/blob/master/homeass。'
 sidebar_label: 传感器
 ---
+# 传感器实体
 
 传感器是提供一些信息的只读实体。信息具有价值，并且可选地具有测量单位。平台实体派生自[`homeassistant.components.sensor.SensorEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/sensor/__init__.py)
 

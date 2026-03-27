@@ -1,6 +1,6 @@
 ---
 title: PEGELONLINE
-description: 有关如何将 PEELONLINE 测量集成到 Home Assistant 的说明。
+description: '此集成使用德国联邦水道与航运管理局 (Wasserstraßen- und Schifffahrtsverwaltung des Bundes) 的 PEGELONLINE(https://www.pegelonline.wsv.de/) 数据，根据所选测量站可提供的数据创建不同的传感器(sensors)。'
 ha_category:
   - Environment
   - Sensor
@@ -16,6 +16,7 @@ ha_codeowners:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# PEGELONLINE
 
 此集成使用德国联邦水道与航运管理局 (_Wasserstraßen- und Schifffahrtsverwaltung des Bundes_) 的 [PEGELONLINE](https://www.pegelonline.wsv.de/) 数据，根据所选测量站可提供的数据创建不同的[传感器](#sensors)。
 

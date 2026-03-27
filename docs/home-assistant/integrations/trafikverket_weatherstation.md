@@ -1,6 +1,6 @@
 ---
 title: Trafikverket Weather Station
-description: 关于如何将 Trafikverket 气象站集成到 Home Assistant 的说明。
+description: 'Showing weather information provided by Trafikverket(https://www.trafikverket.se/) weather stations in Sweden. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Weather
 ha_release: 0.66
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Trafikverket Weather Station
 
 Showing weather information provided by [Trafikverket](https://www.trafikverket.se/) weather stations in Sweden.
 

@@ -1,6 +1,6 @@
 ---
 title: RESTful
-description: 有关如何将 REST 传感器和二进制传感器集成到 Home Assistant 中的说明。
+description: 'RESTful 集成用于消费某个给定端点，该端点由设备、应用程序或 Web 服务通过 RESTful API(https://en.wikipedia.org/wiki/Representationalstatetransfer) 暴露。该传感器支持 GET 和 POST 请求。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - switch
 ha_integration_type: service
 ---
+# RESTful
 
 **RESTful** 集成用于消费某个给定端点，该端点由设备、应用程序或 Web 服务通过 [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer) 暴露。该传感器支持 GET 和 POST 请求。
 

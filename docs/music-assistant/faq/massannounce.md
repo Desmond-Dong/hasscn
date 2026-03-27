@@ -1,7 +1,7 @@
 ---
 title: "播放公告操作"
+description: '此操作允许您通过 URL 向播放器发送音频公告。URL 可以通过各种方式访问。例如：。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # MA play_announcement 操作
 
 此操作允许您通过 URL 向播放器发送音频公告。URL 可以通过各种方式访问。例如：

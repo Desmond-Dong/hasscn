@@ -1,6 +1,6 @@
 ---
 title: Emulated Hue
-description: 关于如何在 Home Assistant 中模拟 Hue 网桥的说明。
+description: '请注意，对于新的 Google Home 用户来说，emulatedhue 已不再可用。如果您以前没有配置过并成功使用它，请改用 Google Assistant(/home-assistant/integrations/googleassistant/) 集成或 Nabu Casa。'
 ha_category:
   - Hub
 ha_release: 0.27
@@ -15,6 +15,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Emulated Hue
 
 :::warning
 请注意，对于新的 **Google Home** 用户来说，`emulated_hue` 已不再可用。如果您以前没有配置过并成功使用它，请改用 [Google Assistant](/home-assistant/integrations/google_assistant/) 集成或 [Nabu Casa cloud](/home-assistant/integrations/cloud) 集成。

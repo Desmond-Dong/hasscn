@@ -1,6 +1,6 @@
 ---
 title: Ultraloq
-description: 使用 Z-Wave 集成连接和控制您的 Ultraloq Z-Wave 系列设备
+description: 'Ultraloq 智能门锁让用户无需钥匙即可进入家中。您可以通过 Ultraloq 应用或 Home Assistant 远程控制门锁。其母公司 U-tec 是 Works with Home Assistant 合作伙伴计划的成员，这意味着他们致力于确保 Ultraloq Z-Wave 产品保持最新状态。'
 ha_release: '2022.11'
 ha_category:
   - Lock
@@ -10,6 +10,7 @@ works_with:
   - zwave
 ha_iot_standard: zwave
 ---
+# Ultraloq
 
 Ultraloq 智能门锁让用户无需钥匙即可进入家中。您可以通过 Ultraloq 应用或 Home Assistant 远程控制门锁。其母公司 U-tec 是 Works with Home Assistant 合作伙伴计划的成员，这意味着他们致力于确保 Ultraloq Z-Wave 产品保持最新状态，并可直接配合 Home Assistant 使用。
 

@@ -1,6 +1,6 @@
 ---
 title: devolo Home Network
-description: 关于如何将 devolo Home Network 设备与 Home Assistant 集成的说明。
+description: 'devolo Home Network 集成允许您监控和控制您的 devolo(https://www.devolo.global) PLC 网络。根据您添加到 Home Assistant 的设备，可能有不同的用例。大致上，您可以将设备分为 Wi-Fi 和非 Wi-Fi 设备。'
 ha_category:
   - Binary sensor
   - Button
@@ -29,6 +29,7 @@ ha_zeroconf: true
 ha_integration_type: device
 ha_quality_scale: silver
 ---
+# devolo Home Network
 
 **devolo Home Network** 集成允许您监控和控制您的 [devolo](https://www.devolo.global) PLC 网络。根据您添加到 Home Assistant 的设备，可能有不同的用例。大致上，您可以将设备分为 Wi-Fi 和非 Wi-Fi 设备。非 Wi-Fi 设备在监控 PLC 网络方面或多或少有限。但是，Wi-Fi 设备可以帮助进行存在检测和访客 Wi-Fi 的远程控制。有关详细信息，请继续阅读[实体](#entities)并查看[支持的设备](#supported-devolo-devices)。
 

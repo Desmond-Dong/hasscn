@@ -1,9 +1,8 @@
 ---
 layout: doc
 title: 搜索引擎访问说明
-description: Home Assistant 中文网建议使用更稳定的搜索引擎访问本站内容，并说明部分搜索入口的访问限制。
+description: '🔍 本站强烈建议你使用 Bing(https://www.bing.com) 来搜索本站内容。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 ---
-
 # 搜索引擎
 
 :::tip 建议使用 Bing

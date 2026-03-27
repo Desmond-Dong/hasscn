@@ -1,6 +1,6 @@
 ---
 title: Seerr
-description: "有关如何使用 Home Assistant 设置 Seerr 的说明。"
+description: 'Seerr 是一项可让您管理媒体请求，并将这些请求与 Plex、Jellyfin、Radarr 和 Sonarr 集成的服务。Seerr 集成允许您接入自己的 Seerr(https://seerr.dev/) 实例。此集成向后兼容 Overseerr(https://github.com/sct/overs。'
 
 ha_category:
   - Event
@@ -20,6 +20,7 @@ ha_platforms:
   - sensor
 ha_quality_scale: platinum
 ---
+# Seerr
 
 Seerr 是一项可让您管理媒体请求，并将这些请求与 Plex、Jellyfin、Radarr 和 Sonarr 集成的服务。**Seerr** 集成允许您接入自己的 [Seerr](https://seerr.dev/) 实例。此集成向后兼容 [Overseerr](https://github.com/sct/overseerr)。
 

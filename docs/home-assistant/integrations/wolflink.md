@@ -1,6 +1,6 @@
 ---
 title: Wolf SmartSet Service
-description: 关于如何在 Home Assistant 中集成 Wolf Smart-Set 云服务的说明。
+description: 'Wolf SmartSet Service 集成使用 Wolf Smart-Set(https://www.wolf-smartset.com/) 网络服务来获取您的供暖系统状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.114
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Wolf SmartSet Service
 
 **Wolf SmartSet Service** 集成使用 [Wolf Smart-Set](https://www.wolf-smartset.com/) 网络服务来获取您的供暖系统状态。
 

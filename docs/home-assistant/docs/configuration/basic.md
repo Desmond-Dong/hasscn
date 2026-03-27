@@ -1,7 +1,8 @@
 ---
 title: 设置基本信息
-description: 设置 Home Assistant 的基本信息。
+description: '作为默认引导流程的一部分，Home Assistant 可以通过 IP 地址地理定位检测您的位置。Home Assistant 将根据此位置自动选择单位系统和时区。如果您在引导过程中没有直接调整此设置，可以稍后再进行设置。 本页属于 Home Assistant 中文文档。'
 ---
+# 设置基本信息
 
 作为默认引导流程的一部分，Home Assistant 可以通过 IP 地址地理定位检测您的位置。Home Assistant 将根据此位置自动选择单位系统和时区。如果您在引导过程中没有直接调整此设置，可以稍后再进行设置。
 

@@ -1,6 +1,6 @@
 ---
 title: Zodiac
-description: 关于如何在 Home Assistant 中设置 zodiac 集成的说明。
+description: 'Zodiac 集成会跟踪当前的黄道十二宫星座。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
 ha_iot_class: Calculated
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_config_flow: true
 ---
+# Zodiac
 
 **Zodiac** 集成会跟踪当前的黄道十二宫星座。
 

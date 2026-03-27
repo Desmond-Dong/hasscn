@@ -1,6 +1,6 @@
 ---
 title: Profiler
-description: 有关 Home Assistant 性能分析工具的说明。
+description: 'Profiler 集成提供性能分析功能。它会生成一组统计信息，用于识别 Home Assistant 各部分耗时，可帮助你定位性能问题，或了解某个集成行为异常的原因。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Utility
 ha_release: 0.117
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_integration_type: integration
 ---
+# Profiler
 
 **Profiler** 集成提供性能分析功能。它会生成一组统计信息，用于识别 Home Assistant 各部分耗时，可帮助你定位性能问题，或了解某个集成行为异常的原因。
 

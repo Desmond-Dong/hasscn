@@ -1,6 +1,6 @@
 ---
 title: Nettigo Air Monitor
-description: "有关如何将 Nettigo Air Monitor 集成到 Home Assistant 中的说明。"
+description: 'The Nettigo Air Monitor integration allows you to read temperature, humidity, pressure and air quality data from Nettigo Air Monitor devices. Nettigo Air。'
 
 ha_category:
   - DIY
@@ -17,6 +17,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: device
 ---
+# Nettigo Air Monitor
 
 The **Nettigo Air Monitor** integration allows you to read temperature, humidity, pressure and air quality data from Nettigo Air Monitor devices. [Nettigo Air Monitor](https://air.nettigo.pl/?setlang=en) is a DIY air quality monitoring system with open source firmware, based on an open hardware project.
 

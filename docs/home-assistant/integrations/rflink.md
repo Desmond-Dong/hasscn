@@ -1,6 +1,6 @@
 ---
 title: RFLink
-description: 有关如何将 RFLink 网关集成到 Home Assistant 的说明。
+description: 'RFLink 集成支持使用 RFLink gateway firmware(https://www.rflink.nl/download.php) 的设备，例如 Nodo RFLink Gateway(https://www.nodo-shop.nl/21-rflink-)。'
 ha_category:
   - Binary sensor
   - Cover
@@ -25,6 +25,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# RFLink
 
 **RFLink** 集成支持使用 [RFLink gateway firmware](https://www.rflink.nl/download.php) 的设备，例如 [Nodo RFLink Gateway](https://www.nodo-shop.nl/21-rflink-)。RFLink Gateway 是运行在 Arduino Mega 上的固件，可借助低成本硬件（Arduino + transceiver）与大量 RF 无线设备进行双向通信。
 

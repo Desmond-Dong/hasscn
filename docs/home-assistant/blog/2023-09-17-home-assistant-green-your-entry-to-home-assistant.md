@@ -2,6 +2,7 @@
 title: '介绍 Home Assistant Green：你的 Home Assistant 入门之选'
 description: Home Assistant Green 的建议零售价为 99 美元，是新用户开始打造 Home Assistant 智能家的理想方式。
 ---
+# 介绍 Home Assistant Green：你的 Home Assistant 入门之选
 
 早在 2021 年，我们发起了 Home Assistant Yellow 的众筹活动。Home Assistant Yellow 体现了我们心目中智能家居中枢应有的样子，包含了爱好者想要的一切功能。我们对 Home Assistant Yellow 非常自豪，但与此同时，我们也越来越清楚地意识到，刚刚开始智能家居之旅的人，并不需要 Yellow 提供的全部功能。再加上全球元器件短缺让所需的 Compute Module 4 更贵也更难买到，Home Assistant Yellow 已经不再适合新手入门。
 

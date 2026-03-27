@@ -1,6 +1,6 @@
 ---
 title: MeteoAlarm
-description: 关于如何在 Home Assistant 中设置 MeteoAlarm 二值传感器的说明。
+description: 'MeteoAlarm 集成允许您监控来自 MeteoAlarm(https://www.meteoalarm.org)（EUMETNET）的欧洲天气警报。要使用此二值传感器，您需要从 MeteoAlarm(https://feeds.meteoalarm.org) 获取国家和省份名称。'
 ha_category:
   - Binary sensor
 ha_release: 0.93
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# MeteoAlarm
 
 **MeteoAlarm** 集成允许您监控来自 [MeteoAlarm](https://www.meteoalarm.org)（EUMETNET）的欧洲天气警报。要使用此二值传感器，您需要从 [MeteoAlarm](https://feeds.meteoalarm.org) 获取国家和省份名称。请注意，国家名称必须与以 `https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-` 开头的 URL 中显示的名称完全一致，包括名称中使用的连字符。否则可能导致错误或数据不正确。
 

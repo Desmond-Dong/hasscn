@@ -1,7 +1,8 @@
 ---
 title: Markdown 卡片
-description: Markdown 卡片用于渲染 Markdown 内容。
+description: 'Markdown 卡片用于渲染 Markdown(https://commonmark.org/help/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Markdown 卡片
 
 Markdown 卡片用于渲染 [Markdown](https://commonmark.org/help/)。
 

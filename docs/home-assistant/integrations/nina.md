@@ -1,6 +1,6 @@
 ---
 title: NINA
-description: "有关如何在 Home Assistant 中设置 NINA 警告的说明。"
+description: 'The NINA(https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-ninanode.html) integration displays warnings from the Bundesamt für。'
 
 ha_category:
   - Binary sensor
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: silver
 ---
+# NINA
 
 The [NINA](https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html) integration displays warnings from the [Bundesamt für Bevölkerungsschutz und Katastrophenhilfe](https://www.bbk.bund.de/) in Germany.
 

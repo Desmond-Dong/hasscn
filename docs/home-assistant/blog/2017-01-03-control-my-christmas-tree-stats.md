@@ -3,6 +3,7 @@ title: Control My Christmas Tree Stats
 description: I used Home Assistant for a publicly controllable Christmas tree and
   it worked great!
 ---
+# Control My Christmas Tree Stats
 
 大家好，新年快乐！
 

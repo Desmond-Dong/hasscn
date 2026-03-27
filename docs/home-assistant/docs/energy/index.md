@@ -1,7 +1,7 @@
 ---
 title: 能源
+description: 'Home Assistant 能源仪表板让您能够监控和管理家中的能源使用情况。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 能源
 
 Home Assistant 能源仪表板让您能够监控和管理家中的能源使用情况。

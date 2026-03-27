@@ -1,6 +1,6 @@
 ---
 title: Philips Hue BLE
-description: 关于如何在 Home Assistant 中设置飞利浦 Hue 蓝牙灯的说明。
+description: 'Hue BLE 集成允许您使用 Home Assistant 控制飞利浦 Hue 蓝牙灯。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_release: 2025.12
@@ -15,6 +15,7 @@ ha_bluetooth: true
 ha_integration_type: device
 ha_quality_scale: bronze
 ---
+# Philips Hue BLE
 
 **Hue BLE** 集成允许您使用 Home Assistant 控制飞利浦 Hue 蓝牙灯。
 

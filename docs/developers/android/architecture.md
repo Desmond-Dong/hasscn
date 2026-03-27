@@ -1,7 +1,9 @@
 ---
 title: "安卓架构"
+description: 'Home Assistant 的 Android 项目于 2019 年启动。从那时起，Android 生态系统发生了显着的发展，许多贡献者塑造了该项目。因此，您可能会遇到不符合当前最佳实践的传承代码。该文档是应用程序架构和开发实践的真实来源。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: "建筑学"
 ---
+# 安卓架构
 
 ## 介绍
 

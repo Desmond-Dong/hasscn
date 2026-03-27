@@ -1,7 +1,8 @@
 ---
 title: UTC 与时区感知
-description: Home Assistant 核心现在在内部统一使用 UTC 时间。
+description: '我最近合并了一次重构，将 Home Assistant 内部时间全面改为仅使用 UTC。这是一次非常必要的调整。我还为时间敏感部分补充了更多测试覆盖，以确保稳定性。这些代码已经在 dev 分支运行了 9 天，很快就会发布到 master 分支。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# UTC 与时区感知
 
 我最近合并了一次重构，将 Home Assistant 内部时间全面改为仅使用 UTC。这是一次非常必要的调整。我还为时间敏感部分补充了更多测试覆盖，以确保稳定性。这些代码已经在 dev 分支运行了 9 天，很快就会发布到 master 分支。
 

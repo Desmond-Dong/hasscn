@@ -1,6 +1,6 @@
 ---
 title: 模板
-description: 有关如何将模板传感器集成到家庭助理中的说明。
+description: '模板集成允许创建从其他数据派生其值的实体。这是通过为实体的属性（例如名称或状态）指定 templates(/home-assistant/docs/configuration/templating/) 来完成的。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm Control Panel
   - Binary sensor
@@ -51,6 +51,7 @@ related:
   - docs: /docs/blueprint/
     title: 关于蓝图
 ---
+# 模板
 
 **模板**集成允许创建从其他数据派生其值的实体。这是通过为实体的属性（例如名称或状态）指定 [templates](/home-assistant/docs/configuration/templating/) 来完成的。
 

@@ -1,6 +1,6 @@
 ---
 title: Brands
-description: 为集成和硬件提供品牌图像，如图标和标志。
+description: 'Brands 集成负责提供您在 Home Assistant 用户界面中看到的品牌图片，例如图标和标志。比如，集成卡片、更新实体，以及媒体浏览器项目中显示的图标，都是由此集成提供的。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 2026.3
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_domain: brands
 ha_integration_type: system
 ---
+# Brands
 
 **Brands** 集成负责提供您在 Home Assistant 用户界面中看到的品牌图片，例如图标和标志。比如，集成卡片、更新实体，以及媒体浏览器项目中显示的图标，都是由此集成提供的。
 

@@ -1,6 +1,6 @@
 ---
 title: Device tracker
-description: 关于如何在 Home Assistant 中设置设备跟踪的说明。
+description: 'Device tracker 可让您在 Home Assistant 中跟踪设备。这可以通过查询无线路由器来实现，也可以通过应用推送位置信息来实现。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: 0.7
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Device tracker
 
 Device tracker 可让您在 Home Assistant 中跟踪设备。这可以通过查询无线路由器来实现，也可以通过应用推送位置信息来实现。
 

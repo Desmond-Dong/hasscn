@@ -1,6 +1,6 @@
 ---
 title: Presence-based lights
-description: 关于如何使用 Home Assistant 自动化灯光的说明。
+description: 'Home Assistant 内置了一个名为 devicesunlighttrigger 的集成，用于帮助您自动控制灯光。该集成会：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
   - Light
@@ -14,6 +14,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Presence-based lights
 
 Home Assistant 内置了一个名为 `device_sun_light_trigger` 的集成，用于帮助您自动控制灯光。该集成会：
 

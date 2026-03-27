@@ -1,7 +1,8 @@
 ---
 title: Nest 来到家中！
-description: Home Assistant 已将 Nest 加入支持设备列表。
+description: '在过去的大部分时间里，Home Assistant 主要专注于在场检测、灯光和开关。但现在不一样了，我们正在扩展支持设备。今天，我们很高兴发布由 Stefano Fiorini(https://github.com/sfiorini) 贡献的 Nest Thermostat 集成！。'
 ---
+# Nest 来到家中！
 
 在过去的大部分时间里，Home Assistant 主要专注于在场检测、灯光和开关。但现在不一样了，我们正在扩展支持设备。今天，我们很高兴发布由 [Stefano Fiorini](https://github.com/sfiorini) 贡献的 Nest Thermostat 集成！
 

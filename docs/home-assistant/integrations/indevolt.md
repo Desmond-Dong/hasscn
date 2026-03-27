@@ -1,6 +1,6 @@
 ---
 title: Indevolt
-description: 关于如何将 Indevolt 设备与 Home Assistant 集成的说明。
+description: 'Indevolt 集成可在 Home Assistant 与您的 Indevolt(https://www.indevolt.com/) 储能设备之间建立直接的本地通信。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2026.3
 ha_category:
   - Energy
@@ -18,6 +18,7 @@ ha_integration_type: device
 ha_quality_scale: bronze
 ha_config_flow: true
 ---
+# Indevolt
 
 Indevolt 集成可在 Home Assistant 与您的 [Indevolt](https://www.indevolt.com/) 储能设备之间建立直接的本地通信。
 

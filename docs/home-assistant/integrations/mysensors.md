@@ -1,6 +1,6 @@
 ---
 title: MySensors
-description: 关于如何将 MySensors 集成到 Home Assistant 的说明。
+description: 'MySensors(https://www.mysensors.org) 项目将 Arduino、ESP8266、Raspberry Pi、NRF24L01+ 和 RFM69 等设备组合起来，用于构建低成本传感器网络。完成presentation(presentation) 后。'
 
 ha_category:
   - DIY
@@ -23,6 +23,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: hub
 ---
+# MySensors
 
 [MySensors](https://www.mysensors.org) 项目将 Arduino、ESP8266、Raspberry Pi、NRF24L01+ 和 RFM69 等设备组合起来，用于构建低成本传感器网络。完成[presentation](#presentation) 后，此集成会自动将所有可用设备添加到 Home Assistant。也就是说，你无需为这些设备额外添加任何配置。你可以前往开发者工具中的 **states** 部分，查看已经识别出的设备。
 

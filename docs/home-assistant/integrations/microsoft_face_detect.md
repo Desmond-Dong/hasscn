@@ -1,6 +1,6 @@
 ---
 title: Microsoft Face Detect
-description: 关于如何将 Microsoft Face Detect 集成到 Home Assistant 的说明。
+description: 'Microsoft Face Detect 集成允许您通过 Home Assistant 使用 Microsoft Face Identify(https://azure.microsoft.com/products/cognitive-services/) API。'
 ha_category:
   - Image processing
 ha_iot_class: Cloud Push
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Microsoft Face Detect
 
 **Microsoft Face Detect** 集成允许您通过 Home Assistant 使用 [Microsoft Face Identify](https://azure.microsoft.com/products/cognitive-services/) API。该平台可让您检测摄像头画面中的人脸，并触发带有属性的事件。
 

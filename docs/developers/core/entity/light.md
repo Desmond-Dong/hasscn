@@ -1,8 +1,9 @@
 ---
 title: 光实体
+description: '灯光实体控制光源的亮度、色调和饱和度颜色值、白色值、色温和效果。平台实体派生自homeassistant.components.light.LightEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/。'
 sidebar_label: 光
 ---
-
+# 光实体
 
 灯光实体控制光源的亮度、色调和饱和度颜色值、白色值、色温和效果。平台实体派生自[`homeassistant.components.light.LightEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/light/__init__.py)。
 

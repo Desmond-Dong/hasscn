@@ -1,6 +1,6 @@
 ---
 title: Velbus
-description: 关于如何将 Velbus 集成到 Home Assistant 的说明。
+description: 'Velbus 集成用于控制 Velbus(https://www.velbus.eu/?lang=en) 模块。它支持 Velbus USB、Velbus 串口和 TCP/IP 网关。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -29,6 +29,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Velbus
 
 **Velbus** 集成用于控制 [Velbus](https://www.velbus.eu/?lang=en) 模块。它支持 Velbus USB、Velbus 串口和 TCP/IP 网关。
 

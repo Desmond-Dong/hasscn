@@ -1,6 +1,6 @@
 ---
 title: Select
-description: 有关如何使用 Home Assistant 管理您的 Select 实体的说明。
+description: 'Select 集成用于管理 select 实体的状态，并允许你控制这些实体。此集成还允许其他集成为实体提供一组有限的可选项。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Select
 ha_release: 2021.7
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Select
 
 **Select** 集成用于管理 select 实体的状态，并允许你控制这些实体。此集成还允许其他集成为实体提供一组有限的可选项。
 

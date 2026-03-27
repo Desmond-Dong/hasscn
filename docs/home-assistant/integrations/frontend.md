@@ -1,6 +1,6 @@
 ---
 title: Home Assistant frontend
-description: 为 Home Assistant 提供前端。
+description: '这提供了控制 Home Assistant 的官方前端。此集成默认启用，除非您从 "configuration.yaml" 文件中禁用或删除了 defaultconfig:(/home-assistant/integrations/defaultconfig/) 行。'
 ha_category:
   - Other
 ha_release: 0.7
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_domain: frontend
 ha_integration_type: system
 ---
+# Home Assistant frontend
 
 这提供了控制 Home Assistant 的官方前端。此集成默认启用，除非您从 "`configuration.yaml`" 文件中禁用或删除了 [`default_config:`](/home-assistant/integrations/default_config/) 行。如果是这种情况，以下示例展示了如何在 "`configuration.yaml`" 文件中手动启用此集成。
 

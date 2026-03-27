@@ -1,6 +1,6 @@
 ---
 title: Nobø Ecohub
-description: "有关如何将 Nobø Ecohub 集成到 Home Assistant 的说明。"
+description: '集成 Nobø Ecohub(https://www.glendimplex.no/produkter/varmestyring/11123610/noboe-hub/c-77/p-330) 进入家庭助理。此集成并未得到 Glen Dimplex Nordic AS 的正式支持或认可。'
 
 ha_category:
   - Climate
@@ -95,7 +95,7 @@ Nobø 系统（可能与北欧地区霜冻导致的管道冻结有关）。
 要将所有区域覆盖为给定预设（配置为不遵循全局覆盖的区域除外），请使用全局
 覆盖选择器。全局覆盖持续时间遵循与预设覆盖持续时间相同的配置。
 
-# Nobø Switch
+## Nobø Switch
 
 每个 Nobø 开关 (SW4) 均表示为温度传感器。如果开关连接到一个区域，则温度为
 也可用作 HVAC 实体的当前温度。

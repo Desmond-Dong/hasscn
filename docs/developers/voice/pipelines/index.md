@@ -1,6 +1,8 @@
 ---
 title: "Assist 管道"
+description: 'Assist 管道(https://www.home-assistant.io/integrations/assistpipeline) 集成负责运行语音助手的常见步骤：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# Assist 管道
 
 [Assist 管道](https://www.home-assistant.io/integrations/assist_pipeline) 集成负责运行语音助手的常见步骤：
 

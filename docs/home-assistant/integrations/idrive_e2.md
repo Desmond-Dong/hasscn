@@ -1,6 +1,6 @@
 ---
 title: IDrive e2
-description: 关于如何设置 IDrive e2 存储桶作为备份位置的说明。
+description: 'IDrive e2 集成允许您将 IDrive e2(https://www.idrive.com/s3-storage-e2/) 存储桶与 Home Assistant 备份一起使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2026.3
 ha_category:
   - Backup
@@ -12,6 +12,7 @@ ha_codeowners:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# IDrive e2
 
 **IDrive e2** 集成允许您将 [IDrive e2](https://www.idrive.com/s3-storage-e2/) 存储桶与 Home Assistant 备份一起使用。
 

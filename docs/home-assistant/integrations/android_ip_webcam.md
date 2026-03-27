@@ -1,6 +1,6 @@
 ---
 title: Android IP Webcam
-description: 将 Android 设备作为 IP 摄像头连接到 Home Assistant
+description: 'Android IP Webcam 集成与 Android IP Webcam 连接，可将任何 Android 手机或平板电脑变成具有多种查看选项的网络摄像头。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Camera
@@ -20,6 +20,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@engrbm87'
 ---
+# Android IP Webcam
 
 **Android IP Webcam** 集成与 Android IP Webcam 连接，可将任何 Android 手机或平板电脑变成具有多种查看选项的网络摄像头。
 

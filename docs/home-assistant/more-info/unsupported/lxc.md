@@ -1,7 +1,8 @@
 ---
 title: LXC
-description: 关于 LXC 为何将安装标记为不支持的更多信息。
+description: '在 LXC 虚拟机中运行 Supervisor 会导致性能和容器管理方面的问题。将 LXC 与 Supervisor 结合使用不受支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# LXC
 
 ## 问题
 

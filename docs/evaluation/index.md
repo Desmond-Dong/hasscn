@@ -1,3 +1,8 @@
+---
+title: 测评清单
+description: Home Assistant 相关硬件与软件测评清单，汇总可本地接入的设备、配件与实际使用参考，帮助你按协议与场景选择方案。
+---
+
 # 测评清单
 
 :::tip 说明 (仅Home Assistant相关的使用情况)
@@ -7,7 +12,9 @@
 根据不同的协议您可能会需要购买不同的配件，但都是本地直连，非本地直连的，会在文章内容中指出。
 
 :::
+
 ## 硬件
+
 ### **Seeed Studio (矽递科技)**
 
 #### reTerminal E1001/E1002
@@ -16,10 +23,9 @@
 
 #### reCamera HQ POE
 
-
 ### **AIKS 埃克思科技**
 
-####  Home Assistant 智能遥控器 (AIKS X9 Vela Edition)
+#### Home Assistant 智能遥控器 (AIKS X9 Vela Edition)
 
 ---
 

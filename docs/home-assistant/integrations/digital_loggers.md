@@ -1,6 +1,6 @@
 ---
 title: Digital Loggers
-description: 使用 Belkin WeMo 集成连接和控制您的 Digital Loggers 设备
+description: '此集成由 Belkin WeMo(/home-assistant/integrations/wemo/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Fan
@@ -25,6 +25,7 @@ ha_iot_class: Local Push
 ha_homekit: true
 ha_ssdp: true
 ---
+# Digital Loggers
 
 :::note
 此集成由 [Belkin WeMo](/home-assistant/integrations/wemo/) 集成支持。

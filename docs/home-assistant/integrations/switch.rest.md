@@ -1,6 +1,6 @@
 ---
 title: "RESTful Switch"
-description: "有关如何将 REST 开关集成到 Home Assistant 的说明。"
+description: 'The RESTful Switch integration allows you to control a given endpoint that supports a RESTful API(https://en.wikipedia.org/wiki/Representationalstatetransf。'
 
 ha_category:
   - Switch
@@ -8,6 +8,7 @@ ha_release: 0.7.6
 ha_iot_class: Local Polling
 ha_domain: rest
 ---
+# RESTful Switch
 
 The **RESTful Switch** integration allows you to control a given endpoint that supports a [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer). The switch can get the state via GET and set the state via POST on a given REST resource.
 

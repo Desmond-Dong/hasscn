@@ -1,6 +1,6 @@
 ---
 title: Model Context Protocol Server
-description: 关于如何将模型上下文协议服务器添加到 Home Assistant 的说明。
+description: 'Model Context Protocol(https://modelcontextprotocol.io) 是一种开放协议，用于标准化应用程序向 <abbr title="Large Language Models"LLMs</abbr 提供上下文的方式。'
 ha_category:
   - Voice
 ha_release: 2025.2
@@ -15,6 +15,7 @@ related:
     title: Conversation
 ha_quality_scale: silver
 ---
+# Model Context Protocol Server
 
 [Model Context Protocol](https://modelcontextprotocol.io) 是一种开放协议，用于标准化应用程序向 <abbr title="Large Language Models">LLMs</abbr> 提供上下文的方式。**Model Context Protocol Server**（MCP）集成让你可以使用 Home Assistant 为 <abbr title="Model Context Protocol">MCP</abbr> LLM 客户端应用提供上下文。例如，你可以从 Claude Desktop 控制家中的灯，或将你的 Google Tasks 待办清单作为工具公开。
 

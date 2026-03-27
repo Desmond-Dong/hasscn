@@ -1,6 +1,6 @@
 ---
 title: LIVISI Smart Home
-description: 访问和控制您的 LIVISI 智能家居控制器 (SHC) 及其连接的 RWE/innogy 设备。
+description: 'LIVISI Smart Home 集成可让您将 LIVISI Smart Home Controller (SHC) 连接到 Home Assistant。SHC 可控制与其相连的兼容 RWE/innogy 设备。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Climate
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# LIVISI Smart Home
 
 **LIVISI Smart Home** 集成可让您将 LIVISI Smart Home Controller (SHC) 连接到 Home Assistant。SHC 可控制与其相连的兼容 RWE/innogy 设备。
  

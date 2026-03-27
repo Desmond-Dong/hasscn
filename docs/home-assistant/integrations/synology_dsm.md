@@ -1,6 +1,6 @@
 ---
 title: Synology DSM
-description: 有关如何将 Synology DSM 传感器集成到 Home Assistant 中的说明。
+description: 'Synology DSM 集成可访问您的 Synology NAS(https://www.synology.com)（DSM 5.x 及以上）中的多种统计信息，也可接入 Surveillance Station(https://www.synology.com/surveillance) 中的摄像头。'
 ha_category:
   - Backup
   - Camera
@@ -27,6 +27,7 @@ ha_platforms:
 ha_integration_type: device
 ha_zeroconf: true
 ---
+# Synology DSM
 
 **Synology DSM** 集成可访问您的 [Synology NAS](https://www.synology.com)（_DSM 5.x 及以上_）中的多种统计信息，也可接入 [Surveillance Station](https://www.synology.com/surveillance) 中的摄像头，并允许将 [File Station](https://www.synology.com/en-us/dsm/feature/file_sharing) 用作备份位置。
 

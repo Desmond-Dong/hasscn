@@ -1,7 +1,8 @@
 ---
 title: 活动回顾 - GitHub Universe '24
-description: Home Assistant 在今年的 GitHub Universe 上有非常亮眼的表现，下面是一些精彩瞬间。
+description: '<img src=''/home-assistant/images/blog/2024-11-universe/art.jpg'' alt="Event Wrap-up"。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 活动回顾 - GitHub Universe '24
 
 <img src='/home-assistant/images/blog/2024-11-universe/art.jpg' alt="Event Wrap-up">
 

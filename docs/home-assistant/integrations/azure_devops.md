@@ -1,6 +1,6 @@
 ---
 title: Azure DevOps
-description: 关于如何将 Azure DevOps 与 Home Assistant 集成的说明。
+description: 'Azure DevOps 集成允许您在 Home Assistant 中控制和监控您的 Azure DevOps 实例。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 0.114
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Azure DevOps
 
 **Azure DevOps** 集成允许您在 Home Assistant 中控制和监控您的 Azure DevOps 实例。
 

@@ -1,7 +1,8 @@
 ---
 title: Home Assistant Green 现已发售
-description: 我们的全球经销商网络现已重新补货 Home Assistant Green。
+description: '我们很高兴地告诉你，Home Assistant Green 现已在我们全球网络中的大多数经销商处发售。如果你一直在等离自己更近的商店开始销售 Home Assistant Green，现在就可以查看我们的经销商列表，找到你附近的门店：。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Home Assistant Green 现已发售
 
 我们很高兴地告诉你，Home Assistant Green 现已在我们全球网络中的大多数经销商处发售。如果你一直在等离自己更近的商店开始销售 Home Assistant Green，现在就可以查看我们的经销商列表，找到你附近的门店：
 

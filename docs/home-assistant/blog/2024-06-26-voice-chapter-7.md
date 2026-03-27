@@ -1,7 +1,9 @@
 ---
 title: 语音第 7 章 - 增强的唤醒词和计时器
-description: MicroWakeWord v2 带来了巨大的改进，并且我们引入了高级计时器。
+description: '本章可能是迄今为止功能最丰富的章节之一，带来了人们强烈要求的计时器功能和对唤醒词的重大改进，以及甚至超越了大型科技公司的语音助手的实验技术。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 语音第 7 章 - 增强的唤醒词和计时器
+
 本章可能是迄今为止功能最丰富的章节之一，带来了人们强烈要求的计时器功能和对唤醒词的重大改进，以及甚至超越了大型科技公司的语音助手的实验技术。
 
 <lite-youtube videoid="nLLO4u2Tbbo" videotitle="Voice - Chapter 7 live stream"></lite-youtube>

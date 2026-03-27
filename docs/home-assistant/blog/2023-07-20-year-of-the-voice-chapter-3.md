@@ -1,7 +1,8 @@
 ---
 title: '语音之年 - 第 3 章：随时待命'
-description: 在你的所有 Android 设备上体验 Assist 的完整能力。
+description: '<p<img src=''/home-assistant/images/blog/2023-07-20-year-of-the-voice-chapter-3/social.png'' class=''no-shadow'' /</p。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# 语音之年 - 第 3 章：随时待命
 
 <p><img src='/home-assistant/images/blog/2023-07-20-year-of-the-voice-chapter-3/social.png' class='no-shadow' /></p>
 

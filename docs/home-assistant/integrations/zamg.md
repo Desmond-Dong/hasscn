@@ -1,6 +1,6 @@
 ---
 title: GeoSphere Austria
-description: 关于如何在 Home Assistant 中集成奥地利地球科学研究所（原 ZAMG）的说明。
+description: 'GeoSphere Austria 集成使用奥地利气象服务机构 GeoSphere Austria(https://www.geosphere.at) 发布的气象数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Weather
@@ -15,6 +15,7 @@ ha_integration_type: service
 ha_codeowners:
   - '@killer0071234'
 ---
+# GeoSphere Austria
 
 **GeoSphere Austria** 集成使用奥地利气象服务机构 [GeoSphere Austria](https://www.geosphere.at) 发布的气象数据。
 

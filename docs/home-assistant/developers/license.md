@@ -1,7 +1,8 @@
 ---
 title: Apache 2.0 许可证
-description: 所有 Home Assistant 项目所采用的许可证
+description: 'Home Assistant 源代码基于以下许可证发布。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Apache 2.0 许可证
 
 Home Assistant 源代码基于以下许可证发布。
 

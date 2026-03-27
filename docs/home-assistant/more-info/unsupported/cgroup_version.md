@@ -1,7 +1,8 @@
 ---
 title: CGroup 版本
-description: 关于 CGroup 版本为何将安装标记为不支持的更多信息。
+description: 'Supervisor 更倾向于 CGroups 版本 2，因为它依赖于其功能才能正常工作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# CGroup 版本
 
 ## 问题
 

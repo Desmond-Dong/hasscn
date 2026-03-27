@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 'Home Assistant 资源下载 - 极速版系统、客户端、加载项'
-description: 'Home Assistant OS 极速版官方下载页面，提供安卓客户端、iOS客户端、系统镜像等资源的国内高速下载'
+description: '请使用中国大陆的网络下载以下内容，否则可能导致速度不佳，文件损坏或者下载中断。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中国社区, Home Assistant 中文, Home Assistant 下载, HAOS 下载, 安卓客户端, iOS客户端, 系统镜像, 加载项下载'
 og:
   title: 'Home Assistant 资源下载 - 极速版系统、客户端、加载项'
@@ -11,7 +11,6 @@ og:
   locale: 'zh_CN'
   site_name: 'Home Assistant 中文网'
 ---
-
 # Home Assistant 相关资源下载
 
 :::danger China Only

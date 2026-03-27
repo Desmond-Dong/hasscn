@@ -1,7 +1,9 @@
 ---
 title: 二进制传感器实体
+description: '二元传感器是只能有两种状态的传感器。平台实体派生自homeassistant.components.binarysensor.BinarySensorEntity(https://github.com/home-assistant/home-assistant/blob/master/homeassistan。'
 sidebar_label: 二进制传感器
 ---
+# 二进制传感器实体
 
 二元传感器是只能有两种状态的传感器。平台实体派生自[`homeassistant.components.binary_sensor.BinarySensorEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/binary_sensor/__init__.py)
 

@@ -1,6 +1,6 @@
 ---
 title: "MQTT Text"
-description: "有关如何在 Home Assistant 中通过 MQTT 与公开文本功能的设备进行交互的说明。"
+description: 'The MQTT Text integration allows you to integrate devices that show text that can be set remotely. Optionally the text state can be monitored too using。'
 
 ha_category:
   - Text
@@ -8,6 +8,7 @@ ha_release: "2022.12"
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Text
 
 The **MQTT Text** integration allows you to integrate devices that show text that can be set remotely. Optionally the text state can be monitored too using MQTT.
 

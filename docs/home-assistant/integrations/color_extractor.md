@@ -1,6 +1,6 @@
 ---
 title: ColorExtractor
-description: 关于如何将颜色提取器集成到 Home Assistant 的说明。
+description: 'ColorExtractor 集成将从给定图像中提取主要颜色，并将该颜色应用于目标灯光。 作为自动化的一部分非常有用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.118
 ha_category:
   - Image processing
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_integration_type: integration
 ---
+# ColorExtractor
 
 **ColorExtractor** 集成将从给定图像中提取主要颜色，并将该颜色应用于目标灯光。
 作为自动化的一部分非常有用。

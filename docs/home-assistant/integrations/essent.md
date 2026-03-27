@@ -1,6 +1,6 @@
 ---
 title: Essent
-description: 监控 Essent Netherlands 的动态能源价格
+description: 'The Essent integration monitors dynamic energy prices for Essent customers in the Netherlands with Dynamic Contracts. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Energy
 ha_release: 2025.12
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: silver
 ---
+# Essent
 
 The **Essent** integration monitors dynamic energy prices for Essent customers in the Netherlands with Dynamic Contracts.
 

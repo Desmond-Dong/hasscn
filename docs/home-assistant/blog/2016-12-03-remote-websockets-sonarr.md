@@ -1,7 +1,8 @@
 ---
 title: '0.34：全新的遥控器组件、WebSocket、Sonarr，以及 GPSLogger'
-description: HomeMatic、Tellstick、HTTP 组件等都迎来了重大改进。
+description: '来吧……0.34。我们就叫它“圣诞老人”发布吧。鲁道夫比预期跑得更快，雪橇上装满了各种好东西。当然，还有 @pvizeli 和 @balloob 在异步编程上的更多工作、新组件、新平台、重大改进，以及更多内容。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 0.34：全新的遥控器组件、WebSocket、Sonarr，以及 GPSLogger
 
 来吧……0.34。我们就叫它“圣诞老人”发布吧。鲁道夫比预期跑得更快，雪橇上装满了各种好东西。当然，还有 [@pvizeli] 和 [@balloob] 在异步编程上的更多工作、新组件、新平台、重大改进，以及更多内容。
 

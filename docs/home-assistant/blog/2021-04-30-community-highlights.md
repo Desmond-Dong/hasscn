@@ -3,6 +3,7 @@ title: 'Community Highlights: 19th edition'
 description: Schedule your vacuum cleaning robot with a blueprint, show the robot
   status with a card and get started with open source text-to-speech systems
 ---
+# Community Highlights: 19th edition
 
 The 19th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

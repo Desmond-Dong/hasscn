@@ -1,7 +1,9 @@
 ---
 title: "意图"
+description: '意图是对用户意图的描述。意图由用户操作产生，例如要求 Amazon Echo 打开一盏灯。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "简介"
 ---
+# 意图
 
 意图是对用户意图的描述。意图由用户操作产生，例如要求 Amazon Echo 打开一盏灯。
 

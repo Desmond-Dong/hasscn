@@ -1,7 +1,8 @@
 ---
 title: 无可用 URL
-description: 关于如何解决 Home Assistant 中无可用 URL 消息的更多信息。
+description: '当 Home Assistant 向您显示"无可用 URL"消息时，您可能正在尝试设置或配置需要链接您的账户的集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 无可用 URL
 
 当 Home Assistant 向您显示"无可用 URL"消息时，您可能正在尝试设置或配置需要链接您的账户的集成。
 

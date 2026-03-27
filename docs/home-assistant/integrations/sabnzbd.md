@@ -1,6 +1,6 @@
 ---
 title: SABnzbd
-description: 有关如何将 SABnzbd 与 Home Assistant 集成的说明。
+description: 'The SABnzbd integration allows you to monitor and control your downloads with SABnzbd(https://sabnzbd.org) from within Home Assistant and set up。'
 ha_category:
   - Downloading
   - Sensor
@@ -19,6 +19,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# SABnzbd
 
 The **SABnzbd** integration allows you to monitor and control your downloads with [SABnzbd](https://sabnzbd.org) from within Home Assistant and set up automations based on download status and activity.
 

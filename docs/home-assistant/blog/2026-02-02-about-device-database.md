@@ -1,8 +1,9 @@
 ---
 title: 我们将如何一起建设设备数据库
-description: 我们正在建设一个设备数据库，帮助每个人为自己的智能家居做出更好的选择。
+description: '<img src=''/home-assistant/images/blog/2026-02-02-about-device-database/art.webp'' alt="我们将如何一起建设设备数据库" style=''border: 0;box-shadow: none;''。'
   了解我们的计划，以及你可以如何参与塑造它。
 ---
+# 我们将如何一起建设设备数据库
 
 <img src='/home-assistant/images/blog/2026-02-02-about-device-database/art.webp' alt="我们将如何一起建设设备数据库" style='border: 0;box-shadow: none;'>
 

@@ -1,7 +1,8 @@
 ---
 title: 远程访问
-description: 为 Home Assistant 设置远程访问。
+description: '如果您希望在外出时登录 Home Assistant，则需要使您的实例能够远程访问。以下是几种实现方式。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 远程访问
 
 如果您希望在外出时登录 Home Assistant，则需要使您的实例能够远程访问。以下是几种实现方式。
 

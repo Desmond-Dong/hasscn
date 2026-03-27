@@ -1,6 +1,6 @@
 ---
 title: Motionblinds
-description: 关于如何将 Coulisse B.V. 的 Motionblinds 集成到 Home Assistant 的说明。
+description: 'Motionblinds 集成允许你控制来自 Coulisse B.V.(https://coulisse.com/) 的 Motionblinds(https://motionblinds.com/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Cover
@@ -17,6 +17,7 @@ ha_platforms:
 ha_dhcp: true
 ha_integration_type: hub
 ---
+# Motionblinds
 
 **Motionblinds** 集成允许你控制来自 [Coulisse B.V.](https://coulisse.com/) 的 [Motionblinds](https://motionblinds.com/)。
 

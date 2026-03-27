@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Kira
 
 **Kira** 集成是用于将 Keene Electronics 的 IP 红外 [Kira](https://k2audio.co.uk/collections/ip-and-internet-control) 模块接入 Home Assistant 的主集成。
 

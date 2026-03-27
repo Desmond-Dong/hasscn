@@ -1,6 +1,6 @@
 ---
 title: Amber Electric
-description: 关于如何在 Home Assistant 中集成 Amber Electric 实时价格的说明。
+description: 'Amber(https://www.amber.com.au/) 是一家澳大利亚电力零售商，提供批发电力价格的访问权限。客户可以监控批发价格，并将能源使用转移到更便宜、更绿色的时段。这样可以节省费用，并支持澳大利亚向更多可再生能源的转变。客户还可以以波动的价格出售未使用的电力。'
 ha_category:
   - Energy
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Amber Electric
 
 [Amber](https://www.amber.com.au/) 是一家澳大利亚电力零售商，提供批发电力价格的访问权限。客户可以监控批发价格，并将能源使用转移到更便宜、更绿色的时段。这样可以节省费用，并支持澳大利亚向更多可再生能源的转变。客户还可以以波动的价格出售未使用的电力。这与其他批发供应商不同，后者的售电价格会根据电网需求而变化。
 

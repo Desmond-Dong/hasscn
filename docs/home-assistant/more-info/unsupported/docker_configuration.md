@@ -1,7 +1,8 @@
 ---
 title: Docker 配置
-description: 关于 Docker 配置为何将安装标记为不支持的更多信息。
+description: 'Supervisor 对 Docker 守护进程的配置有一些期望，以维护运行 Supervisor 的主机的稳定性和性能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Docker 配置
 
 ## 问题
 

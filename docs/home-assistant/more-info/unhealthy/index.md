@@ -1,5 +1,6 @@
 ---
 title: 不健康
+description: 'Home Assistant 不健康状态文档索引，汇总 Docker、Supervisor、系统错误与不受信任内容等常见异常状态的排查入口。'
 ---
 
 # 不健康

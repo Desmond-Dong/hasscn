@@ -1,7 +1,8 @@
 ---
 title: Introducing Home Assistant CLI aka. hass-cli
-description: Interact with Home Assistant on a new level
+description: '当我刚开始使用 Home Assistant（HA）时，我一直觉得少了一个可以通过命令行（CLI）与 HA 交互的方式。CLI 能让你充分利用自动补全、脚本化以及直接访问带来的强大能力。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Introducing Home Assistant CLI aka. hass-cli
 
 当我刚开始使用 Home Assistant（HA）时，我一直觉得少了一个可以通过命令行（CLI）与 HA 交互的方式。CLI 能让你充分利用自动补全、脚本化以及直接访问带来的强大能力。
 

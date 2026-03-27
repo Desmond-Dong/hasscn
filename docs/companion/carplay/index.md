@@ -1,7 +1,9 @@
 ---
 title: "概览"
+description: '<img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" /。 本页属于 Home Assistant 配套应用文档，适合查阅 iOS、Android、通知、传感器与移动端能力。'
 id: "carplay"
 ---
+# 概览
 
 <img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" />
 

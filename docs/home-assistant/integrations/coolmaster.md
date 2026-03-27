@@ -1,6 +1,6 @@
 ---
 title: CoolMasterNet
-description: 关于如何在 Home Assistant 中集成 CoolMasterNET 的说明。
+description: 'CoolMasterNet 集成允许您通过 CoolMasterNet(https://coolautomation.com/products/coolmasternet/) 控制 HVAC。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.88
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# CoolMasterNet
 
 **CoolMasterNet** 集成允许您通过 [CoolMasterNet](https://coolautomation.com/products/coolmasternet/) 控制 HVAC。
 

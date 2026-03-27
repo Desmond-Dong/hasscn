@@ -1,6 +1,6 @@
 ---
 title: Västtrafik
-description: 关于如何将 Västtrafik 公共交通数据集成到 Home Assistant 的说明。
+description: 'Västtrafik 集成会通过 Västtrafik(https://vasttrafik.se/) 公共交通服务，为您提供瑞典哥德堡大区的出行详情。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Västtrafik
 
 **Västtrafik** 集成会通过 [Västtrafik](https://vasttrafik.se/) 公共交通服务，为您提供瑞典哥德堡大区的出行详情。
 

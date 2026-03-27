@@ -1,7 +1,8 @@
 ---
 title: 包
-description: 介绍 Home Assistant 中配置包的所有相关信息。
+description: 'Home Assistant 中的包提供了一种将多个集成的配置捆绑在一起的方式。通过包，我们可以使用 拆分配置(/home-assistant/docs/configuration/splittingconfiguration) 中介绍的任何 !include 指令来包含多个集成或集成的部分内容。'
 ---
+# 包
 
 Home Assistant 中的包提供了一种将多个集成的配置捆绑在一起的方式。通过包，我们可以使用 [拆分配置](/home-assistant/docs/configuration/splitting_configuration) 中介绍的任何 `!include` 指令来包含多个集成或集成的部分内容。
 

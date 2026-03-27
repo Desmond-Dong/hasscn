@@ -1,7 +1,9 @@
 ---
 title: 海妖实体
+description: '警报器实体是一种设备，其主要用途是控制警报器设备，例如门铃或门铃。平台实体派生自homeassistant.components.siren.SirenEntity(https://github.com/home-assistant/home-assistant/blob/master/homeassista。'
 sidebar_label: 警笛
 ---
+# 海妖实体
 
 警报器实体是一种设备，其主要用途是控制警报器设备，例如门铃或门铃。平台实体派生自[`homeassistant.components.siren.SirenEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/siren/__init__.py)
 

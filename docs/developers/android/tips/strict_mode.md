@@ -1,7 +1,9 @@
 ---
 title: "严格模式"
+description: '当您在 Android 上以调试模式运行应用程序时，StrictMode 默认处于启用状态。 StrictMode 可帮助您识别主线程上的意外磁盘或网络访问，以及开发过程中的其他潜在问题。有关详细信息，请参阅StrictMode documentation(https://developer.android.。'
 sidebar_label: "严格模式"
 ---
+# 严格模式
 
 ## 调试版本中的严格模式
 

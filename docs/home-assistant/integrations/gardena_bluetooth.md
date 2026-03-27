@@ -1,6 +1,6 @@
 ---
 title: Gardena Bluetooth
-description: 关于如何在 Home Assistant 中集成 Gardena 蓝牙设备的说明。
+description: 'Gardena Bluetooth 集成可让用户将 Gardena 蓝牙设备接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Number
@@ -21,6 +21,7 @@ ha_platforms:
   - valve
 ha_integration_type: device
 ---
+# Gardena Bluetooth
 
 **Gardena Bluetooth** 集成可让用户将 Gardena 蓝牙设备接入 Home Assistant。
 

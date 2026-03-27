@@ -1,7 +1,8 @@
 ---
 title: Home Assistant collaborates with KNX
-description: Home Assistant collaborates with KNX
+description: '<img src=''/home-assistant/images/blog/2023-06-27-knx-collaboration/social.png'' alt="The KNX 面板 in Home Assistant" class=''no-shadow'' <br<br。'
 ---
+# Home Assistant collaborates with KNX
 
 <img src='/home-assistant/images/blog/2023-06-27-knx-collaboration/social.png' alt="The KNX 面板 in Home Assistant" class='no-shadow'>
 <br><br>

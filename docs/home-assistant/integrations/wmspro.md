@@ -29,6 +29,7 @@ related:
     title: Technical documentation for WMS WebControl pro
 ha_dhcp: true
 ---
+# WMS WebControl pro
 
 **WMS WebControl pro** 集成可让您将 WAREMA 设备集成到 Home Assistant 中。
 

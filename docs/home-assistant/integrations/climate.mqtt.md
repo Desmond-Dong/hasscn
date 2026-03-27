@@ -1,12 +1,13 @@
 ---
 title: "MQTT climate (HVAC)"
-description: "有关如何将 MQTT 气候集成到 Home Assistant 中的说明。"
+description: 'MQTT 气候 集成可以让您控制支持 MQTT 的 HVAC 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.55
 ha_iot_class: Local Polling
 ha_domain: mqtt
 ---
+# MQTT climate (HVAC)
 
 **MQTT 气候** 集成可以让您控制支持 MQTT 的 HVAC 设备。
 

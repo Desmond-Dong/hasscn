@@ -1,6 +1,6 @@
 ---
 title: LinkPlay
-description: 使用 LinkPlay 集成连接和控制您的 LinkPlay 媒体播放器
+description: 'Home Assistant 的 LinkPlay 集成可让您控制多种基于 LinkPlay 协议的媒体播放器。该集成支持通过 Zeroconf(/home-assistant/integrations/zeroconf) 在本地网络中自动发现设备。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Media player
 ha_domain: linkplay
@@ -17,6 +17,7 @@ ha_platforms:
   - select
 ha_iot_class: Local Polling
 ---
+# LinkPlay
 
 Home Assistant 的 **LinkPlay** 集成可让您控制多种基于 LinkPlay 协议的媒体播放器。该集成支持通过 [Zeroconf](/home-assistant/integrations/zeroconf) 在本地网络中自动发现设备。
 

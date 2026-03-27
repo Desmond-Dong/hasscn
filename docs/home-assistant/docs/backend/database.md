@@ -1,7 +1,8 @@
 ---
 title: 数据库
-description: 关于 Home Assistant 使用的数据库的详细信息。
+description: 'Home Assistant 使用数据库来存储历史记录和跟踪的数据及参数。默认使用的数据库是 SQLite(https://www.sqlite.org/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 数据库
 
 Home Assistant 使用数据库来存储历史记录和跟踪的数据及参数。默认使用的数据库是 [SQLite](https://www.sqlite.org/)。
 

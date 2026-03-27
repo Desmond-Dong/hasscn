@@ -1,6 +1,6 @@
 ---
 title: Tailscale
-description: 有关如何将 Tailscale 集成到 Home Assistant 中的说明。
+description: 'The Tailscale integration connects to the Tailscale(https://www.tailscale.com) API to monitor devices in your Tailscale network (Tailnet). Use this。'
 ha_category:
   - Binary sensor
   - Network
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Tailscale
 
 The **Tailscale** integration connects to the [Tailscale](https://www.tailscale.com) API to monitor devices in your Tailscale network (Tailnet). Use this integration to create automations based on device connectivity, track usage patterns, or receive notifications when devices go online or offline.
 

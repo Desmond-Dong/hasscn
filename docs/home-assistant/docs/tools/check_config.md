@@ -1,7 +1,8 @@
 ---
 title: 检查配置
-description: 用于检查当前配置的脚本
+description: '在启动 Home Assistant 之前测试您的 configuration.yaml 文件所做的任何更改。此脚本允许您测试更改而无需重启 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 检查配置
 
 在启动 Home Assistant 之前测试您的 **`configuration.yaml`** 文件所做的任何更改。此脚本允许您测试更改而无需重启 Home Assistant。
 

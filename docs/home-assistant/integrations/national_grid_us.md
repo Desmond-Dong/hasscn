@@ -1,6 +1,6 @@
 ---
 title: National Grid US
-description: "使用 Opower 集成连接和控制您的国家电网美国设备"
+description: 'Support for devices by National Grid US in Home Assistant is provided by the Opower(/home-assistant/integrations/opower) integration. 本页属于 Home Assistant。'
 
 ha_category:
   - Energy
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Cloud Polling
 ---
+# National Grid US
 
 Support for devices by National Grid US in Home Assistant is provided by the [Opower](/home-assistant/integrations/opower) integration.
 

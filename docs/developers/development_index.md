@@ -1,7 +1,9 @@
 ---
 title: "Home Assistant 核心"
+description: 'Home Assistant Core 是从零构建的，并且可以通过集成轻松扩展。本节重点介绍如何开发集成。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 介绍
 ---
+# Home Assistant 核心
 
 Home Assistant Core 是从零构建的，并且可以通过集成轻松扩展。本节重点介绍如何开发集成。
 

@@ -1,6 +1,6 @@
 ---
 title: VLC media player
-description: 关于如何将 VLC 播放器集成到 Home Assistant 的说明。
+description: 'VLC media player 集成允许您控制 VLC media player(https://www.videolan.org/vlc/index.html)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.35
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# VLC media player
 
 **VLC media player** 集成允许您控制 [VLC media player](https://www.videolan.org/vlc/index.html)。
 

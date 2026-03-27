@@ -1,6 +1,6 @@
 ---
 title: DLNA Digital Media Server
-description: 关于使用 Home Assistant 访问存储在 DLNA DMS 设备上的媒体的说明。
+description: 'DLNA Digital Media Server 集成允许您浏览和播放来自 DLNA Digital Media Server(https://www.dlna.org/) 的媒体。配置的 DMS 设备充当媒体源(/home-assistant/integrations/mediasource/)。'
 ha_category:
   - Media source
 ha_release: 2022.3
@@ -12,6 +12,7 @@ ha_domain: dlna_dms
 ha_ssdp: true
 ha_integration_type: service
 ---
+# DLNA Digital Media Server
 
 **DLNA Digital Media Server** 集成允许您浏览和播放来自 [DLNA Digital Media Server](https://www.dlna.org/) 的媒体。配置的 DMS 设备充当[媒体源](/home-assistant/integrations/media_source/)，可以在媒体面板中浏览。
 

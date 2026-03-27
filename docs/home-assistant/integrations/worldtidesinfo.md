@@ -1,6 +1,6 @@
 ---
 title: World Tides
-description: 关于如何将潮汐信息添加到 Home Assistant 的说明。
+description: 'World Tides 集成使用 World Tides(https://www.worldtides.info/) 的数据，为全球任意位置提供潮汐预测信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
 ha_release: 0.52
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# World Tides
 
 **World Tides** 集成使用 [World Tides](https://www.worldtides.info/) 的数据，为全球任意位置提供潮汐预测信息。
 

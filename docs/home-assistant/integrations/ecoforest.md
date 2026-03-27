@@ -1,6 +1,6 @@
 ---
 title: Ecoforest
-description: 关于如何将 Ecoforest 壁炉与 Home Assistant 集成的说明。
+description: 'Ecoforest 集成允许在 Home Assistant 中监控和控制本地 Ecoforest(https://ecoforest.com) 壁炉。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: '2023.10'
@@ -15,6 +15,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Ecoforest
 
 **Ecoforest** 集成允许在 Home Assistant 中监控和控制本地 [Ecoforest](https://ecoforest.com) 壁炉。
 

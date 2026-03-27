@@ -1,6 +1,6 @@
 ---
 title: NextDNS
-description: "有关如何在 Home Assistant 中集成 NextDNS 的说明。"
+description: 'NextDNS 是一项 DNS 服务，可防止各种安全威胁，阻止网站和应用程序中的 ADS 和跟踪器，并在所有设备和所有网络上为儿童提供安全且受监督的互联网。 NextDNS 集成允许您监控 NextDNS 统计数据并控制其配置。 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Network
@@ -19,6 +19,8 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# NextDNS
+
 NextDNS 是一项 DNS 服务，可防止各种安全威胁，阻止网站和应用程序中的 ADS 和跟踪器，并在所有设备和所有网络上为儿童提供安全且受监督的互联网。 NextDNS 集成允许您监控 NextDNS 统计数据并控制其配置。
 
 ## Prerequisites

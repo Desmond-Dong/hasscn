@@ -1,6 +1,6 @@
 ---
 title: QNAP
-description: 关于如何在 Home Assistant 中集成 QNAP 传感器的说明。
+description: 'QNAP integration 允许从您的 QNAP NAS(https://www.qnap.com/en-us/) 获取各种统计数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: 0.38
@@ -13,6 +13,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@disforw'
 ---
+# QNAP
 
 **QNAP** integration 允许从您的 [QNAP NAS](https://www.qnap.com/en-us/) 获取各种统计数据。
 

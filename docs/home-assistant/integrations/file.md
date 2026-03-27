@@ -1,6 +1,6 @@
 ---
 title: File
-description: 关于如何将读取文件的传感器集成到 Home Assistant 的说明。
+description: 'File 集成允许您将通知存储到文件中，或者根据文件内容创建传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
   - Sensor
@@ -19,6 +19,7 @@ related:
     title: Configuration file
 ha_config_flow: true
 ---
+# File
 
 **File** 集成允许您将通知存储到文件中，或者根据文件内容创建传感器。
 

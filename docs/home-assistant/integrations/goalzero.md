@@ -1,6 +1,6 @@
 ---
 title: Goal Zero Yeti
-description: 关于如何将 Goal Zero Yeti 与 Home Assistant 集成的说明
+description: 'Goal Zero Yeti 集成会从支持 Wi-Fi 的 Goal Zero Yeti(https://www.goalzero.com) 设备中获取数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: device
 ---
+# Goal Zero Yeti
 
 **Goal Zero Yeti** 集成会从支持 Wi-Fi 的 [Goal Zero Yeti](https://www.goalzero.com) 设备中获取数据。
 

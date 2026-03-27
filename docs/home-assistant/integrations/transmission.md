@@ -1,6 +1,6 @@
 ---
 title: Transmission
-description: 关于如何在 Home Assistant 中集成 Transmission 的说明。
+description: 'The Transmission integration allows you to monitor your Transmission(https://www.transmissionbt.com/) BitTorrent downloads from within Home Assistant and。'
 ha_category:
   - Downloading
   - Sensor
@@ -19,6 +19,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Transmission
 
 The **Transmission** integration allows you to monitor your [Transmission](https://www.transmissionbt.com/) BitTorrent downloads from within Home Assistant and set up automations based on that information.
 

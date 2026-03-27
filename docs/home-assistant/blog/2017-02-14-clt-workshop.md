@@ -1,7 +1,8 @@
 ---
 title: CLT 2017 工作坊
-description: Home Assistant 将亮相 Chemnitzer Linux-Tage 2017 工作坊
+description: '我们将在 Chemnitzer Linux-Tage 2017clt 举办一场 Home Assistant 工作坊。首先，我会介绍安装、设置和配置流程。第二部分将专门讲解自动化。最后，我们还会聊聊如何集成新的平台或组件。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# CLT 2017 工作坊
 
 我们将在 [Chemnitzer Linux-Tage 2017][clt] 举办一场 Home Assistant 工作坊。首先，我会介绍安装、设置和配置流程。第二部分将专门讲解自动化。最后，我们还会聊聊如何集成新的平台或组件。
 

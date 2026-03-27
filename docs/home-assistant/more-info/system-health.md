@@ -1,7 +1,8 @@
 ---
 title: 系统健康
-description: 关于系统健康的更多信息。
+description: '系统健康会显示与您的 Home Assistant 实例相关的信息，包括系统架构、操作系统及其版本、Home Assistant 安装类型和版本、Python 版本、前端版本，以及您拥有的仪表盘(/home-assistant/dashboards/)数量等数据。'
 ---
+# 系统健康
 
 系统健康会显示与您的 Home Assistant 实例相关的信息，包括系统架构、操作系统及其版本、Home Assistant 安装类型和版本、Python 版本、前端版本，以及您拥有的[仪表盘](/home-assistant/dashboards/)数量等数据。
 

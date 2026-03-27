@@ -1,8 +1,9 @@
 ---
 title: 0.40.2 and broken dependencies
-description: Due to a bug in our dependency 安装, some older versions can
+description: 'TL; DR: We have just released 版本 0.40.2 that includes a fix related to the 安装 of dependencies. 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
   get into a broken state.
 ---
+# 0.40.2 and broken dependencies
 
 TL; DR: We have just released 版本 0.40.2 that includes a fix related to the 安装 of dependencies.
 

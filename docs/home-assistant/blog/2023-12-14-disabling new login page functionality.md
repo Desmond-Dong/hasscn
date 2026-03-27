@@ -1,7 +1,8 @@
 ---
 title: 停用新版登录页面功能
-description: 为什么我们会在 2023.12.3 补丁版中移除 2023.12 发布时引入的重新设计登录页面。
+description: '在发布 2023.12(https://www.home-assistant.io/博客/2023/12/06/发布-202312/)中，我们为 Home Assistant 添加了一个重新设计的登录页面。它会检测你是否通过本地家庭网络访问 Home Assistant。'
 ---
+# 停用新版登录页面功能
 
 在[发布 2023.12](https://www.home-assistant.io/博客/2023/12/06/发布-202312/)中，我们为 Home Assistant 添加了一个重新设计的登录页面。它会检测你是否通过本地家庭网络访问 Home Assistant；如果是，就会显示一个新的登录界面，并展示你的用户资料。如果你是从家庭网络之外访问 Home Assistant，登录页面仍会像以前一样要求你输入用户名和密码。
 

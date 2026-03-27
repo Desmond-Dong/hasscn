@@ -1,6 +1,6 @@
 ---
 title: Neurio energy
-description: "有关如何将 Neurio 集成到 Home Assistant 中的说明。"
+description: '将您的 Neurio(https://neur.io/) 仪表信息集成到 Home Assistant 中。要获取 API 密钥和密码，请登录您的 Neurio 帐户(https://my.neur.io/settings/applications/register) 并注册应用程序。'
 
 ha_category:
   - Energy
@@ -15,6 +15,8 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Neurio energy
+
 将您的 [Neurio](https://neur.io/) 仪表信息集成到 Home Assistant 中。要获取 API 密钥和密码，请登录您的 [Neurio 帐户](https://my.neur.io/#settings/applications/register) 并注册应用程序。请注意，主页 URL 和回调 URL 是可选的。
 
 To enable this integration in your installation, add the following to your `configuration.yaml` file.

@@ -1,7 +1,8 @@
 ---
 title: Home Assistant OS Release 6
-description: ''
+description: '<a href=''https://github.com/home-assistant/operating-system/releases/tag/6.0'' <img title=''Home Assistant OS 发布 6'' alt=''Home Assistant OS 发布 6 Logo''。'
 ---
+# Home Assistant OS Release 6
 
 <a href='https://github.com/home-assistant/operating-system/releases/tag/6.0'>
 <img title='Home Assistant OS 发布 6' alt='Home Assistant OS 发布 6 Logo'

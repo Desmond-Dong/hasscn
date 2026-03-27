@@ -1,6 +1,6 @@
 ---
 title: Flexit Nordic (BACnet)
-description: 关于如何将 Flexit 空气处理设备集成到 Home Assistant 的说明。
+description: '将 Flexit(https://www.flexit.no/en/) Nordic 系列空气处理设备集成到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 2024.1
@@ -19,6 +19,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_quality_scale: silver
 ---
+# Flexit Nordic (BACnet)
 
 将 [Flexit](https://www.flexit.no/en/) Nordic 系列空气处理设备集成到 Home Assistant。
 

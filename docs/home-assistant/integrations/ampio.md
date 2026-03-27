@@ -1,6 +1,6 @@
 ---
 title: Ampio Smart Smog System
-description: 关于在 Home Assistant 中设置 Ampio Smog 传感器的说明。
+description: 'Ampio 集成将查询 ampio.pl(http://smog.ampio.pl/) 的开放数据 API 来监控空气质量传感器站。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Health
   - Sensor
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Ampio Smart Smog System
 
 **Ampio** 集成将查询 [ampio.pl](http://smog.ampio.pl/) 的开放数据 API 来监控空气质量传感器站。
 

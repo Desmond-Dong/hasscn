@@ -1,6 +1,6 @@
 ---
 title: Coinbase
-description: 关于如何将 Coinbase 传感器添加到 Home Assistant 的说明。
+description: 'Coinbase 集成允许您从 Coinbase(https://coinbase.com) 访问账户余额和汇率。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Finance
   - Sensor
@@ -15,6 +15,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_integration_type: service
 ---
+# Coinbase
 
 **Coinbase** 集成允许您从 [Coinbase](https://coinbase.com) 访问账户余额和汇率。
 

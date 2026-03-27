@@ -1,6 +1,6 @@
 ---
 title: Lawn mower
-description: 关于如何在 Home Assistant 中设置和使用割草机器人的说明。
+description: 'Lawn mower 集成可让机器人割草机的控制能力在 Home Assistant 中体现出来。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2023.9
 ha_domain: lawn_mower
 ha_quality_scale: internal
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Lawn mower
 
 **Lawn mower** 集成可让机器人割草机的控制能力在 Home Assistant 中体现出来。
 

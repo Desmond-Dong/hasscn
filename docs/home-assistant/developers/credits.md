@@ -1,7 +1,8 @@
 ---
 title: 致谢
-description: 对 Home Assistant 做出贡献的开发者致谢。
+description: '本页面列出了以各种方式为 Home Assistant 做出贡献的人员名单。将鼠标悬停在用户名上可查看其贡献内容。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 致谢
 
 本页面列出了以各种方式为 Home Assistant 做出贡献的人员名单。将鼠标悬停在用户名上可查看其贡献内容。
 

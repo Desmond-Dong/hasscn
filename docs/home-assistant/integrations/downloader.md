@@ -1,6 +1,6 @@
 ---
 title: Downloader
-description: 关于如何为 Home Assistant 设置下载器集成的说明。
+description: 'Downloader 集成提供了一个用于下载文件的操作。如果下载目录不存在，集成会报错并停止设置。该目录必须对运行 Home Assistant 的用户可写。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Downloading
 ha_release: pre 0.7
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_integration_type: service
 ha_config_flow: true
 ---
+# Downloader
 
 **Downloader** 集成提供了一个用于下载文件的操作。如果下载目录不存在，集成会报错并停止设置。该目录必须对运行 Home Assistant 的用户可写。
 

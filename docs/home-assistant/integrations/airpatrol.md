@@ -1,6 +1,6 @@
 ---
 title: AirPatrol
-description: 关于将 Airpatrol 空调控制器集成到 Home Assistant 的说明。
+description: 'Airpatrol integration 允许您通过 Home Assistant 中的 Airpatrol(https://www.airpatrol.com/) 设备控制空调机组。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 2026.1
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: bronze
 ---
+# AirPatrol
 
 **Airpatrol** integration 允许您通过 Home Assistant 中的 [Airpatrol](https://www.airpatrol.com/) 设备控制空调机组。
 

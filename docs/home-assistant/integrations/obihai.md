@@ -1,6 +1,6 @@
 ---
 title: Obihai
-description: "有关如何将 Obihai 设备集成到 Home Assistant 的说明。"
+description: 'The Obihai integration allows you to view the call status for your Obihai devices(https://www.obitalk.com/info/productshomesection). 本页属于 Home Assistant。'
 
 ha_iot_class: Local Polling
 ha_category:
@@ -17,6 +17,7 @@ ha_platforms:
 ha_integration_type: device
 ha_dhcp: true
 ---
+# Obihai
 
 The **Obihai** integration allows you to view the call status for your [Obihai devices](https://www.obitalk.com/info/products#home_section).
 

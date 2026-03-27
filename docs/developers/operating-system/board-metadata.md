@@ -1,7 +1,9 @@
 ---
 title: "开发板元数据"
+description: '每个受支持的开发板都有一个名为 meta 的 Home Assistant Operating System（HAOS）专用元数据文件。本文档说明其中的变量及可用选项。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: Metadata
 ---
+# 开发板元数据
 
 每个受支持的开发板都有一个名为 `meta` 的 Home Assistant Operating System（HAOS）专用元数据文件。本文档说明其中的变量及可用选项。
 

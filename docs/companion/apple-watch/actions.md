@@ -1,7 +1,9 @@
 ---
 title: "（旧版）iOS 操作"
+description: '您可以通过将脚本/场景添加到手表配置(/companion/apple-watch/home)来直接运行脚本和激活场景。 iOS 操作将不再获得未来支持。请迁移到其他解决方案，如 脚本 小部件或 Apple Watch 配置。 本页属于 Home Assistant 配套应用文档。'
 id: "watch-actions"
 ---
+# （旧版）iOS 操作
 
 :::info 继续之前
 您可以通过将脚本/场景添加到手表[配置](/companion/apple-watch/#home)来直接运行脚本和激活场景。

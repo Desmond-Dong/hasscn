@@ -1,6 +1,6 @@
 ---
 title: LetPot
-description: 关于如何将 LetPot 水培花园集成到 Home Assistant 的说明。
+description: 'The LetPot integration allows you to integrate your LetPot(https://letpot.com/) hydroponic gardens/systems into Home Assistant. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Number
@@ -24,6 +24,7 @@ ha_platforms:
   - time
 ha_quality_scale: silver
 ---
+# LetPot
 
 The **LetPot** integration allows you to integrate your [LetPot](https://letpot.com/) hydroponic gardens/systems into Home Assistant.
 

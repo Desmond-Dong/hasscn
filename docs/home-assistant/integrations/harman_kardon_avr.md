@@ -1,6 +1,6 @@
 ---
 title: Harman Kardon AVR
-description: 关于如何将 Harman Kardon AVR 网络接收器集成到 Home Assistant 的说明。
+description: 'Harman Kardon AVR 集成允许您从 Home Assistant 控制 Harman Kardon 网络接收器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Harman Kardon AVR
 
 **Harman Kardon AVR** 集成允许您从 Home Assistant 控制 Harman Kardon 网络接收器。
 

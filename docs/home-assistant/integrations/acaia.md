@@ -1,6 +1,6 @@
 ---
 title: Acaia
-description: 关于将 Acaia 智能咖啡秤集成到 Home Assistant 的说明。
+description: 'Acaia integration 允许您通过 Home Assistant 控制 Acaia(https://acaia.co/) 秤。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2024.12
 ha_category:
   - Binary sensor
@@ -20,6 +20,7 @@ ha_codeowners:
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
+# Acaia
 
 **Acaia** integration 允许您通过 Home Assistant 控制 [Acaia](https://acaia.co/) 秤。
 

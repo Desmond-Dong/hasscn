@@ -1,7 +1,7 @@
 ---
 title: "Plex"
+description: 'Music Assistant 支持使用 Plex（音乐库）。由 <a href="https://github.com/micha91" target="blank" rel="noopener noreferrer"micha91</a 贡献，由 <a。'
 ---
-
 # Plex 提供者 <img src="/assets/icons/plex-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持使用 Plex（音乐库）。由 <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> 贡献，由 <a href="https://github.com/anatosun" target="_blank" rel="noopener noreferrer">anatosun</a> 维护。

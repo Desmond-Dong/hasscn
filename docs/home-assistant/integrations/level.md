@@ -1,6 +1,6 @@
 ---
 title: Level
-description: 使用 Matter 集成连接和控制您的 Level Matter 设备
+description: 'Level(https://level.co/) 致力于确保其产品保持最新状态，并可在 Home Assistant 中顺利使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: '2025.10'
 ha_iot_class: Local Push
 ha_category:
@@ -12,6 +12,7 @@ ha_platforms:
 ha_iot_standard: matter
 ha_brand: true
 ---
+# Level
 
 [Level](https://level.co/) 致力于确保其产品保持最新状态，并可在 Home Assistant 中顺利使用。
 

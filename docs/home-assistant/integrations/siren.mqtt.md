@@ -1,6 +1,6 @@
 ---
 title: "MQTT Siren"
-description: "有关如何将 MQTT 警报器集成到 Home Assistant 的说明。"
+description: 'The MQTT Siren integration lets you control your MQTT enabled sirens and text based notification devices. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Siren
@@ -8,6 +8,7 @@ ha_release: 2022.3
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Siren
 
 The **MQTT Siren** integration lets you control your MQTT enabled sirens and text based notification devices.
 

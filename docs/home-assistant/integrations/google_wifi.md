@@ -1,6 +1,6 @@
 ---
 title: Google Wifi
-description: 关于如何将 Google Wifi/OnHub 路由器集成到 Home Assistant 的说明。
+description: 'Google Wifi 集成用于显示 Google Wifi（或 OnHub）路由器公开提供的状态信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Google Wifi
 
 **Google Wifi** 集成用于显示 Google Wifi（或 OnHub）路由器公开提供的状态信息。
 

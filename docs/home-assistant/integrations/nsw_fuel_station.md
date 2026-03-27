@@ -1,6 +1,6 @@
 ---
 title: NSW Fuel Station Price
-description: "有关如何将新南威尔士州加油站价格集成到 Home Assistant 的说明。"
+description: 'The NSW Fuel Station Price integration uses the NSW Fuel Check App(https://www.fuelcheck.nsw.gov.au/app) data as a source for current fuel price data.。'
 
 ha_category:
   - Car
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# NSW Fuel Station Price
 
 The **NSW Fuel Station Price** integration uses the [NSW Fuel Check App](https://www.fuelcheck.nsw.gov.au/app) data as a source for current fuel price data.
 

@@ -1,6 +1,6 @@
 ---
 title: Smart Meter Texas
-description: 有关如何将 Smart Meter Texas 集成到 Home Assistant 的说明。
+description: 'The Smart Meter Texas(https://www.smartmetertexas.com/) integration allows Texas residents to integrate their electric meters into Home Assistant. This。'
 ha_category:
   - Sensor
 ha_release: 0.115
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: integration
 ---
+# Smart Meter Texas
 
 The [Smart Meter Texas](https://www.smartmetertexas.com/) integration allows Texas residents to integrate their electric meters into Home Assistant. This integration will create a sensor for each meter that shows the current reading.
 

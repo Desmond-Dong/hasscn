@@ -1,6 +1,6 @@
 ---
 title: FFmpeg Noise
-description: 关于如何集成基于 FFmpeg 的噪声二值传感器的说明
+description: 'FFmpeg Noise 集成允许您在 Home Assistant 中使用任何视频或音频源和 FFmpeg(https://www.ffmpeg.org/) 进行各种传感器检测。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Image processing
 ha_iot_class: Calculated
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# FFmpeg Noise
 
 **FFmpeg Noise** 集成允许您在 Home Assistant 中使用任何视频或音频源和 [FFmpeg](https://www.ffmpeg.org/) 进行各种传感器检测。
 

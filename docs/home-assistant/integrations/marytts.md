@@ -1,6 +1,6 @@
 ---
 title: MaryTTS
-description: 关于如何为 Home Assistant 设置 MaryTTS 的说明。
+description: 'MaryTTS 集成使用 MaryTTS(https://marytts.github.io/) 文字转语音引擎，以自然语音朗读文本。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Text-to-speech
 ha_iot_class: Local Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# MaryTTS
 
 **MaryTTS** 集成使用 [MaryTTS](https://marytts.github.io/) 文字转语音引擎，以自然语音朗读文本。
 

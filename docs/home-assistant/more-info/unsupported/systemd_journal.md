@@ -1,7 +1,8 @@
 ---
 title: Systemd Journal
-description: 关于 systemd journal 为何将安装标记为不支持的更多信息。
+description: 'Supervisor 需要访问 systemd journal 以获取各个系统组件和应用（以前称为加载项）的日志。如果 journal 不可访问，这些日志将受到限制或完全不可用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Systemd Journal
 
 ## 问题
 

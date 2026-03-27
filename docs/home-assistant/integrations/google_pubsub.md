@@ -1,6 +1,6 @@
 ---
 title: Google Pub/Sub
-description: Google Pub/Sub 集成设置
+description: 'Google Pub/Sub 集成允许您挂钩到 Home Assistant 事件总线并将事件发送到 Google Cloud Pub/Sub(https://cloud.google.com/pubsub/docs/overview)。当前 GCP。'
 ha_category:
   - History
 ha_release: 0.88
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Google Pub/Sub
 
 **Google Pub/Sub** 集成允许您挂钩到 Home Assistant 事件总线并将事件发送到 [Google Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/overview)。当前 GCP 的[免费层](https://cloud.google.com/free/)应该允许您平均每 2 秒同步约 1 个事件（每月 200 万次调用）。
 

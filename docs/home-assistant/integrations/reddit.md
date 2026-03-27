@@ -1,6 +1,6 @@
 ---
 title: Reddit
-description: 如何将 Reddit 传感器集成到 Home Assistant 中。
+description: 'Reddit 集成可接入 Reddit(https://reddit.com/) 的数据，用于监控您喜爱的子版块。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 0.89
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Reddit
 
 **Reddit** 集成可接入 [Reddit](https://reddit.com/) 的数据，用于监控您喜爱的子版块。
 

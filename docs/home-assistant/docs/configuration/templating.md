@@ -1,8 +1,7 @@
 ---
 title: "模板"
-description: "关于如何使用 Home Assistant 模板功能的说明。"
+description: '这是 Home Assistant 的一项高级功能。你需要对以下内容有基本了解：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 这是 Home Assistant 的一项高级功能。你需要对以下内容有基本了解：
 
 - [Home Assistant 架构](/home-assistant/developers/architecture/)，尤其是状态相关概念。
@@ -1528,13 +1527,13 @@ Home Assistant 提供了两个附加功能，使宏变得更加强大。
 # 传入值：
 {“素数”：[2,3,5,7,11,13]}
 
-# 提取第一个素数
+## 提取第一个素数
 {{ value_json.primes[0] }}
 
-# 格式化输出
+## 格式化输出
 {{“%+.1f”|值_json }}
 
-# 数学
+## 数学
 {{ value_json | 浮动 * 1024 如果 is_number(value_json) }}
 {{ float(value_json) * (2**10) if is_number(value_json) }}
 {{ value_json | 记录 if is_number(value_json) }}
@@ -1544,7 +1543,7 @@ Home Assistant 提供了两个附加功能，使宏变得更加强大。
 {{ tan(pi) }}
 {{ sqrt(e) }}
 
-# 时间戳
+## 时间戳
 {{ value_json.tst | 本地计时器 }}
 {{ value_json.tst | 计时器_UTC }}
 {{ value_json.tst | timestamp_custom('%Y', True) }}

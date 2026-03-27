@@ -1,7 +1,8 @@
 ---
 title: Systemd-Resolved
-description: 关于 systemd-resolved 为何将安装标记为不支持的更多信息。
+description: 'systemd-resolved 通过 D-Bus 用于解析 Home Assistant、Supervisor 和应用（以前称为加载项）发出的 DNS 查询。没有它，您的安装中的 DNS 将无法正常工作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Systemd-Resolved
 
 ## 问题
 

@@ -1,7 +1,8 @@
 ---
 title: 备份应急工具包
-description: 关于备份应急工具包的信息
+description: '存储在 Home Assistant Cloud 上的备份(/home-assistant/common-tasks/general/backups)始终使用 AES-128(https://en.wikipedia.org/wiki/AdvancedEncryptionStandard) 加密。'
 ---
+# 备份应急工具包
 
 存储在 Home Assistant Cloud 上的[备份](/home-assistant/common-tasks/general/#backups)始终使用 [AES-128](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 加密。对于存储在[其他备份位置](/home-assistant/common-tasks/general/#defining-backup-locations)的备份，您可以选择是否加密备份。备份应急工具包包含[恢复备份](/home-assistant/common-tasks/general/#restoring-a-backup)所需的信息，例如加密密钥和相关备份的元数据。
 

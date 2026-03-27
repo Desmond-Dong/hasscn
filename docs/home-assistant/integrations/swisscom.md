@@ -1,6 +1,6 @@
 ---
 title: Swisscom Internet-Box
-description: 有关如何将 Swisscom Internet-Box 集成到 Home Assistant 的说明。
+description: 'The Swisscom Internet-Box integration offers presence detection by looking at connected devices to an Internet-Box(https://www.swisscom.ch/en/residential/h。'
 ha_category:
   - Presence detection
 ha_release: 0.32
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Swisscom Internet-Box
 
 The **Swisscom Internet-Box** integration offers presence detection by looking at connected devices to an [Internet-Box](https://www.swisscom.ch/en/residential/help/device/internet-router.html) router from [Swisscom](https://www.swisscom.ch) which is an Internet provider in Switzerland.
 

@@ -1,6 +1,6 @@
 ---
 title: Z-Wave
-description: 关于如何通过 Z-Wave JS 将 Z-Wave 集成到 Home Assistant 的说明。
+description: 'Z-Wave 集成允许您通过 Z-Wave JS(https://zwave-js.github.io/node-zwave-js//) 驱动程序从 Home Assistant 控制 Z-Wave 网络。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 featured: true
 ha_category:
   - Binary sensor
@@ -50,6 +50,7 @@ related:
   - docs: /docs/z-wave/controllers/
     title: 其他 Z-Wave 适配器
 ---
+# Z-Wave
 
 **Z-Wave** 集成允许您通过 [Z-Wave JS](https://zwave-js.github.io/node-zwave-js/#/) 驱动程序从 Home Assistant 控制 Z-Wave 网络。
 

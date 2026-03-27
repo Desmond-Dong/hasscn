@@ -1,6 +1,6 @@
 ---
 title: Modbus
-description: 关于如何集成 modbus 和平台的说明。
+description: 'modbus(http://www.modbus.org/) 是一种用于控制 PLC（可编程逻辑控制器）和 RTU（远程终端单元）的通信协议。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Hub
@@ -20,7 +20,6 @@ related:
   - docs: /docs/configuration/
     title: 配置文件
 ---
-
 [modbus](http://www.modbus.org/) 是一种用于控制 PLC（可编程逻辑控制器）和 RTU（远程终端单元）的通信协议。
 
 集成严格遵守 [协议规范](https://www.modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf)，使用 [pymodbus](https://github.com/pymodbus-dev/pymodbus) 进行协议实现。
@@ -335,7 +334,7 @@ modbus:
     stopbits: 1
 ```
 
-# 配置 Modbus 实体
+## 配置 Modbus 实体
 
 modbus 实体分组在每个 modbus 通信条目下方。
 
@@ -1716,7 +1715,7 @@ modbus:
 | swap: word_byte | 否    | 否    | 否  | 是  | 是  |
 
 
-# 动作
+## 动作
 
 除了特定于平台的操作之外，modbus 集成还提供两种通用写入操作。
 
@@ -1761,7 +1760,7 @@ data:
 | 设置暖通空调模式 | 设置 HVAC 模式。需要传入 `value` ，这是所需的模式。 `value` 应是有效的 HVAC 模式。所需状态与要写入 HVAC 模式寄存器的值之间必须存在映射。如果定义了开/关寄存器，则执行此操作还将设置开/关寄存器为适当的值。 |
 
 
-# 提交问题
+## 提交问题
 
 打开问题时，请添加您当前的配置（或缩小版本），至少包含：
 
@@ -1781,6 +1780,6 @@ logger:
 
 并重新启动 Home Assistant，重现问题，并将日志包含在问题中。
 
-# 基于 Modbus 开发
+## 基于 Modbus 开发
 
 唯一推荐的方法是继承所需的实体。

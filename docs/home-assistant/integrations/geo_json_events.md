@@ -1,6 +1,6 @@
 ---
 title: GeoJSON
-description: 关于如何将 GeoJSON 订阅集成到 Home Assistant 的说明。
+description: 'GeoJSON 集成可让您导入 GeoJSON feed 中的事件。它会从 feed 中获取事件，并根据与 Home Assistant 位置的距离筛选后显示这些事件的信息。 GeoJSON feed 中的所有条目都必须定义 geometry，通常是带有地理坐标的点或多边形。'
 ha_category:
   - Geolocation
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_platforms:
   - geo_location
 ha_integration_type: service
 ---
+# GeoJSON
 
 **GeoJSON** 集成可让您导入 GeoJSON feed 中的事件。它会从 feed 中获取事件，并根据与 Home Assistant 位置的距离筛选后显示这些事件的信息。
 GeoJSON feed 中的所有条目都必须定义 `geometry`，通常是带有地理坐标的点或多边形。此外，此平台会在条目的 `properties` 中查找 `title` 键，并将其用作实体名称。

@@ -1,6 +1,6 @@
 ---
 title: 西班牙每小时电价（PVPC）
-description: 有关如何在 Home Assistant 中设置 PVPC 每小时定价传感器的说明。
+description: '此集成使用官方 API 从 <https://www.esios.ree.es/en/pvpc 获取西班牙每小时电价。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_release: '0.108'
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# 西班牙每小时电价（PVPC）
 
 此集成使用官方 API 从 <https://www.esios.ree.es/en/pvpc> 获取西班牙每小时电价。
 

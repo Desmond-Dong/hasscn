@@ -1,7 +1,9 @@
 ---
 title: 锁定实体
+description: '锁实体能够被锁定和解锁。可以选择使用用户代码来保护锁定和解锁。有些锁还允许打开闩锁，这也可以使用用户代码进行保护。平台实体派生自homeassistant.components.lock.LockEntity(https://github.com/home-assistant/core/blob/dev/ho。'
 sidebar_label: 锁
 ---
+# 锁定实体
 
 锁实体能够被锁定和解锁。可以选择使用用户代码来保护锁定和解锁。有些锁还允许打开闩锁，这也可以使用用户代码进行保护。平台实体派生自[`homeassistant.components.lock.LockEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/lock/__init__.py)。
 

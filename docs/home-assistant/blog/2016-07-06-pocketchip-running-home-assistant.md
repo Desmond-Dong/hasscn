@@ -1,7 +1,8 @@
 ---
 title: 在 PocketCHIP 上运行 Home Assistant
-description: 在 PocketCHIP 上体验 Home Assistant。
+description: '<img src=''/home-assistant/images/blog/2016-07-pocketchip/pocketchip-logo.png'' style=''clear: right; border:none; box-shadow: none; float: right。'
 ---
+# 在 PocketCHIP 上运行 Home Assistant
 
 <img src='/home-assistant/images/blog/2016-07-pocketchip/pocketchip-logo.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='200' />
 一年多前，我参加了 [Next Thing Co.](https://www.nextthing.co/) 发起的 [Kickstarter 众筹](https://www.kickstarter.com/projects/1598272670/chip-the-worlds-first-9-computer/description)——“CHIP：世界上第一台 9 美元电脑”。我选择 PocketCHIP 正是因为它的设计理念：有显示屏、内置存储（因此不需要 SD 卡）、电池供电、还有键盘，这些特性都很吸引人。上周它终于到货了……

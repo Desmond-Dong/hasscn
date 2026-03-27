@@ -3,6 +3,7 @@ title: '0.8: Honeywell Thermostats, Orvibo 开关 and Z-Wave 开关 and 灯光 '
 description: Home Assistant 0.8 can now interact with Honeywell thermostats, Orvibo
   开关 and has improved Z-Wave support.
 ---
+# 0.8: Honeywell Thermostats, Orvibo 开关 and Z-Wave 开关 and 灯光 
 
 <img src='/home-assistant/images/screenshots/custom-icons.png' style='float: right;' />我们一直在努力准备这个最新发布。本次发布的一大亮点，是在前端引入了一套扩展图标集（感谢 [@happyleavesaoc] 提供创意和原型）。要开始自定义，请从 [Material Design Icons] 中选择任意图标，在名称前加上 `mdi:`，然后将其放入 `configuration.yaml` 中的 `customize` 部分：
 

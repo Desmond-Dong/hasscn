@@ -1,7 +1,7 @@
 ---
 title: "Radio Browser"
+description: 'Music Assistant 支持 <a href="https://www.radio-browser.info/" target="blank" rel="noopener noreferrer"RadioBrowser</a，允许轻松将在线电台添加到 Music Assistant。'
 ---
-
 # Radio Browser 提供者 <img src="/assets/icons/radiobrowser_icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 <a href="https://www.radio-browser.info/" target="_blank" rel="noopener noreferrer">RadioBrowser</a>，允许轻松将在线电台添加到 Music Assistant。

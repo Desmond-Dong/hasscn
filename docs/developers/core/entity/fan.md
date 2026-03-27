@@ -1,7 +1,9 @@
 ---
 title: 粉丝实体
+description: '风扇实体是一种控制风扇不同矢量（例如速度、方向和振动）的设备。从''homeassistant.components.fan.FanEntity''(https://github.com/home-assistant/core/blob/dev/homeassistant/components/fan/init.。'
 sidebar_label: 扇子
 ---
+# 粉丝实体
 
 风扇实体是一种控制风扇不同矢量（例如速度、方向和振动）的设备。从['homeassistant.components.fan.FanEntity'](https://github.com/home-assistant/core/blob/dev/homeassistant/components/fan/__init__.py)派生实体平台。
 

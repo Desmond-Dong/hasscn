@@ -1,6 +1,6 @@
 ---
 title: Plex Media Server
-description: 关于如何将 Plex 集成到 Home Assistant 的说明。
+description: 'Plex Media Server integration 允许您将 Home Assistant 连接到 Plex Media Server(https://plex.tv)。配置完成后，正在流式传输的 Plex 客户端(https://www.plex.tv/apps-devices/)。'
 ha_category:
   - Button
   - Media player
@@ -21,6 +21,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: service
 ---
+# Plex Media Server
 
 **Plex Media Server** integration 允许您将 Home Assistant 连接到 [Plex Media Server](https://plex.tv)。配置完成后，正在流式传输的 [Plex 客户端](https://www.plex.tv/apps-devices/) 会显示为[媒体播放器](/home-assistant/integrations/media_player/)，并通过 Home Assistant 中的[传感器](/home-assistant/integrations/sensor/)报告播放状态和资料库大小。媒体播放器将允许您控制媒体播放并查看当前播放的项目。
 

@@ -1,7 +1,9 @@
 ---
 title: "验证"
+description: 'Home Assistant 内置了一套认证系统，允许不同用户与 Home Assistant 交互。该认证系统由多个部分组成。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 介绍
 ---
+# 验证
 
 Home Assistant 内置了一套认证系统，允许不同用户与 Home Assistant 交互。该认证系统由多个部分组成。
 

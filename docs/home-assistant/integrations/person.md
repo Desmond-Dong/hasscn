@@ -1,6 +1,6 @@
 ---
 title: Person
-description: 有关如何在 Home Assistant 中设置人员跟踪的说明。
+description: 'Person 集成允许将设备追踪器(/home-assistant/integrations/devicetracker/)实体关联到一个或多个人员实体。关联设备追踪器的状态更新会设置人员状态。使用多个设备追踪器时，人员状态按以下顺序确定：。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Presence detection
 ha_release: 0.88
@@ -9,6 +9,7 @@ ha_domain: person
 ha_iot_class: Calculated
 ha_integration_type: system
 ---
+# Person
 
 **Person** 集成允许将[设备追踪器](/home-assistant/integrations/device_tracker/)实体关联到一个或多个人员实体。关联设备追踪器的状态更新会设置人员状态。使用多个设备追踪器时，人员状态按以下顺序确定：
 

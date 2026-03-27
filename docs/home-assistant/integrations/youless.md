@@ -1,6 +1,6 @@
 ---
 title: YouLess
-description: 关于如何将 YouLess 设备集成到 Home Assistant 的说明。
+description: 'Home Assistant 的 YouLess 集成可让您读取由 YouLess(https://www.youless.nl/home.html) 创建的传感器中的计量值。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# YouLess
 
 Home Assistant 的 **YouLess** 集成可让您读取由 [YouLess](https://www.youless.nl/home.html) 创建的传感器中的计量值。
 

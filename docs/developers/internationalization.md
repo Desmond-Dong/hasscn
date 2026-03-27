@@ -1,6 +1,8 @@
 ---
 title: "国际化"
+description: 'Home Assistant 国际化项目包括准备 平台 和 前端 进行本地化，以及本地化字符串的实际翻译。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 国际化
 
 Home Assistant 国际化项目包括准备 平台 和 前端 进行本地化，以及本地化字符串的实际翻译。
 

@@ -1,6 +1,6 @@
 ---
 title: Dremel 3D Printer
-description: 关于将 Dremel 3D 打印机集成到 Home Assistant 的说明。
+description: 'Dremel 3D Printer(https://www.dremel.com/gn/en/digilab) 集成允许您通过 Home Assistant 监控您的 Dremel 3D 打印机及其进度。此集成目前仅支持 3D20、3D40 和 3D45。'
 ha_category:
   - 3D printing
   - Sensor
@@ -17,6 +17,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: device
 ---
+# Dremel 3D Printer
 
 [Dremel 3D Printer](https://www.dremel.com/gn/en/digilab) 集成允许您通过 Home Assistant 监控您的 Dremel 3D 打印机及其进度。此集成目前仅支持 3D20、3D40 和 3D45。
 

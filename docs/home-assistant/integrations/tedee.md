@@ -1,6 +1,6 @@
 ---
 title: Tedee
-description: 有关如何将 Tedee 锁与 Home Assistant 集成的说明。
+description: '此集成通过 HTTP 与 Tedee Bridge 通信，从而与您的 Tedee(https://tedee.com) 门锁交互。该集成会在本地与门锁通信。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2024.2
 ha_category:
   - Binary sensor
@@ -20,6 +20,7 @@ ha_codeowners:
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# Tedee
 
 此集成通过 HTTP 与 Tedee Bridge 通信，从而与您的 [Tedee](https://tedee.com) 门锁交互。该集成会在本地与门锁通信。
 

@@ -1,6 +1,6 @@
 ---
 title: Fish Audio
-description: 关于如何为 Home Assistant 设置 Fish Audio 集成的说明。
+description: 'Fish Audio 集成为 Home Assistant 带来了高质量的语音克隆和多种公共声音。它提供文字转语音（<abbr title="text-to-speech"TTS</abbr）服务，允许您创建富有表现力、类人的语音。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Text-to-speech
 ha_release: 2026.1
@@ -14,6 +14,7 @@ ha_codeowners:
   - '@noambav'
 ha_quality_scale: bronze
 ---
+# Fish Audio
 
 **Fish Audio** 集成为 Home Assistant 带来了高质量的语音克隆和多种公共声音。它提供文字转语音（<abbr title="text-to-speech">TTS</abbr>）服务，允许您创建富有表现力、类人的语音。
 

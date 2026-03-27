@@ -1,6 +1,6 @@
 ---
 title: DHCP discovery
-description: 使用 DHCP 协议发现网络上的集成。
+description: 'DHCP 发现集成将监视网络上的 DHCP 请求以查找支持的设备和服务。发现的集成将显示在配置面板集成页面的已发现部分。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_iot_class: Local Push
@@ -11,6 +11,7 @@ ha_codeowners:
   - '@bdraco'
 ha_integration_type: system
 ---
+# DHCP discovery
 
 **DHCP 发现**集成将监视网络上的 DHCP 请求以查找支持的设备和服务。发现的集成将显示在配置面板集成页面的已发现部分。
 

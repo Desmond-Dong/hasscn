@@ -1,6 +1,6 @@
 ---
 title: Radio Thermostat
-description: 有关如何将无线电恒温器 (3M Filtrete) 恒温器集成到 Home Assistant 中的说明。
+description: 'Radio Thermostat 集成允许您控制来自 Radio Thermostat(https://www.radiothermostat.com/) 或 3M Filtrete(https://www.filtrete.com/) 的恒温器。您的恒温器必须已安装 Wi-Fi 模块并连接到网络。'
 ha_category:
   - Climate
   - Switch
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: device
 ha_dhcp: true
 ---
+# Radio Thermostat
 
 **Radio Thermostat** 集成允许您控制来自 [Radio Thermostat](https://www.radiothermostat.com/) 或 [3M Filtrete](https://www.filtrete.com/) 的恒温器。您的恒温器必须已安装 Wi-Fi 模块并连接到网络。
 

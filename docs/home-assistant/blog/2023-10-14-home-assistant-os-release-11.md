@@ -3,6 +3,7 @@ title: 'Home Assistant OS 11: Low-latency scheduler and VM snapshot improvements
 description: Home Assistant OS 11 released with low-latency scheduler enabled and
   VM snapshot improvements on KVM/Proxmox.
 ---
+# Home Assistant OS 11: Low-latency scheduler and VM snapshot improvements
 
 With Home Assistant OS 11, there is no big or flashy feature to highlight. Rather, there are a lot of small improvements and little gems. The increased use of 蓝牙 has uncovered quite some issues on Home Assistant OS; some of which we are still working on. One of the main issues in Home Assistant OS 10 was caused by a bug in the processing of 蓝牙 advertisements in the Linux kernel’s 蓝牙 stack itself. With the help of our community, we managed to reproduce, pinpoint, and provide the necessary hints to the 蓝牙 开发者. This led to a fix in the 蓝牙 stack not only for Home Assistant OS and 受监管模式 users but for the Linux community in general 🎉 (see issue https://github.com/home-assistant/operating-system/issues/2535 for details).
 

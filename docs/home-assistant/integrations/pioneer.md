@@ -1,6 +1,6 @@
 ---
 title: Pioneer
-description: 有关如何将先锋网络接收器集成到家庭助理中的说明。
+description: 'The Pioneer integration allows you to control Pioneer Network Receivers. Please note, however, that the more recent Pioneer models work with。'
 ha_category:
   - Media player
 ha_release: 0.19
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Pioneer
 
 The **Pioneer** integration allows you to control Pioneer Network Receivers. Please note, however, that the more recent Pioneer models work with [Onkyo](/home-assistant/integrations/onkyo) platform instead.
 

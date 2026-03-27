@@ -1,6 +1,6 @@
 ---
 title: AquaCell
-description: 关于将 AquaCell 集成到 Home Assistant 的说明。
+description: 'AquaCell 是由 Culligan(https://culliganinternational.com) 制造的软水设备。AquaCell(https://www.aquacell-waterontharder.nl/) 集成可让您在 Home Assistant 中监控 AquaCell 设备。'
 ha_category:
   - Sensor
 ha_release: 2024.7
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# AquaCell
 
 AquaCell 是由 [Culligan](https://culliganinternational.com) 制造的软水设备。[AquaCell](https://www.aquacell-waterontharder.nl/) 集成可让您在 Home Assistant 中监控 AquaCell 设备。
 您需要 **AquaCell** 应用中使用的 AquaCell 账户信息。

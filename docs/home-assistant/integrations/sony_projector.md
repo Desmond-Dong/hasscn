@@ -1,6 +1,6 @@
 ---
 title: Sony Projector
-description: 有关如何将索尼投影仪开关集成到 Home Assistant 的说明。
+description: 'The Sony Projector integration allows you to control the state of SDCP compatible network-connected projectors from Sony(https://www.sony.com/). 本页属于 Home。'
 ha_category:
   - Multimedia
 ha_iot_class: Local Polling
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Sony Projector
 
 The **Sony Projector** integration allows you to control the state of SDCP compatible network-connected projectors from [Sony](https://www.sony.com/).
 

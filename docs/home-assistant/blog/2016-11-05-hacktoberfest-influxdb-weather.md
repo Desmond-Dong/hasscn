@@ -1,7 +1,8 @@
 ---
 title: '0.32：Hacktoberfest、InfluxDB 传感器、错误报告，以及天气'
-description: Hacktoberfest 已结束，新增 InfluxDB 传感器、CUPS 传感器，以及 ThingSpeak。
+description: '又过了两周，我们很高兴为你带来 Home Assistant 0.32。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 0.32：Hacktoberfest、InfluxDB 传感器、错误报告，以及天气
 
 又过了两周，我们很高兴为你带来 Home Assistant 0.32。
 

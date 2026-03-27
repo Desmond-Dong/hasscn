@@ -1,6 +1,8 @@
 ---
 title: "模板句子语法"
+description: '模板句子使用 Hassil，我们的模板匹配器(https://github.com/home-assistant/hassil) 的格式定义在 YAML 文件中。我们的模板句子存储在 GitHub(https://github.com/home-assistant/intents/tree/main/sent。'
 ---
+# 模板句子语法
 
 模板句子使用 [Hassil，我们的模板匹配器](https://github.com/home-assistant/hassil) 的格式定义在 YAML 文件中。我们的模板句子存储在 [GitHub](https://github.com/home-assistant/intents/tree/main/sentences) 上，并按语言组织到 `sentences/<language>/` 目录中：
 

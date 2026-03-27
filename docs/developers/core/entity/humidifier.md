@@ -1,7 +1,9 @@
 ---
 title: 加湿器实体
+description: '加湿器实体是一种主要目的是控制湿度的设备，即加湿器或除湿器。平台实体派生自homeassistant.components.humidifier.HumidifierEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/com。'
 sidebar_label: 加湿器
 ---
+# 加湿器实体
 
 加湿器实体是一种主要目的是控制湿度的设备，即加湿器或除湿器。平台实体派生自[`homeassistant.components.humidifier.HumidifierEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/humidifier/__init__.py)
 

@@ -1,6 +1,6 @@
 ---
 title: Intergas gateway
-description: 关于如何将 Intergas 网关与 Home Assistant 集成的说明。
+description: '此集成可将 Home Assistant 与您的 Intergas 网关连接起来，包括锅炉以及连接到该网关的所有房间温控器。 该集成使用 incomfort-client(https://pypi.org/project/incomfort-client/) 库。'
 ha_category:
   - Binary sensor
   - Climate
@@ -22,6 +22,7 @@ ha_config_flow: true
 ha_dhcp: true
 ha_quality_scale: platinum
 ---
+# Intergas gateway
 
 此集成可将 Home Assistant 与您的 Intergas 网关连接起来，包括锅炉以及连接到该网关的所有房间温控器。
 该集成使用 [incomfort-client](https://pypi.org/project/incomfort-client/) 库。

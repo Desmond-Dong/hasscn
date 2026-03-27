@@ -1,7 +1,9 @@
 ---
 title: 图像实体
+description: '图像实体可以显示静态图像。平台实体派生自homeassistant.components.image.ImageEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/image/init.py)。'
 sidebar_label: 图像
 ---
+# 图像实体
 
 图像实体可以显示静态图像。平台实体派生自[`homeassistant.components.image.ImageEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/image/__init__.py)。
 

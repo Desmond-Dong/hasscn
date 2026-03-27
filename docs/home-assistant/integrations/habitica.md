@@ -1,6 +1,6 @@
 ---
 title: Habitica
-description: 关于如何为 Home Assistant 启用 Habitica 支持的说明
+description: 'Habitica 集成可让你在 Home Assistant 中监控自己在 Habitica(https://habitica.com/) 中的冒险者进度和属性，并无缝整合待办事项、日常任务等内容。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Calendar
   - Image
@@ -34,6 +34,7 @@ related:
     title: Habitica
 ha_quality_scale: platinum
 ---
+# Habitica
 
 **Habitica** 集成可让你在 Home Assistant 中监控自己在 [Habitica](https://habitica.com/) 中的冒险者进度和属性，并无缝整合待办事项、日常任务等内容。
 

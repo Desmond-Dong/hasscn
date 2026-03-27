@@ -1,6 +1,6 @@
 ---
 title: Aurora
-description: 了解您所在位置何时可能看到极光
+description: 'Aurora 集成使用 NOAA Aurora Forecast(https://www.swpc.noaa.gov/products/aurora-30-minute-forecast) 服务，根据当前的太阳耀斑活动，让您了解未来 30 分钟内您所在位置是否可能看到极光。'
 ha_category:
   - Environment
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Aurora
 
 **Aurora** 集成使用 [NOAA Aurora Forecast](https://www.swpc.noaa.gov/products/aurora-30-minute-forecast) 服务，根据当前的太阳耀斑活动，让您了解未来 30 分钟内您所在位置是否可能看到极光。
 

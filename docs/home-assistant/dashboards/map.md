@@ -1,7 +1,9 @@
 ---
 title: 地图卡片
-description: 地图卡片允许您在地图上显示实体
+description: '地图卡片允许您在地图上显示您的家庭区域、实体和其他预定义的区域。此卡片用于地图仪表盘(/home-assistant/dashboards/dashboard/map-dashboard)，这是默认仪表盘之一。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 地图卡片
+
 地图卡片允许您在地图上显示您的家庭区域、实体和其他预定义的区域。此卡片用于[地图仪表盘](/home-assistant/dashboards/dashboard/#map-dashboard)，这是默认仪表盘之一。
 
 <p class='img'>

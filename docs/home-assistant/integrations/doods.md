@@ -1,6 +1,6 @@
 ---
 title: DOODS - Dedicated Open Object Detection Service
-description: 使用 DOODS 检测和识别物体。
+description: 'DOODS 图像处理集成允许您使用 DOODS(https://github.com/snowzach/doods/) 检测和识别摄像头图像中的物体。实体的状态是检测到的物体数量，识别出的物体列在 summary 属性中以及数量。matches 属性为每个检测类别提供识别的置信度 score 和物体的边界。'
 ha_category:
   - Image processing
 ha_iot_class: Local Polling
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# DOODS - Dedicated Open Object Detection Service
 
 **DOODS** 图像处理集成允许您使用 [DOODS](https://github.com/snowzach/doods/) 检测和识别摄像头图像中的物体。实体的状态是检测到的物体数量，识别出的物体列在 `summary` 属性中以及数量。`matches` 属性为每个检测类别提供识别的置信度 `score` 和物体的边界 `box`。
 

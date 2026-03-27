@@ -1,7 +1,7 @@
 ---
 title: "远程访问"
+description: '远程访问允许您从世界任何地方安全地连接到您的 Music Assistant 服务器。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 远程访问设置 <img src="/assets/icons/remote-access-icon.png" alt="预览图片" style="width: 70px; float: right;" loading="lazy" />
 
 远程访问允许您从世界任何地方安全地连接到您的 Music Assistant 服务器。

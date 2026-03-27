@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 与 Codenotary CAS 的内容信任
-description: 能够验证我们提供的更新，与您获取到的更新是完全一致的。
+description: '我们已开始使用 Codenotary CAS(https://cas.codenotary.com/) 更新 Home Assistant 的内容信任机制。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Home Assistant 与 Codenotary CAS 的内容信任
 
 我们已开始使用 [Codenotary CAS](https://cas.codenotary.com/) 更新 Home Assistant 的内容信任机制。
 

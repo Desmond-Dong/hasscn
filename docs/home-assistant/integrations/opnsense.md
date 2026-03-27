@@ -1,6 +1,6 @@
 ---
 title: OPNsense
-description: "有关如何配置 OPNsense 集成的说明"
+description: 'OPNsense(https://opnsense.org/) 是一个基于 FreeBSD 的开源防火墙 和路由平台。目前支持以下设备类型 在家庭助理中：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Hub
@@ -15,6 +15,8 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# OPNsense
+
 [OPNsense](https://opnsense.org/) 是一个基于 FreeBSD 的开源防火墙
 和路由平台。目前支持以下设备类型
 在家庭助理中：

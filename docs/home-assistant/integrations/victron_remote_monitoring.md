@@ -1,6 +1,6 @@
 ---
 title: Victron Remote Monitoring
-description: 关于如何在 Home Assistant 中实现 Victron 远程监控平台的说明。
+description: 'Victron Remote Monitoring（VRM）集成会将 Victron Energy(https://www.victronenergy.com/) 的 <abbr title="Victron Remote Monitoring"VRM</abbr。'
 ha_category:
   - Energy
 ha_release: '2025.10'
@@ -21,6 +21,7 @@ related:
     title: VRM Portal manual
 ha_quality_scale: bronze
 ---
+# Victron Remote Monitoring
 
 **Victron Remote Monitoring**（VRM）集成会将 [Victron Energy](https://www.victronenergy.com/) 的 <abbr title="Victron Remote Monitoring">VRM</abbr> 门户中的站点统计数据、太阳能发电预测和用电预测导入 Home Assistant。它可提供次日、下一小时以及未来六天的发电和用电预测，也包含峰值时段预测。此集成需要至少 30 天的 VRM 历史数据后，预测功能才会可用。
 

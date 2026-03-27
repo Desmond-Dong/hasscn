@@ -1,6 +1,6 @@
 ---
 title: Todoist
-description: 关于如何将 Todoist 集成到 Home Assistant 的说明。
+description: 'This integration allows you to connect to your Todoist projects(https://todoist.com) as todo(/home-assistant/integrations/todo/) or。'
 ha_category:
   - Calendar
   - To-do list
@@ -28,6 +28,7 @@ related:
   - url: https://todoist.com
     title: Todoist projects
 ---
+# Todoist
 
 This integration allows you to connect to your [Todoist projects](https://todoist.com) as [todo](/home-assistant/integrations/todo/) or [calendar](/home-assistant/integrations/calendar/) entities. All tasks get updated roughly every minute.
 

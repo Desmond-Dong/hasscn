@@ -1,7 +1,8 @@
 ---
 title: 设置本地媒体源
-description: 关于如何在 Home Assistant 中设置本地媒体源的更多信息。
+description: 'Home Assistant 有一个本地媒体文件夹。放置在此文件夹中的任何音频或视频文件都可以通过媒体浏览器访问。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 设置本地媒体源
 
 Home Assistant 有一个本地媒体文件夹。放置在此文件夹中的任何音频或视频文件都可以通过媒体浏览器访问。
 

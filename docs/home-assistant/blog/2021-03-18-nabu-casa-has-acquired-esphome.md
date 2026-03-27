@@ -1,7 +1,8 @@
 ---
 title: Nabu Casa 已收购 ESPHome
-description: Nabu Casa 已收购 ESPHome，以确保这个项目能继续作为自由开源项目蓬勃发展。
+description: '<img alt="Nabu Casa 与 ESPHome" src="/home-assistant/images/blog/2021-03-18-nabu-casa-acquired-esphome/social.png" /。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Nabu Casa 已收购 ESPHome
 
 <img alt="Nabu Casa 与 ESPHome" src="/home-assistant/images/blog/2021-03-18-nabu-casa-acquired-esphome/social.png" />
 

@@ -1,7 +1,9 @@
 ---
 title: "Raspberry Pi"
+description: '如需通过串口控制台访问终端，请在 cmdline.txt 中添加 console=ttyAMA0,115200，并在 config.txt 中添加 enableuart=1、dtoverlay=pi3-disable-bt。GPIO 引脚为：6 = GND / 8 = UART TXD / 10 =。'
 sidebar_label: Raspberry Pi
 ---
+# Raspberry Pi
 
 ## 支持的硬件
 

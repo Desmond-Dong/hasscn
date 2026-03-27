@@ -1,6 +1,6 @@
 ---
 title: System Log
-description: 运行时 Home Assistant 中的错误和警告摘要。
+description: 'System Log 集成会存储 Home Assistant 中所有已记录的错误和警告信息。要查看日志，请前往 Settings System Logs(https://my.home-assistant.io/redirect/logs/)（可查看精简日志和完整原始日志）。'
 ha_category:
   - Other
 ha_release: 0.58
@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_domain: system_log
 ha_integration_type: system
 ---
+# System Log
 
 **System Log** 集成会存储 Home Assistant 中所有已记录的错误和警告信息。要查看日志，请前往 [**Settings** > **System** > **Logs**](https://my.home-assistant.io/redirect/logs/)（可查看精简日志和完整原始日志）。为了避免日志数据过多影响 Home Assistant，精简日志仅保存最近 50 条错误和警告。更早的条目会自动从精简日志中丢弃；完整原始日志会保留全部记录。你可以使用 `max_entries` 参数调整精简日志的保存条目数。
 

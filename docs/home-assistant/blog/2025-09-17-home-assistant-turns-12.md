@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 12 岁生日快乐！
-description: 今年我们会分享一些来自社区的故事，以及关于我们成长的若干数据。
+description: '<img src=''/home-assistant/images/blog/2025-09-12th-anniversary/art.webp'' style=''border: 0;box-shadow: none;'' alt="Home Assistant 12th Anniversary"。'
 ---
+# Home Assistant 12 岁生日快乐！
 
 <img src='/home-assistant/images/blog/2025-09-12th-anniversary/art.webp' style='border: 0;box-shadow: none;' alt="Home Assistant 12th Anniversary">
 

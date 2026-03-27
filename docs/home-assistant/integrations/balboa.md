@@ -1,6 +1,6 @@
 ---
 title: Balboa Spa Client
-description: 关于如何在 Home Assistant 中集成 Balboa Spa WiFi 的说明。
+description: 'Balboa Spa Client 集成添加了对 Balboa(https://www.balboawatergroup.com/) Spa WiFi 模块在 Home Assistant 中使用的支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -26,6 +26,7 @@ ha_config_flow: true
 ha_integration_type: device
 ha_dhcp: true
 ---
+# Balboa Spa Client
 
 **Balboa Spa Client** 集成添加了对 [Balboa](https://www.balboawatergroup.com/) Spa WiFi 模块在 Home Assistant 中使用的支持。
 

@@ -1,7 +1,9 @@
 ---
 title: 天气实体
+description: '平台实体派生自homeassistant.components.weather.WeatherEntity(https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/weather/init.py。'
 sidebar_label: 天气
 ---
+# 天气实体
 
 平台实体派生自[`homeassistant.components.weather.WeatherEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/weather/__init__.py)。
 

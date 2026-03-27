@@ -3,6 +3,7 @@ title: Using USB webcams with Home Assistant
 description: A how-to how to repurpose your old USB webcams and integrate them into
   Home Assistant.
 ---
+# Using USB webcams with Home Assistant
 
 <img src='/home-assistant/images/blog/2016-06-cranberry/motion.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='200' />
 过去一个月里，我一直在思考如何再次把 USB 摄像头集成到 Home Assistant 中。主要原因是这能让这些设备重获新生，也能以很低的成本实现视频监控。虽然有一些可用方案，比如 [pygame](http://www.pygame.org/hifi.html) 或 [SimpleCV](http://www.simplecv.org/)，但我一直没有真正完成。现在借助 [Landrash](https://github.com/Landrash) 提供的 [Local File 摄像头平台](/home-assistant/integrations/local_file) 和 [motion](http://lavrsen.dk/foswiki/bin/view/Motion/WebHome)，只需几个简单步骤就能接入本地 USB 摄像头。

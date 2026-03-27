@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Worx Landroid
 
 The **Worx Landroid** integration allows you to get the current state, battery level and error status Worx Landroid WG796E.1 or WG797E.
 

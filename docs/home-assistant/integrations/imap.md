@@ -1,6 +1,6 @@
 ---
 title: IMAP
-description: 关于如何将 IMAP 未读邮件集成到 Home Assistant 的说明。
+description: 'IMAP 集成会监视你的 IMAP 服务器(https://en.wikipedia.org/wiki/InternetMessageAccessProtocol)。它可以报告未读邮件数量，并发送可用于触发自动化的自定义事件。你也可以使用其他搜索条件，下面的示例中有展示。'
 ha_category:
   - Mailbox
 ha_release: 0.25
@@ -14,6 +14,7 @@ ha_codeowners:
   - '@jbouwh'
 ha_config_flow: true
 ---
+# IMAP
 
 **IMAP** 集成会监视你的 [IMAP 服务器](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol)。它可以报告未读邮件数量，并发送可用于触发自动化的自定义事件。你也可以使用其他搜索条件，下面的示例中有展示。
 

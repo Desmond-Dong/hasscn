@@ -1,6 +1,6 @@
 ---
 title: Hunter Hydrawise
-description: 关于如何在 Home Assistant 中集成 Hunter Hydrawise Wi-Fi 灌溉控制系统的说明。
+description: 'Hunter Hydrawise 集成允许您将 Hunter Hydrawise(https://hydrawise.com) Wi-Fi 灌溉控制系统集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Irrigation
@@ -22,6 +22,7 @@ ha_platforms:
   - valve
 ha_integration_type: hub
 ---
+# Hunter Hydrawise
 
 **Hunter Hydrawise** 集成允许您将 [Hunter Hydrawise](https://hydrawise.com) Wi-Fi 灌溉控制系统集成到 Home Assistant 中。
 

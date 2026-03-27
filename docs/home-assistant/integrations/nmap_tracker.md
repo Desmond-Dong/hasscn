@@ -1,6 +1,6 @@
 ---
 title: Nmap Tracker
-description: "有关如何将 Nmap 集成到 Home Assistant 的说明。"
+description: '作为基于路由器的设备跟踪的替代方案，可以使用 Nmap 直接扫描网络中的设备。要扫描的 IP 地址可以以 Nmap 理解的任何格式指定，包括网络前缀表示法（“192.168.1.1/24”）和范围表示法（“192.168.1.1-255”）。 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Presence detection
@@ -12,6 +12,8 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: integration
 ---
+# Nmap Tracker
+
 作为基于路由器的设备跟踪的替代方案，可以使用 Nmap 直接扫描网络中的设备。要扫描的 IP 地址可以以 Nmap 理解的任何格式指定，包括网络前缀表示法（“192.168.1.1/24”）和范围表示法（“192.168.1.1-255”）。
 
 :::note

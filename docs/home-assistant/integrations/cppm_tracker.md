@@ -1,6 +1,6 @@
 ---
 title: Aruba ClearPass
-description: 关于将 Aruba ClearPass 集成到 Home Assistant 的说明。
+description: '此集成允许您通过查看连接到 Aruba Clearpass(https://www.arubanetworks.com/products/security/network-access-control/) 的设备来检测存在。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Presence Detection
 ha_release: '0.90'
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Aruba ClearPass
 
 此集成允许您通过查看连接到 [Aruba Clearpass](https://www.arubanetworks.com/products/security/network-access-control/) 的设备来检测存在。
 

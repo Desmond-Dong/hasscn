@@ -1,6 +1,6 @@
 ---
 title: TRIGGERcmd
-description: 关于如何将 TRIGGERcmd 与 Home Assistant 集成的说明。
+description: 'The TRIGGERcmd integration allows you to run commands on computers via TRIGGERcmd(https://triggercmd.com/) with Home Assistant. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Automation
   - Switch
@@ -14,6 +14,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# TRIGGERcmd
 
 The **TRIGGERcmd** integration allows you to run commands on computers via [TRIGGERcmd](https://triggercmd.com/) with Home Assistant.
 

@@ -1,6 +1,6 @@
 ---
 title: Rogers Hitron CODA
-description: 关于如何将 Hitron CODA 路由器集成到 Home Assistant 的说明。
+description: 'Rogers Hitron CODA 集成通过检查连接到 Rogers Hitron CODA(https://www.rogers.com/customer/support/article/wi-fi-password-hitron-coda4582-cgn3amr-cgnm3552-cgn3acr-cgn。'
 ha_category:
   - Presence detection
 ha_release: 0.58
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Rogers Hitron CODA
 
 **Rogers Hitron CODA** 集成通过检查连接到 [Rogers Hitron CODA](https://www.rogers.com/customer/support/article/wi-fi-password-hitron-coda4582-cgn3amr-cgnm3552-cgn3acr-cgn3) 或 [Shaw Hitron CGNM](https://community.shaw.ca/docs/DOC-4066) 路由器的设备来实现在家状态检测。
 

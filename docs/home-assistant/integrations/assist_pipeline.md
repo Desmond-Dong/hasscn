@@ -1,6 +1,6 @@
 ---
 title: Assist pipeline
-description: Assist 流程集成。
+description: 'Assist pipeline 集成为 Home Assistant 中的 Assist(/home-assistant/voicecontrol/) 语音助手提供基础能力。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Voice
 ha_iot_class: Local Push
@@ -21,6 +21,7 @@ related:
   - docs: /voice_control/
     title: Assist
 ---
+# Assist pipeline
 
 **Assist pipeline** 集成为 Home Assistant 中的 [Assist](/home-assistant/voice_control/) 语音助手提供基础能力。
 

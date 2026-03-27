@@ -1,6 +1,6 @@
 ---
 title: Saunum
-description: 有关如何将 Saunum 桑拿控制单元集成到 Home Assistant 的说明。
+description: 'Saunum 集成可将你的 Saunum Leil(https://saunum.com/en/product/control-devices/) 桑拿控制单元接入 Home Assistant。Saunum(https://saunum.com/) 是一家爱沙尼亚公司。'
 ha_iot_class: Local Polling
 ha_release: 2025.12
 ha_codeowners:
@@ -24,6 +24,7 @@ ha_platforms:
   - number
   - sensor
 ---
+# Saunum
 
 **Saunum** 集成可将你的 [Saunum Leil](https://saunum.com/en/product/control-devices/) 桑拿控制单元接入 Home Assistant。[Saunum](https://saunum.com/) 是一家爱沙尼亚公司，专注于带有智能功能的先进桑拿加热器和控制系统。
 

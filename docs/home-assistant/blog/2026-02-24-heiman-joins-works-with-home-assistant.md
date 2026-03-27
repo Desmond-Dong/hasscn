@@ -1,8 +1,9 @@
 ---
 title: Heiman 加入 Works with Home Assistant
-description: Heiman 为 Works with Home Assistant 带来价格亲民、支持本地控制的安全设备，
+description: '<img src="/home-assistant/images/blog/2026-02-heiman/art.webp" style="border: 0;box-shadow: none;" alt="Heiman 加入 Works with Home Assistant"。'
   其中包括首批 Matter 一氧化碳报警器。
 ---
+# Heiman 加入 Works with Home Assistant
 
 <img src="/home-assistant/images/blog/2026-02-heiman/art.webp" style="border: 0;box-shadow: none;" alt="Heiman 加入 Works with Home Assistant">
 

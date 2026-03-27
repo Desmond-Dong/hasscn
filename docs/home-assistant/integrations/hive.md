@@ -1,6 +1,6 @@
 ---
 title: Hive
-description: 关于如何将 Hive 设备与 Home Assistant 集成的说明。
+description: 'The Hive integration for Home Assistant allows you to interact with supported devices and services offered by hivehome.com(https://www.hivehome.com)。'
 ha_category:
   - Binary sensor
   - Climate
@@ -26,6 +26,7 @@ ha_config_flow: true
 ha_integration_type: hub
 ha_homekit: true
 ---
+# Hive
 
 The **Hive** integration for Home Assistant allows you to interact with supported devices and services offered by
 [hivehome.com](https://www.hivehome.com)

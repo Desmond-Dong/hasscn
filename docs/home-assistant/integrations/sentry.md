@@ -1,6 +1,6 @@
 ---
 title: Sentry
-description: 将错误记录到 Sentry。
+description: 'Sentry 免费账户每月允许 5000 个事件。根据发送到 Sentry 的事件数量，您可能需要升级 Sentry 账户，否则会出现一段时间 Home Assistant 无法继续向 Sentry 发送数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_iot_class: Cloud Polling
@@ -12,6 +12,7 @@ ha_codeowners:
 ha_domain: sentry
 ha_integration_type: service
 ---
+# Sentry
 
 :::important
 Sentry 免费账户每月允许 5000 个事件。根据发送到 Sentry 的事件数量，您可能需要升级 Sentry 账户，否则会出现一段时间 Home Assistant 无法继续向 Sentry 发送数据。

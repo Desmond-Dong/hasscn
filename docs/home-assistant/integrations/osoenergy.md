@@ -1,6 +1,6 @@
 ---
 title: OSO Energy
-description: 有关如何将 OSO Energy 设备与 Home Assistant 集成的说明。
+description: 'The OSO Energy integration for Home Assistant allows you to interact with supported devices and services offered by OSO Energy(https://www.osoenergy.no)。'
 ha_release: '2024.1'
 ha_category:
   - Binary sensor
@@ -17,7 +17,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: hub
 ---
-
+# OSO Energy
 
 The **OSO Energy** integration for Home Assistant allows you to interact with supported devices and services offered by [OSO Energy](https://www.osoenergy.no)
 

@@ -1,7 +1,8 @@
 ---
 title: Home Assistant Cloud 的故障排除
-description: 帮助排查 Home Assistant Cloud 问题的指南。
+description: 'Home Assistant Cloud 是由我们的合作伙伴 Nabu Casa, Inc. 提供的订阅服务。请访问 他们的网站(https://www.nabucasa.com/config/troubleshooting/) 获取故障排除帮助。 本页属于 Home Assistant 中文文档。'
 ---
+# Home Assistant Cloud 的故障排除
 
 Home Assistant Cloud 是由我们的合作伙伴 Nabu Casa, Inc. 提供的订阅服务。请访问 [他们的网站](https://www.nabucasa.com/config/troubleshooting/) 获取故障排除帮助。
 

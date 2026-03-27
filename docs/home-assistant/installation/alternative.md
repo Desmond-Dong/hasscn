@@ -1,7 +1,8 @@
 ---
 title: 其他安装方式
-description: Home Assistant 的其他安装方式
+description: 'Home Assistant 可以通过多种方式安装。以下是其他可选的安装方法。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 其他安装方式
 
 ## 替代安装方式
 

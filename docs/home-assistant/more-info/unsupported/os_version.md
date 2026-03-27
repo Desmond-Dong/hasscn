@@ -1,7 +1,8 @@
 ---
 title: Home Assistant Operating System 版本
-description: 关于 Home Assistant Operating System 版本为何将安装标记为不支持的更多信息。
+description: 'Supervisor 将超过最近 4 个主要版本的 Home Assistant Operating System 视为不支持。我们通常建议始终更新到最新的 Home Assistant Operating System。 本页属于 Home Assistant 中文文档。'
 ---
+# Home Assistant Operating System 版本
 
 ## 问题
 

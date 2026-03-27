@@ -1,6 +1,6 @@
 ---
 title: Pocket Casts
-description: 有关如何在 Home Assistant 中设置 Pocket Casts 传感器的说明。
+description: 'The Pocket Casts integration lets you monitor how many unplayed episodes you have of your favorite podcasts at Pocket Casts(https://play.pocketcasts.com/).。'
 ha_category:
   - Multimedia
 ha_release: 0.39
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Pocket Casts
 
 The **Pocket Casts** integration lets you monitor how many unplayed episodes you have of your favorite podcasts at [Pocket Casts](https://play.pocketcasts.com/). This integration requires a [Pocket Casts + Plus](https://www.pocketcasts.com/plus/) subscription to work!
 

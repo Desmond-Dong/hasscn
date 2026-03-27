@@ -1,6 +1,6 @@
 ---
 title: FRITZ!Box Tools
-description: 关于如何将 FRITZ!Box 路由器集成到 Home Assistant 的说明。
+description: 'FRITZ!Box Tools 集成允许您控制您的 FRITZ!Box(https://en.fritz.com/products/fritzbox/) 路由器（由 FRITZ!，前身为 AVM 制造），并对已连接的网络设备进行存在检测。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Image
@@ -31,6 +31,7 @@ related:
     title: Enabling or disabling entities
 ha_quality_scale: bronze
 ---
+# FRITZ!Box Tools
 
 **FRITZ!Box Tools** 集成允许您控制您的 [FRITZ!Box](https://en.fritz.com/products/fritzbox/) 路由器（由 FRITZ!，前身为 AVM 制造），并对已连接的网络设备进行存在检测。
 

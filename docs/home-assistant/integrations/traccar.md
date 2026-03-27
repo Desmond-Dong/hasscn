@@ -1,6 +1,6 @@
 ---
 title: Traccar Client
-description: 关于如何使用 Traccar GPS 跟踪器在 Home Assistant 中跟踪设备的说明。
+description: 'Traccar uses GPS for tracking and has support for over 1500 different types of devices. You can use the Traccar Client(https://www.traccar.org/client/)。'
 ha_release: 0.83
 ha_category:
   - Car
@@ -14,6 +14,7 @@ ha_platforms:
   - device_tracker
 ha_integration_type: integration
 ---
+# Traccar Client
 
 `Traccar` uses GPS for tracking and has support for over 1500 different types of devices. You can use the [Traccar Client](https://www.traccar.org/client/) app on a smartphone via `webhook`.
 

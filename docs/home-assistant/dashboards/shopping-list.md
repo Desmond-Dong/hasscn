@@ -1,7 +1,9 @@
 ---
 title: 购物清单卡片
-description: 购物清单卡片允许您向购物清单中添加、编辑、勾选和清除项目。
+description: '注意：购物清单卡片已无法再通过用户界面直接添加。请改用待办事项列表卡片(/home-assistant/dashboards/todo-list/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 购物清单卡片
+
 注意：购物清单卡片已无法再通过用户界面直接添加。请改用[待办事项列表卡片](/home-assistant/dashboards/todo-list/)。
 
 购物清单卡片允许您向购物清单中添加、编辑、勾选和清除项目。

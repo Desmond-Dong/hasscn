@@ -1,6 +1,6 @@
 ---
 title: Honeywell Total Connect Comfort (US)
-description: 关于如何在 Home Assistant 中集成 Honeywell 恒温器的说明。
+description: 'The Honeywell Total Connect Comfort integration integrates Home Assistant with US-based Honeywell Total Connect Comfort (TCC)(https://mytotalconnectcomfort。'
 ha_category:
   - Climate
   - Sensor
@@ -19,6 +19,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Honeywell Total Connect Comfort (US)
 
 The **Honeywell Total Connect Comfort** integration integrates Home Assistant with _US-based_ [Honeywell Total Connect Comfort (TCC)](https://mytotalconnectcomfort.com/portal/) climate systems.
 

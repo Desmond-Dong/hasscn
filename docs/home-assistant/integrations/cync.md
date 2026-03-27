@@ -1,6 +1,6 @@
 ---
 title: Cync
-description: 关于如何将 Cync 设备集成到 Home Assistant 的说明。
+description: 'Cync 集成用于与 GE Lighting(https://www.gelighting.com/) 销售的智能设备集成。Cync，以前称为"C by GE"，是 GE Lighting 智能设备系列的名称。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: '2025.10'
 ha_iot_class: Cloud Push
 ha_category:
@@ -14,6 +14,7 @@ ha_platforms:
 ha_quality_scale: bronze
 ha_config_flow: true
 ---
+# Cync
 
 **Cync** 集成用于与 [GE Lighting](https://www.gelighting.com/) 销售的智能设备集成。Cync，以前称为"C by GE"，是 GE Lighting 智能设备系列的名称。
 

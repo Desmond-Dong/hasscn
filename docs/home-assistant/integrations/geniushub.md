@@ -1,6 +1,6 @@
 ---
 title: Genius Hub
-description: 关于如何将 Genius Hub 与 Home Assistant 集成的说明。
+description: 'The Genius Hub integration links Home Assistant with your Genius Hub CH/DHW system, including its zones, devices, and issues. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Climate
@@ -21,6 +21,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_config_flow: true
 ---
+# Genius Hub
 
 The **Genius Hub** integration links Home Assistant with your Genius Hub CH/DHW system, including its zones, devices, and issues.
 

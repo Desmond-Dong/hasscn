@@ -1,6 +1,6 @@
 ---
 title: Unitymedia Horizon HD Recorder
-description: 关于如何将 Unitymedia Horizon HD 录像机集成到 Home Assistant 的说明。
+description: 'Unitymedia Horizon HD Recorder 集成允许您从 Home Assistant 控制 Unitymedia(https://www.unitymedia.de) Horizon HD 录像机。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Unitymedia Horizon HD Recorder
 
 **Unitymedia Horizon HD Recorder** 集成允许您从 Home Assistant 控制 [Unitymedia](https://www.unitymedia.de) Horizon HD 录像机。
 

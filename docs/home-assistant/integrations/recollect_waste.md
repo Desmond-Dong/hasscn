@@ -1,6 +1,6 @@
 ---
 title: ReCollect Waste
-description: 有关如何在 Home Assistant 中设置 ReCollect Waste 传感器的说明。
+description: 'ReCollect Waste 集成允许您跟踪 ReCollect Waste(https://recollect.net/waste-haulers/) 的下一次计划垃圾收集时间以及对应的垃圾类型。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Calendar
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# ReCollect Waste
 
 **ReCollect Waste** 集成允许您跟踪 [ReCollect Waste](https://recollect.net/waste-haulers/) 的下一次计划垃圾收集时间以及对应的垃圾类型。
 

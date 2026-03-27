@@ -1,6 +1,6 @@
 ---
 title: Twitch
-description: 关于如何将 Twitch 传感器集成到 Home Assistant 的说明。
+description: 'The Twitch integration allows you to monitor Twitch(https://www.twitch.tv/) channel status from within Home Assistant and set up automation based on the。'
 ha_category:
   - Social
 ha_release: '0.10'
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@joostlek'
 ha_config_flow: true
 ---
+# Twitch
 
 The **Twitch** integration allows you to monitor [Twitch](https://www.twitch.tv/) channel status from within Home Assistant and set up automation based on the information.
 

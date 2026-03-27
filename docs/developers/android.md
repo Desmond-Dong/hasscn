@@ -1,7 +1,9 @@
 ---
 title: "Home Assistant 安卓应用"
+description: '你准备好在智能家居技术领域带来改变了吗？Home Assistant Android app 是一个开源项目，让用户能够无缝控制自己的智能家居。无论你是开发者、设计师还是爱好者，你的贡献都很重要！。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "简介"
 ---
+# Home Assistant 安卓应用
 
 ## 欢迎来到 Home Assistant Android 项目
 

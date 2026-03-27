@@ -2,6 +2,7 @@
 title: Home Assistant meets IFTTT
 description: Announcing new 集成 with IFTTT and some samples to get started.
 ---
+# Home Assistant meets IFTTT
 
 今天我们发布 Home Assistant v0.7.2，其中包含由 [@sfam][github-sfam] 带来的全新 [IFTTT][ifttt] 集成支持。IFTTT 的全称是 If This, Then That，它是一个几乎能连接所有网络服务的 Web 服务。把 Home Assistant 加入这个生态后，Home Assistant 就能通过 IFTTT 与这些服务互联。
 

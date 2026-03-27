@@ -1,7 +1,7 @@
 ---
 title: "gPodder"
+description: 'Music Assistant 支持 <a href="https://gpodder.github.io" target="blank" rel="noopener noreferrer"gPodder</a。由 <a href="https://github.com/fmunkes"。'
 ---
-
 # gPodder 提供者 <img src="/assets/icons/gpodder-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 <a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a>。由 <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a> 贡献和维护。

@@ -1,6 +1,6 @@
 ---
 title: TechnoVE
-description: 有关如何将 TechnoVE 智能充电站与 Home Assistant 集成的说明。
+description: 'The TechnoVE integration provides connectivity with TechnoVE Smart Charging Station through the station local API. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Car
 ha_release: 2024.2
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# TechnoVE
 
 The **TechnoVE** integration provides connectivity with TechnoVE Smart Charging Station through the station local API.
 

@@ -1,7 +1,8 @@
 ---
 title: 放眼未来
-description: 今天我们 5 岁了，是时候设定新的目标。
+description: '今天是 Home Assistant 的 5 周年。我想借这篇文章，不仅回顾过去 5 年，也谈谈我们接下来要走向哪里、希望 Home Assistant 成为什么样的平台。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 放眼未来
 
 今天是 Home Assistant 的 5 周年。我想借这篇文章，不仅回顾过去 5 年，也谈谈我们接下来要走向哪里、希望 Home Assistant 成为什么样的平台。
 

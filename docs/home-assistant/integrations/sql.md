@@ -1,6 +1,6 @@
 ---
 title: SQL
-description: 说明如何将 SQL 传感器集成到 Home Assistant 中。
+description: 'SQL 集成允许你使用 sqlalchemy(https://www.sqlalchemy.org) 库所支持的 SQL(https://en.wikipedia.org/wiki/SQL) 数据库中的值，来填充传感器状态（及其属性）。 如果搭配 recorder 集成数据库使用。'
 ha_category:
   - Sensor
   - Utility
@@ -18,6 +18,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# SQL
 
 **SQL** 集成允许你使用 [sqlalchemy](https://www.sqlalchemy.org) 库所支持的 [SQL](https://en.wikipedia.org/wiki/SQL) 数据库中的值，来填充传感器状态（及其属性）。
 如果搭配 `recorder` 集成数据库使用，它可以用于展示 Home Assistant 传感器的统计信息；也可以用于外部数据源。

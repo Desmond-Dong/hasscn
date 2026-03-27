@@ -1,6 +1,6 @@
 ---
 title: Happiest Baby Snoo
-description: 有关如何将 Snoo 集成到 Home Assistant 的说明
+description: 'Snoo(https://www.happiestbaby.com/products/snoo-smart-bassinet) 是由 Happiest Baby(https://www.happiestbaby.com/) 推出的智能婴儿床，帮助宝宝入睡并保持睡眠状态。'
 ha_category:
   - Binary Sensor
   - Event
@@ -23,6 +23,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# Happiest Baby Snoo
 
 [Snoo](https://www.happiestbaby.com/products/snoo-smart-bassinet) 是由 [Happiest Baby](https://www.happiestbaby.com/) 推出的智能婴儿床，帮助宝宝入睡并保持睡眠状态。
 

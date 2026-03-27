@@ -1,6 +1,6 @@
 ---
 title: Motionblinds Bluetooth
-description: 关于如何将 Motionblinds 蓝牙电机集成到 Home Assistant 的说明。
+description: '此集成为 Motionblinds(https://motionblinds.com/) 蓝牙电机添加支持。想让现有窗帘实现电动化？可以使用 Motionblinds 的 CMD-03 电机。采用 Motionblinds 的定制窗饰可通过全球经销商网络购买。'
 
 ha_category:
   - Cover
@@ -19,6 +19,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Motionblinds Bluetooth
 
 此集成为 [Motionblinds](https://motionblinds.com/) 蓝牙电机添加支持。想让现有窗帘实现电动化？可以使用 Motionblinds 的 CMD-03 电机。采用 Motionblinds 的定制窗饰可通过全球经销商网络购买。
 请注意，此集成不适用于 Eve Motionblinds 电机。Eve Motionblinds 可通过 [HomeKit Device](https://www.home-assistant.io/integrations/homekit_controller/) 集成或 [Matter](https://www.home-assistant.io/integrations/matter/) 集成添加到 Home Assistant。

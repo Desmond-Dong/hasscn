@@ -3,6 +3,7 @@ title: 'Community Highlights: 10th edition'
 description: Try the new ApexCharts 卡片, build your own 开关 面板 and get inspiration
   for your own Lovelace 仪表盘.
 ---
+# Community Highlights: 10th edition
 
 Oh yeah! This is already the 10th edition of the Home Assistant Community Highlights!
 Some interesting things popped up around our community, we thought was worth sharing.

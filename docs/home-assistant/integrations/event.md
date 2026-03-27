@@ -1,6 +1,6 @@
 ---
 title: Event
-description: 关于如何在 Home Assistant 中使用事件实体的说明。
+description: '事件是在某些事情发生时发出的信号，例如用户按下门铃这样的实体按钮，或按下遥控器上的按钮时。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Event
 ha_release: 2023.8
@@ -17,6 +17,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Event
 
 事件是在某些事情发生时发出的信号，例如用户按下门铃这样的实体按钮，或按下遥控器上的按钮时。
 

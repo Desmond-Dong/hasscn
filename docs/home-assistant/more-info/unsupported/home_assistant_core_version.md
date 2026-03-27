@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 核心版本
-description: 关于 Home Assistant 核心版本为何将安装标记为不支持的更多信息。
+description: 'Supervisor 将超过 24 个月（约 24 个版本）的 Home Assistant 核心版本视为不支持。 强烈建议将 Home Assistant 核心更新到最新版本。 至少应在 6 个月（6 个发布周期）内更新，以确保不会错过自动 YAML 集成迁移。'
 ---
+# Home Assistant 核心版本
 
 ## 问题
 

@@ -1,7 +1,8 @@
 ---
 title: AirGradient 加入 Works with Home Assistant
-description: 他们为该计划带来了室内和室外空气质量监测仪。
+description: '<img src=''/home-assistant/images/blog/2025-08-airgradient/art.jpg'' style=''border: 0;box-shadow: none;'' alt="AirGradient 加入 Works with Home Assistant"。'
 ---
+# AirGradient 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-08-airgradient/art.jpg' style='border: 0;box-shadow: none;' alt="AirGradient 加入 Works with Home Assistant">
 

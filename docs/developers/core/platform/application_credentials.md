@@ -1,6 +1,8 @@
 ---
 title: "应用凭证"
+description: '集成可以支持通过 OAuth2 进行配置(/developers/configentriesconfigflowhandlerconfiguration-via-oauth2)，让 用户关联他们的账号。集成可以添加 applicationcredentials.py 文件，并实现下文介绍的功能。'
 ---
+# 应用凭证
 
 集成可以支持[通过 OAuth2 进行配置](/developers/config_entries_config_flow_handler#configuration-via-oauth2)，让
 用户关联他们的账号。集成可以添加 `application_credentials.py` 文件，并实现下文介绍的功能。

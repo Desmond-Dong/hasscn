@@ -1,6 +1,6 @@
 ---
 title: FreeDNS
-description: 使用 FreeDNS 保持您的 DNS 记录更新。
+description: '通过 FreeDNS 集成，您可以让 FreeDNS(https://freedns.afraid.org) 记录保持最新。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_iot_class: Cloud Push
@@ -9,6 +9,7 @@ ha_domain: freedns
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# FreeDNS
 
 通过 **FreeDNS** 集成，您可以让 [FreeDNS](https://freedns.afraid.org) 记录保持最新。
 

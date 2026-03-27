@@ -1,7 +1,8 @@
 ---
 title: 系统检测到不受信任的内容
-description: 关于不受信任的内容为何将安装标记为不健康的更多信息。
+description: 'Home Assistant 检测到不受信任的代码。看起来有人/某物将未签名的镜像或代码注入了您的 Home Assistant 系统。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 系统检测到不受信任的内容
 
 ## 问题
 

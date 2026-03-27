@@ -1,6 +1,6 @@
 ---
 title: Synology SRM
-description: 有关如何将 Synology SRM 路由器集成到 Home Assistant 的说明。
+description: '此集成允许您通过检查连接到 Synology SRM(https://www.synology.com/srm) 路由器的设备来检测在家状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Synology SRM
 
 此集成允许您通过检查连接到 [Synology SRM](https://www.synology.com/srm) 路由器的设备来检测在家状态。
 

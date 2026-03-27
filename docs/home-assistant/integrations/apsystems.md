@@ -1,6 +1,6 @@
 ---
 title: APsystems
-description: 在本地控制和监控您的 APsystems EZ1 微型逆变器，无需云端
+description: 'APsystems 集成允许您读取 APsystems EZ1(https://emea.apsystems.com/diy/ez1/) 微型逆变器的数据。它还允许您将输出限制设置为 30 瓦以上的任何值。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_iot_class: Local Polling
 ha_config_flow: true
 ha_release: 2024.6
@@ -17,6 +17,7 @@ ha_codeowners:
   - '@mawoka-myblock'
   - '@SonnenladenGmbH'
 ---
+# APsystems
 
 **APsystems** 集成允许您读取 [APsystems EZ1](https://emea.apsystems.com/diy/ez1/) 微型逆变器的数据。它还允许您将输出限制设置为 30 瓦以上的任何值。
 

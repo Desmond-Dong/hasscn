@@ -1,7 +1,7 @@
 ---
 title: "Squeezelite"
+description: 'Music Assistant 部分模拟 Logitech Media Server（现在作为 <a href="https://lyrion.org" target="blank" rel="noopener noreferrer"Lyrion Music Server</a 维护，又名 LMS）。'
 ---
-
 # Squeezelite <img src="/assets/icons/slim-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 部分模拟 Logitech Media Server（现在作为 <a href="https://lyrion.org" target="_blank" rel="noopener noreferrer">Lyrion Music Server</a> 维护，又名 LMS），并以 <a href="https://github.com/ralph-irving/squeezelite" target="_blank" rel="noopener noreferrer">Squeezelite</a> 客户端的播放器提供商支持形式完全实现了 <a href="https://lyrion.org/reference/slimproto-protocol/"  target="_blank" rel="noopener noreferrer">SlimProto 协议</a>。

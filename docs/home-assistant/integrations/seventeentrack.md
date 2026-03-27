@@ -1,6 +1,6 @@
 ---
 title: 17TRACK
-description: 有关如何在 Home Assistant 中使用 17track.net 数据的说明
+description: 'The 17TRACK integration allows users to get package data tied to their 17track.net(https://www.17track.net) account. The integration creates both summary。'
 ha_category:
   - Postal Service
 ha_release: 0.83
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# 17TRACK
 
 The **17TRACK** integration allows users to get package data tied to their [17track.net](https://www.17track.net) account. The integration creates both summary sensors, which show the number of packages in a current state (e.g., "In Transit"), as well as individual sensors for each package within the account.
 

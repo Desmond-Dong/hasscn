@@ -1,6 +1,6 @@
 ---
 title: Rabbit Air
-description: 有关如何将 Rabbit Air 空气净化器集成到 Home Assistant 中的说明。
+description: 'Rabbit Air 集成允许您通过本地网络控制空气净化器。目前支持以下设备型号：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Fan
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ ha_platforms:
   - fan
 ha_integration_type: device
 ---
+# Rabbit Air
 
 **Rabbit Air** 集成允许您通过本地网络控制空气净化器。目前支持以下设备型号：
 

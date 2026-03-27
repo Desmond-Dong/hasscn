@@ -1,6 +1,6 @@
 ---
 title: Google Air Quality
-description: 关于如何将 Google 空气质量集成到 Home Assistant 的说明。
+description: 'Google Air Quality 集成通过 Google Air Quality API 提供空气质量数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 2025.12
@@ -14,6 +14,7 @@ ha_integration_type: service
 ha_domain: google_air_quality
 ha_quality_scale: bronze
 ---
+# Google Air Quality
 
 **Google Air Quality** 集成通过 Google Air Quality API 提供空气质量数据。
 

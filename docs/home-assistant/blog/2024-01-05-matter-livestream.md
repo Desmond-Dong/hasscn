@@ -2,6 +2,8 @@
 title: 物质状态直播
 description: 我们将于 1 月 10 日星期三举办 Matter 直播。请在评论部分询问有关 Matter 和 Home Assistant 的所有问题！
 ---
+# 物质状态直播
+
 TL;DR：我们将于 1 月 10 日星期三进行 Matter 直播。在评论部分发布您有关 Matter 和 Home Assistant 的所有问题，我们将尽力在直播期间回答这些问题！
 
 2022 年末，Matter 首次向公众发布。它有望成为新的本地家庭自动化标准，将统一各个制造商的生态系统和智能设备。我们[加入了 CSA](/home-assistant/blog/2023/12/04/nabu-casa-at-the-Matter-member-meeting/)，这是一个开发 Matter 的联盟，以占据前排席位，并尽我们所能地实现 Matter。如今，一年过去了，Matter 是否兑现了承诺，Matter 在 Home Assistant 中的状态又如何呢？

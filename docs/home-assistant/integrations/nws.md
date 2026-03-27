@@ -1,6 +1,6 @@
 ---
 title: National Weather Service (NWS)
-description: "有关如何在 Home Assistant 中集成国家气象局数据的说明。"
+description: 'The NWS integration uses the National Weather Service(https://www.weather.gov) web API as a source for meteorological data for your location. 本页属于 Home。'
 
 ha_category:
   - Weather
@@ -17,6 +17,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# National Weather Service (NWS)
 
 The **NWS** integration uses the [National Weather Service](https://www.weather.gov) web API as a source for meteorological data for your location.
 

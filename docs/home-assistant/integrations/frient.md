@@ -1,6 +1,6 @@
 ---
 title: Frient
-description: 使用 Zigbee 集成控制您的 Frient Zigbee 设备。
+description: 'Frient(https://www.frient.com/) is a member of the Works with Home Assistant partner program for their Zigbee products. Frient is committed to making sure。'
 ha_release: '2025.8'
 ha_iot_class: Local Push
 ha_category:
@@ -23,6 +23,7 @@ ha_platforms:
 ha_iot_standard: zigbee
 ha_brand: true
 ---
+# Frient
 
 [Frient](https://www.frient.com/) is a member of the Works with Home Assistant partner program for their Zigbee products. Frient is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

@@ -1,6 +1,6 @@
 ---
 title: Raspberry Pi Power Supply Checker
-description: 有关如何将 Raspberry Pi 电源检查器集成到 Home Assistant 中的说明。
+description: 'Raspberry Pi Power Supply Checker 集成允许您检测运行 Home Assistant 的 Raspberry Pi 是否存在供电不良(https://www.raspberrypi.com/documentation/computers/raspberry-pi.htmlpow。'
 ha_category:
   - System monitor
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ ha_platforms:
   - binary_sensor
 ha_integration_type: integration
 ---
+# Raspberry Pi Power Supply Checker
 
 **Raspberry Pi Power Supply Checker** 集成允许您检测运行 Home Assistant 的 Raspberry Pi 是否存在[供电不良](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#power-supply-warnings)问题。
 

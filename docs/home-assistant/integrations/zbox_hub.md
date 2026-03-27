@@ -1,6 +1,6 @@
 ---
 title: Z-Box Hub
-description: 使用 Fibaro 集成连接和控制您的 Z-Box Hub 设备
+description: '将 Z-Box Hub(https://zboxhub.com/) 集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -33,6 +33,7 @@ ha_platforms:
   - switch
 ha_iot_class: Local Push
 ---
+# Z-Box Hub
 
 将 [Z-Box Hub](https://zboxhub.com/) 集成到 Home Assistant 中。
 

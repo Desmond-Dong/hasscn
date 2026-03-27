@@ -2,6 +2,7 @@
 title: '[更新：问题已解决，API 已恢复并承诺持续保留] Logitech Harmony 移除本地 API'
 description: Logitech 在 Harmony Hub 最新软件更新中禁用了本地 API。出于隐私和速度考虑，家庭自动化设备应当在本地通信，避免数据离开局域网。
 ---
+# [更新：问题已解决，API 已恢复并承诺持续保留] Logitech Harmony 移除本地 API
 
 **更新 6（12 月 21 日）：**好消息！Logitech 在[论坛公告](https://community.logitech.com/s/question/0D55A00008D4bZ4SAJ/harmony-hub-firmware-更新-fixes-vulnerabilities)中表示，他们推出了 XMPP Beta Program，可安装开发者固件版本以恢复原有 XMPP API（包括其中的安全漏洞行为）。请注意，安装该版本会导致保修失效。
 

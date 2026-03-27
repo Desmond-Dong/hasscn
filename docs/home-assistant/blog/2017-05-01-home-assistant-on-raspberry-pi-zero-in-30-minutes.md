@@ -1,7 +1,8 @@
 ---
 title: 30 分钟在 Pi Zero W 上安装 Home Assistant
-description: 在 Pi Zero W 上安装 Home Assistant（Hassbian）
+description: '<p class="img" <img src="/home-assistant/images/blog/2017-05-hassbian-pi-zero/homeassistantplusrpi600x315.png" / </p。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# 30 分钟在 Pi Zero W 上安装 Home Assistant
 
 <p class="img">
   <img src="/home-assistant/images/blog/2017-05-hassbian-pi-zero/home_assistant_plus_rpi_600x315.png" />

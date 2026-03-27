@@ -1,6 +1,6 @@
 ---
 title: Google Maps
-description: 关于如何使用 Google Maps 位置共享在 Home Assistant 中跟踪设备的说明。
+description: 'Google Maps 集成允许您使用 Google Maps 位置共享(https://myaccount.google.com/locationsharing) 的非官方 API 检测存在。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.67
 ha_category:
   - Presence detection
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Google Maps
 
 **Google Maps** 集成允许您使用 [Google Maps 位置共享](https://myaccount.google.com/locationsharing) 的非官方 API 检测存在。
 

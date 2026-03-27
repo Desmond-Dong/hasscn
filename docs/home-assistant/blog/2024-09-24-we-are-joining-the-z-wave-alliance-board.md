@@ -1,7 +1,9 @@
 ---
 title: 我们即将加入 Z-Wave 联盟董事会
-description: 我们将在该平台上帮助代表家庭助理用户和开放家庭基金会的价值观，定义 Z-Wave 的未来。
+description: '<img src=''/home-assistant/images/blog/2024-09-zwave-board/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Paulus Schoutsen is joining the Z-Wave。'
 ---
+# 我们即将加入 Z-Wave 联盟董事会
+
 <img src='/home-assistant/images/blog/2024-09-zwave-board/art.jpg' style='border: 0;box-shadow: none;' alt="Paulus Schoutsen is joining the Z-Wave Alliance Board">
 
 今天有一个重要公告，我（Home Assistant 创始人 Paulus）将代表 Nabu Casa 在 Z-Wave 联盟董事会中占有一席之地。这是对我们在支持开放标准方面所做工作的重要认可，也是对开源项目在保持标准成功和繁荣方面的重要性的认可。

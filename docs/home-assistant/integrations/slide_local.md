@@ -1,6 +1,6 @@
 ---
 title: Slide Local
-description: 有关如何将 Innovation in Motion Slide 保护套与 Home Assistant 集成的说明。
+description: 'Slide Local 集成允许您通过本地 API，在 Home Assistant 中接入 Slide(https://slide.store/) 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Cover
 ha_iot_class: Local Polling
@@ -18,6 +18,7 @@ ha_integration_type: device
 ha_zeroconf: true
 ha_quality_scale: gold
 ---
+# Slide Local
 
 **Slide Local** 集成允许您通过本地 API，在 Home Assistant 中接入 [Slide](https://slide.store/) 设备。
 

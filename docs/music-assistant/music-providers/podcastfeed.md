@@ -1,7 +1,7 @@
 ---
 title: "Podcast RSS Feed"
+description: 'Music Assistant 支持从 RSS 源流式传输播客。由 <a href="https://github.com/saeugetier" target="blank" rel="noopener noreferrer"saeugetier</a 贡献和维护。'
 ---
-
 # Podcast RSS Feed 提供者 <img src="/assets/icons/rss-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持从 RSS 源流式传输播客。由 <a href="https://github.com/saeugetier" target="_blank" rel="noopener noreferrer">saeugetier</a> 贡献和维护。

@@ -1,6 +1,6 @@
 ---
 title: ekey bionyx
-description: 关于如何将 ekey bionyx 设备集成到 Home Assistant 的说明。
+description: 'ekey bionyx 集成允许 Home Assistant 接收来自您的 ekey 指纹读取器(https://www.ekey.net)的事件。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Event
 ha_release: '2025.10'
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# ekey bionyx
 
 **ekey bionyx** 集成允许 Home Assistant 接收来自您的 [ekey 指纹读取器](https://www.ekey.net)的事件。
 

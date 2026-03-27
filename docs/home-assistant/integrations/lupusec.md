@@ -1,6 +1,6 @@
 ---
 title: Lupus Electronics LUPUSEC
-description: 关于将 Lupusec 家庭安防与 Home Assistant 集成的说明。
+description: 'Lupus Electronics LUPUSEC 集成允许用户集成他们的 Lupusec 报警控制面板以及所有连接的传感器和其他设备。有关 LUPUS-Electronics 安防系统的更多信息，请访问他们的网站(https://www.lupus-electronics.de)。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -19,6 +19,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_config_flow: true
 ---
+# Lupus Electronics LUPUSEC
 
 **Lupus Electronics LUPUSEC** 集成允许用户集成他们的 Lupusec 报警控制面板以及所有连接的传感器和其他设备。有关 LUPUS-Electronics 安防系统的更多信息，请访问他们的[网站](https://www.lupus-electronics.de)。
 

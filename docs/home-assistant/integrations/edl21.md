@@ -1,6 +1,6 @@
 ---
 title: EDL21
-description: 关于如何在 Home Assistant 中集成基于 SML 的 EDL21 智能电表的说明。
+description: 'The EDL21 integration lets you read German EDL21 smart meters using SML(https://de.wikipedia.org/wiki/SmartMessageLanguage) from Home Assistant. 本页属于 Home。'
 ha_category:
   - Sensor
 ha_iot_class: Local Push
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_config_flow: true
 ---
+# EDL21
 
 The **EDL21** integration lets you read German EDL21 smart meters using [SML](https://de.wikipedia.org/wiki/Smart_Message_Language) from Home Assistant.
 

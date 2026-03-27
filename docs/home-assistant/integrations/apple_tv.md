@@ -1,6 +1,6 @@
 ---
 title: Apple TV
-description: 关于将 Apple TV 设备集成到 Home Assistant 的说明。
+description: 'Apple TV 集成允许您控制 Apple TV（任何一代）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
   - Multimedia
@@ -18,6 +18,7 @@ ha_platforms:
   - remote
 ha_integration_type: device
 ---
+# Apple TV
 
 **Apple TV** 集成允许您控制 Apple TV（任何一代）。
 

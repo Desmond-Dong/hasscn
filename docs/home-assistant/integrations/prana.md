@@ -1,6 +1,6 @@
 ---
 title: Prana
-description: 集成控制普拉纳回收器。
+description: 'Prana recuperators 集成可让您控制 Prana 热回收设备。您可以管理电机及其工作模式，并监控设备提供的一系列传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2026.2
 ha_iot_class: Local Polling
 ha_codeowners:
@@ -17,6 +17,7 @@ ha_platforms:
 ha_config_flow: true
 ha_zeroconf: true
 ---
+# Prana
 
 **Prana recuperators** 集成可让您控制 Prana 热回收设备。您可以管理电机及其工作模式，并监控设备提供的一系列传感器。
 

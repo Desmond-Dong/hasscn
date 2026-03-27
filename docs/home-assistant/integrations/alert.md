@@ -1,6 +1,6 @@
 ---
 title: 警报
-description: 关于如何在 Home Assistant 中设置自动警报的说明。
+description: 'Alert 集成旨在在问题出现时通知您。 例如，如果车库门被打开，alert 集成可用于通过以可自定义的间隔发送重复通知来提醒您。这也用于低电池传感器、漏水传感器或任何可能需要您关注的情况。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
 ha_release: 0.38
@@ -15,6 +15,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# 警报
 
 **Alert** 集成旨在在问题出现时通知您。
 例如，如果车库门被打开，`alert` 集成可用于通过以可自定义的间隔发送重复通知来提醒您。这也用于低电池传感器、漏水传感器或任何可能需要您关注的情况。

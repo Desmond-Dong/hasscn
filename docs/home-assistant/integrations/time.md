@@ -1,6 +1,6 @@
 ---
 title: Time
-description: 关于如何在 Home Assistant 中设置时间实体的说明。
+description: 'Time 集成用于控制和监测设备上的时间值。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Time
 ha_release: '2022.12'
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Time
 
 **Time** 集成用于控制和监测设备上的时间值。
 

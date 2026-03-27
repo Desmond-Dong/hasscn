@@ -1,6 +1,6 @@
 ---
 title: SwitchBot Bluetooth
-description: 有关如何设置 SwitchBot 设备的说明。
+description: 'SwitchBot Bluetooth 集成可让你控制 SwitchBot devices(https://www.switch-bot.com/) 设备，例如传感器、门锁、窗帘、灯具、插座、扫地机器人和 Hub 等。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Button
@@ -45,6 +45,7 @@ ha_config_flow: true
 ha_integration_type: device
 ha_quality_scale: gold
 ---
+# SwitchBot Bluetooth
 
 **SwitchBot Bluetooth** 集成可让你控制 SwitchBot [devices](https://www.switch-bot.com/) 设备，例如传感器、门锁、窗帘、灯具、插座、扫地机器人和 Hub 等。
 

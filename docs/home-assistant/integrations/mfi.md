@@ -1,6 +1,6 @@
 ---
 title: Ubiquiti mFi mPort
-description: 关于如何在 Home Assistant 中集成 mFi 的说明。
+description: 'Home Assistant 目前支持以下设备类型：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
   - Sensor
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Ubiquiti mFi mPort
 
 Home Assistant 目前支持以下设备类型：
 

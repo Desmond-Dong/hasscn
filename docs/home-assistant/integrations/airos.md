@@ -1,6 +1,6 @@
 ---
 title: Ubiquiti airOS
-description: Ubiquiti UISP airOS 集成说明。
+description: 'Ubiquiti <abbr title="Ubiquity 互联网服务提供商"UISP</abbr 系列的无线(https://techspecs.ui.com/uisp/wireless)产品提供了一套专为互联各种位置而设计的综合设备。只要这些 airOS。'
 ha_category:
   - Sensor
 ha_iot_class: Local Polling
@@ -18,6 +18,7 @@ ha_integration_type: device
 ha_quality_scale: platinum
 ha_dhcp: true
 ---
+# Ubiquiti airOS
 
 Ubiquiti <abbr title="Ubiquity 互联网服务提供商">UISP</abbr> 系列的[无线](https://techspecs.ui.com/uisp/wireless)产品提供了一套专为互联各种位置而设计的综合设备。只要这些 airOS 设备可以在没有（或有限）建筑物或树木等障碍物的情况下"看到"彼此，就可以建立稳定且高带宽的"波束"。即使是最具成本效益的设备也可以实现高达 450 Mbps 的真实 TCP/IP 吞吐量，并保持可靠连接达 10 公里范围。
 

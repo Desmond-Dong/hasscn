@@ -1,6 +1,6 @@
 ---
 title: Frontier Silicon
-description: 关于如何将 Frontier Silicon 网络收音机集成到 Home Assistant 的说明。
+description: '这种集成为基于 Frontier Silicon 芯片组 的网络收音机提供支持。提供基于这些芯片的产品的一些制造商包括：Hama、Medion、Slivercrest、Auna、Technisat、Revo、Pinnel 等。这些设备通常由 OKTIV 或 UNDOK 应用程序控制。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ ha_codeowners:
 ha_ssdp: true
 ha_config_flow: true
 ---
+# Frontier Silicon
 
 这种集成为基于 [Frontier Silicon 芯片组] 的网络收音机提供支持。提供基于这些芯片的产品的一些制造商包括：Hama、Medion、Slivercrest、Auna、Technisat、Revo、Pinnel 等。这些设备通常由 OKTIV 或 UNDOK 应用程序控制。
 

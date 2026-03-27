@@ -1,7 +1,8 @@
 ---
 title: 介绍 Home Assistant 创作者网络！
-description: 我们希望投入资源到社区中，并支持大家已经付出的努力。
+description: '大家好！今天我们宣布推出一项新计划：Home Assistant Creator Network！我们非常期待能与创作者展开更紧密的交流，确保每个人都能获得尽可能准确、完善的信息。我们希望投入资源到社区中，并支持那些持续帮助用户了解 Home Assistant 的努力。'
 ---
+# 介绍 Home Assistant 创作者网络！
 
 大家好！今天我们宣布推出一项新计划：Home Assistant Creator Network！我们非常期待能与创作者展开更紧密的交流，确保每个人都能获得尽可能准确、完善的信息。我们希望投入资源到社区中，并支持那些持续帮助用户了解 Home Assistant 的努力。这也是 Home Assistant 用来回馈那些积极与用户互动的创作者的一种方式。
 

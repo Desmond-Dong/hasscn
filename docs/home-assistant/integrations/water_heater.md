@@ -1,6 +1,6 @@
 ---
 title: Water heater
-description: 关于如何在 Home Assistant 中控制热水器的说明。
+description: 'Water heater 集成用于控制和监控热水器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.81
 ha_domain: water_heater
 ha_quality_scale: internal
@@ -9,6 +9,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Water heater
 
 **Water heater** 集成用于控制和监控热水器。
 

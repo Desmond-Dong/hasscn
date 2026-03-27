@@ -1,6 +1,6 @@
 ---
 title: Crownstone
-description: 关于如何在 Home Assistant 中设置 Crownstone 集成的说明。
+description: 'Crownstone 集成允许您通过云端或使用 Crownstone USB(crownstone-usb) 加密狗来控制您的 Crownstone。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ ha_platforms:
   - light
 ha_integration_type: integration
 ---
+# Crownstone
 
 **Crownstone** 集成允许您通过云端或使用 [Crownstone USB](#crownstone-usb) 加密狗来控制您的 Crownstone。
 

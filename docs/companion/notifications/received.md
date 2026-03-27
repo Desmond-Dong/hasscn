@@ -1,7 +1,9 @@
 ---
 title: "通知接收"
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /。 本页属于 Home Assistant 配套应用文档。'
 id: "notification-received"
 ---
+# 通知接收
 
 <img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" />
 

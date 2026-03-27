@@ -1,6 +1,6 @@
 ---
 title: ToGrill
-description: 控制和监控您的 ToGrill 兼容烧烤温度计。
+description: 'The ToGrill integration allows you to connect your ToGrill compatible Bluetooth grill thermometer. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_iot_class: Local Push
 ha_config_flow: true
 ha_release: '2025.9'
@@ -20,6 +20,7 @@ ha_codeowners:
   - '@elupus'
 ha_quality_scale: bronze
 ---
+# ToGrill
 
 The **ToGrill** integration allows you to connect your ToGrill compatible Bluetooth grill thermometer.
 

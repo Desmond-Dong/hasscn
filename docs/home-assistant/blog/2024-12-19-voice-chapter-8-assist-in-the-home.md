@@ -1,7 +1,9 @@
 ---
 title: 声音第 8 章 - 今天帮忙做家务
-description: 您今天可以使用 Assist 执行的所有操作，以及我们的开发状态、限制以及您可以提供帮助的地方。
+description: '<img src=''/home-assistant/images/blog/2024-12-voice-chapter-8/art.png'' alt="Voice chapter 8 - Assist in the home today"。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# 声音第 8 章 - 今天帮忙做家务
+
 <img src='/home-assistant/images/blog/2024-12-voice-chapter-8/art.png' alt="Voice chapter 8 - Assist in the home today">
 
 您可能已经读到，我们今天推出了[Home Assistant语音预览版](/home-assistant/voice-pe/)。 Home Assistant 的本土语音助手 [Assist](/home-assistant/voice_control/) 是过去几年开源软件进步的顶峰。一大群专注的开发人员一直在共同努力添加和完善其许多功能，如果您已经有一段时间没有尝试 Assist，您应该利用这次发布作为一个机会，重新加入并查看我们所取得的进展。

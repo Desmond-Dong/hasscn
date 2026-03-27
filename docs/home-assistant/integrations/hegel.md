@@ -1,6 +1,6 @@
 ---
 title: Hegel Amplifier
-description: 关于将 Hegel 功放集成到 Home Assistant 的说明。
+description: 'Hegel 集成允许您从 Home Assistant 控制 Hegel Music Systems(https://www.hegel.com/) 功放。它使用 Hegel 的官方 IP 控制协议通过 TCP 进行通信，并支持实时推送更新以提供响应式体验。'
 ha_category:
   - Media player
 ha_release: 2026.3
@@ -15,6 +15,7 @@ ha_ssdp: true
 ha_quality_scale: silver
 ha_integration_type: device
 ---
+# Hegel Amplifier
 
 **Hegel** 集成允许您从 Home Assistant 控制 [Hegel Music Systems](https://www.hegel.com/) 功放。它使用 Hegel 的官方 IP 控制协议通过 TCP 进行通信，并支持实时推送更新以提供响应式体验。
 

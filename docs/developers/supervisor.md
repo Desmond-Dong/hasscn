@@ -1,7 +1,9 @@
 ---
 title: Home Assistant Supervisor 开发
+description: 'Supervisor 允许用户直接在 Home Assistant 中管理自己的安装环境。Supervisor 主要负责以下内容：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 简介
 ---
+# Home Assistant Supervisor 开发
 
 Supervisor 允许用户直接在 Home Assistant 中管理自己的安装环境。Supervisor 主要负责以下内容：
 

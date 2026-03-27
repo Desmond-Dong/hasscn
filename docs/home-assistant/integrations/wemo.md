@@ -1,6 +1,6 @@
 ---
 title: Belkin WeMo
-description: 关于如何将 Belkin WeMo 设备集成到 Home Assistant 的说明。
+description: 'Belkin WeMo 集成是将各种 Belkin WeMo(https://www.belkin.com/products/wemo-smart-home/) 设备接入 Home Assistant 的主集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Fan
@@ -23,6 +23,7 @@ ha_codeowners:
   - '@esev'
 ha_integration_type: integration
 ---
+# Belkin WeMo
 
 **Belkin WeMo** 集成是将各种 [Belkin WeMo](https://www.belkin.com/products/wemo-smart-home/) 设备接入 Home Assistant 的主集成。
 

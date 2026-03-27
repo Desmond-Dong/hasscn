@@ -1,6 +1,6 @@
 ---
 title: Volumio
-description: 如何设置 Volumio 媒体播放器集成
+description: 'Volumio 集成允许您通过 Home Assistant 控制 Volumio(https://volumio.org/) 媒体播放器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.41
@@ -14,6 +14,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# Volumio
 
 **Volumio** 集成允许您通过 Home Assistant 控制 [Volumio](https://volumio.org/) 媒体播放器。
 

@@ -1,6 +1,6 @@
 ---
 title: Keyboard Remote
-description: 关于如何使用键盘远程控制 Home Assistant 的说明。
+description: '接收来自键盘的信号，并将其当作遥控器使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 0.29
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Keyboard Remote
 
 接收来自键盘的信号，并将其当作遥控器使用。
 

@@ -1,6 +1,6 @@
 ---
 title: Baltimore Gas and Electric (BGE)
-description: 使用 Opower 集成获取巴尔的摩燃气电力公司 (BGE) 的能源使用数据
+description: '此集成由 Opower(/home-assistant/integrations/opower/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Cloud Polling
 ---
+# Baltimore Gas and Electric (BGE)
 
 :::note
 此集成由 [Opower](/home-assistant/integrations/opower/) 集成支持。

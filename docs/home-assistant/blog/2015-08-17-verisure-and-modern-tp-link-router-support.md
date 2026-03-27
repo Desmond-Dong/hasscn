@@ -1,8 +1,9 @@
 ---
 title: 现已支持 Verisure 设备和新款 TP-Link 路由器
-description: 新增对 Verisure 开关、传感器、湿度计以及新款
+description: '这是一个小型的错误修复发布，用于解决上个版本以来出现的一些问题。请尽快在 Home Assistant 目录中运行 git pull 完成升级。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
   TP-Link routers
 ---
+# 现已支持 Verisure 设备和新款 TP-Link 路由器
 
 这是一个小型的错误修复发布，用于解决上个版本以来出现的一些问题。请尽快在 Home Assistant 目录中运行 `git pull` 完成升级。
 

@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Home Assistant Analytics Insights
 
 **Analytics Insights** 集成允许您在 Home Assistant 中获取集成使用统计数据。
 数据来自 [Home Assistant Analytics](https://analytics.home-assistant.io/)。

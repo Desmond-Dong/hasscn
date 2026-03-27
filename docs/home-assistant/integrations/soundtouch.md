@@ -1,6 +1,6 @@
 ---
 title: Bose SoundTouch
-description: 有关如何将 Bose SoundTouch 设备集成到 Home Assistant 的说明。
+description: 'The Bose SoundTouch integration allows you to control your Bose SoundTouch(https://www.soundtouch.com/) speakers from Home Assistant. 本页属于 Home Assistant。'
 ha_category:
   - Media player
 ha_release: 0.34
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: device
 ha_zeroconf: true
 ---
+# Bose SoundTouch
 
 The **Bose SoundTouch** integration allows you to control your [Bose SoundTouch](https://www.soundtouch.com/) speakers from Home Assistant.
 

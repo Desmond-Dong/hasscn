@@ -1,6 +1,6 @@
 ---
 title: Azure Event Hub
-description: Azure Event Hub 集成设置
+description: 'Azure Event Hub 集成允许您接入 Home Assistant 事件总线，并将事件发送到 Azure Event Hub(https://azure.microsoft.com/products/event-hubs/) 或 Azure IoT。'
 ha_category:
   - History
 ha_release: 0.94
@@ -14,6 +14,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Azure Event Hub
 
 **Azure Event Hub** 集成允许您接入 Home Assistant 事件总线，并将事件发送到 [Azure Event Hub](https://azure.microsoft.com/products/event-hubs/) 或 [Azure IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-read-builtin)。
 

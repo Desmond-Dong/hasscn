@@ -1,6 +1,6 @@
 ---
 title: Yandex TTS
-description: 关于如何在 Home Assistant 中设置 Yandex SpeechKit TTS 的说明。
+description: 'Yandex TTS 集成使用 Yandex SpeechKit(https://tech.yandex.com/speechkit/) 文本转语音引擎，以自然语音朗读文本。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Text-to-speech
 ha_release: 0.36
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Yandex TTS
 
 **Yandex TTS** 集成使用 [Yandex SpeechKit](https://tech.yandex.com/speechkit/) 文本转语音引擎，以自然语音朗读文本。
 

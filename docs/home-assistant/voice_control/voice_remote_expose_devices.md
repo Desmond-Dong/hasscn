@@ -1,7 +1,8 @@
 ---
 title: 向 Assist 暴露实体
-description: 分步说明如何将实体暴露给 Assist、Google Assistant 或 Alexa 等助手。
+description: '如果您想通过语音命令控制设备，必须先将对应的实体暴露给 Assist。 这样做是为了避免门锁、车库门等敏感设备被语音误操作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 向 Assist 暴露实体
 
 如果您想通过语音命令控制设备，必须先将对应的实体暴露给 Assist。
 这样做是为了避免门锁、车库门等敏感设备被语音误操作。

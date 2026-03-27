@@ -1,6 +1,8 @@
 ---
 title: Assist 的唤醒词
+description: '唤醒词是一些特殊词语或短语，用来告诉语音助手接下来将会说出命令。设备随后会从被动聆听切换为主动聆听。常见示例包括：Hey Google、Hey Siri 或 Alexa。Home Assistant 也支持自己的唤醒词，例如 Okay Nabu。 本页属于 Home Assistant 中文文档。'
 ---
+# Assist 的唤醒词
 
 唤醒词是一些特殊词语或短语，用来告诉语音助手接下来将会说出命令。设备随后会从被动聆听切换为主动聆听。常见示例包括：Hey Google、Hey Siri 或 Alexa。Home Assistant 也支持自己的唤醒词，例如 Okay Nabu。
 

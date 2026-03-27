@@ -1,7 +1,9 @@
 ---
 title: '仪表盘第二章：我们一起重新设计卡片吧！'
-description: 我们每个月都会稳定地发布新仪表盘设计的更新，我们希望我们的贡献者社区能够参与其中！
+description: '<p class=''img'' <lite-youtube videoid="9zmXLxQPr1o" videotitle="A Home-Approved 仪表盘 - Chapter 2: Let''s redesign the 卡片 together!"</lite-youtube </p。'
 ---
+# 仪表盘第二章：我们一起重新设计卡片吧！
+
 <p class='img'>
     <lite-youtube videoid="9zmXLxQPr1o" videotitle="A Home-Approved 仪表盘 - Chapter 2: Let's redesign the 卡片 together!"></lite-youtube>
 </p>

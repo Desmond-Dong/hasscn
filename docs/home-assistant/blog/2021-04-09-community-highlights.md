@@ -4,6 +4,7 @@ description: Google Home custom 集成 so you can read timers and alarms, get
   started with the tempometer gauge card and a lot of new inspiration for your own
   Lovelace dashboard.
 ---
+# Community Highlights: 16th edition
 
 What did you think of [the 发布][发布] last Wednesday? A
 lot of cool things have been added! But there were also a lot of

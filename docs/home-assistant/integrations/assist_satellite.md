@@ -1,6 +1,6 @@
 ---
 title: Assist Satellite
-description: 使用 Assist 的远程卫星设备。
+description: '这是一个面向远程卫星设备的集成，这些设备使用 Assist(/home-assistant/voicecontrol/) 来控制并与 Home Assistant 交互。这使其他集成能够以一致的方式表示这些卫星设备。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Voice
 ha_release: '2024.10'
@@ -12,6 +12,7 @@ ha_domain: assist_satellite
 ha_integration_type: entity
 ha_quality_scale: internal
 ---
+# Assist Satellite
 
 这是一个面向远程卫星设备的集成，这些设备使用 [Assist](/home-assistant/voice_control/) 来控制并与 Home Assistant 交互。这使其他集成能够以一致的方式表示这些卫星设备。
 

@@ -1,6 +1,6 @@
 ---
 title: MTA New York City Transit
-description: 关于如何在 Home Assistant 中集成纽约地铁和公交实时到站信息的说明。
+description: 'The MTA New York City Transit integration provides real-time subway and bus arrival predictions for NYC transit lines using GTFS-RT data from the。'
 
 ha_category:
   - Transport
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: silver
 ---
+# MTA New York City Transit
 
 The **MTA New York City Transit** integration provides real-time subway and bus arrival predictions for NYC transit lines using GTFS-RT data from the [Metropolitan Transportation Authority (MTA)](https://new.mta.info/).
 

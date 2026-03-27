@@ -1,6 +1,9 @@
 ---
 title: "集成质量量表"
+description: 'import RuleOverview from ''./includes/ruleoverview.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 集成质量量表
+
 import RuleOverview from './_includes/rule_overview.jsx'
 
 集成质量等级是 Home Assistant 的一个框架，用于根据用户体验、功能、代码质量和开发人员经验对集成进行分级。

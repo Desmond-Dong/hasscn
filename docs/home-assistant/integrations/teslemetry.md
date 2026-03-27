@@ -1,6 +1,6 @@
 ---
 title: Teslemetry
-description: 有关如何将遥测技术集成到 Home Assistant 中的说明。
+description: 'Teslemetry 集成可公开与你的 Teslemetry(https://teslemetry.com/) 订阅关联的 Tesla 车辆和能源站点中的各种命令与传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -38,6 +38,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Teslemetry
 
 **Teslemetry** 集成可公开与你的 [Teslemetry](https://teslemetry.com/) 订阅关联的 Tesla 车辆和能源站点中的各种命令与传感器。
 

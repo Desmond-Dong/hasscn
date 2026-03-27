@@ -1,6 +1,6 @@
 ---
 title: Bring!
-description: 关于如何将 Bring! 待办事项列表集成到 Home Assistant 的说明。
+description: 'Bring! 集成允许您将 Bring!(https://www.getbring.com/) 购物清单与 Home Assistant 同步。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - To-do list
 ha_iot_class: Cloud Polling
@@ -27,6 +27,7 @@ related:
     title: Bring!
 ha_quality_scale: platinum
 ---
+# Bring!
 
 **Bring!** 集成允许您将 [Bring!](https://www.getbring.com/) 购物清单与 Home Assistant 同步。
 

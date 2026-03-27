@@ -1,7 +1,9 @@
 ---
 title: "安卓目标"
+description: '本文档概述了 Home Assistant 应用程序支持的各种 Android 目标。每个目标都有其特定的要求和考虑因素。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "目标"
 ---
+# 安卓目标
 
 ## Android 目标
 

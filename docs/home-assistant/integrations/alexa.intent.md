@@ -1,6 +1,6 @@
 ---
 title: "Amazon Alexa Custom Skill"
-description: "关于如何构建 Alexa/Amazon Echo 自定义命令以连接 Home Assistant 的说明。"
+description: '内置的 Alexa 集成允许您将 Home Assistant 集成到 Alexa/Amazon Echo 中。此集成将允许您通过语音查询信息并在 Home Assistant 中执行操作。Home Assistant 不提供内置语句，但提供了一个框架供您定义自己的语句。'
 ha_category:
   - Voice
 ha_release: "0.10"
@@ -9,6 +9,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Amazon Alexa Custom Skill
 
 ## 我想构建自定义命令以配合 Echo 使用
 

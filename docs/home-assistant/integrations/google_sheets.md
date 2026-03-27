@@ -1,6 +1,6 @@
 ---
 title: Google Sheets
-description: 关于如何在 Home Assistant 中使用 Google Sheets 的说明。
+description: 'Google Sheets 集成允许您将 Google Drive(https://drive.google.com) 连接到 Home Assistant。该集成添加了一个动作，允许您向 Sheets 文档追加行。其思想是您可以在那里存储数据以供进一步处理。'
 ha_category:
   - Utility
 ha_iot_class: Cloud Polling
@@ -16,6 +16,7 @@ api_link: https://console.developers.google.com/start/api?id=drive
 api2: Google Sheets API
 api2_link: https://console.cloud.google.com/apis/enableflow?apiid=sheets.googleapis.com
 ---
+# Google Sheets
 
 **Google Sheets** 集成允许您将 [Google Drive](https://drive.google.com) 连接到 Home Assistant。该集成添加了一个动作，允许您向 Sheets 文档追加行。其思想是您可以在那里存储数据以供进一步处理。当您设置配置条目时，您的云端硬盘将有一个名为 Home Assistant 的新表格。然后您可以将其重命名为您喜欢的任何名称。
 

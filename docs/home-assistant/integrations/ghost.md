@@ -1,6 +1,6 @@
 ---
 title: Ghost
-description: 关于如何将 Ghost 与 Home Assistant 集成的说明。
+description: 'Ghost 集成允许您在 Home Assistant 中监控您的 Ghost(https://ghost.org) 发布指标，包括成员数量、收入、文章统计和电子邮件通讯性能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: '2026.3'
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Ghost
 
 **Ghost** 集成允许您在 Home Assistant 中监控您的 [Ghost](https://ghost.org) 发布指标，包括成员数量、收入、文章统计和电子邮件通讯性能。
 

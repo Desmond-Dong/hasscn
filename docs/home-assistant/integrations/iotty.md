@@ -1,6 +1,6 @@
 ---
 title: iotty
-description: 关于如何将 iotty 智能设备连接到 Home Assistant 的说明。
+description: 'The iotty integration lets you integrate iotty devices into Home Assistant. The iotty family includes the smart switch for lights and gates。'
 ha_release: '2024.8'
 ha_category:
   - Cover
@@ -15,6 +15,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# iotty
 
 The **iotty** integration lets you integrate iotty devices into Home Assistant. The iotty family includes the smart switch for lights and gates, the smart shades switch for blinds and shutters, and the smart outlet.
 

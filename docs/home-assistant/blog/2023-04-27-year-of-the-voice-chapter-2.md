@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "语音之年 - 第 2 章：聊起来"
-description: "通过我们全新的语音助手功能和你的智能家居对话，并让它开口回应。"
+description: '今年是 Home Assistant 的语音之年Year of the Voice。我们在 2023 年的目标，是让用户可以用自己的语言控制 Home Assistant。今天我们发布第 2 章，这是实现这一目标过程中的第二个里程碑。 本页属于 Home Assistant 中文博客与更新记录。'
 date: 2023-04-27 00:00:00
 date_formatted: "April 27, 2023"
 author: Paulus Schoutsen
@@ -9,7 +9,7 @@ comments: true
 categories: Assist
 og_image: /images/blog/2023-04-27-year-of-the-voice-chapter-2/social.png
 ---
-
+# 语音之年 - 第 2 章：聊起来
 
 今年是 Home Assistant 的[语音之年][Year of the Voice]。我们在 2023 年的目标，是让用户可以用自己的语言控制 Home Assistant。今天我们发布第 2 章，这是实现这一目标过程中的第二个里程碑。
 

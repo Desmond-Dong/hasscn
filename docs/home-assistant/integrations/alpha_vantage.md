@@ -1,6 +1,6 @@
 ---
 title: Alpha Vantage
-description: 关于在 Home Assistant 中设置 Alpha Vantage 的说明。
+description: 'Alpha Vantage 集成使用 Alpha Vantage(https://www.alphavantage.co) 来监控股票市场。该平台还提供汇率详情。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Finance
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Alpha Vantage
 
 **Alpha Vantage** 集成使用 [Alpha Vantage](https://www.alphavantage.co) 来监控股票市场。该平台还提供汇率详情。
 

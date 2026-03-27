@@ -1,7 +1,9 @@
 ---
 title: "安卓推送通知（FCM）"
+description: '设置 Firebase 云消息传递 (FCM) 可能很复杂。除非您特别需要，否则请考虑使用通过 WebSocket 的通知来进行开发。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "FCM 推送通知"
 ---
+# 安卓推送通知（FCM）
 
 ## FCM 推送通知设置
 

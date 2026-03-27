@@ -1,6 +1,6 @@
 ---
 title: FGLair
-description: 控制使用 FGLair 应用的富士通热泵或空调
+description: 'FGLair 集成为使用 FGLair 应用程序的富士通热泵和空调提供支持。 要了解适合您的热泵的应用程序，请查看 the Fujitsu FGLair FAQ(https://www.fujitsu-general.com/global/support/faq/airstage-mobile/0127.ht。'
 ha_category:
   - Climate
 ha_release: 2024.9
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Cloud Polling
 ---
+# FGLair
 
 **FGLair** 集成为使用 FGLair 应用程序的富士通热泵和空调提供支持。
 要了解适合您的热泵的应用程序，请查看 [the Fujitsu FGLair FAQ](https://www.fujitsu-general.com/global/support/faq/airstage-mobile/0127.html)。

@@ -1,7 +1,9 @@
 ---
 title: 阀门实体
+description: '阀门实体控制阀门设备，例如家中的水阀或燃气阀。平台实体派生自homeassistant.components.valve.ValveEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/valve/ini。'
 sidebar_label: 阀门
 ---
+# 阀门实体
 
 阀门实体控制阀门设备，例如家中的水阀或燃气阀。平台实体派生自[`homeassistant.components.valve.ValveEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/valve/__init__.py)。
 

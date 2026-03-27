@@ -1,7 +1,7 @@
 ---
 title: "BBC Sounds"
+description: 'Music Assistant 支持从 BBC Sounds 流式传输。由 <a href="https://github.com/kieranhogg" target="blank" rel="noopener noreferrer"Kieran Hogg</a 贡献和维护。'
 ---
-
 # BBC Sounds 提供者 <img src="/assets/icons/bbcsounds-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持从 BBC Sounds 流式传输。由 <a href="https://github.com/kieranhogg" target="_blank" rel="noopener noreferrer">Kieran Hogg</a> 贡献和维护。

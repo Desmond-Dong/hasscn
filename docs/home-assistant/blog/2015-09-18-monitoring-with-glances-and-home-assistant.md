@@ -2,6 +2,7 @@
 title: 遥控器 Monitoring with Glances
 description: This post describes the 设置 for monitoring 遥控器 hosts with Home Assistant.
 ---
+# 遥控器 Monitoring with Glances
 
 <img src='/home-assistant/images/supported_brands/glances.png' style='border:none; box-shadow: none; float: right;' height='80' />
 受到一个 [feature requests](https://github.com/home-assistant/home-assistant/issues/310) 的启发，我开始研究可用于监控远程主机的方案。这个功能请求希望能像 [systemmonitor](/home-assistant/integrations/systemmonitor) 传感器监控本地系统那样显示系统信息。后来我觉得，这对没有完整系统监控方案的小型家庭网络会是一个很好的补充。

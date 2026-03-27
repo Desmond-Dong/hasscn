@@ -1,6 +1,6 @@
 ---
 title: Geolocation
-description: 关于如何将地理位置感知平台集成到 Home Assistant 的说明。
+description: '地理位置感知实体通常与 Home Assistant 所在位置附近的现实世界事件有关，例如天气事件、丛林火灾或地震。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Geolocation
 ha_release: 0.78
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Geolocation
 
 地理位置感知实体通常与 Home Assistant 所在位置附近的现实世界事件有关，例如天气事件、丛林火灾或地震。
 

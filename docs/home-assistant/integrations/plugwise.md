@@ -1,6 +1,6 @@
 ---
 title: Plugwise
-description: Plugwise 网关平台集成。
+description: 'Plugwise(https://www.plugwise.com) 提供智能家居设备，让您监控和控制气候、能源（包括燃气）消耗和能源生产。能源信息可用于能源仪表板(/home-assistant/home-energy-management)。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Button
@@ -29,6 +29,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# Plugwise
 
 [Plugwise](https://www.plugwise.com) 提供智能家居设备，让您监控和控制气候、能源（包括燃气）消耗和能源生产。能源信息可用于[能源仪表板](/home-assistant/home-energy-management)。
 

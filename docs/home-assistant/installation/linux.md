@@ -1,7 +1,8 @@
 ---
 title: Linux
-description: 在 Linux 上安装 Home Assistant
+description: '如果您想轻松开始使用 Home Assistant，或者您几乎没有 Linux 经验，请按照本指南操作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Linux
 
 ## 安装 Home Assistant Operating System
 

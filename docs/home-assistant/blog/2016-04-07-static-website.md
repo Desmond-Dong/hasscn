@@ -1,7 +1,8 @@
 ---
 title: Static website
-description: Serving a static website with Home Assistant.
+description: 'Home Assistant 的前端借助本地 Web 服务器提供服务。如果你已经自定义(/home-assistant/getting-started/devices/customizing-devices-and-服务)过安装，那你其实已经在使用这个功能了。'
 ---
+# Static website
 
 Home Assistant 的前端借助本地 Web 服务器提供服务。如果你已经[自定义](/home-assistant/getting-started/devices/#customizing-devices-and-服务)过安装，那你其实已经在使用这个功能了。位于 Home Assistant 配置目录（`.homeassistant`）中的 `www` 文件夹内容，会通过 `/local` 对外提供（例如 `index.html` 文件对应 `https://localhost:8123/local/index.html`）。
 

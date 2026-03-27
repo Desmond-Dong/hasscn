@@ -2,6 +2,7 @@
 title: '[On hold] Deprecating Home Assistant Supervised on generic Linux'
 description: Home Assistant Supervised is no longer a supported 安装 option.
 ---
+# [On hold] Deprecating Home Assistant Supervised on generic Linux
 
 **[更新 May 26]**
 

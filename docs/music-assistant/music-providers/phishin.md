@@ -1,7 +1,7 @@
 ---
 title: "Phish.in"
+description: 'Music Assistant 支持 <a href="https://phish.in/" target="blank" rel="noopener noreferrer"Phish.in</a。此组件由 <a href="https://github.com/ozgav" target="blank"。'
 ---
-
 # Phish.in 提供者 <img src="/assets/icons/phish-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 <a href="https://phish.in/" target="_blank" rel="noopener noreferrer">Phish.in</a>。此组件由 <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a> 贡献和维护。

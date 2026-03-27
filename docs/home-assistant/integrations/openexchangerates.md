@@ -14,6 +14,7 @@ ha_integration_type: service
 ha_codeowners:
   - '@MartinHjelmare'
 ---
+# Open Exchange Rates
 
 **Open Exchange Rates** integration 会显示来自 [Open Exchange Rates](https://openexchangerates.org) 的当前汇率。该服务为 [170 种货币](https://openexchangerates.org/currencies)提供实时汇率。
 

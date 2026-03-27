@@ -1,6 +1,6 @@
 ---
 title: P5 FutureNow
-description: 关于如何在 Home Assistant 中将 P5 FutureNow 继电器/调光器单元设置为灯光的说明。
+description: 'P5 FutureNow 集成允许您将 P5(https://www.p5.hu/) FutureNow 继电器/调光器单元用作灯光。目前支持的单元：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# P5 FutureNow
 
 **P5 FutureNow** 集成允许您将 [P5](https://www.p5.hu/) FutureNow 继电器/调光器单元用作灯光。目前支持的单元：
 

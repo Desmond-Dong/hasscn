@@ -1,6 +1,6 @@
 ---
 title: OneDrive for Business
-description: "有关如何设置 OneDrive for Business 以与备份一起使用的说明。"
+description: 'The OneDrive for Business integration allows you to use OneDrive for Business(https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)。'
 
 ha_release: 2026.3
 ha_category:
@@ -19,6 +19,7 @@ ha_platforms:
   - diagnostics
   - sensor
 ---
+# OneDrive for Business
 
 The **OneDrive for Business** integration allows you to use [OneDrive for Business](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage) for [Home Assistant Backups](/home-assistant/common-tasks/general/#backups).
 

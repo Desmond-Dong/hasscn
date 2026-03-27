@@ -1,6 +1,6 @@
 ---
 title: Text-to-speech (TTS)
-description: 关于如何在 Home Assistant 中设置文字转语音 (TTS) 的说明。
+description: '文字转语音（TTS）让 Home Assistant 可以对您“说话”。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media source
   - Text-to-speech
@@ -24,6 +24,7 @@ related:
   - url: https://www.home-assistant.io/voice_control/
     title: Home Assistant Assist
 ---
+# Text-to-speech (TTS)
 
 文字转语音（TTS）让 Home Assistant 可以对您“说话”。
 

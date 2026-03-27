@@ -1,6 +1,6 @@
 ---
 title: Melissa
-description: 关于如何将 Melissa Climate 集成到 Home Assistant 的说明。
+description: 'Melissa 集成是用于连接 Melissa Climate(https://seemelissa.com/) 空调控制系统的主集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
   - Hub
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Melissa
 
 **Melissa** 集成是用于连接 [Melissa Climate](https://seemelissa.com/) 空调控制系统的主集成。
 

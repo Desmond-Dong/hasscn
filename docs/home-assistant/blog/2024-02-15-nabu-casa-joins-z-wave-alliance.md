@@ -2,6 +2,8 @@
 title: Nabu Casa 加入 Z-Wave 联盟
 description: 感谢 Home Assistant Cloud 订阅者的收入，我们已加入 Z-Wave 联盟，并启动 Z-Wave JS 的认证流程。
 ---
+# Nabu Casa 加入 Z-Wave 联盟
+
 TL;DR：得益于 Home Assistant Cloud 订阅者的收入，我们已加入 Z-Wave 联盟，并将启动 Z-Wave JS 的认证流程。
 
 <p><img src='/home-assistant/images/blog/2024-02-zwave/nabucasa-zwa.png' class='no-shadow' /></p>

@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 播客第 1 期
-description: Home Assistant 播客第 1 期 - 节目介绍与 0.45 版本
+description: '由 Home Assistant Podcast(https://hasspodcast.io) 制作的第一期节目包含播客介绍，并回顾了 Home Assistant 0.45(/home-assistant/blog/2017/05/20/automation-editor-zwave-面板-ocr/)。'
 ---
+# Home Assistant 播客第 1 期
 
 由 [Home Assistant Podcast](https://hasspodcast.io) 制作的第一期节目包含播客介绍，并回顾了 Home Assistant [0.45](/home-assistant/blog/2017/05/20/automation-editor-zwave-面板-ocr/) 的发布。
 

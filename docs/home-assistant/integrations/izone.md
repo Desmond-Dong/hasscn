@@ -1,6 +1,6 @@
 ---
 title: iZone
-description: 关于如何将 iZone 气候控制设备与 Home Assistant 集成的说明。
+description: 'The iZone integration allows access of control of a local iZone(https://izone.com.au/) ducted reverse-cycle climate control devices. These are largely。'
 ha_category:
   - Climate
 ha_release: '0.100'
@@ -17,6 +17,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# iZone
 
 The **iZone** integration allows access of control of a local [iZone](https://izone.com.au/) ducted reverse-cycle climate control devices. These are largely available in Australia.
 

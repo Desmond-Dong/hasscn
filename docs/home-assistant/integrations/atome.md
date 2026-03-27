@@ -1,6 +1,6 @@
 ---
 title: Atome Linky
-description: 在 Home Assistant 中集成 Atome Linky 能耗数据。
+description: 'Atome Linky 集成从 Direct Energy Atome 电表(https://total.direct-energie.com/particuliers/electricite/compteur-linky/atome)获取您家庭的用电消耗数据。'
 ha_release: 0.99
 ha_category:
   - Energy
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Atome Linky
 
 **Atome Linky** 集成从 [Direct Energy Atome 电表](https://total.direct-energie.com/particuliers/electricite/compteur-linky/atome)获取您家庭的用电消耗数据。
 这个特殊的小设备连接到 Linky 电表，并将实时数据发送到云平台。

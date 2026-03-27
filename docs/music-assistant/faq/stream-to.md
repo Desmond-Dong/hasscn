@@ -1,6 +1,8 @@
 ---
 title: "我想流式传输到"
+description: '安装 <a href="https://github.com/pssc/ha-addon-squeezelite" target="blank" rel="noopener noreferrer"squeezelite 应用</a，然后可以通过音频连接从 HA 主机流式传输到您的扬声器或放大器。'
 ---
+# 我想流式传输到
 
 ## 我的本地 HA 设备
 

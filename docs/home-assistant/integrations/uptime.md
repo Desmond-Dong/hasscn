@@ -1,6 +1,6 @@
 ---
 title: Uptime
-description: 关于如何将运行时间传感器集成到 Home Assistant 的说明。
+description: 'Uptime 集成会提供一个传感器，用于保存 Home Assistant 上次启动时的时间戳（日期和时间）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Utility
@@ -15,6 +15,7 @@ ha_codeowners:
   - '@frenck'
 ha_integration_type: service
 ---
+# Uptime
 
 **Uptime** 集成会提供一个传感器，用于保存 Home Assistant 上次启动时的时间戳（日期和时间）。
 

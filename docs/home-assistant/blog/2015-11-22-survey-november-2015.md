@@ -1,7 +1,8 @@
 ---
 title: 2015 年 11 月调查
-description: 关于 Home Assistant 各部分使用情况调查的结果。
+description: '<img src=''/home-assistant/images/blog/2015-11-survey/releases.png'' style=''float: right; margin-left: 8px; margin-bottom: 8px;'' height=''120''/大约一周前。'
 ---
+# 2015 年 11 月调查
 
 <img src='/home-assistant/images/blog/2015-11-survey/releases.png' style='float: right; margin-left: 8px; margin-bottom: 8px;' height='120'/>大约一周前，我们发起了第一次调查。现在已经有 30 人参与。若你也参与了，非常感谢。我们认为这个时间点已经足以得到一些“仅具部分代表性”的数据。很难准确判断目前有多少 Home Assistant 用户。当前我们的 [Discord 聊天服务器](https://discord.gg/c5DvZ4e) 有 215 名成员，而上周 [PyPI](https://pypi.python.org/pypi/homeassistant/) 统计到 5063 次下载。
 

@@ -1,6 +1,6 @@
 ---
 title: KWB Easyfire
-description: 关于如何将 KWB Easyfire 传感器集成到 Home Assistant 的说明。
+description: 'KWB Easyfire 集成可将配备 Comfort3 控制器的 KWB Easyfire(https://www.kwb.net/produkte/) 颗粒燃料中央供暖设备传感器接入 Home Assistant。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# KWB Easyfire
 
 **KWB Easyfire** 集成可将配备 Comfort3 控制器的 [KWB Easyfire](https://www.kwb.net/produkte/) 颗粒燃料中央供暖设备传感器接入 Home Assistant。
 

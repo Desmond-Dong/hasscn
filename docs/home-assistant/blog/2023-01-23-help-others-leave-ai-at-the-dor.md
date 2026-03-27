@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "想帮助别人？请把 AI 留在门外"
-description: "像 ChatGPT 这样的 AI 生成的答案，往往并不正确。"
+description: '今天，我们要为 Home Assistant 社区引入一条新规则：今后不再允许使用 ChatGPT 或其他 AI 系统来帮助别人回答问题。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 date: 2023-01-23 00:00:00
 date_formatted: "January 23, 2023"
 author: Paulus Schoutsen
 comments: true
 categories: Public-Service-Announcement
 ---
+# 想帮助别人？请把 AI 留在门外
 
 今天，我们要为 Home Assistant 社区引入一条新规则：今后不再允许使用 ChatGPT 或其他 AI 系统来帮助别人回答问题。
 

@@ -1,6 +1,6 @@
 ---
 title: Fluss+
-description: 关于如何在 Home Assistant 中集成 Fluss+ 设备的说明。
+description: 'Fluss+ 集成允许您通过 Home Assistant 控制 Fluss+(https://fluss.io/) 设备。Fluss 将您的手机变成遥控钥匙，可以打开您的车库、大门、门，甚至办公室的停车场——让您完全掌控。Home Assistant 集成允许您通过 Wi-Fi 触发 Fluss+ 设备。'
 ha_category:
   - Button
 ha_release: 2026.1
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: bronze
 ---
+# Fluss+
 
 **Fluss+** 集成允许您通过 Home Assistant 控制 [Fluss+](https://fluss.io/) 设备。Fluss 将您的手机变成遥控钥匙，可以打开您的车库、大门、门，甚至办公室的停车场——让您完全掌控。Home Assistant 集成允许您通过 Wi-Fi 触发 Fluss+ 设备，以打开或关闭连接的电机设备。
 

@@ -1,6 +1,6 @@
 ---
 title: MusicCast
-description: 关于如何将雅马哈 MusicCast 接收器集成到 Home Assistant 的说明。
+description: 'The Yamaha MusicCast integration allows you to control Yamaha MusicCast Receivers(https://usa.yamaha.com/products/audiovisual/musiccast/index.html) from。'
 ha_category:
   - Media player
 ha_release: 0.53
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# MusicCast
 
 The **Yamaha MusicCast** integration allows you to control [Yamaha MusicCast Receivers](https://usa.yamaha.com/products/audio_visual/musiccast/index.html) from Home Assistant.
 

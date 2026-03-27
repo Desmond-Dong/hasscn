@@ -1,6 +1,6 @@
 ---
 title: Modern Forms
-description: 关于如何将 Modern Forms 智能风扇与 Home Assistant 集成的说明。
+description: 'Modern Forms(https://modernforms.com/) 提供一系列支持 Wi-Fi 连接的智能风扇，可对风扇和灯光进行云端或本地控制。它还支持为风扇和灯光分别设置和清除独立的睡眠定时器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Binary sensor
@@ -24,6 +24,7 @@ ha_platforms:
   - switch
 ha_integration_type: integration
 ---
+# Modern Forms
 
 [Modern Forms](https://modernforms.com/) 提供一系列支持 Wi-Fi 连接的智能风扇，可对风扇和灯光进行云端或本地控制。它还支持为风扇和灯光分别设置和清除独立的睡眠定时器。
 

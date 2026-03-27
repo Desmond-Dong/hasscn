@@ -1,6 +1,6 @@
 ---
 title: Tank Utility
-description: 如何将 Tank Utility 传感器集成到 Home Assistant 中。
+description: 'Add Tank Utility(https://www.tankutility.com/) propane tank monitors to Home Assistant. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Tank Utility
 
 Add [Tank Utility](https://www.tankutility.com/) propane tank monitors to Home Assistant.
 

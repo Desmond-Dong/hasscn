@@ -1,6 +1,6 @@
 ---
 title: Meraki
-description: 关于如何将基于 Meraki 的存在检测集成到 Home Assistant 的说明。
+description: 'Use your Meraki AP as device tracker. Note that Meraki will see all devices, not only connected to the network. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Presence detection
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Meraki
 
 Use your Meraki AP as device tracker. Note that Meraki will see all devices, not only connected to the network.
 

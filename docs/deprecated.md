@@ -1,8 +1,7 @@
 ---
 title: 已弃用内容说明
-description: 本页收录已被官方弃用的 Home Assistant 安装方式，仅供历史参考。
+description: '请确保您已了解系统要求(https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md)。 本页属于 Home Assistant 中文网文档内容。'
 ---
-
 # 官方已经确定弃用
 
 ## **🖥️ Home Assistant Supervised 极速版**

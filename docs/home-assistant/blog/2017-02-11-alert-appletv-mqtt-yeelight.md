@@ -1,7 +1,8 @@
 ---
 title: '0.38：Alert、Apple TV、MQTT discovery，以及 Yeelight'
-description: 更快且可配置性更强的前端、配置检查，以及核心全面迁移到异步
+description: '又到了周六，也就意味着又一次发布！。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 0.38：Alert、Apple TV、MQTT discovery，以及 Yeelight
 
 又到了周六，也就意味着又一次发布！
 

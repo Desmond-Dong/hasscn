@@ -1,6 +1,6 @@
 ---
 title: Ring
-description: 有关将 Ring.com 设备与 Home Assistant 集成的说明。
+description: 'Ring 集成允许您在 Home Assistant 中控制 Ring.com(https://ring.com/) 门铃、Stick Up Cam、Chime 和对讲设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -32,6 +32,7 @@ ha_codeowners:
   - '@sdb9696'
 ha_quality_scale: bronze
 ---
+# Ring
 
 **Ring** 集成允许您在 Home Assistant 中控制 [Ring.com](https://ring.com/) 门铃、Stick Up Cam、Chime 和对讲设备。
 

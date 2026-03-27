@@ -1,6 +1,6 @@
 ---
 title: Cloudflare R2
-description: 关于如何设置 Cloudflare R2 存储桶作为备份位置的说明。
+description: 'Cloudflare R2 集成允许您将 Cloudflare R2(https://www.cloudflare.com/developer-platform/products/r2/) 存储桶与 Home Assistant 备份一起使用。 本页属于 Home Assistant 中文文档。'
 ha_release: 2026.2
 ha_category:
   - Backup
@@ -12,6 +12,7 @@ ha_codeowners:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Cloudflare R2
 
 **Cloudflare R2** 集成允许您将 [Cloudflare R2](https://www.cloudflare.com/developer-platform/products/r2/) 存储桶与 Home Assistant 备份一起使用。
 

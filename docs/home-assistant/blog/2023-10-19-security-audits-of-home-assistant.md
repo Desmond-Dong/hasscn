@@ -2,6 +2,7 @@
 title: Home Assistant 的安全审计
 description: Home Assistant 聘请了 Cure53 进行安全审计，作为我们常规安全评估的一部分。你是安全的，我们没有发现认证绕过问题。
 ---
+# Home Assistant 的安全审计
 
 _一句话总结：作为常规安全评估的一部分，Home Assistant 完成了两次安全审计。你是安全的，我们没有发现认证绕过问题。我们修复了一些与攻击者可能诱骗用户从而接管其实例相关的问题。所有修复都已包含在 Home Assistant 2023.9（2023 年 9 月 6 日发布）以及最新的 iOS 和 Android Home Assistant 应用中。请确保你已经更新到最新版本。_
 

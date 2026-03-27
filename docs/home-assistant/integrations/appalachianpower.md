@@ -1,6 +1,6 @@
 ---
 title: Appalachian Power
-description: 使用 Opower 集成获取 Appalachian Power 的能源使用数据
+description: '此集成由 Opower(/home-assistant/integrations/opower/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Cloud Polling
 ---
+# Appalachian Power
 
 :::note
 此集成由 [Opower](/home-assistant/integrations/opower/) 集成支持。

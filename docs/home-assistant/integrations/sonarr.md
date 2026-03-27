@@ -1,6 +1,6 @@
 ---
 title: Sonarr
-description: 有关如何将 Sonarr 与 Home Assistant 集成的说明。
+description: 'The Sonarr integration pulls data from a given Sonarr(https://sonarr.tv/) instance. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Downloading
 ha_release: 0.34
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Sonarr
 
 The **Sonarr** integration pulls data from a given [Sonarr](https://sonarr.tv/) instance.
 

@@ -2,6 +2,7 @@
 title: '0.31：为你播报新闻、一些严肃事项、Hacktoberfest，以及破坏性 Z-Wave 变更'
 description: 支持 Alexa Flash Briefing API、持久通知中的 Markdown、全新的 updater 组件、Hacktoberfest，以及破坏性的 Z-Wave 变更。
 ---
+# 0.31：为你播报新闻、一些严肃事项、Hacktoberfest，以及破坏性 Z-Wave 变更
 
 朋友，你好，又见面了。
 

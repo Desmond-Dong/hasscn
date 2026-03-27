@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 正在迁移到 Discord
-description: Home Assistant 聊天社区正在迁移到 Discord。
+description: '社区会成长，事物也会改变。我们理解有些人不喜欢变化，这也是为什么我们会尽力让聊天平台从 Gitter 迁移到 Discorddiscord 的过程，对每个人来说都尽可能顺畅。现在就通过一次点击discord加入我们吧！。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Home Assistant 正在迁移到 Discord
 
 社区会成长，事物也会改变。我们理解有些人不喜欢变化，这也是为什么我们会尽力让聊天平台从 Gitter 迁移到 [Discord][discord] 的过程，对每个人来说都尽可能顺畅。现在就通过[一次点击][discord]加入我们吧！
 

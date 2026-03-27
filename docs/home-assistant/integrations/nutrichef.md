@@ -1,6 +1,6 @@
 ---
 title: Nutrichef
-description: "使用 INKBIRD 集成连接和控制您的 Nutrichef 设备"
+description: 'Support for devices by Nutrichef in Home Assistant is provided by the INKBIRD(/home-assistant/integrations/inkbird) integration. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Sensor
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Local Push
 ---
+# Nutrichef
 
 Support for devices by Nutrichef in Home Assistant is provided by the [INKBIRD](/home-assistant/integrations/inkbird) integration.
 

@@ -1,6 +1,6 @@
 ---
 title: Speedtest.net
-description: 如何将 Speedtest.net 集成到 Home Assistant 中。
+description: 'The Speedtest.net integration uses the Speedtest.net(https://speedtest.net/) web service to measure network bandwidth performance. 本页属于 Home Assistant。'
 ha_category:
   - Sensor
   - System monitor
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Speedtest.net
 
 The **Speedtest.net** integration uses the [Speedtest.net](https://speedtest.net/) web service to measure network bandwidth performance.
 

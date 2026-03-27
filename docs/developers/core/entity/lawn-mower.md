@@ -1,7 +1,9 @@
 ---
 title: 割草机实体
+description: '平台实体派生自homeassistant.components.lawnmower.LawnMowerEntity(https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/lawnmower/i。'
 sidebar_label: 割草机
 ---
+# 割草机实体
 
 平台实体派生自[`homeassistant.components.lawn_mower.LawnMowerEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/lawn_mower/__init__.py)
 

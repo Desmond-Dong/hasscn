@@ -1,7 +1,9 @@
 ---
 title: 磁贴卡片
-description: 磁贴卡片为您提供实体的快速概览。该卡片允许您切换实体、显示更多信息对话框或执行自定义操作。
+description: '磁贴卡片为您提供实体的快速概览。该卡片允许您添加点击操作和功能来控制实体。您也可以选择点击以打开更多信息对话框。某些实体（如温控(/home-assistant/integrations/climate)或人员(/home-assistant/integrations/person)实体）会显示徽章。'
 ---
+# 磁贴卡片
+
 磁贴卡片为您提供实体的快速概览。该卡片允许您添加点击操作和功能来控制实体。您也可以选择点击以打开**更多信息**对话框。某些实体（如[温控](/home-assistant/integrations/climate)或[人员](/home-assistant/integrations/person)实体）会显示徽章。
 
 <p class='img'>

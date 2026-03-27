@@ -1,6 +1,6 @@
 ---
 title: Input Datetime
-description: 关于如何将输入日期时间集成到 Home Assistant 的说明。
+description: 'Input Datetime 集成允许您定义可通过前端控制的日期和时间值，并可在自动化和模板中使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
   - Helper
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: input_datetime
 ha_integration_type: helper
 ---
+# Input Datetime
 
 **Input Datetime** 集成允许您定义可通过前端控制的日期和时间值，并可在自动化和模板中使用。
 

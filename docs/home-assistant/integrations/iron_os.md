@@ -1,6 +1,6 @@
 ---
 title: IronOS
-description: 关于如何将基于 IronOS 的 Pinecil V2 设备与 Home Assistant 集成的说明。
+description: 'IronOS 集成可将 Home Assistant 与 PINE64 的 Pinecil V2 焊台无缝连接，实现远程监控和控制。此集成可实时更新温度、功率，以及多种设置和诊断信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -27,6 +27,7 @@ ha_platforms:
   - update
 ha_quality_scale: platinum
 ---
+# IronOS
 
 **IronOS** 集成可将 Home Assistant 与 PINE64 的 Pinecil V2 焊台无缝连接，实现远程监控和控制。此集成可实时更新温度、功率，以及多种设置和诊断信息。
 

@@ -1,6 +1,6 @@
 ---
 title: Time & Date
-description: 关于如何在 Home Assistant 中创建时间和日期传感器的说明。
+description: 'The Time & Date integration allows one to create sensors for the current date or time in different formats. All values are based on the timezone which is。'
 ha_category:
   - Calendar
 ha_iot_class: Local Push
@@ -14,7 +14,6 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
-
 The **Time & Date** integration allows one to create sensors for the current date or time in different formats. All values are based on the timezone which is set in "General Configuration". 
 
 

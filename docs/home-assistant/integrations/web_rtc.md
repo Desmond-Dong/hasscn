@@ -1,6 +1,6 @@
 ---
 title: WebRTC
-description: 关于如何为 Home Assistant 配置 WebRTC 集成的说明。
+description: 'WebRTC 集成是一个内部集成，为 Home Assistant 中的摄像头串流提供 WebRTC 功能。它会在需要时自动设置，无需手动配置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: '2026.1'
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: system
 ---
+# WebRTC
 
 **WebRTC** 集成是一个内部集成，为 Home Assistant 中的摄像头串流提供 WebRTC 功能。它会在需要时自动设置，无需手动配置。
 

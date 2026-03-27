@@ -1,7 +1,8 @@
 ---
 title: 社区精选：第一期！
-description: 与众不同的界面设计、智能厕纸架，以及 DIY 智能信箱
+description: '早在 2015 年community-highlights-2015 和 2016 年community-highlights-2016，我们就尝试过推出一个名为 “Community Highlight” 的系列博客，介绍社区里那些非常精彩的 Home Assistant 玩法。'
 ---
+# 社区精选：第一期！
 
 早在 [2015 年][community-highlights-2015] 和 [2016 年][community-highlights-2016]，我们就尝试过推出一个名为 “Community Highlight” 的系列博客，介绍社区里那些非常精彩的 Home Assistant 玩法。
 

@@ -1,6 +1,6 @@
 ---
 title: AWS S3
-description: 关于如何设置 AWS S3 存储桶作为备份位置的说明。
+description: 'AWS S3 集成允许您将 AWS S3(https://aws.amazon.com/s3/) 存储桶与 Home Assistant 备份一起使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2025.5
 ha_category:
   - Backup
@@ -14,6 +14,7 @@ ha_quality_scale: bronze
 ha_platforms:
   - sensor
 ---
+# AWS S3
 
 **AWS S3** 集成允许您将 [AWS S3](https://aws.amazon.com/s3/) 存储桶与 Home Assistant 备份一起使用。
 

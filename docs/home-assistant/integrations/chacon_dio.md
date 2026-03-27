@@ -1,6 +1,6 @@
 ---
 title: Chacon DiO
-description: 关于如何在 Home Assistant 中集成 Chacon Dio 设备的说明。
+description: 'Chacon Dio 设备(https://chacon.com/) 是可以通过 RF 433 MHz 或 Wi-Fi 控制的智能家居设备。 此集成让您可以使用 Wi-Fi 连接，使 Home Assistant 可以列出您的 Chacon Dio 设备并实时与它们交互，就像厂商的智能手机应用程序一样。'
 ha_category:
   - Cover
   - Switch
@@ -15,6 +15,7 @@ ha_platforms:
   - switch
 ha_integration_type: integration
 ---
+# Chacon DiO
 
 [Chacon Dio 设备](https://chacon.com/) 是可以通过 RF 433 MHz 或 Wi-Fi 控制的智能家居设备。
 此集成让您可以使用 Wi-Fi 连接，使 Home Assistant 可以列出您的 Chacon Dio 设备并实时与它们交互，就像厂商的智能手机应用程序一样。

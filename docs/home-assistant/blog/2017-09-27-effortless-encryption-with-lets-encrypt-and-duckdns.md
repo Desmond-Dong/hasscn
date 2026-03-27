@@ -1,7 +1,8 @@
 ---
 title: Effortless encryption with Let's Encrypt and DuckDNS
-description: Get Home Assistant encrypted in less than 5 minutes.
+description: 'When Let''s Encrypt launched we were estatic: finally an easy and free way for our 用户 to securely access their homes remotely. Let''s Encrypt signifianctly。'
 ---
+# Effortless encryption with Let's Encrypt and DuckDNS
 
 When Let's Encrypt launched we were estatic: finally an easy and free way for our 用户 to securely access their homes remotely. Let's Encrypt signifianctly lowered the bar to get and renew SSL certificates. However, this process could still be quite an obstacle for our 用户. It required opening ports on the router and remembering to renew the certificate every so often.
 

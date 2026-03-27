@@ -1,7 +1,8 @@
 ---
 title: Report the temperature with ESP8266 to MQTT
-description: Step by step tutorial to use ESP8266 and a HDC1008 to .
+description: '{::options coderaylinenumbers="table" /}。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Report the temperature with ESP8266 to MQTT
 
 {::options coderay_line_numbers="table" /}
 

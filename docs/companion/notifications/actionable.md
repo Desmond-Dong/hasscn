@@ -1,7 +1,9 @@
 ---
 title: "可操作通知"
+description: '可操作通知是一种独特的通知类型，它允许用户在通知中添加按钮，点击后可以向 Home Assistant 发送事件(https://www.home-assistant.io/docs/configuration/events/)。然后可以在自动化中使用此事件，允许您执行各种操作。'
 id: "actionable-notifications"
 ---
+# 可操作通知
 
 可操作通知是一种独特的通知类型，它允许用户在通知中添加按钮，点击后可以向 Home Assistant 发送[事件](https://www.home-assistant.io/docs/configuration/events/)。然后可以在自动化中使用此事件，允许您执行各种操作。这些通知可以发送到 iOS 或 Android。
 

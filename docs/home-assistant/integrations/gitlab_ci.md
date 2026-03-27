@@ -1,6 +1,6 @@
 ---
 title: GitLab-CI
-description: 关于如何在 Home Assistant 中集成 GitLab-CI 作业状态的说明。
+description: 'GitLab-CI 集成可接入 GitLab(https://gitlab.com/) 中 CI/CD 流水线作业上报的结果。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 0.8
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# GitLab-CI
 
 **GitLab-CI** 集成可接入 [GitLab](https://gitlab.com/) 中 CI/CD 流水线作业上报的结果。
 

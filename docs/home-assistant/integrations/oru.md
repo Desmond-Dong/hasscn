@@ -16,7 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
-
+# Orange and Rockland Utility (ORU)
 
 [Orange and Rockland Utility](https://oru.com) 是美国纽约州和新泽西州的一家能源供应商。
 

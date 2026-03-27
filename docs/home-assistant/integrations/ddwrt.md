@@ -1,6 +1,6 @@
 ---
 title: DD-WRT
-description: 关于如何将基于 DD-WRT 的路由器集成到 Home Assistant 的说明。
+description: 'DD-WRT 集成会通过检查连接到基于 DD-WRT(https://dd-wrt.com/) 路由器的设备来提供在家状态检测。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# DD-WRT
 
 **DD-WRT** 集成会通过检查连接到基于 [DD-WRT](https://dd-wrt.com/) 路由器的设备来提供在家状态检测。
 

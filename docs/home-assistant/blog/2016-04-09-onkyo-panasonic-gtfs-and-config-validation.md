@@ -1,7 +1,8 @@
 ---
 title: '0.17: Onkyo, Panasonic, GTFS and config validation'
-description: Home Assistant 0.17 has arrived.
+description: 'Another awesome 发布 ready to hit your homes. YAML can be hard for beginners and more experienced automators. So to help catch those pesky 错误 that sneak。'
 ---
+# 0.17: Onkyo, Panasonic, GTFS and config validation
 
 Another awesome 发布 ready to hit your homes. YAML can be hard for beginners and more experienced automators. So to help catch those pesky 错误 that sneak into your files we've been hard at work to introduce config validation! Especially huge thanks to [@jaharkes] for his hard work on this. Config validation is still in its early stages. More common platforms and components have been added but we didn't do everything yet.
 

@@ -1,6 +1,6 @@
 ---
 title: Air quality
-description: 关于在 Home Assistant 中添加空气质量传感器的说明
+description: 'Air quality integration 允许其他集成处理关于空气质量和污染详情的信息。它由提供 airquality 传感器的集成使用 - 您可以在 health 集成(/home-assistant/integrations/health)下找到这些集成。'
 ha_release: 0.85
 ha_domain: air_quality
 ha_quality_scale: internal
@@ -9,6 +9,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Air quality
 
 **Air quality** integration 允许其他集成处理关于空气质量和污染详情的信息。它由提供 `air_quality` 传感器的集成使用 - 您可以在 `health` [集成](/home-assistant/integrations/#health)下找到这些集成。
 

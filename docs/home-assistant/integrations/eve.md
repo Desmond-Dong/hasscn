@@ -1,6 +1,6 @@
 ---
 title: Eve
-description: 使用 Matter 集成连接和控制您的 Eve Matter 设备
+description: 'Eve(https://www.evehome.com/) is a member of the Works with Home Assistant partner program for their Matter products. Eve is committed to making sure。'
 ha_release: '2025.4'
 ha_iot_class: Local Push
 ha_category:
@@ -16,6 +16,7 @@ ha_brand: true
 works_with:
   - matter
 ---
+# Eve
 
 [Eve](https://www.evehome.com/) is a member of the Works with Home Assistant partner program for their Matter products. Eve is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

@@ -1,6 +1,6 @@
 ---
 title: Private BLE Device
-description: 有关如何将私人 BLE 设备集成到 Home Assistant 的说明。
+description: '有些 BLE 设备使用一种名为 Resolvable Private Addresses 的隐私特性，以防止企业在您携带智能设备外出时对您进行追踪。它不会使用一个固定不变、可被持续跟踪的静态地址，而是会频繁更换蓝牙地址。如果您已经启用了并正常使用 Bluetooth(/home-assistant/integ。'
 ha_category:
   - Device tracker
 ha_release: '2023.10'
@@ -14,6 +14,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@Jc2k'
 ---
+# Private BLE Device
 
 有些 BLE 设备使用一种名为 Resolvable Private Addresses 的隐私特性，以防止企业在您携带智能设备外出时对您进行追踪。它不会使用一个固定不变、可被持续跟踪的静态地址，而是会频繁更换蓝牙地址。如果您已经启用了并正常使用 [Bluetooth](/home-assistant/integrations/bluetooth)，并且知道自己设备的 Identity Resolving Key，就可以将其作为 Private BLE Device 添加到 Home Assistant。随后，Home Assistant 就能识别哪些随机 MAC 地址与该 IRK 相关，并对其进行追踪。
 

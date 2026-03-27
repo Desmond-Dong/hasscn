@@ -1,6 +1,6 @@
 ---
 title: Voice over IP
-description: 网络电话
+description: 'VoIP 集成允许用户通过模拟电话和 VoIP 适配器与 Assist(/home-assistant/voicecontrol/) 进行对话。目前，该系统可与 Grandstream HT801(https://www.amazon.com/dp/B06XW1BQHC) 搭配使用。'
 ha_category:
   - Voice
 ha_iot_class: Local Push
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_config_flow: true
 ---
+# Voice over IP
 
 **VoIP** 集成允许用户通过模拟电话和 VoIP 适配器与 [Assist](/home-assistant/voice_control/) 进行对话。目前，该系统可与 [Grandstream HT801](https://www.amazon.com/dp/B06XW1BQHC) 搭配使用。详细说明请参阅[教程](/home-assistant/voice_control/worlds-most-private-voice-assistant)。
 

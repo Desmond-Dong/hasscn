@@ -1,6 +1,6 @@
 ---
 title: Blockchain.com
-description: 关于如何在 Home Assistant 中集成 Blockchain.com 数据的说明。
+description: 'Blockchain.com 集成显示来自 blockchain.com(https://blockchain.com) 的 Bitcoin 钱包余额。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Finance
 ha_release: 0.47
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Blockchain.com
 
 **Blockchain.com** 集成显示来自 [blockchain.com](https://blockchain.com) 的 Bitcoin 钱包余额。
 

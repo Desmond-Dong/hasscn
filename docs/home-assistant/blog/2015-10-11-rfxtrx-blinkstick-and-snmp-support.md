@@ -3,6 +3,7 @@ title: '0.7.5: Blinkstick, SNMP, Telegram'
 description: Home Assistant 0.7.5 has been released with support for RFXtrx, Blinkstick,
   SNMP and Telegram.
 ---
+# 0.7.5: Blinkstick, SNMP, Telegram
 
 我们发现了两个足够烦人的问题，因此决定发布 0.7.5：
 

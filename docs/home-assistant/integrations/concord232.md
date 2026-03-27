@@ -1,6 +1,6 @@
 ---
 title: Concord232
-description: 关于如何将 Interlogix/GE Concord4 集成到 Home Assistant 的说明。
+description: 'Concord232 集成为支持 RS-232 自动化控制面板接口模块（或内置该模块）的 GE、Interlogix 及其他品牌报警面板提供集成支持。支持的面板包括 Concord 4。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Concord232
 
 **Concord232** 集成为支持 RS-232 自动化控制面板接口模块（或内置该模块）的 GE、Interlogix 及其他品牌报警面板提供集成支持。支持的面板包括 Concord 4。
 

@@ -1,7 +1,8 @@
 ---
 title: 将 iOS 伴侣应用迁移至 Nabu Casa
-description: 说明我们为何更改应用发布者，以及你需要做什么
+description: '你好，我是你的老朋友、iOS 开发者 Robbie。这里有一则关于 Home Assistant iOS 伴侣应用的重要更新，也包含你需要完成的几个步骤。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 将 iOS 伴侣应用迁移至 Nabu Casa
 
 你好，我是你的老朋友、iOS 开发者 Robbie。这里有一则关于 Home Assistant iOS 伴侣应用的重要更新，也包含你需要完成的几个步骤。
 

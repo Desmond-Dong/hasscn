@@ -3,6 +3,7 @@ title: 'iBeacons: Making 在场 detection work better (part I)'
 description: A step by step guide how to vastly improve your 在场 detection by
   integrating iBeacons.
 ---
+# iBeacons: Making 在场 detection work better (part I)
 
 _本文由 Home Assistant 贡献者 [Greg Dowling](https://github.com/pavoni) 撰写。_
 

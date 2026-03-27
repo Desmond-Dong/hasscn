@@ -1,6 +1,6 @@
 ---
 title: Image upload
-description: 图像上传集成处理 Home Assistant 中的图像资源。
+description: 'Image upload 集成允许 Home Assistant 管理系统中的图像资源，例如系统账户的头像图片。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media source
   - Other
@@ -11,6 +11,7 @@ ha_domain: image_upload
 ha_quality_scale: internal
 ha_integration_type: system
 ---
+# Image upload
 
 **Image upload** 集成允许 Home Assistant 管理系统中的图像资源，例如系统账户的头像图片。
 

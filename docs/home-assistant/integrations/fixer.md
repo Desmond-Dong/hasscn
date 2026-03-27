@@ -1,6 +1,6 @@
 ---
 title: Fixer
-description: 关于如何在 Home Assistant 中集成 Fixer.io 汇率的说明。
+description: 'Fixer 集成将向您显示 Fixer.io(https://fixer.io/) 的当前汇率，该汇率使用 European Central Bank (ECB)(https://www.ecb.europa.eu) 的数据。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Finance
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Fixer
 
 **Fixer** 集成将向您显示 [Fixer.io](https://fixer.io/) 的当前汇率，该汇率使用 [European Central Bank (ECB)](https://www.ecb.europa.eu) 的数据。
 

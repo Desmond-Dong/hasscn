@@ -1,12 +1,13 @@
 ---
 title: "FFmpeg Camera"
-description: "关于如何通过 FFmpeg 将视频源作为摄像头集成到 Home Assistant 的说明。"
+description: 'FFmpeg 摄像头集成允许您通过 FFmpeg(https://www.ffmpeg.org/) 将任何视频源用作 Home Assistant 中的摄像头。此视频源必须支持多次同时读取，因为对于每个并发的 Home Assistant 用户，每 10 秒都会建立一个到源的连接。通常这不会有问题。'
 ha_category:
   - Camera
 ha_release: 0.26
 ha_iot_class: Local Polling
 ha_domain: ffmpeg
 ---
+# FFmpeg Camera
 
 **FFmpeg 摄像头**集成允许您通过 [FFmpeg](https://www.ffmpeg.org/) 将任何视频源用作 Home Assistant 中的摄像头。此视频源必须支持多次同时读取，因为对于每个并发的 Home Assistant 用户，每 10 秒都会建立一个到源的连接。通常这不会有问题。
 

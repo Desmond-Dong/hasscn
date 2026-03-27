@@ -1,7 +1,8 @@
 ---
 title: 2015 年 3 月 11 日发布说明
-description: 2015 年 3 月 11 日发布说明
+description: '距离 Theodor 为 Home Assistant 引入 YAML 支持才刚过一周多，但已经发生了很多变化，是时候总结一下近期更新了。在介绍亮点之前，先感谢 andythigpen(https://github.com/andythigpen)、jamespcole(https://github.com/。'
 ---
+# 2015 年 3 月 11 日发布说明
 
 距离 Theodor 为 Home Assistant 引入 YAML 支持才刚过一周多，但已经发生了很多变化，是时候总结一下近期更新了。在介绍亮点之前，先感谢 [andythigpen](https://github.com/andythigpen)、[jamespcole](https://github.com/jamespcole) 和 [theolind](https://github.com/theolind) 提交了大量 bug 修复、功能增强和新贡献！
 

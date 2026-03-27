@@ -1,7 +1,9 @@
 ---
 title: 'ESP32-S3 上的设备唤醒词在这里 - 语音：第 6 章'
-description: 本章介绍了设备唤醒词检测 (microWakeWord)、句子触发器的定制、控制设备的附加意图以及更好的错误消息。
+description: 'TL;DR: 我们添加了设备上唤醒词检测 (microWakeWord)！它比在 Home Assistant 中处理唤醒词更快、更具可扩展性。我们将继续支持 Home Assistant 中的唤醒词处理。另外一个新功能是对语句的更多定制、控制更多设备的附加意图以及更好的错误消息和调试工具。'
 ---
+# ESP32-S3 上的设备唤醒词在这里 - 语音：第 6 章
+
 **TL;DR:** 我们添加了设备上唤醒词检测 (microWakeWord)！它比在 Home Assistant 中处理唤醒词更快、更具可扩展性。我们将继续支持 Home Assistant 中的唤醒词处理。另外一个新功能是对语句的更多定制、控制更多设备的附加意图以及更好的错误消息和调试工具。
 
 <p class='img'>

@@ -1,12 +1,13 @@
 ---
 title: "MQTT Light"
-description: "介绍如何在 Home Assistant 中使用默认架构设置 MQTT 灯光。"
+description: 'MQTT 灯光集成可让你通过支持的消息架构之一来控制启用 MQTT 的灯具，支持 default、json 和 template。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_iot_class: Configurable
 ha_release: 0.8
 ha_domain: mqtt
 ---
+# MQTT Light
 
 **MQTT 灯光**集成可让你通过支持的消息架构之一来控制启用 MQTT 的灯具，支持 `default`、`json` 和 `template`。
 

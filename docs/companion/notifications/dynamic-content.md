@@ -1,7 +1,9 @@
 ---
 title: "动态附件"
+description: '<img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" / 专属<br / 地图和摄像头流等动态内容可以作为通知的一部分显示，而无需打开应用。'
 id: "dynamic-content"
 ---
+# 动态附件
 
 <img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" /> 专属<br />
 地图和摄像头流等动态内容可以作为通知的一部分显示，而无需打开应用。

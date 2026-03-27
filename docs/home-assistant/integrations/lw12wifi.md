@@ -1,6 +1,6 @@
 ---
 title: LAGUTE LW-12
-description: 关于如何在 Home Assistant 中设置 Lagute LW-12 WiFi LED 控制器的说明。
+description: 'The LAGUTE LW-12 integration supports Lagute LW-12 Wifi LED controller. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# LAGUTE LW-12
 
 The **LAGUTE LW-12** integration supports Lagute LW-12 Wifi LED controller.
 

@@ -1,6 +1,6 @@
 ---
 title: Wiffi
-description: 支持 stall.biz 的 WIFFI 设备，例如 Weatherman、Rainyman 等...
+description: 'Wiffi 集成可让您将 STALL WIFFI(https://stall.biz) 设备直接连接到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - DIY
 ha_release: '0.110'
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Wiffi
 
 **Wiffi** 集成可让您将 [STALL WIFFI](https://stall.biz) 设备直接连接到 Home Assistant。
 

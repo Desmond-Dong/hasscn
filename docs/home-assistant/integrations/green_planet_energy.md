@@ -1,6 +1,6 @@
 ---
 title: Green Planet Energy
-description: 关于如何将 Green Planet Energy 动态电价集成到 Home Assistant 的说明。
+description: 'Green Planet Energy 集成提供来自德国可再生能源供应商 Green Planet Energy 的实时电价数据。它会获取每小时电价，并提供多种用于能源优化和监控的传感器。它还会将价格可视化，方便您调整用电习惯并将用电转移到更便宜的时段。'
 ha_category:
   - Energy
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Green Planet Energy
 
 **Green Planet Energy** 集成提供来自德国可再生能源供应商 Green Planet Energy 的实时电价数据。它会获取每小时电价，并提供多种用于能源优化和监控的传感器。它还会将价格可视化，方便您调整用电习惯并将用电转移到更便宜的时段。
 

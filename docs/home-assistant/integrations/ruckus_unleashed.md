@@ -1,6 +1,6 @@
 ---
 title: Ruckus
-description: 有关如何将 Ruckus Networks 设备集成到 Home Assistant 的说明。
+description: 'Ruckus 集成允许您连接到 Ruckus(https://www.ruckusnetworks.com/) 接入点。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: 0.117
@@ -15,6 +15,7 @@ ha_platforms:
   - device_tracker
 ha_integration_type: hub
 ---
+# Ruckus
 
 **Ruckus** 集成允许您连接到 [Ruckus](https://www.ruckusnetworks.com/) 接入点。
 

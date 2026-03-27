@@ -1,6 +1,8 @@
 ---
 title: "自定义视图布局"
+description: '默认情况下，Home Assistant 会尝试以 masonry 布局（类似 Pinterest）显示 cards。自定义视图布局允许开发者覆盖这一行为，并定义自己的布局机制（例如网格）。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 自定义视图布局
 
 默认情况下，Home Assistant 会尝试以 masonry 布局（类似 Pinterest）显示 cards。自定义视图布局允许开发者覆盖这一行为，并定义自己的布局机制（例如网格）。
 

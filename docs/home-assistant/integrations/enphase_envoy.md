@@ -1,6 +1,6 @@
 ---
 title: Enphase Envoy
-description: 关于如何在 Home Assistant 中设置 Enphase Envoy 的说明。
+description: 'Enphase Envoy 集成用于接入 Enphase IQ Gateway(https://enphase.com/installers/communication)。它是 Enphase(https://enphase.com/homeowners) 太阳能逆变器和电池系统的通信设备。'
 ha_category:
   - Energy
 ha_release: 0.76
@@ -22,6 +22,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# Enphase Envoy
 
 **Enphase Envoy** 集成用于接入 [Enphase IQ Gateway](https://enphase.com/installers/communication)。它是 [Enphase](https://enphase.com/homeowners) 太阳能逆变器和电池系统的通信设备。在本文档以及集成实体名称中，Enphase IQ Gateway 通常简称为 `Envoy`。这是该集成早期沿用下来的命名，因其更简洁而继续保留。
 

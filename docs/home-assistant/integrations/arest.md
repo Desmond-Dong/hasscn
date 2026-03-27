@@ -1,6 +1,6 @@
 ---
 title: aREST
-description: 关于如何在 Home Assistant 中集成 aREST 的说明。
+description: '目前 Home Assistant 支持以下设备类型：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - DIY
@@ -19,6 +19,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# aREST
 
 目前 Home Assistant 支持以下设备类型：
 

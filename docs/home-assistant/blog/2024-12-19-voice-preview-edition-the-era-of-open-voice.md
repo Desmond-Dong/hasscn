@@ -2,6 +2,7 @@
 title: 开放语音助手的时代已经到来
 description: Home Assistant Voice Preview Edition 是你开始体验我们开放且注重隐私的语音助手的最佳方式。
 ---
+# 开放语音助手的时代已经到来
 
 <lite-youtube videoid="ZgoaoTpIhm8" videotitle="Voice Chapter 8 - Voice Preview Edition launch"></lite-youtube>
 

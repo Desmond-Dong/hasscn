@@ -1,6 +1,6 @@
 ---
 title: Climate
-description: 关于如何在 Home Assistant 中设置气候控制设备的说明。
+description: 'Climate 集成允许您控制和监控 HVAC（供暖、通风和空调）设备及恒温器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.19
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Climate
 
 **Climate** 集成允许您控制和监控 HVAC（供暖、通风和空调）设备及恒温器。
 

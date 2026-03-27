@@ -1,7 +1,8 @@
 ---
 title: 用户体验与设计师
-description: Home Assistant 的 UX 设计以及如何参与贡献。
+description: '<img src=''/home-assistant/images/blog/2021-10-ux/social.png'' style=''border: 0;box-shadow: none;''。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 用户体验与设计师
 
 <img src='/home-assistant/images/blog/2021-10-ux/social.png' style='border: 0;box-shadow: none;'>
 

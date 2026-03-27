@@ -1,6 +1,6 @@
 ---
 title: Xbox
-description: 关于如何在 Home Assistant 中设置 Xbox 设备的说明。
+description: 'Xbox 集成可让您将 Home Assistant 连接到 Xbox Network。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Media player
@@ -25,6 +25,7 @@ ha_ssdp: true
 ha_dhcp: true
 ha_quality_scale: platinum
 ---
+# Xbox
 
 **Xbox** 集成可让您将 Home Assistant 连接到 **Xbox Network**。
 

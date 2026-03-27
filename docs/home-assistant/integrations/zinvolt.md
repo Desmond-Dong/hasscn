@@ -1,6 +1,6 @@
 ---
 title: Zinvolt
-description: 关于如何将 Zinvolt 电池与 Home Assistant 集成的说明。
+description: 'Zinvolt 集成可让您在 Home Assistant 中监控 Zinvolt(https://zinvolt.com/) 电池。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Binary Sensor
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# Zinvolt
 
 **Zinvolt** 集成可让您在 Home Assistant 中监控 [Zinvolt](https://zinvolt.com/) 电池。
 

@@ -2,6 +2,7 @@
 title: Home Assistant OS 发布 8
 description: 现已在基于 UEFI 的系统上使用 GRUB2，支持 Home Assistant Yellow，并支持基于 UEFI 的 AArch64 系统！
 ---
+# Home Assistant OS 发布 8
 
 <a href='https://github.com/home-assistant/operating-system/releases/tag/8.0'>
 <img title='Home Assistant OS 发布 8' alt='Home Assistant OS 发布 8 Logo'

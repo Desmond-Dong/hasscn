@@ -1,6 +1,6 @@
 ---
 title: Anthropic
-description: 关于将 Anthropic Claude 与 Home Assistant 集成的说明
+description: 'Anthropic 集成在 Home Assistant 中添加了一个由 Anthropic(https://www.anthropic.com) 提供支持的对话代理，例如 Claude 3.5 Sonnet。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Voice
 ha_release: 2024.9
@@ -25,6 +25,7 @@ related:
     title: Claude
 ha_quality_scale: bronze
 ---
+# Anthropic
 
 **Anthropic** 集成在 Home Assistant 中添加了一个由 [Anthropic](https://www.anthropic.com) 提供支持的对话代理，例如 Claude 3.5 Sonnet。
 

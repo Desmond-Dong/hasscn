@@ -1,7 +1,9 @@
 ---
 title: "调试 Home Assistant 操作系统"
+description: '本节不面向终端用户。终端用户应使用 SSH app（原 add-on） 通过 SSH 登录 Home Assistant。这里的内容仅适用于 Home Assistant 的开发者。如果你在使用这些选项，请不要寻求常规支持。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: 调试
 ---
+# 调试 Home Assistant 操作系统
 
 :::info
 本节不面向终端用户。终端用户应使用 [SSH app（原 add-on）] 通过 SSH 登录 Home Assistant。这里的内容仅适用于 Home Assistant 的**开发者**。如果你在使用这些选项，请不要寻求常规支持。

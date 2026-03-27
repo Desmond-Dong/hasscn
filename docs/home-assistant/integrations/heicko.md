@@ -1,6 +1,6 @@
 ---
 title: Heicko
-description: 使用 Motionblinds 集成连接和控制您的 Heicko 设备
+description: '此集成由 Motionblinds(/home-assistant/integrations/motionblinds/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Cover
 ha_domain: heicko
@@ -18,6 +18,7 @@ ha_platforms:
 ha_iot_class: Local Push
 ha_dhcp: true
 ---
+# Heicko
 
 :::note
 此集成由 [Motionblinds](/home-assistant/integrations/motion_blinds/) 集成支持。

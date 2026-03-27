@@ -1,6 +1,6 @@
 ---
 title: Roth Touchline SL
-description: 关于如何在 Home Assistant 中集成 Roth Touchline SL 的说明。
+description: 'The Roth Touchline SL integration enables you to control Roth Touchline SL(https://www.roth-uk.com/products/control-systems/roth-touchliner-sl-wireless-sys。'
 ha_category:
   - Climate
 ha_release: 2024.9
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@jnsgruk'
 ha_config_flow: true
 ---
+# Roth Touchline SL
 
 The **Roth Touchline SL** integration enables you to control [Roth Touchline SL](https://www.roth-uk.com/products/control-systems/roth-touchliner-sl-wireless-system) underfloor heating systems.
 

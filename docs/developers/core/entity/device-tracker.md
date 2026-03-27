@@ -1,7 +1,9 @@
 ---
 title: 设备跟踪器实体
+description: '设备跟踪器是提供存在信息的只读实体。有两种类型的设备跟踪器实体：ScannerEntity 和 TrackerEntity。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 设备追踪器
 ---
+# 设备跟踪器实体
 
 设备跟踪器是提供存在信息的只读实体。有两种类型的设备跟踪器实体：ScannerEntity 和 TrackerEntity。
 

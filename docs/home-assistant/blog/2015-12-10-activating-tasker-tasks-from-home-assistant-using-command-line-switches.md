@@ -3,6 +3,7 @@ title: Activating Tasker tasks from Home Assistant using command line 开关
 description: Step-by-step guide how to start using Tasker on your Android phone with
   Home Assistant
 ---
+# Activating Tasker tasks from Home Assistant using command line 开关
 
 <img src='/home-assistant/images/blog/2015-12-tasker/tasker-logo.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='200' />
 在这篇教程中，我会说明如何通过 Home Assistant 的命令行开关触发 Tasker 任务。我们会设置一个开关，当你切换它时，你的 Android 设备会说出 "On" 或 "Off"。

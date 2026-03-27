@@ -1,7 +1,8 @@
 ---
 title: '0.18: Bluetooth, LG WebOS TVs and Roombas.'
-description: Home Assistant 0.18 has arrived.
+description: 'It''s time for 0.18. This 发布 cycle is 2 days shorter than usual as I''ll be traveling to Europe. This also means that it can take some more time before you。'
 ---
+# 0.18: Bluetooth, LG WebOS TVs and Roombas.
 
 It's time for 0.18. This 发布 cycle is 2 days shorter than usual as I'll be traveling to Europe. This also means that it can take some more time before you get feedback on PRs.
 

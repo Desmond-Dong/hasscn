@@ -1,6 +1,6 @@
 ---
 title: Flic
-description: 关于如何在 Home Assistant 中集成 flic 按钮的说明。
+description: 'Flic 集成允许您从 flic(https://flic.io) 智能按钮接收点击事件。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
 ha_iot_class: Local Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Flic
 
 **Flic** 集成允许您从 [flic](https://flic.io) 智能按钮接收点击事件。
 

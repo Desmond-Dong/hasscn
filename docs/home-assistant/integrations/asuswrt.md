@@ -1,6 +1,6 @@
 ---
 title: ASUSWRT
-description: 关于如何将 ASUSWRT 集成到 Home Assistant 的说明。
+description: 'ASUSWRT 集成可以将 Home Assistant 连接到运行 ASUSWRT 固件的 ASUS 路由器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Presence detection
@@ -19,6 +19,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# ASUSWRT
 
 **ASUSWRT** 集成可以将 Home Assistant 连接到运行 ASUSWRT 固件的 ASUS 路由器。
 

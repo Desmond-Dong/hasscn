@@ -1,7 +1,8 @@
 ---
 title: 停用 Disqus 评论
-description: 由于出现不合适的广告，我们已在网站上停用 Disqus 评论。
+description: '上周，从 Home Assistant 0.62(/home-assistant/blog/2018/01/27/release-62/) 发布开始，我们将博客评论切换到了社区论坛(https://community.home-assistant.io)。'
 ---
+# 停用 Disqus 评论
 
 上周，从 [Home Assistant 0.62](/home-assistant/blog/2018/01/27/release-62/) 发布开始，我们将博客评论切换到了[社区论坛](https://community.home-assistant.io)。这样一来，大家可以直接使用现有的 Home Assistant 社区账号参与博客讨论，彼此互动。对用户来说，也少了一个需要额外关注的渠道。
 

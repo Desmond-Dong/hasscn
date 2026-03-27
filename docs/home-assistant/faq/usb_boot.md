@@ -1,6 +1,8 @@
 ---
 title: 是否支持 Raspberry Pi 4 的 USB 启动？
+description: 'Home Assistant 提供数据磁盘功能，可将所有数据转移到已连接的 USB 硬盘上。SD 卡仍会继续使用，但仅用于承载 Home Assistant OS。了解数据磁盘功能的更多信息。(/home-assistant/common-tasks/os/using-external-data-disk)。'
 ---
+# 是否支持 Raspberry Pi 4 的 USB 启动？
 
 Home Assistant 提供数据磁盘功能，可将所有数据转移到已连接的 USB 硬盘上。SD 卡仍会继续使用，但仅用于承载 Home Assistant OS。[了解数据磁盘功能的更多信息。](/home-assistant/common-tasks/os/#using-external-data-disk)
 

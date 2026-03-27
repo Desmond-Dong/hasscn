@@ -1,6 +1,6 @@
 ---
 title: nVent RAYCHEM SENZ
-description: 说明如何将 SENZ 恒温器集成到 Home Assistant 中。
+description: 'nVent RAYCHEM SENZ 集成可让您控制并监控 nVent RAYCHEM SENZ-WIFI 恒温器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# nVent RAYCHEM SENZ
 
 **nVent RAYCHEM SENZ** 集成可让您控制并监控 nVent RAYCHEM SENZ-WIFI 恒温器。
 

@@ -1,6 +1,6 @@
 ---
 title: Osramlightify
-description: 有关如何将 Osram Lightify 集成到 Home Assistant 的说明。
+description: 'The Osramlightify integration allows you to integrate your Osram Lightify(https://www.osram.com/cb/lightify/index.jsp) into Home Assistant. 本页属于 Home。'
 ha_category:
   - Light
 ha_release: 0.21
@@ -14,7 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
-
+# Osramlightify
 
 The **Osramlightify** integration allows you to integrate your [Osram Lightify](https://www.osram.com/cb/lightify/index.jsp) into Home Assistant.
 

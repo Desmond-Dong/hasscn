@@ -1,6 +1,6 @@
 ---
 title: Google Drive
-description: 关于如何在 Home Assistant 中使用 Google Drive 的说明。
+description: '此集成允许您将 Google Drive(https://drive.google.com) 与 Home Assistant 备份连接。设置此集成时，您的 Google Drive 将有一个名为 Home Assistant 的新文件夹，所有备份都将存储在其中。'
 ha_category:
   - Backup
 ha_iot_class: Cloud Polling
@@ -25,6 +25,7 @@ ha_platforms:
   - diagnostics
   - sensor
 ---
+# Google Drive
 
 此集成允许您将 [Google Drive](https://drive.google.com) 与 Home Assistant 备份连接。设置此集成时，您的 Google Drive 将有一个名为 `Home Assistant` 的新文件夹，所有备份都将存储在其中。要打开此文件夹，请前往 **设置** > **设备与服务** > **Google Drive**，然后选择 **访问**。您可以随时在 Google Drive 中将此文件夹重命名为您喜欢的任何名称。如果您删除该文件夹，只要集成启用，它将自动重新创建。
 

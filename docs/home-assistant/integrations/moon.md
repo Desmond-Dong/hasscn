@@ -1,6 +1,6 @@
 ---
 title: Moon
-description: 关于如何将月相传感器集成到 Home Assistant 的说明。
+description: 'The Moon integration tracks the phases of the moon. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Environment
@@ -16,6 +16,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: service
 ---
+# Moon
 
 The **Moon** integration tracks the phases of the moon.
 

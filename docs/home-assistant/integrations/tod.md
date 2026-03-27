@@ -1,6 +1,6 @@
 ---
 title: Times of the Day
-description: 关于如何在 Home Assistant 中集成时段二值传感器的说明。
+description: 'The Times of the Day integration provides a binary sensor that gets its values by checking if the current time is within defined time ranges. 本页属于 Home。'
 ha_category:
   - Binary sensor
   - Helper
@@ -13,6 +13,7 @@ ha_platforms:
   - binary_sensor
 ha_integration_type: helper
 ---
+# Times of the Day
 
 The **Times of the Day** integration provides a binary sensor that gets its values by checking if the current time is within defined time ranges.
 

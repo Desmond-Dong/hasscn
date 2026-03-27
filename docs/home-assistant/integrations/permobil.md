@@ -1,6 +1,6 @@
 ---
 title: MyPermobil
-description: 有关如何将 Permobil 轮椅集成到 Home Assistant 的说明。
+description: 'MyPermobil 集成允许您查看与 Permobil 轮椅相关的各种传感器信息，例如电池状态、行驶距离和座椅调整次数。传感器的值可能会延迟数分钟，因此不应依赖这些数据进行关键用途。要使集成正常工作，您必须确保在 MyPermobil 应用中启用了 voice assistant linking。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# MyPermobil
 
 **MyPermobil** 集成允许您查看与 Permobil 轮椅相关的各种传感器信息，例如电池状态、行驶距离和座椅调整次数。传感器的值可能会延迟数分钟，因此不应依赖这些数据进行关键用途。要使集成正常工作，您必须确保在 MyPermobil 应用中启用了 _voice assistant linking_。为此，请打开应用并前往 **Settings** > **My Account** > **Connection Settings**。
 

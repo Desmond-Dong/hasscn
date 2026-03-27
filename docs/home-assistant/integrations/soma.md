@@ -1,6 +1,6 @@
 ---
 title: Soma Connect
-description: 有关如何在 Home Assistant 中设置 Soma Connect 的说明。
+description: 'The Soma Connect integration will allow users to integrate their Soma Smarthome devices into Home Assistant using the Soma Connect hub. 本页属于 Home。'
 ha_category:
   - Cover
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Soma Connect
 
 The **Soma Connect** integration will allow users to integrate their Soma Smarthome devices into Home Assistant using the Soma Connect hub.
 

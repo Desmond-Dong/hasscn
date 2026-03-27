@@ -1,6 +1,6 @@
 ---
 title: Media extractor
-description: 关于如何将媒体提取器集成到 Home Assistant 的说明。
+description: 'Media extractor 集成会获取流媒体 URL 并将其发送给媒体播放器实体。如果配置得当，此集成还可以提取特定于实体的流媒体。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_iot_class: Calculated
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_config_flow: true
 ---
+# Media extractor
 
 **Media extractor** 集成会获取流媒体 URL 并将其发送给媒体播放器实体。如果配置得当，此集成还可以提取特定于实体的流媒体。
 

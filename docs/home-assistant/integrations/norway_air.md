@@ -1,6 +1,6 @@
 ---
 title: Om Luftkvalitet i Norge (Norway Air)
-description: "显示挪威空气质量的当前状况。"
+description: 'The Norway Air integration queries(https://luftkvalitet.miljostatus.no/) the Norway air quality data feed(https://api.met.no/weatherapi/airqualityforecast/。'
 
 ha_category:
   - Health
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Om Luftkvalitet i Norge (Norway Air)
 
 The **Norway Air** integration [queries](https://luftkvalitet.miljostatus.no/) the Norway air quality [data feed](https://api.met.no/weatherapi/airqualityforecast/0.1/documentation) provided by the Norwegian Meteorological Institute.
 

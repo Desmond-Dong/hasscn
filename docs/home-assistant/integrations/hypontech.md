@@ -1,6 +1,6 @@
 ---
 title: Hypontech Cloud
-description: 关于如何在 Home Assistant 中集成 Hypontech Cloud 太阳能逆变器的说明。
+description: 'Hypontech Cloud 集成允许您通过 Hypontech Cloud(https://www.hypon.cloud) 平台监控 Hypontech 太阳能逆变器系统，并将数据集成到您的 Home Assistant 安装中。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Energy
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# Hypontech Cloud
 
 **Hypontech Cloud** 集成允许您通过 [Hypontech Cloud](https://www.hypon.cloud) 平台监控 Hypontech 太阳能逆变器系统，并将数据集成到您的 Home Assistant 安装中。
 

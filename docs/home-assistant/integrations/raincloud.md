@@ -1,6 +1,6 @@
 ---
 title: Melnor RainCloud
-description: 有关如何将 Melnor Raincloud 喷水灭火系统集成到 Home Assistant 中的说明。
+description: 'The Melnor RainCloud integration allows you to integrate your Melnor RainCloud(https://wifiaquatimer.com) sprinkler system in Home Assistant. 本页属于 Home。'
 ha_category:
   - Binary sensor
   - Irrigation
@@ -21,6 +21,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Melnor RainCloud
 
 The **Melnor RainCloud** integration allows you to integrate your [Melnor RainCloud](https://wifiaquatimer.com) sprinkler system in Home Assistant.
 

@@ -1,6 +1,6 @@
 ---
 title: Nibe Heat Pump
-description: "有关如何将 Nibe 热泵集成到 Home Assistant 中的说明。"
+description: 'The Nibe Heat Pump integration allows you to control and monitor Nibe Heat Pumps(https://www.nibe.eu/en-eu/products/heat-pumps) in Home Assistant. 本页属于。'
 
 ha_category:
   - Climate
@@ -21,6 +21,7 @@ ha_platforms:
   - water_heater
 ha_integration_type: device
 ---
+# Nibe Heat Pump
 
 The **Nibe Heat Pump** integration allows you to control and monitor [Nibe Heat Pumps](https://www.nibe.eu/en-eu/products/heat-pumps) in Home Assistant.
 

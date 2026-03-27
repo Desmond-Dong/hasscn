@@ -1,6 +1,6 @@
 ---
 title: Neff
-description: "使用 Home Connect 集成连接和控制您的 Neff 设备"
+description: 'Support for devices by Neff in Home Assistant is provided by the Home Connect(/home-assistant/integrations/homeconnect) integration. 本页属于 Home Assistant。'
 
 ha_category:
   - Binary sensor
@@ -34,6 +34,7 @@ ha_iot_class: Cloud Push
 ha_dhcp: true
 ha_zeroconf: true
 ---
+# Neff
 
 Support for devices by Neff in Home Assistant is provided by the [Home Connect](/home-assistant/integrations/home_connect) integration.
 

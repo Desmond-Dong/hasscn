@@ -1,6 +1,6 @@
 ---
 title: Ankuoo REC Switch
-description: 有关如何将 Ankuoo REC Switch 集成到 Home Assistant 的说明。
+description: 'Ankuoo REC Switch 集成允许您控制 Ankuoo REC Switch 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.81
 ha_category:
   - Switch
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Ankuoo REC Switch
 
 **Ankuoo REC Switch** 集成允许您控制 Ankuoo REC Switch 设备。
 

@@ -1,6 +1,6 @@
 ---
 title: Edimax
-description: 关于将 Edimax 开关集成到 Home Assistant 的说明。
+description: '此 Edimax 集成允许您控制 Edimax(https://www.edimax.com/edimax/merchandise/merchandiselist/data/edimax/global/homeautomationsmartplug/) 开关的状态。'
 ha_category:
   - Switch
 ha_release: pre 0.7
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Edimax
 
 此 **Edimax** 集成允许您控制 [Edimax](https://www.edimax.com/edimax/merchandise/merchandise_list/data/edimax/global/home_automation_smart_plug/) 开关的状态。
 

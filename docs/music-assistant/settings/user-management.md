@@ -1,7 +1,7 @@
 ---
 title: "用户管理"
+description: '此页面允许管理用户、他们的角色和权限。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 用户管理 <img src="/assets/icons/user-management-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 此页面允许管理用户、他们的角色和权限。

@@ -1,6 +1,6 @@
 ---
 title: Airthings BLE
-description: 关于如何通过蓝牙 LE 设置 Airthings 设备的说明。
+description: '将 Airthings BLE sensors 集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
   - Health
@@ -17,6 +17,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: device
 ---
+# Airthings BLE
 
 将 Airthings BLE sensors 集成到 Home Assistant 中。
 

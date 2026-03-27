@@ -1,6 +1,6 @@
 ---
 title: Fronius
-description: 关于如何将 Fronius SolarAPI 设备连接到 Home Assistant 的说明。
+description: 'Fronius 集成轮询 Fronius(https://www.fronius.com/) 太阳能逆变器或数据记录器，获取 Fronius SolarNet 设置的详细信息，并将其集成到您的 Home Assistant 安装中。 本页属于 Home Assistant 中文文档。'
 ha_release: 0.96
 ha_category:
   - Energy
@@ -17,6 +17,7 @@ ha_dhcp: true
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# Fronius
 
 **Fronius** 集成轮询 [Fronius](https://www.fronius.com/) 太阳能逆变器或数据记录器，获取 Fronius SolarNet 设置的详细信息，并将其集成到您的 Home Assistant 安装中。
 

@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Cloud
-description: 启用 Home Assistant Cloud 集成。
+description: 'Home Assistant Cloud 允许您快速将本地 Home Assistant 与各种云服务集成，例如：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: '0.60'
 ha_category:
   - Backup
@@ -23,6 +23,7 @@ related:
   - docs: /voice_control/voice_remote_cloud_assistant/
     title: Setting up a voice Assistant with Home Assistant Cloud
 ---
+# Home Assistant Cloud
 
 Home Assistant Cloud 允许您快速将本地 Home Assistant 与各种云服务集成，例如：
 

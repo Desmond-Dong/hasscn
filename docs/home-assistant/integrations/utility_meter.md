@@ -1,6 +1,6 @@
 ---
 title: Utility Meter
-description: 关于如何将用电量计集成到 Home Assistant 的说明。
+description: 'Utility Meter 集成可用于跟踪各种公共事业消耗（如电、燃气、水、供暖）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Helper
   - Sensor
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: helper
 ---
+# Utility Meter
 
 **Utility Meter** 集成可用于跟踪各种公共事业消耗（如电、燃气、水、供暖）。
 

@@ -1,7 +1,9 @@
 ---
 title: 场景实体
+description: '场景实体是 可以重现想要的状态(/developers/core/platform/reproducestate) 为一组实体的实体。场景实体可以针对一组设备激活场景，但从 Home Assistant 角度来看保持无状态。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: 场景
 ---
+# 场景实体
 
 场景实体是 [可以重现想要的状态](/developers/core/platform/reproduce_state) 为一组实体的实体。场景实体可以针对一组设备激活场景，但从 Home Assistant 角度来看保持无状态。
 

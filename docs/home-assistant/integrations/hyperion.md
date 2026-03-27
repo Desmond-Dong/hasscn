@@ -1,6 +1,6 @@
 ---
 title: Hyperion
-description: 关于如何将 Hyperion 集成到 Home Assistant 的说明。
+description: 'Hyperion 集成允许您将 Hyperion(https://docs.hyperion-project.org/) 集成到 Home Assistant 中。Hyperion 是一个开源的 Ambilight 实现，可在许多平台上运行。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Light
 ha_release: 0.7.6
@@ -17,6 +17,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Hyperion
 
 **Hyperion** 集成允许您将 [Hyperion](https://docs.hyperion-project.org/) 集成到 Home Assistant 中。Hyperion 是一个开源的 Ambilight 实现，可在许多平台上运行。
 

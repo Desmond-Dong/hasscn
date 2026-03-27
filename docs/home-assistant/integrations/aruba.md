@@ -1,6 +1,6 @@
 ---
 title: Aruba
-description: 关于将 Aruba 路由器集成到 Home Assistant 的说明。
+description: '此集成允许您通过查看连接到 Aruba Instant(https://www.arubanetworks.com/products/networking/aruba-instant/) 设备的设备来检测存在。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: 0.7
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Aruba
 
 此集成允许您通过查看连接到 [Aruba Instant](https://www.arubanetworks.com/products/networking/aruba-instant/) 设备的设备来检测存在。
 

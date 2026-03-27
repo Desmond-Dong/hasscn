@@ -1,7 +1,7 @@
 ---
 title: "Bluesound"
+description: 'Music Assistant 支持基于 <a href="https://www.bluesound.com/" target="blank" rel="noopener noreferrer"Bluesound</a (BlueOS) 的设备。此组件由 <a。'
 ---
-
 # Bluesound <img src="/assets/icons/bluesound-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持基于 <a href="https://www.bluesound.com/" target="_blank" rel="noopener noreferrer">Bluesound</a> (BlueOS) 的设备。此组件由 <a href="https://github.com/Cyanogenbot" target="_blank" rel="noopener noreferrer">Cyanogenbot</a> 贡献和维护。

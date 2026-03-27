@@ -1,7 +1,9 @@
 ---
 title: "通用 x86-64"
+description: '此开发板配置旨在支持大多数使用 UEFI 启动的 x86-64 系统。 它的主要目标是支持 Intel NUC 迷你 PC 及类似系统。已测试硬件如下。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 通用 x86-64
 ---
+# 通用 x86-64
 
 ## 支持的硬件
 

@@ -1,6 +1,6 @@
 ---
 title: Tomorrow.io
-description: 关于如何将 Tomorrow.io 天气和空气质量 API 集成到 Home Assistant 的说明。
+description: 'The Tomorrow.io integration allows you to obtain weather, air quality, pollen, and fire information from the Tomorrow.io API(https://www.tomorrow.io/weathe。'
 ha_category:
   - Environment
   - Health
@@ -18,6 +18,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Tomorrow.io
 
 The **Tomorrow.io** integration allows you to obtain weather, air quality, pollen, and fire information from the [Tomorrow.io API](https://www.tomorrow.io/weather-api/).
 

@@ -1,7 +1,8 @@
 ---
 title: 下一步
-description: 配置 Home Assistant 的下一步
+description: '初始设置过程带您完成 Home Assistant 的初始设置，例如启动系统、命名您的家和选择位置。本节指向更多文档，帮助您完成下一步。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 下一步
 
 初始设置过程带您完成 Home Assistant 的初始设置，例如启动系统、命名您的家和选择位置。本节指向更多文档，帮助您完成下一步。
 

@@ -1,7 +1,9 @@
 ---
 title: "本地推送"
+description: '本地推送使用 WebSocket API(https://developers.home-assistant.io/docs/api/websocket) 将通知传递到您的设备，而不是使用 Apple 的推送通知服务或 Google 的 Firebase 云消息传递。'
 id: "notification-local"
 ---
+# 本地推送
 
 本地推送使用 [WebSocket API](https://developers.home-assistant.io/docs/api/websocket) 将通知传递到您的设备，而不是使用 Apple 的推送通知服务或 Google 的 Firebase 云消息传递。
 

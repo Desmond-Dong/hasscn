@@ -1,6 +1,6 @@
 ---
 title: laundrify
-description: 关于如何在 Home Assistant 中集成 laundrify 的说明。
+description: '使用 laundrify(https://laundrify.de/) WiFi 电源插头，在 Home Assistant 中监控洗衣机或烘干机的状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
 ha_release: 2022.6
@@ -14,6 +14,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_integration_type: hub
 ---
+# laundrify
 
 使用 [laundrify](https://laundrify.de/) WiFi 电源插头，在 Home Assistant 中监控洗衣机或烘干机的状态。
 

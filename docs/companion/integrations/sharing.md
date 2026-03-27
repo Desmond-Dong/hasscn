@@ -1,7 +1,9 @@
 ---
 title: "分享"
+description: '此功能将在以下应用版本中可用：。 本页属于 Home Assistant 配套应用文档，适合查阅 iOS、Android、通知、传感器与移动端能力。'
 id: 'sharing'
 ---
+# 分享
 
 此功能将在以下应用版本中可用：
 

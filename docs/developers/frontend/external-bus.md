@@ -1,6 +1,8 @@
 ---
 title: "外部总线"
+description: '前端可以与嵌入 Home Assistant 前端的外部应用建立一个消息总线。这个系统是对外部身份验证(/developers/frontend/external-authentication)的泛化，使得未来在应用端或前端侧都无需复杂布线即可更轻松地添加更多命令。'
 ---
+# 外部总线
 
 前端可以与嵌入 Home Assistant 前端的外部应用建立一个消息总线。这个系统是对[外部身份验证](/developers/frontend/external-authentication)的泛化，使得未来在应用端或前端侧都无需复杂布线即可更轻松地添加更多命令。
 

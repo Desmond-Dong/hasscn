@@ -1,6 +1,6 @@
 ---
 title: Vanderbilt SPC
-description: 有关如何在 Home Assistant 中设置 Vanderbilt SPC 设备的说明。
+description: 'Home Assistant has support to integrate your Vanderbilt SPC(https://www.spcsupportinfo.com/SPCConnectPro/) alarm panel and any connected motion, door。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Vanderbilt SPC
 
 Home Assistant has support to integrate your [Vanderbilt SPC](https://www.spcsupportinfo.com/SPCConnectPro/) alarm panel and any connected motion, door, smoke and technical sensors.
 

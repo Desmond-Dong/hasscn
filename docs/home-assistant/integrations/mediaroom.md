@@ -1,6 +1,6 @@
 ---
 title: Mediaroom
-description: 关于如何将 Mediaroom 机顶盒集成到 Home Assistant 的说明。
+description: 'Mediaroom 集成允许您通过 Home Assistant 控制 Mediaroom(https://en.wikipedia.org/wiki/EricssonMediaroom) 机顶盒（STB）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Mediaroom
 
 **Mediaroom** 集成允许您通过 Home Assistant 控制 [Mediaroom](https://en.wikipedia.org/wiki/Ericsson_Mediaroom) 机顶盒（STB）。
 

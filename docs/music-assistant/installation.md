@@ -1,8 +1,7 @@
 ---
 title: Installation
-description: Music Assistant 安装指南
+description: 'Music Assistant（简称 MA）设计为与 Home Assistant 并行使用，并以自动化为设计理念。推荐的安装方法是将服务器作为 Home Assistant 应用运行，然后可选择<a href="https://music-assistant.io/integration/installat。'
 ---
-
 # 安装服务器 <img src="/assets/icons/installation-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant（简称 MA）设计为与 Home Assistant 并行使用，并以自动化为设计理念。推荐的安装方法是将服务器作为 Home Assistant 应用运行，然后可选择<a href="https://music-assistant.io/integration/installation/" target="_blank" rel="noopener noreferrer">添加 HA 集成</a>。对于不使用 Home Assistant Operating System (HAOS) 的用户，还有 docker 选项。

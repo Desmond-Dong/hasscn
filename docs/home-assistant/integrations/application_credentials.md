@@ -1,6 +1,6 @@
 ---
 title: Application credentials
-description: 允许用户将账号与支持 OAuth2 的集成关联
+description: 'Application credentials 集成用于支持 OAuth2 的集成，以便将您的账号关联到 Home Assistant。最常见且推荐的方式是通过 Home Assistant Cloud 完成账号关联，但并非所有云服务提供商都支持这种方式。'
 ha_release: 2022.6
 ha_domain: application_credentials
 ha_quality_scale: internal
@@ -9,6 +9,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: system
 ---
+# Application credentials
 
 **Application credentials** 集成用于支持 OAuth2 的集成，以便将您的账号关联到 Home Assistant。最常见且推荐的方式是通过 Home Assistant Cloud 完成账号关联，但并非所有云服务提供商都支持这种方式，因此有些集成会使用 Application Credentials。您也可以自行选择使用 Application Credentials，而不是 Home Assistant Cloud 账号关联。
 

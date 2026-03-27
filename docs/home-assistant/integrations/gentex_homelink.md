@@ -1,6 +1,6 @@
 ---
 title: HomeLink
-description: 关于如何在 Home Assistant 中设置 HomeLink 设备的说明。
+description: 'HomeLink 集成允许您将 HomeLink(https://homelink.com) 设备集成到 Home Assistant 中。HomeLink 应用程序允许 HomeLink(https://homelink.com) 用户从车内触发各种基于云的智能家居平台上的智能家居例程。'
 ha_category:
   - Binary sensor
 ha_release: 2026.1
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: bronze
 ---
+# HomeLink
 
 **HomeLink** 集成允许您将 [HomeLink](https://homelink.com) 设备集成到 Home Assistant 中。HomeLink 应用程序允许 [HomeLink](https://homelink.com) 用户从车内触发各种基于云的智能家居平台上的智能家居例程。当您回家时，按一下 HomeLink 按钮就可以调节恒温器、打开灯光、解除安全系统、解锁门，并开始播放您最喜欢的音乐。
 

@@ -1,6 +1,8 @@
 ---
 title: "触发意图"
+description: '如果你的代码能够将用户的语音或文本匹配到意图，你可以让 Home Assistant 来处理该意图。这既可以在你自己的集成内部完成，也可以通过通用的 Intent handle API 来完成。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 触发意图
 
 如果你的代码能够将用户的语音或文本匹配到意图，你可以让 Home Assistant 来处理该意图。这既可以在你自己的集成内部完成，也可以通过通用的 Intent handle API 来完成。
 

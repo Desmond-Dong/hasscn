@@ -1,6 +1,6 @@
 ---
 title: ecobee
-description: 关于如何在 Home Assistant 中集成 ecobee 恒温器和传感器的说明。
+description: 'ecobee integration 允许您控制和查看来自 ecobee(https://ecobee.com) 恒温器的传感器数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -27,6 +27,7 @@ ha_zeroconf: true
 ha_homekit: true
 ha_integration_type: hub
 ---
+# ecobee
 
 **ecobee** integration 允许您控制和查看来自 [ecobee](https://ecobee.com) 恒温器的传感器数据。
 

@@ -1,6 +1,6 @@
 ---
 title: Twente Milieu
-description: 关于如何将 Twente Milieu 与 Home Assistant 集成的说明。
+description: 'The Twente Milieu integration enables you to monitor the upcoming waste collection schedules provided by Twente Milieu(https://www.twentemilieu.nl/)。'
 ha_category:
   - Calendar
   - Environment
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: silver
 ---
+# Twente Milieu
 
 The **Twente Milieu** integration enables you to monitor the upcoming waste collection schedules provided by [Twente Milieu](https://www.twentemilieu.nl/), a waste collection company serving municipalities in the Twente region of the Netherlands, including Enschede, Hengelo, Almelo, Borne, Hof van Twente, Oldenzaal, and Losser. This integration helps you stay informed about the next pickup dates for different types of waste (like organic, paper, plastic, and non-recyclable), ensuring you never miss a collection day.
 

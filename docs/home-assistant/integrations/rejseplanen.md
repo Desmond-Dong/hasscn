@@ -1,6 +1,6 @@
 ---
 title: Rejseplanen
-description: 有关如何在 Home Assistant 中集成丹麦 Rejseplanen 时间表数据的说明。
+description: 'Rejseplanen 集成会使用 Rejseplanen(https://www.rejseplanen.dk/) 的时刻表数据，为您提供丹麦公共交通的出行信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Rejseplanen
 
 **Rejseplanen** 集成会使用 [Rejseplanen](https://www.rejseplanen.dk/) 的时刻表数据，为您提供丹麦公共交通的出行信息。
 

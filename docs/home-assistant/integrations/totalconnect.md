@@ -1,6 +1,6 @@
 ---
 title: Total Connect
-description: 将支持 Resideo Total Connect 2.0 的报警系统集成到 Home Assistant。
+description: 'The Total Connect integration provides connectivity with Resideo Total Connect 2.0-enabled alarm systems. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -18,6 +18,7 @@ ha_platforms:
   - diagnostics
 ha_integration_type: hub
 ---
+# Total Connect
 
 The **Total Connect** integration provides connectivity with Resideo Total Connect 2.0-enabled alarm systems.
 

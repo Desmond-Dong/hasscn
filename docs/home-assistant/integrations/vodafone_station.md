@@ -1,6 +1,6 @@
 ---
 title: Vodafone Station
-description: 关于如何将 Vodafone Station 路由器集成到 Home Assistant 的说明。
+description: 'Vodafone Station 集成允许您控制基于 Vodafone Station(https://www.vodafone.it/privati/area-supporto/assistenza-dispositivi/vodafone-station.html) 的路由器。'
 ha_category:
   - Button
   - Image
@@ -24,6 +24,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# Vodafone Station
 
 **Vodafone Station** 集成允许您控制基于 [Vodafone Station](https://www.vodafone.it/privati/area-supporto/assistenza-dispositivi/vodafone-station.html) 的路由器。
 

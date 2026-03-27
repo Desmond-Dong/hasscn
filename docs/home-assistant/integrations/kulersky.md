@@ -1,6 +1,6 @@
 ---
 title: Kuler Sky
-description: 关于将 Brightech Kuler Sky 蓝牙落地灯与 Home Assistant 集成的说明。
+description: '此集成将 Brightech Kuler Sky 落地灯连接到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ ha_platforms:
   - light
 ha_integration_type: device
 ---
+# Kuler Sky
 
 此集成将 Brightech Kuler Sky 落地灯连接到 Home Assistant。
 

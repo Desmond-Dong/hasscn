@@ -41,6 +41,7 @@ features:
     details: 博客部分整理了历年来的重要开发变更、弃用通知与 API 调整，便于追踪版本演进。
     icon: 📝
 ---
+# Home Assistant 开发者文档 - 集成、前端与 API 开发指南 | 老王杂谈说
 
 ## 快速入口
 

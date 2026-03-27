@@ -1,7 +1,7 @@
 ---
 title: "First Run (Authentication)"
+description: '访问 Music Assistant 用户界面 (UI) 需要登录名和密码。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 初始身份验证设置
 
 访问 Music Assistant 用户界面 (UI) 需要登录名和密码。

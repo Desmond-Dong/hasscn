@@ -1,6 +1,6 @@
 ---
 title: Rehlko
-description: 支持 Rehlko 设备（以前称为 Oncue 和 Kohler Energy）
+description: 'Rehlko（前称 Kohler Energy Management）集成允许您通过 Home Assistant 监控已启用的 Kohler 发电机(https://www.kohlerhomeenergy.rehlko.com/kohler-energy-management-app) 状态。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Polling
@@ -17,6 +17,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Rehlko
 
 **Rehlko**（前称 Kohler Energy Management）集成允许您通过 Home Assistant 监控已启用的 [Kohler 发电机](https://www.kohlerhomeenergy.rehlko.com/kohler-energy-management-app) 状态。此集成取代了旧版 Oncue 集成。
 

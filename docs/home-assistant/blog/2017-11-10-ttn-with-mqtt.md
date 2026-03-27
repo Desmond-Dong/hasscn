@@ -3,6 +3,7 @@ title: Home Assistant and The Things Network (TTN)
 description: How to use transfer MQTT messages from The Things Network (TTN) to a
   local broker.
 ---
+# Home Assistant and The Things Network (TTN)
 
 The Home Assistant 集成 for [The Things Network (TTN)](https://www.thethingsnetwork.org/) uses their [Storage](https://www.thethingsnetwork.org/docs/applications/storage/) feature to get the 传感器 data. The easiest way to observe TTN 传感器 would be [MQTT](https://www.thethingsnetwork.org/docs/applications/MQTT/) as it doesn't requires any additional 配置.
 

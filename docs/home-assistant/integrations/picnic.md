@@ -1,6 +1,6 @@
 ---
 title: Picnic
-description: 如何在 Home Assistant 中设置和使用 Picnic 集成。
+description: 'Picnic integration 允许从 Picnic(https://picnic.app) 获取有关订单、配送和购物车内容的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 2021.5
@@ -15,6 +15,7 @@ ha_platforms:
   - todo
 ha_integration_type: service
 ---
+# Picnic
 
 **Picnic** integration 允许从 [Picnic](https://picnic.app) 获取有关订单、配送和购物车内容的信息。
 

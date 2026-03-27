@@ -1,6 +1,6 @@
 ---
 title: TOLO Sauna
-description: 使用 Home Assistant 控制您的 TOLO 桑拿和蒸汽浴室。
+description: 'The TOLO Sauna integration allows to control Steamtec TOLO(https://www.tolosauna.com/) devices with Home Assistant. 本页属于 Home Assistant 中文文档。'
 ha_release: '2021.12'
 ha_category:
   - Climate
@@ -24,6 +24,7 @@ ha_platforms:
 ha_dhcp: true
 ha_integration_type: device
 ---
+# TOLO Sauna
 
 The **TOLO Sauna** integration allows to control [Steamtec TOLO](https://www.tolosauna.com/) devices with Home Assistant.
 

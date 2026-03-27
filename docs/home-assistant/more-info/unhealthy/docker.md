@@ -1,7 +1,8 @@
 ---
 title: Docker 环境工作不正常
-description: 关于配置错误的 Docker 环境为何将系统标记为不健康的更多信息。
+description: 'Docker 是 Supervisor 执行大多数操作的核心，重要的是它被正确配置并按照 Supervisor 的预期工作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Docker 环境工作不正常
 
 Docker 是 Supervisor 执行大多数操作的核心，重要的是它被正确配置并按照 Supervisor 的预期工作。
 

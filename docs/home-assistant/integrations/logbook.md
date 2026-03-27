@@ -1,6 +1,6 @@
 ---
 title: Activity
-description: 关于如何为 Home Assistant 启用活动集成的说明。
+description: '<img src=''/home-assistant/images/screenshots/activity-panel.png'' style=''margin-left:10px; float: right;'' height="100" /。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - History
 ha_release: 0.7
@@ -13,6 +13,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Activity
 
 <img src='/home-assistant/images/screenshots/activity-panel.png' style='margin-left:10px; float: right;' height="100" />
 

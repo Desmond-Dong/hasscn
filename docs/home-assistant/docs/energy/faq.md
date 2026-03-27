@@ -1,7 +1,8 @@
 ---
 title: 家庭能源管理常见问题
-description: 家庭能源管理是一个广泛的话题，并非所有内容都清晰明了。本页面试图澄清一些问题。
+description: '人们经常混淆功率(https://en.wikipedia.org/wiki/Electricpower)和能源(https://en.wikipedia.org/wiki/Energy)；它们是不同的物理量。功率是能量传输或转换的速率（有多快），而能源是已传输或转换的总量（有多少）。'
 ---
+# 家庭能源管理常见问题
 
 ## 能源与功率
 

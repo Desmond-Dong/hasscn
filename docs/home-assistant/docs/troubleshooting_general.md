@@ -1,7 +1,8 @@
 ---
 title: 常规故障排除
-description: 常规故障排除信息
+description: '本页面提供了一些关于常规故障排除主题的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 常规故障排除
 
 本页面提供了一些关于常规故障排除主题的信息。
 
@@ -11,7 +12,7 @@ description: 常规故障排除信息
 
 页面顶部会显示一个红色横幅。在 **概述** 页面上，您会看到 **恢复模式** 通知。
 
-![image](/home-assistant/images/docs/troubleshooting/recovery_mode_active.png)
+![Home Assistant recovery mode active](/home-assistant/images/docs/troubleshooting/recovery_mode_active.png)
 
 ### 说明
 

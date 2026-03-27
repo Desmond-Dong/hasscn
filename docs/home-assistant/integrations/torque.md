@@ -1,6 +1,6 @@
 ---
 title: Torque
-description: 关于如何将 Torque 传感器集成到 Home Assistant 的说明。
+description: 'Torque 集成可让你监控通过 Torque 移动应用从蓝牙 OBD2 适配器转发的 Torque(https://torque-bhp.com/) 数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Car
 ha_release: '0.10'
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Torque
 
 **Torque** 集成可让你监控通过 Torque 移动应用从蓝牙 OBD2 适配器转发的 [Torque](https://torque-bhp.com/) 数据。
 

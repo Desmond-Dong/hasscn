@@ -1,7 +1,8 @@
 ---
 title: 通用 x86-64
-description: 在通用 x86-64 系统（如 Intel NUC）上安装 Home Assistant
+description: '如果您想轻松开始使用 Home Assistant，或者几乎没有 Linux 经验，请按照本指南操作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 通用 x86-64
 
 ## 安装 Home Assistant Operating System
 

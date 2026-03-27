@@ -1,6 +1,6 @@
 ---
 title: Twilio Call
-description: 关于如何将 Twilio 通话通知添加到 Home Assistant 的说明。
+description: 'Twilio Call 集成支持通过 Twilio(https://twilio.com) 使用语音发送通知。 收到的消息会由文本转语音服务朗读。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: 0.37
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Twilio Call
 
 **Twilio Call** 集成支持通过 [Twilio](https://twilio.com) 使用语音发送通知。
 收到的消息会由文本转语音服务朗读。

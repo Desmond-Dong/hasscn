@@ -1,6 +1,6 @@
 ---
 title: Baidu
-description: 关于如何在 Home Assistant 中设置百度 TTS 的说明。
+description: 'Baidu 集成使用 百度 TTS 引擎(https://cloud.baidu.com/product/speech/tts) 以自然的声音朗读文本。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Text-to-speech
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Baidu
 
 **Baidu** 集成使用 [百度 TTS 引擎](https://cloud.baidu.com/product/speech/tts) 以自然的声音朗读文本。
 

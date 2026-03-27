@@ -1,6 +1,6 @@
 ---
 title: Sinch SMS
-description: 有关如何将 Sinch 通知添加到 Home Assistant 的说明。
+description: 'Sinch SMS 集成使用 Sinch(https://www.sinch.com/products/apis/messaging/sms/) 发送来自 Home Assistant 的通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: 0.101
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Sinch SMS
 
 **Sinch SMS** 集成使用 [Sinch](https://www.sinch.com/products/apis/messaging/sms/) 发送来自 Home Assistant 的通知。
 

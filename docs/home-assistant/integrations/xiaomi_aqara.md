@@ -1,6 +1,6 @@
 ---
 title: Xiaomi Gateway (Aqara)
-description: 关于如何在 Home Assistant 中集成小米网关（Aqara）的说明。
+description: '小米网关（Xiaomi Gateway (Aqara)） 集成可让你将 Xiaomi(https://www.mi.com/en/) Aqara 兼容设备集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
 ha_release: 0.57
@@ -20,6 +20,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Xiaomi Gateway (Aqara)
 
 **小米网关（Xiaomi Gateway (Aqara)）** 集成可让你将 [Xiaomi](https://www.mi.com/en/) Aqara 兼容设备集成到 Home Assistant 中。
 

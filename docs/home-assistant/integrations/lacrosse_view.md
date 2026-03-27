@@ -1,6 +1,6 @@
 ---
 title: LaCrosse View
-description: 获取 LaCrosse View 连接传感器的数据
+description: 'LaCrosse View(https://www.lacrossetechnology.com/pages/la-crosse-view) 是 LaCrosse Technology 提供的服务，可让您访问 LaCrosse 传感器。 本页属于 Home Assistant 中文文档。'
 ha_release: '2022.9'
 ha_category:
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# LaCrosse View
 
 [**LaCrosse View**](https://www.lacrossetechnology.com/pages/la-crosse-view) 是 LaCrosse Technology 提供的服务，可让您访问 LaCrosse 传感器。
 

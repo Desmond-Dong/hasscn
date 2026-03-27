@@ -1,6 +1,6 @@
 ---
 title: AirVisual Cloud
-description: 关于在 Home Assistant 中使用 AirVisual 数据的说明
+description: 'AirVisual Cloud 集成会查询 AirVisual(https://www.iqair.com) 云 API 以获取空气质量数据。可以通过纬度/经度或城市/州或省/国家来收集数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Health
 ha_release: 0.53
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# AirVisual Cloud
 
 **AirVisual Cloud** 集成会查询 [AirVisual](https://www.iqair.com) 云 API 以获取空气质量数据。可以通过纬度/经度或城市/州或省/国家来收集数据。
 

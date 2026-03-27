@@ -1,6 +1,6 @@
 ---
 title: Fitbit
-description: 关于如何在 Home Assistant 中集成 Fitbit 设备的说明。
+description: 'Fitbit 集成允许您将 Fitbit(https://fitbit.com/) 的数据暴露给 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Health
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@allenporter'
 ha_config_flow: true
 ---
+# Fitbit
 
 **Fitbit** 集成允许您将 [Fitbit](https://fitbit.com/) 的数据暴露给 Home Assistant。
 

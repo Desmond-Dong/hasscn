@@ -1,6 +1,6 @@
 ---
 title: DSMR Smart Meter
-description: 关于如何在 Home Assistant 中集成 DSMR 智能电表的说明。
+description: '这是一个适用于比利时、荷兰、卢森堡和瑞典智能电表的传感器平台，这些电表需符合 DSMR（Dutch Smart Meter Requirements）标准，也称为 “Slimme meter” 或 “P1 poort”。带有 “HAN port” 的瑞典电表不受此集成支持。'
 ha_category:
   - Energy
 ha_release: 0.34
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# DSMR Smart Meter
 
 这是一个适用于比利时、荷兰、卢森堡和瑞典智能电表的传感器平台，这些电表需符合 DSMR（Dutch Smart Meter Requirements）标准，也称为 “Slimme meter” 或 “P1 poort”。带有 “HAN port” 的瑞典电表不受此集成支持。
 

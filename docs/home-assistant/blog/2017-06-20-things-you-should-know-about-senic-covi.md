@@ -1,7 +1,8 @@
 ---
 title: '[Update: fixed] A frank and serious warning about X'
-description: The picture painted is not as great as it seems.
+description: '更新 June 21: Senic has removed our name from their materials and have issued an apologyapology. We wish them best of luck with the launch of COVI. 本页属于。'
 ---
+# [Update: fixed] A frank and serious warning about X
 
 **更新 June 21:** Senic has removed our name from their materials and have [issued an apology][apology]. We wish them best of luck with the launch of COVI.
 

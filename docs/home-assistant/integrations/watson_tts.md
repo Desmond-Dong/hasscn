@@ -1,6 +1,6 @@
 ---
 title: IBM Watson TTS
-description: 关于如何在 Home Assistant 中设置 IBM Watson TTS 的说明。
+description: 'IBM Watson TTS 文本转语音集成可与 IBM Watson Cloud(https://www.ibm.com/watson/services/text-to-speech/) 配合使用，生成语音输出。 Watson 是 IBM Cloud 提供的付费服务。'
 ha_category:
   - Text-to-speech
 ha_release: 0.94
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# IBM Watson TTS
 
 **IBM Watson TTS** 文本转语音集成可与 [IBM Watson Cloud](https://www.ibm.com/watson/services/text-to-speech/) 配合使用，生成语音输出。
 Watson 是 IBM Cloud 提供的付费服务，但也有一个不错的[免费层级](https://www.ibm.com/cloud/watson-text-to-speech/pricing)，每月提供 10000 个免费字符。

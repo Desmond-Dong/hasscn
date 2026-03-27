@@ -1,12 +1,13 @@
 ---
 title: "RESTful Sensor"
-description: 有关如何将 REST 传感器集成到 Home Assistant 的说明。
+description: 'RESTful 传感器 集成正在使用由设备、应用程序或 Web 服务的 RESTful API(https://en.wikipedia.org/wiki/Representationalstatetransfer) 公开的给定端点。传感器支持 GET 和 POST 请求。'
 ha_category:
   - Sensor
 ha_release: 0.7.4
 ha_iot_class: Local Polling
 ha_domain: rest
 ---
+# RESTful Sensor
 
 **RESTful 传感器** 集成正在使用由设备、应用程序或 Web 服务的 [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer) 公开的给定端点。传感器支持 GET 和 POST 请求。
 

@@ -2,6 +2,7 @@
 title: Home Assistant Android Companion 1.5.0
 description: 今天我们为 Android Companion 应用发布了一次重要更新，包含小组件、全屏模式和 Android TV 支持。
 ---
+# Home Assistant Android Companion 1.5.0
 
 今天我们发布了 Home Assistant Android Companion 1.5.0。这是一次非常棒的发布，带来了不少实用新功能，也有新的协作者加入一起完善它！
 

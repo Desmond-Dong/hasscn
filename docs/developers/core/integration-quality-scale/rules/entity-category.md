@@ -1,6 +1,8 @@
 ---
 title: "实体被正确分配 EntityCategory"
+description: '当默认类别不合适时，应为实体适当分配EntityCategory，以确保它们被正确分类并且可以轻松识别。 例如，实体类别用于自动生成的仪表板。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 实体被正确分配 EntityCategory
 
 ## 推理
 

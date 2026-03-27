@@ -1,7 +1,8 @@
 ---
 title: 'Almond 与 Ada：以隐私为核心的语音助手'
-description: 认识 Almond（注重隐私的虚拟助手）和 Ada（由 Home Assistant 驱动的语音助手）。
+description: 'Almond 与 Ada：以隐私为核心的语音助手。本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更、社区动态与重要公告。'
 ---
+# Almond 与 Ada：以隐私为核心的语音助手
 
 太长不看版：
 

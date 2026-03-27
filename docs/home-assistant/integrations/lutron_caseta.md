@@ -1,6 +1,6 @@
 ---
 title: Lutron Caséta
-description: 关于如何在 Home Assistant 中使用 Lutron Caseta 设备的说明。
+description: 'Lutron(https://www.lutron.com/) 是一家美国照明控制公司。其提供多条家庭自动化产品线，可管理开关、调光器、占用传感器、暖通控制等设备。Home Assistant 中的 lutroncaseta 集成用于与 Lutron Caseta Smart Bridge 通信。'
 featured: true
 ha_category:
   - Binary sensor
@@ -32,6 +32,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Lutron Caséta
 
 [Lutron](https://www.lutron.com/) 是一家美国照明控制公司。其提供多条家庭自动化产品线，可管理开关、调光器、占用传感器、暖通控制等设备。Home Assistant 中的 `lutron_caseta` 集成用于与 Lutron Caseta Smart Bridge 通信，以接入 [Caseta](https://www.casetawireless.com/) 产品线中的调光器、开关、窗帘和传感器。它也可与 Lutron Radio RA2 Main Repeater 通信，以接入 [RA2 Select](https://www.lutron.com/controls/systems/ra2select) 产品线中的调光器、开关、窗帘和传感器。
 

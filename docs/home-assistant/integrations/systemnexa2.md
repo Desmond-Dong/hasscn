@@ -1,6 +1,6 @@
 ---
 title: System Nexa 2
-description: 如何将 System Nexa 2 设备集成到 Home Assistant 中。
+description: 'The System Nexa 2 integration allows you to integrate with the System Nexa 2 devices from Nexa(https://nexa.se/smarta-hem/system-nexa-2). 本页属于 Home。'
 ha_category:
   - Light
   - Sensor
@@ -21,6 +21,7 @@ ha_zeroconf: true
 ha_quality_scale: silver
 ha_integration_type: device
 ---
+# System Nexa 2
 
 The **System Nexa 2** integration allows you to integrate with the **System Nexa 2** devices from [Nexa](https://nexa.se/smarta-hem/system-nexa-2).
 

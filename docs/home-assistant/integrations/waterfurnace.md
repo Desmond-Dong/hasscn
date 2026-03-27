@@ -1,6 +1,6 @@
 ---
 title: WaterFurnace
-description: 关于如何将 WaterFurnace 地热系统集成到 Home Assistant 的说明。
+description: 'WaterFurnace 集成通过 WaterFurnace Symphony 网站使用的 WebSocket 与服务通信，以显示系统中的多个传感器。虽然这不是官方 API，但它与 Symphony 网站使用的是同一后端，因此应当具有较好的稳定性。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
 ha_release: 0.62
@@ -15,6 +15,7 @@ ha_codeowners:
   - '@sdague'
   - '@masterkoppa'
 ---
+# WaterFurnace
 
 **WaterFurnace** 集成通过 WaterFurnace Symphony 网站使用的 WebSocket 与服务通信，以显示系统中的多个传感器。虽然这不是官方 API，但它与 Symphony 网站使用的是同一后端，因此应当具有较好的稳定性。
 

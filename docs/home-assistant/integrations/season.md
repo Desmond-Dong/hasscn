@@ -1,6 +1,6 @@
 ---
 title: Season
-description: 有关如何将季节传感器添加到 Home Assistant 中的说明。
+description: 'Season 集成会以传感器的形式提供当前的天文季节或气象季节（春、夏、秋、冬）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Utility
@@ -15,6 +15,7 @@ ha_codeowners:
   - '@frenck'
 ha_integration_type: service
 ---
+# Season
 
 **Season** 集成会以传感器的形式提供当前的天文季节或气象季节（春、夏、秋、冬）。
 

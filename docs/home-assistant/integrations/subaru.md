@@ -1,6 +1,6 @@
 ---
 title: Subaru
-description: 有关如何使用 Home Assistant 设置斯巴鲁帐户的说明。
+description: 'This integration retrieves vehicle information and actuates remote services provided by MySubaru Connected Services(https://www.subaru.com/vehicle-info/con。'
 ha_category:
   - Car
   - Lock
@@ -19,6 +19,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Subaru
 
 This integration retrieves vehicle information and actuates remote services provided by [MySubaru Connected Services](https://www.subaru.com/vehicle-info/connected-services/mysubaru-connected-services.html)(formerly known as Subaru STARLINK). This service is currently only available in the USA and Canada.
 

@@ -1,7 +1,8 @@
 ---
 title: ESP8266 and MicroPython - Part 1
-description: Using MicroPython on ESP8266 based 设备 and Home Assistant.
+description: '<img src=''/home-assistant/images/blog/2016-07-micropython/micropython.png'' style=''clear: right; border:none; box-shadow: none; float: right。'
 ---
+# ESP8266 and MicroPython - Part 1
 
 <img src='/home-assistant/images/blog/2016-07-micropython/micropython.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='200' />
 The first 发布 of Micropython for ESP8266 was delivered a couple of weeks ago. The [文档](http://docs.micropython.org/en/latest/) 遮盖 a lot of ground. This post is providing only a little summary which should get you started.

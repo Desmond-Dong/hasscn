@@ -1,7 +1,8 @@
 ---
 title: 文档
-description: Home Assistant 文档
+description: '本文档涵盖从入门到高级的安装、设置、配置和使用主题。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 文档
 
 本文档涵盖从入门到高级的安装、设置、配置和使用主题。
 

@@ -1,6 +1,6 @@
 ---
 title: Sisyphus
-description: 有关如何将西西弗斯动能艺术桌集成到家庭助理中的说明。
+description: 'Home Assistant 的 Sisyphus(https://sisyphus-industries.com/) 集成可让您查看并控制 Sisyphus 动能艺术桌。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Light
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Sisyphus
 
 Home Assistant 的 [Sisyphus](https://sisyphus-industries.com/) 集成可让您查看并控制 Sisyphus 动能艺术桌。
 

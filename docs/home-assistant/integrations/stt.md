@@ -1,6 +1,6 @@
 ---
 title: Speech-to-text (STT)
-description: 有关如何使用 Home Assistant 设置语音转文本 (STT) 的说明。
+description: '语音转文本（STT）实体允许其他集成或应用将语音数据流发送到 STT API，并返回文本结果。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: '0.102'
 ha_codeowners:
   - '@home-assistant/core'
@@ -20,6 +20,7 @@ related:
   - docs: /integrations/?cat=speech-to-text
     title: Integrations that use the speech-to-text integration
 ---
+# Speech-to-text (STT)
 
 语音转文本（STT）实体允许其他集成或应用将语音数据流发送到 STT API，并返回文本结果。
 

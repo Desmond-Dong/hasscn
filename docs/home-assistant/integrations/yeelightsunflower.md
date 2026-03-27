@@ -1,6 +1,6 @@
 ---
 title: Yeelight Sunflower
-description: 关于如何在 Home Assistant 中设置 Yeelight Sunflower 网关和灯泡的说明。
+description: 'Yeelight Sunflower 集成可让您使用 Home Assistant 控制 Yeelight Sunflower 灯泡。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_release: 0.39
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Yeelight Sunflower
 
 **Yeelight Sunflower** 集成可让您使用 Home Assistant 控制 Yeelight Sunflower 灯泡。
 

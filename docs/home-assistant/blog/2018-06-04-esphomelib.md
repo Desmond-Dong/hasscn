@@ -1,7 +1,8 @@
 ---
 title: esphomelib - 在 Home Assistant 中使用 ESP 的一体化方案
-description: 使用 esphomelib 工具套件，让 ESP 的接入和管理变得非常简单。
+description: 'ESP8266(https://www.espressif.com/products/socs/esp8266) 和 ESP32(https://www.espressif.com/products/socs/esp32) 是价格极低、支持 WiFi 的微控制器，已经成为许多 DIY 家庭自动化项目的基础。'
 ---
+# esphomelib - 在 Home Assistant 中使用 ESP 的一体化方案
 
 [ESP8266](https://www.espressif.com/products/socs/esp8266) 和 [ESP32](https://www.espressif.com/products/socs/esp32) 是价格极低、支持 WiFi 的微控制器，已经成为许多 DIY 家庭自动化项目的基础。包括 iTead（Sonoff 设备）在内的不少厂商，也因为性价比选择了这些芯片。
 

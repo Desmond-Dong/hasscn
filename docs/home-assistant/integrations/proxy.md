@@ -1,6 +1,6 @@
 ---
 title: Camera Proxy
-description: 有关如何在 Home Assistant 中集成摄像头代理的说明。
+description: 'The Camera Proxy integration allows you to pass another camera''s output through post-processing routines and generate a new camera with the post-processed。'
 ha_category:
   - Camera
 ha_release: 0.65
@@ -13,6 +13,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Camera Proxy
 
 The **Camera Proxy** integration allows you to pass another camera's output through post-processing routines and generate a new camera with the post-processed output.
 

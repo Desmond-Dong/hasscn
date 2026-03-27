@@ -1,6 +1,6 @@
 ---
 title: Sun
-description: 有关如何在 Home Assistant 中跟踪太阳的说明。
+description: 'Sun 集成会根据您配置的家庭位置计算所有与太阳相关的时间（如日出、日落、黎明、黄昏等）。这意味着所有基于时间的计算和触发器都会针对您的具体位置保持准确，如您的基础配置(/home-assistant/docs/configuration/basic/)中所定义。'
 ha_category:
   - Environment
 ha_release: pre 0.7
@@ -18,6 +18,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Sun
 
 **Sun** 集成会根据您配置的家庭位置计算所有与太阳相关的时间（如日出、日落、黎明、黄昏等）。这意味着所有基于时间的计算和触发器都会针对您的具体位置保持准确，如您的[基础配置](/home-assistant/docs/configuration/basic/)中所定义。
 

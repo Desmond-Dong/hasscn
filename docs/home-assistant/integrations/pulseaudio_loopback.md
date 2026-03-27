@@ -1,6 +1,6 @@
 ---
 title: PulseAudio Loopback
-description: 有关如何使用 Pulseaudio 环回模块构建灵活的整个家庭音频系统的说明。
+description: 'The goal behind this switch is to allow a very flexible whole home audio system based upon PulseAudio(https://www.freedesktop.org/wiki/Software/PulseAudio/。'
 ha_category:
   - Switch
 ha_release: 0.16
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# PulseAudio Loopback
 
 The goal behind this switch is to allow a very flexible whole home audio system based upon [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/).
 

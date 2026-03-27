@@ -1,11 +1,12 @@
 ---
 title: "Amazon Alexa 快报"
-description: "关于如何使用 Home Assistant 创建 Flash Briefing 技能的说明。"
+description: '从 0.31zero-three-one 版本开始，Home Assistant 支持新的 Alexa Flash Briefing Skills APIflash-briefing-api。快报技能会添加一个由 Home Assistant 生成的全新 Flash Briefing 来源。'
 ha_category:
   - Voice
 ha_release: "0.31"
 ha_domain: alexa
 ---
+# Amazon Alexa 快报
 
 ## 快报技能
 

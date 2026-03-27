@@ -1,6 +1,6 @@
 ---
 title: Kankun
-description: Kankun SP3 WiFi 开关的说明
+description: 'Kankun 集成可让您切换经过自定义改造的 Kankun SP3 Wi-Fi 开关。这些开关需要加入 json.cgi(https://github.com/homedash/kankun-json/blob/master/cgi-bin/json.cgi) 脚本，以提供 HTTP API。'
 ha_category:
   - Switch
 ha_release: 0.36
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Kankun
 
 **Kankun** 集成可让您切换经过自定义改造的 Kankun SP3 Wi-Fi 开关。这些开关需要加入 [json.cgi](https://github.com/homedash/kankun-json/blob/master/cgi-bin/json.cgi) 脚本，以提供 HTTP API。
 

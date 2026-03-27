@@ -1,6 +1,6 @@
 ---
 title: Anel NET-PwrCtrl
-description: 关于如何在 Home Assistant 中集成 ANEL PwrCtrl 开关的说明。
+description: 'Anel NET-PwrCtrl 集成允许您控制固件版本 6.x 及更低版本的 ANEL PwrCtrl(https://en.anel.eu/index.htm?src=/produkte/produkte.htm) 设备。固件版本 7.x 的 ANEL。'
 ha_category:
   - Switch
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Anel NET-PwrCtrl
 
 **Anel NET-PwrCtrl** 集成允许您控制固件版本 6.x 及更低版本的 [ANEL PwrCtrl](https://en.anel.eu/index.htm?src=/produkte/produkte.htm) 设备。固件版本 7.x 的 [ANEL PwrCtrl](https://en.anel.eu/index.htm?src=/produkte/produkte.htm) 设备不受支持。
 

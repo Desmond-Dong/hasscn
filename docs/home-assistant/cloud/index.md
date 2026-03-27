@@ -1,7 +1,8 @@
 ---
 title: Home Assistant Cloud
-description: 启用 Home Assistant Cloud 集成。
+description: 'Home Assistant Cloud 是由我们的合作伙伴 Nabu Casa, Inc. 提供的订阅服务。请访问 他们的网站(https://www.nabucasa.com) 了解更多关于功能、定价以及如何配置 Home Assistant(https://www.nabucasa.com/config。'
 ---
+# Home Assistant Cloud
 
 Home Assistant Cloud 是由我们的合作伙伴 Nabu Casa, Inc. 提供的订阅服务。请访问 [他们的网站](https://www.nabucasa.com) 了解更多关于功能、定价以及[如何配置 Home Assistant](https://www.nabucasa.com/config/)的信息。
 

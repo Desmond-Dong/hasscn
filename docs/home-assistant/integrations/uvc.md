@@ -1,6 +1,6 @@
 ---
 title: Ubiquiti UniFi Video
-description: 关于如何将 Ubiquiti UniFi 视频摄像头集成到 Home Assistant 的说明。
+description: 'Ubiquiti UniFi Video 集成允许您将 UniFi Video Camera (UVC)(https://www.ui.com/products/unifivideo) 接入 Home Assistant。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Camera
 ha_release: 0.13
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Ubiquiti UniFi Video
 
 **Ubiquiti UniFi Video** 集成允许您将 [UniFi Video Camera (UVC)](https://www.ui.com/products/#unifivideo) 接入 Home Assistant。
 

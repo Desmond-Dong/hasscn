@@ -1,6 +1,6 @@
 ---
 title: Monoprice 6-Zone Amplifier
-description: 关于如何将 Monoprice 6 区家庭音频控制器集成到 Home Assistant 的说明。
+description: 'The Monoprice 6-Zone Amplifier integration allows you to control Monoprice 6-Zone Amplifier(https://www.monoprice.com/product?pid=10761) using a serial。'
 
 ha_category:
   - Media player
@@ -15,6 +15,7 @@ ha_platforms:
   - media_player
 ha_integration_type: hub
 ---
+# Monoprice 6-Zone Amplifier
 
 The **Monoprice 6-Zone Amplifier** integration allows you to control [Monoprice 6-Zone Amplifier](https://www.monoprice.com/product?p_id=10761) using a serial connection.
 

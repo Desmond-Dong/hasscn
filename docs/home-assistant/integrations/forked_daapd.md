@@ -1,6 +1,6 @@
 ---
 title: OwnTone
-description: 关于如何将 OwnTone 服务器集成到 Home Assistant 的说明。
+description: 'OwnTone 集成允许您从 Home Assistant 控制 OwnTone（以前称为 forked-daapd）(https://github.com/owntone/owntone-server) 服务器。此集成可以控制 OwnTone 输出（区域）。'
 ha_category:
   - Media player
 ha_release: '0.110'
@@ -14,6 +14,7 @@ ha_platforms:
   - media_player
 ha_integration_type: integration
 ---
+# OwnTone
 
 **OwnTone** 集成允许您从 Home Assistant 控制 [OwnTone（以前称为 forked-daapd）](https://github.com/owntone/owntone-server) 服务器。此集成可以控制 OwnTone 输出（区域），具有有限的播放控制（播放/暂停、上一曲/下一曲）和媒体信息支持。不支持播放列表操作。
 

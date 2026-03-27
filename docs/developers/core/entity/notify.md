@@ -1,7 +1,9 @@
 ---
 title: 通知实体
+description: '通知实体是可以向设备或服务发送消息但从 Home Assistant 角度来看保持无状态的实体。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 通知
 ---
+# 通知实体
 
 通知实体是可以向设备或服务发送消息但从 Home Assistant 角度来看保持无状态的实体。
 

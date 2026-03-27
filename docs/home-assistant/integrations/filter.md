@@ -1,6 +1,6 @@
 ---
 title: Filter
-description: 关于如何在 Home Assistant 中集成数据过滤传感器的说明。
+description: '过滤器集成使传感器能够处理其他实体的状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Helper
   - Sensor
@@ -19,6 +19,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Filter
 
 **过滤器**集成使传感器能够处理其他实体的状态。
 

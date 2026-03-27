@@ -1,6 +1,6 @@
 ---
 title: U.S. Geological Survey Earthquake Hazards (USGS)
-description: 关于如何将美国地质调查局地震危险计划信息流集成到 Home Assistant 的说明。
+description: 'U.S. Geological Survey Earthquake Hazards (USGS) 集成允许您接入由 U.S. Geological Survey(https://earthquake.usgs.gov/) 提供的 GeoJSON 信息流，其中包含地震等地震事件的信息。'
 ha_category:
   - Geolocation
 ha_iot_class: Cloud Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# U.S. Geological Survey Earthquake Hazards (USGS)
 
 **U.S. Geological Survey Earthquake Hazards (USGS)** 集成允许您接入由 [U.S. Geological Survey](https://earthquake.usgs.gov/) 提供的 GeoJSON 信息流，其中包含地震等地震事件的信息。它会从信息流中获取事件，并根据与 Home Assistant 位置的距离筛选后显示这些事件的信息。
 

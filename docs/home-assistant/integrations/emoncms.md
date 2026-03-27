@@ -1,6 +1,6 @@
 ---
 title: Emoncms
-description: 关于如何将 Emoncms 数据源作为传感器集成到 Home Assistant 的说明。
+description: 'Emoncms 集成为您的本地或云端版 Emoncms(https://emoncms.org) 中可用的数据源创建传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 0.29
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_config_flow: true
 ---
+# Emoncms
 
 **Emoncms** 集成为您的本地或云端版 [Emoncms](https://emoncms.org) 中可用的数据源创建传感器。
 

@@ -1,6 +1,6 @@
 ---
 title: Smappee
-description: 有关如何在 Home Assistant 中设置 Smappee 的说明。
+description: 'Smappee 集成允许您通过官方云 API(https://smappee.atlassian.net/wiki/spaces/DEVAPI/overview)或受限的本地方式，将 Smappee 监视器、Smappee Comfort Plug 和 Smappee Switch 接入 Home。'
 ha_category:
   - Binary sensor
   - Energy
@@ -23,6 +23,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Smappee
 
 **Smappee** 集成允许您通过[官方云 API](https://smappee.atlassian.net/wiki/spaces/DEVAPI/overview)或受限的本地方式，将 Smappee 监视器、Smappee Comfort Plug 和 Smappee Switch 接入 Home Assistant。
 

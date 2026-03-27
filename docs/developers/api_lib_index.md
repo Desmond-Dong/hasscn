@@ -1,7 +1,9 @@
 ---
 title: "为 API 构建 Python 库"
+description: 'Home Assistant 的一条基础规则是：我们不包含任何特定协议的代码。相反，此类代码应放入独立的 Python 库中，并发布到 PyPI。本指南将介绍如何开始实践这一点！。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "简介"
 ---
+# 为 API 构建 Python 库
 
 Home Assistant 的一条基础规则是：我们不包含任何特定协议的代码。相反，此类代码应放入独立的 Python 库中，并发布到 PyPI。本指南将介绍如何开始实践这一点！
 

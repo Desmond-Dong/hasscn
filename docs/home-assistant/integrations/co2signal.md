@@ -1,6 +1,6 @@
 ---
 title: Electricity Maps
-description: 关于如何在 Home Assistant 中使用 Electricity Maps（原 CO2Signal）数据的说明
+description: 'Electricity Maps 集成（原名 CO2Signal）查询 Electricity Maps(https://electricitymaps.com/free-tier) API 获取特定区域的 CO2 强度。 可以通过使用家庭位置、纬度/经度或区域代码来收集您家庭的数据。'
 ha_category:
   - Climate
   - Energy
@@ -17,6 +17,7 @@ ha_codeowners:
   - '@jpbede'
   - '@VIKTORVAV99'
 ---
+# Electricity Maps
 
 **Electricity Maps** 集成（原名 CO2Signal）查询 [Electricity Maps](https://electricitymaps.com/free-tier) API 获取特定区域的 CO2 强度。
 可以通过使用家庭位置、纬度/经度或区域代码来收集您家庭的数据。

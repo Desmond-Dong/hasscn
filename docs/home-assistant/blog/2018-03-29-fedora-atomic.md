@@ -1,7 +1,8 @@
 ---
 title: 在 Fedora Atomic 上运行 Home Assistant
-description: 介绍如何在 Fedora Atomic 主机上部署 Home Assistant。
+description: 'Hackerspace Eastermundigen(http://www.eastermundigen.ch/) 一直是我做 Home Assistant 相关实战的“试验场”，其中不少场景甚至更偏工业自动化而非家庭场景。在那里我还能接触到自己没有的设备，比如 3D 打印机、激光切割机、联网插排等。'
 ---
+# 在 Fedora Atomic 上运行 Home Assistant
 
 Hackerspace [Eastermundigen](http://www.eastermundigen.ch/) 一直是我做 Home Assistant 相关实战的“试验场”，其中不少场景甚至更偏工业自动化而非家庭场景。在那里我还能接触到自己没有的设备，比如 3D 打印机、激光切割机、联网插排等。过去，当地的 Home Assistant 实例运行在一台装有 [Fedora ARM](https://arm.fedoraproject.org/) 的旧 [CubieBoard2](http://cubieboard.org/) 上。它只是多台 24/7 运行设备之一。为了降低电费，我们决定把实体机器合并成两台：一台负责存储，另一台负责其余服务。
 

@@ -1,7 +1,8 @@
 ---
 title: 加入社区
-description: Home Assistant 体验的一部分是全球创客社区。加入我们。
+description: '您来到这里了？做得好！您已经能够安装 Home Assistant 并体验了所有可能的一小部分。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 加入社区
 
 您来到这里了？做得好！您已经能够安装 Home Assistant 并体验了所有可能的一小部分。
 

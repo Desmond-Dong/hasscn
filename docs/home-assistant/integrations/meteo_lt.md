@@ -1,6 +1,6 @@
 ---
 title: Meteo.lt
-description: 关于如何在 Home Assistant 中集成立陶宛水文气象局 (Meteo.lt) 的说明。
+description: 'Meteo.lt 集成使用 立陶宛水文气象局(https://www.meteo.lt)（<abbr title="Lietuvos hidrometeorologijos tarnyba"LHMT</abbr）的气象数据，为立陶宛境内的位置提供天气预报。您可以通过用户界面设置一个或多个位置。'
 ha_release: 2025.11
 ha_iot_class: Cloud Polling
 ha_category:
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Meteo.lt
 
 **Meteo.lt** 集成使用 [立陶宛水文气象局](https://www.meteo.lt)（<abbr title="Lietuvos hidrometeorologijos tarnyba">LHMT</abbr>）的气象数据，为立陶宛境内的位置提供天气预报。您可以通过用户界面设置一个或多个位置。
 

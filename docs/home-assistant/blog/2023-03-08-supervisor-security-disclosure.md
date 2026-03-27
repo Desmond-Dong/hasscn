@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "披露：Supervisor 安全漏洞"
-description: "披露一项影响使用 Home Assistant Supervisor 的安装方式的安全漏洞。"
+description: '我们获悉，一项安全问题影响了使用 Home Assistant Supervisor 的安装方式。 该安全问题的修复已通过 Supervisor 自动更新系统推送给所有受影响的 Home Assistant 用户，因此这一问题现已不存在。 本页属于 Home Assistant 中文博客与更新记录。'
 date: 2023-03-08 00:00:00
 date_formatted: "March 08, 2023"
 author: Paulus Schoutsen
@@ -10,6 +10,7 @@ comments: true
 categories: Public-Service-Announcement
 og_image: /images/blog/2023-03-supervisor-security-disclosure/social.png
 ---
+# 披露：Supervisor 安全漏洞
 
 ![请注意并阅读](/home-assistant/images/blog/2023-03-supervisor-security-disclosure/social.png)
 

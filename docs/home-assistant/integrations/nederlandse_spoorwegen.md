@@ -1,6 +1,6 @@
 ---
 title: Nederlandse Spoorwegen (NS)
-description: "有关如何在 Home Assistant 中集成在荷兰乘火车旅行的时刻表数据的说明。"
+description: 'The Nederlandse Spoorwegen (NS) integration provides real-time information about Dutch train schedules using the NS API(https://apiportal.ns.nl/). This。'
 
 ha_category:
   - Transport
@@ -17,6 +17,7 @@ ha_platforms:
 ha_integration_type: service
 ha_config_flow: true
 ---
+# Nederlandse Spoorwegen (NS)
 
 The **Nederlandse Spoorwegen (NS)** integration provides real-time information about Dutch train schedules using the [NS API](https://apiportal.ns.nl/). This integration allows you to monitor departure times, delays, and travel information for your regular routes.
 

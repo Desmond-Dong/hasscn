@@ -1,7 +1,9 @@
 ---
 title: "简介"
+description: 'mobileapp 通知平台接受通知平台使用的标准 title（标题）、message（消息）和 target（目标）参数。mobileapp 通知平台支持目标作为服务。只要您在设置过程中授予了通知权限，您将在通知操作中找到所有设备列为目标，名称前缀为 notify.mobileapp 后跟您设备的设备。'
 id: "notifications-basic"
 ---
+# 简介
 
 `mobile_app` 通知平台接受通知平台使用的标准 `title`（标题）、`message`（消息）和 `target`（目标）参数。mobile_app 通知平台支持目标作为服务。只要您在设置过程中授予了通知权限，您将在通知操作中找到所有设备列为目标，名称前缀为 `notify.mobile_app_` 后跟您设备的设备 ID。这可以在 [Home Assistant 配置菜单](https://my.home-assistant.io/redirect/config/) 的 Companion App 菜单中检查，默认为 iOS/macOS 设置应用中的通用>关于或 Android 设置中的关于>电话中指定的名称（空格和非字母数字字符替换为下划线）。通知平台的要求是您必须在负载中指定至少 `message:`。通知的最小工作示例是：
 

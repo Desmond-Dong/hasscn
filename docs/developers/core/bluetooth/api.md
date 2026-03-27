@@ -1,6 +1,8 @@
 ---
 title: "蓝牙 API"
+description: '某些集成可能需要知道设备何时被发现。Bluetooth 集成提供注册 API，用于在发现与特定键值匹配的新设备时立即接收回调。bluetooth 的匹配格式与 manifest.json(/developers/creatingintegrationmanifest) 中的定义一致。'
 ---
+# 蓝牙 API
 
 ### 订阅 Bluetooth 发现
 

@@ -1,7 +1,8 @@
 ---
 title: 通过 Home Assistant Cloud 使用 Google Assistant
-description: 通过 Home Assistant Cloud 启用 Google Assistant。
+description: 'Home Assistant Cloud 是由我们的合作伙伴 Nabu Casa, Inc. 提供的订阅服务。请访问 Nabu Casa 网站(https://www.nabucasa.com/config/googleassistant/) 获取通过 Home Assistant Cloud 使用。'
 ---
+# 通过 Home Assistant Cloud 使用 Google Assistant
 
 Home Assistant Cloud 是由我们的合作伙伴 Nabu Casa, Inc. 提供的订阅服务。请访问 [Nabu Casa 网站](https://www.nabucasa.com/config/google_assistant/) 获取通过 Home Assistant Cloud 使用 Google Assistant 的帮助。
 

@@ -1,6 +1,6 @@
 ---
 title: BMW Connected Drive
-description: 关于如何在 Home Assistant 中设置 BMW Connected Drive 账户的说明。
+description: 'BMW Connected Drive 集成允许您从 MyBMW 门户（以前称为 BMW Connected Drive）获取您的 BMW 或 MINI 车辆数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -32,6 +32,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# BMW Connected Drive
 
 **BMW Connected Drive** 集成允许您从 MyBMW 门户（以前称为 BMW Connected Drive）获取您的 BMW 或 MINI 车辆数据。
 

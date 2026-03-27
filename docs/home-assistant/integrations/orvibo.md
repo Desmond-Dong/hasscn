@@ -1,6 +1,6 @@
 ---
 title: Orvibo
-description: 有关如何将 Orvibo 插座集成到 Home Assistant 中的说明。
+description: '请注意，出于安全原因，产品 ORVIBO WIFI SMART SOCKET S20 (LGS-20) 已被欧洲主管部门召回。更多信息请参阅 RAPEX 信息(https://ec.europa.eu/consumers/consumerssafety/safetyproducts/rapex/alerts/。'
 ha_category:
   - Switch
 ha_iot_class: Local Push
@@ -11,7 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
-
+# Orvibo
 
 :::caution
 请注意，出于安全原因，产品 ORVIBO WIFI SMART SOCKET S20 (LGS-20) 已被欧洲主管部门召回。更多信息请参阅 [RAPEX 信息](https://ec.europa.eu/consumers/consumers_safety/safety_products/rapex/alerts/?event=viewProduct&reference=A12/1577/15&lng=en)。

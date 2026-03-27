@@ -1,6 +1,6 @@
 ---
 title: FiveM
-description: 关于如何将 FiveM 服务器集成到 Home Assistant 的说明。
+description: 'FiveM 允许玩家与其他玩家在线玩 Rockstar Games(https://www.rockstargames.com) 的游戏 Grand Theft Auto V(https://www.rockstargames.com/V)。 FiveM 添加了对自定义资源的支持。'
 ha_release: 2022.3
 ha_category:
   - Binary sensor
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# FiveM
 
 FiveM 允许玩家与其他玩家在线玩 [Rockstar Games](https://www.rockstargames.com) 的游戏 [Grand Theft Auto V](https://www.rockstargames.com/V)。 FiveM 添加了对自定义资源的支持。 FiveM 集成允许您从 Home Assistant 中的 FiveM 服务器检索信息。
 

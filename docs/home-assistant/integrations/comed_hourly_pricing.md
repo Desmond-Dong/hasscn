@@ -1,6 +1,6 @@
 ---
 title: ComEd Hourly Pricing
-description: 关于如何在 Home Assistant 中设置 ComEd 分时定价传感器的说明。
+description: 'ComEd 分时定价计划是 ComEd 电力用户可选的一项方案。它会根据当前需求向客户收取浮动电价，而不是传统的固定费率。实时价格会发布在这里(https://hourlypricing.comed.com/live-prices/)，也可以通过 API(https://hourlypricing.comed。'
 ha_category:
   - Energy
 ha_release: '0.40'
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# ComEd Hourly Pricing
 
 ComEd 分时定价计划是 ComEd 电力用户可选的一项方案。它会根据当前需求向客户收取浮动电价，而不是传统的固定费率。实时价格会发布在[这里](https://hourlypricing.comed.com/live-prices/)，也可以通过 [API](https://hourlypricing.comed.com/hp-api/) 获取，您可以将其集成为 Home Assistant 中的传感器。
 

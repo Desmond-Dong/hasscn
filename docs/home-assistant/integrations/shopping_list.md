@@ -1,6 +1,6 @@
 ---
 title: Shopping list
-description: 有关如何使用 Intent 将购物清单集成到 Home Assistant 的说明。
+description: 'The Shopping list integration allows you to keep track of shopping list items. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Intent
   - To-do list
@@ -13,6 +13,7 @@ ha_integration_type: integration
 ha_platforms:
   - todo
 ---
+# Shopping list
 
 The **Shopping list** integration allows you to keep track of shopping list items.
 

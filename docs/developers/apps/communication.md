@@ -1,6 +1,8 @@
 ---
 title: "应用程序通讯"
+description: 'Home Assistant 内的应用程序（以前称为附加组件）之间的通信方式有多种。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 应用程序通讯
 
 Home Assistant 内的应用程序（以前称为附加组件）之间的通信方式有多种。
 

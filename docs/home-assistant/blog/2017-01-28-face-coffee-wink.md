@@ -3,6 +3,7 @@ title: '0.37: Face detection, Coffee, Wink'
 description: Governance, Face recognition, improved 摄像头 security, and a coffee
   maker
 ---
+# 0.37: Face detection, Coffee, Wink
 
 这次没有统计数字，也没有各种数据总结。好吧，其实还是有一个数字：0.37。我们已经回到了双周发布的节奏上。除了若干组织层面的变化，这次发布也再次带来了不少酷炫的新功能和新集成。也请留意“Backward-incompatible changes”部分，因为其中还包含了一些针对特定平台和组件的重要改进。
 

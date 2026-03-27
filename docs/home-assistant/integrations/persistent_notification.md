@@ -1,6 +1,6 @@
 ---
 title: Persistent Notification
-description: 有关如何将持久通知集成到 Home Assistant 中的说明。
+description: 'Persistent Notification 集成可用于在前端显示必须由你手动关闭的通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_iot_class: Local Push
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: persistent_notification
 ha_integration_type: system
 ---
+# Persistent Notification
 
 **Persistent Notification** 集成可用于在前端显示必须由你手动关闭的通知。
 
@@ -109,7 +110,7 @@ actions:
 | 粗体 | `**My bold text**` |
 | 斜体 | `*My italic text*` |
 | 链接 | `[Link](https://home-assistant.io/)` |
-| 图片 | `![image](/home-assistant/local/my_image.jpg)` |
+| 图片 | `![Home Assistant my image](/home-assistant/local/my_image.jpg)` |
 
 :::note
 此处的 `/local/` 指向 `.homeassistant/www/` 文件夹。

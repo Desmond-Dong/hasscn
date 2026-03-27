@@ -1,6 +1,6 @@
 ---
 title: Renault
-description: 有关如何将雷诺汽车集成到家庭助理中的说明。
+description: 'Renault 集成接入 MyRenault 云服务，并提供充电器状态、温度等传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Car
@@ -23,6 +23,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Renault
 
 **Renault** 集成接入 **MyRenault** 云服务，并提供充电器状态、温度等传感器。
 

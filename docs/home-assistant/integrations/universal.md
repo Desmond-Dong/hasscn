@@ -1,6 +1,6 @@
 ---
 title: Universal media player
-description: 关于如何在 Home Assistant 中创建通用媒体播放器的说明。
+description: '通用媒体播放器可将 Home Assistant 中多个现有实体组合成一个媒体播放器实体。这样就能创建一个可控制整个媒体中心的单一媒体播放器实体。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_iot_class: Calculated
@@ -14,6 +14,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Universal media player
 
 通用媒体播放器可将 Home Assistant 中多个现有实体组合成一个媒体播放器实体。这样就能创建一个可控制整个媒体中心的单一媒体播放器实体。
 

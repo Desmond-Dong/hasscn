@@ -1,6 +1,6 @@
 ---
 title: Notifications for Android TV / Fire TV
-description: "Android TV / Fire TV 的通知"
+description: 'Android TV 通知(https://play.google.com/store/apps/details?id=de.cyberdream.androidtv.notifications.google) 和 Fire TV 通知(https://www.amazon.com/Christian-Fee。'
 
 ha_category:
   - Notifications
@@ -14,6 +14,8 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: service
 ---
+# Notifications for Android TV / Fire TV
+
 [Android TV 通知](https://play.google.com/store/apps/details?id=de.cyberdream.androidtv.notifications.google) 和 [Fire TV 通知](https://www.amazon.com/Christian-Fees-Notifications-for-Fire/dp/B00OESCXEK) 的通知集成。您可以使用此集成将通知发送到您的 Android TV 设备。包含消息内容的叠加层将显示可配置的秒数，然后再次消失。还支持发送图像（例如安全摄像头）和自定义图标。图标本质上与图像相同（支持 Android TV 支持的任何图像格式），但图标显示得较小且位于通知左侧，而图像则较大且位于通知上方。
 
 这些通知在您的 Android TV 设备的全局范围内。无论哪个应用程序正在运行，它们都会显示。

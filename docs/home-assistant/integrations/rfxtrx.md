@@ -1,6 +1,6 @@
 ---
 title: RFXCOM RFXtrx
-description: 有关如何将 RFXtrx 集成到 Home Assistant 的说明。
+description: 'The RFXCOM RFXtrx integration supports RFXtrx devices by RFXCOM(http://www.rfxcom.com), which communicate in the frequency range of 433.92 MHz. 本页属于 Home。'
 ha_category:
   - Binary sensor
   - Cover
@@ -29,6 +29,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# RFXCOM RFXtrx
 
 The **RFXCOM RFXtrx** integration supports RFXtrx devices by [RFXCOM](http://www.rfxcom.com), which communicate in the frequency range of 433.92 MHz.
 

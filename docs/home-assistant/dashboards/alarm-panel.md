@@ -1,7 +1,9 @@
 ---
 title: 报警面板卡片
-description: 报警面板卡片允许您对报警控制面板集成进行设防和解除设防操作。
+description: '报警面板卡片允许您对报警控制面板(/home-assistant/integrations/报警)进行设防和解除设防操作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 报警面板卡片
+
 报警面板卡片允许您对[报警控制面板](/home-assistant/integrations/#报警)进行设防和解除设防操作。
 
 <p class='img'>

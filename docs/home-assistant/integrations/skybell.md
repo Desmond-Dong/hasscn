@@ -1,6 +1,6 @@
 ---
 title: SkyBell
-description: 有关如何将 Skybell HD 设备集成到 Home Assistant 中的说明。
+description: 'SkyBell 集成允许您在 Home Assistant 中接入 Skybell.com(http://www.skybell.com/) 门铃。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Camera
@@ -22,6 +22,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: hub
 ---
+# SkyBell
 
 **SkyBell** 集成允许您在 Home Assistant 中接入 [Skybell.com](http://www.skybell.com/) 门铃。
 

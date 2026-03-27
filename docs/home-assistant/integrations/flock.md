@@ -1,6 +1,6 @@
 ---
 title: Flock
-description: 关于如何将 Flock 通知添加到 Home Assistant 的说明。
+description: 'Flock 集成使用 Flock.com(https://flock.com) 传递来自 Home Assistant 的通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Flock
 
 **Flock** 集成使用 [Flock.com](https://flock.com) 传递来自 Home Assistant 的通知。
 

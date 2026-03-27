@@ -3,6 +3,7 @@ title: Improved Hass.io build system
 description: We're introducing a new and improved Hass.io build system for Hass.io
   and 插件.
 ---
+# Improved Hass.io build system
 
 :::note
 This is going to be a technical post for Hass.io 插件 开发者 and people that run locally build 插件 (not the default).

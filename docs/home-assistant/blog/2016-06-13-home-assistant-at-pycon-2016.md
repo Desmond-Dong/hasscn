@@ -2,6 +2,7 @@
 title: Home Assistant at PyCon 2016
 description: A wrap up of what our developers were up to during PyCon 2016.
 ---
+# Home Assistant at PyCon 2016
 
 距离几位 Home Assistant 开发者前往波特兰参加 [PyCon 2016]（一场关于 Python 的大会）已经快两周了。我们此行既是为了学习各种让代码更好的技巧，更重要的是为了交流 Home 自动化。
 

@@ -1,6 +1,6 @@
 ---
 title: MQTT Statestream
-description: 关于如何在 Home Assistant 中设置 MQTT 状态流的说明。
+description: 'MQTT Statestream 集成会将 Home Assistant 中的状态变化发布到各自独立的 MQTT 主题中。MQTT 集成(/home-assistant/integrations/mqtt/) 是 MQTT Statestream 正常工作的前提条件。'
 
 ha_category:
   - Other
@@ -13,6 +13,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# MQTT Statestream
 
 **MQTT Statestream** 集成会将 Home Assistant 中的状态变化发布到各自独立的 MQTT 主题中。[MQTT 集成](/home-assistant/integrations/mqtt/) 是 MQTT Statestream 正常工作的前提条件。
 

@@ -1,6 +1,6 @@
 ---
 title: Matrix
-description: Matrix 聊天机器人支持
+description: '此集成可让你向 Matrix 房间发送消息，也可以对 Matrix 房间中的消息作出响应。对命令的响应方式是：当触发已配置的某个命令时，触发一个事件。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Notifications
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Matrix
 
 此集成可让你向 Matrix 房间发送消息，也可以对 Matrix 房间中的消息作出响应。对命令的响应方式是：当触发已配置的某个命令时，触发一个事件。
 

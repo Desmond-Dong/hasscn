@@ -1,7 +1,7 @@
 ---
 title: "Builtin"
+description: '内置提供者支持手动将曲目和电台 URL 添加到数据库，它还生成各种播放列表(/music-assistant/usage/playlists)。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 内置提供者  <img src="/assets/icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 内置提供者支持手动将曲目和电台 URL 添加到数据库，它还生成各种[播放列表](/music-assistant/usage/#playlists)。

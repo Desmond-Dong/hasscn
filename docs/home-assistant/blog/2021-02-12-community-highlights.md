@@ -3,6 +3,7 @@ title: 'Community Highlights: 8th edition'
 description: Control your home with a StreamDeck, updates to ESPHome and a vintage
   project.
 ---
+# Community Highlights: 8th edition
 
 The 8th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing. But first of all, 

@@ -1,7 +1,9 @@
 ---
 title: 家庭助理11岁了！
-description: 今年，我们向社区和打造 Home Assistant 的人们致敬。
+description: '<img src=''/home-assistant/images/blog/2024-09-11th-anniversary/art.png'' alt=''Art by Clelia'' style=''border: 0;box-shadow: none;''。'
 ---
+# 家庭助理11岁了！
+
 <img src='/home-assistant/images/blog/2024-09-11th-anniversary/art.png' alt='Art by Clelia' style='border: 0;box-shadow: none;'>
 
 我之前已经说过，如果没有社区，Home Assistant 就什么都不是。这就是为什么我们决定今年将周年庆典的重点放在承认和感谢我们出色的社区上。这很合适，因为 2024 年我们添加了一位专门的社区经理 [Missy Quarry](https://community.home-assistant.io/t/an-introduction-your-new-community-social-media-manager/693623)，她在我们的 [11 周年直播](https://www.youtube.com/watch?v=iE8yFUvQ2e4) 中主持了这次 *你* 的庆祝活动。

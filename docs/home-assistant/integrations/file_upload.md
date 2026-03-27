@@ -1,6 +1,6 @@
 ---
 title: File upload
-description: 文件上传集成支持 Home Assistant 内的各种前端功能
+description: 'File upload 集成允许前端中的各种功能上传文件。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2022.9
 ha_quality_scale: internal
 ha_domain: file_upload
@@ -9,6 +9,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_category: []
 ---
+# File upload
 
 **File upload** 集成允许前端中的各种功能上传文件。
 

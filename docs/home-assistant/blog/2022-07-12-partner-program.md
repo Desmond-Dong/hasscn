@@ -1,7 +1,8 @@
 ---
 title: 介绍 Works with Home Assistant 计划
-description: 我们的目标是与制造商合作，为我们共同的用户群打造最佳体验。
+description: '这篇博客已过时。 有关合作伙伴计划的最新信息，请访问我们的 Works with Home Assistant 网页(https://works-with.home-assistant.io/)。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 介绍 Works with Home Assistant 计划
 
 :::note
 **这篇博客已过时。** 有关合作伙伴计划的最新信息，请访问我们的 [Works with Home Assistant 网页](https://works-with.home-assistant.io/)。

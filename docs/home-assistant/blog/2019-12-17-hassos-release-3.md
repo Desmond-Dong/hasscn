@@ -1,7 +1,8 @@
 ---
 title: HassOS 3 发布！支持 Raspberry Pi 4
-description: 'HassOS 更新：正式支持 Raspberry Pi 4！'
+description: '虽然比原计划稍晚一些，但我们很高兴宣布：Hass.io Operating System（HassOS）3 版本已发布，正好赶上圣诞节！。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# HassOS 3 发布！支持 Raspberry Pi 4
 
 虽然比原计划稍晚一些，但我们很高兴宣布：Hass.io Operating System（HassOS）3 版本已发布，正好赶上圣诞节！
 

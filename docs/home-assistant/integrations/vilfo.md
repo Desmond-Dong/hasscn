@@ -1,6 +1,6 @@
 ---
 title: Vilfo Router
-description: 关于如何将 Vilfo 路由器集成到 Home Assistant 的说明。
+description: 'Vilfo Router 集成允许您在 Home Assistant 中查看 Vilfo Router(https://www.vilfo.com) 的状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: '0.106'
 ha_category:
   - Network
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Vilfo Router
 
 **Vilfo Router** 集成允许您在 Home Assistant 中查看 [Vilfo Router](https://www.vilfo.com) 的状态。
 

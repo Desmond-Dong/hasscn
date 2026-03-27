@@ -1,6 +1,6 @@
 ---
 title: Mastodon
-description: 关于如何将 Mastodon 帖子和账户统计添加到 Home Assistant 的说明。
+description: 'The Mastodon integration uses Mastodon(https://joinmastodon.org/) to post status updates, get account statistics, and mute accounts. 本页属于 Home Assistant。'
 ha_category:
   - Notifications
   - Sensor
@@ -18,6 +18,7 @@ ha_integration_type: service
 ha_config_flow: true
 ha_quality_scale: silver
 ---
+# Mastodon
 
 The **Mastodon** integration uses [Mastodon](https://joinmastodon.org/) to post status updates, get account statistics, and mute accounts.
 

@@ -1,6 +1,6 @@
 ---
 title: Volvo
-description: 关于如何在 Home Assistant 中设置 Volvo 的说明。
+description: 'Volvo 集成用于接入您的 Volvo(https://www.volvocars.com/) 车辆。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2025.8
 ha_iot_class: Cloud Polling
 ha_codeowners:
@@ -25,6 +25,7 @@ related:
   - url: https://developer.volvocars.com/
     title: Volvo developer portal
 ---
+# Volvo
 
 **Volvo** 集成用于接入您的 [Volvo](https://www.volvocars.com/) 车辆。
 

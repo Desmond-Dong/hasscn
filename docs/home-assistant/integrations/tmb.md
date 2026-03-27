@@ -1,6 +1,6 @@
 ---
 title: Transports Metropolitans de Barcelona
-description: 关于如何在 Home Assistant 中集成 TMB iBus 传感器的说明。
+description: 'Transports Metropolitans de Barcelona 集成使用 iBus 服务(https://www.tmb.cat/en/barcelona/tmb-ibus)，为您提供特定站点下一班公交车的预计到站时间，单位为分钟。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Transport
 ha_release: 0.104
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Transports Metropolitans de Barcelona
 
 **Transports Metropolitans de Barcelona** 集成使用 [iBus 服务](https://www.tmb.cat/en/barcelona/tmb-ibus)，为您提供特定站点下一班公交车的预计到站时间，单位为分钟。
 

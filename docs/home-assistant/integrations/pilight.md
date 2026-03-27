@@ -1,6 +1,6 @@
 ---
 title: Pilight
-description: 关于如何在 Home Assistant 中设置 Pilight 的说明。
+description: 'Pilight(https://www.pilight.org/) 是一个模块化的开源解决方案，用于与 433 MHz 设备通信，可在各种小型计算机上运行。许多常见的协议(https://manual.pilight.org/protocols/)已经可用。'
 ha_category:
   - Binary sensor
   - DIY
@@ -20,6 +20,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Pilight
 
 [Pilight](https://www.pilight.org/) 是一个模块化的开源解决方案，用于与 433 MHz 设备通信，可在各种小型计算机上运行。许多常见的[协议](https://manual.pilight.org/protocols/)已经可用。
 

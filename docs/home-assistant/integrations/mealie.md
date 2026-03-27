@@ -1,6 +1,6 @@
 ---
 title: Mealie
-description: 关于如何在 Home Assistant 中设置 Mealie 设备的说明。
+description: 'Mealie(https://mealie.io/) is an open source, self-hosted recipe manager, meal planner, and shopping list. The Mealie integration will fetch and allow you。'
 ha_category:
   - Calendar
   - To-do list
@@ -19,6 +19,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# Mealie
 
 [Mealie](https://mealie.io/) is an open source, self-hosted recipe manager, meal planner, and shopping list. The Mealie integration will fetch and allow you to create and update data held in your Mealie instance.
 

@@ -1,6 +1,8 @@
 ---
 title: "状态"
+description: 'Home Assistant 会在状态机中跟踪实体的状态。状态机只有很少的要求：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 状态
 
 Home Assistant 会在状态机中跟踪实体的状态。状态机只有很少的要求：
 

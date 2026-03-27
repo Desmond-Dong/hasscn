@@ -1,6 +1,6 @@
 ---
 title: Aurora ABB PowerOne Solar PV
-description: 关于如何在 Home Assistant 中集成 Aurora ABB PowerOne 太阳能逆变器的说明。
+description: '此集成实现了与 PVI-3.0/3.6/4.2-TL-OUTD ABB 系列太阳能逆变器的直接 RS485 连接，可能也适用于其他型号。 该逆变器原由 PowerOne 制造，后被 ABB 收购。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: device
 ---
+# Aurora ABB PowerOne Solar PV
 
 此集成实现了与 PVI-3.0/3.6/4.2-TL-OUTD ABB 系列太阳能逆变器的直接 RS485 连接，可能也适用于其他型号。
 该逆变器原由 PowerOne 制造，后被 ABB 收购。

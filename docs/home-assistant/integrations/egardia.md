@@ -1,6 +1,6 @@
 ---
 title: Egardia
-description: 关于如何在 Home Assistant 中设置 Egardia / Woonveilig 的说明。
+description: 'Egardia 集成可让您控制 Egardia(https://egardia.com/)/Woonveilig(https://woonveilig.nl) 控制面板。这类报警面板在世界各地会以不同品牌名称销售，例如在荷兰称为 Woonveilig。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -19,6 +19,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Egardia
 
 **Egardia** 集成可让您控制 [Egardia](https://egardia.com/)/[Woonveilig](https://woonveilig.nl) 控制面板。这类报警面板在世界各地会以不同品牌名称销售，例如在荷兰称为 Woonveilig。该集成已经在 Egardia/Woonveilig 平台的 WL-1716、GATE-01、GATE-02 和 GATE-03 版本上进行了测试。除了集成报警控制面板外，受支持的传感器（目前为门磁）也会自动添加。
 

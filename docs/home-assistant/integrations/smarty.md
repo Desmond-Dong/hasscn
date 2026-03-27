@@ -1,6 +1,6 @@
 ---
 title: Salda Smarty
-description: 有关如何将 Salda Smarty 2X/3X/4X P/V 通风系统集成到 Home Assistant 的说明。
+description: 'The Salda Smarty integration lets you control Salda Smarty(http://www.salda.lt/en/products/category/compact-counter-flow-units) ventilation units from。'
 ha_category:
   - Button
   - Fan
@@ -21,6 +21,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Salda Smarty
 
 The **Salda Smarty** integration lets you control Salda [Smarty](http://www.salda.lt/en/products/category/compact-counter-flow-units) ventilation units from Home Assistant. You need a [MB-GATEWAY](http://www.salda.lt/en/products/item/5637227077) or something similar to connect to your local network.
 

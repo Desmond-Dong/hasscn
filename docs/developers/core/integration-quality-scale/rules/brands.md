@@ -1,6 +1,8 @@
 ---
 title: "是否有可用于整合的品牌资产"
+description: '品牌资产对于使集成易于识别并在所有集成中提供一致的外观和感觉非常重要。 brands repository(https://github.com/home-assistant/brands) 中的项目中跟踪它们。 本页属于 Home Assistant 开发者文档。'
 ---
+# 是否有可用于整合的品牌资产
 
 ## 推理
 

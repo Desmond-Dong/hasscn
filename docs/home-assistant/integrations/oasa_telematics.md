@@ -1,6 +1,6 @@
 ---
 title: OASA Telematics
-description: 有关如何在 Home Assistant 中集成希腊 OASA 远程信息处理的公共汽车和电车到达数据的说明。
+description: 'OASA Telematics 集成会使用 OASA Telematics(https://telematics.oasa.gr/en/) 的实时数据，为您提供希腊雅典公共交通的公交车和无轨电车到站时间。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Transport
@@ -15,7 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
-
+# OASA Telematics
 
 **OASA Telematics** 集成会使用 [OASA Telematics](https://telematics.oasa.gr/en/) 的实时数据，为您提供希腊雅典公共交通的公交车和无轨电车到站时间。
 

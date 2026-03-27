@@ -1,6 +1,6 @@
 ---
 title: Qbus
-description: 有关如何将 Qbus 安装与 Home Assistant 集成的说明。
+description: 'The Qbus integration allows you to integrate your Qbus Control(https://www.qbus.be) into Home Assistant. Qbus is a Belgian manufacturer of Home Automation。'
 ha_category:
   - Binary sensor
   - Climate
@@ -28,6 +28,7 @@ ha_integration_type: hub
 ha_config_flow: true
 ha_quality_scale: bronze
 ---
+# Qbus
 
 The **Qbus** integration allows you to integrate your [Qbus Control](https://www.qbus.be) into Home Assistant. **Qbus** is a Belgian manufacturer of Home Automation systems.
 

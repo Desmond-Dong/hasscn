@@ -1,6 +1,6 @@
 ---
 title: currencylayer
-description: 关于在 Home Assistant 中集成 currencylayer.com 汇率的说明。
+description: 'Currencylayer 集成将显示 Currencylayer(https://currencylayer.com/) 提供的当前汇率，该服务为 170 种货币(https://currencylayer.com/currencies) 提供实时汇率。'
 ha_category:
   - Finance
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# currencylayer
 
 **Currencylayer** 集成将显示 [Currencylayer](https://currencylayer.com/) 提供的当前汇率，该服务为 [170 种货币](https://currencylayer.com/currencies) 提供实时汇率。免费账户仅限于以美元为基础货币，每月允许 250 次请求，每日更新。
 

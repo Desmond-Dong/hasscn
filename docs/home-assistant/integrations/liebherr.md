@@ -1,6 +1,6 @@
 ---
 title: Liebherr
-description: 关于如何将 Liebherr SmartDevice 家电集成到 Home Assistant 的说明。
+description: 'Liebherr 集成可让您通过云端 SmartDevice HomeAPI(https://developer.liebherr.com/apis/smartdevice-homeapi/) 控制和监控 Liebherr(https://home.liebherr.com/) SmartDevice。'
 ha_release: 2026.3
 ha_iot_class: Cloud Polling
 ha_codeowners:
@@ -31,6 +31,7 @@ ha_platforms:
   - sensor
   - switch
 ---
+# Liebherr
 
 **Liebherr** 集成可让您通过云端 [SmartDevice HomeAPI](https://developer.liebherr.com/apis/smartdevice-homeapi/) 控制和监控 [Liebherr](https://home.liebherr.com/) SmartDevice 冰箱和冷柜。借助此集成，您可以监控温度、调整制冷设置，并创建自动化，以便在温度超过食品安全储存阈值时收到提醒。
 

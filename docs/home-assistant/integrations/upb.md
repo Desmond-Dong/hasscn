@@ -1,6 +1,6 @@
 ---
 title: Universal Powerline Bus (UPB)
-description: 关于如何将通用电力线总线 (UPB) 集成到 Home Assistant 的说明。
+description: 'The Universal Powerline Bus (UPB) integration allows Home Assistant to connect to a Universal Powerline Bus Powerline Interface Module (UPB PIM) to get。'
 ha_category:
   - Light
   - Scene
@@ -15,6 +15,7 @@ ha_platforms:
   - scene
 ha_integration_type: integration
 ---
+# Universal Powerline Bus (UPB)
 
 The **Universal Powerline Bus (UPB)** integration allows Home Assistant to connect to a Universal Powerline Bus Powerline Interface Module (UPB PIM) to get status and control UPB devices and UPB links. The UPB PIM may be connected either to a serial port or over TCP. The integration implements the following platforms:
 

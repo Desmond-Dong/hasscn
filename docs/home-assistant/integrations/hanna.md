@@ -1,6 +1,6 @@
 ---
 title: Hanna
-description: 关于如何将 HannaCloud 集成到 Home Assistant 的说明。
+description: 'Hanna 集成通过连接您的 HannaCloud(https://www.hannacloud.com) 账户，从 Hanna Pool Controller(https://www.hannainstruments.be/en/Applicatons-measure-analyze/swimming-po。'
 ha_release: 2025.12
 ha_category:
   - Sensor
@@ -14,6 +14,7 @@ ha_config_flow: true
 ha_platforms:
   - sensor
 ---
+# Hanna
 
 **Hanna** 集成通过连接您的 [HannaCloud](https://www.hannacloud.com) 账户，从 [Hanna Pool Controller](https://www.hannainstruments.be/en/Applicatons-measure-analyze/swimming-pool/ph-chlorine-control/systems/) 设备获取数据。
 

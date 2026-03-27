@@ -3,6 +3,7 @@ title: Buying a 设备 to run Home Assistant (April 2022 edition)
 description: Chip shortages and global supply chain issues make getting a 设备 complicated.
   Here is our latest overview.
 ---
+# Buying a 设备 to run Home Assistant (April 2022 edition)
 
 Home Assistant 是一个专注于隐私和本地控制的家庭自动化平台。即使没有互联网连接，它也可以完整运行。Home Assistant 在日常使用中已经足够易用，而我们也一直投入大量时间持续优化这套体验。
 

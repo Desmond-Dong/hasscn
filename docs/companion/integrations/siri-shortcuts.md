@@ -1,7 +1,9 @@
 ---
 title: "Siri 快捷指令"
+description: '<img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" /<br / 使用 iOS 13 或更高版本以及 Home Assistant 伴侣应用。'
 id: siri-shortcuts
 ---
+# Siri 快捷指令
 
 <img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" /><br />
 使用 iOS 13 或更高版本以及 Home Assistant 伴侣应用，您可以利用 Siri 快捷指令的强大功能，通过点击或语音命令执行 Home Assistant 任务。

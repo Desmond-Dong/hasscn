@@ -1,6 +1,8 @@
 ---
 title: 配置条目
+description: '配置边界由 Home Assistant 持久配置存储的配置数据。 边界由用户通过 UI。 UI 流程由配置流处理程序(/developers/configentriesconfigflowhandler)由集成定义。 本页属于 Home Assistant 开发者文档。'
 ---
+# 配置条目
 
 配置边界由 Home Assistant 持久配置存储的配置数据。 边界由用户通过 UI。 UI 流程由[配置流处理程序](/developers/config_entries_config_flow_handler)由集成定义。
 

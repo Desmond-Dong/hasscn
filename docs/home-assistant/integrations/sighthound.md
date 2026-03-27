@@ -1,6 +1,6 @@
 ---
 title: Sighthound
-description: 使用 Sighthound Cloud 检测人员。
+description: '使用 Sighthound Cloud(https://www.sighthound.com/products/cloud) 检测摄像头图像中的人物。Sighthound Developer 套餐（非商业用途免费）每月允许处理 5000 张图像。如果您每月需要处理更多图像。'
 ha_category:
   - Image processing
 ha_release: 0.105
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Sighthound
 
 使用 [Sighthound Cloud](https://www.sighthound.com/products/cloud) 检测摄像头图像中的人物。Sighthound Developer 套餐（非商业用途免费）每月允许处理 5000 张图像。如果您每月需要处理更多图像，则需要注册生产账户（即 Basic 或 Pro 账户）。
 

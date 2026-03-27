@@ -1,6 +1,6 @@
 ---
 title: Suez Water
-description: 有关如何将苏伊士水务日常数据集成到 Home Assistant 中的说明。
+description: 'The Suez Water integration fetches your water consumption data from the French water provider Tout Sur Mon Eau(https://www.toutsurmoneau.fr) website. 本页属于。'
 ha_release: 0.97
 ha_category:
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Suez Water
 
 The **Suez Water** integration fetches your water consumption data from the French water provider [Tout Sur Mon Eau](https://www.toutsurmoneau.fr) website.
 

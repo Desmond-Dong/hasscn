@@ -1,6 +1,6 @@
 ---
 title: Recovery mode
-description: 允许 Home Assistant 在恢复模式下启动。
+description: 'Recovery mode 集成是 Home Assistant Core 使用的内部集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category: []
 ha_release: 0.105
 ha_codeowners:
@@ -12,6 +12,7 @@ related:
   - docs: /docs/troubleshooting_general/
     title: General troubleshooting
 ---
+# Recovery mode
 
 **Recovery mode** 集成是 Home Assistant Core 使用的内部集成。
 

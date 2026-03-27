@@ -1,6 +1,6 @@
 ---
 title: Lutron Homeworks
-description: 关于如何在 Home Assistant 中使用 Lutron Homeworks Series 4 & 8 的说明。
+description: 'Lutron(https://www.lutron.com/) 是一家美国照明控制公司。Lutron Homeworks Series 4 和 8 系统相对较旧（约 2003 年），并使用 RS-232 与家庭自动化系统通信。Home Assistant 中的 homeworks。'
 ha_category:
   - Binary sensor
   - Button
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_config_flow: true
 ---
+# Lutron Homeworks
 
 [Lutron](https://www.lutron.com/) 是一家美国照明控制公司。Lutron Homeworks Series 4 和 8 系统相对较旧（约 2003 年），并使用 RS-232 与家庭自动化系统通信。Home Assistant 中的 `homeworks` 集成负责与这些系统的主控制器通信，通信通过以太网转串口转换器（例如 NPort）进行。
 

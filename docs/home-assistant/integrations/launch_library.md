@@ -1,6 +1,6 @@
 ---
 title: Launch Library
-description: 关于如何在 Home Assistant 中集成太空发射信息的说明。
+description: 'Launch Library 集成会为您提供下一次计划中的太空发射和 SpaceX Starship 活动信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Polling
@@ -15,6 +15,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: service
 ---
+# Launch Library
 
 **Launch Library** 集成会为您提供下一次计划中的太空发射和 SpaceX Starship 活动信息。
 

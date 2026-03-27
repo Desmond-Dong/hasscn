@@ -1,6 +1,6 @@
 ---
 title: Sonos
-description: 有关如何将 Sonos 设备集成到 Home Assistant 的说明。
+description: 'Sonos 集成允许你在 Home Assistant 中控制 Sonos(https://www.sonos.com) 无线音箱，也支持 IKEA Symfonisk 音箱。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
   - Sensor
@@ -25,6 +25,7 @@ ha_zeroconf: true
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# Sonos
 
 **Sonos** 集成允许你在 Home Assistant 中控制 [Sonos](https://www.sonos.com) 无线音箱，也支持 IKEA Symfonisk 音箱。
 

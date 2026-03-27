@@ -1,6 +1,6 @@
 ---
 title: Python Scripts
-description: 有关如何在 Home Assistant 中设置 Python 脚本的说明。
+description: '此集成允许你编写 Python 脚本，并将其作为 Home Assistant 中的动作公开。你在 <config/pythonscripts/ 文件夹中创建的每个 Python 文件都会作为一个动作显示。脚本内容不会被缓存，因此开发时可以直接编辑文件、保存更改、执行动作。脚本运行在沙盒环境中。'
 ha_category:
   - Automation
 ha_release: 0.47
@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_domain: python_script
 ha_integration_type: integration
 ---
+# Python Scripts
 
 此集成允许你编写 Python 脚本，并将其作为 Home Assistant 中的动作公开。你在 `<config>/python_scripts/` 文件夹中创建的每个 Python 文件都会作为一个动作显示。脚本内容不会被缓存，因此开发时可以直接编辑文件、保存更改、执行动作。脚本运行在沙盒环境中。沙盒内可用变量如下：
 

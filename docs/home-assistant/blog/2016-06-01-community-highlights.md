@@ -3,6 +3,7 @@ title: Community Highlights
 description: Showcasing some of the cool projects and videos our community has come
   up with.
 ---
+# Community Highlights
 
 我们的社区非常乐于助人且充满创造力。如果你还没来过，记得来我们的 [聊天室] 逛逛，一起交流。在这篇博客文章中，我想重点介绍一些社区最近很棒的项目和视频。
 

@@ -1,6 +1,6 @@
 ---
 title: BT Home Hub 5
-description: 关于如何将 BT Home Hub 5 路由器集成到 Home Assistant 的说明。
+description: '此集成通过查看连接到 BT Home Hub 5(https://en.wikipedia.org/wiki/BTHomeHub) 路由器的设备来提供存在检测。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: 0.22
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# BT Home Hub 5
 
 此集成通过查看连接到 [BT Home Hub 5](https://en.wikipedia.org/wiki/BT_Home_Hub) 路由器的设备来提供存在检测。
 

@@ -1,7 +1,7 @@
 ---
 title: "Audible"
+description: 'Music Assistant 支持从 Audible 流式传输。由 <a href="https://github.com/ztripez" target="blank" rel="noopener noreferrer"ztripez</a 贡献和维护。'
 ---
-
 # Audible 提供者 <img src="/assets/icons/audible-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持从 Audible 流式传输。由 <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a> 贡献和维护。

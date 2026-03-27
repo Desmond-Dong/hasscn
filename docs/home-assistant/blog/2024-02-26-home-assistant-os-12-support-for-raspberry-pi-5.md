@@ -2,6 +2,8 @@
 title: Home Assistant OS 版本 12 和 Supervisor 更新中支持 Raspberry Pi 5 等
 description: HAOS 12 增加了对 Raspberry Pi 5 和 ODROID-M1S 板的支持，Linux 内核更新至 6.6。此外，备份变得更快，并且附加组件现在可以在不应自动更新时发出信号。
 ---
+# Home Assistant OS 版本 12 和 Supervisor 更新中支持 Raspberry Pi 5 等
+
 **TL;DR:** Home Assistant OS 12 增加了对树莓派 5 和 ODROID-M1S 主板的支持，Linux 内核更新至 6.6。此外，备份变得更快，并且附加组件现在可以在不应自动更新时发出信号。
 
 <p><img src='/home-assistant/images/blog/2024-02-haos12/haos12.png' class='no-shadow' /></p>

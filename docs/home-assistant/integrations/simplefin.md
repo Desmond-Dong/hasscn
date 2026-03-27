@@ -1,6 +1,6 @@
 ---
 title: SimpleFin
-description: 有关个人理财 SimpleFIN 集成的说明。
+description: 'SimpleFIN(http://simplefin.org) 允许用户共享只读财务数据。这是一项付费服务，但价格相当便宜（每月 1.50 美元）。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Finance
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# SimpleFin
 
 [SimpleFIN](http://simplefin.org) 允许用户共享只读财务数据。这是一项付费服务，但价格相当便宜（每月 1.50 美元）。
 

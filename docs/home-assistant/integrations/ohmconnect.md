@@ -1,6 +1,6 @@
 ---
 title: OhmConnect
-description: "有关 OhmConnect 传感器的文档。"
+description: 'OhmConnect integration 会根据给定的 OhmConnect ID 显示当前的 OhmConnect(https://www.ohmconnect.com/) 状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Energy
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# OhmConnect
 
 **OhmConnect** integration 会根据给定的 OhmConnect ID 显示当前的 [OhmConnect](https://www.ohmconnect.com/) 状态。
 

@@ -1,6 +1,6 @@
 ---
 title: To-do list
-description: 关于如何在 Home Assistant 中使用待办事项列表的说明。
+description: 'To-do list 集成为待办列表提供实体，使其他集成可以将待办列表接入 Home Assistant。待办列表会显示在 To-do lists 仪表板中，用于跟踪事项及其是否已完成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_domain: todo
 ha_release: 2023.11
 ha_category:
@@ -15,6 +15,7 @@ related:
   - docs: /dashboards/todo-list/
     title: To-do list card
 ---
+# To-do list
 
 **To-do list** 集成为待办列表提供实体，使其他集成可以将待办列表接入 Home Assistant。待办列表会显示在 **To-do lists** 仪表板中，用于跟踪事项及其是否已完成。
 

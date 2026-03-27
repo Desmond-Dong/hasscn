@@ -1,6 +1,6 @@
 ---
 title: Philips Hue
-description: 关于在 Home Assistant 中设置 Philips Hue 的说明。
+description: 'Philips Hue integration 允许您控制和监控连接到 Hue 网桥的灯光和传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Light
@@ -23,6 +23,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: hub
 ---
+# Philips Hue
 
 **Philips Hue** integration 允许您控制和监控连接到 Hue 网桥的灯光和传感器。
 

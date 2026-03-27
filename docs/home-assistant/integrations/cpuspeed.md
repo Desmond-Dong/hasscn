@@ -1,6 +1,6 @@
 ---
 title: CPU Speed
-description: 关于如何在 Home Assistant 中集成 CPU 速度的说明。
+description: 'CPU Speed 集成允许您监控当前 CPU 速度。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: pre 0.7
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# CPU Speed
 
 **CPU Speed** 集成允许您监控当前 CPU 速度。
 

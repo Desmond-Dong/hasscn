@@ -1,6 +1,6 @@
 ---
 title: FRITZ!Box Call Monitor
-description: 关于如何将 FRITZ!Box 路由器的电话呼叫监视器集成到 Home Assistant 的说明。
+description: 'FRITZ!Box Call Monitor 集成监控 FRITZ!Box(https://en.fritz.com/products/fritzbox/) 路由器（由 FRITZ!，以前的 AVM）在 TCP 端口 1012 上公开的呼叫监视器。它将采用值 idle、ringing、dialing 或。'
 ha_category:
   - System monitor
 ha_release: 0.27
@@ -11,6 +11,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# FRITZ!Box Call Monitor
 
 **FRITZ!Box Call Monitor** 集成监控 [FRITZ!Box](https://en.fritz.com/products/fritzbox/) 路由器（由 FRITZ!，以前的 AVM）在 TCP 端口 1012 上公开的呼叫监视器。它将采用值 `idle`、`ringing`、`dialing` 或 `talking` 以及状态属性中包含的涉及的电话号码。
 它还可以访问路由器的内部电话簿来查找与电话号码对应的名称并将其存储在状态属性中。

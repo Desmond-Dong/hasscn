@@ -1,6 +1,6 @@
 ---
 title: HDMI-CEC
-description: 关于如何通过 Home Assistant 与 HDMI-CEC 交互的说明。
+description: 'HDMI-CEC 集成提供了一组操作，可让您选择活动设备、打开所有设备、让所有设备进入待机状态，并为 HDMI 设备创建开关实体。您可以在配置文件中通过关联 HDMI 端口号和设备名称来定义设备。还支持那些提供额外 HDMI 端口的已连接设备，例如条形音箱和 AVR。'
 ha_category:
   - Automation
 ha_release: 0.23
@@ -14,6 +14,7 @@ ha_codeowners:
   - '@inytar'
 ha_quality_scale: legacy
 ---
+# HDMI-CEC
 
 **HDMI-CEC** 集成提供了一组操作，可让您选择活动设备、打开所有设备、让所有设备进入待机状态，并为 HDMI 设备创建开关实体。您可以在配置文件中通过关联 HDMI 端口号和设备名称来定义设备。还支持那些提供额外 HDMI 端口的已连接设备，例如条形音箱和 AVR。设备列表是从启用了 CEC 的 Home Assistant 设备视角来描述的。无论设备是否支持 CEC，都可以将其列出。理想情况下，设备上的 HDMI 端口号会正确映射到 CEC 物理地址。如果没有正确映射，请使用 `cec-client`（`libcec` 软件包的一部分）监听 CEC 总线上的流量，并找出正确的编号。
 

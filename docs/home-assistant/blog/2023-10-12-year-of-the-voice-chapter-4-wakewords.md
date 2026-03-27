@@ -1,7 +1,8 @@
 ---
 title: '语音之年 - 第 4 章：唤醒词'
-description: 使用唤醒词激活你的语音助手，并了解如何创建你自己的唤醒词
+description: '<p<img src=''/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/social.png'' class=''no-shadow'' /</p。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# 语音之年 - 第 4 章：唤醒词
 
 <p><img src='/home-assistant/images/blog/2023-10-12-year-of-the-voice-chapter-4/social.png' class='no-shadow' /></p>
 

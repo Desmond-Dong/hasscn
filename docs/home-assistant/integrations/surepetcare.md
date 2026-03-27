@@ -1,6 +1,6 @@
 ---
 title: Sure Petcare
-description: 有关如何将 Sure Petcare 猫和宠物皮瓣集成到 Home Assistant 中的说明。
+description: 'Sure Petcare 集成允许您获取 Sure Petcare Connect 宠物门或猫门的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Lock
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Sure Petcare
 
 **Sure Petcare** 集成允许您获取 Sure Petcare Connect 宠物门或猫门的信息。
 

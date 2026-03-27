@@ -1,6 +1,6 @@
 ---
 title: Graphite
-description: 关于如何在 Graphite 中记录 Home Assistant 历史的说明。
+description: 'Graphite 集成会记录所有事件和状态变化，并将数据发送到 graphite(http://graphiteapp.org/) 实例。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - History
 ha_release: 0.13
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Graphite
 
 **Graphite** 集成会记录所有事件和状态变化，并将数据发送到 [graphite](http://graphiteapp.org/) 实例。
 

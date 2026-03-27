@@ -1,6 +1,6 @@
 ---
 title: BleBox devices
-description: 关于如何将 BleBox 设备集成到 Home Assistant 的说明。
+description: 'BleBox(https://blebox.eu/) 生产小型、低功耗、价格实惠且功能丰富的 WiFi 设备，用于无服务器的智能家居自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Cover
 ha_release: '0.110'
@@ -21,6 +21,7 @@ ha_platforms:
 ha_integration_type: device
 ha_zeroconf: true
 ---
+# BleBox devices
 
 [BleBox](https://blebox.eu/) 生产小型、低功耗、价格实惠且功能丰富的 WiFi 设备，用于无服务器的智能家居自动化。
 

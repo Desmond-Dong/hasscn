@@ -4,6 +4,7 @@ description: This new release of Home Assistant has been mainly about stabilizin
   our last release which included a lot of core improvements. We're all stable now
   and set for a bright future.
 ---
+# 0.22: Pandora, BT Home Hub 5 and local file 摄像头.
 
 现在到了 0.22 发布的时间。这个发布周期相当艰难，我们不得不为核心改进连续推出两个热修复。不过现在看起来一切都稳定下来了，很多人反馈他们的安装体验比以往更快，偶发的小问题也不再出现。
 

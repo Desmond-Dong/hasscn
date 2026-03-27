@@ -1,6 +1,6 @@
 ---
 title: NETGEAR LTE
-description: "有关如何将 NETGEAR LTE 调制解调器集成到 Home Assistant 中的说明。"
+description: 'The NETGEAR LTE integration for Home Assistant allows you to observe and control NETGEAR LTE modems(https://www.netgear.com/home/mobile-wifi/lte-modems/).。'
 
 ha_release: 0.72
 ha_category:
@@ -19,6 +19,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: device
 ---
+# NETGEAR LTE
 
 The **NETGEAR LTE** integration for Home Assistant allows you to observe and control [NETGEAR LTE modems](https://www.netgear.com/home/mobile-wifi/lte-modems/).
 

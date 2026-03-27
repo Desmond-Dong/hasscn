@@ -1,6 +1,6 @@
 ---
 title: QR Code
-description: 有关如何将二维码识别集成到 Home Assistant 的说明。
+description: 'QR Code 集成可从摄像头画面中识别二维码。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Image processing
 ha_iot_class: Calculated
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# QR Code
 
 **QR Code** 集成可从摄像头画面中识别二维码。
 

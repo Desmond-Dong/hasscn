@@ -1,6 +1,6 @@
 ---
 title: Third Reality
-description: 使用 Zigbee 集成连接和控制您的第三现实 Zigbee 设备
+description: 'Third Reality(https://3reality.com/) is a member of the Works with Home Assistant partner program for their Zigbee and Matter products. Third Reality is。'
 ha_release: '2022.10'
 ha_iot_class: Local Push
 ha_category:
@@ -27,6 +27,7 @@ ha_iot_standard:
   - matter
 ha_brand: true
 ---
+# Third Reality
 
 [Third Reality](https://3reality.com/) is a member of the Works with Home Assistant partner program for their Zigbee and Matter products. Third Reality is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

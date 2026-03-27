@@ -4,6 +4,7 @@ description: From now on, never forget to put the wheelie bin on the street agai
   link all kinds of actions to your Aqara magic cube and create your own LP record
   player in Lovelace
 ---
+# Community Highlights: 13th edition
 
 The 13th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

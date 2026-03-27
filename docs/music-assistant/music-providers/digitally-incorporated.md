@@ -1,7 +1,7 @@
 ---
 title: "DI.fm Network"
+description: 'Music Assistant 支持 DI.fm 广播网络，包括 <a href="https://www.di.fm" target="blank" rel="noopener noreferrer"DI.fm</a、<a href="https://www.radiotunes.com"。'
 ---
-
 # DI.fm Network 提供者 <img src="/assets/icons/difm-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 DI.fm 广播网络，包括 <a href="https://www.di.fm" target="_blank" rel="noopener noreferrer">DI.fm</a>、<a href="https://www.radiotunes.com" target="_blank" rel="noopener noreferrer">Radiotunes</a>、<a href="https://www.zenradio.com" target="_blank" rel="noopener noreferrer">Zen Radio</a>、<a href="https://www.jazzradio.com" target="_blank" rel="noopener noreferrer">Jazz Radio</a>、<a href="https://www.classicalradio.com" target="_blank" rel="noopener noreferrer">Classical Radio</a> 和 <a href="https://www.rockradio.com" target="_blank" rel="noopener noreferrer">Rock Radio</a>。由 <a href="https://github.com/benklop" target="_blank" rel="noopener noreferrer">Ben</a> 贡献和维护。

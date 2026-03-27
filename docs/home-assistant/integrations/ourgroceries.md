@@ -1,6 +1,6 @@
 ---
 title: OurGroceries
-description: 有关如何将 OurGroceries 购物清单集成到 Home Assistant 的说明。
+description: '此集成会连接到您的 OurGroceries(https://www.ourgroceries.com/) 账户，并将您的购物清单集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - To-do List
 ha_release: '2023.12'
@@ -22,7 +22,7 @@ related:
   - url: https://www.ourgroceries.com/
     title: OurGroceries
 ---
-
+# OurGroceries
 
 此集成会连接到您的 [OurGroceries](https://www.ourgroceries.com/) 账户，并将您的购物清单集成到 Home Assistant 中。
 

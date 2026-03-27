@@ -1,6 +1,6 @@
 ---
 title: Paperless-ngx
-description: 如何将 Paperless-ngx 集成到 Home Assistant 中的说明
+description: 'Paperless-ngx 集成允许您将 Paperless-ngx(https://docs.paperless-ngx.com/) 实例连接到 Home Assistant，并监控其状态和活动。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2025.6
 ha_category:
   - Sensor
@@ -20,6 +20,7 @@ ha_platforms:
   - sensor
   - update
 ---
+# Paperless-ngx
 
 **Paperless-ngx** 集成允许您将 [Paperless-ngx](https://docs.paperless-ngx.com/) 实例连接到 Home Assistant，并监控其状态和活动。
 

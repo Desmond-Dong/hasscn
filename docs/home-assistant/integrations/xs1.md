@@ -1,6 +1,6 @@
 ---
 title: EZcontrol XS1
-description: 关于如何在 Home Assistant 中集成 XS1 网关的说明。
+description: 'Home Assistant 的 EZcontrol XS1(http://www.ezcontrol.de/content/view/36/28/) 集成可让您查看并控制 XS1 Gateway 上配置的设备。有关此网关的使用方式，请参阅官方文档 Bedienungsanleitung。'
 ha_category:
   - Climate
   - Hub
@@ -19,6 +19,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# EZcontrol XS1
 
 Home Assistant 的 [EZcontrol XS1](http://www.ezcontrol.de/content/view/36/28/) 集成可让您查看并控制 XS1 Gateway 上配置的设备。有关此网关的使用方式，请参阅官方文档 [Bedienungsanleitung v3.0.0.0](http://www.ezcontrol.de/support/downloads/XS1/xs1manual/Bedienungsanleitung_EZcontrol_XS1_3.0.0.0-2.pdf)。
 

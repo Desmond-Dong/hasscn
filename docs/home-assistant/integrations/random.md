@@ -1,6 +1,6 @@
 ---
 title: Random
-description: 有关如何将随机数集成到 Home Assistant 中的说明。
+description: '随机（Random） 集成可简单地创建随机值或随机状态。如果您想测试自动化规则或运行交互式演示，它会很有用。每次轮询时，它都会生成一个新的状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Helper
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: helper
 ha_config_flow: true
 ---
+# Random
 
 **随机（Random）** 集成可简单地创建随机值或随机状态。如果您想测试自动化规则或运行交互式演示，它会很有用。每次轮询时，它都会生成一个新的状态。
 

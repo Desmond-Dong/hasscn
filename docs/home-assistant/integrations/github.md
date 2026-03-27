@@ -1,6 +1,6 @@
 ---
 title: GitHub
-description: 关于如何将 GitHub 集成到 Home Assistant 的说明。
+description: 'GitHub 集成允许您监控您喜欢的 GitHub(https://github.com/) 公共仓库。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_config_flow: true
@@ -15,6 +15,7 @@ ha_codeowners:
   - '@ludeeus'
 ha_integration_type: service
 ---
+# GitHub
 
 **GitHub** 集成允许您监控您喜欢的 [GitHub](https://github.com/) 公共仓库。
 

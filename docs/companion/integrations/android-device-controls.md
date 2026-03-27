@@ -1,8 +1,9 @@
 ---
 title: "Android 设备控制"
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" / Android 应用将自动集成到运行 Android 11。'
 id: 'android-device-controls'
 ---
-
+# Android 设备控制
 
 <img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /> Android 应用将自动集成到运行 Android 11 或更高版本且支持此功能的设备上的[智能家居设备控制](https://developer.android.com/guide/topics/ui/device-control)功能。所需的是您能够登录应用并远程使用它。
 

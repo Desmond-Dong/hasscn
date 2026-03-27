@@ -1,6 +1,6 @@
 ---
 title: Discord
-description: 关于如何将 Discord 通知添加到 Home Assistant 的说明。
+description: 'Discord 服务(https://discordapp.com/)是通知集成的一个平台。这允许集成使用 Discord 向用户发送消息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -13,6 +13,7 @@ ha_platforms:
   - notify
 ha_integration_type: service
 ---
+# Discord
 
 [Discord 服务](https://discordapp.com/)是通知集成的一个平台。这允许集成使用 Discord 向用户发送消息。
 

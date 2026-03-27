@@ -3,6 +3,7 @@ title: 'Home Assistant 0.41: Tado, Volumio, Workday, improved Plex'
 description: Improved Pley media player, filtering components overview, Tado and Volumio
   platform
 ---
+# Home Assistant 0.41: Tado, Volumio, Workday, improved Plex
 
 欢迎来到 0.41。在过去两周里，发生了很多事情，不只是代码层面，Home Assistant 的社区层面也同样热闹。[Paulus][@balloob] 接受了 [OpenSourceCraft] 的[采访][interview]，[Fabian][@fabaff] 在 [Chemnitzer Linux Tage][clt] 上举办了[工作坊][workshop]，而且我们现在已经是一个获奖的开源项目了（我会在另一篇博客文章里专门介绍这件事）。
 

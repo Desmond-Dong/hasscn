@@ -1,8 +1,9 @@
 ---
 title: '0.15: Unforked Open Z-Wave, templated 服务 calls, extended 场景 support
   and PEP257 compliance.'
-description: Home Assistant 0.15 has arrived.
+description: '两周过去了，0.15 来了！我们这段时间非常专注于质量，确保系统更加稳定、可靠。我通常会在发布说明里重点介绍一项很酷的更新，但这次发布有 4 条令人兴奋的公告！。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 0.15: Unforked Open Z-Wave, templated 服务 calls, extended 场景 support
 
 两周过去了，0.15 来了！我们这段时间非常专注于质量，确保系统更加稳定、可靠。我通常会在发布说明里重点介绍一项很酷的更新，但这次发布有 4 条令人兴奋的公告！
 

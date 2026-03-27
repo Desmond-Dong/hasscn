@@ -1,6 +1,6 @@
 ---
 title: Discogs
-description: 关于在 Home Assistant 中设置 Discogs 传感器的说明。
+description: 'Discogs 集成允许您查看 Discogs(https://www.discogs.com) 收藏中当前的唱片数量。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Multimedia
 ha_release: 0.61
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Discogs
 
 **Discogs** 集成允许您查看 [Discogs](https://www.discogs.com) 收藏中当前的唱片数量。
 

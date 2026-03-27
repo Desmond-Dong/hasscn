@@ -1,8 +1,9 @@
 ---
 title: 'Android 配套应用程序：已经有一段时间了'
-description: 该应用程序现在将有一名专门的开发人员。我们回顾一下这两年
+description: '<img src=''/home-assistant/images/blog/2025-07-android-companion/art.png'' style=''border: 0;box-shadow: none;'' alt="Android 配套应用程序：已经有一段时间了"。'
   应用程序的发展和未来。
 ---
+# Android 配套应用程序：已经有一段时间了
 
 <img src='/home-assistant/images/blog/2025-07-android-companion/art.png' style='border: 0;box-shadow: none;' alt="Android 配套应用程序：已经有一段时间了">
 

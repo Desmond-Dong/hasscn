@@ -1,6 +1,6 @@
 ---
 title: GPSD
-description: 关于如何将 GPSD 集成到 Home Assistant 的说明。
+description: 'The GPSD integration is using the GPS information collected by gpsd(https://gpsd.gitlab.io/gpsd/index.html) and a GPS receiver. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Utility
 ha_release: 0.26
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: integration
 ---
+# GPSD
 
 The **GPSD** integration is using the GPS information collected by [gpsd](https://gpsd.gitlab.io/gpsd/index.html) and a GPS receiver.
 

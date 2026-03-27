@@ -1,7 +1,10 @@
 ---
 title: "关键通知"
+description: '关键通知的配置和行为在 iOS 和 Android 之间有所不同。 本页属于 Home Assistant 配套应用文档，适合查阅 iOS、Android、通知、传感器与移动端能力。'
 id: "critical-notifications"
 ---
+# 关键通知
+
 关键通知的配置和行为在 iOS 和 Android 之间有所不同。
 
 ## <img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" />

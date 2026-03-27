@@ -1,7 +1,8 @@
 ---
 title: 安装故障排除
-description: 常见安装问题及其解决方案
+description: '在安装和初始设置 Home Assistant 时可能会遇到问题。本页面帮助您解决最常见的问题。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 安装故障排除
 
 在安装和初始设置 Home Assistant 时可能会遇到问题。本页面帮助您解决最常见的问题。
 

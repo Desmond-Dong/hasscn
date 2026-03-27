@@ -1,6 +1,6 @@
 ---
 title: Integral
-description: 关于如何在 Home Assistant 中集成积分传感器的说明。
+description: 'This integration provides the Riemann sum(https://en.wikipedia.org/wiki/Riemannsum) of the values provided by a source sensor. The Riemann sum is an。'
 ha_category:
   - Energy
   - Helper
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: helper
 ---
+# Integral
 
 This integration provides the [Riemann sum](https://en.wikipedia.org/wiki/Riemann_sum)
 of the values provided by a source sensor. The Riemann sum is an approximation

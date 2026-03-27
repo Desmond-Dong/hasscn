@@ -1,6 +1,6 @@
 ---
 title: Jabber (XMPP)
-description: 关于如何将 Jabber (XMPP) 通知添加到 Home Assistant 的说明。
+description: 'Jabber (XMPP) 集成可让您将 Home Assistant 的通知发送到 Jabber (XMPP)(https://xmpp.org/) 账户。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: pre 0.7
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Jabber (XMPP)
 
 **Jabber (XMPP)** 集成可让您将 Home Assistant 的通知发送到 [Jabber (XMPP)](https://xmpp.org/) 账户。
 

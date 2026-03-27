@@ -1,6 +1,8 @@
 ---
 title: 添加自定义语句以触发自动化
+description: '您可以通过扩展现有意图(https://开发者.home-assistant.io/docs/intentbuiltin/)或创建新意图，向意图识别器添加自己的语句。您还可以为现有意图自定义响应(/home-assistant/voicecontrol/customsentencesyamlcustomizi。'
 ---
+# 添加自定义语句以触发自动化
 
 您可以通过扩展现有[意图](https://开发者.home-assistant.io/docs/intent_builtin/)或创建新意图，向意图识别器添加自己的语句。您还可以为现有意图[自定义响应](/home-assistant/voice_control/custom_sentences_yaml#customizing-responses)。
 

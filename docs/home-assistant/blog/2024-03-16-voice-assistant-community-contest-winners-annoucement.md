@@ -1,7 +1,9 @@
 ---
 title: 我们的语音助手社区竞赛的获胜者是 🥁 ...
-description: 我们组织了一场语音助手竞赛。这是获奖者！
+description: '<p<img src=''/home-assistant/images/blog/2024-01-11-voice-assistant-contest/banner.png'' class=''no-shadow'' /</p。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# 我们的语音助手社区竞赛的获胜者是 🥁 ...
+
 <p><img src='/home-assistant/images/blog/2024-01-11-voice-assistant-contest/banner.png' class='no-shadow' /></p>
 
 2023 年是【声音年】(/blog/2022/12/20/year-of-voice/)。让用户用自己的语言控制 Home Assistant 是我们的年度目标。我们组织了一场竞赛来庆祝我们的语音助手可以为社区带来什么。参赛作品均令人惊叹，作品表现出色。就我个人而言，通过查看所有参赛作品，我学到了很多东西，我了解到我们的社区是如此富有创造力和坚持不懈。  我的个人项目清单增长了很多，因为我想在家里实现一半的项目！  今天是我们宣布获奖者的日子！

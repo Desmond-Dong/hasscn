@@ -1,6 +1,6 @@
 ---
 title: OpenALPR Cloud
-description: "有关如何将车牌与 OpenALPR 云集成到 Home Assistant 的说明。"
+description: 'OpenALPR(https://www.openalpr.com/) integration 让 Home Assistant 可以处理来自摄像头的车牌信息。您可以基于识别到的车牌打开车库门，或触发其他自动化(/home-assistant/integrations/automation/)。'
 
 ha_category:
   - Image processing
@@ -13,6 +13,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# OpenALPR Cloud
 
 [OpenALPR](https://www.openalpr.com/) integration 让 Home Assistant 可以处理来自摄像头的车牌信息。您可以基于识别到的车牌打开车库门，或触发其他[自动化](/home-assistant/integrations/automation/)。
 

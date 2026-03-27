@@ -1,6 +1,6 @@
 ---
 title: Homee
-description: 关于如何在 Home Assistant 中设置 homee 设备的说明。
+description: 'homee(https://hom.ee) 是一个智能家居系统，可集成 Z-Wave、Zigbee、EnOcean 等多种协议。homee 集成可让您在 Home Assistant 中使用 homee 的设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -43,6 +43,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Homee
 
 [homee](https://hom.ee) 是一个智能家居系统，可集成 Z-Wave、Zigbee、EnOcean 等多种协议。homee 集成可让您在 Home Assistant 中使用 homee 的设备。
 

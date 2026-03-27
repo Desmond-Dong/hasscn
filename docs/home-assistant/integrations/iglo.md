@@ -1,6 +1,6 @@
 ---
 title: iGlo
-description: 关于如何将 iGlo 灯集成到 Home Assistant 的说明。
+description: 'iGlo 集成允许您将 iGlo Lights(https://www.youtube.com/watch?v=oHTS9jiv-s) 集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# iGlo
 
 **iGlo** 集成允许您将 [iGlo Lights](https://www.youtube.com/watch?v=oHTS9ji_v-s) 集成到 Home Assistant 中。
 

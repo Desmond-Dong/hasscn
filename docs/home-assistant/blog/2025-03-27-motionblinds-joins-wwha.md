@@ -1,7 +1,8 @@
 ---
 title: Motionblinds 加入 Works with Home Assistant
-description: 我们正在补上 Works with 计划中的“窗帘空白”，并为社区打开更多令人期待的选择。
+description: '<img src=''/home-assistant/images/blog/2025-03-motionblinds/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Motionblinds wwha logo"。'
 ---
+# Motionblinds 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-03-motionblinds/art.jpg' style='border: 0;box-shadow: none;' alt="Motionblinds wwha logo">
 

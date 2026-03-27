@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Plugin Provider
-description: Home Assistant 插件提供从 HA 到 MA 的连接
+description: 'Home Assistant 插件提供从 HA 到 MA 的连接。这将允许 HA 播放器在 MA 中可见并接收流式传输。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
 # Home Assistant 插件提供者 <img src="/assets/icons/ha-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 

@@ -1,6 +1,6 @@
 ---
 title: Local calendar
-description: 关于如何在 Home Assistant 中使用本地日历的说明。
+description: 'Local calendar 集成可让您在 Home Assistant 中创建事件日历，用于驱动自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Calendar
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ ha_codeowners:
   - '@allenporter'
 ha_integration_type: integration
 ---
+# Local calendar
 
 **Local calendar** 集成可让您在 Home Assistant 中创建事件日历，用于驱动自动化。
 

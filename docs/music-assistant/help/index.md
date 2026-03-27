@@ -1,7 +1,7 @@
 ---
 title: "我想帮忙"
+description: '对于这样一个大项目，总有很多事情要做。不仅是实际的代码编写，还有文档、提供支持、测试等。当然，您可以通过<a href="https://www.nabucasa.com" target="blank" rel="noopener noreferrer"订阅 Nabu Casa</a来大大帮助我们。'
 ---
-
 # 我想帮忙 <img src="/assets/icons/help-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 对于这样一个大项目，总有很多事情要做。不仅是实际的代码编写，还有文档、提供支持、测试等。当然，您可以通过<a href="https://www.nabucasa.com" target="_blank" rel="noopener noreferrer">订阅 Nabu Casa</a>来大大帮助我们，但也可以通过其他方式帮助：

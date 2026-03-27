@@ -1,7 +1,7 @@
 ---
 title: "Installation"
+description: '将 Music Assistant 连接到 Home Assistant 的集成作为 HA 核心中的官方组件提供。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 安装 <img src="/assets/icons/installation-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 > [!NOTE]

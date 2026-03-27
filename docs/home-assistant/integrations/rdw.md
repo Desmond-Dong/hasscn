@@ -1,6 +1,6 @@
 ---
 title: RDW
-description: 有关如何将 RDW 车辆信息与 Home Assistant 集成的说明。
+description: 'RDW 集成连接到 RDW(https://www.rdw.nl)（荷兰车辆管理局）的开放数据服务，以便在 Home Assistant 中获取并监控您的荷兰注册车辆信息。RDW 是荷兰负责车辆注册、许可、监管和执法的政府机构。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Car
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# RDW
 
 **RDW** 集成连接到 [RDW](https://www.rdw.nl)（荷兰车辆管理局）的开放数据服务，以便在 Home Assistant 中获取并监控您的荷兰注册车辆信息。RDW 是荷兰负责车辆注册、许可、监管和执法的政府机构。
 

@@ -1,8 +1,9 @@
 ---
 title: SwitchBot 加入 Works with Home Assistant
-description: 首批空气净化器和清洁机器人加入该计划，并提供选项
+description: '<img src=''/home-assistant/images/blog/2025-06-switchbot/art.jpg'' style=''border: 0;box-shadow: none;'' alt="SwitchBot 与 Home Assistant 合作"。'
   用于 Matter 和蓝牙连接。
 ---
+# SwitchBot 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-06-switchbot/art.jpg' style='border: 0;box-shadow: none;' alt="SwitchBot 与 Home Assistant 合作">
 

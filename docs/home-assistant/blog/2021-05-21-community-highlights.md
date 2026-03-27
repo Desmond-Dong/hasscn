@@ -3,6 +3,7 @@ title: 'Community Highlights: 22nd edition'
 description: A new highlight with 2 new cards that you can use, blueprint for those
   who always leave the door open and give your TV an upgrade with Hyperion project.
 ---
+# Community Highlights: 22nd edition
 
 The 22nd edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

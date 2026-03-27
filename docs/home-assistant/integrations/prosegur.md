@@ -1,6 +1,6 @@
 ---
 title: Prosegur Alarm
-description: 有关如何将 Prosegur 智能警报集成到 Home Assistant 的说明。
+description: 'Prosegur(https://www.prosegur.com/) 智能警报可集成到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Camera
@@ -16,6 +16,7 @@ ha_platforms:
   - diagnostics
 ha_integration_type: hub
 ---
+# Prosegur Alarm
 
 [Prosegur](https://www.prosegur.com/) 智能警报可集成到 Home Assistant。
 

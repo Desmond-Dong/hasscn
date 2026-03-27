@@ -1,6 +1,6 @@
 ---
 title: Cisco IOS
-description: 关于如何将 Cisco IOS 路由器集成到 Home Assistant 的说明。
+description: '这是一个用于 Cisco IOS(https://www.cisco.com/) 设备的存在检测扫描器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: 0.33
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Cisco IOS
 
 这是一个用于 [Cisco IOS](https://www.cisco.com/) 设备的存在检测扫描器。
 

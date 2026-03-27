@@ -1,7 +1,9 @@
 ---
 title: 功能概览
+description: 'Home Assistant Companion 应用提供了一种便捷的方式来查看和控制您的 Home Assistant 实例，但它还通过允许您的设备作为数据源来扩展实例的功能。Home Assistant Companion 应用添加了大量 传感器(sensors.md)（如电池和网络状态等）、创建一个。'
 id: 'core'
 ---
+# 功能概览
 
 Home Assistant Companion 应用提供了一种便捷的方式来查看和控制您的 Home Assistant 实例，但它还通过允许您的设备作为数据源来扩展实例的功能。Home Assistant Companion 应用添加了大量 [传感器](sensors.md)（如电池和网络状态等）、创建一个 `device_tracker` 实体以允许从设备发送 [位置](location.md) 更新，并提供 [操作快捷方式](actions.md) 来触发脚本或自动化。
 

@@ -1,6 +1,6 @@
 ---
 title: Wake-word detection
-description: 在流式音频中检测唤醒词。
+description: '唤醒词检测实体可让其他集成或应用在流式音频中检测唤醒词。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Voice
 ha_release: '2023.9'
@@ -11,6 +11,7 @@ ha_domain: wake_word
 ha_integration_type: entity
 ha_quality_scale: internal
 ---
+# Wake-word detection
 
 唤醒词检测实体可让其他集成或应用在流式音频中检测唤醒词。
 

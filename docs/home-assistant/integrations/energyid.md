@@ -13,6 +13,7 @@ ha_codeowners:
 ha_release: 2025.12
 ha_quality_scale: silver
 ---
+# EnergyID
 
 **EnergyID** 集成将您的 Home Assistant 连接到 [EnergyID](https://www.energyid.eu/)——一个用于能源监控和优化的云平台。此集成上传您的 Home Assistant 传感器数据，并为太阳能、电池、能源消耗等提供高级分析和性能跟踪。
 

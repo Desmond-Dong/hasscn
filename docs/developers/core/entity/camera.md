@@ -1,7 +1,9 @@
 ---
 title: 相机实体
+description: '相机实体可以显示图像，也可以显示视频流。平台实体派生自homeassistant.components.camera.Camera(https://github.com/home-assistant/core/blob/dev/homeassistant/components/camera/init.py)。'
 sidebar_label: 相机
 ---
+# 相机实体
 
 相机实体可以显示图像，也可以显示视频流。平台实体派生自[`homeassistant.components.camera.Camera`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/camera/__init__.py)。
 

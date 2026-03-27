@@ -1,7 +1,8 @@
 ---
 title: 常用任务 - 容器
-description: Home Assistant Container 的常用任务
+description: '要了解如何备份系统，或如何从备份恢复系统，请参阅通用任务(/home-assistant/common-tasks/general/备份)中的备份文档。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 常用任务 - 容器
 
 ## 备份
 

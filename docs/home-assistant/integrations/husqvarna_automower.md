@@ -1,6 +1,6 @@
 ---
 title: Husqvarna Automower
-description: 关于如何将 Husqvarna Automower 割草机器人集成到 Home Assistant 的说明。
+description: 'Husqvarna Automower 集成通过 Husqvarna 的云 API 与 Husqvarna Automower 割草机器人建立连接。仅支持带有 Automower(R) Connect 或 Automower(R) Connect Module 的割草机。'
 ha_category:
   - Binary sensor
   - Button
@@ -33,6 +33,7 @@ ha_integration_type: hub
 ha_domain: husqvarna_automower
 ha_quality_scale: silver
 ---
+# Husqvarna Automower
 
 **Husqvarna Automower** 集成通过 Husqvarna 的云 API 与 Husqvarna Automower 割草机器人建立连接。仅支持带有 _Automower(R) Connect_ 或 _Automower(R) Connect Module_ 的割草机。
 

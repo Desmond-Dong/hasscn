@@ -1,7 +1,9 @@
 ---
 title: 选择实体
+description: 'select 是一个实体，允许用户从集成提供的有限选项列表中选择一个选项。平台实体派生自homeassistant.components.select.SelectEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/comp。'
 sidebar_label: 选择
 ---
+# 选择实体
 
 `select` 是一个实体，允许用户从集成提供的有限选项列表中选择一个选项。平台实体派生自[`homeassistant.components.select.SelectEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/select/__init__.py)
 

@@ -1,6 +1,6 @@
 ---
 title: Swing2Sleep Smarla
-description: 有关将 Swing2Sleep Smarla 连接到 Home Assistant 的说明。
+description: 'Swing2Sleep Smarla 集成使 Home Assistant 能够接入 Swing2Sleep(https://swing2sleep.de)（Smarla）电动摇篮。通过此集成，您可以控制 Smarla 设备。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Number
   - Sensor
@@ -21,6 +21,7 @@ ha_platforms:
   - update
 ha_quality_scale: bronze
 ---
+# Swing2Sleep Smarla
 
 **Swing2Sleep Smarla** 集成使 Home Assistant 能够接入 [Swing2Sleep](https://swing2sleep.de)（Smarla）电动摇篮。通过此集成，您可以控制 Smarla 设备。
 

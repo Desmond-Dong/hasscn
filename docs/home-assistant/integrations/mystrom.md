@@ -1,6 +1,6 @@
 ---
 title: myStrom
-description: 关于如何将 myStrom WiFi 开关、灯泡和运动传感器集成到 Home Assistant 的说明。
+description: 'There is currently support for the following device types within Home Assistant:。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Binary sensor
@@ -23,6 +23,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# myStrom
 
 There is currently support for the following device types within Home Assistant:
 

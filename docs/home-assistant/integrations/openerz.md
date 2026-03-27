@@ -1,6 +1,6 @@
 ---
 title: Open ERZ
-description: "有关如何将用于苏黎世城市垃圾处理的 OpenERZ API 与 Home Assistant 集成的说明"
+description: 'Open ERZ integration 使用 OpenERZ(http://openerz.metaodi.ch/) API 访问苏黎世废弃物处理与回收机构 Entsorgung und Recycling Zürich (ERZ) 的数据。它会报告指定邮编和垃圾类型的下一次收运日期。'
 
 ha_category:
   - Sensor
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Open ERZ
 
 **Open ERZ** integration 使用 [OpenERZ](http://openerz.metaodi.ch/) API 访问苏黎世废弃物处理与回收机构 Entsorgung und Recycling Zürich (ERZ) 的数据。它会报告指定邮编和垃圾类型的下一次收运日期。
 

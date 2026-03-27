@@ -1,6 +1,6 @@
 ---
 title: Solar-Log
-description: 有关如何将 Solar-Log 传感器集成到 Home Assistant 中的说明。
+description: 'The Solar-Log integration uses the open JSON interface on Solar-Log PV monitoring systems(https://www.solar-log.com/) to get details from your Solar-Log。'
 ha_category:
   - Energy
   - Sensor
@@ -17,6 +17,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# Solar-Log
 
 The **Solar-Log** integration uses the open JSON interface on [Solar-Log PV monitoring systems](https://www.solar-log.com/) to get details from your Solar-Log device and integrate these into your Home Assistant installation. With the integration you may monitor the solar power production and power consumption as tracked with your Solar-Log device.
 

@@ -1,6 +1,6 @@
 ---
 title: WLED
-description: 关于如何将 WLED 与 Home Assistant 集成的说明。
+description: 'WLED(https://kno.wled.ge) 是一个快速且功能丰富的 ESP8266/ESP32 Web 服务器实现，用于控制 NeoPixel LED（如 WS2812B、WS2811、SK6812 等）以及基于 SPI 的芯片组（如 WS2801 和 APA102）。'
 ha_category:
   - Light
   - Sensor
@@ -26,6 +26,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
+# WLED
 
 [WLED](https://kno.wled.ge) 是一个快速且功能丰富的 ESP8266/ESP32 Web 服务器实现，用于控制 NeoPixel LED（如 WS2812B、WS2811、SK6812 等）以及基于 SPI 的芯片组（如 WS2801 和 APA102）。
 

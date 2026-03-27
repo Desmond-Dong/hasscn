@@ -1,6 +1,6 @@
 ---
 title: Wake on LAN
-description: 关于如何在 Home Assistant 中设置网络唤醒集成的说明。
+description: 'Wake on LAN 集成可让您向支持 Wake on LAN(https://en.wikipedia.org/wiki/Wake-on-LAN) 的设备发送 magic packets，以将其唤醒开机。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Button
   - Network
@@ -19,6 +19,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Wake on LAN
 
 **Wake on LAN** 集成可让您向支持 [Wake on LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) 的设备发送 _magic packets_，以将其唤醒开机。
 
@@ -171,7 +172,7 @@ shell_command:
 1. First, define a new helper button. 
     - Go to **[Settings > Devices & services > Helpers](https://my.home-assistant.io/redirect/helpers/)** and select the **+ Create helper** button. Choose **Button** and give it a name. A button named "Wake PC" will render like this:
 
-    ![image](https://github.com/home-assistant/home-assistant.io/assets/252209/10e468a0-45c8-4ee7-b69d-596db3845b14)
+    ![Home Assistant 10e468a0 45c8 4ee7 b69d 596db3845b14](https://github.com/home-assistant/home-assistant.io/assets/252209/10e468a0-45c8-4ee7-b69d-596db3845b14)
 
 2. Then, create a new automation. Go to **[Settings > Automations & scenes](https://my.home-assistant.io/redirect/automations/)** and select **+ Create Automation**. 
     - The trigger will be on `State` and the entity will be the button you created. 

@@ -1,6 +1,6 @@
 ---
 title: Ecovacs
-description: 关于如何在 Home Assistant 中集成 Ecovacs 扫地机器人和割草机的说明。
+description: 'Ecovacs 集成是集成 Ecovacs(https://www.ecovacs.com)（Deebot）扫地机和割草机的主要集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Lawn mower
@@ -27,6 +27,7 @@ ha_platforms:
   - vacuum
 ha_integration_type: hub
 ---
+# Ecovacs
 
 **Ecovacs** 集成是集成 [Ecovacs](https://www.ecovacs.com)（Deebot）扫地机和割草机的主要集成。
 

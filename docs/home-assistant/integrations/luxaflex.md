@@ -1,6 +1,6 @@
 ---
 title: Luxaflex
-description: 使用 Hunter Douglas PowerView 集成连接和控制您的 Luxaflex 设备
+description: '此集成由 Hunter Douglas PowerView(/home-assistant/integrations/hunterdouglaspowerview/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Button
   - Cover
@@ -31,6 +31,7 @@ ha_dhcp: true
 ha_homekit: true
 ha_zeroconf: true
 ---
+# Luxaflex
 
 :::note
 此集成由 [Hunter Douglas PowerView](/home-assistant/integrations/hunterdouglas_powerview/) 集成支持。

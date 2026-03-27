@@ -1,6 +1,6 @@
 ---
 title: OVO Energy
-description: 有关如何将 OVO Energy 与 Home Assistant 集成的说明。
+description: 'OVO Energy 集成允许您在 Home Assistant 中监控能源消耗数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# OVO Energy
 
 **OVO Energy** 集成允许您在 Home Assistant 中监控能源消耗数据。
 

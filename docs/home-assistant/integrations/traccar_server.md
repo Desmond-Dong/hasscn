@@ -1,6 +1,6 @@
 ---
 title: Traccar Server
-description: Traccar Server 集成的文档。
+description: 'Traccar 使用 GPS 进行追踪，并支持 1500 多种不同类型的设备。你可以使用 Traccar Server 集成与自己的 Traccar Server(https://www.traccar.org/server/) 通信，它也提供为 Home Assistant。'
 ha_release: 2024.2
 ha_category:
   - Car
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: integration
 ---
+# Traccar Server
 
 Traccar 使用 GPS 进行追踪，并支持 1500 多种不同类型的设备。你可以使用 Traccar Server 集成与自己的 [Traccar Server](https://www.traccar.org/server/) 通信，它也提供为 [Home Assistant 插件](https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_traccar)。
 

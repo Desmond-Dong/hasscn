@@ -1,6 +1,6 @@
 ---
 title: Tailwind
-description: 有关如何将 Tailwind 车库门控制器与 Home Assistant 集成的说明。
+description: 'The Tailwind integration integrates Tailwind(https://gotailwind.com/) garage door controllers fully locally. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Cover
 ha_release: 2024.1
@@ -19,6 +19,7 @@ ha_platforms:
 ha_integration_type: device
 ha_dhcp: true
 ---
+# Tailwind
 
 The **Tailwind** integration integrates [Tailwind](https://gotailwind.com/)
 garage door controllers fully locally.

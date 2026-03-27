@@ -1,7 +1,8 @@
 ---
 title: 'Home Assistant 0.44：Zigbee、OpenCV 和 DLib'
-description: '原生接入 Zigbee 网络，并使用 OpenCV 进行人脸检测：0.44 发布了。'
+description: '<a href=''/home-assistant/integrations/version/0.44''<img src=''/home-assistant/images/blog/2017-05-0.44/components.png'' style=''border: 0;box-shadow:。'
 ---
+# Home Assistant 0.44：Zigbee、OpenCV 和 DLib
 
 <a href='/home-assistant/integrations/#version/0.44'><img src='/home-assistant/images/blog/2017-05-0.44/components.png' style='border: 0;box-shadow: none;'></a>
 

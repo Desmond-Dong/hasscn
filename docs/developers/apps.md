@@ -1,7 +1,9 @@
 ---
 title: "开发应用"
+description: 'Home Assistant 的应用（此前称为 add-ons）允许用户扩展 Home Assistant 周边功能。这既可以是运行一个可供 Home Assistant 集成的应用程序（例如 MQTT broker），也可以是通过 Samba 共享配置，便于从其他电脑进行编辑。'
 sidebar_label: 简介
 ---
+# 开发应用
 
 Home Assistant 的应用（此前称为 add-ons）允许用户扩展 Home Assistant 周边功能。这既可以是运行一个可供 Home Assistant 集成的应用程序（例如 MQTT broker），也可以是通过 Samba 共享配置，便于从其他电脑进行编辑。应用可以通过 Home Assistant 中的 Supervisor 面板进行配置。
 

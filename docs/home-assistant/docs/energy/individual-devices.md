@@ -1,7 +1,8 @@
 ---
 title: 集成单个设备能源使用
-description: 了解如何将单个设备的能源使用信息添加到 Home Assistant 家庭能源管理中。
+description: 'Home Assistant 可以集成单个设备的能源使用情况。这样您就可以看到单个设备对总能耗的影响。除了能源使用外，Home Assistant 还支持跟踪单个用水设备的使用情况，让您能够监控家中特定设备的用水量。 本页属于 Home Assistant 中文文档。'
 ---
+# 集成单个设备能源使用
 
 Home Assistant 可以集成单个设备的能源使用情况。这样您就可以看到单个设备对总能耗的影响。除了能源使用外，Home Assistant 还支持跟踪单个用水设备的使用情况，让您能够监控家中特定设备的用水量。
 

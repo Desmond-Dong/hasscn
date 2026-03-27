@@ -1,6 +1,6 @@
 ---
 title: TP-Link Omada
-description: 关于将 TP-Link Omada SDN 网络设备集成到 Home Assistant 的说明。
+description: 'The TP-Link Omada integration allows you to control your TP-Link Omada SDN Devices(https://www.tp-link.com/omada-sdn/) such as network switches。'
 ha_category:
   - Hub
   - Update
@@ -19,6 +19,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# TP-Link Omada
 
 The **TP-Link Omada** integration allows you to control your [TP-Link Omada SDN Devices](https://www.tp-link.com/omada-sdn/) such as network switches, access points, and internet gateways.
 

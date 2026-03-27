@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# IMGW-PIB
 
 **IMGW-PIB** 集成使用来自 [Institute of Meteorology and Water Management - National Research Institute](https://hydro.imgw.pl) 的水文数据，以展示波兰河流和水库的信息。
 

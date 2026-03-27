@@ -1,6 +1,6 @@
 ---
 title: LANnouncer
-description: 关于如何将 Lannouncer 通知添加到 Home Assistant 的说明。
+description: 'LANnouncer 集成可让您在运行 Lannouncer(https://play.google.com/store/apps/details?id=com.keybounce.lannouncer&hl=enUS) 的 Android 设备上播放语音消息（TTS）或声音。'
 ha_category:
   - Notifications
 ha_iot_class: Local Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# LANnouncer
 
 **LANnouncer** 集成可让您在运行 [Lannouncer](https://play.google.com/store/apps/details?id=com.keybounce.lannouncer&hl=en_US) 的 Android 设备上播放语音消息（TTS）或声音。当您有壁挂式 Android 平板，或一台长期通电并保持开启的 Android 设备，并希望用它来播放通知时，这会很有帮助。
 

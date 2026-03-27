@@ -1,7 +1,8 @@
 ---
 title: Security Bulletin
-description: Update your Home Assistant instance as soon as possible.
+description: 'It has come to our attention that certain custom 集成 have security issues and could potentially leak sensitive information. Home Assistant is not。'
 ---
+# Security Bulletin
 
 ![Attention please read](/home-assistant/images/blog/2021-01-security-bulletin/social.png)
 

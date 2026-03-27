@@ -1,6 +1,6 @@
 ---
 title: Xiaomi
-description: 关于如何将视频流（通过 FFmpeg）作为摄像头以及路由器集成到 Home Assistant 的说明。
+description: '本节介绍如何将 Xiaomi 路由器(http://miwifi.com)或 Xiaomi 摄像头集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Camera
   - Presence detection
@@ -16,6 +16,7 @@ related:
     title: configuration.yaml file
 ha_quality_scale: legacy
 ---
+# Xiaomi
 
 本节介绍如何将 [Xiaomi 路由器](http://miwifi.com)或 Xiaomi 摄像头集成到 Home Assistant 中。
 

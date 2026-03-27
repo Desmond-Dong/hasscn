@@ -1,6 +1,6 @@
 ---
 title: EnergyZero
-description: 关于如何在 Home Assistant 中集成 EnergyZero 的说明。
+description: 'EnergyZero 集成可将 EnergyZero(https://www.energyzero.nl/) API 平台接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_release: 2023.2
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# EnergyZero
 
 **EnergyZero** 集成可将 [EnergyZero](https://www.energyzero.nl/) API 平台接入 Home Assistant。
 

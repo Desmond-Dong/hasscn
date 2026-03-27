@@ -1,6 +1,8 @@
 ---
 title: "在代码中添加类型提示"
+description: 'Python 中的类型提示是对变量和函数添加的静态注解，可以让代码更容易理解。请参阅标准库文档(https://docs.python.org/3/library/typing.html)以及 PyCascades 2018 的这个演讲(https://youtu.be/zKre4DKAB30)。'
 ---
+# 在代码中添加类型提示
 
 Python 中的类型提示是对变量和函数添加的静态注解，可以让代码更容易理解。请参阅标准库[文档](https://docs.python.org/3/library/typing.html)以及 PyCascades 2018 的这个[演讲](https://youtu.be/zKre4DKAB30)。
 

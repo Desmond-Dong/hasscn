@@ -1,7 +1,8 @@
 ---
 title: Supervisor 设置失败
-description: 关于设置阶段失败为何将安装标记为不健康的更多信息。
+description: '当任何设置任务未能完成时会发生这种情况，这可能是由于 Supervisor 启动时主机未完全准备好，或 DBUS 未正常工作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Supervisor 设置失败
 
 ## 问题
 

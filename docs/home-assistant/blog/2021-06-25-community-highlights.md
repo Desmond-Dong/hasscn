@@ -3,6 +3,7 @@ title: 'Community Highlights: 27th edition'
 description: Know when a 设备 is no longer connected to your network with a blueprint,
   lock your cards with a card and get started with statistics in Home Assistant.
 ---
+# Community Highlights: 27th edition
 
 The 27th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, which we thought was worth sharing.

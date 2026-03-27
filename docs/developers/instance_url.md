@@ -1,6 +1,8 @@
 ---
 title: "获取实例地址"
+description: '在某些情况下，集成需要知道用户的 Home Assistant 实例 URL，并且这个 URL 还必须满足当前用例的需求。例如，设备需要将数据回传给 Home Assistant，或外部服务/设备需要从 Home Assistant 获取数据（例如生成的图片或音频文件）。'
 ---
+# 获取实例地址
 
 在某些情况下，集成需要知道用户的 Home Assistant 实例 URL，并且这个 URL 还必须满足当前用例的需求。例如，设备需要将数据回传给 Home Assistant，或外部服务/设备需要从 Home Assistant 获取数据（例如生成的图片或音频文件）。
 

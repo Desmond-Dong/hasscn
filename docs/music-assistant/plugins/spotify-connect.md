@@ -1,8 +1,7 @@
 ---
 title: Spotify Connect 插件
-description: Spotify Connect 插件的功能和说明
+description: 'Music Assistant 可以为任何 MA 播放器添加 <a href="https://connect.spotify.com/" target="blank" rel="noopener noreferrer"Spotify Connect</a 支持。'
 ---
-
 # Spotify Connect <img src="/assets/icons/spotify-connect-icon.png" alt="预览图片" style="float: right;" loading="lazy" />
 
 Music Assistant 可以为任何 MA 播放器添加 <a href="https://connect.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify Connect</a> 支持。

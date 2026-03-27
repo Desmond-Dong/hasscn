@@ -1,6 +1,8 @@
 ---
 title: 设备注册表
+description: '设备注册表是 Home Assistant 用于跟踪设备的注册表。一个设备会通过一个或多个实体在 Home Assistant 中表示。例如，电池供电的温度和湿度传感器可能会暴露温度、湿度和电池电量等实体。 本页属于 Home Assistant 开发者文档。'
 ---
+# 设备注册表
 
 设备注册表是 Home Assistant 用于跟踪设备的注册表。一个设备会通过一个或多个实体在 Home Assistant 中表示。例如，电池供电的温度和湿度传感器可能会暴露温度、湿度和电池电量等实体。
 

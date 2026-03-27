@@ -1,8 +1,7 @@
 ---
 title: DLNA/UPnP 提供者
-description: DLNA/UPnP 播放器提供者的描述
+description: 'Music Assistant 支持基于 uPnP/DLNA 的设备。这是一个（某种程度上）通用的标准，用于将音频流式传输到支持的设备。由于制造商对此协议的实现非常不一致，某些播放器会工作得很好，而其他播放器则根本无法工作或需要变通方法。除此之外，如果您有一个可以工作的设备。'
 ---
-
 # DLNA/UPnP <img src="/assets/icons/dlna-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持基于 uPnP/DLNA 的设备。这是一个（某种程度上）通用的标准，用于将音频流式传输到支持的设备。由于制造商对此协议的实现非常不一致，某些播放器会工作得很好，而其他播放器则根本无法工作或需要变通方法。除此之外，如果您有一个可以工作的设备，您可以享受快速的本地控制、无损音频支持以及在许多情况下播放媒体的元数据。

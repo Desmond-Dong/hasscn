@@ -1,8 +1,7 @@
 ---
 title: 公告
-description: 公告功能详情
+description: '公告是通过 <a href="https://www.home-assistant.io/integrations/tts/" target="blank" rel="noopener noreferrer"tts.xxxxxx</a 或 musicassistant.playannouncement(/mu。'
 ---
-
 # 公告
 
 公告是通过 <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">`tts.xxxxxx`</a> 或 [`music_assistant.play_announcement`](/music-assistant/faq/massannounce/) HA 操作从 Home Assistant 发送到 MA 播放器的文本转语音或音频文件。

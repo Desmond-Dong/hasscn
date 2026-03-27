@@ -31,6 +31,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_integration_type: hub
 ---
+# Fibaro
 
 **Fibaro** integration 允许您将 Home Assistant 连接到 Fibaro Home Center、Nice Yubii Home 或 Zooz Z-Box Hub，从而实现连接设备的控制和监控以及场景执行。Home Assistant 使用本地连接与集线器通信。
 

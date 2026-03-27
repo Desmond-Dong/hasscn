@@ -1,6 +1,6 @@
 ---
 title: Netatmo
-description: "有关如何将 Netatmo 集成集成到 Home Assistant 的说明。"
+description: 'The Netatmo integration is the main integration to integrate all Netatmo related platforms. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Binary sensor
@@ -37,6 +37,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Netatmo
 
 The **Netatmo** integration is the main integration to integrate all Netatmo related platforms.
 

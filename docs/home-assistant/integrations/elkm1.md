@@ -1,6 +1,6 @@
 ---
 title: Elk-M1 Control
-description: 关于如何设置 Elk-M1 控制器用于家庭安防和自动化的说明。
+description: 'Elk-M1 Control 集成让您将 Elk-M1 Gold 和 EZ8 报警面板连接到 Home Assistant。这些先进的家庭安防和自动化控制器提供强大的报警控制面板功能，以及广泛的自动化功能，帮助您管理和保护您的家。 本页属于 Home Assistant 中文文档。'
 ha_release: 0.81
 ha_category:
   - Alarm
@@ -31,6 +31,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Elk-M1 Control
 
 **Elk-M1 Control** 集成让您将 Elk-M1 Gold 和 EZ8 报警面板连接到 Home Assistant。这些先进的家庭安防和自动化控制器提供强大的报警控制面板功能，以及广泛的自动化功能，帮助您管理和保护您的家。
 

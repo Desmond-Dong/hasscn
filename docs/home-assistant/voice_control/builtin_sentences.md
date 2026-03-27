@@ -1,6 +1,8 @@
 ---
 title: 与助手对话 - 语句入门包
+description: 'Home Assistant 附带了社区贡献的内置语句(https://github.com/home-assistant/intents/tree/main/sentences)，支持数十种语言(https://开发者.home-assistant.io/docs/voice/intent-recognit。'
 ---
+# 与助手对话 - 语句入门包
 
 Home Assistant 附带了社区贡献的[内置语句](https://github.com/home-assistant/intents/tree/main/sentences)，支持[数十种语言](https://开发者.home-assistant.io/docs/voice/intent-recognition/supported-languages)。
 

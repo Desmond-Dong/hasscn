@@ -2,6 +2,8 @@
 title: '胸怀更大：2024 年开放日状况'
 description: 2024 年 Open Home 状态直播深入探讨了 Home Assistant 的演变，以及它目前如何达到估计 100 万安装量。
 ---
+# 胸怀更大：2024 年开放日状况
+
 我们最近举行了 [Open Home 2024 直播的状态](https://www.youtube.com/live/oa__fLArsFk?si=PzlfiHLUYE6uAEq3)，我们在会上透露了我们如何[更大](/home-assistant/blog/2018/09/17/thinking-big/) 思考如何确保智能家居的未来。在本次直播中，我们推出了 [开放家庭基金会](https://www.openhomefoundation.org/)，这是一个新的非营利组织，旨在为智能家居的基本原则（隐私、选择和可持续性）而奋斗，专注于为生活在其中的每个人提供服务。要了解有关开放之家基金会的更多信息，请阅读完整的[公告](https://www.openhomefoundation.org/博客/announcing-the-open-home-foundation/)。
 
 该直播深入探讨了 Home Assistant 的演变以及它目前如何达到估计 100 万的安装量。语音和硬件方面还有其他重大更新，包括我们即将推出的 Z-Wave 和语音助手硬件。第一个面板讨论的主角是 Open Home Foundation 合作项目 WLED、Zigbee2MQTT、Rhasspy 和 Z-Wave JS 的创始人。第二个面板全面概述了开放标准的状态，其中包括致力于 Zigbee、Z-Wave、Matter 和蓝牙的关键开源开发者。直播最后展望了开放式住宅的未来，包括宣布了充满令人兴奋的新功能的路线图。

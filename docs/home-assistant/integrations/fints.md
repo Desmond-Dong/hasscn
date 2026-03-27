@@ -1,6 +1,6 @@
 ---
 title: FinTS
-description: 关于如何使用 FinTS 传感器的说明。
+description: '通过 FinTS 集成，您可以从银行获取账户信息。这仅适用于支持 FinTS（也称 HBCI）标准的银行。许多德国银行都使用 FinTS 标准，因此如果您没有德国银行账户，这项集成大概率无法使用。要确认您的银行是否支持 FinTS，请查阅银行官网或联系其客服热线。'
 ha_category:
   - Finance
 ha_release: '0.70'
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# FinTS
 
 通过 **FinTS** 集成，您可以从银行获取账户信息。这仅适用于支持 FinTS（也称 HBCI）标准的银行。许多德国银行都使用 FinTS 标准，因此如果您没有德国银行账户，这项集成大概率无法使用。要确认您的银行是否支持 FinTS，请查阅银行官网或联系其客服热线。
 

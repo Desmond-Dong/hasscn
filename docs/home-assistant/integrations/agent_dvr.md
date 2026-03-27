@@ -1,6 +1,6 @@
 ---
 title: Agent DVR
-description: 从 Home Assistant 访问和控制 Agent DVR。
+description: 'Agent DVR(https://www.ispyconnect.com/download.aspx/) 是一款适用于 Windows 10、Mac 和 Linux 的免费 软件 DVR 解决方案。Agent DVR 作为服务或控制台应用程序运行，可以访问和控制大量第三方摄像头，具有高级运动检测功能。'
 ha_category:
   - Alarm
   - Camera
@@ -15,6 +15,7 @@ ha_platforms:
   - camera
 ha_integration_type: hub
 ---
+# Agent DVR
 
 [Agent DVR](https://www.ispyconnect.com/download.aspx/) 是一款适用于 Windows 10、Mac 和 Linux 的免费* 软件 DVR 解决方案。Agent DVR 作为服务或控制台应用程序运行，可以访问和控制大量第三方摄像头，具有高级运动检测功能，包括用于对象识别的 DeepStack 集成。iSpyConnect 网站提供安全的 (SSL) 远程访问，无需端口转发。
 

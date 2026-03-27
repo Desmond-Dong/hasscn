@@ -4,6 +4,7 @@ description: Dale (dale3h) joins Rohan and Dan to talk about Dale’s involvemen
   the project as a community leader and his contributions. Dale and Rohan also 遮盖
   off the 0.54 release.
 ---
+# Home Assistant Podcast #9
 
 Dale ([dale3h](https://github.com/dale3h)) joins Rohan and Dan to talk about Dale’s involvement in the project as a community 
  leader and his contributions. Dale and Rohan also 遮盖 off the 0.54 发布.

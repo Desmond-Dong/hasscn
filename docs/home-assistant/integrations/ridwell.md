@@ -1,6 +1,6 @@
 ---
 title: Ridwell
-description: 有关如何设置 Ridwell 的说明
+description: 'Ridwell 集成允许用户跟踪通过 Ridwell(https://www.ridwell.com) 安排的回收取件。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 2021.12
@@ -16,6 +16,7 @@ ha_platforms:
   - switch
 ha_integration_type: service
 ---
+# Ridwell
 
 **Ridwell** 集成允许用户跟踪通过 [Ridwell](https://www.ridwell.com) 安排的回收取件。
 

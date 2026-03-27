@@ -1,8 +1,9 @@
 ---
 title: 'Community Highlights: 9th edition'
-description: 插件 for DSMR Reader and show the 条件 of your washing machine
+description: 'The 9th edition of the Home Assistant Community Highlights! Some interesting things popped up around our community, we thought was worth sharing. 本页属于。'
   with a Laundry 卡片
 ---
+# Community Highlights: 9th edition
 
 The 9th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

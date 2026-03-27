@@ -1,6 +1,6 @@
 ---
 title: RoonLabs music player
-description: 有关如何将 RoonLabs 多房间播放器集成到 Home Assistant 的说明。
+description: 'Roon 集成允许您通过 Home Assistant 控制 RoonLabs(https://roonlabs.com/) 音乐播放器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.115
@@ -14,6 +14,7 @@ ha_platforms:
   - media_player
 ha_integration_type: hub
 ---
+# RoonLabs music player
 
 **Roon** 集成允许您通过 Home Assistant 控制 [RoonLabs](https://roonlabs.com/) 音乐播放器。
 

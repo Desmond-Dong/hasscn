@@ -1,7 +1,8 @@
 ---
 title: 移除 Mazda Connected Services 集成
-description: 解释为什么该集成已在 Home Assistant 2023.10.2 中被移除。
+description: '2023 年 10 月 11 日，我们获悉，一位开源贡献者收到了来自 Mazda North American Operations（Mazda）的一封停止并终止函，内容涉及他用于连接 Mazda 服务的库。Home Assistant 的 Mazda Connected Services 集成使用了这个库。'
 ---
+# 移除 Mazda Connected Services 集成
 
 2023 年 10 月 11 日，我们获悉，一位开源贡献者收到了来自 Mazda North American Operations（Mazda）的一封停止并终止函，内容涉及他用于连接 Mazda 服务的库。Home Assistant 的 Mazda Connected Services 集成使用了这个库，而该集成同样由他维护。Mazda 还向 GitHub 发送了一份 [DMCA 通知](https://github.com/github/dmca/blob/master/2023/10/2023-10-10-mazda.md)，要求删除所有代码及其派生仓库。
 

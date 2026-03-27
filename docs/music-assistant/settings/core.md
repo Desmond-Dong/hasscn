@@ -1,7 +1,7 @@
 ---
 title: "System Settings"
+description: '核心服务器设置使用典型默认值，应该适用于大多数用户。但是，每个核心控制器都有可用的设置，这些设置概述如下。所有控制器在高级部分都有日志级别设置。HA 插件和 docker 版本的服务器之间设置可能略有不同。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # MA 系统设置 <img src="/assets/icons/settings-core-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 核心服务器设置使用典型默认值，应该适用于大多数用户。但是，每个核心控制器都有可用的设置，这些设置概述如下。所有控制器在高级部分都有日志级别设置。HA 插件和 docker 版本的服务器之间设置可能略有不同。

@@ -1,6 +1,6 @@
 ---
 title: Threshold
-description: 有关如何将阈值二进制传感器集成到 Home Assistant 中的说明。
+description: 'The Threshold integration observes the state of another sensor. If the value is below or higher than the given threshold, then the state of the threshold。'
 ha_category:
   - Binary sensor
   - Helper
@@ -14,6 +14,7 @@ ha_platforms:
   - binary_sensor
 ha_integration_type: helper
 ---
+# Threshold
 
 The **Threshold** integration observes the state of another sensor. If the value is below or higher than the given threshold, then the state of the threshold sensor is changed. It also supports a range if both the upper and lower limits are given.
 

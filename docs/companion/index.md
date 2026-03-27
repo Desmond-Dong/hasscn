@@ -1,7 +1,7 @@
 ---
 pageType: home
 title: 'Home Assistant 配套应用文档 - iOS、Android 与移动端接入 | 老王杂谈说'
-description: 'Home Assistant 配套应用中文文档，覆盖 iOS、Android、通知、位置、传感器、快捷控制与远程访问。'
+description: 'Home Assistant 配套应用文档 - iOS、Android 与移动端接入 | 老王杂谈说。本页属于 Home Assistant 配套应用文档，适合查阅 iOS、Android、通知、位置、传感器与移动端接入能力。'
 keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistant 中文, Companion App, Home Assistant 配套应用, iOS, Android, Apple Watch, Wear OS, 远程控制'
 og:
   title: 'Home Assistant 配套应用文档 - iOS、Android 与移动端接入'
@@ -52,3 +52,5 @@ features:
     icon: 🏠
     link: /companion/getting_started/connection_security_level
 ---
+# Home Assistant 配套应用文档 - iOS、Android 与移动端接入 | 老王杂谈说
+

@@ -1,6 +1,6 @@
 ---
 title: Refoss
-description: 将 Refoss 设备集成到 Home Assistant 中。
+description: '将 Refoss 设备接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Switch
@@ -15,6 +15,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Refoss
 
 将 Refoss 设备接入 Home Assistant。
 

@@ -1,7 +1,8 @@
 ---
 title: 一线近况更新
-description: 来自 Home Assistant 总部的状态更新。
+description: '一线近况更新。本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更、社区动态与重要公告。'
 ---
+# 一线近况更新
 
 TL;DR:
 - Nabu Casa 已成为 Let’s Encrypt 的赞助方，以支持安全家庭所需的基础设施。

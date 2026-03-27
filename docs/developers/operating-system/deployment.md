@@ -1,7 +1,9 @@
 ---
 title: "部署/发布"
+description: 'Home Assistant Operating System 的发布版本从 release 分支构建。所有公开发布都使用 GitHub Actions 构建。没有固定的发布时间表，构建会由 HAOS 维护者按需触发。变更需要先应用到开发分支，并打上 rel-x 标签。'
 sidebar_label: 部署
 ---
+# 部署/发布
 
 Home Assistant Operating System 的发布版本从 release 分支构建。所有公开发布都使用 GitHub Actions 构建。没有固定的发布时间表，构建会由 HAOS 维护者按需触发。变更需要先应用到开发分支，并打上 `rel-x` 标签。维护者会在下一个发布前将这些补丁回移植到 release 分支。
 

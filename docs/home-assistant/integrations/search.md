@@ -1,6 +1,6 @@
 ---
 title: Search
-description: 家庭助理的内部搜索模块。
+description: 'Search 集成是 Home Assistant Core 内部使用的集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 0.105
@@ -10,6 +10,7 @@ ha_domain: search
 ha_quality_scale: internal
 ha_integration_type: system
 ---
+# Search
 
 **Search** 集成是 Home Assistant Core 内部使用的集成。
 

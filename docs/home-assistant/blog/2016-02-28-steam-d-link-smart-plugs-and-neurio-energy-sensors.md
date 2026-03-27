@@ -1,7 +1,8 @@
 ---
 title: '0.14: Steam, D-Link smart plugs and Neurio Energy 传感器'
-description: Home Assistant 0.14 has arrived.
+description: '又过去了两周，也就意味着 0.14 发布时间到了！。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 0.14: Steam, D-Link smart plugs and Neurio Energy 传感器
 
 又过去了两周，也就意味着 0.14 发布时间到了！
 

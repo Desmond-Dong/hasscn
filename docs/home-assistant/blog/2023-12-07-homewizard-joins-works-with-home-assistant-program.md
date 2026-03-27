@@ -3,6 +3,7 @@ title: HomeWizard joins Works With Home Assistant program
 description: HomeWizard makes Wi-Fi 设备 that give insight into electricity, water,
   and gas consumption. The devices integrate locally into Home Assistant.
 ---
+# HomeWizard joins Works With Home Assistant program
 
 我们很高兴宣布，HomeWizard 已加入 Works With Home Assistant 计划，并获得 *“Works Locally With Home Assistant”* 标识，同时承诺确保其产品在 Home Assistant 中拥有良好表现。这家来自荷兰的公司生产一系列 Wi-Fi 设备，帮助家庭了解自己的用电、用水和用气情况。他们希望让人们更关注自身的能源消耗，并帮助大家节省能源，这不仅对钱包有好处，也对世界更有益。这一使命与我们的[开放家庭价值观](/home-assistant/blog/2021/12/23/the-open-home/)高度契合。他们也将成为首家使用新版 Works With Home Assistant 标识的公司，新标识中采用了全新的 Home Assistant logo！
 

@@ -1,6 +1,6 @@
 ---
 title: Lock
-description: 关于如何在 Home Assistant 中设置门锁的说明。
+description: '此集成会跟踪你环境中的门锁及其状态，并允许你控制它们。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Lock
 ha_release: 0.9
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Lock
 
 此集成会跟踪你环境中的门锁及其状态，并允许你控制它们。
 

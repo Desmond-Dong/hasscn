@@ -1,7 +1,8 @@
 ---
 title: '0.16: Embedded MQTT broker, Uber, Yamaha receivers and Growl'
-description: Home Assistant 0.16 has arrived.
+description: '各位派对玩家，0.16 来了！这次发布最大的亮点是，我们通过可启动内置 MQTT 服务器 hbMQTT，彻底降低了 MQTT 的上手门槛。只要在配置中加入 mqtt:，代理服务就会启动并连接到 Home Assistant。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# 0.16: Embedded MQTT broker, Uber, Yamaha receivers and Growl
 
 各位派对玩家，0.16 来了！这次发布最大的亮点是，我们通过可启动内置 MQTT 服务器 [hbMQTT]，彻底降低了 MQTT 的上手门槛。只要在配置中加入 `mqtt:`，代理服务就会启动并连接到 Home Assistant。
 

@@ -1,6 +1,6 @@
 ---
 title: Sky Hub
-description: 有关如何将 Sky Hub 路由器集成到 Home Assistant 的说明。
+description: 'The Sky Hub integration offers presence detection by looking at connected devices to a Sky Hub router(https://www.sky.com/shop/broadband-talk/sky-hub/)。'
 ha_category:
   - Presence detection
 ha_release: 0.37
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Sky Hub
 
 The **Sky Hub** integration offers presence detection by looking at connected devices to a [Sky Hub router](https://www.sky.com/shop/broadband-talk/sky-hub/) based router.
 

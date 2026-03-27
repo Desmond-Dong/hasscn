@@ -1,6 +1,6 @@
 ---
 title: Default Config
-description: 默认配置集成将为 Home Assistant 初始化默认配置。
+description: '此集成是一个元组件，用于为 Home Assistant 配置一组默认加载的集成。将会加载以下集成：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 0.88
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: system
 ---
+# Default Config
 
 此集成是一个元组件，用于为 Home Assistant 配置一组默认加载的集成。将会加载以下集成：
 

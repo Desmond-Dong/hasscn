@@ -1,7 +1,7 @@
 ---
 title: API
+description: 'Music Assistant 提供强大的 API 来控制您的音乐媒体库、管理播放器和流式传输音频。无论您是构建自定义界面、与家庭自动化集成还是创建音乐应用，API 都能让您完全控制。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # API <img src="/assets/icons/api-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 提供强大的 API 来控制您的音乐媒体库、管理播放器和流式传输音频。无论您是构建自定义界面、与家庭自动化集成还是创建音乐应用，API 都能让您完全控制。

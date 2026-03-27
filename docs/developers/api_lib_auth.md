@@ -1,7 +1,9 @@
 ---
 title: "Python库：身份验证"
+description: '此页面适用于用于集成第三方 API 的通用 Python 库开发。若要与 Home Assistant 的 API 交互，请参阅 Home Assistant REST API 文档(/developers/api/rest)。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: 验证
 ---
+# Python库：身份验证
 
 此页面适用于用于集成第三方 API 的通用 Python 库开发。若要与 Home Assistant 的 API 交互，请参阅 [Home Assistant REST API 文档](/developers/api/rest)。
 

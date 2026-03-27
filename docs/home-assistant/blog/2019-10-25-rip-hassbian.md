@@ -1,7 +1,8 @@
 ---
 title: R.I.P Hassbian
-description: Hassbian 的谢幕
+description: '曾经最简单的 Home Assistant 安装方式，是时候退出历史舞台了。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# R.I.P Hassbian
 
 曾经最简单的 Home Assistant 安装方式，是时候退出历史舞台了。
 

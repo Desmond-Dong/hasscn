@@ -1,6 +1,6 @@
 ---
 title: SwitchBot Cloud
-description: 有关如何设置 SwitchBot 设备的说明。
+description: 'The SwitchBot Cloud integration allows you to control SwitchBot devices(https://www.switch-bot.com/) connected through the SwitchBot hub. 本页属于 Home。'
 ha_category:
   - Binary Sensor
   - Button
@@ -39,6 +39,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: hub
 ---
+# SwitchBot Cloud
 
 The **SwitchBot Cloud** integration allows you to control SwitchBot [devices](https://www.switch-bot.com/) connected through the SwitchBot hub.
 

@@ -1,6 +1,6 @@
 ---
 title: Google Assistant
-description: Google Assistant 集成设置
+description: 'Google Assistant 集成允许您通过手机、平板或 Google Home 设备上的 Google Assistant 控制 Home Assistant 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Voice
 featured: true
@@ -14,6 +14,7 @@ ha_platforms:
   - button
   - diagnostics
 ---
+# Google Assistant
 
 **Google Assistant** 集成允许您通过手机、平板或 Google Home 设备上的 Google Assistant 控制 Home Assistant 设备。
 

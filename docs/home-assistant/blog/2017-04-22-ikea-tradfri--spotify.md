@@ -3,6 +3,7 @@ title: 'Home Assistant 0.43: IKEA Trådfri, Spotify and our iOS app is live'
 description: Another packed release. Three major cool new features and a ton of small
   ones.
 ---
+# Home Assistant 0.43: IKEA Trådfri, Spotify and our iOS app is live
 
 <a href='/home-assistant/integrations/#added_in_current_version'><img src='/home-assistant/images/blog/2017-04-0.43/components.png' style='border: 0;box-shadow: none;'></a>
 

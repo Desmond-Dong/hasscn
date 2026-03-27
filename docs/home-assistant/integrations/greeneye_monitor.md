@@ -1,6 +1,6 @@
 ---
 title: GreenEye Monitor (GEM)
-description: 关于如何在 Home Assistant 中集成 GreenEye Monitor 的说明。
+description: 'GreenEye Monitor (GEM)(https://www.brultech.com/greeneye/) 集成可让您在 Home Assistant 中为 GEM 的各类数据通道创建传感器。每个电流互感器（CT）通道、脉冲计数器和温度传感器都会在 Home Assistant 中显示为传感器。'
 ha_category:
   - Energy
   - Hub
@@ -18,6 +18,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# GreenEye Monitor (GEM)
 
 [GreenEye Monitor (GEM)](https://www.brultech.com/greeneye/) 集成可让您在 Home Assistant 中为 GEM 的各类数据通道创建传感器。每个电流互感器（CT）通道、脉冲计数器和温度传感器都会在 Home Assistant 中显示为传感器，并可用于自动化。
 

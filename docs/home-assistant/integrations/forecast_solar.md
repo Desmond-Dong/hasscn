@@ -1,6 +1,6 @@
 ---
 title: Forecast.Solar
-description: 关于如何在 Home Assistant 中集成 Forecast.Solar 的说明。
+description: 'Forecast.Solar(https://forecast.solar/) 服务根据历史平均值结合天气预报，为您的太阳能电池板系统提供太阳能发电预测。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_release: 2021.7
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Forecast.Solar
 
 [Forecast.Solar](https://forecast.solar/) 服务根据历史平均值结合天气预报，为您的太阳能电池板系统提供太阳能发电预测。
 

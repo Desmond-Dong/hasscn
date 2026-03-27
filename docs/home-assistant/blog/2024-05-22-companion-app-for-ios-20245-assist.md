@@ -1,7 +1,9 @@
 ---
 title: '适用于 iOS 2024.5 的配套应用程序：让我来帮助您 🍎'
-description: 协助 iOS 和配套应用程序迄今为止的进展。
+description: '嘿，这是布鲁诺。自从我加入 Nabu Casa 全职开发 Home Assistant iOS 应用程序以来已经过去了几个月，再次非常感谢我们的 Home Assistant Cloud 订阅者使这一切成为可能。今天，我想回顾一下自 版本 2024.1。'
 ---
+# 适用于 iOS 2024.5 的配套应用程序：让我来帮助您 🍎
+
 嘿，这是布鲁诺。自从我加入 Nabu Casa 全职开发 Home Assistant iOS 应用程序以来已经过去了几个月，再次非常感谢我们的 Home Assistant Cloud 订阅者使这一切成为可能。今天，我想回顾一下自 [版本 2024.1 的最后一篇博客文章](/home-assistant/blog/2024/01/29/companion-app-for-ios-20241-carplay/) 以来介绍的内容，并讨论更多有关如何将 Assist 集成到 Apple 生态系统中的信息，以及该应用程序的许多其他改进。
 
 ![iOS 2024.5 配套应用程序](/home-assistant/images/blog/2024-05-ios-assist/ios-og.jpg)

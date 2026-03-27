@@ -1,7 +1,8 @@
 ---
 title: Why Home Assistant doesn't have an external API for 集成
-description: How our API design promotes an open IoT ecosystem.
+description: 'Home Assistant is the world’s largest home 自动化 platform talking with over 1900 different 设备 and 服务(/home-assistant/integrations/). Home Assistant works。'
 ---
+# Why Home Assistant doesn't have an external API for 集成
 
 Home Assistant is the world’s largest home 自动化 platform talking with [over 1900 different 设备 and 服务](/home-assistant/integrations/). Home Assistant works with these via “integrations”.
 

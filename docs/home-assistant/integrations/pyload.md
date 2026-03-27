@@ -1,6 +1,6 @@
 ---
 title: pyLoad
-description: 关于如何将 pyLoad 下载管理器与 Home Assistant 集成的说明。
+description: 'The pyLoad(https://pyload.net/) integration enables monitoring your downloads directly in Home Assistant. This integration provides various sensors to。'
 ha_category:
   - Downloading
 ha_release: 0.58
@@ -17,6 +17,7 @@ ha_integration_type: service
 ha_config_flow: true
 ha_quality_scale: platinum
 ---
+# pyLoad
 
 The [**pyLoad**](https://pyload.net/) integration enables monitoring your downloads directly in Home Assistant. This integration provides various sensors to keep track of your download activities and allows creating automations based on the sensor information, alongside button and switch controls for performing specific tasks such as aborting downloads and managing file restarts.
 

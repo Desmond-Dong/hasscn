@@ -1,6 +1,6 @@
 ---
 title: Amazon Alexa
-description: 关于如何将 Alexa/Amazon Echo 连接到 Home Assistant 的说明。
+description: '使用 Home Assistant Cloud(/home-assistant/cloud/)，您只需简单点击几下即可将 Home Assistant 实例连接到 Amazon Alexa。使用 Home Assistant Cloud，您无需处理动态 DNS、SSL 证书或在路由器上打开端口。'
 ha_category:
   - Voice
 ha_iot_class: Cloud Push
@@ -15,6 +15,7 @@ ha_integration_type: system
 ha_platforms:
   - diagnostics
 ---
+# Amazon Alexa
 
 ## 通过 Home Assistant Cloud 自动设置
 

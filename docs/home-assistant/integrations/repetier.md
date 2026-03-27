@@ -1,6 +1,6 @@
 ---
 title: Repetier-Server
-description: 说明如何将 Repetier-Server 传感器添加到 Home Assistant。
+description: 'Repetier-Server(https://www.repetier-server.com/) 是一个 3D 打印机/CNC 服务器，能够在同一服务器上控制多个设备。 此集成负责与该服务器进行主要对接。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Repetier-Server
 
 [Repetier-Server](https://www.repetier-server.com/) 是一个 3D 打印机/CNC 服务器，能够在同一服务器上控制多个设备。
 此集成负责与该服务器进行主要对接。

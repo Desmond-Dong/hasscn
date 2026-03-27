@@ -1,7 +1,9 @@
 ---
 title: 报警控制面板实体
+description: '报警控制面板实体控制报警。 平台实体派生自homeassistant.components.alarmcontrolpanel.AlarmControlPanelEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/compo。'
 sidebar_label: 报警控制面板
 ---
+# 报警控制面板实体
 
 报警控制面板实体控制报警。  平台实体派生自[`homeassistant.components.alarm_control_panel.AlarmControlPanelEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/alarm_control_panel/__init__.py)。
 

@@ -1,6 +1,6 @@
 ---
 title: ElevenLabs
-description: 关于如何为 Home Assistant 设置 ElevenLabs 文字转语音的说明。
+description: 'ElevenLabs 集成添加了对 ElevenLabs(https://elevenlabs.io/) 的支持，作为文字转语音来使用自然声音朗读文本，以及语音转文字来将语音转换为文本。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Text-to-speech
 ha_release: 2024.8
@@ -14,6 +14,7 @@ ha_integration_type: service
 ha_codeowners:
   - '@sorgfresser'
 ---
+# ElevenLabs
 
 **ElevenLabs** 集成添加了对 [ElevenLabs](https://elevenlabs.io/) 的支持，作为文字转语音来使用自然声音朗读文本，以及语音转文字来将语音转换为文本。
 

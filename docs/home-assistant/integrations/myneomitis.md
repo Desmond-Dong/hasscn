@@ -1,6 +1,6 @@
 ---
 title: MyNeomitis
-description: 使用云 API 将 MyNeomitis 设备（散热器、毛巾架、继电器、地暖）连接到 Home Assistant。
+description: 'MyNeomitis 集成可将您的 Axenco(https://www.axenco.com/) MyNeomitis 供暖和能源管理设备连接到 Home Assistant。借助此集成，您可以直接在 Home Assistant 中控制电暖气、毛巾架和地暖等设备。'
 ha_category:
   - Select
 ha_release: 2026.3
@@ -13,6 +13,7 @@ ha_platforms:
   - select
 ha_integration_type: hub
 ---
+# MyNeomitis
 
 **MyNeomitis** 集成可将您的 [Axenco](https://www.axenco.com/) MyNeomitis 供暖和能源管理设备连接到 Home Assistant。借助此集成，您可以直接在 Home Assistant 中控制电暖气、毛巾架和地暖等设备。
 

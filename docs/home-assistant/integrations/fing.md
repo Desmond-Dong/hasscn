@@ -1,6 +1,6 @@
 ---
 title: Fing
-description: 关于将您的 Fing Agent 与 Home Assistant 集成的说明
+description: 'Fing 集成允许 Home Assistant 检索有关本地网络上设备的详细信息。Fing(https://www.fing.com/) 帮助家庭用户和 IT 专业人员监控、保护和了解他们的网络，使用直观的工具使连接管理变得简单有效。 通过 Local。'
 ha_release: '2025.11'
 ha_category:
   - Presence detection
@@ -14,6 +14,7 @@ ha_domain: fing
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Fing
 
 **Fing** 集成允许 Home Assistant 检索有关本地网络上设备的详细信息。[Fing](https://www.fing.com/) 帮助家庭用户和 IT 专业人员监控、保护和了解他们的网络，使用直观的工具使连接管理变得简单有效。
 通过 [Local API](https://www.fing.com/developers/local-api/) 连接，Fing 自动构建和同步设备清单以检测在线状态并触发自动化。

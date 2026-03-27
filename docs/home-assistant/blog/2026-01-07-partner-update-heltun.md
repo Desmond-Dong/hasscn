@@ -1,8 +1,9 @@
 ---
 title: '合作伙伴更新：HELTUN 已从 Works with Home Assistant 中移除'
-description: 出于透明公开的考虑，我们正式宣布 HELTUN 已被移出 Works with Home Assistant
+description: '<img src=''/home-assistant/images/blog/2026-01-partner-update-heltun/art.webp'' style=''border: 0;box-shadow: none;'' alt="合作伙伴更新：HELTUN 已从 Works with Home。'
   计划。
 ---
+# 合作伙伴更新：HELTUN 已从 Works with Home Assistant 中移除
 
 <img src='/home-assistant/images/blog/2026-01-partner-update-heltun/art.webp' style='border: 0;box-shadow: none;' alt="合作伙伴更新：HELTUN 已从 Works with Home Assistant 中移除">
 

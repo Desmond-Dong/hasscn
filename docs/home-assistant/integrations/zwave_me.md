@@ -1,6 +1,6 @@
 ---
 title: Z-Wave.Me
-description: 关于如何通过 Z-Wave.Me Z-Way 将 Z-Wave 集成到 Home Assistant 的说明。
+description: '此集成允许您通过 Z-Wave.Me Z-Way(https://z-wave.me/z-way/) 控制 Z-Wave 网络。它结合了 Z-Way 内置诊断工具的性能和强大功能以及 Home Assistant 的灵活性。该集成将所有 Z-Way 设备引入 Home。'
 ha_category:
   - Binary sensor
   - Button
@@ -37,6 +37,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: hub
 ---
+# Z-Wave.Me
 
 此集成允许您通过 [Z-Wave.Me Z-Way](https://z-wave.me/z-way/) 控制 Z-Wave 网络。它结合了 Z-Way 内置诊断工具的性能和强大功能以及 Home Assistant 的灵活性。该集成将所有 Z-Way 设备引入 Home Assistant（Z-Wave、Zigbee、EnOcean、基于 HTTP 的设备等）。
 

@@ -1,6 +1,6 @@
 ---
 title: JustNimbus
-description: 关于如何在 Home Assistant 中配置 JustNimbus 集成的说明
+description: 'JustNimbus 集成会查询 JustNimbus 网页仪表板使用的 JustNimbus API。 此集成允许您收集并保存数据，以查看储水袋使用情况的历史概览。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
 ha_release: 2022.9
@@ -13,6 +13,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@kvanzuijlen'
 ---
+# JustNimbus
 
 **JustNimbus** 集成会查询 JustNimbus 网页仪表板使用的 JustNimbus API。
 此集成允许您收集并保存数据，以查看储水袋使用情况的历史概览。

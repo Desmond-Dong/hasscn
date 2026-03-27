@@ -1,7 +1,9 @@
 ---
 title: "Hardkernel ODROID-XU4"
+description: 'ODROID XU4 使用 eMMC 启动分区进行启动。通常 eMMC 读卡器无法写入这个 eMMC 启动分区。这里有几种情况：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: ODROID-XU4
 ---
+# Hardkernel ODROID-XU4
 
 ## eMMC
 

@@ -1,6 +1,6 @@
 ---
 title: MQTT room presence
-description: 关于如何在 Home Assistant 中跟踪房间存在感的说明。
+description: 'MQTT room presence 集成允许您使用 MQTT 客户端检测设备在室内的位置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Presence detection
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# MQTT room presence
 
 **MQTT room presence** 集成允许您使用 MQTT 客户端检测设备在室内的位置。
 

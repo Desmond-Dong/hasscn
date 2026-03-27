@@ -1,7 +1,9 @@
 ---
 title: "手势"
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /, <img src="/companion-assets/iOS.svg" alt="iOS"。'
 id: 'gestures'
 ---
+# 手势
 
 <img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" />, <img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" /><br />
 您可以在使用 Home Assistant 主界面时设置手势以执行快速操作。

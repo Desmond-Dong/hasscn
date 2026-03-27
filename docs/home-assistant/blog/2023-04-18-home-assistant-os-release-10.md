@@ -10,6 +10,7 @@ categories:
   - Announcements
 og_image: /images/blog/2023-04-18-os10/social.png
 ---
+# Home Assistant OS 10：更好的内存管理与新开发板支持
 
 <a href='https://github.com/home-assistant/operating-system/releases/tag/10.0'>
 <img title='Home Assistant OS Release 10' alt='Home Assistant OS Release 10 Logo'

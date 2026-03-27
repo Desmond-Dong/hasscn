@@ -1,6 +1,6 @@
 ---
 title: SNMP
-description: 有关如何将 SNMP 集成到 Home Assistant 的说明。
+description: '许多路由器、Wi-Fi 接入点、打印机以及其他联网设备都支持简单网络管理协议 (SNMP)(https://en.wikipedia.org/wiki/SimpleNetworkManagementProtocol)。这是一种用于监控和管理联网设备的标准化方法。'
 ha_category:
   - Network
   - Presence detection
@@ -18,6 +18,7 @@ ha_codeowners:
   - '@nmaggioni'
 ha_quality_scale: legacy
 ---
+# SNMP
 
 许多路由器、Wi-Fi 接入点、打印机以及其他联网设备都支持[简单网络管理协议 (SNMP)](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)。这是一种用于监控和管理联网设备的标准化方法。SNMP 使用树状层级结构，其中每个节点都是一个对象。许多此类对象都包含持续更新的指标列表，例如网络接口吞吐量、磁盘活动、网络中的活跃设备、墨粉余量等。
 

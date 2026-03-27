@@ -1,6 +1,6 @@
 ---
 title: FYTA
-description: 关于如何在 Home Assistant 中集成 FYTA 传感器的说明。
+description: 'FYTA 集成使用 FYTA(https://www.fyta.de) 的开放 API 从您的植物传感器获取数据并将其集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -19,6 +19,7 @@ ha_integration_type: hub
 ha_quality_scale: platinum
 ha_dhcp: true
 ---
+# FYTA
 
 **FYTA** 集成使用 [FYTA](https://www.fyta.de) 的开放 API 从您的植物传感器获取数据并将其集成到 Home Assistant 中。
 

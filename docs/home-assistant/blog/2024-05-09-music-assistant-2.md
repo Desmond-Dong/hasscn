@@ -1,7 +1,9 @@
 ---
 title: '音乐助手2.0：你的音乐，你的玩家'
-description: 将多个音乐库连接到几乎所有智能扬声器。
+description: '<p<img src=''/home-assistant/images/blog/2024-05-music-assistant/art.jpg'' class=''no-shadow'' /</p。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 音乐助手2.0：你的音乐，你的玩家
+
 <p><img src='/home-assistant/images/blog/2024-05-music-assistant/art.jpg' class='no-shadow' /></p>
 
 正好五年前的今天，我，Marcel，开始致力于[音乐助手](https://music-assistant.io/)。一开始只是一个快速脚本，用于同步我的播放列表，以便我可以在流媒体提供商之间切换，但它自己却成长为一头野兽。

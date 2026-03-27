@@ -1,6 +1,6 @@
 ---
 title: Yale Smart Living
-description: 关于如何将 Yale 智能报警系统集成到 Home Assistant 的说明。
+description: 'The Yale Smart Living integration provides connectivity with the Yale Smart Alarm systems and Smart Hub through Yale''s API. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -26,6 +26,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Yale Smart Living
 
 The **Yale Smart Living** integration provides connectivity with the Yale Smart Alarm systems and Smart Hub through Yale's API.
 

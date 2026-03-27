@@ -1,6 +1,6 @@
 ---
 title: Efergy
-description: 关于如何在 Home Assistant 中集成 Efergy 设备的说明。
+description: '将您的 Efergy(https://efergy.com) 电表信息集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_release: pre 0.7
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: hub
 ---
+# Efergy
 
 将您的 [Efergy](https://efergy.com) 电表信息集成到 Home Assistant 中。
 

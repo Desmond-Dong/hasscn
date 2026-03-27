@@ -1,6 +1,6 @@
 ---
 title: Tibber
-description: 有关如何将 Tibber 集成到 Home Assistant 中的说明。
+description: '如果你是 Tibber(https://tibber.com/) 客户，Tibber 集成会提供一个显示当前电价的传感器。 如果你有 Tibber Pulse(https://tibber.com/no/store/produkt/pulse) 或 Watty(https://tibber.com/se/st。'
 ha_category:
   - Binary sensor
   - Energy
@@ -19,6 +19,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Tibber
 
 如果你是 [Tibber](https://tibber.com/) 客户，**Tibber** 集成会提供一个显示当前电价的传感器。
 如果你有 [Tibber Pulse](https://tibber.com/no/store/produkt/pulse) 或 [Watty](https://tibber.com/se/store/produkt/watty-smart-energimatare)，还会显示实时用电量。你还会获得月度用电量、月度费用和月度峰值小时的传感器。如果你有实时电表，数据每小时更新一次，否则每天更新一次。系统会生成每小时用电量和费用的统计信息，可在[能源仪表板](/home-assistant/docs/energy/)中使用（ID 为 `tibber:energy_consumption_HOMEID` 和 `tibber:energy_totalcost_HOMEID`）。如果你会发电，还会生成每小时发电量和收益的统计信息，也可在该仪表板中使用（ID 为 `tibber:energy_production_HOMEID` 和 `tibber:energy_profit_HOMEID`）。

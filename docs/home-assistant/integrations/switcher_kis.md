@@ -1,6 +1,6 @@
 ---
 title: Switcher
-description: 集成切换器设备。
+description: 'The Switcher integration allows you to control your Switcher Devices(https://www.switcher.co.il/). 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
   - Cover
@@ -24,6 +24,7 @@ ha_config_flow: true
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Switcher
 
 The **Switcher** integration allows you to control your [Switcher Devices](https://www.switcher.co.il/).
 

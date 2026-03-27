@@ -1,6 +1,6 @@
 ---
 title: PCS Lighting
-description: 使用通用电力线总线 (UPB) 集成连接和控制您的 PCS 照明设备
+description: '此虚拟集成由 Universal Powerline Bus (UPB)(/home-assistant/integrations/upb/) 集成提供支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
   - Scene
@@ -17,6 +17,7 @@ ha_platforms:
   - scene
 ha_iot_class: Local Push
 ---
+# PCS Lighting
 
 :::note
 此虚拟集成由 [Universal Powerline Bus (UPB)](/home-assistant/integrations/upb/) 集成提供支持。

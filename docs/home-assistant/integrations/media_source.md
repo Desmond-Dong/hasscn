@@ -1,6 +1,6 @@
 ---
 title: Media source
-description: 关于如何使用 Home Assistant 访问媒体的说明。
+description: 'Media source 集成平台允许其他集成公开媒体内容，以便在 Home Assistant 中通过媒体浏览器面板或 Google Cast 等受支持的媒体播放器使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media source
 ha_release: 0.115
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_quality_scale: internal
 ha_integration_type: system
 ---
+# Media source
 
 **Media source** 集成平台允许其他集成公开媒体内容，以便在 Home Assistant 中通过媒体浏览器面板或 Google Cast 等受支持的媒体播放器使用。
 

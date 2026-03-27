@@ -1,7 +1,8 @@
 ---
 title: 安装 Methods & Community Guides Wiki
-description: Overview of how we're going to improve our documentation.
+description: '我们最近曾宣布，打算弃用通用版 Home Assistant 安装器。后来我们发现，这种安装方式比预期中更受欢迎，因此暂时搁置了这个计划。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 安装 Methods & Community Guides Wiki
 
 我们最近曾宣布，打算弃用通用版 Home Assistant 安装器。后来我们发现，这种安装方式比预期中更受欢迎，因此暂时搁置了这个计划。
 

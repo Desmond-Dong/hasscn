@@ -1,6 +1,6 @@
 ---
 title: Prometheus
-description: 在 Prometheus 中记录事件。
+description: 'Prometheus 集成会以 Prometheus(https://prometheus.io/) 可读取的格式暴露指标。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - History
 ha_release: 0.49
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Prometheus
 
 **Prometheus** 集成会以 [Prometheus](https://prometheus.io/) 可读取的格式暴露指标。
 

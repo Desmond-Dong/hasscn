@@ -1,6 +1,6 @@
 ---
 title: Sharp Aquos TV
-description: 关于将 Sharp Aquos TV 集成到 Home Assistant 的说明。
+description: 'Sharp Aquos TV 集成可让您控制 Sharp Aquos TV(https://global.sharp/aquos/index.html)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.35
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Sharp Aquos TV
 
 **Sharp Aquos TV** 集成可让您控制 [Sharp Aquos TV](https://global.sharp/aquos/index.html)。
 

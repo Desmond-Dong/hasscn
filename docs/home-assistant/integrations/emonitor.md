@@ -1,6 +1,6 @@
 ---
 title: SiteSage Emonitor
-description: 关于如何在 Home Assistant 中集成 SiteSage Emonitor 的说明。
+description: 'The SiteSage Emonitor integration allows local power monitoring on a per circuit basis via an Emonitor(https://powerhousedynamics.com/solutions/sitesage/)。'
 ha_release: '2021.5'
 ha_category:
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# SiteSage Emonitor
 
 The **SiteSage Emonitor** integration allows local power monitoring on a per circuit basis via an [Emonitor](https://powerhousedynamics.com/solutions/sitesage/) device.
 

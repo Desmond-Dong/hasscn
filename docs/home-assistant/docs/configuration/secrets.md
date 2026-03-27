@@ -1,7 +1,8 @@
 ---
 title: 存储密钥
-description: 将密钥存储在 configuration.yaml 之外。
+description: 'configuration.yaml 文件是一个纯文本文件，因此任何有权访问该文件的人都可以读取它。该文件包含密码和 API 令牌，如果您想分享您的配置，需要对这些信息进行脱敏处理。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 存储密钥
 
 **`configuration.yaml`** 文件是一个纯文本文件，因此任何有权访问该文件的人都可以读取它。该文件包含密码和 API 令牌，如果您想分享您的配置，需要对这些信息进行脱敏处理。
 

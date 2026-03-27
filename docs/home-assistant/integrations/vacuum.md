@@ -1,6 +1,6 @@
 ---
 title: Vacuum
-description: 关于如何在 Home Assistant 中设置和使用吸尘器的说明。
+description: 'Vacuum 集成让 Home Assistant 能够控制家用清洁机器人。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.51
 ha_domain: vacuum
 ha_quality_scale: internal
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Vacuum
 
 **Vacuum** 集成让 Home Assistant 能够控制家用清洁机器人。
 

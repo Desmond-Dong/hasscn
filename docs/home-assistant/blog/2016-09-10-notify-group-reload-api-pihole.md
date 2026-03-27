@@ -4,6 +4,7 @@ title: '0.28: 重新加载 自动化 and groups, API documentation, car tracking
 description: No Home Assistant 重启 for reloading 自动化 and groups, Automatic
   car tracking, Pi-Hole and battery details, and bugfixes for 温控 and 遮盖
 ---
+# 0.28: 重新加载 自动化 and groups, API documentation, car tracking, Pi-Hole
 
 由于我们的发布周期非常短，很快就到了 0.28。现在可以正式宣布了：我们在 GitHub 上达到了 4000 星！这真的很棒。虽然可能没有 0.27 那次那么“炸裂”，但依然非常令人兴奋。
 

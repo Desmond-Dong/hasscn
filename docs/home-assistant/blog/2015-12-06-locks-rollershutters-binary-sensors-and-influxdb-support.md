@@ -1,7 +1,8 @@
 ---
 title: '0.9: Rollershutters, 门锁, binary 传感器 and InfluxDB'
-description: Version 0.9 of Home Assistant has been released.
+description: '过去几周里，我们成功打磨出了一个不错的 Home Assistant 新版本带给大家！。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 0.9: Rollershutters, 门锁, binary 传感器 and InfluxDB
 
 过去几周里，我们成功打磨出了一个不错的 Home Assistant 新版本带给大家！
 

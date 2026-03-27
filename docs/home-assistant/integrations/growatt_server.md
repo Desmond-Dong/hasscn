@@ -1,6 +1,6 @@
 ---
 title: Growatt
-description: 关于如何在 Home Assistant 中集成 Growatt 服务器太阳能逆变器的说明。
+description: 'Growatt 集成可让您从 Growatt 逆变器获取数据，并控制部分逆变器设置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -16,6 +16,7 @@ ha_integration_type: hub
 ha_codeowners:
   - '@johanzander'
 ---
+# Growatt
 
 **Growatt** 集成可让您从 Growatt 逆变器获取数据，并控制部分逆变器设置。
 

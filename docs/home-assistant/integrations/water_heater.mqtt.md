@@ -1,6 +1,6 @@
 ---
 title: "MQTT water heater"
-description: "有关如何将 MQTT 热水器集成到 Home Assistant 的说明。"
+description: 'The MQTT water heater integration lets you control your MQTT enabled water heater devices. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Water heater
@@ -8,6 +8,7 @@ ha_release: 2023.7
 ha_iot_class: Local Polling
 ha_domain: mqtt
 ---
+# MQTT water heater
 
 The **MQTT water heater** integration lets you control your MQTT enabled water heater devices.
 

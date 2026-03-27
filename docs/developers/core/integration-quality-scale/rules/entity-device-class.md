@@ -1,10 +1,13 @@
 ---
 title: "实体尽可能使用设备类"
+description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 related_rules:
   - has-entity-name
   - entity-translations
   - icon-translations
 ---
+# 实体尽可能使用设备类
+
 import RelatedRules from './_includes/related_rules.jsx'
 
 ## 推理

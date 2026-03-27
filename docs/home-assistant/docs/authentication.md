@@ -1,7 +1,8 @@
 ---
 title: 认证
-description: Home Assistant 认证文档。
+description: '认证系统用于保护对 Home Assistant 的访问。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 认证
 
 认证系统用于保护对 Home Assistant 的访问。
 

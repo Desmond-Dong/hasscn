@@ -1,8 +1,7 @@
 ---
 title: Music Assistant Jellyfin Provider
-description: 使用 Jellyfin 音乐提供者的文档
+description: 'Music Assistant 支持按照 Jellyfin 规范工作的音乐服务器。此组件由 <a href="https://github.com/lokiberra" target="blank" rel="noopener noreferrer"lokiberra</a 贡献。'
 ---
-
 # Jellyfin 提供者 <img src="/assets/icons/jellyfin-logo.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持按照 Jellyfin 规范工作的音乐服务器。此组件由 <a href="https://github.com/lokiberra" target="_blank" rel="noopener noreferrer">lokiberra</a> 贡献。

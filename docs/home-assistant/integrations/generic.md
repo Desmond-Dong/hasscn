@@ -1,6 +1,6 @@
 ---
 title: Generic Camera
-description: 关于如何在 Home Assistant 中集成 IP 摄像头的说明。
+description: 'Generic Camera 集成允许您将任何 IP 摄像头或其他 URL 集成到 Home Assistant 中。可以使用模板动态生成 URL。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Camera
 ha_release: pre 0.7
@@ -14,6 +14,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_integration_type: device
 ---
+# Generic Camera
 
 **Generic Camera** 集成允许您将任何 IP 摄像头或其他 URL 集成到 Home Assistant 中。可以使用模板动态生成 URL。
 

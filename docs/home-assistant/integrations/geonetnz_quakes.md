@@ -1,6 +1,6 @@
 ---
 title: GeoNet NZ Quakes
-description: 关于如何将新西兰 GeoNet 地震订阅集成到 Home Assistant 的说明。
+description: 'The GeoNet NZ Quakes integration lets you use a GeoJSON feed provided by New Zealand''s GeoNet(https://www.geonet.org.nz/) with information about quakes in。'
 ha_category:
   - Geolocation
 ha_iot_class: Cloud Polling
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# GeoNet NZ Quakes
 
 The **GeoNet NZ Quakes** integration lets you use a GeoJSON feed provided by 
 New Zealand's [GeoNet](https://www.geonet.org.nz/) with information 

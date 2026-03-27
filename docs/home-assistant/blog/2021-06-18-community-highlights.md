@@ -3,6 +3,7 @@ title: 'Community Highlights: 26th edition'
 description: Another new blueprint for your lights when it's dark, get started with
   3D floorplans and make household chores a bit more fun with a chores tracker.
 ---
+# Community Highlights: 26th edition
 
 The 26th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, which we thought was worth sharing.

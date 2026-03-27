@@ -1,7 +1,9 @@
 ---
 title: "通知清除"
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /。 本页属于 Home Assistant 配套应用文档。'
 id: "notification-cleared"
 ---
+# 通知清除
 
 <img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" />
 

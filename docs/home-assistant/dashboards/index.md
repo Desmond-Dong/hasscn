@@ -1,7 +1,8 @@
 ---
 title: 仪表盘
-description: Home Assistant 的强大可配置仪表盘
+description: 'Home Assistant 仪表盘可以显示你的智能家居信息。它们可高度自定义，并且是在手机和桌面端管理家庭的强大方式。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 仪表盘
 
 Home Assistant 仪表盘可以显示你的智能家居信息。它们可高度自定义，并且是在手机和桌面端管理家庭的强大方式。
 

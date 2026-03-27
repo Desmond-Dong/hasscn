@@ -1,7 +1,8 @@
 ---
 title: Supervisor update
-description: Upcoming changes to the Supervisor
+description: '"Snapshot" is a term that we have been using in the Supervisor since the beginning, but it''s not very descriptive for those that do not know what it is.。'
 ---
+# Supervisor update
 
 ## Renaming snapshot to 备份
 

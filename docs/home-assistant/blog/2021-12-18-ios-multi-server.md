@@ -1,7 +1,8 @@
 ---
 title: Multi-server support in iOS 2021.12
-description: Configure multiple servers and easily switch between them.
+description: 'Today we''re releasing Home Assistant companion app for iOS 2021.12. The big new feature: multiple server support. Find it in the app 设置 on iOS and Mac.。'
 ---
+# Multi-server support in iOS 2021.12
 
 ![Screenshot of the 设置 screen showing multiple servers](/home-assistant/images/blog/2021-12-ios/social.png)
 

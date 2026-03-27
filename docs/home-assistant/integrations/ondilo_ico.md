@@ -1,6 +1,6 @@
 ---
 title: Ondilo ICO
-description: "有关如何配置 Ondilo ICO 集成的说明。"
+description: 'Ondilo(https://ondilo.com/en/) 的 ICO 是一个小型连接设备，您只需将其放入泳池或水疗中心即可。 ICO 持续分析您的泳池/水疗中心的水质并通过其应用程序通知您。 ICO提供个性化推荐，以便您在正确的时间以正确的比例使用正确的产品。'
 
 ha_category:
   - Sensor
@@ -14,6 +14,8 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Ondilo ICO
+
 [Ondilo](https://ondilo.com/en/) 的 ICO 是一个小型连接设备，您只需将其放入泳池或水疗中心即可。 ICO 持续分析您的泳池/水疗中心的水质并通过其应用程序通知您。 ICO提供个性化推荐，以便您在正确的时间以正确的比例使用正确的产品。
 
 Home Assistant 目前支持以下信息：

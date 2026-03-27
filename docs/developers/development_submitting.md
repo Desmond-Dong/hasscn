@@ -1,6 +1,8 @@
 ---
 title: "提交你的作品"
+description: '始终将您的 Pull 请求基于当前 dev 分支，而不是 master。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 提交你的作品
 
 :::tip
 始终将您的 Pull 请求基于当前 **`dev`** 分支，而不是 `master`。

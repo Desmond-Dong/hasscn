@@ -1,7 +1,8 @@
 ---
 title: 'Android Companion 2022.2: Local Push Notifications!'
-description: Local Push Notifications, In-App Changelog and more!
+description: 'Hey Everyone! It''s time for the next Android 发布 and we are really excited to get this one out. Lots of changes for all versions of the app。'
 ---
+# Android Companion 2022.2: Local Push Notifications!
 
 ![Screenshot of Companion](/home-assistant/images/blog/2022-02-android/Companion.png)
 

@@ -3,6 +3,7 @@ title: 'Community Highlights: 18th edition'
 description: Pause a movie with a blueprint, get started with the EV Charger Card
   and an update from the internship regarding Home Assistant Energy!
 ---
+# Community Highlights: 18th edition
 
 The 18th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

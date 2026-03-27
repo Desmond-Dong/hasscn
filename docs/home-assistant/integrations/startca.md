@@ -1,6 +1,6 @@
 ---
 title: Start.ca
-description: 有关如何将 Start.ca 数据使用集成到 Home Assistant 中的说明。
+description: 'Integrate your Start.ca(https://www.start.ca/) account information into Home Assistant. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_release: 0.64
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Start.ca
 
 Integrate your [Start.ca](https://www.start.ca/) account information into Home Assistant.
 

@@ -2,6 +2,7 @@
 title: Nabu Casa 参加 Matter 成员大会
 description: Nabu Casa 在日内瓦的 Matter 成员大会上代表了 Home Assistant、我们的社区以及 Open Home 愿景。我们还将在 1 月举办一场关于 Matter 的专场直播！
 ---
+# Nabu Casa 参加 Matter 成员大会
 
 一句话总结：我们在日内瓦的 Matter 成员大会上代表了 Home Assistant、我们的社区以及 Open Home 愿景。我们将在 1 月举办一场 Matter 直播，向你更新我们的进展并回答你的问题。欢迎在下方评论区留下你的问题！
 

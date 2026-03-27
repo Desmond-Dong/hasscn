@@ -1,6 +1,6 @@
 ---
 title: Pi-hole
-description: 有关如何将 Pi-hole 与 Home Assistant 集成的说明。
+description: 'The Pi-hole integration allows you to retrieve statistics and interact with a Pi-hole(https://pi-hole.net/) system. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
   - Switch
@@ -20,6 +20,7 @@ ha_platforms:
   - update
 ha_integration_type: device
 ---
+# Pi-hole
 
 The **Pi-hole** integration allows you to retrieve statistics and interact with a
 [Pi-hole](https://pi-hole.net/) system.

@@ -1,12 +1,13 @@
 ---
 title: "MQTT 设备触发器"
-description: "关于如何在 Home Assistant 中集成 MQTT 设备触发器的说明。"
+description: 'MQTT 设备触发器 集成使用 MQTT 消息负载来生成设备触发器事件。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Device automation
 ha_release: 0.106
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT 设备触发器
 
 **MQTT 设备触发器** 集成使用 MQTT 消息负载来生成设备触发器事件。
 

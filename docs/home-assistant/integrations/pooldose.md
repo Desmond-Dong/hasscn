@@ -1,6 +1,6 @@
 ---
 title: SEKO PoolDose
-description: 将您的 SEKO PoolDose 水处理系统连接到 Home Assistant。
+description: 'SEKO PoolDose 集成可将 SEKO(https://www.seko.com/) 水处理系统连接到 Home Assistant。SEKO 是一家生产泳池和水疗池各类监测与控制设备的制造商。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Number
@@ -25,6 +25,7 @@ ha_integration_type: device
 ha_quality_scale: platinum
 ha_dhcp: true
 ---
+# SEKO PoolDose
 
 **SEKO PoolDose** 集成可将 [SEKO](https://www.seko.com/) 水处理系统连接到 Home Assistant。SEKO 是一家生产泳池和水疗池各类监测与控制设备的制造商。
 

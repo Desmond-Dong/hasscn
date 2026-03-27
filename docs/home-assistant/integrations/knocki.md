@@ -1,6 +1,6 @@
 ---
 title: Knocki
-description: 关于如何在 Home Assistant 中设置 Knocki 设备的说明。
+description: 'Knocki 集成可让您只需在普通表面上敲击自定义模式（例如连敲三下），就触发自己喜欢的自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Event
 ha_config_flow: true
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_dhcp: true
 ---
+# Knocki
 
 **Knocki** 集成可让您只需在普通表面上敲击自定义模式（例如连敲三下），就触发自己喜欢的自动化。
 

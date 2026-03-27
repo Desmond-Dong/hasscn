@@ -1,6 +1,6 @@
 ---
 title: Ripple
-description: 有关如何将ripple.com 数据集成到Home Assistant 中的说明。
+description: 'Ripple 集成会显示来自 Ripple.com(https://ripple.com) 的 Ripple 钱包余额。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Finance
 ha_release: 0.47
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Ripple
 
 **Ripple** 集成会显示来自 [Ripple.com](https://ripple.com) 的 Ripple 钱包余额。
 

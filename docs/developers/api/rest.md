@@ -1,6 +1,9 @@
 ---
 title: "REST API"
+description: 'import ApiEndpoint from ''@site/static/js/apiendpoint.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# REST API
+
 import ApiEndpoint from '@site/static/js/api_endpoint.jsx'
 
 Home Assistant 在与 Web 前端相同的端口上提供 REST API（默认端口为 8123）。

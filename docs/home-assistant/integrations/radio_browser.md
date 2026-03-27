@@ -1,6 +1,6 @@
 ---
 title: Radio Browser
-description: 有关如何将无线电浏览器集成到 Home Assistant 的说明。
+description: 'Radio Browser 集成允许您在 Home Assistant 中使用 Radio Browser(https://www.radio-browser.info) 收录的电台目录。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media source
   - Multimedia
@@ -12,6 +12,7 @@ ha_codeowners:
   - '@frenck'
 ha_integration_type: service
 ---
+# Radio Browser
 
 **Radio Browser** 集成允许您在 Home Assistant 中使用 [Radio Browser](https://www.radio-browser.info) 收录的电台目录。
 

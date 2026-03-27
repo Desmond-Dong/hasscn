@@ -1,6 +1,6 @@
 ---
 title: Google Nest
-description: "有关如何将 Nest 集成到 Home Assistant 的说明。"
+description: 'Google Nest 集成可让你在 Home Assistant 中接入部分受支持(https://developers.google.com/nest/device-access/supported-devices)的 Google Nest(https://store.google.com/us/cat。'
 
 ha_category:
   - Camera
@@ -25,7 +25,6 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
-
 **Google Nest** 集成可让你在 Home Assistant 中接入部分[受支持](https://developers.google.com/nest/device-access/supported-devices)的 Google [Nest](https://store.google.com/us/category/connected_home?) 设备。此集成使用 [Smart Device Management](https://developers.google.com/nest/device-access/api) API 和 Google Cloud Pub/Sub，高效监听设备状态变化和其他事件。有关 SDM API 支持的全部设备，请参阅[支持的设备](https://developers.google.com/nest/device-access/supported-devices)。
 
 Home Assistant 目前支持以下设备类型：

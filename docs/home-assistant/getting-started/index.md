@@ -1,7 +1,8 @@
 ---
 title: 入门指南
-description: 开始使用 Home Assistant
+description: '感谢你为智能家居选择 Home Assistant。下面这些基础步骤将帮助你踏上通往更私密、更强大、更可持续家庭的旅程。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 入门指南
 
 感谢你为智能家居选择 Home Assistant。下面这些基础步骤将帮助你踏上通往更私密、更强大、更可持续家庭的旅程。
 

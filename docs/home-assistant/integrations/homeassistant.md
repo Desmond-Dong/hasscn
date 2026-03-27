@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Core Integration
-description: homeassistant 集成的描述。
+description: 'Home Assistant Core 集成提供一些通用实现，例如通用的 homeassistant.turnon 动作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.0
 ha_category:
   - Other
@@ -17,6 +17,7 @@ related:
   - docs: /docs/configuration/
   - docs: /docs/configuration/customizing-devices/
 ---
+# Home Assistant Core Integration
 
 **Home Assistant Core** 集成提供一些通用实现，例如通用的 `homeassistant.turn_on` 动作。
 

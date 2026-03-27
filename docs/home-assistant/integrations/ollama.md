@@ -1,6 +1,6 @@
 ---
 title: Ollama
-description: "有关如何集成 Ollama 的说明"
+description: 'The Ollama integration adds a conversation agent in Home Assistant powered by a local Ollama(https://ollama.com/) server. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - AI
@@ -22,6 +22,7 @@ related:
 ha_platforms:
   - conversation
 ---
+# Ollama
 
 The **Ollama** integration adds a conversation agent in Home Assistant powered by a local [Ollama](https://ollama.com/) server.
 

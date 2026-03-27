@@ -1,7 +1,8 @@
 ---
 title: 安装
-description: 安装 Home Assistant
+description: '开始使用 Home Assistant 的第一步，就是把它安装到设备上。Home Assistant 可以运行在多种场景和多种技能水平适合的设备上。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 安装
 
 开始使用 Home Assistant 的第一步，就是把它安装到设备上。Home Assistant 可以运行在多种场景和多种技能水平适合的设备上。
 

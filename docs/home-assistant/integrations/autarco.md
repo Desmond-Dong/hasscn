@@ -1,6 +1,6 @@
 ---
 title: Autarco
-description: 关于如何在 Home Assistant 中集成 Autarco 太阳能系统的说明。
+description: 'Autarco 集成允许您从 Autarco(https://www.autarco.com) 的云 API 收集数据并在 Home Assistant 中使用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Autarco
 
 **Autarco** 集成允许您从 [Autarco](https://www.autarco.com) 的云 API 收集数据并在 Home Assistant 中使用。
 

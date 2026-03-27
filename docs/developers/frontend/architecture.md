@@ -1,7 +1,9 @@
 ---
 title: "前端架构"
+description: 'Home Assistant 前端使用 Web Components 构建。这是一项现代 Web 技术，允许我们将模板、样式和逻辑封装到单个文件中，并在浏览器中以 HTML 标签的形式暴露。这些组件可以自由组合，为我们的应用提供非常动态且强大的基础。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: "架构"
 ---
+# 前端架构
 
 Home Assistant 前端使用 Web Components 构建。这是一项现代 Web 技术，允许我们将模板、样式和逻辑封装到单个文件中，并在浏览器中以 HTML 标签的形式暴露。这些组件可以自由组合，为我们的应用提供非常动态且强大的基础。
 

@@ -1,6 +1,6 @@
 ---
 title: IoTaWatt
-description: 关于如何将 IoTaWatt 集成到 Home Assistant 的说明。
+description: '这是用于 IoTaWatt(https://www.iotawatt.com/) 开源 Wi-Fi 电力监测器的集成。它会收集电流互感器夹（输入 CT）以及 IoTaWatt 上定义的所有输出数据，并在 Home Assistant 中创建对应的传感器。'
 ha_release: 2021.9
 ha_category:
   - Energy
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# IoTaWatt
 
 这是用于 [IoTaWatt](https://www.iotawatt.com/) 开源 Wi-Fi 电力监测器的集成。它会收集电流互感器夹（输入 CT）以及 IoTaWatt 上定义的所有输出数据，并在 Home Assistant 中创建对应的传感器。
 

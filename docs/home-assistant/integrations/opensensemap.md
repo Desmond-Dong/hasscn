@@ -1,6 +1,6 @@
 ---
 title: openSenseMap
-description: 关于如何在 Home Assistant 中设置 openSenseMap 传感器的说明。
+description: 'openSenseMap 集成会查询 openSenseMap.org(https://opensensemap.org/) 的开放数据 API，以监控空气质量传感器站。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Health
 ha_release: 0.85
@@ -14,7 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
-
+# openSenseMap
 
 **openSenseMap** 集成会查询 [openSenseMap.org](https://opensensemap.org/) 的开放数据 API，以监控空气质量传感器站。
 

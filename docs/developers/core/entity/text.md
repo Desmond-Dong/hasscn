@@ -1,7 +1,9 @@
 ---
 title: 文本实体
+description: '文本实体是允许用户向集成输入文本值的实体。平台实体派生自homeassistant.components.text.TextEntity(https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/。'
 sidebar_label: 文本
 ---
+# 文本实体
 
 文本实体是允许用户向集成输入文本值的实体。平台实体派生自[`homeassistant.components.text.TextEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/text/__init__.py)
 

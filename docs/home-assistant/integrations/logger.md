@@ -1,6 +1,6 @@
 ---
 title: Logger
-description: 关于如何为 Home Assistant 启用日志集成的说明。
+description: 'Logger 集成可让您定义 Home Assistant 中日志活动的级别。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Utility
 ha_release: 0.8
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_domain: logger
 ha_integration_type: system
 ---
+# Logger
 
 **Logger** 集成可让您定义 Home Assistant 中日志活动的级别。
 

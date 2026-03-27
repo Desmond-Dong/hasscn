@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HomeSeer 加入 Works with Home Assistant"
-description: "HomeSeer 作为 Z-Wave 合作伙伴加入 Works with Home Assistant 合作伙伴计划。"
+description: '<img src=''/home-assistant/images/blog/2023-04-11-homeseer-partner/homeseertop.png'' alt="HomeSeer 与 Works with Home Assistant 标志" class=''no-shadow'' <br<br。'
 date: 2023-04-11 00:00:00
 date_formatted: "April 11, 2023"
 author: Uwe Bernitt
@@ -9,6 +9,7 @@ comments: true
 categories: Works-with-Home-Assistant
 og_image: /images/blog/2023-04-11-homeseer-partner/social.png
 ---
+# HomeSeer 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2023-04-11-homeseer-partner/homeseer_top.png' alt="HomeSeer 与 Works with Home Assistant 标志" class='no-shadow'>
 <br><br>

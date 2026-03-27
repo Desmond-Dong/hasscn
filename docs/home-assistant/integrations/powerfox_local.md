@@ -1,6 +1,6 @@
 ---
 title: Powerfox Local
-description: "有关如何将 Powerfox 设备与 Home Assistant 本地集成的说明。"
+description: 'The Powerfox Local integration allows you to gather data from your Poweropti(https://shop.powerfox.energy/collections/frontpage) device directly over your。'
 
 ha_category:
   - Energy
@@ -18,6 +18,7 @@ ha_integration_type: device
 ha_quality_scale: platinum
 ha_zeroconf: true
 ---
+# Powerfox Local
 
 The **Powerfox Local** integration allows you to gather data from your [Poweropti](https://shop.powerfox.energy/collections/frontpage) device directly over your local network, without relying on the Powerfox cloud API.
 

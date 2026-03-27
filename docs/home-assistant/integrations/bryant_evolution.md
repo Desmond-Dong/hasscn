@@ -1,6 +1,6 @@
 ---
 title: Bryant Evolution
-description: 关于如何使用系统访问模块集成 Bryant Evolution HVAC 系统的说明。
+description: 'Bryant Evolution 集成允许您控制 Bryant Evolution HVAC 系统。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 featured: false
@@ -14,6 +14,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@danielsmyers'
 ---
+# Bryant Evolution
 
 **Bryant Evolution** 集成允许您控制 Bryant Evolution HVAC 系统。
 

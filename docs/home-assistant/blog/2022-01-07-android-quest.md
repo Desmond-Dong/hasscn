@@ -1,7 +1,8 @@
 ---
 title: Oculus Quest 遇见智能家居！
-description: 让你的家庭自动化根据你使用 Quest 的方式来响应！
+description: '大家好！希望你和家人都度过了一个愉快的新年和假期！刚刚过去的节日季里出现了不少超酷的新玩具，而对我们来说，酷玩具就意味着又多了些可以折腾的新东西。今年最热门的礼物之一无疑就是 Oculus Quest，说真的，这怎么可能不让人心动呢？。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Oculus Quest 遇见智能家居！
 
 ![Android 应用的截图](/home-assistant/images/blog/2022-01-android/quest_sensors.png)
 

@@ -1,7 +1,8 @@
 ---
 title: Docker 版本
-description: 关于 Docker 版本为何将安装标记为不支持的更多信息。
+description: 'Supervisor 所需的版本取决于其正常工作所需的功能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Docker 版本
 
 ## 问题
 

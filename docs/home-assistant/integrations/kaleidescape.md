@@ -1,6 +1,6 @@
 ---
 title: Kaleidescape
-description: 关于如何将 Kaleidescape 集成到 Home Assistant 的说明。
+description: 'The Kaleidescape integration allows for the automation of Kaleidescape(https://www.kaleidescape.com/) movie players. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Media player
   - Remote
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Kaleidescape
 
 The **Kaleidescape** integration allows for the automation of [Kaleidescape](https://www.kaleidescape.com/) movie players.
 

@@ -1,6 +1,6 @@
 ---
 title: Last.fm
-description: 关于如何将 Last.fm 传感器集成到 Home Assistant 的说明。
+description: 'Last.fm 集成可让您查看用户何时开始记录播放、播放总次数、最近播放的歌曲，以及在 Last.fm(https://www.last.fm/) 上播放次数最多的歌曲。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Social
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_config_flow: true
 ha_codeowners:
   - '@joostlek'
 ---
+# Last.fm
 
 **Last.fm** 集成可让您查看用户何时开始记录播放、播放总次数、最近播放的歌曲，以及在 [Last.fm](https://www.last.fm/) 上播放次数最多的歌曲。
 

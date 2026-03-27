@@ -1,7 +1,8 @@
 ---
 title: Home Assistant Cast（预览版）
-description: Home Assistant Cast 的首次亮相，这是将在支持 Cast 的设备上运行的新用户界面。
+description: '今天是我的生日。我33岁了。为了庆祝，我想分享一个我一直在开发的项目预览：Home Assistant Cast。这是 Home Assistant Lovelace 界面，但是专为支持 Cast 的设备设计的，比如 Chromecast 或带有屏幕的 Google Assistant 设备。'
 ---
+# Home Assistant Cast（预览版）
 
 今天是我的生日。我33岁了。为了庆祝，我想分享一个我一直在开发的项目预览：Home Assistant Cast。这是 Home Assistant Lovelace 界面，但是专为支持 Cast 的设备设计的，比如 Chromecast 或带有屏幕的 Google Assistant 设备。
 

@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Monoprice Blackbird 矩阵切换器
 
 **Monoprice Blackbird 矩阵切换器** 集成允许您通过串口或 IP 连接控制 [Monoprice Blackbird 矩阵切换器](https://www.monoprice.com/product?p_id=21819)（8x8），此集成不支持 4x4 矩阵切换器。
 

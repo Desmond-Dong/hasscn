@@ -1,6 +1,6 @@
 ---
 title: Yandex Transport
-description: 关于如何在 Home Assistant 中设置 Yandex 交通的说明。
+description: 'Yandex Transport 集成使用 Yandex Maps(https://maps.yandex.ru/)，可为您提供某个公交站、电车站等地点距离下一班车发车的时间。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Transport
@@ -18,6 +18,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Yandex Transport
 
 **Yandex Transport** 集成使用 [Yandex Maps](https://maps.yandex.ru/)，可为您提供某个公交站、电车站等地点距离下一班车发车的时间。
 

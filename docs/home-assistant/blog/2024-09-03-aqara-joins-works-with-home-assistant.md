@@ -2,6 +2,8 @@
 title: Aqara 加入与家庭助理合作
 description: 我们已经认证了 4 台 Aqara 设备，所有这些设备都是首批使用带有 Home Assistant 任务的 Works via Matter 的设备。
 ---
+# Aqara 加入与家庭助理合作
+
 <img src='/home-assistant/images/blog/2024-09-aqara-wwha/art.jpg' style='border: 0;box-shadow: none;' alt="Aqara joins Works with Home Assistant">
 
 我们很高兴地宣布，Aqara 正在将他们的几款设备带入我们的[与Home Assistant配合使用](https://partner.home-assistant.io/) 计划。我们知道 Aqara 是社区中许多人喜欢推荐的品牌，因为它提供了可靠的 Zigbee 和 Matter 选择。

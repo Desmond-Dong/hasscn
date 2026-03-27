@@ -1,7 +1,9 @@
 ---
 title: "安卓集成测试"
+description: 'Unit tests(/developers/android/testing/unittesting) 很棒，应该是您编写测试时的主要选择。但是，集成测试可确保应用程序在真实 Android 环境中的行为得到验证。集成测试通过模拟器在真实的 Android 操作系统上运行，使用最终用户将使用的相同 JVM。'
 sidebar_label: "集成测试"
 ---
+# 安卓集成测试
 
 ## 为什么要进行集成测试？
 

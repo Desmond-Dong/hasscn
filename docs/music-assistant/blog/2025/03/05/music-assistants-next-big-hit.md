@@ -1,7 +1,8 @@
 ---
 title: "Music Assistant 的下一个大热门"
-description: "Spotify Connect、Assist 流媒体、播客、有声读物、Apple Music、完整 EQ 等等！"
+description: '在过去的几个月里，Music Assistant(https://www.music-assistant.io/) 一直在完美演绎新功能、更高的稳定性和越来越多的贡献者，他们不断推动项目向前发展。如果您不熟悉 Music Assistant(/music-assistant/blog/2024/05/09/m。'
 ---
+# Music Assistant 的下一个大热门
 
 在过去的几个月里，[Music Assistant](https://www.music-assistant.io/) 一直在完美演绎新功能、更高的稳定性和越来越多的贡献者，他们不断推动项目向前发展。如果您[不熟悉 Music Assistant](/music-assistant/blog/2024/05/09/music-assistant-2/#what-is-music-assistant)，它允许您合并来自主要音频流媒体提供商和本地文件的库，让您在最流行的智能扬声器上播放它们。自我们[上次更新](/music-assistant/blog/2024/05/09/music-assistant-2/)以来，Music Assistant 有几个大版本发布，但我们最近的版本可能是我们的白金唱片 💿，2.4 版本带来了许多新功能。如果您错过了最近的几次更新，以下是最大的新增内容。
 

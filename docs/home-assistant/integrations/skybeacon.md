@@ -1,6 +1,6 @@
 ---
 title: Skybeacon
-description: 有关如何将 MiFlora BLE 植物传感器与 Home Assistant 集成的说明。
+description: 'Skybeacon 集成支持由 CR2477(https://cnsky9.en.alibaba.com/) 供电、带有温度/湿度传感器模块的 iBeacon(https://en.wikipedia.org/wiki/IBeacon)/Eddystone 传感器。'
 ha_category:
   - DIY
 ha_release: 0.37
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Skybeacon
 
 **Skybeacon** 集成支持由 [CR2477](https://cnsky9.en.alibaba.com/) 供电、带有温度/湿度传感器模块的 [iBeacon](https://en.wikipedia.org/wiki/IBeacon)/Eddystone 传感器。
 

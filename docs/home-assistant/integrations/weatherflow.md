@@ -1,6 +1,6 @@
 ---
 title: WeatherFlow
-description: 关于如何将 WeatherFlow tempest 集成到 Home Assistant 的说明。
+description: 'WeatherFlow 集成是一个仅限本地的集成，用于读取本地网络中所有兼容 WeatherFlow Tempest(https://weatherflow.com/tempest-weather-system/) 的气象站数据。 本页属于 Home Assistant 中文文档。'
 ha_release: '2023.10'
 ha_category:
   - Environment
@@ -16,6 +16,7 @@ ha_codeowners:
 ha_domain: weatherflow
 ha_integration_type: hub
 ---
+# WeatherFlow
 
 **WeatherFlow** 集成是一个仅限本地的集成，用于读取本地网络中所有兼容 [WeatherFlow Tempest](https://weatherflow.com/tempest-weather-system/) 的气象站数据。
 

@@ -1,6 +1,6 @@
 ---
 title: SwitchBot Matter
-description: 使用 Matter 集成连接和控制您的 SwitchBot Matter 设备
+description: 'SwitchBot Matter(https://www.switch-bot.com/) is a member of the Works with Home Assistant partner program for their Matter products. SwitchBot Matter is。'
 ha_release: '2025.6'
 ha_iot_class: Local Push
 ha_category:
@@ -21,6 +21,7 @@ ha_platforms:
 ha_iot_standard: matter
 ha_brand: true
 ---
+# SwitchBot Matter
 
 [SwitchBot Matter](https://www.switch-bot.com/) is a member of the Works with Home Assistant partner program for their Matter products. SwitchBot Matter is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

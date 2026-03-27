@@ -1,7 +1,8 @@
 ---
 title: 树莓派高级安装
-description: 在树莓派上安装 Home Assistant Container 的说明。仅适用于高级用户。
+description: '虽然我们推荐使用 Home Assistant Operating System，但您也可以通过 Home Assistant Container 安装 Home Assistant。继续之前，请先了解它与 Home Assistant Operating System 相比的限制和差异。'
 ---
+# 树莓派高级安装
 
 虽然我们推荐使用 **Home Assistant Operating System**，但您也可以通过 **Home Assistant Container** 安装 Home Assistant。继续之前，请先了解它与 **Home Assistant Operating System** 相比的限制和差异。更多信息请参阅[安装页面](/home-assistant/installation/#about-installation-methods)。最重要的一点是，<a href="/home-assistant/addons">附加组件</a>仅适用于 Home Assistant Operating System。
 

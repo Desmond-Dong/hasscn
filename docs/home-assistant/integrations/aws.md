@@ -1,6 +1,6 @@
 ---
 title: Amazon Web Services (AWS)
-description: 关于如何将 Amazon Web Services 与 Home Assistant 集成的说明。
+description: 'AWS 集成提供了一个与 Amazon Web Services(https://aws.amazon.com/) 交互的单一位置。目前它提供了一个可以向 AWS SQS(https://aws.amazon.com/sqs/)、AWS SNS(https://aws.amazon.com/sns/)。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Amazon Web Services (AWS)
 
 **AWS** 集成提供了一个与 [Amazon Web Services](https://aws.amazon.com/) 交互的单一位置。目前它提供了一个可以向 [AWS SQS](https://aws.amazon.com/sqs/)、[AWS SNS](https://aws.amazon.com/sns/) 发送消息或调用 [AWS Lambda](https://aws.amazon.com/lambda/) 函数的通知平台。
 

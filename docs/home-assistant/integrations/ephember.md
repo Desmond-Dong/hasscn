@@ -1,6 +1,6 @@
 ---
 title: EPH Controls
-description: 关于如何在 Home Assistant 中集成 EPH Controls EMBER 恒温器的说明。
+description: 'The EPH Controls integration lets you control EPH Controls(https://emberapp.ephcontrols.com/) thermostats. The module only works if you have a Wi-Fi。'
 ha_category:
   - Climate
 ha_release: 0.57
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# EPH Controls
 
 The **EPH Controls** integration lets you control [EPH Controls](https://emberapp.ephcontrols.com/) thermostats. The module only works if you have a Wi-Fi gateway to control your EPH system and an account on the EMBER app.
 

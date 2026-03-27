@@ -1,6 +1,6 @@
 ---
 title: Pure Energie
-description: 有关如何将 Pure Energie 集成到 Home Assistant 中的说明。
+description: 'The Pure Energie integration integrates the Pure Energie Monitor(https://pure-energie.nl/kennisbank/pure-energie-meter/) device with Home Assistant. 本页属于。'
 ha_category:
   - Energy
 ha_release: 2022.3
@@ -15,6 +15,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: device
 ---
+# Pure Energie
 
 The **Pure Energie** integration integrates the [Pure Energie Monitor](https://pure-energie.nl/kennisbank/pure-energie-meter/)
 device with Home Assistant.

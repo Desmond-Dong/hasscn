@@ -1,8 +1,9 @@
 ---
 title: 'Disclosure: security vulnerabilities in custom 集成 HACS, Dwains 仪表盘,
   Font Awesome and others'
-description: Update your Home Assistant instance as soon as possible.
+description: '<emThis is a disclosure about security vulnerabilities found in <b3rd party custom 集成</b. Custom 集成 are not 创建 and/or maintained by Home Assistant. 用户 安装。'
 ---
+# Disclosure: security vulnerabilities in custom 集成 HACS, Dwains 仪表盘,
 
 ![Attention please read](/home-assistant/images/blog/2021-01-security-disclosure/social.png)
 

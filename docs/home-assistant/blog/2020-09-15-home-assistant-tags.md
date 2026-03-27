@@ -1,8 +1,9 @@
 ---
 title: 家庭助理标签
-description: 使用NFC标签为您的家庭和生活提供动力，现在是等公民
+description: '自从两年前@hoveeman(https://github.com/hoveeman)发表this video(https://www.youtube.com/watch?v=AvCseOQidSw)中他在家里播放音乐使用RFID以来，RFID标签就一直在我的家庭自动化关注范围内。'
   家庭助理。
 ---
+# 家庭助理标签
 
 ![Photo of a Tag Reader](/home-assistant/images/blog/2020-09-15-home-assistant-tags/tag-reader.jpg)
 

@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Alerts
-description: Home Assistant 警报会通知您 Home Assistant 团队发布的可能影响您系统的警报。
+description: 'Home Assistant Alerts 集成会将 Home Assistant Alerts(https://alerts.home-assistant.io) 网站接入您的 Home Assistant 实例。 本页属于 Home Assistant 中文文档。'
 ha_release: 2022.8
 ha_category:
   - Other
@@ -10,6 +10,7 @@ ha_domain: homeassistant_alerts
 ha_integration_type: system
 ha_quality_scale: internal
 ---
+# Home Assistant Alerts
 
 **Home Assistant Alerts** 集成会将 [Home Assistant Alerts](https://alerts.home-assistant.io) 网站接入您的 Home Assistant 实例。
 

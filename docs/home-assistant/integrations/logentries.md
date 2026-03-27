@@ -1,6 +1,6 @@
 ---
 title: Logentries
-description: 将事件发送到 Logentries。
+description: 'Logentries 集成可让您通过 Logentries Webhook 端点，将所有状态变更记录到 Logentries(https://logentries.com)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - History
 ha_iot_class: Cloud Push
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Logentries
 
 **Logentries** 集成可让您通过 Logentries Webhook 端点，将所有状态变更记录到 [Logentries](https://logentries.com)。
 

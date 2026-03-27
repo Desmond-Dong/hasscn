@@ -1,7 +1,7 @@
 ---
 title: 配置
+description: 'Home Assistant 提供多种配置选项来自定义您的智能家居系统。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 配置
 
 Home Assistant 提供多种配置选项来自定义您的智能家居系统。

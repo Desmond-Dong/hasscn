@@ -1,7 +1,9 @@
 ---
 title: "Home Assistant 操作系统配置"
+description: '你可以使用带有 HassOS 的 USB 驱动器来配置网络选项、主机 SSH 访问以及安装更新。 将 USB 盘格式化为 FAT32/EXT4/NTFS，并命名为 CONFIG（必须全大写）。或者，你也可以在 boot 分区中创建一个 CONFIG 文件夹。在 USB 驱动器中使用以下目录结构：。'
 sidebar_label: 配置
 ---
+# Home Assistant 操作系统配置
 
 ## Automatic
 

@@ -1,7 +1,7 @@
 ---
 title: 自动化
+description: '自动化是 Home Assistant 最强大的功能之一，让您可以自动执行各种任务。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 自动化
 
 自动化是 Home Assistant 最强大的功能之一，让您可以自动执行各种任务。

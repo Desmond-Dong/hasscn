@@ -1,8 +1,7 @@
 ---
 title: Listenbrainz Scrobbler 插件
-description: Listenbrainz Scrobbler 插件的功能和说明
+description: 'Music Assistant 能够<a href="https://www.collinsdictionary.com/dictionary/english/scrobble" target="blank" rel="noopener noreferrer"scrobble</a到 <a。'
 ---
-
 # Listenbrainz Scrobbler <img src="/assets/icons/listenbrainz-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 能够<a href="https://www.collinsdictionary.com/dictionary/english/scrobble" target="_blank" rel="noopener noreferrer">scrobble</a>到 <a href="https://listenbrainz.org" target="_blank" rel="noopener noreferrer">Listenbrainz</a>。由 <a href="https://github.com/ijc" target="_blank" rel="noopener noreferrer">Ian Campbell</a> 贡献和维护

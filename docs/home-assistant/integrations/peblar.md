@@ -1,6 +1,6 @@
 ---
 title: Peblar
-description: 有关如何将 Peblar Rocksolid EV 充电器与 Home Assistant 集成的说明。
+description: 'Peblar 集成可将 Peblar Rocksolid EV Charger 接入你的智能家居生态。它支持实时监控充电状态、跟踪能耗、控制充电行为，并将电动车充电数据集成到 Home Assistant 能源仪表板中。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Car
   - Energy
@@ -24,6 +24,7 @@ ha_integration_type: device
 ha_zeroconf: true
 ha_quality_scale: platinum
 ---
+# Peblar
 
 **Peblar** 集成可将 [Peblar Rocksolid EV Charger] 接入你的智能家居生态。它支持实时监控充电状态、跟踪能耗、控制充电行为，并将电动车充电数据集成到 Home Assistant 能源仪表板中。
 

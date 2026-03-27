@@ -1,6 +1,6 @@
 ---
 title: Waze Travel Time
-description: 关于如何将 Waze 行程时间添加到 Home Assistant 的说明。
+description: 'Waze Travel Time 集成可从 Waze(https://www.waze.com/) 获取行程时间。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@eifinger'
 ha_integration_type: service
 ---
+# Waze Travel Time
 
 **Waze Travel Time** 集成可从 [Waze](https://www.waze.com/) 获取行程时间。
 

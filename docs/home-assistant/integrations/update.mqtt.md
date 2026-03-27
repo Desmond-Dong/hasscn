@@ -1,6 +1,6 @@
 ---
 title: "MQTT Update"
-description: "有关如何在 Home Assistant 中通过 MQTT 与公开更新实体的设备进行交互的说明。"
+description: 'The MQTT Update integration allows you to integrate devices that might expose firmware/software installed and the latest versions through MQTT into Home。'
 
 ha_category:
   - Update
@@ -8,6 +8,7 @@ ha_release: "2021.11"
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Update
 
 The **MQTT Update** integration allows you to integrate devices that might expose firmware/software installed and the latest versions through MQTT into Home Assistant as an Update entity. Every time a message under the `topic` in the configuration is received, the entity will be updated in Home Assistant.
 

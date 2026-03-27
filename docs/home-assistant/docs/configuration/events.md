@@ -1,7 +1,8 @@
 ---
 title: 事件
-description: 描述 Home Assistant 中关于事件的所有内容。
+description: 'Home Assistant 的核心是事件总线。事件总线允许任何集成触发或监听事件。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 事件
 
 Home Assistant 的核心是事件总线。事件总线允许任何集成触发或监听事件。
 

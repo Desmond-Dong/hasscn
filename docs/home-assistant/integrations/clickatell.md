@@ -1,6 +1,6 @@
 ---
 title: Clickatell
-description: 关于如何将 Clickatell 通知添加到 Home Assistant 的说明。
+description: 'Clickatell 集成使用 Clickatell(https://www.clickatell.com) 从 Home Assistant 发送 SMS 通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Clickatell
 
 **Clickatell** 集成使用 [Clickatell](https://www.clickatell.com) 从 Home Assistant 发送 SMS 通知。
 

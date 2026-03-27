@@ -1,7 +1,9 @@
 ---
 title: "hass 对象"
+description: '在开发 Home Assistant 时，你会看到一个无处不在的变量：hass。这是 Home Assistant 实例，它让你可以访问系统的各个部分。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "简介"
 ---
+# hass 对象
 
 在开发 Home Assistant 时，你会看到一个无处不在的变量：`hass`。这是 Home Assistant 实例，它让你可以访问系统的各个部分。
 

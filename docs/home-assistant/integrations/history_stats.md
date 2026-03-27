@@ -1,6 +1,6 @@
 ---
 title: History Stats
-description: 关于如何将历史统计数据集成到 Home Assistant 的说明。
+description: 'History stats 集成使用 history(/home-assistant/integrations/history/) 集成中的数据，为其他集成或平台提供快速统计信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Helper
   - Sensor
@@ -18,6 +18,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# History Stats
 
 **History stats** 集成使用 [`history`](/home-assistant/integrations/history/) 集成中的数据，为其他集成或平台提供快速统计信息。
 

@@ -1,7 +1,8 @@
 ---
 title: 调整 Home Assistant 品牌命名
-description: 我们正在调整 Home Assistant 的品牌命名，让概念更清晰、沟通更简单！
+description: '过去几年里，我们在 Home Assistant 体系下逐步积累了很多项目。我们最初只是一个 Python 应用（名为 Home Assistant），随后又加入了操作系统（HassOS）和管理系统（Hass.io Supervisor），让用户可以更轻松地管理家庭自动化，同时也能更容易保持系统更新。'
 ---
+# 调整 Home Assistant 品牌命名
 
 过去几年里，我们在 Home Assistant 体系下逐步积累了很多项目。我们最初只是一个 Python 应用（名为 Home Assistant），随后又加入了操作系统（HassOS）和管理系统（Hass.io Supervisor），让用户可以更轻松地管理家庭自动化，同时也能更容易保持系统更新。
 

@@ -1,7 +1,8 @@
 ---
 title: '操作系统错误：Bad message'
-description: 关于 OS 错误为何将安装标记为不健康的更多信息。
+description: 'Supervisor 在文件操作期间收到操作系统错误（Python OSError 异常）。报告的错误编号为 74，"Bad message"，这通常是在文件系统损坏时引发的。文件系统损坏可能是由于断电或系统未正常关闭造成的。 本页属于 Home Assistant 中文文档。'
 ---
+# 操作系统错误：Bad message
 
 ## 问题
 

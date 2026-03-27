@@ -1,6 +1,6 @@
 ---
 title: Slide
-description: 有关如何将 Innovation in Motion Slide 保护套与 Home Assistant 集成的说明。
+description: 'Slide 集成允许您使用官方 API(https://documenter.getpostman.com/view/6223391/S1Lu2pSf?version=latest)，在 Home Assistant 中接入 slide.store(https://slide.store/) 设备。'
 ha_category:
   - Cover
   - Hub
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Slide
 
 **Slide** 集成允许您使用[官方 API](https://documenter.getpostman.com/view/6223391/S1Lu2pSf?version=latest)，在 Home Assistant 中接入 [slide.store](https://slide.store/) 设备。
 

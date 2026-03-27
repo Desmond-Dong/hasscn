@@ -1,6 +1,6 @@
 ---
 title: devolo Home Control
-description: 关于如何将 devolo Home Control 与 Home Assistant 集成的说明。
+description: 'devolo(https://www.devolo.global) Home Control 是一个以 Z-Wave to IP 网关(https://www.devolo.de/devolo-home-control-zentrale) 为中心的 Z-Wave 生态系统。此集成允许您控制连接到网关的设备。'
 ha_category:
   - Binary sensor
   - Climate
@@ -28,6 +28,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: hub
 ---
+# devolo Home Control
 
 [devolo](https://www.devolo.global) Home Control 是一个以 [Z-Wave to IP 网关](https://www.devolo.de/devolo-home-control-zentrale) 为中心的 Z-Wave 生态系统。此集成允许您控制连接到网关的设备。
 

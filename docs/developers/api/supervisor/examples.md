@@ -1,6 +1,8 @@
 ---
 title: "示例"
+description: '以下示例说明如何与 Supervisor API 交互。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 示例
 
 以下示例说明如何与 Supervisor API 交互。
 

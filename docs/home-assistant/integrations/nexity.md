@@ -1,6 +1,6 @@
 ---
 title: Nexity Eugénie
-description: "使用 Overkiz 集成连接和控制您的 Nexity Eugénie 设备"
+description: 'Support for devices by Nexity Eugénie in Home Assistant is provided by the Overkiz(/home-assistant/integrations/overkiz) integration. 本页属于 Home Assistant。'
 
 ha_category:
   - Alarm
@@ -46,6 +46,7 @@ ha_iot_class: Local Polling
 ha_dhcp: true
 ha_zeroconf: true
 ---
+# Nexity Eugénie
 
 Support for devices by Nexity Eugénie in Home Assistant is provided by the [Overkiz](/home-assistant/integrations/overkiz) integration.
 

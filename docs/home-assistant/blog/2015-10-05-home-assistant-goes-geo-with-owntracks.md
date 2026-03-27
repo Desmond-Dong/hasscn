@@ -3,6 +3,7 @@ title: Home Assistant goes geo with OwnTracks
 description: Home Assistant 0.7.4 has been released with support for OwnTracks and
   geofencing.
 ---
+# Home Assistant goes geo with OwnTracks
 
 几周过去了，又到了发布新版本的时候：版本 0.7.4。我们非常高兴地宣布，这次带来了全新的 OwnTracks 集成，可在地图上追踪人员位置。地理位置支持包含三个部分：
 

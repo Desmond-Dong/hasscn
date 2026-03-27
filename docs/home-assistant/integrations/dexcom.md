@@ -1,6 +1,6 @@
 ---
 title: Dexcom
-description: 关于将您的 Dexcom CGM 数据集成到 Home Assistant 的说明。
+description: 'Dexcom 集成允许您在 Home Assistant 中查看来自 Dexcom(https://www.dexcom.com/) 的 CGM 数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 0.113
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Dexcom
 
 **Dexcom** 集成允许您在 Home Assistant 中查看来自 [Dexcom](https://www.dexcom.com/) 的 CGM 数据。
 

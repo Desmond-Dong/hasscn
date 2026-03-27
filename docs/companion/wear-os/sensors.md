@@ -1,7 +1,9 @@
 ---
 title: "传感器"
+description: 'Wear OS 应用还提供传感器(../core/sensors.mdandroid-sensors)，以便在 Home Assistant 中使用您的可穿戴数据，请参考链接了解有关 Android 上传感器更新的更多信息。并非手机应用提供的所有传感器都由 Wear OS 应用提供。'
 id: 'sensors'
 ---
+# 传感器
 
 Wear OS 应用还提供[传感器](../core/sensors.md#android-sensors)，以便在 Home Assistant 中使用您的可穿戴数据，请参考链接了解有关 Android 上传感器更新的更多信息。并非手机应用提供的所有传感器都由 Wear OS 应用提供。请查看以下列表，了解 Wear OS 应用当前支持的传感器。如果传感器需要权限，系统会提示您接受，否则传感器将不会启用和发送数据。
 

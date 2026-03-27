@@ -1,7 +1,8 @@
 ---
 title: Serial analog 传感器
-description: Using a Digispark with Home Assistant.
+description: 'This 博客 post is about building a super simple analog 传感器 for Home Assistant. The physical 传感器 will send the data over its virtual serial port as it will。'
 ---
+# Serial analog 传感器
 
 This 博客 post is about building a super simple analog 传感器 for Home Assistant. The physical 传感器 will send the data over its virtual serial port as it will be connected over USB. The concept is similar to the [TEMPer USB](/home-assistant/integrations/temper) 设备. The attatched 传感器 type to the microcontroller can be any kind of 传感器 which gives you an analog signal from brightness over soil moisture to temperature.
 

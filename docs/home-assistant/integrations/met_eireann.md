@@ -1,6 +1,6 @@
 ---
 title: Met Éireann
-description: 关于如何将 Met Éireann 与 Home Assistant 集成的说明。
+description: 'Met Éireann 集成使用 Met Éireann(https://met.ie)（爱尔兰气象局）的公共天气预报 API，为指定位置提供当前天气和天气预报数据。此集成与 Met Éireann 没有任何隶属关系，也未获得其认可。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Weather
 ha_release: 2021.5
@@ -13,6 +13,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Met Éireann
 
 **Met Éireann** 集成使用 [Met Éireann](https://met.ie)（爱尔兰气象局）的公共天气预报 API，为指定位置提供当前天气和天气预报数据。此集成与 Met Éireann 没有任何隶属关系，也未获得其认可。
 

@@ -1,7 +1,7 @@
 ---
 title: "Music Providers"
+description: '!<a href="/assets/music-provider-logos.png" target="blank"<img src="/assets/music-provider-logos.png" alt="Logo Banner" loading="lazy" style="max-width:。'
 ---
-
 # 音乐提供者
 !<a href="/assets/music-provider-logos.png" target="_blank"><img src="/assets/music-provider-logos.png" alt="Logo Banner" loading="lazy" style="max-width: 100%;" /></a>
 

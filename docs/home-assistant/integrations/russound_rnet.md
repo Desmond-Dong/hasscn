@@ -1,6 +1,6 @@
 ---
 title: Russound RNET
-description: 有关如何将 Russound RNET 设备集成到 Home Assistant 的说明。
+description: 'Russound RNET 集成允许您控制使用 RNET 协议的 Russound 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.25
@@ -16,6 +16,7 @@ ha_quality_scale: legacy
 ha_codeowners:
   - '@noahhusby'
 ---
+# Russound RNET
 
 **Russound RNET** 集成允许您控制使用 RNET 协议的 Russound 设备。
 

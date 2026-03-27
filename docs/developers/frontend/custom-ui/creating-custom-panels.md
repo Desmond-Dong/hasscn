@@ -1,6 +1,8 @@
 ---
 title: "创建自定义面板"
+description: 'Panels 是在 Home Assistant 中显示信息并允许进行控制的页面。它们从侧边栏链接进入，并以全屏形式渲染。它们可以通过 JavaScript 实时访问 Home Assistant 对象。应用中的 panel 示例包括 dashboards、Map、Logbook 和 History。'
 ---
+# 创建自定义面板
 
 Panels 是在 Home Assistant 中显示信息并允许进行控制的页面。它们从侧边栏链接进入，并以全屏形式渲染。它们可以通过 JavaScript 实时访问 Home Assistant 对象。应用中的 panel 示例包括 dashboards、Map、Logbook 和 History。
 

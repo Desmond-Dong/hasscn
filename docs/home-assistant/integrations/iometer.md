@@ -1,6 +1,6 @@
 ---
 title: IOmeter
-description: 关于如何在 Home Assistant 中集成 IOmeter 的说明。
+description: 'The IOmeter integration fetches data from your IOmeter(https://iometer.de/produkt/) device, by using the local HTTP API. 本页属于 Home Assistant 中文文档。'
 ha_release: 2025.3
 ha_category:
   - Energy
@@ -17,6 +17,7 @@ ha_platforms:
   - binary_sensor
   - sensor
 ---
+# IOmeter
 
 The **IOmeter** integration fetches data from your [IOmeter](https://iometer.de/produkt/) device, by using the local HTTP API.
 

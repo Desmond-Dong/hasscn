@@ -23,6 +23,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Squeezebox (Lyrion Music Server)
 
 **Squeezebox** 集成可让您控制 [Lyrion Music Server](https://lyrion.org/) (LMS) 生态中的音乐播放器。Lyrion Music Server 之前名为 [Logitech Media Server](https://en.wikipedia.org/wiki/Squeezebox_%28network_music_player%29)。
 

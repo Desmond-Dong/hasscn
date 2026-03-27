@@ -1,6 +1,6 @@
 ---
 title: Medcom Bluetooth
-description: 集成 International Medcom 辐射监测仪
+description: '将 International Medcom 支持蓝牙的辐射监测仪集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: device
 ---
+# Medcom Bluetooth
 
 将 International Medcom 支持蓝牙的辐射监测仪集成到 Home Assistant 中。
 

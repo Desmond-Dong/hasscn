@@ -1,7 +1,9 @@
 ---
 title: 日期实体
+description: 'date 是一个允许用户将日期输入集成的实体。平台实体派生自homeassistant.components.date.DateEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/date/init.p。'
 sidebar_label: 日期
 ---
+# 日期实体
 
 `date` 是一个允许用户将日期输入集成的实体。平台实体派生自[`homeassistant.components.date.DateEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/date/__init__.py)
 

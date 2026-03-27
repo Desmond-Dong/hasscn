@@ -1,6 +1,6 @@
 ---
 title: Sensoterra
-description: 有关如何将 Sensoterra 探头与 Home Assistant 集成的说明。
+description: '此集成通过 HTTPS 使用公开的 Sensoterra Customer API(https://monitor.sensoterra.com/api/v3/)，与您的 Sensoterra(https://sensoterra.com) 土壤湿度探针通信。'
 ha_release: '2024.10'
 ha_category:
   - Sensor
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@markruys'
 ha_integration_type: hub
 ---
+# Sensoterra
 
 此集成通过 HTTPS 使用公开的 [Sensoterra Customer API](https://monitor.sensoterra.com/api/v3/)，与您的 [Sensoterra](https://sensoterra.com) 土壤湿度探针通信。
 

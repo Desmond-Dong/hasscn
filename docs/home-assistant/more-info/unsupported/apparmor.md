@@ -1,7 +1,8 @@
 ---
 title: AppArmor 问题
-description: 更多关于缺少 AppArmor 导致安装被标记为不支持的原因。
+description: 'AppArmor 是 Supervisor 处理加载项所有安全机制的方式，如果没有它，Supervisor 将缺少保护您的系统和其中数据的重要安全机制。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# AppArmor 问题
 
 ## 问题
 

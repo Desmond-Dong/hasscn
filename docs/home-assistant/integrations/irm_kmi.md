@@ -1,6 +1,6 @@
 ---
 title: IRM KMI Weather Belgium
-description: 关于如何将 IRM KMI 天气集成到 Home Assistant 的说明。
+description: 'Royal Meteorological Institute of Belgium 集成将来自 IRM KMI (meteo.be)(https://www.meteo.be) 的天气数据接入 Home Assistant。 本页属于 Home Assistant 中文文档。'
 ha_release: '2025.10'
 ha_iot_class: Cloud Polling
 ha_config_flow: true
@@ -16,6 +16,7 @@ ha_quality_scale: bronze
 ha_platforms:
   - weather
 ---
+# IRM KMI Weather Belgium
 
 **Royal Meteorological Institute of Belgium** 集成将来自 [IRM KMI (meteo.be)](https://www.meteo.be) 的天气数据接入 Home Assistant。
 

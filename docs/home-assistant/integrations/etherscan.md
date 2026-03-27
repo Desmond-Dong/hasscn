@@ -1,6 +1,6 @@
 ---
 title: Etherscan
-description: 关于如何在 Home Assistant 中集成 Etherscan.io 数据的说明。
+description: 'The Etherscan integration displays Ether and ERC-20 token balances from Etherscan.io(https://etherscan.io). 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Finance
 ha_release: 0.47
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Etherscan
 
 The **Etherscan** integration displays Ether and ERC-20 token balances from [Etherscan.io](https://etherscan.io).
 

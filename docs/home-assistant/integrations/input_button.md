@@ -1,6 +1,6 @@
 ---
 title: Input button
-description: 关于如何在 Home Assistant 中使用输入按钮辅助工具的说明。
+description: 'Input button 辅助集成允许您定义可通过用户界面按下的按钮，并可用于触发事物，如自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
   - Helper
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: input_button
 ha_integration_type: helper
 ---
+# Input button
 
 **Input button** 辅助集成允许您定义可通过用户界面按下的按钮，并可用于触发事物，如自动化。
 

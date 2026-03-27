@@ -2,6 +2,7 @@
 title: 'iBeacons: How to track things that can’t track themselves (part II)'
 description: A step by step guide how to tracking dumb 设备 by using iBeacons.
 ---
+# iBeacons: How to track things that can’t track themselves (part II)
 
 _本文由 Home Assistant 贡献者 [Greg Dowling](https://github.com/pavoni) 撰写。_
 

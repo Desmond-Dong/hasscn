@@ -1,7 +1,8 @@
 ---
 title: 2015 年 3 月 22 日发布说明
-description: 新增 SabNZBD、Pushover、场景与脚本支持。
+description: 'Home Assistant 刚刚推送了一个新版本。这个版本包含了 jamespcole(https://github.com/jamespcole)、andythigpen(https://github.com/andythigpen)、trainman419(https://github.com/trai。'
 ---
+# 2015 年 3 月 22 日发布说明
 
 Home Assistant 刚刚推送了一个新版本。这个版本包含了 [jamespcole](https://github.com/jamespcole)、[andythigpen](https://github.com/andythigpen)、[trainman419](https://github.com/trainman419) 和 [我](https://github.com/balloob) 贡献的错误修复，也带来了不少很棒的新功能：
 

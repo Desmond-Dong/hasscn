@@ -1,6 +1,6 @@
 ---
 title: Opower
-description: "有关如何将 Opower 集成到 Home Assistant 中的说明。"
+description: 'The Opower integration allows you to get energy information from utilities that use Opower(https://www.oracle.com/utilities/opower-energy-efficiency/).。'
 
 ha_category:
   - Energy
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Opower
 
 The **Opower** integration allows you to get energy information from utilities that use [Opower](https://www.oracle.com/utilities/opower-energy-efficiency/).
 

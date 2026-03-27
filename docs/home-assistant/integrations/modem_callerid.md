@@ -1,6 +1,6 @@
 ---
 title: Phone Modem
-description: 关于如何将来电显示传感器集成到 Home Assistant 的说明。
+description: 'Phone Modem 集成使用可用调制解调器来收集来电显示信息。它要求使用兼容 Hayes AT 且支持来电显示检测（通过 AT+VCID=1）的调制解调器。通常，任何使用 CX93001 的调制解调器都支持此功能。 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: device
 ---
+# Phone Modem
 
 **Phone Modem** 集成使用可用调制解调器来收集来电显示信息。它要求使用兼容 Hayes AT 且支持来电显示检测（通过 `AT+VCID=1`）的调制解调器。通常，任何使用 CX93001 的调制解调器都支持此功能。
 

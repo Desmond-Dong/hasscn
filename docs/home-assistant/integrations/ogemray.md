@@ -1,6 +1,6 @@
 ---
 title: Ogemray
-description: "使用 Shelly 集成连接和控制您的 Ogemray 设备"
+description: 'Support for devices by Ogemray in Home Assistant is provided by the Shelly(/home-assistant/integrations/shelly) integration. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Binary sensor
@@ -45,6 +45,7 @@ ha_platforms:
 ha_iot_class: Local Push
 ha_zeroconf: true
 ---
+# Ogemray
 
 Support for devices by Ogemray in Home Assistant is provided by the [Shelly](/home-assistant/integrations/shelly) integration.
 

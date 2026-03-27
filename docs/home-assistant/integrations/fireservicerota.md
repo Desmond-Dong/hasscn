@@ -1,6 +1,6 @@
 ---
 title: FireServiceRota
-description: 关于如何为 Home Assistant 配置 FireServiceRota 集成的说明。
+description: 'FireServiceRota 是一款功能强大且灵活的消防员可用性、调度和调度系统。 它是荷兰BrandweerRooster(https://www.brandweerrooster.nl)的国际品牌，被荷兰200多个消防站使用。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -17,6 +17,7 @@ ha_platforms:
   - switch
 ha_integration_type: service
 ---
+# FireServiceRota
 
 FireServiceRota 是一款功能强大且灵活的消防员可用性、调度和调度系统。
 它是荷兰[BrandweerRooster](https://www.brandweerrooster.nl)的国际品牌，被荷兰200多个消防站使用。

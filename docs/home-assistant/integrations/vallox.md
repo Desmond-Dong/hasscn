@@ -1,6 +1,6 @@
 ---
 title: Vallox
-description: 关于如何在 Home Assistant 中集成 Vallox 的说明。
+description: 'Vallox 集成允许您控制所有受 valloxwebsocketapi(https://github.com/yozik04/valloxwebsocketapi) 支持的 Vallox 新风设备（支持的机型请参阅链接中的列表）。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Fan
   - Sensor
@@ -23,6 +23,7 @@ ha_codeowners:
   - '@yozik04'
 ha_integration_type: device
 ---
+# Vallox
 
 **Vallox** 集成允许您控制所有受 [vallox_websocket_api](https://github.com/yozik04/vallox_websocket_api) 支持的 Vallox 新风设备（支持的机型请参阅链接中的列表）。
 

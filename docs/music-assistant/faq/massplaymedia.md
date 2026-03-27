@@ -1,7 +1,7 @@
 ---
 title: "播放媒体操作"
+description: '此操作允许您精确选择要播放的媒体。通过 HA GUI 或 YAML 创建您的服务调用或自动化。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # MA play_media 操作
 
 此操作允许您精确选择要播放的媒体。通过 HA GUI 或 YAML 创建您的服务调用或自动化

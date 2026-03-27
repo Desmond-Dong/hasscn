@@ -1,6 +1,6 @@
 ---
 title: TP-Link LTE
-description: 关于如何在 Home Assistant 中集成 TP-Link LTE 路由器的说明。
+description: 'Home Assistant 的 TP-Link LTE 集成可让您通过 TP-Link LTE 路由器发送短信。您需要在 YAML 配置中预先定义电话号码，每个电话号码都会在 Home Assistant 中显示为额外的通知操作。该集成为每个已配置的号码添加一个可用于发送短信的通知操作。'
 ha_release: 0.83
 ha_category:
   - Network
@@ -12,6 +12,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# TP-Link LTE
 
 Home Assistant 的 **TP-Link LTE** 集成可让您通过 TP-Link LTE 路由器发送短信。您需要在 YAML 配置中预先定义电话号码，每个电话号码都会在 Home Assistant 中显示为额外的通知操作。该集成为每个已配置的号码添加一个可用于发送短信的通知操作。仅在 TL-MR6400 v4 上测试过。
 

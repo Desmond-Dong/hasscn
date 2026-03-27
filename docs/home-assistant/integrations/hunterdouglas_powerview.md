@@ -1,6 +1,6 @@
 ---
 title: Hunter Douglas PowerView
-description: 关于如何在 Home Assistant 中设置 Hunter Douglas PowerView 场景的说明。
+description: 'Hunter Douglas PowerView 集成允许您将 Hunter Douglas PowerView(https://www.hunterdouglas.com/smart-automation) 设备集成到 Home Assistant 中。'
 ha_category:
   - Button
   - Cover
@@ -29,6 +29,7 @@ ha_zeroconf: true
 ha_dhcp: true
 ha_integration_type: hub
 ---
+# Hunter Douglas PowerView
 
 **Hunter Douglas PowerView** 集成允许您将 [Hunter Douglas PowerView](https://www.hunterdouglas.com/smart-automation) 设备集成到 Home Assistant 中。该产品在欧洲和澳大利亚也以 Luxaflex Powerview 品牌名称闻名[如其网站所述](https://www.hunterdouglasgroup.com/worldwide-offices/)，但此集成应该适用于两个品牌。
 

@@ -1,7 +1,9 @@
 ---
 title: 条件卡片
-description: 条件卡片根据条件显示另一个卡片。
+description: '条件卡片根据条件显示另一个卡片。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 条件卡片
+
 条件卡片根据条件显示另一个卡片。
 
 ![条件卡片截图](/home-assistant/images/dashboards/conditional_card.gif)

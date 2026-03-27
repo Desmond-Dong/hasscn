@@ -1,8 +1,9 @@
 ---
 title: 总结“到底是什么？！”这个月
-description: 所有美好的事情都会结束，包括“到底是什么？！”的月份。
+description: '<a href=''https://community.home-assistant.io/c/what-the-heck/52''<img src=''/home-assistant/images/blog/2020-08-18-the-month-of-what-the-heck/social.png''。'
   那么，第一版怎么样？
 ---
+# 总结“到底是什么？！”这个月
 
 <a href='https://community.home-assistant.io/c/what-the-heck/52'><img src='/home-assistant/images/blog/2020-08-18-the-month-of-what-the-heck/social.png' class='no-shadow'></a>
 

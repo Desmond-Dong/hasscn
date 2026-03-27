@@ -1,7 +1,8 @@
 ---
 title: 更强者更进一步：Home Assistant Connect ZBT-2
-description: 我们发布了最新硬件，帮助你将 Zigbee、Thread 或 Matter 设备连接到 Home Assistant。
+description: '<img src=''/home-assistant/images/blog/2025-11-home-assistant-connect-zbt-2/art.webp'' style=''border: 0;box-shadow: none;'' alt="The best gets better - Home。'
 ---
+# 更强者更进一步：Home Assistant Connect ZBT-2
 
 <img src='/home-assistant/images/blog/2025-11-home-assistant-connect-zbt-2/art.webp' style='border: 0;box-shadow: none;' alt="The best gets better - Home Assistant Connect ZBT-2">
 

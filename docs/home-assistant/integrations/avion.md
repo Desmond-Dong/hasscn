@@ -1,6 +1,6 @@
 ---
 title: Avi-on
-description: 关于如何在 Home Assistant 中设置 GE Avi-on 蓝牙调光器的说明。
+description: '支持 Avi-on 蓝牙调光开关 Avi-on(https://avi-on.com/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_iot_class: Assumed State
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Avi-on
 
 支持 Avi-on 蓝牙调光开关 [Avi-on](https://avi-on.com/)。
 

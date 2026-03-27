@@ -1,8 +1,7 @@
 ---
 title: 用户界面
-description: Music Assistant 用户界面导览
+description: '!<a href="/assets/screenshots/UI-main-menu.png" target="blank"<img src="/assets/screenshots/UI-main-menu.png" alt="image" loading="lazy" style="max-width:。'
 ---
-
 # 用户界面
 
 ## 主菜单

@@ -1,7 +1,8 @@
 ---
 title: '语音篇章 11：多语言助手来了'
-description: 我们的助手现在能同时用多种语言控制更多设备。
+description: '<img src=''/home-assistant/images/blog/2025-10-voice-chapter-11/art.webp'' style=''border: 0;box-shadow: none;'' alt="Voice Chapter 11: multilingual。'
 ---
+# 语音篇章 11：多语言助手来了
 
 <img src='/home-assistant/images/blog/2025-10-voice-chapter-11/art.webp' style='border: 0;box-shadow: none;' alt="Voice Chapter 11: multilingual assistants are here">
 

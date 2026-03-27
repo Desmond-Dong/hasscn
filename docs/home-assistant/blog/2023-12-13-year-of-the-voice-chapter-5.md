@@ -1,7 +1,8 @@
 ---
 title: 声音之年 - 第 5 章
-description: 更多硬件选择与意图支持
+description: '<p<img src=''/home-assistant/images/blog/2023-12-13-year-of-the-voice-chapter-5/social.png'' class=''no-shadow'' /</p。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# 声音之年 - 第 5 章
 
 <p><img src='/home-assistant/images/blog/2023-12-13-year-of-the-voice-chapter-5/social.png' class='no-shadow' /></p>
 

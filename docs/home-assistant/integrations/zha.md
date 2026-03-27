@@ -1,6 +1,6 @@
 ---
 title: Zigbee Home Automation
-description: 有关如何将 Zigbee 家庭自动化 (ZHA) 设备集成到 Home Assistant 中的说明。
+description: 'Zigbee 家庭自动化 (ZHA) integration 允许您使用称为Zigbee 协调器 的众多兼容硬件适配器之一将许多现成的 Zigbee-based devices(https://csa-iot.org/csa-iotproducts/) 直接无线连接到 Home Assistant。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -48,7 +48,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: hub
 ---
-
+# Zigbee Home Automation
 
 **Zigbee 家庭自动化** (ZHA) integration 允许您使用称为_Zigbee 协调器_ 的众多兼容硬件适配器之一将许多现成的 [Zigbee-based devices](https://csa-iot.org/csa-iot_products/) 直接无线连接到 Home Assistant。
 

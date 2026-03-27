@@ -1,6 +1,6 @@
 ---
 title: Yi Home Cameras
-description: 关于如何将视频流（通过 FFmpeg）作为摄像头集成到 Home Assistant 的说明。
+description: 'Yi Home Cameras 集成可让您在 Home Assistant 中使用 Yi Home Cameras(https://www.yitechnology.com/)。具体来说，此平台支持基于 Hi3518e 芯片组的 Yi Home Cameras，包括：。'
 ha_category:
   - Camera
 ha_release: 0.56
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: legacy
 ---
+# Yi Home Cameras
 
 **Yi Home Cameras** 集成可让您在 Home Assistant 中使用 [Yi Home Cameras](https://www.yitechnology.com/)。具体来说，此平台支持基于 Hi3518e 芯片组的 Yi Home Cameras，包括：
 

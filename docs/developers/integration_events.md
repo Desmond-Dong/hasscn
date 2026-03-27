@@ -1,6 +1,8 @@
 ---
 title: "射击事件"
+description: '通常鼓励 集成 将事件发布为事件 实体(/developers/core/entity/event)反而。这种方法使用户更容易浏览和识别所有可用事件，从而增强了用户体验。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 射击事件
 
 :::info 
 通常鼓励 集成 将事件发布为[事件 实体](/developers/core/entity/event)反而。这种方法使用户更容易浏览和识别所有可用事件，从而增强了用户体验。

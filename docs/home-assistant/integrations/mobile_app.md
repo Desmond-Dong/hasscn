@@ -1,6 +1,6 @@
 ---
 title: Mobile App
-description: 移动应用集成为 Home Assistant 移动应用提供通用接入平台。
+description: 'Mobile App 集成让 Home Assistant 移动应用能够轻松接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 0.89
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Mobile App
 
 **Mobile App** 集成让 Home Assistant 移动应用能够轻松接入 Home Assistant。
 

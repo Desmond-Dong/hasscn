@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Connect ZBT-2
-description: Home Assistant Connect ZBT-2 为硬件配置页面提供硬件信息。
+description: 'Home Assistant Connect ZBT-2 集成为硬件配置页面提供硬件信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2025.9
 ha_category:
   - Other
@@ -15,6 +15,7 @@ ha_platforms:
   - update
 ha_quality_scale: bronze
 ---
+# Home Assistant Connect ZBT-2
 
 **Home Assistant Connect ZBT-2** 集成为硬件配置页面提供硬件信息。
 

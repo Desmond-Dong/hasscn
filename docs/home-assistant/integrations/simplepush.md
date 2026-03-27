@@ -1,6 +1,6 @@
 ---
 title: Simplepush
-description: 有关如何向 Home Assistant 添加 Simplepush 通知的说明。
+description: 'Simplepush 集成使用 Simplepush(https://simplepush.io/) 将来自 Home Assistant 的通知发送到您的 Android 或 iOS 设备。与类似应用不同，Simplepush 无需注册，并支持端到端加密。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_integration_type: service
 ha_codeowners:
   - '@engrbm87'
 ---
+# Simplepush
 
 **Simplepush** 集成使用 [Simplepush](https://simplepush.io/) 将来自 Home Assistant 的通知发送到您的 Android 或 iOS 设备。与类似应用不同，Simplepush 无需注册，并支持端到端加密。
 

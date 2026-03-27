@@ -1,6 +1,6 @@
 ---
 title: UniFi Protect
-description: 关于如何配置 Ubiquiti UniFi Protect 集成的说明。
+description: 'UniFi Protect 集成可支持从运行在 UniFi OS Console 上、由 Ubiquiti Networks, inc.(https://www.ui.com/) 提供的 UniFi Protect 应用(https://ui.com/camera-security)中获取摄像头视频流和传感器。'
 ha_category:
   - Binary sensor
   - Button
@@ -41,6 +41,7 @@ ha_codeowners:
   - '@RaHehl'
 ha_quality_scale: platinum
 ---
+# UniFi Protect
 
 **UniFi Protect** 集成可支持从运行在 UniFi OS Console 上、由 [Ubiquiti Networks, inc.](https://www.ui.com/) 提供的 [UniFi Protect 应用](https://ui.com/camera-security)中获取摄像头视频流和传感器数据。
 

@@ -1,6 +1,6 @@
 ---
 title: OpenEnergyMonitor WiFi Thermostat
-description: "有关如何将 OpenEnergyMonitor 恒温器与 Home Assistant 集成的说明。"
+description: '此 integration 支持由 OpenEnergyMonitor(https://web.archive.org/web/20220426080315/https://shop.openenergymonitor.com/wifi-mqtt-relay-thermostat/) 销售的基于。'
 
 ha_category:
   - Climate
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# OpenEnergyMonitor WiFi Thermostat
 
 此 integration 支持由 [OpenEnergyMonitor](https://web.archive.org/web/20220426080315/https://shop.openenergymonitor.com/wifi-mqtt-relay-thermostat/) 销售的基于 ESP8266 的 “WiFi MQTT Relay / Thermostat”（归档页面，现已停售）。其底层[库](https://oemthermostat.readthedocs.io/)仅支持该[原始设备](https://harizanov.com/2014/12/wifi-iot-3-channel-relay-board-with-mqtt-and-http-api-using-esp8266/)的单继电器版本。
 

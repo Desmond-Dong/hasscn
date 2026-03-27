@@ -1,6 +1,6 @@
 ---
 title: OpenGarage
-description: "有关如何将 OpenGarage.io 集成到 Home Assistant 中的说明。"
+description: 'OpenGarage integration 让您可以通过 Home Assistant 控制开源的 OpenGarage.io(https://opengarage.io/) 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Cover
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# OpenGarage
 
 **OpenGarage** integration 让您可以通过 Home Assistant 控制开源的 [OpenGarage.io](https://opengarage.io/) 设备。
 

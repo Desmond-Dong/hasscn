@@ -1,7 +1,9 @@
 ---
 title: "Android 小部件"
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" / Android 应用允许用户在主屏幕上创建小部件，以便用户可以执行各种操作。'
 id: 'android-widgets'
 ---
+# Android 小部件
 
 <img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /> Android 应用允许用户在主屏幕上创建小部件，以便用户可以执行各种操作，如执行操作、显示实体状态甚至渲染模板。您可以像任何应用一样，根据设备启动器正常添加小部件。当启用数据节省模式时，小部件将不起作用，您还需要确保应用的后台数据已启用。如果您发现小部件不再工作，请尝试重新创建它。也可以通过导航到[设置](https://my.home-assistant.io/redirect/config/) > 伴侣应用 > 管理小部件来编辑小部件，如果您使用的是 Android 12，还可以通过长按小部件并点击编辑图标来编辑它。
 

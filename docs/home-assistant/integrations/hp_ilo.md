@@ -1,6 +1,6 @@
 ---
 title: HP Integrated Lights-Out (ILO)
-description: 关于如何在 Home Assistant 中集成 HP ILO（集成远程管理）传感器的说明。
+description: 'HP Integrated Lights-Out 集成允许您对服务器的 HP ILO（集成远程管理）传感器进行 API 调用，并在 Home Assistant 传感器中使用这些数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: 0.27
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# HP Integrated Lights-Out (ILO)
 
 **HP Integrated Lights-Out** 集成允许您对服务器的 HP ILO（集成远程管理）传感器进行 API 调用，并在 Home Assistant 传感器中使用这些数据。
 

@@ -1,6 +1,8 @@
 ---
 title: "贡献你的声音"
+description: '你可以帮助我们以及整个开放语音社区，为你的语言开发 speech-to-text 和 text-to-speech 模型。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 贡献你的声音
 
 你可以帮助我们以及整个开放语音社区，为你的语言开发 **speech-to-text** 和 **text-to-speech** 模型。
 

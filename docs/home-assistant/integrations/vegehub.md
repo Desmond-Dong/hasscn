@@ -1,6 +1,6 @@
 ---
 title: Vegetronix VegeHub
-description: 关于如何将 VegeHub 设备与 Home Assistant 集成的说明。
+description: 'Vegetronix VegeHub(https://vegetronix.com/Products/ha/VG-HUB-RELAY/) 是一款紧凑型网络连接设备，专为农业监测与控制而设计。它支持多种环境传感器，包括土壤湿度、土壤温度、光照等，因此适用于园艺、景观维护和精准农业。'
 ha_category:
   - Sensor
   - Switch
@@ -24,6 +24,7 @@ related:
 ha_quality_scale: bronze
 ha_zeroconf: true
 ---
+# Vegetronix VegeHub
 
 **[Vegetronix VegeHub](https://vegetronix.com/Products/ha/VG-HUB-RELAY/)** 是一款紧凑型网络连接设备，专为农业监测与控制而设计。它支持多种环境传感器，包括*土壤湿度、土壤温度、光照等*，因此适用于园艺、景观维护和精准农业。除了监测功能外，VegeHub 还可以控制*继电器、泵或水阀*等执行器，实现灌溉和其他系统的自动化。此集成允许 Home Assistant 接收 VegeHub 设备的实时数据，并可选择控制已连接的输出端。
 

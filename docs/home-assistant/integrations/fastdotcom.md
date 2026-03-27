@@ -1,6 +1,6 @@
 ---
 title: Fast.com
-description: 关于如何在 Home Assistant 中集成 Fast.com 的说明。
+description: 'Fast.com 集成使用 Fast.com(https://fast.com/) Web 服务来测量网络带宽性能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - System monitor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Fast.com
 
 **Fast.com** 集成使用 [Fast.com](https://fast.com/) Web 服务来测量网络带宽性能。
 

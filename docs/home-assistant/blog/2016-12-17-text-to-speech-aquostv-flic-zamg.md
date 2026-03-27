@@ -2,6 +2,7 @@
 title: '0.35：文本转语音、VLC、Flic，以及 Netdata'
 description: Home Assistant 学会了说话，同时带来了 VLC、AquosTV 媒体播放器、Netdata、ZAMG、Flic，以及 Broadlink。
 ---
+# 0.35：文本转语音、VLC、Flic，以及 Netdata
 
 GitHub 上 5000 颗星、我们的 [聊天室][discord] 里有 2000 人、每月页面浏览量超过 100 万。2016 年接近尾声时，我们很难想象比这更好的状态了。这感觉就像提前收到的圣诞礼物！而我们提前送给你的礼物是 0.35。它不是一个包装精美的单件礼物，而是一个 0.35 礼盒里装着好几个小惊喜。
 

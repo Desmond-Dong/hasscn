@@ -1,7 +1,7 @@
 ---
 title: "iBroadcast"
+description: 'Music Assistant 支持从 <a href="https://www.ibroadcast.com/" target="blank" rel="noopener noreferrer"iBroadcast</a 流式传输您的音乐。由 <a。'
 ---
-
 # iBroadcast 提供者 <img src="/assets/icons/ibroadcast-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持从 <a href="https://www.ibroadcast.com/" target="_blank" rel="noopener noreferrer">iBroadcast</a> 流式传输您的音乐。由 <a href="https://github.com/robsonke" target="_blank" rel="noopener noreferrer">robsonke</a> 贡献和维护。

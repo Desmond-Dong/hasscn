@@ -1,6 +1,6 @@
 ---
 title: Foscam
-description: 关于如何在 Home Assistant 中集成 Foscam IP 摄像头的说明。
+description: 'Foscam 集成允许您在 Home Assistant 中观看 Foscam(https://www.foscam.com) IP 摄像头的实时流。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Camera
 ha_iot_class: Local Polling
@@ -15,6 +15,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Foscam
 
 **Foscam** 集成允许您在 Home Assistant 中观看 [Foscam](https://www.foscam.com) IP 摄像头的实时流。
 

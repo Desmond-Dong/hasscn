@@ -1,6 +1,6 @@
 ---
 title: Number
-description: "有关如何使用 Home Assistant 管理您的 Number 实体的说明。"
+description: '跟踪环境中的“数量”实体及其状态，并允许您控制它们。此集成允许其他集成从用户获取一定范围内的值输入。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Number
@@ -17,6 +17,8 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Number
+
 跟踪环境中的“数量”实体及其状态，并允许您控制它们。此集成允许其他集成从用户获取一定范围内的值输入。
 
 :::note Building block integration

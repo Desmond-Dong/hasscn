@@ -1,6 +1,6 @@
 ---
 title: Antifurto365 iAlarm
-description: 关于如何将 iAlarms 报警系统集成到 Home Assistant 的说明。
+description: 'iAlarm 集成可连接 Antifurto365(https://www.antifurtocasa365.it/) 的 iAlarm 报警系统，并且已确认也适用于 Meian 和 Emooluxr 品牌的报警系统。 请注意，最新的 iAlarm-XR 报警系统暂不受支持。'
 ha_category:
   - Alarm
 ha_iot_class: Local Polling
@@ -13,6 +13,7 @@ ha_platforms:
   - alarm_control_panel
 ha_integration_type: device
 ---
+# Antifurto365 iAlarm
 
 **iAlarm** 集成可连接 [Antifurto365](https://www.antifurtocasa365.it/) 的 iAlarm 报警系统，并且已确认也适用于 Meian 和 Emooluxr 品牌的报警系统。
 请注意，最新的 iAlarm-XR 报警系统暂不受支持。

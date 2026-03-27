@@ -1,6 +1,6 @@
 ---
 title: Humidifier
-description: 关于如何在 Home Assistant 中设置湿度控制设备的说明。
+description: 'Humidifier 集成用于控制和监控加湿器、除湿机和湿度控制设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Humidifier
 ha_release: '0.112'
@@ -16,6 +16,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Humidifier
 
 **Humidifier** 集成用于控制和监控加湿器、除湿机和湿度控制设备。
 

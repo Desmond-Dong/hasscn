@@ -3,6 +3,7 @@ title: 'Community Highlights: 12th edition'
 description: Create your own smart pet feeder, show values of your house on an ePaper
   display and a delicious Home Assistant cake.
 ---
+# Community Highlights: 12th edition
 
 The 12th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

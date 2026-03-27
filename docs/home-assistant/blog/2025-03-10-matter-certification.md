@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 正式通过 Matter 认证
-description: Home Assistant 获得认证，同时也为任何开源项目带来了一项强大工具
+description: '<p<img src=''/home-assistant/images/blog/2025-03-matter-certification/art.jpg'' alt="Home Assistant is officially Matter certified" class=''no-shadow'' /</p。'
 ---
+# Home Assistant 正式通过 Matter 认证
 
 <p><img src='/home-assistant/images/blog/2025-03-matter-certification/art.jpg' alt="Home Assistant is officially Matter certified" class='no-shadow' /></p>
 

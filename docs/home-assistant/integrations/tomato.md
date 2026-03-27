@@ -1,6 +1,6 @@
 ---
 title: Tomato
-description: 关于如何将 Tomato 路由器集成到 Home Assistant 的说明。
+description: 'Tomato 集成可跟踪连接到运行 Tomato(https://tomato.groov.pl/) 固件的无线路由器上的设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: pre 0.7
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Tomato
 
 **Tomato** 集成可跟踪连接到运行 [Tomato](https://tomato.groov.pl/) 固件的无线路由器上的设备。
 

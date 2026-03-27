@@ -1,6 +1,6 @@
 ---
 title: KNX
-description: 关于如何将 KNX 组件与 Home Assistant 集成的说明。
+description: 'KNX(https://www.knx.org) 集成可将 Home Assistant 连接到您的 KNX 安装，使您能够控制 KNX 设备、响应报文，并将其他集成实体的状态变化转发到 KNX 总线。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 featured: true
 ha_category:
   - Binary sensor
@@ -50,6 +50,7 @@ ha_config_flow: true
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# KNX
 
 [KNX](https://www.knx.org) 集成可将 Home Assistant 连接到您的 KNX 安装，使您能够控制 KNX 设备、响应报文，并将其他集成实体的状态变化转发到 KNX 总线。
 

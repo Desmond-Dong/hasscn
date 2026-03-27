@@ -1,6 +1,6 @@
 ---
 title: NuHeat
-description: "有关如何将 NuHeat Signature 恒温器集成到 Home Assistant 中的说明。"
+description: 'The NuHeat integration lets control your connected NuHeat Signature(https://www.nuheat.com/products/thermostats/signature-thermostat) floor heating。'
 
 ha_category:
   - Climate
@@ -15,6 +15,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@tstabrawa'
 ---
+# NuHeat
 
 The **NuHeat** integration lets control your connected [NuHeat Signature](https://www.nuheat.com/products/thermostats/signature-thermostat) floor heating thermostats from [NuHeat](https://www.nuheat.com/).
 

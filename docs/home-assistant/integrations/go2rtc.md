@@ -1,6 +1,6 @@
 ---
 title: go2rtc
-description: 关于如何在 Home Assistant 中设置 go2rtc 的说明。
+description: 'go2rtc 是一个开源项目，提供支持 RTSP、WebRTC、HomeKit、FFmpeg、RTMP 等格式的摄像头流媒体应用。go2rtc 集成会连接到 go2rtc 实例，并为您的所有摄像头提供 WebRTC 代理。要了解更多 go2rtc 信息。'
 ha_category:
   - Camera
 ha_release: 2024.11
@@ -13,6 +13,7 @@ related:
   - docs: /installation/
 ha_quality_scale: internal
 ---
+# go2rtc
 
 go2rtc 是一个开源项目，提供支持 RTSP、WebRTC、HomeKit、FFmpeg、RTMP 等格式的摄像头流媒体应用。**go2rtc** 集成会连接到 go2rtc 实例，并为您的所有摄像头提供 WebRTC 代理。要了解更多 go2rtc 信息，请参阅[项目的 GitHub 页面](https://github.com/AlexxIT/go2rtc/)。
 

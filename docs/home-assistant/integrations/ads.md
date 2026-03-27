@@ -1,6 +1,6 @@
 ---
 title: ADS
-description: 通过 ADS 接口将 Home Assistant 连接到 TwinCAT 设备
+description: 'ADS（Automation Device Specification，自动化设备规范）集成描述了一个与设备无关、与现场总线无关的接口，用于在运行 TwinCAT(https://www.beckhoff.com/en-en/products/automation/twincat/) 的。'
 ha_category:
   - Binary sensor
   - Cover
@@ -28,6 +28,7 @@ ha_codeowners:
   - '@mrpasztoradam'
 ha_quality_scale: legacy
 ---
+# ADS
 
 **ADS**（Automation Device Specification，自动化设备规范）集成描述了一个与设备无关、与现场总线无关的接口，用于在运行 [TwinCAT](https://www.beckhoff.com/en-en/products/automation/twincat/) 的 [Beckhoff](https://www.beckhoff.com/) 自动化设备与其他实现该接口的设备之间通信。
 

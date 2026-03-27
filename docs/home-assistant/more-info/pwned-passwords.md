@@ -1,7 +1,8 @@
 ---
 title: 泄露密码和机密信息
-description: 关于 Home Assistant 中检测到的泄露机密信息的更多信息。
+description: '我们使用 Have I Been Pwned (HIBP)(https://haveibeenpwned.com/Passwords) 服务来检测泄露或受损的机密信息，如密码。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 泄露密码和机密信息
 
 我们使用 [Have I Been Pwned (HIBP)](https://haveibeenpwned.com/Passwords) 服务来检测泄露或受损的机密信息，如密码。
 

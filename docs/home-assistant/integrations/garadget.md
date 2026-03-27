@@ -1,6 +1,6 @@
 ---
 title: Garadget
-description: 关于如何在 Home Assistant 中集成 Garadget 遮盖的说明。
+description: 'Garadget 集成可让您通过 Home Assistant 控制 Garadget(https://www.garadget.com/) 车库门控制设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Cover
 ha_release: 0.32
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Garadget
 
 **Garadget** 集成可让您通过 Home Assistant 控制 [Garadget](https://www.garadget.com/) 车库门控制设备。
 

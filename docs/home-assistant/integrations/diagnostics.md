@@ -1,6 +1,6 @@
 ---
 title: Diagnostics
-description: 诊断集成可以提供集成和设备信息以用于调试目的。
+description: 'Diagnostics 集成提供了一种从设备或集成下载诊断数据以在问题报告中分享的方法。在报告问题时分享诊断数据可以让开发者更快地诊断和修复您报告的问题。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 2022.2
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: system
 ---
+# Diagnostics
 
 **Diagnostics** 集成提供了一种从设备或集成下载诊断数据以在问题报告中分享的方法。在报告问题时分享诊断数据可以让开发者更快地诊断和修复您报告的问题。
 

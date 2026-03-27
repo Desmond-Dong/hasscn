@@ -2,6 +2,7 @@
 title: 'Home Assistant 0.40: Turn any Android phone into an IP Webcam'
 description: Big startup performance increase and tons of bug fixes for MQTT, Z-Wave.
 ---
+# Home Assistant 0.40: Turn any Android phone into an IP Webcam
 
 <a href='/home-assistant/integrations/#added_in_current_version'><img src='/home-assistant/images/blog/2017-03-0.40/social.png' style='border: 0;box-shadow: none;'></a>
 

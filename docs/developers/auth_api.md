@@ -1,7 +1,9 @@
 ---
 title: "认证API"
+description: '本页介绍应用程序如何获取对 Home Assistant 实例的授权并完成集成。查看演示(https://hass-auth-demo.glitch.me)，该演示基于我们的辅助库 home-assistant-js-websocket(https://github.com/home-assistant/ho。'
 sidebar_label: API
 ---
+# 认证API
 
 本页介绍应用程序如何获取对 Home Assistant 实例的授权并完成集成。[查看演示](https://hass-auth-demo.glitch.me)，该演示基于我们的辅助库 [home-assistant-js-websocket](https://github.com/home-assistant/home-assistant-js-websocket)。
 

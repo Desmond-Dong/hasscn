@@ -3,6 +3,7 @@ title: The month of 'What the Heck?!' 2022
 description: Ever felt that 'What the heck Home Assistant?!' moment? This month, we
   would like to learn about your 'what the heck?!' moments...
 ---
+# The month of 'What the Heck?!' 2022
 
 <a href='https://community.home-assistant.io/c/what-the-heck/56'><img src='/home-assistant/images/blog/2022-09-30-the-month-of-what-the-heck/social.png' style='border: 0;box-shadow: none;'></a>
 

@@ -1,7 +1,8 @@
 ---
 title: Introducing Hass.io
-description: The ultimate home 自动化 hub has arrived.
+description: 'TL;DR: Today we''re introducing Hass.io. Hass.io is an operating system that will take care of installing and updating Home Assistant。'
 ---
+# Introducing Hass.io
 
 **TL;DR:** Today we're introducing [Hass.io]. Hass.io is an operating system that will take care of installing and updating Home Assistant, is managed from the Home Assistant UI, allows creating/restoring snapshots of your 配置 and can easily be extended using [Hass.io 插件][插件] including [Google Assistant] and [Let's Encrypt].
 

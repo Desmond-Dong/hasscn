@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 后端
-description: Home Assistant 后端。
+description: 'Home Assistant 的后端运行于 Python 3(https://www.python.org/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Home Assistant 后端
 
 Home Assistant 的后端运行于 [Python 3](https://www.python.org/)。
 

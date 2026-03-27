@@ -1,6 +1,6 @@
 ---
 title: Brother Printer
-description: 关于如何将 Brother 打印机集成到 Home Assistant 的说明。
+description: 'Brother Printer 集成允许您读取本地 Brother 打印机的当前数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: 0.104
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
+# Brother Printer
 
 **Brother Printer** 集成允许您读取本地 Brother 打印机的当前数据。
 

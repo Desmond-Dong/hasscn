@@ -1,6 +1,6 @@
 ---
 title: Vera
-description: 关于如何在 Home Assistant 中设置 Vera Z-Wave 网关并配置设备的说明。
+description: 'Vera(https://getvera.com/) 集线器是一种主要用于连接 Z-Wave 设备的控制器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -26,6 +26,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Vera
 
 [Vera](https://getvera.com/) 集线器是一种主要用于连接 Z-Wave 设备的控制器。
 

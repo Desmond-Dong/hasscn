@@ -1,6 +1,6 @@
 ---
 title: Custom panel
-description: 有关如何将自定义面板添加到 Home Assistant 前端的说明。
+description: 'Custom panel 集成允许您使用 JavaScript 编写自己的面板，并将其添加到 Home Assistant 中。有关如何构建自定义面板，请参阅开发者文档中的相关说明(https://developers.home-assistant.io/docs/frontend/custom-ui/cre。'
 ha_category:
   - Front end
 ha_release: 0.26
@@ -13,6 +13,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Custom panel
 
 **Custom panel** 集成允许您使用 JavaScript 编写自己的面板，并将其添加到 Home Assistant 中。有关如何构建自定义面板，请参阅开发者文档中的[相关说明](https://developers.home-assistant.io/docs/frontend/custom-ui/creating-custom-panels/)。
 

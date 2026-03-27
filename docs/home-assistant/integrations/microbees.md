@@ -1,6 +1,6 @@
 ---
 title: microBees
-description: 关于如何将 microBees 设备集成到 Home Assistant 的说明。
+description: 'The microBees integration allows you to control your microBees devices(https://www.microbees.com/) such as plugs and wall switches. To use this。'
 ha_category:
   - Button
   - Climate
@@ -26,6 +26,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# microBees
 
 The **microBees** integration allows you to control your [microBees devices](https://www.microbees.com/) such as plugs and wall switches.
 To use this integration you need OAuth2 Client ID and Client Secret and your user credentials.

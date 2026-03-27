@@ -1,7 +1,8 @@
 ---
 title: 常见问题
-description: Home Assistant 常见问题
+description: '这是由社区整理的常见问题列表，涵盖 Home Assistant 的安装、设置和使用。如果你想了解某个术语，请先查看 术语表(/home-assistant/docs/glossary/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 常见问题
 
 这是由社区整理的常见问题列表，涵盖 Home Assistant 的安装、设置和使用。如果你想了解某个术语，请先查看 [术语表](/home-assistant/docs/glossary/)。
 

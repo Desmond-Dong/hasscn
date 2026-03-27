@@ -1,6 +1,6 @@
 ---
 title: Zabbix
-description: 关于如何将 Zabbix 集成到 Home Assistant 的说明。
+description: 'Zabbix 集成是通过 Zabbix API 连接到 Zabbix(https://www.zabbix.com/) 监控实例的主集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - System monitor
@@ -17,6 +17,7 @@ ha_quality_scale: legacy
 ha_codeowners:
   - '@kruton'
 ---
+# Zabbix
 
 **Zabbix** 集成是通过 Zabbix API 连接到 [Zabbix](https://www.zabbix.com/) 监控实例的主集成。
 

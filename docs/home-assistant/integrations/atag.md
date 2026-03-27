@@ -1,6 +1,6 @@
 ---
 title: Atag
-description: 关于如何设置 Atag 集成的说明。
+description: 'Atag 集成允许 Home Assistant 连接到 Atag One(https://www.atagverwarming.nl) 恒温器，报告并设置其状态。 该集成实现了以下平台：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
   - Sensor
@@ -17,6 +17,7 @@ ha_platforms:
   - water_heater
 ha_integration_type: device
 ---
+# Atag
 
 **Atag** 集成允许 Home Assistant 连接到 [Atag One](https://www.atagverwarming.nl) 恒温器，报告并设置其状态。
 该集成实现了以下平台：

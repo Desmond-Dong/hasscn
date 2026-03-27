@@ -1,6 +1,6 @@
 ---
 title: Mullvad VPN
-description: 关于如何将 Mullvad VPN API 数据集成到 Home Assistant 的说明。
+description: 'The Mullvad VPN integration uses the Mullvad(https://mullvad.net/) VPN API to detect if your Home Assistant instance is connected to the Mullvad VPN。'
 
 ha_category:
   - Binary sensor
@@ -15,10 +15,11 @@ ha_platforms:
   - binary_sensor
 ha_integration_type: service
 ---
+# Mullvad VPN
 
 The **Mullvad VPN** integration uses the [Mullvad](https://mullvad.net/) VPN API to detect if your Home Assistant instance is connected to the Mullvad VPN service.
 
-![](/home-assistant/images/screenshots/mullvad_vpn_sample_sensor_connected.png)
+![Home Assistant mullvad vpn sample sensor connected](/home-assistant/images/screenshots/mullvad_vpn_sample_sensor_connected.png)
 
 
 :::note 配置

@@ -1,6 +1,6 @@
 ---
 title: Datadog
-description: 将数据和事件发送到 Datadog。
+description: 'Datadog 集成使用 Datadog Agent(https://docs.datadoghq.com/guides/basicagentusage/) 将所有状态更改发送到 Datadog(https://www.datadoghq.com/)。'
 ha_category:
   - History
 ha_iot_class: Local Push
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_config_flow: true
 ---
+# Datadog
 
 **Datadog** 集成使用 [Datadog Agent](https://docs.datadoghq.com/guides/basic_agent_usage/) 将所有状态更改发送到 [Datadog](https://www.datadoghq.com/)。
 

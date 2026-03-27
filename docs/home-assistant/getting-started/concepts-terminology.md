@@ -1,7 +1,8 @@
 ---
 title: 概念与术语
-description: Home Assistant 基础概念说明
+description: '现在您已经进入 Home Assistant，让我们了解最重要的概念。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 概念与术语
 
 现在您已经进入 Home Assistant，让我们了解最重要的概念。
 

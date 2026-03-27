@@ -1,6 +1,6 @@
 ---
 title: Redgtech
-description: 将您的 Redgtech 智能开关与 Home Assistant 集成。
+description: 'Redgtech 集成可将您的 Redgtech(https://redgtech.com.br/) 智能开关接入 Home Assistant。Redgtech 是巴西的智能家居品牌，生产连接云端的开关和继电器。通过此集成，您可以直接在 Home Assistant 中控制和监控 Redgtech 开关。'
 ha_category:
   - Switch
 ha_release: 2026.3
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Redgtech
 
 **Redgtech** 集成可将您的 [Redgtech](https://redgtech.com.br/) 智能开关接入 Home Assistant。Redgtech 是巴西的智能家居品牌，生产连接云端的开关和继电器。通过此集成，您可以直接在 Home Assistant 中控制和监控 Redgtech 开关。
 

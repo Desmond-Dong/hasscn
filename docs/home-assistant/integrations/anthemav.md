@@ -1,6 +1,6 @@
 ---
 title: Anthem A/V Receivers
-description: 关于将 Anthem A/V 接收器集成到 Home Assistant 的说明。
+description: 'Anthem 当前和上一代 <abbr title="Audio & video"A/V</abbr 接收器和处理器都支持基于 IP 的网络控制。此 Home Assistant 集成为您网络上的任何这些接收器添加了适当的"本地推送"支持。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Media player
 ha_iot_class: Local Push
@@ -13,6 +13,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# Anthem A/V Receivers
 
 [Anthem] 当前和上一代 <abbr title="Audio & video">A/V</abbr> 接收器和处理器都支持基于 IP 的网络控制。此 Home Assistant 集成为您网络上的任何这些接收器添加了适当的"本地推送"支持。
 

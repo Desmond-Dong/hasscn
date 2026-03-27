@@ -1,6 +1,6 @@
 ---
 title: UK Transport
-description: 显示英国火车和公交出发的当前状态。
+description: 'The UK Transport integration will display the time in minutes until the next departure in a specified direction from of a configured train station or bus。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# UK Transport
 
 The **UK Transport** integration will display the time in minutes until the next departure in a specified direction from of a configured train station or bus stop. The sensor uses [transportAPI](https://www.transportapi.com/) to query live departure data and requires a developer application ID and key which can be obtained [here](https://developer.transportapi.com/). The [free tier](https://www.transportapi.com/blog/2022/08/introducing-the-home-use-plan-for-transportapi/) allows 30 requests a day, which is sufficient for a single sensor refreshing every 48 minutes.
 

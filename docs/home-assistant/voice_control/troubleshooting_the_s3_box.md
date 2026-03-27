@@ -1,6 +1,8 @@
 ---
 title: ESP32-S3-BOX-3 故障排除
+description: '本节提供适用于 Espressif ESP32-S3-BOX-3 的故障排除步骤。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# ESP32-S3-BOX-3 故障排除
 
 本节提供适用于 Espressif ESP32-S3-BOX-3 的故障排除步骤。
 

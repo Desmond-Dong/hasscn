@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 中的能源管理
-description: 监控你的能源使用情况，转向可持续能源，并节省开支。
+description: 'TL; DR: 我们正在添加能源管理功能，而且效果很棒(https://demo.home-assistant.io//energy)。我们还打造了两款用于读取电表数据的产品：SlimmeLezer(https://www.slimmelezer.nl) 适用于 P1 端口。'
 ---
+# Home Assistant 中的能源管理
 
 _TL; DR: 我们正在添加能源管理功能，而且[效果很棒](https://demo.home-assistant.io/#/energy)。我们还打造了两款用于读取电表数据的产品：[SlimmeLezer](https://www.slimmelezer.nl) 适用于 P1 端口，[Home Assistant Glow](https://github.com/klaasnicolaas/home-assistant-glow) 适用于活动指示灯。我们也升级了大多数[现有的能源集成](/home-assistant/integrations/#energy)，让它们可以兼容。_
 

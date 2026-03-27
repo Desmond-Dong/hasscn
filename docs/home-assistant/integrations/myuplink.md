@@ -1,6 +1,6 @@
 ---
 title: myUplink
-description: 关于如何在 Home Assistant 中设置 myUplink 集成的说明。
+description: 'myUplink 集成允许您通过官方云 API(https://dev.myuplink.com) 获取支持 myUplink 的热泵设备信息并对其进行控制。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Binary sensor
@@ -30,6 +30,7 @@ related:
     title: myUplink web portal
 ha_quality_scale: silver
 ---
+# myUplink
 
 **myUplink** 集成允许您通过[官方云 API](https://dev.myuplink.com) 获取支持 myUplink 的热泵设备信息并对其进行控制。
 

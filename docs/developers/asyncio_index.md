@@ -1,7 +1,9 @@
 ---
 title: "异步编程"
+description: '2016 年 9 月 29 日，我们按每周四发布的节奏发布了 Home Assistant 0.290.29。这个版本由 本ben 主导，对 Core 进行了全面的异步化改造。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 介绍
 ---
+# 异步编程
 
 2016 年 9 月 29 日，我们按每周四发布的节奏发布了 [Home Assistant 0.29][0.29]。这个版本由 [本][ben] 主导，对 Core 进行了全面的异步化改造。
 

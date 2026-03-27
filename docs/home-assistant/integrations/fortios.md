@@ -1,6 +1,6 @@
 ---
 title: FortiOS
-description: 关于如何使用 Fortinet FortiOS 在 Home Assistant 中跟踪设备的说明。
+description: 'FortiOS 存在检测使 Home Assistant 能够跟踪具有从 Fortinet(https://www.fortinet.com) 连接到 FortiGate 的 MAC 地址的设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# FortiOS
 
 FortiOS 存在检测使 Home Assistant 能够跟踪具有从 [Fortinet](https://www.fortinet.com) 连接到 FortiGate 的 MAC 地址的设备。
 

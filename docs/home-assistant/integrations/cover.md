@@ -1,6 +1,6 @@
 ---
 title: Cover
-description: 关于如何在 Home Assistant 中集成遮盖的说明。
+description: 'Home Assistant 可为您提供一个界面，用于控制卷帘、百叶帘和车库门等 cover 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Cover
 ha_release: 0.27
@@ -15,6 +15,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Cover
 
 Home Assistant 可为您提供一个界面，用于控制卷帘、百叶帘和车库门等 cover 设备。
 

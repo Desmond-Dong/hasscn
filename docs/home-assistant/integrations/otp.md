@@ -1,6 +1,6 @@
 ---
 title: One-Time Password (OTP)
-description: 有关如何将一次性密码 (OTP) 传感器添加到 Home Assistant 的说明。
+description: 'One-Time Password (OTP) 集成会按照 RFC6238(https://tools.ietf.org/html/rfc6238) 生成一次性密码，并兼容大多数 OTP 生成器，包括 Google Authenticator。当您构建自定义安全方案并希望使用每 30。'
 ha_category:
   - Sensor
   - Utility
@@ -16,7 +16,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
-
+# One-Time Password (OTP)
 
 **One-Time Password (OTP)** 集成会按照 [RFC6238](https://tools.ietf.org/html/rfc6238) 生成一次性密码，并兼容大多数 OTP 生成器，包括 Google Authenticator。当您构建自定义安全方案并希望使用每 30 秒变化一次的“滚动验证码”时，可以使用此集成。
 

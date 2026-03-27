@@ -1,7 +1,8 @@
 ---
 title: Frient 加入 Works with Home Assistant
-description: 经过一段时间的空档，又有更多 Zigbee 设备加入该计划，覆盖从电表监测到烟雾报警器等多种场景。
+description: '<img src=''/home-assistant/images/blog/2025-09-frient/art.webp'' style=''border: 0;box-shadow: none;'' alt="Frient joins Works with Home Assistant"。'
 ---
+# Frient 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-09-frient/art.webp' style='border: 0;box-shadow: none;' alt="Frient joins Works with Home Assistant">
 

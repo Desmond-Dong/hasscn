@@ -3,6 +3,7 @@ title: 'Community Highlights: 20th edition'
 description: New inspiration for your own Lovelace 仪表盘, get started with a browser
   extension and try the pulse meter component in the latest ESPHome release
 ---
+# Community Highlights: 20th edition
 
 Damn! We are already at the 20th edition of the Home Assistant Community
 Highlights! Some interesting things popped up around our community, we

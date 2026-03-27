@@ -1,6 +1,6 @@
 ---
 title: NMBS
-description: "有关如何在 Home Assistant 中集成 NMBS/SNCB 比利时铁路旅行的时刻表数据的说明。"
+description: 'The NMBS integration will create sensors for monitoring travel time and information between 2 stations. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Transport
@@ -15,6 +15,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# NMBS
 
 The **NMBS** integration will create sensors for monitoring travel time and information between 2 stations.
 

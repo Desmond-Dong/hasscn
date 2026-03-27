@@ -1,6 +1,6 @@
 ---
 title: ELV PCA
-description: 关于将 ELV PCA 301 开关集成到 Home Assistant 的说明。
+description: 'ELV PCA 集成允许您控制 ELV PCA 301 智能开关(https://www.elv.de/funkschaltsteckdose-fuer-energiekostenmonitor-pca-301.html) 的状态。您需要一个 868 MHz 接口。'
 ha_category:
   - Switch
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# ELV PCA
 
 **ELV PCA** 集成允许您控制 [ELV PCA 301 智能开关](https://www.elv.de/funkschaltsteckdose-fuer-energiekostenmonitor-pca-301.html) 的状态。您需要一个 868 MHz 接口，如刷入了 [pca-hex 固件](https://github.com/mhop/fhem-mirror/blob/master/fhem/FHEM/firmware/JeeLink_PCA301.hex) 的 [JeeLink](https://www.digitalsmarties.net/products/jeelink)。
 

@@ -1,6 +1,6 @@
 ---
 title: Venstar
-description: 关于如何将 Venstar 温控器集成到 Home Assistant 的说明。
+description: 'Venstar 集成允许您通过 Home Assistant 控制 Venstar(https://www.venstar.com/) 温控器。 Venstar 温控器提供本地 API，因此无需依赖其 Skyport 云服务即可实现自动化。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Climate
@@ -18,6 +18,7 @@ ha_codeowners:
 ha_config_flow: true
 ha_integration_type: device
 ---
+# Venstar
 
 **Venstar** 集成允许您通过 Home Assistant 控制 [Venstar](https://www.venstar.com/) 温控器。
 Venstar 温控器提供本地 API，因此无需依赖其 Skyport 云服务即可实现自动化。

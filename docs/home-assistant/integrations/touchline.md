@@ -1,6 +1,6 @@
 ---
 title: Roth Touchline
-description: 关于如何在 Home Assistant 中集成 Roth Touchline 的说明。
+description: 'The Roth Touchline integration lets you control ROTH Touchline(https://www.roth-uk.com/en/roth-touchline.htm) floor heating thermostats from Roth. 本页属于。'
 ha_category:
   - Climate
 ha_release: 0.61
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Roth Touchline
 
 The **Roth Touchline** integration lets you control [ROTH Touchline](https://www.roth-uk.com/en/roth-touchline.htm) floor heating thermostats from Roth.
 

@@ -1,6 +1,6 @@
 ---
 title: "MQTT Select"
-description: "有关如何与在Home Assistant中通过MQTT公开选择的设备进行交互的说明。"
+description: 'MQTT Select integration 允许您将可能通过 MQTT 公开配置选项的设备集成到 Home Assistant 中作为选择。每次收到配置中 topic 下的消息时，所选实体都会在 Home Assistant 中更新，反之亦然，从而保持设备和 Home Assistant 同步。'
 
 ha_category:
   - Select
@@ -8,6 +8,7 @@ ha_release: 2021.7
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Select
 
 **MQTT Select** integration 允许您将可能通过 MQTT 公开配置选项的设备集成到 Home Assistant 中作为选择。每次收到配置中 `topic` 下的消息时，所选实体都会在 Home Assistant 中更新，反之亦然，从而保持设备和 Home Assistant 同步。
 

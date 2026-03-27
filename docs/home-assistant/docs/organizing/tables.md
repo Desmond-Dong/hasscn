@@ -1,7 +1,8 @@
 ---
 title: 使用表格
-description: 在表格中筛选项目。
+description: '在使用表格时，您可以选择多个项目来应用动作。如果您通过将项目分配到楼层、区域、标签或分类来进行分组(/home-assistant/docs/organizing/)，您也可以相应地筛选数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 使用表格
 
 在使用表格时，您可以选择多个项目来应用动作。如果您通过将项目分配到楼层、区域、标签或分类来进行[分组](/home-assistant/docs/organizing/)，您也可以相应地筛选数据。
 

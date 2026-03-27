@@ -3,6 +3,7 @@ title: Matter in Home Assistant workshop announcement
 description: On June 15 we're showing how Matter will work and guide you in getting
   it set up.
 ---
+# Matter in Home Assistant workshop announcement
 
 <!--<img src='/home-assistant/images/blog/2022-05-matter-in-home-assistant-workshop-announcement/header.png' alt="Decorative header." class='no-shadow'>-->
 

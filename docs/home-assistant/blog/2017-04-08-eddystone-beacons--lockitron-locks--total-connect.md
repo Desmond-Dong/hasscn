@@ -3,6 +3,7 @@ title: 'Home Assistant 0.42: Eddystone Beacons, Lockitron 门锁 and Total Conne
   alarm systems'
 description: Tons of bug fixes, performance increasements and some cool new 集成.
 ---
+# Home Assistant 0.42: Eddystone Beacons, Lockitron 门锁 and Total Connect
 
 <a href='/home-assistant/integrations/#added_in_current_version'><img src='/home-assistant/images/blog/2017-04-0.42/social.png' style='border: 0;box-shadow: none;'></a>
 

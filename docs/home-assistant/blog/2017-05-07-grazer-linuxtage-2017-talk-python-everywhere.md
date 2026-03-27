@@ -2,6 +2,7 @@
 title: 'Grazer Linuxtage 2017: Python Everywhere'
 description: Florian Klien's talk at Grazer Linuxtage 2017 about Home Assistant.
 ---
+# Grazer Linuxtage 2017: Python Everywhere
 
 I like Python. It is a clean, easy-to-read, easy-to-learn language. Yet when you use it for some time, you still find more features that improve your coding. What I probably like most about Python is the community and the great libraries that already exist. Often, solving a problem means including an existing library and writing some glue code. That makes it quick to get things up and running.
 

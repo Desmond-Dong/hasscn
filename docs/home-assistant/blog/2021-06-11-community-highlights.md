@@ -4,6 +4,7 @@ description: Fool possible burglars by pretending you are at home with a bluepri
   get started with a floorplan in your Lovelace dashboard and keep an eye on your
   own brewed beer.
 ---
+# Community Highlights: 25th edition
 
 The 25th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, which we thought was worth sharing.

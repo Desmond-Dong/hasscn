@@ -1,8 +1,9 @@
 ---
 title: 家庭助理操作系统版本 5
-description: 改进的名称解析、外部数据磁盘、更高的可靠性和支持
+description: '<img src=''/home-assistant/images/blog/2020-12-13-os5/social.png'' style=''border: 0;box-shadow: none;''。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
   3 个新设备！
 ---
+# 家庭助理操作系统版本 5
 
 <img src='/home-assistant/images/blog/2020-12-13-os5/social.png' style='border: 0;box-shadow: none;'>
 

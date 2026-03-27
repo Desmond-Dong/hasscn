@@ -1,6 +1,6 @@
 ---
 title: SFTP Storage
-description: 允许将使用备份系统创建的备份存储到远程 SFTP 主机上。
+description: 'The SFTP Storage integration works with the core Backup(/home-assistant/integrations/backup) integration. When you enable SFTP Storage in the Locations。'
 ha_category:
   - Backup
 ha_release: '2025.10'
@@ -17,6 +17,7 @@ related:
   - docs: /more-info/backup-emergency-kit/
     title: Backup emergency kit
 ---
+# SFTP Storage
 
 The **SFTP Storage** integration works with the core [Backup](/home-assistant/integrations/backup) integration. When you enable **SFTP Storage** in the **Locations** section of your [Backup](/home-assistant/integrations/backup) integration settings, Home Assistant automatically stores manual and automatic backups on your remote SSH/SFTP server.
 

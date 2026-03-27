@@ -1,6 +1,6 @@
 ---
 title: Counter
-description: 关于如何在 Home Assistant 中集成计数器的说明。
+description: '计数器（Counter） 集成可用于统计自动化被触发的次数。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
   - Helper
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: counter
 ha_integration_type: helper
 ---
+# Counter
 
 **计数器（Counter）** 集成可用于统计自动化被触发的次数。
 

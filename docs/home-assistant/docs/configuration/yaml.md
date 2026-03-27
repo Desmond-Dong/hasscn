@@ -1,7 +1,8 @@
 ---
 title: YAML 语法
-description: 关于 Home Assistant 配置中使用的 YAML 语法的详细说明。
+description: 'Home Assistant 使用 YAML(https://yaml.org/) 语法进行配置。虽然大多数集成可以通过用户界面进行配置，但有些集成需要您编辑 configuration.yaml(/home-assistant/docs/configuration/) 文件来指定其设置。'
 ---
+# YAML 语法
 
 Home Assistant 使用 [YAML](https://yaml.org/) 语法进行配置。虽然大多数集成可以通过用户界面进行配置，但有些集成需要您编辑 [`configuration.yaml`](/home-assistant/docs/configuration/) 文件来指定其设置。
 

@@ -1,6 +1,6 @@
 ---
 title: Rollease Acmeda Automate
-description: 在 Home Assistant 中设置 Rollease Acmeda Automate 的说明。
+description: 'Rollease Acmeda Automate integration 允许您通过 Rollease Acmeda Automate 中心控制和监控遮盖物。该集成直接与本地网络上的中心通信，而不是通过云端或 RS-485 连接。设备以遮盖物的形式进行监控和控制，以及用于监控电池状态的传感器。'
 ha_category:
   - Cover
   - Hub
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: integration
 ---
+# Rollease Acmeda Automate
 
 **Rollease Acmeda Automate** integration 允许您通过 Rollease Acmeda Automate 中心控制和监控遮盖物。该集成直接与本地网络上的中心通信，而不是通过云端或 RS-485 连接。设备以遮盖物的形式进行监控和控制，以及用于监控电池状态的传感器。
 

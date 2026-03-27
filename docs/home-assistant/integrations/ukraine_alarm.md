@@ -1,6 +1,6 @@
 ---
 title: Ukraine Alarm
-description: 关于如何在 Home Assistant 中集成乌克兰警报的说明。
+description: 'The Ukraine Alarm integration uses the siren.pp.ua API - public wrapper for Ukraine Alarm(https://www.ukrainealarm.com/) web service to offer air-raid。'
 ha_category:
   - Other
 ha_release: 2022.6
@@ -13,6 +13,7 @@ ha_platforms:
   - binary_sensor
 ha_integration_type: service
 ---
+# Ukraine Alarm
 
 The **Ukraine Alarm** integration uses the siren.pp.ua API - public wrapper for [Ukraine Alarm](https://www.ukrainealarm.com/) web service to offer air-raid siren notifications. The integration will create 6 binary sensors for your selected region in Ukraine:
 

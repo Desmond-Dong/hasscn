@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Green
-description: Home Assistant Green 为硬件配置页面提供硬件信息。
+description: 'Home Assistant Green 集成为硬件配置页面提供硬件信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2023.9
 ha_category:
   - Other
@@ -9,6 +9,7 @@ ha_codeowners:
 ha_domain: homeassistant_green
 ha_integration_type: hardware
 ---
+# Home Assistant Green
 
 **Home Assistant Green** 集成为硬件配置页面提供硬件信息。
 

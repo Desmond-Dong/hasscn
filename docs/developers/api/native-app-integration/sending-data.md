@@ -1,6 +1,8 @@
 ---
 title: "发送数据回家"
+description: '当你的应用完成 mobile app 组件注册后，就可以通过提供的 webhook 信息开始与 Home Assistant 交互。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 发送数据回家
 
 当你的应用完成 mobile app 组件注册后，就可以通过提供的 webhook 信息开始与 Home Assistant 交互。
 

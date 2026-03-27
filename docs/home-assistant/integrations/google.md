@@ -1,6 +1,6 @@
 ---
 title: Google Calendar
-description: 关于如何在 Home Assistant 中使用 Google 日历的说明。
+description: 'Google Calendar integration 允许您将 Google 日历(https://calendar.google.com)连接到 Home Assistant。该集成添加 calendar 实体，这些实体显示在日历仪表板上，可用于基于任何事件的自动化，或限于特定匹配条件。'
 ha_category:
   - Calendar
 ha_iot_class: Cloud Polling
@@ -17,6 +17,7 @@ google_dev_console_link: https://console.developers.google.com/apis/credentials
 api: Google Calendar API
 api_link: https://console.cloud.google.com/apis/library/calendar-json.googleapis.com
 ---
+# Google Calendar
 
 **Google Calendar** integration 允许您将 [Google 日历](https://calendar.google.com)连接到 Home Assistant。该集成添加 calendar 实体，这些实体显示在*日历*仪表板上，可用于基于任何事件的自动化，或限于特定匹配条件。
 

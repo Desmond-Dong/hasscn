@@ -1,7 +1,9 @@
 ---
 title: 核心架构
+description: 'Home Assistant Core 由四个主要部分组成。除此之外，它还包含许多帮助程序类来处理常见场景，例如提供实体或处理位置。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: Core
 ---
+# 核心架构
 
 Home Assistant Core 由四个主要部分组成。除此之外，它还包含许多帮助程序类来处理常见场景，例如提供实体或处理位置。
 

@@ -1,7 +1,7 @@
 ---
 title: "Nugs.net"
+description: 'Music Assistant 支持从 <a href="https://www.nugs.net" target="blank" rel="noopener noreferrer"Nugsnet</a 流式传输您的音乐。由 <a href="https://github.com/brian10048"。'
 ---
-
 # Nugs.net 提供者 <img src="/assets/icons/nugsnet-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持从 <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a> 流式传输您的音乐。由 <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a> 贡献和维护。

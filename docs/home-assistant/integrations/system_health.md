@@ -1,6 +1,6 @@
 ---
 title: System Health
-description: 系统健康集成将报告系统信息并允许运行系统诊断。
+description: 'The System Health integration provides an API to offer information on the system and its components. It also allows to run diagnostic tools to diagnose。'
 ha_category:
   - Other
 ha_release: 0.87
@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_domain: system_health
 ha_integration_type: system
 ---
+# System Health
 
 The **System Health** integration provides an API to offer information on the system and its components. It also allows to run diagnostic tools to diagnose problems.
 

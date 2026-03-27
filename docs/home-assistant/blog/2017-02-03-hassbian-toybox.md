@@ -2,6 +2,7 @@
 title: HASSbian 1.1 - The Toy-box
 description: New release of the HASSbian Raspberry Pi 图像 for Home Assistant
 ---
+# HASSbian 1.1 - The Toy-box
 
 今晚我很高兴宣布，我们的 Raspberry Pi 镜像迎来了新版本：**HASSbian 1.1 - The Toy-box.**  
 你可能会好奇，为什么叫 Toy-box？因为这个名字很贴切地概括了这次更新所包含的内容。

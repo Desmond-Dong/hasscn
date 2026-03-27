@@ -1,6 +1,6 @@
 ---
 title: GIOŚ
-description: 关于如何将 GIOŚ（波兰环境监察总局）空气质量服务集成到 Home Assistant 的说明。
+description: 'The GIOŚ integration uses the GIOŚ(http://powietrze.gios.gov.pl/pjp/current) web service as a source for air quality data for your location. 本页属于 Home。'
 ha_category:
   - Health
 ha_release: 0.104
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# GIOŚ
 
 The **GIOŚ** integration uses the [GIOŚ](http://powietrze.gios.gov.pl/pjp/current) web service as a source for air quality data for your location.
 

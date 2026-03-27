@@ -3,6 +3,7 @@ title: Community Highlights
 description: Another round-up of the amazing things from our community including Alexa
   Lightning skill and HomeKit 集成.
 ---
+# Community Highlights
 
 Home Assistant 社区最近非常活跃，很多人都做出了很棒的项目。
 

@@ -3,6 +3,7 @@ title: Third Reality joins Works with Home Assistant
 description: Third Reality has become the first Works with Home Assistant partner
   using the Zigbee badge
 ---
+# Third Reality joins Works with Home Assistant
 
 <img src='/home-assistant/images/works_with/works-with.png' width="256" align="right" alt="Works via Zigbee with Home Assistant" class='no-shadow'>
 

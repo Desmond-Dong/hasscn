@@ -1,6 +1,8 @@
 ---
 title: 扩展 Assist
+description: '完成最佳实践(/home-assistant/voicecontrol/bestpractices/)中的步骤后，你的基础设置就已经齐备，可以开始使用 Assist 了。本节提供了一些思路，帮助你扩展设置以支持更高级的用法。 本页属于 Home Assistant 中文文档。'
 ---
+# 扩展 Assist
 
 完成[最佳实践](/home-assistant/voice_control/best_practices/)中的步骤后，你的基础设置就已经齐备，可以开始使用 Assist 了。本节提供了一些思路，帮助你扩展设置以支持更高级的用法。
 

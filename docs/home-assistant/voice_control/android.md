@@ -1,6 +1,8 @@
 ---
 title: Android 上的 Assist
+description: '你可以通过 Home Assistant Companion App(https://companion.home-assistant.io/docs/gettingstarted/) 在 Android 手机和平板上使用 Assist。 本页属于 Home Assistant 中文文档。'
 ---
+# Android 上的 Assist
 
 ## Android 手机上的 Assist
 

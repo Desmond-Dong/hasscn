@@ -1,3 +1,8 @@
+---
+title: Rspress Markdown 与 MDX 指南
+description: Rspress 的 Markdown 与 MDX 使用说明，涵盖 Frontmatter、组件、容器语法与内容编写方式，当前主要作为示例与参考页面保留。
+---
+
 # Markdown & MDX
 
 Rspress supports not only Markdown but also [MDX](https://mdxjs.com/), a powerful way to develop content.

@@ -1,7 +1,8 @@
 ---
 title: Sonos 关闭本地语音方案 Snips
-description: 收购 Snips 后，Sonos 决定关闭本地语音控制的构建入口。
+description: '又到了一年中的这个时间：外面很冷，屋里温暖，大家和家人朋友共度时光，同时也是一些大公司放弃本地可访问技术的时候（2015(/home-assistant/blog/2015/12/12/philips-hue-blocks-3rd-party-bulbs/)、2018(/home-assistant/blog。'
 ---
+# Sonos 关闭本地语音方案 Snips
 
 又到了一年中的这个时间：外面很冷，屋里温暖，大家和家人朋友共度时光，同时也是一些大公司放弃本地可访问技术的时候（[2015](/home-assistant/blog/2015/12/12/philips-hue-blocks-3rd-party-bulbs/)、[2018](/home-assistant/blog/2018/12/17/logitech-harmony-removes-local-api/)）。
 

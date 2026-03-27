@@ -1,6 +1,6 @@
 ---
 title: Epion
-description: 关于如何将 Epion Air CO2 传感器与 Home Assistant 集成的说明
+description: '将 Epion Air 传感器集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Epion
 
 将 Epion Air 传感器集成到 Home Assistant 中。
 

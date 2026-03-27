@@ -1,6 +1,6 @@
 ---
 title: Scripts
-description: 有关如何在 Home Assistant 中设置脚本的说明。
+description: 'Scripts 集成允许你定义一系列由 Home Assistant 执行的操作。当你启用脚本时，这些操作会被执行。脚本集成会为每个脚本创建一个实体，并允许你通过动作来控制它们。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
 ha_release: 0.7
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_domain: script
 ha_integration_type: system
 ---
+# Scripts
 
 **Scripts** 集成允许你定义一系列由 Home Assistant 执行的操作。当你启用脚本时，这些操作会被执行。脚本集成会为每个脚本创建一个实体，并允许你通过动作来控制它们。
 

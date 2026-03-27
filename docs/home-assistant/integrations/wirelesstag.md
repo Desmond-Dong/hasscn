@@ -1,6 +1,6 @@
 ---
 title: Wireless Sensor Tags
-description: 关于如何在 Home Assistant 中集成无线标签传感器的说明。
+description: 'Wireless Sensor Tags 集成可让您在 Home Assistant 中接入 wirelesstag.net(https://wirelesstag.net/) 传感器标签。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Hub
@@ -21,6 +21,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Wireless Sensor Tags
 
 **Wireless Sensor Tags** 集成可让您在 Home Assistant 中接入 [wirelesstag.net](https://wirelesstag.net/) 传感器标签。
 

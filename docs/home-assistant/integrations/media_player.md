@@ -1,6 +1,6 @@
 ---
 title: Media player
-description: 关于如何在 Home Assistant 中设置媒体播放器的说明。
+description: '与网络中的媒体播放器交互。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.7
@@ -15,6 +15,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Media player
 
 与网络中的媒体播放器交互。
 

@@ -1,6 +1,6 @@
 ---
 title: ista EcoTrend
-description: 关于如何将 ista EcoTrend 与 Home Assistant 集成的说明。
+description: 'The ista EcoTrend integration for Home Assistant allows you to import your monthly meter readings from the ista EcoTrend(https://ecotrend.ista.de)。'
 ha_release: 2024.7
 ha_category:
   - Energy
@@ -15,6 +15,7 @@ ha_config_flow: true
 ha_integration_type: service
 ha_quality_scale: gold
 ---
+# ista EcoTrend
 
 The **ista EcoTrend** integration for Home Assistant allows you to import your monthly meter readings from the [ista EcoTrend](https://ecotrend.ista.de) service.
 

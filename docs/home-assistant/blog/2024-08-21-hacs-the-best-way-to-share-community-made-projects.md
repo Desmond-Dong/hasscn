@@ -1,7 +1,9 @@
 ---
 title: HACS 2.0 - 共享社区项目的最佳方式变得更好
-description: 2.0 带来了新功能，使其成为共享社区制作的集成和 UI 元素的最佳选择。
+description: '<p class=''img''<img src=''/home-assistant/images/blog/2024-08-hacs2/art.png'' style=''border: 0;box-shadow: none;'' alt="HACS 2.0 - The best way to share。'
 ---
+# HACS 2.0 - 共享社区项目的最佳方式变得更好
+
 <p class='img'><img src='/home-assistant/images/blog/2024-08-hacs2/art.png' style='border: 0;box-shadow: none;' alt="HACS 2.0 - The best way to share community-made projects just got better">Clelia Rella 创作</p>
 
 **TL;DR：** HACS 2.0 向前迈出了一大步，添加了更简单的安装方法、更快的更新、新的 UI 以及适当的 Home Assistant 更新/修复通知。

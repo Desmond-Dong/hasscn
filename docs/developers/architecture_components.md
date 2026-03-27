@@ -1,7 +1,9 @@
 ---
 title: "集成架构"
+description: 'Home Assistant Core 可以通过 集成 扩展。每个集成都负责 Home Assistant 中某个特定领域的功能。集成可以监听触发器或事件、提供操作并维护状态。一个集成通常由组件（基础逻辑）和平台（与其它集成对接的部分）组成。集成使用 Python 编写，因此可以充分利用 Python 生态。'
 sidebar_label: "集成"
 ---
+# 集成架构
 
 Home Assistant Core 可以通过 **集成** 扩展。每个集成都负责 Home Assistant 中某个特定领域的功能。集成可以监听触发器或事件、提供操作并维护状态。一个集成通常由组件（基础逻辑）和平台（与其它集成对接的部分）组成。集成使用 Python 编写，因此可以充分利用 Python 生态。开箱即用时，Home Assistant 已经提供了大量[内置集成](https://www.home-assistant.io/integrations/)。
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "语音之年 - 第 1 章：Assist"
-description: "Assist 是 Home Assistant 的新功能，用来处理你的所有对话。"
+description: '今年是 Home Assistant 的语音之年(https://www.home-assistant.io/blog/2022/12/20/year-of-voice/)。我们在 2023 年的目标，是让用户可以用自己的语言控制 Home Assistant。'
 date: 2023-01-26 00:00:00
 date_formatted: "January 26, 2023"
 author: Paulus Schoutsen
@@ -9,6 +9,7 @@ comments: true
 categories: Assist
 og_image: /images/blog/2023-01-26-year-of-the-voice-chapter-1/social.png
 ---
+# 语音之年 - 第 1 章：Assist
 
 今年是 Home Assistant 的[语音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/)。我们在 2023 年的目标，是让用户可以用自己的语言控制 Home Assistant。今天，在 2023 年开始后的第一个月，我们开启第一章。
 

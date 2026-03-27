@@ -1,7 +1,8 @@
 ---
 title: ELTAKO 加入 Works with Home Assistant
-description: ELTAKO 面向专业场景的 Matter 继电器加入我们的 Home Assistant 计划。
+description: '<img src=''/home-assistant/images/blog/2025-10-eltako/art.webp'' style=''border: 0;box-shadow: none;'' alt="ELTAKO joins Works with Home Assistant"。'
 ---
+# ELTAKO 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-10-eltako/art.webp' style='border: 0;box-shadow: none;' alt="ELTAKO joins Works with Home Assistant">
 

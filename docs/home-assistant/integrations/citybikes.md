@@ -1,6 +1,6 @@
 ---
 title: CityBikes
-description: 关于如何将 CityBikes API 数据集成到 Home Assistant 的说明。
+description: 'CityBikes 集成监控选定区域内共享单车站点的自行车可用性。数据由 CityBikes(https://citybik.es/about) 提供，支持世界各地的共享单车系统。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_release: 0.49
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# CityBikes
 
 **CityBikes** 集成监控选定区域内共享单车站点的自行车可用性。数据由 [CityBikes](https://citybik.es/#about) 提供，支持世界各地的共享单车系统。
 

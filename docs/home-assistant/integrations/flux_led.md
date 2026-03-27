@@ -1,6 +1,6 @@
 ---
 title: Magic Home
-description: 关于如何在 Home Assistant 中设置 Magic Home 的说明。
+description: 'Magic Home 集成支持使用相同协议的多个品牌的开关、灯泡和控制器。如果您可以使用 Magic Home 应用程序或 Surp Life 应用程序控制设备，您的灯泡或控制器（例如 WiFi LED 控制器）很有可能与此集成配合使用。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Button
   - Light
@@ -25,6 +25,7 @@ ha_config_flow: true
 ha_dhcp: true
 ha_integration_type: integration
 ---
+# Magic Home
 
 **Magic Home** 集成支持使用相同协议的多个品牌的开关、灯泡和控制器。如果您可以使用 Magic Home 应用程序或 Surp Life 应用程序控制设备，您的灯泡或控制器（例如 WiFi LED 控制器）很有可能与此集成配合使用。
 

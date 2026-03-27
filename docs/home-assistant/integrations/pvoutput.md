@@ -1,6 +1,6 @@
 ---
 title: PVOutput
-description: 有关如何在 Home Assistant 中使用 PVOutput 的说明。
+description: 'PVOutput 集成会读取由您的太阳能光伏 (PV) 系统上传到 PVOutput(https://pvoutput.org/) 的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_release: 0.33
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# PVOutput
 
 **PVOutput** 集成会读取由您的太阳能光伏 (PV) 系统上传到 [PVOutput](https://pvoutput.org/) 的信息。
 

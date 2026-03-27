@@ -1,8 +1,7 @@
 ---
 title: 集成
-description: Home Assistant 内置集成列表。
+description: '本页列出 Home Assistant 的内置集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 集成
 
 本页列出 Home Assistant 的内置集成。

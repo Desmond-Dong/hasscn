@@ -1,7 +1,8 @@
 ---
 title: '2023：Home Assistant 的语音之年'
-description: 我们在 2023 年的目标，是让用户能够用自己的语言控制 Home Assistant。
+description: 'TL;DR：我们在 2023 年的目标，是让用户能够用自己的语言控制 Home Assistant。Rhasspy 的创建者 Mike Hansen 已加入 Nabu Casa 来主导这项工作。我们会先从构建覆盖各种语言的意图匹配语句集合(https://github.com/home-assistant/i。'
 ---
+# 2023：Home Assistant 的语音之年
 
 _**TL;DR**：我们在 2023 年的目标，是让用户能够用自己的语言控制 Home Assistant。Rhasspy 的创建者 Mike Hansen 已加入 Nabu Casa 来主导这项工作。我们会先从构建[覆盖各种语言的意图匹配语句集合](https://github.com/home-assistant/intents)开始。_
 

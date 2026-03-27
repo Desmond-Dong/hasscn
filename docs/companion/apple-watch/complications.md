@@ -1,8 +1,9 @@
 ---
 title: "复杂功能"
+description: '复杂功能允许您在 Apple Watch 表盘上显示 Home Assistant 传感器的值。Home Assistant Apple Watch 应用包含适用于大多数 Apple Watch 表盘的复杂功能。 本页属于 Home Assistant 配套应用文档。'
 id: "complications"
 ---
-
+# 复杂功能
 
 复杂功能允许您在 Apple Watch 表盘上显示 Home Assistant 传感器的值。Home Assistant Apple Watch 应用包含适用于大多数 Apple Watch 表盘的复杂功能。
 

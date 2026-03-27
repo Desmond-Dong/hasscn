@@ -1,6 +1,6 @@
 ---
 title: Overkiz
-description: 有关如何将使用 Overkiz IoT 平台的集线器与 Home Assistant 集成的说明。
+description: 'Overkiz（由 Somfy 提供）IoT 平台被许多不同厂商使用，例如 Somfy、Hitachi 和 Atlantic。此集成允许您通过 Overkiz API 将这些设备接入 Home Assistant。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -43,6 +43,7 @@ ha_platforms:
   - water_heater
 ha_integration_type: hub
 ---
+# Overkiz
 
 Overkiz（由 Somfy 提供）IoT 平台被许多不同厂商使用，例如 Somfy、Hitachi 和 Atlantic。此集成允许您通过 Overkiz API 将这些设备接入 Home Assistant。
 

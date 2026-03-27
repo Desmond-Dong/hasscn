@@ -1,6 +1,6 @@
 ---
 title: Plant Monitor
-description: 有关如何使用 Home Assistant 设置植物监控的说明。
+description: 'This Plant Monitor integration lets you merge moisture, conductivity, light intensity, temperature and battery level for a plant into a single UI element.。'
 ha_category:
   - Environment
 ha_release: 0.44
@@ -11,6 +11,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Plant Monitor
 
 This **Plant Monitor** integration lets you merge moisture, conductivity, light intensity, temperature and battery level for a plant into a single UI element. It also supports setting minimum and maximum values for each measurement and will change its state to "problem" if it is not within those limits.
 

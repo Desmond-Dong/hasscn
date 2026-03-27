@@ -1,6 +1,6 @@
 ---
 title: TCP
-description: 有关如何在 Home Assistant 中设置 TCP 的说明。
+description: 'The TCP integration allows the integration of some services for which a specific Home Assistant integration does not exist. If the service communicates。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# TCP
 
 The **TCP** integration allows the integration of some services for which a specific Home Assistant integration does not exist. If the service communicates over a TCP socket with a simple request/reply mechanism then the chances are that this integration will allow integration with it.
 

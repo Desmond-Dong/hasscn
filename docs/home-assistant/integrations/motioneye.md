@@ -1,6 +1,6 @@
 ---
 title: motionEye
-description: 关于如何将 motionEye 集成到 Home Assistant 的说明。
+description: 'motionEye 集成可让你将 motionEye(https://github.com/motioneye-project/motioneye) 服务器接入 Home Assistant。motionEye 是 motion 守护进程的开源 Web 前端，用于集中管理和可视化多种类型的摄像头。'
 
 ha_category:
   - Camera
@@ -17,6 +17,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# motionEye
 
 **motionEye** 集成可让你将
 [motionEye](https://github.com/motioneye-project/motioneye) 服务器接入 Home Assistant。motionEye

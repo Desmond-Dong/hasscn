@@ -1,6 +1,6 @@
 ---
 title: ClickSend SMS
-description: 关于如何将 ClickSend 通知添加到 Home Assistant 的说明。
+description: 'ClickSend SMS 集成使用 ClickSend(https://clicksend.com) 从 Home Assistant 发送通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: 0.48
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# ClickSend SMS
 
 **ClickSend SMS** 集成使用 [ClickSend](https://clicksend.com) 从 Home Assistant 发送通知。
 

@@ -1,6 +1,6 @@
 ---
 title: HaveIBeenPwned
-description: 关于如何将 HaveIBeenPwned 传感器集成到 Home Assistant 的说明。
+description: 'HaveIBeenPwned 集成会创建传感器，用于检查 haveibeenpwned(https://haveibeenpwned.com) 上是否存在已泄露的邮箱账户。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 0.31
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# HaveIBeenPwned
 
 **HaveIBeenPwned** 集成会创建传感器，用于检查 [haveibeenpwned](https://haveibeenpwned.com) 上是否存在已泄露的邮箱账户。
 

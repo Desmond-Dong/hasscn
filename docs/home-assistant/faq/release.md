@@ -1,7 +1,8 @@
 ---
 title: 版本发布
-description: Home Assistant 的发布时间安排
+description: 'Home Assistant 的新版本会在每个月的第一个星期三发布。确切日期可在 Home Assistant Developers(https://developers.home-assistant.io/) 网站的即将举行活动日历中查看。 本页属于 Home Assistant 中文文档。'
 ---
+# 版本发布
 
 Home Assistant 的新版本会在每个月的第一个星期三发布。确切日期可在 [Home Assistant Developers](https://developers.home-assistant.io/) 网站的即将举行活动日历中查看。
 

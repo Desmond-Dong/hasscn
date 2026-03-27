@@ -1,6 +1,8 @@
 ---
 title: "自定义卡片"
+description: 'Dashboards(https://www.home-assistant.io/dashboards/) 是 Home Assistant 的界面定义方式。我们提供了许多内置 cards，但你并不局限于这些；你也可以构建并使用自己的 card！。 本页属于 Home Assistant 开发者文档。'
 ---
+# 自定义卡片
 
 [Dashboards](https://www.home-assistant.io/dashboards/) 是 Home Assistant 的界面定义方式。我们提供了许多内置 cards，但你并不局限于这些；你也可以构建并使用自己的 card！
 

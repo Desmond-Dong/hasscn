@@ -1,6 +1,6 @@
 ---
 title: Motionblinds Matter
-description: 使用 Matter 集成控制您的 Motionblinds Matter 设备。
+description: 'Motionblinds(https://motionblinds.com) 凭借其 Matter 产品加入了 Works with Home Assistant 合作伙伴计划。Motionblinds 致力于确保其产品保持最新状态，并可在 Home Assistant 中即刻使用。'
 ha_category:
   - Cover
 ha_domain: motionblinds_matter
@@ -17,6 +17,7 @@ works_with:
 ha_iot_standard:
   - matter
 ---
+# Motionblinds Matter
 
 [Motionblinds](https://motionblinds.com) 凭借其 Matter 产品加入了 Works with Home Assistant 合作伙伴计划。Motionblinds 致力于确保其产品保持最新状态，并可在 Home Assistant 中即刻使用。
 

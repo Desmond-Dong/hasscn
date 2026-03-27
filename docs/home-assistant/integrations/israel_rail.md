@@ -1,6 +1,6 @@
 ---
 title: Israel Railways
-description: 关于如何将以色列铁路时刻表数据集成到 Home Assistant 的说明。
+description: 'Israel Railways 集成会为您提供以色列铁路中从一个指定地点前往另一个地点的接下来三班发车时间。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Israel Railways
 
 **Israel Railways** 集成会为您提供以色列铁路中从一个指定地点前往另一个地点的接下来三班发车时间。
 

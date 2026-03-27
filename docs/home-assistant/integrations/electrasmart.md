@@ -1,6 +1,6 @@
 ---
 title: Electra Smart
-description: 关于如何在 Home Assistant 中集成 Electra 空调的说明。
+description: 'Electra Air(https://www.electra-air.co.il), is a company which manufactures and sells Air Conditioners. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 2023.6
@@ -13,6 +13,7 @@ ha_platforms:
   - climate
 ha_integration_type: hub
 ---
+# Electra Smart
 
 [Electra Air](https://www.electra-air.co.il), is a company which manufactures and sells Air Conditioners.
 

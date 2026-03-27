@@ -1,7 +1,8 @@
 ---
 title: Music Assistant 2.7 - 接管整个音浪
-description: 从界面大改版、新功能与新内容提供方，到我们自研的流媒体协议，这是迄今为止最大的一次更新！
+description: '<img src=''/home-assistant/images/blog/2025-12-music-assistant-2-7/art.webp'' style=''border: 0;box-shadow: none;'' alt="Music Assistant is taking over the。'
 ---
+# Music Assistant 2.7 - 接管整个音浪
 
 <img src='/home-assistant/images/blog/2025-12-music-assistant-2-7/art.webp' style='border: 0;box-shadow: none;' alt="Music Assistant is taking over the airwaves">
 

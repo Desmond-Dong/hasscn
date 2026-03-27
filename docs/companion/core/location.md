@@ -1,7 +1,9 @@
 ---
 title: "位置"
+description: '在以下情况下，位置更新会从您的设备发送到 Home Assistant：。 本页属于 Home Assistant 配套应用文档，适合查阅 iOS、Android、通知、传感器与移动端能力。'
 id: "location"
 ---
+# 位置
 
 ## 概述
 

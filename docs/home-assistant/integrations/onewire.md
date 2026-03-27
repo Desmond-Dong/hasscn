@@ -1,6 +1,6 @@
 ---
 title: 1-Wire
-description: "有关如何将一根线 (1-wire) 传感器集成到 Home Assistant 中的说明。"
+description: 'The 1-Wire integration supports sensors that use the 1-wire bus for communication. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - DIY
@@ -21,6 +21,7 @@ ha_integration_type: hub
 ha_zeroconf: true
 ha_quality_scale: silver
 ---
+# 1-Wire
 
 The **1-Wire** integration supports sensors that use the 1-wire bus for communication.
 

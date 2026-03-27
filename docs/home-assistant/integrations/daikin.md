@@ -1,6 +1,6 @@
 ---
 title: Daikin AC
-description: 关于如何将大金空调设备与 Home Assistant 集成的说明。
+description: 'Daikin 集成将大金空调系统集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
   - Energy
@@ -19,6 +19,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Daikin AC
 
 **Daikin** 集成将大金空调系统集成到 Home Assistant 中。
 

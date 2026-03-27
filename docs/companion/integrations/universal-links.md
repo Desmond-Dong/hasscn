@@ -1,7 +1,9 @@
 ---
 title: "通用链接、NFC 和 QR 标签"
+description: '对这些功能的支持正在积极开发中，可能尚未完全发布。 本页属于 Home Assistant 配套应用文档，适合查阅 iOS、Android、通知、传感器与移动端能力。'
 id: 'universal-links'
 ---
+# 通用链接、NFC 和 QR 标签
 
 对这些功能的支持正在积极开发中，可能尚未完全发布。
 

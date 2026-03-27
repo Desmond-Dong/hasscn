@@ -1,6 +1,6 @@
 ---
 title: rTorrent
-description: 有关如何在 Home Assistant 中集成 rTorrent 传感器的说明。
+description: 'rTorrent 集成允许您在 Home Assistant 中监控 rTorrent(https://rakshasa.github.io/rtorrent/) 的下载情况，并基于这些信息设置自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Downloading
 ha_release: 0.81
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# rTorrent
 
 **rTorrent** 集成允许您在 Home Assistant 中监控 [rTorrent](https://rakshasa.github.io/rtorrent/) 的下载情况，并基于这些信息设置自动化。
 

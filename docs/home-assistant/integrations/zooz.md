@@ -1,6 +1,6 @@
 ---
 title: Zooz
-description: 使用 Z-Wave 集成连接和控制您的 Zooz Z-Wave 系列设备
+description: 'Zooz(https://www.getzooz.com/) 的 Z-Wave 设备可在本地运行，并与 Home Assistant 中的 Z-Wave 集成无缝配合使用（需要 Z-Wave 棒）。由于所有连接都在本地完成，因此状态更新和设备控制在 Home Assistant 中几乎是即时的。'
 ha_release: '2025.7'
 ha_iot_class: Local Push
 ha_category:
@@ -21,6 +21,7 @@ works_with:
 ha_iot_standard: zwave
 ha_brand: true
 ---
+# Zooz
 
 [Zooz](https://www.getzooz.com/) 的 Z-Wave 设备可在本地运行，并与 Home Assistant 中的 Z-Wave 集成无缝配合使用（需要 Z-Wave 棒）。由于所有连接都在本地完成，因此状态更新和设备控制在 Home Assistant 中几乎是即时的。
 

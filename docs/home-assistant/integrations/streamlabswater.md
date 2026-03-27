@@ -1,6 +1,6 @@
 ---
 title: StreamLabs
-description: 有关如何将 Streamlabs Water 设备与 Home Assistant 集成的说明。
+description: 'The StreamLabs integration is used to interact with StreamLabs water monitoring devices(https://www.streamlabswater.com/) in order to retrieve usage。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# StreamLabs
 
 The **StreamLabs** integration is used to interact with [StreamLabs water monitoring devices](https://www.streamlabswater.com/) in order to retrieve usage information and manage the away mode of the device. The [StreamLabs Water API](https://developer.streamlabswater.com) is used to retrieve daily, monthly, and yearly water usage along with the current away mode.
 

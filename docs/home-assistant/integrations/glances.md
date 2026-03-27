@@ -1,6 +1,6 @@
 ---
 title: Glances
-description: 关于如何将 Glances 传感器集成到 Home Assistant 的说明。
+description: 'Glances 集成允许您监控由 Glances(https://github.com/nicolargo/glances) API 提供的系统信息。这使得可以跟踪远程主机并在 Home Assistant 中显示其统计信息。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - System monitor
 ha_iot_class: Local Polling
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Glances
 
 **Glances** 集成允许您监控由 [Glances](https://github.com/nicolargo/glances) API 提供的系统信息。这使得可以跟踪远程主机并在 Home Assistant 中显示其统计信息。
 

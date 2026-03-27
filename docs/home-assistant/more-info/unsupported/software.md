@@ -1,7 +1,8 @@
 ---
 title: 不支持的软件
-description: 关于运行不支持的软件为何将安装标记为不支持的更多信息。
+description: '如 ADR-0014(https://github.com/home-assistant/architecture/blob/master/adr/0014-home-assistant-supervised.md) 所述，Home Assistant 生态系统之外不会安装任何额外软件。'
 ---
+# 不支持的软件
 
 ## 问题
 

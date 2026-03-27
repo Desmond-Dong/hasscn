@@ -1,6 +1,6 @@
 ---
 title: Shark IQ
-description: 将您的 Shark IQ 扫地机器人与 Home Assistant 集成。
+description: 'Shark IQ 集成允许您控制 Shark IQ(https://www.sharkclean.com/vacuums/robot-vacuums/) 扫地机器人。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Vacuum
 ha_iot_class: Cloud Polling
@@ -15,6 +15,7 @@ ha_platforms:
   - vacuum
 ha_integration_type: hub
 ---
+# Shark IQ
 
 **Shark IQ** 集成允许您控制 [Shark IQ](https://www.sharkclean.com/vacuums/robot-vacuums/) 扫地机器人。
 

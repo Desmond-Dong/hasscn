@@ -1,7 +1,9 @@
 ---
 title: "更新系统"
+description: 'Home Assistant Operating System 使用 RAUC(https://rauc.io/) 作为更新系统。RAUC 是一种面向嵌入式系统、基于镜像的更新系统。它支持多个启动槽位，因此支持 A/B 风格的更新机制。更新系统可与 U-Boot 等常见 bootloader 集成。'
 sidebar_label: 更新系统
 ---
+# 更新系统
 
 Home Assistant Operating System 使用 [RAUC](https://rauc.io/) 作为更新系统。RAUC 是一种面向嵌入式系统、基于镜像的更新系统。它支持多个启动槽位，因此支持 A/B 风格的更新机制。更新系统可与 U-Boot 等常见 bootloader 集成，也允许通过脚本与自定义启动流程集成。它使用 X.509 加密来对更新包进行签名和验证。
 

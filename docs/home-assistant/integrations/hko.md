@@ -1,6 +1,6 @@
 ---
 title: Hong Kong Observatory
-description: 关于如何将香港天文台 (HKO) 开放数据 API 集成到 Home Assistant 的说明。
+description: 'Hong Kong Observatory 集成会从 香港天文台(https://www.hko.gov.hk/tc/index.html) 的 开放数据 API(https://www.hko.gov.hk/en/abouthko/opendataintro.htm) 获取香港特别行政区的气象数据。'
 ha_category:
   - Weather
 ha_release: 2024.2
@@ -13,6 +13,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Hong Kong Observatory
 
 **Hong Kong Observatory** 集成会从 [香港天文台](https://www.hko.gov.hk/tc/index.html) 的 [开放数据 API](https://www.hko.gov.hk/en/abouthko/opendata_intro.htm) 获取香港特别行政区的气象数据。
 

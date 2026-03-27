@@ -1,6 +1,6 @@
 ---
 title: Pencom
-description: 如何使用 Pencom Designs 8 通道继电器板。
+description: 'Pencom Design(https://www.pencomdesign.com/) 是一家面向商业和工业应用制造计算机控制继电器、I/O 和定制板卡的厂商。这个面向 Pencom 继电器控制板(https://www.pencomdesign.com/relay-boards)的接口设计为通过以太网转串。'
 ha_category:
   - Switch
 ha_release: 0.85
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Pencom
 
 [Pencom Design](https://www.pencomdesign.com/) 是一家面向商业和工业应用制造计算机控制继电器、I/O 和定制板卡的厂商。这个面向 [Pencom 继电器控制板](https://www.pencomdesign.com/relay-boards)的接口设计为通过以太网转串口适配器（NPort）工作。每个开关（继电器）都可以打开或关闭，并且可以读取继电器状态。
 

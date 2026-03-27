@@ -1,6 +1,6 @@
 ---
 title: IDTECK Proximity Reader
-description: 关于如何使用 IDTECK 近距离读卡器的说明。
+description: 'IDTECK(https://www.idteck.com/) 生产用于门禁控制和用户识别的身份识别系统。此集成适用于 Proximity Readers(https://www.idteck.com/en/products/rfid-reader--card-%26-tag-idteck-credentia。'
 ha_category:
   - Other
 ha_release: 0.85
@@ -9,6 +9,7 @@ ha_domain: idteck_prox
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# IDTECK Proximity Reader
 
 [IDTECK](https://www.idteck.com/) 生产用于门禁控制和用户识别的身份识别系统。此集成适用于 [Proximity Readers](https://www.idteck.com/en/products/rfid-reader-__-card-%26-tag-__idteck-credential-format-(idc))（RFID 读卡器）。设备通过串口转以太网转换器（NPort）连接到 Home Assistant。
 

@@ -1,6 +1,6 @@
 ---
 title: Moat
-description: 关于如何将 Moat 设备集成到 Home Assistant 的说明。
+description: 'Integrates Moat(https://moat-tech.com/) devices into Home Assistant. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_bluetooth: true
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Moat
 
 Integrates [Moat](https://moat-tech.com/) devices into Home Assistant.
 

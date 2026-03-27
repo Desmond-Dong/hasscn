@@ -1,7 +1,7 @@
 ---
 title: "Deezer"
+description: 'Music Assistant 支持 <a href="https://www.deezer.com/" target="blank" rel="noopener noreferrer"Deezer</a。由 <a href="https://github.com/arctixdev"。'
 ---
-
 # Deezer 提供者 <img src="/assets/icons/deezer-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 <a href="https://www.deezer.com/" target="_blank" rel="noopener noreferrer">Deezer</a>。由 <a href="https://github.com/arctixdev" target="_blank" rel="noopener noreferrer">arctixdev</a> 和 <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> 贡献和维护。

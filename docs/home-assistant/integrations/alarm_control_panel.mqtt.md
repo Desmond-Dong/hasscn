@@ -1,6 +1,6 @@
 ---
 title: "MQTT 报警控制面板"
-description: "关于如何将 MQTT 报警面板集成到 Home Assistant 的说明。"
+description: 'MQTT 报警控制面板 集成可以控制支持 MQTT 的报警面板。报警图标将在从 statetopic 接收到新状态后改变状态。如果这些消息使用 RETAIN 标志发布，MQTT 报警面板将在订阅后立即接收状态更新，并以正确的状态启动。否则，初始状态将为 unknown。'
 ha_category:
   - Alarm
 ha_release: 0.7.4
@@ -10,6 +10,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# MQTT 报警控制面板
 
 **MQTT 报警控制面板** 集成可以控制支持 MQTT 的报警面板。报警图标将在从 `state_topic` 接收到新状态后改变状态。如果这些消息使用 *RETAIN* 标志发布，MQTT 报警面板将在订阅后立即接收状态更新，并以正确的状态启动。否则，初始状态将为 `unknown`。
 

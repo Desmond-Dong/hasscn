@@ -1,6 +1,6 @@
 ---
 title: Google Photos
-description: 关于如何在 Home Assistant 中使用 Google Photos 的说明。
+description: 'Google Photos 集成允许您使用 Home Assistant 将照片上传到您的 Google Photos(https://photos.google.com/)。该集成添加了用于上传照片的动作和媒体源(/home-assistant/integrations/mediasource)来查看或投射。'
 ha_category:
   - Media source
 ha_iot_class: Cloud Polling
@@ -18,6 +18,7 @@ related:
   - url: https://console.cloud.google.com/apis/library/photoslibrary.googleapis.com
     title: Google Developers Console
 ---
+# Google Photos
 
 **Google Photos** 集成允许您使用 Home Assistant 将照片上传到您的 [Google Photos](https://photos.google.com/)。该集成添加了用于上传照片的动作和[媒体源](/home-assistant/integrations/media_source)来查看或投射由 Home Assistant 上传的内容。此集成不会让 Home Assistant 访问您的整个 Google Photos 媒体库。
 

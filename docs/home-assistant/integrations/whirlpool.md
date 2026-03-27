@@ -1,6 +1,6 @@
 ---
 title: Whirlpool Appliances
-description: 关于如何将惠而浦家电与 Home Assistant 集成的说明。
+description: 'Whirlpool Appliances 集成可让您将 Whirlpool、Maytag、KitchenAid 和 Consul 家电连接到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
   - Hub
@@ -21,6 +21,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Whirlpool Appliances
 
 **Whirlpool Appliances** 集成可让您将 Whirlpool、Maytag、KitchenAid 和 Consul 家电连接到 Home Assistant。
 

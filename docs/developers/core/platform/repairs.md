@@ -1,6 +1,8 @@
 ---
 title: "修复"
+description: 'Home Assistant 会跟踪需要用户注意的问题。这些问题可能由集成引起，也可能来自 Home Assistant 本身。问题可以通过 RepairsFlow 解决，也可以通过链接到说明用户如何自行解决问题的网站来处理。 本页属于 Home Assistant 开发者文档。'
 ---
+# 修复
 
 Home Assistant 会跟踪需要用户注意的问题。这些问题可能由集成引起，也可能来自 Home Assistant 本身。问题可以通过 `RepairsFlow` 解决，也可以通过链接到说明用户如何自行解决问题的网站来处理。
 

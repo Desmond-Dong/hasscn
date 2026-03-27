@@ -1,6 +1,6 @@
 ---
 title: Version
-description: 关于如何将版本集成到 Home Assistant 的说明。
+description: 'Version 集成可以显示当前的 Home Assistant Core 版本信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Utility
@@ -17,6 +17,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: integration
 ---
+# Version
 
 **Version** 集成可以显示当前的 Home Assistant Core 版本信息。
 

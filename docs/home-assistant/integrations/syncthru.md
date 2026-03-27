@@ -1,6 +1,6 @@
 ---
 title: Samsung SyncThru Printer
-description: 有关如何在 Home Assistant 中集成提供 SyncThru 的三星打印机的说明。
+description: 'The Samsung SyncThru Printer integration allows Home Assistant to read current data from a local Samsung printer. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - System monitor
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Samsung SyncThru Printer
 
 The **Samsung SyncThru Printer** integration allows Home Assistant to read current data from a local Samsung printer.  
 

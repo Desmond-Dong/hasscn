@@ -1,6 +1,6 @@
 ---
 title: SmartTub
-description: 有关如何将 SmartTub 集成到 Home Assistant 的说明。
+description: 'SmartTub 集成允许您在 Home Assistant 中查看和控制使用 SmartTub(https://www.jacuzzi.com/en-us/hot-tubs/owners/smarttub-system) 系统的热水浴缸。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Binary sensor
   - Climate
@@ -21,6 +21,7 @@ ha_platforms:
   - switch
 ha_integration_type: integration
 ---
+# SmartTub
 
 **SmartTub** 集成允许您在 Home Assistant 中查看和控制使用 [SmartTub](https://www.jacuzzi.com/en-us/hot-tubs/owners/smarttub-system) 系统的热水浴缸。
 

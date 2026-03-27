@@ -1,6 +1,6 @@
 ---
 title: 流媒体
-description: 有关如何在 Home Assistant 中集成直播的说明。
+description: '流媒体集成为通过 Home Assistant 代理实时视频流提供了一种方式。大多数用户不需要配置任何内容，也不需要直接与此集成交互，因为它是供摄像头集成(/home-assistant/integrations/camera)使用的内部集成。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Other
 ha_release: '0.90'
@@ -15,6 +15,7 @@ ha_platforms:
   - diagnostics
 ha_integration_type: system
 ---
+# 流媒体
 
 **流媒体**集成为通过 Home Assistant 代理实时视频流提供了一种方式。大多数用户不需要配置任何内容，也不需要直接与此集成交互，因为它是供[摄像头集成](/home-assistant/integrations/camera)使用的内部集成。
 

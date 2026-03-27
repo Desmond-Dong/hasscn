@@ -1,6 +1,6 @@
 ---
 title: Jellyfin
-description: 关于如何将 Jellyfin 集成到 Home Assistant 的说明。
+description: 'Jellyfin 集成会将 Jellyfin(https://jellyfin.org/) 服务器作为媒体源公开到 Home Assistant 中。 当前仅支持音乐、电影和电视剧资料库。其他资料库不会显示在媒体浏览器中。此集成已在 Jellyfin server 10.6.4 及更高版本上测试通过。'
 ha_category:
   - Media player
   - Media source
@@ -20,6 +20,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Jellyfin
 
 **Jellyfin** 集成会将 [Jellyfin](https://jellyfin.org/) 服务器作为媒体源公开到 Home Assistant 中。
 当前仅支持音乐、电影和电视剧资料库。其他资料库不会显示在媒体浏览器中。此集成已在 Jellyfin server 10.6.4 及更高版本上测试通过。

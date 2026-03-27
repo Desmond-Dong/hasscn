@@ -1,6 +1,6 @@
 ---
 title: iNELS
-description: 关于如何将 iNELS 与 Home Assistant 集成的说明。
+description: 'iNELS 集成允许您控制和监控连接到控制单元（BUS(https://www.elkoep.com/wired) 或 eLAN(https://www.elkoep.com/wireless)）的设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Switch
 ha_release: 2025.11
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# iNELS
 
 **iNELS** 集成允许您控制和监控连接到控制单元（[BUS](https://www.elkoep.com/wired) 或 [eLAN](https://www.elkoep.com/wireless)）的设备。
 

@@ -1,6 +1,6 @@
 ---
 title: 意图脚本
-description: 关于如何设置在意图上运行脚本的说明。
+description: '意图脚本集成允许你为意图配置操作和响应。任何支持意图的集成都可以触发这些意图，例如 Alexa(/home-assistant/integrations/alexa/)（Amazon Echo）、Dialogflow(/home-assistant/integrations/dialogflow/)（Goog。'
 ha_category:
   - Intent
 ha_release: '0.50'
@@ -10,6 +10,7 @@ ha_integration_type: integration
 ha_codeowners:
   - '@arturpragacz'
 ---
+# 意图脚本
 
 **意图脚本**集成允许你为意图配置操作和响应。任何支持意图的集成都可以触发这些意图，例如 [Alexa](/home-assistant/integrations/alexa/)（Amazon Echo）、[Dialogflow](/home-assistant/integrations/dialogflow/)（Google Assistant）和 [Snips](/home-assistant/integrations/snips/)。在 Home Assistant 内部，也可以通过[自定义语句](https://www.home-assistant.io/voice_control/custom_sentences_yaml/)触发它们。
 

@@ -19,6 +19,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Toon
 
 **Toon** 集成平台可用于控制你的 Quby Toon 恒温器，
 它目前以下列品牌销售：

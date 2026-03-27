@@ -1,7 +1,8 @@
 ---
 title: 弃用 Core 和 Supervised 安装方法以及 32 位系统
-description: 此次弃用将有助于集中支持工作并简化开发。
+description: '<img src=''/home-assistant/images/blog/2025-05-deprecation/art.png'' style=''border: 0;box-shadow: none;'' alt="弃用核心和受监管模式安装方式以及32位系统"。'
 ---
+# 弃用 Core 和 Supervised 安装方法以及 32 位系统
 
 <img src='/home-assistant/images/blog/2025-05-deprecation/art.png' style='border: 0;box-shadow: none;' alt="弃用核心和受监管模式安装方式以及32位系统">
 

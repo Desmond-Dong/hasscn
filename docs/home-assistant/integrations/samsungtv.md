@@ -1,6 +1,6 @@
 ---
 title: Samsung Smart TV
-description: 有关如何将三星智能电视集成到家庭助理的说明。
+description: 'The Samsung Smart TV integration allows you to control a Samsung Smart TV(https://www.samsung.com/uk/tvs/all-tvs/). 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Media player
   - Remote
@@ -21,6 +21,7 @@ ha_dhcp: true
 ha_integration_type: device
 ha_quality_scale: silver
 ---
+# Samsung Smart TV
 
 The **Samsung Smart TV** integration allows you to control a [Samsung Smart TV](https://www.samsung.com/uk/tvs/all-tvs/).
 

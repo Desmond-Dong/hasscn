@@ -1,6 +1,6 @@
 ---
 title: 区域
-description: 关于如何在 Home Assistant 中设置区域的说明。
+description: '区域允许你在地图上指定特定范围。它们可用于区域在家检测(/home-assistant/getting-started/presence-detection/)。这些信息可用于自动化，比如你离家后启动扫地机器人，或离开办公室时提前开启家中供暖。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Organization
   - Presence detection
@@ -20,6 +20,7 @@ related:
   - docs: /getting-started/presence-detection/
     title: Presence detection
 ---
+# 区域
 
 区域允许你在地图上指定特定范围。它们可用于[区域在家检测](/home-assistant/getting-started/presence-detection/)。这些信息可用于自动化，比如你离家后启动扫地机器人，或离开办公室时提前开启家中供暖。
 

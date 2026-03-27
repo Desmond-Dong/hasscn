@@ -1,7 +1,9 @@
 ---
 title: "X-Callback-URL"
+description: '<img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" /<br / 应用完全支持 X-Callback-URL(http://x-callback-url.com/)。'
 id: 'x-callback-url'
 ---
+# X-Callback-URL
 
 <img src="/companion-assets/iOS.svg" alt="iOS" style="height: 1em; vertical-align: middle;" /><br />
 应用完全支持 [X-Callback-URL](http://x-callback-url.com/)，这是一种标准化方式，让 Google Chrome、Drafts 和快捷指令等应用通过 URL 处理器相互交互。

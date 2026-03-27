@@ -1,6 +1,6 @@
 ---
 title: QNAP QSW
-description: 有关如何将 QNAP QSW 集成到 Home Assistant 中的说明。
+description: '此集成可与 QNAP QSW 网管交换机(https://www.qnap.com/en/product/series/qsw-managed-switches)的本地 API 交互。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2022.5
 ha_category:
   - Binary sensor
@@ -21,6 +21,7 @@ ha_codeowners:
 ha_integration_type: device
 ha_dhcp: true
 ---
+# QNAP QSW
 
 此集成可与 [QNAP QSW 网管交换机](https://www.qnap.com/en/product/series/qsw-managed-switches)的本地 API 交互。
 

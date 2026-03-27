@@ -1,6 +1,6 @@
 ---
 title: Geocaching
-description: 关于如何在 Home Assistant 中集成 Geocaching 账户的说明。
+description: 'Geocaching is a real-world, outdoor adventure that is happening all the time, all around the world. To play, participants use the Geocaching app and/or a。'
 ha_category:
   - Sensor
 ha_release: 2022.6
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Geocaching
 
 Geocaching is a real-world, outdoor adventure that is happening all the time, all around the world. To play, participants use the Geocaching app and/or a GPS device to navigate to cleverly hidden containers called geocaches.
 

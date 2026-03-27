@@ -1,6 +1,6 @@
 ---
 title: "Amazon Alexa 智能家居技能"
-description: "关于如何构建 Smart Home 技能以将 Amazon Alexa 与 Home Assistant 连接的说明。"
+description: 'Amazon Alexa 提供了 Smart Home API，可实现更丰富的家庭自动化控制，而且无需用户说出技能名称，例如：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Voice
 ha_release: "0.54"
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@jbouwh'
 ha_domain: alexa
 ---
+# Amazon Alexa 智能家居技能
 
 Amazon Alexa 提供了 Smart Home API，可实现更丰富的家庭自动化控制，而且无需用户说出技能名称，例如：
 

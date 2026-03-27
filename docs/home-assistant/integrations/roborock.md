@@ -1,6 +1,6 @@
 ---
 title: Roborock
-description: 有关如何将 Roborock 吸尘器集成到 Home Assistant 的说明
+description: 'Roborock 集成允许您将 Roborock(https://us.roborock.com/pages/robot-vacuum-cleaner) 扫地机器人接入 Home Assistant。Roborock 吸尘器是智能家居清洁机器人，具体功能会因设备不同而异，可能包括拖地能力、激光导航。'
 ha_category:
   - Binary sensor
   - Button
@@ -33,6 +33,7 @@ ha_integration_type: hub
 ha_quality_scale: silver
 ha_dhcp: true
 ---
+# Roborock
 
 **Roborock** 集成允许您将 [Roborock](https://us.roborock.com/pages/robot-vacuum-cleaner) 扫地机器人接入 Home Assistant。Roborock 吸尘器是智能家居清洁机器人，具体功能会因设备不同而异，可能包括拖地能力、激光导航，以及调整清洁性能或家庭内清扫位置等选项。此集成让您可以直接在 Home Assistant 中控制并监控 Roborock 吸尘器。
 

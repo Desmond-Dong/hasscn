@@ -1,6 +1,6 @@
 ---
 title: AEMET OpenData
-description: 关于在 Home Assistant 中集成 AEMET OpenData 的说明。
+description: 'AEMET 集成使用 AEMET OpenData(https://opendata.aemet.es/) 作为您所在位置当前气象数据的来源。AEMET 代表 "Agencia Estatal de Meteorologia"，即西班牙国家气象局。 本页属于 Home Assistant 中文文档。'
 ha_release: 2021.3
 ha_category:
   - Sensor
@@ -17,6 +17,7 @@ ha_integration_type: service
 ha_codeowners:
   - '@Noltari'
 ---
+# AEMET OpenData
 
 **AEMET** 集成使用 [AEMET OpenData](https://opendata.aemet.es/) 作为您所在位置当前气象数据的来源。AEMET 代表 "Agencia Estatal de Meteorologia"，即西班牙国家气象局。
 

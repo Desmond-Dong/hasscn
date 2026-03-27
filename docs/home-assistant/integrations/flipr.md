@@ -1,6 +1,6 @@
 ---
 title: Flipr
-description: 关于如何在 Home Assistant 中集成 Flipr 设备的说明。
+description: 'Go flipr 公司销售智能泳池监控和管理设备。Flipr 和 Flipr Hub 设备通过 Wi-Fi 和 SigFox 将数据发布到云端。 此集成让您可以在 Home Assistant 上访问 Flipr 测量的信息，数据与供应商的智能手机应用程序相同。'
 ha_category:
   - Sensor
 ha_release: 2021.8
@@ -16,6 +16,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Flipr
 
 Go flipr 公司销售智能泳池监控和管理设备。Flipr 和 Flipr Hub 设备通过 Wi-Fi 和 SigFox 将数据发布到云端。
 此集成让您可以在 Home Assistant 上访问 Flipr 测量的信息，数据与供应商的智能手机应用程序相同。

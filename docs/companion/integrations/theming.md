@@ -1,7 +1,9 @@
 ---
 title: 主题
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" / &nbsp; Android<br /<br / 颜色应以十六进制格式指定（例如 0099ff）。'
 id: 'theming'
 ---
+# 主题
 
 ## 使用的颜色
 

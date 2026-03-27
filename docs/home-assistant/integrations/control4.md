@@ -1,6 +1,6 @@
 ---
 title: Control4
-description: 关于将 Control4 系统添加到 Home Assistant 的说明。
+description: 'Control4 集成允许您从本地 Control4 系统控制和监控灯光、房间媒体和气候设备。您的 Control4 控制器必须运行 OS 3.0+。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: '0.114'
 ha_category:
   - Climate
@@ -19,6 +19,7 @@ ha_platforms:
   - media_player
 ha_integration_type: hub
 ---
+# Control4
 
 **Control4** 集成允许您从本地 Control4 系统控制和监控灯光、房间媒体和气候设备。您的 Control4 控制器必须运行 OS 3.0+。
 

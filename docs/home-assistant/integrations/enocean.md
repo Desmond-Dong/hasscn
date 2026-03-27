@@ -1,6 +1,6 @@
 ---
 title: EnOcean
-description: 将 EnOcean 设备连接到 Home Assistant
+description: 'The EnOcean(https://en.wikipedia.org/wiki/EnOcean) standard is supported by many different vendors. There are switches and sensors of many different kinds。'
 ha_category:
   - Binary sensor
   - Hub
@@ -21,6 +21,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# EnOcean
 
 The [EnOcean](https://en.wikipedia.org/wiki/EnOcean) standard is supported by many different vendors. There are switches and sensors of many different kinds, and typically they employ energy harvesting to get power such that no batteries are necessary.
 

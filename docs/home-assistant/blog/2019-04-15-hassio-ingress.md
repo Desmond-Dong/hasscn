@@ -3,6 +3,7 @@ title: Introducing Hass.io Ingress
 description: Ingress allows Hass.io 插件 to seamlessly integrate their 用户 interface
   with Home Assistant
 ---
+# Introducing Hass.io Ingress
 
 Today we are proud to introduce a new feature for Hass.io called Ingress. Ingress allows Hass.io 插件 to seamlessly integrate their 用户 interface with Home Assistant. Home Assistant will take care of the 认证 and the secure connection, so 用户 can start using the 插件 directly, without any 配置 necessary by the 用户. It just works. Even with Nabu Casa’s Home Assistant Cloud 遥控器 UI!
 

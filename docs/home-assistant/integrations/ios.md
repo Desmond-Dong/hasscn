@@ -1,6 +1,6 @@
 ---
 title: Home Assistant iOS
-description: 关于如何将 iOS 伴侣应用与 Home Assistant 配合使用的说明。
+description: 'The Home Assistant iOS integration is used by the Home Assistant Companion App for iOS to store and provide settings for actionable。'
 ha_category:
   - Hub
 ha_release: 0.31
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: integration
 ---
+# Home Assistant iOS
 
 The **Home Assistant iOS** integration is used by the Home Assistant Companion App for iOS to store and provide settings for [actionable notifications](https://companion.home-assistant.io/docs/notifications/actionable-notifications) and [actions](https://companion.home-assistant.io/docs/core/actions). Both of these can also be configured for a single device within the app, in which case the `ios` integration is not required.
 

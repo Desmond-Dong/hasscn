@@ -1,6 +1,6 @@
 ---
 title: Image processing
-description: 关于如何使用 Home Assistant 设置图像处理的说明。
+description: '图像处理功能使 Home Assistant 能够处理来自摄像头(/home-assistant/integrations/camera)的图像。仅支持摄像头实体作为来源。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Image processing
 ha_release: 0.36
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Image processing
 
 图像处理功能使 Home Assistant 能够处理来自[摄像头](/home-assistant/integrations/#camera)的图像。仅支持摄像头实体作为来源。
 

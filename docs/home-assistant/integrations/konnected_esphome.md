@@ -1,6 +1,6 @@
 ---
 title: Konnected
-description: 使用 ESPHome 集成连接和控制您的 Konnected 设备
+description: 'Konnected(https://konnected.io/) 是 Made for ESPHome 计划的成员。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.85
 ha_category:
   - Alarm
@@ -46,6 +46,7 @@ ha_iot_class: Local Push
 ha_dhcp: true
 ha_zeroconf: true
 ---
+# Konnected
 
 [Konnected](https://konnected.io/) 是 Made for ESPHome 计划的成员。
 

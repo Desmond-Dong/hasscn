@@ -1,8 +1,7 @@
 ---
 title: Player Support
-description: 与所有播放器提供者相关的信息
+description: '有关特定播放器提供者的信息，请参阅本文档中的相关部分。有关可能设置的描述，请参阅播放器提供者设置(/music-assistant/settings/player-provider/)和单个播放器设置(/music-assistant/settings/individual-player/)页面。'
 ---
-
 # 播放器提供者
 
 > [!NOTE]

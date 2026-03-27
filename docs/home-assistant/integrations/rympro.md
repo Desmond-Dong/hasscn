@@ -1,6 +1,6 @@
 ---
 title: Read Your Meter Pro
-description: 有关如何通过 Read Your Meter Pro 集成水表的说明。
+description: 'The Read Your Meter Pro integration connects with a Read Your Meter Pro(https://rym-pro.com/) account to get water meter reads into Home Assistant. 本页属于。'
 ha_category:
   - Sensor
 ha_release: '2023.2'
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Read Your Meter Pro
 
 The **Read Your Meter Pro** integration connects with a [Read Your Meter Pro](https://rym-pro.com/) account to get water meter reads into Home Assistant.
 

@@ -1,6 +1,6 @@
 ---
 title: Huawei LTE
-description: 关于如何将华为 LTE 路由器和调制解调器设备与 Home Assistant 集成的说明。
+description: 'Home Assistant 的 Huawei LTE 路由器与调制解调器集成可让您监控并控制 Huawei LTE 设备(https://consumer.huawei.com/en/routers/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -29,6 +29,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Huawei LTE
 
 Home Assistant 的 **Huawei LTE** 路由器与调制解调器集成可让您监控并控制 [Huawei LTE 设备](https://consumer.huawei.com/en/routers/)。
 

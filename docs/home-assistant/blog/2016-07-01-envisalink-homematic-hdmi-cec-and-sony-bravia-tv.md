@@ -4,6 +4,7 @@ description: This new release of Home Assistant contains support for Envisalink,
   Sony Bravia TV and HDMI-CEC. Additionally was the Wink support improved and CherryPy
   is the new WSGI server.
 ---
+# 0.23: Envisalink, Homematic, HDMI-CEC and Sony Bravia TV
 
 It's time for Home Assistant 0.23 and it's full of goodies. It's also the 发布 that bumps us over a 1000 tests and to 94% test coverage! Also our 安装 issues on the 树莓派 and Synology have been resolved.
 

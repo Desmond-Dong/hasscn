@@ -1,7 +1,8 @@
 ---
 title: D-Bus 问题
-description: 关于缺少 D-Bus 为何会将安装标记为不支持的更多信息。
+description: 'D-Bus 是 Supervisor 与主机进行大部分通信的方式，没有它，Supervisor 需要执行的许多操作将会失败。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# D-Bus 问题
 
 ## 问题
 

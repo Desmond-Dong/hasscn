@@ -1,6 +1,8 @@
 ---
 title: "添加状态卡片"
+description: 'Home Assistant 的主界面是当前实体及其状态的列表。系统中的每个实体都会渲染一个 state card。State cards 会显示图标、实体名称、状态上次变化的时间，以及当前状态或与之交互的控件。 本页属于 Home Assistant 开发者文档。'
 ---
+# 添加状态卡片
 
 Home Assistant 的主界面是当前实体及其状态的列表。系统中的每个实体都会渲染一个 state card。State cards 会显示图标、实体名称、状态上次变化的时间，以及当前状态或与之交互的控件。
 

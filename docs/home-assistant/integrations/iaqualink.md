@@ -1,6 +1,6 @@
 ---
 title: Jandy iAqualink
-description: 关于如何配置 Jandy iAqualink 集成的说明。
+description: 'Jandy(https://www.jandy.com/) 的 iAqualink(https://www.iaqualink.com/) 可让您随时随地控制泳池。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -21,6 +21,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Jandy iAqualink
 
 [Jandy](https://www.jandy.com/) 的 [iAqualink](https://www.iaqualink.com/) 可让您随时随地控制泳池。
 

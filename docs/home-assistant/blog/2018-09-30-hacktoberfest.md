@@ -1,7 +1,8 @@
 ---
 title: 参与 Hacktoberfest
-description: Home Assistant 将参与 Hacktoberfest，帮助更多人开启开源贡献之旅。
+description: '十月将迎来 Hacktoberfest(https://hacktoberfest.digitalocean.com/)。为了庆祝并支持开源，DigitalOcean(https://www.digitalocean.com/)、Twilio(https://www.twilio.com/) 和。'
 ---
+# 参与 Hacktoberfest
 
 十月将迎来 [Hacktoberfest](https://hacktoberfest.digitalocean.com/)。为了庆祝并支持开源，[DigitalOcean](https://www.digitalocean.com/)、[Twilio](https://www.twilio.com/) 和 [GitHub](https://github.com/) 再次联合举办该活动。和过去两年一样，Home Assistant 也会参与其中。
 

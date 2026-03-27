@@ -3,6 +3,7 @@ title: Raspberry Pi all-in-one installer
 description: Installing Home Assistant on a Raspberry Pi has never been easier with
   the new all-in-one installer.
 ---
+# Raspberry Pi all-in-one installer
 
 我们在虚拟的 Home Assistant 总部一直努力工作，让你能更轻松地开始使用 Home Assistant。这就是为什么 [@patchedsoul] 最近推出了一体化安装器。你只需要在运行 Raspbian Jessie 的树莓派中输入一行代码，就可以快速部署一套完整的 Home Assistant 设置：
 

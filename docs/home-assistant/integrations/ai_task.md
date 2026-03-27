@@ -1,6 +1,6 @@
 ---
 title: AI Task
-description: 关于在 Home Assistant 中设置 AI 任务实体的说明。
+description: 'AI Task 集成允许您借助 AI 来配置 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - AI
 ha_release: '2025.7'
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# AI Task
 
 **AI Task** 集成允许您借助 AI 来配置 Home Assistant。
 

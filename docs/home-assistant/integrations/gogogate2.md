@@ -1,6 +1,6 @@
 ---
 title: Gogogate2 and ismartgate
-description: 关于如何将 Gogogate2 和 iSmartGate 车库门遮盖集成到 Home Assistant 的说明。
+description: 'Gogogate2 and ismartgate 集成可让您通过 Home Assistant 控制支持 Gogogate2 和 iSmartGate 的车库门及大门。Home Assistant 中的设备名称会根据 GogoGate2 或 iSmartGate 移动应用中定义的名称自动生成。'
 ha_category:
   - Cover
 ha_release: 0.67
@@ -16,6 +16,7 @@ ha_platforms:
 ha_dhcp: true
 ha_integration_type: hub
 ---
+# Gogogate2 and ismartgate
 
 **Gogogate2 and ismartgate** 集成可让您通过 Home Assistant 控制支持 Gogogate2 和 iSmartGate 的车库门及大门。Home Assistant 中的设备名称会根据 GogoGate2 或 iSmartGate 移动应用中定义的名称自动生成。
 

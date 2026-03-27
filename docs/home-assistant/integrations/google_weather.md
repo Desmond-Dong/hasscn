@@ -1,6 +1,6 @@
 ---
 title: Google Weather
-description: 关于如何在 Home Assistant 中集成 Google 天气的说明。
+description: '此集成使用 Google Weather(https://developers.google.com/maps/documentation/weather) 作为您所在位置的天气数据来源。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Weather
 ha_release: 2025.12
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
   - weather
 ---
+# Google Weather
 
 此集成使用 [Google Weather](https://developers.google.com/maps/documentation/weather) 作为您所在位置的天气数据来源。
 

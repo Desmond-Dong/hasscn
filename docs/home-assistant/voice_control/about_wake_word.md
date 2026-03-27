@@ -1,6 +1,8 @@
 ---
 title: 'Home Assistant 的唤醒词方法'
+description: '为了不受限于特定硬件，唤醒词检测会在 Home Assistant 内部完成。语音卫星设备会持续对房间中的当前音频进行采样以检测人声。当它检测到语音后，卫星会将音频发送到 Home Assistant，由 Home Assistant 判断是否说出了唤醒词，并处理其后的命令。'
 ---
+# Home Assistant 的唤醒词方法
 
 ## 挑战
 

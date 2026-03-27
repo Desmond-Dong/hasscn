@@ -1,6 +1,6 @@
 ---
 title: Escea
-description: 关于如何将 Escea 壁炉与 Home Assistant 集成的说明。
+description: 'The Escea integration allows monitoring and control of local Escea(https://escea.com/) fireplaces. These fireplaces are manufactured in New Zealand and。'
 ha_category:
   - Climate
 ha_release: 2022.9
@@ -14,6 +14,7 @@ ha_platforms:
   - climate
 ha_integration_type: device
 ---
+# Escea
 
 The **Escea** integration allows monitoring and control of local [Escea](https://escea.com/) fireplaces. These fireplaces are manufactured in New Zealand and sold throughout Australia and New Zealand.
 

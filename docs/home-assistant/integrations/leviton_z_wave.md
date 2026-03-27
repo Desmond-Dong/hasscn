@@ -1,6 +1,6 @@
 ---
 title: Leviton Z-Wave
-description: 使用 Z-Wave 集成连接和控制您的 Leviton Z-Wave 设备
+description: 'Leviton(https://leviton.com) 凭借其 Z-Wave 产品加入了 Works with Home Assistant 合作伙伴计划。Leviton 致力于确保其产品保持最新状态，并可在 Home Assistant 中直接使用。'
 featured: true
 ha_release: '2021.2'
 ha_iot_class: Local Push
@@ -44,6 +44,7 @@ ha_platforms:
   - update
 ha_iot_standard: zwave
 ---
+# Leviton Z-Wave
 
 [Leviton](https://leviton.com) 凭借其 Z-Wave 产品加入了 Works with Home Assistant 合作伙伴计划。Leviton 致力于确保其产品保持最新状态，并可在 Home Assistant 中直接使用。[Leviton Z-Wave 产品](https://www.amazon.com/Leviton) 让您能够轻松实现照明自动化，支持的产品包括 DZ6HD 调光器、DZ15S 开关、ZW4SF 风扇速度控制器、DZPD3 插入式调光器、DZPA1 插入式开关，以及 ZW15R 插座。
 

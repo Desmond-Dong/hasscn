@@ -1,6 +1,6 @@
 ---
 title: YouTube
-description: 关于如何在 Home Assistant 中集成 YouTube 的说明。
+description: 'YouTube 集成可让您将 YouTube 频道连接到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: '2023.6'
@@ -17,6 +17,7 @@ google_dev_console_link: https://console.cloud.google.com/apis/library/youtube.g
 api: YouTube Data API v3
 api_link: https://console.cloud.google.com/apis/library/youtube.googleapis.com?project=home-assistant-17698
 ---
+# YouTube
 
 **YouTube** 集成可让您将 YouTube 频道连接到 Home Assistant。
 

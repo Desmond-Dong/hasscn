@@ -1,6 +1,6 @@
 ---
 title: Firmata
-description: 在 Home Assistant 中连接 Arduino 兼容开发板
+description: 'Firmata(https://github.com/firmata/protocol) 可用于将模拟和数字输入输出添加到 Home Assistant 中。这样一来，您就可以接入按钮、开关、运动探测器、继电器控制、传感器、电位器、调光器等设备。该集成目前可以通过串口或 USB 串口连接到 Firmata。'
 ha_category:
   - Binary sensor
   - DIY
@@ -20,6 +20,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Firmata
 
 [Firmata](https://github.com/firmata/protocol) 可用于将模拟和数字输入输出添加到 Home Assistant 中。这样一来，您就可以接入按钮、开关、运动探测器、继电器控制、传感器、电位器、调光器等设备。该集成目前可以通过串口或 USB 串口连接到 Firmata 开发板。
 

@@ -1,6 +1,6 @@
 ---
 title: D-Link Wi-Fi Smart Plugs
-description: 关于将 D-Link 开关集成到 Home Assistant 的说明。
+description: 'D-Link Wi-Fi Smart Plugs 集成允许您控制 D-Link Wi-Fi Smart Plugs(https://us.dlink.com/en/consumer/smart-home) 的状态。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Switch
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: device
 ---
+# D-Link Wi-Fi Smart Plugs
 
 **D-Link Wi-Fi Smart Plugs** 集成允许您控制 [D-Link Wi-Fi Smart Plugs](https://us.dlink.com/en/consumer/smart-home) 的状态。
 

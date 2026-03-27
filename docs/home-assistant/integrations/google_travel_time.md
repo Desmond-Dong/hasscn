@@ -1,6 +1,6 @@
 ---
 title: Google Maps Travel Time
-description: 关于如何将 Google Maps 行程时间添加到 Home Assistant 的说明。
+description: 'Google Maps Travel Time 集成通过 Google Maps Routes API(https://developers.google.com/maps/documentation/routes/overview) 提供行程时间。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@eifinger'
 ha_integration_type: service
 ---
+# Google Maps Travel Time
 
 **Google Maps Travel Time** 集成通过 [Google Maps Routes API](https://developers.google.com/maps/documentation/routes/overview) 提供行程时间。
 

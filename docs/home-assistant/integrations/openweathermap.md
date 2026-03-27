@@ -1,6 +1,6 @@
 ---
 title: OpenWeatherMap
-description: "有关如何将 OpenWeatherMap 集成到 Home Assistant 中的说明。"
+description: 'OpenWeatherMap integration 使用 OpenWeatherMap(https://openweathermap.org/) 作为您所在位置的气象和空气质量数据来源。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_release: 0.32
 ha_category:
@@ -22,6 +22,7 @@ related:
   - docs: /common-tasks/general/#defining-a-custom-polling-interval
     title: Defining a custom polling interval
 ---
+# OpenWeatherMap
 
 **OpenWeatherMap** integration 使用 [OpenWeatherMap](https://openweathermap.org/) 作为您所在位置的气象和空气质量数据来源。
 

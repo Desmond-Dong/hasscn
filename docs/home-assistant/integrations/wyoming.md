@@ -1,6 +1,6 @@
 ---
 title: Wyoming Protocol
-description: 将远程语音服务连接到 Home Assistant。
+description: 'Wyoming 集成使用一种轻量协议(https://github.com/rhasspy/rhasspy3/blob/master/docs/wyoming.md)将外部语音服务连接到 Home Assistant。这使得 Assist(/home-assistant/voicecontrol/)。'
 ha_category:
   - Voice
 ha_iot_class: Local Push
@@ -22,6 +22,7 @@ ha_platforms:
 ha_config_flow: true
 ha_zeroconf: true
 ---
+# Wyoming Protocol
 
 **Wyoming** 集成使用一种[轻量协议](https://github.com/rhasspy/rhasspy3/blob/master/docs/wyoming.md)将外部语音服务连接到 Home Assistant。这使得 [Assist](/home-assistant/voice_control/) 可以使用多种本地的[语音转文本](/home-assistant/integrations/stt/)、[文本转语音](/home-assistant/integrations/tts/)和[唤醒词检测](/home-assistant/integrations/wake_word/)系统，例如：
 

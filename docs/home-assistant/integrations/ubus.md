@@ -1,6 +1,6 @@
 ---
 title: OpenWrt (ubus)
-description: 关于如何将 OpenWRT 路由器集成到 Home Assistant 的说明。
+description: 'This is a presence detection scanner for OpenWrt(https://openwrt.org/) using ubus(https://openwrt.org/docs/techref/ubus). It scans for changes in hostapd.。'
 ha_category:
   - Presence detection
 ha_release: 0.7.6
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# OpenWrt (ubus)
 
 This is a presence detection scanner for [OpenWrt](https://openwrt.org/) using [ubus](https://openwrt.org/docs/techref/ubus). It scans for changes in `hostapd.*`, which will detect and report changes in devices connected to the access point on the router.
 

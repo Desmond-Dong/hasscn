@@ -1,8 +1,7 @@
 ---
 title: 拆分配置
-description: 将 configuration.yaml 拆分为多个文件。
+description: '您使用 Home Assistant 已经有一段时间了，您的 configuration.yaml 文件已经大到让人看了想哭。或者，您只是想从一开始就采用分布式的方法。以下是如何将 configuration.yaml 拆分成更易于管理（即：人类可读）的部分。'
 ---
-
 您使用 Home Assistant 已经有一段时间了，您的 **`configuration.yaml`** 文件已经大到让人看了想哭。或者，您只是想从一开始就采用分布式的方法。以下是如何将 **`configuration.yaml`** 拆分成更易于管理（即：人类可读）的部分。
 
 ## 示例配置文件供参考

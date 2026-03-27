@@ -1,6 +1,6 @@
 ---
 title: Splunk
-description: 在 Splunk 中记录事件。
+description: 'Splunk(https://www.splunk.com/) is a data platform for searching, monitoring, and analyzing machine-generated data. The Splunk integration sends all Home。'
 ha_category:
   - History
 ha_iot_class: Local Push
@@ -17,6 +17,7 @@ ha_quality_scale: bronze
 ha_platforms:
   - diagnostics
 ---
+# Splunk
 
 [Splunk](https://www.splunk.com/) is a data platform for searching, monitoring, and analyzing machine-generated data. The **Splunk** integration sends all Home Assistant state changes to a Splunk instance using the [HTTP Event Collector (HEC)](https://docs.splunk.com/Documentation/Splunk/latest/Data/UsetheHTTPEventCollector) feature.
 

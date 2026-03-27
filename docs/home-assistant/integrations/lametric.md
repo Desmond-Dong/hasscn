@@ -1,6 +1,6 @@
 ---
 title: LaMetric
-description: 关于如何将 LaMetric TIME 与 Home Assistant 集成的说明。
+description: 'LaMetric TIME(https://lametric.com/) 是一款智能时钟，可用于访问应用、收听网络广播以及显示通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Button
   - Notifications
@@ -30,6 +30,7 @@ ha_config_flow: true
 ha_ssdp: true
 ha_dhcp: true
 ---
+# LaMetric
 
 [LaMetric TIME](https://lametric.com/) 是一款智能时钟，可用于访问应用、收听网络广播以及显示通知。
 

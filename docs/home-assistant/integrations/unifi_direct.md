@@ -1,6 +1,6 @@
 ---
 title: UniFi AP
-description: 关于如何将 UniFi WAP 用作设备跟踪器的说明。
+description: 'This integration allows you to detect presence by looking at devices connected to a UniFi AP(https://www.ui.com/products/unifi). This device tracker。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# UniFi AP
 
 This integration allows you to detect presence by looking at devices connected to a [UniFi AP](https://www.ui.com/products/#unifi). This device tracker differs from [Ubiquiti UniFi](/home-assistant/integrations/unifi) because it doesn't require the UniFi Network application.
 

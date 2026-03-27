@@ -1,7 +1,7 @@
 ---
 title: 组织
+description: 'Home Assistant 提供多种方式来组织您的智能家居设备和实体。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 组织
 
 Home Assistant 提供多种方式来组织您的智能家居设备和实体。

@@ -1,7 +1,8 @@
 ---
 title: Laundry 传感器 with NodeMCU and Home Assistant
-description: Nolan describes how he gets notified when laundry is done.
+description: 'This is a guest post by Home Assistant 用户 and contributor Nolan Gilley(https://github.com/nkgilley). 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Laundry 传感器 with NodeMCU and Home Assistant
 
 _This is a guest post by Home Assistant 用户 and contributor [Nolan Gilley](https://github.com/nkgilley)._
 

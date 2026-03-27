@@ -1,7 +1,8 @@
 ---
 title: ZWave 实体 IDs
-description: Information on the past and future of ZWave 实体 IDs.
+description: 'ZWave entityids have long been a source of frustration in Home Assistant. The first problem we faced was that depending on the order of node discovery。'
 ---
+# ZWave 实体 IDs
 
 ZWave entity_ids have long been a source of frustration in Home Assistant. The first problem we faced was that depending on the order of node discovery, entity_ids could be discovered with different names on each run. To solve this we added the node id as a suffix to the entity_id. This ensured that entity_ids were generated deterministically on each run, but additional suffixes had to be added to handle edge cases where there would otherwise be a conflict. The resulting entity_ids worked, but have been difficult to work with and makes ZWave a strange exception among other Home Assistant components.
 

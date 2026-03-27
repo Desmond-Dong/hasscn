@@ -1,6 +1,6 @@
 ---
 title: Browser
-description: 关于如何在 Home Assistant 中设置浏览器集成的说明。
+description: 'Browser 集成提供一个动作，用于在主机的默认浏览器中打开 URL。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Utility
 ha_release: pre 0.7
@@ -12,6 +12,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Browser
 
 **Browser** 集成提供一个动作，用于在主机的默认浏览器中打开 URL。
 

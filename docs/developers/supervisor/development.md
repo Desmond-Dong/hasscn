@@ -1,7 +1,9 @@
 ---
 title: "Supervisor 开发"
+description: '本文说明如何通过与开发中的或远程的 Supervisor 交互，来开发 Supervisor、Supervisor 前端面板以及 hassio 集成。本文默认你使用一台开发机器进行开发，也会用到 devcontainer 和其他依赖 Docker 的工具。'
 sidebar_label: "开发"
 ---
+# Supervisor 开发
 
 本文说明如何通过与开发中的或远程的 Supervisor 交互，来开发 Supervisor、Supervisor 前端面板以及 `hassio` 集成。本文默认你使用一台开发机器进行开发，也会用到 devcontainer 和其他依赖 Docker 的工具。请先按照我们的[devcontainer 开发环境](/developers/setup_devcontainer_environment)指南准备好合适的开发环境。
 

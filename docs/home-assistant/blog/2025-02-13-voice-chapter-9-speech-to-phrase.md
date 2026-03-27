@@ -1,8 +1,9 @@
 ---
 title: Speech-to-Phrase 把语音真正带回家中 - Voice 第 9 章
-description: 这个新工具为低端硬件带来了快速、本地的语音处理能力，
+description: '<lite-youtube videoid="k6VvzDSI8RU" videotitle="Voice Chapter 9 - Speech-to-Phrase"</lite-youtube。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
   同时也带来一些实用的新语音和 AI 功能
 ---
+# Speech-to-Phrase 把语音真正带回家中 - Voice 第 9 章
 
 <lite-youtube videoid="k6VvzDSI8RU" videotitle="Voice Chapter 9 - Speech-to-Phrase"></lite-youtube>
 

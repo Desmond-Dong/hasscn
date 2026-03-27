@@ -1,6 +1,6 @@
 ---
 title: Mycroft
-description: 关于如何在 Home Assistant 中设置 Mycroft AI 的说明。
+description: 'Mycroft(https://mycroft.ai) 是一款开源语音助手，可让您从 Home Assistant 向 Mycroft 发送通知等内容。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Notifications
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Mycroft
 
 [Mycroft](https://mycroft.ai) 是一款开源语音助手，可让您从 Home Assistant 向 Mycroft 发送通知等内容。
 

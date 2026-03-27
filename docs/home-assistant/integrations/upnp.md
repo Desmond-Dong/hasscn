@@ -1,6 +1,6 @@
 ---
 title: UPnP/IGD
-description: 关于如何将 UPnP/IGD 发现协议集成到 Home Assistant 的说明。
+description: 'UPnP/IGD 集成允许您从路由器收集网络统计信息，例如入站/出站字节数、入站/出站数据包数、运行时间、WAN IP 地址以及 WAN 连接状态。如果您的路由器启用了 UPnP(https://en.wikipedia.org/wiki/UniversalPlugandPlay)/Internet。'
 ha_category:
   - Binary sensor
   - Network
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# UPnP/IGD
 
 **UPnP/IGD** 集成允许您从路由器收集网络统计信息，例如入站/出站字节数、入站/出站数据包数、运行时间、WAN IP 地址以及 WAN 连接状态。如果您的路由器启用了 [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play)/[Internet Gateway Device (IGD) Protocol](https://en.wikipedia.org/wiki/Internet_Gateway_Device_Protocol)，即可提供这些信息。
 

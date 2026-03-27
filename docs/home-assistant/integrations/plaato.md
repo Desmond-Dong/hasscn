@@ -1,6 +1,6 @@
 ---
 title: Plaato
-description: 有关如何在 Home Assistant 中集成 Plaato Airlock 和 Keg 传感器的说明。
+description: '此集成可将 Plaato(https://www.plaato.io/) Airlock 和 Keg 接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.95
 ha_category:
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Plaato
 
 此集成可将 [Plaato](https://www.plaato.io/) Airlock 和 Keg 接入 Home Assistant。
 

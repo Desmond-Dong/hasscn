@@ -1,6 +1,6 @@
 ---
 title: Google Cast
-description: 关于如何将 Google Cast 集成到 Home Assistant 的说明。
+description: '此集成可通过 UI 配置。前往 设置 设备与服务 添加。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 featured: true
@@ -15,7 +15,7 @@ ha_platforms:
   - media_player
 ha_integration_type: hub
 ---
-
+# Google Cast
 
 :::note 配置
 此集成可通过 UI 配置。前往 **设置 > 设备与服务** 添加。

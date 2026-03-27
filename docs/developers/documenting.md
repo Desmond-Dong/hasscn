@@ -1,6 +1,8 @@
 ---
 title: "参与文档贡献"
+description: '用户文档位于 https://www.home-assistant.io(https://www.home-assistant.io)。 本节补充说明如何创建或修改文档内容。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 参与文档贡献
 
 用户文档位于 [https://www.home-assistant.io](https://www.home-assistant.io)。
 本节补充说明如何创建或修改文档内容。

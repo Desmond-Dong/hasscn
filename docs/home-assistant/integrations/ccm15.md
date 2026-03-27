@@ -1,6 +1,6 @@
 ---
 title: Midea ccm15 AC Controller
-description: 关于如何将 Midea CCM15 模块集成到 Home Assistant 的说明。
+description: 'CCM15 集成允许您将 Midea CCM15(https://mbt.midea.com/hvac-goods/midea-products-category/vrfs/vrf-controller/central-controller-ccm-15) 设备集成到 Home Assistant 中。'
 ha_category:
   - Climate
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ ha_platforms:
   - diagnostics
 ha_integration_type: hub
 ---
+# Midea ccm15 AC Controller
 
 **CCM15** 集成允许您将 [Midea CCM15](https://mbt.midea.com/hvac-goods/midea-products-category/vrfs/vrf-controller/central-controller-ccm-15) 设备集成到 Home Assistant 中。
 

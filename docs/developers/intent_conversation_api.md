@@ -1,7 +1,9 @@
 ---
 title: "对话 API"
+description: '可以通过对话集成(https://www.home-assistant.io/integrations/conversation/)从文本中识别意图并触发它们。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "对话 API"
 ---
+# 对话 API
 
 可以通过[对话集成](https://www.home-assistant.io/integrations/conversation/)从文本中识别意图并触发它们。
 

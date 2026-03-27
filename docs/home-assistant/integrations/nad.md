@@ -1,6 +1,6 @@
 ---
 title: NAD
-description: "有关如何将 NAD 接收器集成到 Home Assistant 的说明。"
+description: 'The NAD integration allows you to control an NAD receiver(https://nadelectronics.com/) through RS232, TCP and Telnet from Home Assistant. 本页属于 Home。'
 
 ha_category:
   - Media player
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# NAD
 
 The **NAD** integration allows you to control an [NAD receiver](https://nadelectronics.com/) through RS232, TCP and Telnet from Home Assistant.
 

@@ -1,6 +1,6 @@
 ---
 title: Watts Vision +
-description: 关于如何在 Home Assistant 中设置 Watts Vision + 智能供暖系统的说明。
+description: 'The Watts Vision + integration enables seamless control of your heating zones directly from Home Assistant. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Climate
   - Switch
@@ -19,6 +19,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: platinum
 ---
+# Watts Vision +
 
 The **Watts Vision +** integration enables seamless control of your heating zones directly from Home Assistant.
 

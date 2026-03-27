@@ -1,6 +1,8 @@
 ---
 title: "验证输入"
+description: 'configuration.yaml 文件包含组件和平台的配置项。我们使用 voluptuous(https://pypi.python.org/pypi/voluptuous) 来确保用户提供的配置有效。有些条目是可选的，有些则是平台或组件运行所必需的。其他值还必须符合预定义类型，或来自预定义列表。'
 ---
+# 验证输入
 
 `configuration.yaml` 文件包含组件和平台的配置项。我们使用 [voluptuous](https://pypi.python.org/pypi/voluptuous) 来确保用户提供的配置有效。有些条目是可选的，有些则是平台或组件运行所必需的。其他值还必须符合预定义类型，或来自预定义列表。
 

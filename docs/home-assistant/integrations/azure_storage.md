@@ -1,6 +1,6 @@
 ---
 title: Azure Storage
-description: 关于如何设置 Azure 存储账户以用于备份的说明。
+description: '此集成允许您使用 Azure 存储账户(https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview) 与 Home Assistant 备份一起使用。 本页属于 Home Assistant 中文文档。'
 ha_release: 2025.3
 ha_category:
   - Backup
@@ -12,6 +12,7 @@ ha_codeowners:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# Azure Storage
 
 此集成允许您使用 [Azure 存储账户](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview) 与 Home Assistant 备份一起使用。
 

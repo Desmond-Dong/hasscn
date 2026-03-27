@@ -1,7 +1,8 @@
 ---
 title: ESP8266 与 MicroPython - 第 2 部分
-description: 在基于 ESP8266 的设备和 Home Assistant 中使用 MicroPython 与 MQTT。
+description: '<img src=''/home-assistant/images/blog/2016-07-micropython/micropython.png'' style=''clear: right; border:none; box-shadow: none; float: right。'
 ---
+# ESP8266 与 MicroPython - 第 2 部分
 
 <img src='/home-assistant/images/blog/2016-07-micropython/micropython.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='200' />
 那么，[ESP8266 与 MicroPython](/home-assistant/blog/2016/07/28/esp8266-and-micropython-part1/) 的第 1 部分是不是有点不过瘾？这次我们更进一步：不再只是从 Home Assistant 取数据，而是创建我们自己的传感器，把它的状态详情主动发送到 Home Assistant 实例。

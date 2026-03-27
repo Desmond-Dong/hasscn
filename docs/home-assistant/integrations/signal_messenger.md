@@ -1,6 +1,6 @@
 ---
 title: Signal Messenger
-description: 有关如何将 Signal Messenger 集成到 Home Assistant 中的说明。
+description: 'Signal Messenger 集成使用 Signal Messenger REST API(https://github.com/bbernhard/signal-cli-rest-api)，将 Home Assistant 的通知发送到您的 Android 或 iOS 设备。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Signal Messenger
 
 **Signal Messenger** 集成使用 [Signal Messenger REST API](https://github.com/bbernhard/signal-cli-rest-api)，将 Home Assistant 的通知发送到您的 Android 或 iOS 设备。
 

@@ -1,6 +1,6 @@
 ---
 title: Joaoapps Join
-description: 关于如何在 Home Assistant 中集成 Joaoapps 的 Join 服务的说明。
+description: 'Joaoapps Join 集成公开了来自 Join(https://joaoapps.com/join) 的操作。在 Home Assistant 中，Joaoapps Join 的功能分为两个部分：Join 集成，以及 Joaoapps Join 通知平台。'
 ha_category:
   - Hub
   - Notifications
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Joaoapps Join
 
 **Joaoapps Join** 集成公开了来自 [Join](https://joaoapps.com/join) 的操作。在 Home Assistant 中，Joaoapps Join 的功能分为两个部分：Join 集成，以及 Joaoapps Join 通知平台。通知平台允许您向 Joaoapps Join 设备发送消息，而集成则让您访问 Joaoapps Join 提供的其他特殊功能。如有疑问，可以参考其所基于的 [API 文档](https://joaoapps.com/join/api/)。
 

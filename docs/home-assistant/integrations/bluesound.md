@@ -1,6 +1,6 @@
 ---
 title: Bluesound
-description: 关于如何将 Bluesound 设备集成到 Home Assistant 的说明。
+description: 'Bluesound 集成允许您从 Home Assistant 控制 Bluesound(https://www.bluesound.com/) HiFi 无线扬声器和音频集成设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.51
@@ -19,6 +19,7 @@ related:
 ha_config_flow: true
 ha_zeroconf: true
 ---
+# Bluesound
 
 **Bluesound** 集成允许您从 Home Assistant 控制 [Bluesound](https://www.bluesound.com/) HiFi 无线扬声器和音频集成设备。
 

@@ -1,6 +1,6 @@
 ---
 title: Proxmox VE
-description: 在 Home Assistant 中访问您的 ProxmoxVE 实例。
+description: 'Proxmox VE(https://www.proxmox.com/en/) 是一个开源服务器虚拟化环境。此集成可让你在 Home Assistant 中监控 Proxmox VE 节点、虚拟机和容器，并公开控制操作（前提是你的 Proxmox 权限允许）。'
 ha_category:
   - Binary sensor
   - Button
@@ -24,6 +24,7 @@ related:
 ha_quality_scale: legacy
 ha_config_flow: true
 ---
+# Proxmox VE
 
 [Proxmox VE](https://www.proxmox.com/en/) 是一个开源服务器虚拟化环境。此集成可让你在 Home Assistant 中监控 Proxmox VE 节点、虚拟机和容器，并公开控制操作（前提是你的 Proxmox 权限允许）。
 

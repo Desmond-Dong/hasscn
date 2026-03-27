@@ -1,6 +1,6 @@
 ---
 title: MessageBird
-description: 关于如何将 MessageBird 通知添加到 Home Assistant 的说明。
+description: 'The MessageBird integration sends notifications as SMS messages using MessageBird(https://www.messagebird.com/) to your mobile phone. 本页属于 Home Assistant。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# MessageBird
 
 The **MessageBird** integration sends notifications as SMS messages using [MessageBird](https://www.messagebird.com/) to your mobile phone.
 

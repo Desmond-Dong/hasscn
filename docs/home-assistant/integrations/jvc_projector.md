@@ -1,6 +1,6 @@
 ---
 title: JVC Projector
-description: 关于如何将 JVC 投影仪集成到 Home Assistant 的说明。
+description: 'The JVC Projector integration allows for the automation of JVC Projectors(https://www.jvc.com/usa/projectors/). 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Remote
 ha_release: '2023.6'
@@ -18,6 +18,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# JVC Projector
 
 The **JVC Projector** integration allows for the automation of [JVC Projectors](https://www.jvc.com/usa/projectors/).
 

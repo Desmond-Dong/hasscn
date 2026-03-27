@@ -1,6 +1,6 @@
 ---
 title: Pentair ScreenLogic
-description: 有关如何在 Home Assistant 中集成 ScreenLogic 网关的说明。
+description: 'Pentair ScreenLogic 集成允许您通过 Pentair ScreenLogic(https://www.pentair.com/products/residential/pool-spa-equipment/pool-automation/screenlogic2interfaceforint。'
 ha_release: '2021.4'
 ha_category:
   - Binary sensor
@@ -25,6 +25,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Pentair ScreenLogic
 
 **Pentair ScreenLogic** 集成允许您通过 [Pentair ScreenLogic](https://www.pentair.com/products/residential/pool-spa-equipment/pool-automation/screenlogic2_interfaceforintellitouchandeasytouchautomationsystems.html) 网关，将 Pentair IntelliTouch 或 EasyTouch 泳池控制器接入 Home Assistant。
 

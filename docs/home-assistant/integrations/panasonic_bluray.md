@@ -1,6 +1,6 @@
 ---
 title: Panasonic Blu-Ray Player
-description: 有关如何将松下蓝光播放器集成到家庭助理中的说明。
+description: 'Panasonic Blu-Ray Player 集成可让您控制松下蓝光播放器。请注意，设备必须与 Home Assistant 位于同一子网中；如果从不同子网建立连接，将会返回错误。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Panasonic Blu-Ray Player
 
 **Panasonic Blu-Ray Player** 集成可让您控制松下蓝光播放器。请注意，设备必须与 Home Assistant 位于同一子网中；如果从不同子网建立连接，将会返回错误。
 

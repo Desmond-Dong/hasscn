@@ -1,6 +1,6 @@
 ---
 title: Environment Canada
-description: 来自加拿大环境部的天气数据。
+description: 'Environment Canada 集成可为加拿大地区位置提供来自 Environment and Climate Change Canada(https://weather.gc.ca/indexe.html) 的气象数据。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Camera
   - Sensor
@@ -19,6 +19,7 @@ ha_domain: environment_canada
 ha_config_flow: true
 ha_integration_type: service
 ---
+# Environment Canada
 
 **Environment Canada** 集成可为加拿大地区位置提供来自 [Environment and Climate Change Canada](https://weather.gc.ca/index_e.html) 的气象数据。
 

@@ -1,6 +1,6 @@
 ---
 title: SleepIQ
-description: 有关如何将 SleepIQ 床集成到 Home Assistant 中的说明。
+description: 'The SleepIQ integration lets you integrate your SleepNumber Bed via SleepIQ by SleepNumber(https://www.sleepnumber.com/pages/sleepiq-sleep-tracker). 本页属于。'
 ha_category:
   - Binary sensor
   - Button
@@ -28,6 +28,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# SleepIQ
 
 The **SleepIQ** integration lets you integrate your SleepNumber Bed via [SleepIQ by SleepNumber](https://www.sleepnumber.com/pages/sleepiq-sleep-tracker).
 

@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 亮相 PyCon US 2017
-description: 我们的许多开发者和用户都会参加 PyCon US 2017。
+description: '再过 12 个小时，PyCon US 2017 就要开幕了。这场大会很令人期待，因为会有很多 Home Assistant 的开发者和用户到场，终于可以线下见面。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Home Assistant 亮相 PyCon US 2017
 
 再过 12 个小时，PyCon US 2017 就要开幕了。这场大会很令人期待，因为会有很多 Home Assistant 的开发者和用户到场，终于可以线下见面。
 

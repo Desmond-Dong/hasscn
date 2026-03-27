@@ -1,7 +1,9 @@
 ---
 title: 概览卡片
-description: 概览卡片用于将多个传感器分组显示在紧凑的概览中。
+description: '概览卡片用于将多个传感器分组显示在紧凑的概览中。请注意，它可以与实体过滤器卡片(/home-assistant/dashboards/entity-filter/)一起使用来创建动态卡片。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 概览卡片
+
 概览卡片用于将多个传感器分组显示在紧凑的概览中。请注意，它可以与[实体过滤器卡片](/home-assistant/dashboards/entity-filter/)一起使用来创建动态卡片。
 
 <p class='img'>

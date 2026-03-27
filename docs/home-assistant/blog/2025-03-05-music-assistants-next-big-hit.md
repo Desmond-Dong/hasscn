@@ -1,8 +1,9 @@
 ---
 title: Music Assistant 的下一首大热单曲
-description: Spotify Connect、Assist 流式播放、播客、有声书、Apple Music、
+description: '<p<img src=''/home-assistant/images/blog/2025-03-music-assistant/art.jpg'' alt="Music Assistants next big hit" class=''no-shadow'' /</p。'
   完整均衡器，还有更多！
 ---
+# Music Assistant 的下一首大热单曲
 
 <p><img src='/home-assistant/images/blog/2025-03-music-assistant/art.jpg' alt="Music Assistants next big hit" class='no-shadow' /></p>
 

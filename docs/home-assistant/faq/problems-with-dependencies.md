@@ -1,7 +1,8 @@
 ---
 title: 依赖项问题
-description: 依赖项问题
+description: '几乎所有集成都需要外部依赖项来与您的设备和服务通信。有时 Home Assistant 无法安装所需的依赖项。如果出现这种情况，您应该能在日志(/home-assistant/integrations/logger/viewing-logs)中看到相关信息。'
 ---
+# 依赖项问题
 
 几乎所有集成都需要外部依赖项来与您的设备和服务通信。有时 Home Assistant 无法安装所需的依赖项。如果出现这种情况，您应该能在[日志](/home-assistant/integrations/logger/#viewing-logs)中看到相关信息。
 

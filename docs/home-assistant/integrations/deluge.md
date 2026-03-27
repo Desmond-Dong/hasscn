@@ -1,6 +1,6 @@
 ---
 title: Deluge
-description: 关于如何在 Home Assistant 中集成 Deluge 的说明。
+description: 'Home Assistant 目前支持以下设备类型：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Downloading
   - Sensor
@@ -16,6 +16,7 @@ ha_codeowners:
   - '@tkdrob'
 ha_integration_type: service
 ---
+# Deluge
 
 Home Assistant 目前支持以下设备类型：
 

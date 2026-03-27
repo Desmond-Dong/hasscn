@@ -1,6 +1,6 @@
 ---
 title: APC UPS Daemon
-description: 关于如何将 apcupsd 状态集成到 Home Assistant 的说明。
+description: 'APC UPS Daemon 集成用于在 APC 设备上配置网络信息服务器（apcupsd(http://www.apcupsd.org/)）时与 APC(www.apc.com) 的 UPS 设备集成。使用案例：当在 Home Assistant 中设置通知集成时，您可以发送通知。'
 ha_category:
   - Binary sensor
   - Sensor
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
+# APC UPS Daemon
 
 **APC UPS Daemon** 集成用于在 APC 设备上配置网络信息服务器（[apcupsd](http://www.apcupsd.org/)）时与 [APC](www.apc.com) 的 UPS 设备集成。使用案例：当在 Home Assistant 中设置通知集成时，您可以发送通知。例如，当 UPS 切换到电池供电时，或当电池电量下降时。您还可以使用它来跟踪 UPS 负载。
 

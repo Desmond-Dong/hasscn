@@ -1,6 +1,6 @@
 ---
 title: Dacia
-description: 使用 Renault 集成连接和控制您的 Dacia 设备
+description: '此集成由 Renault(/home-assistant/integrations/renault/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Car
@@ -24,6 +24,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Cloud Polling
 ---
+# Dacia
 
 :::note
 此集成由 [Renault](/home-assistant/integrations/renault/) 集成支持。

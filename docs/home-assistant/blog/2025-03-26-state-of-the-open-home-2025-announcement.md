@@ -1,7 +1,8 @@
 ---
 title: 宣布举办 2025 年 State of the Open Home
-description: 4 月 12 日将带来又一场充满激动人心更新和公告的大型直播。
+description: '<lite-youtube videoid="o4Vctz1KYE" videotitle="状态 of the Open Home 2025"</lite-youtube。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 宣布举办 2025 年 State of the Open Home
 
 <lite-youtube videoid="o4Vctz1_KYE" videotitle="状态 of the Open Home 2025"></lite-youtube>
 

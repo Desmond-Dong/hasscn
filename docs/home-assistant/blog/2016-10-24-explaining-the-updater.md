@@ -1,7 +1,8 @@
 ---
 title: 解释一下 Updater
-description: 关于近期 updater 组件改动的说明
+description: '上周六我们发布了 Home Assistant 0.310.31，其中包含了改进后的 updater 组件，它会通过 Home Assistant 服务器检查新版本。我们希望向社区同步这次上线情况，并回答一些已经出现的问题。作为更新检查的一部分，除非你选择退出。'
 ---
+# 解释一下 Updater
 
 上周六我们发布了 [Home Assistant 0.31][0.31]，其中包含了改进后的 updater 组件，它会通过 Home Assistant 服务器检查新版本。我们希望向社区同步这次上线情况，并回答一些已经出现的问题。作为更新检查的一部分，除非你选择退出，否则系统会向 Home Assistant 服务器提交匿名的操作系统与 Python 版本信息。
 

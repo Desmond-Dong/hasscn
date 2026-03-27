@@ -1,7 +1,7 @@
 ---
+description: '版本修改作者：Alone(https://anlo.ng/)，如果你已经是Home Assistant OS 极速版则无需重复安装，已内置。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 layout: doc
 ---
-
 # 🏠 HACS 极速版 [![stars](https://img.shields.io/github/stars/hacs-china/integration)](https://github.com/hacs-china/integration/stargazers)
 :::info 版权
 版本修改作者：[Alone](https://anlo.ng/)，如果你已经是`Home Assistant OS 极速版`则无需重复安装，已内置

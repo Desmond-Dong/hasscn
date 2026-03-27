@@ -1,6 +1,6 @@
 ---
 title: Powerfox Cloud
-description: "有关如何将 Powerfox Cloud 集成到 Home Assistant 中的说明。"
+description: 'The Powerfox Cloud integration allows you to gather data from your Poweropti(https://shop.powerfox.energy/collections/frontpage) devices。'
 
 ha_category:
   - Energy
@@ -18,6 +18,7 @@ ha_integration_type: hub
 ha_quality_scale: silver
 ha_zeroconf: true
 ---
+# Powerfox Cloud
 
 The **Powerfox Cloud** integration allows you to gather data from your [Poweropti](https://shop.powerfox.energy/collections/frontpage) devices, by using their cloud API and fetching the data in Home Assistant.
 

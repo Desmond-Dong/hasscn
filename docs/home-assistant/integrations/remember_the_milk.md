@@ -1,6 +1,6 @@
 ---
 title: Remember The Milk
-description: 有关如何通过 Home Assistant 使用 Remember The Milk 的说明。
+description: 'Remember The Milk 集成允许您从 Home Assistant 在 Remember The Milk (RTM)(https://www.rememberthemilk.com) 中创建任务。如果您希望 Home Assistant 发送一些不该忘记的待办事项，例如给植物浇水。'
 ha_category:
   - Calendar
 ha_iot_class: Cloud Push
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Remember The Milk
 
 **Remember The Milk** 集成允许您从 Home Assistant 在 [Remember The Milk (RTM)](https://www.rememberthemilk.com) 中创建任务。如果您希望 Home Assistant 发送一些不该忘记的待办事项，例如给植物浇水，就可以使用此集成。该集成允许您同时使用多个 RTM 账户。
 

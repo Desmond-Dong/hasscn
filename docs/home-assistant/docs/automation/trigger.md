@@ -1,10 +1,11 @@
 ---
 title: "Automation Trigger"
-description: "All the different ways how automations can be triggered."
+description: '触发器决定了 automation 规则何时开始处理。当自动化中任意一个触发器满足条件时（触发器触发），Home Assistant 会先验证是否有条件(/home-assistant/docs/automation/condition/)，然后调用动作(/home-assistant/docs/automa。'
 related:
   - docs: /voice_control/custom_sentences/#adding-a-custom-sentence-to-trigger-an-automation
     title: Adding a custom sentence to trigger an automation
 ---
+# Automation Trigger
 
 触发器决定了 automation 规则何时开始处理。当自动化中_任意_一个触发器满足条件时（触发器_触发_），Home Assistant 会先验证是否有[条件](/home-assistant/docs/automation/condition/)，然后调用[动作](/home-assistant/docs/automation/action/)。
 

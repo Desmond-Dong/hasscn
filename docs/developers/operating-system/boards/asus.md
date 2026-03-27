@@ -1,7 +1,9 @@
 ---
 title: "Asus Tinker Board"
+description: '同一镜像即可支持 eMMC。只需通过 Micro-USB 将 Tinker Board S 连接到你的 PC，并将镜像刷写到 eMMC。请参阅 Tinkerboard 文档，了解如何使用 Micro-USB 和 UMS 进行刷写。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: Asus Tinker Board
 ---
+# Asus Tinker Board
 
 ## 支持的硬件
 

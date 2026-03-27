@@ -2,6 +2,7 @@
 title: Home Assistant Yellow
 description: Join our crowdfunding campaign for the easiest way to run Home Assistant.
 ---
+# Home Assistant Yellow
 
 <a href="https://www.crowdsupply.com/nabu-casa/home-assistant-yellow"><img src='/home-assistant/images/blog/2021-09-home-assistant-yellow/overview.png'></a>
 

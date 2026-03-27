@@ -1,6 +1,6 @@
 ---
 title: Xiaomi BLE
-description: 关于如何将小米 BLE 设备集成到 Home Assistant 的说明。
+description: '此集成可接入使用 Xiaomi Mijia BLE MiBeacon 协议的设备，以及 MiScales 和 MiFora 植物传感器所实现的 BLE 协议。此集成不支持 Xiaomi BLE Mesh 设备。它会监听设备自行发出的蓝牙广播，因此无需通过轮询唤醒设备。'
 ha_category:
   - Binary sensor
   - Event
@@ -19,6 +19,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Xiaomi BLE
 
 此集成可接入使用 Xiaomi Mijia BLE MiBeacon 协议的设备，以及 MiScales 和 MiFora 植物传感器所实现的 BLE 协议。此集成不支持 Xiaomi BLE Mesh 设备。它会监听设备自行发出的蓝牙广播，因此无需通过轮询唤醒设备，就能跟踪最新的传感器数值或事件（`HHCCJCY01` 除外，见下方说明）。这种方式有助于延长电池寿命。
 

@@ -1,7 +1,8 @@
 ---
 title: 连接检查
-description: 关于禁用 Network Manager 的连接检查为何将安装标记为不支持的更多信息。
+description: 'Home Assistant 需要知道何时有稳定的网络连接，以便禁用需要该连接的功能。没有此检查，由于连接超时，您将面临更多的错误和性能问题。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 连接检查
 
 ## 问题
 

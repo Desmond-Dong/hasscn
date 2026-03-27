@@ -1,6 +1,6 @@
 ---
 title: Scrape
-description: 有关如何将网络抓取传感器集成到 Home Assistant 中的说明。
+description: 'The Scrape sensor integration scrapes information from websites. The sensor loads an HTML page, and allows you to search and extract specific values. As。'
 ha_category:
   - Sensor
 ha_release: 0.31
@@ -17,6 +17,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Scrape
 
 The **Scrape** sensor integration scrapes information from websites. The sensor loads an HTML page, and allows you to search and extract specific values. As this is not a fully featured web scraper like [scrapy](https://scrapy.org/), it will work with simple web pages and it can be time-consuming to get the right section.
 

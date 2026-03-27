@@ -1,6 +1,6 @@
 ---
 title: Sony Songpal
-description: 有关如何将 Sony Songpal 设备集成到 Home Assistant 的说明。
+description: 'The Sony Songpal integration allows you to control Sony''s Songpal ("Audio Control API(https://developer.sony.com/develop/audio-control-api/)") compatible。'
 ha_category:
   - Media player
 ha_iot_class: Local Push
@@ -15,6 +15,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# Sony Songpal
 
 The **Sony Songpal** integration allows you to control Sony's Songpal ("[Audio Control API](https://developer.sony.com/develop/audio-control-api/)") compatible devices such as soundbars, AV receivers and wireless speakers from Home Assistant.
 

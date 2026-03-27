@@ -1,6 +1,6 @@
 ---
 title: 标签
-description: 有关如何开始使用 Home Assistant 中的标签的说明
+description: '<p class=''img'' <img src="/home-assistant/images/blog/2020-09-15-home-assistant-tags/tag-reader.jpg" alt="Tag Reader for Home Assistant" <a。'
 ha_category:
   - Automation
 ha_release: 0.115
@@ -10,6 +10,7 @@ ha_domain: tag
 ha_quality_scale: internal
 ha_integration_type: entity
 ---
+# 标签
 
 <p class='img'>
 <img src="/home-assistant/images/blog/2020-09-15-home-assistant-tags/tag-reader.jpg" alt="Tag Reader for Home Assistant">

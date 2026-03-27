@@ -1,6 +1,6 @@
 ---
 title: Dormakaba dKey
-description: 关于如何将 Dormakaba dKey 门锁集成到 Home Assistant 的说明。
+description: '将通过蓝牙低功耗连接的 Dormakaba dKey 门锁集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Lock
 ha_bluetooth: true
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Dormakaba dKey
 
 将通过蓝牙低功耗连接的 Dormakaba dKey 门锁集成到 Home Assistant 中。
 

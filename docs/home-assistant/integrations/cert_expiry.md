@@ -1,6 +1,6 @@
 ---
 title: Certificate Expiry
-description: 关于如何在 Home Assistant 中设置 HTTPS (SSL) 证书过期传感器的说明。
+description: 'Certificate Expiry 集成从配置的主机获取证书，并在时间戳传感器中显示其过期时间。 传感器每 12 小时检查并更新配置主机的证书信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_release: 0.44
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Certificate Expiry
 
 **Certificate Expiry** 集成从配置的主机获取证书，并在时间戳传感器中显示其过期时间。
 传感器每 12 小时检查并更新配置主机的证书信息。

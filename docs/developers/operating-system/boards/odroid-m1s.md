@@ -1,7 +1,9 @@
 ---
 title: "Hardkernel ODROID-M1S"
+description: 'Home Assistant OS 12 及更高版本支持 ODROID-M1S 开发板。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: ODROID-M1S
 ---
+# Hardkernel ODROID-M1S
 
 Home Assistant OS 12 及更高版本支持 ODROID-M1S 开发板。
 

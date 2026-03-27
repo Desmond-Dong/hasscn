@@ -1,8 +1,7 @@
 ---
 title: 移动设备通用信息
-description: 与所有移动设备相关的信息
+description: '当通过支持 <a href="https://caniuse.com/?search=mediasession" target="blank" rel="noopener noreferrer"mediasession API</a 的浏览器访问 Music Assistant UI 时。'
 ---
-
 # 移动设备
 
 ## 通知屏幕支持

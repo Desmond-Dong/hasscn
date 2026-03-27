@@ -1,6 +1,6 @@
 ---
 title: Gitter
-description: 关于如何将 Gitter 聊天室传感器与 Home Assistant 集成的说明
+description: 'Gitter 集成可让您监控 Gitter.im(https://gitter.im) 聊天室中的未读消息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Gitter
 
 **Gitter** 集成可让您监控 [Gitter.im](https://gitter.im) 聊天室中的未读消息。
 

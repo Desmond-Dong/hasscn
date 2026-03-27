@@ -1,7 +1,7 @@
 ---
 title: "Radio Paradise"
+description: 'Music Assistant 支持 <a href="https://radioparadise.com/" target="blank" rel="noopener noreferrer"Radio Paradise</a，允许轻松将其电台添加到 Music Assistant。'
 ---
-
 # Radio Paradise 提供者 <img src="/assets/icons/radioparadise-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 <a href="https://radioparadise.com/" target="_blank" rel="noopener noreferrer">Radio Paradise</a>，允许轻松将其电台添加到 Music Assistant。由 <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a> 贡献和维护。

@@ -1,6 +1,6 @@
 ---
 title: LaCrosse
-description: 关于如何将从 Jeelink 接收的 LaCrosse 传感器数据集成到 Home Assistant 的说明。
+description: 'LaCrosse 集成使用来自 Jeelink(https://www.digitalsmarties.net/products/jeelink) USB 加密狗或此 Arduino sketch(https://svn.fhem.de/trac/browser/trunk/fhem/contrib/ardu。'
 ha_category:
   - DIY
 ha_release: 0.58
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# LaCrosse
 
 **LaCrosse** 集成使用来自 [Jeelink](https://www.digitalsmarties.net/products/jeelink) USB 加密狗或此 [Arduino sketch](https://svn.fhem.de/trac/browser/trunk/fhem/contrib/arduino/36_LaCrosse-LaCrosseITPlusReader.zip) 提供的数据。
 

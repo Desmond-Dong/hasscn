@@ -1,8 +1,9 @@
 ---
 title: HomeMatic/homematicIP 支持的新附加组件 - 需要采取行动
-description: 为了在未来进一步改进 HomeMatic 支持，我们将弃用当前的
+description: '如果你正在将 HomeMatic/homematicIP 智能家居产品与 Home Assistant 搭配使用，那么未来会变得更加明朗。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
   HomeMatic CCU 附加组件，改为推荐功能更完整的 RaspberryMatic CCU 附加组件。
 ---
+# HomeMatic/homematicIP 支持的新附加组件 - 需要采取行动
 
 如果你正在将 HomeMatic/homematicIP 智能家居产品与 Home Assistant 搭配使用，那么未来会变得更加明朗。
 

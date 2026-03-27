@@ -1,6 +1,6 @@
 ---
 title: SIA Alarm Systems
-description: 有关如何集成基于 SIA 的报警系统的说明。
+description: 'SIA Alarm Systems 集成为多个实现了 SIA 协议的报警系统提供支持，其中包括 Ajax Systems(https://ajax.systems/)。该协议是只监听的，因此不允许您打开或关闭报警系统；它只会更新状态以反映报警状态，并允许您根据该状态执行操作。'
 ha_category:
   - Alarm
 ha_release: 2021.6
@@ -14,6 +14,7 @@ ha_platforms:
   - binary_sensor
 ha_integration_type: hub
 ---
+# SIA Alarm Systems
 
 **SIA Alarm Systems** 集成为多个实现了 SIA 协议的报警系统提供支持，其中包括 [Ajax Systems](https://ajax.systems/)。该协议是只监听的，因此不允许您打开或关闭报警系统；它只会更新状态以反映报警状态，并允许您根据该状态执行操作，例如在报警触发时打开所有灯并拉开窗帘。底层软件包支持多种 SIA 变体，包括 DC-09、DC-04，以及有限的一部分 ADM-CID。如果您的报警系统使用 ADM-CID 标准但无法正常工作，请在[这里](https://github.com/eavanvalkenburg/pysiaalarm/issues/new)提交问题。
 

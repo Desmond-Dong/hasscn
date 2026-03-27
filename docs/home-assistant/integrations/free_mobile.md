@@ -1,6 +1,6 @@
 ---
 title: Free Mobile
-description: 关于如何将 Free Mobile SMS 通知添加到 Home Assistant 的说明。
+description: '免费移动集成使用法国移动运营商 Free Mobile(http://mobile.free.fr/) 将短信发送到您自己的手机。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: 0.11
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Free Mobile
 
 **免费移动**集成使用法国移动运营商 [Free Mobile](http://mobile.free.fr/) 将短信发送到您自己的手机。
 

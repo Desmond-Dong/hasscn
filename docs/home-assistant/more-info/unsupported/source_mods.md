@@ -1,7 +1,8 @@
 ---
 title: Supervisor 源修改
-description: 关于 supervisor 源修改为何将安装标记为不支持的更多信息。
+description: '我们无法支持未经测试且未经 Home Assistant 项目批准的源修改。 当然，您可以自行修改运行您的安装，但这将导致失去安装的官方支持状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Supervisor 源修改
 
 ## 问题
 

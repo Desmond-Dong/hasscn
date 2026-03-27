@@ -1,6 +1,6 @@
 ---
 title: Change device type of a switch
-description: 有关如何将任何家庭助理开关转换为其他开关的说明。
+description: 'Change device type of a switch 辅助集成可让您将任意 Home Assistant 开关转换为 Home Assistant 的 Light、Cover、Fan、Lock、Siren 或 Valve。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Cover
   - Fan
@@ -26,6 +26,7 @@ ha_platforms:
   - valve
 ha_integration_type: helper
 ---
+# Change device type of a switch
 
 **Change device type of a switch** 辅助集成可让您将任意 Home Assistant 开关转换为 Home Assistant 的 Light、Cover、Fan、Lock、Siren 或 Valve。
 

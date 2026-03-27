@@ -1,6 +1,6 @@
 ---
 title: Xeoma
-description: 关于如何在 Home Assistant 中集成来自 Xeoma 服务器的摄像头视频流的说明。
+description: 'Xeoma 集成可让您查看来自 Xeoma(https://felenasoft.com/xeoma) 视频监控服务器的视频流。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Camera
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Xeoma
 
 **Xeoma** 集成可让您查看来自 [Xeoma](https://felenasoft.com/xeoma) 视频监控服务器的视频流。
 

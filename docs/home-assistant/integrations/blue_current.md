@@ -1,6 +1,6 @@
 ---
 title: Blue Current
-description: 关于如何将 Blue Current 充电桩集成到 Home Assistant 的说明。
+description: 'Blue Current(https://www.bluecurrent.nl/) 是一家制造电动汽车充电器的荷兰公司。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Car
   - Sensor
@@ -19,6 +19,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Blue Current
 
 [Blue Current](https://www.bluecurrent.nl/) 是一家制造电动汽车充电器的荷兰公司。
 

@@ -1,6 +1,6 @@
 ---
 title: Date/Time
-description: 关于如何在 Home Assistant 中设置日期/时间实体的说明。
+description: 'Date/Time 集成用于控制和监控设备上的日期时间戳。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Date/Time
 ha_release: '2023.6'
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Date/Time
 
 **Date/Time** 集成用于控制和监控设备上的日期时间戳。
 

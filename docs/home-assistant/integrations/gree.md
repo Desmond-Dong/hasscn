@@ -1,6 +1,6 @@
 ---
 title: Gree Climate
-description: 关于如何在 Home Assistant 中集成格力智能设备的说明。
+description: 'Gree 集成允许您在 Home Assistant 中控制 Gree Smart HVAC(https://global.gree.com/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.117
@@ -14,6 +14,7 @@ ha_platforms:
   - switch
 ha_integration_type: integration
 ---
+# Gree Climate
 
 **Gree** 集成允许您在 Home Assistant 中控制 [Gree Smart HVAC](https://global.gree.com/)。
 

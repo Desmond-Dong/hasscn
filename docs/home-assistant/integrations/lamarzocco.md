@@ -1,6 +1,6 @@
 ---
 title: La Marzocco
-description: 关于如何将 La Marzocco 咖啡机与 Home Assistant 集成的说明。
+description: '此集成通过调用 La Marzocco 云 API 与 La Marzocco(https://lamarzocco.com/it/en/) 咖啡机交互。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2024.2
 ha_category:
   - Binary sensor
@@ -30,7 +30,6 @@ ha_codeowners:
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
-
 此集成通过调用 La Marzocco 云 API 与 [La Marzocco](https://lamarzocco.com/it/en/) 咖啡机交互。
 
 如果您的 Home Assistant 主机支持 [DHCP 发现](https://www.home-assistant.io/integrations/dhcp/)，您的咖啡机会被自动发现。否则，只要咖啡机处于 Home Assistant 主机的蓝牙范围内，且 [Bluetooth](/home-assistant/integrations/bluetooth) 集成已完整加载，也同样可以被发现。

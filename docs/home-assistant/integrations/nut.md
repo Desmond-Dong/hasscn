@@ -1,6 +1,6 @@
 ---
 title: Network UPS Tools (NUT)
-description: 关于如何在 Home Assistant 中设置 NUT 传感器的说明。
+description: 'Network UPS Tools (NUT) integration 允许您使用 NUT(https://networkupstools.org/) 服务器监控和管理不间断电源 (UPS) 电池备份、配电单元 (PDU) 或其他类似电力设备。它让您可以查看状态、接收重要事件通知。'
 ha_category:
   - Button
   - Switch
@@ -26,7 +26,7 @@ related:
     title: Network UPS Tools
 ha_quality_scale: platinum
 ---
-
+# Network UPS Tools (NUT)
 
 **Network UPS Tools (NUT)** integration 允许您使用 [NUT](https://networkupstools.org/) 服务器监控和管理不间断电源 (UPS) 电池备份、配电单元 (PDU) 或其他类似电力设备。它让您可以查看状态、接收重要事件通知，并作为一个或多个此类设备的设备动作执行命令。
 

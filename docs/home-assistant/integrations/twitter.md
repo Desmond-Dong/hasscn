@@ -1,6 +1,6 @@
 ---
 title: X
-description: 关于如何将 X 通知添加到 Home Assistant 的说明。
+description: 'X 集成使用 X(https://twitter.com) 从 Home Assistant 发送通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
 ha_release: 0.12
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# X
 
 **X** 集成使用 [X](https://twitter.com) 从 Home Assistant 发送通知。
 

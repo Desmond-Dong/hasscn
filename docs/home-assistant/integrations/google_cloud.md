@@ -1,6 +1,6 @@
 ---
 title: Google Cloud
-description: Google Cloud Platform 集成。
+description: 'Google Cloud 集成允许您使用 Google Cloud Platform(https://cloud.google.com/) API 并将其集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Speech-to-text
   - Text-to-speech
@@ -17,6 +17,7 @@ ha_platforms:
   - tts
 ha_integration_type: service
 ---
+# Google Cloud
 
 **Google Cloud** 集成允许您使用 [Google Cloud Platform](https://cloud.google.com/) API 并将其集成到 Home Assistant 中。
 

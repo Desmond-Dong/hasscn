@@ -1,6 +1,6 @@
 ---
 title: Honeywell Total Connect Comfort (Europe)
-description: 关于如何将 Honeywell Evohome/TCC 系统与 Home Assistant 集成的说明。
+description: 'Evohome 集成将 Home Assistant 与所有非美国 Honeywell Total Connect Comfort (TCC)(https://international.mytotalconnectcomfort.com/Account/Login) CH/DHW 系统链接，例如：。'
 ha_category:
   - Climate
   - Hub
@@ -19,6 +19,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Honeywell Total Connect Comfort (Europe)
 
 **Evohome** 集成将 Home Assistant 与所有_非美国_ [Honeywell Total Connect Comfort (TCC)](https://international.mytotalconnectcomfort.com/Account/Login) CH/DHW 系统链接，例如：
 

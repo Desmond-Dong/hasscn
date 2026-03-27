@@ -1,3 +1,6 @@
+---
+description: 'layout: doc。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
+---
 --- 
 layout: doc 
 ---
@@ -59,7 +62,7 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 
 :::note 终端界面可能会显示类似状态，这属于正常现象。
 
-![](./images/terminal.png)
+![terminal](./images/terminal.png)
 
 :::
 
@@ -116,7 +119,7 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 OTA service kindly sponsored by Coolkit: https://www.coolkit.cn/
 Official Website: https://www.hasscn.top
 ```
-![](./images/mirrow.png)
+![mirrow](./images/mirrow.png)
 - 并且看到的官方商店变成了这样全中文的
 > 点击下面这个按钮，进入到你的加载项商店
 

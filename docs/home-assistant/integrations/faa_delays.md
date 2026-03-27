@@ -1,6 +1,6 @@
 ---
 title: FAA Delays
-description: 关于如何在 Home Assistant 中使用 FAA 延误数据的说明
+description: 'FAA Delays 集成根据以下信息收集并显示有关美国机场延误的信息： FAA''s National Airspace System Status(https://nasstatus.faa.gov/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_release: 2021.3
@@ -13,6 +13,7 @@ ha_platforms:
   - binary_sensor
 ha_integration_type: service
 ---
+# FAA Delays
 
 **FAA Delays** 集成根据以下信息收集并显示有关美国机场延误的信息：
 [FAA's National Airspace System Status](https://nasstatus.faa.gov/)。

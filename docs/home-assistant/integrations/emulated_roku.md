@@ -1,6 +1,6 @@
 ---
 title: Emulated Roku
-description: 关于如何在 Home Assistant 中设置模拟 Roku 的说明。
+description: 'The Emulated Roku integration integrates an emulated Roku API into Home Assistant, so remotes such as Harmony and Android apps can connect to it through。'
 ha_category:
   - Hub
 ha_release: 0.86
@@ -12,6 +12,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Emulated Roku
 
 The **Emulated Roku** integration integrates an emulated Roku API into Home Assistant,
 so remotes such as Harmony and Android apps can connect to it through Wi-Fi as if it were a Roku player.

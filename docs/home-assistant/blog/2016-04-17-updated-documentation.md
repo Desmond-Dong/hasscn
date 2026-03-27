@@ -3,6 +3,7 @@ title: Updated documentation
 description: We have reorganized our documentation which should make it easier to
   get started and develop for Home Assistant.
 ---
+# Updated documentation
 
 One of the main complaints that we receive is something along the lines "I read that X is possible yet I am unable to find it on the website.". This post is to announce that we have taken the first steps to improve it by revamping the [入门] and [开发者] sections. It's still a work in progress but we now have a solid foundation to build on for the future 👍.
 

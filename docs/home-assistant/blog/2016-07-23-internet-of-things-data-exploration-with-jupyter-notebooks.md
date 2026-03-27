@@ -1,7 +1,8 @@
 ---
 title: 使用 Jupyter Notebooks 探索 IoT 数据
-description: 教你如何使用 Jupyter Notebooks、Pandas 和 Matplotlib 开始探索数据。
+description: '这是 Anton Kireyeu 的第一篇博客文章。他是 Home Assistant 的新贡献者，接下来会专注于 Home Assistant 数据的探索与可视化。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 使用 Jupyter Notebooks 探索 IoT 数据
 
 _这是 Anton Kireyeu 的第一篇博客文章。他是 Home Assistant 的新贡献者，接下来会专注于 Home Assistant 数据的探索与可视化。_
 

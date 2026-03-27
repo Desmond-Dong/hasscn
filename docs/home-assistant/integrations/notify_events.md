@@ -1,6 +1,6 @@
 ---
 title: Notify.Events
-description: "有关如何将 Notify.Events 服务与 Home Assistant 通知集成的说明。"
+description: 'The Notify.Events service(https://notify.events/) is an integration for the notify integration. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_release: 0.112
 ha_category:
@@ -18,6 +18,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Notify.Events
 
 ## Description
 

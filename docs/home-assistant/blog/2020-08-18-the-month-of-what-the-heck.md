@@ -2,6 +2,7 @@
 title: “What the Heck?!” 月（2020）
 description: 你是否也有过“Home Assistant 这是怎么回事？！”的时刻？这个月，我们想听听你的“what the heck?!”时刻。
 ---
+# “What the Heck?!” 月（2020）
 
 <a href='https://community.home-assistant.io/c/what-the-heck/52'><img src='/home-assistant/images/blog/2020-08-18-the-month-of-what-the-heck/social.png' style='border: 0;box-shadow: none;'></a>
 

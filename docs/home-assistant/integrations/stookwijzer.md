@@ -1,6 +1,6 @@
 ---
 title: Stookwijzer
-description: 有关如何在 Home Assistant 中使用 Stookwijzer 数据的说明
+description: 'Stookwijzer 集成会查询 Atlas Leefomgeving Stookwijzer(https://www.atlasleefomgeving.nl/stookwijzer) API，以获取风速和空气质量指数。基于这些数值，Stookwijzer 会建议人们不要焚烧木托盘或木材。'
 ha_category:
   - Environment
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Stookwijzer
 
 **Stookwijzer** 集成会查询 [Atlas Leefomgeving Stookwijzer](https://www.atlasleefomgeving.nl/stookwijzer) API，以获取风速和空气质量指数。基于这些数值，Stookwijzer 会建议人们不要焚烧木托盘或木材，也不要使用烧烤设备，从而帮助减少周边居民的健康风险。
 

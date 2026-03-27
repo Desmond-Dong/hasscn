@@ -1,6 +1,6 @@
 ---
 title: Onkyo
-description: 有关如何将 Onkyo 和某些先锋接收器集成到 Home Assistant 的说明。
+description: 'The Onkyo integration allows you to control Onkyo(https://www.onkyo.com) and Integra(http://www.integrahometheater.com) (from 2011 onward) and also。'
 ha_category:
   - Media player
 ha_codeowners:
@@ -17,7 +17,7 @@ ha_release: 0.17
 ha_ssdp: true
 ha_quality_scale: bronze
 ---
-
+# Onkyo
 
 The **Onkyo** integration allows you to control [Onkyo](https://www.onkyo.com) and [Integra](http://www.integrahometheater.com) (from 2011 onward) and also [Pioneer](https://www.pioneerelectronics.com) (from 2016 onward) receivers using Home Assistant.
 Please be aware that you need to enable "Network Standby" for this integration to work with your hardware.

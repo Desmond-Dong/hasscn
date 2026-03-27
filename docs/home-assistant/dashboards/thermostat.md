@@ -1,7 +1,9 @@
 ---
 title: 温控器卡片
-description: 温控器卡片可让您控制温控或热水器实体，允许您更改实体的温度和模式。
+description: '温控器卡片可让您控制温控(/home-assistant/integrations/climate)或热水器(/home-assistant/integrations/waterheater)实体，允许您更改实体的温度和模式。 本页属于 Home Assistant 中文文档。'
 ---
+# 温控器卡片
+
 温控器卡片可让您控制[温控](/home-assistant/integrations/#climate)或[热水器](/home-assistant/integrations/#water_heater)实体，允许您更改实体的温度和模式。
 
 <p class='img'>

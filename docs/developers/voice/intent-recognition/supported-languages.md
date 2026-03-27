@@ -1,6 +1,8 @@
 ---
 title: "支持的语言"
+description: 'import languages from ''!!yaml-loader!../../../intents/languages.yaml''; import intents from ''!!yaml-loader!../../../intents/intents.yaml''。'
 ---
+# 支持的语言
 
 import languages from '!!yaml-loader!../../../intents/languages.yaml';
 import intents from '!!yaml-loader!../../../intents/intents.yaml';

@@ -1,6 +1,6 @@
 ---
 title: LIFX
-description: 关于如何将 LIFX 集成到 Home Assistant 的说明。
+description: 'LIFX 集成会在 Home Assistant 的网络配置(/home-assistant/integrations/network)中已启用的每个网络上，自动发现 LIFX(https://www.lifx.com) 灯具。如果某些 LIFX 灯没有被自动发现，您可以按照下面的配置步骤。'
 ha_category:
   - Button
   - Light
@@ -21,6 +21,7 @@ ha_dhcp: true
 ha_codeowners:
   - '@Djelibeybi'
 ---
+# LIFX
 
 **LIFX** 集成会在 Home Assistant 的[网络配置](/home-assistant/integrations/network)中已启用的每个网络上，自动发现 [LIFX](https://www.lifx.com) 灯具。如果某些 LIFX 灯没有被自动发现，您可以按照下面的配置步骤，在用户界面中逐个手动添加。
 

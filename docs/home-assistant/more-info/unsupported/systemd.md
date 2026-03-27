@@ -1,7 +1,8 @@
 ---
 title: Systemd
-description: 关于 systemd 将安装标记为不支持的更多信息。
+description: 'Supervisor 通过 DBus 使用 systemd 来控制主机系统并获取信息。 如果没有 systemd，我们将缺少大量信息和功能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Systemd
 
 ## 问题所在
 

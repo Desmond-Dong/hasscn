@@ -1,6 +1,6 @@
 ---
 title: NSW Rural Fire Service Incidents
-description: "有关如何将新南威尔士州农村消防服务事件源集成到 Home Assistant 的说明。"
+description: 'The NSW Rural Fire Service Incidents integration lets you integrate a GeoJSON feed provided by the NSW Rural Fire Service(https://www.rfs.nsw.gov.au/fire-i。'
 
 ha_category:
   - Geolocation
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# NSW Rural Fire Service Incidents
 
 The **NSW Rural Fire Service Incidents** integration lets you integrate a GeoJSON feed provided by the [NSW Rural Fire Service](https://www.rfs.nsw.gov.au/fire-information/fires-near-me) with information about bush fires, grass fires, hazard reductions and more. It retrieves incidents from a feed and shows information of those incidents filtered by distance to Home Assistant's location.
 

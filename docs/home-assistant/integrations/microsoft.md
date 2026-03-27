@@ -1,6 +1,6 @@
 ---
 title: Microsoft Text-to-Speech (TTS)
-description: 关于如何为 Home Assistant 设置 Microsoft 文字转语音的说明。
+description: 'Microsoft text-to-speech 集成使用 Microsoft Speech Service 的 TTS 引擎(https://learn.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)。'
 ha_category:
   - Text-to-speech
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Microsoft Text-to-Speech (TTS)
 
 **Microsoft text-to-speech** 集成使用 [Microsoft Speech Service 的 TTS 引擎](https://learn.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)，以自然语音朗读文本。此集成使用 Cognitive Services 提供的一部分 API，即 Microsoft Speech API。要使此集成正常工作，您需要一个免费的 API 密钥。您可以使用自己的 [Azure 订阅](https://azure.microsoft.com) 创建一个 [Azure Speech 资源](https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices)。
 

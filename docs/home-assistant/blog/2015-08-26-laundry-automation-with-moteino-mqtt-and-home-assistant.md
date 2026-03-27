@@ -1,7 +1,8 @@
 ---
 title: 'Laundry 自动化: insight and 通知'
-description: Nolan describes how he gets notified when laundry is done.
+description: '这是 Home Assistant 用户和贡献者 Nolan Gilley(https://github.com/nkgilley) 撰写的一篇客座文章。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Laundry 自动化: insight and 通知
 
 _这是 Home Assistant 用户和贡献者 [Nolan Gilley](https://github.com/nkgilley) 撰写的一篇客座文章。_
 

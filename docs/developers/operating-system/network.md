@@ -1,7 +1,9 @@
 ---
 title: "网络配置"
+description: 'Home Assistant Operating System 使用 NetworkManager 管理主机网络。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 网络
 ---
+# 网络配置
 
 Home Assistant Operating System 使用 NetworkManager 管理主机网络。
 

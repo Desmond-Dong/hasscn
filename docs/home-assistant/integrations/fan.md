@@ -1,6 +1,6 @@
 ---
 title: Fan
-description: 关于如何在 Home Assistant 中设置风扇设备的说明。
+description: 'Fan 集成允许您控制和监控风扇设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Fan
 ha_release: 0.27
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Fan
 
 **Fan** 集成允许您控制和监控风扇设备。
 

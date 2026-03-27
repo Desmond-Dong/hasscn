@@ -1,6 +1,8 @@
 ---
 title: Assist 故障排除
+description: '本节列出了一些可帮助您排查 Assist 问题的步骤。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Assist 故障排除
 
 本节列出了一些可帮助您排查 Assist 问题的步骤。
 

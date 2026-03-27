@@ -1,6 +1,6 @@
 ---
 title: Zestimate
-description: 关于如何将 Zestimate 传感器集成到 Home Assistant 的说明。
+description: 'Zestimate 集成可让您使用 Zillow API(https://www.zillow.com/howto/api/APIOverview.htm) 跟踪房产的 Zestimate® 估值。根据 Zillow 网站说明，Zestimate® 是 Zillow 估算的房产市场价值，并不是正式估价。'
 ha_category:
   - Sensor
 ha_release: 0.65
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Zestimate
 
 **Zestimate** 集成可让您使用 [Zillow API](https://www.zillow.com/howto/api/APIOverview.htm) 跟踪房产的 Zestimate® 估值。根据 Zillow 网站说明，Zestimate® 是 Zillow 估算的房产市场价值，并不是正式估价。您可以将其作为判断房产价值的起点。Zestimate® 由 [Zillow](https://www.zillow.com) 提供，该网站主要用于展示美国的房屋买卖和租赁信息。
 

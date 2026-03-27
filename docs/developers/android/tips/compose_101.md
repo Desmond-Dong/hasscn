@@ -1,7 +1,9 @@
 ---
 title: "Jetpack Compose 入门"
+description: '要在应用程序中创建新屏幕并快速迭代，请按照以下步骤操作：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "Jetpack 组合 101"
 ---
+# Jetpack Compose 入门
 
 ## 如何在现有应用中创建新屏幕并快速迭代
 

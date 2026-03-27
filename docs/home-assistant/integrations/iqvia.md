@@ -1,6 +1,6 @@
 ---
 title: IQVIA
-description: 关于如何在 Home Assistant 中使用 IQVIA 数据的说明
+description: 'IQVIA 集成会从 IQVIA(https://www.iqvia.com/) 获取并显示基于美国邮政编码的过敏、哮喘和疾病相关信息。 采集的数据包括：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Health
 ha_release: 0.63
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# IQVIA
 
 **IQVIA** 集成会从 [IQVIA](https://www.iqvia.com/) 获取并显示基于美国邮政编码的过敏、哮喘和疾病相关信息。
 采集的数据包括：

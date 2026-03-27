@@ -1,6 +1,6 @@
 ---
 title: Xiaomi TV
-description: 关于如何将小米电视集成到 Home Assistant 的说明。
+description: 'Xiaomi TV 集成可让您控制 Xiaomi TV(https://www.mi.com/global/mitv3s/65flat/)。 Xiaomi TV 集成仅支持运行 MIUI 的小米电视。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.64
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Xiaomi TV
 
 **Xiaomi TV** 集成可让您控制 [Xiaomi TV](https://www.mi.com/global/mitv3s/65flat/)。
 Xiaomi TV 集成仅支持运行 MIUI 的小米电视。

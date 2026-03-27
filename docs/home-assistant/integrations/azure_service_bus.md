@@ -1,6 +1,6 @@
 ---
 title: Azure Service Bus
-description: Azure Service Bus 集成设置
+description: 'Azure Service Bus 集成允许您从 Home Assistant 内部向 Azure Service Bus(https://azure.microsoft.com/products/service-bus/) 发送消息。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Azure Service Bus
 
 **Azure Service Bus** 集成允许您从 Home Assistant 内部向 [Azure Service Bus](https://azure.microsoft.com/products/service-bus/) 发送消息。
 

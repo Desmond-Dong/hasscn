@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 正在迁移到 YAML
-description: 配置方式将变得更加灵活
+description: 'Home Assistant 现在使用 YAML(http://yaml.org/) 作为配置文件格式。YAML 支持列表结构，这会让配置文件更灵活、更实用。新的配置格式向后兼容现有组件，因此组件开发者无需更新自己的组件。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Home Assistant 正在迁移到 YAML
 
 Home Assistant 现在使用 [YAML](http://yaml.org/) 作为配置文件格式。YAML 支持列表结构，这会让配置文件更灵活、更实用。新的配置格式向后兼容现有组件，因此组件开发者无需更新自己的组件。
 

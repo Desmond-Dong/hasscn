@@ -10,7 +10,7 @@ head:
       content: "Music Assistant 2.0：您的音乐，您的播放器"
 
 title: "Music Assistant 2.0：您的音乐，您的播放器"
-description: "将多个音乐库连接到几乎任何智能扬声器。"
+description: '今天，正好五年前，我，Marcel，开始开发 Music Assistant(https://music-assistant.io/)。最初只是一个快速脚本，用于同步我的播放列表以便在流媒体提供商之间切换，如今已发展成为一个独立的项目。 本页属于 Music Assistant 中文文档。'
 cover:
   image: /public/images/blog/2024/05/09/music-assistant-2/art.jpg
   alt: 'Music Assistant 2.0：您的音乐，您的播放器'
@@ -22,6 +22,7 @@ tags:
   - release
   - announcement
 ---
+# Music Assistant 2.0：您的音乐，您的播放器
 
 今天，正好五年前，我，Marcel，开始开发 [Music Assistant](https://music-assistant.io/)。最初只是一个快速脚本，用于同步我的播放列表以便在流媒体提供商之间切换，如今已发展成为一个独立的项目。
 

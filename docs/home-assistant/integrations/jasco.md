@@ -1,6 +1,6 @@
 ---
 title: Jasco
-description: 使用 Z-Wave 集成连接和控制您的 Jasco Z-Wave 设备
+description: 'Jasco(https://byjasco.com/) is a member of the Works with Home Assistant partner program for their Z-Wave products. Jasco is committed to making sure。'
 ha_release: '2022.11'
 ha_iot_class: Local Push
 ha_category:
@@ -16,6 +16,7 @@ ha_platforms:
 ha_iot_standard: zwave
 ha_brand: true
 ---
+# Jasco
 
 [Jasco](https://byjasco.com/) is a member of the Works with Home Assistant partner program for their Z-Wave products. Jasco is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

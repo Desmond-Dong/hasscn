@@ -1,6 +1,6 @@
 ---
 title: UPC Connect Box
-description: 关于如何在 Home Assistant 中集成 UPC Connect Box 的说明。
+description: 'UPC Connect Box 集成可通过检查连接到 Liberty Global(https://www.libertyglobal.com) Connect Box(https://www.upc.ch/en/internet/learn-about-internet/) 的设备来实现在家检测。'
 ha_category:
   - Presence detection
 ha_release: 0.36
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# UPC Connect Box
 
 **UPC Connect Box** 集成可通过检查连接到 [Liberty Global](https://www.libertyglobal.com) [Connect Box](https://www.upc.ch/en/internet/learn-about-internet/) 的设备来实现在家检测。Liberty Global 是一家互联网服务提供商，在瑞士（也称 UPC Cablecom）、奥地利、荷兰（Ziggo）、匈牙利（Vodafone）和波兰（PLAY）提供服务。
 

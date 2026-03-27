@@ -1,7 +1,9 @@
 ---
 title: "Home Assistant 前端"
+description: 'Home Assistant 前端让用户能够浏览并控制家中状态、管理自动化，并配置集成。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "简介"
 ---
+# Home Assistant 前端
 
 Home Assistant 前端让用户能够浏览并控制家中状态、管理自动化，并配置集成。
 

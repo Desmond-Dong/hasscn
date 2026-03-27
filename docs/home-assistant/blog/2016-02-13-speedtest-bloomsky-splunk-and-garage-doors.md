@@ -3,6 +3,7 @@ title: '0.13: Speedtest.net, Bloomsky, Splunk and Garage Doors'
 description: Home Assistant 0.13 brings test coverage to a whopping 90% and adds a
   whole bunch of new components.
 ---
+# 0.13: Speedtest.net, Bloomsky, Splunk and Garage Doors
 
 0.13 的重点是测试覆盖率，特别感谢 [@rmkraus] 在这方面付出的努力。很高兴宣布，我们在核心和重要组件上达到了 90% 的测试覆盖率。这是项目的一个重要里程碑。
 

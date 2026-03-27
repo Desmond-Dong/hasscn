@@ -1,6 +1,6 @@
 ---
 title: Serial
-description: 有关如何将串行连接传感器的数据集成到 Home Assistant 的说明。
+description: 'The Serial integration is using the data provided by a device connected to the serial port of the system where Home Assistant is running. With。'
 ha_category:
   - Sensor
 ha_release: 0.56
@@ -12,6 +12,7 @@ ha_platforms:
   - sensor
 ha_integration_type: integration
 ---
+# Serial
 
 The **Serial** integration is using the data provided by a device connected to the serial port of the system where Home Assistant is running. With [`ser2net`](https://ser2net.sourceforge.net/) and [`socat`](http://www.dest-unreach.org/socat/) would it also work for sensors connected to a remote system.
 

@@ -1,6 +1,6 @@
 ---
 title: A. O. Smith
-description: 关于将您的 A. O. Smith 热水器集成到 Home Assistant 的说明。
+description: 'A. O. Smith 集成允许您从 Home Assistant 控制兼容的 A. O. Smith iCOMM 启用的热水器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Water heater
 ha_release: 2024.1
@@ -16,6 +16,7 @@ ha_platforms:
   - water_heater
 ha_integration_type: hub
 ---
+# A. O. Smith
 
 **A. O. Smith** 集成允许您从 Home Assistant 控制兼容的 A. O. Smith iCOMM 启用的热水器。
 

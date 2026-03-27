@@ -1,7 +1,9 @@
 ---
 title: "Android 主屏幕应用（启动器）"
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /。 本页属于 Home Assistant 配套应用文档。'
 id: 'android-home-app-launcher'
 ---
+# Android 主屏幕应用（启动器）
 
 <img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" />
 

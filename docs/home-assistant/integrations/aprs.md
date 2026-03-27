@@ -1,6 +1,6 @@
 ---
 title: APRS
-description: 关于如何在 Home Assistant 中使用 APRS 跟踪设备的说明。
+description: 'APRS（自动分组报告系统(https://en.wikipedia.org/wiki/AutomaticPacketReportingSystem)）集成可连接到 APRS-IS(http://aprs-is.net/) 网络以跟踪业余无线电设备。 本页属于 Home Assistant 中文文档。'
 ha_release: 0.95
 ha_category:
   - Presence detection
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# APRS
 
 **APRS**（[自动分组报告系统](https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System)）集成可连接到 [APRS-IS](http://aprs-is.net/) 网络以跟踪业余无线电设备。
 

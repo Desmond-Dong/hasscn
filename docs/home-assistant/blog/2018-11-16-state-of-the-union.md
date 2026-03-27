@@ -1,7 +1,8 @@
 ---
 title: 现状与展望
-description: Paulus 分享了 Home Assistant 的起源，以及我们接下来的方向。
+description: '<p class=''img'' <img src=''/home-assistant/images/blog/2018-11-state-of-the-union/share-the-love.jpg'' alt=''Photo of Paulus Schoutsen presenting the 状态 of。'
 ---
+# 现状与展望
 
 <p class='img'>
   <img src='/home-assistant/images/blog/2018-11-state-of-the-union/share-the-love.jpg' alt='Photo of Paulus Schoutsen presenting the 状态 of the union.'>

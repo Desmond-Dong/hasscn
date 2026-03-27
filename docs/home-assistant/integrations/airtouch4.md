@@ -1,6 +1,6 @@
 ---
 title: AirTouch 4
-description: 关于如何将 AirTouch 4 空调控制器集成到 Home Assistant 的说明。
+description: 'AirTouch 4 integration 允许您控制使用 AirTouch 4(https://www.airtouch.net.au/airtouch/airtouch-4/) 控制器的管道式空调系统。目前，此集成仅支持带有独立温度控制 (ITC) 模块的 AirTouch 4 控制器。'
 ha_category:
   - Climate
 ha_release: 2021.9
@@ -13,6 +13,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@samsinnamon'
 ---
+# AirTouch 4
 
 **AirTouch 4** integration 允许您控制使用 [AirTouch 4](https://www.airtouch.net.au/airtouch/airtouch-4/) 控制器的管道式空调系统。目前，此集成仅支持带有独立温度控制 (ITC) 模块的 AirTouch 4 控制器。
 

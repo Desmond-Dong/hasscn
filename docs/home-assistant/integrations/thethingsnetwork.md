@@ -1,6 +1,6 @@
 ---
 title: The Things Network
-description: 有关如何将 The Things Network 集成到 Home Assistant 中的说明。
+description: 'The Things Network 集成允许您在 Home Assistant 中与 The Things Network(https://www.thethingsnetwork.org) 交互。这个由社区驱动的开放网络支持 LoRaWAN(https://www.lora-alliance.org/)。'
 ha_category:
   - Hub
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_config_flow: true
 ---
+# The Things Network
 
 **The Things Network** 集成允许您在 Home Assistant 中与 [The Things Network](https://www.thethingsnetwork.org) 交互。这个由社区驱动的开放网络支持 [LoRaWAN](https://www.lora-alliance.org/)，可实现低带宽（每条消息 51 字节）的远距离通信（约 5 到 15 公里）。[网关](https://www.thethingsnetwork.org/docs/gateways/) 会将从传感器接收到的数据传输到 The Things Network。
 

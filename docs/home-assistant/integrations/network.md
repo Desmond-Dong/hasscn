@@ -1,6 +1,6 @@
 ---
 title: Network Configuration
-description: "Home Assistant 的网络配置"
+description: 'The Network configuration integration provides network configuration for integrations such as Zeroconf(/home-assistant/integrations/zeroconf/). It is。'
 
 ha_category:
   - Other
@@ -12,6 +12,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: system
 ---
+# Network Configuration
 
 The **Network configuration** integration provides network configuration for integrations such as [Zeroconf](/home-assistant/integrations/zeroconf/). It is managed by going to **[Settings > System > Network](https://my.home-assistant.io/redirect/network/)** and is only available to users that have "Advanced Mode" enabled on their [user profile](https://my.home-assistant.io/redirect/profile/).
 

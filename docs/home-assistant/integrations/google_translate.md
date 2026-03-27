@@ -1,6 +1,6 @@
 ---
 title: Google Translate text-to-speech
-description: 关于如何为 Home Assistant 设置 Google 翻译文字转语音的说明。
+description: 'Google Translate text-to-speech 集成使用非官方的 Google Translate text-to-speech engine(https://translate.google.com/) 以自然的语音朗读文本。与名称暗示的不同，此集成仅提供文字转语音功能。'
 ha_category:
   - Text-to-speech
 ha_release: 0.35
@@ -11,6 +11,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: service
 ---
+# Google Translate text-to-speech
 
 **Google Translate text-to-speech** 集成使用非官方的 [Google Translate text-to-speech engine](https://translate.google.com/) 以自然的语音朗读文本。与名称暗示的不同，此集成仅提供文字转语音功能，不会翻译发送给它的消息。
 

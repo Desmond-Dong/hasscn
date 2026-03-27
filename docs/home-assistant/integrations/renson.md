@@ -1,6 +1,6 @@
 ---
 title: Renson
-description: 有关如何将 Renson Endura Delta 传感器集成到 Home Assistant 的说明。
+description: 'Renson 集成会从 Renson Endura Delta 设备拉取数据。Android/iOS 应用中大多数可监控的传感器，也都可以通过此集成进行监控。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -24,6 +24,7 @@ ha_platforms:
   - time
 ha_integration_type: device
 ---
+# Renson
 
 **Renson** 集成会从 Renson Endura Delta 设备拉取数据。Android/iOS 应用中大多数可监控的传感器，也都可以通过此集成进行监控。
 

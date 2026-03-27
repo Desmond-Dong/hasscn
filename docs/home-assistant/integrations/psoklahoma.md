@@ -1,6 +1,6 @@
 ---
 title: Public Service Company of Oklahoma (PSO)
-description: 使用 Opower 集成从俄克拉荷马州公共服务公司 (PSO) 获取能源使用情况
+description: '此虚拟集成由 Opower(/home-assistant/integrations/opower/) 集成提供支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Cloud Polling
 ---
+# Public Service Company of Oklahoma (PSO)
 
 :::note
 此虚拟集成由 [Opower](/home-assistant/integrations/opower/) 集成提供支持。

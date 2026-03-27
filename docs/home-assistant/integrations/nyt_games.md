@@ -1,6 +1,6 @@
 ---
 title: NYT Games
-description: "有关如何在 Home Assistant 中设置 NYT Games 的说明。"
+description: 'The NYT Games(https://www.nytimes.com/crosswords) integration fetches data about your progress on their daily puzzles. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# NYT Games
 
 The [NYT Games](https://www.nytimes.com/crosswords) integration fetches data about your progress on their daily puzzles.
 

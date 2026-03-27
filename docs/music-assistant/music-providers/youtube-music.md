@@ -1,7 +1,7 @@
 ---
 title: "YouTube Music"
+description: 'Music Assistant 支持 Youtube Music。由 <a href="https://github.com/MarvinSchenkel" target="blank" rel="noopener noreferrer"MarvinSchenkel</a 贡献和维护。'
 ---
-
 # YouTube Music 提供者 <img src="/assets/icons/ytm-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 Youtube Music。由 <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener noreferrer">MarvinSchenkel</a> 贡献和维护。

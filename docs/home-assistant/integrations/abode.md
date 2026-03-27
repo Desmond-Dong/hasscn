@@ -1,6 +1,6 @@
 ---
 title: Abode
-description: 关于将 Abode 家庭安全系统集成到 Home Assistant 的说明。
+description: 'Abode integration 允许您将 Abode 家庭安全系统集成到 Home Assistant 中，并使用其报警系统和传感器触发自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -29,6 +29,7 @@ ha_platforms:
   - switch
 ha_integration_type: integration
 ---
+# Abode
 
 **Abode** integration 允许您将 Abode 家庭安全系统集成到 Home Assistant 中，并使用其报警系统和传感器触发自动化。
 

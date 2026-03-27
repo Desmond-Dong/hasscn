@@ -1,9 +1,8 @@
 ---
 title: 博客
-description: Home Assistant 博客
+description: '这里收录 Home Assistant 的最新博客文章与发布说明。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 outline: [1]
 ---
-
 # 博客
 
 这里收录 Home Assistant 的最新博客文章与发布说明。

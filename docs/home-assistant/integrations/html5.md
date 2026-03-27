@@ -1,6 +1,6 @@
 ---
 title: HTML5 Push Notifications
-description: 关于如何从 Home Assistant 使用 HTML5 推送通知平台的说明。
+description: 'HTML5 Push Notifications 集成可让你无论身在世界何处，都能在 Chrome 或 Firefox 中接收推送通知。html5 还支持 Android 上的 Chrome 和 Firefox，从而无需原生应用也能实现接近原生应用的集成体验。'
 ha_category:
   - Notifications
 ha_release: 0.27
@@ -16,6 +16,7 @@ related:
 ha_codeowners:
   - '@alexyao2015'
 ---
+# HTML5 Push Notifications
 
 **HTML5 Push Notifications** 集成可让你无论身在世界何处，都能在 Chrome 或 Firefox 中接收推送通知。`html5` 还支持 Android 上的 Chrome 和 Firefox，从而无需原生应用也能实现接近原生应用的集成体验。
 

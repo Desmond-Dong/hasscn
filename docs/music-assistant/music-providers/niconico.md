@@ -1,7 +1,7 @@
 ---
 title: "Nico Nico Video"
+description: 'Music Assistant 支持 Nico Nico Video(https://www.nicovideo.jp/)，一个类似 YouTube 的日本视频分享网站，以其覆盖在视频上的屏幕滚动评论而闻名。由 <a href="https://github.com/Shi-553"。'
 ---
-
 # Nico Nico 提供者 <img src="/assets/icons/niconico-logo.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 [Nico Nico Video](https://www.nicovideo.jp/)，一个类似 YouTube 的日本视频分享网站，以其覆盖在视频上的屏幕滚动评论而闻名。由 <a href="https://github.com/Shi-553" target="_blank" rel="noopener noreferrer">柴田 Shi-553</a> 贡献和维护。

@@ -1,6 +1,6 @@
 ---
 title: HomeKit Device
-description: 关于如何在 Home Assistant 中集成 HomeKit 设备的说明。
+description: 'HomeKit(https://developer.apple.com/apple-home/) Device 集成可让你将带有“Works with HomeKit”标识的配件连接到 Home Assistant。请不要将此集成与 HomeKit Bridge(/home-assistant/integra。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -43,7 +43,6 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
-
  [HomeKit](https://developer.apple.com/apple-home/) Device 集成可让你将带有“Works with HomeKit”标识的配件连接到 Home Assistant。请不要将此集成与 [HomeKit Bridge](/home-assistant/integrations/homekit/) 集成混淆，后者可让你通过 HomeKit 控制 Home Assistant 设备。
 
 # 添加 HomeKit 设备

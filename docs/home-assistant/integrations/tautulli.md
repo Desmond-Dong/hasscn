@@ -1,6 +1,6 @@
 ---
 title: Tautulli
-description: 有关如何在 Home Assistant 中设置 Tautulli 传感器的说明。
+description: 'Tautulli 集成会监控指定 Tautulli 服务器tautulli 上的活动。它会创建一个传感器，将当前活动串流数量显示为状态；点击该传感器查看更多详情时，还会显示更多统计信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_config_flow: true
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Tautulli
 
 **Tautulli** 集成会监控指定 [Tautulli 服务器][tautulli] 上的活动。它会创建一个传感器，将当前活动串流数量显示为状态；点击该传感器查看更多详情时，还会显示更多统计信息。
 

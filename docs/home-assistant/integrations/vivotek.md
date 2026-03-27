@@ -1,6 +1,6 @@
 ---
 title: VIVOTEK
-description: 关于如何将 Vivotek 摄像头集成到 Home Assistant 的说明。
+description: 'VIVOTEK 集成允许您将 VIVOTEK IP 摄像头接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Camera
 ha_release: 0.99
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: device
 ha_config_flow: true
 ---
+# VIVOTEK
 
 **VIVOTEK** 集成允许您将 VIVOTEK IP 摄像头接入 Home Assistant。
 

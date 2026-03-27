@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 前端
-description: 了解 Home Assistant 前端界面、仪表盘及相关设置。
+description: 'Home Assistant 的前端集成(/home-assistant/integrations/frontend/)提供图形用户界面，让您可以浏览和控制家中的状态，并管理自动化和配置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Home Assistant 前端
 
 Home Assistant 的[前端集成](/home-assistant/integrations/frontend/)提供图形用户界面，让您可以浏览和控制家中的状态，并管理自动化和配置。
 

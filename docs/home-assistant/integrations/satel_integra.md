@@ -19,6 +19,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Satel Integra
 
 **Satel Integra** 集成可让您将 [Satel Integra 报警系统](https://www.satel.pl/en/product-category/intruder-alarms/integra/) 连接到 Home Assistant，以控制并监控报警系统。
 

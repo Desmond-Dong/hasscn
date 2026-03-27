@@ -1,6 +1,6 @@
 ---
 title: System Bridge
-description: 如何将 System Bridge 集成到 Home Assistant 中。
+description: 'System Bridge(https://system-bridge.timmo.dev) is an application that runs on your local machine to share system information via its API/WebSocket. You。'
 ha_category:
   - Sensor
   - System monitor
@@ -20,6 +20,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: device
 ---
+# System Bridge
 
 [System Bridge](https://system-bridge.timmo.dev) is an application that runs on your local machine to share system information via its API/WebSocket. You can also send commands to the device such as opening a URL or sending keyboard keypresses.
 

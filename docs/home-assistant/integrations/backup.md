@@ -1,6 +1,6 @@
 ---
 title: Backup
-description: 允许创建容器和核心安装的备份。
+description: 'Backup integration 用于所有安装类型(/home-assistant/installation/about-installation-methods)创建和恢复备份。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Event
   - Other
@@ -26,6 +26,7 @@ related:
   - docs: /more-info/backup-emergency-kit/
     title: backup emergency kit
 ---
+# Backup
 
 **Backup** integration 用于所有[安装类型](/home-assistant/installation/#about-installation-methods)创建和恢复备份。
 

@@ -1,6 +1,6 @@
 ---
 title: Ping (ICMP)
-description: 关于如何将基于 Ping (ICMP) 的设备集成到 Home Assistant 的说明。
+description: 'Home Assistant 目前支持以下设备类型：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Network
@@ -18,6 +18,7 @@ ha_config_flow: true
 ha_codeowners:
   - '@jpbede'
 ---
+# Ping (ICMP)
 
 Home Assistant 目前支持以下设备类型：
 

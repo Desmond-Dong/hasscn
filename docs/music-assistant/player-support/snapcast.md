@@ -1,8 +1,7 @@
 ---
 title: Snapcast Player Provider
-description: Snapcast 播放器提供者详细信息
+description: 'Music Assistant 支持 Snapcast，这是一个强大的同步多房间音频流式传输解决方案。Snapcast 可以在各种设备之间实现无缝播放，创造沉浸式音频体验。 无论是使用兼容 Snapcast 的扬声器还是 Raspberry Pi 等设备，都可以轻松享受同步音频播放。'
 ---
-
 # Snapcast <img src="/assets/icons/snapcast-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 Snapcast，这是一个强大的同步多房间音频流式传输解决方案。Snapcast 可以在各种设备之间实现无缝播放，创造沉浸式音频体验。

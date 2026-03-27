@@ -1,9 +1,8 @@
 ---
 title: '0.11：扩展 DIY 方案支持'
-description: Home Assistant 0.11 已发布，进一步扩展了对使用 Raspberry Pi
+description: '2016 年 1 月，我们火力全开！@ @ PH0 @ @github-ha 在 GitHub 上已经突破 2500 星（发布时为 2596 星）。此外，还有 20 位 @ @ PH1 @ @发布-pr 贡献者参与了这次发布，持续改进并扩展 Home Assistant。'
   和 MySensors 自制家庭自动化组件的支持。
 ---
-
 2016 年 1 月，我们火力全开！[@ @ PH0 @ @][github-ha] 在 GitHub 上已经突破 2500 星（发布时为 2596 星）。此外，还有 20 位 [@ @ PH1 @ @][发布-pr] 贡献者参与了这次发布，持续改进并扩展 Home Assistant。项目仍在不断成长，我很期待 2016 年接下来会带来什么。
 
 [github-ha]: https://github.com/home-assistant/home-assistant/

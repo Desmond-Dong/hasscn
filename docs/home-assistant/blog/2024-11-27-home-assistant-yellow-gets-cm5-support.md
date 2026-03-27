@@ -1,7 +1,9 @@
 ---
 title: Home Assistant Yellow 在 HAOS 14 中获得 CM5 支持
-description: 我们已经使用 Home Assistant Yellow 测试了 CM5，效果很好！但CM4仍然很棒！
+description: '<img src=''/home-assistant/images/blog/2024-11-cm5/art.jpg'' alt="Home Assistant Yellow in all its glory"。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Home Assistant Yellow 在 HAOS 14 中获得 CM5 支持
+
 <img src='/home-assistant/images/blog/2024-11-cm5/art.jpg' alt="Home Assistant Yellow in all its glory">
 
 我们在两年多前推出了[黄色Home Assistant](/home-assistant/yellow/)，其设计理念是根据用户的需求来发展和扩展其功能。需要更多存储空间，请添加 NVMe 驱动器。需要 Matter over Thread 而不是 Zigbee，请更改固件。

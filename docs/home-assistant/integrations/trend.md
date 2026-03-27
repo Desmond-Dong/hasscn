@@ -1,6 +1,6 @@
 ---
 title: Trend
-description: 关于如何将趋势二值传感器集成到 Home Assistant 的说明。
+description: 'The Trend integration allows you to create sensors which show the trend of numeric state orstateattributes from other entities. This sensor requires at。'
 ha_category:
   - Binary sensor
   - Helper
@@ -16,6 +16,7 @@ ha_integration_type: helper
 ha_codeowners:
   - '@jpbede'
 ---
+# Trend
 
 The **Trend** integration allows you to create sensors which show the trend of
 numeric `state` or`state_attributes` from other entities. This sensor requires

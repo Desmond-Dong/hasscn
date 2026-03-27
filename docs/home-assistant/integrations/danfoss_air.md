@@ -1,6 +1,6 @@
 ---
 title: Danfoss Air
-description: 如何在 Home Assistant 中集成 Danfoss Air HRV。
+description: 'Danfoss Air 集成允许您访问 Danfoss Air HRV 设备的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Danfoss Air
 
 **Danfoss Air** 集成允许您访问 Danfoss Air HRV 设备的信息。
 

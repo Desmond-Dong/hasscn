@@ -38,6 +38,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# deCONZ
 
 [dresden elektronik](https://www.dresden-elektronik.de) 的 [deCONZ](https://www.dresden-elektronik.de/funk/software/deconz.html) 是一款软件，可与 ConBee/RaspBee Zigbee 网关通信，并公开连接到网关的 Zigbee 设备。
 

@@ -1,6 +1,6 @@
 ---
 title: Ruuvi Gateway
-description: 支持充当 BLE 远程扫描仪的 Ruuvi 网关设备。
+description: '此集成通过 /history 端点poll 将 Ruuvi Gateway(https://ruuvi.com/gateway/) 设备接入为采用轮询方式的 BLE 远程扫描器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: '2023.2'
@@ -12,6 +12,7 @@ ha_domain: ruuvi_gateway
 ha_dhcp: true
 ha_integration_type: device
 ---
+# Ruuvi Gateway
 
 此集成通过 [`/history` 端点][poll] 将 [Ruuvi Gateway](https://ruuvi.com/gateway/) 设备接入为采用轮询方式的 BLE 远程扫描器。
 

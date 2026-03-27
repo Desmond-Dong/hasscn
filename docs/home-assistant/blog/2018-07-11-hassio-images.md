@@ -1,7 +1,8 @@
 ---
 title: 基于 HassOS 的全新 Hass.io 镜像
-description: 我们发布了 HassOS，一款专为运行 Hass.io 而打造的全新操作系统。
+description: '经过 4 个月的努力，我们很高兴发布基于 HassOS 的全新 Hass.io 镜像。HassOS 是我们专为运行 Hass.io 打造的全新操作系统。是的，它支持树莓派 3 B+！。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 基于 HassOS 的全新 Hass.io 镜像
 
 经过 4 个月的努力，我们很高兴发布基于 HassOS 的全新 Hass.io 镜像。HassOS 是我们专为运行 Hass.io 打造的全新操作系统。是的，它支持树莓派 3 B+！
 

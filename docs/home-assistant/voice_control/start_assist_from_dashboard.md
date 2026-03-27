@@ -1,6 +1,8 @@
 ---
 title: 从仪表盘启动 Assist
+description: '如果您以 kiosk 模式使用 Home Assistant，例如把平板安装在墙上，那么右上角的 Assist 图标可能无法访问。这种情况下，您可以使用仪表盘按钮来启动 Assist。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 从仪表盘启动 Assist
 
 如果您以 kiosk 模式使用 Home Assistant，例如把平板安装在墙上，那么右上角的 Assist 图标可能无法访问。这种情况下，您可以使用仪表盘按钮来启动 Assist。
 

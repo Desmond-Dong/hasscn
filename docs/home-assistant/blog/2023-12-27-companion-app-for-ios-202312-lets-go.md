@@ -1,9 +1,10 @@
 ---
 title: 'iOS 版 Companion App 2023.12：出发吧！'
-description: Bruno Pantaleao 已加入 Nabu Casa 担任 iOS 工程师，并将致力于改善
+description: '对于期待 iOS Companion App 拥有更多功能和更快开发速度的朋友，我们有个好消息！我，Bruno Pantaleao，已加入 Nabu Casa 担任 iOS 工程师（当然也会参与 watchOS、iPadOS 和 macOS 应用的工作）。'
   iOS 用户的 Companion App 体验。2023.12 带来了 Apple Thread 凭据共享、
   全新的 watchOS 图标、场景的 **全选** 切换，以及一个 **最新内容** 链接。
 ---
+# iOS 版 Companion App 2023.12：出发吧！
 
 对于期待 iOS Companion App 拥有更多功能和更快开发速度的朋友，我们有个好消息！我，Bruno Pantaleao，已加入 Nabu Casa 担任 iOS 工程师（当然也会参与 watchOS、iPadOS 和 macOS 应用的工作），并计划延续 Robbie Trencheny、Zac West 以及社区所完成的出色工作，给予 iOS 应用应有的关注。那么，让我们来聊聊本月应用的 2023.12 发布吧！
 

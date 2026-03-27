@@ -1,8 +1,9 @@
 ---
 title: Hacktoberfest 2020
-description: 十月了，Hacktoberfest 开始了！家庭助理参与
+description: '<img src=''/home-assistant/images/blog/2020-10-01-hacktoberfest-2020/social.png'' class=''no-shadow''。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
   今年又来了，你呢？
 ---
+# Hacktoberfest 2020
 
 <img src='/home-assistant/images/blog/2020-10-01-hacktoberfest-2020/social.png' class='no-shadow'>
 

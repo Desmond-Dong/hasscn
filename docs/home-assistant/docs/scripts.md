@@ -1,7 +1,8 @@
 ---
 title: 脚本语法
-description: Home Assistant 脚本语法文档。
+description: '脚本是 Home Assistant 将按顺序执行的一系列动作。脚本既可以通过独立的脚本集成作为实体使用，也可以嵌入自动化和 Alexa/Amazon Echo 配置中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 脚本语法
 
 脚本是 Home Assistant 将按顺序执行的一系列动作。脚本既可以通过独立的[脚本集成]作为实体使用，也可以嵌入自动化和 [Alexa/Amazon Echo] 配置中。
 

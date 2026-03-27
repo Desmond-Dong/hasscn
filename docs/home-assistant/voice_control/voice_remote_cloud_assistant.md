@@ -1,6 +1,8 @@
 ---
 title: 入门 - Home Assistant Cloud
+description: '在使用 Assist 之前，您需要先完成配置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 入门 - Home Assistant Cloud
 
 在使用 Assist 之前，您需要先完成配置。
 

@@ -1,6 +1,6 @@
 ---
 title: Homevolt
-description: 本地连接 Homevolt 电池以在 Home Assistant 中显示传感器。
+description: 'Homevolt 集成可让 Home Assistant 通过本地网络读取 Homevolt 电池的数据，无需云端。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -19,6 +19,7 @@ ha_release: 2026.3
 ha_quality_scale: silver
 ha_zeroconf: true
 ---
+# Homevolt
 
 **Homevolt** 集成可让 Home Assistant 通过本地网络读取 Homevolt 电池的数据，无需云端。
 

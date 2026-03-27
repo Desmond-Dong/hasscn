@@ -1,6 +1,6 @@
 ---
 title: Update
-description: 关于如何在 Home Assistant 中使用更新实体的说明。
+description: '更新实体用于指示某个设备或服务是否有可用更新。这可以是任何类型的更新，包括灯泡、路由器等设备的固件更新，或附加组件、容器等的软件更新。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category: []
 ha_release: 2022.4
 ha_quality_scale: internal
@@ -14,6 +14,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Update
 
 更新实体用于指示某个设备或服务是否有可用更新。这可以是任何类型的更新，包括灯泡、路由器等设备的固件更新，或附加组件、容器等的软件更新。
 

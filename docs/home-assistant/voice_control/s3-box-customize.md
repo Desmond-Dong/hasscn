@@ -1,6 +1,8 @@
 ---
 title: 自定义 S3-BOX-3
+description: '本教程将向您展示如何把 Espressif ESP32-S3-BOX-3(https://www.espressif.com/en/news/ESP32-S3-BOX-3) 上的 Home Assistant 状态插图替换为您自己的图片。 本页属于 Home Assistant 中文文档。'
 ---
+# 自定义 S3-BOX-3
 
 ## 使用您自己的插图自定义 S3-BOX-3
 

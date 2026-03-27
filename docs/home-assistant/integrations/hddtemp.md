@@ -1,6 +1,6 @@
 ---
 title: hddtemp
-description: 关于如何将硬盘温度信息集成到 Home Assistant 的说明。
+description: 'hddtemp 集成使用由 HDDTemp(https://savannah.nongnu.org/projects/hddtemp) 提供的数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: 0.32
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# hddtemp
 
 **hddtemp** 集成使用由 [HDDTemp](https://savannah.nongnu.org/projects/hddtemp) 提供的数据。
 

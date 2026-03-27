@@ -1,7 +1,8 @@
 ---
 title: 可视化你的 IoT 数据
-description: 导出、处理并可视化你的 Home Assistant 数据。
+description: '<img src=''/home-assistant/images/blog/2016-07-reporting/mpl-sensor.png'' style=''clear: right; border:none; box-shadow: none; float: right; margin-bottom:。'
 ---
+# 可视化你的 IoT 数据
 
 <img src='/home-assistant/images/blog/2016-07-reporting/mpl-sensor.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='200' />
 

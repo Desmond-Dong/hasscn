@@ -1,6 +1,6 @@
 ---
 title: HERE Travel Time
-description: 关于如何将 HERE 行程时间添加到 Home Assistant 的说明。
+description: 'HERE Travel Time 集成通过 HERE Routing API(https://www.here.com/docs/bundle/routing-api-developer-guide-v8/page/README.html) 提供行程时间。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# HERE Travel Time
 
 **HERE Travel Time** 集成通过 [HERE Routing API](https://www.here.com/docs/bundle/routing-api-developer-guide-v8/page/README.html) 提供行程时间。
 

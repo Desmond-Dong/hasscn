@@ -1,6 +1,6 @@
 ---
 title: Amazon Polly
-description: 关于在 Home Assistant 中设置 Amazon Polly 的说明。
+description: 'Amazon Polly 集成与 Amazon Polly(https://aws.amazon.com/polly/) 配合使用来创建语音输出。 Polly 是通过 Amazon Web Services 提供的付费服务。前 12 个月有免费套餐(https://aws.amazon.com/polly/p。'
 ha_category:
   - Text-to-speech
 ha_release: 0.37
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Amazon Polly
 
 **Amazon Polly** 集成与 [Amazon Polly](https://aws.amazon.com/polly/) 配合使用来创建语音输出。
 Polly 是通过 Amazon Web Services 提供的付费服务。前 12 个月有[免费套餐](https://aws.amazon.com/polly/pricing/)，之后按每百万字符收费。

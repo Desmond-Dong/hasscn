@@ -1,6 +1,6 @@
 ---
 title: Recorder
-description: 有关如何为 Home Assistant 配置数据记录器的说明。
+description: 'Recorder 集成默认作为 history(/home-assistant/integrations/history/) 集成的依赖项启用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - History
 ha_release: pre 0.7
@@ -11,6 +11,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: system
 ---
+# Recorder
 
 **Recorder** 集成默认作为 [`history`](/home-assistant/integrations/history/) 集成的依赖项启用。
 

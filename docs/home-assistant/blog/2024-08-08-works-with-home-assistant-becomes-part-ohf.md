@@ -1,7 +1,9 @@
 ---
 title: 与家庭助理合作成为开放家庭基金会的一部分
-description: 该计划的一些变化旨在为智能家居构建更好的硬件生态系统。
+description: '<p class=''img''<img src=''/home-assistant/images/blog/2024-08-wwha-update/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Works with Home Assistant。'
 ---
+# 与家庭助理合作成为开放家庭基金会的一部分
+
 <p class='img'><img src='/home-assistant/images/blog/2024-08-wwha-update/art.jpg' style='border: 0;box-shadow: none;' alt="Works with Home Assistant becomes part of the Open Home Foundation">Clelia Rella 创作</p>
 
 经过两年成功的[与Home Assistant合作](https://partner.home-assistant.io/)，我们将继续努力改进该计划。考虑到这一点，该计划将移交给拥有 Home Assistant 的非营利组织，即 [Open Home Foundation](https://www.openhomefoundation.org/)，这将确保其始终与 [Open Home 的价值观](https://www.openhomefoundation.org/about/) 保持一致。

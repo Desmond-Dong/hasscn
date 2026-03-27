@@ -1,6 +1,6 @@
 ---
 title: AccuWeather
-description: 关于在 Home Assistant 中集成 AccuWeather 的说明。
+description: 'AccuWeather 集成使用 AccuWeather(https://accuweather.com/) 网络服务作为您所在位置的天气数据来源。使用此集成需要付费订阅。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Weather
 ha_release: 0.114
@@ -15,6 +15,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# AccuWeather
 
 **AccuWeather** 集成使用 [AccuWeather](https://accuweather.com/) 网络服务作为您所在位置的天气数据来源。使用此集成需要付费订阅。
 

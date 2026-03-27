@@ -3,6 +3,7 @@ title: '[Update: decision reversed!] Philips Hue blocks 3rd party 灯光'
 description: Philips has published a firmware update that blocks pairing of any 3rd
   party 灯光.
 ---
+# [Update: decision reversed!] Philips Hue blocks 3rd party 灯光
 
 **更新 Dec 16**：好消息！Philips 已决定[撤回该决定][philips-reverse]，并正在开发软件更新，以再次支持第三方灯泡。
 

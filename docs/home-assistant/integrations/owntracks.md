@@ -1,6 +1,6 @@
 ---
 title: OwnTracks
-description: 关于如何在 Home Assistant 中使用 OwnTracks 跟踪设备的说明。
+description: 'OwnTracks(https://owntracks.org/) 是一款免费开源的 iOS 和 Android 应用程序，允许您跟踪您的位置并将其直接发送到 Home Assistant。可以通过 Settings Devices & services(https://my.home-assistant.i。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Push
@@ -11,6 +11,7 @@ ha_platforms:
   - device_tracker
 ha_integration_type: service
 ---
+# OwnTracks
 
 [OwnTracks](https://owntracks.org/) 是一款免费开源的 iOS 和 Android 应用程序，允许您跟踪您的位置并将其直接发送到 Home Assistant。可以通过 **[Settings > Devices & services](https://my.home-assistant.io/redirect/integrations/)** 设置 OwnTracks。
 

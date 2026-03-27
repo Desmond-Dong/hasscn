@@ -1,7 +1,9 @@
 ---
 title: "在棒棒糖模拟器上测试"
+description: '要在运行 Lollipop (Android API 21) 的 Android 模拟器上测试应用程序，您需要更新过时的 WebView 以确保兼容性。如果没有此更新，WebView 将崩溃。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "棒棒糖模拟器"
 ---
+# 在棒棒糖模拟器上测试
 
 ## 概述
 

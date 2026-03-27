@@ -1,6 +1,6 @@
 ---
 title: SpaceAPI
-description: 有关如何为 Home Assistant 配置 SpaceAPI 的说明。
+description: 'The Space API integration allow Hackerspaces and Makerspaces to expose information to web apps or any other application with the。'
 ha_category:
   - Social
 ha_iot_class: Calculated
@@ -16,6 +16,7 @@ related:
     title: HTTP integration
 ha_quality_scale: legacy
 ---
+# SpaceAPI
 
 The **Space API** integration allow Hackerspaces and Makerspaces to expose information to web apps or any other application with the [SpaceAPI](https://spaceapi.io/).  It does this by exposing an API on Home Assistant that hosts the JSON payload that SpaceAPI uses.
 

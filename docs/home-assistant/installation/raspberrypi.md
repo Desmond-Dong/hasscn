@@ -1,7 +1,8 @@
 ---
 title: 树莓派
-description: 在树莓派上安装 Home Assistant
+description: '我们需要几样东西来开始安装 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 树莓派
 
 ## 推荐硬件
 

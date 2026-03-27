@@ -4,6 +4,7 @@ description: This new release of Home Assistant is lightning fast with the new w
   stack and progressive web application. On top of that a handful of new components
   and platforms for EnOcean, LIRC and Osram Lightify support.
 ---
+# 0.21: Improved Web and support for EnOcean, LIRC and Osram Lightify
 
 现在到了发布 0.21 的时候了，这个版本包含了大量核心改进：我们用标准化的 WSGI 栈替换了自研的 HTTP 栈。这将提升性能、速度与安全性，也会让未来开发高级 HTTP 功能变得更加轻松。
 

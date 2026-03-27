@@ -1,7 +1,9 @@
 ---
 title: "集成测试文件结构"
+description: '每个集成的测试都存放在一个以集成域命名的目录中。例如，移动应用集成的测试应位于 tests/components/mobileapp。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "测试文件结构"
 ---
+# 集成测试文件结构
 
 每个集成的测试都存放在一个以集成域命名的目录中。例如，移动应用集成的测试应位于 `tests/components/mobile_app`。
 

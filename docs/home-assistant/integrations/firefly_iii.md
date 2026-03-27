@@ -1,6 +1,6 @@
 ---
 title: Firefly III
-description: 关于如何将 Firefly III 与 Home Assistant 集成的说明。
+description: 'Firefly III 集成用作 Firefly III API(https://api-docs.firefly-iii.org/) 的接口。 Firefly III 是一个免费的开源个人财务管理器。它包含完整的交易管理系统、预算、类别和报告。您可以通过 Firefly III 提供的多种选项轻松导入交易。'
 ha_category:
   - Finance
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Firefly III
 
 **Firefly III** 集成用作 [Firefly III API](https://api-docs.firefly-iii.org/) 的接口。
 Firefly III 是一个免费的开源个人财务管理器。它包含完整的交易管理系统、预算、类别和报告。您可以通过 Firefly III 提供的多种选项轻松导入交易。它甚至包含一个规则引擎来自动化和帮助组织您的记账。

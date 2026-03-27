@@ -1,6 +1,6 @@
 ---
 title: Tasmota
-description: "有关如何将 Tasmota 与 Home Assistant 集成的说明。"
+description: 'This integration allows you to control Tasmota(https://tasmota.github.io/docs/) devices over MQTT. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Binary sensor
@@ -25,6 +25,7 @@ ha_platforms:
   - switch
 ha_integration_type: integration
 ---
+# Tasmota
 
 This integration allows you to control [Tasmota](https://tasmota.github.io/docs/) devices over MQTT.
 

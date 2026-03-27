@@ -1,6 +1,6 @@
 ---
 title: Advantage Air
-description: 关于将 Advantage Air 空调控制器集成到 Home Assistant 的说明。
+description: 'Advantage Air integration 允许您将 Advantage Air(https://www.advantageair.com.au/) 空调控制器集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -28,6 +28,7 @@ ha_platforms:
   - update
 ha_integration_type: hub
 ---
+# Advantage Air
 
 **Advantage Air** integration 允许您将 [Advantage Air](https://www.advantageair.com.au/) 空调控制器集成到 Home Assistant 中。
 

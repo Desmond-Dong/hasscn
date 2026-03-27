@@ -1,7 +1,9 @@
 ---
 title: 帮助我们在一分钟内改善语音质量
-description: 我们构建了一个工具，让您可以帮助我们为所有语言提供更好的本地和私人语音服务。
+description: '<img src=''/home-assistant/images/blog/2024-10-wake-word-collective/art.jpg'' alt="Help us improve voice"。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 帮助我们在一分钟内改善语音质量
+
 <img src='/home-assistant/images/blog/2024-10-wake-word-collective/art.jpg' alt="Help us improve voice">
 
 请给我们一分钟的时间，[发出你的声音](https://ohf-voice.github.io/wake-word-collective/) 来改进我们以社区为导向、注重隐私的语音助手，我们将共同打破大型科技公司对家庭语音控制的束缚。

@@ -1,6 +1,6 @@
 ---
 title: Hikvision
-description: 关于如何在 Home Assistant 中设置海康威视摄像头和 NVR 的说明。
+description: 'The Hikvision integration connects your Hikvision IP Camera or <abbr title="Network Video Recorder"NVR</abbr(https://www.hikvision.com/) to Home Assistant。'
 ha_category:
   - Binary sensor
   - Camera
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: device
 ha_config_flow: true
 ---
+# Hikvision
 
 The **Hikvision** integration connects your [Hikvision IP Camera or <abbr title="Network Video Recorder">NVR</abbr>](https://www.hikvision.com/) to Home Assistant, providing:
 

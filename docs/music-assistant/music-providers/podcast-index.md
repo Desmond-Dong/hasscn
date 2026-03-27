@@ -1,7 +1,7 @@
 ---
 title: "Podcast Index"
+description: 'Music Assistant 支持从 <a href="https://podcastindex.org/" target="blank" rel="noopener noreferrer"Podcast Index</a 流式传输播客。由 <a href="https://github.com/ozgav。'
 ---
-
 # Podcast Index 提供者 <img src="/assets/icons/podcast-index-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持从 <a href="https://podcastindex.org/" target="_blank" rel="noopener noreferrer">Podcast Index</a> 流式传输播客。由 <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a> 贡献和维护。

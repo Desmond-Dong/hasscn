@@ -1,7 +1,8 @@
 ---
 title: Logitech 对本地 API 的立场
-description: Logitech 改变决定，现已承诺继续维护 Harmony Hub 的本地 XMPP API。
+description: 'Logitech 曾决定移除其 Harmony Hub 上一个被广泛使用的本地 API。我们在这里博客-remove-api持续追踪了整个事件。这一变动在我们的用户以及其他接入 Harmony Hub 的智能家居用户中引发了大量讨论：很多人突然发现家里的自动化失效了。'
 ---
+# Logitech 对本地 API 的立场
 
 #### 本文最初讨论的是 Logitech 在移除其私有但被广泛使用的本地 API 后，不愿继续支持本地 API。该决定现已撤回，因此本文结论已不再适用于 Logitech。事件详情可见[这篇博客][博客-remove-api]。
 

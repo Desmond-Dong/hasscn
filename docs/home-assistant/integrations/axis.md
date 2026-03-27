@@ -1,6 +1,6 @@
 ---
 title: Axis
-description: Axis Communications 网络设备与 Home Assistant 之间的集成。
+description: 'Axis Communications(https://www.axis.com/) 设备是监控摄像头、扬声器、门禁控制和其他安全相关的网络连接硬件。Event API 适用于固件 5.50 及更新版本。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Camera
@@ -24,6 +24,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Axis
 
 [Axis Communications](https://www.axis.com/) 设备是监控摄像头、扬声器、门禁控制和其他安全相关的网络连接硬件。Event API 适用于固件 5.50 及更新版本。
 

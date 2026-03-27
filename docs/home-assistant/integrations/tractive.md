@@ -1,6 +1,6 @@
 ---
 title: Tractive
-description: 关于如何在 Home Assistant 中集成 Tractive 的说明。
+description: 'Tractive(https://tractive.com/en/) is an Austrian company that develops real-time location trackers for pets and other animals using GPS and GSM。'
 ha_category:
   - Presence detection
 ha_release: 2021.9
@@ -19,6 +19,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Tractive
 
 [Tractive](https://tractive.com/en/) is an Austrian company that develops real-time location trackers for pets and other animals using GPS and GSM technology.
 

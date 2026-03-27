@@ -1,6 +1,6 @@
 ---
 title: Ziggo Mediabox XL
-description: 关于如何将 Ziggo Mediabox XL 集成到 Home Assistant 的说明。
+description: 'The Ziggo Mediabox XL integration allows you to control a Ziggo(https://www.ziggo.nl/) Mediabox XL from Home Assistant. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Ziggo Mediabox XL
 
 The **Ziggo Mediabox XL** integration allows you to control a [Ziggo](https://www.ziggo.nl/) Mediabox XL from Home Assistant.
 

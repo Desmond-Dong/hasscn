@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 自动化
-description: 帮助您在 Home Assistant 中开始设置自动化的步骤。
+description: 'Home Assistant 包含您家中设备和实体的各种信息。您可以在仪表盘中查看这些信息，也可以用它们来触发自动化。这正是自动化最有趣的地方。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Home Assistant 自动化
 
 Home Assistant 包含您家中设备和实体的各种信息。您可以在仪表盘中查看这些信息，也可以用它们来触发自动化。这正是自动化最有趣的地方。
 

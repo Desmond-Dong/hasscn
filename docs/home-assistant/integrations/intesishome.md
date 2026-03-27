@@ -1,6 +1,6 @@
 ---
 title: IntesisHome
-description: 关于如何将 IntesisHome 空调设备与 Home Assistant 集成的说明。
+description: 'IntesisHome 集成可让您控制 IntesisHome(https://www.intesishome.com)、Airconwithme(https://airconwithme.com) 和 anywAIR(https://www.fujitsugeneral.com.au/anywair)。'
 ha_category:
   - Climate
 ha_release: 0.104
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# IntesisHome
 
 **IntesisHome** 集成可让您控制 [IntesisHome](https://www.intesishome.com)、[Airconwithme](https://airconwithme.com) 和 [anywAIR](https://www.fujitsugeneral.com.au/anywair) 设备。IntesisHome 为包括 Panasonic、Daikin、Fujitsu、Toshiba、LG 等品牌在内的空调提供集成支持。
 

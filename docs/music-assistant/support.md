@@ -1,7 +1,7 @@
 ---
 title: 获取帮助
+description: '由于本项目源于 Home Assistant 集成，所有最终用户支持都在单独的仓库中维护。请<a href="https://github.com/music-assistant/support" target="blank" rel="noopener noreferrer"在此</a提交问题并讨论想法。'
 ---
-
 # 获取帮助 <img src="/assets/icons/support-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 由于本项目源于 Home Assistant 集成，所有最终用户支持都在单独的仓库中维护。请<a href="https://github.com/music-assistant/support" target="_blank" rel="noopener noreferrer">在此</a>提交问题并讨论想法

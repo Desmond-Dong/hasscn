@@ -1,6 +1,6 @@
 ---
 title: inexogy
-description: 关于如何在 Home Assistant 中集成 inexogy 智能电表的说明。
+description: 'inexogy 集成允许用户将其 inexogy(https://inexogy.com/) 智能电表集成到 Home Assistant 中。 该集成使用 inexogy 的 官方 REST API(https://api.inexogy.com/docs//)。'
 ha_category:
   - Energy
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# inexogy
 
 **inexogy** 集成允许用户将其 [inexogy](https://inexogy.com/) 智能电表集成到 Home Assistant 中。
 该集成使用 inexogy 的 [官方 REST API](https://api.inexogy.com/docs/#/)。

@@ -1,6 +1,6 @@
 ---
 title: Tami4 Edge / Edge+
-description: Tami4 边缘集成
+description: 'The Tami4 Edge integration allows you to control and monitor Tami4 Edge / Edge+ by Strauss(https://www.tami4.co.il/tami4edge-collection) devices in Home。'
 ha_release: 2023.11
 ha_category:
   - Button
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Tami4 Edge / Edge+
 
 The **Tami4 Edge** integration allows you to control and monitor [Tami4 Edge / Edge+ by Strauss](https://www.tami4.co.il/tami4edge-collection) devices in Home Assistant.
 

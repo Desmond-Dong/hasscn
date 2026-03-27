@@ -1,6 +1,6 @@
 ---
 title: Apple WeatherKit
-description: 关于如何在 Home Assistant 中设置 Apple WeatherKit 的说明。
+description: 'Apple WeatherKit 集成可从 Apple Weather 获取当前天气和天气预报（按小时和按天）。由于 Apple 收购了 Dark Sky 并将其技术整合进自己的天气服务，因此它是 Dark Sky API 最直接的替代方案。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Weather
 ha_release: '2023.10'
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
   - weather
 ---
+# Apple WeatherKit
 
 **Apple WeatherKit** 集成可从 Apple Weather 获取当前天气和天气预报（按小时和按天）。由于 Apple 收购了 Dark Sky 并将其技术整合进自己的天气服务，因此它是 Dark Sky API 最直接的替代方案。
 

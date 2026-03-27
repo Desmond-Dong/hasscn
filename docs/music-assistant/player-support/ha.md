@@ -1,8 +1,7 @@
 ---
 title: 播放器支持 - Home Assistant 播放器
-description: 在 Music Assistant 中使用 HA 媒体播放器实体的功能和说明
+description: 'Music Assistant 支持播放到 Home Assistant 中的媒体播放器实体。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # Home Assistant <img src="/assets/icons/ha-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持播放到 Home Assistant 中的媒体播放器实体。

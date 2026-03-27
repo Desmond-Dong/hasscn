@@ -1,6 +1,6 @@
 ---
 title: MQTT
-description: 如何在 Home Assistant 中设置 MQTT 的说明。
+description: 'MQTT（又称 MQ 遥测传输）是一种基于 TCP/IP 的机器对机器或"物联网"连接协议。它允许极其轻量级的发布/订阅消息传输。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Update
@@ -46,6 +46,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# MQTT
 
 MQTT（又称 MQ 遥测传输）是一种基于 TCP/IP 的机器对机器或"物联网"连接协议。它允许极其轻量级的发布/订阅消息传输。
 

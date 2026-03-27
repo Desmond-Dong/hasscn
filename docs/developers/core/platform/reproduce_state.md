@@ -1,6 +1,8 @@
 ---
 title: "重现状态"
+description: 'Home Assistant 支持场景。场景是一组（部分）实体状态。当场景被激活时，Home Assistant 会尝试调用正确的服务操作，使这些实体进入场景中指定的状态。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 重现状态
 
 Home Assistant 支持场景。场景是一组（部分）实体状态。当场景被激活时，Home Assistant 会尝试调用正确的服务操作，使这些实体进入场景中指定的状态。
 

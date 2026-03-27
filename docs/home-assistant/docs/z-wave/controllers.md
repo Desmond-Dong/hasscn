@@ -1,7 +1,8 @@
 ---
 title: Z-Wave 适配器
-description: 关于如何设置 Z-Wave 的扩展说明。
+description: '要在 Home Assistant 中使用 Z-Wave，您需要一个兼容的 Z-Wave 适配器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Z-Wave 适配器
 
 要在 Home Assistant 中使用 Z-Wave，您需要一个兼容的 Z-Wave 适配器。
 

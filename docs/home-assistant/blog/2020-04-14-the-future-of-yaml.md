@@ -1,7 +1,8 @@
 ---
 title: The future of YAML
-description: A blog post answering the 'Is YAML going away?' question.
+description: '最近，社区里出现了不少评论和提问，讨论的是：越来越多集成开始支持通过前端配置，同时其中一些集成也移除了 YAML 支持。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# The future of YAML
 
 最近，社区里出现了不少评论和提问，讨论的是：越来越多集成开始支持通过前端配置，同时其中一些集成也移除了 YAML 支持。
 

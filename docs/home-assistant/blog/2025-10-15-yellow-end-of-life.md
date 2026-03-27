@@ -1,7 +1,8 @@
 ---
 title: 停止生产 Home Assistant Yellow
-description: 软件支持将继续，我们也开始探索下一代面向高阶用户的硬件方向。
+description: '<img src=''/home-assistant/images/blog/2025-10-yellow-eol/art.webp'' style=''border: 0;box-shadow: none;'' alt="Ending production of Home Assistant Yellow"。'
 ---
+# 停止生产 Home Assistant Yellow
 
 <img src='/home-assistant/images/blog/2025-10-yellow-eol/art.webp' style='border: 0;box-shadow: none;' alt="Ending production of Home Assistant Yellow">
 

@@ -1,7 +1,8 @@
 ---
 title: 实体和域
-description: 描述 Home Assistant 中的实体和域是什么。
+description: '您的设备在 Home Assistant 中表示为实体。实体是 Home Assistant 中存储数据的基本构建块。实体在 Home Assistant 中代表传感器、执行器或功能。实体用于监测物理属性或控制其他实体。实体通常是设备或服务的一部分。实体具有状态(/home-assistant/docs/co。'
 ---
+# 实体和域
 
 您的设备在 Home Assistant 中表示为实体。实体是 Home Assistant 中存储数据的基本构建块。实体在 Home Assistant 中代表传感器、执行器或功能。实体用于监测物理属性或控制其他实体。实体通常是设备或服务的一部分。实体具有[状态](/home-assistant/docs/configuration/state_object/)和[状态属性](/home-assistant/docs/configuration/state_object/#about-entity-state-attributes)。
 

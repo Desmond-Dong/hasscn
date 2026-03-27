@@ -1,7 +1,9 @@
 ---
 title: 家庭助理路线图
-description: 详细了解我们制定的路线图、其含义以及如何共同构建它！
+description: '<p class="img no-shadow"<img src=''/home-assistant/images/blog/2024-06-roadmap-introduction/art.jpg'' alt=''Artwork for the roadmap introduction''/<iClelia。'
 ---
+# 家庭助理路线图
+
 <p class="img no-shadow"><img src='/home-assistant/images/blog/2024-06-roadmap-introduction/art.jpg' alt='Artwork for the roadmap introduction'/><i>Clelia Rella 艺术</i></p>
 
 在我们的[开放日直播状态](https://www.youtube.com/watch?v=oa__fLArsFk&t=7649s) 中，我们通过宣布第一个路线图展示了开放日的未来。

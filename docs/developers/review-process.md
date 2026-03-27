@@ -1,6 +1,8 @@
 ---
 title: "拉取请求评审流程"
+description: 'Home Assistant 项目由多个 GitHub 仓库中的许多子项目共同组成， 这些项目一起构成了大家熟悉并喜爱的 Home Assistant。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 拉取请求评审流程
 
 Home Assistant 项目由多个 GitHub 仓库中的许多子项目共同组成，
 这些项目一起构成了大家熟悉并喜爱的 Home Assistant。

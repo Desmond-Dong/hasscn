@@ -1,6 +1,6 @@
 ---
 title: BeeWi SmartClim BLE sensor
-description: 关于如何将 MBeeWi SmartClim BLE 传感器与 Home Assistant 集成的说明。
+description: 'BeeWi SmartClim 集成允许监控室内或室外温度和湿度。BeeWi SmartClim BLE 是一款蓝牙低能耗传感器设备，通过使用应用程序从智能手机监控房间或花园的温度。使用此集成，可以通过 Home Assistant 从任何位置跟踪这些指标，以及根据房间温度创建一些自动化脚本。'
 ha_category:
   - Sensor
 ha_release: 0.99
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# BeeWi SmartClim BLE sensor
 
 **BeeWi SmartClim** 集成允许监控室内或室外温度和湿度。BeeWi SmartClim BLE 是一款蓝牙低能耗传感器设备，通过使用应用程序从智能手机监控房间或花园的温度。使用此集成，可以通过 Home Assistant 从任何位置跟踪这些指标，以及根据房间温度创建一些自动化脚本。
 

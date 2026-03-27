@@ -3,6 +3,7 @@ title: Energy management research using Home Assistant
 description: Learn how Prof. Kane from Northeastern University is conducting research
   using Home Assistant.
 ---
+# Energy management research using Home Assistant
 
 Two weeks ago we hosted the [状态 of the Open Home](/home-assistant/状态-of-the-open-home/). It included a presentation by [Prof. Michael Kane](https://coe.northeastern.edu/people/kane-michael/) and [Maharsi Pathak](https://www.linkedin.com/in/maharshi-pathak-) from the department of Civil and Environmental Engineering at [Northeastern University](https://www.northeastern.edu/).
 

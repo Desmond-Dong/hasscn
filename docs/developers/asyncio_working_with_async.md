@@ -1,6 +1,8 @@
 ---
 title: "使用异步"
+description: 'Home Assistant 提供了兼容层 API，但直接使用异步 Core 会快得多。Core 中的大多数组件都已经改写为异步版本，包括实体组件 helper（如灯、开关等的基础设施）、脚本、组和自动化。 本页属于 Home Assistant 开发者文档。'
 ---
+# 使用异步
 
 Home Assistant 提供了兼容层 API，但直接使用异步 Core 会快得多。Core 中的大多数组件都已经改写为异步版本，包括实体组件 helper（如灯、开关等的基础设施）、脚本、组和自动化。
 

@@ -1,7 +1,8 @@
 ---
 title: 还有一件事……
-description: 隆重推出适用于 macOS 的 Home Assistant Companion。
+description: '哇，这真是一个生日周啊！感谢 month of What The Heck?!(/home-assistant/blog/2020/08/18/the-month-of-what-the-heck/)，我们有了 new supervisor 发布(/home-assistant/blog/2020/09/16。'
 ---
+# 还有一件事……
 
 哇，这真是一个生日周啊！感谢 [month of What The Heck?!](/home-assistant/blog/2020/08/18/the-month-of-what-the-heck/)，我们有了 [new supervisor 发布](/home-assistant/blog/2020/09/16/supervisor-joins-the-party)，它是最大且最受用户驱动的核心 [releases](/home-assistant/blog/2020/09/17/release-115) 之一。我们甚至将 [RFID tags](/home-assistant/blog/2020/09/15/home-assistant-tags) 融入了 Home Assistant 的核心，但我们还没有完成！我们还有“还有一件事……”
 

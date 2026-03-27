@@ -1,7 +1,8 @@
 ---
 title: 连接错误
-description: 连接错误
+description: '在运行 Home Assistant 时，您可能会收到关于连接问题的错误信息。例如：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 连接错误
 
 在运行 Home Assistant 时，您可能会收到关于连接问题的错误信息。例如：
 

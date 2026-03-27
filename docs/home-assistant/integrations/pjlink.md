@@ -1,6 +1,6 @@
 ---
 title: PJLink
-description: 有关如何将支持 PJLink 的投影仪集成到 Home Assistant 的说明。
+description: 'The PJLink integration allows you to control from Home Assistant, projectors with support for the PJLink protocol(https://pjlink.jbmia.or.jp/english/index.。'
 ha_category:
   - Media player
 ha_release: 0.76
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# PJLink
 
 The **PJLink** integration allows you to control from Home Assistant, projectors with support for the [PJLink protocol](https://pjlink.jbmia.or.jp/english/index.html).
 

@@ -1,6 +1,6 @@
 ---
 title: DSMR Reader
-description: 关于如何集成 DSMR Reader 的说明。
+description: 'DSMR Reader 集成允许您轻松添加 DSMR Reader(https://dsmr-reader.readthedocs.io/en/latest/)（荷兰智能电表要求读取器）暴露给 MQTT 的所有传感器。它为 MQTT 主题中的每个字段添加一个单独的传感器。'
 ha_category:
   - Energy
   - Sensor
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# DSMR Reader
 
 **DSMR Reader** 集成允许您轻松添加 [DSMR Reader](https://dsmr-reader.readthedocs.io/en/latest/)（荷兰智能电表要求读取器）暴露给 MQTT 的所有传感器。它为 MQTT 主题中的每个字段添加一个单独的传感器，命名为 `sensor_dsmr_<mqtt_topic>`。
 

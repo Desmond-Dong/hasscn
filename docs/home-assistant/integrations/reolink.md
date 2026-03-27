@@ -1,6 +1,6 @@
 ---
 title: Reolink
-description: 有关如何将 Reolink 设备（NVR/摄像头）集成到 Home Assistant 的说明。
+description: 'Reolink 集成可让您在 Home Assistant 中控制 Reolink(https://reolink.com/) NVR 或摄像头。Reolink 摄像头以本地存储著称，无需云订阅或云账号即可使用。设备可在局域网内完全本地运行，优先保障隐私。'
 ha_category:
   - Camera
   - Doorbell
@@ -35,6 +35,7 @@ related:
 works_with:
   - local
 ---
+# Reolink
 
 **Reolink** 集成可让您在 Home Assistant 中控制 [Reolink](https://reolink.com/) NVR 或摄像头。Reolink 摄像头以本地存储著称，无需云订阅或云账号即可使用。设备可在局域网内完全本地运行，优先保障隐私。即使阻断 Reolink 设备的互联网访问，Home Assistant 集成以及 Reolink app/client 仍可照常工作。Reolink 摄像头在白天与夜间都能提供清晰画质，且价格相对亲民。摄像头内置 SD 卡可进行本地录像，选配的 Reolink NVR/Hub 则可在室内提供更大的录像容量。从本文档中的实体列表也可看出，Reolink 摄像头具备高度可配置性，并与 Home Assistant 深度集成。
 

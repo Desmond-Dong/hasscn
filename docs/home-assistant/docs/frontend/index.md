@@ -1,7 +1,7 @@
 ---
 title: 前端
+description: 'Home Assistant 的用户界面可以通过多种方式进行自定义。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
-
 # 前端
 
 Home Assistant 的用户界面可以通过多种方式进行自定义。

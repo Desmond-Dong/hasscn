@@ -1,6 +1,6 @@
 ---
 title: Trenitalia ViaggiaTreno
-description: 关于如何将意大利铁路数据（来自 ViaggiaTreno API）集成到 Home Assistant 的说明。
+description: 'Trenitalia ViaggiaTreno 集成会通过公开的 ViaggiaTreno(http://viaggiatreno.it) API，为您提供已配置列车 ID 和车站的信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Trenitalia ViaggiaTreno
 
 **Trenitalia ViaggiaTreno** 集成会通过公开的 [ViaggiaTreno](http://viaggiatreno.it) API，为您提供已配置列车 ID 和车站的信息。
 

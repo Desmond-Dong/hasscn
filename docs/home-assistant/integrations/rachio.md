@@ -1,6 +1,6 @@
 ---
 title: Rachio
-description: 有关如何通过 Home Assistant 使用 Rachio 的说明。
+description: 'The Rachio integration allows you to control your Rachio irrigation system(https://rachio.com/). 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Calendar
@@ -22,6 +22,7 @@ ha_platforms:
 ha_zeroconf: true
 ha_integration_type: hub
 ---
+# Rachio
 
 The **Rachio** integration allows you to control your [Rachio irrigation system](https://rachio.com/).
 

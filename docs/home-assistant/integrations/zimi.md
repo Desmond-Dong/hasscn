@@ -1,6 +1,6 @@
 ---
 title: zimi
-description: 访问和控制您的 Zimi 云控制器及其连接的基于 Zimi 的设备。
+description: 'The Zimi Cloud Controller integration allows you to connect your Zimi Cloud Controller to Home Assistant and, via this integration。'
 featured: false
 ha_iot_class: Local Push
 ha_release: 2025.6
@@ -27,6 +27,7 @@ related:
 ha_quality_scale: bronze
 ha_integration_type: hub
 ---
+# zimi
 
 The **Zimi Cloud Controller** integration allows you to connect your Zimi Cloud Controller to Home Assistant and, via this integration, control local devices connected to the Zimi mesh.
 

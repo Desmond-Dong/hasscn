@@ -1,6 +1,6 @@
 ---
 title: Timer
-description: 关于如何将计时器集成到 Home Assistant 的说明。
+description: '计时器（Timer） 集成旨在简化基于（动态）时长的自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
   - Helper
@@ -9,6 +9,7 @@ ha_quality_scale: internal
 ha_domain: timer
 ha_integration_type: helper
 ---
+# Timer
 
 **计时器（Timer）** 集成旨在简化基于（动态）时长的自动化。
 

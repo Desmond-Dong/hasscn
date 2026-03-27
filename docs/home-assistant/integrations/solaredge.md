@@ -1,6 +1,6 @@
 ---
 title: SolarEdge
-description: 有关如何将 SolarEdge 传感器集成到 Home Assistant 中的说明。
+description: 'The SolarEdge integration allows you to get details from your SolarEdge solar power setup and integrate these in your Home Assistant installation. It。'
 ha_category:
   - Energy
   - Sensor
@@ -17,6 +17,7 @@ ha_codeowners:
   - '@tronikos'
 ha_integration_type: device
 ---
+# SolarEdge
 
 The **SolarEdge** integration allows you to get details from your SolarEdge solar power setup and integrate these in your Home Assistant installation.
 It provides two main features:

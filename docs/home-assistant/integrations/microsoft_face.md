@@ -1,6 +1,6 @@
 ---
 title: Microsoft Face
-description: 关于如何将 Microsoft Face 集成到 Home Assistant 的说明。
+description: 'Microsoft Face 集成是 Microsoft Azure Cognitive Service Face(https://azure.microsoft.com/products/cognitive-services/vision-services) 的主集成。'
 ha_category:
   - Image processing
 ha_iot_class: Cloud Push
@@ -9,6 +9,7 @@ ha_domain: microsoft_face
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Microsoft Face
 
 **Microsoft Face** 集成是 Microsoft Azure Cognitive Service [Face](https://azure.microsoft.com/products/cognitive-services/vision-services) 的主集成。
 所有数据都存储在您自己位于 Azure 云中的私有实例中。

@@ -1,8 +1,11 @@
 ---
 title: "如果互联网/设备/服务不可用，则在不可用时记录一次，在重新连接时记录一次"
+description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 related_rules:
   - entity-unavailable
 ---
+# 如果互联网/设备/服务不可用，则在不可用时记录一次，在重新连接时记录一次
+
 import RelatedRules from './_includes/related_rules.jsx'
 
 ## 推理

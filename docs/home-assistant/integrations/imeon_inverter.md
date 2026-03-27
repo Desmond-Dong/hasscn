@@ -1,6 +1,6 @@
 ---
 title: Imeon Inverter
-description: 关于 Imeon 逆变器与 Home Assistant 集成的说明。
+description: 'Imeon Inverter 集成会在 Home Assistant 中轮询 Imeon(https://imeon-energy.com/) 太阳能逆变器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2025.5
 ha_category:
   - Energy
@@ -20,6 +20,7 @@ ha_platforms:
   - sensor
 ha_ssdp: true
 ---
+# Imeon Inverter
 
 **Imeon Inverter** 集成会在 Home Assistant 中轮询 [Imeon](https://imeon-energy.com/) 太阳能逆变器。
 

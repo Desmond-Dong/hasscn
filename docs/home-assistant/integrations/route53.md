@@ -1,6 +1,6 @@
 ---
 title: AWS Route53
-description: 自动更新您的 AWS Route53 DNS 记录。
+description: '借助 AWS Route53 集成，您可以让 AWS Route53 DNS 记录保持最新。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_iot_class: Cloud Push
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# AWS Route53
 
 借助 **AWS Route53** 集成，您可以让 AWS Route53 DNS 记录保持最新。
 

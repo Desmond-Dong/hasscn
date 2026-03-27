@@ -1,6 +1,6 @@
 ---
 title: MQTT JSON
-description: 关于如何使用 MQTT JSON 在 Home Assistant 中跟踪设备的说明。
+description: 'MQTT JSON 集成允许您通过监控 MQTT 主题中的新位置数据来检测在家状态。要使用此平台，您需要为每个设备指定唯一主题。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Presence detection
@@ -15,6 +15,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# MQTT JSON
 
 **MQTT JSON** 集成允许您通过监控 MQTT 主题中的新位置数据来检测在家状态。要使用此平台，您需要为每个设备指定唯一主题。
 

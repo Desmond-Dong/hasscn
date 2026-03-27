@@ -1,7 +1,9 @@
 ---
 title: 标题卡片
-description: 标题卡片通过提供标题、图标、导航和徽章来组织您的仪表盘。
+description: '标题卡片通过提供标题、图标和导航来组织您的仪表盘。此卡片支持动作(/home-assistant/dashboards/actions/)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 标题卡片
+
 标题卡片通过提供标题、图标和导航来组织您的仪表盘。此卡片支持[动作](/home-assistant/dashboards/actions/)。
 
 <p class='img'>

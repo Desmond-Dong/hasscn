@@ -1,6 +1,6 @@
 ---
 title: Scenes
-description: 有关如何在 Home Assistant 中设置场景的说明。
+description: '场景实体是一种可以恢复一组实体状态的实体。 场景可以由您自行定义，也可以由集成提供。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Organization
 ha_release: 0.15
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_domain: scene
 ha_integration_type: entity
 ---
+# Scenes
 
 场景实体是一种可以恢复一组实体状态的实体。
 场景可以由您自行定义，也可以由集成提供。

@@ -1,7 +1,8 @@
 ---
 title: 楼层
-description: 按楼层对区域进行分组
+description: 'Home Assistant 中的楼层是一个逻辑分组，旨在与您家中的物理楼层相匹配。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 楼层
 
 Home Assistant 中的楼层是一个逻辑分组，旨在与您家中的物理楼层相匹配。
 

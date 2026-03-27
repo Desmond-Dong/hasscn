@@ -1,7 +1,8 @@
 ---
 title: 质量等级
-description: 关于integrations分类的详细信息。
+description: 'integrations质量等级是 Home Assistant 用来根据用户体验、功能、代码质量和开发者体验对integrations进行评级的框架。 为此，项目制定了一组层级，每个层级都有自己的一套标准。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 质量等级
 
 integrations质量等级是 Home Assistant 用来根据用户体验、功能、代码质量和开发者体验对integrations进行评级的框架。
 为此，项目制定了一组层级，每个层级都有自己的一套标准。

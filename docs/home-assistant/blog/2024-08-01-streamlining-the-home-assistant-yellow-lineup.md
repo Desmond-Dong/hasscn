@@ -1,7 +1,9 @@
 ---
 title: 精简家庭助理黄色阵容
-description: 黄色家庭助理仍然是我们的旗舰产品，并且该产品线正在进行一些小调整。
+description: '<p class=''img''<img src=''/home-assistant/images/blog/2024-08-yellow-lineup/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Home Assistant Yellow and。'
 ---
+# 精简家庭助理黄色阵容
+
 <p class='img'><img src='/home-assistant/images/blog/2024-08-yellow-lineup/art.jpg' style='border: 0;box-shadow: none;' alt="Home Assistant Yellow and packaging">Home Assistant Yellow 完全组装有附加（且不包含）NVMe 存储和 Z-Wave GPIO 模块</p>
 
 **TL;DR：** 我们现在仅将 Home Assistant Yellow 作为套件出售，这需要单独购买 CM4。 Home Assistant Green 是初学者的最佳即插即用选择。

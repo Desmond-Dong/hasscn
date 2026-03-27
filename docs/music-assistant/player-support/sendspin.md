@@ -1,7 +1,7 @@
 ---
 title: "Sendspin"
+description: '<a href="https://www.sendspin-audio.com/" target="blank" rel="noopener noreferrer"Sendspin-audio</a 是由 <a href="https://www.openhomefoundation.org/"。'
 ---
-
 # Sendspin-audio 提供商 <img src="/assets/icons/sendspin-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 <a href="https://www.sendspin-audio.com/" target="_blank" rel="noopener noreferrer">Sendspin-audio</a> 是由 <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation</a> 开发的音频播放、控制和同步协议。它是 **Music Assistant 内置的原生播放协议**，提供跨多个客户端的同步音频播放，具有采样精确的时序。

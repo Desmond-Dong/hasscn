@@ -1,7 +1,8 @@
 ---
 title: 'pip3：找不到命令'
-description: 'pip3：找不到命令'
+description: '这个工具通常会作为 Python 3 安装的一部分一同安装。运行 python3 --version 可检查 Python 3 是否已安装。如果尚未安装，请在此下载(https://www.python.org/getit/)。 本页属于 Home Assistant 中文文档。'
 ---
+# pip3：找不到命令
 
 这个工具通常会作为 Python 3 安装的一部分一同安装。运行 `python3 --version` 可检查 Python 3 是否已安装。如果尚未安装，请[在此下载](https://www.python.org/getit/)。
 

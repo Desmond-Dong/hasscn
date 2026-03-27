@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: 关于如何为 Home Assistant 设置配置面板的说明。
+description: 'Config 集成旨在在前端显示 设置 面板，用于配置和管理 Home Assistant 的各个部分。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Front end
 ha_release: 0.39
@@ -15,6 +15,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Configuration
 
 **Config** 集成旨在在前端显示 **设置** 面板，用于配置和管理 Home Assistant 的各个部分。
 

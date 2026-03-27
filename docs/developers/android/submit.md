@@ -1,7 +1,9 @@
 ---
 title: "安卓提交贡献"
+description: '首先感谢您的贡献！现在是时候获取反馈并为真实用户准备您的工作了。按照 GitHub Documentation(https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your。'
 sidebar_label: "提交贡献"
 ---
+# 安卓提交贡献
 
 ## 提交您的第一份贡献
 

@@ -1,6 +1,6 @@
 ---
 title: Nightscout
-description: "有关如何将 Nightscout CGM 数据集成到 Home Assistant 的说明。"
+description: 'The Nightscout integration allows you to view your CGM data from Nightscout(http://www.nightscout.info/) in Home Assistant. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Nightscout
 
 The **Nightscout** integration allows you to view your CGM data from [Nightscout](http://www.nightscout.info/) in Home Assistant.
 

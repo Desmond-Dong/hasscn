@@ -1,6 +1,6 @@
 ---
 title: Fressnapf Tracker
-description: 关于如何将 Fressnapf GPS 跟踪器集成到 Home Assistant 的说明。
+description: 'Fressnapf Tracker 集成允许您将 Fressnapf GPS 跟踪器(https://tracker.fressnapf.de/) 集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_iot_class: Cloud Polling
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# Fressnapf Tracker
 
 **Fressnapf Tracker** 集成允许您将 [Fressnapf GPS 跟踪器](https://tracker.fressnapf.de/) 集成到 Home Assistant 中。
 

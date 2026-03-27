@@ -1,6 +1,8 @@
 ---
 title: "YAML 风格指南"
+description: '除了通用的文档规范(/developers/documenting/standards)之外，我们还为文档中的 YAML 片段制定了一套专门规范。本页介绍的规则适用于项目中所有基于 YAML 的代码示例，重点面向文档场景。 本页属于 Home Assistant 开发者文档。'
 ---
+# YAML 风格指南
 
 除了通用的[文档规范](/developers/documenting/standards)之外，我们还为文档中的 YAML 片段制定了一套专门规范。本页介绍的规则适用于项目中所有基于 YAML 的代码示例，重点面向文档场景。
 

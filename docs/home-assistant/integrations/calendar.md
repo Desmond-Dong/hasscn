@@ -1,6 +1,6 @@
 ---
 title: Calendar
-description: 关于如何在 Home Assistant 中集成日历的说明。
+description: 'Calendar 集成提供日历实体，允许其他集成将日历整合到 Home Assistant 中。日历显示在日历仪表板上，可用于自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.33
 ha_domain: calendar
 ha_quality_scale: internal
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
 ---
+# Calendar
 
 **Calendar** 集成提供日历实体，允许其他集成将日历整合到 Home Assistant 中。日历显示在日历仪表板上，可用于自动化。
 

@@ -1,6 +1,6 @@
 ---
 title: Yamaha Network Receivers
-description: 关于如何将雅马哈网络接收器集成到 Home Assistant 的说明。
+description: 'The Yamaha Network Receivers integration allows you to control Yamaha Network Receivers(https://usa.yamaha.com/products/audio-visual/av-receivers-amps/rx)。'
 ha_category:
   - Media player
 ha_release: 0.16
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Yamaha Network Receivers
 
 The **Yamaha Network Receivers** integration allows you to control [Yamaha Network Receivers](https://usa.yamaha.com/products/audio-visual/av-receivers-amps/rx) from Home Assistant.
 

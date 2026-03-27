@@ -1,6 +1,6 @@
 ---
 title: "Configuration.yaml"
-description: "Configuring Home Assistant via text files."
+description: '虽然您可以在用户界面中完成 Home Assistant 的大部分配置，但某些集成仍需要编辑 configuration.yaml 文件。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 related:
   - docs: /docs/configuration/yaml/
     title: YAML syntax
@@ -15,6 +15,7 @@ related:
   - docs: docs/configuration/troubleshooting/
     title: Troubleshooting the configuration
 ---
+# Configuration.yaml
 
 虽然您可以在用户界面中完成 Home Assistant 的大部分配置，但某些集成仍需要编辑 `configuration.yaml` 文件。
 

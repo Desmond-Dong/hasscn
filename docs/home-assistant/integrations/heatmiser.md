@@ -1,6 +1,6 @@
 ---
 title: Heatmiser
-description: 关于如何在 Home Assistant 中集成 Heatmiser 恒温器的说明。
+description: 'Heatmiser 集成可让您控制 Heatmiser DT/DT-E/PRT/PRT-E(https://www.heatmisershop.co.uk/room-thermostats/) 恒温器。该模块目前通过 RS232 - RS485 转换器工作，因此使用 IP 连接。'
 ha_category:
   - Climate
 ha_release: '0.10'
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Heatmiser
 
 **Heatmiser** 集成可让您控制 [Heatmiser DT/DT-E/PRT/PRT-E](https://www.heatmisershop.co.uk/room-thermostats/) 恒温器。该模块目前通过 RS232 -> RS485 转换器工作，因此使用 IP 连接。
 

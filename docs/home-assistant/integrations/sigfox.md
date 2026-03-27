@@ -1,6 +1,6 @@
 ---
 title: Sigfox
-description: 在 Home Assistant 中显示来自 Sigfox 设备的消息。
+description: 'SigFox(https://www.sigfox.com/) integration adding a sensor for each Sigfox device registered with your account. The default name of sensors is。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Sigfox
 
 [SigFox](https://www.sigfox.com/) integration adding a sensor for each Sigfox device registered with your account. The default name of sensors is `sigfox_{DEVICE_ID}` where `DEVICE_ID` is the devices Sigfox ID. The state of an added Sigfox sensor is the payload of the last message published by that device. Additionally, there are attributes for the latitude and longitude coordinates of the device, as well as the signal-to-noise ratio ([snr](https://en.wikipedia.org/wiki/Signal-to-noise_ratio)).
 

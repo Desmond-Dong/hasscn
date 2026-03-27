@@ -1,7 +1,8 @@
 ---
 title: 添加本地媒体
-description: 关于如何向 Home Assistant 添加本地媒体的更多信息。
+description: '为了在您的 Home Assistant 媒体浏览器中查看本地媒体，您需要将媒体添加到您的媒体文件夹。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 添加本地媒体
 
 为了在您的 Home Assistant 媒体浏览器中查看本地媒体，您需要将媒体添加到您的媒体文件夹。
 

@@ -1,6 +1,6 @@
 ---
 title: 简单服务发现协议（SSDP）
-description: 使用 SSDP 协议发现网络上的集成。
+description: '简单服务发现协议（SSDP）（UPnP 的一部分）集成会扫描网络中的受支持设备和服务。发现到的集成会显示在配置面板中集成页面的“已发现”部分。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_iot_class: Local Push
@@ -9,6 +9,7 @@ ha_domain: ssdp
 ha_quality_scale: internal
 ha_integration_type: system
 ---
+# 简单服务发现协议（SSDP）
 
 **简单服务发现协议（SSDP）**（UPnP 的一部分）集成会扫描网络中的受支持设备和服务。发现到的集成会显示在配置面板中集成页面的“已发现”部分。
 

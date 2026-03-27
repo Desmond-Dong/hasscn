@@ -1,8 +1,7 @@
 ---
 title: MusicCast 播放器提供者
-description: MusicCast 播放器提供者说明
+description: 'Music Assistant 支持 <a href="https://au.yamaha.com/en/products/contents/audiovisual/musiccast/index.html" target="blank" rel="noopener。'
 ---
-
 # MusicCast <img src="/assets/icons/musiccast-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 <a href="https://au.yamaha.com/en/products/contents/audio_visual/musiccast/index.html" target="_blank" rel="noopener noreferrer">MusicCast</a> 设备。由 <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a> 贡献和维护

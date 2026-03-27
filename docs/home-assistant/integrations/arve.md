@@ -1,6 +1,6 @@
 ---
 title: Arve
-description: 关于将 Arve 集成到 Home Assistant 的说明
+description: 'Arve 集成提供监控由您的 Arve(https://www.arveair.com) 设备测量的实时空气质量数据的能力。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
   - Health
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_config_flow: true
 ---
+# Arve
 
 **Arve** 集成提供监控由您的 [Arve](https://www.arveair.com) 设备测量的实时空气质量数据的能力。
 

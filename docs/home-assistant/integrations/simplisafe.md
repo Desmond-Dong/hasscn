@@ -1,6 +1,6 @@
 ---
 title: SimpliSafe
-description: 有关如何将 SimpliSafe 集成到 Home Assistant 的说明。
+description: 'SimpliSafe 集成可将 SimpliSafe home security(https://simplisafe.com)（V2 和 V3）系统接入 Home Assistant，并支持多个 SimpliSafe 账户。 本页属于 Home Assistant 中文文档。'
 ha_release: 0.81
 ha_iot_class: Cloud Polling
 ha_category:
@@ -21,6 +21,7 @@ ha_platforms:
 ha_dhcp: true
 ha_integration_type: hub
 ---
+# SimpliSafe
 
 **SimpliSafe** 集成可将 [SimpliSafe home security](https://simplisafe.com)（V2 和 V3）系统接入 Home Assistant，并支持多个 SimpliSafe 账户。
 

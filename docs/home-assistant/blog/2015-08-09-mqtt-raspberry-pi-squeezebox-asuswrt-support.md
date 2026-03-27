@@ -3,6 +3,7 @@ title: 现已支持 MQTT、Raspberry Pi、Logitech Squeezebox 和 ASUSWRT 路由
 description: 新增对 MQTT、Raspberry Pi GPIO、Logitech Squeezebox 和 ASUSWRT 的支持
   routers
 ---
+# 现已支持 MQTT、Raspberry Pi、Logitech Squeezebox 和 ASUSWRT 路由器
 
 八月发布来了，这次有不少重磅内容。感谢 [@balloob](https://github.com/balloob) 对 Home Assistant 核心进行了一轮深入清理，并提升了测试覆盖率。如果你是开发者，请务必阅读[弃用公告](https://github.com/home-assistant/home-assistant/pull/251)。[@fabaff](https://github.com/fabaff) 也再次完善了各类组件文档。
 

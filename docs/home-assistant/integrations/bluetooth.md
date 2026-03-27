@@ -1,6 +1,6 @@
 ---
 title: Bluetooth
-description: 发现、连接和监控蓝牙设备。
+description: '蓝牙集成将检测附近的蓝牙设备。发现的设备将显示在配置面板集成页面的已发现部分。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Utility
 ha_iot_class: Local Push
@@ -21,6 +21,7 @@ related:
   - url: https://esphome.io/projects/?type=bluetooth
     title: Bluetooth proxy page
 ---
+# Bluetooth
 
 **蓝牙**集成将检测附近的蓝牙设备。发现的设备将显示在配置面板集成页面的已发现部分。
 

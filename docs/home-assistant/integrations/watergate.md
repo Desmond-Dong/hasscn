@@ -1,6 +1,6 @@
 ---
 title: Watergate
-description: 关于如何将 Watergate 与 Home Assistant 集成的说明。
+description: 'Watergate 集成可将您的 Watergate 设备（目前为 Sonic Wi-Fi）接入 Home Assistant。 使用此集成，您可以：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Valve
@@ -18,6 +18,7 @@ ha_platforms:
 ha_quality_scale: silver
 ha_integration_type: device
 ---
+# Watergate
 
 **Watergate** 集成可将您的 Watergate 设备（目前为 Sonic Wi-Fi）接入 Home Assistant。
 使用此集成，您可以：

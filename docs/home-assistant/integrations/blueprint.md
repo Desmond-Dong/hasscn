@@ -1,6 +1,6 @@
 ---
 title: Blueprint
-description: 关于如何在 Home Assistant 中使用自动化蓝图的说明。
+description: '<scriptdocument.location.href = ''/docs/automation/usingblueprints/'';</script。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
 ha_release: 2020.12
@@ -10,5 +10,6 @@ ha_codeowners:
 ha_domain: blueprint
 ha_integration_type: system
 ---
+# Blueprint
 
 <script>document.location.href = '/docs/automation/using_blueprints/';</script>

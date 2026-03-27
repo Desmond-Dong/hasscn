@@ -1,6 +1,6 @@
 ---
 title: Proliphix
-description: 有关如何将 Proliphix 恒温器集成到 Home Assistant 中的说明。
+description: 'Proliphix 集成可让您在 Home Assistant 中控制 Proliphix 恒温器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.11
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Proliphix
 
 **Proliphix** 集成可让您在 Home Assistant 中控制 Proliphix 恒温器。
 

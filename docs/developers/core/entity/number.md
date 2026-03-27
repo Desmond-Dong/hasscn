@@ -1,7 +1,9 @@
 ---
 title: 数值实体
+description: 'number 是一种允许用户向集成输入任意数值的实体平台。请从 homeassistant.components.number.NumberEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/numbe。'
 sidebar_label: 数值
 ---
+# 数值实体
 
 `number` 是一种允许用户向集成输入任意数值的实体平台。请从 [`homeassistant.components.number.NumberEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/number/__init__.py) 派生你的实体。
 

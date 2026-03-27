@@ -2,6 +2,7 @@
 title: '0.25: Custom 前端 面板, Jupyter notebooks, DirecTV.'
 description: 前端 became blazing fast and extensible. DirecTV support added.
 ---
+# 0.25: Custom 前端 面板, Jupyter notebooks, DirecTV.
 
 When Home Assistant started the focus has always been on making a great developer experience. Allowing anyone to add support for their favorite 设备 to Home Assistant easily. This focus has been a great success since we now have 339 components and platforms!
 

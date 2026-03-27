@@ -1,6 +1,6 @@
 ---
 title: Kaiterra
-description: 关于如何将 Kaiterra 设备集成到 Home Assistant 的说明。
+description: 'Kaiterra 集成可让您通过 Kaiterra REST API(https://dev.kaiterra.com/) 查看 Laser Egg 或 Sensedge 设备的读数。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_iot_class: Cloud Polling
 ha_category:
   - Health
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Kaiterra
 
 **Kaiterra** 集成可让您通过 [Kaiterra REST API](https://dev.kaiterra.com/) 查看 Laser Egg 或 Sensedge 设备的读数。
 

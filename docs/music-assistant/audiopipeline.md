@@ -1,8 +1,7 @@
 ---
 title: 音频管道
-description: 音频管道视图说明
+description: '<video controls autoplay loop muted playsinline style="width: 100%; max-width: 800px;" <source src="/videos/audio-pipeline.mp4" type="video/mp4" / </video。'
 ---
-
 # 音频管道
 
 <video controls autoplay loop muted playsinline style="width: 100%; max-width: 800px;">

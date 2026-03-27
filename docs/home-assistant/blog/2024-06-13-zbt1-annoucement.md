@@ -1,7 +1,9 @@
 ---
 title: 家庭助理 SkyConnect 更名为 Connect ZBT-1
-description: 将 Zigbee 添加到 Home Assistant 的最佳方式是获得新的名称和外观。
+description: '<p class="img no-shadow"<img src=''/home-assistant/images/blog/2024-06-ZBT1/art.jpg'' alt=''Home Assistant Skyconnect becomes Connect ZBT-1''/</p。'
 ---
+# 家庭助理 SkyConnect 更名为 Connect ZBT-1
+
 <p class="img no-shadow"><img src='/home-assistant/images/blog/2024-06-ZBT1/art.jpg' alt='Home Assistant Skyconnect becomes Connect ZBT-1'/></p>
 
 [Home Assistant Connect ZBT-1](/home-assistant/connectzbt1) 是 Home Assistant SkyConnect 的新名称。尽管名称和外观都是新的，但它们具有完全相同的硬件、功能和支持。

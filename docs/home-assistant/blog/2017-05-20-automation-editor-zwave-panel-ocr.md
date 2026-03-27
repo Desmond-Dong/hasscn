@@ -2,6 +2,7 @@
 title: "Home Assistant 0.45: Automation editor, Z-Wave panel, OCR"
 description: "AXIS and Keene support, PiFace, Raspihats, and Datadog integrations"
 ---
+# Home Assistant 0.45: Automation editor, Z-Wave panel, OCR
 
 <a href='/home-assistant/integrations/#版本/0.45'><img src='/home-assistant/images/blog/2017-05-0.45/components.png' style='border: 0;box-shadow: none;'></a>
 

@@ -3,6 +3,7 @@ title: 预计 Home Assistant OS 将支持 Raspberry Pi 5
 description: 预计在 2023 年底或 2024 年初为 Raspberry Pi 5 提供稳定的 Home Assistant OS
   支持
 ---
+# 预计 Home Assistant OS 将支持 Raspberry Pi 5
 
 9 月 28 日，Raspberry Pi 发布了 [Raspberry Pi 5](https://www.raspberrypi.com/news/introducing-raspberry-pi-5/)，让全世界都感到惊喜，说实话，我们也是如此。这块新主板承诺将提供超过 Raspberry Pi 4 两倍的性能，目前已经开放预购。Raspberry Pi 预计会在 10 月底前向客户发货。
 

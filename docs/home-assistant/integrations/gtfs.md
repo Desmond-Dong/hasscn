@@ -1,6 +1,6 @@
 ---
 title: General Transit Feed Specification (GTFS)
-description: 关于如何在 Home Assistant 中使用公共交通开放数据的说明。
+description: 'GTFS 集成可为您提供公共交通车站/站点的下一班发车时间及相关数据。这些数据来自您选择的公共交通机构，并采用 General Transit Feed Specification(https://developers.google.com/transit/gtfs/) 格式，通常简称为 GTFS。'
 ha_category:
   - Transport
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# General Transit Feed Specification (GTFS)
 
 **GTFS** 集成可为您提供公共交通车站/站点的下一班发车时间及相关数据。这些数据来自您选择的公共交通机构，并采用 [General Transit Feed Specification](https://developers.google.com/transit/gtfs/) 格式，通常简称为 GTFS。
 

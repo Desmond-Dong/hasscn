@@ -1,7 +1,7 @@
 ---
 title: "个人资料设置"
+description: '此页面与当前登录的用户有关。用户名、显示名称和密码可以在此更改。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # MA 个人资料设置 <img src="/assets/icons/profile-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 此页面与当前登录的用户有关。用户名、显示名称和密码可以在此更改。

@@ -1,6 +1,8 @@
 ---
 title: "配置"
+description: '在 hass 对象(/developers/dev101hass) 上有一个 Config 类实例。Config 类包含用户偏好的单位制、配置目录路径，以及当前已加载的组件。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 配置
 
 在 [`hass` 对象](/developers/dev_101_hass) 上有一个 `Config` 类实例。`Config` 类包含用户偏好的单位制、配置目录路径，以及当前已加载的组件。
 

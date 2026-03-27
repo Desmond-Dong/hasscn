@@ -1,6 +1,6 @@
 ---
 title: NASweb
-description: "集成 NASweb 设备"
+description: 'The NASweb integration brings the device''s smart home features into Home Assistant, converting them into entities that users can monitor, control。'
 
 ha_category:
   - Alarm
@@ -20,6 +20,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# NASweb
 
 The **NASweb** integration brings the device's smart home features into **Home Assistant**, converting them into entities that users can monitor, control, and incorporate into scripts and automations.
 

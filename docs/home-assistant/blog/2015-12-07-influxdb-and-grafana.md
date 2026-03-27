@@ -3,6 +3,7 @@ title: InfluxDB and Grafana
 description: A step by step guide to start recording data from Home Assistant in InfluxDB
   and visualizing it using Grafana.
 ---
+# InfluxDB and Grafana
 
 <img src='/home-assistant/images/supported_brands/influxdb.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='200' /><img src='/home-assistant/images/supported_brands/grafana.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='200' />
 [InfluxDB](https://influxdb.com/) 数据库是一种所谓的时间序列数据库，主要用于存储传感器数据和实时分析数据。

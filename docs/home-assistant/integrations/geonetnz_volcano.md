@@ -1,6 +1,6 @@
 ---
 title: GeoNet NZ Volcano
-description: 关于如何将新西兰 GeoNet 火山警报等级订阅集成到 Home Assistant 的说明。
+description: 'The GeoNet NZ Volcano integration lets you use a GeoJSON feed provided by New Zealand''s GeoNet(https://www.geonet.org.nz/) with information about。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# GeoNet NZ Volcano
 
 The **GeoNet NZ Volcano** integration lets you use a GeoJSON feed provided by 
 New Zealand's [GeoNet](https://www.geonet.org.nz/) with information 

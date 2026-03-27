@@ -2,6 +2,7 @@
 title: 使用 Docker 设置 InfluxDB 和 Grafana
 description: 使用本教程在 Docker 容器中设置 InfluxDB 和 Grafana，并将其与 Home Assistant 搭配使用。
 ---
+# 使用 Docker 设置 InfluxDB 和 Grafana
 
 Home Assistant 会收集大量适合生成精美图表的（时间序列）数据。虽然 [History](/home-assistant/integrations/history/) 集成已经提供了不错的图表，但我相信你一直想要那种更强大的 [Grafana](https://grafana.com/) 图表。不过问题在于，我们大多数人用于运行 Home Assistant 的低功耗设备，比如树莓派，并不适合承担这类工作。
 

@@ -1,6 +1,6 @@
 ---
 title: IKEA Idasen Desk
-description: 控制和监控您的 IKEA Idåsen 站立式办公桌。
+description: 'IKEA IDÅSEN 集成允许您将 IKEA Idåsen(https://www.ikea.com/us/en/cat/idasen-system-47424/) 电动办公桌连接到 Home Assistant，使控制办公桌高度成为可能，还可以监控来自物理控制器的高度变化。'
 ha_iot_class: Local Push
 ha_config_flow: true
 ha_release: '2023.10'
@@ -17,6 +17,7 @@ ha_codeowners:
   - '@abmantis'
 ha_quality_scale: bronze
 ---
+# IKEA Idasen Desk
 
 **IKEA IDÅSEN** 集成允许您将 [IKEA Idåsen](https://www.ikea.com/us/en/cat/idasen-system-47424/) 电动办公桌连接到 Home Assistant，使控制办公桌高度成为可能，还可以监控来自物理控制器的高度变化。
 

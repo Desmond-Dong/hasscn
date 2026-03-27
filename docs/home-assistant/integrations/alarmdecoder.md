@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# AlarmDecoder
 
 **AlarmDecoder** integration 允许拥有 DSC 或 Honeywell 报警面板的 Home Assistant 用户利用其报警系统和传感器为 Home Assistant 提供有关其家庭的丰富信息。Home Assistant 与报警面板之间的连接通过 Nu Tech Software Solutions 生产的设备（称为 AlarmDecoder）实现。AlarmDecoder 设备为报警面板提供串行、TCP/IP 套接字或 USB 接口，并在其中模拟报警键盘。
 

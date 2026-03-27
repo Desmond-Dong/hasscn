@@ -1,6 +1,6 @@
 ---
 title: Compit
-description: 关于如何在 Home Assistant 中集成 Compit 设备的说明。
+description: 'Compit 集成允许您将空调、通风和供暖控制器与 Home Assistant 集成。您需要一个 Compit iNext 账户，可以在 inext.compit.pl(https://inext.compit.pl) 设置。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Climate
   - Water Heater
@@ -21,6 +21,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# Compit
 
 **Compit** 集成允许您将空调、通风和供暖控制器与 Home Assistant 集成。您需要一个 Compit iNext 账户，可以在 [inext.compit.pl](https://inext.compit.pl) 设置。
 

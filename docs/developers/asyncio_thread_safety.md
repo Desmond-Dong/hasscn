@@ -1,6 +1,8 @@
 ---
 title: "asyncio 的线程安全"
+description: '使用 asyncio 开发时必须特别注意线程安全，因为几乎所有 asyncio 对象都不是线程安全的。如果你刚开始接触 asyncio，建议先阅读 Python 文档中的使用 asyncio 开发(https://docs.python.org/3/library/asyncio-dev.html)。'
 ---
+# asyncio 的线程安全
 
 使用 asyncio 开发时必须特别注意线程安全，因为几乎所有 asyncio 对象都不是线程安全的。如果你刚开始接触 asyncio，建议先阅读 Python 文档中的[使用 asyncio 开发](https://docs.python.org/3/library/asyncio-dev.html)，以避开常见陷阱。
 

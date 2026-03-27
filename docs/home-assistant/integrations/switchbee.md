@@ -1,6 +1,6 @@
 ---
 title: SwitchBee
-description: 有关如何将 SwitchBee 配件集成到 Home Assistant 中的说明。
+description: 'SwitchBee(https://www.switchbee.com), is an innovation company making smart homes more accessible and affordable to any household environment. 本页属于 Home。'
 ha_category:
   - Button
   - Climate
@@ -21,6 +21,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# SwitchBee
 
 [SwitchBee](https://www.switchbee.com), is an innovation company making smart homes more accessible and affordable to any household environment.
 

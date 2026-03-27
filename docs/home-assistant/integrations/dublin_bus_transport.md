@@ -1,6 +1,6 @@
 ---
 title: Dublin Bus
-description: 关于如何在 Home Assistant 中集成都柏林公交时刻表数据的说明。
+description: 'Dublin Bus 集成会使用 RTPI 信息，为您提供都柏林公交站接下来两班车的到站时间。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Dublin Bus
 
 **Dublin Bus** 集成会使用 RTPI 信息，为您提供都柏林公交站接下来两班车的到站时间。
 

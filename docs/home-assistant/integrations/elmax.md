@@ -1,6 +1,6 @@
 ---
 title: Elmax
-description: 关于如何在 Home Assistant 中集成 Elmax 面板的说明。
+description: 'The Elmax integration enables Home Assistant integration with ELMAX(https://www.elmaxsrl.it/) control panels. Elmax panels are domotic systems focused on。'
 ha_category:
   - Switch
 ha_release: 2022.2
@@ -17,6 +17,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_zeroconf: true
 ---
+# Elmax
 
 The **Elmax** integration enables Home Assistant integration with 
 [ELMAX](https://www.elmaxsrl.it/) control panels. Elmax panels are 

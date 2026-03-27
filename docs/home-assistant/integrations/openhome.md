@@ -1,6 +1,6 @@
 ---
 title: Linn / OpenHome
-description: 有关如何将 Linn Ds 和 Openhome 渲染器集成到 Home Assistant 中的说明。
+description: 'Linn / OpenHome 集成允许您将符合 OpenHome(http://openhome.org/) 标准的渲染器连接到 Home Assistant，例如 Linn Products Ltd(https://www.linn.co.uk) 的 HiFi 流媒体播放器。'
 ha_category:
   - Media player
   - Update
@@ -16,7 +16,7 @@ ha_platforms:
   - update
 ha_integration_type: device
 ---
-
+# Linn / OpenHome
 
 **Linn / OpenHome** 集成允许您将符合 [OpenHome](http://openhome.org/) 标准的渲染器连接到 Home Assistant，例如 [Linn Products Ltd](https://www.linn.co.uk) 的 HiFi 流媒体播放器。它让您可以控制媒体播放、音量和输入源，并查看当前正在播放的内容。
 

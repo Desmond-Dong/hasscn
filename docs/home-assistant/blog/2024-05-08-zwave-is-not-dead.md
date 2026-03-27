@@ -1,7 +1,9 @@
 ---
 title: Z-Wave is not dead
-description: Z-Wave 的活力和良好表现，部分归功于正在构建新开源资源的强大社区。
+description: '<p class="img"<img src=''/home-assistant/images/blog/2024-05-zwave-is-not-dead/art.jpg''/<iClelia Rella 艺术</i</p。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Z-Wave is not dead
+
 <p class="img"><img src='/home-assistant/images/blog/2024-05-zwave-is-not-dead/art.jpg'/><i>Clelia Rella 艺术</i></p>
 
 **TL;DR：Z-Wave 仍然活跃且发展良好，部分原因在于强大的社区正在构建新的开源资源。为了在未来蓬勃发展，它必须采取进一步措施开放其技术。**

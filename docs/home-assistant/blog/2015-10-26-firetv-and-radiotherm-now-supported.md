@@ -3,6 +3,7 @@ title: '0.7.6: Amazon FireTV, Radiotherm thermostats'
 description: Home Assistant 0.7.6 has been released with lots of squashed bugs and
   support for Amazon FireTV and Radiotherm thermostats.
 ---
+# 0.7.6: Amazon FireTV, Radiotherm thermostats
 
 经过两周的努力，我很高兴宣布 Home Assistant v0.7.6 正式发布。本次发布主要聚焦于 bug、测试覆盖率和文档，而且这三方面都超出预期。我们修复了大量问题，[测试覆盖率提升到 85%](https://coveralls.io/builds/3946399)，同时也感谢 [@fabaff](https://github.com/fabaff) 和我一起完成了网站[组件版块](/home-assistant/integrations/)的全面改版。
 

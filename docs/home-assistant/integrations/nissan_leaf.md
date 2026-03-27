@@ -1,6 +1,6 @@
 ---
 title: Nissan Leaf
-description: "有关如何将 Nissan Leaf 集成到 Home Assistant 的说明。"
+description: 'The Nissan Leaf integration offers integration with the NissanConnect EV(https://www.nissan.co.uk/dashboard.html) cloud service. NissanConnect EV was。'
 
 ha_category:
   - Car
@@ -20,6 +20,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Nissan Leaf
 
 The **Nissan Leaf** integration offers integration with the [NissanConnect EV](https://www.nissan.co.uk/dashboard.html) cloud service. NissanConnect EV was previously known as Nissan Carwings.
 

@@ -3,6 +3,7 @@ title: 'IKEA Trådfri: Internet of Things done right'
 description: We analyzed the recently released IKEA Trådfri hardware. It is the perfect
   companion hardware to Home Assistant.
 ---
+# IKEA Trådfri: Internet of Things done right
 
 上个月，IKEA 发布了一套名为 [Trådfri][tradfri] 的全新家庭自动化产品线。其中包括白光灯泡、调光遥控器、色温遥控器，以及运动传感器。经过将近两周的研究，我们得出的结论是：这将成为与 Home Assistant 搭配使用的理想硬件。以下是我们的核心结论：
 

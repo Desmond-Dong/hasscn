@@ -1,6 +1,6 @@
 ---
 title: Manual MQTT Alarm 控制面板
-description: 关于如何将支持 MQTT 的手动报警集成到 Home Assistant 的说明。
+description: 'MQTT 集成通过增加远程设备对报警系统的 MQTT 控制能力，扩展了 manual alarm(/home-assistant/integrations/manual)。你可以用它创建外部键盘，只需改变 Home Assistant 中手动报警的状态即可。'
 ha_category:
   - Alarm
 ha_release: '0.50'
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Manual MQTT Alarm 控制面板
 
 **MQTT** 集成通过增加远程设备对报警系统的 MQTT 控制能力，扩展了 [manual alarm](/home-assistant/integrations/manual)。你可以用它创建外部键盘，只需改变 Home Assistant 中手动报警的状态即可。
 

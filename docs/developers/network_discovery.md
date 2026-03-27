@@ -1,7 +1,9 @@
 ---
 title: "网络和发现"
+description: '某些集成可能需要通过 mDNS/Zeroconf(https://en.wikipedia.org/wiki/Zero-configurationnetworking)、SSDP(https://en.wikipedia.org/wiki/SimpleServiceDiscoveryProtocol)。'
 sidebar_label: "网络和发现"
 ---
+# 网络和发现
 
 某些集成可能需要通过 [mDNS/Zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)、[SSDP](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) 或其它已启用的方式来发现网络中的设备。最常见的场景包括：查找没有固定 IP 地址的设备，或者为可动态增删任意数量兼容设备的集成提供发现能力。
 

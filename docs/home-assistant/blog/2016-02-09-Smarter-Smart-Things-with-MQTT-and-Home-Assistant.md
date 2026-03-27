@@ -1,7 +1,8 @@
 ---
 title: 通过 MQTT 和 Home Assistant 让 SmartThings 更聪明
-description: Jer 和 St. John 介绍了他们如何将 SmartThings 与 Home Assistant 连接起来。
+description: '这是一篇由 Home Assistant 用户 Jeremiah Wuenschel(https://github.com/jer) 和 St. John Johnson(https://github.com/stjohnjohnson) 撰写的客座文章。'
 ---
+# 通过 MQTT 和 Home Assistant 让 SmartThings 更聪明
 
 _这是一篇由 Home Assistant 用户 [Jeremiah Wuenschel](https://github.com/jer) 和 [St. John Johnson](https://github.com/stjohnjohnson) 撰写的客座文章。_
 

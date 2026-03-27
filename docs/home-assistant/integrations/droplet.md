@@ -1,6 +1,6 @@
 ---
 title: Droplet
-description: 关于如何在 Home Assistant 中设置 Droplet 的说明。
+description: 'Droplet 集成将您的 Home Assistant 设置无缝连接到 Droplet(https://shop.hydrificwater.com/pages/buy-droplet)——一款先进的智能家居一体式水传感器。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
 ha_config_flow: true
@@ -15,6 +15,7 @@ ha_integration_type: device
 ha_zeroconf: true
 ha_quality_scale: bronze
 ---
+# Droplet
 
 **Droplet** 集成将您的 Home Assistant 设置无缝连接到 [Droplet](https://shop.hydrificwater.com/pages/buy-droplet)——一款先进的智能家居一体式水传感器。
 

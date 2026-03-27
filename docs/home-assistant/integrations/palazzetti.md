@@ -1,6 +1,6 @@
 ---
 title: Palazzetti
-description: 关于如何在 Home Assistant 中集成 Palazzetti 的说明。
+description: 'Palazzetti 集成可接入配备 Connection Box(https://palazzettigroup.com/research-and-development/app/) 的 Palazzetti(https://palazzettigroup.com/) 炉具。'
 ha_category:
   - Climate
 ha_release: 2024.11
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: device
 ha_dhcp: true
 ---
+# Palazzetti
 
 **Palazzetti** 集成可接入配备 [Connection Box](https://palazzettigroup.com/research-and-development/app/) 的 [Palazzetti](https://palazzettigroup.com/) 炉具。
 

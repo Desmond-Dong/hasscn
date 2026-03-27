@@ -1,6 +1,6 @@
 ---
 title: Fjäråskupan
-description: 关于如何配置 fjäråskupan 集成的说明。
+description: 'Fjäråskupan(https://fjaraskupan.se/) 允许您控制配备蓝牙的厨房风扇。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Fan
@@ -19,6 +19,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Fjäråskupan
 
 [Fjäråskupan](https://fjaraskupan.se/) 允许您控制配备蓝牙的厨房风扇。
 

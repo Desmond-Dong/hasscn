@@ -1,7 +1,9 @@
 ---
 title: "安卓依赖项"
+description: '我们使用version catalog(https://docs.gradle.org/current/userguide/versioncatalogs.html)来管理项目中直接使用的所有库。这是用于添加依赖项的唯一允许的方法。为了保持一致性和可追溯性，严格禁止在目录之外添加依赖项。'
 sidebar_label: "依赖关系"
 ---
+# 安卓依赖项
 
 ## 版本目录
 

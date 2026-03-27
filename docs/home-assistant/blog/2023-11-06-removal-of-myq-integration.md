@@ -1,7 +1,8 @@
 ---
 title: 移除 MyQ 集成
-description: 为什么 MyQ 集成将在 Home Assistant 2023.12 中被移除
+description: '简而言之： MyQ 集成将于 2023 年 12 月 6 日随 Home Assistant 2023.12 版本一同移除。MyQ 的所有者 Chamberlain Group 已公开表示，他们会继续阻止 MyQ 集成这类第三方应用访问。对于当前的 MyQ 用户，我们推荐使用 ratgdo。'
 ---
+# 移除 MyQ 集成
 
 **简而言之：** MyQ 集成将于 2023 年 12 月 6 日随 Home Assistant 2023.12 版本一同移除。MyQ 的所有者 Chamberlain Group 已公开表示，他们会继续阻止 MyQ 集成这类第三方应用访问。对于当前的 MyQ 用户，我们推荐使用 [ratgdo]，这是一种可直接连接到你的 MyQ 车库门开门器并支持本地控制的设备。
 

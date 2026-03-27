@@ -3,6 +3,7 @@ title: Alarms, Sonos and iTunes now supported
 description: Home Assistant 0.7.3 has been released with support for Sonos, iTunes
   and improved .
 ---
+# Alarms, Sonos and iTunes now supported
 
 这次就像有人把一整罐硬核开发者倒进了我们的 [chat channel](https://discord.gg/c5DvZ4e)，于是讨论和贡献都迎来了大爆发。0.7.3 版本亮点包括：Sonos、iTunes、报警组件，以及自动化升级。
 

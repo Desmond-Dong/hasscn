@@ -1,8 +1,9 @@
 ---
 title: 关于 Emulated Hue 的说明
-description: Emulated Hue 集成不会被移除，我们也不会为了推动你订阅 Community
+description: '最近社区里对 Emulated Hue 集成的未来有一些误解，我想在这里把事情说明白。Emulated Hue 集成不会被移除，我们也不会为了推动你通过订阅 Community Support Package 来支持 Home Assistant 项目，而删除 Home Assistant 的任何功能。'
   Support Package 而删除 Home Assistant 的任何功能。
 ---
+# 关于 Emulated Hue 的说明
 
 最近社区里对 Emulated Hue 集成的未来有一些误解，我想在这里把事情说明白。**Emulated Hue 集成不会被移除，我们也不会为了推动你通过订阅 Community Support Package 来支持 Home Assistant 项目，而删除 Home Assistant 的任何功能。**
 

@@ -1,6 +1,6 @@
 ---
 title: Xiaomi Home
-description: 关于如何在 Home Assistant 中使用小米集成来集成小米设备的说明。
+description: 'Xiaomi Home 集成支持以下设备：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Fan
@@ -37,6 +37,7 @@ ha_platforms:
   - vacuum
 ha_integration_type: hub
 ---
+# Xiaomi Home
 
 **Xiaomi Home** 集成支持以下设备：
 

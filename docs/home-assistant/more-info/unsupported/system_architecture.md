@@ -1,7 +1,8 @@
 ---
 title: 系统架构
-description: 关于系统架构为何将安装标记为不支持的更多信息。
+description: 'Supervisor 将 i386、armhf 和 armv7（所有 32 位系统架构）视为不支持。Home Assistant 于 2025 年 5 月宣布弃用这些架构（请参阅这篇博客文章了解更多信息(https://www.home-assistant.io/blog/2025/05/22/depreca。'
 ---
+# 系统架构
 
 ## 问题
 

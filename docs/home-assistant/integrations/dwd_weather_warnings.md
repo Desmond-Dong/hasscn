@@ -1,6 +1,6 @@
 ---
 title: Deutscher Wetterdienst (DWD) Weather Warnings
-description: 关于如何将德国气象局天气预警集成到 Home Assistant 的说明。
+description: 'Deutscher Wetterdienst Weather Warnings 集成使用 Deutscher Wetterdienst (DWD)(https://www.dwd.de) 作为当前和提前天气预警的数据来源。配置后的传感器每 15 分钟检查一次数据。'
 ha_category:
   - Weather
 ha_config_flow: true
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Deutscher Wetterdienst (DWD) Weather Warnings
 
 **Deutscher Wetterdienst Weather Warnings** 集成使用 [Deutscher Wetterdienst (DWD)](https://www.dwd.de) 作为当前和提前天气预警的数据来源。配置后的传感器每 15 分钟检查一次数据。
 

@@ -1,7 +1,8 @@
 ---
 title: 场景
-description: 关于如何在 Home Assistant 中设置场景的说明。
+description: '你可以创建场景，用来记录某些实体应处于的状态。例如，一个场景可以指定灯 A 打开、灯 B 呈亮红色。场景既可以通过独立的场景集成(/home-assistant/integrations/scene/)作为实体使用，也可以嵌入到自动化(/home-assistant/docs/automation/actio。'
 ---
+# 场景
 
 你可以创建场景，用来记录某些实体应处于的状态。例如，一个场景可以指定灯 A 打开、灯 B 呈亮红色。场景既可以通过独立的[场景集成](/home-assistant/integrations/scene/)作为实体使用，也可以嵌入到[自动化](/home-assistant/docs/automation/action/)和[脚本](/home-assistant/docs/scripts/)中。
 

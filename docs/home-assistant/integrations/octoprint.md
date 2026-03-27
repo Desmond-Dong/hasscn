@@ -1,6 +1,6 @@
 ---
 title: OctoPrint
-description: "OctoPrint 和 Home Assistant 之间的集成。"
+description: 'OctoPrint(https://octoprint.org/) 是 3D 打印机的 Web 界面。这是集成 OctoPrint 传感器的主要集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - 3D printing
@@ -24,6 +24,8 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# OctoPrint
+
 [OctoPrint](https://octoprint.org/) 是 3D 打印机的 Web 界面。这是集成 OctoPrint 传感器的主要集成。
 
 ## Configuration

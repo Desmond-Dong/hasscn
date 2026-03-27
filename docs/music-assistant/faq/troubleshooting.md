@@ -1,8 +1,7 @@
 ---
 title: 故障排除
-description: 常见问题和修复
+description: '查看日志并尝试解决您在那里看到的任何错误，特别是与<a href="https://music-assistant.io/music-providers/filesystem/tagging-files" target="blank" rel="noopener noreferrer"标记</a相关的错误。'
 ---
-
 # 首先尝试的事情和如何报告问题
 
 查看日志并尝试解决您在那里看到的任何错误，特别是与<a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">标记</a>相关的错误。连接错误是网络问题（包括 Adguard 或 pi-hole 阻止）或容器配置错误的症状。

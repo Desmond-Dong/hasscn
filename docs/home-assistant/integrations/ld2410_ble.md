@@ -1,6 +1,6 @@
 ---
 title: LD2410 BLE
-description: 关于如何将 LD2410 BLE 设备集成到 Home Assistant 的说明。
+description: '将来自 Hi-Link(http://www.hlktech.net/) 的 LD2410 BLE 传感器集成到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
   - Sensor
@@ -16,6 +16,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# LD2410 BLE
 
 将来自 [Hi-Link](http://www.hlktech.net/) 的 LD2410 BLE 传感器集成到 Home Assistant。
 

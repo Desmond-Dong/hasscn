@@ -1,6 +1,6 @@
 ---
 title: StarLine
-description: 有关如何使用 Home Assistant 设置 StarLine 帐户的说明。
+description: 'StarLine 集成可让您从 StarLine portal(https://my.starline.ru/) 获取 StarLine(https://www.alarmstarline.com/) 安防系统的数据。您需要一个可用的 StarLine 账户。'
 ha_category:
   - Binary sensor
   - Button
@@ -24,6 +24,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# StarLine
 
 **StarLine** 集成可让您从 [StarLine portal](https://my.starline.ru/) 获取 [StarLine](https://www.alarmstarline.com/) 安防系统的数据。您需要一个可用的 StarLine 账户。
 

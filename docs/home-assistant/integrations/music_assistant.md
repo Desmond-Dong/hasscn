@@ -1,6 +1,6 @@
 ---
 title: Music Assistant
-description: 关于如何将 Music Assistant 集成到 Home Assistant 的说明。
+description: 'Music Assistant（MA）集成可让你将 Home Assistant 连接到 Music Assistant Server(https://music-assistant.io/)。配置完成后，所有 MA 播放器(https://music-assistant.io/player-support/。'
 
 ha_category:
   - Media player
@@ -18,6 +18,7 @@ ha_zeroconf: true
 ha_integration_type: service
 ha_quality_scale: bronze
 ---
+# Music Assistant
 
 **Music Assistant**（MA）集成可让你将 Home Assistant 连接到 [Music Assistant Server](https://music-assistant.io/)。配置完成后，所有 [MA 播放器](https://music-assistant.io/player-support/) 都会显示为 Home Assistant 的 [媒体播放器实体](/home-assistant/integrations/media_player/)。通过这些媒体播放器，你可以控制媒体播放并查看当前正在播放的内容。
 

@@ -18,6 +18,7 @@ ha_category: []
 ha_quality_scale: bronze
 ha_config_flow: true
 ---
+# Nintendo Switch parental controls
 
 The **Nintendo Switch Parental Controls** integration integrates with the Nintendo Switch Parental Controls service, allowing parents to monitor and control screentime for their children.
 

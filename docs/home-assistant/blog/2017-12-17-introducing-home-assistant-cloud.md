@@ -2,6 +2,7 @@
 title: Introducing Home Assistant Cloud
 description: Use Alexa to control any 设备 that is connected to Home Assistant.
 ---
+# Introducing Home Assistant Cloud
 
 Today we’re introducing the next step in the Home Assistant saga: the Home Assistant Cloud. The goal of the Home Assistant Cloud is to bridge the gap between your local Home Assistant instance and 服务 in the cloud while delivering the maximum possible security and privacy.
 

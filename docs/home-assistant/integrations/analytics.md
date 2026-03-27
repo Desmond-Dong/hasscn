@@ -1,6 +1,6 @@
 ---
 title: Analytics
-description: 分享系统分析和诊断信息
+description: 'Home Assistant 允许用户通过分析集成分享其使用数据。汇总数据可在 <https://analytics.home-assistant.io 查看。这些数据用于影响 Home Assistant 的开发优先级，并说服制造商添加本地控制和注重隐私的功能。'
 ha_category:
   - Other
 ha_release: 2021.4
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: analytics
 ha_integration_type: system
 ---
+# Analytics
 
 Home Assistant 允许用户通过分析集成分享其使用数据。汇总数据可在 <https://analytics.home-assistant.io> 查看。这些数据用于影响 Home Assistant 的开发优先级，并说服制造商添加本地控制和注重隐私的功能。
 

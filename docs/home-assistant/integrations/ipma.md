@@ -1,6 +1,6 @@
 ---
 title: Instituto Português do Mar e Atmosfera (IPMA)
-description: 关于如何将葡萄牙海洋和大气研究所天气状况集成到 Home Assistant 的说明。
+description: 'IPMA 集成使用 Instituto Portugues do Mar e Atmosfera(https://www.ipma.pt/) 作为当前和天气预报气象数据的来源。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Weather
 ha_release: 0.72
@@ -15,6 +15,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Instituto Português do Mar e Atmosfera (IPMA)
 
 **IPMA** 集成使用 [Instituto Portugues do Mar e Atmosfera](https://www.ipma.pt/) 作为当前和天气预报气象数据的来源。
 

@@ -1,7 +1,9 @@
 ---
 title: "开始进行 Home Assistant 操作系统开发"
+description: '位于 github.com/home-assistant/operating-system/(https://github.com/home-assistant/operating-system/) 的主仓库包含通过 br2-external mechanism(https://buildroot.org/d。'
 sidebar_label: 入门
 ---
+# 开始进行 Home Assistant 操作系统开发
 
 ## 准备开发环境
 

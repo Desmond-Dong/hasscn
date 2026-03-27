@@ -1,7 +1,8 @@
 ---
 title: Podcast.__init__ 对 Paulus Schoutsen 的采访
-description: Tobias Macey 采访了我们的创始人 Paulus Schoutsen，聊聊 Home Assistant。
+description: '<p class=''img'' <a href=''https://www.podcastinit.com/''<img src=''/home-assistant/images/blog/2017-05-podcast-init/podcastinit.png'' /</a </p。'
 ---
+# Podcast.__init__ 对 Paulus Schoutsen 的采访
 
 <p class='img'>
 <a href='https://www.podcastinit.com/'><img src='/home-assistant/images/blog/2017-05-podcast-init/podcast_init.png' /></a>

@@ -1,6 +1,6 @@
 ---
 title: "Notify using TTS"
-description: "有关如何在 Home Assistant 中使用 TTS 操作和 media_player 设置通知集成的说明。"
+description: '通知 TTS 平台允许您使用 TTS 集成 speak(/home-assistant/integrations/tts/action-speak) 或旧版 say(/home-assistant/integrations/tts/action-say-legacy) 操作和。'
 
 ha_category:
   - Notifications
@@ -9,6 +9,8 @@ ha_iot_class: Local Push
 ha_quality_scale: internal
 ha_domain: notify
 ---
+# Notify using TTS
+
 通知 TTS 平台允许您使用 TTS 集成 [speak](/home-assistant/integrations/tts/#action-speak) 或旧版 [say](/home-assistant/integrations/tts/#action-say-legacy) 操作和 [media_player](/home-assistant/integrations/media_player) 来提醒您重要事件。此集成提供了一个简单的界面，可在您的自动化和警报中使用。
 
 为了使用此集成，您必须已安装和配置 TTS 平台，以及与 TTS 平台配合使用的 media_player。

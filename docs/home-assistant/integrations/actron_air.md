@@ -1,6 +1,6 @@
 ---
 title: Actron Air
-description: 关于将 Actron Air 空调控制器集成到 Home Assistant 的说明。
+description: 'Actron Air integration 允许您将 Actron Air(https://www.actronair.com.au/) 空调控制器集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 2025.11
@@ -17,6 +17,7 @@ ha_integration_type: hub
 ha_quality_scale: bronze
 ha_dhcp: true
 ---
+# Actron Air
 
 **Actron Air** integration 允许您将 [Actron Air](https://www.actronair.com.au/) 空调控制器集成到 Home Assistant 中。
 

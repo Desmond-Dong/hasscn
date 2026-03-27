@@ -1,6 +1,6 @@
 ---
 title: Twinkly
-description: 关于如何将 Twinkly LED 灯串集成到 Home Assistant 的说明。
+description: 'The Twinkly integration allows you to control Twinkly(https://twinkly.com/) LED string from Home Assistant. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Light
 ha_release: 2020.12
@@ -18,6 +18,7 @@ ha_platforms:
 ha_dhcp: true
 ha_integration_type: device
 ---
+# Twinkly
 
 The **Twinkly** integration allows you to control [Twinkly](https://twinkly.com/) LED string from Home Assistant.
 

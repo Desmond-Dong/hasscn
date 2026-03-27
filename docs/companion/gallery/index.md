@@ -1,7 +1,9 @@
 ---
 title: Android 截图画廊
+description: '<img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" / 截图。 本页属于 Home Assistant 配套应用文档。'
 id: android
 ---
+# Android 截图画廊
 
 <img src="/companion-assets/android.svg" alt="Android" style="height: 1em; vertical-align: middle;" /> 截图
 

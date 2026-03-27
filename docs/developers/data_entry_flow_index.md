@@ -1,6 +1,8 @@
 ---
 title: 数据录入流程
+description: 'Data Entry Flow 是 Home Assistant 的一套数据录入流程框架。数据录入通过数据录入流程（data entry flow）完成。一个流程（flow）既可以表示简单的登录表单，也可以表示集成的多步骤设置向导。流程管理器（Flow Manager）负责管理所有进行中的流程。'
 ---
+# 数据录入流程
 
 Data Entry Flow 是 Home Assistant 的一套数据录入流程框架。数据录入通过数据录入流程（data entry flow）完成。一个流程（flow）既可以表示简单的登录表单，也可以表示集成的多步骤设置向导。流程管理器（Flow Manager）负责管理所有进行中的流程，并处理新流程的创建。
 

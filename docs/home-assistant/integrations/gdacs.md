@@ -1,6 +1,6 @@
 ---
 title: Global Disaster Alert and Coordination System (GDACS)
-description: 关于如何将全球灾害警报和协调系统 (GDACS) 订阅集成到 Home Assistant 的说明。
+description: 'The GDACS integration lets you use a GeoRSS feed provided by GDACS(https://www.gdacs.org/) with information about major droughts, earthquakes, floods。'
 ha_category:
   - Geolocation
 ha_iot_class: Cloud Polling
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Global Disaster Alert and Coordination System (GDACS)
 
 The **GDACS** integration lets you use a GeoRSS feed provided by [GDACS](https://www.gdacs.org/) with information about major droughts, earthquakes, floods, tropical cyclones, tsunamis and volcanic activities worldwide.
 It retrieves alerts from a feed and shows information of those alerts filtered by distance to Home Assistant's location.

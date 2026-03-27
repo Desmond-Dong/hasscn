@@ -1,6 +1,6 @@
 ---
 title: Azure Data Explorer
-description: Azure Data Explorer 集成设置说明
+description: 'Azure Data Explorer(https://azure.microsoft.com/en-us/services/data-explorer/) 是一款高性能时序数据库、查询引擎和仪表板工具。Home Assistant Azure Data Explorer 集成允许您接入 Home。'
 ha_category:
   - History
 ha_release: 2024.6
@@ -13,6 +13,7 @@ related:
   - docs: /docs/configuration/
 ha_integration_type: service
 ---
+# Azure Data Explorer
 
 [Azure Data Explorer](https://azure.microsoft.com/en-us/services/data-explorer/) 是一款高性能时序数据库、查询引擎和仪表板工具。Home Assistant **Azure Data Explorer** 集成允许您接入 Home Assistant 事件总线并将事件转发到 Azure Data Explorer 进行分析和仪表板展示。从这里，数据可以在构建仪表板、PowerBi 和 Grafana 等工具中查看。
 

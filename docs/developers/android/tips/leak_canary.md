@@ -1,7 +1,9 @@
 ---
 title: "泄漏金丝雀🐤"
+description: 'LeakCanary(https://square.github.io/leakcanary/)是一个强大的工具，用于检测Android应用程序中的内存泄漏。但是，在某些情况下您可能希望禁用它，例如在为性能测试准备调试版本时或不需要它时。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: "金丝雀泄密"
 ---
+# 泄漏金丝雀🐤
 
 ## 如何在调试版本中禁用 LeakCanary
 

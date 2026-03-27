@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HELTUN 加入 Works with Home Assistant"
-description: "HELTUN 作为 Z-Wave 合作伙伴加入 Works with Home Assistant 合作伙伴计划。"
+description: '<div class="alert" <p class="alert-title"<iconify-icon inline="" icon="mdi:lightbulb-outline"</iconify-icon 内容已过期</p <div class="alert-content" <p。'
 date: 2023-03-03 00:00:00
 date_formatted: "March 3rd, 2023"
 author: Uwe Bernitt
@@ -9,6 +9,7 @@ comments: true
 categories: Works-with-Home-Assistant
 og_image: /images/blog/2023-03-03-heltun-partner/social.png
 ---
+# HELTUN 加入 Works with Home Assistant
 
 <div class="alert">
   <p class="alert-title"><iconify-icon inline="" icon="mdi:lightbulb-outline"></iconify-icon> 内容已过期</p>

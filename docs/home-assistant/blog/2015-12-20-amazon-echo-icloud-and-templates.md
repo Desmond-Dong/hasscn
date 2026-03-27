@@ -3,6 +3,7 @@ title: '0.10: Amazon Echo, iCloud, Dweet.io, Twitch and templating support!'
 description: Home Assistant 0.10 has been released with a bunch of added components
   and brand new templating support.
 ---
+# 0.10: Amazon Echo, iCloud, Dweet.io, Twitch and templating support!
 
 好了，Home Assistant 0.10 来了。这次有很多令人兴奋的变化，不过遗憾的是，我们也引入了不少向后不兼容的改动。特别感谢 Philip Lundrigan ([@philipbl])，他在推动迁移、让更多平台转向使用模板方面投入了大量精力。
 

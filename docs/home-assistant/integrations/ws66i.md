@@ -1,6 +1,6 @@
 ---
 title: Soundavo WS66i 6-Zone Amplifier
-description: 关于如何将 WS66i 6区域家庭音频控制器集成到 Home Assistant 的说明。
+description: 'Soundavo WS66i 6-Zone Amplifier 集成可让您通过本地网络控制 Soundavo 全宅音频功放(https://www.soundavo.com/products/ws-66i)。这款功放是 Monoprice(https://www.monoprice.com/product?p。'
 ha_category:
   - Media player
 ha_release: 2022.6
@@ -13,6 +13,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# Soundavo WS66i 6-Zone Amplifier
 
 **Soundavo WS66i 6-Zone Amplifier** 集成可让您通过本地网络控制 [Soundavo 全宅音频功放](https://www.soundavo.com/products/ws-66i)。这款功放是 [Monoprice](https://www.monoprice.com/product?p_id=10761) 所售型号的升级版，新增了 2 个内置无线流媒体模块和一个用于局域网控制的以太网端口。
 

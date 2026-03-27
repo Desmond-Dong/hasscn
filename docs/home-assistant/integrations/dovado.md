@@ -1,6 +1,6 @@
 ---
 title: Dovado
-description: 关于如何在 Home Assistant 中集成 Dovado 的说明。
+description: 'Dovado 集成管理与 Dovado(https://www.dovado.com/) 路由器的通信。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Notifications
   - Sensor
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Dovado
 
 **Dovado** 集成管理与 [Dovado](https://www.dovado.com/) 路由器的通信。
 

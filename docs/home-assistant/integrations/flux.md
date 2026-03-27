@@ -1,6 +1,6 @@
 ---
 title: Flux
-description: 关于如何使用 Home Assistant 根据时间自动调整灯光色温的说明
+description: 'Flux 集成将使用昼夜节律改变灯的温度，类似于计算机上通量的工作方式。它们在白天会很亮，在晚上逐渐褪成红色/橙色。 flux 交换机启动后恢复其上次状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
 ha_release: 0.21
@@ -14,6 +14,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Flux
 
 **Flux** 集成将使用昼夜节律改变灯的温度，类似于计算机上通量的工作方式。它们在白天会很亮，在晚上逐渐褪成红色/橙色。 `flux` 交换机启动后恢复其上次状态。
 

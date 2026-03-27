@@ -1,6 +1,6 @@
 ---
 title: RAPT Bluetooth
-description: 有关如何将蓝牙模式下配置的 RAPT 药丸比重计集成到 Home Assistant 中的说明。
+description: '此集成可将 RAPT Pill(https://kegland.com.au/products/yellow-rapt-pill-hydrometer-thermometer-wifi-bluetooth) 比重计接入 Home Assistant。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
 ha_bluetooth: true
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# RAPT Bluetooth
 
 此集成可将 [RAPT Pill](https://kegland.com.au/products/yellow-rapt-pill-hydrometer-thermometer-wifi-bluetooth) 比重计接入 Home Assistant。
 

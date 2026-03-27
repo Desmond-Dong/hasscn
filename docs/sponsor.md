@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "支持 Home Assistant 中文网 - 老王杂谈说"
-description: "支持 Home Assistant 中文网的持续运营，您的每一份助力都将帮助维护服务器、更新优质内容和优化用户体验"
+description: '内容的持续运营需要您的支持，您的每一份助力都将帮助我：。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 keywords: "支持 Home Assistant, 赞助, 老王杂谈说, 开源项目支持, 服务器维护"
 og:
   title: "支持 Home Assistant 中文网 - 老王杂谈说"

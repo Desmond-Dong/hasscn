@@ -1,7 +1,9 @@
 ---
 title: 日历实体
+description: '日历实体是表示一组具有开始时间的事件的实体 以及结束日期和/或时间，有助于自动化。日历实体源自homeassistant.components.calendar.CalendarEntity(https://github.com/home-assistant/core/blob/dev/homeassista。'
 sidebar_label: 日历
 ---
+# 日历实体
 
 日历实体是表示一组具有开始时间的事件的实体
 以及结束日期和/或时间，有助于自动化。日历实体源自[`homeassistant.components.calendar.CalendarEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/calendar/__init__.py)。

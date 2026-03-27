@@ -1,6 +1,6 @@
 ---
 title: Compensation
-description: 关于如何在 Home Assistant 中集成补偿传感器的说明。
+description: 'Compensation 集成消费来自其他传感器的状态。它将补偿值作为状态导出到单独的实体中，并将以下值作为属性导出：entityid 和 coefficients。单个多项式（默认为线性）拟合到提供的所有数据点。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
   - Utility
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Compensation
 
 **Compensation** 集成消费来自其他传感器的状态。它将补偿值作为状态导出到单独的实体中，并将以下值作为属性导出：`entity_id` 和 `coefficients`。单个多项式（默认为线性）拟合到提供的所有数据点。
 

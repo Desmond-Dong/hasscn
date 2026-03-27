@@ -1,6 +1,6 @@
 ---
 title: Apollo Automation
-description: 使用 ESPHome 集成连接并控制 Apollo Automation 设备
+description: 'Apollo Automation(https://apolloautomation.com/) 是 Made for ESPHome 项目的成员。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 0.85
 ha_category:
   - Alarm
@@ -46,6 +46,7 @@ ha_iot_class: Local Push
 ha_dhcp: true
 ha_zeroconf: true
 ---
+# Apollo Automation
 
 [Apollo Automation](https://apolloautomation.com/) 是 Made for ESPHome 项目的成员。
 

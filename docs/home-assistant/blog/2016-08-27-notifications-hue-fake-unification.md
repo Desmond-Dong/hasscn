@@ -1,9 +1,10 @@
 ---
 title: '0.27 is here to break eggs and take names: 通知, Hue fakery, safety
   and unification come to Home Assistant'
-description: HTML5 push 通知 and grouping support, 配置 validations
+description: '本周的博客文章只能用一个标签来形容：。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
   and checking, 遮盖, 温控 and 风扇.
 ---
+# 0.27 is here to break eggs and take names: 通知, Hue fakery, safety
 
 本周的博客文章只能用一个标签来形容：
 

@@ -1,6 +1,6 @@
 ---
 title: mutesync
-description: 关于如何将 Mutesync 按钮与 Home Assistant 集成的说明。
+description: 'The mutesync integration for Home Assistant connects to the mütesync virtual button(https://mutesync.com/). This tray app pairs with popular video。'
 
 ha_category:
   - Presence detection
@@ -14,6 +14,7 @@ ha_platforms:
   - binary_sensor
 ha_integration_type: service
 ---
+# mutesync
 
 The **mutesync** integration for Home Assistant connects to the [mütesync virtual button](https://mutesync.com/). This tray app pairs with popular video conferencing tools such as Zoom, Google Meet, Discord, and Teams.
 

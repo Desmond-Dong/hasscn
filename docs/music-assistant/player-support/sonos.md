@@ -1,7 +1,7 @@
 ---
 title: "Sonos"
+description: 'Music Assistant 支持 Sonos 设备。有两个提供者可用。"Sonos S1"用于 S1 设备，"Sonos"用于 S2。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # Sonos <img src="/assets/icons/sonos-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 Sonos 设备。有两个提供者可用。"Sonos S1"用于 S1 设备，"Sonos"用于 S2。

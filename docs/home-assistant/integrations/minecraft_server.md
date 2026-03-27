@@ -1,6 +1,6 @@
 ---
 title: Minecraft Server
-description: 关于如何将 Minecraft 服务器集成到 Home Assistant 的说明。
+description: 'Minecraft(https://www.minecraft.net/en-us) 是由 Mojang Studios 开发的沙盒游戏。Minecraft 服务器允许玩家通过互联网或局域网与其他玩家一起游玩。Minecraft Server 集成让您可以在 Home Assistant 中获取。'
 ha_release: 0.106
 ha_category:
   - Binary sensor
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: silver
 ---
+# Minecraft Server
 
 [Minecraft](https://www.minecraft.net/en-us) 是由 Mojang Studios 开发的沙盒游戏。Minecraft 服务器允许玩家通过互联网或局域网与其他玩家一起游玩。**Minecraft Server** 集成让您可以在 Home Assistant 中获取 Minecraft 服务器的信息。它同时支持 **Java Edition** 和 **Bedrock Edition** 服务器。
 

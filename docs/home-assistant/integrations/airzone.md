@@ -1,6 +1,6 @@
 ---
 title: Airzone
-description: 关于如何在 Home Assistant 中集成 Airzone 的说明。
+description: '此 integration 与 Airzone 暖通分区系统(https://www.airzone.es/en/) 的本地 API 进行交互。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2022.4
 ha_category:
   - Binary sensor
@@ -25,6 +25,7 @@ ha_codeowners:
 ha_integration_type: hub
 ha_dhcp: true
 ---
+# Airzone
 
 此 integration 与 [Airzone 暖通分区系统](https://www.airzone.es/en/) 的本地 API 进行交互。
 

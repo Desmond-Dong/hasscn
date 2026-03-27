@@ -1,6 +1,6 @@
 ---
 title: Freedompro
-description: 关于如何在 Home Assistant 中集成 Freedompro 配件的说明。
+description: 'Freedompro(https://freedompro.eu/) 是一家专门从事家庭自动化的公司，设计和制造产品，使每个人、安装人员和爱好者都能负担得起家庭自动化产品。 Freedompro Products(https://freedompro.eu/collections/easykon)。'
 ha_category:
   - Binary sensor
   - Climate
@@ -27,6 +27,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Freedompro
 
 [Freedompro](https://freedompro.eu/) 是一家专门从事家庭自动化的公司，设计和制造产品，使每个人、安装人员和爱好者都能负担得起家庭自动化产品。 [Freedompro Products](https://freedompro.eu/collections/easykon) 的设计易于使用、实用且安装快速。
 

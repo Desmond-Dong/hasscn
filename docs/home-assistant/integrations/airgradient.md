@@ -1,6 +1,6 @@
 ---
 title: AirGradient
-description: 关于在 Home Assistant 中设置 AirGradient 设备的说明。
+description: 'AirGradient integration 将从您的 AirGradient 设备(https://www.airgradient.com/)获取数据。 AirGradient 制造室内和室外空气质量监测器，让您了解空气质量是否健康。它们测量 PM2.5、CO2、TVOC 和 NOx 等指标。'
 ha_category:
   - Health
   - Sensor
@@ -26,6 +26,7 @@ works_with:
   - local
 ha_quality_scale: platinum
 ---
+# AirGradient
 
 **AirGradient** integration 将从您的 [AirGradient 设备](https://www.airgradient.com/)获取数据。
 AirGradient 制造室内和室外空气质量监测器，让您了解空气质量是否健康。它们测量 PM2.5、CO2、TVOC 和 NOx 等指标。软件和硬件都是开源的，允许您自定义或扩展设备功能。

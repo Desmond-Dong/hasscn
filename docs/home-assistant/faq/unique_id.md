@@ -1,7 +1,8 @@
 ---
 title: 此实体没有唯一 ID？
-description: 此实体没有唯一 ID？
+description: '如果您尝试在 Home Assistant 中访问某个实体的配置对话框，可能会看到以下消息：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 此实体没有唯一 ID？
 
 如果您尝试在 Home Assistant 中访问某个实体的配置对话框，可能会看到以下消息：
 

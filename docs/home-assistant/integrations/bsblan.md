@@ -1,6 +1,6 @@
 ---
 title: BSB-LAN
-description: 关于如何将 BSBLan 设备集成到 Home Assistant 的说明。
+description: 'BSB-Lan 集成将 BSBLan(https://github.com/fredlcore/BSB-LAN) 设备集成到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Button 
   - Climate
@@ -22,6 +22,7 @@ ha_integration_type: device
 ha_zeroconf: true
 ha_quality_scale: silver
 ---
+# BSB-LAN
 
 **BSB-Lan** 集成将 [BSBLan](https://github.com/fredlcore/BSB-LAN) 设备集成到 Home Assistant。
 

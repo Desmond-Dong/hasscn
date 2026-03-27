@@ -1,6 +1,6 @@
 ---
 title: Tesla Fleet
-description: 有关如何将 Tesla Fleet API 集成到 Home Assistant 的说明。
+description: 'Tesla Fleet 集成可通过 Tesla Fleet API(https://developer.tesla.com/) 让你控制 Tesla 车辆和能源站点。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -37,6 +37,7 @@ ha_platforms:
   - update
 ha_integration_type: hub
 ---
+# Tesla Fleet
 
 **Tesla Fleet** 集成可通过 [Tesla Fleet API](https://developer.tesla.com/) 让你控制 Tesla 车辆和能源站点。
 

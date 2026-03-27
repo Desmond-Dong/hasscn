@@ -1,6 +1,6 @@
 ---
 title: LG Soundbars
-description: 关于如何将 LG 条形音箱集成到 Home Assistant 的说明。
+description: 'LG Soundbars 集成可让您在 Home Assistant 中控制 LG 条形音箱(https://www.lg.com/us/sound-bars)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: device
 ha_config_flow: true
 ---
+# LG Soundbars
 
 **LG Soundbars** 集成可让您在 Home Assistant 中控制 [LG 条形音箱](https://www.lg.com/us/sound-bars)。
 

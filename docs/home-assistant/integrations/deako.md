@@ -1,6 +1,6 @@
 ---
 title: Deako
-description: 关于如何将 Deako 智能照明集成到 Home Assistant 的说明。
+description: 'Deako Smart Lighting 集成允许您从 Home Assistant 控制 Deako(https://deako.com) 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Switch
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ ha_codeowners:
 ha_zeroconf: true
 ha_integration_type: integration
 ---
+# Deako
 
 **Deako Smart Lighting** 集成允许您从 Home Assistant 控制 [Deako](https://deako.com) 设备。
 

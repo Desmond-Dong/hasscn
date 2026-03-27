@@ -1,6 +1,6 @@
 ---
 title: Usage Prediction
-description: 关于如何为 Home Assistant 配置使用预测集成的说明。
+description: 'Usage Prediction 集成是一个内部集成，用于预测用户最有可能与哪些实体交互。前端会利用这些预测结果向用户展示最相关的实体。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - History
 ha_release: '2025.10'
@@ -11,6 +11,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: system
 ---
+# Usage Prediction
 
 **Usage Prediction** 集成是一个内部集成，用于预测用户最有可能与哪些实体交互。前端会利用这些预测结果向用户展示最相关的实体。
 

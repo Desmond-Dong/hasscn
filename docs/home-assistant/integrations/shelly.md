@@ -1,6 +1,6 @@
 ---
 title: Shelly
-description: 集成 Shelly 设备
+description: '将 Shelly 设备(https://shelly.com)集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -44,6 +44,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
+# Shelly
 
 将 [Shelly 设备](https://shelly.com)集成到 Home Assistant 中。
 

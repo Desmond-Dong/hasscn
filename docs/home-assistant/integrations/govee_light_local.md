@@ -1,6 +1,6 @@
 ---
 title: Govee lights local
-description: 关于如何使用 Govee 本地 API 将 Govee 灯集成到 Home Assistant 的说明
+description: '使用本地 API 控制，将 Govee(https://www.govee.com/) 灯具接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - light
 ha_release: 2024.2
@@ -13,6 +13,7 @@ ha_platforms:
   - light
 ha_integration_type: integration
 ---
+# Govee lights local
 
 使用本地 API 控制，将 [Govee](https://www.govee.com/) 灯具接入 Home Assistant。
 

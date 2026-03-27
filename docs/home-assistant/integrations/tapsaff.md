@@ -1,6 +1,6 @@
 ---
 title: Taps Aff
-description: 有关如何在 Home Assistant 中使用 Taps Aff 二进制传感器的说明。
+description: 'The Taps Aff integration provides the ''Taps Aff'' status for a given location within the UK using Taps Aff(https://www.taps-aff.co.uk/). 本页属于 Home。'
 ha_category:
   - Weather
 ha_release: 0.47
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Taps Aff
 
 The **Taps Aff** integration provides the 'Taps Aff' status for a given location within the UK using [Taps Aff](https://www.taps-aff.co.uk/).
 

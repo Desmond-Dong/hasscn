@@ -1,7 +1,9 @@
 ---
 title: Home Assistant Connect ZBT-1 问题和更换
-description: 通过大量测试，我们发现了故障，但我们正在制定更换计划。
+description: '<img src=''/home-assistant/images/blog/2024-10-zbt1-issue/art.jpg'' alt="Home Assistant Connect ZBT-1 issue and replacement"。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Home Assistant Connect ZBT-1 问题和更换
+
 <img src='/home-assistant/images/blog/2024-10-zbt1-issue/art.jpg' alt="Home Assistant Connect ZBT-1 issue and replacement">
 
 :::注意

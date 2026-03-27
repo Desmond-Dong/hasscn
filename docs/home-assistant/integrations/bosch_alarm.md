@@ -1,6 +1,6 @@
 ---
 title: Bosch Alarm
-description: 集成 Bosch 报警系统。
+description: 'Bosch 报警面板 集成允许您将 Bosch 报警面板(https://www.boschsecurity.com) 连接到 Home Assistant，以控制和监控您的 Bosch 报警面板。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Binary Sensor
@@ -23,6 +23,7 @@ ha_integration_type: device
 ha_quality_scale: platinum
 ha_dhcp: true
 ---
+# Bosch Alarm
 
 **Bosch 报警面板** 集成允许您将 [Bosch 报警面板](https://www.boschsecurity.com) 连接到 Home Assistant，以控制和监控您的 Bosch 报警面板。
 

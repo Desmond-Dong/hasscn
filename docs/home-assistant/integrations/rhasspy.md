@@ -1,6 +1,6 @@
 ---
 title: Rhasspy
-description: 有关在 Home Assistant 中设置 Rhasspy 的说明。
+description: 'Rhasspy 集成允许您在 Home Assistant 安装中使用 Rhasspy 语音助手(https://rhasspy.readthedocs.io)。Rhasspy 是一套开源、完全离线的语音助手服务，支持多种人类语言。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Voice
 ha_iot_class: Local Push
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: rhasspy
 ha_integration_type: integration
 ---
+# Rhasspy
 
 **Rhasspy** 集成允许您在 Home Assistant 安装中使用 [Rhasspy 语音助手](https://rhasspy.readthedocs.io)。Rhasspy 是一套开源、完全离线的语音助手服务，支持多种人类语言。
 

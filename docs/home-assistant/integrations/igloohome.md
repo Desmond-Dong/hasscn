@@ -1,6 +1,6 @@
 ---
 title: igloohome
-description: 集成 igloohome 智能门禁设备。
+description: 'igloohome 集成可通过 igloodeveloper API(https://igloocompany.stoplight.io/docs/igloohome-api/1w1cuv56ge5xq-overview) 让 Home Assistant。'
 ha_category:
   - Sensor
 ha_release: 2025.2
@@ -15,6 +15,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# igloohome
 
 **igloohome** 集成可通过 [igloodeveloper API](https://igloocompany.stoplight.io/docs/igloohome-api/1w1cuv56ge5xq-overview) 让 Home Assistant 访问已配对的[智能门禁设备](https://www.igloohome.co/#products)。此集成包括以下功能：
 

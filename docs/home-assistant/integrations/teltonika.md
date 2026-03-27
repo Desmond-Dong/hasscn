@@ -1,6 +1,6 @@
 ---
 title: Teltonika
-description: 有关如何将 Teltonika 路由器与 Home Assistant 集成的说明。
+description: 'The Teltonika integration integrates Teltonika Networks(https://teltonika-networks.com/) routers with Home Assistant, allowing you to monitor cellular。'
 ha_release: 2026.3
 ha_iot_class: Local Polling
 ha_codeowners:
@@ -20,6 +20,7 @@ related:
   - url: https://wiki.teltonika-networks.com/
     title: Teltonika Networks Wiki
 ---
+# Teltonika
 
 The **Teltonika** integration integrates [Teltonika Networks](https://teltonika-networks.com/) routers with Home Assistant, allowing you to monitor cellular signal quality, modem temperature, and network connectivity.
 

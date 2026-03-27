@@ -1,6 +1,6 @@
 ---
 title: Ituran
-description: 关于如何将 Ituran 添加到 Home Assistant 的说明。
+description: 'The Ituran integration allows you to retrieve information from your Ituran-equipped vehicle using the Ituran APP service(https://www.ituran.co.il/ituranfro。'
 ha_category:
   - Car
   - Device Tracker
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Ituran
 
 The **Ituran** integration allows you to retrieve information from your Ituran-equipped vehicle using the [Ituran APP service](https://www.ituran.co.il/ituranfront/comfort-services-2/ituran-app-comfort). It pulls information from the Ituran web service regarding the vehicle's location.
 

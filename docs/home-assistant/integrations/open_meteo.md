@@ -1,6 +1,6 @@
 ---
 title: Open-Meteo
-description: "有关如何将 Open-Meteo 集成到 Home Assistant 中的说明。"
+description: 'Open-Meteo integration 可将 Open-Meteo(https://open-meteo.com) 提供的免费天气预报集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Weather
@@ -15,6 +15,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Open-Meteo
 
 **Open-Meteo** integration 可将 [Open-Meteo](https://open-meteo.com) 提供的免费天气预报集成到 Home Assistant 中。
 

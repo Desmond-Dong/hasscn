@@ -1,6 +1,6 @@
 ---
 title: Input select
-description: 关于如何将输入选择集成到 Home Assistant 的说明。
+description: 'Input select 集成允许您定义一个可通过前端选择的值列表，并可在自动化条件中使用。当您选择新项目时，会生成状态变化事件。该状态事件可用作 automation 触发器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
   - Helper
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: input_select
 ha_integration_type: helper
 ---
+# Input select
 
 **Input select** 集成允许您定义一个可通过前端选择的值列表，并可在自动化条件中使用。当您选择新项目时，会生成状态变化事件。该状态事件可用作 `automation` 触发器。
 

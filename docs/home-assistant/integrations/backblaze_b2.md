@@ -1,6 +1,6 @@
 ---
 title: Backblaze B2
-description: 关于如何设置 Backblaze B2 存储桶作为备份位置的说明。
+description: 'Backblaze integration 允许您在 Home Assistant 中使用 Backblaze B2(https://www.backblaze.com/cloud-storage) 存储桶作为备份位置。 本页属于 Home Assistant 中文文档。'
 ha_release: 2025.12
 ha_category:
   - Backup
@@ -15,6 +15,7 @@ ha_quality_scale: bronze
 ha_platforms:
   - diagnostics
 ---
+# Backblaze B2
 
 **Backblaze** integration 允许您在 Home Assistant 中使用 [Backblaze B2](https://www.backblaze.com/cloud-storage) 存储桶作为备份位置。
 

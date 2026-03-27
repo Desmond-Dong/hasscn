@@ -1,6 +1,8 @@
 ---
 title: "本地应用程序测试"
+description: '开发应用程序（以前称为附加组件）的最快且推荐的方法是使用本地 Visual Studio Code 开发容器。我们维护一个devcontainer for this purpose(https://github.com/home-assistant/devcontainer)。'
 ---
+# 本地应用程序测试
 
 开发应用程序（以前称为附加组件）的最快且推荐的方法是使用本地 Visual Studio Code 开发容器。我们维护一个[devcontainer for this purpose](https://github.com/home-assistant/devcontainer)，它在我们所有的应用程序存储库中使用。 VS Code 的开发容器设置运行 Supervisor 和 Home Assistant，所有应用程序都映射为内部本地应用程序，这使得 Windows、Mac 和 Linux 桌面操作系统上的应用程序开发人员变得简单。
 

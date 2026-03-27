@@ -1,7 +1,8 @@
 ---
 title: '2022.5.3：Ukraine Alarm 集成，空袭或炮击警报即时提醒'
-description: Home Assistant 的一次特别发布，让全新 Ukraine Alarm 集成可供所有人使用。
+description: '2022 年 2 月，俄罗斯入侵乌克兰(https://en.wikipedia.org/wiki/2022RussianinvasionofUkraine)。此后两国一直处于战争状态。乌克兰平民随时可能遭遇交火，或成为俄军蓄意攻击目标。乌克兰推出了 Ukraine。'
 ---
+# 2022.5.3：Ukraine Alarm 集成，空袭或炮击警报即时提醒
 
 2022 年 2 月，[俄罗斯入侵乌克兰](https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine)。此后两国一直处于战争状态。乌克兰平民随时可能遭遇交火，或成为俄军蓄意攻击目标。乌克兰推出了 [Ukraine 报警](https://www.ukrainealarm.com/) 服务，用于在附近出现战事时向民众发出通知。
 

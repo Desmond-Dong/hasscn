@@ -1,6 +1,6 @@
 ---
 title: Neato Botvac
-description: "有关如何将 Neato 集成到 Home Assistant 中的说明。"
+description: 'The Neato integration allows you to control your Neato Botvac Connected Robotsbotvac-connected. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Button
@@ -20,6 +20,7 @@ ha_platforms:
   - vacuum
 ha_integration_type: hub
 ---
+# Neato Botvac
 
 The **Neato** integration allows you to control your [Neato Botvac Connected Robots][botvac-connected].
 

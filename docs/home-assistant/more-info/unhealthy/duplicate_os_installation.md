@@ -1,7 +1,8 @@
 ---
 title: 重复的 Home Assistant OS 安装
-description: 如何解决在同一系统上有多个 Home Assistant OS 安装导致的问题。
+description: '检测到多个 Home Assistant OS 安装，这可能导致系统无法启动，特别是在更新后。当您在连接到同一设备的不同存储设备（如 SD 卡、USB 驱动器或内部存储）上多次安装 Home Assistant OS 时，通常会出现此问题。这种不匹配可能导致：。'
 ---
+# 重复的 Home Assistant OS 安装
 
 ## 问题
 

@@ -1,6 +1,6 @@
 ---
 title: Linux Battery
-description: 关于如何将 Linux 电池信息集成到 Home Assistant 的说明。
+description: 'Linux Battery 集成会使用您本地 Linux 系统中 /sys/class/powersupply/ 存储的信息，来显示当前电池状态的详细信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: 0.28
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Linux Battery
 
 **Linux Battery** 集成会使用您本地 Linux 系统中 `/sys/class/power_supply/` 存储的信息，来显示当前电池状态的详细信息。
 

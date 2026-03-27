@@ -1,7 +1,8 @@
 ---
 title: Apollo 加入 Works with Home Assistant 计划
-description: 新增认证三款设备，包括社区最受欢迎的存在感与空气质量多传感器。
+description: '<img src=''/home-assistant/images/blog/2025-02-apollo/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Apollo wwha logo"。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Apollo 加入 Works with Home Assistant 计划
 
 <img src='/home-assistant/images/blog/2025-02-apollo/art.jpg' style='border: 0;box-shadow: none;' alt="Apollo wwha logo">
 

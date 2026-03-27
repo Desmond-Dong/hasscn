@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Supervisor
-description: 从 Home Assistant 控制 Supervisor 应用和操作系统
+description: 'Home Assistant Supervisor 集成允许您从 Home Assistant 监控和控制 Supervisor 应用及操作系统。 如果您运行 Home Assistant Operating System，此集成已安装。请注意，此集成无法安装在 Home Assistant。'
 ha_category:
   - Backup
   - Binary sensor
@@ -22,6 +22,7 @@ ha_codeowners:
   - '@home-assistant/supervisor'
 ha_integration_type: integration
 ---
+# Home Assistant Supervisor
 
 **Home Assistant Supervisor** 集成允许您从 Home Assistant 监控和控制 Supervisor 应用及操作系统。
 如果您运行 Home Assistant Operating System，此集成已安装。请注意，此集成无法安装在 Home Assistant Container 上。

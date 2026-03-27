@@ -1,6 +1,8 @@
 ---
 title: "已认证的 WebView"
+description: '你的应用已经要求用户完成认证。这意味着当用户打开 Home Assistant UI 时，应用不应再次要求用户认证。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 已认证的 WebView
 
 你的应用已经要求用户完成认证。这意味着当用户打开 Home Assistant UI 时，应用不应再次要求用户认证。
 

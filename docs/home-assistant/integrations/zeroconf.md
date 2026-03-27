@@ -1,6 +1,6 @@
 ---
 title: Zero-configuration networking (zeroconf)
-description: 使用 Zeroconf 协议暴露 Home Assistant。
+description: 'Zero-configuration networking (zeroconf) 集成会扫描网络中的受支持设备和服务。发现的集成会显示在配置面板中集成页面的“已发现”部分。它还会让 Home Assistant 可被网络中的其他服务发现。Zeroconf 有时也被称为 Bonjour、Rendezvous。'
 ha_category:
   - Network
 ha_release: 0.18
@@ -11,6 +11,7 @@ ha_domain: zeroconf
 ha_iot_class: Local Push
 ha_integration_type: system
 ---
+# Zero-configuration networking (zeroconf)
 
 **Zero-configuration networking (zeroconf)** 集成会扫描网络中的受支持设备和服务。发现的集成会显示在配置面板中集成页面的“已发现”部分。它还会让 Home Assistant 可被网络中的其他服务发现。Zeroconf 有时也被称为 Bonjour、Rendezvous 和 Avahi。
 

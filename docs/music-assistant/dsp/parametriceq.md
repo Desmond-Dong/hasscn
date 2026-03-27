@@ -1,8 +1,7 @@
 ---
 title: DSP 参数均衡器
-description: DSP 参数均衡器滤镜的使用和效果说明
+description: '参数均衡器 (PEQ) 是一个<a href="https://www.masteringbox.com/learn/parametric-eq" target="blank" rel="noopener noreferrer"强大的工具</a，用于微调音频。'
 ---
-
 # 参数均衡器
 
 参数均衡器 (PEQ) 是一个<a href="https://www.masteringbox.com/learn/parametric-eq" target="_blank" rel="noopener noreferrer">强大的工具</a>，用于微调音频。与简单的音调控制不同，PEQ 允许精确调整特定频率范围。

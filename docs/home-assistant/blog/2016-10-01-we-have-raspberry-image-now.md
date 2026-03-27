@@ -1,7 +1,8 @@
 ---
 title: 我们现在有树莓派镜像了
-description: Home Assistant 树莓派镜像正式发布
+description: '今天我们很高兴宣布全新的树莓派镜像！它基于 Raspbian Lite，并集成了 HASS，因此我们把它命名为 Hassbian。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 我们现在有树莓派镜像了
 
 今天我们很高兴宣布全新的树莓派镜像！它基于 Raspbian Lite，并集成了 HASS，因此我们把它命名为 Hassbian。
 

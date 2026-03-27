@@ -1,6 +1,6 @@
 ---
 title: Demo
-description: 关于如何在 Home Assistant 中使用平台演示的说明。
+description: 'Demo 集成允许您使用带有演示实现的集成。演示实体是虚拟的，但它们可以向您展示真实平台在 Home Assistant 中的外观。这样，您就可以像使用在线 Home Assistant 演示(/home-assistant/demo/) 一样运行自己的演示实例，同时又能结合您自己的真实平台。'
 ha_category:
   - Other
   - Update
@@ -50,6 +50,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Demo
 
 **Demo** 集成允许您使用带有演示实现的集成。演示实体是虚拟的，但它们可以向您展示真实平台在 Home Assistant 中的外观。这样，您就可以像使用在线 [Home Assistant 演示](/home-assistant/demo/) 一样运行自己的演示实例，同时又能结合您自己的真实平台。
 

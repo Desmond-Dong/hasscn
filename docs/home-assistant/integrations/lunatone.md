@@ -1,6 +1,6 @@
 ---
 title: Lunatone
-description: 关于如何将 Lunatone REST API 设备与 Home Assistant 集成的说明。
+description: 'Lunatone 集成用于接入提供 REST API 的 Lunatone(https://www.lunatone.com) 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Light
@@ -16,6 +16,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# Lunatone
 
 **Lunatone** 集成用于接入提供 REST API 的 [Lunatone](https://www.lunatone.com) 设备。
 

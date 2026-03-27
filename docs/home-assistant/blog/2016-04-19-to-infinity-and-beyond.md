@@ -1,7 +1,8 @@
 ---
 title: To Infinity and Beyond 🚀
-description: 'The state of Home Assistant: past, present, future.'
+description: 'After 2.5 years I think we can proudly say: Home Assistant is a success. I write we because Home Assistant is no longer a one-person side project. It has。'
 ---
+# To Infinity and Beyond 🚀
 
 After 2.5 years I think we can proudly say: Home Assistant is a success. I write _we_ because Home Assistant is no longer a one-person side project. It has become the side project of many people who spend countless hours on making Home Assistant the best home 自动化 software out there. To acknowledge this we migrated the repositories from being under my name to be under our own [organization on GitHub][gh-ha].
 

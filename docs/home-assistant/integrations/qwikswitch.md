@@ -1,6 +1,6 @@
 ---
 title: QwikSwitch QSUSB
-description: 有关如何将 QwikSwitch QSUSB 集线器集成到 Home Assistant 的说明。
+description: 'QwikSwitch QSUSB 集成是将各种 QwikSwitch(https://www.qwikswitch.co.za/) 设备接入 Home Assistant 的主集成。该集成需要 QSUSB Modem 设备，并连接到 QS Mobile 应用。'
 ha_category:
   - Binary sensor
   - Hub
@@ -23,6 +23,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# QwikSwitch QSUSB
 
 **QwikSwitch QSUSB** 集成是将各种 [QwikSwitch](https://www.qwikswitch.co.za/) 设备接入 Home Assistant 的主集成。该集成需要 QSUSB Modem 设备，并连接到 QS Mobile 应用。
 

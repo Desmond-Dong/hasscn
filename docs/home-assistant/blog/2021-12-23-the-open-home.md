@@ -2,6 +2,7 @@
 title: The Open Home
 description: 'Our vision for the smart home: privacy, choice and sustainability.'
 ---
+# The Open Home
 
 <img src='/home-assistant/images/blog/2021-12-open-home/header.png' style='box-shadow:none;border:0'>
 

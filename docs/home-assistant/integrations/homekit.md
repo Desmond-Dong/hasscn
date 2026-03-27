@@ -1,6 +1,6 @@
 ---
 title: HomeKit Bridge
-description: 关于如何在 Home Assistant 中设置 HomeKit 网桥集成的说明。
+description: 'HomeKit Bridge 集成可将你的 Home Assistant 实体提供给 Apple HomeKit， 这样即使这些设备原生不支持 HomeKit，也能通过 Apple 的“家庭”App 和 Siri 进行控制。 本页属于 Home Assistant 中文文档。'
 featured: true
 ha_category:
   - Voice
@@ -15,7 +15,6 @@ ha_platforms:
   - diagnostics
 ha_integration_type: integration
 ---
-
 **HomeKit Bridge** 集成可将你的 Home Assistant 实体提供给 Apple HomeKit，
 这样即使这些设备原生不支持 HomeKit，也能通过 Apple 的“家庭”App 和 Siri 进行控制。
 

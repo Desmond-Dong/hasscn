@@ -3,6 +3,7 @@ title: '[Update: we are wrong] Nest 门锁 用户 out of their own data'
 description: Nest is no longer accepting new developer accounts or certifications,
   blocking you from accessing your data.
 ---
+# [Update: we are wrong] Nest 门锁 用户 out of their own data
 
 **更新 1 (Jan 24):** 我们收到一些反馈，表示用户仍然可以创建账号并生成所需密钥。我们刚刚也验证过，情况确实如此。所以目前你依然可以访问自己的数据，这算是个好消息。只是他们对我们那条推文的回复，依然让我们摸不着头脑。也感谢 Reddit 用户 /u/lefos123 [指出](https://www.reddit.com/r/homeassistant/comments/ajgiz2/nest_locks_users_out_of_their_own_data/eevh8on/)，Nest 其实早在 2018 年 11 月就 ~~宣布了这件事~~ [更新了相关链接](https://开发者.nest.com/)。
 

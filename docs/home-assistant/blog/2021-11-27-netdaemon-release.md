@@ -3,6 +3,7 @@ title: 'New NetDaemon Release: Use C# to automate Home Assistant'
 description: NetDaemon just released a new version of their .Net platform for Home
   Assistant
 ---
+# New NetDaemon Release: Use C# to automate Home Assistant
 
 <img src='/home-assistant/images/blog/2021-11-NetDaemon/NetDaemonLogo.png' style='border: 0;box-shadow: none; width: 25%; height: 25%; float: right;'>
 

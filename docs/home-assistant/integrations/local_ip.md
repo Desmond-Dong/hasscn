@@ -1,6 +1,6 @@
 ---
 title: Local IP Address
-description: 关于如何将本地 IP 地址传感器集成到 Home Assistant 的说明。
+description: 'Local IP Address 集成会公开您的 Home Assistant 实例在本地网络（LAN）中的 IP 地址。当您的实例使用固定的公网主机名（例如使用 Nabu Casa 服务时），但本地局域网地址是动态分配的（例如通过 DHCP 配置）时，这会很有帮助。'
 ha_category:
   - Network
 ha_iot_class: Local Polling
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: integration
 ---
+# Local IP Address
 
 **Local IP Address** 集成会公开您的 Home Assistant 实例在本地网络（LAN）中的 IP 地址。当您的实例使用固定的公网主机名（例如使用 Nabu Casa 服务时），但本地局域网地址是动态分配的（例如通过 DHCP 配置）时，这会很有帮助。
 

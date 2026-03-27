@@ -1,6 +1,6 @@
 ---
 title: Supervisord
-description: 有关如何将 Supervisord 集成到 Home Assistant 中的说明。
+description: 'Supervisord 集成允许您跟踪 Supervisord(http://supervisord.org/) 的状态。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: '0.20'
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Supervisord
 
 **Supervisord** 集成允许您跟踪 [Supervisord](http://supervisord.org/) 的状态。
 

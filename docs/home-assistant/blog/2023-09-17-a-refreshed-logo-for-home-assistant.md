@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 焕新标志登场！
-description: 我们为 Home Assistant 带来了一个既熟悉又更精致的新标志，并将在接下来几周内逐步推出。
+description: '<img class=''no-shadow'' src=''/home-assistant/images/blog/2023-09-ha10/logo-cover.png'' alt=''蓝色背景上的新版 Home Assistant 标志。''。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Home Assistant 焕新标志登场！
 
 <img class='no-shadow' src='/home-assistant/images/blog/2023-09-ha10/logo-cover.png' alt='蓝色背景上的新版 Home Assistant 标志。'>
 

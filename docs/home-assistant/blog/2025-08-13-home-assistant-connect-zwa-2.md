@@ -1,7 +1,8 @@
 ---
 title: Z-Wave 重生 - Home Assistant Connect ZWA-2
-description: 宣布将 Z-Wave 设备连接到 Home Assistant 的终极方式
+description: '<img src=''/home-assistant/images/blog/2025-08-home-assistant-connect-zwa-2/art.webp'' style=''border: 0;box-shadow: none;'' alt="Z-Wave 重生 - Home Assistant。'
 ---
+# Z-Wave 重生 - Home Assistant Connect ZWA-2
 
 <img src='/home-assistant/images/blog/2025-08-home-assistant-connect-zwa-2/art.webp' style='border: 0;box-shadow: none;' alt="Z-Wave 重生 - Home Assistant Connect ZWA-2">
 

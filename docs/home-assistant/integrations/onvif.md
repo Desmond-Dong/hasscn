@@ -1,6 +1,6 @@
 ---
 title: ONVIF
-description: "有关如何将 ONVIF 摄像头集成到 Home Assistant 中的说明。"
+description: 'The ONVIF integration allows you to use an ONVIF(https://www.onvif.org/) Profile S conformant device in Home Assistant. This requires the ffmpeg。'
 
 ha_category:
   - Camera
@@ -22,6 +22,7 @@ ha_platforms:
 ha_integration_type: device
 ha_dhcp: true
 ---
+# ONVIF
 
 The **ONVIF** integration allows you to use an [ONVIF](https://www.onvif.org/) Profile S conformant device in Home Assistant. This requires the [`ffmpeg` integration](/home-assistant/integrations/ffmpeg/) to be already configured.
 

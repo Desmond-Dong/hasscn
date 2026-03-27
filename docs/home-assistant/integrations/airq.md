@@ -1,6 +1,6 @@
 ---
 title: air-Q
-description: 关于将 air-Q 集成到 Home Assistant 的说明
+description: 'air-Q 集成允许将您的 air-Q(https://www.air-q.com/) 设备提供的传感器集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Environment
   - Health
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# air-Q
 
 **air-Q** 集成允许将您的 [air-Q](https://www.air-q.com/) 设备提供的传感器集成到 Home Assistant 中。
 

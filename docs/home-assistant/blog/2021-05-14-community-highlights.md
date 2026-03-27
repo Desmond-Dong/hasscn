@@ -3,6 +3,7 @@ title: 'Community Highlights: 21st edition'
 description: Mute your media player when you are on the phone, get started with telemetry
   data from your car and switch a light via Minecraft
 ---
+# Community Highlights: 21st edition
 
 The 21st edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

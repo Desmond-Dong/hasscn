@@ -1,7 +1,8 @@
 ---
 title: 集成您的太阳能电池板
-description: 了解如何将太阳能电池板信息添加到 Home Assistant 家庭能源管理中。
+description: '通过将太阳能电池板集成到 Home Assistant 来深入了解您的能源生产情况。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 集成您的太阳能电池板
 
 通过将太阳能电池板集成到 Home Assistant 来深入了解您的能源生产情况。
 

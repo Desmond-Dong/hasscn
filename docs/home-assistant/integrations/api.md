@@ -1,6 +1,6 @@
 ---
 title: Home Assistant API
-description: 关于如何在 Home Assistant 中设置 RESTful API 的说明。
+description: 'Home Assistant API 集成公开一个 RESTful API，并允许与无头运行的 Home Assistant 实例进行交互。此集成依赖于 HTTP 集成(/home-assistant/integrations/http/)。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Other
 ha_release: 0.7
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_domain: api
 ha_integration_type: system
 ---
+# Home Assistant API
 
 **Home Assistant API** 集成公开一个 RESTful API，并允许与无头运行的 Home Assistant 实例进行交互。此集成依赖于 [HTTP 集成](/home-assistant/integrations/http/)。
 

@@ -1,6 +1,6 @@
 ---
 title: ntfy
-description: "有关如何将 ntfy 与 Home Assistant 集成的说明。"
+description: 'ntfy 集成允许您通过 ntfy.sh(https://ntfy.sh/) 或其他 ntfy 服务发布推送通知。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Event
@@ -21,6 +21,7 @@ ha_platforms:
   - update
 ha_quality_scale: platinum
 ---
+# ntfy
 
 **ntfy** 集成允许您通过 [ntfy.sh](https://ntfy.sh/) 或其他 ntfy 服务发布推送通知。
 

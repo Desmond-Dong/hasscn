@@ -1,6 +1,6 @@
 ---
 title: PG LAB Electronics
-description: 有关如何将 PG LAB Electronics 与 Home Assistant 集成的说明。
+description: 'The PG LAB Electronics integrations allows you to control PG LAB Electronics(https://www.pglab.dev/) devices in Home Assistant. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Cover
   - Sensor
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_quality_scale: bronze
 ---
+# PG LAB Electronics
 
 The **PG LAB Electronics** integrations allows you to control [PG LAB Electronics](https://www.pglab.dev/) devices in Home Assistant.
 

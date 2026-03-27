@@ -1,7 +1,8 @@
 ---
 title: Thomas Krenn award 2017
-description: Thomas Krenn award 2017
+description: '你可能已经从我们的社交媒体频道，以及 0.41 的发布博客中得知：我们现在已经是一个获奖的开源项目了。Thomas-Krenn-Awardaward 评审团将我们评为第二名。对于一个独立的社区项目来说，这是非常了不起的成就。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# Thomas Krenn award 2017
 
 你可能已经从我们的社交媒体频道，以及 0.41 的发布博客中得知：我们现在已经是一个获奖的开源项目了。[Thomas-Krenn-Award][award] 评审团将我们评为第二名。对于一个独立的社区项目来说，这是非常了不起的成就。
 

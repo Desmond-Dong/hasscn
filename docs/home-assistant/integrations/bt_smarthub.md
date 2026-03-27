@@ -1,6 +1,6 @@
 ---
 title: BT Smart Hub
-description: 关于如何将 BT Smart Hub 路由器集成到 Home Assistant 的说明。
+description: '此集成通过查看连接到 BT Smart Hub(https://en.wikipedia.org/wiki/BTSmartHub) 路由器的设备来提供存在检测。 此路由器有时被称为 BT Home Hub 6。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: 0.82
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# BT Smart Hub
 
 此集成通过查看连接到 [BT Smart Hub](https://en.wikipedia.org/wiki/BT_Smart_Hub) 路由器的设备来提供存在检测。
 此路由器有时被称为 BT Home Hub 6。

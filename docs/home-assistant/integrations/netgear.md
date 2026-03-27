@@ -1,6 +1,6 @@
 ---
 title: NETGEAR
-description: "有关如何将 NETGEAR 路由器集成到 Home Assistant 的说明。"
+description: 'This integration allows you to detect presence by looking at connected devices to a NETGEAR(https://www.netgear.com/) device and control the NETGEAR。'
 
 ha_category:
   - Presence detection
@@ -22,6 +22,7 @@ ha_codeowners:
 ha_ssdp: true
 ha_integration_type: hub
 ---
+# NETGEAR
 
 This integration allows you to detect presence by looking at connected devices to a [NETGEAR](https://www.netgear.com/) device and control the NETGEAR device.
 Both routers and access points can be used with this integration. Some access points will not be automatically discovered and need to be set up manually.

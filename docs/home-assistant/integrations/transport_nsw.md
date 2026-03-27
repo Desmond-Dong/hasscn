@@ -1,6 +1,6 @@
 ---
 title: Transport NSW
-description: 关于如何将新南威尔士州交通局（澳大利亚）时刻表数据集成到 Home Assistant 的说明。
+description: 'Transport NSW 集成可显示从新南威尔士州交通局站点出发的下一班公交、火车、轻轨或渡轮还有多久发车。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_iot_class: Cloud Polling
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Transport NSW
 
 **Transport NSW** 集成可显示从新南威尔士州交通局站点出发的下一班公交、火车、轻轨或渡轮还有多久发车。
 

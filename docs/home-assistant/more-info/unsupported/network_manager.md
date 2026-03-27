@@ -1,7 +1,8 @@
 ---
 title: NetworkManager
-description: 关于 NetworkManager 为何将安装标记为不受支持的更多信息。
+description: 'Supervisor 利用主机上的 Network Manager 向加载项提供网络信息，并让您可以选择通过 UI 或命令行管理网络接口。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# NetworkManager
 
 ## 问题
 

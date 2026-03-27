@@ -1,6 +1,6 @@
 ---
 title: "MQTT device tracker"
-description: "关于如何使用 MQTT 在 Home Assistant 中跟踪设备的说明。"
+description: 'MQTT device tracker 集成允许您通过在 "configuration.yaml" 中手动 YAML 配置(yaml-configuration)定义新的 devicetracker，也可以使用 MQTT 发现协议(using-the-discovery-protocol)自动发现。'
 ha_category:
   - Presence detection
 ha_iot_class: Configurable
@@ -10,7 +10,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
-
+# MQTT device tracker
 
 **MQTT device tracker** 集成允许您通过在 "`configuration.yaml`" 中[手动 YAML 配置](#yaml-configuration)定义新的 device_tracker，也可以[使用 MQTT 发现协议](#using-the-discovery-protocol)自动发现 device_tracker。
 

@@ -1,6 +1,6 @@
 ---
 title: Nord Pool
-description: "有关如何与 Nord Pool Energy 市场价格整合的说明。"
+description: 'The Nord Pool integration integrates Nord Pool Group(https://www.nordpoolgroup.com/) energy prices into Home Assistant. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Energy
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# Nord Pool
 
 The **Nord Pool** integration integrates [Nord Pool Group](https://www.nordpoolgroup.com/) energy prices into Home Assistant.
 

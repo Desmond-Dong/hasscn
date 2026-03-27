@@ -1,6 +1,6 @@
 ---
 title: UniFi Network
-description: 关于如何配置 Ubiquiti UniFi Network 应用程序集成的说明。
+description: 'Ubiquiti Networks, inc.(https://www.ui.com/) 推出的 UniFi Network(https://www.ui.com/download-software/) 是一款将网关、交换机和无线接入点统一整合到单一图形化界面中的软件。'
 ha_category:
   - Hub
   - Image
@@ -26,6 +26,7 @@ ha_platforms:
   - update
 ha_integration_type: hub
 ---
+# UniFi Network
 
 [Ubiquiti Networks, inc.](https://www.ui.com/) 推出的 [UniFi Network](https://www.ui.com/download-software/) 是一款将网关、交换机和无线接入点统一整合到单一图形化界面中的软件。
 

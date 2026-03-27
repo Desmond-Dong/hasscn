@@ -1,7 +1,9 @@
 ---
 title: The State of Matter
-description: 了解我们于 2024 年 1 月 10 日星期三直播的 State of Matter 直播的所有亮点。
+description: '在两周前的 Matter 状态直播中，我们解释了 Matter 是什么、它与 Thread 的关系，以及如何将它与您可能已经知道的现有协议（例如 Zigbee 或 Z-Wave）进行比较。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# The State of Matter
+
 在两周前的 Matter 状态直播中，我们解释了 Matter 是什么、它与 Thread 的关系，以及如何将它与您可能已经知道的现有协议（例如 Zigbee 或 Z-Wave）进行比较。 
 
 在这篇博文中，我们为您提取了该流的亮点。我们还链接到更新的相关[Matter](/home-assistant/integrations/Matter/) 和[Thread](/home-assistant/integrations/Thread/) 文档。

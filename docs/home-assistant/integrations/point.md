@@ -1,6 +1,6 @@
 ---
 title: Minut Point
-description: 有关如何将 Minut Point 集成到 Home Assistant 的说明。
+description: 'The Point hub enables integration with the Minut Point(https://minut.com/). 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -21,6 +21,7 @@ related:
   - docs: /integrations/application_credentials/
     title: Application credentials
 ---
+# Minut Point
 
 The Point hub enables integration with the [Minut Point](https://minut.com/).
 

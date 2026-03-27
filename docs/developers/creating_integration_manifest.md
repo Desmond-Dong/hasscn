@@ -1,7 +1,9 @@
 ---
 title: "集成清单"
+description: '每个集成都有一个 manifest 文件，用于声明其基础信息。该文件以 manifest.json 的形式存放在集成目录中，并且是必需的。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "manifest"
 ---
+# 集成清单
 
 每个集成都有一个 `manifest` 文件，用于声明其基础信息。该文件以 `manifest.json` 的形式存放在集成目录中，并且是必需的。
 

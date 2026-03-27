@@ -1,6 +1,6 @@
 ---
 title: HomeWizard
-description: 关于如何将 HomeWizard 集成到 Home Assistant 的说明。
+description: 'HomeWizard(https://www.homewizard.com/) 平台的集成。它可以从 HomeWizard 产品本地收集数据，并在 Home Assistant 中创建为传感器。使用此集成，你可以监控电力、燃气和用水情况，从而优化能源使用。'
 ha_release: 2022.2
 ha_category:
   - Energy
@@ -23,6 +23,7 @@ works_with:
   - local
 ha_dhcp: true
 ---
+# HomeWizard
 
 [HomeWizard](https://www.homewizard.com/) 平台的集成。它可以从 HomeWizard 产品本地收集数据，并在 Home Assistant 中创建为传感器。使用此集成，你可以监控电力、燃气和用水情况，从而优化能源使用。此集成收集的信息可用于 [Energy dashboard](/home-assistant/home-energy-management)。
 

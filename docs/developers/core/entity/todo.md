@@ -1,7 +1,9 @@
 ---
 title: 待办事项列表实体
+description: '待办事项列表实体是表示待办事项列表的实体。待办事项列表包含 已订购并具有状态（已完成或正在进行）的待办事项。待办事项列表实体源自homeassistant.components.todo.TodoListEntity(https://github.com/home-assistant/core/blob/de。'
 sidebar_label: 待办事项清单
 ---
+# 待办事项列表实体
 
 待办事项列表实体是表示待办事项列表的实体。待办事项列表包含
 已订购并具有状态（已完成或正在进行）的待办事项。待办事项列表实体源自[`homeassistant.components.todo.TodoListEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/todo/__init__.py)。

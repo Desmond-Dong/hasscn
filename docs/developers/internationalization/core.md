@@ -1,6 +1,8 @@
 ---
 title: "后端本地化"
+description: '平台 翻译字符串以 JSON 形式存储在Core(https://github.com/home-assistant/core)存储库。这些文件必须位于与其所属的 component/platform 相邻的位置。组件必须有自己的目录，并且该目录中的文件简单地命名为 strings.json。'
 ---
+# 后端本地化
 
 ## 翻译字符串
 

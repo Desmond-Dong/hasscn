@@ -1,6 +1,6 @@
 ---
 title: Wallbox
-description: 关于如何将 Wallbox 电动汽车充电器集成到 Home Assistant 的说明。
+description: 'The Wallbox integration pulls data from the MyWallbox Portal(https://my.wallbox.com) for your Wallbox charging station. Use this integration to monitor。'
 ha_category:
   - Car
 ha_release: 2021.6
@@ -17,6 +17,7 @@ ha_codeowners:
   - '@hesselonline'
 ha_integration_type: device
 ---
+# Wallbox
 
 The **Wallbox** integration pulls data from the [MyWallbox Portal](https://my.wallbox.com) for your Wallbox charging station. 
 Use this integration to monitor the charging of your car by the **Wallbox** charger and modify settings such as **Charging Power**, **Energy Price**, **Solar Charging** and **Pause/Resume**. The energy usage collected by this integration can be used in the [Energy dashboard](/home-assistant/home-energy-management).

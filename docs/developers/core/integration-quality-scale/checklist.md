@@ -1,6 +1,9 @@
 ---
 title: "清单"
+description: 'import Checklist from ''./includes/checklist.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 清单
+
 import Checklist from './_includes/checklist.jsx'
 
 更改集成的质量等级时，请确保您在已完成规则之前打开 PR 更改质量等级。

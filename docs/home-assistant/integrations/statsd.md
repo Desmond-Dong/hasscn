@@ -1,6 +1,6 @@
 ---
 title: StatsD
-description: 在 StatsD 中记录事件。
+description: 'StatsD 集成可将所有状态变化传输到外部 StatsD(https://github.com/etsy/statsd) 实例。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - History
 ha_iot_class: Local Push
@@ -12,6 +12,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# StatsD
 
 **StatsD** 集成可将所有状态变化传输到外部 [StatsD](https://github.com/etsy/statsd) 实例。
 

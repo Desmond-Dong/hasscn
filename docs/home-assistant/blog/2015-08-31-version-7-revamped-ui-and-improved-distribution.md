@@ -1,7 +1,8 @@
 ---
 title: '0.7: Better UI and improved distribution'
-description: Home Assistant gains a version number and a face lift.
+description: '随着 Home Assistant 用户越来越多，我们开始明显感受到缺少正式发布机制带来的问题。过去我们没有版本号，用户必须通过 Git 检出源码才能开始使用。此外，随着支持设备数量持续增长，所需依赖也越来越多。因此我们决定调整发布方式。从现在开始：。'
 ---
+# 0.7: Better UI and improved distribution
 
 随着 Home Assistant 用户越来越多，我们开始明显感受到缺少正式发布机制带来的问题。过去我们没有版本号，用户必须通过 Git 检出源码才能开始使用。此外，随着支持设备数量持续增长，所需依赖也越来越多。因此我们决定调整发布方式。从现在开始：
 

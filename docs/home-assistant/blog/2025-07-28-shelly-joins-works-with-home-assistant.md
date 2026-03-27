@@ -1,7 +1,8 @@
 ---
 title: Shelly 加入 Works with Home Assistant
-description: 提供多种专为 Z-Wave 打造的开关和继电器。
+description: '<img src=''/home-assistant/images/blog/2025-07-shelly/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Shelly 加入 Works with Home Assistant"。'
 ---
+# Shelly 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-07-shelly/art.jpg' style='border: 0;box-shadow: none;' alt="Shelly 加入 Works with Home Assistant">
 

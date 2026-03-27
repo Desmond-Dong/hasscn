@@ -1,6 +1,6 @@
 ---
 title: Apple iTunes
-description: 关于如何将 iTunes 集成到 Home Assistant 的说明。
+description: 'Apple iTunes 集成允许您从 Home Assistant 控制 iTunes(https://apple.com/itunes/)。它使用一个运行在您 Mac 上的第三方服务器 itunes-api(https://github.com/maddox/itunes-api)。'
 ha_category:
   - Media player
 ha_release: 0.7.3
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Apple iTunes
 
 **Apple iTunes** 集成允许您从 Home Assistant 控制 [iTunes](https://apple.com/itunes/)。它使用一个运行在您 Mac 上的第三方服务器 [itunes-api](https://github.com/maddox/itunes-api)。您可以远程控制 Mac 上 iTunes 的播放、暂停或跳过歌曲。
 

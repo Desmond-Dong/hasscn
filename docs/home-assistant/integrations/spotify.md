@@ -1,6 +1,6 @@
 ---
 title: Spotify
-description: 有关如何将 Spotify 集成到 Home Assistant 的说明。
+description: 'Spotify 集成可让您在 Home Assistant 中控制 Spotify 账户的播放，并浏览 Spotify(https://www.spotify.com/) 媒体库。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.43
@@ -15,6 +15,7 @@ ha_platforms:
   - media_player
 ha_integration_type: service
 ---
+# Spotify
 
 **Spotify** 集成可让您在 Home Assistant 中控制 Spotify 账户的播放，并浏览 [Spotify](https://www.spotify.com/) 媒体库。
 

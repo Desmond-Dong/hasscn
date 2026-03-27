@@ -1,6 +1,6 @@
 ---
 title: Statistics
-description: 有关如何将统计传感器集成到 Home Assistant 中的说明。
+description: 'Statistics 集成会监视源传感器的状态，并提供其近期历史的聚合统计特征。这个集成在自动化中很有用，例如：在浴室热水澡后空气湿度恢复平稳时触发操作，或在一天内冲泡咖啡次数过多时触发提醒。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Helper
   - Sensor
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: helper
 ---
+# Statistics
 
 **Statistics** 集成会监视源传感器的状态，并提供其近期历史的聚合统计特征。这个集成在自动化中很有用，例如：在浴室热水澡后空气湿度恢复平稳时触发操作，或在一天内冲泡咖啡次数过多时触发提醒。
 

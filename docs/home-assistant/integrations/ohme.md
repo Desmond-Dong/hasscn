@@ -1,6 +1,6 @@
 ---
 title: Ohme
-description: "配置 Ohme 集成到 Home Assistant 的说明。"
+description: 'The Ohme integration allows you to connect your Ohme(https://ohme-ev.com/) EV charger to Home Assistant. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Car
@@ -22,6 +22,7 @@ ha_platforms:
 ha_quality_scale: platinum
 ha_integration_type: device
 ---
+# Ohme
 
 The **Ohme** integration allows you to connect your [Ohme](https://ohme-ev.com/) EV charger to Home Assistant.
 

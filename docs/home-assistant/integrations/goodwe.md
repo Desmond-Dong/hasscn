@@ -1,6 +1,6 @@
 ---
 title: GoodWe Inverter
-description: 关于如何将 GoodWe 逆变器连接到 Home Assistant 的说明。
+description: 'GoodWe 集成会通过本地网络轮询 GoodWe(http://www.goodwe.com/) 太阳能逆变器，并将其运行时数值以传感器形式显示在 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -19,6 +19,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# GoodWe Inverter
 
 **GoodWe** 集成会通过本地网络轮询 [GoodWe](http://www.goodwe.com/) 太阳能逆变器，并将其运行时数值以传感器形式显示在 Home Assistant 中。
 

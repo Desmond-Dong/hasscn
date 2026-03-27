@@ -1,6 +1,6 @@
 ---
 title: My Home Assistant
-description: 支持 my.home-assistant.io 重定向服务。
+description: '此集成用于处理来自 My Home Assistant(https://my.home-assistant.io) 服务的重定向。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 2021.3
@@ -10,6 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: system
 ---
+# My Home Assistant
 
 此集成用于处理来自 [My Home Assistant](https://my.home-assistant.io) 服务的重定向。
 

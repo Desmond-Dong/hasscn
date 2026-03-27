@@ -1,6 +1,6 @@
 ---
 title: RMV
-description: 有关如何将莱茵-美因州公共交通出发时间集成到 Home Assistant 中的说明。
+description: 'RMV 集成会为您提供 Rhein-Main 地区公共交通网络中下一个站点的下一班公交、有轨电车、地铁或火车的发车时间。线路编号和目的地等附加信息会显示在属性中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Transport
 ha_release: 0.76
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# RMV
 
 **RMV** 集成会为您提供 Rhein-Main 地区公共交通网络中下一个站点的下一班公交、有轨电车、地铁或火车的发车时间。线路编号和目的地等附加信息会显示在属性中。
 

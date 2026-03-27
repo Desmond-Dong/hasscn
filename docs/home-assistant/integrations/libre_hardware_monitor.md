@@ -1,6 +1,6 @@
 ---
 title: Libre Hardware Monitor
-description: 关于如何在 Home Assistant 中集成 Libre Hardware Monitor 的说明。
+description: 'The Libre Hardware Monitor integration uses your Libre Hardware Monitor(https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) installation as a。'
 ha_category:
   - System monitor
 ha_release: '2025.10'
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: silver
 ---
+# Libre Hardware Monitor
 
 The **Libre Hardware Monitor** integration uses your [Libre Hardware Monitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) installation as a source for sensors to display that system information in Home Assistant.
 

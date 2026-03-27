@@ -1,7 +1,9 @@
 ---
 title: "虚拟机"
+description: '目前由于此前的 OVA 发行方式存在问题，我们只发布 VMDK 虚拟磁盘。我们正在研究恢复 OVA 发行方式的可行方案，不过 VMDK 可用于上面列出的 hypervisor。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 虚拟机
 ---
+# 虚拟机
 
 ## 支持的 Hypervisor
 

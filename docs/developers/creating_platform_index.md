@@ -1,7 +1,9 @@
 ---
 title: "集成平台"
+description: 'Home Assistant 内置了多种用于抽象设备类型的实体平台，例如灯(/developers/core/entity/light)、开关(/developers/core/entity/switch)、cover(/developers/core/entity/cover)、气候设备(/develope。'
 sidebar_label: "平台"
 ---
+# 集成平台
 
 Home Assistant 内置了多种用于抽象设备类型的实体平台，例如[灯](/developers/core/entity/light)、[开关](/developers/core/entity/switch)、[cover](/developers/core/entity/cover)、[气候设备](/developers/core/entity/climate)以及[更多实体类型](/developers/core/entity)。您的集成可以通过创建平台来接入这些实体类型。对于要支持的每一种实体类型，通常都需要对应的一个平台。
 

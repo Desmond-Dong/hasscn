@@ -1,6 +1,6 @@
 ---
 title: Tuya
-description: 关于如何在 Home Assistant 中设置涂鸦中心的说明。
+description: 'Tuya 集成将您添加到涂鸦智能和涂鸦智能生活应用程序中的所有 Powered by Tuya 设备集成在一起。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Camera
@@ -48,6 +48,7 @@ ha_platforms:
 ha_dhcp: true
 ha_integration_type: hub
 ---
+# Tuya
 
 **Tuya** 集成将您添加到涂鸦智能和涂鸦智能生活应用程序中的所有 Powered by Tuya 设备集成在一起。
 

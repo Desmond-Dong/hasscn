@@ -1,6 +1,6 @@
 ---
 title: Slack
-description: 有关如何将 Slack 通知添加到 Home Assistant 的说明。
+description: 'The Slack integration allows you to deliver notifications from Home Assistant to Slack(https://slack.com/). 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Notifications
 ha_release: pre 0.7
@@ -15,10 +15,11 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Slack
 
 The **Slack** integration allows you to deliver notifications from Home Assistant to [Slack](https://slack.com/).
 
-![](/home-assistant/images/integrations/slack/slack-message.png)
+![Home Assistant slack message](/home-assistant/images/integrations/slack/slack-message.png)
 
 
 ## Setup
@@ -43,7 +44,7 @@ Find `Features/OAuth and Permissions/Scopes/Bot Token Scopes`
   - `mpim:write`
   - Optionally add `chat:write.customize` to modify your Slack bot's username and icon.
 
-![](/home-assistant/images/integrations/slack/bot-token-scopes.png)
+![Home Assistant bot token scopes](/home-assistant/images/integrations/slack/bot-token-scopes.png)
 
 4. Scroll up to `OAuth Tokens & Redirect URLs` and click `Install to Workspace`.
 
@@ -51,7 +52,7 @@ In `Features/OAuth and Permissions/OAuth Tokens for Your Workspace`:
 
 5. Copy the Bot User OAuth Token. Use this as 'API Key' when setting up in Home Assistant
 
-![](/home-assistant/images/integrations/slack/oauth-tokens-for-workspace.png)
+![Home Assistant oauth tokens for workspace](/home-assistant/images/integrations/slack/oauth-tokens-for-workspace.png)
 
 6. Ensure that the bot user is added to the channel in which you want it to post. This can be completed in several ways:
 
@@ -96,7 +97,7 @@ Default Channel: `#channel`
 Icon/Username:
 - optional - if you want to have a custom name/icon for the bot user not already set in Slack
 
-![](/home-assistant/images/integrations/slack/slack-integration-setup.png)
+![Home Assistant slack integration setup](/home-assistant/images/integrations/slack/slack-integration-setup.png)
 
 ## Usage
 
@@ -214,7 +215,7 @@ Some of the examples below use a member ID. This is a unique string assigned by 
 2. Open the context menu by selecting the three dots.
 3. Select **Copy member ID**.
 
-![](/home-assistant/images/integrations/slack/slack-member-id.png)
+![Home Assistant slack member id](/home-assistant/images/integrations/slack/slack-member-id.png)
 
 ### Examples
 

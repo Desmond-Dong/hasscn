@@ -1,7 +1,8 @@
 ---
 title: '视频：如何配置 Home Assistant'
-description: BRUH 自动化 制作了一个优秀的视频，帮助您开始配置 Home Assistant。
+description: '来自 BRUH automation(http://www.bruhautomation.com) 的 Ben 制作了许多很棒的视频，介绍他如何使用 Home Assistant 以及您如何也能开始使用它。下面的视频将引导您完成 Home Assistant 的配置。请欣赏！。'
 ---
+# 视频：如何配置 Home Assistant
 
 来自 [BRUH automation](http://www.bruhautomation.com) 的 Ben 制作了许多很棒的视频，介绍他如何使用 Home Assistant 以及您如何也能开始使用它。下面的视频将引导您完成 Home Assistant 的配置。请欣赏！
 

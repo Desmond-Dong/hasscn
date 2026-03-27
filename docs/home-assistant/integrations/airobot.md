@@ -1,6 +1,6 @@
 ---
 title: Airobot
-description: 关于将 Airobot 智能恒温器集成到 Home Assistant 用于智能地暖控制的说明。
+description: 'Airobot integration 允许您通过本地 REST API 控制和监控 Airobot(https://airobothome.com/) 智能恒温器，用于智能地暖控制。恒温器使用带有 <abbr title="时间比例积分"TPI</abbr 算法的自适应学习来保持稳定温度并优化能源效率。'
 ha_release: 2025.12
 ha_iot_class: Local Polling
 ha_codeowners:
@@ -25,6 +25,7 @@ ha_platforms:
   - sensor
   - switch
 ---
+# Airobot
 
 **Airobot** integration 允许您通过本地 REST API 控制和监控 [Airobot](https://airobothome.com/) 智能恒温器，用于智能地暖控制。恒温器使用带有 <abbr title="时间比例积分">TPI</abbr> 算法的自适应学习来保持稳定温度并优化能源效率。可选的内置二氧化碳和湿度传感器可监测室内空气质量，营造更健康的居住环境。
 

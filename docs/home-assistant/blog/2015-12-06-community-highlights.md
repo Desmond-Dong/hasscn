@@ -1,7 +1,8 @@
 ---
 title: Community Highlights
-description: Interesting links from the Home Assistant community.
+description: '我们会不时发现一些值得和 Home Assistant 社区伙伴分享的内容。以下是上周的一些有趣内容：。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Community Highlights
 
 我们会不时发现一些值得和 Home Assistant 社区伙伴分享的内容。以下是上周的一些有趣内容：
 

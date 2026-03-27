@@ -1,12 +1,13 @@
 ---
 title: "MQTT Image"
-description: "关于如何在 Home Assistant 中将 MQTT 图像消息用作图像的说明。"
+description: 'MQTT Image 集成允许您将通过 MQTT 发送的图像文件内容集成到 Home Assistant 中作为图像。 image 平台是 camera 平台的简化版本，仅接受图像。 每次在配置中的 imagetopic 下收到消息时，Home Assistant 中显示的图像也会更新。'
 ha_category:
   - Image
 ha_release: 2023.7
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Image
 
 **MQTT Image** 集成允许您将通过 MQTT 发送的图像文件内容集成到 Home Assistant 中作为图像。
 `image` 平台是 `camera` 平台的简化版本，仅接受图像。

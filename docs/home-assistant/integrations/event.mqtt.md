@@ -1,12 +1,13 @@
 ---
 title: "MQTT Event"
-description: "关于将 MQTT 事件集成到 Home Assistant 的说明。"
+description: 'MQTT Event 集成允许您处理来自 MQTT 消息的事件信息。事件是在发生某些事情时发出的信号，例如，当用户按下门铃等物理按钮或按下遥控器上的按钮时。事件可以发送一些事件属性作为实体的属性。MQTT 事件是无状态的。例如，门铃没有像"开"或"关"这样的状态，而是被瞬间按下。'
 ha_category:
   - Event
 ha_release: 2023.8
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Event
 
 **MQTT Event** 集成允许您处理来自 MQTT 消息的事件信息。事件是在发生某些事情时发出的信号，例如，当用户按下门铃等物理按钮或按下遥控器上的按钮时。事件可以发送一些事件属性作为实体的属性。MQTT 事件是无状态的。例如，门铃没有像"开"或"关"这样的状态，而是被瞬间按下。
 

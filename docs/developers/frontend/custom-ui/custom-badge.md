@@ -1,6 +1,8 @@
 ---
 title: "自定义徽章"
+description: 'Badges(https://www.home-assistant.io/dashboards/badges/) 是位于视图顶部、所有 cards 之上的小部件。我们提供内置 badge —— entity badge(https://next.home-assistant.io/dashboards/bad。'
 ---
+# 自定义徽章
 
 [Badges](https://www.home-assistant.io/dashboards/badges/) 是位于视图顶部、所有 cards 之上的小部件。我们提供内置 badge —— [entity badge](https://next.home-assistant.io/dashboards/badges/#entity-badge) —— 但你并不局限于这一种。你也可以构建并使用自己的 badge！
 

@@ -1,6 +1,6 @@
 ---
 title: HomematicIP Cloud
-description: 关于将 HomematicIP 集成到 Home Assistant 的说明。
+description: 'The HomematicIP(https://www.homematic-ip.com/) integration is used as an interface to the cloud server. Since there is no official documentation about。'
 ha_category:
   - Alarm
   - Binary sensor
@@ -38,6 +38,7 @@ ha_codeowners:
   - '@hahn-th'
   - '@lackas'
 ---
+# HomematicIP Cloud
 
 The [HomematicIP](https://www.homematic-ip.com/) integration is used as an interface to the cloud server. Since there is no official documentation about this API, everything was done via reverse engineering. Use at your own risk.
 

@@ -1,6 +1,6 @@
 ---
 title: Nanoleaf
-description: "说明如何将 Nanoleaf 面板集成到 Home Assistant 中。"
+description: 'The Nanoleaf integration allows you to control and monitor Nanoleaf Light Panels, Canvas, Shapes, Elements, and Lines. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Button
@@ -26,7 +26,6 @@ ha_zeroconf: true
 ha_ssdp: true
 ha_integration_type: device
 ---
-
 The **Nanoleaf** integration allows you to control and monitor Nanoleaf Light Panels, Canvas, Shapes, Elements, and Lines.
 
 此集成不支持 Nanoleaf Remote 和 Essentials 灯。通过 HomeKit 控制器集成，可以通过 Thread 和蓝牙控制 Nanoleaf Essentials 灯。

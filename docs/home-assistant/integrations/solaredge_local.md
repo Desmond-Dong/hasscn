@@ -1,6 +1,6 @@
 ---
 title: SolarEdge Local
-description: 有关如何通过本地 API 将 SolarEdge 传感器集成到 Home Assistant 中的说明。
+description: 'SolarEdge Local 集成使用某些 SolarEdge 逆变器提供的本地 API，让你能够获取 SolarEdge 太阳能系统的详细信息，并将其集成到 Home Assistant 安装中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -18,6 +18,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# SolarEdge Local
 
 **SolarEdge Local** 集成使用某些 SolarEdge 逆变器提供的本地 API，让你能够获取 SolarEdge 太阳能系统的详细信息，并将其集成到 Home Assistant 安装中。
 

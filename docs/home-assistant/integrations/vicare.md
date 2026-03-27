@@ -1,6 +1,6 @@
 ---
 title: Viessmann ViCare
-description: 关于如何将 Viessmann ViCare 集成到 Home Assistant 的说明。
+description: 'Viessmann ViCare 集成允许您通过 Viessmann ViCare（REST）API 控制 Viessmann(https://www.viessmann-climatesolutions.com) 设备。 大多数较新的联网 Viessmann 供暖设备（如燃气锅炉）都应受到支持。'
 ha_category:
   - Climate
   - Fan
@@ -23,6 +23,7 @@ ha_integration_type: hub
 ha_codeowners:
   - '@CFenner'
 ---
+# Viessmann ViCare
 
 **Viessmann ViCare** 集成允许您通过 Viessmann ViCare（REST）API 控制 [Viessmann](https://www.viessmann-climatesolutions.com) 设备。
 大多数较新的联网 Viessmann 供暖设备（如燃气锅炉）都应受到支持。

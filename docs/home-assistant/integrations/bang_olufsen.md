@@ -1,6 +1,6 @@
 ---
 title: Bang & Olufsen
-description: 关于如何将 Bang & Olufsen 设备集成到 Home Assistant 的说明。
+description: 'Bang & Olufsen 集成允许通过 Home Assistant 控制某些 Bang & Olufsen(https://www.bang-olufsen.com/) 设备的部分功能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Event
   - Media Player
@@ -21,6 +21,7 @@ ha_config_flow: true
 ha_zeroconf: true
 ha_integration_type: device
 ---
+# Bang & Olufsen
 
 **Bang & Olufsen** 集成允许通过 Home Assistant 控制某些 [Bang & Olufsen](https://www.bang-olufsen.com/) 设备的部分功能。
 

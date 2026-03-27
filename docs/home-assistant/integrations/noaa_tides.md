@@ -1,6 +1,6 @@
 ---
 title: NOAA Tides
-description: "将 NOAA 潮汐信息添加到 Home Assistant 的说明。"
+description: 'NOAA Tides integration 使用 NOAA Tides and Currents(https://tidesandcurrents.noaa.gov/api/) 的数据，为美国境内任意地点提供潮汐预报信息。 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Environment
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# NOAA Tides
 
 **NOAA Tides** integration 使用 [NOAA Tides and Currents](https://tidesandcurrents.noaa.gov/api/) 的数据，为美国境内任意地点提供潮汐预报信息。
 

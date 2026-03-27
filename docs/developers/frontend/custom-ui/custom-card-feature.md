@@ -1,6 +1,8 @@
 ---
 title: "自定义卡片功能"
+description: '一些 dashboard cards 支持 features(https://www.home-assistant.io/dashboards/features/)。这些小部件会为 card 添加快捷控制。我们提供了许多内置 features，但你并不局限于 Home Assistant 默认包含的那些。'
 ---
+# 自定义卡片功能
 
 一些 dashboard cards 支持 [features](https://www.home-assistant.io/dashboards/features/)。这些小部件会为 card 添加快捷控制。我们提供了许多内置 features，但你并不局限于 Home Assistant 默认包含的那些。你可以像定义[custom cards](/developers/frontend/custom-ui/custom-card)一样构建并使用自己的 feature。
 

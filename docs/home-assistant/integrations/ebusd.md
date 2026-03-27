@@ -1,6 +1,6 @@
 ---
 title: ebusd
-description: ebusd 集成允许 eBUS 供暖系统与 Home Assistant 之间进行集成。
+description: 'ebusd(https://github.com/john30/ebusd/) 守护进程（用于与 eBUS 供暖系统通信）与 Home Assistant 之间的集成。ebusd 集成使用传感器集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_iot_class: Local Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# ebusd
 
 [ebusd](https://github.com/john30/ebusd/) 守护进程（用于与 eBUS 供暖系统通信）与 Home Assistant 之间的集成。ebusd 集成使用传感器集成。
 

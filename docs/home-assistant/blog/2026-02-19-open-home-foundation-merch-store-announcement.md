@@ -1,8 +1,9 @@
 ---
 title: Open Home Foundation 周边商店上线了！
-description: '正式介绍 Open Home Foundation 周边商店：你可以用一种轻松的方式支持我们的使命，
+description: '<img src="/home-assistant/images/blog/2026-02-the-open-home-foundation-merch-store-is-here/art.webp" alt="Open Home Foundation 周边商店上线了！" style="border:。'
   同时顺手带走一些高质量周边！'
 ---
+# Open Home Foundation 周边商店上线了！
 
 <img src="/home-assistant/images/blog/2026-02-the-open-home-foundation-merch-store-is-here/art.webp" alt="Open Home Foundation 周边商店上线了！" style="border: 0;box-shadow: none;">
 

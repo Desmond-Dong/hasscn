@@ -1,6 +1,6 @@
 ---
 title: Yale Access Bluetooth
-description: 关于如何将 Yale Access 蓝牙设备集成到 Home Assistant 的说明。
+description: 'Integrates Yale Access(https://www.yalehome.com/us/en/products/smart-technology/yale-access) Bluetooth devices into Home Assistant. 本页属于 Home Assistant。'
 ha_category:
   - Binary sensor
   - Lock
@@ -18,6 +18,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Yale Access Bluetooth
 
 Integrates [Yale Access](https://www.yalehome.com/us/en/products/smart-technology/yale-access) Bluetooth devices into Home Assistant.
 

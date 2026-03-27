@@ -1,6 +1,6 @@
 ---
 title: Twilio
-description: 关于如何将 Twilio 通知添加到 Home Assistant 的说明。
+description: 'Twilio 集成支持通过 Twilio(https://twilio.com) 发送短信通知和发起电话呼叫。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
 ha_release: '0.40'
@@ -9,6 +9,7 @@ ha_domain: twilio
 ha_iot_class: Cloud Push
 ha_integration_type: service
 ---
+# Twilio
 
 **Twilio** 集成支持通过 [Twilio](https://twilio.com) 发送短信通知和发起电话呼叫。
 

@@ -1,7 +1,9 @@
 ---
 title: "SARIF报告"
+description: 'SARIF（静态分析结果交换格式）报告在 GitHub Actions 中使用，以通知 linter 或代码样式工具发现的问题。本指南解释了我们的项目中如何处理 SARIF 报告，以及如何将多个报告合并为一个报告以与 GitHub Actions 兼容。'
 sidebar_label: "SARIF报告"
 ---
+# SARIF报告
 
 ## 概述
 

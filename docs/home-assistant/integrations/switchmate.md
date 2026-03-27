@@ -1,6 +1,6 @@
 ---
 title: Switchmate SimplySmart Home
-description: 有关如何设置 Switchmate 开关的说明。
+description: 'The Switchmate SimplySmart Home integration allows you to control Switchmate devices(https://www.mysimplysmarthome.com/products/switchmate-switches/).。'
 ha_category:
   - Switch
 ha_release: 0.78
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Switchmate SimplySmart Home
 
 The **Switchmate SimplySmart Home** integration allows you to control Switchmate [devices](https://www.mysimplysmarthome.com/products/switchmate-switches/).
 

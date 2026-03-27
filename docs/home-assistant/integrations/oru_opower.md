@@ -1,6 +1,6 @@
 ---
 title: Orange and Rockland Utilities (ORU) Opower
-description: 使用 Opower 集成获取 Orange 和 Rockland Utilities 的能源使用情况
+description: '此虚拟集成由 Opower(/home-assistant/integrations/opower/) 集成提供支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -16,7 +16,7 @@ ha_platforms:
   - sensor
 ha_iot_class: Cloud Polling
 ---
-
+# Orange and Rockland Utilities (ORU) Opower
 
 :::note
 此虚拟集成由 [Opower](/home-assistant/integrations/opower/) 集成提供支持。

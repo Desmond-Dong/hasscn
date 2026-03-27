@@ -1,6 +1,6 @@
 ---
 title: Meteorologisk institutt (Met.no)
-description: 关于如何在 Home Assistant 中集成 Met.no 的说明。
+description: 'The Meteorologisk institutt (Met.no) integration uses the Met.no(https://met.no/) web service as a source for meteorological data for your location. The。'
 ha_category:
   - Weather
 ha_release: 0.79
@@ -14,6 +14,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Meteorologisk institutt (Met.no)
 
 The **Meteorologisk institutt (Met.no)** integration uses the [Met.no](https://met.no/) web service as a source for meteorological data for your location. The weather forecast is delivered by the Norwegian Meteorological Institute and the NRK.
 

@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 与 SSH
-description: 通过安全 Shell 隧道访问 Home Assistant。
+description: '大多数系统工程师都非常熟悉 SSH (Secure shell)(https://en.wikipedia.org/wiki/SecureShell)。这个工具由服务端和客户端两部分组成，用于以安全的方式访问远程系统。如果你正在运行 Home Assistant，但又不想把它直接暴露在公网中，它同样能帮上忙。'
 ---
+# Home Assistant 与 SSH
 
 大多数系统工程师都非常熟悉 [SSH (Secure shell)](https://en.wikipedia.org/wiki/Secure_Shell)。这个工具由服务端和客户端两部分组成，用于以安全的方式访问远程系统。如果你正在运行 Home Assistant，但又不想把它直接暴露在公网中，它同样能帮上忙。在 Linux 系统上，SSH 通常默认可用。如果你使用的是 Windows 安装，则需要额外步骤，而这些内容不在本文讨论范围内。
 

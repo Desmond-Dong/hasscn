@@ -1,7 +1,9 @@
 ---
 title: "通用 AArch64"
+description: '该开发板配置旨在支持大多数采用 UEFI 启动的 aarch64 系统。 已测试过的硬件如下所示。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 通用 AArch64
 ---
+# 通用 AArch64
 
 ## 支持的硬件
 

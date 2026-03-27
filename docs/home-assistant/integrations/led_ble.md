@@ -1,6 +1,6 @@
 ---
 title: LED BLE
-description: 关于如何将 LED BLE 设备集成到 Home Assistant 的说明。
+description: '将多个品牌的低功耗蓝牙 LED 设备集成到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_bluetooth: true
@@ -14,6 +14,7 @@ ha_platforms:
   - light
 ha_integration_type: device
 ---
+# LED BLE
 
 将多个品牌的低功耗蓝牙 LED 设备集成到 Home Assistant。
 

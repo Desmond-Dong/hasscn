@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 与 Home Assistant Core 的区别
-description: Home Assistant 与 Home Assistant Core 的区别
+description: '简单来说，Home Assistant Core 是一个 Python 程序。它可以在各种操作系统上运行，并提供跟踪、控制和自动化设备的能力。 当人们谈论 Home Assistant Core 时，通常指的是独立安装类型(/home-assistant/docs/installation/)。'
 ---
+# Home Assistant 与 Home Assistant Core 的区别
 
 简单来说，Home Assistant Core 是一个 Python 程序。它可以在各种操作系统上运行，并提供跟踪、控制和自动化设备的能力。
 当人们谈论 Home Assistant Core 时，通常指的是独立[安装类型](/home-assistant/docs/installation/)。

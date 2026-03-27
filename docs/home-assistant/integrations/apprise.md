@@ -1,6 +1,6 @@
 ---
 title: Apprise
-description: 关于如何将 Apprise 通知添加到 Home Assistant 的说明。
+description: 'Apprise 服务(https://github.com/caronc/apprise/)是一个一体化方案，可将 Home Assistant 接入几乎所有通知平台（如 Amazon SNS、Discord、Telegram、Slack、MSTeams、Twilio 等）。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Push
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Apprise
 
 [Apprise 服务](https://github.com/caronc/apprise/)是一个一体化方案，可将 Home Assistant 接入几乎所有通知平台（如 Amazon SNS、Discord、Telegram、Slack、MSTeams、Twilio 等）。
 

@@ -1,6 +1,6 @@
 ---
 title: Rituals Perfume Genie
-description: 有关如何将 Rituals Perfume Genie 扩散器集成到 Home Assistant 中的说明。
+description: 'Rituals Perfume Genie(https://www.rituals.com/perfume-genie-b2b.html) 集成允许您控制并监控已连接到 Rituals 账户的香氛扩散器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_iot_class: Cloud Polling
 ha_config_flow: true
 ha_release: 2021.3
@@ -24,6 +24,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Rituals Perfume Genie
 
 [Rituals Perfume Genie](https://www.rituals.com/perfume-genie-b2b.html) 集成允许您控制并监控已连接到 Rituals 账户的香氛扩散器。
 

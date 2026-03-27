@@ -3,6 +3,7 @@ title: 'Community Highlights: 14th edition'
 description: Get started with a DIY smart door lock, A new card that you can use in
   Lovelace and listen to more background information about the future of ESPHome
 ---
+# Community Highlights: 14th edition
 
 The 14th edition of the Home Assistant Community Highlights! Some interesting
 things popped up around our community, we thought was worth sharing.

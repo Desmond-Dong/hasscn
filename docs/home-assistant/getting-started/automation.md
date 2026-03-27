@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 自动化
-description: 快速入门：创建您的第一个自动化
+description: '设置好设备后，是时候锦上添花了：自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Home Assistant 自动化
 
 设置好设备后，是时候锦上添花了：自动化。
 

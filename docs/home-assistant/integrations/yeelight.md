@@ -1,6 +1,6 @@
 ---
 title: Yeelight
-description: 关于如何在 Home Assistant 中设置 Yeelight WiFi 设备的说明。
+description: 'Yeelight 集成可让你在 Home Assistant 中控制 Yeelight Wi-Fi 灯泡。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Light
 ha_release: 0.32
@@ -20,6 +20,7 @@ ha_dhcp: true
 ha_zeroconf: true
 ha_integration_type: device
 ---
+# Yeelight
 
 **Yeelight** 集成可让你在 Home Assistant 中控制 Yeelight Wi-Fi 灯泡。
 

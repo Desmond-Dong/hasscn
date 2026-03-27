@@ -1,6 +1,6 @@
 ---
 title: DNS IP
-description: 关于如何在 Home Assistant 中集成 DNS IP 传感器的说明。
+description: 'DNS IP 集成会通过 DNS 解析获取 IP 地址，并将其作为实体值显示，每 2 分钟更新一次。根据解析器的可访问性，它会分别提供 IPv4 和 IPv6 查询传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Network
 ha_iot_class: Cloud Polling
@@ -13,6 +13,7 @@ ha_codeowners:
   - '@gjohansson-ST'
 ha_integration_type: service
 ---
+# DNS IP
 
 **DNS IP** 集成会通过 DNS 解析获取 IP 地址，并将其作为实体值显示，每 2 分钟更新一次。根据解析器的可访问性，它会分别提供 IPv4 和 IPv6 查询传感器。
 

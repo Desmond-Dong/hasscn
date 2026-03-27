@@ -1,7 +1,8 @@
 ---
 title: 自动化模板
-description: 列出模板可用的所有触发器变量。
+description: '自动化支持模板(/home-assistant/docs/configuration/templating/)的高级功能，就像脚本一样。除了脚本可用的 Home Assistant 模板扩展(/home-assistant/docs/configuration/templating/home-assistan。'
 ---
+# 自动化模板
 
 自动化支持[模板](/home-assistant/docs/configuration/templating/)的高级功能，就像脚本一样。除了脚本可用的 [Home Assistant 模板扩展](/home-assistant/docs/configuration/templating/#home-assistant-template-extensions)之外，自动化还可以使用 `trigger` 和 `this` 模板变量。
 

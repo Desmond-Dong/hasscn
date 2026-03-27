@@ -1,6 +1,6 @@
 ---
 title: Emulated Kasa
-description: 关于如何在 Home Assistant 中集成模拟 Kasa 的说明。
+description: 'Emulated Kasa 集成模拟 TP-Link Kasa 智能插座，并向本地网络上任何可能请求的设备公布配置设备的功率使用情况。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
 ha_iot_class: Local Push
@@ -14,6 +14,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Emulated Kasa
 
 **Emulated Kasa** 集成模拟 TP-Link Kasa 智能插座，并向本地网络上任何可能请求的设备公布配置设备的功率使用情况。
 

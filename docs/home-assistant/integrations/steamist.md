@@ -1,6 +1,6 @@
 ---
 title: Steamist
-description: 有关 Steamist 蒸汽淋浴的文档。
+description: 'The Steamist integration allows you to monitor the state of your Steamist(https://steamist.com/digital-controls/) steam shower and turn on and off the。'
 ha_category:
   - Sensor
   - Switch
@@ -16,6 +16,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# Steamist
 
 The **Steamist** integration allows you to monitor the state of your [Steamist](https://steamist.com/digital-controls/) steam shower and turn on and off the steam generator.
 

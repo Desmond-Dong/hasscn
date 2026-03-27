@@ -1,6 +1,6 @@
 ---
 title: Tesla Wall Connector
-description: 有关如何将 Tesla Wall Connector（第 3 代）集成到 Home Assistant 的说明。
+description: 'The Tesla Wall Connector integration allows you to integrate your Gen 3 Tesla Wall Connector(https://www.tesla.com/support/home-charging-installation/wall-。'
 ha_category:
   - Binary sensor
   - Energy
@@ -17,6 +17,7 @@ ha_platforms:
   - sensor
 ha_integration_type: device
 ---
+# Tesla Wall Connector
 
 The **Tesla Wall Connector** integration allows you to integrate your Gen 3 [Tesla Wall Connector](https://www.tesla.com/support/home-charging-installation/wall-connector) with Wi-Fi into Home Assistant.
 

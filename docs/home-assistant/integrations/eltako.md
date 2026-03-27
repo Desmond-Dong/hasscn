@@ -1,6 +1,6 @@
 ---
 title: Eltako
-description: 使用 Matter 集成连接和控制您的 Eltako Matter 设备
+description: 'Eltako(https://www.eltako.com) is a member of the Works with Home Assistant partner program for their Matter products. Eltako is committed to making sure。'
 ha_release: '2025.10'
 ha_iot_class: Local Push
 ha_category:
@@ -14,7 +14,7 @@ ha_platforms:
 ha_iot_standard: matter
 ha_brand: true
 ---
-
+# Eltako
 
 [Eltako](https://www.eltako.com) is a member of the Works with Home Assistant partner program for their Matter products. Eltako is committed to making sure their products are up-to-date and ready to use in Home Assistant.
 

@@ -3,6 +3,7 @@ title: Home Assistant 🤝 Ubiquiti Networks
 description: Ubiquiti Networks 已聘用 Home Assistant 创始人 Paulus Schoutsen，全力支持
   Home Assistant 让用户配置更简单、与设备厂商集成更深入、并让集成的创建维护和演进更容易。
 ---
+# Home Assistant 🤝 Ubiquiti Networks
 
 TL;DR：Ubiquiti Networks 已聘用 Home Assistant 创始人 Paulus Schoutsen，支持 Home Assistant 继续实现这些目标：让用户配置更简单、与设备厂商集成更深入，并让集成的创建、维护与演进更轻松。
 

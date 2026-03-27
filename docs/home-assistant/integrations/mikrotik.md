@@ -1,6 +1,6 @@
 ---
 title: Mikrotik
-description: 关于如何将 MikroTik/RouterOS 设备集成到 Home Assistant 的说明。
+description: 'The MikroTik integration offers presence detection by looking at connected devices to a MikroTik RouterOS(https://mikrotik.com) based router. 本页属于 Home。'
 ha_category:
   - Hub
   - Presence detection
@@ -14,6 +14,7 @@ ha_platforms:
   - device_tracker
 ha_integration_type: device
 ---
+# Mikrotik
 
 The **MikroTik** integration offers presence detection by looking at connected devices to a [MikroTik RouterOS](https://mikrotik.com) based router.
 

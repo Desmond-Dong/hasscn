@@ -1,6 +1,6 @@
 ---
 title: Meteoclimatic
-description: 关于如何在 Home Assistant 中集成 Meteoclimatic 的说明。
+description: 'Meteoclimatic 集成使用 Meteoclimatic(https://www.meteoclimatic.net/) Web 服务作为您所在位置的气象数据来源。位置基于 Meteoclimatic 站点代码（例如 ESCAT4300000043206B）。'
 ha_release: 2021.6
 ha_iot_class: Cloud Polling
 ha_category:
@@ -15,6 +15,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Meteoclimatic
 
 **Meteoclimatic** 集成使用 [Meteoclimatic](https://www.meteoclimatic.net/) Web 服务作为您所在位置的气象数据来源。位置基于 Meteoclimatic 站点代码（例如 `ESCAT4300000043206B`），而显示的天气数据则取决于各个站点本身的能力。
 

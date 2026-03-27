@@ -1,6 +1,6 @@
 ---
 title: Panasonic Viera
-description: 有关如何将 Panasonic Viera 电视与 Home Assistant 集成的说明。
+description: 'The Panasonic Viera integration allows you to control a Panasonic Viera TV. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
   - Remote
@@ -16,6 +16,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Panasonic Viera
 
 The **Panasonic Viera** integration allows you to control a Panasonic Viera TV.
 

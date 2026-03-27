@@ -1,6 +1,6 @@
 ---
 title: Dune HD
-description: 关于将 Dune HD 媒体播放器集成到 Home Assistant 的说明。
+description: 'Dune HD 集成允许您从 Home Assistant 控制 Dune HD 媒体播放器(https://dune-hd.com/eng/products/fullhdmediaplayers)。支持基于 Dune 发布的官方 IP 协议(https://dune-hd.com/support/ipcon。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -11,6 +11,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# Dune HD
 
 **Dune HD** 集成允许您从 Home Assistant 控制 [Dune HD 媒体播放器](https://dune-hd.com/eng/products/full_hd_media_players)。支持基于 Dune 发布的官方 [IP 协议](https://dune-hd.com/support/ip_control/dune_ip_control_overview.txt)。
 

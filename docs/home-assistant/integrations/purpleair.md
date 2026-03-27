@@ -1,6 +1,6 @@
 ---
 title: PurpleAir
-description: 有关如何将 PurpleAir 传感器与 Home Assistant 集成的说明。
+description: 'PurpleAir(https://www2.purpleair.com/) makes sensors that measure hyper-local air quality data and share it with the public. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Sensor
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ ha_platforms:
 ha_integration_type: service
 ha_config_flow: true
 ---
+# PurpleAir
 
 [PurpleAir](https://www2.purpleair.com/) makes sensors that measure hyper-local air
 quality data and share it with the public.

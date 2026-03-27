@@ -1,6 +1,6 @@
 ---
 title: Telldus Live
-description: 有关如何将 Telldus Live 集成到 Home Assistant 的说明。
+description: 'The Telldus Live integration let you connect to the Telldus Live(https://live.telldus.com) API. It''s cloud platform that connects to your Tellstick Net or。'
 ha_category:
   - Binary sensor
   - Cover
@@ -25,6 +25,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Telldus Live
 
 The **Telldus Live** integration let you connect to the [Telldus Live](https://live.telldus.com) API. It's cloud platform that connects to your Tellstick Net or Tellstick ZNet connected gear at home.
 

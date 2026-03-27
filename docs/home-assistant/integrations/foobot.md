@@ -1,6 +1,6 @@
 ---
 title: Foobot
-description: 关于如何在 Home Assistant 中设置 Foobot 空气质量传感器的说明。
+description: 'Foobot 集成将从您或您的 Foobot device(s)(https://foobot.io/features/) 获取空气质量数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Health
 ha_release: 0.66
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Foobot
 
 **Foobot** 集成将从您或您的 [Foobot device(s)](https://foobot.io/features/) 获取空气质量数据。
 

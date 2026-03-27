@@ -1,6 +1,6 @@
 ---
 title: Russound RIO
-description: 有关如何将 Russound RIO 设备集成到 Home Assistant 的说明。
+description: 'Russound RIO 集成允许您控制使用 RIO 协议的 Russound 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.49
@@ -18,6 +18,7 @@ ha_integration_type: hub
 ha_quality_scale: silver
 ha_zeroconf: true
 ---
+# Russound RIO
 
 **Russound RIO** 集成允许您控制使用 RIO 协议的 Russound 设备。
 

@@ -1,5 +1,6 @@
 ---
 title: "需要能够通过界面设置集成"
+description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 related_rules:
   - test-before-configure
   - unique-config-entry
@@ -8,6 +9,8 @@ related_rules:
   - reauthentication-flow
   - reconfiguration-flow
 ---
+# 需要能够通过界面设置集成
+
 import RelatedRules from './_includes/related_rules.jsx'
 
 ## 推理

@@ -1,7 +1,8 @@
 ---
 title: 家庭助理伴侣 Android 应用程序版本 3.0.0
-description: Home Assistant Companion Android 应用程序 3.0.0 中的新增功能
+description: '大家好，自从我们上次谈话以来已经有一段时间了。我们推出了全新的 Android 版 Home Assistant Companion，我们很高兴能将其交付给您，并将于第二天左右在 Google Play 商店中推出。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# 家庭助理伴侣 Android 应用程序版本 3.0.0
 
 大家好，自从我们上次谈话以来已经有一段时间了。我们推出了全新的 Android 版 Home Assistant Companion，我们很高兴能将其交付给您，并将于第二天左右在 Google Play 商店中推出。
 

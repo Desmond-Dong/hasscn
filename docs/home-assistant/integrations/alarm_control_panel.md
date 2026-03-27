@@ -1,6 +1,6 @@
 ---
 title: Alarm control panel
-description: 关于如何将报警控制面板集成到 Home Assistant 的说明。
+description: 'Home Assistant 可以为您提供一个类似于经典报警系统的界面。 请参阅手动报警(/home-assistant/integrations/manual)或模板报警(/home-assistant/integrations/template/alarm-control-panel)进行报警配置。'
 ha_category:
   - Alarm
 ha_release: 0.7.3
@@ -15,6 +15,7 @@ related:
   - docs: /integrations/template/#alarm-control-panel
     title: Template alarm
 ---
+# Alarm control panel
 
 Home Assistant 可以为您提供一个类似于经典报警系统的界面。
 请参阅[手动报警](/home-assistant/integrations/manual)或[模板报警](/home-assistant/integrations/template/#alarm-control-panel)进行报警配置。

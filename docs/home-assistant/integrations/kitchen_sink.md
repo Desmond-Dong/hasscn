@@ -1,6 +1,6 @@
 ---
 title: Everything but the Kitchen Sink
-description: 关于如何设置"包罗万象"集成的说明
+description: 'The Kitchen Sink integration contains demonstrations of various odds and ends. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 2023.2
@@ -23,6 +23,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# Everything but the Kitchen Sink
 
 The **Kitchen Sink** integration contains demonstrations of various odds and ends.
 

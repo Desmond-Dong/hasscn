@@ -1,6 +1,6 @@
 ---
 title: LG webOS TV
-description: 关于如何在 Home Assistant 中集成 LG webOS 电视的说明。
+description: 'LG webOS TV 集成可让您控制 LG(https://www.lg.com/) webOS 电视。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
   - Notifications
@@ -18,6 +18,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: platinum
 ---
+# LG webOS TV
 
 **LG webOS TV** 集成可让您控制 [LG](https://www.lg.com/) webOS 电视。
 

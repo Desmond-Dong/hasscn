@@ -2,6 +2,8 @@
 title: 语音助手竞赛 - 让我们一起构建并赢得一些奖品！
 description: 我们将于 1 月 17 日至 3 月 10 日举办语音助手竞赛。您可以赢得一些 Home Assistant Green、一些 Home Assistant SkyConnect，并有机会在直播中与我们谈论您的创作。
 ---
+# 语音助手竞赛 - 让我们一起构建并赢得一些奖品！
+
 <p><img src='/home-assistant/images/blog/2024-01-11-voice-assistant-contest/banner.png' class='no-shadow' /></p>
 
 TL;DR：我们将于 1 月 17 日至 3 月 10 日组织一场语音助手竞赛。您可以赢得一些[Home Assistant Green](/home-assistant/green/)、[Home Assistant SkyConnect](/home-assistant/skyconnect/)，并有机会在直播中与我们谈论您的工作。

@@ -1,6 +1,6 @@
 ---
 title: easyEnergy
-description: 关于如何在 Home Assistant 中集成 easyEnergy 的说明。
+description: 'easyEnergy 集成可将 easyEnergy(https://www.easyenergy.com) API 平台接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Energy
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# easyEnergy
 
 **easyEnergy** 集成可将 [easyEnergy](https://www.easyenergy.com) API 平台接入 Home Assistant。
 

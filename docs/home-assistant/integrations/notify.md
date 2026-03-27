@@ -1,6 +1,6 @@
 ---
 title: Notifications
-description: "有关如何向 Home Assistant 添加用户通知的说明。"
+description: 'The Notify integration makes it possible to send notifications to a wide variety of platforms. To use it, you have to set up at least one notification。'
 
 ha_category:
   - Notifications
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: notify
 ha_integration_type: entity
 ---
+# Notifications
 
 The **Notify** integration makes it possible to send notifications to a wide variety of platforms. To use it, you have to set up at least one notification target (notifier). Check the [integrations list](/home-assistant/integrations/#notifications) for one that fits your use case.
 

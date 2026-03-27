@@ -1,7 +1,8 @@
 ---
 title: 安全设置
-description: 关于如何保护 Home Assistant 安装的说明。
+description: 'Home Assistant 的一个主要优势是它不依赖云服务。即使您只在本地网络上使用 Home Assistant，也应该采取措施保护您的实例。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 安全设置
 
 Home Assistant 的一个主要优势是它不依赖云服务。即使您只在本地网络上使用 Home Assistant，也应该采取措施保护您的实例。
 

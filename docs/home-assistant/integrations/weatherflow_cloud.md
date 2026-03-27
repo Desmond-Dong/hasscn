@@ -1,6 +1,6 @@
 ---
 title: WeatherflowCloud
-description: 关于基于云的 WeatherFlow 集成的说明
+description: 'WeatherFlow Cloud 集成可访问云端提供的 Tempest 气象站天气预报数据。要访问您的气象站，您需要使用 API Key(https://weatherflow.github.io/Tempest/api/) 配置此集成。 本页属于 Home Assistant 中文文档。'
 ha_release: 2024.3
 ha_category:
   - Environment
@@ -16,6 +16,7 @@ ha_codeowners:
 ha_domain: weatherflow_cloud
 ha_integration_type: hub
 ---
+# WeatherflowCloud
 
 **WeatherFlow Cloud** 集成可访问云端提供的 Tempest 气象站天气预报数据。要访问您的气象站，您需要使用 [API Key](https://weatherflow.github.io/Tempest/api/) 配置此集成。
 

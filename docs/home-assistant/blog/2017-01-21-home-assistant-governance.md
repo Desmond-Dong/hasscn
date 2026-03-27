@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 治理 [已更新]
-description: 为所有人保护 Home Assistant，不仅是现在，也面向未来
+description: 'After feedback from the community we have updated the CLAcla and the license that Home Assistant is distributed under. For the CLA。'
 ---
+# Home Assistant 治理 [已更新]
 
 ### 更新 JAN 28, 2017
 

@@ -1,8 +1,7 @@
 ---
 title: 贡献者许可协议
-description: Home Assistant 项目的贡献者许可协议。
+description: '本许可证的文本基于知识共享署名-相同方式共享 3.0 未移植许可证(https://creativecommons.org/licenses/by-sa/3.0/)发布。它基于 Linux 开发者原创证书(https://elinux.org/DeveloperCertificateOfOrigin)。'
 ---
-
 # 贡献者许可协议
 
 ```text

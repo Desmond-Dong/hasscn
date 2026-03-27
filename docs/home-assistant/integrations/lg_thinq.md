@@ -1,6 +1,6 @@
 ---
 title: LG ThinQ
-description: LG ThinQ 集成设置。
+description: 'LG ThinQ 集成可让您将 LG ThinQ 设备连接到 Home Assistant。此集成的功能包括：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
 ha_release: '2024.11'
@@ -26,6 +26,7 @@ ha_codeowners:
   - '@LG-ThinQ-Integration'
 ha_dhcp: true
 ---
+# LG ThinQ
 
 **LG ThinQ** 集成可让您将 LG ThinQ 设备连接到 Home Assistant。此集成的功能包括：
 

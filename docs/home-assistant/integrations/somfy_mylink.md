@@ -1,6 +1,6 @@
 ---
 title: Somfy MyLink
-description: 有关如何将 Somfy MyLink 设备与 Home Assistant 集成的说明。
+description: 'The Somfy MyLink integration is used as an interface to a compatible Somfy MyLink hub utilizing the Synergy API. It allows the addition of covers from the。'
 ha_category:
   - Cover
   - Hub
@@ -13,6 +13,7 @@ ha_platforms:
   - cover
 ha_integration_type: hub
 ---
+# Somfy MyLink
 
 The **Somfy MyLink** integration is used as an interface to a compatible Somfy MyLink hub utilizing the `Synergy` API. It allows the addition of covers from the Somfy MyLink platform to Home Assistant.
 

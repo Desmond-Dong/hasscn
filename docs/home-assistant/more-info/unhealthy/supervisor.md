@@ -1,7 +1,8 @@
 ---
 title: Supervisor 未能更新
-description: 关于 Supervisor 更新失败为何将系统标记为不健康的更多信息。
+description: '当 Supervisor 启动期间出现网络问题时，可能会发生这种情况。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Supervisor 未能更新
 
 ## 问题
 

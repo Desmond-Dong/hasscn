@@ -1,7 +1,9 @@
 ---
 title: "开发板支持概览"
+description: '当前支持以下开发板和设备：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 概览
 ---
+# 开发板支持概览
 
 ## 概览
 

@@ -1,6 +1,6 @@
 ---
 title: Energenie Power Sockets
-description: 关于将 Energenie Power-Strip 开关集成到 Home Assistant 的说明。
+description: 'Energenie Power-Sockets 集成允许您将 Energenie USB Power-Sockets(https://energenie.com/item.aspx?id=7556&lang=de) 包含到您的 Home Assistant 设置中。'
 ha_category:
   - Switch
 ha_iot_class: Local Polling
@@ -13,6 +13,7 @@ ha_platforms:
 ha_integration_type: device
 ha_config_flow: true
 ---
+# Energenie Power Sockets
 
 **Energenie Power-Sockets** 集成允许您将 [Energenie USB Power-Sockets](https://energenie.com/item.aspx?id=7556&lang=de) 包含到您的 Home Assistant 设置中。
 

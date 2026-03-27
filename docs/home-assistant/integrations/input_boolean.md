@@ -1,6 +1,6 @@
 ---
 title: Input boolean
-description: 关于如何在 Home Assistant 中使用输入布尔辅助工具的说明。
+description: 'Input boolean 辅助集成允许您定义可通过用户界面控制的布尔值，并可在自动化的条件中使用。例如，可以通过在条件中使用它们来禁用或启用某些自动化。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Automation
   - Helper
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: input_boolean
 ha_integration_type: helper
 ---
+# Input boolean
 
 **Input boolean** 辅助集成允许您定义可通过用户界面控制的布尔值，并可在自动化的条件中使用。例如，可以通过在条件中使用它们来禁用或启用某些自动化。
 

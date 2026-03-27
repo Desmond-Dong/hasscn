@@ -1,6 +1,6 @@
 ---
 title: Model Context Protocol
-description: 关于如何在 Home Assistant 中使用模型上下文协议的说明。
+description: 'The Model Context Protocol(https://modelcontextprotocol.io) is an open protocol that standardizes how applications provide context to LLMs. The Model。'
 ha_category:
   - Voice
 ha_release: 2025.2
@@ -15,6 +15,7 @@ related:
     title: Conversation
 ha_quality_scale: silver
 ---
+# Model Context Protocol
 
 The [Model Context Protocol](https://modelcontextprotocol.io) is an open protocol that
 standardizes how applications provide context to LLMs. The **Model Context Protocol** integration

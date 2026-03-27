@@ -55,3 +55,5 @@ features:
     icon: 🧑‍💻
     link: /developers/
 ---
+# Home Assistant 中文网 - 汉化资源、文档与安装指南 | 老王杂谈说
+

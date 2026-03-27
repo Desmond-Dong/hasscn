@@ -1,7 +1,7 @@
 ---
 title: "Tidal"
+description: 'Music Assistant 支持 <a href="https://tidal.com" target="blank" rel="noopener noreferrer"Tidal</a。由 <a href="https://github.com/jozefKruszynski"。'
 ---
-
 # Tidal 提供者 <img src="/assets/icons/tidal-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 <a href="https://tidal.com" target="_blank" rel="noopener noreferrer">Tidal</a>。由 <a href="https://github.com/jozefKruszynski" target="_blank" rel="noopener noreferrer">jozefKruszynski</a> 贡献和维护。

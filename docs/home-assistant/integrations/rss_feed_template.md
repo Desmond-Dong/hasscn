@@ -1,6 +1,6 @@
 ---
 title: RSS feed template
-description: 使用此集成生成显示最新数据的 RSS 源。
+description: 'RSS feed template 集成可以将 Home Assistant 中的任意信息导出为静态 RSS feed。这样就能通过 RSS 阅读器在多种类型的设备上显示这些信息。虽然 Home Assistant 的原生应用并不普遍，但几乎所有平台都有原生 RSS 阅读器可用。'
 ha_category:
   - Front end
 ha_iot_class: Local Push
@@ -11,6 +11,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: integration
 ---
+# RSS feed template
 
 **RSS feed template** 集成可以将 Home Assistant 中的任意信息导出为静态 RSS feed。这样就能通过 RSS 阅读器在多种类型的设备上显示这些信息。虽然 Home Assistant 的原生应用并不普遍，但几乎所有平台都有原生 RSS 阅读器可用。
 

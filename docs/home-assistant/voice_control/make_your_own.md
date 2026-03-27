@@ -1,6 +1,8 @@
 ---
 title: 制作您自己的 Assist 设备
+description: '如果您想自己开发 Assist 设备，可以参考以下建议：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 制作您自己的 Assist 设备
 
 如果您想自己开发 Assist 设备，可以参考以下建议：
 

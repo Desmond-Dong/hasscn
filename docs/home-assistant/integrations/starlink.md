@@ -1,6 +1,6 @@
 ---
 title: Starlink
-description: 有关如何将 Starlink 集成到 Home Assistant 的说明。
+description: 'Starlink 集成允许您将 Starlink(https://www.starlink.com/) 接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -25,6 +25,7 @@ ha_platforms:
   - time
 ha_integration_type: device
 ---
+# Starlink
 
 **Starlink** 集成允许您将 [Starlink](https://www.starlink.com/) 接入 Home Assistant。
 

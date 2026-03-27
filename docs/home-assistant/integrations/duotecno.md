@@ -1,6 +1,6 @@
 ---
 title: Duotecno
-description: 访问和控制您的 Duotecno 节点。
+description: '您可以使用 Duotecno 集成在 Home Assistant 中控制 Duotecno(https://www.duotecno.be/) 节点。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
   - Cover
@@ -20,6 +20,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Duotecno
 
 您可以使用 **Duotecno** 集成在 Home Assistant 中控制 [Duotecno](https://www.duotecno.be/) 节点。
 

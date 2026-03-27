@@ -1,7 +1,9 @@
 ---
 title: 'iOS 2024.9 配套应用：为 iOS 18 做好准备'
-description: 新的控制中心小部件和 Apple Watch 配置。
+description: 'Bruno 再次为您带来一系列关于您最喜欢的 iOS 应用程序的新闻😉。在此版本中，我们将引入一些新功能来补充 iOS 18 的发布，以及配置 Home Assistant Apple Watch 应用程序的新方法。 本页属于 Home Assistant 中文博客与更新记录。'
 ---
+# iOS 2024.9 配套应用：为 iOS 18 做好准备
+
 ![iOS 2024.9 配套应用程序](/home-assistant/images/blog/2024-09-16/ios-og.jpg)
 
 Bruno 再次为您带来一系列关于您最喜欢的 iOS 应用程序的新闻😉。在此版本中，我们将引入一些新功能来补充 iOS 18 的发布，以及配置 Home Assistant Apple Watch 应用程序的新方法。

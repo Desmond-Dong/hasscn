@@ -1,6 +1,6 @@
 ---
 title: MELCloud
-description: MELCloud 集成
+description: 'MELCloud 集成可将三菱电机支持 MELCloud(https://www.melcloud.com/) 的设备接入 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Climate
 ha_release: 0.106
@@ -16,6 +16,7 @@ ha_integration_type: device
 ha_codeowners:
   - '@erwindouna'
 ---
+# MELCloud
 
 **MELCloud** 集成可将三菱电机支持 [MELCloud](https://www.melcloud.com/) 的设备接入 Home Assistant。
 

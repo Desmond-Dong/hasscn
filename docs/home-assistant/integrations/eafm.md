@@ -1,6 +1,6 @@
 ---
 title: Environment Agency Flood Gauges
-description: 使用英国环境署 API 集成监控附近水位并做好洪水防范准备。
+description: 'Environment Agency Flood Gauges 集成与 UK Environment Agency Flood Monitoring(https://environment.data.gov.uk/flood-monitoring/doc/reference) API 集成。'
 ha_category:
   - Sensor
 ha_release: 0.115
@@ -13,6 +13,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Environment Agency Flood Gauges
 
 **Environment Agency Flood Gauges** 集成与 [UK Environment Agency Flood Monitoring](https://environment.data.gov.uk/flood-monitoring/doc/reference) API 集成，为附近的水位提供传感器。结合 Home Assistant 通知，如果附近的河流可能淹没您当地的自行车道或村庄唯一的出路，您可以给自己一个警告。
 

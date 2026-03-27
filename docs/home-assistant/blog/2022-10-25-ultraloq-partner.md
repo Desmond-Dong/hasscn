@@ -3,6 +3,7 @@ title: Ultraloq joins Works with Home Assistant
 description: Ultraloq Z-Wave Series join the Works with Home Assistant partner program
   as a Z-Wave partner.
 ---
+# Ultraloq joins Works with Home Assistant
 
 <img src='/home-assistant/images/works_with/works-with.png' width="256" align="right" alt="Works via Zigbee with Home Assistant" class='no-shadow'>
 

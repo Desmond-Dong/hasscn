@@ -1,7 +1,9 @@
 ---
 title: 文本转语音实体
+description: '文本转语音 (TTS) 实体使 Home Assistant 能够与您对话。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 文字转语音
 ---
+# 文本转语音实体
 
 文本转语音 (TTS) 实体使 Home Assistant 能够与您对话。
 

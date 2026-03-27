@@ -1,7 +1,8 @@
 ---
 title: Home Assistant 初始设置
-description: Home Assistant 配置指南
+description: '在设备上安装(/home-assistant/installation/) Home Assistant 后，需要完成 5 个步骤来设置 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# Home Assistant 初始设置
 
 在设备上[安装](/home-assistant/installation/) Home Assistant 后，需要完成 5 个步骤来设置 Home Assistant。
 

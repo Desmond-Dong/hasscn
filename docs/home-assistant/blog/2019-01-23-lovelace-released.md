@@ -3,6 +3,7 @@ title: Lovelace UI released!
 description: After 8 months of development, we're proud to release our brand new Lovelace
   UI.
 ---
+# Lovelace UI released!
 
 Today we're happy to announce that our new Lovelace UI, which has been in beta for the last 8 months, is becoming the new default interface of [Home Assistant 0.86](/home-assistant/blog/2019/01/23/release-86/). With Lovelace we're taking a new approach to building 用户 interfaces for Home Assistant. We're no longer storing the look and feel of your UI in your 配置.yaml, requiring restarts for changes. With Lovelace we're keeping the UI concerns in the UI<sup>1</sup>, unlocking a whole new set of features:
 

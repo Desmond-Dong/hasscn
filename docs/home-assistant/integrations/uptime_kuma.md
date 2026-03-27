@@ -1,6 +1,6 @@
 ---
 title: Uptime Kuma
-description: 关于如何将 Uptime Kuma 与 Home Assistant 集成的说明。
+description: 'Uptime Kuma 集成可将 Home Assistant 与您的 Uptime Kuma 监控工具连接起来。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - System monitor
@@ -18,6 +18,7 @@ ha_platforms:
   - update
 ha_quality_scale: platinum
 ---
+# Uptime Kuma
 
 **Uptime Kuma** 集成可将 Home Assistant 与您的 Uptime Kuma 监控工具连接起来。
 

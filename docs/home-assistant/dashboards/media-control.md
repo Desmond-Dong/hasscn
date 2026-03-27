@@ -1,7 +1,8 @@
 ---
 title: 媒体控制卡片
-description: 媒体控制卡片用于显示媒体播放器实体，并提供易于使用的控制功能。
+description: '媒体控制卡片用于在界面中显示媒体播放器(/home-assistant/integrations/media-player)实体，并提供易于使用的控制功能。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 媒体控制卡片
 
 媒体控制卡片用于在界面中显示[媒体播放器](/home-assistant/integrations/#media-player)实体，并提供易于使用的控制功能。
 

@@ -1,6 +1,6 @@
 ---
 title: cmus
-description: 关于如何将 cmus Music Player 集成到 Home Assistant 的说明。
+description: 'cmus 集成允许您从 Home Assistant 控制远程或本地机器上的 cmus(https://cmus.github.io/) 音乐播放器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_iot_class: Local Polling
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# cmus
 
 **cmus** 集成允许您从 Home Assistant 控制远程或本地机器上的 [cmus](https://cmus.github.io/) 音乐播放器。
 

@@ -1,6 +1,6 @@
 ---
 title: IGN Sismología
-description: 关于如何将西班牙国家地理研究所地震订阅集成到 Home Assistant 的说明。
+description: 'IGN Sismologia 集成可让您接入由西班牙 Instituto Geografico Nacional(https://www.ign.es/) 提供的 GeoRSS 订阅源，其中包含伊比利亚半岛和加那利群岛地震等地震事件的信息。它会从订阅源中获取事件。'
 ha_category:
   - Geolocation
 ha_iot_class: Cloud Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# IGN Sismología
 
 **IGN Sismologia** 集成可让您接入由西班牙 [Instituto Geografico Nacional](https://www.ign.es/) 提供的 GeoRSS 订阅源，其中包含伊比利亚半岛和加那利群岛地震等地震事件的信息。它会从订阅源中获取事件，并按与 Home Assistant 位置的距离过滤后显示这些事件的信息。
 

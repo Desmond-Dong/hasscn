@@ -1,6 +1,6 @@
 ---
 title: VÁGNER POOL
-description: 使用 SEKO PoolDose 集成连接和控制您的 VÁGNER POOL 设备
+description: '此集成由 SEKO PoolDose(/home-assistant/integrations/pooldose/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Number
@@ -26,6 +26,7 @@ ha_platforms:
 ha_iot_class: Local Polling
 ha_dhcp: true
 ---
+# VÁGNER POOL
 
 :::note
 此集成由 [SEKO PoolDose](/home-assistant/integrations/pooldose/) 集成支持。

@@ -1,6 +1,6 @@
 ---
 title: Weather
-description: 关于如何在 Home Assistant 中设置天气平台的说明。
+description: 'Weather 集成从网络服务获取气象信息，并显示给定位置的天气状况及其他详细信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Weather
 ha_release: 0.32
@@ -10,6 +10,7 @@ ha_codeowners:
 ha_domain: weather
 ha_integration_type: entity
 ---
+# Weather
 
 **Weather** 集成从网络服务获取气象信息，并显示给定位置的天气状况及其他详细信息。
 

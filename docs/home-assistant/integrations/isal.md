@@ -1,6 +1,6 @@
 ---
 title: Intelligent Storage Acceleration
-description: 智能存储加速
+description: 'zlib(https://github.com/madler/zlib) 是 aiohttp(https://github.com/aio-libs/aiohttp) 的性能瓶颈，尤其是在 WebSocket 连接场景中。Intelligent Storage。'
 ha_release: 2024.6
 ha_category:
   - Other
@@ -11,6 +11,7 @@ ha_integration_type: system
 ha_quality_scale: internal
 ha_iot_class: Local Polling
 ---
+# Intelligent Storage Acceleration
 
 [`zlib`](https://github.com/madler/zlib) 是 [`aiohttp`](https://github.com/aio-libs/aiohttp) 的性能瓶颈，尤其是在 WebSocket 连接场景中。[Intelligent Storage Acceleration](https://github.com/intel/isa-l) 用于加速 [`aiohttp`](https://github.com/aio-libs/aiohttp)，因为它可以将压缩速度[提升](https://github.com/pycompression/python-isal/tree/develop/benchmark_scripts)多达 5 倍。
 

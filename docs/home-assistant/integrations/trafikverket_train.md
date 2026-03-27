@@ -1,6 +1,6 @@
 ---
 title: Trafikverket Train
-description: 关于如何将 Trafikverket 列车集成到 Home Assistant 的说明。
+description: 'Retrieve train departure information from Trafikverket(https://www.trafikverket.se/). 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Transport
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# Trafikverket Train
 
 Retrieve train departure information from [Trafikverket](https://www.trafikverket.se/).
 

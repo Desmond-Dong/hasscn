@@ -1,6 +1,6 @@
 ---
 title: HTTP
-description: 提供用于提供文件的 Web 框架。
+description: 'HTTP 集成为 Home Assistant 前端提供所需的全部文件和数据。只有当你想更改默认设置时，才需要将它添加到配置文件中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: pre 0.7
@@ -11,6 +11,7 @@ ha_codeowners:
 ha_domain: http
 ha_integration_type: system
 ---
+# HTTP
 
 **HTTP** 集成为 Home Assistant 前端提供所需的全部文件和数据。只有当你想更改默认设置时，才需要将它添加到配置文件中。
 

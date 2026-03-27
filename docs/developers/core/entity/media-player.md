@@ -1,7 +1,9 @@
 ---
 title: 媒体播放器实体
+description: '此条目不完整。欢迎贡献。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: 媒体播放器
 ---
+# 媒体播放器实体
 
 :::info 不完整
 此条目不完整。欢迎贡献。

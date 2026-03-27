@@ -1,7 +1,7 @@
 ---
 title: "AirPlay"
+description: 'Music Assistant 支持基于 AirPlay 的设备，包括支持 <a href="https://en.wikipedia.org/wiki/RemoteAudioOutputProtocol" target="blank" rel="noopener noreferrer"RAOP</a 和。'
 ---
-
 # AirPlay <img src="/assets/icons/airplay-logo.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持基于 AirPlay 的设备，包括支持 <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> 和 <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay2</a>。这包括 Apple 设备如 Homepod，也包括非常广泛的第三方设备如接收器和智能扬声器。由于 AirPlay 使用无损、时间戳流式传输，它是无损多房间播放的一个非常有趣的协议。

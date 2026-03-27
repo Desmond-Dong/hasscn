@@ -1,6 +1,6 @@
 ---
 title: Home Assistant WebSocket API
-description: 关于如何在 Home Assistant 中设置 WebSocket API 的说明。
+description: 'Home Assistant WebSocket API 集成会设置一个 WebSocket API，让您能够与以无界面模式运行的 Home Assistant 实例交互。此集成依赖于 http 集成(/home-assistant/integrations/http/)。'
 ha_category:
   - Other
 ha_release: 0.34
@@ -12,6 +12,7 @@ ha_platforms:
   - sensor
 ha_integration_type: system
 ---
+# Home Assistant WebSocket API
 
 **Home Assistant WebSocket API** 集成会设置一个 WebSocket API，让您能够与以无界面模式运行的 Home Assistant 实例交互。此集成依赖于 [`http` 集成](/home-assistant/integrations/http/)。
 

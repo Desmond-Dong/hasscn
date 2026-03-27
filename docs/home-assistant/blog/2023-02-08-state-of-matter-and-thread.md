@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "Matter 与 Thread：我们目前进展如何"
-description: "关于 Matter 与 Thread 当前状态，以及下一步计划的更新"
+description: '最近 Home Assistant 在 Matter 和 Thread 方面进展很多。信息量比较大，不太容易全部跟上，所以我们想借这篇文章集中更新一下当前状态，以及我们接下来的计划。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 date: 2023-02-08 00:00:00
 date_formatted: "February 8, 2023"
 author: Paulus Schoutsen
 comments: true
 categories: Technology
 ---
+# Matter 与 Thread：我们目前进展如何
 
 最近 Home Assistant 在 Matter 和 Thread 方面进展很多。信息量比较大，不太容易全部跟上，所以我们想借这篇文章集中更新一下当前状态，以及我们接下来的计划。
 

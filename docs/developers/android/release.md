@@ -1,7 +1,9 @@
 ---
 title: "安卓发布流程"
+description: '本文档概述了 Android 应用程序从在您的计算机上开发到最终用户生产的步骤。它还介绍了 CI/CD 管道、内部测试、Beta 测试和 Google Play 商店验证的角色。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "发布流程"
 ---
+# 安卓发布流程
 
 ## 安卓发布流程
 

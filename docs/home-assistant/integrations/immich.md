@@ -1,6 +1,6 @@
 ---
 title: Immich
-description: 关于如何将 Immich 用户账户集成到 Home Assistant 的说明。
+description: '此集成允许将 Immich(https://immich.app/) 用户账户添加到 Home Assistant。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media source
   - Multimedia
@@ -19,6 +19,7 @@ ha_codeowners:
 ha_integration_type: service
 ha_quality_scale: platinum
 ---
+# Immich
 
 此集成允许将 [Immich](https://immich.app/) 用户账户添加到 Home Assistant。
 

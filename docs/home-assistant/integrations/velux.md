@@ -1,6 +1,6 @@
 ---
 title: Velux
-description: 关于如何将 Velux KLF 200 与 Home Assistant 集成的说明。
+description: 'Velux(https://www.velux.com/) Home Assistant 集成允许您连接到 Velux KLF 200 接口，从而控制 io-homecontrol(http://www.io-homecontrol.com) 设备，例如窗户、窗帘、灯光和开关。'
 ha_category:
   - Cover
   - Scene
@@ -26,6 +26,7 @@ ha_integration_type: hub
 ha_dhcp: true
 ha_quality_scale: silver
 ---
+# Velux
 
 [Velux](https://www.velux.com/) Home Assistant 集成允许您连接到 Velux KLF 200 接口，从而控制 [io-homecontrol](http://www.io-homecontrol.com) 设备，例如窗户、窗帘、灯光和开关。该集成还允许您启动在 KLF 200 上配置的场景。
 

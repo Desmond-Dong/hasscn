@@ -1,6 +1,6 @@
 ---
 title: Buienradar
-description: 关于如何在 Home Assistant 中集成 buienradar.nl 天气的说明。
+description: 'Buienradar 集成使用 buienradar.nl(https://buienradar.nl/) 作为您所在位置当前气象数据的来源。天气预报由 Buienradar 提供，它为荷兰用户提供详细的天气信息服务。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Camera
   - Weather
@@ -18,6 +18,7 @@ ha_platforms:
   - weather
 ha_integration_type: service
 ---
+# Buienradar
 
 **Buienradar** 集成使用 [buienradar.nl](https://buienradar.nl/) 作为您所在位置当前气象数据的来源。天气预报由 Buienradar 提供，它为荷兰用户提供详细的天气信息服务。
 

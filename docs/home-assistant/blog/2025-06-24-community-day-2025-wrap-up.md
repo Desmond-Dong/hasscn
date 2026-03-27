@@ -1,8 +1,9 @@
 ---
 title: 2025 年社区日总结
-description: 我们强调最好的时刻、我们学到的东西以及我们将如何保持
+description: '<img src=''/home-assistant/images/blog/2025-06-community-day-wrap-up/art.jpg'' style=''border: 0;box-shadow: none;'' alt="多个社区日聚会的照片"。'
   支持全球聚会。
 ---
+# 2025 年社区日总结
 
 <img src='/home-assistant/images/blog/2025-06-community-day-wrap-up/art.jpg' style='border: 0;box-shadow: none;' alt="多个社区日聚会的照片">
 

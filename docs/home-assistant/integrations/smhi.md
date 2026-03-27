@@ -1,6 +1,6 @@
 ---
 title: SMHI
-description: 有关如何将 SMHI 预测集成到 Home Assistant 中的说明。
+description: 'SMHI 集成为 SMHI.se(https://www.smhi.se/) Web 服务提供支持，可将其作为您所在位置的气象数据来源。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Hub
   - Sensor
@@ -16,6 +16,7 @@ ha_codeowners:
   - '@gjohansson-ST'
 ha_integration_type: integration
 ---
+# SMHI
 
 **SMHI** 集成为 [SMHI.se](https://www.smhi.se/) Web 服务提供支持，可将其作为您所在位置的气象数据来源。
 

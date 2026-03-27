@@ -1,7 +1,8 @@
 ---
 title: Perfect Home 自动化
-description: A breakdown of what the perfect home 自动化 should consist of.
+description: '人们经常问我对 Home Assistant 的愿景。在解释我想把 Home Assistant 带到哪里之前，我得先谈谈：在我的理想世界里，完美的家庭自动化应该是什么样子。这正是这篇文章想讨论的内容。我不会把重点放在协议、网络或某个特定中枢上，那些都只是实现细节。'
 ---
+# Perfect Home 自动化
 
 人们经常问我对 Home Assistant 的愿景。在解释我想把 Home Assistant 带到哪里之前，我得先谈谈：在我的理想世界里，完美的家庭自动化应该是什么样子。这正是这篇文章想讨论的内容。我不会把重点放在协议、网络或某个特定中枢上，那些都只是实现细节。相反，我想聚焦于最重要的部分：技术与家中成员之间的互动方式。
 

@@ -1,6 +1,6 @@
 ---
 title: PrusaLink
-description: 有关使用 PrusaLink 监控 Prusa 3D 打印机的说明。
+description: 'The PrusaLink integration allows you to monitor your Prusa 3D printer(https://www.prusa3d.com) and its progress with your Home Assistant installation.。'
 ha_category:
   - 3D printing
 ha_iot_class: Local Polling
@@ -22,6 +22,7 @@ related:
   - url: https://help.prusa3d.com/guide/prusalink-prusa-connect-with-rpi-3-4-usb-mk2-5-s-mk3-s-_469341
     title: PrusaLink installation guide for Prusa MK2.5/MK3 with Raspberry Pi 3/4
 ---
+# PrusaLink
 
 The **PrusaLink** integration allows you to monitor your [Prusa 3D printer](https://www.prusa3d.com) and its progress with your Home Assistant installation. This integration works with Prusa MINI/MINI+, Prusa MK3.9/MK4, Prusa XL, Prusa CORE One, and with the older Raspberry Pi-based Prusa MK2.5/MK3.
 

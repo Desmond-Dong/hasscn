@@ -1,7 +1,8 @@
 ---
 title: Google Assistant 技能正式上线！
-description: Home Assistant Cloud 的 Google Assistant 集成现已向所有用户开放。
+description: '<p class=''img'' <img src=''/home-assistant/images/blog/2018-04-google-assistant/google-assistant-home-assistant.png'' alt=''Home Assistant logo and the Works。'
 ---
+# Google Assistant 技能正式上线！
 
 <p class='img'>
   <img

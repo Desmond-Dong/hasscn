@@ -1,6 +1,6 @@
 ---
 title: UniFi LED
-description: 关于如何配置 Ubiquiti UniFi LED 控制器集成的说明。
+description: 'UniFi LED(https://unifi-led.ui.com/) by Ubiquiti Networks, inc.(https://www.ui.com/) is a system of controller managed LED light panels and dimmers. 本页属于。'
 ha_category:
   - Light
 ha_release: 0.102
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# UniFi LED
 
 [UniFi LED](https://unifi-led.ui.com/) by [Ubiquiti Networks, inc.](https://www.ui.com/) is a system of controller managed LED light panels and dimmers.
 

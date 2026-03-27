@@ -1,6 +1,6 @@
 ---
 title: Starling Bank
-description: 如何将您的 Starling 银行帐户集成到 Home Assistant 中。
+description: 'Starling Bank 集成允许您在 Home Assistant 中以传感器形式监控账户余额数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Finance
 ha_release: 0.79
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Starling Bank
 
 **Starling Bank** 集成允许您在 Home Assistant 中以传感器形式监控账户余额数据。
 

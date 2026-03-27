@@ -8,7 +8,7 @@ author: Daniel Shokouhi
 categories: Release-Notes
 og_image: /images/blog/2023-01-20-android-auto/Companion.png
 ---
-
+# Home Assistant 开进你的汽车！
 
 ![Companion 截图](/home-assistant/images/blog/2023-01-20-android-auto/Companion.png)
 

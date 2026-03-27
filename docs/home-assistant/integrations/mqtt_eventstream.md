@@ -1,6 +1,6 @@
 ---
 title: MQTT Eventstream
-description: 关于如何在 Home Assistant 中设置 MQTT 事件流的说明。
+description: 'MQTT Eventstream 集成可通过 MQTT 连接两个 Home Assistant 实例。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 
 ha_category:
   - Other
@@ -13,6 +13,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# MQTT Eventstream
 
 **MQTT Eventstream** 集成可通过 MQTT 连接两个 Home Assistant 实例。
 

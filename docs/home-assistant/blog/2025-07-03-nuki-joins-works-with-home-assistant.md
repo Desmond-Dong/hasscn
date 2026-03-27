@@ -1,8 +1,9 @@
 ---
 title: Nuki 加入 Works with Home Assistant
-description: 三种新锁类型即将加入，均经过我们团队的认证，可提供
+description: '<img src=''/home-assistant/images/blog/2025-07-nuki/art.jpg'' style=''border: 0;box-shadow: none;'' alt="Nuki 与 Home Assistant 合作"。'
   Home Assistant 的最佳体验
 ---
+# Nuki 加入 Works with Home Assistant
 
 <img src='/home-assistant/images/blog/2025-07-nuki/art.jpg' style='border: 0;box-shadow: none;' alt="Nuki 与 Home Assistant 合作">
 

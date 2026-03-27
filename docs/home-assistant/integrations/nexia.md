@@ -1,6 +1,6 @@
 ---
 title: Nexia/American Standard/Trane
-description: "有关如何将特灵和美国标准恒温器集成到家庭助理中的说明。"
+description: 'The Nexia/American Standard/Trane integration allows you to integrate your Nexia(https://mynexia.com/) (Trane) thermostats or American。'
 
 ha_category:
   - Binary sensor
@@ -25,6 +25,7 @@ ha_platforms:
   - switch
 ha_integration_type: hub
 ---
+# Nexia/American Standard/Trane
 
 The **Nexia/American Standard/Trane** integration allows you to integrate your [Nexia](https://mynexia.com/) (Trane) thermostats or [American Standard](https://asairhome.com/) thermostats into Home Assistant.
 

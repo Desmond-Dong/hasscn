@@ -1,6 +1,6 @@
 ---
 title: London Air
-description: 按区域和污染物类型显示伦敦空气质量的当前状态。
+description: 'London Air 集成会查询(https://api.erg.kcl.ac.uk/AirQuality/Hourly/MonitoringIndex/GroupName=London/Json) Kings College London 提供的伦敦空气质量数据源(https://www.londonair。'
 ha_category:
   - Health
 ha_iot_class: Cloud Polling
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# London Air
 
 **London Air** 集成会[查询](https://api.erg.kcl.ac.uk/AirQuality/Hourly/MonitoringIndex/GroupName=London/Json) Kings College London 提供的伦敦空气质量[数据源](https://www.londonair.org.uk/LondonAir/API/)。配置文件中每指定一个 `location`（[地方行政区或 borough](https://en.wikipedia.org/wiki/List_of_London_boroughs)），就会添加一个对应传感器。每个传感器的状态表示该 borough 的整体空气质量。请注意，32 个 borough 中只有 28 个提供数据。
 

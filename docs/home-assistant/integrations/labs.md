@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Labs
-description: 在新预览功能成为 Home Assistant 标准功能之前试用它们。
+description: 'Labs 集成为您提供一个专门的面板，让您可以在新功能成为 Home Assistant 标准功能之前进行预览和测试。这些预览功能已经可以正常使用，且没有严重缺陷，但仍可能根据用户反馈继续调整设计。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Other
 ha_release: 2025.12
@@ -14,6 +14,7 @@ related:
   - docs: /docs/configuration/basic/
     title: Configuration basics
 ---
+# Home Assistant Labs
 
 **Labs** 集成为您提供一个专门的面板，让您可以在新功能成为 Home Assistant 标准功能之前进行预览和测试。这些预览功能已经可以正常使用，且没有严重缺陷，但仍可能根据用户反馈继续调整设计。
 

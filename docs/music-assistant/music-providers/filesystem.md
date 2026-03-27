@@ -1,8 +1,7 @@
 ---
 title: 文件系统提供商
-description: 文件系统播放器提供商的功能、配置、问题等更多信息
+description: 'Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文件，并将其目录到库中，允许播放到 Music Assistant 支持的所有播放器提供商。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 文件系统提供商 <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文件，并将其目录到库中，允许播放到 Music Assistant 支持的所有播放器提供商。

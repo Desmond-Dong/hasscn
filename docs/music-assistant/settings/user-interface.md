@@ -1,7 +1,7 @@
 ---
 title: "用户界面"
+description: '从此页面自定义用户界面。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 用户界面设置 <img src="/assets/icons/UI-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 从此页面自定义用户界面

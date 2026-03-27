@@ -3,6 +3,7 @@ title: Your hub should be local and open
 description: Running a hub that depends on the cloud is a risk that can cost you your
   home 自动化.
 ---
+# Your hub should be local and open
 
 今天有消息传出，Google 将会[关闭 Revolv 中枢][medium-revolv]。这里的“关闭”并不是停止销售或停止支持——不是的，他们会向每一台中枢推送更新，把你原本完全可用的家庭自动化中枢变成一块没用的塑料。Google 竟然觉得这是个好主意，这让我非常震惊。无论如何，他们都应该像 ninjasphere 一样：把一切开放出来，让人们自己决定他们 _自己的_ 中枢命运。
 

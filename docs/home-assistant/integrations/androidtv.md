@@ -1,6 +1,6 @@
 ---
 title: Android Debug Bridge
-description: 关于如何将 Android 和 Fire TV 设备集成到 Home Assistant 的说明。
+description: 'Android Debug Bridge 集成允许您控制 Android 设备或 Amazon Fire TV(https://www.amazon.com/b/?node=8521791011) 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
   - Remote
@@ -17,6 +17,7 @@ ha_platforms:
   - remote
 ha_integration_type: device
 ---
+# Android Debug Bridge
 
 **Android Debug Bridge** 集成允许您控制 Android 设备或 [Amazon Fire TV](https://www.amazon.com/b/?node=8521791011) 设备。
 

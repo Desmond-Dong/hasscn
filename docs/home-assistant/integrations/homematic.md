@@ -1,6 +1,6 @@
 ---
 title: Homematic
-description: 关于将 Homematic 集成到 Home Assistant 的说明。
+description: 'Homematic(https://www.eq-3.com/products/homematic.html) 集成为你的 CCU/Homegear 提供双向通信能力。它通过 XML-RPC 连接向设备写入值，并订阅设备与 CCU 发出的事件。 如果你使用的是 Homegear。'
 ha_category:
   - Binary sensor
   - Climate
@@ -31,6 +31,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Homematic
 
 [Homematic](https://www.eq-3.com/products/homematic.html) 集成为你的 CCU/Homegear 提供双向通信能力。它通过 XML-RPC 连接向设备写入值，并订阅设备与 CCU 发出的事件。
 如果你使用的是 Homegear，且其中配对了 [Intertechno](https://intertechno.at/) 设备，也可以进行单向通信。

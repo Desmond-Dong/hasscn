@@ -1,12 +1,13 @@
 ---
 title: "MQTT Fan"
-description: "关于如何将 MQTT 风扇集成到 Home Assistant 的说明。"
+description: 'MQTT Fan 集成可让您控制支持 MQTT 的风扇。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Fan
 ha_release: 0.27
 ha_iot_class: Configurable
 ha_domain: mqtt
 ---
+# MQTT Fan
 
 **MQTT Fan** 集成可让您控制支持 MQTT 的风扇。
 

@@ -1,6 +1,6 @@
 ---
 title: LCN
-description: 关于如何将 LCN 组件与 Home Assistant 集成的说明。
+description: 'Home Assistant 的 LCN 集成可让您连接到 LCN(https://www.lcn.eu/) 硬件设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Climate
@@ -27,6 +27,7 @@ ha_config_flow: true
 ha_integration_type: hub
 ha_quality_scale: silver
 ---
+# LCN
 
 Home Assistant 的 **LCN** 集成可让您连接到 [LCN](https://www.lcn.eu/) 硬件设备。
 

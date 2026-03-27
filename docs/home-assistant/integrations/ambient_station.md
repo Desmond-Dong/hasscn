@@ -1,6 +1,6 @@
 ---
 title: Ambient Weather Station
-description: 关于如何在 Home Assistant 中集成 Ambient Weather 气象站的说明。
+description: 'Ambient Weather Station 集成通过 Ambient Weather(https://ambientweather.net) 的个人气象站获取本地天气信息。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Weather
 ha_release: 0.85
@@ -15,6 +15,7 @@ ha_platforms:
   - sensor
 ha_integration_type: hub
 ---
+# Ambient Weather Station
 
 **Ambient Weather Station** 集成通过 [Ambient Weather](https://ambientweather.net) 的个人气象站获取本地天气信息。
 

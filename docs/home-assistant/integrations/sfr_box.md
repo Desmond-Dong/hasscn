@@ -1,6 +1,6 @@
 ---
 title: SFR Box
-description: 有关如何将 SFR Box 集成到 Home Assistant 的说明。
+description: 'The SFR Box integration offers integration with the SFR broadband router. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
 ha_release: 2023.2
@@ -17,6 +17,7 @@ ha_platforms:
 ha_integration_type: device
 ha_quality_scale: silver
 ---
+# SFR Box
 
 The **SFR Box** integration offers integration with the **SFR** broadband router.
 

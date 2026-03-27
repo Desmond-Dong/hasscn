@@ -1,6 +1,6 @@
 ---
 title: Balay
-description: 使用 Home Connect 集成连接和控制您的 Balay 设备
+description: '此集成由 Home Connect(/home-assistant/integrations/homeconnect/) 集成支持。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -34,6 +34,7 @@ ha_iot_class: Cloud Push
 ha_dhcp: true
 ha_zeroconf: true
 ---
+# Balay
 
 :::note
 此集成由 [Home Connect](/home-assistant/integrations/home_connect/) 集成支持。

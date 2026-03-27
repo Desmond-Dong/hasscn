@@ -1,6 +1,6 @@
 ---
 title: LIFX Cloud
-description: 关于如何在 Home Assistant 中使用原生 LIFX 场景的说明。
+description: 'The LIFX Cloud integration allows you to activate the scenes that LIFX smartphone apps store in the LIFX cloud. 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Scene
 ha_iot_class: Cloud Push
@@ -14,6 +14,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# LIFX Cloud
 
 The **LIFX Cloud** integration allows you to activate the scenes that LIFX smartphone apps store in the LIFX cloud.
 

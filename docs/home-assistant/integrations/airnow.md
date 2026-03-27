@@ -1,6 +1,6 @@
 ---
 title: AirNow
-description: 关于在 Home Assistant 中集成 AirNow 的说明。
+description: 'AirNow integration 使用 AirNow(https://www.airnow.gov/) 网络服务作为您所在位置的空气质量数据来源。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Health
 ha_release: 2021.2
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# AirNow
 
 **AirNow** integration 使用 [AirNow](https://www.airnow.gov/) 网络服务作为您所在位置的空气质量数据来源。
 

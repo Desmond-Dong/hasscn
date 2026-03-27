@@ -1,6 +1,6 @@
 ---
 title: Emby
-description: 关于将 Emby 集成到 Home Assistant 的说明。
+description: 'Emby 集成允许您从 Home Assistant 控制 Emby(https://emby.media/) 多媒体系统。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.32
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Emby
 
 **Emby** 集成允许您从 Home Assistant 控制 [Emby](https://emby.media/) 多媒体系统。
 

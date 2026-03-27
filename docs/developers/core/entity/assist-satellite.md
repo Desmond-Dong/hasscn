@@ -1,7 +1,9 @@
 ---
 title: "Assist 卫星实体"
+description: 'Assist 卫星实体表示设备中由 Assist 管道驱动的语音助手能力。具有此类实体的设备可以让用户通过语音控制 Home Assistant。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: Assist 卫星
 ---
+# Assist 卫星实体
 
 Assist 卫星实体表示设备中由 Assist 管道驱动的语音助手能力。具有此类实体的设备可以让用户通过语音控制 Home Assistant。
 

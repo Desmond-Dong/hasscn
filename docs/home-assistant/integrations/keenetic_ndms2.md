@@ -1,6 +1,6 @@
 ---
 title: Keenetic NDMS2 Router
-description: 关于如何将 Keenetic NDMS2 路由器集成到 Home Assistant 的说明。
+description: '此集成通过检查连接到运行 NDMS 2.05 及以上固件版本的 Keenetic(https://keenetic.net/) 路由器的设备来提供存在检测功能。它使用 telnet 连接，因此请确保路由器未禁用 telnet。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Presence detection
 ha_iot_class: Local Polling
@@ -15,6 +15,7 @@ ha_config_flow: true
 ha_ssdp: true
 ha_integration_type: device
 ---
+# Keenetic NDMS2 Router
 
 此集成通过检查连接到运行 NDMS 2.05 及以上固件版本的 [Keenetic](https://keenetic.net/) 路由器的设备来提供存在检测功能。它使用 telnet 连接，因此请确保路由器未禁用 telnet。
 

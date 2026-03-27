@@ -1,6 +1,6 @@
 ---
 title: UptimeRobot
-description: 关于如何将 UptimeRobot 传感器集成到 Home Assistant 的说明。
+description: 'UptimeRobot 集成会为您在 UptimeRobot(https://uptimerobot.com) 账户中的所有监测项提供状态实体。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - System monitor
 ha_release: 0.72
@@ -18,6 +18,7 @@ ha_config_flow: true
 ha_integration_type: service
 ha_quality_scale: gold
 ---
+# UptimeRobot
 
 **UptimeRobot** 集成会为您在 [UptimeRobot](https://uptimerobot.com) 账户中的所有监测项提供状态实体。
 

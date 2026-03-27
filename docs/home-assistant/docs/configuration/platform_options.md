@@ -1,7 +1,8 @@
 ---
 title: 实体集成平台选项
-description: 展示如何通过 configuration.yaml 自定义任何集成的轮询间隔。
+description: '这些选项正在逐步淘汰，仅适用于单平台集成。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 实体集成平台选项
 
 :::important
 这些选项正在逐步淘汰，仅适用于单平台集成。

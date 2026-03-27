@@ -1,6 +1,6 @@
 ---
 title: OpenTherm Gateway
-description: "从 Home Assistant 控制您的 OpenTherm Gateway。"
+description: 'The OpenTherm Gateway integration is used to control the OpenTherm Gateway(https://otgw.tclcode.com/) from Home Assistant. 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Binary sensor
@@ -24,7 +24,6 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
-
 The **OpenTherm Gateway** integration is used to control the [OpenTherm Gateway](https://otgw.tclcode.com/) from Home Assistant.
 
 此集成将为每个配置的网关添加三个设备到 Home Assistant。集成的主要控制是单个“气候”实体，可以在添加的“OpenTherm Thermostat”设备上找到该实体。所有添加的设备都有“sensor”和“binary_sensor”实体的集合，默认情况下这些实体是禁用的。要启用它们，请按照[启用实体](/home-assistant/common-tasks/general/#enabling-or-disabling-entities)上的步骤操作。

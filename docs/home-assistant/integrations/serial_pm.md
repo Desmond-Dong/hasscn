@@ -1,6 +1,6 @@
 ---
 title: Serial Particulate Matter
-description: 有关如何将颗粒物（灰尘）传感器与 Home Assistant 集成的说明。
+description: '颗粒物传感器用于测量空气中极小颗粒的含量。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - DIY
 ha_release: 0.26
@@ -11,6 +11,7 @@ ha_platforms:
 ha_integration_type: integration
 ha_quality_scale: legacy
 ---
+# Serial Particulate Matter
 
 颗粒物传感器用于测量空气中极小颗粒的含量。
 

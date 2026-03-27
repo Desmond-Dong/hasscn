@@ -1,6 +1,6 @@
 ---
 title: Bizkaibus
-description: 关于如何在 Home Assistant 中集成 Bizkaibus 时刻表数据的说明。
+description: 'Bizkaibus 集成将为您提供所选站点下一班公交车的时间。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Sensor
   - Transport
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Bizkaibus
 
 **Bizkaibus** 集成将为您提供所选站点下一班公交车的时间。
 

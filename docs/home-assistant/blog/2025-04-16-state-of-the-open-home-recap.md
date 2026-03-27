@@ -1,7 +1,8 @@
 ---
 title: 200 万家庭共同见证 - State of the Open Home 2025
-description: 我们庆祝 2025 年最重要的时刻、社区成就，并展望接下来的方向。
+description: '<lite-youtube videoid="o4Vctz1KYE" videotitle="状态 of the Open Home 2025"</lite-youtube。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 200 万家庭共同见证 - State of the Open Home 2025
 
 <lite-youtube videoid="o4Vctz1_KYE" videotitle="状态 of the Open Home 2025"></lite-youtube>
 

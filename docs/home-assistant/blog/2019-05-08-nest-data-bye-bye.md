@@ -3,6 +3,7 @@ title: '[Update: new 用户 only] Nest to turn off their API'
 description: Nest has announced that they will shut down their API in August, no longer
   allowing you to access your data.
 ---
+# [Update: new 用户 only] Nest to turn off their API
 
 **更新 May 16:** Nest 刚刚在[一篇博文](https://博客.google/products/google-nest/updates-works-with-nest/)中宣布调整计划。它仍会在 8 月底关闭 Works with Nest 项目，但不会再切断现有 API 用户的访问权限。不过，它依然会在 8 月底停止接收新用户。
 

@@ -1,7 +1,9 @@
 ---
 title: 气候实体
+description: '气候实体控制温度、湿度或风扇，例如空调系统和加湿器。平台实体派生自homeassistant.components.climate.ClimateEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/cl。'
 sidebar_label: 气候
 ---
+# 气候实体
 
 气候实体控制温度、湿度或风扇，例如空调系统和加湿器。平台实体派生自[`homeassistant.components.climate.ClimateEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/climate/__init__.py)
 

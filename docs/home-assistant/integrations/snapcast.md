@@ -1,6 +1,6 @@
 ---
 title: Snapcast
-description: 有关如何将 Snapcast 集成到 Home Assistant 的说明。
+description: 'Snapcast 集成允许您在 Home Assistant 中控制 Snapcast(https://github.com/badaix/snapcast)。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Media player
 ha_release: 0.13
@@ -13,6 +13,7 @@ ha_integration_type: hub
 ha_codeowners:
   - '@luar123'
 ---
+# Snapcast
 
 **Snapcast** 集成允许您在 Home Assistant 中控制 [Snapcast](https://github.com/badaix/snapcast)。
 

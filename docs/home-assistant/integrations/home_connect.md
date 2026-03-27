@@ -1,6 +1,6 @@
 ---
 title: Home Connect
-description: 关于如何在 Home Assistant 中设置 Home Connect 集成的说明。
+description: 'Home Connect 集成可让你通过官方云端 API(https://developer.home-connect.com)接入支持 Home Connect 标准的 Bosch 和 Siemens 家电。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Button
@@ -32,6 +32,7 @@ ha_integration_type: hub
 ha_zeroconf: true
 ha_dhcp: true
 ---
+# Home Connect
 
 **Home Connect** 集成可让你通过[官方云端 API](https://developer.home-connect.com)接入支持 Home Connect 标准的 Bosch 和 Siemens 家电。
 

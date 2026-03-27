@@ -1,6 +1,6 @@
 ---
 title: CalDAV
-description: 关于如何将 WebDav 日历集成到 Home Assistant 的说明。
+description: 'CalDAV integration 允许您将 WebDAV 日历连接到 Home Assistant，作为以下实体类型之一：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Calendar
   - To-do List
@@ -24,6 +24,7 @@ related:
   - docs: /docs/configuration/
     title: Configuration file
 ---
+# CalDAV
 
 **CalDAV** integration 允许您将 WebDAV 日历连接到 Home Assistant，作为以下实体类型之一：
 

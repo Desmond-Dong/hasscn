@@ -1,6 +1,6 @@
 ---
 title: Bond
-description: 关于在 Home Assistant 中设置 Bond Bridge 的说明。
+description: 'Bond 集成允许您通过 Bond Bridge(https://bondhome.io/) 控制设备。复制您的 RF 遥控器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Button
   - Cover
@@ -28,6 +28,7 @@ ha_platforms:
 ha_integration_type: hub
 ha_dhcp: true
 ---
+# Bond
 
 **Bond** 集成允许您通过 [Bond Bridge](https://bondhome.io/) 控制设备。复制您的 RF 遥控器。
 

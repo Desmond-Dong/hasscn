@@ -1,6 +1,8 @@
 ---
 title: "通过 YAML 进行集成配置"
+description: 'configuration.yaml 是由用户定义的配置文件。Home Assistant 会在首次启动时自动创建它。它用于定义要加载哪些组件。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
+# 通过 YAML 进行集成配置
 
 `configuration.yaml` 是由用户定义的配置文件。Home Assistant 会在首次启动时自动创建它。它用于定义要加载哪些组件。
 

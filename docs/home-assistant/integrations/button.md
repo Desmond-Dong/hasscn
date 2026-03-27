@@ -1,6 +1,6 @@
 ---
 title: Button
-description: 关于如何在 Home Assistant 中设置按钮的说明。
+description: '按钮实体是一个可以向设备或服务触发事件/动作但从 Home Assistant 角度看保持无状态的实体。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Button
 ha_release: 2021.12
@@ -15,6 +15,7 @@ related:
   - docs: /dashboards/
     title: Dashboard
 ---
+# Button
 
 按钮实体是一个可以向设备或服务触发事件/动作但从 Home Assistant 角度看保持无状态的实体。
 

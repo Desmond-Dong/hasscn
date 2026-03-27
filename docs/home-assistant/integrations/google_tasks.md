@@ -1,6 +1,6 @@
 ---
 title: Google Tasks
-description: 关于如何在 Home Assistant 中使用 Google Tasks 的说明。
+description: 'Google Tasks 集成允许您将 Google Tasks(https://support.google.com/tasks/answer/7675772) 连接到 Home Assistant。该集成为每个任务列表添加一个待办事项实体(/home-assistant/integrations/todo。'
 ha_category:
   - To-do list
 ha_iot_class: Cloud Polling
@@ -27,6 +27,7 @@ google_dev_console_link: https://console.developers.google.com/start/api?id=task
 api: Google Tasks API
 api_link: https://console.cloud.google.com/apis/enableflow?apiid=tasks.googleapis.com
 ---
+# Google Tasks
 
 **Google Tasks** 集成允许您将 [Google Tasks](https://support.google.com/tasks/answer/7675772) 连接到 Home Assistant。该集成为每个任务列表添加一个[待办事项实体](/home-assistant/integrations/todo)，允许您从 **待办事项** 仪表板创建、更新或删除列表中的项目。
 

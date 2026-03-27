@@ -1,6 +1,6 @@
 ---
 title: Mochad
-description: 关于如何将 Mochad 集成到 Home Assistant 的说明。
+description: 'Mochad 集成是用于接入所有由 mochad(https://sourceforge.net/projects/mochad/) 控制的 X10 平台的主集成。除启用此集成外，您还需要分别设置各个 X10 设备。 本页属于 Home Assistant 中文文档。'
 
 ha_category:
   - Hub
@@ -18,6 +18,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Mochad
 
 **Mochad** 集成是用于接入所有由 [mochad](https://sourceforge.net/projects/mochad/) 控制的 X10 平台的主集成。除启用此集成外，您还需要分别设置各个 X10 设备。
 

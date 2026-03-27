@@ -1,6 +1,6 @@
 ---
 title: PECO Outage Counter
-description: 了解您所在县的停电次数
+description: 'PECO 是一家为费城都会区提供电力服务的公用事业公司。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_release: 2022.4
 ha_category:
   - Sensor
@@ -14,6 +14,7 @@ ha_platforms:
   - sensor
 ha_integration_type: service
 ---
+# PECO Outage Counter
 
 PECO 是一家为费城都会区提供电力服务的公用事业公司。
 

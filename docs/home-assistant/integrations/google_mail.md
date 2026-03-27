@@ -1,6 +1,6 @@
 ---
 title: Google Mail
-description: 关于如何在 Home Assistant 中使用 Google Mail 的说明。
+description: 'Google Mail 集成允许您将 Google Mail(https://mail.google.com) 连接到 Home Assistant。该集成添加了一个动作，允许您设置电子邮件自动回复，用于度假时。还添加了一个 notify 动作，允许您起草或发送纯文本电子邮件。'
 ha_category:
   - Notifications
 ha_iot_class: Cloud Polling
@@ -17,6 +17,7 @@ google_dev_console_link: https://console.cloud.google.com/apis/library/gmail.goo
 api: Gmail API
 api_link: https://console.cloud.google.com/apis/library/gmail.googleapis.com
 ---
+# Google Mail
 
 **Google Mail** 集成允许您将 [Google Mail](https://mail.google.com) 连接到 Home Assistant。该集成添加了一个动作，允许您设置电子邮件自动回复，用于度假时。还添加了一个 `notify` 动作，允许您起草或发送纯文本电子邮件。
 

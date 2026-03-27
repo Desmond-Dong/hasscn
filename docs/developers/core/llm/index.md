@@ -1,7 +1,9 @@
 ---
 title: "面向大型语言模型的 Home Assistant API"
+description: 'Home Assistant 可以与大型语言模型（LLM）交互。通过向 LLM 暴露 Home Assistant API，LLM 可以获取数据或控制 Home Assistant，从而更好地协助用户。Home Assistant 自带一个内置 LLM API，而自定义集成也可以注册自己的 API。'
 sidebar_label: "LLM API"
 ---
+# 面向大型语言模型的 Home Assistant API
 
 Home Assistant 可以与大型语言模型（LLM）交互。通过向 LLM 暴露 Home Assistant API，LLM 可以获取数据或控制 Home Assistant，从而更好地协助用户。Home Assistant 自带一个内置 LLM API，而自定义集成也可以注册自己的 API，以提供更高级的能力。
 

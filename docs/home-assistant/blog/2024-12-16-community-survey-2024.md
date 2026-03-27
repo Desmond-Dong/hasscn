@@ -1,7 +1,9 @@
 ---
 title: '了解我们的社区：2024 年家庭助理调查'
-description: 今天，我们启动了对社区的年度调查，获得的见解将帮助我们让 Home Assistant 更好地反映我们所有的用户。
+description: '<img src=''/home-assistant/images/blog/2024-12-survey/art.jpg'' alt="2024 community survey"。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# 了解我们的社区：2024 年家庭助理调查
+
 <img src='/home-assistant/images/blog/2024-12-survey/art.jpg' alt="2024 community survey">
 
 随着Home Assistant的不断发展和发展，我们致力于使其更具包容性、更易于使用并满足社区的多样化需求。为此，我们正在启动一项年度调查&mdash;希望您能够参与！

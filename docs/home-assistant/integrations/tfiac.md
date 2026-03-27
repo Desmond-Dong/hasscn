@@ -1,6 +1,6 @@
 ---
 title: Tfiac
-description: 有关如何将 Tfiac AC 设备与 Home Assistant 集成的说明。
+description: 'The Tfiac integration integrates several vendors air conditioning systems, that uses the Tfiac mobile app, into Home Assistant. App currently available at。'
 ha_category:
   - Climate
 ha_release: 0.91
@@ -17,6 +17,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# Tfiac
 
 The **Tfiac** integration integrates several vendors air conditioning systems, that uses the Tfiac mobile app, into Home Assistant. App currently available at [Play Store](https://play.google.com/store/apps/details?id=com.tcl.export) and [App Store](https://apps.apple.com/app/id1059938398).
 

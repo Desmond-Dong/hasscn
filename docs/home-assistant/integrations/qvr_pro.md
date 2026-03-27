@@ -1,6 +1,6 @@
 ---
 title: QVR Pro
-description: 有关如何将 QVR Pro 集成到 Home Assistant 中的说明。
+description: 'QVR Pro(https://www.qnap.com/en/software/qvr-pro) 让您可以在 QNAP NAS 上创建独立且可扩展的监控环境。qvrpro 集成可让您在 Home Assistant 中查看 QVR Pro 频道。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Camera
 ha_iot_class: Local Polling
@@ -16,6 +16,7 @@ related:
     title: Configuration file
 ha_quality_scale: legacy
 ---
+# QVR Pro
 
 [QVR Pro](https://www.qnap.com/en/software/qvr-pro) 让您可以在 QNAP NAS 上创建独立且可扩展的监控环境。`qvr_pro` 集成可让您在 Home Assistant 中查看 QVR Pro 频道。
 

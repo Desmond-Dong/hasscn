@@ -1,6 +1,6 @@
 ---
 title: SolaX Power
-description: 有关如何将 Solax 传感器集成到 Home Assistant 中的说明。
+description: 'SolaX Power 集成将 Home Assistant 连接到 Solax 太阳能逆变器。Solax 逆变器可以连接到家庭 Wi-Fi 网络并提供 REST API。此集成可获取诸如光伏发电功率、电池电量与功率，以及回馈到电网中的电量等信息。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Energy
   - Sensor
@@ -15,6 +15,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: device
 ---
+# SolaX Power
 
 **SolaX Power** 集成将 Home Assistant 连接到 Solax 太阳能逆变器。Solax 逆变器可以连接到家庭 Wi-Fi 网络并提供 REST API。此集成可获取诸如光伏发电功率、电池电量与功率，以及回馈到电网中的电量等信息。
 

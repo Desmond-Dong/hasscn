@@ -1,7 +1,9 @@
 ---
 title: 热水器实体
+description: '平台实体派生自homeassistant.components.waterheater.WaterHeaterEntity(https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/waterhe。'
 sidebar_label: 热水器
 ---
+# 热水器实体
 
 平台实体派生自[`homeassistant.components.water_heater.WaterHeaterEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/water_heater/__init__.py)
 

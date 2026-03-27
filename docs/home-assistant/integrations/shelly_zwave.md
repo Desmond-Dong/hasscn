@@ -1,6 +1,6 @@
 ---
 title: Shelly Z-Wave
-description: 使用 Z-Wave 集成连接和控制您的 Shelly Z-Wave 设备
+description: 'Shelly(https://shelly.com) 的 Z-Wave 设备可在本地运行，并与 Home Assistant 中的 Z-Wave 集成无缝配合使用（需要 Z-Wave 控制器）。由于所有连接都在本地完成，因此设备状态更新和控制都会立即在 Home Assistant 中生效。'
 ha_release: '2025.6'
 ha_iot_class: Local Push
 ha_category:
@@ -18,6 +18,7 @@ works_with:
 ha_iot_standard: zwave
 ha_brand: true
 ---
+# Shelly Z-Wave
 
 [Shelly](https://shelly.com) 的 Z-Wave 设备可在本地运行，并与 Home Assistant 中的 Z-Wave 集成无缝配合使用（需要 Z-Wave 控制器）。由于所有连接都在本地完成，因此设备状态更新和控制都会立即在 Home Assistant 中生效。
 

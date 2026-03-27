@@ -1,8 +1,9 @@
 ---
 title: 'Security Disclosure 2: vulnerabilities in custom 集成 HACS, Font Awesome
   and others'
-description: Update your Home Assistant instance as soon as possible.
+description: 'This 博客 looks pretty much the same as the security disclosure of yesterday(/home-assistant/blog/2021/01/22/security-disclosure/). However。'
 ---
+# Security Disclosure 2: vulnerabilities in custom 集成 HACS, Font Awesome
 
 ![Attention please read](/home-assistant/images/blog/2021-01-security-disclosure2/social.png)
 

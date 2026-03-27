@@ -1,8 +1,7 @@
 ---
 title: 发布周期
-description: 服务器稳定版和测试版的发布周期详情
+description: '稳定版只会每 1-3 个月发布一次，具体取决于功能改进的数量。这些稳定版将在测试周期结束后发布，并发现足够稳定以进行推广。 本页属于 Music Assistant 中文文档，适合查阅音乐源、播放器、安装配置与使用说明。'
 ---
-
 # 发布周期 <img src="/assets/icons/release-cycle-icon.png" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 ## 稳定版

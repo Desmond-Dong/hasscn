@@ -1,6 +1,6 @@
 ---
 title: Locative
-description: 关于如何使用 Locative 在 Home Assistant 中跟踪设备的说明。
+description: '此集成可让您使用 Locative(https://www.locative.app/) 进行存在检测。Locative 是一个适用于 iOS(https://apps.apple.com/app/id725198453) 的开源应用，允许您在进入或离开地理围栏时发送 GET 或 POST 请求。'
 ha_category:
   - Presence detection
 ha_release: 0.86
@@ -11,6 +11,7 @@ ha_platforms:
 ha_config_flow: true
 ha_integration_type: integration
 ---
+# Locative
 
 此集成可让您使用 [Locative](https://www.locative.app/) 进行存在检测。Locative 是一个适用于 [iOS](https://apps.apple.com/app/id725198453) 的开源应用，允许您在进入或离开地理围栏时发送 `GET` 或 `POST` 请求。您可以将其与 Home Assistant 配合使用，以更新您的位置。
 

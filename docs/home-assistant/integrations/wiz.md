@@ -1,6 +1,6 @@
 ---
 title: WiZ
-description: 关于如何在 Home Assistant 中设置 WiZ 的说明。
+description: 'WiZ 集成可让您控制 WiZ 灯具和智能插座。 这些设备通过 Wi-Fi 网络进行设置，不需要额外的桥接器或网关。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Binary sensor
   - Fan
@@ -26,6 +26,7 @@ ha_platforms:
   - switch
 ha_integration_type: device
 ---
+# WiZ
 
 **WiZ** 集成可让您控制 WiZ 灯具和智能插座。
 这些设备通过 Wi-Fi 网络进行设置，不需要额外的桥接器或网关。

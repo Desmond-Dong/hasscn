@@ -1,7 +1,9 @@
 ---
 title: 'iOS 2024.1 配套应用程序：CarPlay 就在这里！'
-description: Home Assistant登陆CarPlay；只需轻轻一按即可打开您的车库！
+description: '嘿，这是布鲁诺。我最近加入了 Nabu Casa，全职开发 Home Assistant iOS 应用程序（感谢 Home Assistant Cloud 订阅者！）。今天我有一个大消息：Home Assistant 现已在 Apple CarPlay 上可用！该版本正在推出。'
 ---
+# iOS 2024.1 配套应用程序：CarPlay 就在这里！
+
 嘿，这是布鲁诺。我最近加入了 Nabu Casa，全职开发 Home Assistant iOS 应用程序（感谢 Home Assistant Cloud 订阅者！）。今天我有一个大消息：Home Assistant 现已在 Apple CarPlay 上可用！该版本正在推出，应该很快就会登陆您的 iOS 设备（版本 2024.1）。
 
 CarPlay 支持现在使Home Assistant用户可以轻松访问其设备和区域，并能够创建自定义动作。自定义动作允许用户创建高级动作序列，例如解锁前门和打开门廊灯光。所有这些都适用于您在应用程序中配置的多个 Home Assistant 服务器。

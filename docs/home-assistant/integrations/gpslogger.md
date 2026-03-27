@@ -1,6 +1,6 @@
 ---
 title: GPSLogger
-description: 关于如何使用 GPSLogger 在 Home Assistant 中跟踪设备的说明。
+description: '此集成用于接入 GPSLogger(https://gpslogger.app/)。GPSLogger 是一款适用于 Android 的开源应用，可让用户在 Home Assistant 中更新自己的位置。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ha_category:
   - Presence detection
 ha_release: 0.34
@@ -11,6 +11,7 @@ ha_platforms:
   - device_tracker
 ha_integration_type: integration
 ---
+# GPSLogger
 
 此集成用于接入 [GPSLogger](https://gpslogger.app/)。GPSLogger 是一款适用于 Android 的开源应用，可让用户在 Home Assistant 中更新自己的位置。
 

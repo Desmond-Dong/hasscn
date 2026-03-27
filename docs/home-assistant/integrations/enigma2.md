@@ -1,6 +1,6 @@
 ---
 title: Enigma2 (OpenWebif)
-description: 关于将运行 OpenWebif 的 Enigma2 机顶盒集成到 Home Assistant 的说明。
+description: 'Enigma2 集成允许您控制安装了 OpenWebif 插件、运行 Enigma2(https://github.com/oe-alliance/oe-alliance-enigma2) 的基于 Linux 的机顶盒。 本页属于 Home Assistant 中文文档。'
 ha_category:
   - Media player
 ha_release: '0.90'
@@ -13,6 +13,7 @@ ha_platforms:
   - media_player
 ha_integration_type: device
 ---
+# Enigma2 (OpenWebif)
 
 **Enigma2** 集成允许您控制安装了 OpenWebif 插件、运行 [Enigma2](https://github.com/oe-alliance/oe-alliance-enigma2) 的基于 Linux 的机顶盒。
 

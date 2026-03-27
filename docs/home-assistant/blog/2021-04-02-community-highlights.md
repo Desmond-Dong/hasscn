@@ -3,6 +3,7 @@ title: 'Community Highlights: 15th edition'
 description: Get started with the banner card, have the volume of your media players
   automatically adjusted with a blueprint and a mega project in the field of Hydroponic
 ---
+# Community Highlights: 15th edition
 
 I hope everyone survived the April 1 jokes a bit? 🐸 We are already at the 15th
 edition of the Home Assistant Community Highlights! Some interesting things popped

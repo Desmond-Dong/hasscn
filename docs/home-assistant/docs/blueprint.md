@@ -1,7 +1,8 @@
 ---
 title: 关于蓝图
-description: 蓝图介绍。
+description: '本节提供蓝图的高级介绍。要查看用于创建有效蓝图的 YAML 模式说明，请参阅蓝图模式(/home-assistant/docs/blueprint/schema/)章节。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。'
 ---
+# 关于蓝图
 
 本节提供蓝图的高级介绍。要查看用于创建有效蓝图的 YAML 模式说明，请参阅[蓝图模式](/home-assistant/docs/blueprint/schema/)章节。
 

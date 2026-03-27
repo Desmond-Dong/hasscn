@@ -1,7 +1,8 @@
 ---
 title: 'Community Highlights: 4th edition'
-description: 3D All the things!
+description: '来到第 4 期，我觉得把社区精选专门留给 3D 主题再合适不过了！。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。'
 ---
+# Community Highlights: 4th edition
 
 来到第 4 期，我觉得把社区精选专门留给 3D 主题再合适不过了！
 

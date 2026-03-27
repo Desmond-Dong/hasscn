@@ -1,7 +1,7 @@
 ---
+description: '欢迎使用专为国人优化的 Home Assistant 加载项库！这里收录优质第三方作品以及本人开发的作品。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 layout: doc
 ---
-
 # 🇨🇳 Home Assistant 加载项源
 
 欢迎使用专为国人优化的 Home Assistant 加载项库！这里收录优质第三方作品以及本人开发的作品。

@@ -1,8 +1,7 @@
 ---
 title: AirPlay Receiver 插件
-description: AirPlay Receiver 插件的功能和说明
+description: 'Music Assistant 可以为任何 MA 播放器添加 <a href="https://www.apple.com/au/airplay/" target="blank" rel="noopener noreferrer"AirPlay Receiver</a 音频支持。'
 ---
-
 # AirPlay Receiver <img src="/assets/icons/airplay-receiver-icon.svg" alt="预览图片" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant 可以为任何 MA 播放器添加 <a href="https://www.apple.com/au/airplay/" target="_blank" rel="noopener noreferrer">AirPlay Receiver</a> 音频支持。
