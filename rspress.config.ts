@@ -5,7 +5,6 @@ import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { analyticsPlugin } from './scripts/analytics-plugin';
 import { globalNav } from './scripts/nav-config';
 import mdiIconPlugin from './scripts/remark-mdi-icon';
-import { searchIndexPlugin } from './scripts/search-index-plugin';
 import {
   companionSidebar,
   developersSidebar,
@@ -46,11 +45,6 @@ export default defineConfig({
     },
   },
 
-  search: {
-    mode: 'local',
-    codeBlocks: false,
-  },
-
   plugins: [
     pluginSitemap({
       siteUrl: 'https://www.hasscn.top',
@@ -71,7 +65,6 @@ export default defineConfig({
         return llmsExcludedRoutes.has(routePath);
       },
     }),
-    searchIndexPlugin(),
     analyticsPlugin(),
   ],
 
@@ -100,24 +93,6 @@ export default defineConfig({
   themeConfig: {
     darkMode: true,
     enableAppearanceAnimation: true,
-    i18nText: {
-      searchPlaceholderText: {
-        zh: '搜索文档',
-        en: 'Search docs',
-      },
-      searchPanelCancelText: {
-        zh: '取消',
-        en: 'Cancel',
-      },
-      searchNoResultsText: {
-        zh: '没有找到结果',
-        en: 'No results found',
-      },
-      searchSuggestedQueryText: {
-        zh: '建议尝试',
-        en: 'Try searching for',
-      },
-    },
     llmsUI: true,
     outlineTitle: '页面大纲',
     nav: globalNav,
