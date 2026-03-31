@@ -5,6 +5,7 @@ import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { analyticsPlugin } from './scripts/analytics-plugin';
 import { globalNav } from './scripts/nav-config';
 import mdiIconPlugin from './scripts/remark-mdi-icon';
+import { searchIndexPlugin } from './scripts/search-index-plugin';
 import {
   companionSidebar,
   developersSidebar,
@@ -45,6 +46,11 @@ export default defineConfig({
     },
   },
 
+  search: {
+    mode: 'local',
+    codeBlocks: false,
+  },
+
   plugins: [
     pluginSitemap({
       siteUrl: 'https://www.hasscn.top',
@@ -65,6 +71,7 @@ export default defineConfig({
         return llmsExcludedRoutes.has(routePath);
       },
     }),
+    searchIndexPlugin(),
     analyticsPlugin(),
   ],
 
