@@ -100,6 +100,24 @@ export default defineConfig({
   themeConfig: {
     darkMode: true,
     enableAppearanceAnimation: true,
+    i18nText: {
+      searchPlaceholderText: {
+        zh: '搜索文档',
+        en: 'Search docs',
+      },
+      searchPanelCancelText: {
+        zh: '取消',
+        en: 'Cancel',
+      },
+      searchNoResultsText: {
+        zh: '没有找到结果',
+        en: 'No results found',
+      },
+      searchSuggestedQueryText: {
+        zh: '建议尝试',
+        en: 'Try searching for',
+      },
+    },
     llmsUI: true,
     outlineTitle: '页面大纲',
     nav: globalNav,
