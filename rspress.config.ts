@@ -45,6 +45,8 @@ export default defineConfig({
     },
   },
 
+  search: false,
+
   plugins: [
     pluginSitemap({
       siteUrl: 'https://www.hasscn.top',
