@@ -42,7 +42,7 @@ layout: doc
 | TCL Home | [![TCL Home](https://img.shields.io/badge/HACS-TCL%20Home-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nemesa&repository=ha-tcl-home-unofficial-integration&category=integration) | 支持 TCL 智能家居设备的接入，适用于 TCL 空调等设备 |
 | Buspro (HDL) | [![Buspro](https://img.shields.io/badge/HACS-Buspro%20(HDL)-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=eyesoft&repository=home_assistant_buspro&category=integration) | 支持河东设备本地接入，适合有河东总线设备的用户 |
 | AqaraGateway | [![AqaraGateway](https://img.shields.io/badge/HACS-AqaraGateway-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=niceboygithub&repository=AqaraGateway&category=integration) | 支持 Aqara 网关及子设备本地接入，适合米家/绿米生态用户 |
-| Midea Meiju Codec | [![Midea Meiju Codec](https://img.shields.io/badge/HACS-Midea%20Meiju%20Codec-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sususweet&repository=midea-meiju-codec&category=integration) | 支持美的美居设备本地接入，适用于美的/美居空调等设备，提升本地化体验 |
+| Midea Meiju Codec | [![Midea Meiju Codec](https://img.shields.io/badge/HACS-Midea%20Meiju%20Codec-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sususweet&repository=midea_auto_cloud&category=integration) | 支持美的美居设备本地接入，适用于美的/美居空调等设备，提升本地化体验 |
 | VivoHomeBridge | [![VivoHomeBridge](https://img.shields.io/badge/HACS-VivoHomeBridge-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=vivo&repository=ha_vivohomebridge&category=integration) | 支持接入 vivo 智能家居生态设备，支持多种型号设备，适合国内用户 |
 
 
@@ -142,7 +142,6 @@ layout: doc
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | HikConnect | [![HikConnect](https://img.shields.io/badge/HACS-HikConnect-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=tomasbedrich&repository=home-assistant-hikconnect&category=integration) | 海康威视 Hik-Connect 监控摄像头、门铃等设备接入，支持实时视频流、事件通知等功能 |
-
 
 
 
