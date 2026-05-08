@@ -71,11 +71,11 @@ layout: doc
 | Unraid | [![Unraid](https://img.shields.io/badge/HACS-Unraid-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=domalab&repository=ha-unraid&category=integration) | 集成 Unraid 服务器状态与监控，适合 NAS/家庭服务器用户 |
 
 
-### 通知类
+### 即时通讯
 
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
-| Bemfa WeChat | [![Bemfa WeChat](https://img.shields.io/badge/HACS-Bemfa%20WeChat-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Desmond-Dong&repository=bemfa_wechat&category=integration) | 支持通过微信推送消息，适合国内用户 |
+| CN IM Hub | [![CN IM Hub](https://img.shields.io/badge/HACS-CN%20IM%20Hub-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=cn_im_hub&category=integration) | 支持国内常用即时通讯能力接入，适合消息通知与交互场景 |
 
 ### 大语言模型
 
@@ -142,7 +142,6 @@ layout: doc
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | HikConnect | [![HikConnect](https://img.shields.io/badge/HACS-HikConnect-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=tomasbedrich&repository=home-assistant-hikconnect&category=integration) | 海康威视 Hik-Connect 监控摄像头、门铃等设备接入，支持实时视频流、事件通知等功能 |
-
 
 
 
