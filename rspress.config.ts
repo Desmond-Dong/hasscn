@@ -5,6 +5,7 @@ import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { analyticsPlugin } from './scripts/analytics-plugin';
 import { globalNav } from './scripts/nav-config';
 import mdiIconPlugin from './scripts/remark-mdi-icon';
+import { searchIndexFilterPlugin } from './scripts/search-index-filter-plugin';
 import {
   companionSidebar,
   developersSidebar,
@@ -45,7 +46,9 @@ export default defineConfig({
     },
   },
 
-  search: false,
+  search: {
+    codeBlocks: false,
+  },
 
   plugins: [
     pluginSitemap({
@@ -68,6 +71,7 @@ export default defineConfig({
       },
     }),
     analyticsPlugin(),
+    searchIndexFilterPlugin(),
   ],
 
   builderConfig: {
