@@ -1,8 +1,12 @@
-import { useLocation, useSite } from '@rspress/core/runtime';
+import { useLang, useLocation, useSite } from '@rspress/core/runtime';
 import {
   type LayoutProps,
   Layout as OriginalLayout,
 } from '@rspress/core/theme-original';
+import {
+  Search as PluginAlgoliaSearch,
+  ZH_LOCALES,
+} from '@rspress/plugin-algolia/runtime';
 import { createElement } from 'react';
 import {
   developersNav,
@@ -38,4 +42,20 @@ function Layout(props: LayoutProps) {
   return createElement(OriginalLayout, props);
 }
 
-export { Layout };
+function Search() {
+  const lang = useLang();
+
+  return createElement(PluginAlgoliaSearch, {
+    docSearchProps: {
+      appId: '3QBOJD1WV0',
+      apiKey: 'a63be28a9d0f1a58da227f2d97a08073',
+      indexName: 'hasscn.top',
+      searchParameters: {
+        facetFilters: [`lang:${lang}`],
+      },
+    },
+    locales: ZH_LOCALES,
+  });
+}
+
+export { Layout, Search };

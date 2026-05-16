@@ -1,5 +1,6 @@
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
+import { pluginAlgolia } from '@rspress/plugin-algolia';
 import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { analyticsPlugin } from './scripts/analytics-plugin';
@@ -53,6 +54,7 @@ export default defineConfig({
       defaultChangeFreq: 'monthly',
       defaultPriority: '0.6',
     }),
+    pluginAlgolia(),
     pluginLlms({
       llmsTxt: {
         name: 'llms.txt',
