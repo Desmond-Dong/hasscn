@@ -1,8 +1,6 @@
 ---
 description: 'layout: doc。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
----
---- 
-layout: doc 
+
 ---
 # 🎉 加入社群 & 联系我
 ---
