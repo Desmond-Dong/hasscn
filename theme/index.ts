@@ -1,5 +1,6 @@
 import { useLang, useLocation, useSite } from '@rspress/core/runtime';
 import {
+  HomeLayout as OriginalHomeLayout,
   type LayoutProps,
   Layout as OriginalLayout,
 } from '@rspress/core/theme-original';
@@ -42,6 +43,43 @@ function Layout(props: LayoutProps) {
   return createElement(OriginalLayout, props);
 }
 
+function HomeLayout() {
+  return createElement(OriginalHomeLayout, {
+    afterFeatures: createElement(
+      'section',
+      { className: 'home-sponsors' },
+      createElement(
+        'div',
+        { className: 'home-sponsors__inner' },
+        createElement('p', { className: 'home-sponsors__eyebrow' }, 'Sponsor'),
+        createElement('h2', { className: 'home-sponsors__title' }, '赞助商信息'),
+        createElement(
+          'p',
+          { className: 'home-sponsors__intro' },
+          '感谢以下赞助商的支持。',
+        ),
+        createElement(
+          'a',
+          {
+            className: 'home-sponsors__card',
+            href: 'https://www.coolkit.cn/',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          },
+          createElement('span', { className: 'home-sponsors__badge' }, '服务器赞助'),
+          createElement('h3', { className: 'home-sponsors__name' }, '深圳酷宅科技有限公司'),
+          createElement(
+            'p',
+            { className: 'home-sponsors__desc' },
+            '为 Home Assistant OS 极速版 与 OTA 服务 提供服务器长期支持。',
+          ),
+          createElement('span', { className: 'home-sponsors__link' }, '访问官网'),
+        ),
+      ),
+    ),
+  });
+}
+
 function Search() {
   const lang = useLang();
 
@@ -58,4 +96,4 @@ function Search() {
   });
 }
 
-export { Layout, Search };
+export { HomeLayout, Layout, Search };
