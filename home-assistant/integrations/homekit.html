@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeKit Bridge - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="HomeKit Bridge - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="HomeKit Bridge 集成可将你的 Home Assistant 实体提供给 Apple HomeKit， 这样即使这些设备原生不支持 HomeKit，也能通过 Apple 的“家庭”App 和 Siri 进行控制。 本页属于 Home Assistant 中文文档。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="HomeKit Bridge 集成可将你的 Home Assistant 实体提供给 Apple HomeKit， 这样即使这些设备原生不支持 HomeKit，也能通过 Apple 的“家庭”App 和 Siri 进行控制。 本页属于 Home Assistant 中文文档。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/homekit_pairing_example.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><p><strong>HomeKit Bridge</strong> 集成可将你的 Home Assistant 实体提供给 Apple HomeKit，
+这样即使这些设备原生不支持 HomeKit，也能通过 Apple 的“家庭”App 和 Siri 进行控制。</p>
+<p>请务必先阅读下方的<a href="#considerations" class="rp-link">注意事项</a>，以避免后续遇到不必要的问题。
+如果确实遇到问题，请查看<a href="#troubleshooting" class="rp-link">故障排查</a>部分。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+如果你想在 Home Assistant 中控制仅支持 HomeKit 的设备，
+请查看 <a href="/home-assistant/integrations/homekit_controller/index.html" class="rp-link">HomeKit Device</a> 集成，
+它可以将支持 HomeKit 的设备接入 Home Assistant。</p><p>:::
+:::note 配置
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h2 class="rp-toc-include" id="手动配置"><a href="#手动配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>手动配置</h2>
+<p>如果你想更细致地控制实体发布到 HomeKit 的方式，覆盖 HomeKit 集成与网络通信时使用的 IP 地址，或修改 HomeKit 向网络广播自身时使用的 IP 地址，那么你需要通过 <code>configuration.yaml</code> 中的配置项来设置 HomeKit 集成。</p>
+<p>示例如下：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Example configuration.yaml entry configuring HomeKit</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">homekit</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">alarm_control_panel</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">light</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">media_player</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_entity_globs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">binary_sensor.*_occupancy</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">binary_sensor.living_room_motion</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_config</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      alarm_control_panel.home</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        code</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1234</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      binary_sensor.living_room_motion</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        linked_battery_sensor</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.living_room_motion_battery</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        low_battery_threshold</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 31</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      fan.air_purifier</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> air_purifier</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        linked_filter_life_level_sensor</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.air_purifier_filter_life_level</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      light.kitchen_table</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Kitchen Table Light</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      lock.front_door</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        code</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1234</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      media_player.living_room</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        feature_list</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">feature</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> on_off</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">feature</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> play_pause</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">feature</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> play_stop</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">feature</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> toggle_mute</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      switch.bedroom_outlet</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> outlet</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      camera.back_porch</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        support_audio</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> True</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      sensor.some_co_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        co_threshold</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      sensor.some_co2_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        co2_threshold</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1000</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> HASS Bridge 2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    port</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 21065</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">light</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">homekit</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> HomeKit configuration.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    port</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Port for the HomeKit extension. If you are adding more than one instance they need to have different values for port.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 21063</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    name</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Needs to be unique for each instance of Home Assistant using the integration on the same local network. Between `3` and `25` characters. Alphanumeric and spaces allowed.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;`Home Assistant Bridge`&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    ip_address</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The local network IP address. Only necessary if the default from Home Assistant does not work.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    mode</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> HomeKit can expose an entity via a bridge, or a single entity as an accessory which is needed for Television Media Players. ([Accessory mode](#accessory-mode))</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;`bridge`&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    advertise_ip</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> If you need to override the IP address(es) used for mDNS advertisement. (For example, using network isolation in Docker and together with an mDNS forwarder like `avahi-daemon` in reflector mode)</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Filters for entities to be included/excluded from HomeKit. ([Configure Filter](#configure-filter))</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        include_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Domains to be included.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        include_entity_globs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Include all entities matching a listed pattern (e.g., `binary_sensor.*_motion`).</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        include_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Entities to be included.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        exclude_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Domains to be excluded.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        exclude_entity_globs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Exclude all entities matching a listed pattern (e.g., `sensor.*_motion`).</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        exclude_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Entities to be excluded.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_config</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Configuration for specific entities. All subordinate keys are the corresponding entity ids of the domains, e.g., `alarm_control_panel.alarm`.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">        &#x27;`ENTITY_ID`&#x27;</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Additional options for specific entities.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            name</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Name of the entity to show in HomeKit. HomeKit will cache the name on the first run so the accessory must be [reset](#resetting-accessories) for any change to take effect.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_battery_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `sensor` entity to use as the battery of the accessory.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_doorbell_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `binary_sensor` or `event` entity to use as the doorbell sensor of a `lock` or `camera` accessory to enable doorbell notifications.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_filter_change_indication_binary_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `binary_sensor` entity to use as the indicator that the filter of the air purifier accessory needs to be changed.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_filter_life_level_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `sensor` entity to use as the filter life level of the air purifier accessory.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_humidity_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `sensor` entity to use as the humidity sensor of the humidifier/dehumidifier accessory.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_pm25_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `sensor` entity to use as the PM2.5 sensor of the air purifier accessory. When set, the `fan` accessory will default its `type` to `air_purifier`.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_motion_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `binary_sensor` or `event` entity to use as the motion sensor of the camera accessory to enable motion notifications.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_obstruction_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `binary_sensor` entity to use as the obstruction sensor of the garage door (cover) accessory to enable obstruction state tracking.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_temperature_sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `sensor` entity to use as the temperature sensor of the air purifier accessory.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_valve_duration</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of an `input_number` entity to use as the default run time of a valve switch (switch type `faucet`, `shower`, `sprinkler`, or `valve`), or valve accessory. Minimum value, maximum value, and step size are set based on the linked `input_number` entity.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            linked_valve_end_time</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The `entity_id` of a `sensor` (timestamp) entity to use for calculating the remaining time of a valve switch (switch type `faucet`, `shower`, `sprinkler`, or `valve`), or valve accessory. The end time has to be maintained in Home Assistant. HomeKit will not update the state of this sensor. The maximum value is set based on the `input_number` of `linked_valve_duration`, or uses a default of 48 hours.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            low_battery_threshold</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Minimum battery level before the accessory starts reporting a low battery.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 20</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            code</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Code to `arm / disarm` an alarm or `lock / unlock` a lock. Only applicable for `alarm_control_panel` or `lock` entities.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;`&lt;No code&gt;`&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            feature_list</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `media_player` entities. List of feature dictionaries to add for a given entity. Comparable to the platform schema.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                feature</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Name of the feature to add to the entity representation. Valid features are `on_off`, `play_pause`, `play_stop` and `toggle_mute`. The media_player entity must support the feature to be valid.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            type</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `switch` and `fan` entities. Type of accessory to be created within HomeKit. Valid types for `switch` entities are `faucet`, `outlet`, `shower`, `sprinkler`, `switch` and `valve`. Valid types for `fan` entities are `fan` and `air_purifier`.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;`switch`&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            stream_count</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. The number of simultaneous streams the camera can support.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 3</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            stream_address</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. The source IP address to use when streaming to RTP clients. If your Home Assistant host has multiple interfaces, selecting a specific IP may be necessary.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> local IP from Home Assistant</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            stream_source</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. A URL, file or other valid FFmpeg input string to use as the stream source, rather than the default camera source. Required for camera entities that do not natively support streaming (MJPEG). If `-i` is not found in the stream source, it is prepended to construct the FFmpeg input.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> stream source from camera entity</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            support_audio</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. Whether the camera supports audio. Audio is disabled unless this flag is set to `True`.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> boolean</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;`False`&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            max_width</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. Maximum width supported by camera. Used when generating advertised video resolutions.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1920</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            max_height</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. Maximum height supported by camera. Used when generating advertised video resolutions.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1080</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            max_fps</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. Maximum FPS (frames per second) supported by camera. Used when generating advertised video resolutions.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 30</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            audio_map</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. FFmpeg [stream selection mapping](https://ffmpeg.org/ffmpeg.html#Stream-selection) for the audio-only stream. Selects the first audio stream in the input stream by default. If your input stream has multiple audio streams, this may need to be adjusted.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;`0:a:0`&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            video_map</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. FFmpeg [stream selection mapping](https://ffmpeg.org/ffmpeg.html#Stream-selection) for the video-only stream. Selects the first video stream in the input stream by default. If your input stream has multiple video streams, this may need to be adjusted.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;`0:v:0`&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            audio_packet_size</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. RTP packet size used for streaming audio to HomeKit clients.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 188</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            video_packet_size</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. RTP packet size used for streaming video to HomeKit clients.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1316</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            video_codec</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. FFmpeg video codec for transcoding. `copy` option reduces CPU load when video source is already encoded with `H264` (MPEG4). `h264_v4l2m2m` can be used with supported hardware, e.g., the Raspberry Pi, to offload encoding to hardware. The `h264_omx` option is only available with custom FFmpeg builds and enables GPU Hardware acceleration on Raspberry Pi.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> libx264</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              available options</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> copy, libx264, h264_v4l2m2m, h264_omx, h264_qsv</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            video_profile_names</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. FFmpeg video profile names for transcoding, only relevant if `video_codec` isn&#x27;t `copy`. Some encoders, e.g., the Raspberry Pi&#x27;s `h264_v4l2m2m`, don&#x27;t use the standard `[&quot;baseline&quot;, &quot;main&quot;, &quot;high&quot;]` profile names but expects `[&quot;0&quot;, &quot;2&quot;, &quot;4&quot;]` instead. Use this option to override the default names, if needed.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-foreground)"> [</span><span style="color:var(--shiki-token-string-expression)">&quot;baseline&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-string-expression)"> &quot;main&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-string-expression)"> &quot;high&quot;</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            audio_codec</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `camera` entities. FFmpeg audio codec for transcoding. `copy` option reduces CPU load when audio source is already encoded with `libopus`.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> libopus</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              available options</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> copy, libopus</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            co_threshold</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `sensor` entities with `device_class` `carbon_monoxide`. Used as the threshold value once HomeKit will warn/notify the user.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 25</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            co2_threshold</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Only for `sensor` entities with `device_class` `carbon_dioxide` or `co2` in `entity_id`. Used as the threshold value once HomeKit will warn/notify the user.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> integer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    devices</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Include device triggers for all matching device ids. Configuration in the UI via Options is recommended instead.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span><span style="color:var(--shiki-foreground)">                </span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="设置"><a href="#设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置</h2>
+<p>若要在 Home Assistant 中启用 HomeKit Bridge 集成，请在配置文件中添加以下内容：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Example for HomeKit setup</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">homekit</span><span style="color:var(--shiki-token-keyword)">:</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>Home Assistant 启动后，只要实体受<a href="#supported-integrations" class="rp-link">支持</a>且符合过滤条件，就会暴露给 HomeKit。添加步骤如下：</p>
+<ol>
+<li>打开 Home Assistant 前端界面。会出现一个新卡片，显示配对二维码和 <code>pin code</code>，如下方示例所示。注意：如果没有显示 pin code，请检查 Home Assistant UI 左下角的“通知”（铃铛图标）。</li>
+<li>打开 Apple <code>Home</code> 应用。</li>
+<li>点击 <code>Add Accessory</code>，然后扫描二维码，或选择 <code>Don&#x27;t Have a Code or Can&#x27;t Scan?</code> 并选中 <code>Home Assistant Bridge</code>。</li>
+<li>点击 <code>Add Anyway</code>，确认添加 <code>Uncertified Accessory</code>。</li>
+<li>输入 <code>PIN</code> 码（如果扫描了二维码，则可跳过此步骤）。</li>
+<li>按流程点击 <code>Next</code>，最后点击右上角的 <code>Done</code>。</li>
+<li>现在你应当能在 <code>Home</code> 应用中看到 <code>Home Assistant Bridge</code> 及其配件。</li>
+</ol>
+<p>设置完成后，你应该就能通过 Apple 的“家庭”App 和 Siri 控制 Home Assistant 中的设备了。</p>
+<p class="img">
+  <img src="/home-assistant/images/screenshots/homekit_pairing_example.png"/>
+</p>
+<h2 class="rp-toc-include" id="迁移-home-assistant-安装"><a href="#迁移-home-assistant-安装" class="rp-header-anchor rp-link" aria-hidden="true">#</a>迁移 Home Assistant 安装</h2>
+<p>如果你在迁移到新的 Home Assistant 设备或安装环境时希望保留 HomeKit 配对关系，除了复制配置文件外，还需要复制配置目录中的 <code>.storage/homekit.*</code> 文件。请注意，该文件夹通常默认是隐藏的，具体取决于你的操作系统。</p>
+<p>复制前，请务必先完全停止旧的和新的 Home Assistant 实例，否则不会生效。</p>
+<h2 class="rp-toc-include" id="注意事项"><a href="#注意事项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>注意事项</h2>
+<h3 class="rp-toc-include" id="配件-id"><a href="#配件-id" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配件 ID</h3>
+<p>当前，此集成使用 <code>entity_id</code> 为 <code>HomeKit</code> 生成唯一的 <code>accessory id (aid)</code>。<code>aid</code> 用于识别设备并保存对其所做的全部配置。因此，如果你修改了一个没有 <code>unique_id</code> 的 <code>entity_id</code>，那么此前在 <code>Home</code> 应用中对该配件所做的所有配置都会丢失。</p>
+<h3 class="rp-toc-include" id="设备数量限制"><a href="#设备数量限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设备数量限制</h3>
+<p>HomeKit Accessory Protocol 规范规定，每个 bridge 最多只能包含 150 个唯一配件（<code>aid</code>）。配置过滤器时请注意这一点。如果你计划超过 150 台设备，可以创建多个 bridge。如果你需要通过 <code>entity_config</code> 为某些实体设置特定配置，请确保将它们添加到通过 <code>YAML</code> 配置的 bridge 中。</p>
+<h3 class="rp-toc-include" id="多个-homekit-实例"><a href="#多个-homekit-实例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>多个 HomeKit 实例</h3>
+<p>如果你是通过 UI（即 <strong>设置</strong> &gt; <strong>设备与服务</strong>）创建 HomeKit 集成，那么它只能通过 UI 进行配置。虽然目前 UI 提供的配置项有限，但如果尝试通过 <code>configuration.yaml</code> 去配置一个由 UI 创建的 HomeKit 实例，就会额外启动另一个运行在不同端口上的 HomeKit 实例。</p>
+<p>建议遵循同一来源配置原则：通过 UI 创建的 HomeKit 实例只在 UI 中编辑；通过 YAML 创建的 HomeKit 实例只在 YAML 中编辑。</p>
+<h3 class="rp-toc-include" id="配件模式"><a href="#配件模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配件模式</h3>
+<p>将 Camera、基于活动的遥控器（支持 activities 的 <code>remote</code>）、Lock，或电视类媒体播放器（<code>device_class</code> 为 <code>tv</code> 或 <code>receiver</code> 的 <code>media_player</code>）暴露给 HomeKit 时，必须将 <code>mode</code> 设置为 <code>accessory</code>，并且相关的 <code>include</code> 过滤器只能包含单个实体。</p>
+<p>要在 UI 中快速添加所有配件模式实体：</p>
+<ol>
+<li>通过 UI 创建新的网桥（即前往 <strong><a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=homekit" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong>）。</li>
+<li>选择 <code>media_player</code>、<code>remote</code>、<code>lock</code> 和 <code>camera</code> 域。</li>
+<li>按正常流程完成配置。</li>
+<li>对于每个必须以配件模式运行且尚未创建条目的实体，系统都会额外创建一个 HomeKit 条目。</li>
+<li>如果你已经为非配件模式实体创建了另一个 HomeKit 网桥，可以安全移除这个新网桥。</li>
+<li><a href="#setup" class="rp-link">配对每个网桥或配件</a>。</li>
+</ol>
+<p>要以配件模式添加单个实体：</p>
+<ol>
+<li>通过 UI 创建新的网桥（即前往 <strong><a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=homekit" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong>）</li>
+<li>在配对该网桥之前，先打开它的选项。</li>
+<li>将模式改为 <code>accessory</code>。</li>
+<li>选择对应实体。</li>
+<li>完成选项配置流程。</li>
+<li><a href="#setup" class="rp-link">配对该配件</a>。</li>
+</ol>
+<h2 class="rp-toc-include" id="配置过滤器"><a href="#配置过滤器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置过滤器</h2>
+<p>默认情况下，除隐藏实体和已分类实体（config、diagnostic、system 实体）外，所有实体都会被包含。若要限制哪些实体暴露给 <code>HomeKit</code>，可使用 <code>filter</code> 参数。请注意，只有<a href="#supported-integrations" class="rp-link">受支持的集成</a>才能被添加。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Example filter to include specified domains and exclude specified entities</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">homekit</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    include_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-string-expression)">alarm_control_panel</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-string-expression)">light</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    include_entity_globs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-string-expression)">binary_sensor.*_occupancy</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    exclude_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-string-expression)">light.kitchen_light</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>过滤器的应用规则如下：</p>
+<ol>
+<li>无过滤器
+<ul>
+<li>包含所有实体</li>
+</ul>
+</li>
+<li>仅有 include
+<ul>
+<li>实体在 entities include 列表中：包含</li>
+<li>否则，实体匹配 domain include：包含</li>
+<li>否则，实体匹配 glob include：包含</li>
+<li>否则：排除</li>
+</ul>
+</li>
+<li>仅有 exclude
+<ul>
+<li>实体在 exclude 列表中：排除</li>
+<li>否则，实体匹配 domain exclude：排除</li>
+<li>否则，实体匹配 glob exclude：排除</li>
+<li>否则：包含</li>
+</ul>
+</li>
+<li>有 domain 和/或 glob 的 include（也可能同时有 exclude）
+<ul>
+<li>实体在 entities include 列表中：包含</li>
+<li>否则，实体在 entities exclude 列表中：排除</li>
+<li>否则，实体匹配 glob include：包含</li>
+<li>否则，实体匹配 glob exclude：排除</li>
+<li>否则，实体匹配 domain include：包含</li>
+<li>否则：排除</li>
+</ul>
+</li>
+<li>有 domain 和/或 glob 的 exclude（没有 domain 和/或 glob 的 include）
+<ul>
+<li>实体在 entities include 列表中：包含</li>
+<li>否则，实体在 exclude 列表中：排除</li>
+<li>否则，实体匹配 glob exclude：排除</li>
+<li>否则，实体匹配 domain exclude：排除</li>
+<li>否则：包含</li>
+</ul>
+</li>
+<li>没有 domain 和/或 glob 的 include 或 exclude
+<ul>
+<li>实体在 entities include 列表中：包含</li>
+<li>否则：排除</li>
+</ul>
+</li>
+</ol>
+<p>实体 glob 可使用以下字符：</p>
+<p><code>*</code> - 星号表示零个、一个或多个字符
+<code>?</code> - 问号表示零个或一个字符</p>
+<p>隐藏实体和已分类实体（config、diagnostic、system 实体）默认不会被包含，除非它们被 <code>include_entity_globs</code> 或 <code>include_entities</code> 明确匹配，或在 UI 的 include 模式中被手动选中。</p>
+<h2 class="rp-toc-include" id="docker-网络隔离"><a href="#docker-网络隔离" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Docker 网络隔离</h2>
+<p><code>advertise_ip</code> 选项可让此集成在启用了网络隔离的临时 Docker 容器中运行，例如未使用 host 网络时。</p>
+<p>你可能还需要在 <a href="/home-assistant/integrations/network.html" class="rp-link">network 配置</a> 中设置 Home Assistant 使用的默认网络接口。</p>
+<p>若要使用 <code>advertise_ip</code>，请在 <code>homekit</code> 配置中添加该选项：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">homekit</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  advertise_ip</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;STATIC_IP_OF_YOUR_DOCKER_HOST&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>重启 Home Assistant 实例。此功能要求你的 Docker 主机上运行 mDNS 转发器，例如以 reflector 模式运行的 <code>avahi-daemon</code>。</p>
+<h2 class="rp-toc-include" id="防火墙"><a href="#防火墙" class="rp-header-anchor rp-link" aria-hidden="true">#</a>防火墙</h2>
+<p>如果你的 Home Assistant 系统启用了防火墙，请确保开放以下端口：</p>
+<ul>
+<li>UDP: 5353</li>
+<li>TCP: 21063 (or the configured/used <code>port</code> in the integration settings).</li>
+</ul>
+<h2 class="rp-toc-include" id="支持的集成"><a href="#支持的集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的集成</h2>
+<p>目前支持以下集成：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>集成</th><th>类型名称</th><th>说明</th></tr></thead><tbody><tr><td>alarm_control_panel</td><td>SecuritySystem</td><td>所有安防系统。</td></tr><tr><td>automation / button / input_boolean / input_button / lawn_mower / remote / scene / script / vacuum</td><td>Switch</td><td>全部会表示为开关。</td></tr><tr><td>input_select / select</td><td>Switch</td><td>会表示为带有各选项按钮的排插。</td></tr><tr><td>binary_sensor</td><td>Sensor</td><td>支持 <code>co2</code>、<code>door</code>、<code>garage_door</code>、<code>gas</code>、<code>moisture</code>、<code>motion</code>、<code>occupancy</code>、<code>opening</code>、<code>smoke</code> 和 <code>window</code> 设备类。其他情况默认使用 <code>occupancy</code> 设备类。</td></tr><tr><td>camera</td><td>Camera</td><td>所有摄像头设备。<strong>当前暂不支持 HomeKit Secure Video。</strong></td></tr><tr><td>climate</td><td>Thermostat</td><td>所有 climate 设备。</td></tr><tr><td>cover</td><td>GarageDoorOpener</td><td>所有支持 <code>open</code> 和 <code>close</code>，且 <code>device_class</code> 为 <code>garage</code> 或 <code>gate</code> 的 cover。</td></tr><tr><td>cover</td><td>WindowCovering</td><td>所有支持 <code>set_cover_position</code> 的 cover。</td></tr><tr><td>cover</td><td>Door</td><td>所有支持 <code>set_cover_position</code> 且 <code>device_class</code> 为 <code>door</code> 的 cover。</td></tr><tr><td>cover</td><td>WindowCovering</td><td>所有通过数值映射支持 <code>open_cover</code> 和 <code>close_cover</code> 的 cover。（<code>open</code> -&gt; <code>&gt;=50</code>；<code>close</code> -&gt; <code>&lt;50</code>）</td></tr><tr><td>cover</td><td>WindowCovering</td><td>所有通过数值映射支持 <code>open_cover</code>、<code>stop_cover</code> 和 <code>close_cover</code> 的 cover。（<code>open</code> -&gt; <code>&gt;70</code>；<code>close</code> -&gt; <code>&lt;30</code>；<code>stop</code> -&gt; 其间任意值）</td></tr><tr><td>device_tracker / person</td><td>Sensor</td><td>支持 <code>occupancy</code> 设备类。</td></tr><tr><td>fan</td><td>Fan / AirPurifier</td><td>支持 <code>on / off</code>、<code>direction</code> 和 <code>oscillating</code>。默认表示为风扇，但可通过 <code>entity_config</code> 中的 <code>type</code> 修改；若关联了 PM2.5 传感器，则默认表示为空气净化器。</td></tr><tr><td>fan</td><td>Fan / AirPurifier</td><td>所有通过数值映射支持 <code>speed</code> 和 <code>speed_list</code> 的风扇：默认假定 <code>speed_list</code> 按升序排列。HomeKit 的数值范围会映射到 <code>speed_list</code> 中对应条目。<code>speed_list</code> 的第一个值应等同于 <code>off</code>，以符合 HomeKit 对风速的定义。（例如：<code>speed_list</code> = [<code>off</code>, <code>low</code>, <code>high</code>]；<code>off</code> -&gt; <code>&lt;= 33</code>；<code>low</code> -&gt; <code>33</code> 到 <code>66</code> 之间；<code>high</code> -&gt; <code>&gt; 66</code>）。表示为空气净化器的风扇同样适用。</td></tr><tr><td>humidifier</td><td>HumidifierDehumidifier</td><td>所有加湿器和除湿器设备。</td></tr><tr><td>light</td><td>Light</td><td>支持 <code>on / off</code>、<code>brightness</code> 和 <code>rgb_color</code>。</td></tr><tr><td>lock</td><td>DoorLock</td><td>支持 <code>lock / unlock</code>。可通过 <code>linked_doorbell_sensor</code> 关联门铃事件/传感器。</td></tr><tr><td>media_player</td><td>MediaPlayer</td><td>会表示为一组开关，用于控制 <code>on / off</code>、<code>play / pause</code>、<code>play / stop</code> 或 <code>mute</code>，具体取决于实体的 <code>supported_features</code> 以及 <code>entity_config</code> 中指定的 <code>mode</code> 列表。</td></tr><tr><td>media_player</td><td>TelevisionMediaPlayer</td><td>所有 <code>device_class</code> 为 <code>tv</code> 的媒体播放器。会在 HomeKit 中表示为电视和遥控器配件，以控制 <code>on / off</code>、<code>play / pause</code>、<code>select source</code> 或 <code>volume increase / decrease</code>，具体取决于实体的 <code>supported_features</code>。需要 iOS 12.2/macOS 10.14.4 或更高版本。</td></tr><tr><td>media_player</td><td>ReceiverMediaPlayer</td><td>所有 <code>device_class</code> 为 <code>receiver</code> 的媒体播放器。会在 HomeKit 中表示为接收器和遥控器配件，以控制 <code>on / off</code>、<code>play / pause</code>、<code>select source</code> 或 <code>volume increase / decrease</code>，具体取决于实体的 <code>supported_features</code>。需要 iOS 12.2/macOS 10.14.4 或更高版本。</td></tr><tr><td>sensor</td><td>TemperatureSensor</td><td>所有 <code>unit_of_measurement</code> 为 <code>°C</code> 或 <code>°F</code> 且 <code>device_class</code> 为 <code>temperature</code> 的传感器。</td></tr><tr><td>sensor</td><td>HumiditySensor</td><td>所有 <code>unit_of_measurement</code> 为 <code>%</code> 且 <code>device_class</code> 为 <code>humidity</code> 的传感器。</td></tr><tr><td>sensor</td><td>AirQualitySensor</td><td>所有 <code>entity_id</code> 中包含 <code>gas</code>/<code>pm10</code>/<code>pm25</code>，或 <code>device_class</code> 为 <code>gas</code>/<code>pm10</code>/<code>pm25</code>/<code>nitrogen_dioxide</code>/<code>volatile_organic_compounds</code> 的传感器。VOC 映射采用 WHO（世界卫生组织）发布的欧洲 IAQ 指南。</td></tr><tr><td>sensor</td><td>CarbonMonoxideSensor</td><td>所有 <code>device_class</code> 为 <code>carbon_monoxide</code> 的传感器。</td></tr><tr><td>sensor</td><td>CarbonDioxideSensor</td><td>所有 <code>entity_id</code> 中包含 <code>co2</code>，或 <code>device_class</code> 为 <code>carbon_dioxide</code> 的传感器。</td></tr><tr><td>sensor</td><td>LightSensor</td><td>所有 <code>unit_of_measurement</code> 为 <code>lm</code> 或 <code>lx</code>，或 <code>device_class</code> 为 <code>illuminance</code> 的传感器。</td></tr><tr><td>switch</td><td>Switch</td><td>默认表示为开关，但可通过 <code>entity_config</code> 中的 <code>type</code> 修改。阀门类开关（类型为 <code>faucet</code>、<code>shower</code>、<code>sprinkler</code> 或 <code>valve</code>）可关联 <code>linked_valve_duration</code> 和 <code>linked_valve_end_time</code>。</td></tr><tr><td>water_heater</td><td>WaterHeater</td><td>所有 <code>water_heater</code> 设备。</td></tr><tr><td>device_automation</td><td>DeviceTriggerAccessory</td><td>所有支持触发器的设备。</td></tr><tr><td>valve</td><td>Valve</td><td>所有 <code>valve</code> 设备都可关联 <code>linked_valve_duration</code> 和 <code>linked_valve_end_time</code>。</td></tr></tbody></table></div>
+<h1 class="rp-toc-include" id="设备触发器"><a href="#设备触发器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设备触发器<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>支持触发器的设备可通过在 <strong><a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong> 中打开 bridge 选项后添加到 bridge 中。要使用此功能，必须在用户资料中启用高级模式。</p>
+<p>桥接后的设备触发器会以无状态可编程开关上的单击按钮形式呈现。这样一来，当设备触发器触发时，就可以运行 HomeKit 自动化。由于 Apple “家庭”App 目前只显示按钮编号而不显示名称，因此用户可能会发现，在 <code>Eve for HomeKit</code> 应用中识别按钮名称会更方便。</p>
+<h2 class="rp-toc-include" id="ios-遥控器小组件"><a href="#ios-遥控器小组件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>iOS 遥控器小组件</h2>
+<p>暴露为 <code>TelevisionMediaPlayer</code> 和 <code>ReceiverMediaPlayer</code> 的实体，可在控制中心的 Apple Remote 小组件中进行控制。根据实体的 <code>supported_features</code>，播放、暂停、音量增减通常可直接使用。不过，如果你的电视还可以通过 <code>media_player</code> 实体之外的方式控制（例如向红外发射器发送动作），你也可以基于这些事件创建自动化。</p>
+<p>当你在控制中心的遥控器小组件中按下按键时，会触发 <code>homekit_tv_remote_key_pressed</code> 事件。
+按键名称会出现在事件数据的 <code>key_name</code> 字段中。示例如下：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> homekit_tv_remote_key_pressed</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        key_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> arrow_right</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">  # Send the arrow right key via a broadlink IR blaster</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> broadlink.send</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      host</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 192.168.1.55</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      packet</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> XXXXXXXX</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="事件"><a href="#事件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>事件</h2>
+<p>HomeKit 集成会发出 <code>homekit_state_change</code> 事件。你可以在自动化中使用这些事件，以判断某个实体的状态是否由 HomeKit 触发变更。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Example for handling a HomeKit event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> homekit_state_change</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover.garage_door</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> open_cover</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> persistent_notification.create</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;The garage door got opened via HomeKit&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="故障排查"><a href="#故障排查" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排查</h2>
+<h3 class="rp-toc-include" id="全部或部分设备间歇性无响应"><a href="#全部或部分设备间歇性无响应" class="rp-header-anchor rp-link" aria-hidden="true">#</a>全部或部分设备间歇性无响应</h3>
+<p>HomeKit 非常依赖家庭中枢来跟踪蓝牙设备。此外，每个家庭中枢还需要维护你桥接的每一个 HomeKit 配件。如果你的配件很多，尤其是摄像头或蓝牙设备较多时，<strong>建议在较旧的家庭中枢上禁用 HomeKit</strong>。</p>
+<h4 class="rp-toc-include" id="以下测试基于-home-assistant-20216hap-python-350和-iostvos-146-进行"><a href="#以下测试基于-home-assistant-20216hap-python-350和-iostvos-146-进行" class="rp-header-anchor rp-link" aria-hidden="true">#</a>以下测试基于 Home Assistant 2021.6（HAP-python 3.5.0）和 iOS/tvOS 14.6 进行</h4>
+<p>以下家庭中枢在测试 400 个配件时表现良好：</p>
+<ul>
+<li>HomePod</li>
+<li>HomePod Mini</li>
+<li>Apple TV 4k Gen 2 (best results when using Ethernet instead of Wi-Fi)</li>
+</ul>
+<p>以下家庭中枢在测试 300 个配件时表现良好：</p>
+<ul>
+<li>Apple TV 4k Gen 1 (best results when using ethernet instead of Wi-Fi)</li>
+</ul>
+<p>以下家庭中枢据反馈在配件数量较多时可能会遇到问题：</p>
+<ul>
+<li>Apple TV HD</li>
+<li>Various iPad models</li>
+</ul>
+<h3 class="rp-toc-include" id="通过-yaml-创建时的重置方法"><a href="#通过-yaml-创建时的重置方法" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 YAML 创建时的重置方法</h3>
+<ol>
+<li>在 <strong><a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a></strong> 面板中删除 <code>HomeKit</code> 集成。</li>
+<li><strong>重启</strong> Home Assistant。</li>
+<li>配置会自动从 YAML 重新导入。</li>
+<li><a href="#setup" class="rp-link">为 bridge 或配件重新配对</a>。</li>
+</ol>
+<h3 class="rp-toc-include" id="通过-integrations-面板创建时的重置方法"><a href="#通过-integrations-面板创建时的重置方法" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 <strong>Integrations</strong> 面板创建时的重置方法</h3>
+<ol>
+<li>在 <strong>Integrations</strong> 面板中删除 <code>HomeKit</code> 集成。</li>
+<li>在 <strong>Integrations</strong> 面板中重新创建 <code>HomeKit</code> 集成。</li>
+<li><a href="#setup" class="rp-link">为 bridge 或配件重新配对</a>。</li>
+</ol>
+<h3 class="rp-toc-include" id="配对期间出现错误"><a href="#配对期间出现错误" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配对期间出现错误</h3>
+<p>如果你在配对过程中遇到问题，请将以下内容添加到 <code>configuration.yaml</code> 中，以便尝试定位问题。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">logger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> warning</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  logs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    homeassistant.components.homekit</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    pyhap</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>然后按照上方的重置说明操作。</p>
+<h3 class="rp-toc-include" id="最小配置"><a href="#最小配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>最小配置</h3>
+<p>如果按照<a href="#errors-during-pairing" class="rp-link">配对期间出现错误</a>中的步骤操作后仍然配对失败，问题可能出在某个特定实体上。可尝试使用如下最小配置进行重置：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">homekit</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    include_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-string-expression)">demo.demo</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="pin-未显示为持久状态"><a href="#pin-未显示为持久状态" class="rp-header-anchor rp-link" aria-hidden="true">#</a>PIN 未显示为持久状态</h4>
+<p>你可能已经为 <code>Home Assistant Bridge</code> 配过对了。如果不是，请按照上方的重置说明操作。</p>
+<h4 class="rp-toc-include" id="home-assistant-bridge-未出现在-home-app-中用于配对"><a href="#home-assistant-bridge-未出现在-home-app-中用于配对" class="rp-header-anchor rp-link" aria-hidden="true">#</a><code>Home Assistant Bridge</code> 未出现在 Home App 中（用于配对）</h4>
+<p>这通常与配置或网络有关。请同时检查下面的其他问题，但以下做法可能会有帮助：</p>
+<ul>
+<li>检查你的路由器配置</li>
+<li>同时尝试 Wi-Fi <strong>和</strong> 有线网络</li>
+<li>修改默认<a href="#port" class="rp-link">端口</a></li>
+</ul>
+<p>请记住，配对时 iOS 设备必须与 Home Assistant 设备位于同一局域网中。</p>
+<h4 class="rp-toc-include" id="home-assistant-bridge-未出现在-home-app-中用于配对--docker"><a href="#home-assistant-bridge-未出现在-home-app-中用于配对--docker" class="rp-header-anchor rp-link" aria-hidden="true">#</a><code>Home Assistant Bridge</code> 未出现在 Home App 中（用于配对）- Docker</h4>
+<p>请在 <code>docker-compose.yaml</code> 中设置 <code>network_mode: host</code>。如果仍有问题，可参考这个 <a href="https://github.com/home-assistant/core/issues/15692" target="_blank" rel="noopener noreferrer" class="rp-link">issue</a>。</p>
+<p>你也可以尝试将 <code>advertise_ip</code> 选项与 reflector 模式的 <code>avahi-daemon</code> 搭配使用，见上文。</p>
+<h4 class="rp-toc-include" id="home-assistant-bridge-未出现在-home-app-中用于配对--virtualbox"><a href="#home-assistant-bridge-未出现在-home-app-中用于配对--virtualbox" class="rp-header-anchor rp-link" aria-hidden="true">#</a><code>Home Assistant Bridge</code> 未出现在 Home App 中（用于配对）- VirtualBox</h4>
+<p>请将网络模式配置为 <code>networkbridge</code>，否则 Home Assistant Bridge 不会暴露到网络中。</p>
+<h4 class="rp-toc-include" id="配件未出现在-home-app-中用于配对--使用-macvtap-适配器的-libvirt-qemukvm-虚拟机"><a href="#配件未出现在-home-app-中用于配对--使用-macvtap-适配器的-libvirt-qemukvm-虚拟机" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配件未出现在 Home App 中（用于配对）- 使用 macvtap 适配器的 Libvirt QEMU/KVM 虚拟机</h4>
+<p>更多详情请参阅 <a href="/home-assistant/integrations/zeroconf/index.html#troubleshooting" class="rp-link">Zero-configuration networking</a> 集成文档。</p>
+<h4 class="rp-toc-include" id="配对卡住---zeroconf-错误"><a href="#配对卡住---zeroconf-错误" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配对卡住 - zeroconf 错误</h4>
+<p>配对最终失败时，你可能会看到 <code>NonUniqueNameException</code> 错误。这通常意味着你需要在 <code>zeroconf</code> 集成配置中启用 <code>default_interface: true</code>，并设置一个唯一名称，例如 <code>name: MyHASS42</code>。</p>
+<p>如果你之前已经尝试过配对（即使失败了），可能需要删除 <code>.homekit.state</code> 文件，才能再次成功配对。请参阅<a href="#errors-during-pairing" class="rp-link">配对期间出现错误</a>。</p>
+<h4 class="rp-toc-include" id="配对卡住---仅在调试配置下可用"><a href="#配对卡住---仅在调试配置下可用" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配对卡住 - 仅在调试配置下可用</h4>
+<p>当过滤器仅包含 <code>demo.demo</code> 时配对正常，但在常规配置下失败。请参阅<a href="#specific-entity-doesnt-work" class="rp-link">特定实体无法工作</a>。</p>
+<h4 class="rp-toc-include" id="配对卡住---无错误信息"><a href="#配对卡住---无错误信息" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配对卡住 - 无错误信息</h4>
+<ol>
+<li>请确认你没有尝试添加超过 150 个配件，参见<a href="#device-limit" class="rp-link">设备数量限制</a>。在少数情况下，某个实体可能无法与 HomeKit 集成正常配合。你可以使用<a href="#configure-filter" class="rp-link">过滤器</a>找出具体是哪个实体。如有需要，也欢迎在 <code>home-assistant</code> 仓库中提交 issue，便于后续修复。</li>
+<li>检查日志，并搜索 <code>Starting accessory Home Assistant Bridge on address</code>。确认 Home Assistant Bridge 连接到了正确的网络接口；如果没有，请显式设置 <code>homekit.ip_address</code> 配置项。</li>
+</ol>
+<h3 class="rp-toc-include" id="正常使用中的问题"><a href="#正常使用中的问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>正常使用中的问题</h3>
+<h4 class="rp-toc-include" id="bridge-会自行取消配对"><a href="#bridge-会自行取消配对" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Bridge 会自行取消配对</h4>
+<p>有多位用户反馈，iOS 12 及更早版本的设备会自行移除配对。请确保所有对家庭拥有管理员权限的 iOS 设备都运行 iOS 13 或更高版本。如果无法升级到 iOS 13，请在该设备的 iCloud 设置中禁用 <code>Home</code>。</p>
+<h4 class="rp-toc-include" id="我的实体没有显示出来"><a href="#我的实体没有显示出来" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我的实体没有显示出来</h4>
+<p>请检查你的实体所属域是否<a href="#supported-integrations" class="rp-link">受支持</a>。如果受支持，再检查你的<a href="#configure-filter" class="rp-link">过滤器</a>设置是否正确，尤其是在使用 <code>include_entities</code> 时要确认拼写无误。</p>
+<h4 class="rp-toc-include" id="homekit-在第二个-home-assistant-实例上无法工作"><a href="#homekit-在第二个-home-assistant-实例上无法工作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>HomeKit 在第二个 Home Assistant 实例上无法工作</h4>
+<p>如果要在同一局域网中将 HomeKit 集成用于多个不同的 Home Assistant 实例，你至少需要为其中一个实例设置自定义名称。参见 <a href="#name" class="rp-link">config/name</a>。</p>
+<h4 class="rp-toc-include" id="特定实体无法工作"><a href="#特定实体无法工作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>特定实体无法工作</h4>
+<p>尽管我们已经尽力处理，但仍有部分实体暂时无法与 HomeKit 集成正常配合。这可能导致配对彻底失败，或所有 Home Assistant 配件都停止工作。请使用过滤器定位出问题的实体。最佳做法是从少量实体开始逐步配对；如果成功，就先取消配对，再逐步增加实体，直到找到引发问题的那个。为帮助其他用户和开发者，请在这里提交新 issue：<a href="https://github.com/home-assistant/core/issues/new" target="_blank" rel="noopener noreferrer" class="rp-link">core/issues/new</a></p>
+<p>如果你的 iCloud 账户中仍登录了 iOS 12.x 设备，那么 <code>device_class: tv</code> 或 <code>device_class: receiver</code> 的 media player 实体可能会触发此问题。过滤掉该实体，或将 iOS 12.x 设备退出 iCloud，通常在其他设备重启后即可解决。</p>
+<h4 class="rp-toc-include" id="所有配件都显示无响应"><a href="#所有配件都显示无响应" class="rp-header-anchor rp-link" aria-hidden="true">#</a>所有配件都显示“无响应”</h4>
+<p>有反馈表明，某些路由器中的 IGMP 设置会导致 HomeKit 出现问题，从而使所有 Home Assistant 的 HomeKit 配件在 Home Assistant（重）启几分钟后全部无响应。如果你遇到此问题，请仔细检查路由器的 IGMP 设置。通常默认的 IGMP 设置效果最好。</p>
+<p>另请参阅<a href="#specific-entity-doesnt-work" class="rp-link">特定实体无法工作</a>。</p>
+<h4 class="rp-toc-include" id="配件无响应---在重启或更新后"><a href="#配件无响应---在重启或更新后" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配件无响应 - 在重启或更新后</h4>
+<p>请参阅<a href="#resetting-accessories" class="rp-link">重置配件</a>和<a href="#unpairing-and-re-pairing" class="rp-link">取消配对并重新配对</a>。</p>
+<h4 class="rp-toc-include" id="关联的电池传感器未被识别"><a href="#关联的电池传感器未被识别" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关联的电池传感器未被识别</h4>
+<p>请尝试先将该实体从 HomeKit 中移除，再重新添加。如果你是为 HomeKit 中已存在的实体新增此配置项，那么对该实体配置选项所做的更改，在将该配件从 HomeKit 中移除并重新添加之前都不会生效。请参阅<a href="#resetting-accessories" class="rp-link">重置配件</a>。</p>
+<h4 class="rp-toc-include" id="我的-media-player-没有显示为电视或接收器配件"><a href="#我的-media-player-没有显示为电视或接收器配件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我的 media player 没有显示为电视或接收器配件</h4>
+<p><code>device_class: tv</code> 或 <code>device_class: receiver</code> 的 Media Player 实体会在运行 iOS 12.2/macOS 10.14.4 及更高版本的设备上显示为 Television 或 Receiver 配件。如有需要，请尝试先将该实体从 HomeKit 中移除，再重新添加，尤其是在该 <code>media_player</code> 之前曾以一组开关形式暴露时。对现有配件所做的任何更改（包括支持功能的变化），在将其从 HomeKit 中移除并重新添加之前都不会生效。请参阅<a href="#resetting-accessories" class="rp-link">重置配件</a>。</p>
+<p><a href="/home-assistant/integrations/universal/index.html#harmony-remote-example" class="rp-link">Universal Media Player</a> 中提供了一个示例，展示如何封装现有实体，使其能够在 HomeKit 中作为 Television 配件使用。</p>
+<h4 class="rp-toc-include" id="无法控制电视-media-player-的音量"><a href="#无法控制电视-media-player-的音量" class="rp-header-anchor rp-link" aria-hidden="true">#</a>无法控制电视 media player 的音量？</h4>
+<p>音量和播放/暂停控制会显示在 Remote 应用或控制中心中。如果你的电视支持通过 Home Assistant 调节音量，那么在屏幕上选中遥控器后，你就可以使用设备侧边的音量按键来控制音量。</p>
+<h4 class="rp-toc-include" id="摄像头视频无法串流"><a href="#摄像头视频无法串流" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头视频无法串流</h4>
+<p>请确认 <a href="/home-assistant/integrations/ffmpeg.html" class="rp-link"><code>ffmpeg</code></a> 集成已正确配置。验证你的流是否可以通过 <code>ffplay &lt;stream_source&gt;</code> 或 <a href="https://www.videolan.org/" target="_blank" rel="noopener noreferrer" class="rp-link">VLC Media Player</a> 直接播放。如果你修改过摄像头的实体配置，可能需要<a href="#resetting-accessories" class="rp-link">重置该配件</a>。</p>
+<h4 class="rp-toc-include" id="摄像头串流不稳定或速度较慢"><a href="#摄像头串流不稳定或速度较慢" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头串流不稳定或速度较慢</h4>
+<p>如果你的摄像头支持原生 H.264 流，Home Assistant 就可以避免进行视频转码，而这通常是一个代价较高的操作。若通过 YAML 配置，请将 <code>video_codec</code> 改为 <code>copy</code> 以启用原生 H.264 串流。若通过 UI 设置 HomeKit，请前往 <strong>Settings</strong> &gt; <strong>Devices &amp; services</strong>，在 HomeKit Bridge 上点击 <strong>Options</strong>，然后在 <code>Cameras that support native H.264 streams</code> 页面中勾选对应摄像头。</p>
+<h4 class="rp-toc-include" id="多路摄像头串流"><a href="#多路摄像头串流" class="rp-header-anchor rp-link" aria-hidden="true">#</a>多路摄像头串流</h4>
+<p>可通过 <code>stream_count</code> 配置项设置多路串流。</p>
+<h4 class="rp-toc-include" id="摄像头音频未串流"><a href="#摄像头音频未串流" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头音频未串流</h4>
+<p>请确认摄像头实体配置中的 <code>support_audio</code> 已设为 <code>True</code>。</p>
+<h4 class="rp-toc-include" id="摄像头移动通知"><a href="#摄像头移动通知" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头移动通知</h4>
+<p>可通过 <code>linked_motion_sensor</code> 配置项关联运动传感器，以启用移动通知。</p>
+<h4 class="rp-toc-include" id="门铃按钮通知"><a href="#门铃按钮通知" class="rp-header-anchor rp-link" aria-hidden="true">#</a>门铃按钮通知</h4>
+<p>可通过 <code>linked_doorbell_sensor</code> 配置项关联门铃传感器，以启用门铃通知。</p>
+<h4 class="rp-toc-include" id="摄像头较多时-homekit-卡顿或设备响应缓慢"><a href="#摄像头较多时-homekit-卡顿或设备响应缓慢" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头较多时 HomeKit 卡顿或设备响应缓慢</h4>
+<p>HomeKit 在抓取摄像头快照时会占用 HomeKit 连接。为避免这个问题，请为每个摄像头在<a href="#mode" class="rp-link">配件模式</a>下创建单独的 <code>HomeKit</code> 实例。</p>
+<h4 class="rp-toc-include" id="重置配件"><a href="#重置配件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重置配件</h4>
+<p>你可以通过 <code>homekit.reset_accessory</code> 动作，结合一个或多个实体 ID，重置那些配置可能已经变更的配件。当你将 media player 的设备类改为 <code>tv</code>、关联电池实体，或 Home Assistant 为现有实体新增 HomeKit 功能支持时，这会非常有用。</p>
+<p>在较早版本的 Home Assistant 中，你可以先通过<a href="#configure-filter" class="rp-link">过滤器</a>将实体从 HomeKit 中移除，再重新添加该配件，以达到重置效果。</p>
+<p>无论使用哪种方式，配件都会表现得像首次设置一样，因此你需要重新恢复名称、分组、房间、场景和/或自动化设置。</p>
+<h4 class="rp-toc-include" id="取消配对并重新配对"><a href="#取消配对并重新配对" class="rp-header-anchor rp-link" aria-hidden="true">#</a>取消配对并重新配对</h4>
+<p>HomeKit 集成会为每个已配对设备记录一个公钥。有时由于配对失败，某个设备对应的公钥可能缺失。如果一个或多个设备显示该配件不可用，就可能需要先取消配对再重新配对，以确保集成拥有每个已配对客户端的公钥。<code>homekit.unpair</code> 动作会强制移除所有配对，并允许重新与该配件配对。通过 UI 设置 HomeKit 时，这可以避免删除并重新创建实例这一有时较为耗时的过程。</p>
+<p>配件会表现得像首次设置一样，因此你需要重新恢复名称、分组、房间、场景和/或自动化设置。</p>
+<h4 class="rp-toc-include" id="空气质量传感器实体"><a href="#空气质量传感器实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>空气质量传感器实体</h4>
+<p>HomeKit 使用五个等级来表示空气质量：Excellent、Good、Fair、Inferior 和 Poor。对于 Home Assistant 中的 PM2.5 传感器实体，会根据原始浓度值（µg/m3），按照 <a href="https://www.epa.gov/system/files/documents/2024-02/pm-naaqs-air-quality-index-fact-sheet.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">2024 US AQI</a> 标准换算为对应等级。映射关系如下：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>HomeKit</th><th>美国 AQI</th><th>PM2.5 µg/m³</th></tr></thead><tbody><tr><td>Excellent</td><td>Good (0-50)</td><td>0.0 to 9.0</td></tr><tr><td>Good</td><td>Moderate (51-100)</td><td>9.1 to 35.4</td></tr><tr><td>Fair</td><td>Unhealthy for Sensitive Groups (101-150)</td><td>35.5 to 55.4</td></tr><tr><td>Inferior</td><td>Unhealthy (151-200)</td><td>55.5 to 125.4</td></tr><tr><td>Poor</td><td>Very Unhealthy (201+)</td><td>125.5+</td></tr></tbody></table></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#手动配置" class="rp-toc-item rp-link" title="手动配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">手动配置</span></a><a href="#设置" class="rp-toc-item rp-link" title="设置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">设置</span></a><a href="#迁移-home-assistant-安装" class="rp-toc-item rp-link" title="迁移 Home Assistant 安装" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">迁移 Home Assistant 安装</span></a><a href="#注意事项" class="rp-toc-item rp-link" title="注意事项" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">注意事项</span></a><a href="#配件-id" class="rp-toc-item rp-link" title="配件 ID" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配件 ID</span></a><a href="#设备数量限制" class="rp-toc-item rp-link" title="设备数量限制" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">设备数量限制</span></a><a href="#多个-homekit-实例" class="rp-toc-item rp-link" title="多个 HomeKit 实例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">多个 HomeKit 实例</span></a><a href="#配件模式" class="rp-toc-item rp-link" title="配件模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配件模式</span></a><a href="#配置过滤器" class="rp-toc-item rp-link" title="配置过滤器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置过滤器</span></a><a href="#docker-网络隔离" class="rp-toc-item rp-link" title="Docker 网络隔离" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Docker 网络隔离</span></a><a href="#防火墙" class="rp-toc-item rp-link" title="防火墙" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">防火墙</span></a><a href="#支持的集成" class="rp-toc-item rp-link" title="支持的集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的集成</span></a><a href="#ios-遥控器小组件" class="rp-toc-item rp-link" title="iOS 遥控器小组件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">iOS 遥控器小组件</span></a><a href="#事件" class="rp-toc-item rp-link" title="事件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">事件</span></a><a href="#故障排查" class="rp-toc-item rp-link" title="故障排查" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排查</span></a><a href="#全部或部分设备间歇性无响应" class="rp-toc-item rp-link" title="全部或部分设备间歇性无响应" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">全部或部分设备间歇性无响应</span></a><a href="#以下测试基于-home-assistant-20216hap-python-350和-iostvos-146-进行" class="rp-toc-item rp-link" title="以下测试基于 Home Assistant 2021.6（HAP-python 3.5.0）和 iOS/tvOS 14.6 进行" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">以下测试基于 Home Assistant 2021.6（HAP-python 3.5.0）和 iOS/tvOS 14.6 进行</span></a><a href="#通过-yaml-创建时的重置方法" class="rp-toc-item rp-link" title="通过 YAML 创建时的重置方法" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过 YAML 创建时的重置方法</span></a><a href="#通过-integrations-面板创建时的重置方法" class="rp-toc-item rp-link" title="通过 Integrations 面板创建时的重置方法" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过 <strong>Integrations</strong> 面板创建时的重置方法</span></a><a href="#配对期间出现错误" class="rp-toc-item rp-link" title="配对期间出现错误" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配对期间出现错误</span></a><a href="#最小配置" class="rp-toc-item rp-link" title="最小配置" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">最小配置</span></a><a href="#pin-未显示为持久状态" class="rp-toc-item rp-link" title="PIN 未显示为持久状态" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">PIN 未显示为持久状态</span></a><a href="#home-assistant-bridge-未出现在-home-app-中用于配对" class="rp-toc-item rp-link" title="Home Assistant Bridge 未出现在 Home App 中（用于配对）" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc"><code>Home Assistant Bridge</code> 未出现在 Home App 中（用于配对）</span></a><a href="#home-assistant-bridge-未出现在-home-app-中用于配对--docker" class="rp-toc-item rp-link" title="Home Assistant Bridge 未出现在 Home App 中（用于配对）- Docker" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc"><code>Home Assistant Bridge</code> 未出现在 Home App 中（用于配对）- Docker</span></a><a href="#home-assistant-bridge-未出现在-home-app-中用于配对--virtualbox" class="rp-toc-item rp-link" title="Home Assistant Bridge 未出现在 Home App 中（用于配对）- VirtualBox" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc"><code>Home Assistant Bridge</code> 未出现在 Home App 中（用于配对）- VirtualBox</span></a><a href="#配件未出现在-home-app-中用于配对--使用-macvtap-适配器的-libvirt-qemukvm-虚拟机" class="rp-toc-item rp-link" title="配件未出现在 Home App 中（用于配对）- 使用 macvtap 适配器的 Libvirt QEMU/KVM 虚拟机" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">配件未出现在 Home App 中（用于配对）- 使用 macvtap 适配器的 Libvirt QEMU/KVM 虚拟机</span></a><a href="#配对卡住---zeroconf-错误" class="rp-toc-item rp-link" title="配对卡住 - zeroconf 错误" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">配对卡住 - zeroconf 错误</span></a><a href="#配对卡住---仅在调试配置下可用" class="rp-toc-item rp-link" title="配对卡住 - 仅在调试配置下可用" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">配对卡住 - 仅在调试配置下可用</span></a><a href="#配对卡住---无错误信息" class="rp-toc-item rp-link" title="配对卡住 - 无错误信息" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">配对卡住 - 无错误信息</span></a><a href="#正常使用中的问题" class="rp-toc-item rp-link" title="正常使用中的问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">正常使用中的问题</span></a><a href="#bridge-会自行取消配对" class="rp-toc-item rp-link" title="Bridge 会自行取消配对" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Bridge 会自行取消配对</span></a><a href="#我的实体没有显示出来" class="rp-toc-item rp-link" title="我的实体没有显示出来" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">我的实体没有显示出来</span></a><a href="#homekit-在第二个-home-assistant-实例上无法工作" class="rp-toc-item rp-link" title="HomeKit 在第二个 Home Assistant 实例上无法工作" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">HomeKit 在第二个 Home Assistant 实例上无法工作</span></a><a href="#特定实体无法工作" class="rp-toc-item rp-link" title="特定实体无法工作" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">特定实体无法工作</span></a><a href="#所有配件都显示无响应" class="rp-toc-item rp-link" title="所有配件都显示“无响应”" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">所有配件都显示“无响应”</span></a><a href="#配件无响应---在重启或更新后" class="rp-toc-item rp-link" title="配件无响应 - 在重启或更新后" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">配件无响应 - 在重启或更新后</span></a><a href="#关联的电池传感器未被识别" class="rp-toc-item rp-link" title="关联的电池传感器未被识别" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">关联的电池传感器未被识别</span></a><a href="#我的-media-player-没有显示为电视或接收器配件" class="rp-toc-item rp-link" title="我的 media player 没有显示为电视或接收器配件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">我的 media player 没有显示为电视或接收器配件</span></a><a href="#无法控制电视-media-player-的音量" class="rp-toc-item rp-link" title="无法控制电视 media player 的音量？" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">无法控制电视 media player 的音量？</span></a><a href="#摄像头视频无法串流" class="rp-toc-item rp-link" title="摄像头视频无法串流" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">摄像头视频无法串流</span></a><a href="#摄像头串流不稳定或速度较慢" class="rp-toc-item rp-link" title="摄像头串流不稳定或速度较慢" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">摄像头串流不稳定或速度较慢</span></a><a href="#多路摄像头串流" class="rp-toc-item rp-link" title="多路摄像头串流" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">多路摄像头串流</span></a><a href="#摄像头音频未串流" class="rp-toc-item rp-link" title="摄像头音频未串流" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">摄像头音频未串流</span></a><a href="#摄像头移动通知" class="rp-toc-item rp-link" title="摄像头移动通知" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">摄像头移动通知</span></a><a href="#门铃按钮通知" class="rp-toc-item rp-link" title="门铃按钮通知" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">门铃按钮通知</span></a><a href="#摄像头较多时-homekit-卡顿或设备响应缓慢" class="rp-toc-item rp-link" title="摄像头较多时 HomeKit 卡顿或设备响应缓慢" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">摄像头较多时 HomeKit 卡顿或设备响应缓慢</span></a><a href="#重置配件" class="rp-toc-item rp-link" title="重置配件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">重置配件</span></a><a href="#取消配对并重新配对" class="rp-toc-item rp-link" title="取消配对并重新配对" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">取消配对并重新配对</span></a><a href="#空气质量传感器实体" class="rp-toc-item rp-link" title="空气质量传感器实体" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">空气质量传感器实体</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

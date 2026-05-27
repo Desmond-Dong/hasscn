@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samsung Smart TV - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Samsung Smart TV - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="The Samsung Smart TV integration allows you to control a Samsung Smart TV(https://www.samsung.com/uk/tvs/all-tvs/). 本页属于 Home Assistant 中文文档。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="The Samsung Smart TV integration allows you to control a Samsung Smart TV(https://www.samsung.com/uk/tvs/all-tvs/). 本页属于 Home Assistant 中文文档。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="samsung-smart-tv"><a href="#samsung-smart-tv" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Samsung Smart TV<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>The <strong>Samsung Smart TV</strong> integration allows you to control a <a href="https://www.samsung.com/uk/tvs/all-tvs/" target="_blank" rel="noopener noreferrer" class="rp-link">Samsung Smart TV</a>.</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">  host</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The IP address of the TV.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  name</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The friendly name of the TV.</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="data-updates"><a href="#data-updates" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Data updates</h2>
+<p>The <strong>SamsungTV</strong> integration uses a local REST API with a WebSocket notification channel for immediate state information for media metadata, playback progress, volume etc.</p>
+<h3 class="rp-toc-include" id="turn-on-action"><a href="#turn-on-action" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Turn on action</h3>
+<p>If the integration knows the MAC address of the TV from discovery, it will attempt to wake it using wake on LAN when calling turn on. Wake on LAN must be enabled on the TV for this to work. If the TV is connected to a smart strip or requires a more complex turn-on process, a <code>turn_on</code> action can be provided that will take precedence over the built-in wake on LAN functionality.</p>
+<p>You can create an automation from the user interface, from the device create a new automation and select the  <strong>Device is requested to turn on</strong> automation.
+Automations can also be created using an automation action:</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Example configuration.yaml entry</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">wake_on_lan</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-comment)"> # enables `wake_on_lan` integration</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Turn On Living Room TV with WakeOnLan&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> samsungtv.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> media_player.samsung_smart_tv</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> wake_on_lan.send_magic_packet</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          mac</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> aa:bb:cc:dd:ee:ff</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>Any other <a href="/home-assistant/docs/automation/action/index.html" class="rp-link">actions</a> to power on the device can be configured.</p>
+<h3 class="rp-toc-include" id="usage"><a href="#usage" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Usage</h3>
+<h4 class="rp-toc-include" id="changing-channels"><a href="#changing-channels" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Changing channels</h4>
+<p>Changing channels can be done by calling the <code>media_player.play_media</code> action
+with the following payload:</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> media_player.samsung_tv</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">media_content_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 590</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">media_content_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> channel</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="selecting-a-source"><a href="#selecting-a-source" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Selecting a source</h4>
+<p>It&#x27;s possible to switch between the 2 sources <code>TV</code> and <code>HDMI</code>.
+Some older models also expose the installed applications through the WebSocket, in which case the source list is adjusted accordingly.</p>
+<h3 class="rp-toc-include" id="remote"><a href="#remote" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Remote</h3>
+<p>The integration supports the <code>remote</code> platform. The remote allows you to send key commands to your TV with the <code>remote.send_command</code> action. The supported keys vary between TV models.</p>
+<details>
+<summary>Full keycodes list</summary>
+<h4 class="rp-toc-include" id="power-keys"><a href="#power-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Power Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_POWEROFF</td><td>PowerOFF</td></tr><tr><td>KEY_POWERON</td><td>PowerOn</td></tr><tr><td>KEY_POWER</td><td>PowerToggle</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="input-keys"><a href="#input-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Input Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_SOURCE</td><td>Source</td></tr><tr><td>KEY_COMPONENT1</td><td>Component1</td></tr><tr><td>KEY_COMPONENT2</td><td>Component2</td></tr><tr><td>KEY_AV1</td><td>AV1</td></tr><tr><td>KEY_AV2</td><td>AV2</td></tr><tr><td>KEY_AV3</td><td>AV3</td></tr><tr><td>KEY_SVIDEO1</td><td>SVideo1</td></tr><tr><td>KEY_SVIDEO2</td><td>SVideo2</td></tr><tr><td>KEY_SVIDEO3</td><td>SVideo3</td></tr><tr><td>KEY_HDMI</td><td>HDMI</td></tr><tr><td>KEY_FM_RADIO</td><td>FMRadio</td></tr><tr><td>KEY_DVI</td><td>DVI</td></tr><tr><td>KEY_DVR</td><td>DVR</td></tr><tr><td>KEY_TV</td><td>TV</td></tr><tr><td>KEY_ANTENA</td><td>AnalogTV</td></tr><tr><td>KEY_DTV</td><td>DigitalTV</td></tr><tr><td>KEY_AMBIENT</td><td>AmbientMode</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="number-keys"><a href="#number-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Number Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_1</td><td>Key1</td></tr><tr><td>KEY_2</td><td>Key2</td></tr><tr><td>KEY_3</td><td>Key3</td></tr><tr><td>KEY_4</td><td>Key4</td></tr><tr><td>KEY_5</td><td>Key5</td></tr><tr><td>KEY_6</td><td>Key6</td></tr><tr><td>KEY_7</td><td>Key7</td></tr><tr><td>KEY_8</td><td>Key8</td></tr><tr><td>KEY_9</td><td>Key9</td></tr><tr><td>KEY_0</td><td>Key0</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="misc-keys"><a href="#misc-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Misc Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_PANNEL_CHDOWN</td><td>3D</td></tr><tr><td>KEY_ANYNET</td><td>AnyNet+</td></tr><tr><td>KEY_ESAVING</td><td>EnergySaving</td></tr><tr><td>KEY_SLEEP</td><td>SleepTimer</td></tr><tr><td>KEY_DTV_SIGNAL</td><td>DTVSignal</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="channel-keys"><a href="#channel-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Channel Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_CHUP</td><td>ChannelUp</td></tr><tr><td>KEY_CHDOWN</td><td>ChannelDown</td></tr><tr><td>KEY_PRECH</td><td>PreviousChannel</td></tr><tr><td>KEY_FAVCH</td><td>FavoriteChannels</td></tr><tr><td>KEY_CH_LIST</td><td>ChannelList</td></tr><tr><td>KEY_AUTO_PROGRAM</td><td>AutoProgram</td></tr><tr><td>KEY_MAGIC_CHANNEL</td><td>MagicChannel</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="volume-keys"><a href="#volume-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Volume Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_VOLUP</td><td>VolumeUp</td></tr><tr><td>KEY_VOLDOWN</td><td>VolumeDown</td></tr><tr><td>KEY_MUTE</td><td>Mute</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="direction-keys"><a href="#direction-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Direction Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_UP</td><td>NavigationUp</td></tr><tr><td>KEY_DOWN</td><td>NavigationDown</td></tr><tr><td>KEY_LEFT</td><td>NavigationLeft</td></tr><tr><td>KEY_RIGHT</td><td>NavigationRight</td></tr><tr><td>KEY_RETURN</td><td>NavigationReturn/Back</td></tr><tr><td>KEY_ENTER</td><td>NavigationEnter</td></tr><tr><td>KEY_EXIT</td><td>NavigationExit</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="media-keys"><a href="#media-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Media Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_REWIND</td><td>Rewind</td></tr><tr><td>KEY_STOP</td><td>Stop</td></tr><tr><td>KEY_PLAY</td><td>Play</td></tr><tr><td>KEY_FF</td><td>FastForward</td></tr><tr><td>KEY_REC</td><td>Record</td></tr><tr><td>KEY_PAUSE</td><td>Pause</td></tr><tr><td>KEY_LIVE</td><td>Live</td></tr><tr><td>KEY_QUICK_REPLAY</td><td>fnKEY_QUICK_REPLAY</td></tr><tr><td>KEY_STILL_PICTURE</td><td>fnKEY_STILL_PICTURE</td></tr><tr><td>KEY_INSTANT_REPLAY</td><td>fnKEY_INSTANT_REPLAY</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="picture-in-picture"><a href="#picture-in-picture" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Picture in Picture</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_PIP_ONOFF</td><td>PIPOn/Off</td></tr><tr><td>KEY_PIP_SWAP</td><td>PIPSwap</td></tr><tr><td>KEY_PIP_SIZE</td><td>PIPSize</td></tr><tr><td>KEY_PIP_CHUP</td><td>PIPChannelUp</td></tr><tr><td>KEY_PIP_CHDOWN</td><td>PIPChannelDown</td></tr><tr><td>KEY_AUTO_ARC_PIP_SMALL</td><td>PIPSmall</td></tr><tr><td>KEY_AUTO_ARC_PIP_WIDE</td><td>PIPWide</td></tr><tr><td>KEY_AUTO_ARC_PIP_RIGHT_BOTTOM</td><td>PIPBottomRight</td></tr><tr><td>KEY_AUTO_ARC_PIP_SOURCE_CHANGE</td><td>PIPSourceChange</td></tr><tr><td>KEY_PIP_SCAN</td><td>PIPScan</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="modes"><a href="#modes" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Modes</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_VCR_MODE</td><td>VCRMode</td></tr><tr><td>KEY_CATV_MODE</td><td>CATVMode</td></tr><tr><td>KEY_DSS_MODE</td><td>DSSMode</td></tr><tr><td>KEY_TV_MODE</td><td>TVMode</td></tr><tr><td>KEY_DVD_MODE</td><td>DVDMode</td></tr><tr><td>KEY_STB_MODE</td><td>STBMode</td></tr><tr><td>KEY_PCMODE</td><td>PCMode</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="color-keys"><a href="#color-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Color Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_GREEN</td><td>Green</td></tr><tr><td>KEY_YELLOW</td><td>Yellow</td></tr><tr><td>KEY_CYAN</td><td>Cyan</td></tr><tr><td>KEY_RED</td><td>Red</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="teletext"><a href="#teletext" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Teletext</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_TTX_MIX</td><td>TeletextMix</td></tr><tr><td>KEY_TTX_SUBFACE</td><td>TeletextSubface</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="aspectratio"><a href="#aspectratio" class="rp-header-anchor rp-link" aria-hidden="true">#</a>AspectRatio</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_ASPECT</td><td>AspectRatio</td></tr><tr><td>KEY_PICTURE_SIZE</td><td>PictureSize</td></tr><tr><td>KEY_4_3</td><td>AspectRatio4:3</td></tr><tr><td>KEY_16_9</td><td>AspectRatio16:9</td></tr><tr><td>KEY_EXT14</td><td>AspectRatio3:4(Alt)</td></tr><tr><td>KEY_EXT15</td><td>AspectRatio16:9(Alt)</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="picture-mode"><a href="#picture-mode" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Picture Mode</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_PMODE</td><td>PictureMode</td></tr><tr><td>KEY_PANORAMA</td><td>PictureModePanorama</td></tr><tr><td>KEY_DYNAMIC</td><td>PictureModeDynamic</td></tr><tr><td>KEY_STANDARD</td><td>PictureModeStandard</td></tr><tr><td>KEY_MOVIE1</td><td>PictureModeMovie</td></tr><tr><td>KEY_GAME</td><td>PictureModeGame</td></tr><tr><td>KEY_CUSTOM</td><td>PictureModeCustom</td></tr><tr><td>KEY_EXT9</td><td>PictureModeMovie(Alt)</td></tr><tr><td>KEY_EXT10</td><td>PictureModeStandard(Alt)</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="menus"><a href="#menus" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Menus</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_MENU</td><td>Menu</td></tr><tr><td>KEY_TOPMENU</td><td>TopMenu</td></tr><tr><td>KEY_TOOLS</td><td>Tools</td></tr><tr><td>KEY_HOME</td><td>Home</td></tr><tr><td>KEY_CONTENTS</td><td>Contents</td></tr><tr><td>KEY_GUIDE</td><td>Guide</td></tr><tr><td>KEY_DISC_MENU</td><td>DiscMenu</td></tr><tr><td>KEY_DVR_MENU</td><td>DVRMenu</td></tr><tr><td>KEY_HELP</td><td>Help</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="osd"><a href="#osd" class="rp-header-anchor rp-link" aria-hidden="true">#</a>OSD</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_INFO</td><td>Info</td></tr><tr><td>KEY_CAPTION</td><td>Caption</td></tr><tr><td>KEY_CLOCK_DISPLAY</td><td>ClockDisplay</td></tr><tr><td>KEY_SETUP_CLOCK_TIMER</td><td>SetupClock</td></tr><tr><td>KEY_SUB_TITLE</td><td>Subtitle</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="zoom"><a href="#zoom" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zoom</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_ZOOM_MOVE</td><td>ZoomMove</td></tr><tr><td>KEY_ZOOM_IN</td><td>ZoomIn</td></tr><tr><td>KEY_ZOOM_OUT</td><td>ZoomOut</td></tr><tr><td>KEY_ZOOM1</td><td>Zoom1</td></tr><tr><td>KEY_ZOOM2</td><td>Zoom2</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="other-keys"><a href="#other-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Other Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_WHEEL_LEFT</td><td>WheelLeft</td></tr><tr><td>KEY_WHEEL_RIGHT</td><td>WheelRight</td></tr><tr><td>KEY_ADDDEL</td><td>Add/Del</td></tr><tr><td>KEY_PLUS100</td><td>Plus100</td></tr><tr><td>KEY_AD</td><td>AD</td></tr><tr><td>KEY_LINK</td><td>Link</td></tr><tr><td>KEY_TURBO</td><td>Turbo</td></tr><tr><td>KEY_CONVERGENCE</td><td>Convergence</td></tr><tr><td>KEY_DEVICE_CONNECT</td><td>DeviceConnect</td></tr><tr><td>KEY_11</td><td>Key11</td></tr><tr><td>KEY_12</td><td>Key12</td></tr><tr><td>KEY_FACTORY</td><td>KeyFactory</td></tr><tr><td>KEY_3SPEED</td><td>Key3SPEED</td></tr><tr><td>KEY_RSURF</td><td>KeyRSURF</td></tr><tr><td>KEY_FF_</td><td>FF_</td></tr><tr><td>KEY_REWIND_</td><td>REWIND_</td></tr><tr><td>KEY_ANGLE</td><td>Angle</td></tr><tr><td>KEY_RESERVED1</td><td>Reserved1</td></tr><tr><td>KEY_PROGRAM</td><td>Program</td></tr><tr><td>KEY_BOOKMARK</td><td>Bookmark</td></tr><tr><td>KEY_PRINT</td><td>Print</td></tr><tr><td>KEY_CLEAR</td><td>Clear</td></tr><tr><td>KEY_VCHIP</td><td>VChip</td></tr><tr><td>KEY_REPEAT</td><td>Repeat</td></tr><tr><td>KEY_DOOR</td><td>Door</td></tr><tr><td>KEY_OPEN</td><td>Open</td></tr><tr><td>KEY_DMA</td><td>DMA</td></tr><tr><td>KEY_MTS</td><td>MTS</td></tr><tr><td>KEY_DNIe</td><td>DNIe</td></tr><tr><td>KEY_SRS</td><td>SRS</td></tr><tr><td>KEY_CONVERT_AUDIO_MAINSUB</td><td>ConvertAudioMain/Sub</td></tr><tr><td>KEY_MDC</td><td>MDC</td></tr><tr><td>KEY_SEFFECT</td><td>SoundEffect</td></tr><tr><td>KEY_PERPECT_FOCUS</td><td>PERPECTFocus</td></tr><tr><td>KEY_CALLER_ID</td><td>CallerID</td></tr><tr><td>KEY_SCALE</td><td>Scale</td></tr><tr><td>KEY_MAGIC_BRIGHT</td><td>MagicBright</td></tr><tr><td>KEY_W_LINK</td><td>WLink</td></tr><tr><td>KEY_DTV_LINK</td><td>DTVLink</td></tr><tr><td>KEY_APP_LIST</td><td>ApplicationList</td></tr><tr><td>KEY_BACK_MHP</td><td>BackMHP</td></tr><tr><td>KEY_ALT_MHP</td><td>AlternateMHP</td></tr><tr><td>KEY_DNSe</td><td>DNSe</td></tr><tr><td>KEY_RSS</td><td>RSS</td></tr><tr><td>KEY_ENTERTAINMENT</td><td>Entertainment</td></tr><tr><td>KEY_ID_INPUT</td><td>IDInput</td></tr><tr><td>KEY_ID_SETUP</td><td>IDSetup</td></tr><tr><td>KEY_ANYVIEW</td><td>AnyView</td></tr><tr><td>KEY_MS</td><td>MS</td></tr><tr><td>KEY_MORE</td><td></td></tr><tr><td>KEY_MIC</td><td></td></tr><tr><td>KEY_NINE_SEPERATE</td><td></td></tr><tr><td>KEY_AUTO_FORMAT</td><td>AutoFormat</td></tr><tr><td>KEY_DNET</td><td>DNET</td></tr><tr><td>KEY_MINUS</td><td>Minus</td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="auto-arc-keys"><a href="#auto-arc-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Auto Arc Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_AUTO_ARC_C_FORCE_AGING</td><td></td></tr><tr><td>KEY_AUTO_ARC_CAPTION_ENG</td><td></td></tr><tr><td>KEY_AUTO_ARC_USBJACK_INSPECT</td><td></td></tr><tr><td>KEY_AUTO_ARC_RESET</td><td></td></tr><tr><td>KEY_AUTO_ARC_LNA_ON</td><td></td></tr><tr><td>KEY_AUTO_ARC_LNA_OFF</td><td></td></tr><tr><td>KEY_AUTO_ARC_ANYNET_MODE_OK</td><td></td></tr><tr><td>KEY_AUTO_ARC_ANYNET_AUTO_START</td><td></td></tr><tr><td>KEY_AUTO_ARC_CAPTION_ON</td><td></td></tr><tr><td>KEY_AUTO_ARC_CAPTION_OFF</td><td></td></tr><tr><td>KEY_AUTO_ARC_PIP_DOUBLE</td><td></td></tr><tr><td>KEY_AUTO_ARC_PIP_LARGE</td><td></td></tr><tr><td>KEY_AUTO_ARC_PIP_LEFT_TOP</td><td></td></tr><tr><td>KEY_AUTO_ARC_PIP_RIGHT_TOP</td><td></td></tr><tr><td>KEY_AUTO_ARC_PIP_LEFT_BOTTOM</td><td></td></tr><tr><td>KEY_AUTO_ARC_PIP_CH_CHANGE</td><td></td></tr><tr><td>KEY_AUTO_ARC_AUTOCOLOR_SUCCESS</td><td></td></tr><tr><td>KEY_AUTO_ARC_AUTOCOLOR_FAIL</td><td></td></tr><tr><td>KEY_AUTO_ARC_JACK_IDENT</td><td></td></tr><tr><td>KEY_AUTO_ARC_CAPTION_KOR</td><td></td></tr><tr><td>KEY_AUTO_ARC_ANTENNA_AIR</td><td></td></tr><tr><td>KEY_AUTO_ARC_ANTENNA_CABLE</td><td></td></tr><tr><td>KEY_AUTO_ARC_ANTENNA_SATELLITE</td><td></td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="panel-keys"><a href="#panel-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Panel Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_PANNEL_POWER</td><td></td></tr><tr><td>KEY_PANNEL_CHUP</td><td></td></tr><tr><td>KEY_PANNEL_VOLUP</td><td></td></tr><tr><td>KEY_PANNEL_VOLDOW</td><td></td></tr><tr><td>KEY_PANNEL_ENTER</td><td></td></tr><tr><td>KEY_PANNEL_MENU</td><td></td></tr><tr><td>KEY_PANNEL_SOURCE</td><td></td></tr><tr><td>KEY_PANNEL_ENTER</td><td></td></tr></tbody></table></div>
+<hr/>
+<h4 class="rp-toc-include" id="extended-keys"><a href="#extended-keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Extended Keys</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>KEY_EXT1</td><td></td></tr><tr><td>KEY_EXT2</td><td></td></tr><tr><td>KEY_EXT3</td><td></td></tr><tr><td>KEY_EXT4</td><td></td></tr><tr><td>KEY_EXT5</td><td></td></tr><tr><td>KEY_EXT6</td><td></td></tr><tr><td>KEY_EXT7</td><td></td></tr><tr><td>KEY_EXT8</td><td></td></tr><tr><td>KEY_EXT11</td><td></td></tr><tr><td>KEY_EXT12</td><td></td></tr><tr><td>KEY_EXT13</td><td></td></tr><tr><td>KEY_EXT16</td><td></td></tr><tr><td>KEY_EXT17</td><td></td></tr><tr><td>KEY_EXT18</td><td></td></tr><tr><td>KEY_EXT19</td><td></td></tr><tr><td>KEY_EXT20</td><td></td></tr><tr><td>KEY_EXT21</td><td></td></tr><tr><td>KEY_EXT22</td><td></td></tr><tr><td>KEY_EXT23</td><td></td></tr><tr><td>KEY_EXT24</td><td></td></tr><tr><td>KEY_EXT25</td><td></td></tr><tr><td>KEY_EXT26</td><td></td></tr><tr><td>KEY_EXT27</td><td></td></tr><tr><td>KEY_EXT28</td><td></td></tr><tr><td>KEY_EXT29</td><td></td></tr><tr><td>KEY_EXT30</td><td></td></tr><tr><td>KEY_EXT31</td><td></td></tr><tr><td>KEY_EXT32</td><td></td></tr><tr><td>KEY_EXT33</td><td></td></tr><tr><td>KEY_EXT34</td><td></td></tr><tr><td>KEY_EXT35</td><td></td></tr><tr><td>KEY_EXT36</td><td></td></tr><tr><td>KEY_EXT37</td><td></td></tr><tr><td>KEY_EXT38</td><td></td></tr><tr><td>KEY_EXT39</td><td></td></tr><tr><td>KEY_EXT40</td><td></td></tr><tr><td>KEY_EXT41</td><td></td></tr></tbody></table></div>
+<p>Please note that some codes are different on the 2016+ TVs. For example, <code>KEY_POWEROFF</code> is <code>KEY_POWER</code> on the newer TVs.</p>
+<p>The code list has been extracted from: <a href="https://github.com/kdschlosser/samsungctl" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/kdschlosser/samsungctl</a> and <a href="https://github.com/jaruba/ha-samsungtv-tizen/blob/master/Key_codes.md" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/jaruba/ha-samsungtv-tizen/blob/master/Key_codes.md</a></p>
+</details>
+<p><strong>Example to send sequence of commands:</strong></p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> remote.send_command</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 72953f9b4c9863e28ddd52c87dcebe05</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  command</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">KEY_MENU</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">KEY_RIGHT</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">KEY_UP</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">KEY_UP</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">KEY_ENTER</span></span>
+<span class="line"></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="known-issues-and-restrictions"><a href="#known-issues-and-restrictions" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Known issues and restrictions</h3>
+<h4 class="rp-toc-include" id="subnetvlan"><a href="#subnetvlan" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Subnet/VLAN</h4>
+<p>Samsung SmartTV does not allow WebSocket connections across different subnets or VLANs. If your TV is not on the same subnet as Home Assistant this will fail.
+It may be possible to bypass this issue by using IP masquerading or a proxy.</p>
+<h4 class="rp-toc-include" id="h-and-j-models"><a href="#h-and-j-models" class="rp-header-anchor rp-link" aria-hidden="true">#</a>H and J models</h4>
+<p>Some televisions from the H and J series use an encrypted protocol and require manual pairing with the TV. This should be detected automatically when attempting to send commands using the WebSocket connection, and trigger the corresponding authentication flow.</p>
+<h4 class="rp-toc-include" id="samsung-tv-keeps-asking-for-permission"><a href="#samsung-tv-keeps-asking-for-permission" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Samsung TV keeps asking for permission</h4>
+<p>The default setting on newer televisions is to ask for permission on every connection attempt.
+To avoid this behavior, please ensure that you adjust this to <code>First time only</code> in the <code>Device connection manager &gt; Access notification</code> settings of your television.
+It is also recommended to cleanup the previous attempts in <code>Device connection manager &gt; Device list</code></p>
+<h2 class="rp-toc-include" id="removing-the-integration"><a href="#removing-the-integration" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Removing the integration</h2>
+<p>This integration follows standard integration removal. No extra steps are required.</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#data-updates" class="rp-toc-item rp-link" title="Data updates" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Data updates</span></a><a href="#turn-on-action" class="rp-toc-item rp-link" title="Turn on action" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Turn on action</span></a><a href="#usage" class="rp-toc-item rp-link" title="Usage" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Usage</span></a><a href="#changing-channels" class="rp-toc-item rp-link" title="Changing channels" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Changing channels</span></a><a href="#selecting-a-source" class="rp-toc-item rp-link" title="Selecting a source" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Selecting a source</span></a><a href="#remote" class="rp-toc-item rp-link" title="Remote" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Remote</span></a><a href="#power-keys" class="rp-toc-item rp-link" title="Power Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Power Keys</span></a><a href="#input-keys" class="rp-toc-item rp-link" title="Input Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Input Keys</span></a><a href="#number-keys" class="rp-toc-item rp-link" title="Number Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Number Keys</span></a><a href="#misc-keys" class="rp-toc-item rp-link" title="Misc Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Misc Keys</span></a><a href="#channel-keys" class="rp-toc-item rp-link" title="Channel Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Channel Keys</span></a><a href="#volume-keys" class="rp-toc-item rp-link" title="Volume Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Volume Keys</span></a><a href="#direction-keys" class="rp-toc-item rp-link" title="Direction Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Direction Keys</span></a><a href="#media-keys" class="rp-toc-item rp-link" title="Media Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Media Keys</span></a><a href="#picture-in-picture" class="rp-toc-item rp-link" title="Picture in Picture" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Picture in Picture</span></a><a href="#modes" class="rp-toc-item rp-link" title="Modes" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Modes</span></a><a href="#color-keys" class="rp-toc-item rp-link" title="Color Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Color Keys</span></a><a href="#teletext" class="rp-toc-item rp-link" title="Teletext" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Teletext</span></a><a href="#aspectratio" class="rp-toc-item rp-link" title="AspectRatio" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">AspectRatio</span></a><a href="#picture-mode" class="rp-toc-item rp-link" title="Picture Mode" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Picture Mode</span></a><a href="#menus" class="rp-toc-item rp-link" title="Menus" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Menus</span></a><a href="#osd" class="rp-toc-item rp-link" title="OSD" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">OSD</span></a><a href="#zoom" class="rp-toc-item rp-link" title="Zoom" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Zoom</span></a><a href="#other-keys" class="rp-toc-item rp-link" title="Other Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Other Keys</span></a><a href="#auto-arc-keys" class="rp-toc-item rp-link" title="Auto Arc Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Auto Arc Keys</span></a><a href="#panel-keys" class="rp-toc-item rp-link" title="Panel Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Panel Keys</span></a><a href="#extended-keys" class="rp-toc-item rp-link" title="Extended Keys" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Extended Keys</span></a><a href="#known-issues-and-restrictions" class="rp-toc-item rp-link" title="Known issues and restrictions" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Known issues and restrictions</span></a><a href="#subnetvlan" class="rp-toc-item rp-link" title="Subnet/VLAN" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Subnet/VLAN</span></a><a href="#h-and-j-models" class="rp-toc-item rp-link" title="H and J models" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">H and J models</span></a><a href="#samsung-tv-keeps-asking-for-permission" class="rp-toc-item rp-link" title="Samsung TV keeps asking for permission" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Samsung TV keeps asking for permission</span></a><a href="#removing-the-integration" class="rp-toc-item rp-link" title="Removing the integration" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Removing the integration</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

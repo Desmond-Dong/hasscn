@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airobot - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Airobot - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Airobot integration 允许您通过本地 REST API 控制和监控 Airobot(https://airobothome.com/) 智能恒温器，用于智能地暖控制。恒温器使用带有 <abbr title=&quot;时间比例积分&quot;TPI</abbr 算法的自适应学习来保持稳定温度并优化能源效率。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Airobot integration 允许您通过本地 REST API 控制和监控 Airobot(https://airobothome.com/) 智能恒温器，用于智能地暖控制。恒温器使用带有 <abbr title=&quot;时间比例积分&quot;TPI</abbr 算法的自适应学习来保持稳定温度并优化能源效率。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="https://my.home-assistant.io/badges/blueprint_import.svg"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="airobot"><a href="#airobot" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Airobot<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Airobot</strong> integration 允许您通过本地 REST API 控制和监控 <a href="https://airobothome.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Airobot</a> 智能恒温器，用于智能地暖控制。恒温器使用带有 <abbr title="时间比例积分">TPI</abbr> 算法的自适应学习来保持稳定温度并优化能源效率。可选的内置二氧化碳和湿度传感器可监测室内空气质量，营造更健康的居住环境。</p>
+<p>使用场景：创建基于在场的供暖自动化，使用 BOOST 在到达前快速加热房间，监测空气质量以触发通风警报，并跟踪供暖运行模式以优化能源使用。</p>
+<h2 class="rp-toc-include" id="支持的设备"><a href="#支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备</h2>
+<p>此集成支持以下设备：</p>
+<ul>
+<li>固件版本 1.8 或更高版本的 Airobot 智能恒温器 TE1</li>
+</ul>
+<h2 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h2>
+<p>在设置集成之前，请确保您的 Airobot 恒温器已正确配置：</p>
+<ol>
+<li>验证您的恒温器固件版本为 1.8 或更高版本。您可以在恒温器设置菜单中查看固件版本。</li>
+<li>将恒温器连接到本地 Wi-Fi 或以太网网络。</li>
+<li>至少连接一次互联网以向 Airobot 服务器注册。在此初始连接期间，恒温器会接收其设备 ID（用户名）和密码。</li>
+<li>在恒温器设置菜单中，导航到 <strong>Connectivity</strong> &gt; <strong>Local API</strong> &gt; <strong>Enable</strong> 以启用本地 REST API（默认禁用）。</li>
+<li>从恒温器菜单的 <strong>Connectivity</strong> &gt; <strong>Mobile app</strong> 屏幕中记下您的设备 ID 和密码。您将在设置过程中需要这些信息。这些与用于配对移动应用程序的凭据相同。</li>
+</ol>
+<p>初始设置完成后，恒温器不需要互联网连接即可与 Home Assistant 配合使用。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<p>当恒温器位于同一网络时，集成可以通过 DHCP 自动发现。如果自动发现不起作用，您可以手动添加集成。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Host</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Airobot 恒温器的主机名或 IP 地址。您可以在路由器设置中找到它，或使用主机名格式 `airobot-thermostat-t01xxxxxx`（将 `t01xxxxxx` 替换为您的设备 ID，小写）。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Device ID</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;恒温器设备 ID（例如 T01XXXXXX）。您可以在恒温器菜单的 **Connectivity** &gt; **Mobile app** 屏幕中找到此信息。这与用于配对移动应用程序的凭据相同。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;恒温器密码。您可以在恒温器菜单的 **Connectivity** &gt; **Mobile app** 屏幕中找到此信息。这与用于配对移动应用程序的凭据相同。&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="重新配置"><a href="#重新配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重新配置</h2>
+<p>如果您需要更新恒温器的连接设置（例如更改 IP 地址、设备 ID 或密码），您可以重新配置集成而无需删除并重新添加：</p>
+<ol>
+<li>转到 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>。</li>
+<li>在 <strong>Airobot</strong> 集成上，选择三点菜单并选择 <strong>重新配置</strong>。</li>
+<li>根据需要更新连接设置。</li>
+<li>选择 <strong>提交</strong> 以保存新设置。</li>
+</ol>
+<p>这在以下情况下很有用：</p>
+<ul>
+<li>您的恒温器 IP 地址已更改（例如，路由器重启或 DHCP 租约更新后）。</li>
+<li>您需要更新设备 ID 或密码。</li>
+<li>您想在 IP 地址和主机名之间切换。</li>
+</ul>
+<h2 class="rp-toc-include" id="支持的功能"><a href="#支持的功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的功能</h2>
+<p><strong>Airobot</strong> 集成提供以下实体。</p>
+<h3 class="rp-toc-include" id="气候"><a href="#气候" class="rp-header-anchor rp-link" aria-hidden="true">#</a>气候</h3>
+<p>恒温器表示为具有以下功能的气候 entity。</p>
+<ul>
+<li>
+<p><strong>当前温度</strong></p>
+<ul>
+<li><strong>描述</strong>：显示房间内的测量温度。</li>
+<li><strong>备注</strong>：如果连接了地板温度传感器，则显示地板温度（用于地暖控制）。否则，显示空气温度。</li>
+</ul>
+</li>
+<li>
+<p><strong>当前湿度</strong></p>
+<ul>
+<li><strong>描述</strong>：显示房间内的测量相对湿度。</li>
+</ul>
+</li>
+<li>
+<p><strong>目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：显示并允许您设置所需温度（5°C 至 35°C 范围）。</li>
+<li><strong>备注</strong>：在 HOME 模式下，控制 HOME 温度设定点。在 AWAY 模式下，控制 AWAY 温度设定点。</li>
+</ul>
+</li>
+<li>
+<p><strong>HVAC 模式</strong></p>
+<ul>
+<li><strong>描述</strong>：对于此仅供暖恒温器，始终设置为制热。</li>
+</ul>
+</li>
+<li>
+<p><strong>HVAC 动作</strong></p>
+<ul>
+<li><strong>描述</strong>：显示恒温器是正在主动加热还是空闲。</li>
+</ul>
+</li>
+<li>
+<p><strong>预设模式</strong></p>
+<ul>
+<li><strong>描述</strong>：选择恒温器的运行模式。</li>
+<li><strong>选项</strong>：Home（使用 HOME 温度设定点）、Away（使用 AWAY 温度设定点，通常较低以节能）、Boost（临时增强供暖 1 小时，然后返回之前的模式）。</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<p>集成提供以下传感器实体来监控您的恒温器和环境。</p>
+<h4 class="rp-toc-include" id="环境传感器"><a href="#环境传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>环境传感器</h4>
+<ul>
+<li>
+<p><strong>空气温度</strong></p>
+<ul>
+<li><strong>描述</strong>：房间内的测量空气温度。</li>
+<li><strong>单位</strong>：°C</li>
+</ul>
+</li>
+<li>
+<p><strong>地板温度</strong></p>
+<ul>
+<li><strong>描述</strong>：测量的地板温度。</li>
+<li><strong>单位</strong>：°C</li>
+<li><strong>备注</strong>：仅在恒温器连接了地板温度传感器时可用。</li>
+</ul>
+</li>
+<li>
+<p><strong>湿度</strong></p>
+<ul>
+<li><strong>描述</strong>：房间内的测量相对湿度。</li>
+<li><strong>单位</strong>：%</li>
+</ul>
+</li>
+<li>
+<p><strong>二氧化碳</strong></p>
+<ul>
+<li><strong>描述</strong>：房间内的测量二氧化碳浓度。</li>
+<li><strong>单位</strong>：ppm</li>
+<li><strong>备注</strong>：仅在恒温器具有可选的二氧化碳传感器时可用。</li>
+</ul>
+</li>
+<li>
+<p><strong>空气质量指数</strong></p>
+<ul>
+<li><strong>描述</strong>：根据二氧化碳水平计算的空气质量指数。</li>
+<li><strong>备注</strong>：仅在恒温器具有可选的二氧化碳传感器时可用。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="诊断传感器"><a href="#诊断传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>诊断传感器</h4>
+<p>以下诊断传感器默认禁用。如果需要，您可以在实体设置中启用它们。</p>
+<ul>
+<li>
+<p><strong>设备运行时间</strong></p>
+<ul>
+<li><strong>描述</strong>：恒温器上次重启的时间戳。</li>
+</ul>
+</li>
+<li>
+<p><strong>供暖运行时间</strong></p>
+<ul>
+<li><strong>描述</strong>：自恒温器上次重启以来供暖处于活动状态的累计时间。</li>
+<li><strong>单位</strong>：小时</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="系统传感器"><a href="#系统传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>系统传感器</h4>
+<ul>
+<li><strong>错误</strong>
+<ul>
+<li><strong>描述</strong>：恒温器上的当前错误计数。值为 0 表示正常运行。</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="数字"><a href="#数字" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数字</h3>
+<p>集成提供一个配置实体来调整高级恒温器设置：</p>
+<ul>
+<li><strong>滞后带</strong>：配置供暖控制的温度滞后（死区）（0.0-0.5°C 范围）。此设置确定温度必须低于设定点多少才会激活供暖。较小的值可提供更严格的温度控制，但可能导致更频繁的供暖循环。较大的值可减少供暖循环，但允许更大的温度变化。</li>
+</ul>
+<h3 class="rp-toc-include" id="按钮"><a href="#按钮" class="rp-header-anchor rp-link" aria-hidden="true">#</a>按钮</h3>
+<p>集成提供用于设备管理的按钮实体：</p>
+<ul>
+<li><strong>重启</strong>：重启恒温器设备。这会执行恒温器的软重启，可用于排查连接问题或应用配置更改。恒温器在重启过程中（通常 5-10 秒）将暂时不可用。</li>
+<li><strong>重新校准 CO₂</strong>：通过将当前空气设置为新的 400 ppm 参考值来启动手动二氧化碳传感器校准。仅在恒温器具有可选的二氧化碳传感器时可用。不建议常规使用，因为二氧化碳传感器默认启用了自动校准算法。仅在空气清洁（新鲜室外空气）且需要手动覆盖自动校准时激活此功能。</li>
+</ul>
+<h3 class="rp-toc-include" id="开关"><a href="#开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关</h3>
+<p>集成提供用于控制恒温器功能的开关实体：</p>
+<ul>
+<li><strong>童锁</strong>：启用或禁用恒温器上的童锁功能。启用后，恒温器上的物理按钮将被锁定，以防止意外或未经授权的设置更改。</li>
+<li><strong>禁用执行器运动</strong>：启用或禁用执行器运动功能。为防止阀门卡住，执行器运动会定期每 96 小时至少关闭阀门 8 分钟。此实体默认禁用。</li>
+</ul>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<p>您可以使用 Airobot 集成创建的自动化示例。</p>
+<h3 class="rp-toc-include" id="空气质量警报"><a href="#空气质量警报" class="rp-header-anchor rp-link" aria-hidden="true">#</a>空气质量警报</h3>
+<p>当空气质量超过指定阈值时发送通知。</p>
+<!-- -->
+<p><a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fcommunity.home-assistant.io%2Ft%2Fair-quality-alert-notification-airobot%2F994072" target="_blank" rel="noopener noreferrer" class="rp-link"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open Import blueprint in your Home Assistant instance."/></a></p>
+<!-- -->
+<details>
+<summary>示例 YAML 配置</summary>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Airobot Air Quality Alert&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">  Sends a notification when the Airobot air quality sensor exceeds</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">  a threshold.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.airobot_air_quality</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    above</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">&gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">    {{</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">      trigger.from_state.state | float(0)</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">      &lt; trigger.to_state.state | float(0)</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">    }}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.mobile_app_your_phone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Poor Air Quality&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">        Air quality in {{ area_name(trigger.entity_id) }} is</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">        {{ trigger.to_state.state }} (threshold: {{ trigger.above | int }})</span></span>
+<span class="line"></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p><strong>Airobot</strong> 集成每 30 秒从恒温器 polls 数据。此间隔与恒温器的内部测量周期相匹配，确保高效的数据同步而不会使设备过载。</p>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<ul>
+<li><strong>仅本地 API</strong>：集成仅支持本地 REST API。不支持通过 Airobot 云服务进行云端控制。</li>
+<li><strong>手动启用 API</strong>：在集成可以连接之前，必须在恒温器上手动启用本地 REST API。出于安全原因，它默认禁用。</li>
+<li><strong>固件要求</strong>：仅支持固件版本 1.8 或更高版本。较旧的固件版本不提供本地 REST API。</li>
+<li><strong>仅供暖</strong>：恒温器专为地暖控制设计，不支持制冷模式。</li>
+<li><strong>可选传感器</strong>：二氧化碳和地板温度传感器仅在您的恒温器型号中安装了相应硬件时可用。</li>
+</ul>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<details>
+<summary>无法连接到恒温器</summary>
+<p><strong>症状：</strong> 无法连接到您的 Airobot 恒温器</p>
+<p>尝试设置集成时，配置流程显示错误&quot;无法连接到您的 Airobot 恒温器&quot;。</p>
+<p>此错误表示 Home Assistant 无法建立到恒温器本地 REST API 的连接。这可能是由于网络设置不正确、本地 API 被禁用或网络连接问题引起的。</p>
+<p>要解决此问题，请尝试以下步骤：</p>
+<ol>
+<li>
+<p><strong>验证 IP 地址或主机名</strong>：</p>
+<ul>
+<li>确保您输入了正确的 IP 地址或主机名。</li>
+<li>您可以在路由器设置中找到 IP 地址。</li>
+<li>主机名格式为 <code>airobot-thermostat-t01xxxxxx</code>（将 <code>t01xxxxxx</code> 替换为您的设备 ID，小写）。</li>
+</ul>
+</li>
+<li>
+<p><strong>检查网络连接</strong>：</p>
+<ul>
+<li>确保恒温器已开机并连接到您的网络。</li>
+<li>验证 Home Assistant 和恒温器在同一网络上或可以相互通信。</li>
+<li>尝试从 Home Assistant 主机 ping 恒温器：<code>ping &lt;thermostat-ip&gt;</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>启用本地 API</strong>：</p>
+<ul>
+<li>在恒温器上，导航到 <strong>Connectivity</strong> &gt; <strong>Local API</strong> &gt; <strong>Enable</strong>。</li>
+<li>等待几秒钟让 API 变为活动状态。</li>
+</ul>
+</li>
+<li>
+<p><strong>重启恒温器</strong>（如果需要）：</p>
+<ul>
+<li>如果刚刚启用本地 API，请尝试重启恒温器以确保 API 服务正确启动。</li>
+</ul>
+</li>
+</ol>
+</details>
+<details>
+<summary>身份验证失败</summary>
+<p><strong>症状：</strong> &quot;无效的身份验证&quot;</p>
+<p>输入凭据时配置流程显示&quot;无效的身份验证&quot;错误。</p>
+<p>提供的设备 ID（用户名）或密码不正确或与恒温器的凭据不匹配。</p>
+<ol>
+<li>
+<p><strong>验证凭据</strong>：</p>
+<ul>
+<li>在恒温器上，导航到设置菜单中的 <strong>Connectivity</strong> &gt; <strong>Mobile app</strong> 屏幕。</li>
+<li>检查设备 ID（例如 T01XXXXXX）是否与您输入的完全匹配（区分大小写）。</li>
+<li>检查密码是否与您输入的完全匹配（区分大小写）。</li>
+</ul>
+</li>
+<li>
+<p><strong>重新输入凭据</strong>：</p>
+<ul>
+<li>仔细检查是否有输入错误。</li>
+<li>设备 ID 应以&quot;T&quot;开头，后跟数字。</li>
+</ul>
+</li>
+<li>
+<p><strong>确保初始注册</strong>：</p>
+<ul>
+<li>恒温器必须至少连接一次互联网以注册并获取凭据。</li>
+<li>如果您从未将恒温器连接到互联网，请先这样做，然后再次检查凭据。</li>
+</ul>
+</li>
+</ol>
+</details>
+<details>
+<summary>恒温器变为不可用</summary>
+<p><strong>症状：</strong> 恒温器实体在一段时间后变为不可用</p>
+<p>集成失去与恒温器的连接，导致实体变为不可用。这可能是由于网络问题、恒温器断电或设备进入睡眠模式引起的。</p>
+<ol>
+<li>
+<p><strong>检查电源和网络</strong>：</p>
+<ul>
+<li>确保恒温器已开机并连接到网络。</li>
+<li>检查您是否可以直接在浏览器中访问恒温器的 Web 界面。</li>
+</ul>
+</li>
+<li>
+<p><strong>验证网络稳定性</strong>：</p>
+<ul>
+<li>如果使用无线连接，请检查 Wi-Fi 信号强度问题。</li>
+<li>考虑使用有线以太网连接以获得更可靠的连接。</li>
+</ul>
+</li>
+<li>
+<p><strong>检查本地 API 状态</strong>：</p>
+<ul>
+<li>确保恒温器上仍启用本地 API。</li>
+<li>导航到 <strong>Connectivity</strong> &gt; <strong>Local API</strong> 并验证它已启用。</li>
+</ul>
+</li>
+<li>
+<p><strong>重置 Wi-Fi 设置</strong>：</p>
+<ul>
+<li>在恒温器上，导航到 <strong>Connectivity</strong> &gt; <strong>WiFi</strong>。</li>
+<li>重置 Wi-Fi 设置并重新连接到您的本地网络。</li>
+</ul>
+</li>
+</ol>
+</details>
+<h2 class="rp-toc-include" id="移除集成"><a href="#移除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>移除集成</h2>
+<p>此集成遵循标准集成移除流程。无需额外步骤。</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol>
+<p>您可以在移除集成后选择性地在恒温器上禁用本地 API，方法是导航到 <strong>Connectivity</strong> &gt; <strong>Local API</strong> &gt; <strong>Disable</strong>。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#支持的设备" class="rp-toc-item rp-link" title="支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备</span></a><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#重新配置" class="rp-toc-item rp-link" title="重新配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">重新配置</span></a><a href="#支持的功能" class="rp-toc-item rp-link" title="支持的功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的功能</span></a><a href="#气候" class="rp-toc-item rp-link" title="气候" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">气候</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#环境传感器" class="rp-toc-item rp-link" title="环境传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">环境传感器</span></a><a href="#诊断传感器" class="rp-toc-item rp-link" title="诊断传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">诊断传感器</span></a><a href="#系统传感器" class="rp-toc-item rp-link" title="系统传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">系统传感器</span></a><a href="#数字" class="rp-toc-item rp-link" title="数字" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">数字</span></a><a href="#按钮" class="rp-toc-item rp-link" title="按钮" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">按钮</span></a><a href="#开关" class="rp-toc-item rp-link" title="开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">开关</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#空气质量警报" class="rp-toc-item rp-link" title="空气质量警报" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">空气质量警报</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#移除集成" class="rp-toc-item rp-link" title="移除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">移除集成</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

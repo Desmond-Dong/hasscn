@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEKO PoolDose - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="SEKO PoolDose - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="SEKO PoolDose 集成可将 SEKO(https://www.seko.com/) 水处理系统连接到 Home Assistant。SEKO 是一家生产泳池和水疗池各类监测与控制设备的制造商。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="SEKO PoolDose 集成可将 SEKO(https://www.seko.com/) 水处理系统连接到 Home Assistant。SEKO 是一家生产泳池和水疗池各类监测与控制设备的制造商。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="seko-pooldose"><a href="#seko-pooldose" class="rp-header-anchor rp-link" aria-hidden="true">#</a>SEKO PoolDose<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>SEKO PoolDose</strong> 集成可将 <a href="https://www.seko.com/" target="_blank" rel="noopener noreferrer" class="rp-link">SEKO</a> 水处理系统连接到 Home Assistant。SEKO 是一家生产泳池和水疗池各类监测与控制设备的制造商。</p>
+<p>此集成使用未公开文档的本地 HTTP API。它可提供泳池传感器的实时读数，例如温度、pH、ORP/氧化还原值、报警状态、继电器状态以及配置参数。</p>
+<h2 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h2>
+<ol>
+<li>按照用户手册安装并设置 PoolDose 设备。
+<ol>
+<li>特别是，要将设备连接到你的 Wi-Fi 网络。</li>
+<li>确认设备的 IP 地址或主机名。</li>
+</ol>
+</li>
+<li>通过 IP 地址或主机名访问设备。使用 HTTP 和端口 80。
+<ol>
+<li>登录 Web 界面。</li>
+<li>确认能看到传感器数据，例如以仪表盘形式显示的水温或 pH 值。</li>
+<li>停用设备密码，也就是将其设置为 0000。</li>
+</ol>
+</li>
+<li>可选：阻止设备访问互联网，以确保完全本地运行，并防止可能带来问题的固件更新。</li>
+</ol>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Host</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 您设备的 IP 地址或主机名。可在设备的 Web 界面或路由器中查看。</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p>默认情况下，此集成每 10 分钟（600 秒）从设备轮询一次数据。设置这一轮询间隔是为了在数据新鲜度与设备稳定性之间取得平衡：</p>
+<ul>
+<li>设备不支持频繁请求，较短的轮询间隔可能导致其变得不稳定。</li>
+<li>实际水处理数值通常变化较慢，不需要频繁监测。</li>
+<li>此间隔既能满足泳池水质管理的监控需求，也能保持设备可靠性。</li>
+</ul>
+<h3 class="rp-toc-include" id="更新与写入行为"><a href="#更新与写入行为" class="rp-header-anchor rp-link" aria-hidden="true">#</a>更新与写入行为</h3>
+<p>集成会避免并行读取只读值，并将写入操作串行化（一次只写一个值）。这样可以降低设备有限硬件的负载，并防止竞争条件。</p>
+<h2 class="rp-toc-include" id="支持的设备"><a href="#支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备</h2>
+<p>已知以下设备受此集成支持：</p>
+<ul>
+<li>SEKO PoolDose Double</li>
+<li>VÁGNER POOL VA DOS BASIC</li>
+<li>VÁGNER POOL VA DOS EXACT</li>
+</ul>
+<h2 class="rp-toc-include" id="支持的功能"><a href="#支持的功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的功能</h2>
+<p>此集成提供以下实体。</p>
+<h3 class="rp-toc-include" id="二进制传感器"><a href="#二进制传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二进制传感器</h3>
+<ul>
+<li><strong>Recirculation pump alarm</strong>: Recirculation pump issue.</li>
+<li><strong>pH tank level alarm</strong>: Low pH dosing solution level.</li>
+<li><strong>ORP tank level alarm</strong>: Low ORP dosing solution level.</li>
+<li><strong>Chlorine tank level alarm</strong>: Low chlorine dosing solution level.</li>
+<li><strong>Flow rate alarm</strong>: Water flow issues.</li>
+<li><strong>pH overfeed alarm</strong>: Excessive pH dosing detected.</li>
+<li><strong>ORP overfeed alarm</strong>: Excessive ORP dosing detected.</li>
+<li><strong>Alarm relay</strong>: Main alarm relay state.</li>
+<li><strong>Auxiliary relay 1</strong>: Auxiliary relay 1 output state.</li>
+<li><strong>Auxiliary relay 2</strong>: Auxiliary relay 2 output state.</li>
+<li><strong>Auxiliary relay 3</strong>: Auxiliary relay 3 output state.</li>
+</ul>
+<h3 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<ul>
+<li><strong>Temperature</strong>: Water temperature.
+<ul>
+<li><strong>Unit</strong>: °C, °F</li>
+</ul>
+</li>
+<li><strong>pH</strong>: pH value.</li>
+<li><strong>ORP</strong>: Current ORP (Redox) value.
+<ul>
+<li><strong>Unit</strong>: mV</li>
+</ul>
+</li>
+<li><strong>Chlorine</strong>: Chlorine concentration.
+<ul>
+<li><strong>Unit</strong>: ppm</li>
+</ul>
+</li>
+<li><strong>Flow rate</strong>: Water flow rate.
+<ul>
+<li><strong>Unit</strong>: L/s, m³/h</li>
+</ul>
+</li>
+<li><strong>pH type dosing</strong>: Type of pH dosing being used.
+<ul>
+<li><strong>Values</strong>: pH+, pH-</li>
+</ul>
+</li>
+<li><strong>Peristaltic pH dosing</strong>: pH peristaltic dosing mode.
+<ul>
+<li><strong>Values</strong>: Off, Proportional, On/Off, Timed</li>
+</ul>
+</li>
+<li><strong>Overfeed alert pH time</strong>: Time threshold for pH overfeed alerts.
+<ul>
+<li><strong>Unit</strong>: min</li>
+</ul>
+</li>
+<li><strong>ORP type dosing</strong>: Type of ORP dosing being used.
+<ul>
+<li><strong>Values</strong>: Low, High</li>
+</ul>
+</li>
+<li><strong>Peristaltic ORP dosing</strong>: ORP peristaltic dosing mode.
+<ul>
+<li><strong>Values</strong>: Off, Proportional, On/Off, Timed</li>
+</ul>
+</li>
+<li><strong>Chlorine type dosing</strong>: Type of chlorine dosing being used.
+<ul>
+<li><strong>Values</strong>: Low, High</li>
+</ul>
+</li>
+<li><strong>Peristaltic chlorine dosing</strong>: Chlorine peristaltic dosing mode.
+<ul>
+<li><strong>Values</strong>: Off, Proportional, On/Off, Timed</li>
+</ul>
+</li>
+<li><strong>Overfeed alert ORP time</strong>: Time threshold for ORP overfeed alerts.
+<ul>
+<li><strong>Unit</strong>: min</li>
+</ul>
+</li>
+<li><strong>pH calibration type</strong>: Type of pH calibration being used.
+<ul>
+<li><strong>Values</strong>: Off, Reference, 1 point, 2 points</li>
+</ul>
+</li>
+<li><strong>pH calibration offset</strong>: pH calibration offset value.
+<ul>
+<li><strong>Unit</strong>: mV</li>
+</ul>
+</li>
+<li><strong>pH calibration slope</strong>: pH calibration slope value.
+<ul>
+<li><strong>Unit</strong>: mV</li>
+</ul>
+</li>
+<li><strong>ORP calibration type</strong>: Type of ORP calibration being used.
+<ul>
+<li><strong>Values</strong>: Off, Reference, 1 point</li>
+</ul>
+</li>
+<li><strong>ORP calibration offset</strong>: ORP calibration offset value.
+<ul>
+<li><strong>Unit</strong>: mV</li>
+</ul>
+</li>
+<li><strong>ORP calibration slope</strong>: ORP calibration slope value.
+<ul>
+<li><strong>Unit</strong>: mV</li>
+</ul>
+</li>
+<li><strong>Totalizer</strong>: Total water volume accumulated.
+<ul>
+<li><strong>Unit</strong>: L, m³</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="数值"><a href="#数值" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数值</h3>
+<ul>
+<li><strong>pH target</strong>: Target pH value for automatic dosing control.</li>
+<li><strong>ORP target</strong>: Target ORP (Redox) value for automatic dosing control.
+<ul>
+<li><strong>Unit</strong>: mV</li>
+</ul>
+</li>
+<li><strong>Chlorine target</strong>: Target chlorine concentration for automatic dosing control.
+<ul>
+<li><strong>Unit</strong>: ppm</li>
+</ul>
+</li>
+<li><strong>pH overfeed alarm lower limit</strong>: Lower threshold for pH overfeed detection.</li>
+<li><strong>pH overfeed alarm upper limit</strong>: Upper threshold for pH overfeed detection.</li>
+<li><strong>ORP overfeed alarm lower limit</strong>: Lower threshold for ORP overfeed detection.
+<ul>
+<li><strong>Unit</strong>: mV</li>
+</ul>
+</li>
+<li><strong>ORP overfeed alarm upper limit</strong>: Upper threshold for ORP overfeed detection.
+<ul>
+<li><strong>Unit</strong>: mV</li>
+</ul>
+</li>
+<li><strong>Chlorine overfeed alarm lower limit</strong>: Lower threshold for chlorine overfeed detection.
+<ul>
+<li><strong>Unit</strong>: ppm</li>
+</ul>
+</li>
+<li><strong>Chlorine overfeed alarm upper limit</strong>: Upper threshold for chlorine overfeed detection.
+<ul>
+<li><strong>Unit</strong>: ppm</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="开关"><a href="#开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关</h3>
+<ul>
+<li><strong>Pause dosing</strong>: Pauses or resumes the dosing process.</li>
+<li><strong>Pump monitoring</strong>: Enables or disables pump monitoring.</li>
+<li><strong>Frequency input</strong>: Enables or disables frequency input for a water meter.</li>
+</ul>
+<h3 class="rp-toc-include" id="选择项"><a href="#选择项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选择项</h3>
+<ul>
+<li><strong>Water meter unit</strong>: Water meter measurement unit.
+<ul>
+<li><strong>Options</strong>: Liters, Cubic meters</li>
+</ul>
+</li>
+<li><strong>Flow rate unit</strong>: Flow rate measurement unit.
+<ul>
+<li><strong>Options</strong>: Cubic meters per hour, Liters per second</li>
+</ul>
+</li>
+<li><strong>pH dosing type</strong>: pH dosing type.
+<ul>
+<li><strong>Options</strong>: pH+ / alcalyne, pH- / acid</li>
+</ul>
+</li>
+<li><strong>pH dosing method</strong>: pH dosing control method.
+<ul>
+<li><strong>Options</strong>: Disabled, Proportional control, On/Off control, Timed dosing</li>
+</ul>
+</li>
+<li><strong>ORP dosing type</strong>: ORP/Redox dosing type.
+<ul>
+<li><strong>Options</strong>: Low intensity, High intensity</li>
+</ul>
+</li>
+<li><strong>ORP dosing method</strong>: ORP/Redox dosing control method.
+<ul>
+<li><strong>Options</strong>: Disabled, Proportional control, On/Off control, Timed dosing</li>
+</ul>
+</li>
+<li><strong>Chlorine dosing type</strong>: Chlorine dosing type.
+<ul>
+<li><strong>Options</strong>: Low intensity, High intensity</li>
+</ul>
+</li>
+<li><strong>Chlorine dosing method</strong>: Chlorine dosing control method.
+<ul>
+<li><strong>Options</strong>: Disabled, Proportional control, On/Off control, Timed dosing</li>
+</ul>
+</li>
+</ul>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<h3 class="rp-toc-include" id="监测-orp-水平并发送提醒"><a href="#监测-orp-水平并发送提醒" class="rp-header-anchor rp-link" aria-hidden="true">#</a>监测 ORP 水平并发送提醒</h3>
+<p>此自动化会监测泳池的 ORP 水平，并在其超出建议范围时发送通知。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Pool ORP out of range&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_orp</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        below</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 650</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;low&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_orp</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        above</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 750</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;high&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.notify</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Pool ORP alert&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;ORP level is {{ trigger.id }}: {{ states(&#x27;sensor.pool_device_orp&#x27;) }} mV&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="监测-ph-水平并发送提醒"><a href="#监测-ph-水平并发送提醒" class="rp-header-anchor rp-link" aria-hidden="true">#</a>监测 pH 水平并发送提醒</h3>
+<p>此自动化会监测泳池的 pH 水平，并在其超出建议范围时发送通知。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Pool pH out of range&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_ph</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        below</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 6.8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;low&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_ph</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        above</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 7.6</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;high&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.notify</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Pool pH alert&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;pH level is {{ trigger.id }}: {{ states(&#x27;sensor.pool_device_ph&#x27;) }}&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="在-ph-极端时暂停投药"><a href="#在-ph-极端时暂停投药" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 pH 极端时暂停投药</h3>
+<p>此自动化会在 pH 值达到危险的高值或低值时暂停投药系统，以防止化学药剂投加过量。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Pause dosing on extreme pH&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_ph</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        below</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 6.5</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;too_low&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_ph</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        above</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 8.0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;too_high&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.pool_device_pause_dosing</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.notify</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Pool dosing paused&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Dosing paused - pH is {{ trigger.id }}: {{ states(&#x27;sensor.pool_device_ph&#x27;) }}&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="泳池监控仪表板"><a href="#泳池监控仪表板" class="rp-header-anchor rp-link" aria-hidden="true">#</a>泳池监控仪表板</h3>
+<p>此示例结合多种卡片类型，创建一个全面的泳池监控视图。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> vertical-stack</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">cards</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> entities</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Pool status</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_temperature</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Temperature</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_ph</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> pH level</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_orp</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> ORP level</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.pool_device_pause_dosing</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Dosing control</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> horizontal-stack</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    cards</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> gauge</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_ph</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> pH</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        min</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 6.5</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        max</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 8.0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        needle</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        segments</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 6.5</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var(--error-color)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 6.8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var(--warning-color)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 7.2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var(--success-color)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 7.6</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var(--warning-color)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 7.8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var(--error-color)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> gauge</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_orp</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> ORP</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        unit</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> mV</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        min</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 600</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        max</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 800</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        needle</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        segments</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 600</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var(--error-color)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 650</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var(--success-color)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 750</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var(--error-color)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> history-graph</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 24 hour trends</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    hours_to_show</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 24</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_ph</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_orp</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.pool_device_temperature</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> entities</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Alarms</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    state_color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.pool_device_ph_tank_level_alarm</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> pH tank level</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.pool_device_orp_tank_level_alarm</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> ORP tank level</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.pool_device_ph_overfeed_alarm</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> pH overfeed</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.pool_device_orp_overfeed_alarm</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> ORP overfeed</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">entity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.pool_device_flow_rate_alarm</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Flow rate</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<h3 class="rp-toc-include" id="硬件与连接问题"><a href="#硬件与连接问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>硬件与连接问题</h3>
+<p>PoolDose 设备有两个特性可能影响其网络连接能力：</p>
+<ul>
+<li>
+<p><strong>硬件限制</strong>：设备使用的是小型控制器，Web 服务器和数据处理任务会给它带来较高负载。这有时会导致短暂的连接中断，不过设备通常会很快恢复。</p>
+</li>
+<li>
+<p><strong>节能模式</strong>：当设备设置中启用了泵监控功能时，如果未检测到泵运行，设备通常会进入节能模式。在此期间，设备对网络请求的响应可能变慢，或者暂时在网络上不可用，比如夜间。</p>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="缓存数据行为"><a href="#缓存数据行为" class="rp-header-anchor rp-link" aria-hidden="true">#</a>缓存数据行为</h3>
+<p>这些限制属于设备的正常行为，并非集成本身的问题。为应对这类连接问题，当设备暂时无响应时，集成会将数值最多缓存 300 秒（5 分钟）。缓存期结束后，实体会显示为“不可用”，直到设备再次提供新数据。</p>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<h3 class="rp-toc-include" id="找不到设备"><a href="#找不到设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>找不到设备</h3>
+<h4 class="rp-toc-include" id="症状无法在网络中找到设备"><a href="#症状无法在网络中找到设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：“无法在网络中找到设备”</h4>
+<p>尝试设置集成时，你会收到无法找到设备的错误。</p>
+<h5 class="rp-toc-include" id="说明"><a href="#说明" class="rp-header-anchor rp-link" aria-hidden="true">#</a>说明</h5>
+<p>设备可能没有正确连接到网络，或者它使用的 IP 地址或主机名与你预期的不一致。</p>
+<h5 class="rp-toc-include" id="解决方法"><a href="#解决方法" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h5>
+<p>尝试以下步骤来解决此问题：</p>
+<ol>
+<li>检查设备是否已通电并连接到你的 Wi-Fi 网络。</li>
+<li>在路由器的设备列表或 DHCP 客户端表中查找名为 “kommspot” 的设备。</li>
+<li>在集成设置中使用 “kommspot” 显示的 IP 地址。</li>
+<li>确保设备与 Home Assistant 位于同一网段。</li>
+</ol>
+<h3 class="rp-toc-include" id="连接被拒绝"><a href="#连接被拒绝" class="rp-header-anchor rp-link" aria-hidden="true">#</a>连接被拒绝</h3>
+<h4 class="rp-toc-include" id="症状连接被拒绝或身份验证错误"><a href="#症状连接被拒绝或身份验证错误" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：“连接被拒绝”或身份验证错误</h4>
+<p>尽管设备能在网络中被找到，但集成仍无法连接到它。</p>
+<h5 class="rp-toc-include" id="说明-1"><a href="#说明-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>说明</h5>
+<p>这通常发生在设备 Web 界面的密码未设置为默认值（0000），或者未被正确停用时。</p>
+<h5 class="rp-toc-include" id="解决方法-1"><a href="#解决方法-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h5>
+<p>请按以下步骤操作：</p>
+<ol>
+<li>使用浏览器访问设备的 IP 地址。</li>
+<li>登录 Web 界面。</li>
+<li>将密码设为默认值（0000）或停用密码保护。</li>
+<li>再次尝试设置集成。</li>
+</ol>
+<h3 class="rp-toc-include" id="连接不稳定"><a href="#连接不稳定" class="rp-header-anchor rp-link" aria-hidden="true">#</a>连接不稳定</h3>
+<h4 class="rp-toc-include" id="症状实体频繁变为不可用"><a href="#症状实体频繁变为不可用" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：实体频繁变为不可用</h4>
+<p>传感器实体会间歇性显示为“不可用”，尤其是在一天中的某些时段。</p>
+<h5 class="rp-toc-include" id="说明-2"><a href="#说明-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>说明</h5>
+<p>这是 PoolDose 设备的正常行为。当循环泵未运行时，设备会进入一种类似休眠的模式，对网络请求的响应会变慢。</p>
+<h5 class="rp-toc-include" id="解决方法-2"><a href="#解决方法-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h5>
+<p>这是预期行为，并不表示集成存在问题：</p>
+<ol>
+<li>当设备暂时无响应时，集成会使用缓存值。</li>
+<li>设备恢复响应后，实体会恢复正常。</li>
+<li>在创建依赖这些传感器的自动化时，请考虑这种行为。</li>
+</ol>
+<h3 class="rp-toc-include" id="缺少蠕动泵状态"><a href="#缺少蠕动泵状态" class="rp-header-anchor rp-link" aria-hidden="true">#</a>缺少蠕动泵状态</h3>
+<h4 class="rp-toc-include" id="症状没有可用的蠕动泵状态数据"><a href="#症状没有可用的蠕动泵状态数据" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：没有可用的蠕动泵状态数据</h4>
+<p>蠕动泵状态传感器不显示任何数据，或显示为不可用。</p>
+<h5 class="rp-toc-include" id="说明-3"><a href="#说明-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>说明</h5>
+<p>只有当设备设置中启用了这些泵的外部继电器时，PoolDose 设备才会上传蠕动投药泵的状态。</p>
+<h5 class="rp-toc-include" id="解决方法-3"><a href="#解决方法-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h5>
+<p>要获取蠕动泵状态数据：</p>
+<ol>
+<li>打开 PoolDose 设备的设置页面。</li>
+<li>找到 pH 和 ORP 泵的外部继电器配置。</li>
+<li>为你想监控的泵启用外部继电器。</li>
+<li>保存设置，并在需要时重启设备。</li>
+</ol>
+<h2 class="rp-toc-include" id="诊断"><a href="#诊断" class="rp-header-anchor rp-link" aria-hidden="true">#</a>诊断</h2>
+<p>此集成提供诊断信息，用于帮助调试和故障排除。诊断输出包括：</p>
+<ul>
+<li>协调器上报的设备信息，其中敏感值会被脱敏处理。</li>
+<li>协调器最近一次从设备获取的数据。</li>
+</ul>
+<p>要收集诊断信息，请前往 <strong>设置</strong> &gt; <strong>设备与服务</strong>，打开 PoolDose 集成，选择集成条目上的三点菜单，然后选择 <strong>下载诊断信息</strong>。报告问题时请附上下载的文件，以帮助维护者排查。</p>
+<h2 class="rp-toc-include" id="删除集成"><a href="#删除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除集成</h2>
+<p>此集成遵循标准的集成删除流程，无需额外步骤。</p>
+<h3 class="rp-toc-include" id="从-home-assistant-中删除集成实例"><a href="#从-home-assistant-中删除集成实例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Home Assistant 中删除集成实例</h3>
+<ol>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a> 并选择该集成卡片。</li>
+<li>在设备列表中，选择你要删除的集成实例。</li>
+<li>在该条目旁选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单，然后选择 <strong>删除</strong>。</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#更新与写入行为" class="rp-toc-item rp-link" title="更新与写入行为" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">更新与写入行为</span></a><a href="#支持的设备" class="rp-toc-item rp-link" title="支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备</span></a><a href="#支持的功能" class="rp-toc-item rp-link" title="支持的功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的功能</span></a><a href="#二进制传感器" class="rp-toc-item rp-link" title="二进制传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">二进制传感器</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#数值" class="rp-toc-item rp-link" title="数值" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">数值</span></a><a href="#开关" class="rp-toc-item rp-link" title="开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">开关</span></a><a href="#选择项" class="rp-toc-item rp-link" title="选择项" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">选择项</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#监测-orp-水平并发送提醒" class="rp-toc-item rp-link" title="监测 ORP 水平并发送提醒" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">监测 ORP 水平并发送提醒</span></a><a href="#监测-ph-水平并发送提醒" class="rp-toc-item rp-link" title="监测 pH 水平并发送提醒" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">监测 pH 水平并发送提醒</span></a><a href="#在-ph-极端时暂停投药" class="rp-toc-item rp-link" title="在 pH 极端时暂停投药" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在 pH 极端时暂停投药</span></a><a href="#泳池监控仪表板" class="rp-toc-item rp-link" title="泳池监控仪表板" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">泳池监控仪表板</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#硬件与连接问题" class="rp-toc-item rp-link" title="硬件与连接问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">硬件与连接问题</span></a><a href="#缓存数据行为" class="rp-toc-item rp-link" title="缓存数据行为" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">缓存数据行为</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#找不到设备" class="rp-toc-item rp-link" title="找不到设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">找不到设备</span></a><a href="#症状无法在网络中找到设备" class="rp-toc-item rp-link" title="症状：“无法在网络中找到设备”" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：“无法在网络中找到设备”</span></a><a href="#连接被拒绝" class="rp-toc-item rp-link" title="连接被拒绝" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">连接被拒绝</span></a><a href="#症状连接被拒绝或身份验证错误" class="rp-toc-item rp-link" title="症状：“连接被拒绝”或身份验证错误" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：“连接被拒绝”或身份验证错误</span></a><a href="#连接不稳定" class="rp-toc-item rp-link" title="连接不稳定" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">连接不稳定</span></a><a href="#症状实体频繁变为不可用" class="rp-toc-item rp-link" title="症状：实体频繁变为不可用" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：实体频繁变为不可用</span></a><a href="#缺少蠕动泵状态" class="rp-toc-item rp-link" title="缺少蠕动泵状态" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">缺少蠕动泵状态</span></a><a href="#症状没有可用的蠕动泵状态数据" class="rp-toc-item rp-link" title="症状：没有可用的蠕动泵状态数据" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：没有可用的蠕动泵状态数据</span></a><a href="#诊断" class="rp-toc-item rp-link" title="诊断" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">诊断</span></a><a href="#删除集成" class="rp-toc-item rp-link" title="删除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">删除集成</span></a><a href="#从-home-assistant-中删除集成实例" class="rp-toc-item rp-link" title="从 Home Assistant 中删除集成实例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从 Home Assistant 中删除集成实例</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

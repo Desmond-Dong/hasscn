@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amazon Alexa 智能家居技能 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Amazon Alexa 智能家居技能 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Amazon Alexa 提供了 Smart Home API，可实现更丰富的家庭自动化控制，而且无需用户说出技能名称，例如：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Amazon Alexa 提供了 Smart Home API，可实现更丰富的家庭自动化控制，而且无需用户说出技能名称，例如：。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/create_a_new_skill.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/create_iam_role_attach_permission.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/lambda_function_env_var.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/account_linking.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/alexa_app_security_system_pin.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/alexa_app_button_trigger.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/alexa_app_person_detection.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/alexa_app_garage_door_pin.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/alexa_app_doorbell_announcement.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/alexa/alexa_app_switch_trigger.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="amazon-alexa-智能家居技能"><a href="#amazon-alexa-智能家居技能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Amazon Alexa 智能家居技能<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>Amazon Alexa 提供了 Smart Home API，可实现更丰富的家庭自动化控制，而且无需用户说出技能名称，例如：</p>
+<ul>
+<li><em>&quot;Alexa, turn off the light.&quot;</em></li>
+<li><em>&quot;Alexa, set the thermostat to cool.&quot;</em></li>
+<li><em>&quot;Alexa, is the garage door open?&quot;</em></li>
+</ul>
+<p>这项配置需要投入不少精力。您的 Home Assistant 实例必须可从互联网访问，而且您还需要创建 Amazon Developer 账户和 Amazon Web Services（AWS）账户。更简单的方案是使用 <a href="/home-assistant/integrations/cloud/index.html" class="rp-link">Home Assistant Cloud</a>。</p>
+<p><a href="/integrations/emulated_hue/" class="rp-link">Emulated Hue 集成</a>提供了更简单的替代方案，让您可以使用像 <em>&quot;Alexa, turn on the kitchen light&quot;</em> 这样的语句。不过它存在一些限制，因为所有设备都会被视为灯泡。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+使用 <a href="/home-assistant/cloud/index.html" class="rp-link">Home Assistant Cloud</a>，您只需简单点击几下，就可以将 Home Assistant 实例连接到 Amazon Alexa。借助 Home Assistant Cloud，您无需处理动态 DNS、SSL 证书或在路由器上开放端口。只需通过用户界面登录，即可建立与云端的安全连接。Home Assistant Cloud 在 30 天免费试用后需要付费订阅。
+<br/>
+<br/>
+Home Assistant Cloud 用户可在<a href="https://www.nabucasa.com/config/amazon_alexa/" target="_blank" rel="noopener noreferrer" class="rp-link">这里</a>查看相关文档。</p><p>:::
+将 Amazon Alexa 智能家居技能与 Home Assistant 集成的步骤：</p><ul>
+<li><a href="#requirements" class="rp-link">要求</a></li>
+<li><a href="#create-an-amazon-alexa-smart-home-skill" class="rp-link">创建 Amazon Alexa 智能家居技能</a></li>
+<li><a href="#create-an-aws-lambda-function" class="rp-link">创建 AWS Lambda 函数</a>
+<ul>
+<li><a href="#create-an-iam-role-for-lambda" class="rp-link">为 Lambda 创建 IAM 角色</a></li>
+<li><a href="#add-code-to-the-lambda-function" class="rp-link">向 Lambda 函数添加代码</a></li>
+<li><a href="#test-the-lambda-function" class="rp-link">测试 Lambda 函数</a></li>
+</ul>
+</li>
+<li><a href="#configure-the-smart-home-service-endpoint" class="rp-link">配置智能家居服务端点</a></li>
+<li><a href="#account-linking" class="rp-link">账户关联</a></li>
+<li><a href="#alexa-smart-home-integration-configuration" class="rp-link">Alexa 智能家居集成配置</a></li>
+<li><a href="#supported-platforms" class="rp-link">支持的平台</a>
+<ul>
+<li><a href="#alarm-control-panel" class="rp-link">报警控制面板</a>
+<ul>
+<li><a href="#arming" class="rp-link">布防</a></li>
+<li><a href="#disarming" class="rp-link">撤防</a></li>
+</ul>
+</li>
+<li><a href="#alert-automation-group" class="rp-link">Alert、Automation、Group</a></li>
+<li><a href="#binary-sensor" class="rp-link">二值传感器</a>
+<ul>
+<li><a href="#routines" class="rp-link">例程</a></li>
+</ul>
+</li>
+<li><a href="#button-input-button" class="rp-link">Button、Input Button</a>
+<ul>
+<li><a href="#routines-1" class="rp-link">例程</a></li>
+<li><a href="#doorbell-announcement-with-binary_sensor" class="rp-link">使用 binary_sensor 进行门铃播报</a></li>
+<li><a href="#presence-detection-with-binary-sensor" class="rp-link">使用二值传感器进行存在检测</a></li>
+</ul>
+</li>
+<li><a href="#camera" class="rp-link">摄像头</a></li>
+<li><a href="#climate" class="rp-link">Climate</a>
+<ul>
+<li><a href="#set-thermostat-temperature" class="rp-link">设置温控器温度</a></li>
+<li><a href="#thermostat-mode" class="rp-link">温控器模式</a></li>
+</ul>
+</li>
+<li><a href="#cover" class="rp-link">Cover</a>
+<ul>
+<li><a href="#opencloseraiselower" class="rp-link">打开/关闭/升起/降下</a></li>
+<li><a href="#set-cover-position" class="rp-link">设置窗帘位置</a></li>
+<li><a href="#set-cover-tilt" class="rp-link">设置窗帘倾斜角度</a></li>
+<li><a href="#stop-the-covers-operation" class="rp-link">停止 Cover 操作</a></li>
+<li><a href="#garage-doors" class="rp-link">车库门</a></li>
+</ul>
+</li>
+<li><a href="#event-entities" class="rp-link">事件实体</a>
+<ul>
+<li><a href="#doorbell-events" class="rp-link">门铃事件</a></li>
+</ul>
+</li>
+<li><a href="#fan" class="rp-link">风扇</a>
+<ul>
+<li><a href="#fan-speed" class="rp-link">风扇速度</a></li>
+<li><a href="#fan-preset-mode" class="rp-link">风扇预设模式</a></li>
+<li><a href="#fan-direction" class="rp-link">风扇方向</a></li>
+<li><a href="#fan-oscillation" class="rp-link">风扇摆动</a></li>
+</ul>
+</li>
+<li><a href="#humidifier" class="rp-link">加湿器</a>
+<ul>
+<li><a href="#humidifier-target-humidity" class="rp-link">加湿器目标湿度</a></li>
+<li><a href="#humidifier-mode" class="rp-link">加湿器模式</a></li>
+</ul>
+</li>
+<li><a href="#image-processing" class="rp-link">图像处理</a>
+<ul>
+<li><a href="#presence-detection-notification" class="rp-link">存在检测通知</a></li>
+</ul>
+</li>
+<li><a href="#input-number-and-number" class="rp-link">Input Number 和 Number</a></li>
+<li><a href="#light" class="rp-link">灯光</a>
+<ul>
+<li><a href="#brightness" class="rp-link">亮度</a></li>
+<li><a href="#color-temperature" class="rp-link">色温</a></li>
+<li><a href="#color" class="rp-link">颜色</a></li>
+</ul>
+</li>
+<li><a href="#lock" class="rp-link">门锁</a>
+<ul>
+<li><a href="#unlocking" class="rp-link">解锁</a></li>
+</ul>
+</li>
+<li><a href="#media-player" class="rp-link">媒体播放器</a>
+<ul>
+<li><a href="#change-channel" class="rp-link">切换频道</a></li>
+<li><a href="#speaker-volume" class="rp-link">扬声器音量</a></li>
+<li><a href="#equalizer-mode" class="rp-link">均衡器模式</a></li>
+<li><a href="#inputs" class="rp-link">输入源</a></li>
+<li><a href="#playback-state" class="rp-link">播放状态</a></li>
+</ul>
+</li>
+<li><a href="#remote" class="rp-link">Remote</a></li>
+<li><a href="#scene" class="rp-link">场景</a></li>
+<li><a href="#script" class="rp-link">脚本</a></li>
+<li><a href="#sensor" class="rp-link">传感器</a></li>
+<li><a href="#switch-input-boolean" class="rp-link">Switch、Input Boolean</a>
+<ul>
+<li><a href="#routines-2" class="rp-link">例程</a></li>
+</ul>
+</li>
+<li><a href="#timer" class="rp-link">计时器</a></li>
+<li><a href="#vacuum" class="rp-link">扫地机</a></li>
+<li><a href="#valve" class="rp-link">阀门</a>
+<ul>
+<li><a href="#openclose" class="rp-link">打开/关闭</a></li>
+<li><a href="#set-valve-position" class="rp-link">设置阀门位置</a></li>
+<li><a href="#stop-the-valve" class="rp-link">停止阀门</a></li>
+</ul>
+</li>
+<li><a href="#water-heater" class="rp-link">热水器</a>
+<ul>
+<li><a href="#set-target-temperature" class="rp-link">设置目标温度</a></li>
+<li><a href="#operation-mode" class="rp-link">运行模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#troubleshooting" class="rp-link">故障排除</a></li>
+<li><a href="#debugging" class="rp-link">调试</a></li>
+</ul><h2 class="rp-toc-include" id="要求"><a href="#要求" class="rp-header-anchor rp-link" aria-hidden="true">#</a>要求</h2><ul>
+<li>Alexa Smart Home API 要求您的 Home Assistant 实例能够通过使用 SSL/TLS 证书的 HTTPS 在 443 端口上从互联网访问。自签名证书不可用，但受信任的公共证书或由<a href="https://ccadb-public.secure.force.com/mozilla/IncludedCACertificateReport" target="_blank" rel="noopener noreferrer" class="rp-link">Amazon 认可的证书颁发机构</a>签发的证书通常可用。有关如何为 Home Assistant 设置加密，请参阅<a href="/home-assistant/blog/2015/12/13/setup-encryption-using-lets-encrypt/" class="rp-link">我们的博客</a>。在运行 Home Assistant 时，使用 <a href="/home-assistant/addons/duckdns/" class="rp-link">Duck DNS</a> 加载项是最简单的方法。</li>
+<li>一个 Amazon Developer 账户。可在<a href="https://developer.amazon.com" target="_blank" rel="noopener noreferrer" class="rp-link">这里</a>注册。</li>
+<li>需要一个 <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer" class="rp-link">Amazon Web Services (AWS)</a> 账户来托管 Alexa 智能家居技能所需的 Lambda 函数。<a href="https://aws.amazon.com/lambda/pricing/" target="_blank" rel="noopener noreferrer" class="rp-link">AWS Lambda</a> 每月可免费使用最多 100 万次请求和 1GB 出站数据传输。</li>
+</ul><h2 class="rp-toc-include" id="创建-amazon-alexa-智能家居技能"><a href="#创建-amazon-alexa-智能家居技能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建 Amazon Alexa 智能家居技能</h2><ul>
+<li>登录 <a href="https://developer.amazon.com/alexa/console/ask" target="_blank" rel="noopener noreferrer" class="rp-link">Alexa Developer Console</a>，您可以在登录页面创建免费账户。请注意，这个账户<em>必须</em>与您在 Alexa 设备和 Alexa 应用中使用的 Amazon 账户相同。</li>
+<li>如果当前不在 <code>Alexa Skills</code> 页面，请先进入该页面，然后选择 <code>Create Skill</code> 按钮开始创建。</li>
+<li>输入您喜欢的 <code>Skill name</code>，然后选择技能的 <code>Default language</code>。</li>
+<li>选择 <code>Smart Home</code> 和 <code>Provision your own</code>，然后点击右上角的 <code>Create skill</code> 按钮。</li>
+</ul><p class="img">
+  <img src="/home-assistant/images/integrations/alexa/create_a_new_skill.png" alt="截图：创建智能家居技能"/>
+</p><ul>
+<li>在下一个页面中，请确保 <code>Payload version</code> 选择的是 <em>v3</em>，并记下您的 <code>Skill ID</code></li>
+<li>现在，您已经创建好了一个 Smart Home 技能的基础骨架。下一步我们要做一些“真正的”开发工作。请保持 Alexa Developer Console 打开，稍后我们还需要修改技能配置。</li>
+</ul><h2 class="rp-toc-include" id="创建-aws-lambda-函数"><a href="#创建-aws-lambda-函数" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建 AWS Lambda 函数</h2><p>我们将编写一小段托管在 AWS Lambda 函数中的代码，用于将 Alexa 智能家居技能的请求转发到您的 Home Assistant 实例，然后由 Home Assistant 中的 Alexa 集成处理请求并返回响应。随后，Lambda 函数会再将该响应返回给 Alexa 智能家居技能。</p><p>好了，开始吧。首先，您需要登录 <a href="https://console.aws.amazon.com/" target="_blank" rel="noopener noreferrer" class="rp-link">AWS console</a>。如果您还没有 AWS 账户，可以在<a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer" class="rp-link">这里</a>创建一个新用户，并享受 12 个月免费套餐。即使您的账户已经超过前 12 个月，也不必太担心费用，因为 AWS 每个月都会为所有用户免费提供最多 100 万次 Lambda 请求、1GB 出站数据，以及所有入站数据。有关更多信息，请参阅 <a href="https://aws.amazon.com/lambda/pricing/" target="_blank" rel="noopener noreferrer" class="rp-link">Lambda 定价</a>。</p><h3 class="rp-toc-include" id="为-lambda-创建-iam-角色"><a href="#为-lambda-创建-iam-角色" class="rp-header-anchor rp-link" aria-hidden="true">#</a>为 Lambda 创建 IAM 角色</h3><p>登录 <a href="https://console.aws.amazon.com/" target="_blank" rel="noopener noreferrer" class="rp-link">AWS console</a> 之后，您首先需要为 Lambda 执行创建一个 IAM 角色。AWS 的访问控制非常严格，因此您必须明确地定义并分配所需权限。</p><ul>
+<li>在顶部导航栏中选择 <code>Services</code>，展开菜单以显示所有 AWS 服务，然后在 <code>Security, Identity, &amp; Compliance</code> 部分选择 <code>IAM</code>，进入 IAM 控制台。您也可以直接使用这个<a href="https://console.aws.amazon.com/iam/home" target="_blank" rel="noopener noreferrer" class="rp-link">链接</a></li>
+<li>在左侧面板选择 <code>Roles</code>，然后点击 <code>Create role</code>，在向导的第一页中选择 <code>AWS Service</code> -&gt; <code>Lambda</code>，再点击 <code>Next: Permissions</code></li>
+<li>选择 <code>AWSLambdaBasicExecutionRole</code> 策略，然后点击 <code>Next: Tags</code>。（提示：您可以使用搜索框筛选策略）</li>
+</ul><p class="img">
+  <img src="/home-assistant/images/integrations/alexa/create_iam_role_attach_permission.png" alt="截图：向 IAM 角色附加权限策略"/>
+</p><ul>
+<li>为新角色命名，例如 <code>AWSLambdaBasicExecutionRole-SmartHome</code>，然后点击页面底部的 <code>Create role</code> 按钮。现在，您应该可以在角色列表中找到这个新角色。</li>
+</ul><h3 class="rp-toc-include" id="向-lambda-函数添加代码"><a href="#向-lambda-函数添加代码" class="rp-header-anchor rp-link" aria-hidden="true">#</a>向 Lambda 函数添加代码</h3><p>接下来，您需要创建一个 Lambda 函数。</p><ul>
+<li>
+<p>在顶部导航栏选择 <code>Services</code>，展开菜单显示所有 AWS 服务，然后在 <code>Compute</code> 部分选择 <code>Lambda</code>，进入 Lambda 控制台。您也可以使用这个<a href="https://console.aws.amazon.com/lambda/home" target="_blank" rel="noopener noreferrer" class="rp-link">链接</a>
+<strong>重要 - Alexa 技能仅支持特定 AWS 区域。</strong> 当前服务器位置会显示在右上角（例如 Ohio）。请根据您的 Amazon 账户区域，而不是实际地理位置，从下面列表中选择可用服务器（<a href="https://developer.amazon.com/en-US/docs/alexa/smarthome/develop-smart-home-skills-in-multiple-languages.html#deploy" target="_blank" rel="noopener noreferrer" class="rp-link">参考</a>）。<strong>如果 Alexa Lambda 函数创建在其他区域，将无法正常工作，甚至可能导致账户关联失败！例如，如果您的区域设置为 English (US)，而您住在加利福尼亚，您必须使用 US East (N.Virginia)，而不是 US West (Oregon)。即使使用错误区域也能完成设置流程，技能仍然无法工作，而且不会有明确错误信息告诉您原因。</strong></p>
+<ul>
+<li><strong>US East (N.Virginia)</strong> 区域适用于 English (US)、English (CA) 或 Portuguese (BR) 技能</li>
+<li><strong>EU (Ireland)</strong> 区域适用于 English (UK)、English (IN)、German (DE)、Spanish (ES) 或 French (FR) 技能</li>
+<li><strong>US West (Oregon)</strong> 区域适用于 Japanese 和 English (AU) 技能</li>
+</ul>
+</li>
+<li>
+<p>在左侧导航栏中选择 <code>Functions</code>，显示您的 Lambda 函数列表。</p>
+</li>
+<li>
+<p>选择 <code>Create function</code>，选中 <code>Author from scratch</code>，然后输入 <code>Function name</code>。</p>
+</li>
+<li>
+<p>将 <code>Runtime</code> 设为 <code>Python 3.x</code>（选择当前可用的最新 Python 3 版本）。</p>
+</li>
+<li>
+<p>可选：将 <code>Architecture</code> 设为 <code>arm64</code>（性能会略好一些）。</p>
+</li>
+<li>
+<p>展开 <code>Change default execution role</code> 下拉框，并确保在 <code>Execution role</code> 中选择 <em>Use an existing role</em>，然后从 <code>Existing role</code> 列表中选中刚创建的角色。</p>
+</li>
+<li>
+<p>选择 <code>Create function</code>，然后即可配置 Lambda 函数的详细信息。</p>
+</li>
+<li>
+<p>展开 <code>Function overview</code>（如果尚未展开），然后在面板左侧选择 <code>+ Add trigger</code>，再从下拉列表中选择 <code>Alexa Smart Home</code>，将 Alexa 智能家居触发器添加到您的 Lambda 函数。</p>
+</li>
+<li>
+<p>接着系统会要求您输入上一步创建技能时的 <code>Skill ID</code>。（提示：您可能需要切回 Alexa Developer Console 复制 <code>Skill ID</code>。）然后点击 <code>Add</code>。</p>
+</li>
+<li>
+<p>向下滚动到 <code>Code source</code>，如果尚未打开，请打开 <code>lambda_function.py</code>。</p>
+</li>
+<li>
+<p>清空示例代码，并复制以下 Python 脚本：<a href="https://gist.github.com/matt2005/744b5ef548cc13d88d0569eea65f5e5b" target="_blank" rel="noopener noreferrer" class="rp-link">https://gist.github.com/matt2005/744b5ef548cc13d88d0569eea65f5e5b</a>（已修改为支持 Alexa 的主动模式，详见下文）</p>
+</li>
+<li>
+<p>点击 <code>Deploy</code> 按钮发布更新后的代码。</p>
+</li>
+<li>
+<p>切换到 <code>Configuration</code> 选项卡，然后选择 <code>Environment variables</code>。您需要添加 1 个必填环境变量，以及按需添加 3 个可选变量。方法是选择 <code>Edit</code>，然后添加以下内容：</p>
+<ul>
+<li><em>(必填)</em> Key = BASE_URL，Value = 您的 Home Assistant 实例可从互联网访问的 URL。<em>不要包含末尾的 <code>/</code></em></li>
+<li><em>(可选)</em> Key = NOT_VERIFY_SSL，Value = <em>True</em>。如果您没有有效的 SSL 证书，或使用的是自签名证书，可以将其设为 <em>True</em> 以忽略 SSL 问题</li>
+<li><em>(可选)</em> Key = DEBUG，Value = <em>True</em>。将此变量设为 <em>True</em> 可记录调试日志，并允许使用 LONG_LIVED_ACCESS_TOKEN</li>
+<li><em>(可选，不推荐)</em> Key = LONG_LIVED_ACCESS_TOKEN，Value = 您的 Home Assistant 长期访问令牌。为避免使用长期访问令牌，您将在后续步骤中将 Alexa 智能家居技能与 Home Assistant 用户账户关联，因此这里其实不一定需要填写。不过，通过登录流程获取的访问令牌只有 30 分钟有效期，因此在测试数据中使用它来测试 Lambda 函数会比较麻烦。为了方便，您可以先从测试数据中移除 access token，并在此处填写一个<a href="https://developers.home-assistant.io/docs/auth_api/#long-lived-access-token" target="_blank" rel="noopener noreferrer" class="rp-link">长期访问令牌</a>，这样函数就会回退为从环境变量中读取令牌。（提示：您并未为环境变量启用安全存储，因此保存在这里的令牌并不安全。请仅将它用于调试和测试，并在调试完成后移除并删除该长期访问令牌。）</li>
+</ul>
+</li>
+</ul><p class="img">
+  <img src="/home-assistant/images/integrations/alexa/lambda_function_env_var.png" alt="截图：Lambda 函数中的环境变量"/>
+</p><ul>
+<li>现在点击右下角的 <code>Save</code> 按钮。</li>
+<li>接下来，复制页面顶部显示的 ARN，它是这个 Lambda 函数的唯一标识。稍后继续配置 Alexa 智能家居技能时，您会用到这个 ARN。</li>
+</ul><h3 class="rp-toc-include" id="测试-lambda-函数"><a href="#测试-lambda-函数" class="rp-header-anchor rp-link" aria-hidden="true">#</a>测试 Lambda 函数</h3><p>现在，您已经创建好了 Lambda 函数，但在测试之前，您还需要先完成 Home Assistant 中的必要配置。请将以下最小配置添加到您的 <code>configuration.yaml</code> 文件中。它会将所有受支持的设备和自动化暴露给 Alexa。强烈建议您查看<a href="#alexa-smart-home-integration-configuration" class="rp-link">配置部分</a>，以控制哪些设备和实体会暴露出去。</p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">alexa</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  smart_home</span><span style="color:var(--shiki-token-keyword)">:</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><p>重启 Home Assistant 后，返回 <code>AWS Lambda Console</code>，接下来您将进行一些测试。</p><ul>
+<li>切换到 <code>Test</code> 选项卡，然后选择 <code>Create new event</code></li>
+<li>为事件命名，例如 <code>Discovery</code></li>
+<li>在名为 <code>Event JSON</code> 的代码框中输入以下数据：</li>
+</ul><div class="rp-codeblock language-json"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="json"><code><span class="line"><span style="color:var(--shiki-foreground)">{</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  &quot;directive&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    &quot;header&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      &quot;namespace&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Alexa.Discovery&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      &quot;name&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Discover&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      &quot;payloadVersion&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;3&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      &quot;messageId&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;1bd5d003-31b9-476f-ad03-71d471922820&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    }</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    &quot;payload&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      &quot;scope&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;type&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;BearerToken&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      }</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    }</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  }</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><ul>
+<li>点击右上角的 <code>Create</code>。</li>
+</ul><p>这个测试事件是一个 <code>Discovery</code> 指令，您的 Home Assistant 实例会返回一个 Alexa 可以交互的设备列表。由于这个测试数据在 <code>payload.scope</code> 中缺少 <code>token</code>，您的 Lambda 函数会从环境变量中读取 <code>LONG_LIVED_ACCESS_TOKEN</code>。</p><p>点击 <code>Test</code> 按钮。如果您没有设置 <code>LONG_LIVED_ACCESS_TOKEN</code>，或者没有启用 <code>DEBUG</code>，执行结果会返回 <code>INVALID_AUTHORIZATION_CREDENTIAL</code> 响应。</p><p>您可以登录 Home Assistant，并<a href="https://developers.home-assistant.io/docs/auth_api/#long-lived-access-token" target="_blank" rel="noopener noreferrer" class="rp-link">生成一个长期访问令牌</a>。在将该令牌填入 <code>LONG_LIVED_ACCESS_TOKEN</code> 环境变量，并把 <code>DEBUG</code> 环境变量设为 <code>True</code> 后，请不要忘记先点击 <code>Save</code> 按钮，再重新执行 <code>Test</code>。</p><p>这一次，您将在响应中看到自己的设备列表。🎉</p><h2 class="rp-toc-include" id="配置智能家居服务端点"><a href="#配置智能家居服务端点" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置智能家居服务端点</h2><p>现在，您可以移除长期访问令牌（如果您愿意），复制 Lambda 函数的 ARN，然后返回 <a href="https://developer.amazon.com/alexa/console/ask" target="_blank" rel="noopener noreferrer" class="rp-link">Alexa Developer Console</a>。接下来您将完成 Smart Home 技能的配置。</p><ul>
+<li>返回 <a href="https://developer.amazon.com/alexa/console/ask" target="_blank" rel="noopener noreferrer" class="rp-link">Alexa Developer Console</a>，如果当前不在 <code>Alexa Skills</code> 页面，请先进入该页面。</li>
+<li>找到刚刚创建的技能，在 <code>Actions</code> 列点击 <code>Edit</code>。</li>
+<li>在构建页面左侧导航栏中选择 <code>SMART HOME</code>。</li>
+<li>在 <code>2. Smart Home service endpoint</code> 下，将 <code>Default endpoint</code> 填写为您从 Lambda 函数配置中复制的 <code>ARN</code>。</li>
+</ul><h2 class="rp-toc-include" id="账户关联"><a href="#账户关联" class="rp-header-anchor rp-link" aria-hidden="true">#</a>账户关联</h2><p>Alexa 需要将您的 Amazon 账户与 Home Assistant 账户关联。这样，Home Assistant 才能确保只有经过身份验证的 Alexa 请求可以访问您家中的设备。要完成账户关联，您必须确保 Home Assistant 可从互联网访问。</p><ul>
+<li>返回 <a href="https://developer.amazon.com/alexa/console/ask" target="_blank" rel="noopener noreferrer" class="rp-link">Alexa Developer Console</a>，如果当前不在 <code>Alexa Skills</code> 页面，请先进入该页面。</li>
+<li>找到刚创建的技能，在 <code>Actions</code> 列点击 <code>Edit</code>。</li>
+<li>在构建页面左侧导航栏中选择 <code>ACCOUNT LINKING</code></li>
+<li>不要启用 “Allow users to link their account to your skill from within your application or website” 开关。这样会要求提供 Redirect URI，而这在这里无法正常工作。</li>
+<li>填写所有必需信息。假设您的 Home Assistant 可通过 <code>https://[YOUR HOME ASSISTANT URL][:PORT]</code> 访问，其中 <code>PORT</code> 为 TCP 端口。如果端口是 <code>443</code>，则可以省略。对于 Alexa 账户关联，默认使用标准 443 端口。如有需要，请通过防火墙转发该端口：
+<ul>
+<li>
+<p><code>Authorization URI</code>: <code>https://[YOUR HOME ASSISTANT URL][:PORT]/auth/authorize</code></p>
+</li>
+<li>
+<p><code>Access Token URI</code>: <code>https://[YOUR HOME ASSISTANT URL][:PORT]/auth/token</code></p>
+<p>虽然可以分配不同的端口，但更推荐使用 443 端口，因此请确保您的防火墙或代理通过 443 端口进行转发。</p>
+<p>有关账户关联要求的更多信息，请参阅 <a href="https://developer.amazon.com/en-US/docs/alexa/account-linking/requirements-account-linking.html" target="_blank" rel="noopener noreferrer" class="rp-link">Alexa 开发者文档</a>。</p>
+<p>:::note
+尽管 Alexa 文档中有免责声明，但 <a href="https://letsencrypt.org/" target="_blank" rel="noopener noreferrer" class="rp-link">Let&#x27;s Encrypt</a> 证书仍然可以使用。</p>
+</li>
+</ul>
+</li>
+</ul><p>:::
+:::important
+您必须使用有效且受信任的 SSL 证书，账户关联功能才能正常工作。
+自签名证书不可用，但您可以使用免费的 Let&#x27;s Encrypt 证书。</p></div></div>
+<ul>
+<li>
+<p><code>Client ID</code>：</p>
+<ul>
+<li>
+<p>如果您位于美国或巴西，请使用 <code>https://pitangui.amazon.com/</code></p>
+</li>
+<li>
+<p>如果您位于欧洲，请使用 <code>https://layla.amazon.com/</code></p>
+</li>
+<li>
+<p>如果您位于日本或澳大利亚，请使用 <code>https://alexa.amazon.co.jp/</code>（尚未验证）</p>
+<p>这里末尾的斜杠非常重要。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Client Secret</code>：可填写任意内容，Home Assistant 不会检查此字段</p>
+</li>
+<li>
+<p><code>Your Authentication Scheme</code>：请确保选择 <em>Credentials in request body</em>。Home Assistant 不支持 <em>HTTP Basic</em></p>
+</li>
+<li>
+<p><code>Scope</code>：点击 <code>+ Add scope</code> 并输入 <code>smart_home</code>。Home Assistant 当前尚未使用该值，但未来在支持更细粒度访问控制时可能会用到</p>
+</li>
+<li>
+<p><code>Domain List</code> 和 <code>Default Access Token Expiration Time</code> 可以留空</p>
+</li>
+</ul>
+<p class="img">
+  <img src="/home-assistant/images/integrations/alexa/account_linking.png" alt="截图：账户关联"/>
+</p>
+<ul>
+<li>点击右上角的 <code>Save</code> 按钮。</li>
+<li>接下来，您需要使用 Alexa 手机应用来关联账户。
+<ul>
+<li>在 Alexa 应用中，依次进入 <code>More</code> -&gt; <code>Skills &amp; Games</code> -&gt; <code>Your Skills</code> -&gt; <code>Dev</code></li>
+<li>点击您刚刚创建的 Smart Home 技能</li>
+<li>点击 <code>Enable to use</code></li>
+<li>系统会打开一个新窗口，引导您进入 Home Assistant 的登录页面</li>
+<li>登录成功后，您会被重定向回 Alexa 应用</li>
+<li>Alexa 现在应该会自动开始发现您的设备！通常物理设备上会显示蓝色光环作为提示</li>
+<li>如果没有，请直接让 Alexa 执行 <code>Discover Devices</code></li>
+</ul>
+</li>
+<li>现在，您就可以通过 Echo 或 Alexa 应用对 Alexa 说 <em>&quot;Alexa, turn on bedroom light&quot;</em> 了 🎉</li>
+</ul>
+<h2 class="rp-toc-include" id="alexa-智能家居集成配置"><a href="#alexa-智能家居集成配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Alexa 智能家居集成配置</h2>
+<p>配置示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">alexa</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  smart_home</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    locale</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> en-US</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    endpoint</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> https://api.amazonalexa.com/v3/events</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    client_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> YOUR_SKILL_CLIENT_ID</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    client_secret</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> YOUR_SKILL_CLIENT_SECRET</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">light.kitchen</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">light.kitchen_left</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_entity_globs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">binary_sensor.*_motion</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">switch</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      exclude_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">switch.outside</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_config</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      light.kitchen</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Custom Name for Alexa&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;厨房里的灯&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      switch.stairs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        display_categories</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> LIGHT</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">alexa</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Alexa 配置</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    smart_home</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Alexa 智能家居配置</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        locale</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 您的 Alexa 设备的语言区域。支持的语言区域有 `de-DE`、`en-AU`、`en-CA`、`en-GB`、`en-IN`、`en-US`、`es-ES`、`es-MX`、`es-US`、`fr-CA`、`fr-FR`、`hi-IN`、`it-IT`、`ja-JP`、`nl-NL` 和 `pt-BR`。更多信息请参阅 [Alexa 语言区域](#alexa-locale)。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> en-US</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        endpoint</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            要启用主动事件，您需要向 Alexa 事件网关发送消息，将其发送到与您的智能家居技能地理可用性相匹配的事件端点。以下是端点列表及其覆盖的区域。更多信息请参阅 [主动事件](#proactive-events)。</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">             - 北美：`https://api.amazonalexa.com/v3/events`</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">             - 欧洲：`https://api.eu.amazonalexa.com/v3/events`</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">             - 远东：`https://api.fe.amazonalexa.com/v3/events`</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        client_id</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 更多信息请参阅 [主动事件](#proactive-events)。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        client_secret</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 更多信息请参阅 [主动事件](#proactive-events)。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 过滤 Alexa 的域和实体。（[配置过滤器](#configure-filter)）</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            include_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 要包含的域列表（例如 `light`）。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            exclude_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 要排除的域列表（例如 `light`）。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            include_entity_globs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 包含所有匹配列出模式的实体（例如 `binary_sensor.*_motion`）。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            exclude_entity_globs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 排除所有匹配列出模式的实体（例如 `binary_sensor.*_motion`）。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            include_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 要包含的实体列表（例如 `light.attic`）。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            exclude_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 要排除的实体列表（例如 `light.attic`）。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_config</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 特定实体的配置。所有下级键是对应的实体 ID 或域，例如 `alarm_control_panel.woowoo`。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">            &#x27;`&lt;ENTITY_ID&gt;`&#x27;</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 特定实体的附加选项。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                name</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在 Amazon Alexa 应用程序中显示的实体名称。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                description</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在 Amazon Alexa 应用程序中显示的实体描述。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                display_categories</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">                    在 Alexa 应用程序中显示每个实体的显示类别和图标。用逗号分隔每个类别。第一个类别是主要的。例如 `MUSIC_SYSTEM,STREAMING_DEVICE,SPEAKER`。可用类别列表请参阅 [Alexa 显示类别](#alexa-display-categories)。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">                  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<!-- -->
+<h3 class="rp-toc-include" id="alexa-区域设置"><a href="#alexa-区域设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Alexa 区域设置</h3>
+<p><code>locale</code> 应与您的 Amazon Echo 设备所使用的位置和语言相匹配。</p>
+<p>支持的区域设置如下：</p>
+<ul>
+<li><code>de-DE</code></li>
+<li><code>en-AU</code></li>
+<li><code>en-CA</code></li>
+<li><code>en-GB</code></li>
+<li><code>en-IN</code></li>
+<li><code>en-US</code></li>
+<li><code>es-ES</code></li>
+<li><code>es-MX</code></li>
+<li><code>es-US</code></li>
+<li><code>fr-CA</code></li>
+<li><code>fr-FR</code></li>
+<li><code>hi-IN</code></li>
+<li><code>it-IT</code></li>
+<li><code>ja-JP</code></li>
+<li><code>nl-NL</code></li>
+<li><code>pt-BR</code></li>
+</ul>
+<p>请参阅<a href="https://developer.amazon.com/docs/alexa/device-apis/list-of-interfaces.html" target="_blank" rel="noopener noreferrer" class="rp-link">功能接口和支持区域设置列表</a>。</p>
+<!-- -->
+<h3 class="rp-toc-include" id="主动事件"><a href="#主动事件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>主动事件</h3>
+<p><code>endpoint</code>、<code>client_id</code> 和 <code>client_secret</code> 是可选项，只有在您想启用 Alexa 的主动模式（也就是启用 “Send Alexa Events”）时才需要配置。如果您要启用主动模式，请注意以下事项：</p>
+<ul>
+<li>根据技能所属区域的不同，端点 URL 也会不同。请在 <a href="https://developer.amazon.com/docs/smarthome/send-events.html#endpoints" target="_blank" rel="noopener noreferrer" class="rp-link">https://developer.amazon.com/docs/smarthome/send-events.html#endpoints</a> 查看可用端点</li>
+<li><code>client_id</code> 和 <code>client_secret</code> 不是通过 “Login with Amazon” 为技能配置的那一组（位于 <a href="https://developer.amazon.com/alexa/console/ask" target="_blank" rel="noopener noreferrer" class="rp-link">Alexa Developer Console</a>：Build &gt; Account Linking），而是来自 “Alexa Skill Messaging”（位于 Alexa Developer Console：Build &gt; Permissions &gt; Alexa Skill Messaging）。要获取它们，您需要启用 “Send Alexa Events” 权限</li>
+<li>如果此前未启用 “Send Alexa Events” 权限，您需要在 Alexa 应用中取消关联并重新关联该技能，否则 Home Assistant 会显示以下错误：“Token invalid and no refresh token available.” 此外，每次在 Alexa 中禁用或重新启用技能后，您都需要重启 Home Assistant</li>
+</ul>
+<!-- -->
+<h3 class="rp-toc-include" id="配置过滤器"><a href="#配置过滤器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置过滤器</h3>
+<p>默认情况下，不会排除任何实体。若要限制哪些实体会暴露给 Alexa，您可以使用 <code>filter</code> 参数。请记住，只有<a href="#supported-platforms" class="rp-link">受支持的平台</a>中的实体才能被添加。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># 示例过滤器：包含指定域并排除指定实体</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">alexa</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  smart_home</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">alarm_control_panel</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">light</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      include_entity_globs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">binary_sensor.*_occupancy</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      exclude_entities</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">light.kitchen_light</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>Filters are applied as follows:</p>
+<ol>
+<li>No filter
+<ul>
+<li>All entities included</li>
+</ul>
+</li>
+<li>Only includes
+<ul>
+<li>Entity listed in entities include: include</li>
+<li>Otherwise, entity matches domain include: include</li>
+<li>Otherwise, entity matches glob include: include</li>
+<li>Otherwise: exclude</li>
+</ul>
+</li>
+<li>Only excludes
+<ul>
+<li>Entity listed in exclude: exclude</li>
+<li>Otherwise, entity matches domain exclude: exclude</li>
+<li>Otherwise, entity matches glob exclude: exclude</li>
+<li>Otherwise: include</li>
+</ul>
+</li>
+<li>Domain and/or glob includes (may also have excludes)
+<ul>
+<li>Entity listed in entities include: include</li>
+<li>Otherwise, entity listed in entities exclude: exclude</li>
+<li>Otherwise, entity matches glob include: include</li>
+<li>Otherwise, entity matches glob exclude: exclude</li>
+<li>Otherwise, entity matches domain include: include</li>
+<li>Otherwise: exclude</li>
+</ul>
+</li>
+<li>Domain and/or glob excludes (no domain and/or glob includes)
+<ul>
+<li>Entity listed in entities include: include</li>
+<li>Otherwise, entity listed in exclude: exclude</li>
+<li>Otherwise, entity matches glob exclude: exclude</li>
+<li>Otherwise, entity matches domain exclude: exclude</li>
+<li>Otherwise: include</li>
+</ul>
+</li>
+<li>No Domain and/or glob includes or excludes
+<ul>
+<li>Entity listed in entities include: include</li>
+<li>Otherwise: exclude</li>
+</ul>
+</li>
+</ol>
+<p>The following characters can be used in entity globs:</p>
+<p><code>*</code> - The asterisk represents zero, one, or multiple characters
+<code>?</code> - The question mark represents zero or one character</p>
+<p>如果您在设置集成时遇到问题，请参阅<a href="#troubleshooting" class="rp-link">故障排除</a>。</p>
+<!-- -->
+<h3 class="rp-toc-include" id="alexa-显示类别"><a href="#alexa-显示类别" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Alexa 显示类别</h3>
+<p>您可以配置显示类别，以覆盖实体在 Alexa 应用中显示时使用的类别和图标。这会让设备更容易被查找和监控。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">light.kitchen_light</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  display_categories</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> LIGHT,SWITCH</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+像摄像头、车库门和报警控制面板这样的设备，需要特定的显示类别才能获得 Amazon Alexa 提供的全部功能。覆盖默认显示类别会限制 Amazon Alexa 可提供的功能。</p><p>:::
+完整列表请参阅 <a href="https://developer.amazon.com/docs/alexa/device-apis/alexa-discovery.html#display-categories" target="_blank" rel="noopener noreferrer" class="rp-link">Alexa Display Categories</a></p><h2 class="rp-toc-include" id="支持的平台"><a href="#支持的平台" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的平台</h2><p>Home Assistant 可通过 Alexa 的 Smart Home Skill 支持以下集成。Home Assistant Cloud 用户可在<a href="https://www.nabucasa.com/config/amazon_alexa/" target="_blank" rel="noopener noreferrer" class="rp-link">这里</a>查看相关文档。</p><p>以下各段将介绍当前受支持平台所具备的功能。</p><h3 class="rp-toc-include" id="报警控制面板"><a href="#报警控制面板" class="rp-header-anchor rp-link" aria-hidden="true">#</a>报警控制面板</h3><p>您可以对报警控制面板实体执行布防和撤防，也可以向 Alexa 查询其状态。</p><ul>
+<li><em>&quot;Alexa, arm my home in away mode.&quot;</em></li>
+<li><em>&quot;Alexa, arm my home.&quot;</em></li>
+<li><em>&quot;Alexa, disarm my home.&quot;</em></li>
+<li><em>&quot;Alexa, is my home armed?&quot;</em></li>
+</ul><h4 class="rp-toc-include" id="布防"><a href="#布防" class="rp-header-anchor rp-link" aria-hidden="true">#</a>布防</h4><p>报警控制面板必须先处于 <code>disarmed</code> 状态，才能执行布防。Alexa 不支持在已布防状态下直接切换到另一种布防状态，比如从 <code>armed_home</code> 切换到 <code>armed_night</code>，必须先撤防。</p><p>Alexa 不支持报警控制面板状态 <code>armed_custom_bypass</code>，它会被视为 <code>armed_home</code>。</p><p>:::note
+Alexa 当前不支持通过语音 PIN 进行布防。因此，如果报警控制面板在布防时要求提供 <code>code</code>，或者 <code>code_arm_required</code> 属性为 <code>true</code>，则该实体在发现阶段不会被暴露给 Alexa。
+即使平台实际上不支持或不要求此项，报警控制面板也可能默认将 <code>code_arm_required</code> 属性设为 <code>true</code>。您可以使用<a href="/home-assistant/docs/configuration/customizing-devices/index.html#customization-using-the-ui" class="rp-link">实体自定义工具</a>将 <code>code_arm_required</code> 覆盖为 <code>false</code>，从而在发现阶段暴露该报警控制面板。</p></div></div>
+<h4 class="rp-toc-include" id="撤防"><a href="#撤防" class="rp-header-anchor rp-link" aria-hidden="true">#</a>撤防</h4>
+<p>用户必须在 Alexa 应用中主动启用语音撤防功能。Alexa 在撤防时会要求输入 4 位语音个人识别码（PIN）。您可以在 Alexa 应用中配置一个 4 位 PIN，也可以使用报警控制面板中现有的 4 位 PIN。</p>
+<p class="img">
+<a href="/home-assistant/images/integrations/alexa/alexa_app_security_system_pin.png" class="rp-link" target="_blank">
+  <img height="460" src="/home-assistant/images/integrations/alexa/alexa_app_security_system_pin.png" alt="截图：Alexa 应用中的安防系统 PIN"/></a>
+</p>
+<p>如果要使用报警控制面板中已有的代码，则 <code>code</code> 必须是 4 位数字，且 <code>code_format</code> 属性必须为 <code>number</code>。在发现完成后，Alexa 应用会提供选项，让您使用现有 <code>code</code>，或额外创建一个用于 Alexa 的 4 位 PIN。</p>
+<p>现有代码不会从 Home Assistant 传递给 Alexa。在撤防过程中，Alexa 会要求输入 PIN。用户对 Alexa 说出的 PIN 会被转发到 Home Assistant，并传递给 <code>alarm_control_panel.alarm_disarm</code> 动作。如果 <code>alarm_control_panel.alarm_disarm</code> 动作因任何原因失败，系统会认为 PIN 不正确，并向 Alexa 报告为无效 PIN。</p>
+<h3 class="rp-toc-include" id="alertautomationgroup"><a href="#alertautomationgroup" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Alert、Automation、Group</h3>
+<p>Alert、Automation 和 Group 实体会被当作开关来打开和关闭。</p>
+<ul>
+<li><em>&quot;Alexa, turn on the front door alert.&quot;</em></li>
+<li><em>&quot;Alexa, turn off energy saving automations.&quot;</em></li>
+<li><em>&quot;Alexa, Downstairs to on.&quot;</em></li>
+</ul>
+<h3 class="rp-toc-include" id="二值传感器"><a href="#二值传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二值传感器</h3>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<p>支持带有以下 <a href="/home-assistant/integrations/binary_sensor/index.html#device-class" class="rp-link"><code>device_class</code></a> 属性的二值传感器：<code>door</code>、<code>garage_door</code>、<code>opening</code>、<code>window</code>、<code>motion</code>、<code>presence</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th style="text-align:center"><code>device_class</code></th><th style="text-align:center">Alexa Sensor Type</th></tr></thead><tbody><tr><td style="text-align:center"><code>door</code></td><td style="text-align:center">Contact</td></tr><tr><td style="text-align:center"><code>garage_door</code></td><td style="text-align:center">Contact</td></tr><tr><td style="text-align:center"><code>opening</code></td><td style="text-align:center">Contact</td></tr><tr><td style="text-align:center"><code>window</code></td><td style="text-align:center">Contact</td></tr><tr><td style="text-align:center"><code>motion</code></td><td style="text-align:center">Motion</td></tr><tr><td style="text-align:center"><code>presence</code></td><td style="text-align:center">Motion</td></tr></tbody></table></div>
+<p>您可以向 Alexa 询问接触类传感器的状态。</p>
+<ul>
+<li><em>&quot;Alexa, is the bedroom window open?&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="例程"><a href="#例程" class="rp-header-anchor rp-link" aria-hidden="true">#</a>例程</h4>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<p>当二值传感器以接触传感器或运动传感器的形式暴露给 Alexa 时，可用于触发 Alexa 例程。</p>
+<p>您可以使用<a href="/home-assistant/docs/configuration/customizing-devices/index.html#customization-using-the-ui" class="rp-link">实体自定义工具</a>覆盖 <code>device_class</code> 属性，以便将某个 <code>binary_sensor</code> 暴露给 Alexa。</p>
+<h3 class="rp-toc-include" id="buttoninput-button"><a href="#buttoninput-button" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Button、Input Button</h3>
+<p>您可以使用按钮名称，或通过 <em>&quot;turn on&quot;</em> 语句来触发 Button 和 Input Button。它们会在 Alexa 应用中显示为场景。</p>
+<ul>
+<li><em>&quot;Alexa, Ring Phone.&quot;</em></li>
+<li><em>&quot;Alexa, turn on Ring Phone.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="例程-1"><a href="#例程-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>例程</h4>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<p>当 Button 和 Input Button 被按下时，可以触发 Alexa 例程。</p>
+<p>为了实现这一点，这些按钮会表现为具有“presence detection”能力。由于 Alexa 本身不支持按钮类型设备，这是启用此功能所采用的方式。若要在按钮按下时触发例程，请在触发条件菜单中选择该按钮，然后选择 “Person” 能力。</p>
+<p class="img">
+<a href="/home-assistant/images/integrations/alexa/alexa_app_button_trigger.png" class="rp-link" target="_blank">
+  <img height="460" src="/home-assistant/images/integrations/alexa/alexa_app_button_trigger.png" alt="截图：Alexa 应用中的按钮例程触发器"/></a>
+</p>
+<h4 class="rp-toc-include" id="使用-binary_sensor-进行门铃播报"><a href="#使用-binary_sensor-进行门铃播报" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用 binary_sensor 进行门铃播报</h4>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<p>请注意，Home Assistant 原生支持通过 <code>device_class</code> 为 <code>doorbell</code> 的 <code>event</code> 实体来表示门铃。</p>
+<p>在 <a href="#entity_config" class="rp-link"><code>entity_config</code></a> 中为某个 <code>binary_sensor</code> 配置 <code>display_category: DOORBELL</code>，即可在 Alexa 应用中使用门铃通知设置。请注意，Home Assistant 也可以原生通过 <code>event</code> 实体支持此功能。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">alexa</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  smart_home</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_config</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      binary_sensor.alexa_doorbell</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Front Door&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Doorbell Binary Sensor&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        display_categories</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> DOORBELL</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>当某个 <code>binary_sensor</code> 的状态从 <code>off</code> 变为 <code>on</code> 时，Alexa 会在所有 Echo 设备上播报 <em>&quot;Someone is at the [entity name]&quot;</em>。</p>
+<p>另请参阅<a href="#event-entities" class="rp-link">事件实体</a>。</p>
+<h4 class="rp-toc-include" id="使用二值传感器进行存在检测"><a href="#使用二值传感器进行存在检测" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用二值传感器进行存在检测</h4>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<p>若某个 <code>binary_sensor</code> 的 <code>device_class</code> 属性为 <code>motion</code> 或 <code>presence</code>，则可在 <a href="#entity_config" class="rp-link"><code>entity_config</code></a> 中将其 <code>display_category</code> 配置为 <code>CAMERA</code>，以便在 Alexa 应用中启用存在检测通知设置。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">alexa</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  smart_home</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_config</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      binary_sensor.driveway_presence</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Driveway&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Driveway Presence Sensor&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        display_categories</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> CAMERA</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>Alexa 会在所有 Echo 设备上播报 <em>&quot;Person detected at [entity name]&quot;</em>。</p>
+<p>:::important
+每台 Echo 设备都需要启用 communication 和 Announcements 设置，并关闭 Do Not Disturb 功能。</p>
+<p>:::</p>
+<p class="img">
+   <a href="/home-assistant/images/integrations/alexa/alexa_app_person_detection.png" class="rp-link" target="_blank">
+    <img height="460" src="/home-assistant/images/integrations/alexa/alexa_app_person_detection.png" alt="截图：Alexa 应用中的人员检测通知"/></a>
+ </p>
+<p><a href="#image-processing" class="rp-link">图像处理</a>实体也支持此通知。</p>
+<h3 class="rp-toc-include" id="摄像头"><a href="#摄像头" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头</h3>
+<p>可在 Amazon Echo 设备上查看摄像头视频流。</p>
+<ul>
+<li><em>&quot;Alexa, show the front door camera.&quot;</em></li>
+</ul>
+<p>要将摄像头视频流发送到 Amazon Echo 设备，需要使用 <a href="/home-assistant/integrations/stream/index.html" class="rp-link"><code>stream</code></a> 集成。</p>
+<p>Amazon Echo 设备会向 Home Assistant 请求摄像头视频流。Home Assistant 的 URL 必须能从 Echo 设备所在的网络访问，并且必须支持 443 端口上的 HTTPS，且使用由<a href="https://ccadb-public.secure.force.com/mozilla/IncludedCACertificateReport" target="_blank" rel="noopener noreferrer" class="rp-link">Amazon 认可的证书颁发机构</a>签发的证书。这些要求可以通过 Home Assistant Cloud 或 LetsEncrypt/DuckDNS 满足。</p>
+<p>请为与 Echo 设备配合使用的摄像头启用预加载视频流选项，以减少响应时间，并避免在 6 秒限制内超时。</p>
+<h3 class="rp-toc-include" id="climate"><a href="#climate" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Climate</h3>
+<p>支持单设定点、双设定点和三设定点温控器。温控器中的温度值也会作为单独的<a href="#sensor" class="rp-link">温度传感器</a>暴露出来。</p>
+<h4 class="rp-toc-include" id="设置温控器温度"><a href="#设置温控器温度" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置温控器温度</h4>
+<ul>
+<li><em>&quot;Alexa, set thermostat to 20.&quot;</em></li>
+<li><em>&quot;Alexa, set the AC to 75.&quot;</em></li>
+<li><em>&quot;Alexa, make it warmer in here.&quot;</em></li>
+<li><em>&quot;Alexa, make it cooler in here.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="温控器模式"><a href="#温控器模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>温控器模式</h4>
+<ul>
+<li>
+<p><em>&quot;Alexa, set living room thermostat to automatic.&quot;</em></p>
+</li>
+<li>
+<p><code>DRY</code> 会在 Alexa 应用中显示为 <code>DEHUMIDIFY</code></p>
+</li>
+<li>
+<p><code>ECO</code> 在 Home Assistant 中作为 <code>preset</code> 处理，因此不会显示在 Alexa 应用中</p>
+</li>
+<li>
+<p><code>FAN_ONLY</code> 不受 Alexa 语音模型支持，因此会在 Alexa 应用中显示为 <code>OFF</code></p>
+</li>
+</ul>
+<p>要更改温控器模式，必须使用精确的说法：</p>
+<ul>
+<li><em>&quot;Alexa, set [entity name] to [mode utterance].&quot;</em></li>
+</ul>
+<p>如果 climate 实体支持开/关功能，则可以将实体名称或模式名称与 <em>&quot;turn on&quot;</em> 和 <em>&quot;turn off&quot;</em> 语句搭配使用。</p>
+<ul>
+<li><em>&quot;Alexa, turn on the [mode utterance].&quot;</em></li>
+<li><em>&quot;Alexa, turn off the [entity name].&quot;</em></li>
+</ul>
+<p>Alexa 支持以下 climate 温控器模式说法：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>HA Climate Mode</th><th>Alexa Mode Utterances</th></tr></thead><tbody><tr><td><code>AUTO</code></td><td><em>&quot;auto&quot;</em>, <em>&quot;automatic&quot;</em></td></tr><tr><td><code>COOL</code></td><td><em>&quot;cool&quot;</em>, <em>&quot;cooling&quot;</em></td></tr><tr><td><code>HEAT</code></td><td><em>&quot;heat&quot;</em>, <em>&quot;heating&quot;</em></td></tr><tr><td><code>ECO</code></td><td><em>&quot;eco&quot;</em>, <em>&quot;economical&quot;</em></td></tr><tr><td><code>DRY</code></td><td><em>&quot;dry&quot;</em>, <em>&quot;dehumidify&quot;</em></td></tr><tr><td><code>OFF</code></td><td><em>&quot;off&quot;</em></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="cover"><a href="#cover" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Cover</h3>
+<p>Covers 应配置合适的 <code>device_class</code>。</p>
+<p><code>device_class</code> 为 <code>blind</code>、<code>shade</code>、<code>curtain</code> 的 Cover 会在 Alexa 应用中显示为室内百叶帘，而 <code>window</code>、<code>awning</code> 或 <code>shutter</code> 则会显示为室外百叶帘。</p>
+<p><code>device_class</code> 为 <code>garage</code> 的 Cover 会显示为<a href="#garage-doors" class="rp-link">车库门</a>，并支持语音 PIN 开门功能。</p>
+<p>您可以使用<a href="/home-assistant/docs/configuration/customizing-devices/index.html#customization-using-the-ui" class="rp-link">实体自定义工具</a>覆盖 <code>device_class</code> 属性，以便将 <code>cover</code> 正确暴露给 Alexa。</p>
+<h4 class="rp-toc-include" id="打开关闭升起降下"><a href="#打开关闭升起降下" class="rp-header-anchor rp-link" aria-hidden="true">#</a>打开/关闭/升起/降下</h4>
+<p>Home Assistant 会为 cover 配置语义，从而支持 <em>&quot;raise&quot;</em>、<em>&quot;lower&quot;</em>、<em>&quot;open&quot;</em>、<em>&quot;close&quot;</em> 等说法。除此之外，<em>&quot;turn on&quot;</em> / <em>&quot;turn off&quot;</em> 也同样可用。</p>
+<ul>
+<li><em>&quot;Alexa, open the garage door.&quot;</em></li>
+<li><em>&quot;Alexa, close the curtain.&quot;</em></li>
+<li><em>&quot;Alexa, lower the shades.&quot;</em></li>
+<li><em>&quot;Alexa, raise the roof!&quot;</em></li>
+</ul>
+<p>语义会根据 cover 支持的功能自动分配。如果 cover 支持倾斜功能，则 <em>&quot;open&quot;</em> 和 <em>&quot;close&quot;</em> 会分配给倾斜功能，而 <em>&quot;raise&quot;</em> 和 <em>&quot;lower&quot;</em> 则分配给位置功能。</p>
+<p>如果 cover 不支持倾斜，则 <em>&quot;raise&quot;</em>、<em>&quot;lower&quot;</em>、<em>&quot;open&quot;</em>、<em>&quot;close&quot;</em> 这些语义都会分配给位置功能。</p>
+<h4 class="rp-toc-include" id="设置窗帘位置"><a href="#设置窗帘位置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置窗帘位置</h4>
+<p>支持设置位置的 Cover 可以通过百分比进行控制。</p>
+<ul>
+<li><em>&quot;Alexa, set the [entity name] position to thirty percent.&quot;</em></li>
+<li><em>&quot;Alexa, increase [entity name] position by ten percent.&quot;</em></li>
+<li><em>&quot;Alexa, decrease [entity name] position by twenty percent.&quot;</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Locale</th><th>Friendly Name Synonyms</th></tr></thead><tbody><tr><td><code>en-US</code></td><td><em>&quot;position&quot;</em>, <em>&quot;opening&quot;</em></td></tr></tbody></table></div>
+<p>目前，Alexa 仅在 <code>en-US</code> 区域设置下支持这些友好名称同义词。</p>
+<h4 class="rp-toc-include" id="设置窗帘倾斜角度"><a href="#设置窗帘倾斜角度" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置窗帘倾斜角度</h4>
+<p>支持倾斜位置控制的 Cover 可以通过百分比进行控制。</p>
+<ul>
+<li><em>&quot;Alexa, set the [entity name] tilt to thirty percent.&quot;</em></li>
+<li><em>&quot;Alexa, increase [entity name] tilt by ten percent.&quot;</em></li>
+<li><em>&quot;Alexa, decrease [entity name] tilt by twenty percent.&quot;</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Locale</th><th>Friendly Name Synonyms</th></tr></thead><tbody><tr><td><code>en-US</code></td><td><em>&quot;tilt&quot;</em>, <em>&quot;angle&quot;</em>, <em>&quot;direction&quot;</em></td></tr></tbody></table></div>
+<p>目前，Alexa 仅在 <code>en-US</code> 区域设置下支持这些友好名称同义词。</p>
+<h4 class="rp-toc-include" id="停止-cover-操作"><a href="#停止-cover-操作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>停止 Cover 操作</h4>
+<p>若要停止 Cover 的操作，请说：</p>
+<ul>
+<li><em>&quot;Alexa, stop [entity name].&quot;</em></li>
+</ul>
+<p>如果您的 cover 支持 <code>STOP</code> 功能，这将停止 cover 的位置操作。
+如果您的 cover 支持 <code>STOP_TILT</code> 功能，这将停止 cover 的倾斜操作。
+如果两项功能都支持，则两者都会被停止。</p>
+<h4 class="rp-toc-include" id="车库门"><a href="#车库门" class="rp-header-anchor rp-link" aria-hidden="true">#</a>车库门</h4>
+<p><code>device_class</code> 为 <code>garage</code> 的 Cover 支持 Alexa 应用中的语音 PIN 开门功能。您可以在 Alexa 应用中配置一个 4 位 PIN 码来打开车库门。</p>
+<p class="img">
+<a href="/home-assistant/images/integrations/alexa/alexa_app_garage_door_pin.png" class="rp-link" target="_blank">
+  <img height="460" src="/home-assistant/images/integrations/alexa/alexa_app_garage_door_pin.png" alt="截图：Alexa 应用中的车库门语音开启功能"/></a>
+</p>
+<h3 class="rp-toc-include" id="事件实体"><a href="#事件实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>事件实体</h3>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<h4 class="rp-toc-include" id="门铃事件"><a href="#门铃事件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>门铃事件</h4>
+<p>如果 Home Assistant 中某个 <code>event</code> 实体的 <code>device_class</code> 设为 <code>doorbell</code>，它就可以在 Alexa 中触发门铃播报。
+当 <code>event</code> 实体收到更新时，Alexa 会在所有 Echo 设备上播报 <em>&quot;Someone is at the [entity name]&quot;</em>。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+每台 Amazon Echo 设备都需要启用 communication 和 announcements 设置，并关闭 Do Not Disturb 功能。</p></div></div>
+<p class="img">
+<a href="/home-assistant/images/integrations/alexa/alexa_app_doorbell_announcement.png" class="rp-link" target="_blank">
+  <img height="460" src="/home-assistant/images/integrations/alexa/alexa_app_doorbell_announcement.png" alt="截图：Alexa 应用中的门铃通知"/></a>
+</p>
+<h3 class="rp-toc-include" id="风扇"><a href="#风扇" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇</h3>
+<p>可控制风扇速度、方向和摆动。</p>
+<h4 class="rp-toc-include" id="风扇速度"><a href="#风扇速度" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇速度</h4>
+<p>风扇设备必须通过 <code>percentage</code> 属性支持基于百分比的速度控制。</p>
+<ul>
+<li><em>&quot;Alexa, set the fan speed to three.&quot;</em></li>
+<li><em>&quot;Alexa, set the fan speed to fifty percent.&quot;</em></li>
+<li><em>&quot;Alexa, set the fan power level to fifty percent.&quot;</em></li>
+<li><em>&quot;Alexa, turn up the speed on the tower fan.&quot;</em></li>
+<li><em>&quot;Alexa, set the air speed on the tower fan to maximum.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="风扇预设模式"><a href="#风扇预设模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇预设模式</h4>
+<p>风扇设备必须支持 <code>preset_mode</code> 属性。</p>
+<ul>
+<li><em>&quot;Alexa, set the fan preset to eco.&quot;</em></li>
+<li><em>&quot;Alexa, set the fan preset to smart.&quot;</em></li>
+<li><em>&quot;Alexa, set the fan preset to auto.&quot;</em></li>
+</ul>
+<p>目前，Alexa 仅在 <code>en-US</code> 区域设置下支持预设模式。</p>
+<h4 class="rp-toc-include" id="风扇方向"><a href="#风扇方向" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇方向</h4>
+<p>风扇设备必须支持 <code>direction</code> 属性。</p>
+<ul>
+<li><em>&quot;Alexa, set the fan direction to forward.&quot;</em></li>
+<li><em>&quot;Alexa, set the fan direction to reverse.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="风扇摆动"><a href="#风扇摆动" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇摆动</h4>
+<p>风扇设备必须支持 <code>oscillating</code> 属性。</p>
+<ul>
+<li><em>&quot;Alexa, is oscillate on for the tower fan?&quot;</em></li>
+<li><em>&quot;Alexa, turn on swivel for the tower fan.&quot;</em></li>
+<li><em>&quot;Alexa, turn on oscillation mode for the table fan.&quot;</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Locale</th><th>Friendly Name Synonyms</th></tr></thead><tbody><tr><td><code>en-US</code></td><td><em>&quot;oscillate&quot;</em>, <em>&quot;swivel&quot;</em>, <em>&quot;oscillation&quot;</em>, <em>&quot;spin&quot;</em>, <em>&quot;back and forth&quot;</em></td></tr></tbody></table></div>
+<p>目前，Alexa 仅在 <code>en-US</code> 区域设置下支持这些友好名称同义词。</p>
+<h3 class="rp-toc-include" id="加湿器"><a href="#加湿器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>加湿器</h3>
+<p>可控制电源、目标湿度和模式。</p>
+<h4 class="rp-toc-include" id="加湿器目标湿度"><a href="#加湿器目标湿度" class="rp-header-anchor rp-link" aria-hidden="true">#</a>加湿器目标湿度</h4>
+<ul>
+<li><em>&quot;Alexa, set the [entity name] humidity to fifty percent.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="加湿器模式"><a href="#加湿器模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>加湿器模式</h4>
+<p>加湿器设备必须支持 <code>mode</code> 属性。</p>
+<ul>
+<li><em>&quot;Alexa, set the [entity name] mode to eco.&quot;</em></li>
+</ul>
+<h3 class="rp-toc-include" id="图像处理"><a href="#图像处理" class="rp-header-anchor rp-link" aria-hidden="true">#</a>图像处理</h3>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<h4 class="rp-toc-include" id="存在检测通知"><a href="#存在检测通知" class="rp-header-anchor rp-link" aria-hidden="true">#</a>存在检测通知</h4>
+<p>所有 <code>image_processing</code> 实体都支持 Alexa 应用中的存在检测通知设置。任意状态变化都会触发通知。</p>
+<p>Alexa 会在所有 Echo 设备上播报 <em>&quot;Person detected at [entity name]&quot;</em>。</p>
+ <p class="img">
+   <a href="/home-assistant/images/integrations/alexa/alexa_app_person_detection.png" class="rp-link" target="_blank">
+    <img height="460" src="/home-assistant/images/integrations/alexa/alexa_app_person_detection.png" alt="截图：Alexa 应用中的人员检测通知"/></a>
+ </p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+显示类别默认会设为 <code>CAMERA</code>，以在 Alexa 应用中启用存在检测通知设置。每台 Echo 设备都需要启用 communication 和 Announcements 设置，并关闭 Do Not Disturb 功能。</p></div></div>
+<h3 class="rp-toc-include" id="input-number-和-number"><a href="#input-number-和-number" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Input Number 和 Number</h3>
+<p>您可以使用 Alexa 控制 <code>input_number</code> 或 <code>number</code> 实体。系统会将该实体的 <code>min</code>、<code>max</code>、<code>step</code> 和 <code>unit_of_measurement</code> 属性同步给 Alexa。</p>
+<ul>
+<li><em>&quot;Alexa, set [entity name] to forty five [unit of measurement].&quot;</em></li>
+<li><em>&quot;Alexa, increase the [entity name] by two.&quot;</em></li>
+<li><em>&quot;Alexa, set the [entity name] to maximum.&quot;</em></li>
+</ul>
+<p>下表列出了一个 <code>min: -90</code>、<code>max: 90</code>、<code>step: 45</code>、<code>unit_of_measurement: degrees</code> 的 Input Number 或 Number 可用的友好名称同义词。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Fan Range</th><th>Friendly Name Synonyms</th></tr></thead><tbody><tr><td>-90</td><td><em>&quot;negative ninety&quot;</em>, <em>&quot;minimum&quot;</em>, <em>&quot;min&quot;</em></td></tr><tr><td>-45</td><td><em>&quot;negative forty five&quot;</em></td></tr><tr><td>0</td><td><em>&quot;zero&quot;</em></td></tr><tr><td>45</td><td><em>&quot;forty five&quot;</em></td></tr><tr><td>90</td><td><em>&quot;ninety&quot;</em>, <em>&quot;maximum&quot;</em>, <em>&quot;max&quot;</em></td></tr></tbody></table></div>
+<p><code>unit_of_measurement</code> 将用于从 <a href="https://developer.amazon.com/en-US/docs/alexa/device-apis/resources-and-assets.html#global-alexa-catalog" target="_blank" rel="noopener noreferrer" class="rp-link">Global Alexa catalog</a> 中选择一个受支持的单位标签。如果没有匹配项，则会分配为预设控制器。</p>
+<p>支持的单位包括：°C、°F、K、m、km、mi、yd、in、kg、g、oz、lb、L、ft³、m³、gal 和 %</p>
+<h3 class="rp-toc-include" id="灯光"><a href="#灯光" class="rp-header-anchor rp-link" aria-hidden="true">#</a>灯光</h3>
+<p>可通过 <em>&quot;turn on&quot;</em> 和 <em>&quot;turn off&quot;</em> 语句控制灯光，并调整亮度、颜色和色温。</p>
+<ul>
+<li><em>&quot;Alexa, turn on the bathroom light.&quot;</em></li>
+<li><em>&quot;Alexa, turn off the patio light.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="亮度"><a href="#亮度" class="rp-header-anchor rp-link" aria-hidden="true">#</a>亮度</h4>
+<p>支持亮度控制的灯光可以通过 0 到 100 的百分比进行调整。</p>
+<ul>
+<li><em>&quot;Alexa, set the bedroom light to fifty percent.&quot;</em></li>
+<li><em>&quot;Alexa, living room lights to one hundred percent.&quot;</em></li>
+</ul>
+<p><em>&quot;dim&quot;</em> 语句会让灯光亮度降低 25 个百分点。</p>
+<ul>
+<li><em>&quot;Alexa, dim the bathroom light.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="色温"><a href="#色温" class="rp-header-anchor rp-link" aria-hidden="true">#</a>色温</h4>
+<p>支持色温的灯光可以使用以下友好名称来调整：</p>
+<ul>
+<li><em>&quot;Alexa, set the dining room softer.&quot;</em></li>
+<li><em>&quot;Alexa, make the living room warmer.&quot;</em></li>
+<li><em>&quot;Alexa, set the dining room cooler.&quot;</em></li>
+<li><em>&quot;Alexa, make the living room light whiter.&quot;</em></li>
+<li><em>&quot;Alexa, make the living room warm white.&quot;</em></li>
+<li><em>&quot;Alexa, set the kitchen to daylight.&quot;</em></li>
+</ul>
+<p>下表列出了支持色温控制的灯光可用的友好名称同义词。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Color Temperature in Kelvin</th><th>Friendly Name Synonyms</th></tr></thead><tbody><tr><td>2200</td><td><em>&quot;warm&quot;</em>, <em>&quot;warm white&quot;</em></td></tr><tr><td>2700</td><td><em>&quot;incandescent&quot;</em>, <em>&quot;soft white&quot;</em></td></tr><tr><td>4000</td><td><em>&quot;white&quot;</em></td></tr><tr><td>5500</td><td><em>&quot;daylight&quot;</em>, <em>&quot;daylight white&quot;</em></td></tr><tr><td>7000</td><td><em>&quot;cool&quot;</em>, <em>&quot;cool white&quot;</em></td></tr></tbody></table></div>
+<p>可使用 <em>&quot;warmer&quot;</em>、<em>&quot;softer&quot;</em>、<em>&quot;cooler&quot;</em>、<em>&quot;whiter&quot;</em> 等语句，以 50 <code>mired</code> 为步进调整色温（大约相当于 300 到 500 开尔文的变化）。</p>
+<ul>
+<li><em>&quot;Alexa, set the dining room softer.&quot;</em></li>
+<li><em>&quot;Alexa, make the living room warmer.&quot;</em></li>
+<li><em>&quot;Alexa, set the dining room cooler.&quot;</em></li>
+<li><em>&quot;Alexa, make the living room light whiter.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="颜色"><a href="#颜色" class="rp-header-anchor rp-link" aria-hidden="true">#</a>颜色</h4>
+<p>您可以使用 CSS <a href="https://drafts.csswg.org/css-color-3/#html4" target="_blank" rel="noopener noreferrer" class="rp-link">基础颜色关键字</a>或<a href="https://drafts.csswg.org/css-color-3/#svg-color" target="_blank" rel="noopener noreferrer" class="rp-link">扩展颜色关键字</a>作为友好颜色名称来设置灯光颜色。</p>
+<ul>
+<li><em>&quot;Alexa, set the front porch light to blue.&quot;</em></li>
+<li><em>&quot;Alexa, set the bedroom light to red.&quot;</em></li>
+<li><em>&quot;Alexa, change the kitchen to the color crimson.&quot;</em></li>
+</ul>
+<h3 class="rp-toc-include" id="门锁"><a href="#门锁" class="rp-header-anchor rp-link" aria-hidden="true">#</a>门锁</h3>
+<ul>
+<li><em>&quot;Alexa, lock my front door.&quot;</em></li>
+<li><em>&quot;Alexa, unlock the dungeon.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="解锁"><a href="#解锁" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解锁</h4>
+<p>要进行解锁，Alexa 会要求输入一个 4 位语音个人识别码（PIN）。请在 Alexa 应用中配置一个 4 位 PIN 来解锁门锁。</p>
+<h3 class="rp-toc-include" id="媒体播放器"><a href="#媒体播放器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>媒体播放器</h3>
+<h4 class="rp-toc-include" id="切换频道"><a href="#切换频道" class="rp-header-anchor rp-link" aria-hidden="true">#</a>切换频道</h4>
+<ul>
+<li><em>&quot;Alexa, change the channel to 200 on the Living Room TV.&quot;</em></li>
+<li><em>&quot;Alexa, change the channel to PBS on the TV.&quot;</em></li>
+<li><em>&quot;Alexa, next channel on the Living Room TV.&quot;</em></li>
+<li><em>&quot;Alexa, channel up on the TV.&quot;</em></li>
+<li><em>&quot;Alexa, channel down on the TV.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="扬声器音量"><a href="#扬声器音量" class="rp-header-anchor rp-link" aria-hidden="true">#</a>扬声器音量</h4>
+<ul>
+<li><em>&quot;Alexa, set the volume of the speakers to 50.&quot;</em></li>
+<li><em>&quot;Alexa, turn the volume down on the stereo by 20.&quot;</em></li>
+<li><em>&quot;Alexa, turn the volume down on Living Room TV.&quot;</em></li>
+<li><em>&quot;Alexa, mute speakers.&quot;</em></li>
+<li><em>&quot;Alexa, unmute speakers.&quot;</em></li>
+<li><em>&quot;Alexa, lower the volume on the stereo.&quot;</em></li>
+<li><em>&quot;Alexa, volume up 20 on the speakers.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="均衡器模式"><a href="#均衡器模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>均衡器模式</h4>
+<p>支持从预设的 <code>sound_mode_list</code> 中切换媒体播放器的 <code>sound_mode</code>。</p>
+<ul>
+<li><em>&quot;Alexa, set mode to movie on the TV.&quot;</em></li>
+</ul>
+<p>Alexa 仅支持以下模式：<code>movie</code>、<code>music</code>、<code>night</code>、<code>sport</code>、<code>tv</code>。</p>
+<h4 class="rp-toc-include" id="输入源"><a href="#输入源" class="rp-header-anchor rp-link" aria-hidden="true">#</a>输入源</h4>
+<p>支持从预设的 <code>source_list</code> 中切换媒体播放器的 <code>source</code>。</p>
+<ul>
+<li><em>&quot;Alexa, change the input to DVD on the Living Room TV.&quot;</em></li>
+</ul>
+<p>Home Assistant 会尝试将 <code>media_player</code> 的 <code>source_list</code> 转换为 Alexa 可识别的有效 <code>source</code> 名称。Alexa 仅支持以下输入源名称：</p>
+<p><code>AUX 1</code>, <code>AUX 2</code>, <code>AUX 3</code>, <code>AUX 4</code>, <code>AUX 5</code>, <code>AUX 6</code>, <code>AUX 7</code>, <code>BLURAY</code>, <code>CABLE</code>, <code>CD</code>, <code>COAX 1</code>, <code>COAX 2</code>, <code>COMPOSITE 1</code>, <code>DVD</code>, <code>GAME</code>, <code>HD RADIO</code>, <code>HDMI 1</code>, <code>HDMI 2</code>, <code>HDMI 3</code>, <code>HDMI 4</code>, <code>HDMI 5</code>, <code>HDMI 6</code>, <code>HDMI 7</code>, <code>HDMI 8</code>, <code>HDMI 9</code>, <code>HDMI 10</code>, <code>HDMI ARC</code>, <code>INPUT 1</code>, <code>INPUT 2</code>, <code>INPUT 3</code>, <code>INPUT 4</code>, <code>INPUT 5</code>, <code>INPUT 6</code>, <code>INPUT 7</code>, <code>INPUT 8</code>, <code>INPUT 9</code>, <code>INPUT 10</code>, <code>IPOD</code>, <code>LINE 1</code>, <code>LINE 2</code>, <code>LINE 3</code>, <code>LINE 4</code>, <code>LINE 5</code>, <code>LINE 6</code>, <code>LINE 7</code>, <code>MEDIA PLAYER</code>, <code>OPTICAL 1</code>, <code>OPTICAL 2</code>, <code>PHONO</code>, <code>PLAYSTATION</code>, <code>PLAYSTATION 3</code>, <code>PLAYSTATION 4</code>, <code>SATELLITE</code>, <code>SMARTCAST</code>, <code>TUNER</code>, <code>TV</code>, <code>USB DAC</code>, <code>VIDEO 1</code>, <code>VIDEO 2</code>, <code>VIDEO 3</code>, <code>XBOX</code></p>
+<h4 class="rp-toc-include" id="播放状态"><a href="#播放状态" class="rp-header-anchor rp-link" aria-hidden="true">#</a>播放状态</h4>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+当前还不支持前进（skip）或后退（go back）这类意图。</p></div></div>
+<h3 class="rp-toc-include" id="remote"><a href="#remote" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Remote</h3>
+<p>支持从给定的 <code>activity_list</code> 中切换 Remote 的 <code>activity</code>。</p>
+<ul>
+<li><em>&quot;Alexa, change the TV to PlayStation.&quot;</em></li>
+<li><em>&quot;Alexa, change the input on the TV to PlayStation.&quot;</em></li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+Alexa 不允许以下词语用作 activity 名称：</p><p><code>alarm</code>, <code>alarms</code>, <code>all alarms</code>, <code>away mode</code>, <code>bass</code>, <code>camera</code>, <code>date</code>, <code>date today</code>, <code>day</code>, <code>do not disturb</code>, <code>drop in</code>, <code>music</code>, <code>night light</code>, <code>notification</code>, <code>playing</code>, <code>sleep sounds</code>, <code>time</code>, <code>timer</code>, <code>today in music</code>, <code>treble</code>, <code>volume</code>, <code>way f. m.</code></p></div></div>
+<h3 class="rp-toc-include" id="场景"><a href="#场景" class="rp-header-anchor rp-link" aria-hidden="true">#</a>场景</h3>
+<p>您可以通过场景名称，或使用 <em>&quot;turn on&quot;</em> 语句来激活场景。Home Assistant 目前不支持对场景执行停用或 <em>&quot;turn off&quot;</em>。</p>
+<ul>
+<li><em>&quot;Alexa, Party Time.&quot;</em></li>
+<li><em>&quot;Alexa, turn on Party Time.&quot;</em></li>
+</ul>
+<h3 class="rp-toc-include" id="脚本"><a href="#脚本" class="rp-header-anchor rp-link" aria-hidden="true">#</a>脚本</h3>
+<p>您可以通过脚本名称，或使用 <em>&quot;turn on&quot;</em> 语句来运行脚本。正在运行的脚本可通过 <em>&quot;turn off&quot;</em> 语句停止。</p>
+<ul>
+<li><em>&quot;Alexa, Party Time.&quot;</em></li>
+<li><em>&quot;Alexa, turn on Party Time.&quot;</em></li>
+<li><em>&quot;Alexa, turn off Party Time.&quot;</em></li>
+</ul>
+<h3 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<p>目前仅支持温度传感器。</p>
+<ul>
+<li><em>&quot;Alexa, what&#x27;s the temperature in the kitchen?&quot;</em></li>
+<li><em>&quot;Alexa, what&#x27;s the upstairs temperature?&quot;</em></li>
+</ul>
+<h3 class="rp-toc-include" id="switchinput-boolean"><a href="#switchinput-boolean" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Switch、Input Boolean</h3>
+<p>支持 <em>&quot;turn on&quot;</em> 和 <em>&quot;turn off&quot;</em> 语句。</p>
+<ul>
+<li><em>&quot;Alexa, turn on the vacuum.&quot;</em></li>
+<li><em>&quot;Alexa, turn off the lights.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="例程-2"><a href="#例程-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>例程</h4>
+<p>需要启用<a href="#proactive-events" class="rp-link">主动事件</a>。</p>
+<p>当 Switch 和 Input Boolean 状态发生变化时，可以触发 Alexa 例程。</p>
+<p>为了实现这一点，Switch 和 Input Boolean 会在 Alexa 例程的触发条件菜单中显示为接触传感器。这是因为 Alexa 不支持通过开关类型设备触发例程，只支持通过接触传感器和运动传感器触发。在该菜单中，选择某个开关后，<code>Open</code> 对应 <code>on</code>，<code>Close</code> 对应 <code>off</code>。</p>
+<p class="img">
+<a href="/home-assistant/images/integrations/alexa/alexa_app_switch_trigger.png" class="rp-link" target="_blank">
+  <img height="460" src="/home-assistant/images/integrations/alexa/alexa_app_switch_trigger.png" alt="截图：Alexa 应用中的开关例程触发器"/></a>
+</p>
+<h3 class="rp-toc-include" id="计时器"><a href="#计时器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>计时器</h3>
+<p>您可以使用 <em>&quot;turn on&quot;</em> 语句来启动计时器。</p>
+<ul>
+<li><em>&quot;Alexa, turn on the laundry.&quot;</em></li>
+</ul>
+<p>您可以使用 <em>&quot;turn off&quot;</em> 语句来取消计时器。</p>
+<ul>
+<li><em>&quot;Alexa, turn off the laundry.&quot;</em></li>
+</ul>
+<p>您还可以暂停和重启 Home Assistant 中的 Timer 实体。</p>
+<ul>
+<li><em>&quot;Alexa, pause the microwave.&quot;</em></li>
+<li><em>&quot;Alexa, hold the sous vide.&quot;</em></li>
+<li><em>&quot;Alexa, restart the microwave.&quot;</em></li>
+</ul>
+<p>:::important
+为了避免与 Alexa 内置的计时器功能发生冲突，Timer 实体的友好名称中不应包含单词 &quot;timer&quot;。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="扫地机"><a href="#扫地机" class="rp-header-anchor rp-link" aria-hidden="true">#</a>扫地机</h3>
+<p>支持 <em>&quot;turn on&quot;</em> 和 <em>&quot;turn off&quot;</em> 语句，也支持暂停和继续。</p>
+<ul>
+<li><em>&quot;Alexa, turn on the vacuum.&quot;</em></li>
+<li><em>&quot;Alexa, pause the vacuum.&quot;</em></li>
+<li><em>&quot;Alexa, restart the vacuum.&quot;</em></li>
+</ul>
+<h3 class="rp-toc-include" id="阀门"><a href="#阀门" class="rp-header-anchor rp-link" aria-hidden="true">#</a>阀门</h3>
+<p>Alexa 原生不支持阀门。因此，在 Alexa 中它们会显示为未知类型的设备。</p>
+<h4 class="rp-toc-include" id="打开关闭"><a href="#打开关闭" class="rp-header-anchor rp-link" aria-hidden="true">#</a>打开/关闭</h4>
+<p>Home Assistant 会为阀门配置语义，以支持 <em>&quot;open&quot;</em> 和 <em>&quot;close&quot;</em> 语句。</p>
+<ul>
+<li><em>&quot;Alexa, open the water valve.&quot;</em></li>
+<li><em>&quot;Alexa, close the gas valve.&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="设置阀门位置"><a href="#设置阀门位置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置阀门位置</h4>
+<p>支持设定位置的阀门可以通过百分比进行控制。</p>
+<ul>
+<li><em>&quot;Alexa, set the [entity name] position to thirty percent.&quot;</em></li>
+<li><em>&quot;Alexa, increase [entity name] position by ten percent.&quot;</em></li>
+<li><em>&quot;Alexa, decrease [entity name] position by twenty percent.&quot;</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Locale</th><th>Friendly Name Synonyms</th></tr></thead><tbody><tr><td><code>en-US</code></td><td><em>&quot;position&quot;</em>, <em>&quot;opening&quot;</em></td></tr></tbody></table></div>
+<p>目前，Alexa 仅在 <code>en-US</code> 区域设置下支持这些友好名称同义词。</p>
+<h4 class="rp-toc-include" id="停止阀门"><a href="#停止阀门" class="rp-header-anchor rp-link" aria-hidden="true">#</a>停止阀门</h4>
+<p>支持 <code>stop</code> 的阀门会额外提供一个切换控制，用于停止阀门的打开或关闭操作。</p>
+<h3 class="rp-toc-include" id="热水器"><a href="#热水器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>热水器</h3>
+<p>支持单设定点、双设定点和三设定点温控器。热水器的温度值也会作为单独的<a href="#sensor" class="rp-link">温度传感器</a>暴露出来。</p>
+<h4 class="rp-toc-include" id="设置目标温度"><a href="#设置目标温度" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置目标温度</h4>
+<ul>
+<li><em>&quot;Alexa, set the boiler&#x27;s target temperature to 50.&quot;</em></li>
+</ul>
+<p>您可以向 Alexa 询问当前温度和当前目标温度。</p>
+<ul>
+<li><em>&quot;Alexa, what is the boiler&#x27;s target temperature?&quot;</em></li>
+<li><em>&quot;Alexa, what is the boiler&#x27;s current temperature?&quot;</em></li>
+</ul>
+<h4 class="rp-toc-include" id="运行模式"><a href="#运行模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>运行模式</h4>
+<p>运行模式可以从 UI 中设置。所有 Home Assistant 运行模式都可以设置（仅支持英文）。</p>
+<ul>
+<li><em>&quot;Alexa, set main boiler to eco.&quot;</em></li>
+</ul>
+<p>要更改热水器的模式，必须使用精确的说法：</p>
+<ul>
+<li><em>&quot;Alexa, set [entity name] to [mode utterance].&quot;</em></li>
+</ul>
+<p>如果热水器实体支持开/关功能，则可以将实体名称或模式名称与 <em>&quot;turn on&quot;</em> 和 <em>&quot;turn off&quot;</em> 语句搭配使用。</p>
+<ul>
+<li><em>&quot;Alexa, turn on the [mode utterance].&quot;</em></li>
+<li><em>&quot;Alexa, turn off the [entity name].&quot;</em></li>
+</ul>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<!-- -->
+<h3 class="rp-toc-include" id="例程触发器中找不到-binary-sensor"><a href="#例程触发器中找不到-binary-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>例程触发器中找不到 Binary Sensor</h3>
+<p>支持带有以下 <a href="/home-assistant/integrations/binary_sensor/index.html#device-class" class="rp-link"><code>device_class</code></a> 属性的二值传感器：<code>door</code>、<code>garage_door</code>、<code>opening</code>、<code>window</code>、<code>motion</code>、<code>presence</code>。</p>
+<p>您可以使用<a href="/home-assistant/docs/configuration/customizing-devices/index.html#customization-using-the-ui" class="rp-link">实体自定义工具</a>覆盖 <code>device_class</code> 属性，以便将某个 <code>binary_sensor</code> 暴露给 Alexa。</p>
+<!-- -->
+<h3 class="rp-toc-include" id="token-invalid-and-no-refresh-token-available"><a href="#token-invalid-and-no-refresh-token-available" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Token Invalid and no Refresh Token Available</h3>
+<p>请在 Alexa 应用中禁用并重新启用该技能，然后重启 Home Assistant。</p>
+<h2 class="rp-toc-include" id="调试"><a href="#调试" class="rp-header-anchor rp-link" aria-hidden="true">#</a>调试</h2>
+<p>当日志级别设为 <code>debug</code> 时，Alexa 集成会记录更多关于状态更新和其他消息的信息。请将以下相关内容添加到 <code>configuration.yaml</code>：</p>
+<p>如果您是通过 Alexa 智能家居技能和 Lambda 函数（如 haaska）使用 Alexa：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">logger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> info</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  logs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    homeassistant.components.alexa</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>如果您使用的是 Home Assistant Cloud，还需要同时调试 <code>hass_nabucasa.iot</code>：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">logger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> info</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  logs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    homeassistant.components.alexa</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    hass_nabucasa.iot</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#要求" class="rp-toc-item rp-link" title="要求" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">要求</span></a><a href="#创建-amazon-alexa-智能家居技能" class="rp-toc-item rp-link" title="创建 Amazon Alexa 智能家居技能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">创建 Amazon Alexa 智能家居技能</span></a><a href="#创建-aws-lambda-函数" class="rp-toc-item rp-link" title="创建 AWS Lambda 函数" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">创建 AWS Lambda 函数</span></a><a href="#为-lambda-创建-iam-角色" class="rp-toc-item rp-link" title="为 Lambda 创建 IAM 角色" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">为 Lambda 创建 IAM 角色</span></a><a href="#向-lambda-函数添加代码" class="rp-toc-item rp-link" title="向 Lambda 函数添加代码" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">向 Lambda 函数添加代码</span></a><a href="#测试-lambda-函数" class="rp-toc-item rp-link" title="测试 Lambda 函数" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">测试 Lambda 函数</span></a><a href="#配置智能家居服务端点" class="rp-toc-item rp-link" title="配置智能家居服务端点" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置智能家居服务端点</span></a><a href="#账户关联" class="rp-toc-item rp-link" title="账户关联" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">账户关联</span></a><a href="#alexa-智能家居集成配置" class="rp-toc-item rp-link" title="Alexa 智能家居集成配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Alexa 智能家居集成配置</span></a><a href="#alexa-区域设置" class="rp-toc-item rp-link" title="Alexa 区域设置" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Alexa 区域设置</span></a><a href="#主动事件" class="rp-toc-item rp-link" title="主动事件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">主动事件</span></a><a href="#配置过滤器" class="rp-toc-item rp-link" title="配置过滤器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配置过滤器</span></a><a href="#alexa-显示类别" class="rp-toc-item rp-link" title="Alexa 显示类别" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Alexa 显示类别</span></a><a href="#支持的平台" class="rp-toc-item rp-link" title="支持的平台" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的平台</span></a><a href="#报警控制面板" class="rp-toc-item rp-link" title="报警控制面板" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">报警控制面板</span></a><a href="#布防" class="rp-toc-item rp-link" title="布防" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">布防</span></a><a href="#撤防" class="rp-toc-item rp-link" title="撤防" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">撤防</span></a><a href="#alertautomationgroup" class="rp-toc-item rp-link" title="Alert、Automation、Group" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Alert、Automation、Group</span></a><a href="#二值传感器" class="rp-toc-item rp-link" title="二值传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">二值传感器</span></a><a href="#例程" class="rp-toc-item rp-link" title="例程" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">例程</span></a><a href="#buttoninput-button" class="rp-toc-item rp-link" title="Button、Input Button" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Button、Input Button</span></a><a href="#例程-1" class="rp-toc-item rp-link" title="例程" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">例程</span></a><a href="#使用-binary_sensor-进行门铃播报" class="rp-toc-item rp-link" title="使用 binary_sensor 进行门铃播报" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">使用 binary_sensor 进行门铃播报</span></a><a href="#使用二值传感器进行存在检测" class="rp-toc-item rp-link" title="使用二值传感器进行存在检测" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">使用二值传感器进行存在检测</span></a><a href="#摄像头" class="rp-toc-item rp-link" title="摄像头" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">摄像头</span></a><a href="#climate" class="rp-toc-item rp-link" title="Climate" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Climate</span></a><a href="#设置温控器温度" class="rp-toc-item rp-link" title="设置温控器温度" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置温控器温度</span></a><a href="#温控器模式" class="rp-toc-item rp-link" title="温控器模式" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">温控器模式</span></a><a href="#cover" class="rp-toc-item rp-link" title="Cover" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Cover</span></a><a href="#打开关闭升起降下" class="rp-toc-item rp-link" title="打开/关闭/升起/降下" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">打开/关闭/升起/降下</span></a><a href="#设置窗帘位置" class="rp-toc-item rp-link" title="设置窗帘位置" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置窗帘位置</span></a><a href="#设置窗帘倾斜角度" class="rp-toc-item rp-link" title="设置窗帘倾斜角度" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置窗帘倾斜角度</span></a><a href="#停止-cover-操作" class="rp-toc-item rp-link" title="停止 Cover 操作" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">停止 Cover 操作</span></a><a href="#车库门" class="rp-toc-item rp-link" title="车库门" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">车库门</span></a><a href="#事件实体" class="rp-toc-item rp-link" title="事件实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">事件实体</span></a><a href="#门铃事件" class="rp-toc-item rp-link" title="门铃事件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">门铃事件</span></a><a href="#风扇" class="rp-toc-item rp-link" title="风扇" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">风扇</span></a><a href="#风扇速度" class="rp-toc-item rp-link" title="风扇速度" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">风扇速度</span></a><a href="#风扇预设模式" class="rp-toc-item rp-link" title="风扇预设模式" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">风扇预设模式</span></a><a href="#风扇方向" class="rp-toc-item rp-link" title="风扇方向" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">风扇方向</span></a><a href="#风扇摆动" class="rp-toc-item rp-link" title="风扇摆动" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">风扇摆动</span></a><a href="#加湿器" class="rp-toc-item rp-link" title="加湿器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">加湿器</span></a><a href="#加湿器目标湿度" class="rp-toc-item rp-link" title="加湿器目标湿度" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">加湿器目标湿度</span></a><a href="#加湿器模式" class="rp-toc-item rp-link" title="加湿器模式" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">加湿器模式</span></a><a href="#图像处理" class="rp-toc-item rp-link" title="图像处理" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">图像处理</span></a><a href="#存在检测通知" class="rp-toc-item rp-link" title="存在检测通知" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">存在检测通知</span></a><a href="#input-number-和-number" class="rp-toc-item rp-link" title="Input Number 和 Number" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Input Number 和 Number</span></a><a href="#灯光" class="rp-toc-item rp-link" title="灯光" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">灯光</span></a><a href="#亮度" class="rp-toc-item rp-link" title="亮度" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">亮度</span></a><a href="#色温" class="rp-toc-item rp-link" title="色温" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">色温</span></a><a href="#颜色" class="rp-toc-item rp-link" title="颜色" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">颜色</span></a><a href="#门锁" class="rp-toc-item rp-link" title="门锁" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">门锁</span></a><a href="#解锁" class="rp-toc-item rp-link" title="解锁" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解锁</span></a><a href="#媒体播放器" class="rp-toc-item rp-link" title="媒体播放器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">媒体播放器</span></a><a href="#切换频道" class="rp-toc-item rp-link" title="切换频道" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">切换频道</span></a><a href="#扬声器音量" class="rp-toc-item rp-link" title="扬声器音量" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">扬声器音量</span></a><a href="#均衡器模式" class="rp-toc-item rp-link" title="均衡器模式" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">均衡器模式</span></a><a href="#输入源" class="rp-toc-item rp-link" title="输入源" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">输入源</span></a><a href="#播放状态" class="rp-toc-item rp-link" title="播放状态" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">播放状态</span></a><a href="#remote" class="rp-toc-item rp-link" title="Remote" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Remote</span></a><a href="#场景" class="rp-toc-item rp-link" title="场景" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">场景</span></a><a href="#脚本" class="rp-toc-item rp-link" title="脚本" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">脚本</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#switchinput-boolean" class="rp-toc-item rp-link" title="Switch、Input Boolean" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Switch、Input Boolean</span></a><a href="#例程-2" class="rp-toc-item rp-link" title="例程" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">例程</span></a><a href="#计时器" class="rp-toc-item rp-link" title="计时器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">计时器</span></a><a href="#扫地机" class="rp-toc-item rp-link" title="扫地机" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">扫地机</span></a><a href="#阀门" class="rp-toc-item rp-link" title="阀门" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">阀门</span></a><a href="#打开关闭" class="rp-toc-item rp-link" title="打开/关闭" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">打开/关闭</span></a><a href="#设置阀门位置" class="rp-toc-item rp-link" title="设置阀门位置" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置阀门位置</span></a><a href="#停止阀门" class="rp-toc-item rp-link" title="停止阀门" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">停止阀门</span></a><a href="#热水器" class="rp-toc-item rp-link" title="热水器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">热水器</span></a><a href="#设置目标温度" class="rp-toc-item rp-link" title="设置目标温度" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置目标温度</span></a><a href="#运行模式" class="rp-toc-item rp-link" title="运行模式" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">运行模式</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#例程触发器中找不到-binary-sensor" class="rp-toc-item rp-link" title="例程触发器中找不到 Binary Sensor" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">例程触发器中找不到 Binary Sensor</span></a><a href="#token-invalid-and-no-refresh-token-available" class="rp-toc-item rp-link" title="Token Invalid and no Refresh Token Available" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Token Invalid and no Refresh Token Available</span></a><a href="#调试" class="rp-toc-item rp-link" title="调试" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">调试</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

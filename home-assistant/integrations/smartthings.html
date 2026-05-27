@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartThings - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="SmartThings - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="SmartThings(https://www.samsung.com/smartthings/) 是一个可连接三星设备和第三方设备的家庭自动化平台。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="SmartThings(https://www.samsung.com/smartthings/) 是一个可连接三星设备和第三方设备的家庭自动化平台。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="smartthings"><a href="#smartthings" class="rp-header-anchor rp-link" aria-hidden="true">#</a>SmartThings<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><a href="https://www.samsung.com/smartthings/" target="_blank" rel="noopener noreferrer" class="rp-link">SmartThings</a> 是一个可连接三星设备和第三方设备的家庭自动化平台。</p>
+<h2 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h2>
+<ul>
+<li>你需要一个 Samsung 账户及其登录凭据。</li>
+<li>若要连接设备，需要在手机上安装 SmartThings 应用。</li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h2 class="rp-toc-include" id="支持的功能"><a href="#支持的功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的功能</h2>
+<p>SmartThings 将设备表示为一组<a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference" target="_blank" rel="noopener noreferrer" class="rp-link">能力</a>。SmartThings 集成会将这些能力映射为 Home Assistant 中的实体。一个设备可能会对应一个或多个实体。</p>
+<ul>
+<li><a href="#binary-sensor" class="rp-link">Binary sensor</a></li>
+<li><a href="#button" class="rp-link">Button</a></li>
+<li><a href="#climate" class="rp-link">Climate</a></li>
+<li><a href="#cover" class="rp-link">Cover</a></li>
+<li><a href="#event" class="rp-link">Event</a></li>
+<li><a href="#fan" class="rp-link">Fan</a></li>
+<li><a href="#light" class="rp-link">Light</a></li>
+<li><a href="#lock" class="rp-link">Lock</a></li>
+<li><a href="#media-player" class="rp-link">Media player</a></li>
+<li><a href="#number" class="rp-link">Number</a></li>
+<li><a href="#scene" class="rp-link">Scene</a></li>
+<li><a href="#select" class="rp-link">Select</a></li>
+<li><a href="#sensor" class="rp-link">Sensor</a></li>
+<li><a href="#switch" class="rp-link">Switch</a></li>
+<li><a href="#update" class="rp-link">Update</a></li>
+<li><a href="#vacuum" class="rp-link">Vacuum</a></li>
+<li><a href="#valve" class="rp-link">Valve</a></li>
+<li><a href="#water-heater" class="rp-link">Water heater</a></li>
+</ul>
+<h3 class="rp-toc-include" id="二值传感器"><a href="#二值传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二值传感器</h3>
+<p>在 Home Assistant 中，以下每个 SmartThings capability 都会创建一个 binary sensor 实体：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th></tr></thead><tbody><tr><td><code>accelerationSensor</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#contactSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>contactSensor</code></a></td></tr><tr><td><code>custom.dryerWrinklePrevent</code></td></tr><tr><td><code>custom.ovenCavityStatus</code></td></tr><tr><td><code>custom.waterFilter</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#filterStatus" target="_blank" rel="noopener noreferrer" class="rp-link"><code>filterStatus</code></a></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#gasDetector" target="_blank" rel="noopener noreferrer" class="rp-link"><code>gasDetector</code></a></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#motionSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>motionSensor</code></a></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#presenceSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>presenceSensor</code></a></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#remoteControlStatus" target="_blank" rel="noopener noreferrer" class="rp-link"><code>remoteControlStatus</code></a></td></tr><tr><td><code>samsungce.doorState</code></td></tr><tr><td><code>samsungce.kidsLock</code></td></tr><tr><td><code>samsungce.steamClosetKeepFreshMode</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#soundSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>soundSensor</code></a></td></tr><tr><td><code>switch</code>（仅适用于洗衣机、烘干机、洗碗机、灶台、微波炉和衣物护理机等家电类别）</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#tamperAlert" target="_blank" rel="noopener noreferrer" class="rp-link"><code>tamperAlert</code></a></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#waterSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>waterSensor</code></a></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="按钮"><a href="#按钮" class="rp-header-anchor rp-link" aria-hidden="true">#</a>按钮</h3>
+<p>SmartThings Button 平台提供以下按钮：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>按钮</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#ovenOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>ovenOperatingState</code></a></td><td>停止</td></tr><tr><td><code>custom.waterFilter</code></td><td>重置净水滤芯</td></tr><tr><td><code>samsungce.hoodFilter</code></td><td>重置油烟机滤网</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="气候"><a href="#气候" class="rp-header-anchor rp-link" aria-hidden="true">#</a>气候</h3>
+<p>SmartThings Climate 平台可用于控制具备空调、恒温器或热泵相关能力的设备。</p>
+<h4 class="rp-toc-include" id="空调"><a href="#空调" class="rp-header-anchor rp-link" aria-hidden="true">#</a>空调</h4>
+<p>若要将 SmartThings 空调表示为 climate 实体，它必须具备以下所有必需 capability。若缺少任意 capability，这些功能会在 Home Assistant 中以单独的传感器形式表示，而不是 climate 实体。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related climate features in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#airConditionerMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>airConditionerMode</code></a> (required)</td><td><code>hvac mode</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#airConditionerFanMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>airConditionerFanMode</code></a> (required)</td><td><code>fan mode</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switch</code></a> (required)</td><td><code>turn on</code>, <code>turn off</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#temperatureMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>temperatureMeasurement</code></a> (required)</td><td><code>temperature</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatCoolingSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatCoolingSetpoint</code></a> (required)</td><td><code>target temp</code></td></tr><tr><td><code>custom.airConditionerOptionalMode</code></td><td><code>preset mode</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#demandResponseLoadControl" target="_blank" rel="noopener noreferrer" class="rp-link"><code>demandResponseLoadControl</code></a></td><td><code>drlc_status_duration</code> (state attribute), <code>drlc_status_level</code> (state attribute), <code>drlc_status_override</code> (state attribute), <code>drlc_status_start</code> (state attribute)</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#fanOscillationMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>fanOscillationMode</code></a></td><td><code>swing mode</code></td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="恒温器"><a href="#恒温器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>恒温器</h4>
+<p>若要将 SmartThings 恒温器表示为 climate 实体，它必须具备所有必需 capability。若缺少任意 capability，这些功能会在 Home Assistant 中以单独的传感器形式表示，而不是 climate 实体。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related climate features in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatMode</code></a> (required)</td><td><code>hvac mode</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatHeatingSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatHeatingSetpoint</code></a> (required)</td><td><code>target temp</code>, <code>target temp low</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#temperatureMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>temperatureMeasurement</code></a> (required)</td><td><code>temperature</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatCoolingSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatCoolingSetpoint</code></a></td><td><code>target temp</code>, <code>target temp high</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatOperatingState</code></a></td><td><code>hvac action</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatFanMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatFanMode</code></a></td><td><code>fan mode</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#relativeHumidityMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>relativeHumidityMeasurement</code></a></td><td><code>humidity</code> (state attribute)</td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="热泵分区"><a href="#热泵分区" class="rp-header-anchor rp-link" aria-hidden="true">#</a>热泵分区</h4>
+<p>若要将 SmartThings 热泵分区表示为 climate 实体，它必须在 <code>INDOOR</code>、<code>INDOOR1</code> 或 <code>INDOOR2</code> 组件上具备所有必需 capability。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related climate features in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#airConditionerMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>airConditionerMode</code></a> (required)</td><td><code>hvac mode</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switch</code></a> (required)</td><td><code>turn on</code>, <code>turn off</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#temperatureMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>temperatureMeasurement</code></a> (required)</td><td><code>temperature</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatCoolingSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatCoolingSetpoint</code></a> (required)</td><td><code>target temp</code></td></tr><tr><td><code>custom.thermostatSetpointControl</code> (required)</td><td><code>min temp</code>, <code>max temp</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="封盖"><a href="#封盖" class="rp-header-anchor rp-link" aria-hidden="true">#</a>封盖</h3>
+<p>SmartThings Cover 平台可用于控制具备开合相关能力的设备。若要将设备表示为 cover 实体，它必须具备 <code>doorControl</code> 或 <code>windowShade</code> capability；否则，这些功能会在 Home Assistant 中以单独的传感器形式表示。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related cover features in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#doorControl" target="_blank" rel="noopener noreferrer" class="rp-link"><code>doorControl</code></a></td><td><code>open</code> and <code>close</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#windowShade" target="_blank" rel="noopener noreferrer" class="rp-link"><code>windowShade</code></a></td><td><code>open</code> and <code>close</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switchLevel" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switchLevel</code></a></td><td><code>position</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference/#windowShadeLevel" target="_blank" rel="noopener noreferrer" class="rp-link"><code>windowShadeLevel</code></a></td><td><code>position</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#battery" target="_blank" rel="noopener noreferrer" class="rp-link"><code>battery</code></a></td><td><code>battery_level</code> (state attribute)</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="事件"><a href="#事件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>事件</h3>
+<p>SmartThings Event 平台会为每个按钮创建实体，用于显示按钮按压事件，并允许你基于这些事件创建自动化。</p>
+<h3 class="rp-toc-include" id="风扇"><a href="#风扇" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇</h3>
+<p>SmartThings Fan 平台可用于控制具备风扇相关能力的设备。若要将 SmartThings 设备表示为 fan 实体，除了 <a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switch</code></a> capability 之外，还必须具备以下一个或多个 capability。若设备同时具备 <code>fanSpeed</code> 或 <code>airConditionerFanMode</code> 以及 <code>thermostatCoolingSetpoint</code>，则会改为表示为 climate 实体。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related fan features in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#fanSpeed" target="_blank" rel="noopener noreferrer" class="rp-link"><code>fanSpeed</code></a></td><td><code>speed</code> (percentage)</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#airConditionerFanMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>airConditionerFanMode</code></a></td><td><code>preset mode</code></td></tr><tr><td><code>samsungce.hoodFanSpeed</code> (creates a separate hood fan entity for range hoods with smart fan speed support)</td><td><code>speed</code> (percentage), <code>preset mode</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="灯光"><a href="#灯光" class="rp-header-anchor rp-link" aria-hidden="true">#</a>灯光</h3>
+<p>SmartThings Light 平台可用于控制具备灯光相关能力的设备。若要将 SmartThings 设备表示为 light 实体，除了 <a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switch</code></a> capability 之外，还必须具备以下一个或多个 capability。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related light features in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switchLevel" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switchLevel</code></a></td><td><code>brightness</code> and <code>transition</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#colorControl" target="_blank" rel="noopener noreferrer" class="rp-link"><code>colorControl</code></a></td><td><code>color</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#colorTemperature" target="_blank" rel="noopener noreferrer" class="rp-link"><code>colorTemperature</code></a></td><td><code>color_temp</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="门锁"><a href="#门锁" class="rp-header-anchor rp-link" aria-hidden="true">#</a>门锁</h3>
+<p>SmartThings Lock 平台可用于控制具备 <a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#lock" target="_blank" rel="noopener noreferrer" class="rp-link"><code>lock</code></a> capability 的设备，可显示当前锁状态并支持上锁与解锁命令。</p>
+<h3 class="rp-toc-include" id="媒体播放器"><a href="#媒体播放器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>媒体播放器</h3>
+<p>SmartThings Media player 平台可用于控制具备媒体播放器相关能力的设备。若要将 SmartThings 设备表示为 media player 实体，它必须具备所有必需 capability。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related media player features in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#audioMute" target="_blank" rel="noopener noreferrer" class="rp-link"><code>audioMute</code></a> (required)</td><td><code>volume_mute</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#audioVolume" target="_blank" rel="noopener noreferrer" class="rp-link"><code>audioVolume</code></a> (required)</td><td><code>volume_up</code>, <code>volume_down</code>, <code>volume_set</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#audioTrackData" target="_blank" rel="noopener noreferrer" class="rp-link"><code>audioTrackData</code></a></td><td><code>media_title</code> and <code>media_artist</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#mediaPlayback" target="_blank" rel="noopener noreferrer" class="rp-link"><code>mediaPlayback</code></a></td><td><code>media_play</code>, <code>media_pause</code>, <code>media_stop</code>, <code>media_next_track</code>, <code>media_previous_track</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#mediaInputSource" target="_blank" rel="noopener noreferrer" class="rp-link"><code>mediaInputSource</code></a></td><td><code>select_source</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#mediaPlaybackRepeat" target="_blank" rel="noopener noreferrer" class="rp-link"><code>mediaPlaybackRepeat</code></a></td><td><code>repeat_set</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#mediaPlaybackShuffle" target="_blank" rel="noopener noreferrer" class="rp-link"><code>mediaPlaybackShuffle</code></a></td><td><code>shuffle_set</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switch</code></a></td><td><code>turn_on</code>, <code>turn_off</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="数值"><a href="#数值" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数值</h3>
+<p>SmartThings Number 平台可用于控制以下 capability 的数值型设置：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Number entity</th></tr></thead><tbody><tr><td><code>custom.washerRinseCycles</code></td><td>Washer rinse cycles</td></tr><tr><td><code>samsungce.hoodFanSpeed</code> (on hood component)</td><td>Hood fan speed</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatCoolingSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatCoolingSetpoint</code></a> (on cooler, freezer, or onedoor components)</td><td>Refrigerator temperature</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="场景"><a href="#场景" class="rp-header-anchor rp-link" aria-hidden="true">#</a>场景</h3>
+<p>SmartThings Scene 平台可用于激活你在 SmartThings 中定义的场景。每个 SmartThings 场景都会创建一个 scene 实体。</p>
+<h3 class="rp-toc-include" id="选择"><a href="#选择" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选择</h3>
+<p>SmartThings Select 平台可用于配置设备选项。某些 capability 需要先在设备上启用远程控制，才能进行更改。</p>
+<p>Select 实体支持以下 SmartThings capability：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th></tr></thead><tbody><tr><td><code>custom.washerSoilLevel</code></td></tr><tr><td><code>custom.washerSpinLevel</code></td></tr><tr><td><code>custom.washerWaterTemperature</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#dishwasherOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>dishwasherOperatingState</code></a></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#dryerOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>dryerOperatingState</code></a></td></tr><tr><td><code>samsungce.autoDispenseDetergent</code></td></tr><tr><td><code>samsungce.dishwasherWashingOptions</code></td></tr><tr><td><code>samsungce.dustFilterAlarm</code></td></tr><tr><td><code>samsungce.flexibleAutoDispenseDetergent</code></td></tr><tr><td><code>samsungce.lamp</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#washerOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>washerOperatingState</code></a></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<p>SmartThings Sensor 平台可用于查看具备传感器相关能力的设备。设备支持的每个属性（如下）都会创建一个 Sensor 实体。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related entities in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#activityLightingMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>activityLightingMode</code></a></td><td>Activity lighting mode</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#airConditionerMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>airConditionerMode</code></a></td><td>Air conditioner mode</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#airQualitySensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>airQualitySensor</code></a></td><td>Air quality</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#alarm" target="_blank" rel="noopener noreferrer" class="rp-link"><code>alarm</code></a></td><td>Alarm</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#atmosphericPressureMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>atmosphericPressureMeasurement</code></a></td><td>Atmospheric pressure</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#audioVolume" target="_blank" rel="noopener noreferrer" class="rp-link"><code>audioVolume</code></a></td><td>Volume</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#battery" target="_blank" rel="noopener noreferrer" class="rp-link"><code>battery</code></a></td><td>Battery</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#bodyMassIndexMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>bodyMassIndexMeasurement</code></a></td><td>Body mass index</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#bodyWeightMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>bodyWeightMeasurement</code></a></td><td>Body weight</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#carbonDioxideMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>carbonDioxideMeasurement</code></a></td><td>Carbon dioxide</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#carbonMonoxideDetector" target="_blank" rel="noopener noreferrer" class="rp-link"><code>carbonMonoxideDetector</code></a></td><td>Carbon monoxide detector</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#carbonMonoxideMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>carbonMonoxideMeasurement</code></a></td><td>Carbon monoxide</td></tr><tr><td><code>custom.cooktopOperatingState</code></td><td>Cooktop operating state</td></tr><tr><td><code>custom.waterFilter</code></td><td>Water filter usage</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#dishwasherOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>dishwasherOperatingState</code></a></td><td>Machine state<br/>Job state<br/>Completion time</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#dryerMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>dryerMode</code></a></td><td>Dryer mode</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#dryerOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>dryerOperatingState</code></a></td><td>Machine state<br/>Job state<br/>Completion time</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#dustHealthConcern" target="_blank" rel="noopener noreferrer" class="rp-link"><code>dustHealthConcern</code></a></td><td>PM10 health concern</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#dustSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>dustSensor</code></a></td><td>PM10<br/>PM2.5</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#energyMeter" target="_blank" rel="noopener noreferrer" class="rp-link"><code>energyMeter</code></a></td><td>Energy</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#equivalentCarbonDioxideMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>equivalentCarbonDioxideMeasurement</code></a></td><td>Equivalent carbon dioxide</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#fineDustHealthConcern" target="_blank" rel="noopener noreferrer" class="rp-link"><code>fineDustHealthConcern</code></a></td><td>PM2.5 health concern</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#fineDustSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>fineDustSensor</code></a></td><td>PM2.5</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#formaldehydeMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>formaldehydeMeasurement</code></a></td><td>Formaldehyde</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#gasMeter" target="_blank" rel="noopener noreferrer" class="rp-link"><code>gasMeter</code></a></td><td>Gas meter<br/>Gas meter calorific<br/>Gas meter time<br/>Gas</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#illuminanceMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>illuminanceMeasurement</code></a></td><td>Illuminance</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#infraredLevel" target="_blank" rel="noopener noreferrer" class="rp-link"><code>infraredLevel</code></a></td><td>Infrared level</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#mediaInputSource" target="_blank" rel="noopener noreferrer" class="rp-link"><code>mediaInputSource</code></a></td><td>Media input source</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#mediaPlaybackRepeat" target="_blank" rel="noopener noreferrer" class="rp-link"><code>mediaPlaybackRepeat</code></a></td><td>Media playback repeat</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#mediaPlaybackShuffle" target="_blank" rel="noopener noreferrer" class="rp-link"><code>mediaPlaybackShuffle</code></a></td><td>Media playback shuffle</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#mediaPlayback" target="_blank" rel="noopener noreferrer" class="rp-link"><code>mediaPlayback</code></a></td><td>Media playback status</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#odorSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>odorSensor</code></a></td><td>Odor sensor</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#ovenMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>ovenMode</code></a></td><td>Oven mode</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#ovenOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>ovenOperatingState</code></a></td><td>Machine state<br/>Job state<br/>Completion time</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#ovenSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>ovenSetpoint</code></a></td><td>Set point</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#powerConsumptionReport" target="_blank" rel="noopener noreferrer" class="rp-link"><code>powerConsumptionReport</code></a></td><td>Energy difference<br/>Power energy<br/>Energy saved<br/>Power<br/>Energy</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#powerMeter" target="_blank" rel="noopener noreferrer" class="rp-link"><code>powerMeter</code></a></td><td>Power</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#powerSource" target="_blank" rel="noopener noreferrer" class="rp-link"><code>powerSource</code></a></td><td>Power source</td></tr><tr><td><code>relativeBrightness</code></td><td>Brightness intensity</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#refrigerationSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>refrigerationSetpoint</code></a></td><td>Set point</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#relativeHumidityMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>relativeHumidityMeasurement</code></a></td><td>Humidity</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#robotCleanerCleaningMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>robotCleanerCleaningMode</code></a></td><td>Cleaning mode</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#robotCleanerMovement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>robotCleanerMovement</code></a></td><td>Movement</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#robotCleanerTurboMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>robotCleanerTurboMode</code></a></td><td>Turbo mode</td></tr><tr><td><code>samsungce.cooktopHeatingPower</code></td><td>Manual level<br/>Heating mode</td></tr><tr><td><code>samsungce.ehsDiverterValve</code></td><td>Diverter valve position</td></tr><tr><td><code>samsungce.hoodFilter</code></td><td>Hood filter usage</td></tr><tr><td><code>samsungce.waterConsumptionReport</code></td><td>Water consumption</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#signalStrength" target="_blank" rel="noopener noreferrer" class="rp-link"><code>signalStrength</code></a></td><td>Link quality<br/>Signal strength</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#smokeDetector" target="_blank" rel="noopener noreferrer" class="rp-link"><code>smokeDetector</code></a></td><td>Smoke detector</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#temperatureMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>temperatureMeasurement</code></a></td><td>Temperature</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatCoolingSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatCoolingSetpoint</code></a></td><td>Cooling set point</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatFanMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatFanMode</code></a></td><td>Fan mode</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatHeatingSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatHeatingSetpoint</code></a></td><td>Heating set point</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatMode</code></a></td><td>Mode</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatOperatingState</code></a></td><td>Operating state</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/deprecated#thermostatSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatSetpoint</code></a></td><td>Set point</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#threeAxis" target="_blank" rel="noopener noreferrer" class="rp-link"><code>threeAxis</code></a></td><td>X coordinate<br/>Y coordinate<br/>Z coordinate</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#tvChannel" target="_blank" rel="noopener noreferrer" class="rp-link"><code>tvChannel</code></a></td><td>TV channel<br/>TV channel name</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#tvocMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>tvocMeasurement</code></a></td><td>Volatile organic compounds</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#ultravioletIndex" target="_blank" rel="noopener noreferrer" class="rp-link"><code>ultravioletIndex</code></a></td><td>UV index</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#veryFineDustHealthConcern" target="_blank" rel="noopener noreferrer" class="rp-link"><code>veryFineDustHealthConcern</code></a></td><td>PM1.0 health concern</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#veryFineDustSensor" target="_blank" rel="noopener noreferrer" class="rp-link"><code>veryFineDustSensor</code></a></td><td>PM1.0</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#voltageMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>voltageMeasurement</code></a></td><td>Voltage</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#washerMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>washerMode</code></a></td><td>Washer mode</td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#washerOperatingState" target="_blank" rel="noopener noreferrer" class="rp-link"><code>washerOperatingState</code></a></td><td>Machine state<br/>Job state<br/>Completion time</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="开关"><a href="#开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关</h3>
+<p>SmartThings Switch 平台可用于控制具备 <a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switch</code></a> capability、且尚未由更具体平台表示的设备。同时也会为以下 capability 创建 switch 实体：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th></tr></thead><tbody><tr><td><code>custom.dryerWrinklePrevent</code></td></tr><tr><td><code>samsungce.airConditionerBeep</code></td></tr><tr><td><code>samsungce.airConditionerLighting</code></td></tr><tr><td><code>samsungce.dishwasherWashingOptions</code></td></tr><tr><td><code>samsungce.powerCool</code></td></tr><tr><td><code>samsungce.powerFreeze</code></td></tr><tr><td><code>samsungce.sabbathMode</code></td></tr><tr><td><code>samsungce.steamClosetAutoCycleLink</code></td></tr><tr><td><code>samsungce.steamClosetKeepFreshMode</code></td></tr><tr><td><code>samsungce.steamClosetSanitizeMode</code></td></tr><tr><td><code>samsungce.washerBubbleSoak</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="更新"><a href="#更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>更新</h3>
+<p>SmartThings Update 平台可用于更新具备 <a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#firmwareUpdate" target="_blank" rel="noopener noreferrer" class="rp-link"><code>firmwareUpdate</code></a> capability 的设备固件。</p>
+<h3 class="rp-toc-include" id="吸尘器"><a href="#吸尘器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>吸尘器</h3>
+<p>SmartThings Vacuum 平台可用于控制具备 <code>samsungce.robotCleanerOperatingState</code> capability 的设备，可显示吸尘器状态并控制设备。</p>
+<h3 class="rp-toc-include" id="阀门"><a href="#阀门" class="rp-header-anchor rp-link" aria-hidden="true">#</a>阀门</h3>
+<p>SmartThings Valve 平台可用于控制具备 <a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#valve" target="_blank" rel="noopener noreferrer" class="rp-link"><code>valve</code></a> capability 的设备，可显示阀门状态并执行打开/关闭操作。</p>
+<h3 class="rp-toc-include" id="热水器"><a href="#热水器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>热水器</h3>
+<p>SmartThings Water heater 平台可用于控制提供热水的热泵。若要将设备表示为 water heater 实体，它必须具备以下所有 capability：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>SmartThings capability</th><th>Related water heater features in Home Assistant</th></tr></thead><tbody><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch" target="_blank" rel="noopener noreferrer" class="rp-link"><code>switch</code></a> (required)</td><td><code>turn on</code>, <code>turn off</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/proposed#airConditionerMode" target="_blank" rel="noopener noreferrer" class="rp-link"><code>airConditionerMode</code></a> (required)</td><td><code>operation mode</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#temperatureMeasurement" target="_blank" rel="noopener noreferrer" class="rp-link"><code>temperatureMeasurement</code></a> (required)</td><td><code>temperature</code></td></tr><tr><td><code>custom.thermostatSetpointControl</code> (required)</td><td><code>min temp</code>, <code>max temp</code></td></tr><tr><td><a href="https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatCoolingSetpoint" target="_blank" rel="noopener noreferrer" class="rp-link"><code>thermostatCoolingSetpoint</code></a> (required)</td><td><code>target temp</code></td></tr><tr><td><code>samsungce.ehsThermostat</code> (required)</td><td></td></tr><tr><td><code>custom.outingMode</code> (required)</td><td><code>away mode</code></td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="故障排查"><a href="#故障排查" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排查</h2>
+<h3 class="rp-toc-include" id="启用调试日志"><a href="#启用调试日志" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用调试日志</h3>
+<p>启用调试日志后，集成会在日志中显示接收到的所有事件。日志会捕获该设备 5 秒内的事件，并返回一个包含设备状态和事件的 JSON 文件。
+调试日志有助于诊断状态更新问题，例如可先在界面中选择按钮，再手动操作设备进行验证。</p>
+<ul>
+<li>若要启用调试日志，请按照<a href="/home-assistant/docs/configuration/troubleshooting/index.html#debug-logs-and-diagnostics" class="rp-link">启用调试日志步骤</a>操作。</li>
+</ul>
+<h3 class="rp-toc-include" id="设备功能缺失"><a href="#设备功能缺失" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设备功能缺失</h3>
+<p>SmartThings 集成并不支持所有 SmartThings capability。仅支持本文档中列出的 capability。若你的设备某项功能未在 Home Assistant 中提供，可能有以下原因：</p>
+<ol>
+<li>想查看当前已实现的 capability，请参阅<a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%8A%9F%E8%83%BD" class="rp-link">支持的功能</a>部分。
+<ul>
+<li>你需要的 capability 可能尚未被此集成支持。</li>
+</ul>
+</li>
+<li>想确认设备所需 capability 是否已在 API 中提供，请查看 <a href="https://my.smartthings.com/advanced/devices" target="_blank" rel="noopener noreferrer" class="rp-link">SmartThings Developer Portal</a>。
+<ul>
+<li>某些设备功能仅在 SmartThings 应用中可用，不会通过 API 暴露。</li>
+</ul>
+</li>
+<li>如果该 capability 已在 SmartThings API 中提供，但此集成尚未支持，你可以通过创建 <a href="https://github.com/orgs/home-assistant/discussions?discussions_q=is%3Aopen+label%3A%22integration%3A+smartthings%22" target="_blank" rel="noopener noreferrer" class="rp-link">GitHub Discussion</a> 来请求支持。
+<ul>
+<li>功能请求请不要创建 GitHub Issue，因为 Issue 主要用于缺陷报告。</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="查看设备诊断信息"><a href="#查看设备诊断信息" class="rp-header-anchor rp-link" aria-hidden="true">#</a>查看设备诊断信息</h3>
+<p>SmartThings 集成提供两个层级的诊断信息。若要下载诊断，请按照<a href="/home-assistant/docs/configuration/troubleshooting/index.html#download-diagnostics" class="rp-link">下载诊断步骤</a>操作。</p>
+<ul>
+<li><strong>设备诊断</strong>：包含单个设备的全部 capability 及其当前状态。排查特定设备问题时非常有用，因为它会准确展示该设备向 SmartThings API 暴露了哪些 capability、属性和属性值。</li>
+<li><strong>配置条目诊断</strong>：包含你的 SmartThings 位置中所有 capability 和设备的信息，但不包含当前状态值。适合用来整体了解所有已连接设备可用的 capability。</li>
+</ul>
+<h2 class="rp-toc-include" id="删除集成"><a href="#删除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除集成</h2>
+<h3 class="rp-toc-include" id="从-home-assistant-中删除集成实例"><a href="#从-home-assistant-中删除集成实例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Home Assistant 中删除集成实例</h3>
+<ol>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>，选择该集成卡片。</li>
+<li>在设备列表中，选择你要删除的集成实例。</li>
+<li>在对应条目旁点击三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单，然后选择 <strong>删除</strong>。</li>
+<li>打开 SmartThings 应用，并从 SmartThings 中删除 Home Assistant 应用。</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#支持的功能" class="rp-toc-item rp-link" title="支持的功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的功能</span></a><a href="#二值传感器" class="rp-toc-item rp-link" title="二值传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">二值传感器</span></a><a href="#按钮" class="rp-toc-item rp-link" title="按钮" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">按钮</span></a><a href="#气候" class="rp-toc-item rp-link" title="气候" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">气候</span></a><a href="#空调" class="rp-toc-item rp-link" title="空调" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">空调</span></a><a href="#恒温器" class="rp-toc-item rp-link" title="恒温器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">恒温器</span></a><a href="#热泵分区" class="rp-toc-item rp-link" title="热泵分区" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">热泵分区</span></a><a href="#封盖" class="rp-toc-item rp-link" title="封盖" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">封盖</span></a><a href="#事件" class="rp-toc-item rp-link" title="事件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">事件</span></a><a href="#风扇" class="rp-toc-item rp-link" title="风扇" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">风扇</span></a><a href="#灯光" class="rp-toc-item rp-link" title="灯光" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">灯光</span></a><a href="#门锁" class="rp-toc-item rp-link" title="门锁" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">门锁</span></a><a href="#媒体播放器" class="rp-toc-item rp-link" title="媒体播放器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">媒体播放器</span></a><a href="#数值" class="rp-toc-item rp-link" title="数值" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">数值</span></a><a href="#场景" class="rp-toc-item rp-link" title="场景" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">场景</span></a><a href="#选择" class="rp-toc-item rp-link" title="选择" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">选择</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#开关" class="rp-toc-item rp-link" title="开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">开关</span></a><a href="#更新" class="rp-toc-item rp-link" title="更新" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">更新</span></a><a href="#吸尘器" class="rp-toc-item rp-link" title="吸尘器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">吸尘器</span></a><a href="#阀门" class="rp-toc-item rp-link" title="阀门" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">阀门</span></a><a href="#热水器" class="rp-toc-item rp-link" title="热水器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">热水器</span></a><a href="#故障排查" class="rp-toc-item rp-link" title="故障排查" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排查</span></a><a href="#启用调试日志" class="rp-toc-item rp-link" title="启用调试日志" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启用调试日志</span></a><a href="#设备功能缺失" class="rp-toc-item rp-link" title="设备功能缺失" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">设备功能缺失</span></a><a href="#查看设备诊断信息" class="rp-toc-item rp-link" title="查看设备诊断信息" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">查看设备诊断信息</span></a><a href="#删除集成" class="rp-toc-item rp-link" title="删除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">删除集成</span></a><a href="#从-home-assistant-中删除集成实例" class="rp-toc-item rp-link" title="从 Home Assistant 中删除集成实例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从 Home Assistant 中删除集成实例</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

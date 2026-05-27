@@ -1,0 +1,9 @@
+# asyncio 101
+
+如果您不太熟悉asyncio，请观看下面的视频。这是一个很棒的介绍\[罗伯特·斯莫尔希尔]\[rob]asyncio 如何以及为何以这种方式工作。
+
+<div class='videoWrapper'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M-UcUs7IMIM" frameborder="0" allowfullscreen></iframe>
+</div>
+
+【抢】：https://github.com/rob-smallshire

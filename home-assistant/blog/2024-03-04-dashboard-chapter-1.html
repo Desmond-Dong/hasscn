@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>家庭认可的仪表盘第 1 章：拖放、剖面视图和新的网格系统设计！ - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="家庭认可的仪表盘第 1 章：拖放、剖面视图和新的网格系统设计！ - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="哇！终于！一切顺利，我们实验性的仪表盘拖放功能终于来了！ 🥲。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="哇！终于！一切顺利，我们实验性的仪表盘拖放功能终于来了！ 🥲。 本页属于 Home Assistant 中文博客与更新记录，适合了解版本演进、功能变更与社区动态。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/layout-types.png"/><link rel="preload" as="image" href="/home-assistant/images/dashboards/masonry.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/layout-masonry-problem.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-case-studies.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-section-example.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-create-new-view.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-blank-sections-view.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-section-button.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/mdi-edit.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/mdi-trash.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-example-dashboard.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-card-by-card.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-card-suggestions.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-from-device-page.jpg"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-responsive-design.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/grid-system-examples.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/grid-system.gif"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/grid-system-available-cards.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-arrangement-methods-comparison.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-sections.gif"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-cards.gif"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item rp-hover-group__item--active" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客首页</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-03-04-release-20263.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.3: 大扫除</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-02-24-heiman-joins-works-with-home-assistant.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Heiman 加入 WWHa</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-02-04-release-20262.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.2: 家，甜蜜的概览</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-01-07-release-20261.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.1: 家就是仪表盘所在</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-12-17-music-assistant-2-7.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Music Assistant 2.7</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-12-03-release-202512.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.12: 触发节日</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-11-05-release-202511.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.11: 选择、自动化和派</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-10-01-release-202510.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.10: 撤销、重做</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-09-17-home-assistant-turns-12.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Home Assistant 12 岁</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="家庭认可的仪表盘第-1-章拖放剖面视图和新的网格系统设计"><a href="#家庭认可的仪表盘第-1-章拖放剖面视图和新的网格系统设计" class="rp-header-anchor rp-link" aria-hidden="true">#</a>家庭认可的仪表盘第 1 章：拖放、剖面视图和新的网格系统设计！<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>哇！终于！一切顺利，我们实验性的仪表盘拖放功能终于来了！ 🥲</p>
+<p>Home Assistant致力于成为最好的智能家居平台，智能家居让居民能够自动化、控制、观察和预测家中的舒适度、安全性和各种便利。除了语音助手之外，仪表盘也是帮助用户做到这一点的好方法！</p>
+<p>因此，我们一直在努力使仪表盘的定制和组织尽可能简单和直观，并创建一个开箱即用、更加有用、用户友好且相关的默认仪表盘。 <a href="https://github.com/matthiasdebaat" target="_blank" rel="noopener noreferrer" class="rp-link">Matthias</a> 和 <a href="https://github.com/madelena" target="_blank" rel="noopener noreferrer" class="rp-link">I</a> 在去年 4 月联手解决了这个问题，我们将目前仪表盘的这一系列改进称为“Project Grace”，以已故的颇具影响力和才华横溢的<a href="https://www.nationalww2museum.org/war/articles/grace-hopper-woman-computer" target="_blank" rel="noopener noreferrer" class="rp-link">Admiral Grace Hopper</a> 命名。</p>
+<p>经过数月的用户研究和构思，确保我们的设计<a href="https://building.open-home.io/open-home-approval-factor/#home-approval-factor" target="_blank" rel="noopener noreferrer" class="rp-link">“家庭认可”</a> - 让您、您的家人、您的客人、您的室友等轻松直观地使用 - 我们很高兴在即将发布的 2024.3 版本中分享我们成功的第一个成果，这在 <a href="https://github.com/piitaya" target="_blank" rel="noopener noreferrer" class="rp-link">Paul</a> 以及出色的前期团队的帮助下。我们希望这些功能将帮助您更快、更轻松地将您和您家的梦想仪表盘从想法变为现实。</p>
+<p>对于那些对这些功能及其背后的设计思维感到好奇的人，请继续阅读并观看我们上周的<a href="https://www.youtube.com/watch?v=XyBy0ckkiDU" target="_blank" rel="noopener noreferrer" class="rp-link">特别直播</a>。您还可以尝试我们更新的<a href="https://demo.home-assistant.io/#/Lovelace/home" target="_blank" rel="noopener noreferrer" class="rp-link">演示</a>并通过<a href="http://home-assistant.io/join-research" target="_blank" rel="noopener noreferrer" class="rp-link">加入Home Assistant用户测试组</a>参与其中！最后，感谢您【订阅Home Assistant云】(<a href="https://www.nabucasa.com)%E5%AF%B9%E6%88%91%E4%BB%AC%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%94%AF%E6%8C%81%EF%BC%81" target="_blank" rel="noopener noreferrer" class="rp-link">https://www.nabucasa.com)对我们工作的支持！</a></p>
+<p class="img">
+    <lite-youtube videoid="XyBy0ckkiDU" videotitle="A Home-Approved 仪表盘 - Chapter 1: What about Grace?"></lite-youtube>
+</p>
+<p>享受吧！</p>
+<p>～玛德琳娜🥳</p>
+<!-- -->
+<h2 class="rp-toc-include" id="什么是恩典计划"><a href="#什么是恩典计划" class="rp-header-anchor rp-link" aria-hidden="true">#</a>什么是恩典计划？</h2>
+<p>Grace 是我们在仪表盘框架 <a href="https://www.home-assistant.io/%E5%8D%9A%E5%AE%A2/2019/01/23/Lovelace-released/" target="_blank" rel="noopener noreferrer" class="rp-link">Lovelace</a> 之上构建的一系列改进的代号。我们的目标是保留 Lovelace 的优势，例如灵活性和可扩展性，并弥补其弱点，例如陡峭的学习曲线、缺乏可扩展性以及布局响应能力差等。</p>
+<h2 class="rp-toc-include" id="三布局问题"><a href="#三布局问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>三布局问题</h2>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/layout-types.png" alt="The three basic view layouts: 面板, 侧边栏, and Masonry"/>
+    三种基本视图布局：面板、侧边栏和砌体
+</p>
+<p>我们的仪表盘默认有3种默认的<a href="https://www.home-assistant.io/dashboards/views/#type" target="_blank" rel="noopener noreferrer" class="rp-link">视图布局类型</a>： 面板，只是一个覆盖整个视图的布局； 侧边栏，是左右的两栏布局；和[砖石]，这是其中最坚固的。虽然 Masonry 非常擅长创建紧凑的屏幕节省空间的仪表盘，但 Masonry 的布局逻辑对于许多用户来说可能无法立即清晰和可预测，这会导致创建和自定义布局的用户体验令人沮丧。由于布局逻辑取决于每个动作的高度，因此我们的仪表盘可用的动作高度变化既是福也是祸：即使高度相差 1 个像素，也意味着显示在最左边一列的动作会一直向右移动。</p>
+<p class="img">
+    <img src="/home-assistant/images/dashboards/masonry.png" alt="Image showing how masonry arranges 卡片 based on size."/>
+    砌体根据尺寸排列配合。
+</p>
+<p>更重要的是，与大多数其他智能家居应用程序不同，Home Assistant 以其选择而自豪。就仪表盘视图布局而言，选择意味着仪表盘应该能够显示在我们用户最方便的任何屏幕上——无论是手机、平板电脑、大显示器还是其他显示设备。虽然 Masonry 布局擅长制作整齐的调节墙，但顾名思义，它是一堵不关心砖块是否铺好的调节墙，因此每次仪表盘显示在另一个屏幕上时，用户记住调节位置的肌肉记忆就会丢失。</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/layout-masonry-problem.png" alt="Masonry does not care about where exactly 卡片 are placed when the screen size changes."/>
+    当屏幕尺寸改变时，Masonry 并不关心调整的具体位置。
+</p>
+<p>在过去的几年里，我们试图创建一个更直观的解决方案来重新排列 Masonry 布局的动作，但最终这些解决方案并不能很好地适应多种屏幕尺寸。与此同时，我们的用户提出了自己的解决方案，其中许多人避免了我们的默认视图布局，以便他们可以创建更可预测和令人难忘的仪表盘。事实证明，“拖放”不仅仅是一个工程问题；更是一个工程问题。这也是一个设计问题。</p>
+<p>为了解决布局中的这些问题，我们意识到 Masonry 布局、与多种屏幕尺寸的兼容性以及简单的“拖放”调整布局不能共存。在过去的一年里，我们构思并确定了一些解决方案，即：</p>
+<ol>
+<li><a href="#the-new-sections-view" class="rp-link">新的剖面视图布局</a></li>
+<li><a href="#the-grid-system" class="rp-link">设计网格系统</a>，以及</li>
+<li><a href="#drag-and-drop-rearrangement-of-%E5%8D%A1%E7%89%87-and-sections" class="rp-link">“Z-Grid”自动重新排列图案</a>。</li>
+</ol>
+<p>让我们深入研究每个解决方案，并了解它们如何协同工作，使您的仪表盘更易于定制和使用！</p>
+<h2 class="rp-toc-include" id="新的部分视图"><a href="#新的部分视图" class="rp-header-anchor rp-link" aria-hidden="true">#</a>新的部分视图</h2>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-case-studies.png" alt="Case studies of our users&#x27; 仪表盘"/>
+    我们用户仪表盘的案例研究
+</p>
+<p>在整个项目中，我们研究了您创建的数十种不同的仪表盘，并将其发布在我们的讨论板上。我们注意到的一件事是，我们更高级的用户都自然地喜欢创建“部分”，即由组标题划分的不同动作组，手动使用 <a href="https://www.home-assistant.io/dashboards/grid/" target="_blank" rel="noopener noreferrer" class="rp-link">grids</a> 和 <a href="https://www.home-assistant.io/dashboards/markdown/" target="_blank" rel="noopener noreferrer" class="rp-link">markdown</a> 动作。Home Assistant仪表盘功能强大且信息丰富，我们的用户经常为各种按钮、开关、图表、指示器等放置数十个按钮。通过将关联分组为“部分”，我们的用户可以减少在查找特定关联时需要浏览的项目数量，因为他们将能够首先查找相关的组标题，然后缩小扫描该特定组以获取信息的范围。并且通过将某个部分中的关系打包到网格关系中，部分中的关系的相对位置不会受到屏幕尺寸变化的影响，因此保留了关系的空间记忆，从而带来更快、更省力的体验。</p>
+<p class="img">
+    <img width="66%" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-section-example.png" alt="Example of a 仪表盘 section"/>
+    仪表盘部分示例
+</p>
+<p>对于我们的新剖面视图，我们将这些剖面作为视图的基本单元，并简化其创建和编辑过程。用户无需摆弄网格调整和降价调整来手动组装一个部分，而是一个部分现在配备了所有这些便利设施以及更多功能。</p>
+<h3 class="rp-toc-include" id="章节入门"><a href="#章节入门" class="rp-header-anchor rp-link" aria-hidden="true">#</a>章节入门</h3>
+<p>:::警告
+新的部分视图是实验性的！请不要在其上构建您的日常仪表盘！
+:::</p>
+<p class="img">
+    <img width="66%" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-create-new-view.png" alt="The Create New View 配置 screen"/>
+    创建新视图配置屏幕
+</p>
+<p>要开始使用新的“部分”视图，请在仪表盘上创建一个新视图，然后选择“<strong>部分（实验）</strong>”作为视图类型。我们目前还无法迁移您当前的仪表盘。</p>
+<p>:::注意
+如果您使用的是默认仪表盘，请阅读如何创建新仪表盘。
+:::</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-blank-sections-view.png" alt="A new 仪表盘 view laid out in Sections"/>
+    章节中布置的新仪表盘视图
+</p>
+<p>您将看到一个干净的新仪表盘视图，其中一个部分已经为您创建。</p>
+<ul>
+<li>
+<p>要添加新部分，请选择 <strong>创建部分</strong> 按钮。
+<img height="56px" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-section-button.png" alt="Add Section button"/></p>
+</li>
+<li>
+<p>要编辑部分的名称，请选择该部分右上角的 <img height="28px" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/mdi-edit.png" alt="Edit icon"/> <strong>编辑</strong> 按钮。 （提示：您可以为您的部分添加任何描述性文本，包括表情符号！）当该部分没有名称时，部分标题将被隐藏。</p>
+</li>
+<li>
+<p>要删除某个部分，请选择该部分右上角的 <img height="28px" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/mdi-trash.png" alt="Delete icon"/> <strong>删除</strong> 按钮。系统将要求您确认删除。</p>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="填满"><a href="#填满" class="rp-header-anchor rp-link" aria-hidden="true">#</a>填满</h3>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-example-dashboard.png" alt="A fully populated 仪表盘 in Sections view layout"/>
+    剖面视图布局中完全填充的仪表盘
+</p>
+<p>有多种方法可以将关联添加到一个部分并填充您的仪表盘：</p>
+<ol>
+<li>
+<p>添加调节最简单的方法是选择该部分中的“<strong>添加调节</strong>”[按钮图标]按钮。</p>
+</li>
+<li>
+<p>出现添加配置对话框，有两个选项：</p>
+<ul>
+<li>
+<p><strong>按比例</strong></p>
+  <p class="img">
+      <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-card-by-card.png" alt="Add 卡片 by 卡片 type dialog"/>通过调节类型对话框添加调节
+  </p>如果您很清楚要为实体使用什么动画，请浏览此屏幕上可用的动画列表。对于“部分”视图，我们建议使用“平铺反馈”，它现在固定在“建议反馈”部分的顶部。
+</li>
+<li>
+<p><strong>作者：实体</strong></p>
+  <p class="img">
+      <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-card-by-card.png" alt="Add 卡片 by 实体 dialog"/>由实体对话框添加动画
+  </p>
+<p>如果你想一次性添加一堆实体，请在该列表中选择一个或多个实体。</p>
+  <p class="img">
+      <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-card-suggestions.png" alt="卡片 suggestions"/>响应建议
+  </p>
+  Home Assistant 将显示要添加的调整的预览，该预览将显示在“平铺调整”中，作为“部分”视图的默认设置。点击“添加到仪表盘”按钮即可完成该过程。
+</li>
+</ul>
+</li>
+</ol>
+<p class="img">
+    <img width="66%" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-add-from-device-page.jpg" alt="Add to 仪表盘 feature on the 设备 page"/>设备页面添加仪表盘功能
+</p>
+<p>添加属于同一设备的一组传感器或控件的另一种方便方法是从设备的页面添加它们。</p>
+<ol>
+<li>
+<p>通过“设置”进入设备页面。</p>
+</li>
+<li>
+<p>点击屏幕上的<strong>添加到仪表盘</strong>按钮。</p>
+</li>
+<li>
+<p>系统将提示您选择要将它们添加到哪个仪表盘视图。如果您选择使用“部分”视图布局的视图，则传感器或控件将作为平铺按钮添加到新部分内。</p>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="响应式设计"><a href="#响应式设计" class="rp-header-anchor rp-link" aria-hidden="true">#</a>响应式设计</h3>
+<p>新的“部分”视图的一大好处是，现在可以更轻松地构建适用于多种屏幕尺寸的仪表盘。</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-responsive-design.png" alt="Sections view adapt nicely to different screen sizes."/>
+    剖面视图可以很好地适应不同的屏幕尺寸。
+</p>
+<p>该视图将根据水平可用空间量重新排列各个部分，而每个部分中的“关联”列数保持不变，从而保留您对“关联”所在位置的肌肉记忆。</p>
+<h2 class="rp-toc-include" id="网格系统"><a href="#网格系统" class="rp-header-anchor rp-link" aria-hidden="true">#</a>网格系统</h2>
+<p>我们当前的仪表盘视图按不同高度的列进行组织，默认情况下采用砖石布局。由于关联的高度可能会有少量变化，因此当将关联移动到另一列时，或者当屏幕尺寸发生变化并移动所有关联时（例如在平板电脑上与移动设备上查看仪表盘时），很难预测关联将“落地”的位置。这会给仪表盘的定制体验带来摩擦。</p>
+<p>输入网格系统，它是图形设计原理的堡垒。</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/grid-system-examples.png" alt="Examples of grid systems in use"/>
+    正在使用的网格系统示例
+</p>
+<p>印刷网格系统在现代平面设计和印刷出版中有着悠久的历史，始于20世纪初欧洲构成主义和几何艺术运动期间的兴起，它关注视觉图像背后隐藏的节奏。它们易于重复，因此可用于生成无限数量的页面，同时还能确保可打印内容的美观比例和一致性。它们还为页面带来秩序。它可以帮助用户了解页面上每个元素之间的关系以及一个元素是否属于另一个元素。</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/grid-system.gif" alt="The Home Assistant 仪表盘 grid system"/>
+    Home Assistant仪表盘网格系统
+</p>当用户界面采用结构化布局设计时，结构和组织的感觉会在用户的第一印象中体现出来。
+<p>通过引入具有规则行高和列宽倍数的比例的网格系统，我们可以帮助用户以可预测的方式更轻松地重新排列比例，使Home Assistant更轻松地适应不同的屏幕尺寸，当然，也使仪表盘看起来更整洁、更美观。</p>
+<p class="img">
+    <img width="66%" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/grid-system-available-cards.png" alt="卡片 currently optimized for the grid system: 传感器 卡片, Tile 卡片, and Button 卡片"/>
+    目前针对电网系统优化的开关：传感器开关、Tile开关、Button开关
+</p>
+<p>为了实现网格系统，我们现在正在标准化我们的旋钮的宽度和高度，从 Tile 旋钮、Button 旋钮和传感器旋钮开始。这些关联将在网格中占据适当的空间，而其他关联目前默认会占据一个部分的整个宽度。</p>
+<p>对于动作开发者，我们很快将提供有关如何使您的自定义动作适应网格系统的更多信息。</p>
+<h2 class="rp-toc-include" id="拖放式重新排列布局和部分"><a href="#拖放式重新排列布局和部分" class="rp-header-anchor rp-link" aria-hidden="true">#</a>拖放式重新排列布局和部分</h2>
+<p>有了部分和网格系统，我们最终可以实现一种通过拖放直观地排列关系和部分的方法，可以预测如何重新排列关系，同时通过可视化信息层次结构而不干扰关系之间的空间关系，创建一个易于导航和记忆的仪表盘。用户不再需要祈祷和猜测当他们改变订单时，动作会落在哪里！</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-arrangement-methods-comparison.png" alt="Comparison of four 卡片 arrangement methods"/>
+    四种配合排列方式比较
+</p>
+<p>在整个设计过程中，我们研究了几种不同的布局方式。最终，我们选择“Z-Grid”作为默认解决方案，因为它简单、可预测且易于记忆，尽管它可能比其他解决方案占用更多空间。 Z 网格的工作原理很简单，即从左到右布置各个部分，并在该行已满时开始一个新行。行的高度由行上最高的部分决定，而列的宽度保持不变以实现响应式设计。</p>
+<h3 class="rp-toc-include" id="如何拖放"><a href="#如何拖放" class="rp-header-anchor rp-link" aria-hidden="true">#</a>如何拖放</h3>
+<p>当您的仪表盘处于编辑模式时：</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-sections.gif" alt="Rearranging sections with drag-and-drop"/>
+    通过拖放重新排列部分
+</p>
+<ul>
+<li>To rearrange sections, simply tap and hold the <img height="28px" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/mdi-edit.png" alt="Edit icon"/> <strong>Move</strong> handle and then move your cursor or finger towards your desired location.其他部分将移至选定部分放置位置的位置。</li>
+</ul>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-cards.gif" alt="Rearranging 卡片 with drag-and-drop"/>
+    通过拖放重新排列部分
+</p>
+<ul>
+<li>要重新排列关系，请点击并按住关系上的任意位置，然后将光标或手指移向所需位置。</li>
+</ul>
+<p>（您不喜欢指令如此简短吗？简单！🦄）</p>
+<h2 class="rp-toc-include" id="接下来是什么介入具有拖放功能的新剖面视图只是家庭认可的仪表盘-project-grace-的第一步我们很清楚我们的设计和开发过程中下一步的发展方向但我们希望在继续之前先听取您的意见以便我们可以确定优先顺序并构建最能帮助您的产品"><a href="#接下来是什么介入具有拖放功能的新剖面视图只是家庭认可的仪表盘-project-grace-的第一步我们很清楚我们的设计和开发过程中下一步的发展方向但我们希望在继续之前先听取您的意见以便我们可以确定优先顺序并构建最能帮助您的产品" class="rp-header-anchor rp-link" aria-hidden="true">#</a>接下来是什么？介入！具有拖放功能的新剖面视图只是家庭认可的仪表盘 Project Grace 的第一步。我们很清楚我们的设计和开发过程中下一步的发展方向，但我们希望在继续之前先听取您的意见，以便我们可以确定优先顺序并构建最能帮助您的产品。</h2>
+<p>为了获得您和您的家庭成员的反馈，我们决定提前以不完整的形式发布此内容，作为“实验”，供您尝试新的“部分”视图。对于那些好奇的人，请随时查看<a href="https://demo.home-assistant.io/#/Lovelace/home" target="_blank" rel="noopener noreferrer" class="rp-link">我们更新的演示</a> 来玩一玩，玩得开心！</p>
+<p>我们希望确保新的默认仪表盘不仅适用于您，也适用于您家中的每个人。我们也很想听听他们的想法。请随时在下面留下您的评论！</p>
+<h3 class="rp-toc-include" id="加入home-assistant用户测试组"><a href="#加入home-assistant用户测试组" class="rp-header-anchor rp-link" aria-hidden="true">#</a>加入Home Assistant用户测试组！</h3>
+<p>我们会不时地发送用户测试，以帮助我们做出我们发现的更困难的产品和设计决策。通过加入我们的用户测试小组，您将帮助引导我们产品的方向，并且还可以抢先了解正在进行的潜在设计。</p>
+<p>请【填写此表】(<a href="http://home-assistant.io/join-research)%E5%8A%A0%E5%85%A5Home" target="_blank" rel="noopener noreferrer" class="rp-link">http://home-assistant.io/join-research)加入Home</a> Assistant用户测试组！</p>
+<p>非常感谢所有加入我们接受用户采访的人，<a href="https://www.youtube.com/c/EverythingSmartHome" target="_blank" rel="noopener noreferrer" class="rp-link">来自 Everything Smart Home 的 Lewis</a> 为我们的案例研究分享了他的仪表盘宝库，当然还有出色的 <a href="https://nabucasa.com" target="_blank" rel="noopener noreferrer" class="rp-link">Nabu Casa</a> 团队。 💖</p>
+<p>这就是现在的全部内容！感谢您的阅读。迫不及待地想向您展示接下来会发生什么！</p>
+<p>〜马德莱娜</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客首页</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#什么是恩典计划" class="rp-toc-item rp-link" title="什么是恩典计划？" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">什么是恩典计划？</span></a><a href="#三布局问题" class="rp-toc-item rp-link" title="三布局问题" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">三布局问题</span></a><a href="#新的部分视图" class="rp-toc-item rp-link" title="新的部分视图" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">新的部分视图</span></a><a href="#章节入门" class="rp-toc-item rp-link" title="章节入门" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">章节入门</span></a><a href="#填满" class="rp-toc-item rp-link" title="填满" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">填满</span></a><a href="#响应式设计" class="rp-toc-item rp-link" title="响应式设计" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">响应式设计</span></a><a href="#网格系统" class="rp-toc-item rp-link" title="网格系统" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">网格系统</span></a><a href="#拖放式重新排列布局和部分" class="rp-toc-item rp-link" title="拖放式重新排列布局和部分" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">拖放式重新排列布局和部分</span></a><a href="#如何拖放" class="rp-toc-item rp-link" title="如何拖放" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">如何拖放</span></a><a href="#接下来是什么介入具有拖放功能的新剖面视图只是家庭认可的仪表盘-project-grace-的第一步我们很清楚我们的设计和开发过程中下一步的发展方向但我们希望在继续之前先听取您的意见以便我们可以确定优先顺序并构建最能帮助您的产品" class="rp-toc-item rp-link" title="接下来是什么？介入！具有拖放功能的新剖面视图只是家庭认可的仪表盘 Project Grace 的第一步。我们很清楚我们的设计和开发过程中下一步的发展方向，但我们希望在继续之前先听取您的意见，以便我们可以确定优先顺序并构建最能帮助您的产品。" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">接下来是什么？介入！具有拖放功能的新剖面视图只是家庭认可的仪表盘 Project Grace 的第一步。我们很清楚我们的设计和开发过程中下一步的发展方向，但我们希望在继续之前先听取您的意见，以便我们可以确定优先顺序并构建最能帮助您的产品。</span></a><a href="#加入home-assistant用户测试组" class="rp-toc-item rp-link" title="加入Home Assistant用户测试组！" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">加入Home Assistant用户测试组！</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

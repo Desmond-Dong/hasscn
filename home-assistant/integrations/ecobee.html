@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ecobee - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="ecobee - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="ecobee integration 允许您控制和查看来自 ecobee(https://ecobee.com) 恒温器的传感器数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="ecobee integration 允许您控制和查看来自 ecobee(https://ecobee.com) 恒温器的传感器数据。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/ecobee-sensor-badges.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/ecobee-thermostat-card.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="ecobee"><a href="#ecobee" class="rp-header-anchor rp-link" aria-hidden="true">#</a>ecobee<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>ecobee</strong> integration 允许您控制和查看来自 <a href="https://ecobee.com" target="_blank" rel="noopener noreferrer" class="rp-link">ecobee</a> 恒温器的传感器数据。</p>
+<h2 class="rp-toc-include" id="前提步骤"><a href="#前提步骤" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提步骤</h2>
+<p>您需要从 ecobee 的<a href="https://www.ecobee.com/developers/" target="_blank" rel="noopener noreferrer" class="rp-link">开发者网站</a>获取 API 密钥才能使用此集成。要获取密钥，您的恒温器必须在 ecobee 网站上注册（您在安装恒温器时可能已经完成了此操作）。完成这些后，请执行以下步骤。</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">Warning</div><div class="rp-callout__content"><p>
+自 2024 年 3 月 28 日起，ecobee 不再接受新的开发者订阅，现有的开发者账户也无法创建新的 API 密钥。何时会再次允许尚无 ETA。现有的 API 密钥将继续运行。</p><p>在此期间，您可以使用 <a href="/home-assistant/integrations/homekit_controller/index.html" class="rp-link">HomeKit Device</a> 集成作为功能完整的替代方案。</p></div></div>
+<ol>
+<li>在<a href="https://www.ecobee.com/home/developer/loginDeveloper.jsp" target="_blank" rel="noopener noreferrer" class="rp-link">开发者网站</a>上点击 <strong>Become a developer</strong> 链接。</li>
+<li>使用您的 ecobee 凭据登录。（确保已禁用多重身份验证以满足开发者登录表单的限制。如果您已启用 MFA，Web 门户不支持禁用它。iOS 和 Android 应用程序可以在 Account &gt; Account Security 下禁用。成为开发者后您可以重新启用 MFA。）</li>
+<li>接受 SDK 协议。</li>
+<li>填写字段。</li>
+<li>点击 <strong>save</strong>。</li>
+</ol>
+<p>登录常规消费者门户，点击右上角的溢出菜单按钮。您将看到一个名为 <strong>Developer</strong> 的新选项。现在可以创建应用程序以与 Home Assistant 集成。</p>
+<ol>
+<li>从右上角的汉堡菜单中选择 <strong>Developer</strong> 选项。</li>
+<li>选择 <strong>Create New</strong>。</li>
+<li>完成右侧的表单。（这两个字段都不会被 Home Assistant 引用）
+<ul>
+<li>Name：必须在所有 ecobee 用户中唯一。</li>
+<li>Summary：不需要唯一。</li>
+</ul>
+</li>
+<li>点击 <em>Authorization method</em> 并选择 <strong>ecobee PIN</strong>。</li>
+<li>点击 <strong>Create</strong>。</li>
+</ol>
+<p>您的新应用程序现在将显示在左侧。点击应用程序后，API 密钥将显示在右侧。复制此密钥并在下面的配置部分中使用。点击 <strong>X</strong> 关闭 Developer 部分。</p>
+<h2 class="rp-toc-include" id="配置"><a href="#配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置</h2>
+<ol>
+<li>在 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a> 菜单中，点击 <strong>+</strong>，然后在弹出菜单中选择 &quot;ecobee&quot;。</li>
+<li>在弹出框中，输入您从 ecobee <a href="https://www.ecobee.com/developers" target="_blank" rel="noopener noreferrer" class="rp-link">开发者门户</a>获取的 API 密钥。</li>
+<li>在下一个弹出框中，您将看到一个以破折号分隔的唯一 8 字符代码（格式：XXXX-XXXX），您需要在 <a href="https://www.ecobee.com/consumerportal/index.html" target="_blank" rel="noopener noreferrer" class="rp-link">ecobee 消费者门户</a>中授权它。您可以通过登录，从汉堡菜单中选择 <strong>My Apps</strong>，点击左侧的 <strong>Add Application</strong>，输入来自 Home Assistant 的 PIN 代码，点击 <strong>Validate</strong>，然后点击右下角的 <strong>Add Application</strong> 来完成此操作。</li>
+<li>在 ecobee 授权应用程序后，返回 Home Assistant 并点击 <strong>Submit</strong>。如果授权成功，将创建一个配置条目，您的恒温器、通风设备和传感器将在 Home Assistant 中可用。</li>
+</ol>
+<h2 class="rp-toc-include" id="手动配置"><a href="#手动配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>手动配置</h2>
+<p>如果您更喜欢在 &quot;<code>configuration.yaml</code>&quot; 文件中设置集成，请按如下方式添加您的 API 密钥（和可选参数）（但是，您仍必须通过 <strong>集成</strong> 面板完成授权）。
+:::tip
+更改配置后需要重启 Home Assistant。
+:::</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># 示例 configuration.yaml 条目</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">ecobee</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  api_key</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> YOUR_API_KEY</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">api_key</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 您的 ecobee API 密钥。这只在集成初始设置时需要。注册后可以将其删除。如果您在 ecobee 门户中撤销了密钥，您需要删除 **集成** 面板中现有的 `ecobee` 配置，更新此项，然后再次配置集成。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p class="img">
+  <img src="/home-assistant/images/screenshots/ecobee-sensor-badges.png"/>
+  <img src="/home-assistant/images/screenshots/ecobee-thermostat-card.png"/>
+</p>
+<p>您必须<a href="/home-assistant/docs/configuration/index.html#reloading-changes" class="rp-link">重启 Home Assistant</a>才能使更改生效。重启后，转到 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a> 并选择该集成。然后，选择 <strong>配置</strong> 并继续按照上述 <strong>自动配置</strong> 授权应用程序，从第 2 步开始。</p>
+<h2 class="rp-toc-include" id="通知"><a href="#通知" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通知</h2>
+<p><code>ecobee</code> 通知平台允许您向 ecobee 恒温器发送通知。对于发现的每个恒温器，将添加一个 <code>notify</code> 实体。</p>
+<p>示例动作：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.send_message</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;你好，这是你的恒温器。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.ecobee</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>要使用通知，请参阅<a href="/home-assistant/getting-started/automation/index.html" class="rp-link">自动化入门页面</a>。</p>
+<h2 class="rp-toc-include" id="恒温器"><a href="#恒温器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>恒温器</h2>
+<h3 class="rp-toc-include" id="概念"><a href="#概念" class="rp-header-anchor rp-link" aria-hidden="true">#</a>概念</h3>
+<p>ecobee 恒温器支持以下关键概念。</p>
+<p><em>目标温度</em> 是设备试图达到的温度。目标温度由当前活动的气候确定，或者可能被保持设置覆盖。当恒温器不处于自动模式时，只有一个目标温度。当恒温器处于自动 HVAC 模式时，有一对目标温度：较低的目标温度确定最低所需温度，而较高的目标温度确定最高所需温度（恒温器将在制热和制冷之间切换以将温度保持在这些限制内）。</p>
+<p><em>气候</em> 是恒温器旨在达到的预定义或用户定义的预设集合。ecobee 恒温器提供三种预定义气候：Home、Away 和 Sleep。Ecobee 将这些称为_舒适设置_。用户可以定义额外的气候。</p>
+<p><em>预设</em> 是对当前活动气候中定义的目标温度的覆盖。预设模式中目标的温度可能是明确设置的（温度预设），可能来自参考气候（home、away、sleep 等），也可能来自恒温器定义的假期。所有保持都是临时的。温度和气候保持在其程序中定义的下一个气候转换时过期。假期保持从定义的假期期间开始时开始，在假期期间结束时过期。</p>
+<p>当处于_外出预设_时，目标温度被外出气候定义的目标温度永久覆盖。外出预设是模拟假期模式的简单方法。</p>
+<p>设备的 <em>HVAC 模式</em> 是 ecobee 恒温器提供的当前活动操作模式：制热、制冷、自动和关闭。</p>
+<p><em>目标湿度</em> 是当连接加湿器并处于手动控制或&quot;开&quot;模式时恒温器的湿度设定点。</p>
+<p>在配置了辅助加热的恒温器上，将出现一个 aux_heat_only 开关。当此开关打开时，ecobee 恒温器 HVAC 模式将更改为&quot;Aux&quot;。但是，Home Assistant 将反映恒温器处于&quot;制热&quot;模式。关闭 aux_heat_only 开关将使恒温器恢复到上次活动的 HVAC 模式（制热、自动等）。</p>
+<h3 class="rp-toc-include" id="属性"><a href="#属性" class="rp-header-anchor rp-link" aria-hidden="true">#</a>属性</h3>
+<p>ecobee 气候实体有一些额外的属性来表示恒温器的状态。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td><code>fan</code></td><td>风扇当前是开还是关：<code>on</code> / <code>off</code>。</td></tr><tr><td><code>climate_mode</code></td><td>这是活动的气候模式，或者如果没有覆盖活动则将是活动的气候模式。</td></tr><tr><td><code>equipment_running</code></td><td>这是当前运行的设备的逗号分隔列表。</td></tr><tr><td><code>fan_min_on_time</code></td><td>风扇每小时运行的最短时间（分钟）。这由最小风扇运行时间设置确定，可以在 ecobee 应用程序或恒温器本身上更改。</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="通风设备"><a href="#通风设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通风设备</h2>
+<h3 class="rp-toc-include" id="概念-1"><a href="#概念-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>概念</h3>
+<p>ecobee 恒温器支持添加附件。如果您有空气交换器（通风设备、HRV 或 ERV），您可以通过最小在家时间和最小外出时间数字来控制它。</p>
+<h3 class="rp-toc-include" id="开关"><a href="#开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关</h3>
+<p><code>ventilator 20 min</code> 开关的行为类似于物理 ecobee 设备中的开关。打开时，通风设备运行 20 分钟。关闭时，它停止通风设备。</p>
+<p><em>注意：这不与 <code>ventilator min time</code> 交互</em></p>
+<h3 class="rp-toc-include" id="数字"><a href="#数字" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数字</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td><code>ventilator_min_on_time_home</code></td><td>您在家时通风设备每小时运行的最短时间（分钟）。这由最小通风设备运行时间设置确定，可以在 ecobee 应用程序或恒温器本身上更改。</td></tr><tr><td><code>ventilator_min_on_time_away</code></td><td>您外出时通风设备每小时运行的最短时间（分钟）。这由最小通风设备运行时间设置确定，可以在 ecobee 应用程序或恒温器本身上更改。</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="辅助加热"><a href="#辅助加热" class="rp-header-anchor rp-link" aria-hidden="true">#</a>辅助加热</h2>
+<h3 class="rp-toc-include" id="概念-2"><a href="#概念-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>概念</h3>
+<p>当 HVAC 系统配备热泵时，通常包含某种形式的辅助加热。这也可能被称为&quot;紧急加热&quot;。您可以控制恒温器是否仅请求辅助加热，并调整热泵压缩机不再使用的室外温度，例如，响应于混合系统中的公用事业成本或太阳能发电。混合系统指的是不使用电力作为辅助加热的系统（天然气、丙烷等）。这更多适用于空气源热泵而不是地热。</p>
+<h3 class="rp-toc-include" id="开关-1"><a href="#开关-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关</h3>
+<p>提供 <code>Auxiliary heat only</code> 开关以禁用压缩机（热泵）的使用，仅使用辅助加热器。请谨慎使用此设置，因为使用效率较低的加热源可能会产生额外的公用事业费用。</p>
+<h3 class="rp-toc-include" id="数字-1"><a href="#数字-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数字</h3>
+<p><code>Compressor minimum temperature</code> 数字表示压缩机（热泵）不运行的室外温度。这以您在 Home Assistant 中选择的温度单位表示；但是，ecobee 仅允许以 5 华氏度为增量进行配置。这也显示在恒温器用户界面中。当室外温度低于此值时，将仅使用辅助加热。请谨慎使用此设置，因为使用效率较低的加热源可能会产生额外的公用事业费用。</p>
+<p>在调整此值之前检查您的热泵用户手册；不要将其调整到低于热泵的额定最低工作温度。<strong>未能遵守额定最低工作温度可能会导致系统损坏</strong></p>
+<h2 class="rp-toc-include" id="动作"><a href="#动作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作</h2>
+<p>除了 Home Assistant <a href="/home-assistant/integrations/climate/index.html" class="rp-link">Climate</a> 集成提供的标准动作外，ecobee 集成还提供以下额外动作：</p>
+<ul>
+<li><code>ecobee.create_vacation</code></li>
+<li><code>ecobee.delete_vacation</code></li>
+<li><code>ecobee.resume_program</code></li>
+<li><code>ecobee.set_fan_min_on_time</code></li>
+<li><code>ecobee.set_dst_mode</code></li>
+<li><code>ecobee.set_mic_mode</code></li>
+<li><code>ecobee.set_occupancy_modes</code></li>
+<li><code>ecobee.set_sensors_in_climate</code></li>
+</ul>
+<h3 class="rp-toc-include" id="动作创建假期"><a href="#动作创建假期" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：创建假期</h3>
+<p><code>ecobee.create_vacation</code> 动作允许您在选定的 ecobee 恒温器上创建假期。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>否</td><td>要在其上创建假期的 ecobee 恒温器</td></tr><tr><td><code>vacation_name</code></td><td>否</td><td>要创建的假期名称。在恒温器上必须唯一</td></tr><tr><td><code>cool_temp</code></td><td>否</td><td>假期期间的制冷温度</td></tr><tr><td><code>heat_temp</code></td><td>否</td><td>假期期间的制热温度</td></tr><tr><td><code>start_date</code></td><td>是</td><td>假期开始的日期，格式为 YYYY-MM-DD</td></tr><tr><td><code>start_time</code></td><td>是</td><td>假期开始的时间，本地时区。必须为 24 小时格式 (HH:MM:SS)</td></tr><tr><td><code>end_date</code></td><td>是</td><td>假期结束的日期，格式为 YYYY-MM-DD（如果未提供，则为从现在起 14 天）</td></tr><tr><td><code>end_time</code></td><td>是</td><td>假期结束的时间，本地时区。必须为 24 小时格式 (HH:MM:SS)</td></tr><tr><td><code>fan_mode</code></td><td>是</td><td>假期期间恒温器的风扇模式（auto 或 on）（如果未提供则为 auto）</td></tr><tr><td><code>fan_min_on_time</code></td><td>是</td><td>假期期间每小时运行风扇的最小分钟数（0 到 60）（如果未提供则为 0）</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作删除假期"><a href="#动作删除假期" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：删除假期</h3>
+<p><code>ecobee.delete_vacation</code> 动作允许您在选定的 ecobee 恒温器上删除假期。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>否</td><td>要在其上删除假期的 ecobee 恒温器</td></tr><tr><td><code>vacation_name</code></td><td>否</td><td>要删除的假期名称</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作恢复程序"><a href="#动作恢复程序" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：恢复程序</h3>
+<p><code>ecobee.resume_program</code> 动作允许您恢复预设的标准活动日程。这将取消任何手动温度设置或选定的预设。这不会取消假期事件，请使用 <code>delete_vacation</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>是</td><td>指向要控制的气候设备 <code>entity_id</code> 的字符串或字符串列表。省略以针对所有 ecobee 恒温器。</td></tr><tr><td><code>resume_all</code></td><td>否</td><td><code>true</code> 将恢复标准日程。<code>false</code> 将仅取消最新的活动事件，这不常用。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作设置风扇最短运行时间"><a href="#动作设置风扇最短运行时间" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：设置风扇最短运行时间</h3>
+<p><code>ecobee.set_fan_min_on_time</code> 动作允许您设置风扇每小时运行的最短时间。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>是</td><td>指向要控制的气候设备 <code>entity_id</code> 的字符串或字符串列表。省略以针对所有 ecobee 恒温器。</td></tr><tr><td><code>fan_min_on_time</code></td><td>否</td><td>整数（例如  5）</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作设置夏令时模式"><a href="#动作设置夏令时模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：设置夏令时模式</h3>
+<p><code>ecobee.set_dst_mode</code> 动作允许您启用/禁用自动夏令时。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>是</td><td>要在其上设置夏令时模式的 ecobee 恒温器。省略以针对所有 ecobee 恒温器。</td></tr><tr><td><code>dst_enabled</code></td><td>否</td><td>true 或 false</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作设置麦克风模式"><a href="#动作设置麦克风模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：设置麦克风模式</h3>
+<p><code>ecobee.set_mic_mode</code> 动作允许您启用/禁用 Alexa 麦克风（仅适用于 ecobee 4）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>是</td><td>要在其上设置麦克风模式的 ecobee 恒温器。省略以针对所有 ecobee 恒温器。</td></tr><tr><td><code>mic_enabled</code></td><td>否</td><td>true 或 false</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作设置占用模式"><a href="#动作设置占用模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：设置占用模式</h3>
+<p><code>ecobee.set_occupancy_modes</code> 动作允许您启用/禁用智能家居/外出和跟随我模式。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>是</td><td>要在其上设置占用模式的 ecobee 恒温器。省略以针对所有 ecobee 恒温器。</td></tr><tr><td><code>auto_away</code></td><td>是</td><td>true 或 false</td></tr><tr><td><code>follow_me</code></td><td>是</td><td>true 或 false</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作在气候中设置传感器"><a href="#动作在气候中设置传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：在气候中设置传感器</h3>
+<p><code>ecobee.set_sensors_in_climate</code> 动作允许您设置特定气候程序中恒温器上哪些传感器处于活动状态。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>服务数据属性</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>否</td><td>要在其上设置活动传感器的 ecobee 恒温器。</td></tr><tr><td><code>preset_mode</code></td><td>是</td><td>要设置传感器活动的气候程序名称（默认为当前活动程序）。</td></tr><tr><td><code>sensors</code></td><td>否</td><td>要设置为参与气候的传感器。这是传感器/恒温器的设备 ID。这些可以在 available_sensors 属性中找到。</td></tr></tbody></table></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#前提步骤" class="rp-toc-item rp-link" title="前提步骤" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">前提步骤</span></a><a href="#配置" class="rp-toc-item rp-link" title="配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置</span></a><a href="#手动配置" class="rp-toc-item rp-link" title="手动配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">手动配置</span></a><a href="#通知" class="rp-toc-item rp-link" title="通知" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">通知</span></a><a href="#恒温器" class="rp-toc-item rp-link" title="恒温器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">恒温器</span></a><a href="#概念" class="rp-toc-item rp-link" title="概念" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">概念</span></a><a href="#属性" class="rp-toc-item rp-link" title="属性" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">属性</span></a><a href="#通风设备" class="rp-toc-item rp-link" title="通风设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">通风设备</span></a><a href="#概念-1" class="rp-toc-item rp-link" title="概念" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">概念</span></a><a href="#开关" class="rp-toc-item rp-link" title="开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">开关</span></a><a href="#数字" class="rp-toc-item rp-link" title="数字" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">数字</span></a><a href="#辅助加热" class="rp-toc-item rp-link" title="辅助加热" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">辅助加热</span></a><a href="#概念-2" class="rp-toc-item rp-link" title="概念" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">概念</span></a><a href="#开关-1" class="rp-toc-item rp-link" title="开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">开关</span></a><a href="#数字-1" class="rp-toc-item rp-link" title="数字" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">数字</span></a><a href="#动作" class="rp-toc-item rp-link" title="动作" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">动作</span></a><a href="#动作创建假期" class="rp-toc-item rp-link" title="动作：创建假期" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：创建假期</span></a><a href="#动作删除假期" class="rp-toc-item rp-link" title="动作：删除假期" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：删除假期</span></a><a href="#动作恢复程序" class="rp-toc-item rp-link" title="动作：恢复程序" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：恢复程序</span></a><a href="#动作设置风扇最短运行时间" class="rp-toc-item rp-link" title="动作：设置风扇最短运行时间" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：设置风扇最短运行时间</span></a><a href="#动作设置夏令时模式" class="rp-toc-item rp-link" title="动作：设置夏令时模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：设置夏令时模式</span></a><a href="#动作设置麦克风模式" class="rp-toc-item rp-link" title="动作：设置麦克风模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：设置麦克风模式</span></a><a href="#动作设置占用模式" class="rp-toc-item rp-link" title="动作：设置占用模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：设置占用模式</span></a><a href="#动作在气候中设置传感器" class="rp-toc-item rp-link" title="动作：在气候中设置传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：在气候中设置传感器</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

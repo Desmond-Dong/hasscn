@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SwitchBot Bluetooth - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="SwitchBot Bluetooth - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="SwitchBot Bluetooth 集成可让你控制 SwitchBot devices(https://www.switch-bot.com/) 设备，例如传感器、门锁、窗帘、灯具、插座、扫地机器人和 Hub 等。 本页属于 Home Assistant 中文文档。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="SwitchBot Bluetooth 集成可让你控制 SwitchBot devices(https://www.switch-bot.com/) 设备，例如传感器、门锁、窗帘、灯具、插座、扫地机器人和 Hub 等。 本页属于 Home Assistant 中文文档。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="switchbot-bluetooth"><a href="#switchbot-bluetooth" class="rp-header-anchor rp-link" aria-hidden="true">#</a>SwitchBot Bluetooth<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>SwitchBot Bluetooth</strong> 集成可让你控制 SwitchBot <a href="https://www.switch-bot.com/" target="_blank" rel="noopener noreferrer" class="rp-link">devices</a> 设备，例如传感器、门锁、窗帘、灯具、插座、扫地机器人和 Hub 等。</p>
+<h2 class="rp-toc-include" id="你可以如何使用此集成"><a href="#你可以如何使用此集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>你可以如何使用此集成</h2>
+<p>SwitchBot 集成可以实现很多操作，例如开关设备、切换设备模式、在 Home Assistant 仪表板中监控传感器数据和能耗，以及手动或通过自动化控制设备配置。</p>
+<h2 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h2>
+<p>要使用此集成，运行 Home Assistant 的设备上必须已正确设置并可用 <a href="/home-assistant/integrations/bluetooth.html" class="rp-link">Bluetooth</a>。此集成不要求必须配备 <a href="https://switch-bot.com/pages/switchbot-hub-mini" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Hub</a>。</p>
+<p>如果你有多个相同类型的设备，需要获取设备的 BTLE MAC 地址来区分它们。可按以下步骤查看：</p>
+<ol>
+<li>打开 SwitchBot 应用。</li>
+<li>打开设备设置。</li>
+<li>点击 “Device Info”。</li>
+<li>记下设备的 BTLE MAC 地址。</li>
+</ol>
+<p>请注意，在 SwitchBot 应用中配置的设备名称不会同步到 Home Assistant。</p>
+<p>某些 SwitchBot 设备需要先在应用中完成配置后，才能由 Home Assistant 控制，例如校准窗帘开合限位，或将两个窗帘配对联动。</p>
+<h3 class="rp-toc-include" id="添加模式"><a href="#添加模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>添加模式</h3>
+<p>在通过蓝牙添加 SwitchBot 设备前，请先确认你的蓝牙适配器在 Bluetooth 集成配置中处于 <strong>Active</strong> 还是 <strong>Passive</strong> 模式。</p>
+<ul>
+<li>
+<p>若要打开 Bluetooth 集成设置，请前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>，选择 <strong>集成</strong>，找到并打开 <strong>Bluetooth</strong> 集成以检查适配器模式。</p>
+</li>
+<li>
+<p>主动模式</p>
+<ul>
+<li>设备通常会被自动发现。</li>
+<li>如果设备未被自动发现：
+<ul>
+<li>对于带物理按键的设备，请长按按键进入配对模式。</li>
+<li>对于没有按键的设备，请断电重启设备以触发配对模式。</li>
+<li>若仍无法发现设备，可尝试打开 <strong>SwitchBot</strong> 集成并登录，从你的 SwitchBot 账户同步设备。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>被动模式</p>
+<ul>
+<li>无法通过本地蓝牙扫描发现设备，必须通过你的 SwitchBot 账户进行同步。</li>
+<li>若要从账户同步设备，请前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>，打开 <strong>集成</strong>，选择 <strong>SwitchBot</strong>，点击该集成打开登录窗口并登录。如果本地蓝牙扫描检测到与你 SwitchBot 账户关联且在范围内的设备，登录后即可添加它们。</li>
+</ul>
+</li>
+</ul>
+<p>如果仍无法添加设备，请确认设备已通电、在蓝牙覆盖范围内，且未连接到其他应用。必要时，请按照厂商提供的重置说明操作，或联系 SwitchBot 支持。</p>
+<h3 class="rp-toc-include" id="添加加密的-switchbot-设备"><a href="#添加加密的-switchbot-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>添加加密的 SwitchBot 设备</h3>
+<p>部分 SwitchBot 设备类型为提升安全性采用了加密，未来还会有更多类型和型号加入加密设备范围。</p>
+<p>加密的 SwitchBot 设备可通过两种方式在 Home Assistant 中设置。
+你可以手动输入 key ID 和加密密钥，也可以让 Home Assistant 从你的 SwitchBot 账户中导入。</p>
+<h4 class="rp-toc-include" id="switchbot-账户推荐"><a href="#switchbot-账户推荐" class="rp-header-anchor rp-link" aria-hidden="true">#</a>SwitchBot 账户（推荐）</h4>
+<p>使用此选项时，你可以提供 SwitchBot 账户登录凭据，Home Assistant 会从你的账户中导入对应的加密密钥。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Username</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> SwitchBot account username</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> SwitchBot account password</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>:::important
+此集成不支持 SSO 账户（例如使用 Google 登录），仅支持用户名和密码账户。</p>
+<p>:::</p>
+<h4 class="rp-toc-include" id="手动输入门锁加密密钥"><a href="#手动输入门锁加密密钥" class="rp-header-anchor rp-link" aria-hidden="true">#</a>手动输入门锁加密密钥</h4>
+<p>此选项适合希望自行获取加密密钥，和/或希望明确了解其账户凭据具体使用位置与方式的用户。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Key ID</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Locks&#x27; encryption key ID</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Encryption key</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Locks&#x27; encryption key</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>关于如何获取加密密钥，请参阅 <a href="https://github.com/Danielhiversen/pySwitchbot#obtaining-locks-encryption-key" target="_blank" rel="noopener noreferrer" class="rp-link">PySwitchbot</a> 项目的 README。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h2 class="rp-toc-include" id="支持的设备"><a href="#支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备</h2>
+<h3 class="rp-toc-include" id="插座与开关"><a href="#插座与开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>插座与开关</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-bot" target="_blank" rel="noopener noreferrer" class="rp-link">Bot (WoHand)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-plug-mini" target="_blank" rel="noopener noreferrer" class="rp-link">Plug Mini (WoPlug)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-plug-mini-homekit-enabled" target="_blank" rel="noopener noreferrer" class="rp-link">Plug Mini (HomeKit Enabled)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-relay-switch-1" target="_blank" rel="noopener noreferrer" class="rp-link">Relay Switch 1</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-relay-switch-1pm" target="_blank" rel="noopener noreferrer" class="rp-link">Relay Switch 1PM</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-plug-mini-eu" target="_blank" rel="noopener noreferrer" class="rp-link">Plug Mini EU</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-relay-switch-2pm" target="_blank" rel="noopener noreferrer" class="rp-link">Relay Switch 2PM</a></li>
+</ul>
+<h3 class="rp-toc-include" id="窗帘与遮阳"><a href="#窗帘与遮阳" class="rp-header-anchor rp-link" aria-hidden="true">#</a>窗帘与遮阳</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-curtain" target="_blank" rel="noopener noreferrer" class="rp-link">Curtain (WoCurtain)</a> (version 1 &amp; 2)</li>
+<li><a href="https://switch-bot.com/pages/switchbot-curtain-3" target="_blank" rel="noopener noreferrer" class="rp-link">Curtain 3 (WoCtn3)</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-blind-tilt" target="_blank" rel="noopener noreferrer" class="rp-link">Blind Tilt (WoBlindTilt)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-roller-shade" target="_blank" rel="noopener noreferrer" class="rp-link">Roller Shade</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-garage-door-opener" target="_blank" rel="noopener noreferrer" class="rp-link">Garage Door Opener</a></li>
+</ul>
+<h3 class="rp-toc-include" id="灯光"><a href="#灯光" class="rp-header-anchor rp-link" aria-hidden="true">#</a>灯光</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-color-bulb" target="_blank" rel="noopener noreferrer" class="rp-link">Color Bulb (WoBulb)</a></li>
+<li><a href="https://www.switchbot.jp/products/switchbot-strip-light" target="_blank" rel="noopener noreferrer" class="rp-link">Light Strip (WoStrip)</a></li>
+<li><a href="https://www.switchbot.jp/products/switchbot-ceiling-light" target="_blank" rel="noopener noreferrer" class="rp-link">Smart Ceiling Light (WoCeiling)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-led-strip-light-3" target="_blank" rel="noopener noreferrer" class="rp-link">Strip Light 3</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-floor-lamp" target="_blank" rel="noopener noreferrer" class="rp-link">Floor Lamp</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-rgbicww-strip-light" target="_blank" rel="noopener noreferrer" class="rp-link">RGBICWW Strip Light</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-rgbicww-floor-lamp" target="_blank" rel="noopener noreferrer" class="rp-link">RGBICWW Floor Lamp</a></li>
+</ul>
+<h3 class="rp-toc-include" id="门锁"><a href="#门锁" class="rp-header-anchor rp-link" aria-hidden="true">#</a>门锁</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-lock" target="_blank" rel="noopener noreferrer" class="rp-link">Lock (WoLock)</a></li>
+<li><a href="https://www.switch-bot.com/pages/switchbot-lock-pro" target="_blank" rel="noopener noreferrer" class="rp-link">Lock Pro (WoLockPro)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-lock-ultra" target="_blank" rel="noopener noreferrer" class="rp-link">Lock Ultra (WoLockUltra)</a></li>
+<li><a href="https://www.switchbot.jp/products/switchbot-lock-lite" target="_blank" rel="noopener noreferrer" class="rp-link">Lock Lite (WoLockLite)</a></li>
+</ul>
+<h3 class="rp-toc-include" id="加湿器"><a href="#加湿器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>加湿器</h3>
+<ul>
+<li><a href="https://www.switchbot.jp/products/switchbot-smart-humidifier" target="_blank" rel="noopener noreferrer" class="rp-link">Humidifier (WoHumi)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-evaporative-humidifier-auto-refill" target="_blank" rel="noopener noreferrer" class="rp-link">Evaporative Humidifier</a></li>
+</ul>
+<h3 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-meter" target="_blank" rel="noopener noreferrer" class="rp-link">Meter</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-meter-plus" target="_blank" rel="noopener noreferrer" class="rp-link">Meter Plus (WoSensorTH)</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-indoor-outdoor-thermo-hygrometer" target="_blank" rel="noopener noreferrer" class="rp-link">Indoor/Outdoor Meter (WoIOSensorTH)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-meter-pro" target="_blank" rel="noopener noreferrer" class="rp-link">Meter Pro</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-meter-pro-co2-monitor" target="_blank" rel="noopener noreferrer" class="rp-link">Meter Pro CO2 Monitor</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-contact-sensor" target="_blank" rel="noopener noreferrer" class="rp-link">Contact Sensor (WoContact)</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-motion-sensor" target="_blank" rel="noopener noreferrer" class="rp-link">Motion Sensor (WoPresence)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-water-leak-detector" target="_blank" rel="noopener noreferrer" class="rp-link">Water Leak Detector</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-remote" target="_blank" rel="noopener noreferrer" class="rp-link">Remote (WoRemote)</a> (currently only supports battery level monitoring)</li>
+<li><a href="https://www.switch-bot.com/products/switchbot-home-climate-panel" target="_blank" rel="noopener noreferrer" class="rp-link">Climate Panel</a> (currently only supports retrieving sensor data, does not yet support device control)</li>
+<li><a href="https://www.switch-bot.com/products/switchbot-presence-sensor" target="_blank" rel="noopener noreferrer" class="rp-link">Presence Sensor</a></li>
+</ul>
+<h3 class="rp-toc-include" id="hub"><a href="#hub" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-hub-2" target="_blank" rel="noopener noreferrer" class="rp-link">Hub 2 (WoHub2)</a> (currently only supports retrieving sensor data, does not yet support device control)</li>
+<li><a href="https://www.switch-bot.com/products/switchbot-hub-mini-matter-enabled" target="_blank" rel="noopener noreferrer" class="rp-link">Hub Mini Matter Enabled</a>(currently only supports retrieving sensor data, does not yet support device control)</li>
+<li><a href="https://www.switch-bot.com/products/switchbot-hub-3" target="_blank" rel="noopener noreferrer" class="rp-link">Hub 3 (WoHub3)</a>(currently only supports retrieving sensor data, does not yet support device control)</li>
+</ul>
+<h3 class="rp-toc-include" id="风扇"><a href="#风扇" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-battery-circulator-fan" target="_blank" rel="noopener noreferrer" class="rp-link">Circulator Fan</a></li>
+</ul>
+<h3 class="rp-toc-include" id="吸尘器"><a href="#吸尘器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>吸尘器</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-mini-robot-vacuum-k10" target="_blank" rel="noopener noreferrer" class="rp-link">K10+</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-mini-robot-vacuum-k10-pro" target="_blank" rel="noopener noreferrer" class="rp-link">K10+ Pro</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-k10-pro-combo" target="_blank" rel="noopener noreferrer" class="rp-link">K10+ Pro Combo</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-robot-vacuum-k11" target="_blank" rel="noopener noreferrer" class="rp-link">K11+</a></li>
+<li><a href="https://www.switchbot.jp/products/switchbot-robot-vacuum-cleaner-k20-pro" target="_blank" rel="noopener noreferrer" class="rp-link">K20</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-floor-cleaning-robot-s10" target="_blank" rel="noopener noreferrer" class="rp-link">S10</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-floor-cleaning-robot-s20" target="_blank" rel="noopener noreferrer" class="rp-link">S20</a></li>
+</ul>
+<h3 class="rp-toc-include" id="空气净化器"><a href="#空气净化器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>空气净化器</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-air-purifier" target="_blank" rel="noopener noreferrer" class="rp-link">Air Purifier</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-air-purifier-table" target="_blank" rel="noopener noreferrer" class="rp-link">Air Purifier Table</a></li>
+</ul>
+<h3 class="rp-toc-include" id="气候设备"><a href="#气候设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>气候设备</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-smart-radiator-thermostat" target="_blank" rel="noopener noreferrer" class="rp-link">Smart Radiator Thermostat</a></li>
+</ul>
+<h3 class="rp-toc-include" id="按钮"><a href="#按钮" class="rp-header-anchor rp-link" aria-hidden="true">#</a>按钮</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-ai-art-frame" target="_blank" rel="noopener noreferrer" class="rp-link">Art Frame</a></li>
+</ul>
+<h3 class="rp-toc-include" id="keypad-vision"><a href="#keypad-vision" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Keypad Vision</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-keypad-vision" target="_blank" rel="noopener noreferrer" class="rp-link">Keypad Vision</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-keypad-vision-pro" target="_blank" rel="noopener noreferrer" class="rp-link">Keypad Vision Pro</a></li>
+</ul>
+<h2 class="rp-toc-include" id="works-with-home-assistant-认证"><a href="#works-with-home-assistant-认证" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Works with Home Assistant 认证</h2>
+<p>SwitchBot 致力于确保其产品保持最新状态，并能在 Home Assistant 中良好使用。
+这些设备已获得 Bluetooth 和 Matter 双重认证。</p>
+<p>以下设备已通过 Bluetooth 认证：</p>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-lock-ultra" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Lock Ultra</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-air-purifier" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Air Purifier</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-air-purifier-table" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Air Purifier Table</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-water-leak-detector" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Leak Detector</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-meter" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Meter</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-meter-pro" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Meter Pro</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-meter-pro-co2-monitor" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Meter Pro CO2</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-indoor-outdoor-thermo-hygrometer" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Indoor/Outdoor Thermo-Hygrometer</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-curtain-3" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Curtain 3</a></li>
+<li><a href="https://www.switch-bot.com/products/contact-sensor" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Contact Sensor</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-roller-shade" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Roller Shade</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-lock-pro" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot Lock Pro</a></li>
+</ul>
+<p>如需查看通过 SwitchBot Matter 认证的设备列表，请访问 <a href="/home-assistant/integrations/switchbot_matter/index.html" class="rp-link">SwitchBot Matter</a> 页面。</p>
+<h2 class="rp-toc-include" id="支持的功能"><a href="#支持的功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的功能</h2>
+<h3 class="rp-toc-include" id="通用"><a href="#通用" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通用</h3>
+<h4 class="rp-toc-include" id="选项"><a href="#选项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选项</h4>
+<ul>
+<li><code>Retry count</code>：向 SwitchBot 设备发送命令时的重试次数。</li>
+</ul>
+<h4 class="rp-toc-include" id="属性"><a href="#属性" class="rp-header-anchor rp-link" aria-hidden="true">#</a>属性</h4>
+<ul>
+<li><code>last_run_success</code>：若上一次发送给 SwitchBot 的操作成功，则返回 <code>true</code>。当蓝牙连接偶发不稳定时，这个属性有助于排查错误。若为 <code>false</code>，请查看 <a href="/home-assistant/integrations/logger/index.html#viewing-logs" class="rp-link">Home Assistant 日志</a> 了解具体错误信息。</li>
+</ul>
+<h3 class="rp-toc-include" id="插座与开关-1"><a href="#插座与开关-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>插座与开关</h3>
+<p>Bot、Plug Mini 和 Relay Switch 会添加为 switch 实体。</p>
+<h4 class="rp-toc-include" id="bot"><a href="#bot" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Bot</h4>
+<p>密码保护：你可以在 SwitchBot 应用中为设备设置密码，以防附近的人控制你的设备。设置密码后，必须输入正确密码才能将其添加到集成中。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>按压</li>
+<li>获取电池电量</li>
+</ul>
+<p>属性：</p>
+<ul>
+<li><code>Switch mode</code>：指定设备模式。若为 <code>true</code>，设备处于适用于拨动开关的拉动/回弹模式；否则设备处于瞬时开关模式。</li>
+</ul>
+<h4 class="rp-toc-include" id="plug-mini"><a href="#plug-mini" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Plug Mini</h4>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>获取功耗读数</li>
+</ul>
+<h4 class="rp-toc-include" id="plug-mini-eu"><a href="#plug-mini-eu" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Plug Mini EU</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>获取功率</li>
+<li>获取电压</li>
+<li>获取电流</li>
+<li>获取用电量</li>
+</ul>
+<h4 class="rp-toc-include" id="relay-switch-1"><a href="#relay-switch-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Relay Switch 1</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+</ul>
+<h4 class="rp-toc-include" id="relay-switch-1pm"><a href="#relay-switch-1pm" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Relay Switch 1PM</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>获取功率</li>
+<li>获取电压</li>
+<li>获取电流</li>
+<li>获取用电量</li>
+</ul>
+<h4 class="rp-toc-include" id="relay-switch-2pm"><a href="#relay-switch-2pm" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Relay Switch 2PM</h4>
+<p>这是一个加密设备，并且具有两个开关通道，你可以分别进行设置。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>获取功率</li>
+<li>获取电压</li>
+<li>获取电流</li>
+<li>获取用电量</li>
+</ul>
+<h3 class="rp-toc-include" id="窗帘与遮阳-1"><a href="#窗帘与遮阳-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>窗帘与遮阳</h3>
+<p>Curtain、Curtain 3、Blind Tilt、Roller Shade 和 Garage Door Opener 会添加为 cover 实体。</p>
+<h4 class="rp-toc-include" id="curtain"><a href="#curtain" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Curtain</h4>
+<p>功能：</p>
+<ul>
+<li>打开/关闭/暂停</li>
+<li>设置位置</li>
+<li>获取位置</li>
+<li>获取光照等级</li>
+<li>获取电池电量</li>
+<li>获取校准状态</li>
+</ul>
+<h4 class="rp-toc-include" id="curtain-3"><a href="#curtain-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Curtain 3</h4>
+<p>功能：</p>
+<ul>
+<li>打开/关闭/暂停</li>
+<li>设置位置</li>
+<li>获取位置</li>
+<li>获取光照等级</li>
+<li>获取电池电量</li>
+<li>获取校准状态</li>
+<li>设置窗帘移动速度</li>
+</ul>
+<p>窗帘移动速度可在设备选项中配置。该设置主要针对 Curtain 3 设计，较旧的 Curtain 型号可能会忽略此设置。</p>
+<ol>
+<li>若要设置 <strong>Curtain movement speed</strong>，请前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>。</li>
+<li>找到 SwitchBot 集成，并选择你要配置的窗帘设备。</li>
+<li>选择该设备的 <strong>配置</strong>。</li>
+<li>在 <strong>选项</strong> 对话框中，将 <strong>Curtain movement speed</strong> 设置为 0-255 之间的数值，默认值为 255。</li>
+</ol>
+<h4 class="rp-toc-include" id="blind-tilt"><a href="#blind-tilt" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Blind Tilt</h4>
+<p>功能：</p>
+<ul>
+<li>向上关闭/向下关闭/暂停</li>
+<li>设置位置</li>
+<li>获取位置</li>
+<li>获取光照等级</li>
+<li>获取电池电量</li>
+<li>获取校准状态</li>
+</ul>
+<p>Blind Tilt 会作为 cover 实体暴露，仅支持控制倾斜角度：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>倾斜位置</th><th>百叶帘状态</th></tr></thead><tbody><tr><td>100%</td><td>向上关闭</td></tr><tr><td>50%</td><td>完全打开</td></tr><tr><td>0%</td><td>向下关闭</td></tr></tbody></table></div>
+<p>关闭按钮会将百叶帘关闭到最近的关闭位置（0% 或 100%），如果百叶帘完全打开，则默认向下关闭。由于 Home Assistant 认为 100% 代表打开，默认卡片在倾斜角度为 100% 时会禁用打开按钮，但该操作实际仍可生效，并将百叶帘打开到 50%。</p>
+<h5 class="rp-toc-include" id="简单的-cover-模板实体"><a href="#简单的-cover-模板实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>简单的 cover 模板实体</h5>
+<p>某些集成可能会将你的 SwitchBot Blind Tilt 提供给其他动作使用，而那些动作默认认为 100% 为打开、0% 为完全关闭。你可以使用 <a href="/home-assistant/integrations/template/index.html#cover" class="rp-link">Cover Template</a> 创建一个代理实体，使其在 100% 时表示打开、0% 时表示关闭。这个模板实体仅支持单方向关闭。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Example configuration.yaml entry</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">cover</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">platform</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> template</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    covers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      example_blinds_simple</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        device_class</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> blind</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        friendly_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Example Blinds (Simple Down)</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        open_cover</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover.set_cover_tilt_position</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            tilt_position</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 50</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover.example_blinds</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        close_cover</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover.set_cover_tilt_position</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            tilt_position</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover.example_blinds</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        position_template</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {{ int(states.cover.example_blinds.attributes.current_tilt_position)*2 }}</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        set_cover_position</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover.set_cover_tilt_position</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            tilt_position</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{position/2}}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover.example_blinds</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="roller-shade"><a href="#roller-shade" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Roller Shade</h4>
+<p>Roller Shade 会作为 cover 实体暴露，仅支持控制位置：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>位置</th><th>Roller Shade 状态</th></tr></thead><tbody><tr><td>&lt;=20%</td><td>打开</td></tr><tr><td>&gt;20%</td><td>关闭</td></tr></tbody></table></div>
+<p>功能：</p>
+<ul>
+<li>打开/关闭/暂停</li>
+<li>设置位置</li>
+<li>获取位置</li>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="garage-door-opener"><a href="#garage-door-opener" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Garage Door Opener</h4>
+<p>功能：</p>
+<ul>
+<li>打开/关闭</li>
+</ul>
+<h3 class="rp-toc-include" id="传感器-1"><a href="#传感器-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<p>温湿度计、运动传感器、门磁传感器、漏水传感器、人体存在传感器、遥控器按钮和 climate panel 会添加为 sensor 实体。</p>
+<h4 class="rp-toc-include" id="meter"><a href="#meter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Meter</h4>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="meter-plus"><a href="#meter-plus" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Meter Plus</h4>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="indooroutdoor-meter"><a href="#indooroutdoor-meter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Indoor/Outdoor Meter</h4>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="meter-pro"><a href="#meter-pro" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Meter Pro</h4>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="meter-pro-co2-monitor"><a href="#meter-pro-co2-monitor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Meter Pro CO2 Monitor</h4>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+<li>获取二氧化碳浓度</li>
+<li>获取电池电量</li>
+<li>设置显示时间格式（12 小时/24 小时）</li>
+<li>将设备日期和时间与 Home Assistant 同步</li>
+</ul>
+<details>
+<summary>自动与 Home Assistant 同步设备日期和时间</summary>
+<p>该集成会在设备详情页中添加一个 <strong>Sync date and time</strong> 按钮。你可以创建自动化，定期触发这个按钮。下面是一个简单的 <code>configuration.yaml</code> 示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Daily SwitchBot CO2 Time Sync&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Sync date and time sync for the Meter Pro CO2 every night.&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    trigger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> time</span></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">        # Ensures the time is in sync after a DST (summer/winter) time change.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        at</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;03:00:00&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> button.press</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">          # Replace with your actual entity ID</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> button.&lt;your_device_name&gt;_sync_date_and_time</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<h4 class="rp-toc-include" id="contact-sensor"><a href="#contact-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Contact Sensor</h4>
+<p>功能：</p>
+<ul>
+<li>打开或关闭状态</li>
+<li>运动检测状态</li>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="motion-sensor"><a href="#motion-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Motion Sensor</h4>
+<p>功能：</p>
+<ul>
+<li>运动检测状态</li>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="presence-sensor"><a href="#presence-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Presence Sensor</h4>
+<p>注意：设备电池数据存储在 service data 中，而不是通过广播发送。只有在 Bluetooth 处于 active 模式时才能获取此数据。</p>
+<p>功能</p>
+<ul>
+<li>获取光照等级</li>
+<li>获取电池电量</li>
+<li>获取占用状态</li>
+</ul>
+<h4 class="rp-toc-include" id="water-leak-detector"><a href="#water-leak-detector" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Water Leak Detector</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>漏水或干燥状态</li>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="remote"><a href="#remote" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Remote</h4>
+<p>功能：</p>
+<ul>
+<li>获取电池电量</li>
+</ul>
+<h4 class="rp-toc-include" id="climate-panel"><a href="#climate-panel" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Climate Panel</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+<li>获取电池电量</li>
+<li>运动检测状态</li>
+<li>光线检测状态</li>
+</ul>
+<h4 class="rp-toc-include" id="keypad-vision-pro"><a href="#keypad-vision-pro" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Keypad Vision (Pro)</h4>
+<p>这是一个加密设备。测试时，你可以在开发者工具中分别执行此设备支持的各项动作。</p>
+<p>动作：</p>
+<ul>
+<li>add_password</li>
+</ul>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switchbot.add_password</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> c2d01328efd261f586e56d914e3af07e</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  password</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 123456</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="灯光-1"><a href="#灯光-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>灯光</h3>
+<p>Color Bulb、LED Strip Light 和 Ceiling Light 会添加为 light 实体。</p>
+<h4 class="rp-toc-include" id="ceiling-light"><a href="#ceiling-light" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Ceiling Light</h4>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>调整亮度</li>
+<li>调整色温</li>
+</ul>
+<h4 class="rp-toc-include" id="color-bulb"><a href="#color-bulb" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Color Bulb</h4>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>调整亮度</li>
+<li>调整色温</li>
+<li>调整颜色</li>
+<li>设置效果</li>
+</ul>
+<h4 class="rp-toc-include" id="led-strip-light"><a href="#led-strip-light" class="rp-header-anchor rp-link" aria-hidden="true">#</a>LED Strip Light</h4>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>调整亮度</li>
+<li>调整颜色</li>
+<li>设置效果</li>
+</ul>
+<h4 class="rp-toc-include" id="strip-light-3"><a href="#strip-light-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Strip Light 3</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>调整亮度</li>
+<li>调整色温</li>
+<li>调整颜色</li>
+<li>设置效果</li>
+</ul>
+<h4 class="rp-toc-include" id="floor-lamp"><a href="#floor-lamp" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Floor Lamp</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>调整亮度</li>
+<li>调整色温</li>
+<li>调整颜色</li>
+<li>设置效果</li>
+</ul>
+<h4 class="rp-toc-include" id="rgbicww-strip-light"><a href="#rgbicww-strip-light" class="rp-header-anchor rp-link" aria-hidden="true">#</a>RGBICWW Strip Light</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>调整亮度</li>
+<li>调整色温</li>
+<li>调整颜色</li>
+<li>设置效果</li>
+</ul>
+<h4 class="rp-toc-include" id="rgbicww-floor-lamp"><a href="#rgbicww-floor-lamp" class="rp-header-anchor rp-link" aria-hidden="true">#</a>RGBICWW Floor Lamp</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启或关闭</li>
+<li>调整亮度</li>
+<li>调整色温</li>
+<li>调整颜色</li>
+<li>设置效果</li>
+</ul>
+<h3 class="rp-toc-include" id="门锁-1"><a href="#门锁-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>门锁</h3>
+<p>注意：该集成当前仅使用主锁状态；在双锁模式下，并非所有功能都能正常工作。</p>
+<h4 class="rp-toc-include" id="lock"><a href="#lock" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Lock</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>上锁或解锁</li>
+<li>打开或关闭状态</li>
+<li>自动上锁暂停状态</li>
+<li>校准状态</li>
+<li>获取电池电量</li>
+</ul>
+<p>选项：</p>
+<ol>
+<li>若要启用 nightlatch operation mode，请前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>。</li>
+<li>在 <strong>集成条目</strong> 下找到该门锁并选择 <strong>配置</strong>。</li>
+<li>在 <strong>选项</strong> 对话框中配置夜闩操作模式。</li>
+</ol>
+<h4 class="rp-toc-include" id="lock-pro"><a href="#lock-pro" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Lock Pro</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>上锁或解锁</li>
+<li>打开或关闭状态</li>
+<li>自动上锁暂停状态</li>
+<li>校准状态</li>
+<li>获取电池电量</li>
+</ul>
+<p>选项：</p>
+<ol>
+<li>若要启用 nightlatch operation mode，请前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>。</li>
+<li>在 <strong>集成条目</strong> 下找到该门锁并选择 <strong>配置</strong>。</li>
+<li>在 <strong>选项</strong> 对话框中配置夜闩操作模式。</li>
+</ol>
+<h4 class="rp-toc-include" id="lock-ultra"><a href="#lock-ultra" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Lock Ultra</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>上锁或解锁</li>
+<li>打开或关闭状态</li>
+<li>自动上锁暂停状态</li>
+<li>校准状态</li>
+<li>获取电池电量</li>
+</ul>
+<p>选项：</p>
+<ol>
+<li>若要启用 nightlatch operation mode，请前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>。</li>
+<li>在 <strong>集成条目</strong> 下找到该门锁并选择 <strong>配置</strong>。</li>
+<li>在 <strong>选项</strong> 对话框中配置夜闩操作模式。</li>
+</ol>
+<h4 class="rp-toc-include" id="lock-lite"><a href="#lock-lite" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Lock Lite</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>上锁或解锁</li>
+<li>校准状态</li>
+<li>获取电池电量</li>
+</ul>
+<h3 class="rp-toc-include" id="hub-1"><a href="#hub-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub</h3>
+<p>部分 Hub 可作为桥接器使用，同时仍可通过蓝牙连接获取传感器数据。Hub 2 可通过传感器线缆显示温湿度；没有数字显示屏的 Hub Mini Matter Enabled 也可读取传感器线缆数据。</p>
+<h4 class="rp-toc-include" id="hub-2"><a href="#hub-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub 2</h4>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+<li>获取光照等级</li>
+</ul>
+<h4 class="rp-toc-include" id="hub-mini-matter-enabled"><a href="#hub-mini-matter-enabled" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub Mini Matter Enabled</h4>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+</ul>
+<h4 class="rp-toc-include" id="hub3"><a href="#hub3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub3</h4>
+<p>功能：</p>
+<ul>
+<li>获取温度</li>
+<li>获取湿度</li>
+<li>获取光照等级</li>
+<li>运动检测状态</li>
+</ul>
+<h3 class="rp-toc-include" id="风扇-1"><a href="#风扇-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇</h3>
+<p>Battery Circulator Fan / Circulator Fan 会添加为 fan 实体。</p>
+<h4 class="rp-toc-include" id="battery-circulator-fancirculator-fan"><a href="#battery-circulator-fancirculator-fan" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Battery Circulator Fan/Circulator Fan</h4>
+<p>功能：</p>
+<ul>
+<li>开启</li>
+<li>关闭</li>
+<li>设置风速</li>
+<li>设置模式</li>
+<li>左右摆风</li>
+<li>获取电池电量（仅 Battery Circulator Fan）</li>
+</ul>
+<h3 class="rp-toc-include" id="空气净化器-1"><a href="#空气净化器-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>空气净化器</h3>
+<p>Air Purifier 和 Air Purifier Table 会添加为 fan 实体。</p>
+<p>空气净化器目前支持三个风速档位，可通过设置 mode 进行调整。</p>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启</li>
+<li>关闭</li>
+<li>设置模式</li>
+</ul>
+<h4 class="rp-toc-include" id="air-purifier-table"><a href="#air-purifier-table" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Air Purifier Table</h4>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启</li>
+<li>关闭</li>
+<li>设置模式</li>
+</ul>
+<h3 class="rp-toc-include" id="吸尘器-1"><a href="#吸尘器-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>吸尘器</h3>
+<p>K10+、K10+ Pro、K10+ Pro Combo、K20、S10、K11+、S20 会添加为 vacuum 实体。</p>
+<p>功能：</p>
+<ul>
+<li>获取状态，包括 <code>cleaning</code>、<code>docked</code>、<code>idle</code>、<code>paused</code>、<code>returning</code> 和 <code>error</code>；更多细节请参阅“已知限制”</li>
+<li>启动清扫</li>
+<li>返回基站</li>
+<li>获取电池电量</li>
+</ul>
+<h3 class="rp-toc-include" id="加湿器-1"><a href="#加湿器-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>加湿器</h3>
+<p>Humidifier 和 Evaporative Humidifier 会添加为 humidifier 实体。</p>
+<h4 class="rp-toc-include" id="humidifier"><a href="#humidifier" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Humidifier</h4>
+<p>功能：</p>
+<ul>
+<li>开启</li>
+<li>关闭</li>
+<li>设置模式</li>
+<li>设置湿度</li>
+</ul>
+<h4 class="rp-toc-include" id="evaporative-humidifier"><a href="#evaporative-humidifier" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Evaporative Humidifier</h4>
+<p>这是一个加密设备。
+注意：若未绑定温湿度传感器，并非所有模式都可用。</p>
+<p>功能：</p>
+<ul>
+<li>开启</li>
+<li>关闭</li>
+<li>设置模式</li>
+<li>设置湿度</li>
+</ul>
+<h3 class="rp-toc-include" id="气候设备-1"><a href="#气候设备-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>气候设备</h3>
+<p>smart radiator thermostat 会添加为 climate 实体。</p>
+<p>这是一个加密设备。</p>
+<p>功能：</p>
+<ul>
+<li>开启</li>
+<li>关闭</li>
+<li>设置模式</li>
+<li>设置目标温度</li>
+</ul>
+<h3 class="rp-toc-include" id="按钮-1"><a href="#按钮-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>按钮</h3>
+<p>art frame 会添加为 button 实体。</p>
+<p>这是一个加密设备。</p>
+<p>注意：用户需要先在应用中预设图片。</p>
+<p>功能：</p>
+<ul>
+<li>下一张图片</li>
+<li>上一张图片</li>
+</ul>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p>SwitchBot 设备使用 <a href="/home-assistant/blog/2016/02/12/classifying-the-internet-of-things/#classifiers" class="rp-link">local push</a> 策略来维持实时状态更新。当设备检测到状态变化时，会主动将更新推送到 Home Assistant 以立即同步。对于用户在 Home Assistant 中主动发起的操作（例如开关设备），集成还会额外主动拉取一次状态，以确保新状态能被即时确认。
+该集成通过本地连接与设备通信，不经过 SwitchBot Cloud。</p>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<h3 class="rp-toc-include" id="连接速度慢"><a href="#连接速度慢" class="rp-header-anchor rp-link" aria-hidden="true">#</a>连接速度慢</h3>
+<p>请将设备移近一些，或更换速度更快的蓝牙适配器。更多信息请参阅<a href="/home-assistant/integrations/bluetooth/index.html#improving-connection-times" class="rp-link">改善连接时间</a>。</p>
+<h3 class="rp-toc-include" id="设备名称不同步"><a href="#设备名称不同步" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设备名称不同步</h3>
+<p>在 SwitchBot 应用中配置的设备名称不会同步到 Home Assistant。</p>
+<h3 class="rp-toc-include" id="电池电量"><a href="#电池电量" class="rp-header-anchor rp-link" aria-hidden="true">#</a>电池电量</h3>
+<p>由于固件限制，<strong>Lock</strong>、<strong>Lock Lite</strong> 等早期型号上报的是粗略的电量区间，而非精确数值：</p>
+<ul>
+<li>&lt; 10 %  → 10</li>
+<li>10 % – 20 % → 20</li>
+<li>20 % – 60 % → 60</li>
+<li>≥ 60 % → 100</li>
+</ul>
+<p>精确定义请参阅最新版 <a href="https://github.com/OpenWonderLabs/SwitchBotAPI" target="_blank" rel="noopener noreferrer" class="rp-link">OpenAPI doc</a>。</p>
+<h3 class="rp-toc-include" id="锁状态"><a href="#锁状态" class="rp-header-anchor rp-link" aria-hidden="true">#</a>锁状态</h3>
+<p>该集成当前仅使用主锁状态；在双锁模式下，并非所有功能都能正常工作。</p>
+<h3 class="rp-toc-include" id="吸尘器状态"><a href="#吸尘器状态" class="rp-header-anchor rp-link" aria-hidden="true">#</a>吸尘器状态</h3>
+<p>对于扫地机器人 K10+ 和 K10+ Pro，由于固件实现限制，仅会返回 <code>cleaning</code> 和 <code>docked</code> 这两种状态。</p>
+<h2 class="rp-toc-include" id="故障排查"><a href="#故障排查" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排查</h2>
+<p>启用且正确运行 <a href="/home-assistant/integrations/bluetooth.html" class="rp-link">Bluetooth</a> 集成后，SwitchBot 集成会自动发现设备。</p>
+<details>
+<summary>无法加载配置流程</summary>
+<p>可能是自定义集成冲突，正在使用不同版本的 PySwitchbot；请尝试卸载该自定义集成。</p>
+</details>
+<details>
+<summary>未找到未配置的设备</summary>
+<p>请确认设备已通电并处于蓝牙覆盖范围内。</p>
+</details>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<h3 class="rp-toc-include" id="自动化思路"><a href="#自动化思路" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自动化思路</h3>
+<p>你可以创建各种自动化，将传感器作为触发条件，将开关、窗帘和灯光作为执行动作。</p>
+<ul>
+<li>检测到运动时打开或关闭灯和开关。</li>
+<li>温度或湿度过低时，打开或关闭 Bot，以控制风扇、空调遥控器或循环扇。</li>
+<li>温度过高时关闭窗帘。</li>
+<li>功耗过高时关闭 Relay Switch。</li>
+<li>二氧化碳浓度过高时，改变 LED Strip Lights 或 Color Bulb 的颜色，或通过 Bot / Relay Switch 打开循环扇。</li>
+</ul>
+<h2 class="rp-toc-include" id="删除集成"><a href="#删除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除集成</h2>
+<p>此集成遵循标准删除流程，无需额外步骤。</p>
+<h3 class="rp-toc-include" id="从-home-assistant-中删除集成实例"><a href="#从-home-assistant-中删除集成实例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Home Assistant 中删除集成实例</h3>
+<ol>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>，选择该集成卡片。</li>
+<li>在设备列表中，选择你要删除的集成实例。</li>
+<li>在对应条目旁点击三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单，然后选择 <strong>删除</strong>。</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#你可以如何使用此集成" class="rp-toc-item rp-link" title="你可以如何使用此集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">你可以如何使用此集成</span></a><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#添加模式" class="rp-toc-item rp-link" title="添加模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">添加模式</span></a><a href="#添加加密的-switchbot-设备" class="rp-toc-item rp-link" title="添加加密的 SwitchBot 设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">添加加密的 SwitchBot 设备</span></a><a href="#switchbot-账户推荐" class="rp-toc-item rp-link" title="SwitchBot 账户（推荐）" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">SwitchBot 账户（推荐）</span></a><a href="#手动输入门锁加密密钥" class="rp-toc-item rp-link" title="手动输入门锁加密密钥" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">手动输入门锁加密密钥</span></a><a href="#支持的设备" class="rp-toc-item rp-link" title="支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备</span></a><a href="#插座与开关" class="rp-toc-item rp-link" title="插座与开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">插座与开关</span></a><a href="#窗帘与遮阳" class="rp-toc-item rp-link" title="窗帘与遮阳" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">窗帘与遮阳</span></a><a href="#灯光" class="rp-toc-item rp-link" title="灯光" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">灯光</span></a><a href="#门锁" class="rp-toc-item rp-link" title="门锁" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">门锁</span></a><a href="#加湿器" class="rp-toc-item rp-link" title="加湿器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">加湿器</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#hub" class="rp-toc-item rp-link" title="Hub" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Hub</span></a><a href="#风扇" class="rp-toc-item rp-link" title="风扇" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">风扇</span></a><a href="#吸尘器" class="rp-toc-item rp-link" title="吸尘器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">吸尘器</span></a><a href="#空气净化器" class="rp-toc-item rp-link" title="空气净化器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">空气净化器</span></a><a href="#气候设备" class="rp-toc-item rp-link" title="气候设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">气候设备</span></a><a href="#按钮" class="rp-toc-item rp-link" title="按钮" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">按钮</span></a><a href="#keypad-vision" class="rp-toc-item rp-link" title="Keypad Vision" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Keypad Vision</span></a><a href="#works-with-home-assistant-认证" class="rp-toc-item rp-link" title="Works with Home Assistant 认证" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Works with Home Assistant 认证</span></a><a href="#支持的功能" class="rp-toc-item rp-link" title="支持的功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的功能</span></a><a href="#通用" class="rp-toc-item rp-link" title="通用" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通用</span></a><a href="#选项" class="rp-toc-item rp-link" title="选项" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">选项</span></a><a href="#属性" class="rp-toc-item rp-link" title="属性" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">属性</span></a><a href="#插座与开关-1" class="rp-toc-item rp-link" title="插座与开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">插座与开关</span></a><a href="#bot" class="rp-toc-item rp-link" title="Bot" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Bot</span></a><a href="#plug-mini" class="rp-toc-item rp-link" title="Plug Mini" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Plug Mini</span></a><a href="#plug-mini-eu" class="rp-toc-item rp-link" title="Plug Mini EU" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Plug Mini EU</span></a><a href="#relay-switch-1" class="rp-toc-item rp-link" title="Relay Switch 1" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Relay Switch 1</span></a><a href="#relay-switch-1pm" class="rp-toc-item rp-link" title="Relay Switch 1PM" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Relay Switch 1PM</span></a><a href="#relay-switch-2pm" class="rp-toc-item rp-link" title="Relay Switch 2PM" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Relay Switch 2PM</span></a><a href="#窗帘与遮阳-1" class="rp-toc-item rp-link" title="窗帘与遮阳" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">窗帘与遮阳</span></a><a href="#curtain" class="rp-toc-item rp-link" title="Curtain" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Curtain</span></a><a href="#curtain-3" class="rp-toc-item rp-link" title="Curtain 3" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Curtain 3</span></a><a href="#blind-tilt" class="rp-toc-item rp-link" title="Blind Tilt" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Blind Tilt</span></a><a href="#roller-shade" class="rp-toc-item rp-link" title="Roller Shade" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Roller Shade</span></a><a href="#garage-door-opener" class="rp-toc-item rp-link" title="Garage Door Opener" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Garage Door Opener</span></a><a href="#传感器-1" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#meter" class="rp-toc-item rp-link" title="Meter" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Meter</span></a><a href="#meter-plus" class="rp-toc-item rp-link" title="Meter Plus" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Meter Plus</span></a><a href="#indooroutdoor-meter" class="rp-toc-item rp-link" title="Indoor/Outdoor Meter" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Indoor/Outdoor Meter</span></a><a href="#meter-pro" class="rp-toc-item rp-link" title="Meter Pro" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Meter Pro</span></a><a href="#meter-pro-co2-monitor" class="rp-toc-item rp-link" title="Meter Pro CO2 Monitor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Meter Pro CO2 Monitor</span></a><a href="#contact-sensor" class="rp-toc-item rp-link" title="Contact Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Contact Sensor</span></a><a href="#motion-sensor" class="rp-toc-item rp-link" title="Motion Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Motion Sensor</span></a><a href="#presence-sensor" class="rp-toc-item rp-link" title="Presence Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Presence Sensor</span></a><a href="#water-leak-detector" class="rp-toc-item rp-link" title="Water Leak Detector" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Water Leak Detector</span></a><a href="#remote" class="rp-toc-item rp-link" title="Remote" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Remote</span></a><a href="#climate-panel" class="rp-toc-item rp-link" title="Climate Panel" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Climate Panel</span></a><a href="#keypad-vision-pro" class="rp-toc-item rp-link" title="Keypad Vision (Pro)" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Keypad Vision (Pro)</span></a><a href="#灯光-1" class="rp-toc-item rp-link" title="灯光" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">灯光</span></a><a href="#ceiling-light" class="rp-toc-item rp-link" title="Ceiling Light" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Ceiling Light</span></a><a href="#color-bulb" class="rp-toc-item rp-link" title="Color Bulb" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Color Bulb</span></a><a href="#led-strip-light" class="rp-toc-item rp-link" title="LED Strip Light" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">LED Strip Light</span></a><a href="#strip-light-3" class="rp-toc-item rp-link" title="Strip Light 3" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Strip Light 3</span></a><a href="#floor-lamp" class="rp-toc-item rp-link" title="Floor Lamp" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Floor Lamp</span></a><a href="#rgbicww-strip-light" class="rp-toc-item rp-link" title="RGBICWW Strip Light" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">RGBICWW Strip Light</span></a><a href="#rgbicww-floor-lamp" class="rp-toc-item rp-link" title="RGBICWW Floor Lamp" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">RGBICWW Floor Lamp</span></a><a href="#门锁-1" class="rp-toc-item rp-link" title="门锁" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">门锁</span></a><a href="#lock" class="rp-toc-item rp-link" title="Lock" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Lock</span></a><a href="#lock-pro" class="rp-toc-item rp-link" title="Lock Pro" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Lock Pro</span></a><a href="#lock-ultra" class="rp-toc-item rp-link" title="Lock Ultra" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Lock Ultra</span></a><a href="#lock-lite" class="rp-toc-item rp-link" title="Lock Lite" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Lock Lite</span></a><a href="#hub-1" class="rp-toc-item rp-link" title="Hub" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Hub</span></a><a href="#hub-2" class="rp-toc-item rp-link" title="Hub 2" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Hub 2</span></a><a href="#hub-mini-matter-enabled" class="rp-toc-item rp-link" title="Hub Mini Matter Enabled" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Hub Mini Matter Enabled</span></a><a href="#hub3" class="rp-toc-item rp-link" title="Hub3" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Hub3</span></a><a href="#风扇-1" class="rp-toc-item rp-link" title="风扇" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">风扇</span></a><a href="#battery-circulator-fancirculator-fan" class="rp-toc-item rp-link" title="Battery Circulator Fan/Circulator Fan" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Battery Circulator Fan/Circulator Fan</span></a><a href="#空气净化器-1" class="rp-toc-item rp-link" title="空气净化器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">空气净化器</span></a><a href="#air-purifier-table" class="rp-toc-item rp-link" title="Air Purifier Table" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Air Purifier Table</span></a><a href="#吸尘器-1" class="rp-toc-item rp-link" title="吸尘器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">吸尘器</span></a><a href="#加湿器-1" class="rp-toc-item rp-link" title="加湿器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">加湿器</span></a><a href="#humidifier" class="rp-toc-item rp-link" title="Humidifier" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Humidifier</span></a><a href="#evaporative-humidifier" class="rp-toc-item rp-link" title="Evaporative Humidifier" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Evaporative Humidifier</span></a><a href="#气候设备-1" class="rp-toc-item rp-link" title="气候设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">气候设备</span></a><a href="#按钮-1" class="rp-toc-item rp-link" title="按钮" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">按钮</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#连接速度慢" class="rp-toc-item rp-link" title="连接速度慢" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">连接速度慢</span></a><a href="#设备名称不同步" class="rp-toc-item rp-link" title="设备名称不同步" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">设备名称不同步</span></a><a href="#电池电量" class="rp-toc-item rp-link" title="电池电量" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">电池电量</span></a><a href="#锁状态" class="rp-toc-item rp-link" title="锁状态" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">锁状态</span></a><a href="#吸尘器状态" class="rp-toc-item rp-link" title="吸尘器状态" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">吸尘器状态</span></a><a href="#故障排查" class="rp-toc-item rp-link" title="故障排查" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排查</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#自动化思路" class="rp-toc-item rp-link" title="自动化思路" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自动化思路</span></a><a href="#删除集成" class="rp-toc-item rp-link" title="删除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">删除集成</span></a><a href="#从-home-assistant-中删除集成实例" class="rp-toc-item rp-link" title="从 Home Assistant 中删除集成实例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从 Home Assistant 中删除集成实例</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xiaomi Gateway (Aqara) - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Xiaomi Gateway (Aqara) - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="小米网关（Xiaomi Gateway (Aqara)） 集成可让你将 Xiaomi(https://www.mi.com/en/) Aqara 兼容设备集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="小米网关（Xiaomi Gateway (Aqara)） 集成可让你将 Xiaomi(https://www.mi.com/en/) Aqara 兼容设备集成到 Home Assistant 中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="xiaomi-gateway-aqara"><a href="#xiaomi-gateway-aqara" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Xiaomi Gateway (Aqara)<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>小米网关（Xiaomi Gateway (Aqara)）</strong> 集成可让你将 <a href="https://www.mi.com/en/" target="_blank" rel="noopener noreferrer" class="rp-link">Xiaomi</a> Aqara 兼容设备集成到 Home Assistant 中。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+该网关有两个版本：v1 和 v2。</p><ul>
+<li>v1 可直接与 Home Assistant 配合使用，没有明显问题。</li>
+<li>v2 在启用本地 API 时可能没有那么直接，甚至可能需要拆开设备。小米曾表示正在推进这项支持。如果你使用的是 Hub 2 并遇到问题，请查看<a href="#troubleshooting" class="rp-link">故障排除</a>部分。</li>
+</ul></div></div>
+<h2 class="rp-toc-include" id="支持的设备"><a href="#支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备</h2>
+<ul>
+<li>Aqara Air Conditioning Companion (lumi.acpartner.v3)</li>
+<li>Aqara Intelligent Door Lock (lock.aq1)</li>
+<li>Aqara Wall Switch (Double)</li>
+<li>Aqara Wall Switch (Single)</li>
+<li>Aqara Wall Switch LN (Double)</li>
+<li>Aqara Wall Switch LN (Single)</li>
+<li>Aqara Wireless Switch (Double)</li>
+<li>Aqara Wireless Switch (Single)</li>
+<li>Battery</li>
+<li>Button 1st generation (Single, Double, Long Click)</li>
+<li>Button 2nd generation (Single, Double)</li>
+<li>Cube</li>
+<li>Door and Window Sensor (1st and 2nd generation)</li>
+<li>Gas Leak Detector (reports alarm and density)</li>
+<li>Gateway (Light, Illumination Sensor, Ringtone play)</li>
+<li>Intelligent Curtain</li>
+<li>Motion Sensor (1st and 2nd generation)</li>
+<li>Plug aka Socket (Zigbee version, reports power consumed, power load, state and if the device is in use)</li>
+<li>Smoke Detector (reports alarm and density)</li>
+<li>Temperature and Humidity Sensor (1st and 2nd generation)</li>
+<li>Vibration Sensor</li>
+<li>Wall Plug (reports power consumed, power load, and state)</li>
+<li>Water Leak Sensor</li>
+<li>Xiaomi Mijia Gateway (lumi.gateway.v2, lumi.gateway.v3)</li>
+</ul>
+<h2 class="rp-toc-include" id="不支持的设备"><a href="#不支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>不支持的设备</h2>
+<ul>
+<li>Xiaomi Aqara Gateway (lumi.gateway.aqhm01)，因为无法在米家 App 中启用开发者模式。</li>
+<li>Gateway Radio</li>
+<li>Gateway Button</li>
+<li>Xiaomi Mi Air Conditioning Companion (lumi.acpartner.v2)</li>
+<li>Aqara Intelligent Air Conditioner Controller Hub (lumi.acpartner.v1)</li>
+<li>Aqara 墙壁开关（单键和双键）的解耦模式</li>
+<li>燃气和烟雾探测器的额外报警事件：模拟报警、电池故障报警（仅烟雾探测器）、灵敏度故障报警、I2C 通信故障</li>
+</ul>
+<h2 class="rp-toc-include" id="设置"><a href="#设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置</h2>
+<p>请使用手机和米家应用完成设置流程。完成后，你可以按照<a href="https://www.domoticz.com/wiki/Xiaomi_Gateway_(Aqara)#Adding_the_Xiaomi_Gateway_to_Domoticz" target="_blank" rel="noopener noreferrer" class="rp-link">本教程</a>从应用中获取密钥（密码）。</p>
+<p>要在你的安装环境中启用 <strong>Xiaomi Gateway (Aqara)</strong>，请前往 <strong><a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong>。Xiaomi Aqara 网关通常会被自动发现，并显示在概览中。选择<strong>配置</strong>，并按步骤填写可选设置。如果 Aqara 网关没有自动出现，请选择右下角的 + 图标，然后选择 <a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=xiaomi_aqara" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Xiaomi Gateway (Aqara)</strong></a> 进入设置流程。若要配置多个网关，只需重复设置流程即可。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">interface</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 要使用的网络接口。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> any</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">key</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 网关的密钥。*如果只使用传感器和/或二进制传感器，则为可选。*</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 网关名称</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="实体"><a href="#实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>实体</h2>
+<p>Xiaomi Gateway (Aqara) 集成支持以下实体。</p>
+<h3 class="rp-toc-include" id="盖板"><a href="#盖板" class="rp-header-anchor rp-link" aria-hidden="true">#</a>盖板</h3>
+<p>cover 实体可让你控制已连接的 Aqara 窗帘设备。你可以执行以下操作：</p>
+<ul>
+<li>打开窗帘</li>
+<li>关闭窗帘</li>
+<li>停止窗帘移动</li>
+<li>将窗帘移动到指定位置</li>
+<li>查看窗帘当前位置</li>
+</ul>
+<h3 class="rp-toc-include" id="灯光"><a href="#灯光" class="rp-header-anchor rp-link" aria-hidden="true">#</a>灯光</h3>
+<p>light 实体可让你控制 Xiaomi 网关的内部灯光。该实体名称为 <code>light.gateway_light_28ffffffffff</code>。你可以执行以下操作：</p>
+<ul>
+<li>打开和关闭灯光</li>
+<li>设置亮度</li>
+<li>使用 HS 或 RGB 颜色编码设置颜色</li>
+</ul>
+<p>前提是你已经完成 <a href="/home-assistant/integrations/xiaomi_aqara/index.html" class="rp-link">Xiaomi Gateway (Aqara)</a> 的设置。</p>
+<h3 class="rp-toc-include" id="门锁"><a href="#门锁" class="rp-header-anchor rp-link" aria-hidden="true">#</a>门锁</h3>
+<p>Aqara 门锁无法通过 Home Assistant 直接控制。不过，lock 实体可让你查看以下数据：</p>
+<ul>
+<li>
+<p><code>changed_by</code> 属性提供上一次成功解锁的用户/钥匙 ID。</p>
+</li>
+<li>
+<p>如果有人尝试解锁设备但连续失败超过 3 次，<code>verified_wrong_times</code> 属性会递增。成功解锁后，该计数器会重置。</p>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="二进制传感器"><a href="#二进制传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二进制传感器</h3>
+<p>binary sensor 实体可让你读取 <a href="https://www.mi.com/en/" target="_blank" rel="noopener noreferrer" class="rp-link">Xiaomi</a> 二进制传感器的数据。</p>
+<h4 class="rp-toc-include" id="支持的二进制传感器类型"><a href="#支持的二进制传感器类型" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的二进制传感器类型</h4>
+<p>以下是受支持的二进制传感器列表，并包含这些属性（如适用）：名称、型号、Zigbee 实体、状态、事件、事件键以及事件值。</p>
+<ul>
+<li>
+<p><strong>Motion Sensor (1st gen)</strong></p>
+<ul>
+<li>Model no.: RTCGQ01LM</li>
+<li>Zigbee entity: motion</li>
+<li>States: on, off</li>
+<li>Event: <code>xiaomi_aqara.motion</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Motion Sensor (2nd gen)</strong></p>
+<ul>
+<li>Model no.: RTCGQ11LM</li>
+<li>Zigbee entity: sensor_motion.aq2</li>
+<li>States: on, off</li>
+<li>Event: <code>xiaomi_aqara.motion</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Xiaomi Door and Window Sensor (1st gen)</strong></p>
+<ul>
+<li>Model no.: MCCGQ01LM</li>
+<li>Zigbee entity: magnet</li>
+<li>States: on, off</li>
+</ul>
+</li>
+<li>
+<p><strong>Aqara Door and Window Sensor (2nd gen)</strong></p>
+<ul>
+<li>Model no.: MCCGQ11LM</li>
+<li>Zigbee entity: sensor_magnet.aq2</li>
+<li>States: on, off</li>
+</ul>
+</li>
+<li>
+<p><strong>Smoke Detector</strong></p>
+<ul>
+<li>Model no.: JTYJ-GD-01LM/BW</li>
+<li>Zigbee entity: smoke</li>
+<li>States: on, off</li>
+</ul>
+</li>
+<li>
+<p><strong>Gas Leak Detector</strong></p>
+<ul>
+<li>Model no.: JTQJ-BF-01LM/BW</li>
+<li>Zigbee entity: natgas</li>
+<li>States: on, off</li>
+</ul>
+</li>
+<li>
+<p><strong>Water Leak Sensor</strong></p>
+<ul>
+<li>Model no.: SJCGQ11LM</li>
+<li>Zigbee entity: sensor_wleak.aq1</li>
+<li>States: on, off</li>
+</ul>
+</li>
+<li>
+<p><strong>Button (1st gen)</strong></p>
+<ul>
+<li>Model no.: WXKG01LM</li>
+<li>Zigbee entity: switch</li>
+<li>States: on (through long_click_press), off</li>
+<li>Event: <code>xiaomi_aqara.click</code></li>
+<li>Event key: <code>click_type</code></li>
+<li>Event values: <code>long_click_press</code>, <code>hold</code>, <code>single</code>, <code>double</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Button (2nd gen)</strong></p>
+<ul>
+<li>Model no.: WXKG11LM</li>
+<li>Zigbee entity: sensor_switch.aq2, remote.b1acn01</li>
+<li>States: on (through long_click_press), off</li>
+<li>Event: <code>xiaomi_aqara.click</code></li>
+<li>Event key: <code>click_type</code></li>
+<li>Event values: <code>single</code>, <code>double</code>, <code>long_click_press</code>, <code>hold</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Button (2nd gen, model b)</strong></p>
+<ul>
+<li>Model no.: WXKG12LM</li>
+<li>Zigbee entity: sensor_switch.aq3</li>
+<li>States: off (always)</li>
+<li>Event: <code>xiaomi_aqara.click</code></li>
+<li>Event key: <code>click_type</code></li>
+<li>Event values: <code>single</code>, <code>double</code>, <code>long_click_press</code>, <code>shake</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Aqara Wireless Switch (Single)</strong></p>
+<ul>
+<li>Model no.: WXKG03LM</li>
+<li>Zigbee entity: 86sw1</li>
+<li>States: off (always)</li>
+<li>Event: <code>xiaomi_aqara.click</code></li>
+<li>Event key: <code>click_type</code></li>
+<li>Event values: <code>single</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Aqara Wireless Switch (Double)</strong></p>
+<ul>
+<li>Model no.: WXKG02LM</li>
+<li>Zigbee entity: 86sw2</li>
+<li>States: off (always)</li>
+<li>Event: <code>xiaomi_aqara.click</code></li>
+<li>Event key: <code>click_type</code></li>
+<li>Event values: <code>single</code>, <code>both</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Aqara Wireless Switch (Single) (2nd gen)</strong></p>
+<ul>
+<li>Model no.: WXKG03LM</li>
+<li>Zigbee entity: remote.b186acn01</li>
+<li>States: off (always)</li>
+<li>Event: <code>xiaomi_aqara.click</code></li>
+<li>Event key: <code>click_type</code></li>
+<li>Event values: <code>single</code>, <code>double</code>, <code>long</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Aqara Wireless Switch (Double) (2nd gen)</strong></p>
+<ul>
+<li>Model no.: WXKG02LM</li>
+<li>Zigbee entity: remote.b286acn01</li>
+<li>States: off (always)</li>
+<li>Event: <code>xiaomi_aqara.click</code></li>
+<li>Event key: <code>click_type</code></li>
+<li>Event values: <code>single</code>, <code>double</code>, <code>long</code>, <code>both</code>, <code>double_both</code>, <code>long_both</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Cube</strong></p>
+<ul>
+<li>Model no.: MFKZQ01LM</li>
+<li>Zigbee entity: cube</li>
+<li>States: off (always)</li>
+<li>Event: <code>xiaomi_aqara.cube_action</code></li>
+<li>Event key: <code>action_type</code>, <code>action_value</code> (rotate)</li>
+<li>Event values: <code>flip90</code>, <code>flip180</code>, <code>move</code>, <code>tap_twice</code>, <code>shake_air</code>, <code>swing</code>, <code>alert</code>, <code>free_fall</code>, <code>rotate</code> (degrees at action_value)</li>
+</ul>
+</li>
+<li>
+<p><strong>Vibration Sensor</strong></p>
+<ul>
+<li>Model no.: DJT11LM</li>
+<li>Zigbee entity: vibration</li>
+<li>States: off (always)</li>
+<li>Event: <code>xiaomi_aqara.movement</code></li>
+<li>Event key: <code>movement_type</code></li>
+<li>Event values: <code>vibrate</code>, <code>tilt</code>, <code>free_fall</code></li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="二进制传感器自动化示例"><a href="#二进制传感器自动化示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二进制传感器自动化示例</h4>
+<h5 class="rp-toc-include" id="运动"><a href="#运动" class="rp-header-anchor rp-link" aria-hidden="true">#</a>运动</h5>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;If there is motion and it&#x27;s dark turn on the gateway light&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.motion_sensor_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.illumination_34ce00xxxx11</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      below</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 300</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_34ce00xxxx11</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        brightness</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 5</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> automation.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> automation.MOTION_OFF</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;If there no motion for 5 minutes turn off the gateway light&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.motion_sensor_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      for</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        minutes</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 5</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_off</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_34ce00xxxx11</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> automation.turn_off</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> automation.Motion_off</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h5 class="rp-toc-include" id="门和或窗二进制传感器"><a href="#门和或窗二进制传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>门和/或窗二进制传感器</h5>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;If the window is open turn off the radiator&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.door_window_sensor_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> climate.set_operation_mode</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> climate.livingroom</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        operation_mode</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;If the window is closed for 5 minutes turn on the radiator again&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.door_window_sensor_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      for</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        minutes</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 5</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> climate.set_operation_mode</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> climate.livingroom</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        operation_mode</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Smart schedule&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Notify if door is opened when away&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.door_window_sensor_15xxxxxxc9xx6b</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> group.family</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;not_home&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.notify_person</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;The door has been opened&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="烟雾"><a href="#烟雾" class="rp-header-anchor rp-link" aria-hidden="true">#</a>烟雾</h4>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Send notification on fire alarm&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.smoke_sensor_158d0001574899</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.html5</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Fire alarm!&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Fire/Smoke detected!&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.play_ringtone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        gw_mac</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xxxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        ringtone_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        ringtone_vol</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 100</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="燃气"><a href="#燃气" class="rp-header-anchor rp-link" aria-hidden="true">#</a>燃气</h4>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Send notification on gas alarm&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.natgas_sensor_158dxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.html5</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Gas alarm!&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Gas with a density of {{ state_attr(&#x27;binary_sensor.natgas_sensor_158dxxxxxxxxxx&#x27;, &#x27;density&#x27;) }} detected.&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="xiaomi-无线按钮"><a href="#xiaomi-无线按钮" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Xiaomi 无线按钮</h4>
+<p>Xiaomi 无线按钮有 3 个版本：</p>
+<ul>
+<li>圆形按钮支持的事件有 <code>single</code>、<code>double</code>、<code>hold</code>、<code>long_click_press</code> 和 <code>long_click_release</code>。</li>
+<li>Aqara 品牌按钮为方形。型号 WXKG11LM 仅支持 <code>single</code>、<code>double</code>、<code>long_click_press</code> 和 <code>hold</code> 事件。WXKG12LM 支持 <code>single</code>、<code>double</code>、<code>long_click_press</code> 和 <code>shake</code> 事件。</li>
+</ul>
+<p>对于 Aqara 版本，触发双击所需的两次点击间隔必须比圆形按钮更长。点击过快会触发单击事件。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Toggle dining light on single press&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.switch_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> single</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.toggle</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.wall_switch_left_158d000xxxxx01</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Toggle couch light on double click&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.switch_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> double</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.toggle</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.wall_switch_right_158d000xxxxx01</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Let a dog bark on long press&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.switch_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> long_click_press</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.play_ringtone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        gw_mac</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xxxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        ringtone_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        ringtone_vol</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 8</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h5 class="rp-toc-include" id="xiaomi-cube"><a href="#xiaomi-cube" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Xiaomi Cube</h5>
+<p>支持的事件有 <code>flip90</code>、<code>flip180</code>、<code>move</code>、<code>tap_twice</code>、<code>shake_air</code>、<code>swing</code>、<code>alert</code>、<code>free_fall</code> 和 <code>rotate</code>。此集成会将最后一次动作保存为 <code>last_action</code> 属性。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Cube event flip90&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.cube_action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.cube_15xxxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        action_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> flip90</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_28xxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        color_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;springgreen&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Cube event flip180&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.cube_action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.cube_15xxxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        action_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> flip180</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_28xxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        color_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;darkviolet&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Cube event move&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.cube_action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.cube_15xxxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        action_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> move</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_28xxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        color_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;gold&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Cube event tap_twice&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.cube_action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.cube_15xxxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        action_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> tap_twice</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_28xxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        color_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;deepskyblue&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Cube event shake_air&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.cube_action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.cube_15xxxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        action_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> shake_air</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_28xxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        color_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;blue&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h5 class="rp-toc-include" id="aqara-无线开关"><a href="#aqara-无线开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Aqara 无线开关</h5>
+<p>Aqara 无线开关有单键版和双键版。每个按键的行为都类似于 Wireless Button，但仅支持 <code>single</code> 点击事件。双键版还会额外提供第三个设备 <code>binary_sensor.wall_switch_both_158xxxxxxxxx12</code>，当两个按键同时按下时，它会报告一个名为 <code>both</code> 的点击事件。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Decrease brightness of the gateway light&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.wall_switch_left_158xxxxxxxxx12</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> single</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_34xxxxxxxx13</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        brightness</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% if state_attr(&#x27;light.gateway_light_34xxxxxxxx13&#x27;, &#x27;brightness&#x27;) %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            {% if state_attr(&#x27;light.gateway_light_34xxxxxxxx13&#x27;, &#x27;brightness&#x27;) - 60 &gt;= 10 %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">              {{state_attr(&#x27;light.gateway_light_34xxxxxxxx13&#x27;, &#x27;brightness&#x27;) - 60}}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            {% else %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">              {{state_attr(&#x27;light.gateway_light_34xxxxxxxx13&#x27;, &#x27;brightness&#x27;)}}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            {% endif %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% else %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            10</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% endif %}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Increase brightness of the gateway light&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.wall_switch_right_158xxxxxxxxx12</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> single</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_34xxxxxxxx13</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        brightness</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% if state_attr(&#x27;light.gateway_light_34xxxxxxxx13&#x27;, &#x27;brightness&#x27;) %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            {% if state_attr(&#x27;light.gateway_light_34xxxxxxxx13&#x27;, &#x27;brightness&#x27;) + 60 &lt;= 255 %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">              {{state_attr(&#x27;light.gateway_light_34xxxxxxxx13&#x27;, &#x27;brightness&#x27;) + 60}}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            {% else %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">              {{state_attr(&#x27;light.gateway_light_34xxxxxxxx13&#x27;, &#x27;brightness&#x27;)}}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            {% endif %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% else %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            10</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% endif %}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Turn off the gateway light&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.wall_switch_both_158xxxxxxxxx12</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> both</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_off</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.gateway_light_34xxxxxxxx13</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="振动传感器"><a href="#振动传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>振动传感器</h4>
+<p>此自动化会在检测到振动或倾斜时切换客厅灯的状态。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Turn on Living Room Lamp on vibration&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.movement</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.vibration_xxxx000000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        movement_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> vibrate</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.toggle</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.living_room_lamp</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Turn on Living Room Lamp on tilt&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.movement</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.vibration_xxxx000000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        movement_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> tilt</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.toggle</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.living_room_lamp</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<p>sensor 实体可让你读取 <a href="https://www.mi.com/en/" target="_blank" rel="noopener noreferrer" class="rp-link">Xiaomi</a> 传感器的数据。</p>
+<p>支持以下传感器类型：</p>
+<ul>
+<li>电池电量（百分比）</li>
+<li>床铺活动 / 振动（微米）</li>
+<li>坐标</li>
+<li>湿度（百分比）</li>
+<li>光照度（lux）</li>
+<li>耗电量（kWh）</li>
+<li>功率负载（W）</li>
+<li>气压（hPa）</li>
+<li>温度（取决于 UI 设置，摄氏或华氏）</li>
+<li>倾斜角度</li>
+</ul>
+<h2 class="rp-toc-include" id="开关"><a href="#开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关</h2>
+<p>switch 实体可让你读取 <a href="https://www.mi.com/en/" target="_blank" rel="noopener noreferrer" class="rp-link">Xiaomi aqara</a> 开关的数据，并切换其状态。</p>
+<h2 class="rp-toc-include" id="动作"><a href="#动作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作</h2>
+<p>该网关提供以下动作：</p>
+<h3 class="rp-toc-include" id="动作播放铃声"><a href="#动作播放铃声" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：播放铃声</h3>
+<p><code>xiaomi_aqara.play_ringtone</code> 动作用于播放指定铃声。网关固件版本至少需要为 <code>1.4.1_145</code>。请参见下面的示例。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>gw_mac</code></td><td>no</td><td>Xiaomi Aqara Gateway 的 MAC 地址</td></tr><tr><td><code>ringtone_id</code></td><td>no</td><td>允许的铃声 ID 之一</td></tr><tr><td><code>ringtone_vol</code></td><td>yes</td><td>音量百分比</td></tr></tbody></table></div>
+<p><code>ringtone_id</code> 的允许值包括：</p>
+<ul>
+<li>警报声
+<ul>
+<li>0 - Police car 1</li>
+<li>1 - Police car 2</li>
+<li>2 - Accident</li>
+<li>3 - Countdown</li>
+<li>4 - Ghost</li>
+<li>5 - Sniper rifle</li>
+<li>6 - Battle</li>
+<li>7 - Air raid</li>
+<li>8 - Bark</li>
+</ul>
+</li>
+<li>门铃声
+<ul>
+<li>10 - Doorbell</li>
+<li>11 - Knock at a door</li>
+<li>12 - Amuse</li>
+<li>13 - Alarm clock</li>
+</ul>
+</li>
+<li>闹钟铃声
+<ul>
+<li>20 - MiMix</li>
+<li>21 - Enthusiastic</li>
+<li>22 - GuitarClassic</li>
+<li>23 - IceWorldPiano</li>
+<li>24 - LeisureTime</li>
+<li>25 - ChildHood</li>
+<li>26 - MorningStreamLiet</li>
+<li>27 - MusicBox</li>
+<li>28 - Orange</li>
+<li>29 - Thinker</li>
+</ul>
+</li>
+<li>自定义铃声（通过米家应用上传），从 10001 开始</li>
+</ul>
+<h3 class="rp-toc-include" id="动作停止铃声"><a href="#动作停止铃声" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：停止铃声</h3>
+<p><code>xiaomi_aqara.stop_ringtone</code> 动作会立即停止当前播放的铃声。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>gw_mac</code></td><td>no</td><td>Xiaomi Aqara Gateway 的 MAC 地址</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作添加设备"><a href="#动作添加设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：添加设备</h3>
+<p><code>xiaomi_aqara.add_device</code> 动作会为 Xiaomi Aqara Gateway 开启 30 秒的入网许可。之后按一次配对按钮即可添加新设备。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>gw_mac</code></td><td>no</td><td>Xiaomi Aqara Gateway 的 MAC 地址</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作移除设备"><a href="#动作移除设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：移除设备</h3>
+<p><code>xiaomi_aqara.remove_device</code> 动作用于移除指定设备。如果某个设备需要与另一个网关配对，则必须先执行移除。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>gw_mac</code></td><td>no</td><td>Xiaomi Aqara Gateway 的 MAC 地址</td></tr><tr><td><code>device_id</code></td><td>no</td><td>要移除设备的硬件地址</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<h3 class="rp-toc-include" id="第一代智能按钮长按"><a href="#第一代智能按钮长按" class="rp-header-anchor rp-link" aria-hidden="true">#</a>第一代智能按钮长按</h3>
+<p>此示例会在按住按钮时播放狗叫声，并在单击按钮时停止播放。仅适用于第一代圆形按钮。</p>
+<p><em>注意：声音播放结束后会自动停止。</em></p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Let a dog bark on long press&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.switch_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> long_click_press</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.play_ringtone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        gw_mac</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xxxxxxxxxxxx</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        ringtone_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        ringtone_vol</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 8</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Stop barking immediately on single click&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.switch_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> single</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.stop_ringtone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        gw_mac</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xxxxxxxxxxxx</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="智能按钮双击"><a href="#智能按钮双击" class="rp-header-anchor rp-link" aria-hidden="true">#</a>智能按钮双击</h3>
+<p>此示例会在双击按钮时切换客厅灯的状态。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Double Click to toggle living room lamp&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xiaomi_aqara.click</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.switch_158d000xxxxxc2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        click_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> double</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.toggle</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.living_room_lamp</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<h3 class="rp-toc-include" id="初始设置问题"><a href="#初始设置问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>初始设置问题</h3>
+<p>如果你在使用应用初始化网关时遇到问题，请尝试更换另一部手机。例如，它在 OnePlus 3 上可能无法工作，但在 Nexus 5 上可以。</p>
+<h3 class="rp-toc-include" id="连接问题"><a href="#连接问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>连接问题</h3>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">2017-08-20</span><span style="color:var(--shiki-token-string)"> 16:51:19</span><span style="color:var(--shiki-token-string)"> ERROR</span><span style="color:var(--shiki-foreground)"> (SyncWorker_0) [homeassistant.components.xiaomi] No gateway discovered</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">2017-08-20</span><span style="color:var(--shiki-token-string)"> 16:51:20</span><span style="color:var(--shiki-token-string)"> ERROR</span><span style="color:var(--shiki-foreground)"> (MainThread) [homeassistant.setup] Setup failed </span><span style="color:var(--shiki-token-keyword)">for</span><span style="color:var(--shiki-foreground)"> xiaomi: Component failed to initialize.</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>这意味着 Home Assistant 没有从你的 Xiaomi 网关收到任何响应。问题可能出在本地网络或防火墙。</p>
+<ul>
+<li>确保你已<a href="https://www.domoticz.com/wiki/Xiaomi_Gateway_(Aqara)#Adding_the_Xiaomi_Gateway_to_Domoticz" target="_blank" rel="noopener noreferrer" class="rp-link">启用局域网访问</a>。</li>
+<li>关闭运行 Home Assistant 的系统上的防火墙。</li>
+<li>确保你的路由器支持组播，因为这是 Xiaomi Gateway 的要求。</li>
+<li>尝试先禁用再重新启用局域网访问。</li>
+<li>对网关执行硬重置：按住网关按钮 30 秒，然后从头重新开始设置。</li>
+<li>如果你在 <a href="/home-assistant/docs/installation/docker/" class="rp-link">Docker</a> 中运行 Home Assistant，请确保使用 <code>--net=host</code>。</li>
+<li>如果你在尝试控制网关灯时，在日志中收到 <code>{&quot;error&quot;:&quot;Invalid key&quot;}</code>
+<ul>
+<li>你应使用 Android 手机重新生成密钥，或者使用 <a href="https://www.bluestacks.com" target="_blank" rel="noopener noreferrer" class="rp-link">bluestacks</a> 之类的模拟器。某些情况下，使用 iOS 应用生成的密钥会有问题。</li>
+<li>你还需要确保网络支持组播。如果你在虚拟机中运行 Home Assistant（例如 Proxmox），可尝试在宿主机上执行 <code>echo 0 &gt;/sys/class/net/vmbr0/bridge/multicast_snooping</code>，然后重启服务或重启宿主机。</li>
+</ul>
+</li>
+</ul>
+<p>如果你的网关 MAC 地址以 <code>04:CF:8C</code> 或 <code>7C:49:EB</code> 开头，那么很可能网关上的必要端口 <code>9898</code> 是关闭的，因此这种方法无法使用。网上有一些替代方案，但通常需要焊接并接触电路操作。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#支持的设备" class="rp-toc-item rp-link" title="支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备</span></a><a href="#不支持的设备" class="rp-toc-item rp-link" title="不支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">不支持的设备</span></a><a href="#设置" class="rp-toc-item rp-link" title="设置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">设置</span></a><a href="#实体" class="rp-toc-item rp-link" title="实体" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">实体</span></a><a href="#盖板" class="rp-toc-item rp-link" title="盖板" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">盖板</span></a><a href="#灯光" class="rp-toc-item rp-link" title="灯光" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">灯光</span></a><a href="#门锁" class="rp-toc-item rp-link" title="门锁" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">门锁</span></a><a href="#二进制传感器" class="rp-toc-item rp-link" title="二进制传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">二进制传感器</span></a><a href="#支持的二进制传感器类型" class="rp-toc-item rp-link" title="支持的二进制传感器类型" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">支持的二进制传感器类型</span></a><a href="#二进制传感器自动化示例" class="rp-toc-item rp-link" title="二进制传感器自动化示例" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">二进制传感器自动化示例</span></a><a href="#烟雾" class="rp-toc-item rp-link" title="烟雾" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">烟雾</span></a><a href="#燃气" class="rp-toc-item rp-link" title="燃气" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">燃气</span></a><a href="#xiaomi-无线按钮" class="rp-toc-item rp-link" title="Xiaomi 无线按钮" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Xiaomi 无线按钮</span></a><a href="#振动传感器" class="rp-toc-item rp-link" title="振动传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">振动传感器</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#开关" class="rp-toc-item rp-link" title="开关" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">开关</span></a><a href="#动作" class="rp-toc-item rp-link" title="动作" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">动作</span></a><a href="#动作播放铃声" class="rp-toc-item rp-link" title="动作：播放铃声" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：播放铃声</span></a><a href="#动作停止铃声" class="rp-toc-item rp-link" title="动作：停止铃声" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：停止铃声</span></a><a href="#动作添加设备" class="rp-toc-item rp-link" title="动作：添加设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：添加设备</span></a><a href="#动作移除设备" class="rp-toc-item rp-link" title="动作：移除设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：移除设备</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#第一代智能按钮长按" class="rp-toc-item rp-link" title="第一代智能按钮长按" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">第一代智能按钮长按</span></a><a href="#智能按钮双击" class="rp-toc-item rp-link" title="智能按钮双击" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">智能按钮双击</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#初始设置问题" class="rp-toc-item rp-link" title="初始设置问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">初始设置问题</span></a><a href="#连接问题" class="rp-toc-item rp-link" title="连接问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">连接问题</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

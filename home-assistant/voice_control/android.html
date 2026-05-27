@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android 上的 Assist - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Android 上的 Assist - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="你可以通过 Home Assistant Companion App(https://companion.home-assistant.io/docs/gettingstarted/) 在 Android 手机和平板上使用 Assist。 本页属于 Home Assistant 中文文档。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="你可以通过 Home Assistant Companion App(https://companion.home-assistant.io/docs/gettingstarted/) 在 Android 手机和平板上使用 Assist。 本页属于 Home Assistant 中文文档。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/android_multi-server_01.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/wearos_assist_app.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/android_tile.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/android_watch_5.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/android_watch_1.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/android_watch_2.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/android_watch_3.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/android_watch_6.png"/><link rel="preload" as="image" href="/home-assistant/images/assist/android_watch_7.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="android-上的-assist"><a href="#android-上的-assist" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Android 上的 Assist<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<h2 class="rp-toc-include" id="android-手机上的-assist"><a href="#android-手机上的-assist" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Android 手机上的 Assist</h2>
+<p>你可以通过 <a href="https://companion.home-assistant.io/docs/getting_started/" target="_blank" rel="noopener noreferrer" class="rp-link">Home Assistant Companion App</a> 在 Android 手机和平板上使用 Assist。</p>
+<h3 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h3>
+<ul>
+<li><a href="https://companion.home-assistant.io/docs/getting_started/" target="_blank" rel="noopener noreferrer" class="rp-link">Home Assistant Companion App</a> 已安装</li>
+<li>已设置好一个 Assistant：可以是<a href="/home-assistant/voice_control/voice_remote_cloud_assistant/index.html" class="rp-link">云端</a>（推荐，性能更好）或<a href="/home-assistant/voice_control/voice_remote_local_assistant/index.html" class="rp-link">本地</a></li>
+<li>你想通过 Assist 控制的设备已经<a href="/home-assistant/voice_control/voice_remote_expose_devices/index.html" class="rp-link">暴露给 Assist</a>，并且你已经检查了大部分<a href="/home-assistant/voice_control/best_practices/index.html" class="rp-link">最佳实践</a></li>
+</ul>
+<h3 class="rp-toc-include" id="在-home-assistant-中启动-assist"><a href="#在-home-assistant-中启动-assist" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 Home Assistant 中启动 Assist</h3>
+<ol>
+<li>在手机上打开 Home Assistant。</li>
+<li>在右上角选择三点菜单，然后选择 <strong>Assist</strong>。</li>
+<li><a href="/home-assistant/voice_control/custom_sentences/index.html" class="rp-link">说出命令</a>。</li>
+</ol>
+<h3 class="rp-toc-include" id="将-home-assistant-assist-设置为默认语音助手应用"><a href="#将-home-assistant-assist-设置为默认语音助手应用" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 Home Assistant Assist 设置为默认语音助手应用</h3>
+<p>要在 Android 手机上将 Home Assistant Assist 设置为默认语音助手应用，请按以下步骤操作：</p>
+<ol>
+<li>在 Android 手机上打开 <strong>Home Assistant</strong> 应用。</li>
+<li>前往 <strong>设置</strong> &gt; <strong>Companion app</strong>。</li>
+<li>选择 <strong>Assist for Android</strong>。</li>
+<li>选择 <strong>Set as default</strong>。</li>
+<li>在打开的系统设置中，选择 <strong>Default digital 语音助手 app</strong>。
+<ul>
+<li>在某些 Android 版本中，这一项可能叫作 <strong>Voice Assistant</strong> 或 <strong>Assist app</strong>。</li>
+</ul>
+</li>
+<li>选择 <strong>Home Assistant</strong>。</li>
+<li>返回 <strong>Home Assistant</strong> 应用。现在你应该会看到 <strong>Assist</strong> 已成为默认语音助手。</li>
+<li>使用启动语音助手的手势来启动 Assist。具体手势会因 Android 版本不同而不同：
+<ul>
+<li>从左下角向上滑动。</li>
+<li>长按电源键。</li>
+<li>按住主页按钮（底部的方形按钮）。</li>
+</ul>
+</li>
+<li>你现在也可以从锁定屏幕启动 Assist。
+<lite-youtube videoid="8TsutVHj7LQ" videotitle="Use Home Assistant from anywhere on Android"></lite-youtube></li>
+</ol>
+<p>要免提激活 Assist，请<a href="#enabling-wake-word-detection-on-android" class="rp-link">启用唤醒词检测</a>。</p>
+<h3 class="rp-toc-include" id="关于-android-上的唤醒词检测"><a href="#关于-android-上的唤醒词检测" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于 Android 上的唤醒词检测</h3>
+<p>唤醒词检测允许你通过说出像 &quot;Hey Jarvis&quot; 或 &quot;Hey Nabu&quot; 这样的唤醒词来免提激活 Assist。你的 Android 设备会使用 <a href="/home-assistant/voice_control/about_wake_word/index.html#about-on-devices-wake-word-processing-microwakeword" class="rp-link">microWakeWord</a> 在本地处理唤醒词，这意味着你的音频会保持私密，在检测到唤醒词之前不会发送到 Home Assistant。</p>
+<p>:::important
+唤醒词检测会持续监听音频以识别唤醒词，这会明显影响电池续航。建议在不需要时关闭唤醒词检测，或者<a href="#controlling-wake-word-detection-from-home-assistant" class="rp-link">从 Home Assistant 远程控制它</a>，只在需要时开启。
+:::</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+Android 上的唤醒词检测比 &quot;Ok Google&quot; 更耗电，因为 Google Assistant 在受支持设备上可以使用专用的低功耗硬件进行唤醒词检测。遗憾的是，Google 并未向第三方应用开发者开放这类专用硬件，因此像 Home Assistant 这样的应用只能依赖标准音频处理，而这需要让 CPU 始终保持运行，从而更耗电。这一平台限制意味着第三方语音助手无法达到 Google 内置语音助手那样的电池效率。</p></div></div>
+<p>唤醒词检测完全在你的 Android 设备上运行，这意味着即使没有有效的互联网连接，它也能工作（不过执行命令仍然需要连接到你的 Home Assistant 实例）。当多个设备同时检测到同一个唤醒词时（例如另一台 Android 手机或 Voice Preview Edition），只有最先捕获到唤醒词的设备会保持 Assist 会话开启，其他设备会自动取消自己的会话。</p>
+<h3 class="rp-toc-include" id="在-android-上启用唤醒词检测"><a href="#在-android-上启用唤醒词检测" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 Android 上启用唤醒词检测</h3>
+<p>:::note
+Android 上的唤醒词检测仍处于实验阶段。</p>
+<p>如果应用变得无响应或无法正常打开，请取消将 Home Assistant 设为默认数字语音助手，以关闭唤醒词检测：</p>
+<ul>
+<li>在 Android 手机上，前往 <strong>设置</strong> &gt; <strong>Apps</strong> &gt; <strong>Default apps</strong> &gt; <strong>Digital 语音助手 app</strong>，然后选择其他语音助手或 <strong>None</strong>。</li>
+<li>如果遇到问题，请在 <a href="https://github.com/home-assistant/android/issues" target="_blank" rel="noopener noreferrer" class="rp-link">GitHub 上提交 issue</a>，以便团队排查。
+:::</li>
+</ul>
+<p>要在 Android 设备上启用唤醒词检测，请按以下步骤操作：</p>
+<h4 class="rp-toc-include" id="前提条件-1"><a href="#前提条件-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h4>
+<ul>
+<li>Home Assistant Companion App 版本 2026.2.3 或更高版本</li>
+<li>已将 Assist 设置为<a href="#setting-up-home-assistant-assist-as-default-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B-app" class="rp-link">默认语音助手应用</a></li>
+<li><a href="/home-assistant/voice_control/voice_remote_cloud_assistant/index.html" class="rp-link">Home Assistant Cloud</a> 或手动配置的<a href="/home-assistant/voice_control/voice_remote_local_assistant.html" class="rp-link">本地 Assist 管线</a></li>
+</ul>
+<h4 class="rp-toc-include" id="启用唤醒词检测"><a href="#启用唤醒词检测" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用唤醒词检测</h4>
+<ol>
+<li>在 Android 手机上打开 <strong>Home Assistant</strong> 应用。</li>
+<li>前往 <strong>设置</strong> &gt; <strong>Companion app</strong>。</li>
+<li>打开 <strong>Assist for Android</strong>。</li>
+<li>启用 <strong>Wake word detection</strong>。</li>
+<li>从可用选项中选择一个唤醒词：
+<ul>
+<li>Hey Nabu</li>
+<li>Hey Jarvis</li>
+<li>Hey Mycroft
+<strong>结果</strong>：启用后，即使设备已锁定或应用在后台，唤醒词检测也能工作。</li>
+</ul>
+</li>
+<li>要在 Android 上使用 Assist，请说出你选择的唤醒词，等待开始聆听的提示音后，再说出命令。</li>
+</ol>
+<h4 class="rp-toc-include" id="从-home-assistant-控制唤醒词检测"><a href="#从-home-assistant-控制唤醒词检测" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Home Assistant 控制唤醒词检测</h4>
+<p>你可以从 Home Assistant 远程开启或关闭唤醒词检测。这对于只在你在家时，或只在特定时间启用唤醒词检测以节省电量的自动化很有用。</p>
+<p>使用 <code>command_wake_word_detection</code> 命令并配合 <code>turn_on</code> 或 <code>turn_off</code> 来控制唤醒词检测。关于如何向配套应用发送命令的详细信息，请参阅<a href="https://companion.home-assistant.io/docs/notifications/notification-commands/" target="_blank" rel="noopener noreferrer" class="rp-link">通知命令文档</a>。</p>
+<h3 class="rp-toc-include" id="在多个-home-assistant-服务器之间使用-assist"><a href="#在多个-home-assistant-服务器之间使用-assist" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在多个 Home Assistant 服务器之间使用 Assist</h3>
+<p>一旦 Assist 被设置为你手机上的默认数字语音助手，你就可以在多个服务器之间使用它。例如，当你还维护着别人家中的 Home Assistant 实例时，这会很有用。</p>
+<ol>
+<li>
+<p>确保你已在这些 Home Assistant 服务器上设置好语音助手。</p>
+</li>
+<li>
+<p>确保这些服务器已经添加到配套应用中。</p>
+<ul>
+<li>在 Android 手机上，前往 <strong>设置</strong> &gt; <strong>Companion app</strong> 并选择 <strong>Add server</strong>。</li>
+<li>从列表中选择额外的服务器。</li>
+</ul>
+</li>
+<li>
+<p>使用启动语音助手的手势来启动 Assist。具体手势会因版本不同而不同。</p>
+<ul>
+<li>从左下角向上滑动。</li>
+<li>长按电源键。</li>
+<li>按住主页按钮（底部的方形按钮）。</li>
+</ul>
+</li>
+<li>
+<p>打开语音助手下拉菜单。</p>
+<p><img src="/home-assistant/images/assist/android_multi-server_01.png" alt="Using Assist with multiple servers"/></p>
+</li>
+<li>
+<p>选择你想要对话的实例中的语音助手。</p>
+<ul>
+<li>说出你的命令。</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="通过快捷方式使用-assist"><a href="#通过快捷方式使用-assist" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过快捷方式使用 Assist</h3>
+<ol>
+<li>在手机上打开 <strong>Widgets</strong> 面板。</li>
+<li>从列表中选择 <strong>Home Assistant</strong>。</li>
+<li>长按 <strong>Assist</strong> 图标并将其拖到主屏幕上。</li>
+<li>选择服务器和语音助手。</li>
+<li>如果你希望能够使用语音控制，请启用 <strong>Start listening</strong> 开关。</li>
+<li>对于你想连接的每个服务器重复此过程，例如当你需要支持别人家的系统时。</li>
+</ol>
+<h2 class="rp-toc-include" id="wear-os-上的-assist"><a href="#wear-os-上的-assist" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Wear OS 上的 Assist</h2>
+<p>通过 Android 的 <a href="https://companion.home-assistant.io/" target="_blank" rel="noopener noreferrer" class="rp-link">Home Assistant Companion App</a> 和 “Assist” 磁贴，你也可以在 Wear OS 上使用 Assist。</p>
+<p><lite-youtube videoid="Dr_ZCbt8w5k" videotitle="Assist on Wear OS"></lite-youtube></p>
+<h3 class="rp-toc-include" id="在-wear-os-上设置-assist"><a href="#在-wear-os-上设置-assist" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 Wear OS 上设置 Assist</h3>
+<p>根据你的 Wear OS 版本不同，设置 Assist 的方式可能会有所不同。</p>
+<ol>
+<li>
+<p>在手表上<a href="https://companion.home-assistant.io/docs/getting_started/" target="_blank" rel="noopener noreferrer" class="rp-link">安装配套应用</a>并连接到 Home Assistant 后，Assist 会自动出现在 <strong>Apps screen</strong> 中。</p>
+<p><img src="/home-assistant/images/assist/wearos_assist_app.png" alt="Assist app"/></p>
+</li>
+<li>
+<p>若要添加 Assist 磁贴，请在 Wear OS 应用中前往 <strong>Tiles</strong> 区域，选择 <strong>Add tile</strong> &gt; <strong>Assist</strong>。</p>
+<p><img src="/home-assistant/images/assist/android_tile.png" alt="Conversation tile"/></p>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="将-assist-添加到表盘"><a href="#将-assist-添加到表盘" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 Assist 添加到表盘</h3>
+<ol>
+<li>
+<p>在手机上打开 <strong>Watch</strong> 应用并选择 <strong>Watch faces</strong>。</p>
+</li>
+<li>
+<p>请确保你选择的表盘支持 complication（小型快捷图标）。</p>
+</li>
+<li>
+<p>点击 <strong>Edit</strong>。</p>
+</li>
+<li>
+<p>在 <strong>Complications</strong> 部分，选择其中一个槽位并选择 <strong>Assist</strong>。</p>
+<ul>
+<li>如果你是刚刚添加 Home Assistant 应用，Assist 可能暂时还不会显示。</li>
+<li>重启手表后，在 <strong>Complications</strong> 下应能看到一组 Home Assistant 图标。</li>
+</ul>
+</li>
+<li>
+<p>保存更改。现在你应该会在表盘上看到 Assist complication。</p>
+<p><img src="/home-assistant/images/assist/android_watch_5.png" alt="Assist complication"/></p>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="在-wear-os-上使用-assist"><a href="#在-wear-os-上使用-assist" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 Wear OS 上使用 Assist</h3>
+<ol>
+<li>
+<p>在手表上打开 Assist。</p>
+<ul>
+<li>例如，向左滑动直到看到 <strong>Assist</strong> 按钮。</li>
+</ul>
+<p><img src="/home-assistant/images/assist/android_watch_1.png" alt="Assist button"/></p>
+</li>
+<li>
+<p>点击 <strong>Assist</strong> 后，等待显示 <strong>How can I assist?</strong>，并等待麦克风开始脉动。</p>
+<p><img src="/home-assistant/images/assist/android_watch_2.png" alt="How can I assist"/></p>
+</li>
+<li>
+<p>说出你的命令。</p>
+<p><img src="/home-assistant/images/assist/android_watch_3.png" alt="Assist speak your command"/></p>
+</li>
+<li>
+<p>如需更换语音助手，点击当前语音助手（上图中为 <strong>Home Assistant Cloud</strong>）。</p>
+<ul>
+<li>从列表中选择语音助手。</li>
+</ul>
+<p><img src="/home-assistant/images/assist/android_watch_6.png" alt="List of assistants"/></p>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="在-wear-os-手表上将-home-assistant-assist-设置为默认语音助手应用"><a href="#在-wear-os-手表上将-home-assistant-assist-设置为默认语音助手应用" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 Wear OS 手表上将 Home Assistant Assist 设置为默认语音助手应用</h3>
+<p>本流程基于 Wear OS 4.0 编写。具体步骤可能会因手表型号和软件版本而有所不同。</p>
+<p>要将 Home Assistant Assist 设为默认语音助手应用，请按以下步骤操作：</p>
+<ol>
+<li>在手表上，前往 <strong>Apps screen</strong> 并选择齿轮图标 <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>。</li>
+<li>前往 <strong>Apps</strong> &gt; <strong>Choose default apps</strong> &gt; <strong>Digital 语音助手 app</strong>。</li>
+<li>从列表中选择 <strong>Home Assistant</strong>。</li>
+<li>返回上一级后，在 <strong>Default app</strong> 下现在应显示 <strong>HA: Assist</strong>。</li>
+<li>在某些手表上，你现在可以通过按下表冠键来启动 Assist。
+<ul>
+<li>如果不起作用，你也可以手动将 Assist 分配给某个按钮。</li>
+</ul>
+</li>
+<li>现在使用对应按键并说出命令。</li>
+</ol>
+<h3 class="rp-toc-include" id="为-assist-分配按钮"><a href="#为-assist-分配按钮" class="rp-header-anchor rp-link" aria-hidden="true">#</a>为 Assist 分配按钮</h3>
+<p>根据你的手表型号，你可以将 Assist 分配给某个按钮，这样就能通过长按或双击直接启动它。</p>
+<ol>
+<li>
+<p>在手表上，前往 <strong>设置</strong> &gt; <strong>Advances features</strong> &gt; <strong>Customize keys</strong>。</p>
+</li>
+<li>
+<p>分配一个按键：</p>
+<ul>
+<li>
+<p>若要使用双击，点击 <strong>Home key</strong> &gt; <strong>Double press</strong>。在应用列表中选择 <strong>HA: Assist</strong>。</p>
+</li>
+<li>
+<p>在 Galaxy watch 上，如果 Assist 已设为默认，你可以使用长按。点击 <strong>Home key</strong>，然后点击 <strong>press and hold</strong>。选择 <strong>Assistant</strong>。</p>
+<ul>
+<li>接着长按 Home 键，并在选择列表中选择 <strong>HA: Assist</strong>。</li>
+<li>选择 <strong>Always</strong>。</li>
+</ul>
+<p><img src="/home-assistant/images/assist/android_watch_7.png" alt="List of assistants"/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>现在使用对应按键并说出命令。</p>
+</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#android-手机上的-assist" class="rp-toc-item rp-link" title="Android 手机上的 Assist" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Android 手机上的 Assist</span></a><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#在-home-assistant-中启动-assist" class="rp-toc-item rp-link" title="在 Home Assistant 中启动 Assist" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在 Home Assistant 中启动 Assist</span></a><a href="#将-home-assistant-assist-设置为默认语音助手应用" class="rp-toc-item rp-link" title="将 Home Assistant Assist 设置为默认语音助手应用" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">将 Home Assistant Assist 设置为默认语音助手应用</span></a><a href="#关于-android-上的唤醒词检测" class="rp-toc-item rp-link" title="关于 Android 上的唤醒词检测" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">关于 Android 上的唤醒词检测</span></a><a href="#在-android-上启用唤醒词检测" class="rp-toc-item rp-link" title="在 Android 上启用唤醒词检测" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在 Android 上启用唤醒词检测</span></a><a href="#前提条件-1" class="rp-toc-item rp-link" title="前提条件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#启用唤醒词检测" class="rp-toc-item rp-link" title="启用唤醒词检测" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">启用唤醒词检测</span></a><a href="#从-home-assistant-控制唤醒词检测" class="rp-toc-item rp-link" title="从 Home Assistant 控制唤醒词检测" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">从 Home Assistant 控制唤醒词检测</span></a><a href="#在多个-home-assistant-服务器之间使用-assist" class="rp-toc-item rp-link" title="在多个 Home Assistant 服务器之间使用 Assist" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在多个 Home Assistant 服务器之间使用 Assist</span></a><a href="#通过快捷方式使用-assist" class="rp-toc-item rp-link" title="通过快捷方式使用 Assist" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过快捷方式使用 Assist</span></a><a href="#wear-os-上的-assist" class="rp-toc-item rp-link" title="Wear OS 上的 Assist" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Wear OS 上的 Assist</span></a><a href="#在-wear-os-上设置-assist" class="rp-toc-item rp-link" title="在 Wear OS 上设置 Assist" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在 Wear OS 上设置 Assist</span></a><a href="#将-assist-添加到表盘" class="rp-toc-item rp-link" title="将 Assist 添加到表盘" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">将 Assist 添加到表盘</span></a><a href="#在-wear-os-上使用-assist" class="rp-toc-item rp-link" title="在 Wear OS 上使用 Assist" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在 Wear OS 上使用 Assist</span></a><a href="#在-wear-os-手表上将-home-assistant-assist-设置为默认语音助手应用" class="rp-toc-item rp-link" title="在 Wear OS 手表上将 Home Assistant Assist 设置为默认语音助手应用" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在 Wear OS 手表上将 Home Assistant Assist 设置为默认语音助手应用</span></a><a href="#为-assist-分配按钮" class="rp-toc-item rp-link" title="为 Assist 分配按钮" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">为 Assist 分配按钮</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

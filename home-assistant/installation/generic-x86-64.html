@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>通用 x86-64 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="通用 x86-64 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="如果您想轻松开始使用 Home Assistant，或者几乎没有 Linux 经验，请按照本指南操作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="如果您想轻松开始使用 Home Assistant，或者几乎没有 Linux 经验，请按照本指南操作。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/intel-nuc-enter-bios.jpg"/><link rel="preload" as="image" href="/home-assistant/images/installation/intel-nuc-uefi-boot.jpg"/><link rel="preload" as="image" href="/home-assistant/images/installation/intel-nuc-disable-secure-boot.jpg"/><link rel="preload" as="image" href="/home-assistant/images/installation/ubuntu_restore_disk_image.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/select_haos.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/start_restoring.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/restore.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/haos_restoring.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/etcher1_file.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/etcher3.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/etcher4.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/etcher5.png"/><link rel="preload" as="image" href="/home-assistant/images/installation/etcher6.png"/><link rel="preload" as="image" href="/home-assistant/images/hassio/screenshots/case-removed.jpg"/><link rel="preload" as="image" href="/home-assistant/images/hassio/screenshots/toggle_spi.jpg"/><link rel="preload" as="image" href="/home-assistant/images/hassio/screenshots/exit-shell.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装概述</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/raspberrypi.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Raspberry Pi</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/raspberrypi-other.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Raspberry Pi 其他系统</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/odroid.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>ODROID</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/generic-x86-64.html" class="rp-sidebar-item rp-sidebar-item--active rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>通用 x86-64</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/windows.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Windows</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/macos.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>macOS</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/linux.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Linux</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/alternative.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>其他安装方式</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/troubleshooting.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>故障排除</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="通用-x86-64"><a href="#通用-x86-64" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通用 x86-64<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<h2 class="rp-toc-include" id="安装-home-assistant-operating-system"><a href="#安装-home-assistant-operating-system" class="rp-header-anchor rp-link" aria-hidden="true">#</a>安装 Home Assistant Operating System</h2>
+<p>如果您想轻松开始使用 Home Assistant，或者几乎没有 Linux 经验，请按照本指南操作。</p>
+<h2 class="rp-toc-include" id="推荐硬件"><a href="#推荐硬件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>推荐硬件</h2>
+<p>您需要准备一些东西才能开始安装 Home Assistant。以下链接指向 Ameridroid。如果您不在美国，应该能在您所在国家的网店找到这些物品。</p>
+<p>首先，我们推荐 ODROID-N2+，这是驱动我们 <a href="/home-assistant/blue/" class="rp-link">Home Assistant Blue</a> 的主板，或者是 ODROID-M1。</p>
+<p>如果无法获得，我们也推荐 <a href="https://ameridroid.com/products/odroid-c4" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-C4</a>。</p>
+<p>Home Assistant 套装（美国市场）：</p>
+<p>套装预装了 Home Assistant。</p>
+<ul>
+<li><a href="https://ameridroid.com/products/odroid-n2-home-assistant-blue-bundle-limited-edition?variant=44748729286935" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-N2+: 2 GB RAM / 16 GB eMMC</a></li>
+<li><a href="https://ameridroid.com/products/odroid-n2-home-assistant-blue-bundle-limited-edition?variant=44748729221399" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-N2+: 4 GB RAM / 64 GB eMMC</a></li>
+<li>ODROID-M1: 4 GB RAM / 256 GB NVMe / <a href="https://ameridroid.com/products/odroid-n2-home-assistant-blue-bundle-limited-edition?variant=44929573028119" target="_blank" rel="noopener noreferrer" class="rp-link">16 GB µSD</a> 或 <a href="https://ameridroid.com/products/odroid-n2-home-assistant-blue-bundle-limited-edition?variant=44994940567831" target="_blank" rel="noopener noreferrer" class="rp-link">16 GB eMMC</a></li>
+<li>ODROID-M1: 8 GB RAM / 256 GB NVMe / <a href="https://ameridroid.com/products/odroid-n2-home-assistant-blue-bundle-limited-edition?variant=44929573093655" target="_blank" rel="noopener noreferrer" class="rp-link">16 GB µSD</a> 或 <a href="https://ameridroid.com/products/odroid-n2-home-assistant-blue-bundle-limited-edition?variant=44994940633367" target="_blank" rel="noopener noreferrer" class="rp-link">16 GB eMMC</a></li>
+<li><a href="https://ameridroid.com/products/odroid-n2-home-assistant-blue-bundle-limited-edition?variant=44994940698903" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-M1: 8 GB RAM / 1 TB NVMe / 64 GB eMMC</a></li>
+</ul>
+<p>未预装 Home Assistant 的版本：</p>
+<ul>
+<li>ODROID-N2+，<a href="https://ameridroid.com/products/odroid-n2-plus?variant=40371828719650" target="_blank" rel="noopener noreferrer" class="rp-link">2 GB RAM</a> 或 <a href="https://ameridroid.com/products/odroid-n2-plus?variant=40371828752418" target="_blank" rel="noopener noreferrer" class="rp-link">4 GB RAM</a></li>
+<li><a href="https://ameridroid.com/products/odroid-c4" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-C4</a></li>
+<li><a href="https://ameridroid.com/products/odroid-M1" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-M1</a></li>
+<li>ODROID-M1S，<a href="https://ameridroid.com/products/odroid-m1s?variant=47425396474135" target="_blank" rel="noopener noreferrer" class="rp-link">4 GB RAM</a> 或 <a href="https://ameridroid.com/products/odroid-m1s?variant=47425396506903" target="_blank" rel="noopener noreferrer" class="rp-link">8 GB RAM</a></li>
+</ul>
+<p>相关组件：</p>
+<ul>
+<li><a href="https://ameridroid.com/products/12v-2a-power-supply-plug" target="_blank" rel="noopener noreferrer" class="rp-link">电源适配器</a></li>
+<li><a href="https://ameridroid.com/products/rtc-bios-battery" target="_blank" rel="noopener noreferrer" class="rp-link">CR2032 纽扣电池</a></li>
+<li><a href="https://ameridroid.com/products/emmc-module-n2-linux-red-dot" target="_blank" rel="noopener noreferrer" class="rp-link">eMMC 模块</a></li>
+<li><a href="https://ameridroid.com/products/odroid-n2-case" target="_blank" rel="noopener noreferrer" class="rp-link">外壳</a></li>
+</ul>
+<p><em>这些是联盟链接。我们通过本文中的链接购买可获得佣金。</em></p>
+<p>:::important</p>
+<p><b>前提条件</b></p>
+<p>本指南假设您有一台专用的 PC 专门运行 <strong>Home Assistant Operating System</strong>。</p>
+<ul>
+<li>这通常是基于 Intel 或 AMD 的系统。</li>
+<li>系统必须支持 64 位并能使用 UEFI 启动。
+<ul>
+<li>最近 10 年生产的大多数系统都支持 UEFI 启动模式。</li>
+</ul>
+</li>
+</ul>
+<p><b>摘要</b></p>
+<ol>
+<li>首先，您需要将 PC 配置为使用 UEFI 启动模式。</li>
+<li>然后，将 <strong>Home Assistant Operating System</strong> 磁盘镜像写入您的启动介质。</li>
+</ol>
+<p>:::</p>
+<h2 class="rp-toc-include" id="配置-x86-64-硬件的-bios"><a href="#配置-x86-64-硬件的-bios" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置 x86-64 硬件的 BIOS</h2>
+<p>要启动 Home Assistant OS，BIOS 需要启用 UEFI 启动模式并禁用安全启动。以下截图来自第 7 代 Intel NUC 系统。您的系统上的 BIOS 菜单可能看起来不同，但选项应该仍然存在且命名类似。</p>
+<ol>
+<li>
+<p>要进入 BIOS，启动您的 x86-64 硬件并反复按 <code>F2</code> 键（在某些系统上可能是 <code>Del</code>、<code>F1</code> 或 <code>F10</code>）。
+<img src="/home-assistant/images/installation/intel-nuc-enter-bios.jpg" alt="使用 F2、Del、F1 或 F10 键进入 BIOS"/></p>
+</li>
+<li>
+<p>确保启用了 UEFI 启动模式。
+<img src="/home-assistant/images/installation/intel-nuc-uefi-boot.jpg" alt="启用 UEFI 启动模式"/></p>
+</li>
+<li>
+<p>禁用安全启动。
+<img src="/home-assistant/images/installation/intel-nuc-disable-secure-boot.jpg" alt="禁用安全启动模式"/></p>
+</li>
+<li>
+<p>保存更改并退出。</p>
+</li>
+</ol>
+<p>BIOS 配置现已完成。</p>
+<h2 class="rp-toc-include" id="将-haos-写入您的-x86-64-硬件"><a href="#将-haos-写入您的-x86-64-硬件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 HAOS 写入您的 x86-64 硬件</h2>
+<p>接下来，您需要将 Home Assistant Operating System 镜像写入<em>启动介质</em>，即您的 x86-64 硬件在运行 Home Assistant 时将从中启动的介质。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+HAOS 没有集成的安装程序可以自动写入镜像。您将使用 Ubuntu 的 <b>磁盘</b> 工具或 Balena Etcher 手动写入。</p></div></div>
+<p>通常，x86-64 启动介质使用内部介质，如 S-ATA 硬盘、S-ATA SSD、M.2 SSD 或不可移动的 eMMC。或者，也可以使用外部介质，如 USB SSD，但不推荐这样做。</p>
+<p>要将 HAOS 镜像写入 x86-64 硬件上的启动介质，有 2 种不同的方法：</p>
+<p><strong>方法 1（推荐）</strong>：从 USB 闪存驱动器启动 Ubuntu，并从那里安装 <strong>Home Assistant Operating System</strong>。它也适用于带有内部硬盘的笔记本电脑和 PC。</p>
+<p><strong>方法 2</strong>：使用此方法，您直接从常规计算机将 Home Assistant Operating 磁盘镜像写入启动介质。步骤稍微复杂一些。如果您有不可移动的内部介质（例如因为您使用的是笔记本电脑）或没有必要的适配器（例如 USB 转 S-ATA 适配器），请改用方法 1。</p>
+<h3 class="rp-toc-include" id="方法-1通过从-usb-闪存驱动器启动-ubuntu-安装-haos"><a href="#方法-1通过从-usb-闪存驱动器启动-ubuntu-安装-haos" class="rp-header-anchor rp-link" aria-hidden="true">#</a>方法 1：通过从 USB 闪存驱动器启动 Ubuntu 安装 HAOS</h3>
+<h4 class="rp-toc-include" id="所需材料"><a href="#所需材料" class="rp-header-anchor rp-link" aria-hidden="true">#</a>所需材料</h4>
+<ul>
+<li>计算机</li>
+<li>目标 x86-64 硬件，您要在其上安装 <strong>Home Assistant Operating System</strong>（HAOS）</li>
+<li>USB 闪存驱动器（USB 拇指驱动器即可，大小应至少为 8 GB）</li>
+<li>互联网连接</li>
+</ul>
+<h4 class="rp-toc-include" id="通过-usb-闪存驱动器从-ubuntu-安装-haos"><a href="#通过-usb-闪存驱动器从-ubuntu-安装-haos" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 USB 闪存驱动器从 Ubuntu 安装 HAOS</h4>
+<ol>
+<li><strong>注意</strong>：此过程将把 <strong>Home Assistant Operating System</strong> 写入您的设备。
+<ul>
+<li>这意味着您将丢失所有数据以及之前安装的操作系统。</li>
+<li>在执行此过程之前备份您的数据。</li>
+</ul>
+</li>
+<li>在 USB 闪存驱动器上创建一个<em>实时操作系统</em>：
+<ul>
+<li>按照 <a href="https://documentation.ubuntu.com/desktop/en/latest/tutorial/try-ubuntu-desktop/" target="_blank" rel="noopener noreferrer" class="rp-link">Ubuntu Desktop 说明</a>将 Ubuntu Desktop iso 文件写入 USB 设备。</li>
+</ul>
+</li>
+<li>将 USB 闪存驱动器插入您想要运行 Home Assistant 的系统。
+<ul>
+<li>启动实时操作系统。</li>
+<li>您可能需要调整启动顺序或使用 F10（可能是不同的 F 键，取决于 BIOS）来选择 USB 闪存驱动器作为启动设备。</li>
+</ul>
+</li>
+<li>当提示时，确保选择 <strong>试用 Ubuntu</strong>。这将在 USB 闪存设备上运行 Ubuntu。
+<ul>
+<li>然后系统启动 Ubuntu。</li>
+<li>将您的系统连接到网络并确保它可以访问互联网。</li>
+</ul>
+</li>
+<li>在 Ubuntu 中，打开浏览器并打开当前文档页面，以便您可以按照步骤操作。
+<ul>
+<li>从那里，<a href="//haos_generic-x86-64-.img.xz" class="rp-link" rel="noopener noreferrer" target="_blank">下载镜像</a>。</li>
+</ul>
+</li>
+<li>在 Ubuntu 中，在左下角选择 <strong>显示应用程序</strong>。</li>
+<li>在应用程序中，搜索并打开 <strong>磁盘</strong> 并开始恢复 HAOS 镜像：
+<ol>
+<li>在 <strong>磁盘</strong> 中，在左侧选择您要安装 HAOS 的内部磁盘设备。</li>
+<li>在屏幕顶部，选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单并选择 <strong>恢复磁盘镜像...</strong>。
+<img src="/home-assistant/images/installation/ubuntu_restore_disk_image.png" alt="恢复磁盘镜像：选择三点菜单"/></li>
+<li>选择您刚刚下载的镜像。
+<img src="/home-assistant/images/installation/select_haos.png" alt="恢复磁盘镜像：选择镜像"/></li>
+<li>选择 <strong>开始恢复...</strong>。
+<img src="/home-assistant/images/installation/start_restoring.png" alt="恢复磁盘镜像：开始恢复"/></li>
+<li>通过选择 <strong>恢复</strong> 确认。
+<img src="/home-assistant/images/installation/restore.png" alt="恢复磁盘镜像：选择恢复"/>
+<ul>
+<li>如果您收到 <strong>Error unmounting filesystem</strong> 错误消息，说明 <strong>target is busy</strong>：</li>
+<li>很可能，您正在内部磁盘上运行 Ubuntu。相反，您需要在您的 USB 驱动器上运行它。
+<ul>
+<li>返回步骤 3，在启动期间，确保您选择 <strong>Try Ubuntu</strong>（而不是 <strong>Install Ubuntu</strong>）。</li>
+</ul>
+</li>
+<li>另一个问题可能是实时 Ubuntu 正在使用现有 Linux 安装的 Swap 分区。
+<ul>
+<li>如果您在要安装 HAOS 的驱动器上看到列出了&quot;Swap&quot;分区，只需选择 Swap 分区，然后按停止按钮卸载它，然后再次尝试恢复操作。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在分区概览中，您现在应该看到正在进行的恢复操作。
+<ul>
+<li>Home Assistant Operating System 现在正在安装到您的系统上。
+<img src="/home-assistant/images/installation/haos_restoring.png" alt="恢复磁盘镜像：正在恢复..."/></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>一旦 Home Assistant Operating System 安装完成，关闭系统。
+<ul>
+<li>Ubuntu 关闭后，移除 USB 闪存驱动器（Ubuntu 会通知您何时可以这样做）。</li>
+<li>您的 Home Assistant 服务器现已设置完成，您可以开始使用它。</li>
+<li>要使用它，请按照 <a href="/home-assistant/installation/generic-x86-64.html#start-up-your-generic-x86-64" class="rp-link">启动您的通用 x86-64</a> 中描述的步骤操作。</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="方法-2直接从启动介质安装-haos"><a href="#方法-2直接从启动介质安装-haos" class="rp-header-anchor rp-link" aria-hidden="true">#</a>方法 2：直接从启动介质安装 HAOS</h3>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+仅在方法 1 对您不起作用时使用此方法。</p></div></div>
+<h4 class="rp-toc-include" id="所需材料-1"><a href="#所需材料-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>所需材料</h4>
+<ul>
+<li>计算机</li>
+<li>目标 x86-64 硬件，您要在其上安装 <strong>Home Assistant Operating System</strong>（HAOS）</li>
+<li>启动介质</li>
+<li>互联网连接</li>
+</ul>
+<h4 class="rp-toc-include" id="将镜像写入您的启动介质"><a href="#将镜像写入您的启动介质" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将镜像写入您的启动介质</h4>
+<h3 class="rp-toc-include" id="将镜像写入您的启动介质-1"><a href="#将镜像写入您的启动介质-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将镜像写入您的启动介质</h3>
+<ol>
+<li>
+<p><strong>注意</strong>：此过程将把 <strong>Home Assistant Operating System</strong> 写入您的设备。</p>
+<ul>
+<li>这意味着您将丢失所有数据以及之前安装的操作系统。</li>
+<li>在继续下一步之前备份您的数据。</li>
+</ul>
+</li>
+<li>
+<p>将 Home Assistant 启动介质连接到您的计算机。</p>
+<p>如果您使用的是 ODROID-M1，请注意不支持从 NVMe 启动。如果您想从 eMMC 启动，请在安装镜像之前<a href="https://github.com/home-assistant/operating-system/blob/dev/documentation/boards/hardkernel/odroid-m1.md" target="_blank" rel="noopener noreferrer" class="rp-link">更新固件</a>。</p>
+<p>如果您使用的是 <a href="/home-assistant/blue" class="rp-link">Home Assistant Blue</a> 或 ODROID-N2+，您可以<a href="/home-assistant/installation/odroid.html#flashing-an-odroid-n2" class="rp-link">直接连接您的设备</a>。</p>
+<p>如果您使用的是 ODROID-M1S，您需要按照本指南<a href="/home-assistant/installation/odroid.html#flashing-an-odroid-m1s" class="rp-link">将您的设备启动到 UMS 模式</a>。</p>
+</li>
+<li>
+<p>下载并启动 <a href="https://www.balena.io/etcher" target="_blank" rel="noopener noreferrer" class="rp-link">Balena Etcher</a>。在 Windows 上您可能需要以管理员权限运行它。</p>
+</li>
+<li>
+<p>将镜像下载到您的计算机。</p>
+<ul>
+<li>复制镜像的 URL。</li>
+<li>如果下面有多个链接，确保为您的版本选择正确的链接。</li>
+</ul>
+<div class="rp-codeblock language-text"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="text"><code><span class="line"><span></span></span>
+<span class="line"><span>//haos_-.img.xz</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p><em>选择并复制 URL 或使用悬停时出现的&quot;复制&quot;按钮。</em></p>
+</li>
+<li>
+<p>将 URL 粘贴到浏览器中以开始下载。</p>
+</li>
+<li>
+<p>解压您刚刚下载的文件。</p>
+</li>
+<li>
+<p>选择 <strong>从文件烧录</strong> 并选择您刚刚解压的镜像。</p>
+<ul>
+<li>不要使用 <strong>从 URL 烧录</strong>。它在某些系统上不起作用。
+<img src="/home-assistant/images/installation/etcher1_file.png" alt="显示选择了从 URL 刷写的 Etcher 软件截图。"/></li>
+</ul>
+</li>
+<li>
+<p><strong>选择目标</strong>。
+<img src="/home-assistant/images/installation/etcher3.png" alt="显示选择目标按钮高亮的 Etcher 软件截图。"/></p>
+</li>
+<li>
+<p>选择您要用于安装的启动介质。
+<img src="/home-assistant/images/installation/etcher4.png" alt="显示可用目标的 Etcher 软件截图。"/></p>
+</li>
+<li>
+<p>选择 <strong>烧录！</strong> 开始写入镜像。</p>
+<ul>
+<li>如果操作失败，解压 .xz 文件并重试。
+<img src="/home-assistant/images/installation/etcher5.png" alt="显示 Flash 按钮高亮的 Etcher 软件截图。"/></li>
+<li>当 Balena Etcher 完成写入镜像后，您将看到确认信息。
+<img src="/home-assistant/images/installation/etcher6.png" alt="显示安装已完成的 Etcher 软件截图。"/></li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="启动您的通用-x86-64"><a href="#启动您的通用-x86-64" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启动您的通用 x86-64</h3>
+<ul>
+<li>
+<p>如果您使用方法 1 进行安装，确保 USB 闪存驱动器已从系统中移除。</p>
+</li>
+<li>
+<p>如果您使用方法 2 进行安装，将启动介质安装到您的 x86-64 硬件中。</p>
+</li>
+</ul>
+<ol>
+<li>插入连接到网络和互联网的以太网电缆。
+<ul>
+<li>注意：需要互联网，因为新安装的 Home Assistant OS 尚未包含所有 Home Assistant 组件。它将在首次启动时下载最新版本的 Home Assistant 核心。</li>
+</ul>
+</li>
+<li>打开系统电源。如果您有连接到系统的屏幕，大约一分钟后 Home Assistant 欢迎横幅将出现在控制台中。</li>
+</ol>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>如果机器抱怨找不到可启动介质，您可能需要在 BIOS 中指定 EFI 条目。
+这可以通过使用实时操作系统（例如 Ubuntu）并运行以下命令来完成（将 <code>&lt;drivename&gt;</code> 替换为 Linux 分配的适当驱动器名称，通常是 <code>sda</code> 或在 NVMe SSD 上是 <code>nvme0n1</code>）：</p><div class="rp-codeblock language-text"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="text"><code><span class="line"><span>efibootmgr --create --disk /dev/&lt;drivename&gt; --part 1 --label &quot;HAOS&quot; \</span></span>
+<span class="line"><span>   --loader &#x27;\EFI\BOOT\bootx64.efi&#x27;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><p>efibootmgr 命令仅在您以 UEFI 模式启动实时操作系统时才有效，因此请确保在此模式下从 USB 闪存驱动器启动。
+根据您在提示符下的权限，您可能需要使用 sudo 运行 efibootmgr。</p><p>否则，BIOS 可能会为您提供一个添加启动选项的工具，您可以在那里指定 EFI 文件的路径：</p><div class="rp-codeblock language-text"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="text"><code><span class="line"><span>\EFI\BOOT\bootx64.efi</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div></div></div>
+<ol>
+<li>
+<p>插入您刚刚创建的启动介质。</p>
+</li>
+<li>
+<p>插入连接到网络和互联网的以太网电缆并打开系统电源。</p>
+<ul>
+<li>注意：需要互联网，因为新安装的 Home Assistant OS 尚未包含所有 Home Assistant 组件。它将在首次启动时下载最新版本的 Home Assistant 核心。</li>
+</ul>
+</li>
+<li>
+<p>在桌面系统的浏览器中，几分钟内您将能够在 <a href="http://homeassistant.local:8123" target="_blank" rel="noopener noreferrer" class="rp-link">homeassistant.local:8123</a> 访问您的新 Home Assistant。</p>
+</li>
+</ol>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+如果您运行的是较旧的 Windows 版本或有更严格的网络配置，您可能需要在 <a href="http://homeassistant:8123" target="_blank" rel="noopener noreferrer" class="rp-link">homeassistant:8123</a> 或 <code>http://X.X.X.X:8123</code>（将 X.X.X.X 替换为您的 IP 地址）访问 Home Assistant。</p></div></div>
+<h3 class="rp-toc-include" id="下载适当的镜像"><a href="#下载适当的镜像" class="rp-header-anchor rp-link" aria-hidden="true">#</a>下载适当的镜像</h3>
+<ul>
+<li>
+<p><a href="//haos_ova-.vdi.zip" class="rp-link" rel="noopener noreferrer" target="_blank">VirtualBox (Intel 芯片)</a> (.vdi)</p>
+</li>
+<li>
+<p><a href="//haos_generic-aarch64-.vmdk.zip" class="rp-link" rel="noopener noreferrer" target="_blank">VirtualBox (Apple Silicon 芯片)</a> (.vmdk)</p>
+</li>
+<li>
+<p><a href="//haos_ova-.qcow2.xz" class="rp-link" rel="noopener noreferrer" target="_blank">KVM</a> (.qcow2)</p>
+</li>
+<li>
+<p><a href="//haos_ova-.qcow2.xz" class="rp-link" rel="noopener noreferrer" target="_blank">KVM/Proxmox</a> (.qcow2)</p>
+</li>
+<li>
+<p><a href="//haos_ova-.ova" class="rp-link" rel="noopener noreferrer" target="_blank">VMware ESXi/vSphere</a> (.ova)</p>
+</li>
+<li>
+<p><a href="//haos_ova-.vmdk.zip" class="rp-link" rel="noopener noreferrer" target="_blank">VMware Workstation</a> (.vmdk)</p>
+</li>
+<li>
+<p><a href="//haos_ova-.vhdx.zip" class="rp-link" rel="noopener noreferrer" target="_blank">Hyper-V</a> (.vhdx)</p>
+</li>
+</ul>
+<p>下载后，解压镜像。如果镜像是 ZIP 文件，例如，解压它。</p>
+<p>如果您已经在运行支持的虚拟机管理程序，请按照本指南操作。如果您不熟悉虚拟机，请直接在 <a href="/home-assistant/installation/yellow" class="rp-link">Home Assistant Yellow</a>、<a href="/home-assistant/installation/raspberrypi.html" class="rp-link">树莓派</a> 或 <a href="/home-assistant/installation/odroid.html" class="rp-link">ODROID</a> 上安装 Home Assistant OS。</p>
+<ul>
+<li>如果您的 Mac 不支持 VirtualBox，并且您有使用虚拟机的经验，您可以尝试在 <a href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer" class="rp-link">UTM</a> 上运行 Home Assistant Operating System。</li>
+</ul>
+<h3 class="rp-toc-include" id="创建虚拟机"><a href="#创建虚拟机" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建虚拟机</h3>
+<p>将设备镜像加载到您的虚拟机管理程序中。（注意：您可以自由地为 VM 分配任意多的资源，请根据您的应用需求分配足够的资源）。</p>
+<p>最低推荐配置：</p>
+<ul>
+<li>2 GB RAM</li>
+<li>2vCPU</li>
+</ul>
+<p><em>如果您的使用需要更多资源，所有这些都可以扩展。</em></p>
+<h3 class="rp-toc-include" id="管理程序特定配置"><a href="#管理程序特定配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>管理程序特定配置</h3>
+<p><strong>VirtualBox</strong></p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span>#### 创建虚拟机</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>    1. 打开 VirtualBox 并选择 **New（新建）** 按钮（蓝色星形图标）。</span></span>
+<span class="line"><span>    2. **Name（名称）:** 输入 Home Assistant。</span></span>
+<span class="line"><span>    3. **ISO Image（ISO 镜像）:** 保留为 **None（无）** 或 **Empty（空）**。</span></span>
+<span class="line"><span>    4. **Type &amp; Version（类型和版本）:** 选择 **Linux**，然后选择 **Oracle Linux (64-bit)**（如果您使用的是 M1/M2/M3 芯片的 Mac，则选择 **ARM 64-bit**）。</span></span>
+<span class="line"><span>    5. 选择 **Next（下一步）**。</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>    #### 配置硬件</span></span>
+<span class="line"><span>    1. **Base Memory（基础内存）:** 将滑块移动到至少 **2048 MB**（2GB）。</span></span>
+<span class="line"><span>    2. **Number of CPUs（CPU 数量）:** 将滑块移动到至少 **2**。</span></span>
+<span class="line"><span>    3. **EFI:** 勾选 **Enable EFI (special OSes only)（启用 EFI，仅用于特殊操作系统）** 复选框。这是 Home Assistant 启动所必需的。</span></span>
+<span class="line"><span>    4. 选择 **Next（下一步）**。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    #### 完成向导</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    1. 在 **Virtual Hard Disk（虚拟硬盘）** 页面上，保留默认设置（它会建议创建一个新磁盘）。我们会在下一步将其替换为已下载的文件。</span></span>
+<span class="line"><span>    2. 选择 **Finish（完成）**。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    #### 附加 Home Assistant 磁盘 (VDI)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    1. 在左侧列表中选择新建的 &quot;Home Assistant&quot; 虚拟机，然后选择 **Settings（设置）** 图标（橙色齿轮）。</span></span>
+<span class="line"><span>    2. 在左侧菜单中进入 **Storage（存储）**。</span></span>
+<span class="line"><span>    3. 在 **Storage Devices（存储设备）** 列表里，您会看到 **Controller: SATA** 下已有一个磁盘。右键点击该磁盘并选择 **Remove Attachment（移除挂载）**，删除这个空白占位磁盘。</span></span>
+<span class="line"><span>    4. 选择 **Controller: SATA** 旁边的 **Add Hard Disk（添加硬盘）** 图标（带绿色加号的小磁盘）。</span></span>
+<span class="line"><span>    5. 在弹出窗口中，点击顶部的 **Add（添加）**。</span></span>
+<span class="line"><span>    6. 找到并选择您之前下载并解压的 `.vdi` 文件。</span></span>
+<span class="line"><span>    7. 选择 **Choose（选择）** 确认文件。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    #### 配置网络</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    1. 在 **Settings（设置）** 窗口中，转到 **Network（网络）** 页面。</span></span>
+<span class="line"><span>    2. 将 **Attached to（连接方式）** 从 **NAT** 改为 **Bridged Adapter（桥接网卡）**。</span></span>
+<span class="line"><span>    3. 在 **Name（名称）** 下，选择您用于联网的网卡，这样 Home Assistant 才能与局域网中的其他设备通信。</span></span>
+<span class="line"><span>    4. 选择 **OK（确定）**。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    `[mdi:alert-outline]`  默认情况下，VirtualBox 不会</span></span>
+<span class="line"><span>    释放未使用的磁盘空间。要自动收缩 vdi 磁盘镜像，必须使用主机终端启用 `discard` 选项：</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>bash
+VBoxManage storageattach <vm name=""> --storagectl &quot;SATA&quot; --port 0 --device 0 --nonrotational on --discard on
+```</vm></p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span>有关该命令的更多详细信息可以在[这里](https://www.virtualbox.org/manual/ch08.html#vboxmanage-storageattach)找到。</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="unraid"><a href="#unraid" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Unraid</h2>
+<ol>
+<li>下载上面的 <strong>.qcow2</strong> 镜像并解压。（Windows 中为 <strong>Extract all</strong>）
+2. 将镜像存储在您服务器上的 <strong>isos</strong> 共享中。
+3. 确保在 <strong>Settings</strong> &gt; <strong>VM manager</strong> 下，<strong>Enable VMs</strong> 已启用。
+4. 创建一个新的虚拟机：<strong>VMS</strong> &gt; <strong>Add VM</strong>。
+5. 选择类型 <strong>Linux</strong> 并给 VM 一个名称和描述。
+6. 选择您想让 VM 使用的 CPU 核心并给它一些内存。
+7. 在 <strong>Primary vDisk Location</strong> 下，选择 <strong>Manual</strong>，然后选择 qcow2 镜像。
+8. 在 <strong>VM Console Keyboard</strong> 下选择您的键盘语言。
+9. 在 <strong>Network Source</strong> 下选择 <strong>br0</strong>。
+10. 在 <strong>Network model</strong> 下选择 <strong>virtio</strong>。
+11. 选择任何您想透传给 Home Assistant 的 USB 设备，例如 Zigbee 或 Z-Wave 控制器。
+12. 取消选择 <strong>Start VM after creation</strong>。
+13. 选择 <strong>Create</strong>。
+14. 选择您新 VM 的名称并选择磁盘的容量数字。在这里，您可以将磁盘扩展到您需要的任何大小。默认值为 32 GB。
+15. 选择您新 VM 的图标并选择 <strong>start with console (VNC)</strong>。</li>
+</ol>
+<h2 class="rp-toc-include" id="kvm-virt-manager"><a href="#kvm-virt-manager" class="rp-header-anchor rp-link" aria-hidden="true">#</a>KVM (virt-manager)</h2>
+<ol>
+<li>在 <code>virt-manager</code> 中创建一个新的虚拟机。
+2. 选择 <strong>Import existing disk image</strong>，提供上面 QCOW2 镜像的路径。
+3. 为操作系统选择 <strong>Generic Default</strong>。
+4. 勾选 <strong>Customize configuration before install</strong> 复选框。
+5. 在 <strong>Network Selection</strong> 下，选择您的网桥。
+6. 在自定义下选择 <strong>Overview</strong> &gt; <strong>Firmware</strong> &gt; <strong>UEFI x86_64: ...</strong>。确保选择非安全启动版本的 OVMF（不包含 <code>secure</code>、<code>secboot</code> 等词），例如 <code>/usr/share/edk2/ovmf/OVMF_CODE.fd</code>。
+7. 选择 <strong>Add Hardware</strong>（左下角），然后选择 <strong>Channel</strong>。
+8. 选择设备类型：<strong>unix</strong>。
+9. 选择名称：<strong>org.qemu.guest_agent.0</strong>。
+10. 最后，选择 <strong>Begin Installation</strong>（左上角）。</li>
+</ol>
+<h2 class="rp-toc-include" id="kvm-virt-install"><a href="#kvm-virt-install" class="rp-header-anchor rp-link" aria-hidden="true">#</a>KVM (virt-install)</h2>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">    virt-install</span><span style="color:var(--shiki-token-string)"> --name</span><span style="color:var(--shiki-token-string)"> haos</span><span style="color:var(--shiki-token-string)"> --description</span><span style="color:var(--shiki-token-string-expression)"> &quot;Home Assistant OS&quot;</span><span style="color:var(--shiki-token-string)"> --os-variant=generic</span><span style="color:var(--shiki-token-string)"> --ram=4096</span><span style="color:var(--shiki-token-string)"> --vcpus=2</span><span style="color:var(--shiki-token-string)"> --disk</span><span style="color:var(--shiki-token-keyword)"> &lt;</span><span style="color:var(--shiki-token-string)">PATH</span><span style="color:var(--shiki-token-string)"> TO</span><span style="color:var(--shiki-token-string)"> QCOW2</span><span style="color:var(--shiki-token-string)"> FIL</span><span style="color:var(--shiki-foreground)">E</span><span style="color:var(--shiki-token-keyword)">&gt;</span><span style="color:var(--shiki-token-string)">,bus=scsi</span><span style="color:var(--shiki-token-string)"> --controller</span><span style="color:var(--shiki-token-string)"> type=scsi,model=virtio-scsi</span><span style="color:var(--shiki-token-string)"> --import</span><span style="color:var(--shiki-token-string)"> --graphics</span><span style="color:var(--shiki-token-string)"> none</span><span style="color:var(--shiki-token-string)"> --boot</span><span style="color:var(--shiki-token-string)"> uefi</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">    ```</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">    `</span><span style="color:var(--shiki-foreground)">[mdi:alert-outline]</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">如果您有</span><span style="color:var(--shiki-token-string)"> USB</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    加密狗要附加，您需要添加选项</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">--hostdev</span><span style="color:var(--shiki-token-string)"> busID.deviceId</span><span style="color:var(--shiki-token-string-expression)">`</span><span style="color:var(--shiki-token-function)">。您可以</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    通过</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">lsusb</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">命令发现这些</span><span style="color:var(--shiki-token-string)"> ID。例如，如果</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">lsusb</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">输出为：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">    ```</span><span style="color:var(--shiki-token-function)">bash</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       Bus</span><span style="color:var(--shiki-token-constant)"> 004</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-string)"> 001:</span><span style="color:var(--shiki-token-string)"> ID</span><span style="color:var(--shiki-token-string)"> 1d6b:0003</span><span style="color:var(--shiki-token-string)"> Linux</span><span style="color:var(--shiki-token-string)"> Foundation</span><span style="color:var(--shiki-token-constant)"> 3.0</span><span style="color:var(--shiki-token-string)"> root</span><span style="color:var(--shiki-token-string)"> hub</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       Bus</span><span style="color:var(--shiki-token-constant)"> 003</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-string)"> 004:</span><span style="color:var(--shiki-token-string)"> ID</span><span style="color:var(--shiki-token-string)"> 30c9:0052</span><span style="color:var(--shiki-token-string)"> Luxvisions</span><span style="color:var(--shiki-token-string)"> Innotech</span><span style="color:var(--shiki-token-string)"> Limited</span><span style="color:var(--shiki-token-string)"> Integrated</span><span style="color:var(--shiki-token-string)"> RGB</span><span style="color:var(--shiki-token-string)"> Camera</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       Bus</span><span style="color:var(--shiki-token-constant)"> 003</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-string)"> 003:</span><span style="color:var(--shiki-token-string)"> ID</span><span style="color:var(--shiki-token-string)"> 1a86:55d4</span><span style="color:var(--shiki-token-string)"> QinHeng</span><span style="color:var(--shiki-token-string)"> Electronics</span><span style="color:var(--shiki-token-string)"> SONOFF</span><span style="color:var(--shiki-token-string)"> Zigbee</span><span style="color:var(--shiki-token-constant)"> 3.0</span><span style="color:var(--shiki-token-string)"> USB</span><span style="color:var(--shiki-token-string)"> Dongle</span><span style="color:var(--shiki-token-string)"> Plus</span><span style="color:var(--shiki-token-string)"> V2</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       Bus</span><span style="color:var(--shiki-token-constant)"> 003</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-string)"> 002:</span><span style="color:var(--shiki-token-string)"> ID</span><span style="color:var(--shiki-token-string)"> 06cb:00fc</span><span style="color:var(--shiki-token-string)"> Synaptics,</span><span style="color:var(--shiki-token-string)"> Inc.</span><span style="color:var(--shiki-foreground)"> </span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       Bus</span><span style="color:var(--shiki-token-constant)"> 003</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-string)"> 005:</span><span style="color:var(--shiki-token-string)"> ID</span><span style="color:var(--shiki-token-string)"> 8087:0033</span><span style="color:var(--shiki-token-string)"> Intel</span><span style="color:var(--shiki-token-string)"> Corp.</span><span style="color:var(--shiki-foreground)"> </span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       Bus</span><span style="color:var(--shiki-token-constant)"> 003</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-string)"> 001:</span><span style="color:var(--shiki-token-string)"> ID</span><span style="color:var(--shiki-token-string)"> 1d6b:0002</span><span style="color:var(--shiki-token-string)"> Linux</span><span style="color:var(--shiki-token-string)"> Foundation</span><span style="color:var(--shiki-token-constant)"> 2.0</span><span style="color:var(--shiki-token-string)"> root</span><span style="color:var(--shiki-token-string)"> hub</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       Bus</span><span style="color:var(--shiki-token-constant)"> 002</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-string)"> 001:</span><span style="color:var(--shiki-token-string)"> ID</span><span style="color:var(--shiki-token-string)"> 1d6b:0003</span><span style="color:var(--shiki-token-string)"> Linux</span><span style="color:var(--shiki-token-string)"> Foundation</span><span style="color:var(--shiki-token-constant)"> 3.0</span><span style="color:var(--shiki-token-string)"> root</span><span style="color:var(--shiki-token-string)"> hub</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       Bus</span><span style="color:var(--shiki-token-constant)"> 001</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-string)"> 001:</span><span style="color:var(--shiki-token-string)"> ID</span><span style="color:var(--shiki-token-string)"> 1d6b:0002</span><span style="color:var(--shiki-token-string)"> Linux</span><span style="color:var(--shiki-token-string)"> Foundation</span><span style="color:var(--shiki-token-constant)"> 2.0</span><span style="color:var(--shiki-token-string)"> root</span><span style="color:var(--shiki-token-string)"> hub</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">    ```</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    您可以在</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">Bus</span><span style="color:var(--shiki-token-constant)"> 003</span><span style="color:var(--shiki-token-string)"> Device</span><span style="color:var(--shiki-token-constant)"> 003</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">识别</span><span style="color:var(--shiki-token-string)"> Sonoff</span><span style="color:var(--shiki-token-string)"> 加密狗。所以安装</span><span style="color:var(--shiki-token-string)"> VM</span><span style="color:var(--shiki-token-string)"> 的命令将变为：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">    ```</span><span style="color:var(--shiki-token-function)">bash</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    virt-install</span><span style="color:var(--shiki-token-string)"> --name</span><span style="color:var(--shiki-token-string)"> haos</span><span style="color:var(--shiki-token-string)"> --description</span><span style="color:var(--shiki-token-string-expression)"> &quot;Home Assistant OS&quot;</span><span style="color:var(--shiki-token-string)"> --os-variant=generic</span><span style="color:var(--shiki-token-string)"> --ram=4096</span><span style="color:var(--shiki-token-string)"> --vcpus=2</span><span style="color:var(--shiki-token-string)"> --disk</span><span style="color:var(--shiki-token-keyword)"> &lt;</span><span style="color:var(--shiki-token-string)">PATH</span><span style="color:var(--shiki-token-string)"> TO</span><span style="color:var(--shiki-token-string)"> QCOW2</span><span style="color:var(--shiki-token-string)"> FIL</span><span style="color:var(--shiki-foreground)">E</span><span style="color:var(--shiki-token-keyword)">&gt;</span><span style="color:var(--shiki-token-string)">,bus=scsi</span><span style="color:var(--shiki-token-string)"> --controller</span><span style="color:var(--shiki-token-string)"> type=scsi,model=virtio-scsi</span><span style="color:var(--shiki-token-string)"> --import</span><span style="color:var(--shiki-token-string)"> --graphics</span><span style="color:var(--shiki-token-string)"> none</span><span style="color:var(--shiki-token-string)"> --boot</span><span style="color:var(--shiki-token-string)"> uefi</span><span style="color:var(--shiki-token-string)"> --hostdev</span><span style="color:var(--shiki-token-constant)"> 003.003</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">    ```</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    请注意，此配置（总线</span><span style="color:var(--shiki-token-string)"> 003，设备</span><span style="color:var(--shiki-token-string)"> 003）只是一个示例，您的加密狗可能在另一个总线和/或具有另一个设备</span><span style="color:var(--shiki-token-string)"> ID。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    请使用</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">lsusb</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">检查您</span><span style="color:var(--shiki-token-string)"> USB</span><span style="color:var(--shiki-token-string)"> 加密狗的正确</span><span style="color:var(--shiki-token-string)"> ID。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">## VMware Workstation</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">1.</span><span style="color:var(--shiki-token-string)"> 启动</span><span style="color:var(--shiki-token-string)"> VMware</span><span style="color:var(--shiki-token-string)"> Workstation</span><span style="color:var(--shiki-token-string)"> 并选择</span><span style="color:var(--shiki-token-string)"> **Create</span><span style="color:var(--shiki-token-string)"> a</span><span style="color:var(--shiki-token-string)"> New</span><span style="color:var(--shiki-token-string)"> Virtual</span><span style="color:var(--shiki-token-string)"> Machine（创建新的虚拟机）**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       -</span><span style="color:var(--shiki-token-string)"> 注意：以下设置的确切名称和位置取决于</span><span style="color:var(--shiki-token-string)"> VMware</span><span style="color:var(--shiki-token-string)"> 版本。此过程基于版本</span><span style="color:var(--shiki-token-string)"> 17。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    2.</span><span style="color:var(--shiki-token-string)"> 选择</span><span style="color:var(--shiki-token-string)"> **I</span><span style="color:var(--shiki-token-string)"> will</span><span style="color:var(--shiki-token-string)"> install</span><span style="color:var(--shiki-token-string)"> the</span><span style="color:var(--shiki-token-string)"> operating</span><span style="color:var(--shiki-token-string)"> system</span><span style="color:var(--shiki-token-string)"> later（稍后安装操作系统）**，然后选择</span><span style="color:var(--shiki-token-string)"> **Linux**</span><span style="color:var(--shiki-token-keyword)"> &gt;</span><span style="color:var(--shiki-token-string)"> **Other</span><span style="color:var(--shiki-token-string)"> Linux</span><span style="color:var(--shiki-token-string)"> 5.x</span><span style="color:var(--shiki-token-string)"> kernel</span><span style="color:var(--shiki-token-string)"> 64-bit**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    3.</span><span style="color:var(--shiki-token-string)"> 给</span><span style="color:var(--shiki-token-string)"> VM</span><span style="color:var(--shiki-token-string)"> 一个名称，</span><span style="color:var(--shiki-token-string-expression)">`</span><span style="color:var(--shiki-token-function)">home-assistant</span><span style="color:var(--shiki-token-string-expression)">`</span><span style="color:var(--shiki-token-function)">，并定义一个易于访问的存储位置，例如</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">C:\home-assistant</span><span style="color:var(--shiki-token-string-expression)">`</span><span style="color:var(--shiki-token-function)">。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    4.</span><span style="color:var(--shiki-token-string)"> 指定磁盘大小并选择</span><span style="color:var(--shiki-token-string)"> **Store</span><span style="color:var(--shiki-token-string)"> virtual</span><span style="color:var(--shiki-token-string)"> disk</span><span style="color:var(--shiki-token-string)"> as</span><span style="color:var(--shiki-token-string)"> a</span><span style="color:var(--shiki-token-string)"> single</span><span style="color:var(--shiki-token-string)"> file（将虚拟磁盘存储为单个文件）**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    5.</span><span style="color:var(--shiki-token-string)"> 选择</span><span style="color:var(--shiki-token-string)"> **Customize</span><span style="color:var(--shiki-token-string)"> Hardware（自定义硬件）**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    6.</span><span style="color:var(--shiki-token-string)"> 定义</span><span style="color:var(--shiki-token-string)"> VM</span><span style="color:var(--shiki-token-string)"> 允许使用的内存量和核心数。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    7.</span><span style="color:var(--shiki-token-string)"> 删除</span><span style="color:var(--shiki-token-string)"> **New</span><span style="color:var(--shiki-token-string)"> CD/DVD（新建</span><span style="color:var(--shiki-token-string)"> CD/DVD）**</span><span style="color:var(--shiki-token-string)"> 条目。该设备不会被使用。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    8.</span><span style="color:var(--shiki-token-string)"> 连接以太网电缆并确保它连接到您的网络。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    9.</span><span style="color:var(--shiki-token-string)"> 在</span><span style="color:var(--shiki-token-string)"> **Network</span><span style="color:var(--shiki-token-string)"> adapter（网络适配器）**</span><span style="color:var(--shiki-token-string)"> 下，选择</span><span style="color:var(--shiki-token-string)"> **Bridged:</span><span style="color:var(--shiki-token-string)"> Connected</span><span style="color:var(--shiki-token-string)"> directly</span><span style="color:var(--shiki-token-string)"> to</span><span style="color:var(--shiki-token-string)"> the</span><span style="color:var(--shiki-token-string)"> physical</span><span style="color:var(--shiki-token-string)"> network（桥接：直接连接到物理网络）**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       -</span><span style="color:var(--shiki-token-string)"> 确保未勾选</span><span style="color:var(--shiki-token-string)"> **Replicate</span><span style="color:var(--shiki-token-string)"> physical</span><span style="color:var(--shiki-token-string)"> network</span><span style="color:var(--shiki-token-string)"> connection</span><span style="color:var(--shiki-token-string)"> state（复制物理网络连接状态）**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       -</span><span style="color:var(--shiki-token-string)"> 选择</span><span style="color:var(--shiki-token-string)"> **Configure</span><span style="color:var(--shiki-token-string)"> Adapters（配置适配器）**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       -</span><span style="color:var(--shiki-token-string)"> 确保取消选择所有虚拟适配器和蓝牙设备。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">       -</span><span style="color:var(--shiki-token-string)"> 选择您的主机网络适配器。很可能是列表中前</span><span style="color:var(--shiki-token-constant)"> 2</span><span style="color:var(--shiki-token-string)"> 个复选框之一：</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">         -</span><span style="color:var(--shiki-token-string)"> 选择用于以太网的那个。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">         -</span><span style="color:var(--shiki-token-string)"> 这些适配器的确切名称取决于您的硬件。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    10.</span><span style="color:var(--shiki-token-string)"> 在向导结束时，选择</span><span style="color:var(--shiki-token-string)"> **Finish（完成）**。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">      ## 编辑 VM 设置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-function)">      11.</span><span style="color:var(--shiki-token-string)"> 在</span><span style="color:var(--shiki-token-string)"> Windows</span><span style="color:var(--shiki-token-string)"> 资源管理器中，转到您新创建的</span><span style="color:var(--shiki-token-string)"> VM</span><span style="color:var(--shiki-token-string)"> 的存储位置，例如</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">C:\home-assistant</span><span style="color:var(--shiki-token-string-expression)">`</span><span style="color:var(--shiki-token-function)">。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">      12.</span><span style="color:var(--shiki-token-string)"> 删除</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">home-assistant.vmdk</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">文件。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">      3.</span><span style="color:var(--shiki-token-string)"> 在</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">Downloads</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">文件夹中，找到</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">haos_ova_xx.x.vmdk</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">文件。</span><span style="color:var(--shiki-token-string-expression)"> </span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">         -</span><span style="color:var(--shiki-token-string)"> 如果您尚未解压存档，请解压它。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">         -</span><span style="color:var(--shiki-token-string)"> 在文件夹中，找到</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">.vmdk</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">文件并将其重命名为</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">home-assistant.vmdk</span><span style="color:var(--shiki-token-string-expression)">`</span><span style="color:var(--shiki-token-function)">。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">         -</span><span style="color:var(--shiki-token-string)"> 将文件（而不是解压的文件夹）粘贴到</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">C:\home-assistant</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">文件夹中。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">      4.</span><span style="color:var(--shiki-token-string)"> 右键单击</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">.vmx</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">文件并选择</span><span style="color:var(--shiki-token-string)"> **Open</span><span style="color:var(--shiki-token-string)"> with（打开方式）**</span><span style="color:var(--shiki-token-keyword)"> &gt;</span><span style="color:var(--shiki-token-string)"> **Notepad（记事本）**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">      5.</span><span style="color:var(--shiki-token-string)"> 在</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">.encoding</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">下，添加一行。输入</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">firmware</span><span style="color:var(--shiki-token-string)"> =</span><span style="color:var(--shiki-token-string-expression)"> &quot;efi&quot;`</span><span style="color:var(--shiki-token-function)">。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">      6.</span><span style="color:var(--shiki-token-string)"> 现在继续下一步启动您的</span><span style="color:var(--shiki-token-string)"> VM。</span><span style="color:var(--shiki-token-string-expression)"> </span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">         -</span><span style="color:var(--shiki-token-string)"> 如果您看到关于侧信道缓解措施的提示，选择</span><span style="color:var(--shiki-token-string)"> **OK（确定）**。</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">         -</span><span style="color:var(--shiki-token-string)"> 如果您看到一条消息指出找不到</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">.vmdk</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">文件，在步骤</span><span style="color:var(--shiki-token-constant)"> 3</span><span style="color:var(--shiki-token-string)"> 中，您可能粘贴了文件夹而不是文件。重复步骤</span><span style="color:var(--shiki-token-string)"> 3。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">## VMware ESXi/vSphere</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">使用</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">E1000</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">或</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">E1000E</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">虚拟网络适配器。使用</span><span style="color:var(--shiki-token-string)"> VMware</span><span style="color:var(--shiki-token-string)"> 的</span><span style="color:var(--shiki-token-string-expression)"> `</span><span style="color:var(--shiki-token-function)">VMXnet3</span><span style="color:var(--shiki-token-string-expression)">` </span><span style="color:var(--shiki-token-function)">虚拟网络适配器时，已确认存在</span><span style="color:var(--shiki-token-string)"> mDNS/多播发现问题。</span></span>
+<span class="line"></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="启动您的虚拟机"><a href="#启动您的虚拟机" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启动您的虚拟机</h3>
+<ol>
+<li>启动虚拟机。</li>
+<li>观察 Home Assistant Operating System 的启动过程。</li>
+<li>完成后，您将能够在 <a href="http://homeassistant.local:8123" target="_blank" rel="noopener noreferrer" class="rp-link">homeassistant.local:8123</a> 访问 Home Assistant。如果您运行的是较旧的 Windows 版本或有更严格的网络配置，您可能需要在 <a href="http://homeassistant:8123" target="_blank" rel="noopener noreferrer" class="rp-link">homeassistant:8123</a> 或 <code>http://X.X.X.X:8123</code>（将 X.X.X.X 替换为您虚拟机的 IP 地址）访问 Home Assistant。</li>
+</ol>
+<p>Home Assistant Operating System 已安装并可访问，您可以继续进行入门设置。</p>
+<div class="rp-callout rp-callout--info"><div class="rp-callout__title">Info</div><div class="rp-callout__content"><p><a href="/home-assistant/getting-started/onboarding/index.html" class="rp-link">入门设置</a></p></div></div>
+<h2 class="rp-toc-include" id="刷写-odroid-n2"><a href="#刷写-odroid-n2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>刷写 ODROID-N2+</h2>
+<p>可以通过板前部的 USB-OTG 连接将 Home Assistant 直接刷写到 ODROID-N2+，将设备直接连接到您的计算机。该设备包含 Petitboot 引导加载程序，这使得 ODROID-N2+ 存储显示为就像它是一个 USB 驱动器一样。</p>
+<p><em>所有这些说明对 ODROID-N2（非 plus 版本）同样适用。</em></p>
+<h3 class="rp-toc-include" id="您将需要什么"><a href="#您将需要什么" class="rp-header-anchor rp-link" aria-hidden="true">#</a>您将需要什么</h3>
+<p>要使用 Petitboot 和 OTG-USB 刷写您的 eMMC，您需要以下物品：</p>
+<ul>
+<li>HDMI 电缆和显示器</li>
+<li>USB 键盘</li>
+<li>USB 2.0 转 micro-USB 电缆</li>
+<li>如果您的主板是 Home Assistant Blue 套装：No.2 六角扳手用于打开外壳</li>
+</ul>
+<h3 class="rp-toc-include" id="启用-spi-启动模式"><a href="#启用-spi-启动模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用 SPI 启动模式</h3>
+<p>要启用 SPI 启动模式：</p>
+<ol>
+<li>
+<p>通过拔掉电源线关闭 ODROID-N2+。</p>
+</li>
+<li>
+<p>移除外壳。</p>
+<p><img src="/home-assistant/images/hassio/screenshots/case-removed.jpg" alt="已移除外壳的照片"/></p>
+</li>
+<li>
+<p>找到启动模式切换开关并将其从 MMC 切换到 SPI。</p>
+<p><img src="/home-assistant/images/hassio/screenshots/toggle_spi.jpg" alt="SPI 切换开关照片"/></p>
+</li>
+<li>
+<p>通过位于板前部的 USB-OTG 端口将 ODROID-N2+ 直接连接到您的计算机。</p>
+</li>
+<li>
+<p>将 USB 键盘和显示器（使用 HDMI）连接到您的 ODROID-N2+。</p>
+</li>
+<li>
+<p>插入电源线以启动 ODROID-N2+。</p>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="启用-usb-驱动器模式"><a href="#启用-usb-驱动器模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用 USB 驱动器模式</h3>
+<p>当 ODROID-N2+ 设置为 SPI 启动模式并通电后，它会启动到终端。要启用 USB 驱动器模式：</p>
+<ol>
+<li>
+<p>从菜单中选择 <code>Exit to shell</code>。</p>
+<p><img src="/home-assistant/images/hassio/screenshots/exit-shell.png" alt="退出到 shell"/></p>
+</li>
+</ol>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+使用命令行时，它可能会返回以下消息：
+<code>can&#x27;t access tty; job control turned off.</code>
+您可以安全地忽略此消息并继续安装</p></div></div>
+<ol>
+<li>
+<p>在控制台使用以下命令确认存储设备节点：</p>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">ls</span><span style="color:var(--shiki-token-string)"> /dev/mmc*</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</li>
+<li>
+<p>使用 <code>ums</code> 命令将 ODROID-N2+ 上的存储设备设置为海量存储设备（USB 大容量存储模式）。
+这将配置 ODROID-N2+ 和 OTG 作为存储卡读取器：</p>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">ums</span><span style="color:var(--shiki-token-string)"> /dev/mmcblk0</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="刷写-home-assistant"><a href="#刷写-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>刷写 Home Assistant</h3>
+<ol>
+<li>
+<p>通过 ODROID-N2+ 前部的 micro-USB 端口将 ODROID-N2+ 连接到您的 PC。</p>
+</li>
+<li>
+<p>当 ODROID-N2 被识别为 USB 连接的存储设备时，您可以使用 <a href="https://www.balena.io/etcher/" target="_blank" rel="noopener noreferrer" class="rp-link">Etcher</a> 刷写 eMMC。</p>
+<ul>
+<li>使用 <a href="https://github.com/home-assistant/operating-system/releases/download//haos_odroid-n2-.img.xz" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-N2+</a> 的最新稳定版 Home Assistant OS（haos_odroid-n2-.img.xz）。</li>
+<li>在 Balena 中，使用 <strong>Flash from file</strong>。<strong>Flash from URL</strong> 在所有系统上都不起作用。</li>
+</ul>
+</li>
+<li>
+<p>当刷写过程完成时，从您的 PC 断开 ODROID-N2+。</p>
+<ul>
+<li>移除电源线。</li>
+<li>移除 USB 和 HDMI 电缆。</li>
+<li>确保将启动模式开关切换回 MMC。</li>
+</ul>
+</li>
+<li>
+<p>将 ODROID 放回外壳中。</p>
+</li>
+<li>
+<p>用以太网电缆将您的 ODROID-N2+ 连接到网络，确保有互联网访问，然后插入电源。</p>
+</li>
+<li>
+<p>如果您的路由器支持 mDNS，您可以在 <code>http://homeassistant.local:8123</code> 访问您的安装。</p>
+<ul>
+<li>如果您的网络不支持 mDNS，您必须使用 ODROID-N2+ 的 IP 地址而不是 <code>homeassistant.local</code>。例如，<code>http://192.168.0.9:8123</code>。</li>
+<li>您应该能够从路由器的管理界面找到 ODROID-N2+ 的 IP 地址。</li>
+</ul>
+</li>
+<li>
+<p>继续<a href="/home-assistant/getting-started/onboarding/index.html" class="rp-link">入门设置</a>。</p>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="刷写-odroid-m1s"><a href="#刷写-odroid-m1s" class="rp-header-anchor rp-link" aria-hidden="true">#</a>刷写 ODROID-M1S</h2>
+<p>可以通过板前部的 USB-OTG 连接将 Home Assistant 刷写到 ODROID-M1S，将设备直接连接到您的计算机。
+与其他 ODROID 板不同，M1S 没有可选 <abbr title="embedded MultiMediaCard">eMMC</abbr> 模块的插槽。它也没有单独的闪存芯片来容纳专用的引导加载程序。
+相反，M1S 有一个内置的 64 GB <abbr title="embedded MultiMediaCard">eMMC</abbr> 直接焊接在板上，默认情况下容纳引导加载程序。本指南将向您展示如何将 <strong>Home Assistant Operating System</strong> 安装到内置 <abbr title="embedded MultiMediaCard">eMMC</abbr>。</p>
+<p><ins><strong>警告：</strong></ins><strong> 安装 Home Assistant OS 会将 <abbr title="embedded MultiMediaCard">eMMC</abbr> 上的固件和 <abbr title="secondary program loader">SPL</abbr> 替换为 Home Assistant OS 提供的主流版本。因此，不再可能使用带有 EMMC2UMS 镜像的 SD 卡，因为主流 <abbr title="secondary program loader">SPL</abbr> 目前（2024 年 2 月）与 EMMC2UMS 镜像中的 U-Boot 不兼容。这对标准使用没有任何问题，只是如果您想返回 Hardkernel 提供的操作系统会更复杂（参见 <a href="#hk-recovery" class="rp-link">HK 恢复</a>）。</strong></p>
+<h3 class="rp-toc-include" id="您将需要什么-1"><a href="#您将需要什么-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>您将需要什么</h3>
+<p>要使用 <abbr title="USB-On-The-Go">USB-OTG</abbr> 刷写您的 <abbr title="embedded MultiMediaCard">eMMC</abbr>，您需要以下物品：</p>
+<ul>
+<li>一张小型 SD 卡</li>
+<li>另一台计算机</li>
+<li>USB 2.0 转 micro-USB 电缆</li>
+<li>特殊的 Hardkernel eMMC-to-USB-mass-storage 镜像</li>
+</ul>
+<h3 class="rp-toc-include" id="启动到大容量存储模式"><a href="#启动到大容量存储模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启动到大容量存储模式</h3>
+<p>（这些步骤与官方 <a href="https://wiki.odroid.com/odroid-m1s/getting_started/os_installation_guide?redirect=1#install_over_usb_from_pc" target="_blank" rel="noopener noreferrer" class="rp-link">Hardkernel wiki</a> 页面相同。）</p>
+<ol>
+<li>下载 <a href="https://dn.odroid.com/RK3566/ODROID-M1S/Installer/ODROID-M1S_EMMC2UMS.img" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-M1S_EMMC2UMS.img</a>。</li>
+<li>使用 <a href="https://www.balena.io/etcher/" target="_blank" rel="noopener noreferrer" class="rp-link">balena Etcher</a> 或其他工具将 UMS 实用程序刷写到 SD 卡上。
+<ul>
+<li>使用 <strong>Flash from file</strong>。<strong>Flash from URL</strong> 在所有系统上都不起作用。
+（balena Etcher 会抱怨刷写过程中出了问题。您可以忽略此消息）</li>
+</ul>
+</li>
+<li>将该 SD 卡插入您的 ODROID-M1S 并启动它。</li>
+</ol>
+<h3 class="rp-toc-include" id="刷写-home-assistant-m1s"><a href="#刷写-home-assistant-m1s" class="rp-header-anchor rp-link" aria-hidden="true">#</a>刷写 Home Assistant M1S</h3>
+<ol>
+<li>下载 <a href="https://github.com/home-assistant/operating-system/releases/download//haos_odroid-m1s-.img.xz" target="_blank" rel="noopener noreferrer" class="rp-link">ODROID-M1S</a> 的最新稳定版 Home Assistant OS。</li>
+<li>除了要刷写的 HAOS 镜像（M1S 而不是 N2+ 版本）外，您可以按照<a href="/home-assistant/common-tasks/os/index.html#flashing-home-assistant" class="rp-link">这里</a>的 N2+ 分步刷写指南操作。</li>
+</ol>
+<h4 class="rp-toc-include" id="hk-恢复"><a href="#hk-恢复" class="rp-header-anchor rp-link" aria-hidden="true">#</a><em>HK 恢复</em></h4>
+<p>如果您想将 M1S 恢复到 Hardkernel 的初始状态，您必须恢复 HK 的引导加载程序。
+重新刷写 eMMC 与您选择的操作系统的可靠方法是使用 Home Assistant OS 刷写 EMMC2UMS 镜像，这将 ODROID-M1S 转换为 USB 大容量存储设备。刷写 EMMC2UMS 镜像后，您可以再次刷写任何操作系统。您需要一根 micro USB 电缆将 ODROID-M1S 连接到 PC。</p>
+<p>注意：此命令将导致您当前的 Home Assistant OS 安装无法启动！</p>
+<p>使用本地终端（HDMI/键盘）访问系统控制台。在 Home Assistant CLI（命令行）上，输入 <code>login</code> 进入 root shell 并使用 <code>curl</code> 下载镜像并使用 <code>dd</code> 将其写入 eMMC 块设备：</p>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">curl</span><span style="color:var(--shiki-token-string)"> -L</span><span style="color:var(--shiki-token-string)"> -A</span><span style="color:var(--shiki-token-string-expression)"> &quot;Mozilla/5.0&quot;</span><span style="color:var(--shiki-token-string)"> https://dn.odroid.com/RK3566/ODROID-M1S/Installer/ODROID-M1S_EMMC2UMS.img</span><span style="color:var(--shiki-token-keyword)"> |</span><span style="color:var(--shiki-token-function)"> sudo</span><span style="color:var(--shiki-token-string)"> dd</span><span style="color:var(--shiki-token-string)"> of=/dev/mmcblk0</span><span style="color:var(--shiki-token-string)"> bs=4M</span><span style="color:var(--shiki-token-string)"> status=progress</span><span style="color:var(--shiki-token-string)"> conv=fsync</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>这样，设备将在下次启动时以移除 SD 卡后的 UMS 模式启动。按照<a href="https://wiki.odroid.com/odroid-m1s/getting_started/os_installation_guide#install_over_usb_from_pc" target="_blank" rel="noopener noreferrer" class="rp-link">从 PC 通过 USB 安装</a>安装不同的操作系统。</p>
+<h2 class="rp-toc-include" id="安装-home-assistant-container"><a href="#安装-home-assistant-container" class="rp-header-anchor rp-link" aria-hidden="true">#</a>安装 Home Assistant Container</h2>
+<p>以下说明用于在您自己管理的容器环境中安装运行 <strong>Home Assistant Container</strong>。任何 <a href="https://opencontainers.org/" target="_blank" rel="noopener noreferrer" class="rp-link">OCI</a> 兼容的运行时都可以使用，但本指南将重点介绍使用 Docker 进行安装。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+此安装类型<strong>无法访问应用</strong>。如果您想使用应用，您需要使用其他安装类型。推荐的类型是 <strong>Home Assistant Operating System</strong>。查看<a href="https://www.home-assistant.io/installation/#about-installation-types" target="_blank" rel="noopener noreferrer" class="rp-link">安装类型概览表</a>了解差异。</p></div></div>
+<p>:::important</p>
+<p><b>前提条件</b>
+本指南假设您已经设置了操作系统并安装了容器运行时（如 Docker）。</p>
+<p>如果您使用 Docker，需要 Docker Engine 23.0.0 或更高版本。Docker <em>Desktop</em> 不起作用；您必须使用 Docker <em>Engine</em>。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="平台安装"><a href="#平台安装" class="rp-header-anchor rp-link" aria-hidden="true">#</a>平台安装</h3>
+<p>使用 Docker 安装很简单。调整以下命令：</p>
+<ul>
+<li>
+<p><code>/PATH_TO_YOUR_CONFIG</code> 指向您要存储配置的文件夹并运行它。确保保留 <code>:/config</code> 部分。</p>
+</li>
+<li>
+<p><code>MY_TIME_ZONE</code> 是 <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener noreferrer" class="rp-link">tz 数据库名称</a>，如 <code>TZ=America/Los_Angeles</code>。</p>
+</li>
+<li>
+<p>D-Bus 是可选的，但如果您计划使用<a href="/home-assistant/integrations/bluetooth.html" class="rp-link">蓝牙集成</a>则是必需的。</p>
+<h3 class="rp-toc-include" id="synology-nas"><a href="#synology-nas" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Synology NAS</h3>
+</li>
+</ul>
+<p>带有 DSM 的 Synology 现在通过容器管理器包支持容器管理，允许您安装 Home Assistant 而无需使用命令行。有关该包的详细信息（包括兼容性信息，如果您的 NAS 受支持），请参阅 <a href="https://www.synology.com/en-us/dsm/packages/ContainerManager" target="_blank" rel="noopener noreferrer" class="rp-link">https://www.synology.com/en-us/dsm/packages/ContainerManager</a>。
+步骤如下：</p>
+<ul>
+<li>使用 Synology 的套件中心，安装 <strong>Container Manager</strong> 套件。</li>
+<li>启动容器管理器应用并导航到 <strong>Registry</strong> 部分。</li>
+<li>在注册表页面上，搜索 <code>homeassistant/home-assistant</code> 并选择 <strong>Download</strong>。选择 <strong>stable</strong> 标签。</li>
+<li>等待镜像被拉取。</li>
+<li>导航到容器管理器应用的 <strong>Image</strong> 部分。</li>
+<li>选择 <code>homeassistant/home-assistant</code> 镜像并选择 <strong>Run</strong>。</li>
+<li>在 <strong>General Settings</strong> 页面上：
+<ul>
+<li>选择您想要的容器名称（例如，<code>homeassistant</code>）。</li>
+<li>如果您愿意，设置 <strong>Enable auto-restart</strong>。</li>
+<li>选择 <strong>Next</strong>。</li>
+</ul>
+</li>
+<li>在 <strong>Advanced Settings</strong> 页面上：
+<ul>
+<li>在 <strong>Volume Settings</strong> 部分，选择 <strong>Add Folder</strong> 并选择现有文件夹或添加新文件夹（例如，在 <code>docker</code> 共享文件夹中，添加一个名为 <code>homeassistant</code> 的新文件夹，然后在该新文件夹中添加另一个新文件夹 <code>config</code>），然后选择 <strong>Select</strong>。然后将 <strong>Mount path</strong> 编辑为 <code>/config</code>，权限设置为 <strong>Read/Write</strong>。这配置了 Home Assistant 存储配置和日志的位置。</li>
+<li>为确保 Home Assistant 显示正确的时区，在 <strong>Environment</strong> 部分，选择 <strong>Add</strong> 按钮，在 <strong>Variable</strong> 字段中添加 <code>TZ</code>，在值中添加您的时区（例如，<code>Europe/London</code>）。时区可以在<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener noreferrer" class="rp-link">这里</a>找到。</li>
+<li>在 <strong>Network</strong> 部分，将网络下拉菜单设置为 <code>host</code>。</li>
+</ul>
+</li>
+<li>选择 <strong>Next</strong>。</li>
+<li>确保选中 <strong>Run this container after the wizard is finished</strong> 并选择 <strong>Done</strong>。</li>
+<li>您在 Docker 中的 Home Assistant 现在应该运行，并将从 Docker 主机上的端口 8123 提供 Web 界面（这将是您的 Synology NAS IP 地址 - 例如 <code>http://192.168.1.10:8123</code>）。</li>
+</ul>
+<p>如果您使用内置防火墙，您还必须将端口 8123 添加到允许列表。这可以在 <strong>Control Panel</strong> &gt; <strong>Security</strong> 然后是 <strong>Firewall</strong> 选项卡中找到。选择 <strong>Firewall Profile</strong> 下拉框旁边的 <strong>Edit Rules</strong>。创建一个新规则并为端口选择 <strong>Custom</strong> 并添加 8123。如果您愿意可以编辑源 IP 或保留默认的 <strong>All</strong>。操作应保持为 <strong>Allow</strong>。</p>
+<p>要使用 Z-Wave USB 适配器进行 Z-Wave 控制，HA Docker 容器需要额外配置才能访问 USB 适配器。虽然有多种方法可以做到这一点，但在撰写本文时，授予访问权限的最少特权方式只能通过终端执行。有关配置 Synology NAS 的终端访问，请参阅此页面：</p>
+<p><a href="https://www.synology.com/en-global/knowledgebase/DSM/help/DSM/AdminCenter/system_terminal" target="_blank" rel="noopener noreferrer" class="rp-link">https://www.synology.com/en-global/knowledgebase/DSM/help/DSM/AdminCenter/system_terminal</a></p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+<a href="https://www.synology.com/en-global/knowledgebase/DSM/tutorial/General_Setup/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet" target="_blank" rel="noopener noreferrer" class="rp-link">请参阅此页面了解如何通过 SSH 访问终端</a></p></div></div>
+<p>按如下方式调整终端命令：</p>
+<ul>
+<li>将 <code>/PATH_TO_YOUR_CONFIG</code> 替换为指向您要存储配置的文件夹 - 确保保留 <code>:/config</code> 部分</li>
+<li>将 <code>/PATH_TO_YOUR_USB_STICK</code> 替换为与您的 USB 适配器路径匹配（例如，大多数 Synology 用户为 <code>/dev/ttyACM0</code>）</li>
+<li>将 <code>Australia/Melbourne</code> 替换为<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener noreferrer" class="rp-link">您的时区</a></li>
+</ul>
+<p>在终端中运行它。</p>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">sudo</span><span style="color:var(--shiki-token-string)"> docker</span><span style="color:var(--shiki-token-string)"> run</span><span style="color:var(--shiki-token-string)"> --restart</span><span style="color:var(--shiki-token-string)"> always</span><span style="color:var(--shiki-token-string)"> -d</span><span style="color:var(--shiki-token-string)"> --name</span><span style="color:var(--shiki-token-string)"> homeassistant</span><span style="color:var(--shiki-token-string)"> -v</span><span style="color:var(--shiki-token-string)"> /PATH_TO_YOUR_CONFIG:/config</span><span style="color:var(--shiki-token-string)"> --device=/PATH_TO_YOUR_USB_STICK</span><span style="color:var(--shiki-token-string)"> -e</span><span style="color:var(--shiki-token-string)"> TZ=Australia/Melbourne</span><span style="color:var(--shiki-token-string)"> --net=host</span><span style="color:var(--shiki-token-string)"> :stable</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>通过<a href="/home-assistant/integrations/zwave_js.html" class="rp-link">按照此处的说明</a>完成其余的 Z-Wave 配置。</p>
+<p>备注：要在 Synology NAS 上的 Docker 中更新您的 Home Assistant，您只需执行以下操作：</p>
+<ul>
+<li>转到 <strong>Container Manager</strong> 应用并移至 <strong>Image</strong> 部分。</li>
+<li>在 Image 中找到 <code>homeassistant/home-assistant</code> 并选择 <strong>Update</strong>。</li>
+<li>等待系统消息/通知弹出，显示下载已完成（没有进度条）。</li>
+<li>移至 <strong>Container</strong> 部分。</li>
+<li>如果容器正在运行，停止它。</li>
+<li>右键单击它并选择 <strong>Action</strong> &gt; <strong>Reset</strong>。您不会丢失任何数据，因为所有文件都存储在您的配置目录中。</li>
+<li>再次启动容器 - 它将使用新的 Home Assistant 镜像启动。</li>
+</ul>
+<p>备注：要在 Synology NAS 中重启您的 Home Assistant，您只需执行以下操作：</p>
+<ul>
+<li>转到 <strong>Container Manager</strong> 应用并移至 <strong>Container</strong> 部分。</li>
+<li>右键单击它并选择 <strong>Action</strong> &gt; <strong>Restart</strong>。</li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>如果您想在 Synology Docker 上的 Home Assistant 中使用 USB 蓝牙适配器或 Z-Wave USB 适配器，这些说明没有正确配置容器以访问 USB 设备。要在 Synology Docker Home Assistant 上配置这些设备，您可以按照 Phil Hawthorne 提供的<a href="https://philhawthorne.com/installing-home-assistant-io-on-a-synology-diskstation-nas/" target="_blank" rel="noopener noreferrer" class="rp-link">说明</a>操作。</p></div></div>
+<h3 class="rp-toc-include" id="qnap-nas"><a href="#qnap-nas" class="rp-header-anchor rp-link" aria-hidden="true">#</a>QNAP NAS</h3>
+<p>带有 QTS 的 QNAP 支持 Docker，允许您使用 Docker 安装 Home Assistant 而无需命令行。有关该包的详细信息（包括兼容性信息，如果您的 NAS 受支持），请参阅 <a href="https://www.qnap.com/solution/container_station/en/index.php" target="_blank" rel="noopener noreferrer" class="rp-link">https://www.qnap.com/solution/container_station/en/index.php</a>。</p>
+<p>步骤如下：</p>
+<ul>
+<li>在您的 Qnap NAS 上安装 <strong>Container Station</strong> 包。</li>
+<li>启动容器站并移至 <strong>Create Container</strong> 部分。</li>
+<li>使用 Docker Hub 搜索镜像 <code>homeassistant/home-assistant</code> 并选择 <strong>Install</strong>。</li>
+<li>选择 <strong>stable</strong> 版本并选择 <strong>Next</strong>。</li>
+<li>选择您想要的容器名称（例如，<code>homeassistant</code>）。</li>
+<li>选择 <strong>Advanced Settings</strong>。</li>
+<li>在 <strong>Shared Folders</strong> 中选择 <strong>Volume from host</strong> &gt; <strong>Add</strong> 并选择现有文件夹或添加新文件夹。挂载点必须是 <code>/config</code>，以便 Home Assistant 将其用于配置和日志。</li>
+<li>在 <strong>Network</strong> 中选择网络模式为 <strong>Host</strong>。</li>
+<li>为确保 Home Assistant 显示正确的时区，转到 <strong>Environment</strong> 选项卡并选择加号，然后添加 <code>variable</code> = <code>TZ</code> 和 <code>value</code> = <code>Europe/London</code>，选择<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener noreferrer" class="rp-link">您的正确时区</a>。</li>
+<li>选择 <strong>Create</strong>。</li>
+<li>等待一段时间，直到您的 NAS 创建容器。</li>
+<li>您在 Docker 中的 Home Assistant 现在应该运行，并将从 Docker 主机上的端口 8123 提供 Web 界面（这将是您的 Qnap NAS IP 地址 - 例如 <code>http://192.xxx.xxx.xxx:8123</code>）。</li>
+</ul>
+<p>备注：要在 Qnap NAS 上的 Docker 中更新您的 Home Assistant，您只需删除容器和镜像并再次执行步骤（不要删除 <code>config</code> 文件夹）。</p>
+<h3 class="rp-toc-include" id="社区说明"><a href="#社区说明" class="rp-header-anchor rp-link" aria-hidden="true">#</a>社区说明</h3>
+<p>请注意，一些用户报告了在 ARM QNAP 系统（例如 TS-233）上使用容器站 3 创建 Home Assistant 容器的问题。一个可能的解决方法是基于 YAML 文件的 <strong>Docker compose</strong> 方法（参见 <strong>Docker compose</strong> 部分）。在 QNAP 容器站 3 UI 中，可以通过转到 <strong>Applications</strong> 部分并选择 <strong>Create</strong> 来访问。然后会提示您输入 YAML 代码，可以从 <strong>Docker compose</strong> 部分显示的代码复制。注意以两种方式修改此代码：首先，添加一行 <code>version: &#x27;3&#x27;</code>；其次，将文本 <code>/PATH_TO_YOUR_CONFIG</code> 替换为 NAS 系统上的有效路径，例如 <code>/share/Container/HomeAssistant/config</code>。</p>
+<p><strong>安装</strong></p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span></span></span>
+<span class="line"><span>```bash</span></span>
+<span class="line"><span>    Docker run -d \</span></span>
+<span class="line"><span>      --name homeassistant \</span></span>
+<span class="line"><span>      --privileged \</span></span>
+<span class="line"><span>      --restart=unless-stopped \</span></span>
+<span class="line"><span>      -e TZ=MY_TIME_ZONE \</span></span>
+<span class="line"><span>      -v /PATH_TO_YOUR_CONFIG:/config \</span></span>
+<span class="line"><span>      -v /run/dbus:/run/dbus:ro \</span></span>
+<span class="line"><span>      --network=host \</span></span>
+<span class="line"><span>      :</span></span>
+<span class="line"><span>    ```</span></span>
+<span class="line"><span></span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>一旦 Home Assistant 容器运行，Home Assistant 应该可以使用 <code>http://&lt;host&gt;:8123</code> 访问（将 <host> 替换为系统的主机名或 IP）。您可以继续进行入门设置。</host></p>
+<div class="rp-callout rp-callout--info"><div class="rp-callout__title">Info</div><div class="rp-callout__content"><p><a href="/home-assistant/getting-started/onboarding/index.html" class="rp-link">入门设置</a></p></div></div>
+<h3 class="rp-toc-include" id="重启-home-assistant"><a href="#重启-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重启 Home Assistant</h3>
+<p>如果您更改配置，您必须重启服务器。有 3 个选项可以做到这一点。</p>
+<ol>
+<li>在您的 Home Assistant UI 中，转到 <a href="https://my.home-assistant.io/redirect/config/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>System</strong></a> 并在右上角选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单。然后，选择 <strong>Restart Home Assistant</strong>。</li>
+<li>转到 <a href="https://my.home-assistant.io/redirect/developer_services/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Developer Tools</strong> &gt; <strong>Actions</strong></a>，选择 <code>homeassistant.restart</code> 并选择 <strong>Perform Action</strong>。</li>
+<li>从终端重启它。</li>
+</ol>
+<p><strong>Docker CLI</strong></p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span></span></span>
+<span class="line"><span>```bash</span></span>
+<span class="line"><span>    Docker restart homeassistant</span></span>
+<span class="line"><span>    ```</span></span>
+<span class="line"><span></span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="docker-compose"><a href="#docker-compose" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Docker compose</h3>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+<code>docker compose</code> 应该<a href="https://www.Docker.com/blog/announcing-compose-v2-general-availability/" target="_blank" rel="noopener noreferrer" class="rp-link">已经安装</a>在您的系统上。如果没有，您可以<a href="https://docs.Docker.com/compose/install/linux/" target="_blank" rel="noopener noreferrer" class="rp-link">手动</a>安装它。</p></div></div>
+<p>随着 Docker 命令变得越来越复杂，切换到 <code>docker compose</code> 可能更可取，并支持在失败或系统重启时自动重启。创建一个 <code>compose.yaml</code> 文件：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">  services</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    homeassistant</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      container_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> homeassistant</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      image</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;:&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      volumes</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">/PATH_TO_YOUR_CONFIG:/config</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">/etc/localtime:/etc/localtime:ro</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">/run/dbus:/run/dbus:ro</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      restart</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> unless-stopped</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      privileged</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      network_mode</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> host</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      environment</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        TZ</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Europe/Amsterdam</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>通过运行启动它：</p>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">docker</span><span style="color:var(--shiki-token-string)"> compose</span><span style="color:var(--shiki-token-string)"> up</span><span style="color:var(--shiki-token-string)"> -d</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>一旦 Home Assistant 容器运行，Home Assistant 应该可以使用 <code>http://&lt;host&gt;:8123</code> 访问（将 <host> 替换为系统的主机名或 IP）。您可以继续进行入门设置。</host></p>
+<div class="rp-callout rp-callout--info"><div class="rp-callout__title">Info</div><div class="rp-callout__content"><p><a href="/home-assistant/getting-started/onboarding/index.html" class="rp-link">入门设置</a></p></div></div>
+<h3 class="rp-toc-include" id="暴露设备"><a href="#暴露设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>暴露设备</h3>
+<p>为了使用 Zigbee 或其他需要访问设备的集成，您需要将适当的设备映射到容器中。确保运行容器的用户具有访问 <code>/dev/tty*</code> 文件的正确权限，然后将设备映射添加到您的容器说明中：</p>
+<p><strong>Docker CLI</strong></p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span></span></span>
+<span class="line"><span>```bash</span></span>
+<span class="line"><span>    Docker run ... --device /dev/ttyUSB0:/dev/ttyUSB0 ...</span></span>
+<span class="line"><span>    ```</span></span>
+<span class="line"><span></span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="优化"><a href="#优化" class="rp-header-anchor rp-link" aria-hidden="true">#</a>优化</h3>
+<p>Home Assistant 容器使用替代内存分配库 <a href="http://jemalloc.net/" target="_blank" rel="noopener noreferrer" class="rp-link">jemalloc</a> 以获得更好的内存管理和 Python 运行时加速。</p>
+<p>由于使用的 jemalloc 配置可能在某些具有大于 4K 页大小的硬件上引起问题（如某些特定的 ARM64 SoC），可以通过传递环境变量 <code>DISABLE_JEMALLOC</code> 与任何值来禁用它，例如：</p>
+<p><strong>Docker CLI</strong></p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span></span></span>
+<span class="line"><span>```bash</span></span>
+<span class="line"><span>    Docker run ... -e &quot;DISABLE_JEMALLOC=true&quot; ...</span></span>
+<span class="line"><span>    ```</span></span>
+<span class="line"><span></span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>错误消息 <code>&lt;jemalloc&gt;: Unsupported system page size</code> 是一个已知的指示器。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><a href="/home-assistant/installation/odroid.html" class="rp-prev-next-page__item rp-prev-next-page__prev rp-link"><span class="rp-prev-next-page__item__desc">上一页</span><span class="rp-prev-next-page__item__title"><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon rp-prev-next-page__rotate_180"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg><span>ODROID</span></span></a><a href="/home-assistant/installation/windows.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>Windows</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#安装-home-assistant-operating-system" class="rp-toc-item rp-link" title="安装 Home Assistant Operating System" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">安装 Home Assistant Operating System</span></a><a href="#推荐硬件" class="rp-toc-item rp-link" title="推荐硬件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">推荐硬件</span></a><a href="#配置-x86-64-硬件的-bios" class="rp-toc-item rp-link" title="配置 x86-64 硬件的 BIOS" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置 x86-64 硬件的 BIOS</span></a><a href="#将-haos-写入您的-x86-64-硬件" class="rp-toc-item rp-link" title="将 HAOS 写入您的 x86-64 硬件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">将 HAOS 写入您的 x86-64 硬件</span></a><a href="#方法-1通过从-usb-闪存驱动器启动-ubuntu-安装-haos" class="rp-toc-item rp-link" title="方法 1：通过从 USB 闪存驱动器启动 Ubuntu 安装 HAOS" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">方法 1：通过从 USB 闪存驱动器启动 Ubuntu 安装 HAOS</span></a><a href="#所需材料" class="rp-toc-item rp-link" title="所需材料" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">所需材料</span></a><a href="#通过-usb-闪存驱动器从-ubuntu-安装-haos" class="rp-toc-item rp-link" title="通过 USB 闪存驱动器从 Ubuntu 安装 HAOS" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">通过 USB 闪存驱动器从 Ubuntu 安装 HAOS</span></a><a href="#方法-2直接从启动介质安装-haos" class="rp-toc-item rp-link" title="方法 2：直接从启动介质安装 HAOS" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">方法 2：直接从启动介质安装 HAOS</span></a><a href="#所需材料-1" class="rp-toc-item rp-link" title="所需材料" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">所需材料</span></a><a href="#将镜像写入您的启动介质" class="rp-toc-item rp-link" title="将镜像写入您的启动介质" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">将镜像写入您的启动介质</span></a><a href="#将镜像写入您的启动介质-1" class="rp-toc-item rp-link" title="将镜像写入您的启动介质" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">将镜像写入您的启动介质</span></a><a href="#启动您的通用-x86-64" class="rp-toc-item rp-link" title="启动您的通用 x86-64" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启动您的通用 x86-64</span></a><a href="#下载适当的镜像" class="rp-toc-item rp-link" title="下载适当的镜像" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">下载适当的镜像</span></a><a href="#创建虚拟机" class="rp-toc-item rp-link" title="创建虚拟机" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">创建虚拟机</span></a><a href="#管理程序特定配置" class="rp-toc-item rp-link" title="管理程序特定配置" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">管理程序特定配置</span></a><a href="#unraid" class="rp-toc-item rp-link" title="Unraid" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Unraid</span></a><a href="#kvm-virt-manager" class="rp-toc-item rp-link" title="KVM (virt-manager)" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">KVM (virt-manager)</span></a><a href="#kvm-virt-install" class="rp-toc-item rp-link" title="KVM (virt-install)" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">KVM (virt-install)</span></a><a href="#启动您的虚拟机" class="rp-toc-item rp-link" title="启动您的虚拟机" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启动您的虚拟机</span></a><a href="#刷写-odroid-n2" class="rp-toc-item rp-link" title="刷写 ODROID-N2+" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">刷写 ODROID-N2+</span></a><a href="#您将需要什么" class="rp-toc-item rp-link" title="您将需要什么" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">您将需要什么</span></a><a href="#启用-spi-启动模式" class="rp-toc-item rp-link" title="启用 SPI 启动模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启用 SPI 启动模式</span></a><a href="#启用-usb-驱动器模式" class="rp-toc-item rp-link" title="启用 USB 驱动器模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启用 USB 驱动器模式</span></a><a href="#刷写-home-assistant" class="rp-toc-item rp-link" title="刷写 Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">刷写 Home Assistant</span></a><a href="#刷写-odroid-m1s" class="rp-toc-item rp-link" title="刷写 ODROID-M1S" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">刷写 ODROID-M1S</span></a><a href="#您将需要什么-1" class="rp-toc-item rp-link" title="您将需要什么" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">您将需要什么</span></a><a href="#启动到大容量存储模式" class="rp-toc-item rp-link" title="启动到大容量存储模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启动到大容量存储模式</span></a><a href="#刷写-home-assistant-m1s" class="rp-toc-item rp-link" title="刷写 Home Assistant M1S" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">刷写 Home Assistant M1S</span></a><a href="#hk-恢复" class="rp-toc-item rp-link" title="HK 恢复" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc"><em>HK 恢复</em></span></a><a href="#安装-home-assistant-container" class="rp-toc-item rp-link" title="安装 Home Assistant Container" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">安装 Home Assistant Container</span></a><a href="#平台安装" class="rp-toc-item rp-link" title="平台安装" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">平台安装</span></a><a href="#qnap-nas" class="rp-toc-item rp-link" title="QNAP NAS" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">QNAP NAS</span></a><a href="#社区说明" class="rp-toc-item rp-link" title="社区说明" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">社区说明</span></a><a href="#重启-home-assistant" class="rp-toc-item rp-link" title="重启 Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">重启 Home Assistant</span></a><a href="#docker-compose" class="rp-toc-item rp-link" title="Docker compose" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Docker compose</span></a><a href="#暴露设备" class="rp-toc-item rp-link" title="暴露设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">暴露设备</span></a><a href="#优化" class="rp-toc-item rp-link" title="优化" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">优化</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

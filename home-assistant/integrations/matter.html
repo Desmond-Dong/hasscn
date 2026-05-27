@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matter - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Matter - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Matter 集成可让你控制本地 Wi-Fi 或 Thread 网络中的 Matter 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Matter 集成可让你控制本地 Wi-Fi 或 Thread 网络中的 Matter 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter_thread_infographic.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter-android-rename.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter_android_connect_new.webp"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter_share_from_apple.webp"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter_share-device-with-other-platform.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter-remove-from-network.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter_device-info.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter_ota_message.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><p><strong>Matter</strong> 集成可让你控制本地 Wi-Fi 或 Thread 网络中的 Matter 设备。</p>
+<p>为了与 Matter 设备通信，Home Assistant 集成会运行自己的“Matter 控制器”应用（此前称为附加组件）。这个 Matter Server 应用会以独立进程运行控制器软件，并连接你的 Matter 网络（技术术语称为 Fabric）与 Home Assistant。Home Assistant 的 Matter 集成通过 WebSocket 连接到该服务器。</p>
+<h1 class="rp-toc-include" id="介绍---什么是-matter"><a href="#介绍---什么是-matter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>介绍 - 什么是 Matter？<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>Matter 是一种面向家庭自动化产品与 IoT（物联网）设备的新型智能家居连接标准，请参阅其 <a href="https://en.wikipedia.org/wiki/Matter_(standard)" target="_blank" rel="noopener noreferrer" class="rp-link">Wikipedia 词条</a>。</p>
+<p>Matter 的首个 1.0 版本发布于 2022 年 10 月。Matter 目前仍处于智能家居市场的持续落地阶段。它因承诺跨生态互操作而获得了大量关注。Google、Apple、Amazon 等大型科技公司在 CSA（<a href="https://csa-iot.org/" target="_blank" rel="noopener noreferrer" class="rp-link">Connectivity Standards Alliance</a>）框架下联合开发这一新标准。已活跃在家庭自动化市场的大型科技公司也已宣布正在或将会推出兼容 Matter 的产品，并参与相关开发。</p>
+<p>Matter 产品在本地运行，并始终支持本地控制，设备控制不依赖互联网连接或云服务。从技术角度看，你可以在不连接厂商专有云的情况下，将 Matter 兼容设备接入 Home Assistant。不过，部分厂商可能要求你先创建账号，才能为某些产品启用 Matter 支持（尤其是以成品设备销售的厂商自有网关/桥接器/中枢/控制器）。</p>
+<p>与其他常见的 IoT 无线协议（如 Zigbee、Z-Wave 和 Bluetooth）不同，Matter 标准本身不包含私有无线协议或网络传输协议。它是在应用层<strong>构建于</strong>现有网络基础设施之上的服务控制协议。所有 Matter 设备都通过标准 IP（IPv6）通信，在你现有的 <a href="https://en.wikipedia.org/wiki/Local_area_network" target="_blank" rel="noopener noreferrer" class="rp-link">局域网（例如 Wi-Fi 与 Ethernet）</a> 或 <a href="https://en.wikipedia.org/wiki/Thread_(network_protocol)" target="_blank" rel="noopener noreferrer" class="rp-link">Thread（低功耗无线个域网）</a> 上传输，具体取决于设备类型。</p>
+<p>Home Assistant 在 Matter 生态中是所谓的“<em>控制器</em>”，也就是它可以控制基于 Matter 的设备。其他 Matter 控制器示例包括 Google Nest 产品、Apple HomePod 音箱、Samsung SmartThings Station，以及部分较新的 Amazon Echo 设备。</p>
+<h2 class="rp-toc-include" id="thread-与-matter-的关系是什么"><a href="#thread-与-matter-的关系是什么" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Thread 与 Matter 的关系是什么？</h2>
+<p>Thread 是一种低功耗无线网状网络技术。它与 Zigbee 很相似，但关键区别在于它是 <em>可 IP 寻址</em> 的，因此非常适合作为 Matter 的传输协议选项。</p>
+<p>下图展示了 Matter、Thread 与边界路由器的关系。Thread 边界路由器负责将 Thread 网络内设备的流量转发到网络外设备。</p>
+<p><img src="/home-assistant/images/integrations/matter/matter_thread_infographic.png" alt="Home Assistant matter thread infographic"/></p>
+<p>图片来源于 Thread Group 的 <a href="https://www.threadgroup.org/support#Resources" target="_blank" rel="noopener noreferrer" class="rp-link">Thread Smart Home Fact Sheet</a>。</p>
+<p>有关 Thread 的更多信息，请参阅 <a href="/home-assistant/integrations/thread/index.html" class="rp-link">Thread 文档</a>。</p>
+<h3 class="rp-toc-include" id="thread-设备不一定支持-matter"><a href="#thread-设备不一定支持-matter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Thread 设备不一定支持 Matter</h3>
+<p>市面上很多设备使用 Thread 进行无线通信，并使用 Matter 作为控制协议，但这并非必然。一些基于 Thread 的设备支持 Apple HomeKit 或其他厂商专有通信协议。也有少数情况需要你申请设备（测试版）固件更新，才能启用 Matter 通信协议。</p>
+<p>看到设备有 Thread 标识时，不要默认它支持 Matter。请始终确认设备本身有 <em>Matter</em> 标识（无论是基于 Wi-Fi/Ethernet 还是 Thread），或有厂商其他明确说明设备支持 Matter。</p>
+<h2 class="rp-toc-include" id="配网期间使用-bluetooth"><a href="#配网期间使用-bluetooth" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配网期间使用 Bluetooth</h2>
+<p>大多数（如果不是全部）符合 Matter 标准的设备都内置 Bluetooth 芯片，以便简化配网。Bluetooth 不用于日常控制，而是用于开箱后或恢复出厂后进行配对。Home Assistant 控制器通过 Home Assistant Companion 应用执行配网。配网时，你需要将手机靠近设备。随后控制器会通过 Bluetooth 把网络凭据发送给设备。完成后，设备会通过其原生接口通信：Wi-Fi 或 Thread。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+即使你的 Home Assistant 服务器可能带有 Bluetooth 适配器并可用于配网，Home Assistant 目前也不会使用该适配器。主要是为了避免与内置 Bluetooth 集成产生冲突，同时相比把设备搬到服务器旁边，让手机靠近 Matter 设备通常更容易。</p></div></div>
+<h2 class="rp-toc-include" id="多-fabric加入多个控制器"><a href="#多-fabric加入多个控制器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>多 Fabric：加入多个控制器</h2>
+<p>Matter 的一个重要特性是 <em>多 Fabric</em>：你可以把同一设备加入多个控制器。例如同时加入 Google Home、Apple Home 和 Home Assistant。标准规定每台设备应至少能够同时支持 5 个不同 Fabric。</p>
+<p>对于 Home Assistant 已提供原生集成（本地 API）的设备，Matter 未必是最佳选择。Matter 作为通用标准，可能不包含厂商专有协议中的精细功能。一个典型例子是 Philips Hue：通过 Matter 通信只提供基础灯光控制，而官方 <a href="/home-assistant/integrations/hue.html" class="rp-link">Hue 集成</a> 还提供 Hue 独有功能，例如（动态）场景、娱乐模式等。</p>
+<h2 class="rp-toc-include" id="支持的安装类型"><a href="#支持的安装类型" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的安装类型</h2>
+<p>建议在 Home Assistant OS 上运行 Matter 应用（此前称为 Matter 附加组件）。这是当前唯一受支持的方案。其他安装类型不在支持范围内，请自行承担风险。</p>
+<p>如果你在容器中运行 Home Assistant，也可以运行 <a href="https://github.com/home-assistant-libs/python-matter-server" target="_blank" rel="noopener noreferrer" class="rp-link">Matter server</a> 的 Docker 镜像。宿主机环境要求和配置说明见该 GitHub 页面。</p>
+<h2 class="rp-toc-include" id="将-matter-设备添加到-home-assistant"><a href="#将-matter-设备添加到-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 Matter 设备添加到 Home Assistant</h2>
+<p>每个 Matter 网络都称为一个 fabric。每个用于控制 Matter 设备的家庭自动化控制器都有自己的“fabric”。你可以把设备直接添加到 Home Assistant 实例的 fabric，也可以从其他 fabric（如 Google 或 Apple）共享到 Home Assistant 的 fabric。下面将分别说明这些方式。</p>
+<p>注意：下面会提到 Nest Hub（第二代）、HomePod Mini 等第三方 Thread 边界路由器。这并不意味着你必须把设备加入这些生态。Home Assistant 仅使用它们访问 Thread 无线网络。Home Assistant Matter 控制器与 Matter 设备之间的通信是加密的。Thread 边界路由器仅负责转发数据，无法读取内容。</p>
+<h3 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h3>
+<p>在尝试将 Matter 设备添加到 Home Assistant 前，请先确保以下组件准备就绪。</p>
+<h4 class="rp-toc-include" id="准备-home-assistant"><a href="#准备-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>准备 Home Assistant</h4>
+<ul>
+<li>确保已<a href="/home-assistant/installation/index.html" class="rp-link">安装</a>最新版本的 Home Assistant</li>
+<li>在 Home Assistant 中安装 Matter 集成
+<ul>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a></li>
+<li>添加 <strong>Matter</strong> 集成</li>
+<li>当提示 <strong>选择连接方式</strong> 时：
+<ul>
+<li>如果你以常规方式运行 Home Assistant OS：选择 <strong>提交</strong>
+<ul>
+<li>这会安装 Home Assistant 官方 Matter Server 应用</li>
+<li>请注意，Home Assistant 官方 Matter Server 应用不支持 32 位平台</li>
+</ul>
+</li>
+<li>如果你已在其他 Home Assistant 应用或自定义容器中运行 Matter server：
+<ul>
+<li>取消勾选复选框，然后选择 <strong>提交</strong></li>
+<li>下一步中填写 Matter server 的 URL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="检查设备标识"><a href="#检查设备标识" class="rp-header-anchor rp-link" aria-hidden="true">#</a>检查设备标识</h4>
+<ul>
+<li>在设备包装上同时确认 Matter 标识，以及 Wi-Fi 或 Thread 标识</li>
+<li>确认设备上是否有二维码或数字配网码
+<ul>
+<li>如果你重置设备，再次配网时仍需要二维码<em>或</em>数字配网码。没有这些信息将无法配网。</li>
+<li>如果二维码或数字配网码只出现在随附文档中，建议提前拍照备份，最好与设备同框并妥善保存。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="准备-android-或-iphone"><a href="#准备-android-或-iphone" class="rp-header-anchor rp-link" aria-hidden="true">#</a>准备 Android 或 iPhone</h4>
+<ul>
+<li>准备一部 Android 或 iPhone，并开启 Bluetooth。关于为何必须使用 Bluetooth，请参阅<a href="#%E9%85%8D%E7%BD%91%E6%9C%9F%E9%97%B4%E4%BD%BF%E7%94%A8-bluetooth" class="rp-link">配网期间使用 Bluetooth</a>：
+<ul>
+<li><strong>Android</strong>：
+<ul>
+<li>至少需要 Android 8.1，推荐 12 或更高版本</li>
+<li>安装最新版 Home Assistant Companion 应用（Play Store 完整版）</li>
+<li>如果你使用 Thread：请确保家庭网络中存在 Thread 边界路由器（Nest Hub 第二代、Nest Wi-Fi Pro，或安装了 Home Assistant OpenThread Border Router 应用的 Home Assistant）
+<ul>
+<li>如果你使用 OpenThread（适用于 Connect ZBT-1、ZBT-2 或 SkyConnect）作为边界路由器，请确保已完成 <a href="/home-assistant/integrations/thread.html#turning-home-assistant-into-a-thread-border-router" class="rp-link">Thread 文档</a>中的步骤</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>iPhone</strong>
+<ul>
+<li>需要 iOS 16 或更高版本</li>
+<li>安装最新版 Home Assistant Companion 应用</li>
+<li>如果你使用 Thread：请确保家庭网络中存在 Thread 边界路由器（HomePod Mini 或 V2、Apple TV 4K，或安装了 Home Assistant OpenThread Border Router 应用的 Home Assistant）
+<ul>
+<li>如果你使用 OpenThread（适用于 Connect ZBT-1、ZBT-2 或 SkyConnect）作为边界路由器，请确保已完成 <a href="/home-assistant/integrations/thread.html#turning-home-assistant-into-a-thread-border-router" class="rp-link">Thread 文档</a>中的步骤</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>确保手机与边界路由器及设备距离足够近</li>
+<li>如果你要添加基于 Wi-Fi 的 Matter 设备：Matter 设备通常使用 2.4 GHz Wi-Fi。请确保手机连接到你计划用于设备运行的同一 2.4 GHz 网络。</li>
+</ul>
+<h3 class="rp-toc-include" id="使用-ios-companion-应用添加新设备"><a href="#使用-ios-companion-应用添加新设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用 iOS Companion 应用添加新设备</h3>
+<p>本指南说明如何添加新设备。该流程会使用手机的 Bluetooth 连接来完成添加。</p>
+<ol>
+<li>在手机上打开 Home Assistant 应用</li>
+<li>前往 <a href="https://my.home-assistant.io/redirect/config_matter/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>Matter</strong></a></li>
+<li>选择 <strong>添加设备</strong> 按钮</li>
+<li>在弹窗中选择 <strong>不，这是新设备。</strong></li>
+<li>使用手机相机扫描 Matter 设备二维码，或选择 <strong>更多选项...</strong> 手动输入配网码</li>
+<li>选择 <strong>添加到 Home Assistant</strong>
+<ul>
+<li>这会启动配网流程，可能需要几分钟</li>
+</ul>
+</li>
+<li>如果你添加的是测试板或测试版设备，可能会出现 <strong>未认证配件</strong> 提示。在该对话框中选择 <strong>仍要添加</strong></li>
+<li>如有提示，输入自定义 <strong>配件名称</strong>
+<ul>
+<li>这里可以输入任意名称</li>
+<li>这是 iOS 内部引用，不会显示在 Home Assistant 中</li>
+<li>输入名称后，选择 <strong>继续</strong></li>
+</ul>
+</li>
+<li>流程完成后选择 <strong>完成</strong>
+<ul>
+<li>你会被重定向到 Home Assistant 中的设备页面，设备已可使用</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="使用-android-companion-应用添加新设备"><a href="#使用-android-companion-应用添加新设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用 Android Companion 应用添加新设备</h3>
+<p>本指南说明如何添加新设备。该流程会使用手机的 Bluetooth 连接来完成添加。</p>
+<ol>
+<li>
+<p>在手机上打开 Home Assistant 应用</p>
+</li>
+<li>
+<p>给设备通电（插电或装入电池）。大多数设备此时会进入配对模式。</p>
+<ul>
+<li>某些设备需要你手动启用配对模式（类似 Z-Wave 或 Zigbee 设备）</li>
+<li>如何进入配对模式通常可在设备文档中找到</li>
+</ul>
+</li>
+<li>
+<p>对于部分设备，此时手机会弹出窗口提示你 <strong>扫描二维码</strong></p>
+<ul>
+<li>扫描二维码</li>
+<li>当提示 <strong>选择应用</strong> 时，请选择 Home Assistant</li>
+<li>流程完成后选择 <strong>完成</strong>，然后选择 <strong>添加设备</strong></li>
+</ul>
+</li>
+<li>
+<p>如果没有弹窗，前往 <a href="https://my.home-assistant.io/redirect/config_matter/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>Matter</strong></a></p>
+<ul>
+<li>选择 <strong>添加设备</strong>，再选择 <strong>添加 Matter 设备</strong></li>
+<li>在弹窗中选择 <strong>不，这是新设备。</strong></li>
+<li>使用手机相机扫描 Matter 设备二维码，或选择 <strong>无二维码设置</strong> 手动输入配网码
+<ul>
+<li>这会启动配网流程，可能需要几分钟</li>
+</ul>
+</li>
+<li>如果你添加测试板（如运行示例应用的 ESP32）且配网失败，可能需要在 Google Developer Console 执行额外操作，请查看测试设备相关说明</li>
+<li>流程完成后选择 <strong>完成</strong></li>
+</ul>
+</li>
+<li>
+<p>要查看设备详情，前往 <a href="https://my.home-assistant.io/redirect/config_matter/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>Matter</strong></a></p>
+</li>
+<li>
+<p>选择 <strong>设备</strong>，再选择刚添加的设备</p>
+<ul>
+<li>默认情况下，设备会使用出厂名称。若要重命名，在设备页面选择铅笔图标 <iconify-icon inline="" icon="mdi:edit" title="edit"></iconify-icon> 进行编辑和重命名。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/matter/matter-android-rename.png" alt="Home Assistant matter android rename"/></p>
+</li>
+<li>
+<p>你的设备现在已可使用</p>
+</li>
+</ol>
+<p class="img">
+    <img width="300" src="/home-assistant/images/integrations/matter/matter_android_connect_new.webp" alt="演示如何将新的 Matter 设备添加到 Home Assistant 的录屏。"/>
+    演示如何将新的 Matter 设备添加到 Home Assistant 的录屏。
+</p>
+<h3 class="rp-toc-include" id="安装故障排查"><a href="#安装故障排查" class="rp-header-anchor rp-link" aria-hidden="true">#</a>安装故障排查</h3>
+<p>如果你在 Android 手机上使用 Home Assistant Companion 应用添加 Matter 设备时遇到问题，请检查以下步骤。</p>
+<h4 class="rp-toc-include" id="现象"><a href="#现象" class="rp-header-anchor rp-link" aria-hidden="true">#</a>现象</h4>
+<p>尝试添加 Matter 设备时，出现 <em>Matter is currently unavailable</em> 错误。</p>
+<h4 class="rp-toc-include" id="解决方法"><a href="#解决方法" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h4>
+<p>这可能表示 Home Assistant Companion 应用所需的 Matter 模块尚未全部下载完成。请尝试以下步骤：</p>
+<ol>
+<li>最多等待 24 小时，让 Google Play Services 下载所需 Matter 模块。</li>
+<li>确保满足<a href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6" class="rp-link">前提条件</a>中列出的要求，包括最低系统要求：
+<ul>
+<li><strong>Android</strong>：
+<ul>
+<li>最低版本为 8.1，推荐 12 或更高版本
+<ul>
+<li>使用较老 Android 版本的用户报告了更多问题</li>
+</ul>
+</li>
+<li>使用常规、登录 Google 账号的 Android 系统，不使用替代版 Android</li>
+<li>确保 Google Play Services 已全部更新到最新</li>
+</ul>
+</li>
+<li><strong>iPhone</strong>：
+<ul>
+<li>需要 iOS 16 或更高版本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Home Assistant Companion 应用：
+<ul>
+<li>确认安装的是从 Play Store 下载的（完整）版本</li>
+<li>确认已更新到最新版本</li>
+<li>如果你刚安装或更新了 Home Assistant Companion 应用：
+<ul>
+<li>请等待</li>
+<li>后台安装所需组件可能需要一些时间</li>
+<li>1 小时后再试，以确保安装完成</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>验证你的设备满足 Matter 支持要求：
+<ul>
+<li>在 Android 设备中，前往 <strong>设置</strong> &gt; <strong>Google</strong> &gt; <strong>设备与共享</strong>
+<ul>
+<li>这里应存在 <strong>Matter 设备</strong> 条目</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重新安装 Home Assistant Companion 应用。</li>
+<li>尝试（重新）安装 Google Home 应用。技术上这不是必需步骤，但可能会触发 Matter 模块的再次安装。</li>
+<li>参考 Google 的这份<a href="https://developers.home.google.com/matter/verify-services" target="_blank" rel="noopener noreferrer" class="rp-link">故障排查指南</a>。</li>
+</ol>
+<h2 class="rp-toc-include" id="从其他平台共享设备到-home-assistant"><a href="#从其他平台共享设备到-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从其他平台共享设备到 Home Assistant</h2>
+<p>如果你的 Matter 设备已添加到 Apple Home 或 Google Home，且你希望同时在 Apple/Google Home 与 Home Assistant 中控制它，请使用以下方法之一。</p>
+<h3 class="rp-toc-include" id="前提条件-1"><a href="#前提条件-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h3>
+<ul>
+<li>安装最新版 Home Assistant Companion 应用</li>
+<li>Matter 设备已分别接入 Apple Home 或 Google Home</li>
+<li>在 Home Assistant 中安装 Matter 集成
+<ul>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a></li>
+<li>添加 <strong>Matter</strong> 集成</li>
+<li>当提示 <strong>选择连接方式</strong> 时：
+<ul>
+<li>如果你以常规方式运行 Home Assistant OS：选择 <strong>提交</strong>
+<ul>
+<li>这会安装官方 Matter server 应用</li>
+</ul>
+</li>
+<li>如果你在自定义容器中运行 Matter server（不推荐）：
+<ul>
+<li>取消勾选复选框，然后选择 <strong>提交</strong></li>
+<li>下一步中填写 Matter server 的 URL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="从其他-matter-控制器如-apple-或-google-home共享设备"><a href="#从其他-matter-控制器如-apple-或-google-home共享设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从其他 Matter 控制器（如 Apple 或 Google Home）共享设备</h3>
+<p>如果你希望 Home Assistant 控制已添加到其他 Matter 控制器（如 Google Home）的 Matter 设备，请按以下步骤操作：</p>
+<ol>
+<li>在手机上打开 Home Assistant 应用</li>
+<li>前往 <a href="https://my.home-assistant.io/redirect/config_matter/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>Matter</strong></a></li>
+<li>选择 <strong>添加设备</strong> 按钮</li>
+<li>在弹窗中选择 <strong>是，已在使用中</strong>，然后选择当前已连接的控制器，例如 Google Home</li>
+<li>按照弹窗中的指引完成操作
+<ul>
+<li><strong>故障排查</strong>：如果 Home Assistant 添加设备失败，请检查 Matter 集成是否已安装，以及 Companion 应用是否为最新版</li>
+</ul>
+</li>
+<li>设备添加到 Home Assistant 后，你会看到 <strong>你的设备已添加</strong> 通知
+<ul>
+<li>流程结束后会跳转到 Home Assistant 的设备页面</li>
+<li>此后你可以在 Home Assistant 和 Google Home 中同时控制设备</li>
+</ul>
+</li>
+</ol>
+<p class="img">
+    <img width="300" src="/home-assistant/images/integrations/matter/matter_share_from_apple.webp" alt="演示如何从 Apple Home 共享 Matter 设备的录屏。"/>
+    演示如何从 Apple Home 共享 Matter 设备的录屏。
+</p>
+<h3 class="rp-toc-include" id="使用-matter-桥接器"><a href="#使用-matter-桥接器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用 Matter 桥接器</h3>
+<p>对于某些生态，你可以通过 <em>Matter 桥接器</em> 将其部分非 Matter 设备添加到 Home Assistant。Matter 桥接器示例包括 SwitchBot Hub 2、Aqara Hub M2、Ikea Dirigera，以及 Philips Hue Bridge。使用桥接器后，你可以继续通过原生应用控制这些设备，同时也能在 Home Assistant 中使用它们。以 Aqara Hub 为例，它原本使用云集成；通过 Matter 桥接到 Home Assistant（而不是其云集成）后，你可以改用本地通信。</p>
+<p>Home Assistant 作为 Matter 控制器，仅支持对 Matter 设备进行<strong>控制</strong>。Home Assistant 本身不是桥接器，不能把 Home Assistant 里已有设备转换成 Matter 兼容设备。</p>
+<h4 class="rp-toc-include" id="如何将-matter-桥接器添加到-home-assistant"><a href="#如何将-matter-桥接器添加到-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>如何将 Matter 桥接器添加到 Home Assistant</h4>
+<p>桥接器接入方式取决于具体设备，请查看对应设备文档。以 SwitchBot Hub 2 为例，你需要在应用中启用 Matter 配对模式。随后应用会提供配对码，并提示你让实际设备进入配对模式。之后你就可以将这个桥接器设备作为 Matter 设备添加到 Home Assistant。并不能保证该生态的所有设备都能在 Home Assistant 中使用。例如 SwitchBot Hub 2 V1.5 支持通过 Matter 使用窗帘、门锁和百叶，但不支持灯光。</p>
+<h4 class="rp-toc-include" id="何时不应使用桥接器"><a href="#何时不应使用桥接器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>何时不应使用桥接器</h4>
+<p>在某些场景下，通过 Matter 桥接到 Home Assistant 并不会带来收益。例如目前 Philips Hue Bridge 支持 Matter，但 Matter 只支持有限功能。Home Assistant 的 Philips Hue 原生集成具备更丰富功能，且同样是本地通信。通过 Matter 桥接添加 Philips Hue 设备不会带来额外好处，反而可能损失部分功能。</p>
+<p><lite-youtube videoid="rEugjMk-4II" videostartat="4192" videotitle="将 Matter 设备桥接到 Home Assistant"></lite-youtube></p>
+<h2 class="rp-toc-include" id="跨平台共享设备"><a href="#跨平台共享设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>跨平台共享设备</h2>
+<p>如果你已将 Matter 设备添加到 Home Assistant，并希望把它提供给其他平台（如 Google Home 或 Apple Home），请按以下步骤操作。</p>
+<ol>
+<li>前往 <a href="https://my.home-assistant.io/redirect/config_matter/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>Matter</strong></a> 并选择 <strong>设备</strong></li>
+<li>在设备列表中选择要共享的设备</li>
+<li>选择 <strong>共享设备</strong>，然后在弹窗中再次选择 <strong>共享设备</strong>
+<ul>
+<li>无需按下设备上的硬件按键来进入配网模式</li>
+</ul>
+</li>
+<li>在目标平台的应用中扫描二维码或输入共享码，以加入该设备</li>
+<li>按目标应用的指引完成流程。完成后可在 Home Assistant 中确认设备已共享：
+<ul>
+<li>在 <strong>共享设备</strong> 按钮旁选择三点菜单 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon>，然后选择 <strong>管理 Fabric</strong></li>
+<li>列表中应显示新增平台</li>
+<li>例如共享到 Google Home 后，会显示 <strong>Google LLC</strong>
+<img src="/home-assistant/images/integrations/matter/matter_share-device-with-other-platform.png" alt="Home Assistant matter share device with other platform"/></li>
+</ul>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="从-matter-控制器中移除设备"><a href="#从-matter-控制器中移除设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Matter 控制器中移除设备</h2>
+<p>如果你希望将设备从某个指定 Matter 控制器中移除，请按以下步骤操作。</p>
+<ol>
+<li>前往 <a href="https://my.home-assistant.io/redirect/config_matter/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>Matter</strong></a> 并选择 <strong>设备</strong></li>
+<li>在设备列表中选择要移除控制器关联的设备</li>
+<li>在 <strong>设备信息</strong> 区域中，找到 <strong>共享设备</strong> 旁的三点菜单 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon>，然后选择 <strong>管理 Fabric</strong></li>
+<li>在列表中移除目标控制器
+<ul>
+<li>如果你要移除 Apple Home，也请同步移除 Apple Keychain 中对应条目
+<img src="/home-assistant/images/integrations/matter/matter-remove-from-network.png" alt="Home Assistant matter remove from network"/></li>
+</ul>
+</li>
+<li>如果你还要把设备从 Home Assistant 本身移除，选择三点菜单 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 并选择 <strong>删除</strong></li>
+</ol>
+<h2 class="rp-toc-include" id="关于-matter-设备信息"><a href="#关于-matter-设备信息" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于 Matter 设备信息</h2>
+<p>设备信息区域会显示设备的一些诊断信息。</p>
+<ol>
+<li>要查看设备详情，前往 <a href="https://my.home-assistant.io/redirect/config_matter/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>Matter</strong></a> 并选择 <strong>设备</strong></li>
+<li>在设备列表中选择你要查看的设备</li>
+</ol>
+<p class="img">
+<img src="/home-assistant/images/integrations/matter/matter_device-info.png" alt="Matter 设备信息"/>
+</p>
+<p>本节对其中部分字段做简要说明：</p>
+<p><strong>网络类型</strong>：显示设备所属网络类型，例如 Thread 或 Wi-Fi。</p>
+<p><strong>设备类型</strong>：共有 4 种设备类型：</p>
+<ul>
+<li><strong>终端设备（End device）</strong>：始终保持无线电开启的终端设备，通常不是电池供电</li>
+<li><strong>休眠终端设备（Sleepy end device）</strong>：非路由终端设备。通常处于休眠状态，偶尔唤醒检查消息，通常为电池供电</li>
+<li><strong>路由终端设备（Routing end device）</strong>：始终保持无线电开启，并可为其他路由与非路由终端设备转发流量的终端设备</li>
+<li><strong>桥接器（Bridge）</strong></li>
+</ul>
+<p><strong>网络名称</strong>：设备在配网时加入的网络名称。</p>
+<p><strong>IP 地址</strong>：通常会显示多个 IPv6 地址，例如链路本地地址、唯一本地地址和全球单播地址。某些设备也支持 IPv4，此时这里还会列出 IPv4 地址。</p>
+<h2 class="rp-toc-include" id="matter-ota-设备更新"><a href="#matter-ota-设备更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Matter OTA 设备更新</h2>
+<p>Matter 协议支持 OTA（Over-the-Air）软件更新。但 OTA 更新是 Matter 设备的可选功能，因此并非所有 Matter 设备都实现该能力。对于支持 Matter 更新的设备，Home Assistant 会创建对应的更新实体。</p>
+<p>CSA 运营一个分布式合规账本（Distributed Compliance Ledger，DCL），用于提供固件更新元数据。默认情况下，Matter 更新实体每 12 小时检查一次 DCL 更新。如果你想强制检查更新，可使用 <code>homeassistant.update_entity</code> <a href="/home-assistant/integrations/homeassistant/index.html" class="rp-link">action</a>，并将更新实体设为目标。目前 Eve 与 Nanoleaf 已通过 DCL 提供更新。预计未来会有越来越多固件更新通过 DCL 提供。</p>
+<p class="img">
+<img src="/home-assistant/images/integrations/matter/matter_ota_message.png" alt="Matter 设备 OTA 更新消息"/>
+Matter 设备 OTA 更新通知
+</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+目前，当 Thread 网络中使用（任意）Apple 边界路由器时，Home Assistant 的 Matter 更新对 Thread 设备不可用。你通常会看到 “Target node did not process the update file” 错误。原因是 Apple 边界路由器不会转发必要的 mDNS 数据包，导致 Home Assistant 侧无法发现更新提供者。作为替代，Apple Home 生态可能会从其侧提供更新（例如 Eve 设备）。</p></div></div>
+<h2 class="rp-toc-include" id="操作"><a href="#操作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作</h2>
+<p>Matter 集成提供以下操作：</p>
+<ul>
+<li><code>matter.water_heater_boost</code></li>
+</ul>
+<h3 class="rp-toc-include" id="操作热水器增强water-heater-boost"><a href="#操作热水器增强water-heater-boost" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：热水器增强（Water heater boost）</h3>
+<p><code>matter.water_heater_boost</code> 操作用于在指定时长内启用热水器增强模式。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>duration</code></td><td>否</td><td>增强持续时间（秒）</td></tr><tr><td><code>emergency_boost</code></td><td>是</td><td>是否启用紧急增强模式</td></tr><tr><td><code>temporary_setpoint</code></td><td>是</td><td>增强期间的临时设定温度（摄氏度）</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="基于按钮按下触发自动化"><a href="#基于按钮按下触发自动化" class="rp-header-anchor rp-link" aria-hidden="true">#</a>基于按钮按下触发自动化</h2>
+<p>如果你有一台以按钮按下作为输入的设备（例如 Tuo Smart Button、Inovelli 的 VTM31SN 调光器，或 Innovation Matters 的 Matter Pushbutton Module），并希望基于按键事件触发自动化，请参阅此<a href="/home-assistant/integrations/event/index.html#automating-on-a-button-press" class="rp-link">教程</a>。</p>
+<h2 class="rp-toc-include" id="使用-esp32-开发板体验-matter"><a href="#使用-esp32-开发板体验-matter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用 ESP32 开发板体验 Matter</h2>
+<p>如果你还没有任何 Matter 兼容硬件，但想先体验或自制 Matter 设备，我们已<a href="https://nabucasa.github.io/matter-example-apps/" target="_blank" rel="noopener noreferrer" class="rp-link">准备了一个页面</a>，你可以轻松为受支持的 ESP32 开发板刷入 Matter 固件。推荐使用运行 Lighting 应用的 M5 Stamp C3 设备。</p>
+<p>Android 用户注意：你需要按页面底部说明把测试设备添加到 Google Developer Console，否则配网会失败。iOS 用户通常不会遇到该问题，但在配网期间会看到是否信任开发设备的提示。</p>
+<ol>
+<li>确保你使用 Google Chrome 或 Microsoft Edge 浏览器。</li>
+<li>打开 <a href="https://nabucasa.github.io/matter-example-apps/" target="_blank" rel="noopener noreferrer" class="rp-link">https://nabucasa.github.io/matter-example-apps/</a></li>
+<li>使用 USB 数据线连接 ESP32 设备。</li>
+<li>在你要设置的示例旁选择单选按钮；如果是 M5 Stamp，请选择 <strong>Lighting app for M5STAMP C3</strong>。</li>
+<li>选择 <strong>Connect</strong>。</li>
+<li>在弹出的对话框中，选择正确的串口设备，通常名称类似 “cu-usbserial”。</li>
+<li>选择 <strong>Install Matter Lighting app example</strong>，并等待其为设备安装固件。该过程需要几分钟。</li>
+<li>刷入 Matter 固件后，再次连接设备，这次选择 <strong>Logs &amp; console</strong>。</li>
+<li>你会看到一个控制台界面，显示实时日志。这是一个可交互 Shell，可输入命令。要查看所有命令，输入 <strong>matter help</strong> 并按回车。</li>
+<li>添加设备需要二维码。在控制台中输入 <code>matter onboardingcodes ble</code>，并将输出 URL 复制到浏览器打开。</li>
+<li>按上述任一手机流程，使用该二维码添加设备，例如通过 Home Assistant Companion 应用。</li>
+</ol>
+<h2 class="rp-toc-include" id="故障排查"><a href="#故障排查" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排查</h2>
+<h3 class="rp-toc-include" id="一般建议"><a href="#一般建议" class="rp-header-anchor rp-link" aria-hidden="true">#</a>一般建议</h3>
+<ul>
+<li>
+<p>在 Home Assistant 中使用基于 Thread 的 Matter 设备需要 Home Assistant OS 10 及以上版本。使用带 Home Assistant Matter Server 应用的 Home Assistant OS 是受支持方案。以独立 Docker 容器运行 Matter Server 不受支持，但我们提供了<a href="https://github.com/home-assistant-libs/python-matter-server/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="rp-link">文档</a>，其中包含宿主机与网络要求说明。</p>
+</li>
+<li>
+<p>要使用 Thread 设备，你的网络中需要至少一个靠近 Thread 设备的 Thread 边界路由器。例如 Apple 用户需要 Apple TV 4K 或 HomePod Mini，Google 用户需要 Nest Hub（第二代）。可使用 Home Assistant 的 Thread 集成诊断 Thread 网络。</p>
+</li>
+<li>
+<p>从简单场景开始，先保持网络结构简单，比如先添加一个 ESP32 测试设备。确认可用后，再逐步扩展到下一步或更多设备。</p>
+</li>
+<li>
+<p>请意识到你属于早期采用者，无论硬件侧还是软件（控制器）侧，都可能遇到兼容性问题或缺失功能。欢迎反馈你发现的问题；如果你找到规避方案或验证了某设备，也欢迎帮助其他用户。</p>
+</li>
+<li>
+<p>确保 IPv6（组播）流量可以在你的网络与 Home Assistant 主机之间自由传输。你不需要具备支持 IPv6 的互联网连接或 DHCPv6 服务器，但 Home Assistant 必须启用 IPv6。前往 <strong><a href="https://my.home-assistant.io/redirect/network/" target="_blank" rel="noopener noreferrer" class="rp-link">设置 &gt; 系统 &gt; 网络</a></strong>，并根据网络设置将 <strong>IPv6</strong> 设为 <strong>Automatic</strong> 或 <strong>static</strong>。如果不确定，请使用 <strong>Automatic</strong>。</p>
+</li>
+<li>
+<p>有关网络配置的更详细信息，请参阅 <a href="https://github.com/home-assistant-libs/python-matter-server/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="rp-link">Matter server 仓库的 README</a>。</p>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="我看不到使用-companion-应用配网按钮"><a href="#我看不到使用-companion-应用配网按钮" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我看不到“使用 Companion 应用配网”按钮</h3>
+<p><strong>使用 Companion 应用配网</strong> 按钮仅存在于 Home Assistant Companion 应用中，浏览器里不可用。</p>
+<h4 class="rp-toc-include" id="解决方法-1"><a href="#解决方法-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h4>
+<p>如果你在 Companion 应用中看不到该按钮：</p>
+<ol>
+<li>
+<p>确保满足<a href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6" class="rp-link">前提条件</a>中列出的要求。</p>
+</li>
+<li>
+<p>其中包括满足最低系统要求：</p>
+<ul>
+<li><strong>Android</strong>：
+<ul>
+<li>最低版本为 8.1，推荐 12 或更高版本
+<ul>
+<li>使用较老 Android 版本的用户报告了更多问题</li>
+<li>使用常规、登录 Google 账号的 Android 系统，不使用替代版 Android</li>
+<li>确保 Google Play Services 已全部更新到最新</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>iPhone</strong>：
+<ul>
+<li>需要 iOS 16 或更高版本</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="android-配网时报错-matter-is-unavailable"><a href="#android-配网时报错-matter-is-unavailable" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Android 配网时报错 “Matter is unavailable”</h3>
+<p>请参阅<a href="#%E5%AE%89%E8%A3%85%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5" class="rp-link">安装故障排查</a>中的步骤。</p>
+<h3 class="rp-toc-include" id="android卡在-checking-network-connectivity"><a href="#android卡在-checking-network-connectivity" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Android：卡在 “Checking network connectivity”</h3>
+<h4 class="rp-toc-include" id="现象-1"><a href="#现象-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>现象</h4>
+<p>你在 Android 手机上尝试 配网 Matter 设备时，会看到 “Checking network connectivity” 提示，并且无法继续。</p>
+<h4 class="rp-toc-include" id="解决方法-2"><a href="#解决方法-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h4>
+<ol>
+<li>
+<p>确保满足<a href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6" class="rp-link">前提条件</a>中列出的要求。</p>
+</li>
+<li>
+<p>其中包括满足 <strong>Android</strong> 最低系统要求：</p>
+<ul>
+<li>最低版本为 8.1，推荐 12 或更高版本
+<ul>
+<li>使用较老 Android 版本的用户报告了更多问题</li>
+<li>使用常规、登录 Google 账号的 Android 系统，不使用替代版 Android</li>
+<li>确保 Google Play Services 已全部更新到最新</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>如果你添加的是基于 Thread 的 Matter 设备，请确保手机与边界路由器及设备距离足够近。</p>
+</li>
+<li>
+<p>如果你添加的是基于 Wi-Fi 的 Matter 设备：</p>
+<ul>
+<li>Matter 设备通常使用 2.4 GHz Wi-Fi</li>
+<li>确保手机连接到你计划用于设备运行的同一 2.4 GHz 网络</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="错误-this-device-requires-a-border-router"><a href="#错误-this-device-requires-a-border-router" class="rp-header-anchor rp-link" aria-hidden="true">#</a>错误 “this device requires a border router”</h3>
+<h4 class="rp-toc-include" id="现象-2"><a href="#现象-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>现象</h4>
+<p>当你使用 Home Assistant Companion 应用添加 Matter 设备时，出现错误 “this device requires a border router”。</p>
+<h4 class="rp-toc-include" id="原因"><a href="#原因" class="rp-header-anchor rp-link" aria-hidden="true">#</a>原因</h4>
+<p>要添加基于 Thread 无线协议的 Matter 设备，你需要在设备附近部署 Thread border router，并且手机需要知道你（新建）Thread 网络的凭据。</p>
+<h4 class="rp-toc-include" id="解决方法-3"><a href="#解决方法-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h4>
+<p>部署 Thread border router，并将凭据从 Home Assistant 同步到 Android 设备：</p>
+<ol>
+<li>按照<a href="https://www.home-assistant.io/integrations/thread#turning-home-assistant-into-a-thread-border-router" target="_blank" rel="noopener noreferrer" class="rp-link">将 Home Assistant 变成 Thread 边界路由器</a>中的步骤操作。</li>
+<li>确保完成第 3 步中描述的 Thread 凭据同步。</li>
+</ol>
+<h3 class="rp-toc-include" id="错误-target-node-did-not-process-the-update-file"><a href="#错误-target-node-did-not-process-the-update-file" class="rp-header-anchor rp-link" aria-hidden="true">#</a>错误 “Target node did not process the update file”</h3>
+<h4 class="rp-toc-include" id="现象-3"><a href="#现象-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>现象</h4>
+<p>你尝试通过 Home Assistant 更新 Matter over Thread 设备时，看到错误 “Target node did not process the update file”。</p>
+<h4 class="rp-toc-include" id="原因-1"><a href="#原因-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>原因</h4>
+<p>通过 Home Assistant 对 Matter 设备执行 OTA 更新，不支持使用 Apple Thread border router 的场景。</p>
+<h4 class="rp-toc-include" id="解决方法-4"><a href="#解决方法-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h4>
+<ul>
+<li>
+<p>如果你只有 Apple 的 Thread border router，则无法通过 Home Assistant 更新该设备。</p>
+<ul>
+<li>如果希望能对这些设备使用 OTA 更新，可增加其他边界路由器，例如<a href="/home-assistant/integrations/thread.html#turning-home-assistant-into-a-thread-border-router" class="rp-link">将 Home Assistant 变成 Thread 边界路由器</a>。</li>
+</ul>
+</li>
+<li>
+<p>如果你同时有 Apple 和其他 Thread border routers（如 Home Assistant <a href="/home-assistant/integrations/thread.html#openthread-border-routers" class="rp-link">OpenThread border router</a>），请按以下步骤操作：</p>
+<ol>
+<li>关闭所有 Apple Thread border routers 电源。</li>
+<li>至少等待 30 分钟。</li>
+<li>再次尝试从 Home Assistant 更新设备。</li>
+</ol>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="无法配网设备持续报错或随机失效"><a href="#无法配网设备持续报错或随机失效" class="rp-header-anchor rp-link" aria-hidden="true">#</a>无法配网设备，持续报错或随机失效</h3>
+<h4 class="rp-toc-include" id="现象-4"><a href="#现象-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>现象</h4>
+<p>初始配网持续失败、设备发现异常，或设备会随机离线。</p>
+<h4 class="rp-toc-include" id="原因-2"><a href="#原因-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>原因</h4>
+<ul>
+<li>Matter 协议依赖（本地）IPv6 与 <abbr title="多播域名系统">mDNS</abbr>（组播流量）在你的网络中自由传输</li>
+<li>Matter 主要面向常规家庭网络设计，和企业级网络方案（如 <abbr title="虚拟局域网">VLANs</abbr>、组播过滤、以及异常的 <abbr title="网际组管理协议">IGMP</abbr> 侦听）可能兼容性不佳</li>
+</ul>
+<h4 class="rp-toc-include" id="解决方法-5"><a href="#解决方法-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h4>
+<ol>
+<li>确保使用 Wi-Fi 的 Matter 设备（包括 Thread border router）与 Home Assistant 处于相同的 <abbr title="局域网">VLANs</abbr>/<abbr title="虚拟局域网">VLAN</abbr>。</li>
+<li>确保仅使用 Thread 的 Matter 设备已加入某个 Thread 网络，并且该网络至少有一个 Thread border router 连接到 Home Assistant 所在 LAN。</li>
+<li>排查你的网络拓扑。
+<ul>
+<li>例如，路由器或 Wi-Fi AP 上用于“优化”组播流量的设置，可能会影响 Matter 设备的（发现）流量。若你在添加或控制 Matter 设备时遇到问题，请重点检查此类设置。</li>
+<li>为减少问题，尽量保持网络拓扑简单、扁平。</li>
+</ul>
+</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#thread-与-matter-的关系是什么" class="rp-toc-item rp-link" title="Thread 与 Matter 的关系是什么？" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Thread 与 Matter 的关系是什么？</span></a><a href="#thread-设备不一定支持-matter" class="rp-toc-item rp-link" title="Thread 设备不一定支持 Matter" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Thread 设备不一定支持 Matter</span></a><a href="#配网期间使用-bluetooth" class="rp-toc-item rp-link" title="配网期间使用 Bluetooth" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配网期间使用 Bluetooth</span></a><a href="#多-fabric加入多个控制器" class="rp-toc-item rp-link" title="多 Fabric：加入多个控制器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">多 Fabric：加入多个控制器</span></a><a href="#支持的安装类型" class="rp-toc-item rp-link" title="支持的安装类型" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的安装类型</span></a><a href="#将-matter-设备添加到-home-assistant" class="rp-toc-item rp-link" title="将 Matter 设备添加到 Home Assistant" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">将 Matter 设备添加到 Home Assistant</span></a><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#准备-home-assistant" class="rp-toc-item rp-link" title="准备 Home Assistant" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">准备 Home Assistant</span></a><a href="#检查设备标识" class="rp-toc-item rp-link" title="检查设备标识" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">检查设备标识</span></a><a href="#准备-android-或-iphone" class="rp-toc-item rp-link" title="准备 Android 或 iPhone" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">准备 Android 或 iPhone</span></a><a href="#使用-ios-companion-应用添加新设备" class="rp-toc-item rp-link" title="使用 iOS Companion 应用添加新设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用 iOS Companion 应用添加新设备</span></a><a href="#使用-android-companion-应用添加新设备" class="rp-toc-item rp-link" title="使用 Android Companion 应用添加新设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用 Android Companion 应用添加新设备</span></a><a href="#安装故障排查" class="rp-toc-item rp-link" title="安装故障排查" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">安装故障排查</span></a><a href="#现象" class="rp-toc-item rp-link" title="现象" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">现象</span></a><a href="#解决方法" class="rp-toc-item rp-link" title="解决方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解决方法</span></a><a href="#从其他平台共享设备到-home-assistant" class="rp-toc-item rp-link" title="从其他平台共享设备到 Home Assistant" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">从其他平台共享设备到 Home Assistant</span></a><a href="#前提条件-1" class="rp-toc-item rp-link" title="前提条件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#从其他-matter-控制器如-apple-或-google-home共享设备" class="rp-toc-item rp-link" title="从其他 Matter 控制器（如 Apple 或 Google Home）共享设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从其他 Matter 控制器（如 Apple 或 Google Home）共享设备</span></a><a href="#使用-matter-桥接器" class="rp-toc-item rp-link" title="使用 Matter 桥接器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用 Matter 桥接器</span></a><a href="#如何将-matter-桥接器添加到-home-assistant" class="rp-toc-item rp-link" title="如何将 Matter 桥接器添加到 Home Assistant" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">如何将 Matter 桥接器添加到 Home Assistant</span></a><a href="#何时不应使用桥接器" class="rp-toc-item rp-link" title="何时不应使用桥接器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">何时不应使用桥接器</span></a><a href="#跨平台共享设备" class="rp-toc-item rp-link" title="跨平台共享设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">跨平台共享设备</span></a><a href="#从-matter-控制器中移除设备" class="rp-toc-item rp-link" title="从 Matter 控制器中移除设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">从 Matter 控制器中移除设备</span></a><a href="#关于-matter-设备信息" class="rp-toc-item rp-link" title="关于 Matter 设备信息" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">关于 Matter 设备信息</span></a><a href="#matter-ota-设备更新" class="rp-toc-item rp-link" title="Matter OTA 设备更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Matter OTA 设备更新</span></a><a href="#操作" class="rp-toc-item rp-link" title="操作" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">操作</span></a><a href="#操作热水器增强water-heater-boost" class="rp-toc-item rp-link" title="操作：热水器增强（Water heater boost）" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：热水器增强（Water heater boost）</span></a><a href="#基于按钮按下触发自动化" class="rp-toc-item rp-link" title="基于按钮按下触发自动化" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">基于按钮按下触发自动化</span></a><a href="#使用-esp32-开发板体验-matter" class="rp-toc-item rp-link" title="使用 ESP32 开发板体验 Matter" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">使用 ESP32 开发板体验 Matter</span></a><a href="#故障排查" class="rp-toc-item rp-link" title="故障排查" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排查</span></a><a href="#一般建议" class="rp-toc-item rp-link" title="一般建议" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">一般建议</span></a><a href="#我看不到使用-companion-应用配网按钮" class="rp-toc-item rp-link" title="我看不到“使用 Companion 应用配网”按钮" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">我看不到“使用 Companion 应用配网”按钮</span></a><a href="#解决方法-1" class="rp-toc-item rp-link" title="解决方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解决方法</span></a><a href="#android-配网时报错-matter-is-unavailable" class="rp-toc-item rp-link" title="Android 配网时报错 “Matter is unavailable”" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Android 配网时报错 “Matter is unavailable”</span></a><a href="#android卡在-checking-network-connectivity" class="rp-toc-item rp-link" title="Android：卡在 “Checking network connectivity”" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Android：卡在 “Checking network connectivity”</span></a><a href="#现象-1" class="rp-toc-item rp-link" title="现象" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">现象</span></a><a href="#解决方法-2" class="rp-toc-item rp-link" title="解决方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解决方法</span></a><a href="#错误-this-device-requires-a-border-router" class="rp-toc-item rp-link" title="错误 “this device requires a border router”" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">错误 “this device requires a border router”</span></a><a href="#现象-2" class="rp-toc-item rp-link" title="现象" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">现象</span></a><a href="#原因" class="rp-toc-item rp-link" title="原因" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">原因</span></a><a href="#解决方法-3" class="rp-toc-item rp-link" title="解决方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解决方法</span></a><a href="#错误-target-node-did-not-process-the-update-file" class="rp-toc-item rp-link" title="错误 “Target node did not process the update file”" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">错误 “Target node did not process the update file”</span></a><a href="#现象-3" class="rp-toc-item rp-link" title="现象" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">现象</span></a><a href="#原因-1" class="rp-toc-item rp-link" title="原因" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">原因</span></a><a href="#解决方法-4" class="rp-toc-item rp-link" title="解决方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解决方法</span></a><a href="#无法配网设备持续报错或随机失效" class="rp-toc-item rp-link" title="无法配网设备，持续报错或随机失效" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">无法配网设备，持续报错或随机失效</span></a><a href="#现象-4" class="rp-toc-item rp-link" title="现象" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">现象</span></a><a href="#原因-2" class="rp-toc-item rp-link" title="原因" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">原因</span></a><a href="#解决方法-5" class="rp-toc-item rp-link" title="解决方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解决方法</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

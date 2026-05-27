@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velbus - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Velbus - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Velbus 集成用于控制 Velbus(https://www.velbus.eu/?lang=en) 模块。它支持 Velbus USB、Velbus 串口和 TCP/IP 网关。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Velbus 集成用于控制 Velbus(https://www.velbus.eu/?lang=en) 模块。它支持 Velbus USB、Velbus 串口和 TCP/IP 网关。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/device-options.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="velbus"><a href="#velbus" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Velbus<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Velbus</strong> 集成用于控制 <a href="https://www.velbus.eu/?lang=en" target="_blank" rel="noopener noreferrer" class="rp-link">Velbus</a> 模块。它支持 Velbus USB、Velbus 串口和 TCP/IP 网关。</p>
+<p>要使用 Velbus 集成，你需要将 Velbus 模块连接到 Velbus USB 或 TCP/IP 接口。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h2 class="rp-toc-include" id="配置参数"><a href="#配置参数" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置参数</h2>
+<p>在设置过程中，你会看到两种连接到 Velbus 总线的方式：</p>
+<ul>
+<li>USB</li>
+<li>TCP/IP</li>
+</ul>
+<p>系统会执行连接测试以确认连接正常。如果测试成功，集成将被添加到 Home Assistant。</p>
+<h3 class="rp-toc-include" id="usb"><a href="#usb" class="rp-header-anchor rp-link" aria-hidden="true">#</a>USB</h3>
+<p>USB 连接是一种接入 Velbus 总线的方式。你需要使用 Velbus USB 接口来连接总线。该 USB 接口连接到 Home Assistant 设备的 USB 端口。
+系统会自动检测 USB 接口设备，并在列表中显示。
+从列表中选择正确的 USB 接口，然后选择 <strong>Submit</strong>。</p>
+<p>系统会执行连接测试以确认连接是否正常。如果正常，集成将被添加到 Home Assistant。</p>
+<h3 class="rp-toc-include" id="tcpip"><a href="#tcpip" class="rp-header-anchor rp-link" aria-hidden="true">#</a>TCP/IP</h3>
+<p>TCP/IP 连接也是接入 Velbus 总线的一种方式。你需要在网络中提供一个可用的 Velbus TCP/IP 接口。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">tls</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;启用到 Velbus TCP/IP 接口的 TLS 连接。连接到 signum 时通常需要此选项。该选项是可选的，在连接到 velser 或 Home Assistant 附加组件时可禁用。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">host</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Velbus TCP/IP 接口的 IP 地址。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">port</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Velbus TCP/IP 接口的端口号。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;用于通过 Velbus TCP/IP 接口进行身份验证的密码。该项为可选，仅在设备启用了身份验证时需要。&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="示例signum"><a href="#示例signum" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例：signum</h4>
+<ul>
+<li>tls: yes</li>
+<li>host: 你的 signum IP 地址</li>
+<li>port: 27015</li>
+<li>password: 你的 signum 密码（如果已配置）</li>
+</ul>
+<h4 class="rp-toc-include" id="示例velser"><a href="#示例velser" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例：velser</h4>
+<ul>
+<li>tls: no</li>
+<li>host: 你的 velser IP 地址</li>
+<li>port: 6000</li>
+<li>password: 留空</li>
+</ul>
+<h4 class="rp-toc-include" id="示例home-assistant-附加组件"><a href="#示例home-assistant-附加组件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例：Home Assistant 附加组件</h4>
+<ul>
+<li>tls: 取决于你的配置</li>
+<li>host: 你的 Home Assistant IP 地址</li>
+<li>port: 如果使用默认值则为 27015</li>
+<li>password: 留空</li>
+</ul>
+<h2 class="rp-toc-include" id="支持的功能"><a href="#支持的功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的功能</h2>
+<p>Velbus 集成支持以下功能：</p>
+<h3 class="rp-toc-include" id="switch"><a href="#switch" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Switch</h3>
+<p>每个继电器模块都会在 Home Assistant 中显示为一个开关实体。你可以打开或关闭开关来控制继电器。</p>
+<h3 class="rp-toc-include" id="light"><a href="#light" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Light</h3>
+<p>每个调光模块都会在 Home Assistant 中显示为一个灯光实体。你可以打开或关闭灯光，并设置亮度级别。
+对于每个输入模块，系统还会创建一个灯光实体来控制按键 LED。你可以打开或关闭 LED，并设置闪烁模式。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+输入模块上的按键 LED 默认处于禁用状态。你可以在网页界面的 <strong>Configuration</strong> 页面中的 <strong>Devices</strong> 面板里启用它们。</p></div></div>
+<h3 class="rp-toc-include" id="binary-sensor"><a href="#binary-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Binary sensor</h3>
+<p>每个输入模块都会在 Home Assistant 中显示为一个二进制传感器实体。输入激活时，二进制传感器为开；输入未激活时，为关。</p>
+<h3 class="rp-toc-include" id="select"><a href="#select" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Select</h3>
+<p>每个支持程序的模块都会在 Home Assistant 中显示为一个选择实体。你可以选择要激活的程序。</p>
+<h3 class="rp-toc-include" id="climate"><a href="#climate" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Climate</h3>
+<p>每个支持恒温器功能的模块都会在 Home Assistant 中显示为一个气候实体。你可以设置目标温度、模式（heat/cool）以及预设模式（away/comfort/eco/home）。</p>
+<h3 class="rp-toc-include" id="cover"><a href="#cover" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Cover</h3>
+<p>每个百叶窗模块都会在 Home Assistant 中显示为一个 cover 实体。你可以打开和关闭百叶窗，如果模块支持，还可以设置百叶窗位置。</p>
+<h3 class="rp-toc-include" id="button"><a href="#button" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Button</h3>
+<p>每个输入模块都会在 Home Assistant 中提供一个按钮实体，用于触发按键按下事件。这可用于从 Home Assistant 触发 Velbus 动作。</p>
+<h3 class="rp-toc-include" id="sensor"><a href="#sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sensor</h3>
+<p>某些模块会公开可在 Home Assistant 中使用的传感器。
+目前已知并已实现的传感器包括：</p>
+<ul>
+<li>能耗传感器：kWh</li>
+<li>温度传感器：°C</li>
+<li>光照等级传感器：Lux</li>
+<li>PSU 电压传感器：Voltage</li>
+<li>PSU 电流传感器：Amps</li>
+<li>PSU 负载传感器：Percentage</li>
+</ul>
+<p>模拟输入模块（VMB4AN）会提供 4 个传感器实体，用于读取模拟值。
+VMBMETEO 模块会提供多个传感器实体，用于读取温度、湿度、风速、风向和降雨量。</p>
+<h3 class="rp-toc-include" id="vlp-文件导入"><a href="#vlp-文件导入" class="rp-header-anchor rp-link" aria-hidden="true">#</a>VLP 文件导入</h3>
+<p>:::note
+此步骤为可选。</p>
+<p>:::
+在配置的下一步中，你可以选择导入 Velbus VLP 配置文件。这是可从 VelbusLink 软件中导出的配置文件。
+这样可以省去总线扫描步骤，并根据配置文件创建所有设备和实体。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">vlp</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;要导入的 VLP 文件路径。如果未提供，则不会导入 VLP 文件，而会执行总线扫描。&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>如果你没有 VLP 文件，或者不想导入它，可以跳过此步骤。集成会通过扫描总线来发现已连接的模块，但这种方式已知不如使用 VLP 文件可靠。</p>
+<h2 class="rp-toc-include" id="重新配置集成"><a href="#重新配置集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重新配置集成</h2>
+<p>你可以按照以下步骤重新配置 Velbus 集成：</p>
+<h2 class="rp-toc-include" id="options"><a href="#options" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Options</h2>
+<p>To define options for Velbus, follow these steps:</p>
+<ol>
+<li>
+<p>In Home Assistant, go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>.</p>
+</li>
+<li>
+<p>If multiple instances of Velbus are configured, choose the instance you want to configure.</p>
+</li>
+<li>
+<p>On the card, select the cogwheel <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>.</p>
+<ul>
+<li>If the card does not have a cogwheel, the integration does not support options for this device.</li>
+</ul>
+<p><img src="/home-assistant/images/screenshots/device-options.png" alt="Screenshot showing the cogwheel icon on an integration card in the Settings &gt; Devices &amp; services page"/></p>
+</li>
+<li>
+<p>Edit the options, then select <strong>Submit</strong> to save the changes.</p>
+</li>
+</ol>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">vlp</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;重新配置时要导入的 VLP 文件路径。如果未提供，则不会导入 VLP 文件，而会执行总线扫描。&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="操作"><a href="#操作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作</h2>
+<ul>
+<li><code>velbus.sync clock</code>：将 Velbus 时间同步到本地时钟。</li>
+<li><code>velbus.scan</code>：扫描总线上的新设备。</li>
+<li><code>velbus.set_memo_text</code>：在 Velbus 显示模块上显示备忘文本。</li>
+<li><code>velbus.clear_cache</code>：清除整个 velbuscache，或仅清除某一个模块的缓存。</li>
+</ul>
+<h3 class="rp-toc-include" id="操作sync-clock"><a href="#操作sync-clock" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：Sync clock</h3>
+<p><code>velbus.sync_clock</code> 操作会将 Velbus 模块的时钟同步到运行 Home Assistant 的设备时钟。这与 VelbusLink 软件中的 “sync clock” 按钮作用相同。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>否</td><td>要发送命令到的 config_entry。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="操作scan"><a href="#操作scan" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：Scan</h3>
+<p><code>velbus.scan</code> 操作会同步总线与 Home Assistant 之间的模块信息。这与 VelbusLink 软件中的 “scan” 按钮作用相同。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>否</td><td>要发送命令到的 config_entry。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="操作set-memo-text"><a href="#操作set-memo-text" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：Set memo text</h3>
+<p><code>velbus.set_memo_text</code> 操作用于向 VMBGPO(D) 和 VMBELO 等 Velbus 模块发送要显示的备忘文本。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>否</td><td>要发送命令到的 config_entry。</td></tr><tr><td><code>address</code></td><td>否</td><td>模块的十进制地址，可在集成页面的设备列表中查看。</td></tr><tr><td><code>memo_text</code></td><td>是</td><td>要在模块上显示的文本。如果未提供 memo text，则会清除此文本。</td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">script</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  trash_memo</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Trash memo text&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    sequence</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> velbus.set_memo_text</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        address</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 65</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        memo_text</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;It&#x27;s trash day&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        config_entry</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;01JGE8XB3MNPZFA836TTZ3KZ46&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="操作clear-cache"><a href="#操作clear-cache" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：Clear cache</h3>
+<p><code>velbus.clear_cache</code> 操作可以清除单个模块的缓存或整个缓存。清除完成后，集成会开始新的扫描。当你通过 velbuslink 修改配置后，可使用此操作。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>否</td><td>要发送命令到的 config_entry。</td></tr><tr><td><code>address</code></td><td>否</td><td>模块的十进制地址，可在集成页面的设备列表中查看。提供该值时，此服务仅清除此模块的缓存；如果不提供地址，则会清除整个 velbuscache。</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<h3 class="rp-toc-include" id="将-velbus-按钮联动到其他实体"><a href="#将-velbus-按钮联动到其他实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 Velbus 按钮联动到其他实体</h3>
+<p>Velbus 集成允许你将 Velbus 按钮（例如 <a href="https://www.velbus.eu/products/view/?id=416302&amp;lang=en" target="_blank" rel="noopener noreferrer" class="rp-link">VMBGPOD</a> 模块上的按钮）链接到 Home Assistant 中可控制的实体。
+实际联动可通过两条自动化规则实现。一条规则用于通过按钮控制设备，另一条规则用于在实体状态变化时立即更新按钮 LED 状态。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Control light living from Velbus push_button_10</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Control light living using Velbus push_button_10&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.push_button_10</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.toggle</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.living</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-comment)"># Keep status LED push_button_10 in sync to status light living</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">- </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Update LED state of push_button_10&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.living</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.living</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> or</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> and</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.led_push_button_10</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.living</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> and</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">            - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.led_push_button_10</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">            - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.living</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.toggle</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.led_push_button_10</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      </span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="vmb7in-与能源仪表板"><a href="#vmb7in-与能源仪表板" class="rp-header-anchor rp-link" aria-hidden="true">#</a>VMB7IN 与能源仪表板</h3>
+<p>VMB7IN 传感器可以接入 Home Assistant 的能源仪表板，以跟踪你的能源消耗。</p>
+<p>在某些情况下，VMB7IN 传感器不会报告计数器实际统计的内容。如果计数器与能源设备相关，通常可以直接正常使用。
+但如果 VMB7IN 传感器是水表或燃气表，你需要在 <code>configuration.yaml</code> 文件中明确指定这一点。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">homeassistant</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  customize</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    sensor.eau_counter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      device_class</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> water</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p><code>device_class</code> 属性可以有两个值：</p>
+<ul>
+<li>gas：如果计数器表示燃气表</li>
+<li>water：如果计数器表示水表</li>
+</ul>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p>此集成为事件驱动，这意味着一旦发生变化，Velbus 模块就会立即将更新推送到 Home Assistant。这样可以确保 Home Assistant 中实体的状态始终保持最新。</p>
+<p>对于传感器实体，Velbus 模块会定期发送更新。这些更新的时间间隔可通过 VelbusLink 软件配置。</p>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<ul>
+<li>此集成不会重新编程 Velbus 模块。凡是未在 <a href="https://github.com/velbus/moduleprotocol" target="_blank" rel="noopener noreferrer" class="rp-link">Velbus 模块协议</a> 中实现的更改，都需要通过 VelbusLink 软件完成。</li>
+<li>此集成不支持升级 Velbus 模块固件。这需要通过 VelbusLink 软件完成。</li>
+<li>对于继电器模块，此集成不支持强制开/关状态。这也需要通过 VelbusLink 软件完成。</li>
+</ul>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<p>如果你在使用 Velbus 集成时遇到问题，可以启用调试日志以获取更多问题信息。</p>
+<h3 class="rp-toc-include" id="常见问题"><a href="#常见问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>常见问题</h3>
+<ul>
+<li>如果你使用 VelbusLink 软件更改了 Velbus 模块配置，可能需要通过 <code>velbus.clear_cache</code> 操作清除 Velbus 缓存，以确保 Home Assistant 获取最新配置。</li>
+<li>如果你为集成使用了 VLP 文件配置，请确保 VLP 文件是最新的，并与 Velbus 模块配置一致。</li>
+</ul>
+<h3 class="rp-toc-include" id="启用调试日志"><a href="#启用调试日志" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用调试日志</h3>
+<p>要为 Velbus 集成启用调试日志，你可以查阅 <a href="https://www.home-assistant.io/docs/configuration/troubleshooting/#debug-logs-and-diagnostics" target="_blank" rel="noopener noreferrer" class="rp-link">Home Assistant 故障排除文档</a> 了解更多信息。</p>
+<h3 class="rp-toc-include" id="无法连接到-velbus-接口"><a href="#无法连接到-velbus-接口" class="rp-header-anchor rp-link" aria-hidden="true">#</a>无法连接到 Velbus 接口</h3>
+<h4 class="rp-toc-include" id="症状unable-to-setup-velbus"><a href="#症状unable-to-setup-velbus" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：“Unable to setup Velbus”</h4>
+<p>此错误表示 Home Assistant 无法连接到 Velbus 接口。</p>
+<h4 class="rp-toc-include" id="解决方法"><a href="#解决方法" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h4>
+<p>请尝试以下步骤：</p>
+<ul>
+<li>对于 USB 连接：
+<ul>
+<li>确保 Velbus USB 接口已正确连接到 Home Assistant 设备。</li>
+<li>确保没有其他应用程序（例如 VelbusLink）同时占用 Velbus USB 接口。</li>
+</ul>
+</li>
+<li>对于 TCP/IP 连接：
+<ul>
+<li>确保 Velbus TCP/IP 接口已通电并连接到网络。</li>
+<li>确认 IP 地址和端口号正确。</li>
+<li>确认防火墙或网络安全设置未阻止到 Velbus TCP/IP 接口的连接。</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="模块未被检测到"><a href="#模块未被检测到" class="rp-header-anchor rp-link" aria-hidden="true">#</a>模块未被检测到</h3>
+<h4 class="rp-toc-include" id="症状certain-modules-are-not-detected-by-the-integration"><a href="#症状certain-modules-are-not-detected-by-the-integration" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：&quot;Certain modules are not detected by the integration&quot;</h4>
+<p>此问题表示部分 Velbus 模块未被 Velbus 集成检测到。</p>
+<h4 class="rp-toc-include" id="说明"><a href="#说明" class="rp-header-anchor rp-link" aria-hidden="true">#</a>说明</h4>
+<p>这通常由以下原因之一导致：</p>
+<ul>
+<li>Velbus 模块未正确连接到 Velbus 总线。</li>
+<li>Velbus 模块未通电。</li>
+<li>添加新模块后尚未执行 Velbus 总线扫描。</li>
+<li>VelbusLink 软件本身也未检测到这些 Velbus 模块。</li>
+<li>Velbus 集成调试日志中存在与模块检测相关的错误消息。</li>
+</ul>
+<h4 class="rp-toc-include" id="解决方法-1"><a href="#解决方法-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>解决方法</h4>
+<ul>
+<li>检查 VelbusLink 软件是否能正确检测到所有模块。</li>
+<li>如果 VelbusLink 软件能检测到所有模块，但它们未显示在 Home Assistant 中，请提交错误报告，并附上调试日志、诊断数据和你的 VLP 文件。</li>
+</ul>
+<h2 class="rp-toc-include" id="支持的设备"><a href="#支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备</h2>
+<p>Velbus 集成支持多种 Velbus 模块。以下是部分受支持模块的非完整列表：</p>
+<ul>
+<li>VMB1RYNOS</li>
+<li>VMBPIRM</li>
+<li>VMBPIRC</li>
+<li>VMBPIRO</li>
+<li>VMBGP4PIR</li>
+<li>VMB1BLS</li>
+<li>VMBDMI-R</li>
+<li>VMBMETEO</li>
+<li>VMB4AN</li>
+<li>VMBEL1</li>
+<li>VMBEL2</li>
+<li>VMBEL4</li>
+<li>VMBELO</li>
+<li>VMBELPIR</li>
+<li>VMBGP1-2</li>
+<li>VMBGP2-2</li>
+<li>VMBGP4-2</li>
+<li>VMBGPOD-2</li>
+<li>VMBGP4PIR-2</li>
+<li>VMB1RYS</li>
+<li>VMBIN</li>
+<li>VMB4PB</li>
+<li>VMBDALI</li>
+<li>VMB4RYLD-10</li>
+<li>VMB4RYNO-10</li>
+<li>VMB2BLE-10</li>
+<li>VMB8DC-20</li>
+<li>VMB6PB-20</li>
+<li>VMBPIR-20</li>
+<li>VMB8IN-20</li>
+<li>VMBEL1-20</li>
+<li>VMBEL2-20</li>
+<li>VMBEL4-20</li>
+<li>VMBELO-20</li>
+<li>VMBGP1-20</li>
+<li>VMBGP2-20</li>
+<li>VMBGP4-20</li>
+<li>VMBGPO-20</li>
+<li>VMBPIRO-20</li>
+<li>VMBDALI-20</li>
+<li>VMBEL4PIR-20</li>
+<li>VMBGP4PIR-20</li>
+<li>VMB2BLE-20</li>
+</ul>
+<h2 class="rp-toc-include" id="不支持的设备"><a href="#不支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>不支持的设备</h2>
+<p>以下 Velbus 模块当前不受此集成支持：</p>
+<ul>
+<li>VMBRF8S</li>
+<li>VMBVP01</li>
+<li>VMBCM3</li>
+<li>VMBUSBIP</li>
+<li>VMBKP</li>
+<li>VMBSIG</li>
+<li>VMBSIG-20</li>
+<li>VMBSIG-21</li>
+</ul>
+<h2 class="rp-toc-include" id="使用场景"><a href="#使用场景" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用场景</h2>
+<ol>
+<li>使用 Home Assistant 内置的 recorder 和历史记录功能，长期保存 Velbus 传感器数据统计信息。</li>
+<li>根据时间、状态变化或其他传感器数据创建自动化，以控制 Velbus 设备。</li>
+<li>将 Velbus 设备与 Home Assistant 支持的其他智能家居设备和服务集成。</li>
+<li>通过 Home Assistant 使用 Google Assistant 或 Amazon Alexa 等语音助手控制 Velbus 设备。</li>
+<li>在 Home Assistant 中创建自定义仪表板，以监控和控制 Velbus 设备。</li>
+<li>使用 Home Assistant 的能源管理功能，结合 Velbus 能源传感器监控并优化能耗。</li>
+<li>将 Velbus 按钮联动到其他 Home Assistant 实体，实现无缝控制。</li>
+<li>使用集成到 Home Assistant 的 Velbus 恒温器模块实现气候控制自动化。</li>
+<li>使用 Velbus 气象模块监控环境状况，并根据传感器读数创建自动化。</li>
+<li>为特定事件设置通知，例如 Velbus 传感器检测到运动或门被打开时。</li>
+</ol>
+<h2 class="rp-toc-include" id="删除集成"><a href="#删除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除集成</h2>
+<p>你可以按照以下步骤删除 Velbus 集成及其实体：</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol>
+<p>注意：删除集成会从 Home Assistant 中移除所有 Velbus 设备及其历史记录。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#配置参数" class="rp-toc-item rp-link" title="配置参数" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置参数</span></a><a href="#usb" class="rp-toc-item rp-link" title="USB" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">USB</span></a><a href="#tcpip" class="rp-toc-item rp-link" title="TCP/IP" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">TCP/IP</span></a><a href="#示例signum" class="rp-toc-item rp-link" title="示例：signum" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">示例：signum</span></a><a href="#示例velser" class="rp-toc-item rp-link" title="示例：velser" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">示例：velser</span></a><a href="#示例home-assistant-附加组件" class="rp-toc-item rp-link" title="示例：Home Assistant 附加组件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">示例：Home Assistant 附加组件</span></a><a href="#支持的功能" class="rp-toc-item rp-link" title="支持的功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的功能</span></a><a href="#switch" class="rp-toc-item rp-link" title="Switch" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Switch</span></a><a href="#light" class="rp-toc-item rp-link" title="Light" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Light</span></a><a href="#binary-sensor" class="rp-toc-item rp-link" title="Binary sensor" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Binary sensor</span></a><a href="#select" class="rp-toc-item rp-link" title="Select" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Select</span></a><a href="#climate" class="rp-toc-item rp-link" title="Climate" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Climate</span></a><a href="#cover" class="rp-toc-item rp-link" title="Cover" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Cover</span></a><a href="#button" class="rp-toc-item rp-link" title="Button" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Button</span></a><a href="#sensor" class="rp-toc-item rp-link" title="Sensor" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Sensor</span></a><a href="#vlp-文件导入" class="rp-toc-item rp-link" title="VLP 文件导入" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">VLP 文件导入</span></a><a href="#重新配置集成" class="rp-toc-item rp-link" title="重新配置集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">重新配置集成</span></a><a href="#options" class="rp-toc-item rp-link" title="Options" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Options</span></a><a href="#操作" class="rp-toc-item rp-link" title="操作" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">操作</span></a><a href="#操作sync-clock" class="rp-toc-item rp-link" title="操作：Sync clock" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：Sync clock</span></a><a href="#操作scan" class="rp-toc-item rp-link" title="操作：Scan" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：Scan</span></a><a href="#操作set-memo-text" class="rp-toc-item rp-link" title="操作：Set memo text" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：Set memo text</span></a><a href="#操作clear-cache" class="rp-toc-item rp-link" title="操作：Clear cache" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：Clear cache</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#将-velbus-按钮联动到其他实体" class="rp-toc-item rp-link" title="将 Velbus 按钮联动到其他实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">将 Velbus 按钮联动到其他实体</span></a><a href="#vmb7in-与能源仪表板" class="rp-toc-item rp-link" title="VMB7IN 与能源仪表板" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">VMB7IN 与能源仪表板</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#常见问题" class="rp-toc-item rp-link" title="常见问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">常见问题</span></a><a href="#启用调试日志" class="rp-toc-item rp-link" title="启用调试日志" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启用调试日志</span></a><a href="#无法连接到-velbus-接口" class="rp-toc-item rp-link" title="无法连接到 Velbus 接口" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">无法连接到 Velbus 接口</span></a><a href="#症状unable-to-setup-velbus" class="rp-toc-item rp-link" title="症状：“Unable to setup Velbus”" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：“Unable to setup Velbus”</span></a><a href="#解决方法" class="rp-toc-item rp-link" title="解决方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解决方法</span></a><a href="#模块未被检测到" class="rp-toc-item rp-link" title="模块未被检测到" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">模块未被检测到</span></a><a href="#症状certain-modules-are-not-detected-by-the-integration" class="rp-toc-item rp-link" title="症状：&quot;Certain modules are not detected by the integration&quot;" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：&quot;Certain modules are not detected by the integration&quot;</span></a><a href="#说明" class="rp-toc-item rp-link" title="说明" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">说明</span></a><a href="#解决方法-1" class="rp-toc-item rp-link" title="解决方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">解决方法</span></a><a href="#支持的设备" class="rp-toc-item rp-link" title="支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备</span></a><a href="#不支持的设备" class="rp-toc-item rp-link" title="不支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">不支持的设备</span></a><a href="#使用场景" class="rp-toc-item rp-link" title="使用场景" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">使用场景</span></a><a href="#删除集成" class="rp-toc-item rp-link" title="删除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">删除集成</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

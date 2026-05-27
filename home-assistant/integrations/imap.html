@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IMAP - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="IMAP - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="IMAP 集成会监视你的 IMAP 服务器(https://en.wikipedia.org/wiki/InternetMessageAccessProtocol)。它可以报告未读邮件数量，并发送可用于触发自动化的自定义事件。你也可以使用其他搜索条件，下面的示例中有展示。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="IMAP 集成会监视你的 IMAP 服务器(https://en.wikipedia.org/wiki/InternetMessageAccessProtocol)。它可以报告未读邮件数量，并发送可用于触发自动化的自定义事件。你也可以使用其他搜索条件，下面的示例中有展示。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="imap"><a href="#imap" class="rp-header-anchor rp-link" aria-hidden="true">#</a>IMAP<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>IMAP</strong> 集成会监视你的 <a href="https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol" target="_blank" rel="noopener noreferrer" class="rp-link">IMAP 服务器</a>。它可以报告未读邮件数量，并发送可用于触发自动化的自定义事件。你也可以使用其他搜索条件，下面的示例中有展示。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h3 class="rp-toc-include" id="使用应用专用密码的-imap-服务"><a href="#使用应用专用密码的-imap-服务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用应用专用密码的 IMAP 服务</h3>
+<h3 class="rp-toc-include" id="microsoft-365-和-live-imap-服务"><a href="#microsoft-365-和-live-imap-服务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Microsoft 365 和 Live IMAP 服务</h3>
+<p>微软已移除在未使用现代验证时，通过应用专用密码直接访问 IMAP 的支持。你仍然可以创建应用专用密码，但只有经微软授权、支持 OAUTH2 的邮件客户端，或通过 Microsoft Entra ID（学校或企业）中的应用注册，才允许访问。</p>
+<p>IMAP 集成不支持 OAUTH2 认证流程。这意味着 Home Assistant 的 IMAP 集成目前无法用于学校和企业版 Microsoft 365 IMAP 服务，也无法用于免费的个人 Microsoft Live IMAP 服务。</p>
+<h3 class="rp-toc-include" id="google-gmail-imap-服务"><a href="#google-gmail-imap-服务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Google Gmail IMAP 服务</h3>
+<p>如果你要使用 Gmail，必须先为 Gmail 帐号启用两步验证。启用后，你需要创建一个<a href="https://support.google.com/mail/answer/185833" target="_blank" rel="noopener noreferrer" class="rp-link">应用专用密码</a>。</p>
+<ol>
+<li>
+<p>前往你的 <a href="https://myaccount.google.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Google Account</a></p>
+</li>
+<li>
+<p>选择 <strong>Security</strong>。</p>
+</li>
+<li>
+<p>在 “How you sign into Google” 下选择 <strong>2-Step Verification</strong>。</p>
+</li>
+<li>
+<p>登录你的 Google 帐号。</p>
+</li>
+<li>
+<p>在两步验证页面底部，点击 <strong>App Passwords</strong>。</p>
+</li>
+<li>
+<p>为应用取一个你能识别的名称（例如 <code>Home Assistant IMAP</code>）。</p>
+</li>
+<li>
+<p>点击 <strong>Create</strong>，记下生成的 16 位应用专用密码妥善保存（保存时请去掉空格）。</p>
+</li>
+<li>
+<p>点击 <strong>Done</strong>。</p>
+</li>
+<li>
+<p>使用上方的 My 按钮将 IMAP 集成添加到你的 Home Assistant 实例中，并按需填写以下信息：</p>
+<ul>
+<li>用户名：你的 Gmail 邮箱登录名</li>
+<li>密码：你的 16 位应用专用密码（不含空格）</li>
+<li>服务器：<code>imap.gmail.com</code></li>
+<li>端口：<code>993</code></li>
+</ul>
+</li>
+<li>
+<p>点击 <strong>Submit</strong>。</p>
+</li>
+<li>
+<p>如有需要，可将该集成分配到某个“区域”，然后点击 <strong>Finish</strong>。</p>
+</li>
+</ol>
+<p>完成后，你就拥有了一个用于统计 Gmail 帐号未读邮件数量的传感器。之后，你还可以基于检测到新邮件时通过事件总线传来的数据，创建额外的传感器。</p>
+<h3 class="rp-toc-include" id="配置-imap-搜索"><a href="#配置-imap-搜索" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置 IMAP 搜索</h3>
+<p>默认情况下，此集成会统计未读邮件。通过配置搜索字符串，你也可以统计其他结果，例如：</p>
+<ul>
+<li><code>ALL</code>：统计某个文件夹中的所有邮件</li>
+<li><code>FROM</code>、<code>TO</code>、<code>SUBJECT</code>：在文件夹中查找符合条件的邮件（所有标准选项参见 <a href="https://tools.ietf.org/html/rfc3501#section-6.4.4" target="_blank" rel="noopener noreferrer" class="rp-link">IMAP RFC</a>）</li>
+<li><a href="https://developers.google.com/gmail/imap/imap-extensions" target="_blank" rel="noopener noreferrer" class="rp-link">Gmail 的 IMAP 扩展</a>支持原生 Gmail 搜索，例如 <code>X-GM-RAW &quot;in: inbox older_than:7d&quot;</code> 可显示收件箱中超过一周的邮件。请注意，原生 Gmail 搜索会忽略你的文件夹配置，直接搜索帐户中的所有邮件。</li>
+</ul>
+<h3 class="rp-toc-include" id="选择-imap-服务器支持的字符集"><a href="#选择-imap-服务器支持的字符集" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选择 IMAP 服务器支持的字符集</h3>
+<p>某些 IMAP 服务（如 Yahoo）要求显式配置 <code>US-ASCII</code> 字符集。</p>
+<h3 class="rp-toc-include" id="选择要包含在-imap-事件中的邮件数据高级模式"><a href="#选择要包含在-imap-事件中的邮件数据高级模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选择要包含在 IMAP 事件中的邮件数据（高级模式）</h3>
+<p>默认情况下，IMAP 事件不会包含 <code>text</code> 或 <code>headers</code> 邮件数据。如果你希望事件中包含它们（<code>text</code>、<code>headers</code> 或两者），需要在选项流程中手动选择。
+处理 <code>text</code> 数据的另一种方式是使用 <code>imap.fetch</code> 操作。在这种情况下，<code>text</code> 不会受到大小限制。</p>
+<h3 class="rp-toc-include" id="选择备用-ssl-密码套件列表或禁用-ssl-验证高级模式"><a href="#选择备用-ssl-密码套件列表或禁用-ssl-验证高级模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选择备用 SSL 密码套件列表或禁用 SSL 验证（高级模式）</h3>
+<p>如果默认的 IMAP 服务器设置无法正常工作，你可以尝试设置备用的 SSL 密码套件列表。
+SSL 密码套件列表选项允许你选择此端点可接受的 SSL 密码套件列表：<code>default</code>（<em>系统默认</em>）、<code>modern</code> 或 <code>intermediate</code>（<em>参考 <a href="https://wiki.mozilla.org/Security/Server_Side_TLS" target="_blank" rel="noopener noreferrer" class="rp-link">Mozilla Security/Server Side TLS</a></em>）。</p>
+<p>如果你使用的是自签名证书，可以关闭 SSL 验证。</p>
+<p>:::important
+SSL 密码套件列表和验证 SSL 都属于高级设置。只有启用高级模式后，这些选项才会显示（参见用户设置）。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="启用-imap-push"><a href="#启用-imap-push" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用 IMAP Push</h3>
+<p>如果你的 IMAP 服务器支持，IMAP Push 会默认启用。如果你使用的 IMAP 服务不稳定，偶尔会断开连接并导致问题，可以考虑关闭 IMAP Push。关闭后将回退为轮询 IMAP 服务器。</p>
+<p>:::important
+强制轮询选项属于高级设置。只有启用高级模式后，此选项才会显示（参见用户设置）。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="故障排查"><a href="#故障排查" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排查</h3>
+<p>邮件服务提供商可能会限制可报告的邮件数量。即使你通过 <code>IMAP search</code> 缩小了结果范围，返回数量仍可能低于其上限（例如 Yahoo 至少为 10,000 封）。如果你没有收到预期事件，又不想清理收件箱或当前配置的文件夹，建议为特定发件人设置邮件过滤规则，将邮件转入新的文件夹。然后创建新的配置条目，或把现有条目改为使用该目标文件夹。</p>
+<h3 class="rp-toc-include" id="使用事件"><a href="#使用事件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用事件</h3>
+<p>当有新邮件到达，或在已定义搜索命令范围内有邮件被移除时，<code>imap</code> 集成会发送一个可用于触发自动化的自定义<a href="/home-assistant/docs/automation/trigger/index.html#event-trigger" class="rp-link">event</a>。
+你也可以基于<a href="/home-assistant/docs/automation/templating/index.html#event" class="rp-link">event 数据</a>创建模板 <a href="/home-assistant/integrations/template/index.html#trigger-based-template-binary-sensors-buttons-numbers-selects-and-sensors" class="rp-link"><code>binary_sensor</code> 或 <code>sensor</code></a>。</p>
+<p>下表展示了 <code>trigger.event.data</code> 中包含的属性。该数据是一个字典，包含下方所示的各个键。</p>
+<p>表中展示的属性也可作为自定义事件数据模板中的变量使用。<a href="/home-assistant/integrations/imap/index.html#example---custom-event-data-template" class="rp-link">示例</a>展示了如何将其用作事件过滤器。</p>
+<p>:::important
+自定义事件数据模板属于高级功能。只有启用高级模式后，此选项才会显示（参见用户设置）。当 <code>text</code> 作为模板变量使用时，不受大小限制。</p>
+<p>:::</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">server</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> IMAP 服务器名称</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">username</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> IMAP 用户名</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">search</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> IMAP 搜索配置</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">folder</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> IMAP 文件夹配置</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">text</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件正文的 `text` 内容。默认仅提供正文前 2048 字节，其余部分会被截断。你可以增大正文文本的最大长度，但不建议这样做，也无法保证能拿到完整正文。更好的做法是使用自定义事件数据模板（高级设置）解析整封邮件，这种方式不受大小限制。渲染结果会作为 `custom` 属性加入事件数据中，用于自动化。只有在选项流程中显式选择后，`text` 才会被包含。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">sender</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件的 `sender`（发件人）</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">subject</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件的 `subject`（主题）</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">date</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件发送时间的 `datetime` 对象</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">headers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件的 `headers`，以字典形式提供。由于同一个请求头可能出现多次，因此其值可迭代。只有在选项流程中显式选择后，`headers` 才会被包含。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">custom</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 保存自定义事件数据[模板](/home-assistant/docs/configuration/templating)的结果。所有属性都可作为模板中的变量使用。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">initial</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 如果这是最近一封收到邮件的首次事件，则返回 `True`。当搜索范围内的邮件被删除，而最近收到的那封邮件本身没有变化时，仍会生成一个 `imap_content` 事件，此时 `initial` 为 `False`。注意：如果触发邮件没有 `Message-ID` 头，则 `initial` 始终为 `True`。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">parts</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 返回一个字典，列出多部分邮件中可用的各个部分。字典键可通过 `part` 选项传给 `fetch` 动作，以获取邮件指定部分的内容。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">uid</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件最新的 `uid`。</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>自定义事件的 <code>event_type</code> 应设置为 <code>imap_content</code>。下面的配置展示了如何在模板 <code>sensor</code> 中使用事件数据。</p>
+<p>如果事件中使用的默认最大消息大小（2048 字节）不能满足需求，可以调大该上限。要进行此设置，你需要将个人资料切换为 <em>advanced</em> 模式。</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">Warning</div><div class="rp-callout__content"><p>
+增大默认最大消息大小（2048 字节）可能会影响性能，因为事件数据也会被 <code>recorder</code> 记录。如果事件总数据大小超过最大事件限制（32168 字节），该事件将被跳过。</p></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">template</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;imap_content&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;custom_event&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> imap_content</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;subject&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        attributes</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Entry</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;entry_id&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          UID</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;uid&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;text&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Server</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;server&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Username</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;username&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Search</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;search&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Folder</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;folder&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Sender</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;sender&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Date</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;date&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Subject</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;subject&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Initial</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;initial&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          To</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;headers&#x27;].get(&#x27;Delivered-To&#x27;, [&#x27;n/a&#x27;])[0] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Return-Path</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;headers&#x27;].get(&#x27;Return-Path&#x27;,[&#x27;n/a&#x27;])[0] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Received-first</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;headers&#x27;].get(&#x27;Received&#x27;,[&#x27;n/a&#x27;])[0] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          Received-last</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;headers&#x27;].get(&#x27;Received&#x27;,[&#x27;n/a&#x27;])[-1] }}&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="后处理操作"><a href="#后处理操作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>后处理操作</h3>
+<p>IMAP 集成提供了一些用于邮件后处理的操作。这些操作通常用于自动化中，作为 <code>imap_content</code> 事件之后的动作。它们需要 IMAP 的 <code>entry_id</code> 以及邮件事件数据中的 <code>uid</code>。你可以为 <code>entry_id</code> 和 <code>uid</code> 使用模板。当该操作被设置为触发动作时，你可以在 UI 中轻松选择正确的条目。在 YAML 模式下可以找到 <code>entry_id</code>。强烈建议按 <code>entry_id</code> 过滤事件。</p>
+<h4 class="rp-toc-include" id="动作-seen---将邮件标记为已读"><a href="#动作-seen---将邮件标记为已读" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作 <code>seen</code> - 将邮件标记为已读</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>类型</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>entry_id</code></td><td>string</td><td>no</td><td>IMAP 配置条目 ID。</td></tr><tr><td><code>uid</code></td><td>string</td><td>no</td><td>要标记为“已读”的邮件 <code>uid</code>，可在该邮件的事件数据中找到。</td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="动作-move---移动-imap-邮件"><a href="#动作-move---移动-imap-邮件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作 <code>move</code> - 移动 IMAP 邮件</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>类型</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>entry_id</code></td><td>string</td><td>no</td><td>IMAP 配置条目 ID。</td></tr><tr><td><code>uid</code></td><td>string</td><td>no</td><td>要处理的邮件 <code>uid</code>，可在该邮件的事件数据中找到。</td></tr><tr><td><code>target_folder</code></td><td>string</td><td>no</td><td>目标文件夹名称，例如 <code>INBOX/Trash</code>（旧系统中也可能是 <code>INBOX.Trash</code>），邮件会被移动到这里。</td></tr><tr><td><code>seen</code></td><td>boolean</td><td>yes</td><td>若设为 <code>true</code>，同时会将该邮件标记为“已读”。</td></tr></tbody></table></div>
+<p>:::important
+请确保使用正确的 IMAP 文件夹分隔符。下表列出了常见 IMAP 服务器使用的文件夹分隔符：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>邮件服务器</th><th>分隔符</th></tr></thead><tbody><tr><td>Gmail</td><td>/</td></tr><tr><td>Dovecot</td><td>.（但通常也可用 /）</td></tr><tr><td>Courier IMAP</td><td>.</td></tr><tr><td>Cyrus IMAP</td><td>/</td></tr><tr><td>Microsoft Exchange</td><td>/</td></tr><tr><td>Zimbra</td><td>/</td></tr><tr><td>Yahoo Mail</td><td>/</td></tr></tbody></table></div>
+<p>:::</p>
+<h4 class="rp-toc-include" id="动作-delete---删除-imap-邮件"><a href="#动作-delete---删除-imap-邮件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作 <code>delete</code> - 删除 IMAP 邮件</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>类型</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>entry_id</code></td><td>string</td><td>no</td><td>IMAP 配置条目 ID。</td></tr><tr><td><code>uid</code></td><td>string</td><td>no</td><td>要删除的邮件 <code>uid</code>，可在该邮件的事件数据中找到。</td></tr></tbody></table></div>
+<div class="rp-callout rp-callout--caution"><div class="rp-callout__title">Caution</div><div class="rp-callout__content"><p>
+当这些动作用于自动化时，请务必正确设置触发器和过滤条件。邮件一旦被删除、移动或修改，将无法恢复。若配置了多个 IMAP 条目，还应同时按 <code>entry_id</code> 过滤邮件，以确保处理的是正确邮件。除非你明确知道自己在做什么，否则不要使用这些动作。</p></div></div>
+<h4 class="rp-toc-include" id="动作-fetch---获取一封-imap-邮件"><a href="#动作-fetch---获取一封-imap-邮件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作 <code>fetch</code> - 获取一封 IMAP 邮件</h4>
+<p>获取邮件正文文本，并读取 IMAP 邮件内部各部分的元数据。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>类型</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>entry_id</code></td><td>string</td><td>no</td><td>IMAP 配置条目 ID。</td></tr><tr><td><code>uid</code></td><td>string</td><td>no</td><td>要获取的邮件 <code>uid</code>，可在该邮件的事件数据中找到。</td></tr></tbody></table></div>
+<h5 class="rp-toc-include" id="fetch-动作的返回值"><a href="#fetch-动作的返回值" class="rp-header-anchor rp-link" aria-hidden="true">#</a><code>fetch</code> 动作的返回值</h5>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">text</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 获取到的邮件纯文本内容。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">subject</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 获取到的邮件主题。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">sender</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 获取到的邮件发件人地址。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">uid</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件的 UID。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">parts</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在多部分邮件场景下，包含一个字典，列出邮件中各可用部分的元数据。这样可进一步获取并处理完整文本部分，不受大小限制。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    content_type</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件部分的 MIME 内容类型，例如 `image/jpeg`</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    content_transfer_encoding</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 返回的邮件部分所使用的编码。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    filename</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件部分的文件名；仅在该信息存在时可用。</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h5 class="rp-toc-include" id="多部分邮件返回变量中-parts-数据示例"><a href="#多部分邮件返回变量中-parts-数据示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>多部分邮件返回变量中 <code>parts</code> 数据示例：</h5>
+<div class="rp-codeblock language-json"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="json"><code><span class="line"><span style="color:var(--shiki-foreground)">{</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    &quot;0,0&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;content_type&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;text/plain&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;content_transfer_encoding&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;7bit&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    }</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    &quot;0,1&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;content_type&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;text/html&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;content_transfer_encoding&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;7bit&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    }</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    &quot;1&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;content_type&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;text/plain&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;filename&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Text attachment content.txt&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;content_transfer_encoding&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;base64&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    }</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="动作-fetch_part---获取-imap-邮件中的某个部分或附件"><a href="#动作-fetch_part---获取-imap-邮件中的某个部分或附件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作 <code>fetch_part</code> - 获取 IMAP 邮件中的某个部分或附件</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>类型</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>entry_id</code></td><td>string</td><td>no</td><td>IMAP 配置条目 ID。</td></tr><tr><td><code>uid</code></td><td>string</td><td>no</td><td>要获取的邮件 <code>uid</code>，可在该邮件的事件数据中找到。</td></tr><tr><td><code>part</code></td><td>string</td><td>no</td><td>要返回的邮件部分索引。可从事件数据或 <code>fetch</code> 动作返回值中的 <code>part</code> 信息获取可用部分列表。</td></tr></tbody></table></div>
+<h5 class="rp-toc-include" id="fetch_part-动作的返回值"><a href="#fetch_part-动作的返回值" class="rp-header-anchor rp-link" aria-hidden="true">#</a><code>fetch_part</code> 动作的返回值</h5>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">part_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 获取到的邮件部分编码数据。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">content_type</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件部分的 MIME 内容类型，例如 `image/jpeg`。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">content_transfer_encoding</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-foreground)"> `</span><span style="color:var(--shiki-token-string-expression)">part_data` 中数据的编码方式。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">file_name</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件部分的文件名；若该部分是附件则通常会有此值，未设置时为 `null`。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">uid</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 邮件的 UID。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">part</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 部分索引。</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="示例---后处理"><a href="#示例---后处理" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例 - 后处理</h2>
+<p>下面的示例会按 <code>entry_id</code> 过滤事件触发器，抓取邮件并将其存入 <code>message_text</code>。随后，它会将事件中的邮件标记为已读，最后再创建一条以邮件主题为内容的通知。<code>seen</code> 操作中的 <code>entry_id</code> 可以是模板，也可以是字面量字符串。在 UI 模式下，你也可以从列表中选择所需条目。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;imap fetch and seen example&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Fetch and mark an incoming message as seen&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> imap_content</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entry_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91fadb3617c5a3ea692aeb62d92aa869</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> template</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    value_template</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;sender&#x27;] == &#x27;info@example.com&#x27; }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> imap.fetch</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entry</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91fadb3617c5a3ea692aeb62d92aa869</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      uid</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;uid&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    response_variable</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> message_text</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> imap.seen</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entry</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91fadb3617c5a3ea692aeb62d92aa869</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      uid</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;uid&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> persistent_notification.create</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ message_text[&#x27;subject&#x27;] }}&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>如果你想处理邮件的某个部分，请使用 <code>fetch_part</code> 操作，并指定 <code>part</code> 选项。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;imap fetch and seen example&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Fetch and mark an incoming message as seen&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> imap_content</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entry_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91fadb3617c5a3ea692aeb62d92aa869</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> template</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    value_template</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;sender&#x27;] == &#x27;info@example.com&#x27; }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> template</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    value_template</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;parts&#x27;].get(&#x27;1&#x27;) }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> template</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    value_template</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;parts&#x27;][&#x27;1&#x27;].get(&#x27;content_type&#x27;) == &#x27;text/plain&#x27; }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> imap.fetch_part</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entry</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91fadb3617c5a3ea692aeb62d92aa869</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      uid</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;uid&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      part</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;1&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    response_variable</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> message_text</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> imap.seen</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entry</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91fadb3617c5a3ea692aeb62d92aa869</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      uid</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data[&#x27;uid&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> persistent_notification.create</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ message_text[&#x27;part_data&#x27;] | base64_decode }}&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="示例---关键词识别"><a href="#示例---关键词识别" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例 - 关键词识别</h2>
+<p>下面的示例展示了如何使用 IMAP 邮件内容传感器扫描邮件主题中的文本。本例中使用的是来自 APC SmartConnect 服务的邮件，用于判断 UPS 当前是否处于电池供电状态。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">template</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;imap_content&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;custom_event&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          sender</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;no-reply@smartconnect.apc.com&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          initial</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> house_electricity</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% if &#x27;UPS On Battery&#x27; in trigger.event.data[&quot;subject&quot;] %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            power_out</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% elif &#x27;Power Restored&#x27; in trigger.event.data[&quot;subject&quot;] %}</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            power_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {% endif %}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="示例---使用模板传感器从邮件中提取结构化文本"><a href="#示例---使用模板传感器从邮件中提取结构化文本" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例 - 使用模板传感器从邮件中提取结构化文本</h2>
+<p>这个示例展示了如何从邮件中提取数字或其他格式化数据，并将模板传感器的值更新为邮件中解析出的结果。本例会从一封来自 Georgia Power 的邮件中提取能耗、费用和账单金额，并基于已配置好的 IMAP 邮件传感器写入多个模板传感器。示例邮件正文如下：</p>
+<div class="rp-codeblock language-text"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="text"><code><span class="line"><span>Yesterday&#x27;s Energy Use:                             76 kWh</span></span>
+<span class="line"><span>Yesterday&#x27;s estimated energy cost:                  $8</span></span>
+<span class="line"><span>Monthly Energy use-to-date for 23 days:             1860 kWh</span></span>
+<span class="line"><span>Monthly estimated energy cost-to-date for 23 days:  $198</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>To view your account for details about your energy use, please click here.</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>下面的模板传感器会从 IMAP 邮件传感器（名为 <code>sensor.energy_email</code>）中的邮件正文提取信息，并生成 3 个传感器，分别表示能耗、每日费用和账单周期总额。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">template</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;imap_content&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;custom_event&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          sender</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;no-reply@smartconnect.apc.com&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Previous Day Energy Use&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        unit_of_measurement</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;kWh&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">        {{ trigger.event.data[&quot;text&quot;]</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          | regex_findall_index(&quot;\*Yesterday&#x27;s Energy Use:\* ([0-9]+) kWh&quot;) }}</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Previous Day Cost&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        unit_of_measurement</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;$&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {{ trigger.event.data[&quot;text&quot;]</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            | regex_findall_index(&quot;\*Yesterday&#x27;s estimated energy cost:\* \$([0-9.]+)&quot;) }}</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Billing Cycle Total&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        unit_of_measurement</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;$&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">          {{ trigger.event.data[&quot;text&quot;]</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">            | regex_findall_index(&quot;\ days:\* \$([0-9.]+)&quot;) }}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>只需对上面的正则表达式做少量修改，就可以用同样的结构从其他邮件正文中解析出不同类型的数据。</p>
+<h2 class="rp-toc-include" id="示例---自定义事件数据模板"><a href="#示例---自定义事件数据模板" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例 - 自定义事件数据模板</h2>
+<p>我们可以定义自定义事件数据模板来帮助过滤事件。例如，当你希望允许多个发件人时，这会非常方便。
+下面的模板会在 <code>sender</code> 中包含 <code>@example.com</code> 时返回 true：</p>
+<div class="rp-codeblock language-jinja"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="jinja"><code><span class="line"><span style="color:var(--shiki-foreground)">{{ </span><span style="color:var(--shiki-token-string-expression)">&quot;@example.com&quot;</span><span style="color:var(--shiki-token-keyword)"> in</span><span style="color:var(--shiki-foreground)"> sender }}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>如果发件人符合条件，模板将渲染为 <code>True</code>。结果会作为 <code>trigger.event.data[&quot;custom&quot;]</code> 加入事件数据。</p>
+<p>下面的示例仅在发件人地址匹配时，才会把模板传感器的状态设置为邮件主题。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">template</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;imap_content&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;custom_event&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          custom</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> True</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    sensor</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event filtered by template</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;{{ trigger.event.data[&quot;subject&quot;] }}&#x27;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="移除-imap-服务"><a href="#移除-imap-服务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>移除 IMAP 服务</h2>
+<p>此集成遵循标准配置条目移除流程。</p>
+<h3 class="rp-toc-include" id="从-home-assistant-中移除集成实例"><a href="#从-home-assistant-中移除集成实例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Home Assistant 中移除集成实例</h3>
+<ol>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a> 并选择该集成卡片。</li>
+<li>在设备列表中，选择你想移除的集成实例。</li>
+<li>在对应条目旁，选择三点菜单 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon>，然后选择 <strong>删除</strong>。</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#使用应用专用密码的-imap-服务" class="rp-toc-item rp-link" title="使用应用专用密码的 IMAP 服务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用应用专用密码的 IMAP 服务</span></a><a href="#microsoft-365-和-live-imap-服务" class="rp-toc-item rp-link" title="Microsoft 365 和 Live IMAP 服务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Microsoft 365 和 Live IMAP 服务</span></a><a href="#google-gmail-imap-服务" class="rp-toc-item rp-link" title="Google Gmail IMAP 服务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Google Gmail IMAP 服务</span></a><a href="#配置-imap-搜索" class="rp-toc-item rp-link" title="配置 IMAP 搜索" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配置 IMAP 搜索</span></a><a href="#选择-imap-服务器支持的字符集" class="rp-toc-item rp-link" title="选择 IMAP 服务器支持的字符集" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">选择 IMAP 服务器支持的字符集</span></a><a href="#选择要包含在-imap-事件中的邮件数据高级模式" class="rp-toc-item rp-link" title="选择要包含在 IMAP 事件中的邮件数据（高级模式）" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">选择要包含在 IMAP 事件中的邮件数据（高级模式）</span></a><a href="#选择备用-ssl-密码套件列表或禁用-ssl-验证高级模式" class="rp-toc-item rp-link" title="选择备用 SSL 密码套件列表或禁用 SSL 验证（高级模式）" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">选择备用 SSL 密码套件列表或禁用 SSL 验证（高级模式）</span></a><a href="#启用-imap-push" class="rp-toc-item rp-link" title="启用 IMAP Push" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启用 IMAP Push</span></a><a href="#故障排查" class="rp-toc-item rp-link" title="故障排查" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">故障排查</span></a><a href="#使用事件" class="rp-toc-item rp-link" title="使用事件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用事件</span></a><a href="#后处理操作" class="rp-toc-item rp-link" title="后处理操作" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">后处理操作</span></a><a href="#动作-seen---将邮件标记为已读" class="rp-toc-item rp-link" title="动作 seen - 将邮件标记为已读" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">动作 <code>seen</code> - 将邮件标记为已读</span></a><a href="#动作-move---移动-imap-邮件" class="rp-toc-item rp-link" title="动作 move - 移动 IMAP 邮件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">动作 <code>move</code> - 移动 IMAP 邮件</span></a><a href="#动作-delete---删除-imap-邮件" class="rp-toc-item rp-link" title="动作 delete - 删除 IMAP 邮件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">动作 <code>delete</code> - 删除 IMAP 邮件</span></a><a href="#动作-fetch---获取一封-imap-邮件" class="rp-toc-item rp-link" title="动作 fetch - 获取一封 IMAP 邮件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">动作 <code>fetch</code> - 获取一封 IMAP 邮件</span></a><a href="#动作-fetch_part---获取-imap-邮件中的某个部分或附件" class="rp-toc-item rp-link" title="动作 fetch_part - 获取 IMAP 邮件中的某个部分或附件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">动作 <code>fetch_part</code> - 获取 IMAP 邮件中的某个部分或附件</span></a><a href="#示例---后处理" class="rp-toc-item rp-link" title="示例 - 后处理" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例 - 后处理</span></a><a href="#示例---关键词识别" class="rp-toc-item rp-link" title="示例 - 关键词识别" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例 - 关键词识别</span></a><a href="#示例---使用模板传感器从邮件中提取结构化文本" class="rp-toc-item rp-link" title="示例 - 使用模板传感器从邮件中提取结构化文本" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例 - 使用模板传感器从邮件中提取结构化文本</span></a><a href="#示例---自定义事件数据模板" class="rp-toc-item rp-link" title="示例 - 自定义事件数据模板" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例 - 自定义事件数据模板</span></a><a href="#移除-imap-服务" class="rp-toc-item rp-link" title="移除 IMAP 服务" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">移除 IMAP 服务</span></a><a href="#从-home-assistant-中移除集成实例" class="rp-toc-item rp-link" title="从 Home Assistant 中移除集成实例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从 Home Assistant 中移除集成实例</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

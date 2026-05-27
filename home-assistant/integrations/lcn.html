@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LCN - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="LCN - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Home Assistant 的 LCN 集成可让您连接到 LCN(https://www.lcn.eu/) 硬件设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Home Assistant 的 LCN 集成可让您连接到 LCN(https://www.lcn.eu/) 硬件设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/lcn/lcn_integration_configuration.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/lcn/lcn_device_page.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/lcn/lcn_create_device.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/lcn/lcn_entities_page.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/lcn/lcn_create_entity.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="lcn"><a href="#lcn" class="rp-header-anchor rp-link" aria-hidden="true">#</a>LCN<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>Home Assistant 的 <strong>LCN</strong> 集成可让您连接到 <a href="https://www.lcn.eu/" target="_blank" rel="noopener noreferrer" class="rp-link">LCN</a> 硬件设备。</p>
+<h2 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h2>
+<ul>
+<li>该集成需要一份未使用的 LCN-PCHK（版本 &gt;2.8）耦合软件许可证，以及一个 LCN 硬件耦合器。</li>
+<li>或者，您也可以使用提供至少两个 PCHK 许可证的 LCN-VISU 或 LCN-PKE 耦合器。</li>
+</ul>
+<p>在这样的设置下，便可以向 LCN 模块发送命令，并接收来自 LCN 模块的命令。</p>
+<p><code>lcn</code> 集成支持连接多个硬件耦合器。对于每个耦合器，都需要创建一个新的集成条目。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<p>要设置该集成，您需要提供以下信息：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Name</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;用于标识该集成条目的名称&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">IP address</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;PCHK 服务器的 IP 地址或主机名&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Port</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;PCHK 服务器使用的端口&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Username</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;用于在 PCHK 服务器上授权的用户名&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;用于在 PCHK 服务器上授权的密码&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Segment coupler scan attempts</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;在您的安装中查找段耦合器的尝试次数。如果并非所有段耦合器都能被正确识别，请增大该数值。如果安装中没有段耦合器，请将其保持为 0。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Dimming mode</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;所有 LCN 模块输出调光时使用的步进数。该设置取决于具体系统以及已安装 LCN 模块的能力。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Request acknowledgement from modules</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;LCN 模块可以为接收到的命令发送确认消息。如果未收到确认，命令会被重新发送。但启用确认会增加总线流量，如果安装中模块很多，可能导致消息丢失。&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="支持的设备类型"><a href="#支持的设备类型" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备类型</h2>
+<p>目前在 Home Assistant 中支持以下设备类型：</p>
+<ul>
+<li><a href="#binary-sensor" class="rp-link">Binary sensor</a></li>
+<li><a href="#climate" class="rp-link">Climate</a></li>
+<li><a href="#cover" class="rp-link">Cover</a></li>
+<li><a href="#light" class="rp-link">Light</a></li>
+<li><a href="#scene" class="rp-link">Scene</a></li>
+<li><a href="#sensor" class="rp-link">Sensor</a></li>
+<li><a href="#switch" class="rp-link">Switch</a></li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+已实现的平台并未覆盖 LCN 系统的全部功能。
+因此，<code>lcn</code> 集成还提供了多种 <a href="#events" class="rp-link">events</a>、<a href="#device-triggers" class="rp-link">device triggers</a> 和 <a href="#actions" class="rp-link">actions</a>。
+它们非常适合用于自动化脚本或 <code>template</code> 平台。</p></div></div>
+<h2 class="rp-toc-include" id="设置设备和实体"><a href="#设置设备和实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置设备和实体</h2>
+<p><code>lcn</code> 硬件模块和组在 Home Assistant 中表示为 <em>devices</em>。每个 <code>lcn</code> 模块的外围功能则表示为 Home Assistant 的 <em>entities</em>。外围功能例如模块的输出端口、继电器和变量。关于每种外围功能应使用哪种实体，请参阅各个 <a href="#platforms" class="rp-link">platform</a> 的说明。</p>
+<p><code>lcn</code> 设备和实体的配置完全通过 Web 用户界面（配置面板）完成。</p>
+<p>将集成添加到 Home Assistant 后，您可以在 <a href="https://my.home-assistant.io/redirect/integration/?domain=lcn" target="_blank" rel="noopener noreferrer" class="rp-link">LCN integration page</a> 中，对应的集成条目旁选择 <strong>Configure</strong> 按钮，以打开 <code>lcn</code> 配置面板。</p>
+<p><img src="/home-assistant/images/integrations/lcn/lcn_integration_configuration.png" alt="Integration configuration"/></p>
+<h2 class="rp-toc-include" id="配置面板"><a href="#配置面板" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置面板</h2>
+<p>在 LCN 配置面板中，您可以在 Home Assistant 内配置 LCN 模块、组和实体。</p>
+<p><img src="/home-assistant/images/integrations/lcn/lcn_device_page.png" alt="LCN Configuration Panel"/></p>
+<h3 class="rp-toc-include" id="配置设备"><a href="#配置设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置设备</h3>
+<p>您可以直接在配置面板中添加或移除模块和组。添加后，它们会在 Home Assistant 中显示为设备，并可在脚本或自动化中触发<a href="#actions" class="rp-link">特定操作</a>。示例请参阅 <a href="/home-assistant/docs/scripts/perform-actions/index.html" class="rp-link">Performing actions</a> 页面。</p>
+<p><strong>Modules / Groups</strong> 选项卡会概览您已配置的 LCN 模块和组，并显示其名称、ID 和 segment ID。LCN 配置面板会尝试从 LCN 模块中读取名称；如果模块没有名称或属于某个组，则会分配一个标准名称。</p>
+<h4 class="rp-toc-include" id="扫描模块"><a href="#扫描模块" class="rp-header-anchor rp-link" aria-hidden="true">#</a>扫描模块</h4>
+<p>要开始扫描总线上的 LCN 模块，请在右上角选择三点菜单 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon>，然后选择 <strong>Scan Modules</strong>。</p>
+<ul>
+<li><strong>结果：</strong> 该过程会轮询每个模块的名称和序列号。</li>
+<li>当所有模块响应都收到后，它们会显示在设备列表中。</li>
+<li>模块扫描可能需要几秒钟。流程完成后，弹出对话框会自动关闭。</li>
+</ul>
+<h4 class="rp-toc-include" id="添加设备"><a href="#添加设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>添加设备</h4>
+<p>如果模块扫描失败，或某个模块在总线上不可用，您可以手动添加它。组也可以手动创建。</p>
+<ol>
+<li>
+<p>若要手动添加模块或组，请选择 <strong>Create Module/Group</strong> 按钮。</p>
+</li>
+<li>
+<p>选择要添加模块还是组，并输入所需的 <code>segment id</code> 以及模块/组 <code>id</code>。</p>
+<p><img src="/home-assistant/images/integrations/lcn/lcn_create_device.png" alt="Create module/group dialog"/></p>
+</li>
+<li>
+<p>选择 <strong>Create</strong> 以添加新设备。</p>
+</li>
+</ol>
+<h4 class="rp-toc-include" id="删除设备"><a href="#删除设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除设备</h4>
+<p>要删除单个设备，请选择其旁边的垃圾桶图标。</p>
+<ul>
+<li><strong>结果：</strong> 该设备会从设备列表和 Home Assistant 中移除，同时删除其关联的所有实体。</li>
+</ul>
+<p>要一次删除多个设备，请启用选择模式，选中所需条目，然后在右上角选择 <strong>Delete Selected</strong>。</p>
+<h3 class="rp-toc-include" id="配置实体"><a href="#配置实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置实体</h3>
+<p>为所有设备配置的实体会列在 <strong>Entities</strong> 选项卡中。</p>
+<p>若要查看某个特定设备（模块或组）的实体，请在 <strong>Modules / Groups</strong> 选项卡中选择该设备条目。</p>
+<ul>
+<li><strong>结果：</strong> <strong>Entities</strong> 选项卡会打开，并显示所选设备的实体。</li>
+<li>如果要应用自定义过滤器，请启用过滤选项。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/lcn/lcn_entities_page.png" alt="Create module/group dialog"/></p>
+<h4 class="rp-toc-include" id="添加实体"><a href="#添加实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>添加实体</h4>
+<ol>
+<li>若要创建新实体，请选择 <strong>Create Entity</strong>。</li>
+<li>在下拉菜单中，选择要为其创建实体的模块或组。
+<ul>
+<li>
+<p>如果已应用单个模块或组过滤器，则会自动预选。</p>
+<p><img src="/home-assistant/images/integrations/lcn/lcn_create_entity.png" alt="Create entity dialog"/></p>
+</li>
+</ul>
+</li>
+<li>为该实体选择域（平台）并输入名称。
+<ul>
+<li>您稍后可以在 Home Assistant 的实体设置中更改此名称。</li>
+</ul>
+</li>
+<li>根据所选域的不同，还会显示额外选项。输入所需信息后，选择 <strong>Create</strong>，即可将实体添加到列表和 Home Assistant 中。</li>
+</ol>
+<h4 class="rp-toc-include" id="删除实体"><a href="#删除实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除实体</h4>
+<p>要删除单个实体，请选择其旁边的垃圾桶图标。</p>
+<ul>
+<li><strong>结果：</strong> 该实体会从列表和 Home Assistant 中移除。</li>
+</ul>
+<p>要删除多个实体，请启用选择模式，选中所需条目，然后在右上角选择 <strong>Delete Selected</strong>。</p>
+<h4 class="rp-toc-include" id="显示实体属性"><a href="#显示实体属性" class="rp-header-anchor rp-link" aria-hidden="true">#</a>显示实体属性</h4>
+<p>实体创建后，您可以查看并配置其属性。</p>
+<p>在实体列表中选择该实体。</p>
+<ul>
+<li>这会打开 Home Assistant 的实体属性对话框，您可以像在通用实体配置面板中一样配置该实体。</li>
+</ul>
+<h2 class="rp-toc-include" id="平台"><a href="#平台" class="rp-header-anchor rp-link" aria-hidden="true">#</a>平台</h2>
+<h3 class="rp-toc-include" id="binary-sensor"><a href="#binary-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Binary sensor</h3>
+<p><code>lcn</code> binary sensor 平台可用于监控以下 <a href="https://www.lcn.eu/" target="_blank" rel="noopener noreferrer" class="rp-link">LCN</a> 二进制数据源：</p>
+<ul>
+<li>二进制硬件传感器</li>
+</ul>
+<p>binary sensor 可用于自动化脚本，或与 <code>template</code> 平台配合使用。</p>
+<h3 class="rp-toc-include" id="climate"><a href="#climate" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Climate</h3>
+<p><code>lcn</code> climate 平台可用于控制 <a href="https://www.lcn.eu/" target="_blank" rel="noopener noreferrer" class="rp-link">LCN</a> 温控器。
+该平台依赖模块温控器的正确配置，这部分需要在 LCN-PRO 编程软件中完成。
+您至少需要指定当前温度变量，以及用于目标温度的设定点变量。
+如果控制被设置为可锁定，则可将温控器打开或关闭。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+如果您希望将温度调节交给 Home Assistant，建议结合 <a href="/home-assistant/integrations/generic_thermostat/index.html" class="rp-link">Generic Thermostat</a>、<a href="#sensor" class="rp-link">LCN Sensor</a> 和 <a href="#switch" class="rp-link">LCN Switch</a> 使用。</p></div></div>
+<h3 class="rp-toc-include" id="cover"><a href="#cover" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Cover</h3>
+<p><code>lcn</code> cover 平台可用于控制已配置为电机控制器的 <a href="https://www.lcn.eu/" target="_blank" rel="noopener noreferrer" class="rp-link">LCN</a> 继电器和输出端口。
+请参阅 <a href="#motors" class="rp-link">motors table</a>，了解各电机使用了哪些模块外围资源。</p>
+<p>仅适用于固件早于 190C 的模块：<br/>
+配置中可选择定义反转时间。该时间是电机电流切换时需要等待的时长。
+仅当使用模块输出端口来驱动 cover 时，才应在此处定义反转时间。对于其他配置，反转时间需要在 LCN Pro 软件中定义。
+反转时间可使用以下常量之一：<code>RT70</code> (70ms)、<code>RT600</code> (600ms)、<code>RT1200</code> (1.2s)。</p>
+<p>:::important
+如果您使用模块输出端口进行电机控制，请确保已在 LCN Pro 软件中将这些输出端口配置为电机控制器！
+否则，输出端口之间不会互锁，存在损坏电机的风险。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="light"><a href="#light" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Light</h3>
+<p><code>lcn</code> light 平台可用于控制以下 <a href="https://www.lcn.eu/" target="_blank" rel="noopener noreferrer" class="rp-link">LCN</a> 端口：</p>
+<ul>
+<li>（可调光）输出端口</li>
+<li>继电器</li>
+</ul>
+<h3 class="rp-toc-include" id="scene"><a href="#scene" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Scene</h3>
+<p><code>lcn</code> scene 平台可用于激活预先编程的 <a href="https://www.lcn.eu/" target="_blank" rel="noopener noreferrer" class="rp-link">LCN</a> 场景。</p>
+<h3 class="rp-toc-include" id="sensor"><a href="#sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sensor</h3>
+<p><code>lcn</code> sensor 平台可用于监控以下 <a href="https://www.lcn.eu/" target="_blank" rel="noopener noreferrer" class="rp-link">LCN</a> 数据源：</p>
+<ul>
+<li>变量</li>
+<li>温控器设定点</li>
+<li>阈值</li>
+<li>S0 输入</li>
+<li>LED 状态</li>
+<li>逻辑运算状态</li>
+</ul>
+<p>sensor 可用于自动化脚本，或与 <code>template</code> 平台配合使用。</p>
+<p>:::important
+请确保 LCN 模块已正确配置，以提供所请求的值。
+否则，模块可能出现异常行为或返回错误消息。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="switch"><a href="#switch" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Switch</h3>
+<p><code>lcn</code> switch 平台可用于控制以下 <a href="https://www.lcn.eu/" target="_blank" rel="noopener noreferrer" class="rp-link">LCN</a> 端口：</p>
+<ul>
+<li>输出端口</li>
+<li>继电器</li>
+<li>温控器锁定状态</li>
+<li>按键锁定状态</li>
+</ul>
+<h2 class="rp-toc-include" id="附加功能"><a href="#附加功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>附加功能</h2>
+<h3 class="rp-toc-include" id="应答器指纹传感器和密码锁"><a href="#应答器指纹传感器和密码锁" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应答器、指纹传感器和密码锁</h3>
+<p>要使用 LCN 应答器、指纹传感器或密码锁，请确保已在 LCN-PRO 软件中启用并正确配置对应模块的 I 端口属性。
+LCN 应答器、指纹和密码锁通过一个六位十六进制代码标识（例如 <em>123abc</em>）。
+当接收到代码时，会触发对应事件（<a href="#event-lcn_transponder" class="rp-link">transponder event</a>、<a href="#event-lcn_fingerprint" class="rp-link">fingerprint event</a>、<a href="#event-lcn_codelock" class="rp-link">codelock event</a>），可用于触发自动化。
+您也可以使用对应的 <a href="#device-triggers" class="rp-link">device triggers</a>。</p>
+<p>示例：</p>
+<p>此示例展示了如何提取 <code>event_data</code>，并使用 Home Assistant 模板引擎在条件中进行判断。
+它会在 transponder 事件触发时，确保接收到的代码在给定列表中：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn_transponder</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  conditions</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data.code in [&#x27;aabbcc&#x27;, &#x27;ddeeff&#x27;, &#x27;112233&#x27;] }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-constant)">    ...</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>更多示例请参阅 <a href="#events" class="rp-link">event section</a>。</p>
+<h3 class="rp-toc-include" id="遥控器"><a href="#遥控器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>遥控器</h3>
+<p>要使用 LCN 遥控器（如 LCN-RT 或 LCN-RT16），请确保已在 LCN-PRO 软件中启用对应模块的 I 端口属性，并将其行为正确配置为 &quot;IR access control&quot;。
+在此配置下，每个遥控器都由一个六位十六进制代码标识（例如 <em>123abc</em>）。
+当接收到遥控器命令时，会触发对应事件（<a href="#event-lcn_transponder" class="rp-link">transponder event</a>），可用于触发自动化。同时会传递该代码、被按下的按键及按键动作。
+您也可以使用对应的 <a href="#device-triggers" class="rp-link">device triggers</a>。</p>
+<p>示例请参阅 <a href="#events" class="rp-link">event section</a>。</p>
+<h3 class="rp-toc-include" id="发送给-pchk-主机home-assistant的-lcn-命令"><a href="#发送给-pchk-主机home-assistant的-lcn-命令" class="rp-header-anchor rp-link" aria-hidden="true">#</a>发送给 PCHK 主机（Home Assistant）的 LCN 命令</h3>
+<p>LCN 模块不仅可被编程为向其他模块或组发送命令，也可以向 <code>lcn</code> 集成中配置的 PCHK 主机发送命令。
+这些命令会直接传递给 Home Assistant 并可用于判断。当前仅支持 <em>send keys</em>（旧版）命令。</p>
+<p>在 LCN-PRO 中，将 <em>send keys</em> 命令（仅支持 &quot;A-C former command&quot;）编程到某个按键上。
+目标地址请手动填写 PCHK 主机 ID（默认值：4），然后按需选择按键和按键动作。</p>
+<p>当收到 <em>send keys</em> 命令时，LCN 集成会针对每个已配置按键触发一个 <a href="#event-lcn_send_keys" class="rp-link">send keys event</a>。
+这些事件可用于触发自动化。
+您也可以使用对应的 <a href="#device-triggers" class="rp-link">device triggers</a>。</p>
+<p>示例请参阅 <a href="#events" class="rp-link">event section</a>。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+仅会处理由模块物理按键发出的命令。LCN-PRO 软件中的 &quot;Test command&quot; 按钮不会被处理，因此不能用于测试。</p></div></div>
+<h2 class="rp-toc-include" id="events"><a href="#events" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Events</h2>
+<p>LCN 系统中有一些功能不会通过集成以常规实体方式暴露，而是以事件形式提供。
+例如遥控器（发射器）按键、应答器识别、指纹传感器，以及所谓的 <em>send keys</em> 事件。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+如果您觉得在脚本自动化中处理事件比较困难，也可以使用 <a href="#device-triggers" class="rp-link">device triggers</a>，通过 UI 设计自动化。</p><p>:::
+所有事件在 <code>event_data</code> 中都包含一些通用属性，用于标识发送事件的 LCN 硬件模块（例如连接应答器的模块）：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>事件负载项</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>LCN 模块在 Home Assistant 中的内部设备 ID</td><td>字符串</td></tr><tr><td><code>segment_id</code></td><td>模块的段 ID</td><td>5..128</td></tr><tr><td><code>module_id</code></td><td>模块 ID</td><td>5..254</td></tr></tbody></table></div><p>此外，每个事件还有其专属属性，详见下文。
+所有专属属性都是可选的，可用作附加筛选条件。</p><h3 class="rp-toc-include" id="event-lcn_transmitter"><a href="#event-lcn_transmitter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Event: <code>lcn_transmitter</code></h3><p>当接收到 LCN 遥控器命令时，会触发 <code>lcn_transmitter</code> 事件。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>专属负载项</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>code</code></td><td>发射器代码</td><td>字符串（6 位十六进制）</td></tr><tr><td><code>level</code></td><td>按键级别</td><td>0..4</td></tr><tr><td><code>key</code></td><td>按键</td><td>0..4</td></tr><tr><td><code>action</code></td><td>按键动作</td><td><code>hit</code>, <code>make</code>, <code>break</code></td></tr></tbody></table></div><p>示例：</p><p>当代码为 <em>123abc</em> 的遥控器上任意按键发生 <code>hit</code> 动作，且接收硬件连接在 segment 0 的模块 7 上时，该触发器会触发。</p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn_transmitter</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        segment_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        module_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 7</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        code</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 123abc</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> hit</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><h3 class="rp-toc-include" id="event-lcn_transponder"><a href="#event-lcn_transponder" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Event: <code>lcn_transponder</code></h3><p>当接收到 LCN 应答器命令时，会触发 <code>lcn_transponder</code> 事件。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>专属负载项</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>code</code></td><td>应答器代码</td><td>字符串（6 位十六进制）</td></tr></tbody></table></div><p>示例：</p><p>当任意硬件模块检测到代码为 <em>123abc</em> 的应答器时，该触发器会触发。</p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn_transponder</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        code</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 123abc</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><h3 class="rp-toc-include" id="event-lcn_fingerprint"><a href="#event-lcn_fingerprint" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Event: <code>lcn_fingerprint</code></h3><p>当接收到 LCN 指纹命令时，会触发 <code>lcn_fingerprint</code> 事件。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>专属负载项</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>code</code></td><td>指纹代码</td><td>字符串（6 位十六进制）</td></tr></tbody></table></div><p>示例：</p><p>当任意硬件模块检测到代码为 <em>123abc</em> 的指纹时，该触发器会触发。</p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn_fingerprint</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        code</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 123abc</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><h3 class="rp-toc-include" id="event-lcn_codelock"><a href="#event-lcn_codelock" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Event: <code>lcn_codelock</code></h3><p>当接收到 LCN 密码锁命令时，会触发 <code>lcn_codelock</code> 事件。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>专属负载项</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>code</code></td><td>密码锁代码</td><td>字符串（6 位十六进制）</td></tr></tbody></table></div><p>示例：</p><p>当任意硬件模块上的代码为 <em>123abc</em> 的密码锁被激活时，该触发器会触发。</p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn_codelock</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        code</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 123abc</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><h3 class="rp-toc-include" id="event-lcn_send_keys"><a href="#event-lcn_send_keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Event: <code>lcn_send_keys</code></h3><p>当 PCHK 主机收到 <em>send keys</em> 命令时，会触发 <code>lcn_send_keys</code> 事件。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>专属负载项</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>key</code></td><td>LCN 按键</td><td>a1..c8</td></tr><tr><td><code>action</code></td><td>按键动作</td><td><code>hit</code>, <code>make</code>, <code>break</code></td></tr></tbody></table></div><p>示例：</p><p>当 PCHK 主机收到一个对按键 <code>a1</code> 执行 <code>hit</code> 动作的命令时，该触发器会触发。</p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> event</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn_send_keys</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      event_data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        key</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> a1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> hit</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><h2 class="rp-toc-include" id="device-triggers"><a href="#device-triggers" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Device triggers</h2><p>为简化在自动化中使用事件，LCN 集成将这些事件作为 device trigger 暴露。
+这些 device trigger 可以在 Home Assistant 自动化编辑器中直接选择。</p><p>创建新自动化后，先选择 <em>Device</em> 作为触发器类型，再在设备列表中选择会产生该事件的模块。
+随后可选择触发器类型并配置其属性。若某个属性是可选项，它会作为触发器的附加过滤条件。
+各属性的说明请参阅对应的 <a href="#events" class="rp-link">events</a>。</p><h2 class="rp-toc-include" id="actions"><a href="#actions" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Actions</h2><p>若要直接与 LCN 系统交互，或调用未被已实现平台覆盖的命令，可使用以下 actions。
+用法示例请参阅 <a href="/home-assistant/docs/scripts/service-calls" class="rp-link">Performing actions</a> 页面。</p><p>当 action 与某个特定设备关联时，设备通过其 <code>device_id</code> 标识。<code>device_id</code> 是 Home Assistant 提供的唯一标识符。</p><p>:::tip
+在自动化或脚本中获取 LCN 模块 <code>device_id</code> 的一种简便方式，是按<a href="/home-assistant/docs/configuration/templating/index.html#devices" class="rp-link">这里</a>所述，在模板中使用 <code>device_id()</code> 函数。这样可以根据前端显示的模块名称（或在 LCN-PRO 软件中配置的名称）查到对应 <code>device_id</code>。</p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.pck</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ device_id(&#x27;Module name&#x27;) }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  pck</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> PIN4</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div></div></div>
+<h3 class="rp-toc-include" id="action-output_abs"><a href="#action-output_abs" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>output_abs</code></h3>
+<p>以百分比设置输出端口的绝对亮度。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>output</code></td><td>否</td><td>模块输出端口</td><td><a href="#ports" class="rp-link">OUTPUT_PORT</a></td></tr><tr><td><code>brightness</code></td><td>是</td><td>绝对亮度（百分比）</td><td>0..100</td></tr><tr><td><code>transition</code></td><td>是</td><td>过渡（渐变）时间，单位秒</td><td>0..486</td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.output_abs</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  output</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> output1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  brightness</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 100</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  transition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 0</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-output_rel"><a href="#action-output_rel" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>output_rel</code></h3>
+<p>以百分比设置输出端口的相对亮度。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>output</code></td><td>否</td><td>模块输出端口</td><td><a href="#ports" class="rp-link">OUTPUT_PORT</a></td></tr><tr><td><code>brightness</code></td><td>是</td><td>相对亮度（百分比）</td><td>-100..100</td></tr><tr><td><code>transition</code></td><td>是</td><td>过渡（渐变）时间，单位秒</td><td>0..486</td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.output_rel</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  output</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> output1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  brightness</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 30</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-output_toggle"><a href="#action-output_toggle" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>output_toggle</code></h3>
+<p>切换输出端口状态。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>output</code></td><td>否</td><td>模块输出端口</td><td><a href="#ports" class="rp-link">OUTPUT_PORT</a></td></tr><tr><td><code>transition</code></td><td>是</td><td>过渡（渐变）时间，单位秒</td><td>0..486</td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.output_toggle</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  output</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> output1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  transition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 0</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-relays"><a href="#action-relays" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>relays</code></h3>
+<p>设置继电器状态。继电器状态由一个 8 字符字符串定义。
+每个字符表示一个继电器的状态变化（1=开，0=关，t=切换，-=不变）。</p>
+<p>状态示例：<code>t---001-</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>state</code></td><td>否</td><td>继电器状态字符串</td><td></td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.relays</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> t---001-</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-led"><a href="#action-led" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>led</code></h3>
+<p>设置 LED 状态。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>state</code></td><td>否</td><td>LED 状态字符串</td><td><a href="#states" class="rp-link">LED_STATE</a></td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.led</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  led</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> led6</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> blink</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-var_abs"><a href="#action-var_abs" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>var_abs</code></h3>
+<p>设置变量或设定点的绝对值。
+若未定义 <code>value</code>，默认值为 0。
+若未定义 <code>unit_of_measurement</code>，默认值为 <code>native</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>variable</code></td><td>否</td><td>变量名称</td><td><a href="#variables-and-units" class="rp-link">VARIABLE</a>, <a href="#variables-and-units" class="rp-link">SETPOINT</a></td></tr><tr><td><code>value</code></td><td>是</td><td>变量值</td><td><em>任意正数</em></td></tr><tr><td><code>unit_of_measurement</code></td><td>是</td><td>变量单位</td><td><a href="#variables-and-units" class="rp-link">VAR_UNIT</a></td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.var_abs</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  variable</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  value</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 75</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  unit_of_measurement</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-foreground)"> %</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>:::important
+请确保 LCN 模块已正确配置，以便访问所定义的变量。
+否则模块可能出现异常行为或返回错误消息。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="action-var_rel"><a href="#action-var_rel" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>var_rel</code></h3>
+<p>设置变量或设定点的相对值。
+若未定义 <code>value</code>，默认值为 0。
+若未定义 <code>unit_of_measurement</code>，默认值为 <code>native</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>variable</code></td><td>否</td><td>变量名称</td><td><a href="#variables-and-units" class="rp-link">VARIABLE</a>, <a href="#variables-and-units" class="rp-link">SETPOINT</a>, <a href="#variables-and-units" class="rp-link">THRESHOLD</a></td></tr><tr><td><code>value</code></td><td>是</td><td>变量值</td><td><em>任意正数或负数</em></td></tr><tr><td><code>unit_of_measurement</code></td><td>是</td><td>变量单位</td><td><a href="#variables-and-units" class="rp-link">VAR_UNIT</a></td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.var_rel</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  variable</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  value</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 10</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  unit_of_measurement</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-foreground)"> %</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>:::important
+请确保 LCN 模块已正确配置，以便访问所定义的变量。
+否则模块可能出现异常行为或返回错误消息。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="action-var_reset"><a href="#action-var_reset" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>var_reset</code></h3>
+<p>重置变量或设定点的值。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>variable</code></td><td>否</td><td>变量名称</td><td><a href="#variables-and-units" class="rp-link">VARIABLE</a>, <a href="#variables-and-units" class="rp-link">SETPOINT</a></td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.var_reset</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  variable</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> var1</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>:::important
+请确保 LCN 模块已正确配置，以便访问所定义的变量。
+否则模块可能出现异常行为或返回错误消息。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="action-lock_regulator"><a href="#action-lock_regulator" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>lock_regulator</code></h3>
+<p>锁定调节器设定点。
+若未定义 <code>state</code>，默认值为 <code>False</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>setpoint</code></td><td>否</td><td>设定点名称</td><td><a href="#variables-and-units" class="rp-link">SETPOINT</a></td></tr><tr><td><code>state</code></td><td>是</td><td>锁定状态</td><td>true, false</td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.lock_regulator</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  setpoint</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> r1varsetpoint</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-send_keys"><a href="#action-send_keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>send_keys</code></h3>
+<p>发送按键（会执行已绑定命令）。
+<code>keys</code> 属性是包含一个或多个按键标识符的字符串。例如：<code>a1a5d8</code>
+若未定义 <code>state</code>，默认值为 <code>hit</code>。
+该命令支持立即发送或延时发送按键。若为延时发送，必须指定 <code>time</code> 和 <code>time_unit</code> 属性。延时发送时，仅允许 <code>hit</code> 这一按键状态。
+若未定义 <code>time_unit</code>，默认值为 <code>seconds</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>keys</code></td><td>否</td><td>按键字符串</td><td></td></tr><tr><td><code>state</code></td><td>是</td><td>按键状态</td><td><a href="#states" class="rp-link">KEY_STATE</a></td></tr><tr><td><code>time</code></td><td>是</td><td>延时时间</td><td>0..</td></tr><tr><td><code>time_unit</code></td><td>是</td><td>时间单位</td><td><a href="#variables-and-units" class="rp-link">TIME_UNIT</a></td></tr></tbody></table></div>
+<p>示例：</p>
+<p>立即发送按键：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.send_keys</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  keys</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> a1a5d8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> hit</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>延时发送按键：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.send_keys</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  keys</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> a1a5d8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  time</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 5</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  time_unit</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> s</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-lock_keys"><a href="#action-lock_keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>lock_keys</code></h3>
+<p>锁定按键。
+若未定义 <code>table</code>，默认使用表 <code>a</code>。
+按键锁定状态由一个 8 字符字符串定义。每个字符表示一个按键锁的状态变化（1=开，0=关，t=切换，-=不变）。
+该命令支持按指定时长锁定按键。若要按时长锁定，必须指定 <code>time</code> 和 <code>time_unit</code> 属性。按时长锁定时，仅允许表 <code>a</code>。
+若未定义 <code>time_unit</code>，默认值为 <code>seconds</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>table</code></td><td>是</td><td>要锁定按键所在的表</td><td></td></tr><tr><td><code>state</code></td><td>否</td><td>按键锁定状态字符串</td><td><a href="#states" class="rp-link">KEY_STATE</a></td></tr><tr><td><code>time</code></td><td>是</td><td>锁定时长</td><td>0..</td></tr><tr><td><code>time_unit</code></td><td>是</td><td>时间单位</td><td><a href="#variables-and-units" class="rp-link">TIME_UNIT</a></td></tr></tbody></table></div>
+<p>示例：</p>
+<p>永久锁定按键：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.lock_keys</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  table</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> a</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 1---t0--</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>按指定时长锁定按键：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.lock_keys</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 1---t0--</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  time</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 10</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  time_unit</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> s</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-dyn_text"><a href="#action-dyn_text" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>dyn_text</code></h3>
+<p>向 LCN-GTxD 显示器发送动态文本。
+显示器支持 4 行文本消息。
+每一行可独立设置，最多可存储 60 个字符（UTF-8 编码）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>row</code></td><td>否</td><td>文本行号（1-4）</td><td></td></tr><tr><td><code>text</code></td><td>否</td><td>发送到指定行的文本</td><td></td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.dyn_text</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  row</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  text</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;text in row 1&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="action-pck"><a href="#action-pck" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Action: <code>pck</code></h3>
+<p>发送任意 PCK 命令。<code>pck</code> 字符串中只需填写 PCK 命令本体部分。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>Home Assistant 设备 ID</td><td></td></tr><tr><td><code>pck</code></td><td>否</td><td>PCK 命令</td><td></td></tr></tbody></table></div>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> lcn.pck</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  device_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 91aa039a2fb6e0b9f9ec7eb219a6b7d2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  pck</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> PIN4</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="lcn-constants"><a href="#lcn-constants" class="rp-header-anchor rp-link" aria-hidden="true">#</a>LCN constants</h2>
+<p><a href="#actions" class="rp-link">actions</a> 使用若干预定义常量作为参数。</p>
+<h3 class="rp-toc-include" id="ports"><a href="#ports" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Ports</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Constant</th><th>Values</th></tr></thead><tbody><tr><td>OUTPUT_PORT</td><td><code>output1</code>, <code>output2</code>, <code>output3</code>, <code>output4</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="motors"><a href="#motors" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Motors</h3>
+<p>电机取值用于指定使用哪组硬件继电器或输出端口配置：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th style="text-align:center">Motor</th><th style="text-align:center">Relay on/off</th><th style="text-align:center">Relay up/down</th></tr></thead><tbody><tr><td style="text-align:center"><code>motor1</code></td><td style="text-align:center"><code>relay1</code></td><td style="text-align:center"><code>relay2</code></td></tr><tr><td style="text-align:center"><code>motor2</code></td><td style="text-align:center"><code>relay3</code></td><td style="text-align:center"><code>relay4</code></td></tr><tr><td style="text-align:center"><code>motor3</code></td><td style="text-align:center"><code>relay5</code></td><td style="text-align:center"><code>relay6</code></td></tr><tr><td style="text-align:center"><code>motor4</code></td><td style="text-align:center"><code>relay7</code></td><td style="text-align:center"><code>relay8</code></td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th style="text-align:center">Motor</th><th style="text-align:center">Output up</th><th style="text-align:center">Output down</th></tr></thead><tbody><tr><td style="text-align:center"><code>outputs</code></td><td style="text-align:center"><code>output1</code></td><td style="text-align:center"><code>output2</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="variables-and-units"><a href="#variables-and-units" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Variables and units</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Constant</th><th>Values</th></tr></thead><tbody><tr><td>VARIABLE</td><td><code>var1</code>, <code>var2</code>, <code>var3</code>, <code>var4</code>, <code>var5</code>, <code>var6</code>, <code>var7</code>, <code>var8</code>, <code>var9</code>, <code>var10</code>, <code>var11</code>, <code>var12</code>, <code>tvar</code>, <code>r1var</code>, <code>r2var</code></td></tr><tr><td>SETPOINT</td><td><code>r1varsetpoint</code>, <code>r2varsetpoint</code></td></tr><tr><td>THRESHOLD</td><td><code>thrs1</code>, <code>thrs2</code>, <code>thrs3</code>, <code>thrs4</code>, <code>thrs5</code>, <code>thrs2_1</code>, <code>thrs2_2</code>, <code>thrs2_3</code>, <code>thrs2_4</code>, <code>thrs3_1</code>, <code>thrs3_2</code>, <code>thrs3_3</code>, <code>thrs3_4</code>, <code>thrs4_1</code>, <code>thrs4_2</code>, <code>thrs4_3</code>, <code>thrs4_4</code></td></tr><tr><td>VAR_UNIT</td><td><code>native</code>, <code>°C</code>, <code>°K</code>, <code>°F</code>, <code>lux_t</code>, <code>lux_i</code>, <code>m/s</code>, <code>%</code>, <code>ppm</code>, <code>volt</code>, <code>ampere</code>, <code>degree</code></td></tr><tr><td>TIME_UNIT</td><td><code>seconds</code>, <code>minutes</code>, <code>hours</code>, <code>days</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="states"><a href="#states" class="rp-header-anchor rp-link" aria-hidden="true">#</a>States</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Constant</th><th>Values</th></tr></thead><tbody><tr><td>LED_STATE</td><td><code>on</code>, <code>off</code>, <code>blink</code>, <code>flicker</code></td></tr><tr><td>KEY_STATE</td><td><code>hit</code>, <code>make</code>, <code>break</code>, <code>dontsend</code></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="keys"><a href="#keys" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Keys</h3>
+<p>凡是需要提供按键的地方，都使用由表标识符（<code>a</code>、<code>b</code>、<code>c</code>、<code>d</code>）与对应按键编号拼接而成的字符串。
+示例：<code>a1</code>、<code>a5</code>、<code>d8</code>。</p>
+<h2 class="rp-toc-include" id="removing-the-integration"><a href="#removing-the-integration" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Removing the integration</h2>
+<p>该集成遵循标准的集成移除流程，无需额外步骤。</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">Warning</div><div class="rp-callout__content"><p>
+移除该集成会删除所有通过 UI 面板完成的设备与实体配置。</p></div></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#支持的设备类型" class="rp-toc-item rp-link" title="支持的设备类型" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备类型</span></a><a href="#设置设备和实体" class="rp-toc-item rp-link" title="设置设备和实体" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">设置设备和实体</span></a><a href="#配置面板" class="rp-toc-item rp-link" title="配置面板" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置面板</span></a><a href="#配置设备" class="rp-toc-item rp-link" title="配置设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配置设备</span></a><a href="#扫描模块" class="rp-toc-item rp-link" title="扫描模块" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">扫描模块</span></a><a href="#添加设备" class="rp-toc-item rp-link" title="添加设备" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">添加设备</span></a><a href="#删除设备" class="rp-toc-item rp-link" title="删除设备" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">删除设备</span></a><a href="#配置实体" class="rp-toc-item rp-link" title="配置实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配置实体</span></a><a href="#添加实体" class="rp-toc-item rp-link" title="添加实体" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">添加实体</span></a><a href="#删除实体" class="rp-toc-item rp-link" title="删除实体" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">删除实体</span></a><a href="#显示实体属性" class="rp-toc-item rp-link" title="显示实体属性" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">显示实体属性</span></a><a href="#平台" class="rp-toc-item rp-link" title="平台" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">平台</span></a><a href="#binary-sensor" class="rp-toc-item rp-link" title="Binary sensor" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Binary sensor</span></a><a href="#climate" class="rp-toc-item rp-link" title="Climate" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Climate</span></a><a href="#cover" class="rp-toc-item rp-link" title="Cover" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Cover</span></a><a href="#light" class="rp-toc-item rp-link" title="Light" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Light</span></a><a href="#scene" class="rp-toc-item rp-link" title="Scene" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Scene</span></a><a href="#sensor" class="rp-toc-item rp-link" title="Sensor" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Sensor</span></a><a href="#switch" class="rp-toc-item rp-link" title="Switch" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Switch</span></a><a href="#附加功能" class="rp-toc-item rp-link" title="附加功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">附加功能</span></a><a href="#应答器指纹传感器和密码锁" class="rp-toc-item rp-link" title="应答器、指纹传感器和密码锁" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">应答器、指纹传感器和密码锁</span></a><a href="#遥控器" class="rp-toc-item rp-link" title="遥控器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">遥控器</span></a><a href="#发送给-pchk-主机home-assistant的-lcn-命令" class="rp-toc-item rp-link" title="发送给 PCHK 主机（Home Assistant）的 LCN 命令" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">发送给 PCHK 主机（Home Assistant）的 LCN 命令</span></a><a href="#events" class="rp-toc-item rp-link" title="Events" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Events</span></a><a href="#event-lcn_transmitter" class="rp-toc-item rp-link" title="Event: lcn_transmitter" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Event: <code>lcn_transmitter</code></span></a><a href="#event-lcn_transponder" class="rp-toc-item rp-link" title="Event: lcn_transponder" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Event: <code>lcn_transponder</code></span></a><a href="#event-lcn_fingerprint" class="rp-toc-item rp-link" title="Event: lcn_fingerprint" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Event: <code>lcn_fingerprint</code></span></a><a href="#event-lcn_codelock" class="rp-toc-item rp-link" title="Event: lcn_codelock" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Event: <code>lcn_codelock</code></span></a><a href="#event-lcn_send_keys" class="rp-toc-item rp-link" title="Event: lcn_send_keys" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Event: <code>lcn_send_keys</code></span></a><a href="#device-triggers" class="rp-toc-item rp-link" title="Device triggers" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Device triggers</span></a><a href="#actions" class="rp-toc-item rp-link" title="Actions" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Actions</span></a><a href="#action-output_abs" class="rp-toc-item rp-link" title="Action: output_abs" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>output_abs</code></span></a><a href="#action-output_rel" class="rp-toc-item rp-link" title="Action: output_rel" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>output_rel</code></span></a><a href="#action-output_toggle" class="rp-toc-item rp-link" title="Action: output_toggle" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>output_toggle</code></span></a><a href="#action-relays" class="rp-toc-item rp-link" title="Action: relays" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>relays</code></span></a><a href="#action-led" class="rp-toc-item rp-link" title="Action: led" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>led</code></span></a><a href="#action-var_abs" class="rp-toc-item rp-link" title="Action: var_abs" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>var_abs</code></span></a><a href="#action-var_rel" class="rp-toc-item rp-link" title="Action: var_rel" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>var_rel</code></span></a><a href="#action-var_reset" class="rp-toc-item rp-link" title="Action: var_reset" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>var_reset</code></span></a><a href="#action-lock_regulator" class="rp-toc-item rp-link" title="Action: lock_regulator" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>lock_regulator</code></span></a><a href="#action-send_keys" class="rp-toc-item rp-link" title="Action: send_keys" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>send_keys</code></span></a><a href="#action-lock_keys" class="rp-toc-item rp-link" title="Action: lock_keys" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>lock_keys</code></span></a><a href="#action-dyn_text" class="rp-toc-item rp-link" title="Action: dyn_text" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>dyn_text</code></span></a><a href="#action-pck" class="rp-toc-item rp-link" title="Action: pck" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Action: <code>pck</code></span></a><a href="#lcn-constants" class="rp-toc-item rp-link" title="LCN constants" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">LCN constants</span></a><a href="#ports" class="rp-toc-item rp-link" title="Ports" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Ports</span></a><a href="#motors" class="rp-toc-item rp-link" title="Motors" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Motors</span></a><a href="#variables-and-units" class="rp-toc-item rp-link" title="Variables and units" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Variables and units</span></a><a href="#states" class="rp-toc-item rp-link" title="States" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">States</span></a><a href="#keys" class="rp-toc-item rp-link" title="Keys" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Keys</span></a><a href="#removing-the-integration" class="rp-toc-item rp-link" title="Removing the integration" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Removing the integration</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeKit Device - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="HomeKit Device - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="HomeKit(https://developer.apple.com/apple-home/) Device 集成可让你将带有“Works with HomeKit”标识的配件连接到 Home Assistant。请不要将此集成与 HomeKit Bridge(/home-assistant/integra。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="HomeKit(https://developer.apple.com/apple-home/) Device 集成可让你将带有“Works with HomeKit”标识的配件连接到 Home Assistant。请不要将此集成与 HomeKit Bridge(/home-assistant/integra。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/homekit_controller/homekit_controller_add_01.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/homekit_controller/homekit_controller_add_02.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/homekit_controller/device_automation_start.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/homekit_controller/device_automation_triggers.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/homekit_controller/device_automation_new.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/homekit_controller/device_automation_finish.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><p><a href="https://developer.apple.com/apple-home/" target="_blank" rel="noopener noreferrer" class="rp-link">HomeKit</a> Device 集成可让你将带有“Works with HomeKit”标识的配件连接到 Home Assistant。请不要将此集成与 <a href="/home-assistant/integrations/homekit/index.html" class="rp-link">HomeKit Bridge</a> 集成混淆，后者可让你通过 HomeKit 控制 Home Assistant 设备。</p>
+<h1 class="rp-toc-include" id="添加-homekit-设备"><a href="#添加-homekit-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>添加 HomeKit 设备<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>将 HomeKit 设备添加到 Home Assistant 有多种方法：</p>
+<ul>
+<li><a href="#adding-a-homekit-device-via-ethernet-or-wi-fi" class="rp-link">通过以太网或 Wi-Fi</a></li>
+<li><a href="#adding-a-homekit-device-through-bluetooth" class="rp-link">通过蓝牙</a></li>
+<li><a href="#adding-a-homekit-device-through-thread" class="rp-link">通过 Thread</a>
+<ul>
+<li><a href="#adding-a-homekit-device-to-a-thread-network-via-home-assistant" class="rp-link">使用 Home Assistant 的首选 Thread 网络</a></li>
+<li><a href="#adding-a-homekit-device-via-apple-thread-border-router" class="rp-link">使用 Apple Thread 边界路由器</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="rp-toc-include" id="通过以太网或-wi-fi-添加-homekit-设备"><a href="#通过以太网或-wi-fi-添加-homekit-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过以太网或 Wi-Fi 添加 HomeKit 设备</h2>
+<p>当 HomeKit <a href="#supported-devices" class="rp-link">兼容设备</a>准备好配对时，HomeKit Device 集成会自动在你的网络中检测到它们。</p>
+<h3 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h3>
+<ul>
+<li>如果你没有启用 <a href="/home-assistant/integrations/default_config/index.html" class="rp-link"><code>default_config</code></a> 集成，请在 &quot;<code>configuration.yaml</code>&quot; 文件中添加 <a href="/home-assistant/integrations/zeroconf/index.html" class="rp-link"><code>zeroconf</code></a>。</li>
+<li>找到你的 HomeKit 配对码。该代码位于设备本体或包装上。如果设备有屏幕，也可能显示在屏幕上。
+<ul>
+<li>如果你没有这个代码，就无法恢复。在这种情况下，你需要联系制造商了解可行方案。</li>
+</ul>
+</li>
+<li>确保设备已通电。</li>
+<li>确保设备已连接到你的网络，但尚未与其他 HomeKit 控制器配对。根据设备情况，你需要执行不同步骤：
+<ul>
+<li>如果设备尚未加入你的网络：先将设备接入网络：
+<ul>
+<li>按照制造商说明将设备加入网络</li>
+<li>如果设备仅支持 HomeKit（例如 Koogeek LS1 灯带），请先使用 Apple Home 应用配对，然后再执行下一步。</li>
+</ul>
+</li>
+<li>如果设备已在你的网络中，但已通过 HomeKit 与 Apple 设备配对：请从 Apple Home 应用中<strong>移除</strong>该设备。
+<ul>
+<li>否则你将无法把它与 Home Assistant 配对。</li>
+</ul>
+</li>
+<li><strong>说明：</strong>先将设备添加到 Home 应用，再将其移除，会产生两个效果：
+<ul>
+<li>它会把设备加入你的网络。即使从应用中移除，设备仍会保留在网络中。</li>
+<li>从应用中移除设备后，设备会重新开放给 Home Assistant 的 HomeKit Device 集成进行配对。HomeKit 设备一次只能与一个控制器配对。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="通过以太网或-wi-fi-添加-homekit-设备-1"><a href="#通过以太网或-wi-fi-添加-homekit-设备-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过以太网或 Wi-Fi 添加 HomeKit 设备</h3>
+<ol>
+<li>
+<p>设备应已出现在 <strong><a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong> 下。</p>
+</li>
+<li>
+<p>在 HomeKit Device 集成卡片上，选择 <strong>Configure</strong>。</p>
+<p><img src="/home-assistant/images/integrations/homekit_controller/homekit_controller_add_01.png" alt="HomeKit integration"/></p>
+</li>
+<li>
+<p>输入你的 HomeKit 配对码。</p>
+<ul>
+<li>将设备添加到某个房间，然后选择 <strong>Finish</strong>。</li>
+<li>设备现在应已添加到你的 Home Assistant 实例中。</li>
+</ul>
+</li>
+<li>
+<p>当 Home Assistant 完成设备配置后，你可以通过 <a href="/home-assistant/integrations/homekit/index.html" class="rp-link"><code>HomeKit Bridge</code></a> 集成将它重新导出到 Siri 和 Apple Home。</p>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="通过蓝牙添加-homekit-设备"><a href="#通过蓝牙添加-homekit-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过蓝牙添加 HomeKit 设备</h2>
+<p>你可以通过 <a href="/home-assistant/integrations/bluetooth.html" class="rp-link">Bluetooth</a> 将 HomeKit <a href="#supported-devices" class="rp-link">兼容设备</a>添加到 Home Assistant。</p>
+<h3 class="rp-toc-include" id="前提条件-1"><a href="#前提条件-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h3>
+<ul>
+<li>找到你的 HomeKit 配对码。该代码位于设备本体或包装上。如果设备有屏幕，也可能显示在屏幕上。
+<ul>
+<li>如果你没有这个代码，就无法恢复。在这种情况下，你需要联系制造商了解可行方案。</li>
+</ul>
+</li>
+<li>如果你的 Home Assistant 实例原生不支持蓝牙，请使用 ESPHome 蓝牙代理。
+<ul>
+<li>如果 Home Assistant 设备距离待配对设备太远，代理也会很有帮助。</li>
+</ul>
+</li>
+<li>如果你的 HomeKit 设备之前用过 Thread，或仍与 iOS 配对，请重置设备。
+<ul>
+<li>HomeKit 设备一次只能与一个控制器配对。</li>
+<li>如果它之前加入过 Thread 网络，设备可能仍记得其他网络的 Thread 凭据。重置可确保设备未连接到任何 Thread 网络。</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="通过蓝牙添加-homekit-设备-1"><a href="#通过蓝牙添加-homekit-设备-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过蓝牙添加 HomeKit 设备</h3>
+<ol>
+<li>
+<p>为你的 HomeKit 设备通电。</p>
+<ul>
+<li>如果已启用蓝牙，设备应出现在 <strong><a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong> 下。</li>
+</ul>
+</li>
+<li>
+<p>在 HomeKit Bridge 集成卡片上，选择 <strong>Configure</strong>。</p>
+<p><img src="/home-assistant/images/integrations/homekit_controller/homekit_controller_add_01.png" alt="HomeKit integration"/></p>
+</li>
+<li>
+<p>输入 HomeKit 配对码以配对设备。</p>
+<ul>
+<li>如果是电池供电设备，你可能需要按下设备上的按钮将其唤醒后再配对。</li>
+<li>蓝牙设备的配对时间可能明显长于 IP 设备。</li>
+<li>将设备添加到某个房间，然后选择 <strong>Finish</strong>。</li>
+</ul>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="通过-thread-添加-homekit-设备"><a href="#通过-thread-添加-homekit-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 Thread 添加 HomeKit 设备</h2>
+<p>本节介绍将 HomeKit 设备加入 Thread 网络的方法：</p>
+<ol>
+<li>通过 Home Assistant</li>
+<li>通过 Apple Thread 边界路由器</li>
+</ol>
+<h3 class="rp-toc-include" id="通过-home-assistant-将-homekit-设备添加到-thread-网络"><a href="#通过-home-assistant-将-homekit-设备添加到-thread-网络" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 Home Assistant 将 HomeKit 设备添加到 Thread 网络</h3>
+<p>将 HomeKit <a href="#supported-devices" class="rp-link">兼容设备</a>添加到 Thread 网络有两种方法：</p>
+<ul>
+<li>通过 Home Assistant 的首选 Thread 网络</li>
+<li>通过 <a href="#adding-a-homekit-device-via-apple-thread-border-router" class="rp-link">Apple Thread 边界路由器</a></li>
+</ul>
+<p>本节介绍如何通过 Home Assistant 的首选 Thread 网络添加设备。</p>
+<h4 class="rp-toc-include" id="前提条件-2"><a href="#前提条件-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h4>
+<ul>
+<li>一台支持 Thread 的 HomeKit 设备。包装上通常会有 Thread 标识。</li>
+<li>确保该 HomeKit 设备已<a href="#adding-a-homekit-device-through-bluetooth" class="rp-link">通过蓝牙加入</a>。</li>
+<li><strong>Thread 网络</strong>：要通过 Thread 使用 HomeKit，你需要一个正常工作的边界路由器。
+<ul>
+<li>确保你的 Home Assistant 设备与边界路由器位于同一局域网中。</li>
+<li>确保你想使用的 Thread 网络已被 Home Assistant 识别，并在 Thread 配置中标记为 <strong>Preferred network</strong>。</li>
+<li>如果你有 Home Assistant Yellow、Connect ZBT-1 或 Connect ZBT-2，可以启用 Thread 来设置 Open Thread 边界路由器，并创建 Thread 网络。
+<ul>
+<li><a href="https://support.nabucasa.com/hc/articles/25742476767517" target="_blank" rel="noopener noreferrer" class="rp-link">在 Yellow 上启用 Thread 的文档</a></li>
+<li><a href="https://support.nabucasa.com/hc/sections/26122472719517" target="_blank" rel="noopener noreferrer" class="rp-link">在 Connect ZBT-1 上启用 Thread 的文档</a></li>
+<li><a href="https://support.nabucasa.com/hc/sections/31260019451421" target="_blank" rel="noopener noreferrer" class="rp-link">在 Connect ZBT-2 上启用 Thread 的文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="通过-home-assistant-将-homekit-设备添加到-thread-网络-1"><a href="#通过-home-assistant-将-homekit-设备添加到-thread-网络-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 Home Assistant 将 HomeKit 设备添加到 Thread 网络</h4>
+<ol>
+<li>在 <strong>HomeKit</strong> 集成中选择相应<strong>设备</strong>，打开设备配置页面。</li>
+<li>在 <strong>Diagnostic</strong> 下，你可以看到 <strong>Thread Status</strong> 显示为 <strong>Disabled</strong>。
+<img src="/home-assistant/images/integrations/homekit_controller/homekit_controller_add_02.png" alt="Device configuration page"/></li>
+<li>要启用 Thread，请在 <strong>Configuration</strong> 下选择 <strong>Press</strong>。这会下发首选 Thread 凭据。
+<ul>
+<li>此时状态会发生变化：
+<ul>
+<li>根据设备类型、网状网络规模和健康状况，Thread 状态可能显示为 <strong>Child</strong>、<strong>Router</strong> 或 <strong>Leader</strong>。
+<img src="/home-assistant/images/integrations/homekit_controller/homekit_controller_add_02.png" alt="Thread status"/></li>
+</ul>
+</li>
+<li>完成后，你的 HomeKit 设备就会通过 Thread 通信。</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="通过-apple-thread-边界路由器添加-homekit-设备"><a href="#通过-apple-thread-边界路由器添加-homekit-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 Apple Thread 边界路由器添加 HomeKit 设备</h3>
+<p>将 HomeKit <a href="#supported-devices" class="rp-link">兼容设备</a>添加到 Thread 网络有两种方法：</p>
+<ul>
+<li>通过 <a href="#adding-a-homekit-device-to-a-thread-network-via-home-assistant" class="rp-link">Home Assistant 的首选 Thread 网络</a></li>
+<li>通过 Apple Thread 边界路由器</li>
+</ul>
+<p>本节介绍如何使用 Apple Thread 边界路由器设备（如 HomePod mini）添加 HomeKit <a href="#supported-devices" class="rp-link">兼容设备</a>。</p>
+<h4 class="rp-toc-include" id="前提条件-3"><a href="#前提条件-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h4>
+<ul>
+<li>一台可充当 Thread 边界路由器的 Apple 设备，例如 HomePod mini。</li>
+<li>一台支持 Thread 的 HomeKit 设备。包装上通常会有 Thread 标识。</li>
+<li>确保你的 Home Assistant 实例与边界路由器位于同一局域网中。</li>
+<li>确保该 HomeKit 设备已在 Apple Home 应用中完成配对（使用 iOS Home 应用）。</li>
+</ul>
+<h4 class="rp-toc-include" id="通过-apple-thread-边界路由器添加-homekit-设备-1"><a href="#通过-apple-thread-边界路由器添加-homekit-设备-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 Apple Thread 边界路由器添加 HomeKit 设备</h4>
+<ol>
+<li>
+<p>从 Apple Home 应用中移除该 HomeKit 设备，但不要重置设备。</p>
+<ul>
+<li>这样会把 Thread 网络信息保留在 HomeKit 设备上。</li>
+<li>Home Assistant 中的 HomeKit controller 集成会自动发现该设备。</li>
+<li>它会以通过 Thread 发现的设备形式出现。</li>
+</ul>
+</li>
+<li>
+<p>在 <strong><a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong> 下的 HomeKit 集成卡片上，选择 <strong>Configure</strong>。</p>
+<p><img src="/home-assistant/images/integrations/homekit_controller/homekit_controller_add_01.png" alt="HomeKit integration"/></p>
+</li>
+<li>
+<p>输入 HomeKit 配对码来配对设备。该代码位于设备本体或包装上。</p>
+<ul>
+<li>如果是电池供电设备，你可能需要按下设备上的按钮将其唤醒后再配对。</li>
+<li>蓝牙设备的配对时间可能明显长于 IP 设备。</li>
+<li>将设备添加到某个房间，然后选择 <strong>Finish</strong>。</li>
+</ul>
+</li>
+<li>
+<p>在 <strong>HomeKit</strong> 集成中选择相应<strong>设备</strong>，打开设备配置页面。</p>
+</li>
+<li>
+<p>在 <strong>Diagnostic</strong> 下检查状态：</p>
+<ul>
+<li>根据设备类型、网状网络规模和健康状况，Thread 状态可能显示为 <strong>Child</strong>、<strong>Router</strong> 或 <strong>Leader</strong>。
+<img src="/home-assistant/images/integrations/homekit_controller/homekit_controller_add_02.png" alt="Thread status"/></li>
+<li>完成后，你的 HomeKit 设备就会通过 Thread 通信。</li>
+</ul>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="支持的设备"><a href="#支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备</h2>
+<p>Home Assistant 当前支持以下设备类型（也称为 <em>domains</em>），下面列出的是其默认类型。</p>
+<ul>
+<li>Alarm control panel（HomeKit 安防系统）</li>
+<li>Climate（HomeKit 恒温器和空调）</li>
+<li>Cover（HomeKit 车库门开关、窗户或窗帘）</li>
+<li>Light（HomeKit 灯）</li>
+<li>Lock（HomeKit 门锁）</li>
+<li>Switch（HomeKit 开关、插座和阀门）</li>
+<li>Binary sensor（HomeKit 运动、接触、占用、一氧化碳和烟雾传感器）</li>
+<li>Sensor（HomeKit 湿度、温度、CO2 和光照传感器）</li>
+<li>Fan</li>
+<li>Air quality</li>
+<li>Humidifier (HomeKit humidifiers and dehumidifiers)</li>
+<li>Automation triggers (HomeKit &#x27;stateless&#x27; accessories like buttons, remotes and doorbells)</li>
+</ul>
+<p>:::note
+如果你的设备不在此列表中，你仍然可能可以完成配对，并在设备注册表中看到它，但 Home Assistant 可能不会为其创建实体。</p>
+<p>:::
+此集成会启用推送更新。通过 Wi-Fi 或以太网连接的设备如果连接不稳定，可能会退回为轮询模式。</p>
+<h2 class="rp-toc-include" id="无状态开关和传感器"><a href="#无状态开关和传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>“无状态”开关和传感器</h2>
+<p>某些 HomeKit 设备（如按钮、遥控器和门铃）不像普通 HomeKit 设备那样提供可读取的传感器，它们只会在事件发生时通知 Home Assistant。这意味着 Home Assistant 无法为它们显示实体，因为它们没有状态。不过，你仍可以将它们用于<a href="/home-assistant/integrations/device_automation/index.html" class="rp-link">设备自动化</a>。</p>
+<p>例如，如果你想添加一个由这些设备触发的新自动化，请前往设备注册表界面并找到你想用作触发器的设备。选择该设备以打开其设备注册表条目。你将能够看到设备的型号、制造商和固件版本。你也可能会看到相关实体，比如电池传感器。</p>
+<p class="img">
+<img src="/home-assistant/images/integrations/homekit_controller/device_automation_start.png"/>
+</p>
+<p>选择按钮以添加自动化。弹出窗口会显示可用触发器列表。</p>
+<p class="img">
+<img src="/home-assistant/images/integrations/homekit_controller/device_automation_triggers.png"/>
+</p>
+<p>选择其中一个后，你会进入自动化编辑器，并自动填入该触发器。如果设备支持，你还可以选择事件类型，比如短按或长按。</p>
+<p class="img">
+<img src="/home-assistant/images/integrations/homekit_controller/device_automation_new.png"/>
+</p>
+<p>填写完表单其余部分并创建自动化后，它就会显示在设备注册表中的该设备下。</p>
+<p class="img">
+<img src="/home-assistant/images/integrations/homekit_controller/device_automation_finish.png"/>
+</p>
+<h2 class="rp-toc-include" id="使用不安全的设置码进行配对"><a href="#使用不安全的设置码进行配对" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用不安全的设置码进行配对</h2>
+<p>某些设备制造商未遵循 HomeKit 规范，会使用固定代码或像 <code>123-45-678</code> 这样极易猜测的代码进行配对。此集成在配对时会提醒你该配置存在安全风险，并要求你在与配件配对前额外确认。建议考虑更换为支持随机配对码的设备。</p>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<h3 class="rp-toc-include" id="我没有-homekit-pin"><a href="#我没有-homekit-pin" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我没有 HomeKit PIN</h3>
+<p>当你购买经过认证、支持 HomeKit 的设备时，PIN 码可能位于说明书中，或贴在配件本体上的标签上。</p>
+<p>像恒温器这类带屏幕的设备，包装中可能根本没有 PIN 码。每次你在 Home Assistant 前端中选择 “Configure” 时，设备都会生成新的配对码并显示在屏幕上。</p>
+<p>如果你的设备没有显示屏，并且是在发售后才增加 HomeKit 支持，那么你可能没有配对码。具体处理方式取决于制造商。有些制造商允许你在他们的 iOS 应用中查看配对码，另一些则要求你必须使用他们的应用配置 HomeKit，且不会提供配对 PIN。在这种情况下，你暂时无法将这些设备用于此集成。</p>
+<p>如果你丢失了 PIN 码，可能就无法再配对该配件。你应联系制造商看看是否还有可行办法。</p>
+<h3 class="rp-toc-include" id="home-assistant-无法发现我的设备"><a href="#home-assistant-无法发现我的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Home Assistant 无法发现我的设备</h3>
+<p>对于 IP 配件，Home Assistant 只能发现已经位于同一网络中的设备。如果配件使用 Wi-Fi，且没有可供加入 Wi-Fi 网络的用户界面，那么你需要一台 Apple HomeKit 控制器设备（iPhone 或 iPad）。你应先用该控制器与设备配对，然后在界面中移除配对关系（但不要重置配件本身）。这样设备会继续留在你的 Wi-Fi 网络中，但处于未配对状态，随后 Home Assistant 就能发现它。</p>
+<p>Home Assistant 只能发现尚未配对的配件。即使你重置了 Home Assistant 配置，配件仍会认为自己已配对，因此无法在 Home Assistant 中使用。你应按照制造商说明重置配件。有些设备提供 “Reset HomeKit” 选项，也有些可能需要完全重置。</p>
+<p>如果你的设备与 Home Assistant 位于不同的 VLAN 中，则必须配置 mDNS 反射器，发现和配对功能才能正常工作。</p>
+<p>请使用 mDNS 工具检查是否能看到你的设备。如果你熟悉命令行，可以在 Home Assistant 安装环境中运行 <code>netdisco</code>：</p>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">python3</span><span style="color:var(--shiki-token-string)"> -m</span><span style="color:var(--shiki-token-string)"> netdisco</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">Discovered</span><span style="color:var(--shiki-token-string)"> devices:</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">homekit:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">[ {</span><span style="color:var(--shiki-token-string-expression)">&#x27;host&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;192.168.17.5&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  &#x27;hostname&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;Philips-hue.local.&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  &#x27;name&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;Philips hue - xxxx&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  &#x27;port&#x27;</span><span style="color:var(--shiki-foreground)">: 8080,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  &#x27;properties&#x27;</span><span style="color:var(--shiki-foreground)">: {</span><span style="color:var(--shiki-token-string-expression)">&#x27;c#&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;21&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">                 &#x27;ci&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;2&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">                 &#x27;ff&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;1&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">                 &#x27;id&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;AA:BB:CC:DD:EE:FF&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">                 &#x27;md&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;BSB002&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">                 &#x27;pv&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;1.1&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">                 &#x27;s#&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;1&#x27;</span><span style="color:var(--shiki-foreground)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">                 &#x27;sf&#x27;</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;0&#x27;</span><span style="color:var(--shiki-foreground)">}},</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>Home Assistant 发现 HomeKit 设备时并不使用 <code>netdisco</code>，因此如果 <code>netdisco</code> 都看不到你的设备，问题更可能出在网络环境，而不是 Home Assistant 本身。</p>
+<p>如果你不太熟悉命令行，也可以使用这些工具：适用于 <a href="https://apps.apple.com/app/id1381004916" target="_blank" rel="noopener noreferrer" class="rp-link">Mac</a> 或 <a href="https://apps.apple.com/app/id305441017" target="_blank" rel="noopener noreferrer" class="rp-link">iOS</a> 的 Discovery、Android 的 <a href="https://play.google.com/store/apps/details?id=com.druk.servicebrowser" target="_blank" rel="noopener noreferrer" class="rp-link">Service Browser</a>，或 <a href="https://apps.microsoft.com/store/detail/all-my-lan/9WZDNCRDN19V" target="_blank" rel="noopener noreferrer" class="rp-link">All My Lan</a>。不过，这些诊断工具的参考价值较低，因为它们并不是从 Home Assistant 所在的网络位置运行。即使工具中能看到设备，问题仍可能是网络配置导致的，但它们有时仍能提供一些线索。</p>
+<p>如果发现工具提供了一个 IP 地址，请检查它是否符合预期（例如和路由器中的 DHCP 租约对比）。你能 ping 通它吗？如果不能，说明你存在网络问题。</p>
+<p>一些用户反馈，他们的网络配置会干扰 HomeKit 设备与 Home Assistant 的配合使用。表现形式各不相同，包括完全无法发现设备，或发现过程不稳定（有时有效，有时无效）。这不仅与所使用的硬件有关，也与配置方式密切相关，因此我们无法提供通用且正确的设置建议。例如，有人认为 IGMP Snooping 是问题根源，也有人把它当作解决办法。</p>
+<h3 class="rp-toc-include" id="即使我没有-apple-设备集成仍在我的网络中发现设备"><a href="#即使我没有-apple-设备集成仍在我的网络中发现设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>即使我没有 Apple 设备，集成仍在我的网络中发现设备</h3>
+<p>这是完全正常的。与许多商业 IoT 方案不同，HomeKit 协议是本地且可离线工作的协议，不依赖 Apple 生态系统运行。你无需 Apple 在线账户也能使用带有 “Works with HomeKit” 标识的设备。某些 Wi-Fi 设备可能需要临时借助 iOS 设备接入 Wi-Fi，但除此之外，你的网络中并不需要任何 Apple 硬件。</p>
+<p>许多 IoT 设备会在上市后获得 HomeKit 支持升级。这意味着，尽管你购买时设备并不支持 HomeKit，它现在也可能在 Home Assistant 中显示为 <code>homekit_controller</code> 设备。对你来说，这可能比原生集成更适合。例如，许多气候设备同时提供仅在线可用的 API 和 HomeKit API。HomeKit API 可能无法暴露你熟悉的全部设置和控制项，但当互联网断开或云服务停止时，它也不会失效。</p>
+<h3 class="rp-toc-include" id="日志中出现了集成跳过更新的警告"><a href="#日志中出现了集成跳过更新的警告" class="rp-header-anchor rp-link" aria-hidden="true">#</a>日志中出现了集成跳过更新的警告</h3>
+<p>你可能会看到如下日志：</p>
+<div class="rp-codeblock language-log"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="log"><code><span class="line"><span style="color:var(--shiki-foreground)">HomeKit device update skipped as previous poll still in flight</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>在这种情况下，问题通常并不是集成本身直接导致的。这是一项安全机制，用于避免你的 Home Assistant 实例过载。它表示 Home Assistant 尝试轮询配件时，上一次轮询仍未完成。这说明轮询你的配件耗时已超过 1 分钟，可能由以下原因造成：</p>
+<ul>
+<li>你的 Home Assistant 实例中有太多会阻塞的同步集成。所有同步集成共享同一个线程池，如果队列中的任务太多，就会排队并产生延迟。在最糟糕的情况下，排队速度会快于处理速度。更快的硬件或许有帮助，但你也可能需要禁用部分集成。</li>
+<li>你与某个配件之间的网络连接较差，导致集成无法稳定访问该配件。这通常需要调整网络设置，以改善 Wi-Fi 覆盖，或更换损坏的线缆。</li>
+<li>配件本身存在问题，导致间歇性的网络异常。</li>
+</ul>
+<p>在这些情况下，集成会跳过轮询，以避免你的实例中积压越来越多的待处理任务。</p>
+<h3 class="rp-toc-include" id="我看不到无状态配件生成的任何事件"><a href="#我看不到无状态配件生成的任何事件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我看不到“无状态”配件生成的任何事件</h3>
+<p>这是正常现象。像某些门铃、按钮或遥控器这样的无状态配件，在 Home Assistant 中只能通过设备自动化来使用。Home Assistant 不会为设备自动化触发器额外创建重复事件，因此你无法在开发者工具的事件界面中看到它们。</p>
+<h3 class="rp-toc-include" id="home-assistant-看不到我的-homebridge-设备"><a href="#home-assistant-看不到我的-homebridge-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Home Assistant 看不到我的 Homebridge 设备</h3>
+<p>请在 Homebridge 的设置或配置中确认你使用的是 <code>ciao</code>，而不是 <code>Bonjour-HAP</code>。<code>Bonjour-HAP</code> 已不再被 <code>homebridge</code> 推荐，并被视为已损坏或不受支持。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#通过以太网或-wi-fi-添加-homekit-设备" class="rp-toc-item rp-link" title="通过以太网或 Wi-Fi 添加 HomeKit 设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">通过以太网或 Wi-Fi 添加 HomeKit 设备</span></a><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#通过以太网或-wi-fi-添加-homekit-设备-1" class="rp-toc-item rp-link" title="通过以太网或 Wi-Fi 添加 HomeKit 设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过以太网或 Wi-Fi 添加 HomeKit 设备</span></a><a href="#通过蓝牙添加-homekit-设备" class="rp-toc-item rp-link" title="通过蓝牙添加 HomeKit 设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">通过蓝牙添加 HomeKit 设备</span></a><a href="#前提条件-1" class="rp-toc-item rp-link" title="前提条件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#通过蓝牙添加-homekit-设备-1" class="rp-toc-item rp-link" title="通过蓝牙添加 HomeKit 设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过蓝牙添加 HomeKit 设备</span></a><a href="#通过-thread-添加-homekit-设备" class="rp-toc-item rp-link" title="通过 Thread 添加 HomeKit 设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">通过 Thread 添加 HomeKit 设备</span></a><a href="#通过-home-assistant-将-homekit-设备添加到-thread-网络" class="rp-toc-item rp-link" title="通过 Home Assistant 将 HomeKit 设备添加到 Thread 网络" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过 Home Assistant 将 HomeKit 设备添加到 Thread 网络</span></a><a href="#前提条件-2" class="rp-toc-item rp-link" title="前提条件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#通过-home-assistant-将-homekit-设备添加到-thread-网络-1" class="rp-toc-item rp-link" title="通过 Home Assistant 将 HomeKit 设备添加到 Thread 网络" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">通过 Home Assistant 将 HomeKit 设备添加到 Thread 网络</span></a><a href="#通过-apple-thread-边界路由器添加-homekit-设备" class="rp-toc-item rp-link" title="通过 Apple Thread 边界路由器添加 HomeKit 设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过 Apple Thread 边界路由器添加 HomeKit 设备</span></a><a href="#前提条件-3" class="rp-toc-item rp-link" title="前提条件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#通过-apple-thread-边界路由器添加-homekit-设备-1" class="rp-toc-item rp-link" title="通过 Apple Thread 边界路由器添加 HomeKit 设备" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">通过 Apple Thread 边界路由器添加 HomeKit 设备</span></a><a href="#支持的设备" class="rp-toc-item rp-link" title="支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备</span></a><a href="#无状态开关和传感器" class="rp-toc-item rp-link" title="“无状态”开关和传感器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">“无状态”开关和传感器</span></a><a href="#使用不安全的设置码进行配对" class="rp-toc-item rp-link" title="使用不安全的设置码进行配对" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">使用不安全的设置码进行配对</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#我没有-homekit-pin" class="rp-toc-item rp-link" title="我没有 HomeKit PIN" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">我没有 HomeKit PIN</span></a><a href="#home-assistant-无法发现我的设备" class="rp-toc-item rp-link" title="Home Assistant 无法发现我的设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Home Assistant 无法发现我的设备</span></a><a href="#即使我没有-apple-设备集成仍在我的网络中发现设备" class="rp-toc-item rp-link" title="即使我没有 Apple 设备，集成仍在我的网络中发现设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">即使我没有 Apple 设备，集成仍在我的网络中发现设备</span></a><a href="#日志中出现了集成跳过更新的警告" class="rp-toc-item rp-link" title="日志中出现了集成跳过更新的警告" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">日志中出现了集成跳过更新的警告</span></a><a href="#我看不到无状态配件生成的任何事件" class="rp-toc-item rp-link" title="我看不到“无状态”配件生成的任何事件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">我看不到“无状态”配件生成的任何事件</span></a><a href="#home-assistant-看不到我的-homebridge-设备" class="rp-toc-item rp-link" title="Home Assistant 看不到我的 Homebridge 设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Home Assistant 看不到我的 Homebridge 设备</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1-Wire - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="1-Wire - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="The 1-Wire integration supports sensors that use the 1-wire bus for communication. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="The 1-Wire integration supports sensors that use the 1-wire bus for communication. 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="https://my.home-assistant.io/badges/config_flow_start.svg"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/device-options.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="1-wire"><a href="#1-wire" class="rp-header-anchor rp-link" aria-hidden="true">#</a>1-Wire<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>The <strong>1-Wire</strong> integration supports sensors that use the 1-wire bus for communication.</p>
+<p>每个 1-wire 设备都有一个（全局）唯一 ID，用于标识总线上的设备。前两位数字标识设备系列，后 14 位数字是在制造过程中为其指定的全球唯一编号。</p>
+<p>不同的系列具有不同的功能并且可以测量不同的数量。</p>
+<p>每个 1-wire 组件数据表都描述了该组件提供的不同属性。 <a href="https://github.com/owfs/owfs" target="_blank" rel="noopener noreferrer" class="rp-link">owfs 软件</a> 添加了一些额外的工具，使 DIY 实现者更容易使用该组件。</p>
+<h3 class="rp-toc-include" id="supported-devices"><a href="#supported-devices" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Supported devices:</h3>
+<h4 class="rp-toc-include" id="binary-sensors"><a href="#binary-sensors" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Binary sensors:</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Family</th><th style="text-align:left">Device</th><th style="text-align:left">Physical Quantity</th></tr></thead><tbody><tr><td>05</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2405.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2405</a></td><td style="text-align:left">1 sensed <sup><a href="#note_4" class="rp-link">4</a></sup></td></tr><tr><td>12</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2406.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2406</a></td><td style="text-align:left">2 sensed (sensed.A/B) <sup><a href="#note_4" class="rp-link">4</a></sup></td></tr><tr><td>29</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2408.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2408</a></td><td style="text-align:left">8 sensed (sensed.0-7) <sup><a href="#note_4" class="rp-link">4</a></sup></td></tr><tr><td>3A</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2413.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2413</a></td><td style="text-align:left">2 sensed (sensed.A/B) <sup><a href="#note_4" class="rp-link">4</a></sup></td></tr><tr><td>EF</td><td style="text-align:left"><a href="https://hobbyboards.com/" target="_blank" rel="noopener noreferrer" class="rp-link">HobbyBoard</a></td><td style="text-align:left">Hub Branch State <sup><a href="#note_3" class="rp-link">3</a> <a href="#note_4" class="rp-link">4</a></sup></td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="select"><a href="#select" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Select:</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Family</th><th style="text-align:left">Device</th><th style="text-align:left">Physical Quantity</th></tr></thead><tbody><tr><td>28</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS18B20</a></td><td style="text-align:left">Temperature resolution</td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="sensors"><a href="#sensors" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sensors:</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Family</th><th style="text-align:left">Device</th><th style="text-align:left">Physical Quantity</th></tr></thead><tbody><tr><td>10</td><td style="text-align:left"><a href="https://www.maximintegrated.com/en/products/sensors/DS18S20.html" target="_blank" rel="noopener noreferrer" class="rp-link">DS18S20</a></td><td style="text-align:left">Temperature</td></tr><tr><td>12</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2406.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2406</a></td><td style="text-align:left">Temperature and pressure when using TAI-8570 <sup><a href="#note_1" class="rp-link">1</a></sup></td></tr><tr><td>1D</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2423.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2423</a></td><td style="text-align:left">Counter</td></tr><tr><td>20</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2450.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2450</a></td><td style="text-align:left">4 x Voltage</td></tr><tr><td>22</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS1822.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS1822</a></td><td style="text-align:left"></td></tr><tr><td>26</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2438.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2438</a></td><td style="text-align:left">Temperature, Voltage, Current (pressure when using B1-R1-A, illuminance when using S2-R1-A, humidity when using compatible Honeywell or Humirel sensor) <sup><a href="#note_2" class="rp-link">2</a></sup></td></tr><tr><td>28</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS18B20</a></td><td style="text-align:left">Temperature</td></tr><tr><td>30</td><td style="text-align:left"><a href="https://pdfserv.maximintegrated.com/en/ds/DS2760.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2760</a></td><td style="text-align:left">Temperature, Voltage, Thermocouple Type K <sup><a href="#note_2" class="rp-link">2</a></sup></td></tr><tr><td>3B</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS1825.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS1825</a></td><td style="text-align:left">Temperature</td></tr><tr><td>42</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS28EA00.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS28EA00</a></td><td style="text-align:left">Temperature</td></tr><tr><td>7E</td><td style="text-align:left"><a href="https://www.embeddeddatasystems.com/assets/images/supportFiles/manuals/EN-UserMan%20%20OW-ENV%20Sensor%20v13.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">EDS00xx</a></td><td style="text-align:left">Temperature/Humidity/Barometric pressure/Light <sup><a href="#note_6" class="rp-link">6</a></sup></td></tr><tr><td>A6</td><td style="text-align:left">Secondary family code for <a href="https://datasheets.maximintegrated.com/en/ds/DS2438.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2438</a></td><td style="text-align:left">Temperature, Voltage, Current (pressure when using B1-R1-A, illuminance when using S2-R1-A, humidity when using compatible Honeywell or Humirel sensor) <sup><a href="#note_2" class="rp-link">2</a></sup></td></tr><tr><td>EF</td><td style="text-align:left"><a href="https://hobbyboards.com/" target="_blank" rel="noopener noreferrer" class="rp-link">HobbyBoard</a></td><td style="text-align:left">Temperature, Humidity, Moisture, Wetness <sup><a href="#note_3" class="rp-link">3</a></sup></td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="switches"><a href="#switches" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Switches:</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Family</th><th style="text-align:left">Device</th><th style="text-align:left">Physical Quantity</th></tr></thead><tbody><tr><td>05</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2405.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2405</a></td><td style="text-align:left">1 PIO <sup><a href="#note_4" class="rp-link">4</a></sup></td></tr><tr><td>12</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2406.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2406</a></td><td style="text-align:left">2 latches (latch.A/B) and 2 PIOs (PIO.A/B) <sup><a href="#note_4" class="rp-link">4</a></sup></td></tr><tr><td>29</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2408.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2408</a></td><td style="text-align:left">8 latches (latch.0-7) and 8 PIOs (PIO.0/7) <sup><a href="#note_4" class="rp-link">4</a></sup></td></tr><tr><td>3A</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2413.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2413</a></td><td style="text-align:left">2 PIOs (PIO.A/B) <sup><a href="#note_4" class="rp-link">4</a></sup></td></tr><tr><td>EF</td><td style="text-align:left"><a href="https://hobbyboards.com/" target="_blank" rel="noopener noreferrer" class="rp-link">HobbyBoard</a></td><td style="text-align:left">Hub Branch Enable, Moisture Sensor Type <sup><a href="#note_3" class="rp-link">3</a> <a href="#note_4" class="rp-link">4</a></sup></td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="bridges"><a href="#bridges" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Bridges:</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Family</th><th style="text-align:left">Device</th><th style="text-align:left">Physical Quantity</th></tr></thead><tbody><tr><td>1F</td><td style="text-align:left"><a href="https://datasheets.maximintegrated.com/en/ds/DS2409.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">DS2409</a></td><td style="text-align:left">None <sup><a href="#note_5" class="rp-link">5</a></sup></td></tr></tbody></table></div>
+<p>Notes:</p>
+<ul>
+<li>
+<p><a href="/" class="rp-link" name="note_1">TAI-8570</a> 压力传感器基于 AAG Electronica 的 1 线复合器件。它在 1 线组件之上还包含气压计、湿度计和照度传感器。此 onewire 平台可以读取并显示来自该设备的值，但传感器将默认为禁用<sup><a href="#note_4" class="rp-link">4</a></sup>。</p>
+</li>
+<li>
+<p><a href="/" class="rp-link" name="note_2">对于爱好者</a>来说，使用 DS2438 或 DS2760 系列智能电池监视器作为多用途测量节点是很常见的，只需向 DS2438 或 DS2760 添加一些标准组件，即可将温度、湿度、电流、热电偶温度和亮度置于 1 线总线上。对于不同的组件类型，owfs 中有实现的现成算法。这些是由 owfs 软件公开的，可以通过该平台读取。 B1-R1-A/压力作为大气压力传感器暴露。 S2-R1-A/照度作为照度传感器出现。有关这些属性的更详细说明，请参阅 owfs 文档 <a href="https://owfs.org/index_php_page_ds2438.html" target="_blank" rel="noopener noreferrer" class="rp-link">DS2438</a>、<a href="https://owfs.org/index_php_page_ds2760.html" target="_blank" rel="noopener noreferrer" class="rp-link">DS2760</a>。
+对于这些组件，更基本的量（温度、VAD、VDD 和 IAD）作为单独的传感器导出。请注意，某些传感器将默认处于禁用状态<sup><a href="#note_4" class="rp-link">4</a></sup>。</p>
+</li>
+<li>
+<p><a href="/" class="rp-link" name="note_3">Hobbyboards</a> 是一家销售各种 DIY 板的公司。该公司已经离开市场一段时间了，因此无法提供有关董事会的信息。该平台有其中一些的实现。</p>
+</li>
+<li>
+<p><a href="/" class="rp-link" name="note_4">默认情况下禁用某些传感器</a>以避免总线过载。这些可以通过打开配置中的集成页面、列出 1-Wire 集成器件并更新实体来激活。</p>
+</li>
+<li>
+<p><a href="/" class="rp-link" name="note_5">桥接设备没有传感器</a>。在发现过程中，会在“aux”和“main”分支中搜索其他 1-wire 设备。</p>
+</li>
+<li>
+<p><a href="/" class="rp-link" name="note_6">嵌入式数据系统制造的多传感器</a>。目前仅支持 EDS0066（温度/气压）和 EDS0068（温度/湿度/气压/光照）。</p>
+</li>
+</ul>
+<h2 class="rp-toc-include" id="与-1-线总线接口"><a href="#与-1-线总线接口" class="rp-header-anchor rp-link" aria-hidden="true">#</a>与 1 线总线接口</h2>
+<p>1-Wire 总线可以使用 owfs 和 owserver 通过网络连接与远程 1-wire 主机连接。</p>
+<h2 class="rp-toc-include" id="interface-adapter-setup"><a href="#interface-adapter-setup" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Interface adapter setup</h2>
+<p>Linux 主机上的“owserver”是 <a href="https://owfs.org/" target="_blank" rel="noopener noreferrer" class="rp-link">owfs 1-Wire 文件系统</a> 的一部分。使用 1 线接口适配器时，您可以访问运行“owserver”的远程或本地 Linux 主机上的传感器。默认情况下，“owserver”在端口 4304 上运行。使用“host”选项指定远程服务器的主机或 IP，并使用可选的“port”选项更改默认端口。</p>
+<h2 class="rp-toc-include" id="configuration"><a href="#configuration" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Configuration</h2>
+<p>To add the <strong>1-Wire</strong> hub to your Home Assistant instance, use this My button:</p>
+<p><a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=onewire" target="_blank" rel="noopener noreferrer" class="rp-link"><img src="https://my.home-assistant.io/badges/config_flow_start.svg" alt="Open Add integration in your Home Assistant instance."/></a></p>
+<p>1-Wire can be auto-discovered by Home Assistant. If an instance is found, it will be shown as <strong>Discovered</strong> and can be set up right away.</p>
+<details>
+<summary>Manual configuration steps</summary>
+<ul>
+<li>Browse to your Home Assistant instance.</li>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>.</li>
+<li>In the lower-right corner, select <a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=onewire" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Add integration</strong></a>.</li>
+<li>From the list, select <strong>1-Wire</strong>.</li>
+<li>Follow the instructions on screen to complete the setup.</li>
+</ul>
+</details>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Host</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The hostname or IP address of your OWServer instance.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Port</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The port of your OWServer instance.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 4304</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="options"><a href="#options" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Options</h2>
+<p>To define options for 1-Wire, follow these steps:</p>
+<ol>
+<li>
+<p>In Home Assistant, go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>.</p>
+</li>
+<li>
+<p>If multiple instances of 1-Wire are configured, choose the instance you want to configure.</p>
+</li>
+<li>
+<p>On the card, select the cogwheel <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>.</p>
+<ul>
+<li>If the card does not have a cogwheel, the integration does not support options for this device.</li>
+</ul>
+<p><img src="/home-assistant/images/screenshots/device-options.png" alt="Screenshot showing the cogwheel icon on an integration card in the Settings &gt; Devices &amp; services page"/></p>
+</li>
+<li>
+<p>Edit the options, then select <strong>Submit</strong> to save the changes.</p>
+</li>
+</ol>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Device selection</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The precision of the `DS18B20` temperature sensors can be configured for individual devices. The lower the precision, the faster the sensor will respond, but with less accuracy. The selected precision is reflected in the `device_path` attribute of the sensor entities.</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="entities-and-attributes"><a href="#entities-and-attributes" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Entities and attributes</h3>
+<p>平台启动后，将搜索 1-wire 总线以查找可用的 1-wire 设备。在 Bridge 设备上，会递归搜索“aux”和“main”分支。对于该平台处理的每个设备（请参阅上面支持的设备列表），该平台会为其测量的每个物理量添加一个传感器。传感器的名称是设备 ID，并附加其测量的物理量。不支持的传感器会在日志中注明警告消息。</p>
+<p><code>传感器.28.FF5C68521604_温度</code></p>
+<p>每个传感器将在状态变量中显示其值，并且出于演示目的，模拟值四舍五入到一位小数，计数时四舍五入为整数。</p>
+<p>每个传感器还公开一些附加属性。</p>
+<div class="rp-codeblock language-text"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="text"><code><span class="line"><span>device_file: /28.FF5C68521604/temperature              &lt;&lt; Device path in owfs file system (or on Rpi system directory)</span></span>
+<span class="line"><span>raw_value: 31.9375                                     &lt;&lt; The raw measurement numbers as red from device. Not rounded.</span></span>
+<span class="line"><span>unit_of_measurement: °C                              </span></span>
+<span class="line"><span>friendly_name: 28.FF5C68521604 Temperature</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="removing-the-integration"><a href="#removing-the-integration" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Removing the integration</h2>
+<p>此集成遵循标准集成删除。不需要额外的步骤。</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol>
+<h2 class="rp-toc-include" id="troubleshooting"><a href="#troubleshooting" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Troubleshooting</h2>
+<h3 class="rp-toc-include" id="温度报告为-85c"><a href="#温度报告为-85c" class="rp-header-anchor rp-link" aria-hidden="true">#</a>温度报告为 85°C</h3>
+<p>“DS18B20”上的读数为 85°C 可能表示有效值，也可能表示接线问题或断电。</p>
+<blockquote>
+<p>85°C 是<code>DS18B20</code>的上电复位值。当充当电源的微小内部电容器耗尽时，它可以报告这样的值。</p>
+</blockquote>
+<p>目前无法区分有效和无效的 85°C 值。如果这些值报告不正确，第一步是检查接线（可能确保温度传感器通电，而不是使用寄生电源）。</p>
+<p>If all else fails, then a template can be used to filter out the incorrect values:</p>
+<div class="rp-codeblock language-jinja"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="jinja"><code><span class="line"><span style="color:var(--shiki-foreground)">{% </span><span style="color:var(--shiki-token-keyword)">if</span><span style="color:var(--shiki-foreground)"> states(</span><span style="color:var(--shiki-token-string-expression)">&#x27;sensor.28_a05966040000_temperature&#x27;</span><span style="color:var(--shiki-foreground)">) | float </span><span style="color:var(--shiki-token-keyword)">!=</span><span style="color:var(--shiki-foreground)"> 85 %}</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  {{ states(</span><span style="color:var(--shiki-token-string-expression)">&#x27;sensor.28_a05966040000_temperature&#x27;</span><span style="color:var(--shiki-foreground)">) }}</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">{% </span><span style="color:var(--shiki-token-keyword)">else</span><span style="color:var(--shiki-foreground)"> %}</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  None</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">{% </span><span style="color:var(--shiki-token-keyword)">endif</span><span style="color:var(--shiki-foreground)"> %}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#supported-devices" class="rp-toc-item rp-link" title="Supported devices:" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Supported devices:</span></a><a href="#binary-sensors" class="rp-toc-item rp-link" title="Binary sensors:" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Binary sensors:</span></a><a href="#select" class="rp-toc-item rp-link" title="Select:" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Select:</span></a><a href="#sensors" class="rp-toc-item rp-link" title="Sensors:" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Sensors:</span></a><a href="#switches" class="rp-toc-item rp-link" title="Switches:" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Switches:</span></a><a href="#bridges" class="rp-toc-item rp-link" title="Bridges:" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Bridges:</span></a><a href="#与-1-线总线接口" class="rp-toc-item rp-link" title="与 1 线总线接口" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">与 1 线总线接口</span></a><a href="#interface-adapter-setup" class="rp-toc-item rp-link" title="Interface adapter setup" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Interface adapter setup</span></a><a href="#configuration" class="rp-toc-item rp-link" title="Configuration" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Configuration</span></a><a href="#options" class="rp-toc-item rp-link" title="Options" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Options</span></a><a href="#entities-and-attributes" class="rp-toc-item rp-link" title="Entities and attributes" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Entities and attributes</span></a><a href="#removing-the-integration" class="rp-toc-item rp-link" title="Removing the integration" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Removing the integration</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a><a href="#troubleshooting" class="rp-toc-item rp-link" title="Troubleshooting" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Troubleshooting</span></a><a href="#温度报告为-85c" class="rp-toc-item rp-link" title="温度报告为 85°C" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">温度报告为 85°C</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

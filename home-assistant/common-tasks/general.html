@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>通用任务 - 安装无关 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="通用任务 - 安装无关 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="本节提供不依赖于特定 Home Assistant 安装类型或特定集成的任务。它们可能在其他过程中被引用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="本节提供不依赖于特定 Home Assistant 安装类型或特定集成的任务。它们可能在其他过程中被引用。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/network-storage/backup_locations_encryption.png"/><link rel="preload" as="image" href="/home-assistant/images/docs/configuration/enable_entity.webp"/><link rel="preload" as="image" href="/home-assistant/images/organizing/enable_disable.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/custom_polling_01.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/custom_polling_02.png"/><link rel="preload" as="image" href="/home-assistant/images/docs/configuration/integration_instance_delete.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="通用任务---安装无关"><a href="#通用任务---安装无关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通用任务 - 安装无关<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>本节提供不依赖于特定 Home Assistant 安装类型或特定集成的任务。它们可能在其他过程中被引用。</p>
+<h2 class="rp-toc-include" id="备份"><a href="#备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>备份</h2>
+<p>定期备份您的 Home Assistant 设置非常重要。您可能花费了许多时间配置系统和创建自动化。保持配置安全，以便您可以<a href="#%E6%81%A2%E5%A4%8D%E5%A4%87%E4%BB%BD" class="rp-link">恢复</a>系统或将 Home Assistant 迁移到新硬件。</p>
+<p>备份是加密的并存储在压缩归档文件（.tar）中，默认情况下存储在本地的 <code>/backup</code> 目录。</p>
+<p>完整备份包括以下目录：</p>
+<ul>
+<li><code>config</code></li>
+<li><code>share</code></li>
+<li><code>addons</code>（仅手动安装或创建的应用，不是从商店安装的）</li>
+<li><code>ssl</code></li>
+<li><code>media</code></li>
+</ul>
+<p>部分备份由上述任意数量的默认目录和已安装应用组成。</p>
+<h3 class="rp-toc-include" id="准备备份"><a href="#准备备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>准备备份</h3>
+<p>在创建备份之前，检查是否可以减小备份的大小。如果您想使用备份将系统迁移到新硬件，这尤其重要，例如从树莓派 Compute Module 4 迁移到树莓派 Compute Module 5。</p>
+<ol>
+<li>检查您的配置目录是否包含大型数据库文件：
+<ul>
+<li>进入 <a href="https://my.home-assistant.io/redirect/system_health/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>系统</strong> &gt; <strong>修复</strong></a>。</li>
+<li>从三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单中，选择 <strong>系统信息</strong>，在 <strong>记录器</strong> 部分下，查找 <strong>估计数据库大小 (MiB)</strong>。</li>
+<li>默认情况下，数据保留 10 天。如果您将其修改为更长时间，请检查 <a href="/home-assistant/integrations/recorder/index.html" class="rp-link"><code>recorder</code></a> 集成页面，了解如何将数据库数据保持在不会引起问题的大小的选项。</li>
+<li>记录保留天数、清除间隔和包含/排除选项。</li>
+</ul>
+</li>
+<li>要检查您总共使用了多少空间，进入 <a href="https://my.home-assistant.io/redirect/system_health/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>系统</strong> &gt; <strong>修复</strong></a>。
+<ul>
+<li>从三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单中，选择 <strong>系统信息</strong>，在 <strong>Home Assistant Supervisor</strong> &gt; <strong>磁盘使用</strong> 下查看。</li>
+<li>如果您有不再使用的已安装应用，请卸载这些应用。有些应用需要相当大的空间。</li>
+</ul>
+</li>
+<li>如果您想将备份存储在网络存储上而不仅仅是本地系统上，请按照<a href="/home-assistant/common-tasks/os/index.html#%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E7%BD%91%E7%BB%9C%E5%AD%98%E5%82%A8" class="rp-link">添加新的网络存储</a>中的步骤操作，并选择 <strong>备份</strong> 选项。</li>
+</ol>
+<h3 class="rp-toc-include" id="设置自动备份过程"><a href="#设置自动备份过程" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置自动备份过程</h3>
+<p>自动备份过程按预定义的时间表创建备份，并删除旧的、多余的备份。</p>
+<ol>
+<li>进入 <a href="https://my.home-assistant.io/redirect/supervisor_backups/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>系统</strong> &gt; <strong>备份</strong></a>。</li>
+<li>在 <strong>设置备份</strong> 下，选择 <strong>设置备份</strong>。</li>
+<li>下载应急工具包并将其存储在安全的地方。
+<ul>
+<li>您需要它来恢复加密备份。</li>
+<li>要了解有关备份加密的更多信息，请参阅<a href="/home-assistant/more-info/backup-emergency-kit/index.html" class="rp-link">备份应急工具包</a>的文档。</li>
+</ul>
+</li>
+<li>定义备份时间表。
+<ul>
+<li>建议每天备份，但您也可以选择在特定日期备份。</li>
+<li>定义时间：
+<ul>
+<li><strong>系统最佳</strong> 在 UI 中显示的预定义时间窗口内设置时间。</li>
+<li><strong>自定义</strong> 让您选择备份开始的时间。</li>
+<li>确保您选择的时间所有备份位置都在运行且可用。否则，备份将对不可用的位置失败。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>定义是否要在更新前自动备份。
+<ul>
+<li>这设置了默认值。但您可以在每次更新前更改此设置。</li>
+<li>对于大型安装，备份可能需要一段时间。</li>
+<li>您的更新可能比预期开始得晚。</li>
+</ul>
+</li>
+<li>定义要保留多少个备份。
+<ul>
+<li>较旧的备份将自动删除。</li>
+<li>例如：如果您每天备份，并选择 7 个备份，则 8 天前及更早的备份将被删除。</li>
+</ul>
+</li>
+<li>定义要备份的数据。
+<ul>
+<li>建议禁用媒体和共享文件夹以减小备份大小。</li>
+<li>大型备份也需要更长时间来恢复。</li>
+<li>某些应用也可能相当大。</li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9A%E4%B9%89%E5%A4%87%E4%BB%BD%E4%BD%8D%E7%BD%AE" class="rp-link">定义备份位置</a>。</li>
+</ol>
+<h3 class="rp-toc-include" id="定义备份位置"><a href="#定义备份位置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>定义备份位置</h3>
+<p>如果系统崩溃，您可能需要备份。如果您只将备份存储在设备本身上，您将无法轻松访问它们。建议在另一个系统上保留副本（Home Assistant 之外），最好还有一个异地副本。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+您可以在<a href="/home-assistant/integrations/index.html#backup" class="rp-link">这里</a>找到提供备份位置的集成概述。</p></div></div>
+<h4 class="rp-toc-include" id="关于-home-assistant-cloud-上的备份存储"><a href="#关于-home-assistant-cloud-上的备份存储" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于 Home Assistant Cloud 上的备份存储</h4>
+<p>如果您有 Home Assistant Cloud，您可以在 Home Assistant Cloud 上存储最大 5 GB 的备份。此云存储空间对所有现有和新的 Home Assistant Cloud 订阅者免费提供。它存储一个备份文件：最后保存到 Home Assistant Cloud 的备份。这些备份始终是加密的。要恢复加密备份，您需要存储在<a href="/home-assistant/more-info/backup-emergency-kit/index.html" class="rp-link">备份应急工具包</a>中的加密密钥。</p>
+<h4 class="rp-toc-include" id="为自动备份定义备份位置"><a href="#为自动备份定义备份位置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>为自动备份定义备份位置</h4>
+<ol>
+<li>进入 <a href="https://my.home-assistant.io/redirect/supervisor_backups/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>系统</strong> &gt; <strong>备份</strong></a>，在 <strong>自动备份</strong> 下，选择 <strong>配置自动备份</strong>。</li>
+<li>在 <strong>位置</strong> 下，使用切换开关启用您想要使用的所有备份位置。
+<ul>
+<li>如果您在列表中没有看到 Home Assistant Cloud，说明您没有<a href="https://www.nabucasa.com/config/" target="_blank" rel="noopener noreferrer" class="rp-link">登录</a>。</li>
+<li>如果您想备份到您的 NAS（如 <a href="/home-assistant/integrations/synology_dsm/index.html#backup-location" class="rp-link">Synology</a>）或云提供商（如 <a href="/home-assistant/integrations/google_drive/index.html" class="rp-link">Google Drive</a> 或 <a href="/home-assistant/integrations/onedrive/index.html" class="rp-link">Microsoft OneDrive</a>），请查看它们的集成文档，了解设置 Home Assistant 备份的具体说明。</li>
+<li>如果您没有看到网络存储，说明您还没有添加。请按照<a href="/home-assistant/common-tasks/os/index.html#%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E7%BD%91%E7%BB%9C%E5%AD%98%E5%82%A8" class="rp-link">添加新的网络存储</a>中的步骤操作，并选择 <strong>备份</strong> 选项。
+<img src="/home-assistant/images/screenshots/network-storage/backup_locations_encryption.png" alt="定义备份位置"/></li>
+</ul>
+</li>
+<li>对于每个启用的位置，选择齿轮 <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon> 以启用/禁用加密。
+<ul>
+<li><strong>信息</strong>：存储在 Home Assistant Cloud 上的备份始终是加密的。</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="使用备份操作创建备份自动化"><a href="#使用备份操作创建备份自动化" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用备份操作创建备份自动化</h3>
+<p>如果 UI 中提供的备份自动化设置不符合您的用例，您可以使用 <a href="/home-assistant/integrations/backup/index.html#action-backupcreate_automatic" class="rp-link">backup.create_automatic</a> 操作手动配置您自己的备份自动化。</p>
+<p>在您自己的自动化中使用该操作允许您按任何您喜欢的时间表创建自动备份，甚至可以在其周围添加条件和操作。例如，您可以创建一个在日历上触发的自动化，打开您的 NAS，等待它上线，然后触发备份。</p>
+<h3 class="rp-toc-include" id="创建手动备份"><a href="#创建手动备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建手动备份</h3>
+<p>这会立即创建备份。您可以随时创建手动备份，无论您是否定义了任何自动备份。</p>
+<ol>
+<li>进入 <a href="https://my.home-assistant.io/redirect/supervisor_backups/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>系统</strong> &gt; <strong>备份</strong></a>。</li>
+<li>在右下角，选择 <strong>立即备份</strong> 并选择 <strong>手动备份</strong>。</li>
+<li>定义要备份的数据。
+<ul>
+<li>建议禁用媒体和共享文件夹以减小备份大小。</li>
+<li>大型备份也需要更长时间来恢复。</li>
+<li>某些应用也可能相当大。</li>
+</ul>
+</li>
+<li>为备份提供一个名称。</li>
+<li>选择备份位置。
+<ul>
+<li>要了解有关位置的更多信息，请参阅<a href="#%E5%AE%9A%E4%B9%89%E5%A4%87%E4%BB%BD%E4%BD%8D%E7%BD%AE" class="rp-link">定义备份位置</a>部分。</li>
+</ul>
+</li>
+<li>下载<a href="/home-assistant/more-info/backup-emergency-kit/index.html" class="rp-link">备份应急工具包</a>并将其存储在安全的地方。确保记录它所属的备份名称。</li>
+<li>要开始备份过程，选择 <strong>创建备份</strong>。</li>
+</ol>
+<h3 class="rp-toc-include" id="下载本地备份"><a href="#下载本地备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>下载本地备份</h3>
+<p>从 Home Assistant 备份页面下载备份时，它会即时解密，以便您可以使用您喜欢的归档工具查看数据。这对所有备份位置都适用，也包括从 Home Assistant Cloud 下载时。</p>
+<p>有多种方法可以从您的 Home Assistant 实例下载本地备份并将其存储在另一个设备上：</p>
+<p><strong>选项 1</strong>：从备份页面下载：</p>
+<ol>
+<li>在 <a href="https://my.home-assistant.io/redirect/supervisor_backups/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>系统</strong> &gt; <strong>备份</strong></a> 下，选择 <strong>显示所有备份</strong>。</li>
+<li>要选择多个备份，选择 <iconify-icon inline="" icon="mdi:order-checkbox-ascending" title="order checkbox ascending"></iconify-icon> 按钮。</li>
+<li>选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单并选择 <strong>下载备份</strong>。
+<ul>
+<li><strong>结果</strong>：选定的备份存储在您计算机的 <strong>下载</strong> 文件夹中。</li>
+</ul>
+</li>
+<li>如果备份存储在多个位置，您可以选择从哪里下载：
+<ul>
+<li>选择备份，在 <strong>位置</strong> 下，选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 并选择 <strong>从此位置下载</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>选项 2</strong>：从备份文件夹复制备份：</p>
+<ol>
+<li>如果您还没有这样做，请使用其中列出的方法之一<a href="/home-assistant/common-tasks/os/index.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90" class="rp-link">配置对 Home Assistant 文件的访问</a>。
+<ul>
+<li>例如，<a href="/home-assistant/common-tasks/os/index.html#%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8-samba-%E6%8F%92%E4%BB%B6" class="rp-link">安装和使用 Samba 插件</a>。</li>
+</ul>
+</li>
+<li>在您的文件资源管理器中，访问 Home Assistant，打开 <code>backup</code> 文件夹并将文件复制到您的计算机。</li>
+</ol>
+<h3 class="rp-toc-include" id="从-home-assistant-cloud-下载备份"><a href="#从-home-assistant-cloud-下载备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Home Assistant Cloud 下载备份</h3>
+<p>如果您在创建备份时已登录 Home Assistant Cloud 并启用了 Cloud 备份，您的最后一个备份将存储在 Home Assistant Cloud 上。</p>
+<p>有两种方法可以从 Home Assistant Cloud 下载备份：</p>
+<ul>
+<li>
+<p><strong>选项 1</strong>：从备份页面</p>
+<ol>
+<li>进入 <a href="https://my.home-assistant.io/redirect/supervisor_backups/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>系统</strong> &gt; <strong>备份</strong></a> 并选择 <strong>显示所有备份</strong>。</li>
+<li>从列表中选择备份。</li>
+<li>在 <strong>位置</strong> 下，选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 并选择 <strong>从此位置下载</strong>。</li>
+</ol>
+</li>
+<li>
+<p><strong>选项 2</strong>：从您的 Home Assistant Cloud 账户</p>
+<ol>
+<li>登录您的 <a href="https://account.nabucasa.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Home Assistant Cloud 账户</a>。</li>
+<li>在 <strong>存储的文件</strong> 下，您可以看到最新可用的备份文件。选择 <strong>下载</strong> 按钮。</li>
+</ol>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="删除过时备份"><a href="#删除过时备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除过时备份</h3>
+<p>如果您定义了自动备份和备份清除计划，旧备份会自动删除。但是，您可能仍有一些想要删除的旧备份。</p>
+<p>要删除旧备份，请按照以下步骤操作：</p>
+<ol>
+<li>在 Home Assistant 中，在 <a href="https://my.home-assistant.io/redirect/supervisor_backups/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>系统</strong> &gt; <strong>备份</strong></a> 下，选择 <strong>显示所有备份</strong>。</li>
+<li>要<strong>删除一个备份</strong>：从列表中选择感兴趣的备份。
+<ul>
+<li>选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单并选择 <strong>删除</strong>。</li>
+</ul>
+</li>
+<li>要<strong>删除多个备份</strong>：选择 <iconify-icon inline="" icon="mdi:order-checkbox-ascending" title="order checkbox ascending"></iconify-icon> 按钮。
+<ul>
+<li>从备份列表中，选择所有要删除的备份并选择 <strong>删除所选</strong>。</li>
+<li><iconify-icon inline="" icon="mdi:information-outline" title="information outline"></iconify-icon> 考虑至少保留一个最近的备份以便恢复。</li>
+</ul>
+</li>
+<li>要<strong>删除存储在 Home Assistant Cloud 上的备份</strong>，您有 2 个选项：
+<ul>
+<li><strong>选项 1</strong>：从 Home Assistant 内触发备份删除
+<ul>
+<li>按照上面的步骤 1 和 2。</li>
+<li>即使您在 Home Assistant 中选择 <strong>删除</strong>，它也会从 Home Assistant Cloud 存储中删除。</li>
+</ul>
+</li>
+<li><strong>选项 2</strong>：从 Nabu Casa 账户页面删除备份。
+<ul>
+<li>登录您的 <a href="https://account.nabucasa.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Nabu Casa 账户</a>。</li>
+<li>在 <strong>备份</strong> 下，删除备份。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="恢复备份"><a href="#恢复备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>恢复备份</h3>
+<p>有两种使用备份的方式：</p>
+<ul>
+<li>在您当前的系统上恢复设置。</li>
+<li>在初始设置期间，将设置迁移到新设备或在执行恢复出厂设置的设备上恢复。</li>
+</ul>
+<h4 class="rp-toc-include" id="预计持续时间"><a href="#预计持续时间" class="rp-header-anchor rp-link" aria-hidden="true">#</a>预计持续时间</h4>
+<p>恢复备份所需的时间取决于您的安装。Home Assistant Core 和所有应用都将重新安装。对于较大的安装，此过程可能需要约 45 分钟。</p>
+<h4 class="rp-toc-include" id="在初始设置期间恢复备份"><a href="#在初始设置期间恢复备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在初始设置期间恢复备份</h4>
+<p>您可以在初始设置过程中使用备份恢复配置。</p>
+<p><strong>迁移</strong>：如果您想从一个设备迁移到另一个设备，此过程也适用。在这种情况下，在新设备上使用旧设备的备份。目标设备可以是不同的设备类型。例如，您可以从树莓派迁移到另一个设备。</p>
+<h5 class="rp-toc-include" id="先决条件"><a href="#先决条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>先决条件</h5>
+<ul>
+<li>此过程假设您已在目标设备上完成了<a href="/home-assistant/installation/index.html" class="rp-link">安装</a>过程，现在正在查看<a href="/home-assistant/getting-started/onboarding/index.html" class="rp-link">初始设置</a>的欢迎屏幕。</li>
+<li>您制作备份的设备的登录凭据。</li>
+<li>包含解密备份所需密钥的<a href="/home-assistant/more-info/backup-emergency-kit/index.html" class="rp-link">备份应急工具包</a>。</li>
+<li><strong>所需存储容量</strong>：如果您将安装迁移到新设备，请确保新设备具有比现有设备更大的存储容量。
+<ul>
+<li>迁移之前，在旧系统上检查您使用了多少存储。</li>
+<li>进入 <strong><a href="https://my.home-assistant.io/redirect/system_health/" target="_blank" rel="noopener noreferrer" class="rp-link">设置 &gt; 系统 &gt; 修复 &gt; ... &gt; 系统信息</a></strong>，在 <strong>Home Assistant Supervisor</strong> 下，查看 <strong>磁盘使用</strong> 值。
+<ul>
+<li>目标设备必须有比源设备更多的可用空间。</li>
+<li>如果您的目标设备是 Home Assistant Yellow，请注意相关的是 eMMC 的大小。</li>
+<li>恢复过程主要使用 eMMC，而不是 NVMe。</li>
+<li>备份文件的大小不是您安装大小的指示。要知道安装的大小，您需要检查上面提到的 <strong>磁盘使用</strong> 值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果您正在迁移到新设备：
+<ul>
+<li>您不需要将备份传输到 USB 或 SD 卡以将其带到您的设备。</li>
+<li>您将能够从您访问初始设置的设备上传备份文件。</li>
+</ul>
+</li>
+</ul>
+<h5 class="rp-toc-include" id="在初始设置期间恢复备份-1"><a href="#在初始设置期间恢复备份-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在初始设置期间恢复备份</h5>
+<ol>
+<li>如果您正在迁移到新设备并且连接了控制器或无线电（如 Z-Wave 适配器或 Connect ZBT-2）：
+<ul>
+<li>确保将它们插入新设备。</li>
+</ul>
+</li>
+<li>您可以从本地机器恢复备份或恢复存储在 Home Assistant Cloud 上的备份：
+<ul>
+<li><strong>选项 1</strong>：从本地备份恢复。
+<ul>
+<li>在欢迎屏幕上，选择 <strong>上传备份</strong>。</li>
+<li>选择 <strong>选择备份文件</strong>。
+<ul>
+<li>文件资源管理器将在您查看 Home Assistant 用户界面的设备上打开。</li>
+<li>您可以从那里访问任何连接的网络驱动器。</li>
+</ul>
+</li>
+<li>选择备份文件。</li>
+</ul>
+</li>
+<li><strong>选项 2</strong>：从 Home Assistant Cloud 备份恢复。
+<ul>
+<li>在欢迎屏幕上，选择 <strong>Home Assistant Cloud</strong>。</li>
+<li>登录 Home Assistant Cloud。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在对话框中，选择您想要恢复的所有部分。
+<ul>
+<li>您当前的系统将被您选择恢复的部分覆盖。</li>
+<li>如果您想恢复完整配置及所有目录和应用，选择所有内容。</li>
+</ul>
+</li>
+<li>输入存储在<a href="/home-assistant/more-info/backup-emergency-kit/index.html" class="rp-link">备份应急工具包</a>中的加密密钥。</li>
+<li>要开始过程，选择 <strong>恢复备份</strong>。
+<ul>
+<li>恢复可能需要一段时间，取决于数据量。</li>
+<li>不要刷新页面。只需等待。
+<ul>
+<li>如果您刷新页面，您将看到 &quot;未找到&quot; 消息。这是因为系统正在关闭、擦除并从备份重新安装。在此期间，它将无法访问。</li>
+</ul>
+</li>
+<li>如果您之前的安装直接为 <a href="/home-assistant/integrations/http/index.html" class="rp-link"><code>http</code> 集成</a>启用了证书，当恢复完成时，它将不再响应 <code>http://</code> 请求。在这种情况下，使用 <code>https://</code>（添加 <code>s</code>）代替。</li>
+</ul>
+</li>
+<li>在登录屏幕上，输入您制作备份的系统的凭据。
+<ul>
+<li>登录密码和用户名必须与您制作备份时使用的密码和用户名匹配。</li>
+<li>您的仪表盘应显示创建备份时的所有元素。</li>
+<li>如果某些设备显示为不可用，您可能需要唤醒电池供电的设备。</li>
+</ul>
+</li>
+<li>如果您在以前的系统上连接了<a href="/home-assistant/common-tasks/os/index.html#%E7%BD%91%E7%BB%9C%E5%AD%98%E5%82%A8" class="rp-link">网络存储</a>，您可能需要重新连接它们。</li>
+<li>如果您有 Zigbee 设备，并且您迁移到了具有内置 Zigbee 无线电的新设备：
+<ul>
+<li>因为这现在是不同的 Zigbee 无线电，您需要<a href="/home-assistant/integrations/zha/index.html#migrating-to-a-new-zigbee-coordinator-adapter-inside-zha" class="rp-link">迁移 Zigbee</a>。</li>
+</ul>
+</li>
+</ol>
+<h4 class="rp-toc-include" id="在当前系统上恢复备份"><a href="#在当前系统上恢复备份" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在当前系统上恢复备份</h4>
+<ol>
+<li>进入 <strong><a href="https://my.home-assistant.io/redirect/backup/" target="_blank" rel="noopener noreferrer" class="rp-link">设置 &gt; 系统 &gt; 备份</a></strong>。</li>
+<li>从备份列表中，选择您要从中恢复的备份。</li>
+<li>选择要恢复的内容：
+<ul>
+<li>您当前的系统将被您选择恢复的部分覆盖。</li>
+<li>如果您想恢复完整配置及所有目录和应用，选择所有内容。</li>
+<li>如果您只想恢复特定元素，只选择您想恢复的文件夹和应用。</li>
+</ul>
+</li>
+<li>选择 <strong>恢复</strong>。
+<ul>
+<li>这可能需要一段时间，取决于需要压缩或解压的内容。</li>
+</ul>
+</li>
+<li>恢复完成后，Home Assistant 重启以应用新设置。
+<ul>
+<li>您将失去与 UI 的连接，重启完成后它将返回。</li>
+</ul>
+</li>
+<li>在登录屏幕上，输入制作备份时的密码和用户名。</li>
+</ol>
+<h2 class="rp-toc-include" id="启用或禁用实体"><a href="#启用或禁用实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用或禁用实体</h2>
+<p>某些实体默认被禁用。设备的特定实体是禁用还是启用取决于集成。例如，诊断实体通常默认禁用，以免弄乱 Home Assistant。例如，ZHA 集成为每个 Zigbee 设备提供的 RSSI 实体（表示 RF 信号强度）默认被禁用。</p>
+<p>有不同的方法启用实体。您可以在实体设置中启用单个实体，也可以从实体列表中一次启用多个实体。</p>
+<h3 class="rp-toc-include" id="启用或禁用单个实体"><a href="#启用或禁用单个实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用或禁用单个实体</h3>
+<ol>
+<li>
+<p>进入 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a> 并选择您的集成卡片。</p>
+</li>
+<li>
+<p>选择设备。</p>
+</li>
+<li>
+<p>要查看所有实体，您可能需要展开 <strong>未显示的实体</strong> 部分。</p>
+</li>
+<li>
+<p>选择感兴趣的实体，选择齿轮 <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>，然后选择 <strong>启用</strong> 的切换开关。</p>
+</li>
+<li>
+<p>选择 <strong>更新</strong>。</p>
+</li>
+<li>
+<p>确认说明实体大约需要 30 秒才能启用的通知。选择 <strong>确定</strong>。</p>
+<p><img src="/home-assistant/images/docs/configuration/enable_entity.webp" alt="显示如何启用单个实体的屏幕录制"/></p>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="启用或禁用多个实体"><a href="#启用或禁用多个实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用或禁用多个实体</h3>
+<ol>
+<li>
+<p>在 Home Assistant 中，打开感兴趣的表格。</p>
+<ul>
+<li>要启用或禁用实体，进入 <a href="https://my.home-assistant.io/redirect/entities/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong> &gt; <strong>实体</strong></a>。</li>
+<li>要启用或禁用自动化，进入 <a href="https://my.home-assistant.io/redirect/automations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>自动化与场景</strong></a>。</li>
+</ul>
+</li>
+<li>
+<p><a href="/home-assistant/docs/organizing/tables.html" class="rp-link">启用多选</a> 并选择所有要启用或禁用的实体。</p>
+</li>
+<li>
+<p>在右上角，选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单，然后选择 <strong>启用</strong> 或 <strong>禁用</strong>。</p>
+<p><img src="/home-assistant/images/organizing/enable_disable.png" alt="显示如何启用或禁用多个自动化的屏幕截图"/></p>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="相关主题"><a href="#相关主题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>相关主题</h3>
+<ul>
+<li><a href="/home-assistant/docs/configuration/customizing-devices/index.html" class="rp-link">自定义实体</a></li>
+<li><a href="/home-assistant/docs/organizing/index.html" class="rp-link">分组您的资产</a></li>
+<li><a href="/home-assistant/docs/organizing/tables.html" class="rp-link">使用表格</a></li>
+</ul>
+<h2 class="rp-toc-include" id="定义自定义轮询间隔"><a href="#定义自定义轮询间隔" class="rp-header-anchor rp-link" aria-hidden="true">#</a>定义自定义轮询间隔</h2>
+<p>如果您想定义设备轮询数据的特定间隔，您可以禁用默认轮询间隔并创建自己的轮询自动化。</p>
+<h3 class="rp-toc-include" id="什么是数据轮询"><a href="#什么是数据轮询" class="rp-header-anchor rp-link" aria-hidden="true">#</a>什么是数据轮询？</h3>
+<p>数据轮询是定期查询设备或服务以检查更新或检索数据的过程。通过定义自定义轮询间隔，您可以控制系统检查新数据的频率，这有助于优化性能并减少不必要的网络流量。</p>
+<h3 class="rp-toc-include" id="为什么使用自动化而不是更改集成的轮询配置"><a href="#为什么使用自动化而不是更改集成的轮询配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>为什么使用自动化而不是更改集成的轮询配置？</h3>
+<p>为轮询创建自动化让您对何时轮询有更多灵活性：</p>
+<ol>
+<li>并非所有集成都有可配置的轮询间隔。另一方面，homeassistant.update_entity 服务适用于大多数集成；不需要代码更改。</li>
+<li>自动化允许您随时轮询。例如，如果您有一个每天有最大请求数限制的太阳能电池板提供商，您可能希望晚上降低/停止轮询，但在白天更频繁地轮询。</li>
+</ol>
+<p>如果您想定义设备轮询数据的特定间隔，您可以禁用默认轮询间隔并创建自己的轮询自动化。</p>
+<p>添加自动化：</p>
+<ol>
+<li>进入 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a>，选择您的集成。</li>
+<li>在集成条目上，选择 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon>。
+<ul>
+<li>然后，选择 <strong>系统选项</strong> 并切换按钮以禁用轮询。
+<img src="/home-assistant/images/screenshots/custom_polling_01.png" alt="禁用更新轮询"/></li>
+</ul>
+</li>
+<li>要定义您的自定义轮询间隔，创建一个自动化。
+<ul>
+<li>进入 <a href="https://my.home-assistant.io/redirect/automations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>自动化与场景</strong></a> 并创建新自动化。</li>
+<li>定义您喜欢的任何触发器和条件。</li>
+<li>选择 <strong>添加操作</strong>，然后选择 <strong>其他操作</strong>。</li>
+<li>选择 <strong>执行操作</strong>，从列表中选择 <a href="/home-assistant/integrations/homeassistant/index.html#action-homeassistantupdate_entity" class="rp-link"><code>homeassistant.update_entity</code> 操作</a>。</li>
+<li>通过选择 <strong>选择区域</strong>、<strong>选择设备</strong>、<strong>选择实体</strong> 或 <strong>选择标签</strong> 按钮来选择您的目标。
+<img src="/home-assistant/images/screenshots/custom_polling_02.png" alt="更新实体"/></li>
+</ul>
+</li>
+<li>保存您的新自动化以轮询数据。</li>
+</ol>
+<h2 class="rp-toc-include" id="删除集成实例"><a href="#删除集成实例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除集成实例</h2>
+<p>如果您不再想在 Home Assistant 中使用设备或服务，您可以删除集成实例，包括设备或服务及其所有实体。</p>
+<p>以下步骤描述了删除集成实例所需的一般步骤。根据集成，可能需要额外的步骤，例如重置设备或删除凭据。请参阅集成文档以了解是否需要额外的步骤。</p>
+<h3 class="rp-toc-include" id="从-home-assistant-删除集成实例"><a href="#从-home-assistant-删除集成实例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Home Assistant 删除集成实例</h3>
+<ol>
+<li>进入 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a> 并选择集成卡片。</li>
+<li>从设备列表中，选择您要删除的集成实例。</li>
+<li>在条目旁边，选择三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单。然后，选择 <strong>删除</strong>。</li>
+</ol>
+<p><img src="/home-assistant/images/docs/configuration/integration_instance_delete.png" alt="显示如何删除集成实例的屏幕截图"/></p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#备份" class="rp-toc-item rp-link" title="备份" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">备份</span></a><a href="#准备备份" class="rp-toc-item rp-link" title="准备备份" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">准备备份</span></a><a href="#设置自动备份过程" class="rp-toc-item rp-link" title="设置自动备份过程" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">设置自动备份过程</span></a><a href="#定义备份位置" class="rp-toc-item rp-link" title="定义备份位置" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">定义备份位置</span></a><a href="#关于-home-assistant-cloud-上的备份存储" class="rp-toc-item rp-link" title="关于 Home Assistant Cloud 上的备份存储" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">关于 Home Assistant Cloud 上的备份存储</span></a><a href="#为自动备份定义备份位置" class="rp-toc-item rp-link" title="为自动备份定义备份位置" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">为自动备份定义备份位置</span></a><a href="#使用备份操作创建备份自动化" class="rp-toc-item rp-link" title="使用备份操作创建备份自动化" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用备份操作创建备份自动化</span></a><a href="#创建手动备份" class="rp-toc-item rp-link" title="创建手动备份" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">创建手动备份</span></a><a href="#下载本地备份" class="rp-toc-item rp-link" title="下载本地备份" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">下载本地备份</span></a><a href="#从-home-assistant-cloud-下载备份" class="rp-toc-item rp-link" title="从 Home Assistant Cloud 下载备份" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从 Home Assistant Cloud 下载备份</span></a><a href="#删除过时备份" class="rp-toc-item rp-link" title="删除过时备份" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">删除过时备份</span></a><a href="#恢复备份" class="rp-toc-item rp-link" title="恢复备份" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">恢复备份</span></a><a href="#预计持续时间" class="rp-toc-item rp-link" title="预计持续时间" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">预计持续时间</span></a><a href="#在初始设置期间恢复备份" class="rp-toc-item rp-link" title="在初始设置期间恢复备份" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">在初始设置期间恢复备份</span></a><a href="#在当前系统上恢复备份" class="rp-toc-item rp-link" title="在当前系统上恢复备份" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">在当前系统上恢复备份</span></a><a href="#启用或禁用实体" class="rp-toc-item rp-link" title="启用或禁用实体" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">启用或禁用实体</span></a><a href="#启用或禁用单个实体" class="rp-toc-item rp-link" title="启用或禁用单个实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启用或禁用单个实体</span></a><a href="#启用或禁用多个实体" class="rp-toc-item rp-link" title="启用或禁用多个实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启用或禁用多个实体</span></a><a href="#相关主题" class="rp-toc-item rp-link" title="相关主题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">相关主题</span></a><a href="#定义自定义轮询间隔" class="rp-toc-item rp-link" title="定义自定义轮询间隔" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">定义自定义轮询间隔</span></a><a href="#什么是数据轮询" class="rp-toc-item rp-link" title="什么是数据轮询？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">什么是数据轮询？</span></a><a href="#为什么使用自动化而不是更改集成的轮询配置" class="rp-toc-item rp-link" title="为什么使用自动化而不是更改集成的轮询配置？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">为什么使用自动化而不是更改集成的轮询配置？</span></a><a href="#删除集成实例" class="rp-toc-item rp-link" title="删除集成实例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">删除集成实例</span></a><a href="#从-home-assistant-删除集成实例" class="rp-toc-item rp-link" title="从 Home Assistant 删除集成实例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从 Home Assistant 删除集成实例</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

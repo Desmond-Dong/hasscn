@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roborock - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.a93d29ce3a.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Roborock - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Roborock 集成允许您将 Roborock(https://us.roborock.com/pages/robot-vacuum-cleaner) 扫地机器人接入 Home Assistant。Roborock 吸尘器是智能家居清洁机器人，具体功能会因设备不同而异，可能包括拖地能力、激光导航。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Roborock 集成允许您将 Roborock(https://us.roborock.com/pages/robot-vacuum-cleaner) 扫地机器人接入 Home Assistant。Roborock 吸尘器是智能家居清洁机器人，具体功能会因设备不同而异，可能包括拖地能力、激光导航。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/device-options.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="roborock"><a href="#roborock" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Roborock<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Roborock</strong> 集成允许您将 <a href="https://us.roborock.com/pages/robot-vacuum-cleaner" target="_blank" rel="noopener noreferrer" class="rp-link">Roborock</a> 扫地机器人接入 Home Assistant。Roborock 吸尘器是智能家居清洁机器人，具体功能会因设备不同而异，可能包括拖地能力、激光导航，以及调整清洁性能或家庭内清扫位置等选项。此集成让您可以直接在 Home Assistant 中控制并监控 Roborock 吸尘器。</p>
+<p>该集成还支持自动化，并可与其他智能家居设备联动。例如，您可以在吸尘器卡住时发送通知，或在媒体播放器开始播放音乐时暂停吸尘器。</p>
+<h2 class="rp-toc-include" id="兼容性说明"><a href="#兼容性说明" class="rp-header-anchor rp-link" aria-hidden="true">#</a>兼容性说明</h2>
+<p>新发布的 <a href="https://us.roborock.com/pages/roborock-store#Q-Series" target="_blank" rel="noopener noreferrer" class="rp-link">Q-Series</a> 设备尚未获得完整支持。Roborock 已更改这类设备的交互协议。目前尚不清楚 Q 系列之外的新设备会继续使用现有协议还是新协议。大多数 Q-Series 设备应可通过 <a href="/home-assistant/integrations/matter/index.html" class="rp-link">Matter</a> 集成获得部分支持。</p>
+<h2 class="rp-toc-include" id="先决条件"><a href="#先决条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>先决条件</h2>
+<ol>
+<li>下载 iOS 或 Android 版 Roborock App。</li>
+<li>创建账户并登录。</li>
+<li>将您的 Roborock 设备添加到 Roborock App 中（例如通过扫描二维码）。</li>
+</ol>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Email address</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;The email address used to sign in to the Roborock app. A verification code will be sent to this email address when adding the Roborock integration.&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Roborock server Region</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;The region that your Roborock account was created in. Leave this set to **Auto** unless you are having issues. See troubleshooting steps below.&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Verification code</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;The verification code that is sent to your email address when adding the Roborock integration.&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="options"><a href="#options" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Options</h2>
+<p>To define options for Roborock, follow these steps:</p>
+<ol>
+<li>
+<p>In Home Assistant, go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>.</p>
+</li>
+<li>
+<p>If multiple instances of Roborock are configured, choose the instance you want to configure.</p>
+</li>
+<li>
+<p>On the card, select the cogwheel <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>.</p>
+<ul>
+<li>If the card does not have a cogwheel, the integration does not support options for this device.</li>
+</ul>
+<p><img src="/home-assistant/images/screenshots/device-options.png" alt="Screenshot showing the cogwheel icon on an integration card in the Settings &gt; Devices &amp; services page"/></p>
+</li>
+<li>
+<p>Edit the options, then select <strong>Submit</strong> to save the changes.</p>
+</li>
+</ol>
+<p>此集成可配置在地图上显示哪些 Roborock App 功能元素。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Charger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示充电座。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Cleaned area</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示已清扫区域。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Go-to path</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示前往目标点的路径。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Ignored obstacles</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示已忽略障碍物。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Ignored obstacles with photo</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示带照片的已忽略障碍物。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Mop path</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示拖地路径。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">No carpet zones</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示禁地毯区域。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">No-go zones</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示禁区。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">No mopping zones</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示禁拖区域。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Obstacles</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示障碍物。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Obstacles with photo</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示带照片的障碍物。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Path</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示路径。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Predicted path</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示预测路径。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Vacuum position</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示吸尘器位置。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Virtual walls</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示虚拟墙。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Zones</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图上显示区域。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Show background</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在地图后方显示蓝色背景，而不是透明背景。</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p>此集成同时使用本地和云端轮询，并通过 MQTT 接收云端推送事件。在可能的情况下会优先使用本地通信。
+地图数据和例程始终通过云端获取，而 Dyad 和 Zeo 设备仅支持云端。</p>
+<p>集成会通过云 API 自动发现您的 Roborock 设备，并在设备支持的情况下获取与其进行本地通信所需的信息。请确保 Home Assistant 实例能够访问设备的本地 IP。我们建议为 Roborock 吸尘器设置静态 IP，以帮助避免后续问题。设备通过 58867 端口通信。
+根据您的防火墙配置，可能需要允许 Home Assistant 通过该端口与吸尘器通信。</p>
+<h2 class="rp-toc-include" id="支持的功能"><a href="#支持的功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的功能</h2>
+<p>Roborock 设备支持的功能因型号不同而异。只有您的设备支持的实体才会被添加到集成中。</p>
+<h3 class="rp-toc-include" id="扫地机器人设备"><a href="#扫地机器人设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>扫地机器人设备</h3>
+<h4 class="rp-toc-include" id="vacuum"><a href="#vacuum" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Vacuum</h4>
+<p>vacuum 实体可控制吸尘器的大多数功能，例如开始清扫、返回充电座或设置风机速度。</p>
+<h4 class="rp-toc-include" id="image"><a href="#image" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Image</h4>
+<ul>
+<li><strong>Map</strong>
+<ul>
+<li><strong>Description</strong>: 显示 Roborock 吸尘器清扫区域的实时地图。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="select"><a href="#select" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Select</h4>
+<ul>
+<li>
+<p><strong>Mop mode</strong></p>
+<ul>
+<li><strong>Description</strong>: 描述拖地方式。在某些固件中，它被称为 <code>mop route</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>Mop intensity</strong></p>
+<ul>
+<li><strong>Description</strong>: 指定拖地强度。</li>
+</ul>
+</li>
+<li>
+<p><strong>Selected map</strong></p>
+<ul>
+<li><strong>Description</strong>: 选择吸尘器当前加载的地图。</li>
+</ul>
+</li>
+<li>
+<p><strong>Empty mode</strong></p>
+<ul>
+<li><strong>Description</strong>: 可设置 <code>empty mode</code>，包括 Max、Light、Balanced 和 Smart。</li>
+<li><strong>Availability</strong>: 仅适用于配备自动集尘座的吸尘器。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="binary-sensor"><a href="#binary-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Binary sensor</h4>
+<ul>
+<li>
+<p><strong>Charging</strong></p>
+<ul>
+<li><strong>Description</strong>: 表示吸尘器当前是否正在充电。</li>
+</ul>
+</li>
+<li>
+<p><strong>Cleaning</strong></p>
+<ul>
+<li><strong>Description</strong>: 表示吸尘器当前是否正在清扫。当机器人正在移动，或因电量低返回充电座但清扫任务仍处于活动状态并会稍后继续时，该实体也会处于开启状态。</li>
+</ul>
+</li>
+<li>
+<p><strong>Mop attached</strong></p>
+<ul>
+<li><strong>Description</strong>: 表示拖布当前是否已安装。</li>
+</ul>
+</li>
+<li>
+<p><strong>Mop drying status</strong></p>
+<ul>
+<li><strong>Description</strong>: 仅适用于具备烘干能力的底座 - 表示拖布当前是否正在烘干。</li>
+</ul>
+</li>
+<li>
+<p><strong>Water box attached</strong></p>
+<ul>
+<li><strong>Description</strong>: 表示水箱当前是否已安装。</li>
+</ul>
+</li>
+<li>
+<p><strong>Water shortage</strong></p>
+<ul>
+<li><strong>Description</strong>: 表示水箱是否缺水；如果未检测到缺水，则显示 <code>Ok</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>Cleaning fluid</strong></p>
+<ul>
+<li><strong>Description</strong>: 仅适用于支持清洁液的底座 - 表示底座清洁液是否不足，或清洁液容器未安装。</li>
+</ul>
+</li>
+<li>
+<p><strong>Clean water box</strong></p>
+<ul>
+<li><strong>Description</strong>: 仅适用于内置清水箱的底座。表示底座是否缺少清水，或清水箱未安装。</li>
+</ul>
+</li>
+<li>
+<p><strong>Dirty water box</strong></p>
+<ul>
+<li><strong>Description</strong>: 仅适用于内置污水箱的底座。表示污水箱是否已满，或污水箱未安装。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="sensor"><a href="#sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sensor</h4>
+<ul>
+<li>
+<p><strong>Cleaning area</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器本次清扫已清洁的面积。如果当前未在清扫，则显示上一次清扫的面积。</li>
+</ul>
+</li>
+<li>
+<p><strong>Cleaning time</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器本次清扫持续的时间。如果当前未在清扫，则显示上一次清扫耗时。</li>
+</ul>
+</li>
+<li>
+<p><strong>Cleaning progress</strong></p>
+<ul>
+<li><strong>Description</strong>: 仅适用于部分较新设备 - 表示当前清扫已完成的百分比。</li>
+</ul>
+</li>
+<li>
+<p><strong>Dock error</strong></p>
+<ul>
+<li><strong>Description</strong>: 仅适用于非基础底座 - 表示吸尘器当前错误；若无错误则显示 <code>Ok</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>Main brush time left</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离 Roborock 建议更换主刷还剩多少时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Mop drying remaining time</strong></p>
+<ul>
+<li><strong>Description</strong>: 仅适用于非基础底座 - 距离拖布烘干完成并可继续清扫还剩多少时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Side brush time left</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离 Roborock 建议更换边刷还剩多少时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Filter time left</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离 Roborock 建议更换吸尘器滤网还剩多少时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Maintenance brush time left</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离 Roborock 建议更换底座维护刷还剩多少时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Strainer time left</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离 Roborock 建议更换底座滤网还剩多少时间。具体可能指水过滤器或清洁托盘，取决于您的设备。</li>
+</ul>
+</li>
+<li>
+<p><strong>Status</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器当前状态。通常表示当前正在执行的动作，例如 <code>spot_cleaning</code> 或 <code>docking</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>Last clean begin</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器上一次开始清扫的时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Last clean end</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器上一次完成清扫的时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Total cleaning time</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器的累计清扫时长。</li>
+</ul>
+</li>
+<li>
+<p><strong>Total cleaning area</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器的累计清扫面积。</li>
+</ul>
+</li>
+<li>
+<p><strong>Total cleaning count</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器的累计清扫次数。</li>
+</ul>
+</li>
+<li>
+<p><strong>Vacuum error</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器当前错误（如果有）。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="time"><a href="#time" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Time</h4>
+<ul>
+<li>
+<p><strong>Do not disturb begin</strong></p>
+<ul>
+<li><strong>Description</strong>: 启用 <em>Do not disturb</em> 后，吸尘器在此时间点之后不会运行，也不会发声。</li>
+</ul>
+</li>
+<li>
+<p><strong>Do not disturb end</strong></p>
+<ul>
+<li><strong>Description</strong>: 启用 <em>Do not disturb</em> 后，吸尘器在此时间点之前不会运行，也不会发声。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="switch"><a href="#switch" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Switch</h4>
+<ul>
+<li>
+<p><strong>Child lock</strong></p>
+<ul>
+<li><strong>Description</strong>: 禁用吸尘器上的实体按键。按下按键不会有任何反应。</li>
+</ul>
+</li>
+<li>
+<p><strong>Status indicator light</strong></p>
+<ul>
+<li><strong>Description</strong>: 这是吸尘器顶部的 LED。其颜色会根据吸尘器状态变化。</li>
+</ul>
+</li>
+<li>
+<p><strong>Do not disturb</strong></p>
+<ul>
+<li><strong>Description</strong>: 在您于 App 或 time 实体中设置的时间段内启用 <em>Do not disturb</em>。启用后，吸尘器不会运行，也不会发声。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="number"><a href="#number" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Number</h4>
+<ul>
+<li><strong>Volume</strong>
+<ul>
+<li><strong>Description</strong>: 允许您控制机器人的语音音量。例如播报 “Starting cleaning” 时的音量。通过该实体可将音量设为 0%，而 App 最低仅允许设置到 20%。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="button"><a href="#button" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Button</h4>
+<p>目前有四个按钮可用于重置吸尘器的不同维护项目。按钮一旦按下便无法撤销。因此，这些按钮默认禁用，以避免误触。</p>
+<ul>
+<li>
+<p><strong>Reset sensor consumable</strong></p>
+<ul>
+<li><strong>Description</strong>: 吸尘器传感器建议每使用 30 小时后清洁一次。</li>
+</ul>
+</li>
+<li>
+<p><strong>Reset side brush consumable</strong></p>
+<ul>
+<li><strong>Description</strong>: 边刷建议每 200 小时更换一次。</li>
+</ul>
+</li>
+<li>
+<p><strong>Reset main brush consumable</strong></p>
+<ul>
+<li><strong>Description</strong>: 主刷/滚刷建议每 300 小时更换一次。</li>
+</ul>
+</li>
+<li>
+<p><strong>Reset air filter</strong></p>
+<ul>
+<li><strong>Description</strong>: 空气滤网建议每 150 小时更换一次。</li>
+</ul>
+</li>
+</ul>
+<p>此外，某些吸尘器支持在 App 中设置例程。每个例程都会创建一个按钮实体，允许您直接触发它。</p>
+<h4 class="rp-toc-include" id="操作"><a href="#操作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作</h4>
+<h5 class="rp-toc-include" id="操作设置吸尘器前往指定位置"><a href="#操作设置吸尘器前往指定位置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：设置吸尘器前往指定位置</h5>
+<p><code>roborock.set_vacuum_goto_position</code> 操作用于让吸尘器前往指定坐标。</p>
+<ul>
+<li><strong>Data attribute</strong>: <code>entity_id</code>
+<ul>
+<li><strong>Description</strong>: 仅作用于指定机器人。</li>
+<li><strong>Optional</strong>: 否。</li>
+</ul>
+</li>
+<li><strong>Data attribute</strong>: <code>x</code>
+<ul>
+<li><strong>Description</strong>: X 坐标，整数值。充电座位于 x=25500。</li>
+<li><strong>Optional</strong>: 否。</li>
+</ul>
+</li>
+<li><strong>Data attribute</strong>: <code>y</code>
+<ul>
+<li><strong>Description</strong>: Y 坐标，整数值。充电座位于 y=25500。</li>
+<li><strong>Optional</strong>: 否。</li>
+</ul>
+</li>
+</ul>
+<h5 class="rp-toc-include" id="操作获取吸尘器当前位置"><a href="#操作获取吸尘器当前位置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：获取吸尘器当前位置</h5>
+<p><code>roborock.get_vacuum_current_position</code> 操作用于获取吸尘器当前位置。
+这是一次云端调用，应仅用于诊断，不适合在自动化中频繁使用。
+频繁请求可能会触发速率限制。</p>
+<ul>
+<li><strong>Data attribute</strong>: <code>entity_id</code>
+<ul>
+<li><strong>Description</strong>: 仅作用于指定机器人。</li>
+<li><strong>Optional</strong>: 否。</li>
+</ul>
+</li>
+</ul>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> roborock.get_vacuum_current_position</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> vacuum.roborock_s7</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-foreground)"> {}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<ul>
+<li>
+<p><strong>Result</strong>: 您会得到类似如下的响应：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">vacuum.roborock_s7</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  x</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 28081</span></span>
+<span class="line"><span style="color:var(--shiki-token-constant)">  y</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 25168</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</li>
+</ul>
+<h5 class="rp-toc-include" id="操作获取地图"><a href="#操作获取地图" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：获取地图</h5>
+<p><code>roborock.get_maps</code> 操作会返回设备上可用的地图，以及每张地图上已命名房间的详细信息。</p>
+<ul>
+<li><strong>Data attribute</strong>: <code>entity_id</code>
+<ul>
+<li><strong>Description</strong>: 获取指定设备的地图。</li>
+<li><strong>Optional</strong>: 否。</li>
+</ul>
+</li>
+</ul>
+<p>该操作会返回地图名称、房间名称及其 ID。有关如何使用地图响应的更多信息，请参阅 <a href="#how-can-i-clean-a-specific-room" class="rp-link">我该如何清扫指定房间？</a>。</p>
+<h3 class="rp-toc-include" id="dyad-设备"><a href="#dyad-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Dyad 设备</h3>
+<p>Roborock 干湿两用吸尘器目前通过 MQTT 连接暴露部分实体，因此当前依赖云端。</p>
+<h4 class="rp-toc-include" id="sensor-1"><a href="#sensor-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sensor</h4>
+<ul>
+<li>
+<p><strong>Status</strong></p>
+<ul>
+<li><strong>Description</strong>: 当前设备状态。通常表示当前正在执行的动作，例如 <code>drying</code> 或 <code>charging</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>Battery</strong></p>
+<ul>
+<li><strong>Description</strong>: 当前设备电量。</li>
+</ul>
+</li>
+<li>
+<p><strong>Filter time left</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离 Roborock 建议清洁/更换滤网还剩多少时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Brush time left</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离 Roborock 建议清洁/更换刷头还剩多少时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Error</strong></p>
+<ul>
+<li><strong>Description</strong>: 当前设备错误；如果没有错误，则显示 <code>None</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>Total cleaning time</strong></p>
+<ul>
+<li><strong>Description</strong>: 干湿两用吸尘器的累计清洁时长。</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="zeo-实体"><a href="#zeo-实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zeo 实体</h3>
+<p>Roborock Zeo One 当前通过 MQTT 连接暴露部分实体，因此目前依赖云端。</p>
+<h4 class="rp-toc-include" id="sensor-2"><a href="#sensor-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sensor</h4>
+<ul>
+<li>
+<p><strong>State</strong></p>
+<ul>
+<li><strong>Description</strong>: 洗衣机当前状态。例如 <code>washing</code> 或 <code>rinsing</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>Countdown</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离机器开始运行的倒计时。</li>
+</ul>
+</li>
+<li>
+<p><strong>Washing left</strong></p>
+<ul>
+<li><strong>Description</strong>: 距离洗衣结束还剩多少时间。</li>
+</ul>
+</li>
+<li>
+<p><strong>Error</strong></p>
+<ul>
+<li><strong>Description</strong>: Zeo 当前错误（如果有）。</li>
+</ul>
+</li>
+</ul>
+<h2 class="rp-toc-include" id="删除集成"><a href="#删除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除集成</h2>
+<p>此集成遵循标准删除流程，无需额外步骤。</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol>
+<h2 class="rp-toc-include" id="常见问题"><a href="#常见问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>常见问题</h2>
+<h3 class="rp-toc-include" id="我可以把-mi-home-app-与此集成一起使用吗"><a href="#我可以把-mi-home-app-与此集成一起使用吗" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我可以把 Mi Home App 与此集成一起使用吗？</h3>
+<p>不可以。此集成在设置时需要使用 Roborock App 中的信息，并通过 Roborock 协议与设备通信。您的吸尘器必须已同步到 Roborock App。</p>
+<h3 class="rp-toc-include" id="我可以阻止该设备访问互联网吗"><a href="#我可以阻止该设备访问互联网吗" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我可以阻止该设备访问互联网吗？</h3>
+<p>目前还不行。当吸尘器与互联网断开时，它会尝试断开 Wi-Fi 并不断重新连接，直到能够访问 Roborock 服务器。</p>
+<h3 class="rp-toc-include" id="支持哪些设备"><a href="#支持哪些设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持哪些设备？</h3>
+<p>如果您的设备可以添加到 Roborock App 中，那么通常就是受支持的。不过，一些较旧的吸尘器（例如 Roborock S5）必须通过 Mi Home App 连接，并可在 Home Assistant 中通过 <a href="/home-assistant/integrations/xiaomi_miio/index.html" class="rp-link">Xiaomi Miio</a> 集成进行设置。</p>
+<h3 class="rp-toc-include" id="未来会支持哪些功能"><a href="#未来会支持哪些功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>未来会支持哪些功能？</h3>
+<p>我们正在为核心集成增加更多功能。我们已经逆向分析出超过 <a href="https://python-roborock.readthedocs.io/en/latest/api_commands.html" target="_blank" rel="noopener noreferrer" class="rp-link">100 条命令</a>。目前文档仍较为基础，我们也希望用户帮助我们将其补充得更完整。以下是我们计划添加到 Home Assistant Core 的一些功能，感谢您的耐心等待。</p>
+<ul>
+<li>按房间选择性清扫</li>
+<li>底座控制</li>
+<li>手动遥控吸尘器</li>
+<li>错误、清扫时间、耗材等状态信息</li>
+<li>查看摄像头</li>
+<li>查看地图</li>
+</ul>
+<h3 class="rp-toc-include" id="how-can-i-clean-a-specific-room"><a href="#how-can-i-clean-a-specific-room" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我该如何清扫指定房间？</h3>
+<p>我们计划在未来简化这一流程，但目前仍需要多步操作。</p>
+<ol>
+<li>
+<p>先确保已在 Roborock App 中为房间命名；否则它们不会出现在调试日志中。</p>
+</li>
+<li>
+<p>前往 <a href="https://my.home-assistant.io/redirect/developer_call_service/?service=roborock.get_maps" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Developer tools</strong> &gt; <strong>Actions</strong> &gt; <strong>Roborock: Get Maps</strong></a>。将您的吸尘器选作实体。请注意，房间 ID 和名称只会针对当前选中的地图更新。</p>
+<ul>
+<li>
+<p><strong>Request</strong>: 您的请求应类似如下：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> roborock.get_maps</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> vacuum.s7_roborock</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</li>
+<li>
+<p><strong>Result</strong>: 您会得到类似如下的响应：</p>
+<div class="rp-codeblock language-json"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="json"><code><span class="line"><span style="color:var(--shiki-foreground)">vacuum.s</span><span style="color:var(--shiki-token-constant)">7</span><span style="color:var(--shiki-foreground)">_roborock:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  maps:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - flag: </span><span style="color:var(--shiki-token-constant)">0</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      name: Downstairs</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      rooms:</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">        &quot;16&quot;</span><span style="color:var(--shiki-foreground)">: Kitchen</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">        &quot;17&quot;</span><span style="color:var(--shiki-foreground)">: Living room</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</li>
+</ul>
+</li>
+<li>
+<p>返回 <a href="https://my.home-assistant.io/redirect/developer_call_service/?service=vacuum.send_command" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Developer tools</strong> &gt; <strong>Actions</strong> &gt; <strong>Vacuum: Send Command</strong></a>，然后将命令填为 <code>app_segment_clean</code>，并在 <code>segments</code> 中填入您想清扫的两位数房间 ID 列表。接着添加 <code>repeat</code>，并填入 1 到 3 之间的数字，用来指定这些区域要清扫几次。</p>
+</li>
+</ol>
+<p>示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> vacuum.send_command</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  command</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> app_segment_clean</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  params</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-keyword)">segments</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-constant)">22</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-constant)">23</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      repeat</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> vacuum.s7_roborock</span></span>
+<span class="line"></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<h3 class="rp-toc-include" id="我收到-invalid-或-no-user-agreement-错误但-app-中什么也没显示"><a href="#我收到-invalid-或-no-user-agreement-错误但-app-中什么也没显示" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我收到 invalid 或 no user agreement 错误，但 App 中什么也没显示</h3>
+<p>Roborock 服务器要求您先接受用户协议才能使用 API，这可能会在设置期间阻止 Home Assistant。此外，即便您之前已经接受过，Roborock 也可能会再次要求您重新确认用户协议。要让 Home Assistant 能使用 Roborock API，请执行以下步骤：</p>
+<ol>
+<li>打开 Roborock App。</li>
+<li>进入 <strong>Profile</strong> &gt; <strong>About Us</strong> &gt; <strong>User Agreement &amp; Privacy Policy</strong>。</li>
+<li>点击 <strong>Revoke authorization</strong>。</li>
+<li>重新登录并接受协议。</li>
+<li>重新加载 Roborock 集成！</li>
+</ol>
+<h3 class="rp-toc-include" id="集成提示无法连接我的吸尘器正在使用云-api或我遇到了网络问题"><a href="#集成提示无法连接我的吸尘器正在使用云-api或我遇到了网络问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>集成提示无法连接我的吸尘器、正在使用云 API，或我遇到了网络问题</h3>
+<p>此集成既能通过云 API 控制设备，也能通过本地 API 控制设备。如果本地 API 无法访问，它就会退回到云 API。我们建议尽量只使用本地 API，以帮助避免触发速率限制。</p>
+<p>修复此问题所需的具体步骤取决于您的网络环境。以下是一些通用排查建议：</p>
+<ol>
+<li>确保吸尘器可以通过 8883 端口访问外网。</li>
+<li>确保吸尘器可以通过 TCP 58867 和 UDP 58866 端口与 Home Assistant 实例通信。</li>
+<li>如果您使用了 Pi-Hole、AdGuard 或其他会修改 DNS 的工具，请确保吸尘器被加入例外名单。</li>
+<li>为吸尘器设置静态 IP。</li>
+<li>检查路由器管理页面。如果设备频繁掉线，您需要优先改善 Wi-Fi 网络质量。</li>
+</ol>
+<h3 class="rp-toc-include" id="我的设备每天凌晨-3-点左右会变为-unavailable该怎么解决"><a href="#我的设备每天凌晨-3-点左右会变为-unavailable该怎么解决" class="rp-header-anchor rp-link" aria-hidden="true">#</a>我的设备每天凌晨 3 点左右会变为 unavailable，该怎么解决？</h3>
+<p>每天夜里，吸尘器都会与互联网断开约一分钟，然后自动重新连接。在设备重新可达之前，集成会显示为 unavailable。这并不是集成本身的问题，而是集成对设备状态变化的正常反应。</p>
+<h3 class="rp-toc-include" id="集成提示未找到设备但我的账户里明明有设备"><a href="#集成提示未找到设备但我的账户里明明有设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>集成提示未找到设备，但我的账户里明明有设备</h3>
+<p>某些设备由于使用了不同于其他设备的协议，因此尚未获得支持。请确保您使用的是最新版本的 Home Assistant。</p>
+<h3 class="rp-toc-include" id="日志中出现-rate-limiting-相关信息我该怎么办"><a href="#日志中出现-rate-limiting-相关信息我该怎么办" class="rp-header-anchor rp-link" aria-hidden="true">#</a>日志中出现 rate limiting 相关信息，我该怎么办？</h3>
+<p>此集成所依赖的 Python 包内置了速率限制机制。这是为了避免您的实例向 Roborock 服务器发送过多请求，从而导致 IP 被封。最佳做法是先将该集成停用 24 小时。</p>
+<p>同时，也建议尽量找出在您环境中触发该错误的根本原因。一个常见原因是：有些用户写了脚本，一旦集成变为 unavailable 就自动重载。如果设备卡住并耗尽电量，系统就会频繁重载集成，从而触发速率限制。</p>
+<h3 class="rp-toc-include" id="添加集成时提示-region-不正确"><a href="#添加集成时提示-region-不正确" class="rp-header-anchor rp-link" aria-hidden="true">#</a>添加集成时提示 region 不正确</h3>
+<p>我们建议将区域设置为 <code>Auto</code>。如果由于您在多个区域拥有账户而导致此方法无效，请尝试以下步骤：</p>
+<ol>
+<li>如果您曾误在错误的 Roborock 服务器区域创建过账户，请使用 Roborock App 将其删除。</li>
+<li>您账户所在的 Roborock 服务器区域不一定与实际国家一致。设置集成时，您可以选择要登录的 Roborock 服务器区域，可选项有 US、EU、RU 和 CN；您可能需要尝试一个与预期不同的区域。大多数俄罗斯和中国以外的用户都位于 US 或 EU 服务器区域。</li>
+<li>请注意，App 中显示的 <code>Region</code> 实际上是您账户注册所在的国家，并不总是与集成所需的区域一致。</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#兼容性说明" class="rp-toc-item rp-link" title="兼容性说明" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">兼容性说明</span></a><a href="#先决条件" class="rp-toc-item rp-link" title="先决条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">先决条件</span></a><a href="#options" class="rp-toc-item rp-link" title="Options" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Options</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#支持的功能" class="rp-toc-item rp-link" title="支持的功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的功能</span></a><a href="#扫地机器人设备" class="rp-toc-item rp-link" title="扫地机器人设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">扫地机器人设备</span></a><a href="#vacuum" class="rp-toc-item rp-link" title="Vacuum" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Vacuum</span></a><a href="#image" class="rp-toc-item rp-link" title="Image" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Image</span></a><a href="#select" class="rp-toc-item rp-link" title="Select" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Select</span></a><a href="#binary-sensor" class="rp-toc-item rp-link" title="Binary sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Binary sensor</span></a><a href="#sensor" class="rp-toc-item rp-link" title="Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Sensor</span></a><a href="#time" class="rp-toc-item rp-link" title="Time" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Time</span></a><a href="#switch" class="rp-toc-item rp-link" title="Switch" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Switch</span></a><a href="#number" class="rp-toc-item rp-link" title="Number" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Number</span></a><a href="#button" class="rp-toc-item rp-link" title="Button" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Button</span></a><a href="#操作" class="rp-toc-item rp-link" title="操作" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">操作</span></a><a href="#dyad-设备" class="rp-toc-item rp-link" title="Dyad 设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Dyad 设备</span></a><a href="#sensor-1" class="rp-toc-item rp-link" title="Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Sensor</span></a><a href="#zeo-实体" class="rp-toc-item rp-link" title="Zeo 实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Zeo 实体</span></a><a href="#sensor-2" class="rp-toc-item rp-link" title="Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Sensor</span></a><a href="#删除集成" class="rp-toc-item rp-link" title="删除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">删除集成</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a><a href="#常见问题" class="rp-toc-item rp-link" title="常见问题" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">常见问题</span></a><a href="#我可以把-mi-home-app-与此集成一起使用吗" class="rp-toc-item rp-link" title="我可以把 Mi Home App 与此集成一起使用吗？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">我可以把 Mi Home App 与此集成一起使用吗？</span></a><a href="#我可以阻止该设备访问互联网吗" class="rp-toc-item rp-link" title="我可以阻止该设备访问互联网吗？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">我可以阻止该设备访问互联网吗？</span></a><a href="#支持哪些设备" class="rp-toc-item rp-link" title="支持哪些设备？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">支持哪些设备？</span></a><a href="#未来会支持哪些功能" class="rp-toc-item rp-link" title="未来会支持哪些功能？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">未来会支持哪些功能？</span></a><a href="#how-can-i-clean-a-specific-room" class="rp-toc-item rp-link" title="我该如何清扫指定房间？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">我该如何清扫指定房间？</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#我收到-invalid-或-no-user-agreement-错误但-app-中什么也没显示" class="rp-toc-item rp-link" title="我收到 invalid 或 no user agreement 错误，但 App 中什么也没显示" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">我收到 invalid 或 no user agreement 错误，但 App 中什么也没显示</span></a><a href="#集成提示无法连接我的吸尘器正在使用云-api或我遇到了网络问题" class="rp-toc-item rp-link" title="集成提示无法连接我的吸尘器、正在使用云 API，或我遇到了网络问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">集成提示无法连接我的吸尘器、正在使用云 API，或我遇到了网络问题</span></a><a href="#我的设备每天凌晨-3-点左右会变为-unavailable该怎么解决" class="rp-toc-item rp-link" title="我的设备每天凌晨 3 点左右会变为 unavailable，该怎么解决？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">我的设备每天凌晨 3 点左右会变为 unavailable，该怎么解决？</span></a><a href="#集成提示未找到设备但我的账户里明明有设备" class="rp-toc-item rp-link" title="集成提示未找到设备，但我的账户里明明有设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">集成提示未找到设备，但我的账户里明明有设备</span></a><a href="#日志中出现-rate-limiting-相关信息我该怎么办" class="rp-toc-item rp-link" title="日志中出现 rate limiting 相关信息，我该怎么办？" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">日志中出现 rate limiting 相关信息，我该怎么办？</span></a><a href="#添加集成时提示-region-不正确" class="rp-toc-item rp-link" title="添加集成时提示 region 不正确" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">添加集成时提示 region 不正确</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>
