@@ -78,12 +78,13 @@ layout: doc
 |--|--|--|
 | CN IM Hub | [![CN IM Hub](https://img.shields.io/badge/HACS-CN%20IM%20Hub-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=cn_im_hub&category=integration) | 支持国内常用即时通讯能力接入，适合消息通知与交互场景 |
 
-### 大语言模型
+### 大语言模型和AI
 
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | zhipuai | [![zhipuai](https://img.shields.io/badge/HACS-zhipuai-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Desmond-Dong&repository=zhipuai&category=integration) | 支持接入智谱清言等大模型，实现中文对话与问答能力 |
 | AI Hub | [![AI Hub](https://img.shields.io/badge/HACS-AI__Hub-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=ai_hub&category=integration) | 支持多种 AI 大模型平台（如智谱、硅基流动）集成，实现多轮对话、集成汉化，微信通知等功能 |
+| Claw Assistant | [![Claw Assistant](https://img.shields.io/badge/HACS-Claw%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=ha_claw&category=integration) | AI 聚合助手，支持多轮工具调用、多 Agent 级联、50+ 内置工具、技能系统、定时任务等功能 |
 
 
 ### 离家在家检测
