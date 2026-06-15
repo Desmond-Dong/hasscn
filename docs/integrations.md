@@ -44,6 +44,7 @@ layout: doc
 | AqaraGateway | [![AqaraGateway](https://img.shields.io/badge/HACS-AqaraGateway-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=niceboygithub&repository=AqaraGateway&category=integration) | 支持 Aqara 网关及子设备本地接入，适合米家/绿米生态用户 |
 | Midea Auto Cloud | [![Midea Auto Cloud](https://img.shields.io/badge/HACS-Midea%20Auto%20Cloud-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sususweet&repository=midea_auto_cloud&category=integration) | 支持通过美的云端接入美居设备，适用于美的/美居空调等设备，适合需要云接入能力的用户 |
 | VivoHomeBridge | [![VivoHomeBridge](https://img.shields.io/badge/HACS-VivoHomeBridge-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=vivo&repository=ha_vivohomebridge&category=integration) | 支持接入 vivo 智能家居生态设备，支持多种型号设备，适合国内用户 |
+| Heiman Home | [![Heiman Home](https://img.shields.io/badge/HACS-Heiman%20Home-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=heiman_home&category=integration) | 海曼智能家居云端接入，支持网关、传感器、开关、报警器等设备 |
 
 
 
@@ -136,6 +137,16 @@ layout: doc
 |--|--|--|
 | 飞牛 NAS | [![fn_nas](https://img.shields.io/badge/HACS-飞牛__nas-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=anxms&repository=fn_nas&category=integration) | 飞牛 NAS 设备集成，支持状态监控与管理|
 | 绿联 | [![iYan UGNAS](https://img.shields.io/badge/HACS-绿联__NAS-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=flamestsui&repository=iyan_ugnas&category=integration) | 绿联设备集成，支持状态监控与管理 |
+
+### 编辑器工具
+| 集成名称 | HACS 安装链接 | 相关说明 |
+|--|--|--|
+| Blueprint Studio | [![Blueprint Studio](https://img.shields.io/badge/HACS-Blueprint%20Studio-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=blueprint-studio&category=integration) | VS Code 风格配置编辑器，支持 YAML 语法高亮、多标签页、Git 版本控制、AI 辅助编码等功能 |
+
+### 前端卡片
+| 集成名称 | HACS 安装链接 | 相关说明 |
+|--|--|--|
+| HTML Card Pro | [![HTML Card Pro](https://img.shields.io/badge/HACS-HTML%20Card%20Pro-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=html-card-pro&category=plugin) | 高级 HTML 卡片组件，支持 AI 辅助设计、数据绑定、实时状态更新等功能 |
 
 ### 监控，门铃，门销
 
