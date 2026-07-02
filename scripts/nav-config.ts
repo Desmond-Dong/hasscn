@@ -41,8 +41,8 @@ export const globalNav = [
     link: '/QandA',
   },
   {
-    text: '测评专区',
-    link: '/evaluation/index',
+    text: "OHF roadmap汉化",
+    link: "/roadmap.html"
   },
   {
     text: '支持我',
