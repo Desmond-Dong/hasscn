@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magic Home - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Magic Home - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Magic Home 集成支持使用相同协议的多个品牌的开关、灯泡和控制器。如果您可以使用 Magic Home 应用程序或 Surp Life 应用程序控制设备，您的灯泡或控制器（例如 WiFi LED 控制器）很有可能与此集成配合使用。 本页属于 Home Assistant 中文文档。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Magic Home 集成支持使用相同协议的多个品牌的开关、灯泡和控制器。如果您可以使用 Magic Home 应用程序或 Surp Life 应用程序控制设备，您的灯泡或控制器（例如 WiFi LED 控制器）很有可能与此集成配合使用。 本页属于 Home Assistant 中文文档。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="magic-home"><a href="#magic-home" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Magic Home<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Magic Home</strong> 集成支持使用相同协议的多个品牌的开关、灯泡和控制器。如果您可以使用 Magic Home 应用程序或 Surp Life 应用程序控制设备，您的灯泡或控制器（例如 WiFi LED 控制器）很有可能与此集成配合使用。</p>
+<p>这种集成将为您的 LED 灯/灯带提供本地控制，并且可以配置为自动扫描您的网络以查找控制器，或者让您通过 IP 地址手动配置各个灯。</p>
+<p>灯泡示例：</p>
+<ul>
+<li><a href="https://www.magiclightbulbs.com/lightbulbs" target="_blank" rel="noopener noreferrer" class="rp-link">MagicLight Smart Bulbs</a> 或 <a href="https://www.amazon.com/gp/product/B081YJHHB1/" target="_blank" rel="noopener noreferrer" class="rp-link">Amazon</a></li>
+<li><a href="https://www.amazon.com/gp/product/B093Q83G7S/" target="_blank" rel="noopener noreferrer" class="rp-link">RGBCW Downlights</a></li>
+<li><a href="https://www.amazon.com/dp/product/B08CDS3N6H" target="_blank" rel="noopener noreferrer" class="rp-link">RGBCW Floodlights</a></li>
+</ul>
+<p>带条的控制器示例：</p>
+<ul>
+<li><a href="https://www.magiclightbulbs.com/strip-lights" target="_blank" rel="noopener noreferrer" class="rp-link">MagicLight Strip Lights</a> 或 <a href="https://www.amazon.com/gp/product/B08LPSS4J3/" target="_blank" rel="noopener noreferrer" class="rp-link">Amazon</a></li>
+</ul>
+<p>控制器示例：</p>
+<ul>
+<li><a href="https://www.amazon.com/gp/product/B07J5B3R5L/" target="_blank" rel="noopener noreferrer" class="rp-link">Single color</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07C1LN7FZ/" target="_blank" rel="noopener noreferrer" class="rp-link">RGB</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07J9QCQNN/" target="_blank" rel="noopener noreferrer" class="rp-link">RGBW</a></li>
+<li><a href="https://www.amazon.co.uk/gp/product/B09BMC4JNJ/" target="_blank" rel="noopener noreferrer" class="rp-link">RGBCW</a></li>
+<li><a href="https://www.amazon.com/gp/product/B01DY56N8U/" target="_blank" rel="noopener noreferrer" class="rp-link">RGB/W/CW</a></li>
+</ul>
+<p>可寻址控制器的示例：</p>
+<ul>
+<li><a href="https://www.amazon.com/gp/product/B09BMBSCRF/" target="_blank" rel="noopener noreferrer" class="rp-link">Addressable v3</a></li>
+</ul>
+<p>带条带的可寻址控制器示例：</p>
+<ul>
+<li><a href="https://www.amazon.com/gp/product/B07RLF7C86/" target="_blank" rel="noopener noreferrer" class="rp-link">Addressable v1</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07B7CQ2ZB/" target="_blank" rel="noopener noreferrer" class="rp-link">Addressable v2</a></li>
+</ul>
+<p>套接字示例：</p>
+<ul>
+<li><a href="https://www.magiclightbulbs.com/smart-plugs" target="_blank" rel="noopener noreferrer" class="rp-link">MagicLight Smart Plugs</a> 或 <a href="https://www.amazon.com/gp/product/B07XNBVVXV/" target="_blank" rel="noopener noreferrer" class="rp-link">Amazon</a></li>
+</ul>
+<p>这些设备至少以以下品牌销售：</p>
+<ul>
+<li>艾斯兰</li>
+<li><a href="http://allkeystech.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Allkeys</a></li>
+<li>阿波波</li>
+<li><a href="https://www.ariluxworldwide.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Arilux</a></li>
+<li>奥布里克</li>
+<li>贝伦尼斯</li>
+<li>BHGY</li>
+<li><a href="https://www.brizled.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Brizled</a></li>
+<li>文平</li>
+<li><a href="https://chichinlighting.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Chichin</a></li>
+<li>科莫伊达</li>
+<li>达拉丁</li>
+<li><a href="https://www.armacostlighting.com/" target="_blank" rel="noopener noreferrer" class="rp-link">DALS RGBW / Armacost Lighting / MyLED</a></li>
+<li>防暗</li>
+<li><a href="https://www.daybetter.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Daybetter</a></li>
+<li>鹿舞</li>
+<li>钻石</li>
+<li><a href="https://www.diodedynamics.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Diode Dynamics</a></li>
+<li><a href="https://www.fluxsmartlighting.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Flux LED</a></li>
+<li><a href="https://fvtled.com/" target="_blank" rel="noopener noreferrer" class="rp-link">FVTLED</a></li>
+<li>GEV LIG</li>
+<li>格悦雅之家</li>
+<li>GIDEALED</li>
+<li><a href="https://giderwel.com/" target="_blank" rel="noopener noreferrer" class="rp-link">GIDERWEL</a></li>
+<li>GMK</li>
+<li>戈德温</li>
+<li>客家电子</li>
+<li><a href="http://www.zengge.com/appkzd" target="_blank" rel="noopener noreferrer" class="rp-link">HaoDeng</a></li>
+<li><a href="https://www.heissner.de/" target="_blank" rel="noopener noreferrer" class="rp-link">Heissner</a></li>
+<li>HDDFL</li>
+<li><a href="https://dals.com/illume/" target="_blank" rel="noopener noreferrer" class="rp-link">illume RGBW</a></li>
+<li><a href="https://www.illumination-fx.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Illumination FX</a></li>
+<li>英达润</li>
+<li>iNextStation</li>
+<li><a href="https://www.koopower.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Koopower</a></li>
+<li>拉鲁默</li>
+<li>莱德网络</li>
+<li><a href="https://litewrx.com/" target="_blank" rel="noopener noreferrer" class="rp-link">LiteWRX</a></li>
+<li>莱托克斯</li>
+<li>魔法氛围</li>
+<li><a href="http://www.zengge.com/appkzd" target="_blank" rel="noopener noreferrer" class="rp-link">Magic Home</a></li>
+<li><a href="http://www.magichue.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Magic Hue</a></li>
+<li><a href="https://www.magiclightbulbs.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Magic Light</a></li>
+<li>米希尔</li>
+<li>莫韦莱</li>
+<li>内克斯勒克斯</li>
+<li>痴迷</li>
+<li>奥德克斯</li>
+<li>PH LED</li>
+<li>波波罗</li>
+<li><a href="https://pinstadium.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Pin Stadium Pinball Lights</a></li>
+<li>POV灯</li>
+<li><a href="https://proteam-me.com/" target="_blank" rel="noopener noreferrer" class="rp-link">PROTEAM Europe Pool Lights</a></li>
+<li><a href="https://www.rimikon.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Rimikon</a></li>
+<li>SMFX</li>
+<li><a href="https://fvtled.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Sumaote</a></li>
+<li><a href="https://superhome.com.cy/" target="_blank" rel="noopener noreferrer" class="rp-link">Superhome</a></li>
+<li><a href="http://www.zengge.com/newbrand" target="_blank" rel="noopener noreferrer" class="rp-link">SurpLife</a></li>
+<li><a href="https://www.superlightingled.com/" target="_blank" rel="noopener noreferrer" class="rp-link">SuperlightingLED</a></li>
+<li>斯维皮尔</li>
+<li>托莫克斯</li>
+<li>瓦南斯</li>
+<li>耶泰达</li>
+<li>YHW</li>
+<li><a href="http://www.zengge.com/sy" target="_blank" rel="noopener noreferrer" class="rp-link">Zengge</a></li>
+<li>赞伯</li>
+</ul>
+<p>:::注意配置
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。
+:::</p>
+<p>添加设备后，可以为它们配置以下列出的不同效果。可以通过导航到“设置”-&gt;“集成”中的集成设置并选择灯泡或控制器的“Magic Home”配置来访问这些设置。</p>
+<p><strong>自定义效果</strong><br/>
+可以输入 RGB 颜色列表来创建效果。可以使用下面的滑块调整效果速度。</p>
+<p><strong>自定义效果类型</strong><br/>
+这决定了每种颜色之间的过渡。</p>
+<h3 class="rp-toc-include" id="支持的型号"><a href="#支持的型号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的型号</h3>
+<p>以下模型已经过测试。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>型号</th><th>描述</th><th>麦克风</th><th>笔记</th></tr></thead><tbody><tr><td>0x01</td><td>0x01传统 RGB 控制器</td><td>没有</td><td>原始协议</td></tr><tr><td>0x03</td><td>0x03传统 CCT 控制器</td><td>没有</td><td>原始协议</td></tr><tr><td>0x04</td><td>0x04 UFO 控制器 RGBW</td><td>没有</td><td></td></tr><tr><td>0x06</td><td>0x06控制器 RGBW</td><td>没有</td><td></td></tr><tr><td>0x07</td><td>0x07控制器 RGBCW</td><td>没有</td><td></td></tr><tr><td>0x08</td><td>0x08带麦克风的 RGB 控制器</td><td>是的</td><td></td></tr><tr><td>0x09</td><td>0x09吸顶灯色温</td><td>没有</td><td></td></tr><tr><td>0x0E</td><td>落地灯 RGBCW</td><td>没有</td><td></td></tr><tr><td>0x10</td><td>0x10圣诞灯</td><td>没有</td><td></td></tr><tr><td>0x16</td><td>0x16磁光 CCT</td><td>没有</td><td></td></tr><tr><td>0x17</td><td>0x17磁力灯可调光</td><td>没有</td><td></td></tr><tr><td>0x1A</td><td>0x1A圣诞灯</td><td>没有</td><td></td></tr><tr><td>0x1C</td><td>0x1C台灯色温</td><td>没有</td><td></td></tr><tr><td>0x1E</td><td>0x1E吸顶灯 RGBCW</td><td>没有</td><td></td></tr><tr><td>0x21</td><td>0x21灯泡可调光</td><td>没有</td><td></td></tr><tr><td>0x25</td><td>0x25控制器 RGB/WW/CW</td><td>没有</td><td>支持RGB、RGBW、RGBWW、CW、DIM</td></tr><tr><td>0x33</td><td>0x33控制器 RGB</td><td>没有</td><td></td></tr><tr><td>0x35</td><td>0x35灯泡 RGBCW</td><td>没有</td><td></td></tr><tr><td>0x41</td><td>0x41可调光控制器</td><td>没有</td><td></td></tr><tr><td>0x44</td><td>0x44灯泡 RGBW</td><td>没有</td><td></td></tr><tr><td>0x52</td><td>0x52灯泡色温</td><td>没有</td><td></td></tr><tr><td>0x54</td><td>0x54 RGBW筒灯</td><td>没有</td><td></td></tr><tr><td>0x62</td><td>0x62控制器 CCT</td><td>没有</td><td></td></tr><tr><td>0x93</td><td>0x93切换 1 通道</td><td>没有</td><td></td></tr><tr><td>0x97</td><td>0x97插座</td><td>没有</td><td></td></tr><tr><td>0xA1</td><td>0xA1可寻址 v1</td><td>没有</td><td>支持UCS1903、SM16703、WS2811、WS2812B、SK6812、INK1003、WS2801、LB1914</td></tr><tr><td>0xA2</td><td>0xA2可寻址 v2</td><td>是的</td><td>支持UCS1903、SM16703、WS2811、WS2811B、SK6812、INK1003、WS2801、WS2815、APA102、TM1914、UCS2904B</td></tr><tr><td>0xA3</td><td>0xA3可寻址 v3</td><td>是的</td><td>支持 WS2812B、SM16703、SM16704、WS2811、UCS1903、SK6812、SK6812RGBW (WS2814)、INK1003、UCS2904B</td></tr><tr><td>0xA4</td><td>0xA4可寻址 v4</td><td>没有</td><td>支持 WS2812B、SM16703、SM16704、WS2811、UCS1903、SK6812、SK6812RGBW (WS2814)、INK1003、UCS2904B</td></tr><tr><td>0xA6</td><td>0xA6可寻址 v6</td><td>是的</td><td>支持 WS2812B、SM16703、SM16704、WS2811、UCS1903、SK6812、SK6812RGBW (WS2814)、INK1003、UCS2904B</td></tr><tr><td>0xA7</td><td>0xA7可寻址 v7</td><td>是的</td><td>支持 WS2812B、SM16703、SM16704、WS2811、UCS1903、SK6812、SK6812RGBW (WS2814)、INK1003、UCS2904B</td></tr><tr><td>0xE1</td><td>0xE1吸顶灯色温</td><td>没有</td><td></td></tr><tr><td>0xE2</td><td>0xE2吸顶灯辅助</td><td>没有</td><td>不支持辅助开关</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="未经测试的模型"><a href="#未经测试的模型" class="rp-header-anchor rp-link" aria-hidden="true">#</a>未经测试的模型</h3>
+<p>以下模型尚未经过测试，但可能有效。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>型号</th><th>描述</th><th>麦克风</th><th>笔记</th></tr></thead><tbody><tr><td>0x02</td><td>0x02传统调光控制器</td><td>没有</td><td>原始协议，已停产</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="不支持的型号"><a href="#不支持的型号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>不支持的型号</h3>
+<p>以下型号已确认不受支持。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>型号</th><th>描述</th><th>麦克风</th><th>笔记</th></tr></thead><tbody><tr><td>0x18</td><td>0x18植物生长灯</td><td>没有</td><td></td></tr><tr><td>0x19</td><td>0x19带 2 个 USB 的插座</td><td>没有</td><td></td></tr><tr><td>0x1B</td><td>0x1B香薰香薰灯</td><td>没有</td><td></td></tr><tr><td>0x1D</td><td>0x1D补光</td><td>没有</td><td></td></tr><tr><td>0x94</td><td>0x94开关 1c 瓦</td><td>没有</td><td></td></tr><tr><td>0x95</td><td>0x95切换 2 通道</td><td>没有</td><td></td></tr><tr><td>0x96</td><td>0x96切换 4 通道</td><td>没有</td><td></td></tr><tr><td>0xD1</td><td>0xD1数字时间灯</td><td>没有</td><td></td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h3>
+<p>如果条带控制器设备在调整颜色和效果期间无法保持 WiFi 或离线，升级到更高安培数的电源通常可以解决任何稳定性问题。</p>
+<h3 class="rp-toc-include" id="效果"><a href="#效果" class="rp-header-anchor rp-link" aria-hidden="true">#</a>效果</h3>
+<p>Magic Home 灯提供了许多其他照明套件中不包含的效果。这些可以从前端选择，或在 <code>light.turn_on</code> 命令的效果字段中发送。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>效果名称</th><th>描述</th></tr></thead><tbody><tr><td><code>colorloop</code></td><td>顺利过渡穿过彩虹。</td></tr><tr><td><code>colorjump</code></td><td>跳跃七种不同的彩虹颜色。</td></tr><tr><td><code>colorstrobe</code></td><td>循环选通每种彩虹颜色。</td></tr><tr><td><code>red_fade</code>、<code>green_fade</code>、<code>blue_fade</code>、<code>yellow_fade</code>、<code>cyan_fade</code>、<code>purple_fade</code>、<code>white_fade</code></td><td>在效果名称中所示的颜色和黑色之间淡入淡出。</td></tr><tr><td><code>rg_cross_fade</code></td><td>在红色和绿色之间渐变。</td></tr><tr><td><code>rb_cross_fade</code></td><td>在红色和蓝色之间渐变。</td></tr><tr><td><code>gb_cross_fade</code></td><td>在绿色和蓝色之间渐变。</td></tr><tr><td><code>red_strobe</code>、<code>green_strobe</code>、<code>blue_strobe</code>、<code>yellow_strobe</code>、<code>cyan_strobe</code>、<code>purple_strobe</code>、<code>white_strobe</code></td><td>选通效果名称指示的颜色。</td></tr><tr><td><code>random</code></td><td>通过选择 R、G 和 B 的随机值来选择随机颜色。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="自定义效果---动作-flux_ledset_custom_effect"><a href="#自定义效果---动作-flux_ledset_custom_effect" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自定义效果 - 动作 <code>flux_led.set_custom_effect</code></h3>
+<p>该集成提供了自定义操作，使您能够将灯光设置为自定义灯光效果。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>要设置效果的 LED 灯的实体 ID。</td></tr><tr><td><code>colors</code></td><td>要在效果中进行过渡的 RGB 颜色列表。 （最多 16 个，必填）</td></tr><tr><td><code>speed_pct</code></td><td>效果的速度，以 % 为单位（0-100。默认 50）</td></tr><tr><td><code>transition</code></td><td>您想要的过渡效果。有效选项为 <code>gradual</code>、<code>jump</code> 或 <code>strobe</code>。 （默认<code>gradual</code>）</td></tr></tbody></table></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)">#Example action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.led_strip</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">colors</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - [</span><span style="color:var(--shiki-token-constant)">255</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - [</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)">255</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - [</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)">255</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">speed_pct</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 80</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">transition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;jump&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="设置区域---操作-flux_ledset_zones"><a href="#设置区域---操作-flux_ledset_zones" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置区域 - 操作 <code>flux_led.set_zones</code></h3>
+<p>可寻址 v3 (0xA3) 型号允许为每个区域设置颜色效果。每个区域的长度是每段的像素数除以颜色数。如果设备已关闭，设置区域将不会将其打开。需要单独调用 <code>light.turn_on</code> 才能打开设备。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>要设置效果的 LED 灯的实体 ID。</td></tr><tr><td><code>colors</code></td><td>每个区域的颜色列表 (RGB)。 （最多 2048 种颜色）</td></tr><tr><td><code>speed_pct</code></td><td>效果的速度，以 % 为单位（0-100。默认 50）</td></tr><tr><td><code>effect</code></td><td>你想要的效果。有效选项为 <code>static</code>、<code>running_water</code>、<code>strobe</code>、<code>jump</code> 或 <code>breathing</code>。 （默认<code>static</code>）</td></tr></tbody></table></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)">#Example action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> flux_led.set_zones</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_id</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">light.addressable_v3_8e2f7f</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">light.addressable_v3_8ebdeb</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  colors</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - [</span><span style="color:var(--shiki-token-constant)">255</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 0</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - [</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 255</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 0</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - [</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 255</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - [</span><span style="color:var(--shiki-token-constant)">255</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 255</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 255</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  speed_pct</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 80</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="设置音乐模式---操作-flux_ledset_music_mode"><a href="#设置音乐模式---操作-flux_ledset_music_mode" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置音乐模式 - 操作 <code>flux_led.set_music_mode</code></h3>
+<p>带 MIC (0x08)、Addressable v2 (0xA2) 和 Addressable v3 (0xA3) 型号的 RGB 具有内置麦克风，具有多种音乐模式设置。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>描述</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>要设置效果的 LED 灯的实体 ID。</td></tr><tr><td><code>sensitivity</code></td><td>麦克风灵敏度（0-100）</td></tr><tr><td><code>brightness</code></td><td>灯光亮度（0-100）</td></tr><tr><td><code>light_screen</code></td><td>二维像素的光屏模式（仅限可寻址型号）</td></tr><tr><td><code>effect</code></td><td>效果（可寻址型号为 1-16，带 MIC 的 RGB 型号为 0-3）</td></tr><tr><td><code>foreground_color</code></td><td>前景 RGB 颜色</td></tr><tr><td><code>background_color</code></td><td>背景 RGB 颜色（仅限可寻址型号）</td></tr></tbody></table></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)">#Example action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> flux_led.set_music_mode</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_id</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">light.addressable_v3_8e2f7f</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">light.addressable_v3_8ebdeb</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  sensitivity</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 100</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  brightness</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 100</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  effect</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 2</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  light_screen</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  background_color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-foreground)"> [</span><span style="color:var(--shiki-token-constant)">0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 255</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 0</span><span style="color:var(--shiki-foreground)">]</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  foreground_color</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-foreground)"> [</span><span style="color:var(--shiki-token-constant)">255</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 0</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-constant)"> 0</span><span style="color:var(--shiki-foreground)">]</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#支持的型号" class="rp-toc-item rp-link" title="支持的型号" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">支持的型号</span></a><a href="#未经测试的模型" class="rp-toc-item rp-link" title="未经测试的模型" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">未经测试的模型</span></a><a href="#不支持的型号" class="rp-toc-item rp-link" title="不支持的型号" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">不支持的型号</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#效果" class="rp-toc-item rp-link" title="效果" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">效果</span></a><a href="#自定义效果---动作-flux_ledset_custom_effect" class="rp-toc-item rp-link" title="自定义效果 - 动作 flux_led.set_custom_effect" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自定义效果 - 动作 <code>flux_led.set_custom_effect</code></span></a><a href="#设置区域---操作-flux_ledset_zones" class="rp-toc-item rp-link" title="设置区域 - 操作 flux_led.set_zones" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">设置区域 - 操作 <code>flux_led.set_zones</code></span></a><a href="#设置音乐模式---操作-flux_ledset_music_mode" class="rp-toc-item rp-link" title="设置音乐模式 - 操作 flux_led.set_music_mode" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">设置音乐模式 - 操作 <code>flux_led.set_music_mode</code></span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

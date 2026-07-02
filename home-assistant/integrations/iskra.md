@@ -1,0 +1,68 @@
+# iskra
+
+The [Iskra](https://www.iskra.eu/) integration allows you to connect Iskra energy meters and power quality analyzers to Home Assistant. Data is polled using Modbus TCP or the Iskra Smart Gateway's REST API.
+
+## Supported devices
+
+This integration supports Iskra's devices, which should not be confused with Iskraemeco, another manufacturer of energy meters commonly used by electrical distributors for billing purposes.
+
+### Energy meters
+
+Most Iskra's DIN rail mountable energy meters support Modbus RTU over RS485 and IR. To integrate them, you will need a Modbus TCP gateway or Iskra's Smart Gateway:
+
+* Impact series ([IE38XX / IE14XX](https://www.iskra.eu/en/Iskra-Energy-meters/))
+* WM series ([WM3XX / WM1XX](https://www.iskra.eu/en/Iskra-Energy-meters/))
+
+### Power quality analyzers
+
+These devices typically support Ethernet connections and use Modbus TCP for data polling:
+
+* iMT/MT series ([MTXXX / iMTXXX](https://www.iskra.eu/en/NEW_SERIES_Universal_measuring_devices_/))
+* iMC/MC series ([MCXXX / iMCXXX](https://www.iskra.eu/en/NEW_SERIES_Universal_measuring_devices_/))
+
+## Configuration options
+
+There are two ways to configure your devices with Home Assistant:
+
+* [Using a Smart Gateway with REST API](#smart-gateway-with-rest-api)
+* [Using a Modbus TCP connection](#modbus-tcp-connection)
+
+### Smart Gateway with REST API
+
+If your device supports Modbus RTU over RS485/IR, you can use Iskra's Smart Gateway to connect them via the REST API:
+
+* **Smart Gateway**: Connect your devices to the Smart Gateway and add your devices to the Smart Gateway's configuration. It's also recommended to set a static IP on your smart gateway.
+* **Home Assistant**: Add the Iskra integration, enter the Smart Gateway's **IP address**, and select **RestAPI** as the connection type within the Home Assistant integration. If authentication is required, Home Assistant will prompt you to enter the Smart Gateway's **credentials**. All devices configured on the Smart Gateway will be automatically added to your Home Assistant.
+
+### Modbus TCP connection
+
+If your device supports a direct internet connection, such as PQ meters (iMC/MC series/ iMT/MT series usually), you can use Modbus TCP:
+
+* **Device**: Find your device using the [MiQen](https://www.iskra.si/sl/Programska-oprema/MiQen/) software and configure it to use a static IP.
+* **Home Assistant**: Add the Iskra integration, enter the device's **IP address**, and select **Modbus TCP** as the connection type within the Home Assistant integration. Home Assistant will prompt you to enter the Modbus TCP port and Modbus address of your device.
+
+:::note 配置
+此集成可通过 UI 配置。前往 **设置 > 设备与服务** 添加。
+:::
+
+## Sensors
+
+The integration provides detailed information about power, current, and voltage for each phase. The data is updated every minute.
+
+| Name                     | Unit         | Description                                            |
+| ------------------------ | ------------ | ------------------------------------------------------ |
+| total\_active\_power       | W            | Total active power                                     |
+| total\_reactive\_power     | var          | Total reactive power                                   |
+| total\_apparent\_power     | VA           | Total apparent power                                   |
+| phase1\_power             | W            | Phase 1 active power                                   |
+| phase2\_power             | W            | Phase 2 active power                                   |
+| phase3\_power             | W            | Phase 3 active power                                   |
+| phase1\_voltage           | V            | Phase 1 voltage                                        |
+| phase2\_voltage           | V            | Phase 2 voltage                                        |
+| phase3\_voltage           | V            | Phase 3 voltage                                        |
+| phase1\_current           | A            | Phase 1 current                                        |
+| phase2\_current           | A            | Phase 2 current                                        |
+| phase3\_current           | A            | Phase 3 current                                        |
+| frequency                | Hz           | Frequency                                              |
+| non\_resettable\_counter\_x | Wh/varh/VAh | Non-resettable energy counters as configured on device |
+| resettable\_counter\_x     | Wh/varh/VAh | Resettable energy counters as configured on device     |

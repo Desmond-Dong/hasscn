@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2024.3：像 Hot 一样拖放！🎉 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="2024.3：像 Hot 一样拖放！🎉 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="全新的 Sections 视图支持在仪表盘中拖放，启动速度提升一倍以上！还可在仪表盘中用用户输入运行脚本、查看单个设备的全新能耗图表、获得 Assist 新句子，以及在模板中翻译状态等等！">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="全新的 Sections 视图支持在仪表盘中拖放，启动速度提升一倍以上！还可在仪表盘中用用户输入运行脚本、查看单个设备的全新能耗图表、获得 Assist 新句子，以及在模板中翻译状态等等！">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03/social.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-section-example.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-example-dashboard.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-sections.gif"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/mdi-edit.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-cards.gif"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03/individual-devices-usage.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03/new-assist-commands.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2024-03/home-assistant-cloud-disable-remove-activation.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item rp-hover-group__item--active" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客首页</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-03-04-release-20263.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.3: 大扫除</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-02-24-heiman-joins-works-with-home-assistant.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Heiman 加入 WWHa</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-02-04-release-20262.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.2: 家，甜蜜的概览</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-01-07-release-20261.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.1: 家就是仪表盘所在</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-12-17-music-assistant-2-7.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Music Assistant 2.7</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-12-03-release-202512.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.12: 触发节日</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-11-05-release-202511.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.11: 选择、自动化和派</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-10-01-release-202510.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.10: 撤销、重做</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-09-17-home-assistant-turns-12.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Home Assistant 12 岁</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="20243像-hot-一样拖放"><a href="#20243像-hot-一样拖放" class="rp-header-anchor rp-link" aria-hidden="true">#</a>2024.3：像 Hot 一样拖放！🎉<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><a href="/home-assistant/integrations/#版本/2024.3" class="rp-link"><img src="/home-assistant/images/blog/2024-03/social.png" style="border:0;box-shadow:none"/></a></p>
+<p>Home Assistant Core 2024.3！🎉</p>
+<p>是的，你没看错标题！我对此非常兴奋。已经是
+谈论了很多年......我保证这是真的：</p>
+<p><strong>仪表盘拖放功能终于来了！ 🎉</strong></p>
+<p>仪表盘部分的第一个实验版本支持拖放。
+这对 Home Assistant 来说是一次巨大飞跃，也是一个更重要的里程碑！</p>
+<p>但不要被这些龙与地下城蒙蔽了双眼；还有更多！</p>
+<p>Assist 的新意图（我终于可以告诉我的吸尘器开始清洁！），使用
+来自仪表盘的脚本输入/字段，以及个人的新能量图
+设备。而这只是冰山一角！</p>
+<p>享受发布！</p>
+<p>../Frenck</p>
+<p>PS：非常感谢并感谢 <a href="https://github.com/bramkragten" target="_blank" rel="noopener noreferrer" class="rp-link">@bramkragten</a> 和 <a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">@balloob</a> 的组织
+运行测试版以及所有帮助制作这些发布说明的人
+发生在我缺席这个测试期间。 🥰</p>
+<!-- -->
+<ul>
+<li><a href="#a-new-experimental-sections-view" class="rp-link">新的实验剖面视图</a></li>
+<li><a href="#drag-and-drop-rearrangement-of-%E5%8D%A1%E7%89%87-and-sections" class="rp-link">拖放动作和部分的重新排列！</a></li>
+<li><a href="#running-%E8%84%9A%E6%9C%AC-from-your-%E4%BB%AA%E8%A1%A8%E7%9B%98-with-user-input" class="rp-link">通过用户输入从仪表盘运行脚本</a></li>
+<li><a href="#new-energy-graph-for-individual-devices" class="rp-link">单个设备的新能源图</a></li>
+<li><a href="#new-sentences-for-assist" class="rp-link">辅助新句子</a></li>
+<li><a href="#disabling-the-remote-activation-of-the-home-assistant-remote-ui" class="rp-link">禁用 Home Assistant 远程用户界面的远程激活</a></li>
+<li><a href="#translating-%E7%8A%B6%E6%80%81-in-your-templates" class="rp-link">翻译模板中的状态</a></li>
+<li><a href="#home-assistant-boots-twice-as-fast" class="rp-link">Home Assistant启动速度提高两倍</a></li>
+<li><a href="#other-noteworthy-changes" class="rp-link">其他值得注意的变化</a></li>
+<li><a href="#new-integrations" class="rp-link">新集成</a></li>
+<li><a href="#integrations-now-available-to-set-up-from-the-ui" class="rp-link">现在可以从 UI 设置集成</a></li>
+<li><a href="#%E5%8F%91%E5%B8%83-202431---march-14" class="rp-link">发布 2024.3.1 - 3 月 14 日</a></li>
+<li><a href="#%E5%8F%91%E5%B8%83-202432---march-22" class="rp-link">发布 2024.3.2 - 3 月 22 日</a></li>
+<li><a href="#%E5%8F%91%E5%B8%83-202433---march-22" class="rp-link">发布 2024.3.3 - 3 月 22 日</a></li>
+<li><a href="#need-help-join-the-community" class="rp-link">需要帮助吗？加入社区！</a></li>
+<li><a href="#backward-incompatible-changes" class="rp-link">向后不兼容的更改</a></li>
+<li><a href="#all-changes" class="rp-link">所有更改</a></li>
+</ul>
+<p>不要忘记<a href="https://www.youtube.com/watch?v=Jxup-fKFpfs" target="_blank" rel="noopener noreferrer" class="rp-link">加入我们在 YouTube 上的发布派对直播</a>
+2024 年 3 月 6 日，格林尼治标准时间 20:00/太平洋标准时间 12:00/欧洲中部时间 21:00！</p>
+<p><lite-youtube videoid="Jxup-fKFpfs" videotitle="Home Assistant 2024.3 发布 Party"></lite-youtube></p>
+<h2 class="rp-toc-include" id="全新的实验性-sections-视图"><a href="#全新的实验性-sections-视图" class="rp-header-anchor rp-link" aria-hidden="true">#</a>全新的实验性 Sections 视图</h2>
+<p>我们的仪表盘目前提供三种视图布局类型：<a href="/home-assistant/dashboards/panel/index.html" class="rp-link">面板</a>、<a href="/home-assistant/dashboards/sidebar/index.html" class="rp-link">侧边栏</a> 和 <a href="/home-assistant/dashboards/masonry/index.html" class="rp-link">Masonry</a>。过去一年里，我们一直在研究如何让仪表盘更容易定制、也更容易使用，而我们意识到现有布局并不适合这个目标。特别是，拖放式重新排列卡片与 Masonry 布局并不能很好地配合。</p>
+<p>我们提出了一些解决方案，我们想分享的第一件事
+与您一起的是一种称为“部分”的新视图布局类型。</p>
+<p>Home Assistant 仪表盘通常信息量很大。用户经常会放入几十个按钮、开关、图表、指示器等卡片。</p>
+<p class="img">
+    <img width="66%" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-section-example.png" alt="Example of a 仪表盘 section"/>
+    仪表盘部分示例
+</p>
+<p>通过将卡片分组为“分区”，你可以减少需要逐一扫描的项目数量。
+当你寻找某个特定的动作时需要仔细浏览，因为你会
+能够先查找相关的组标题，然后将范围缩小到
+扫描该特定组以获取信息。</p>
+<p>通过将一个部分中的关系打包到具有固定列数的网格中，
+截面内的相对位置不受
+屏幕尺寸发生变化，因此保留了亮度的空间记忆，
+带来更快、更轻松的体验。</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/sections-example-dashboard.png" alt="A fully populated 仪表盘 in Sections view layout"/>
+    部分视图布局中完全填充的仪表盘
+</p>
+<p>新剖面视图类型中的布局全部对齐在整齐的网格中，以确保
+当屏幕尺寸变化时，它们的位置的一致性和可预测性。
+目前，我们对三个调整位置进行了重新设计以适应网格：
+<a href="/home-assistant/dashboards/tile/index.html" class="rp-link">瓷砖</a>、<a href="/home-assistant/dashboards/sensor/index.html" class="rp-link">传感器</a>、
+和<a href="/home-assistant/dashboards/button/index.html" class="rp-link">按钮</a> 响应。这些动作将占据右侧
+网格中的空间量，而其他关联将占据整个宽度
+目前默认的一个部分。此外，我们还调整了我们的
+“添加调整”对话框默认推荐平铺调整
+视图类型正在使用中。</p>
+<p>:::警告
+新的部分视图是实验性的！请勿在其上构建您的日常仪表盘！我们提前发布此内容是为了收集您的反馈。
+:::</p>
+<p>要开始使用新的剖面视图类型，请在您的
+仪表盘并选择 <strong>Sections (experimental)</strong> 作为视图类型。
+我们目前还无法迁移您当前的仪表盘。</p>
+<p>更多信息，请查看我们关于新产品的博客文章
+系列<a href="/home-assistant/blog/2024/03/04/dashboard-chapter-1/" class="rp-link">家庭认可的仪表盘：第一章</a>。</p>
+<p>了不起的工作！谢谢<a href="https://github.com/piitaya" target="_blank" rel="noopener noreferrer" class="rp-link">保罗</a>，
+<a href="https://github.com/matthiasdebaat" target="_blank" rel="noopener noreferrer" class="rp-link">马蒂亚斯</a>,
+还有<a href="https://github.com/madelena" target="_blank" rel="noopener noreferrer" class="rp-link">玛德琳娜</a>！</p>
+<h2 class="rp-toc-include" id="拖放式重新排列动作和部分"><a href="#拖放式重新排列动作和部分" class="rp-header-anchor rp-link" aria-hidden="true">#</a>拖放式重新排列动作和部分！</h2>
+<p>哇！终于！星星已经对齐，我们的实验性拖放
+仪表盘功能终于来了！ 🥲</p>
+<p>使用新的剖面视图类型，我们终于可以实现一种排列方式
+通过拖放手势直观且可预测的交互和部分
+以及如何在创建易于操作的仪表盘时重新排列关联
+导航并记住。您将不再需要祈祷和猜测反应在哪里
+当他们改变订单时就会着陆！</p>
+<h3 class="rp-toc-include" id="如何拖放"><a href="#如何拖放" class="rp-header-anchor rp-link" aria-hidden="true">#</a>如何拖放</h3>
+<p>当您的仪表盘处于编辑模式时：</p>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-sections.gif" alt="Rearranging sections with drag-and-drop"/>
+    通过拖放重新排列部分
+</p>
+<ul>
+<li>要重新排列部分，请点击并按住
+<img height="28px" src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/mdi-edit.png" alt="Edit icon"/>
+<strong>移动</strong>手柄，然后将光标或手指移向所需的位置
+位置。其他部分将移开以避开所选位置
+部分将会下降。</li>
+</ul>
+<p class="img">
+    <img src="/home-assistant/images/blog/2024-03-dashboard-chapter-1/drag-and-drop-cards.gif" alt="Rearranging 卡片 with drag-and-drop"/>
+    通过拖放重新排列部分
+</p>
+<ul>
+<li>要重新排列调节，请点击并按住调节上的任意位置，然后移动您的调节器
+将光标或手指移向您想要的位置。</li>
+</ul>
+<p>您不喜欢指令如此简短吗？简单 FTW！ 🦄再次感谢<a href="https://github.com/piitaya" target="_blank" rel="noopener noreferrer" class="rp-link">保罗</a>,
+<a href="https://github.com/matthiasdebaat" target="_blank" rel="noopener noreferrer" class="rp-link">马蒂亚斯</a>,
+还有<a href="https://github.com/madelena" target="_blank" rel="noopener noreferrer" class="rp-link">玛德琳娜</a>！</p>
+<h2 class="rp-toc-include" id="使用用户输入从仪表盘运行脚本"><a href="#使用用户输入从仪表盘运行脚本" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用用户输入从仪表盘运行脚本</h2>
+<p>在 Home Assistant 中，您可以捕捉一系列动作
+以及以可重用的方式进行选择。 脚本非常强大，因为它们可以
+有输入字段，允许您在脚本运行时发送数据。</p>
+<p>脚本字段可以在脚本编辑器中定义，并在调用脚本时显示
+自动化中的脚本。在本次发布中，脚本字段将可用
+在仪表盘上点击脚本时会出现更多信息对话框。</p>
+<p>这允许您提供输入字段并运行脚本，解锁
+全新的可能性维度。</p>
+<p><lite-youtube videoid="Ulkl1L8F1L4" videotitle="Calling 脚本 from the 仪表盘"></lite-youtube></p>
+<p>为了配合这一新功能，我们创建了两个蓝图来帮助您
+开始在仪表盘上使用脚本：</p>
+<p><strong>公告消息</strong>：此蓝图允许您为以下内容创建公告脚本
+您的仪表盘预先配置为特定的媒体播放器和文本转语音
+发动机。激活后，它将询问用户播放消息。</p>
+<p><strong>Add to to-do list</strong>: This blueprint allows you to create a 脚本 to add an
+预先配置到特定待办事项列表的待办事项列表中的项目。当激活时，
+它会询问用户要添加的项目。</p>
+<h2 class="rp-toc-include" id="个人设备新能源图"><a href="#个人设备新能源图" class="rp-header-anchor rp-link" aria-hidden="true">#</a>个人设备新能源图</h2>
+<p>深入研究能源数据是一种非常有趣的方法，可以找到减少能源消耗的方法
+您家庭的能源使用和环境足迹。 🌱</p>
+<p>缺少的砖块之一是查看能源消耗的能力
+随着时间的推移，个人设备的数量。感谢 <a href="https://github.com/karwosts" target="_blank" rel="noopener noreferrer" class="rp-link">@karwosts</a>，我们有了
+能源仪表盘上的全新图表提供了这种见解！</p>
+<p>使用这个新图表，您现在可以轻松找出哪些设备负责
+随着时间的推移，您的能源使用量的哪一部分。</p>
+<img class="no-shadow" src="/home-assistant/images/blog/2024-03/individual-devices-usage.png" alt="Screenshot showing the new energy stacked bar graph of individual 设备 over time."/>
+<p>例如，在上图中，很容易看出洗碗机
+负责早上的峰值，烤箱负责晚上的峰值。</p>
+<h2 class="rp-toc-include" id="协助的新句子"><a href="#协助的新句子" class="rp-header-anchor rp-link" aria-hidden="true">#</a>协助的新句子</h2>
+<p><a href="/home-assistant/voice_control/index.html" class="rp-link">协助</a>，我们的私人语音助手，这个月学到了一些技巧。</p>
+<p>添加了对阀门的支持。您现在可以要求Assistance调整位置
+阀门，或者只是完全打开或关闭阀门。</p>
+<p>此外，还扩展了遮盖支撑，以支持对位置的控制
+您的设备。目前，大多数语言仅支持单个用例
+起点。通过定位单个设备来设置其位置
+姓名：</p>
+<blockquote>
+<p>将窗帘位置设置为 80%</p>
+</blockquote>
+<p>我们正在努力扩大用例覆盖范围以设定位置
+多个设备或完整区域，类似于可能的情况
+开放句和封闭句。</p>
+<img class="no-shadow" src="/home-assistant/images/blog/2024-03/new-assist-commands.png" alt="Screenshot showing a few of the new Assist commands."/>
+<p>下一个新技巧可以被视为错误修复：直到今天还没有
+可通过语音启动或停止吸尘器；现在可以了！协助知道
+如何启动吸尘器并将其放回底座。这是一些例子
+句子，如果你有一个名为 Dusty 的吸尘器清洁工：</p>
+<blockquote>
+<p>开始尘土飞扬</p>
+</blockquote>
+<blockquote>
+<p>将达斯蒂送回基地</p>
+</blockquote>
+<p>最大的变化是媒体播放器。 Assist 现在可以暂停播放，
+恢复播放，跳到下一个媒体，并设置媒体播放器的音量！请注意，目前这些句子仅限于针对单个
+设备名称，例如：</p>
+<blockquote>
+<p>跳至电视上的下一首歌曲</p>
+</blockquote>
+<p>我们正在积极致力于扩展这些新意图的逻辑，以允许
+您可以定位目标区域并仅影响所需的媒体播放器。</p>
+<h2 class="rp-toc-include" id="禁用-home-assistant-远程用户界面的远程激活"><a href="#禁用-home-assistant-远程用户界面的远程激活" class="rp-header-anchor rp-link" aria-hidden="true">#</a>禁用 Home Assistant 远程用户界面的远程激活</h2>
+<p>如果您使用的是【Home Assistant云】(<a href="https://nabucasa.com)%EF%BC%8C%E6%82%A8%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE" target="_blank" rel="noopener noreferrer" class="rp-link">https://nabucasa.com)，您可以访问</a>
+使用远程 UI 功能远程访问您的 Home Assistant 实例。</p>
+<p>假设此功能由于某种原因被禁用，而您当前没有
+在家里。在这种情况下，您可以通过以下方式远程启用远程用户界面功能：
+登录您的 <a href="https://account.nabucasa.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Nabu Casa 帐户</a> 并
+请求您的 Home Assistant 实例将其打开。</p>
+<p>社区的反馈表明，这个功能并不总是需要的，
+此版本添加了一个新选项来禁用远程激活
+远程用户界面功能。一旦禁用，远程用户界面功能只能启用
+从您的 Home Assistant 实例本地。</p>
+<img class="no-shadow" src="/home-assistant/images/blog/2024-03/home-assistant-cloud-disable-remove-activation.png" alt="Screenshot showing the new advanced option that allows disabling remote activation of the Home Assistant remote UI."/>
+<h2 class="rp-toc-include" id="翻译模板中的状态"><a href="#翻译模板中的状态" class="rp-header-anchor rp-link" aria-hidden="true">#</a>翻译模板中的状态</h2>
+<p>您是否使用自动化发送通知？如果是这样的话，
+<a href="https://github.com/PiotrMachowski" target="_blank" rel="noopener noreferrer" class="rp-link">@PiotrMachowski</a> 可能只是添加了您需要的新内容！</p>
+<p>一种新的模板方法，<code>state_translated</code>，直接翻译实体状态
+从您的模板中！考虑这个模板示例：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Untranslated</span></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">  # Shows: on</span></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">  # Shows: below_horizon</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>上面的例子展示了两个实体的原始状态。然而，随着
+新的 <code>state_translated</code> 方法，您可以以人类可读的形式获取状态：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Translated</span></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">  # Shows: Detected</span></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">  # Shows: Below horizon</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>更好的是，它使用 Home Assistant 实例的默认语言。所以，
+如果您使用其他语言的 Home Assistant，翻译后的状态将
+使用该语言。</p>
+<h2 class="rp-toc-include" id="home-assistant-启动速度提高两倍"><a href="#home-assistant-启动速度提高两倍" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Home Assistant 启动速度提高两倍</h2>
+<p>如果您不知道，每个发布 <a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a> 都会提高性能
+关于Home Assistant的某些方面。他已经坚持了很长时间并且一直坚持
+推动改进它。</p>
+<p>事实上，它已经变得如此普遍，以至于我们并不总是强调
+在我们的发布说明中，他为实现这个孤独的目标付出了巨大的努力。<em>对不起！🙏</em></p>
+<p>然而，在这篇文章中，他的努力令人震惊，以至于我们想要
+大声喊出来：<strong>Home Assistant 现在的平均启动速度提高了一倍！</strong> 🚀</p>
+<p>这是一个巨大的进步 <a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a>！感谢您的持续努力
+让Home Assistant变得越来越快！❤️</p>
+<h2 class="rp-toc-include" id="其他含义的变化"><a href="#其他含义的变化" class="rp-header-anchor rp-link" aria-hidden="true">#</a>其他含义的变化</h2>
+<p>本次发布还有更多改进；还有其他一些
+本次发布的意义变更：</p>
+<ul>
+<li>[温控实体]现在有切换服务(<code>climate.toggle</code>)。
+谢谢<a href="https://github.com/arturpragacz" target="_blank" rel="noopener noreferrer" class="rp-link">@arturpragacz</a>！</li>
+<li><a href="/integrations/Matter" class="rp-link">Matter</a> 灯光现在支持转换，很好！谢谢，<a href="https://github.com/marcelveldt" target="_blank" rel="noopener noreferrer" class="rp-link">@marcelveldt</a>！</li>
+<li>我们听说您喜欢下载 CSV！因此，我们添加了下载功能
+现在也可以将能源仪表盘数据保存为CSV文件！谢谢<a href="https://github.com/karwosts" target="_blank" rel="noopener noreferrer" class="rp-link">@karwosts</a>！</li>
+<li>自动 Zigbee 设备固件更新反馈和报告
+在之前的发布中介绍过，本次发布带来了更严格和
+更强大的更新系统<a href="/integrations/zha" class="rp-link">ZHA</a>。谢谢<a href="https://github.com/dmulcahey" target="_blank" rel="noopener noreferrer" class="rp-link">@dmulcahey</a>和<a href="https:///github.com/puddly" target="_blank" rel="noopener noreferrer" class="rp-link">@puddly</a>！</li>
+<li><a href="/integrations/tessie" class="rp-link">Tessie</a> 集成现在提供充电和范围传感器。
+谢谢<a href="https://github.com/Bre77" target="_blank" rel="noopener noreferrer" class="rp-link">@Bre77</a>！</li>
+<li><a href="/integrations/myuplink" class="rp-link">myUplink</a> 设备现在可以直接从 Home Assistant 更新。
+太棒了<a href="https://github.com/astrandb" target="_blank" rel="noopener noreferrer" class="rp-link">@astrandb</a>！</li>
+<li><a href="/integrations/dunehd" class="rp-link">DuneHD</a> 媒体播放器现在支持浏览媒体文件并播放它们。
+谢谢<a href="https://github.com/iliessens" target="_blank" rel="noopener noreferrer" class="rp-link">@iliessens</a>！</li>
+<li>[带！] 现在引入了一个新的“最近”列表。不错<a href="https://github.com/miaucl" target="_blank" rel="noopener noreferrer" class="rp-link">@miaucl</a>！</li>
+<li><a href="https://github.com/lellky" target="_blank" rel="noopener noreferrer" class="rp-link">@lellky</a> 创建设定点作为粉丝的数字实体
+<a href="/integrations/flexit_bacnet" class="rp-link">Flexit Nordic (BACnet)</a>集成，谢谢！</li>
+<li>调整长期统计数据的对话框现在具有自动异常值检测功能！
+这是一个非常聪明且有用的补充。谢谢<a href="https://github.com/karwosts" target="_blank" rel="noopener noreferrer" class="rp-link">@karwosts</a>！</li>
+</ul>
+<h2 class="rp-toc-include" id="新集成"><a href="#新集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>新集成</h2>
+<p>我们欢迎本版本中的以下新集成：</p>
+<ul>
+<li><strong>[Aprilaire]</strong>，由 [@chamberlain2007]<br/> 添加
+监视和控制您的 Aprilaire 恒温器。</li>
+<li><strong>[Husqvarna 自动割草机]</strong>，由 [@Thomas55555]<br/> 添加
+Husqvarna Automower 集成允许您集成和控制
+直接从Home Assistant获得您的割草机。</li>
+<li><strong>[microBees]</strong>，由 [@marcolettieri]ZZPH3Z 添加
+控制您的 microBees 设备，例如插头和墙壁开关。</li>
+<li><strong>[WeatherFlow Cloud]</strong>，由 [@jeeftor]<br/> 添加
+WeatherFlow Cloud 是现有[本地 WeatherFlow] 的替代方案
+集成并从Tempest气象站获取数据。</li>
+<li><strong>[Webmin]</strong>，由 [@autinrd]<br/> 添加
+监视 Webmin 管理服务器的 CPU 和内存使用情况。[@autinerd]: <a href="https://github.com/autinerd" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/autinerd</a>
+[@chamberlain2007]: <a href="https://github.com/chamberlain2007" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/chamberlain2007</a>
+[@jeeftor]: <a href="https://github.com/jeeftor" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/jeeftor</a>
+[@marcolettieri]: <a href="https://github.com/marcolettieri" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/marcolettieri</a>
+[@Thomas55555]: <a href="https://github.com/Thomas55555" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/Thomas55555</a>
+[Aprilaire]: /integrations/aprilaire
+[Husqvarna Automower]: /integrations/husqvarna_automower
+[local WeatherFlow]: /integrations/weatherflow
+[microBees]: /integrations/microbees
+[WeatherFlow Cloud]: /integrations/weatherflow_cloud
+[Webmin]: /integrations/webmin</li>
+</ul>
+<p>此版本还有新的虚拟集成。虚拟集成是存根
+通过其他（现有）集成处理以帮助找到。
+添加了以下虚拟集成：</p>
+<ul>
+<li><strong><a href="/integrations/acomax" class="rp-link">Acomax</a></strong>，由 <a href="/integrations/motion_blinds" class="rp-link">Motionblinds</a> 提供</li>
+<li><strong>[杜肯灯光]</strong>，由 <a href="/integrations/opower" class="rp-link">Opower</a> 提供</li>
+<li><strong><a href="/integrations/krispol" class="rp-link">Krispol</a></strong>，由 <a href="/integrations/motion_blinds" class="rp-link">Motionblinds</a> 提供</li>
+<li><strong><a href="/integrations/madeco" class="rp-link">Madeco</a></strong>，由 <a href="/integrations/motion_blinds" class="rp-link">Motionblinds</a> 提供</li>
+<li><strong><a href="/integrations/samsam" class="rp-link">SamSam</a></strong>，由<a href="/integrations/energyzero" class="rp-link">EnergyZero</a>提供</li>
+<li><strong><a href="/integrations/zondergas" class="rp-link">ZonderGas</a></strong>，由 <a href="/integrations/energyzero" class="rp-link">EnergyZero</a> 提供</li>
+</ul>
+<h2 class="rp-toc-include" id="集成现在可以从-ui-进行设置"><a href="#集成现在可以从-ui-进行设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>集成现在可以从 UI 进行设置</h2>
+<p>现在可以通过 Home Assistant UI 使用以下集成：</p>
+<ul>
+<li>
+<p><strong>[Velux]</strong>，由 [@DeerMaximum] 完成[@DeerMaximum]: <a href="https://github.com/DeerMaximum" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/DeerMaximum</a>
+[Velux]: /integrations/velux## 发布 2024.3.1 - 3 月 14 日 - 修复任选的 Jellyfin RunTimeTicks ([@j-stienstra] - [#108254])
+-添加自动风扇模式图标 ([@mattmccormack] - [#110185])</p>
+</li>
+<li>
+<p>忽略不支持使用信息的 AussieBroadband 服务 ([@FieldofClay] - [#110253])</p>
+</li>
+<li>
+<p>为网络头媒体源使用习惯名称（[@OnFreund] - [#110882]）</p>
+</li>
+<li>
+<p>通过始终使用唯一设备名称的 SSDP 发现来改进 upnp/igd 设备的发现 ([@StevenLooman] - [#111487])</p>
+</li>
+<li>
+<p>将 numato 集成的 numato-gpio 依赖项更新到 v0.12.0 ([@clssn] - [#112272])</p>
+</li>
+<li>
+<p>取消从发现信息更新 ZHA 协商器路径 (<a href="https:///github.com/puddly" target="_blank" rel="noopener noreferrer" class="rp-link">@puddly</a> - [#112415])</p>
+</li>
+<li>
+<p>将意图提升至 2024.3.6 ([@synesthesiam] - [#112515])</p>
+</li>
+<li>
+<p>Weatherflow_cloud 支持 lib 碰撞 ([@jeeftor] - [#112262])</p>
+</li>
+<li>
+<p>将weatherflow4py提升到0.1.14 ([@jeeftor] - [#112554])</p>
+</li>
+<li>
+<p>恢复 Juicenet 集成 (<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a> - [#112578])</p>
+</li>
+<li>
+<p>修复 Bring-api 中不支持的区域设置的错误过滤 ([@tr4nt0r] - [#112589])</p>
+</li>
+<li>
+<p>在 tedee 集成中包含 pytedee_async 记录器 ([@zweckj] - [#112590])</p>
+</li>
+<li>
+<p>当 modbus 配置为空时发出警告 modbus 配置 ([@janiversen] - [#112618])</p>
+</li>
+<li>
+<p>modbus scan_interval：0 是正确的配置 ([@janivesen] - [#112619])</p>
+</li>
+<li>
+<p>前端更新至 20240307.0 (<a href="https://github.com/bramkragten" target="_blank" rel="noopener noreferrer" class="rp-link">@bramkragten</a> - [#112620])</p>
+</li>
+<li>
+<p>使 hass-nabucasa 成为核心要求（<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a> - [#112623]）</p>
+</li>
+<li>
+<p>将 aioautomower 升级到 2024.3.0 ([@Thomas55555] - [#112627])</p>
+</li>
+<li>
+<p>将 pymodbus 升级到 v3.6.5 ([@janiversen] - [#112629])</p>
+</li>
+<li>
+<p>将轴碰撞到 v52 (<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a> - [#112632])</p>
+</li>
+<li>
+<p>更新 Loqed 帮助程序进行更多日志记录 ([@mikewoudenberg] - [#112646])</p>
+</li>
+<li>
+<p>将weatherflow4py提升到0.1.17 ([@jeeftor] - [#112661])</p>
+</li>
+<li>
+<p>将 <code>aionotion</code> 升级到 2024.03.0 ([@bachya] - [#112675])</p>
+</li>
+<li>
+<p>EnsureNotion在启动时保存新的刷新令牌（[@bachya] - [#112676]）</p>
+</li>
+<li>
+<p>修复 tado 温服务控 ([@alinbalutoiu] - [#112686])</p>
+</li>
+<li>
+<p>将 <code>pysnmp-lextudio</code> 降级为 <code>5.0.34</code> 版本 ([@bieniu] - [#112696])</p>
+</li>
+<li>
+<p>允许在不同的 modbus 实体中出现重复的名称 ([@janivesen] - [#112701])</p>
+</li>
+<li>
+<p>重命名实体时防止数据库损坏（<a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a> - [#112718]）</p>
+</li>
+<li>
+<p>修复本地日历对空重复 ID 的处理（[@allenporter] - [#112745]）</p>
+</li>
+<li>
+<p>将 pyenphase 升级到 1.19.2 ([@catsmanac] - [#112747])</p>
+</li>
+<li>
+<p>将 bthome-ble 升级到 3.7.0 ([@thecode] - [#112783])</p>
+</li>
+<li>
+<p>将 <code>pysnmp-lextudio</code> 升级到版本 <code>6.0.9</code> ([@lextm] - [#112795])</p>
+</li>
+<li>
+<p>将 openwrt-luci-rpc 版本提升到 1.1.17 ([@mrchi] - [#112796])</p>
+</li>
+<li>
+<p>修复 google_asssistant 传感器状态报告 (<a href="https://github.com/jbouwh" target="_blank" rel="noopener noreferrer" class="rp-link">@jbouwh</a> - [#112838])</p>
+</li>
+<li>
+<p>修复基本身份验证中缺少静态图像 URL 时的 MJPEG 回退问题 (<a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a> - [#112861])</p>
+</li>
+<li>
+<p>将 boschshcpy 升级到 0.2.82 ([@FlyingFeng2021] - [#112890])</p>
+</li>
+<li>
+<p>在 Hydrawise 中添加装载量的翻译占位符 ([@dknowles2] - [#113007])</p>
+</li>
+<li>
+<p>将 bthome-ble 升级到 3.8.0 ([@Ernst79] - [#113008])</p>
+</li>
+<li>
+<p>将轴碰撞到 v53 (<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a> - [#113019])</p>
+</li>
+<li>
+<p>修复 GIOS 索引传感器的可用性 ([@bieniu] - [#113021])</p>
+</li>
+<li>
+<p>将升级到7.0.1，并始终使用Home Assistant时区进行本地待办事项 dtstart ([@allenporter] - [#113034])</p>
+</li>
+<li>
+<p>修复 rainforest_raven 中的一些手柄漏问题 ([@cottsay] - [#113035])</p>
+</li>
+<li>
+<p>修复 viessmann 设备的 hvac_mode 加热冷却模式 ([@folke] - [#113054])</p>
+</li>
+<li>
+<p>Components/gardena_bluetooth：提高可靠性（[@alistair23] - [#113056]）</p>
+</li>
+<li>
+<p>修复控制 Hue 开关实体 (<a href="https://github.com/marcelveldt" target="_blank" rel="noopener noreferrer" class="rp-link">@marcelveldt</a> - [#113064])</p>
+</li>
+<li>
+<p>将 rova 升级到 0.4.1 ([@LukasdeBoer] - [#113066])</p>
+</li>
+<li>
+<p>修复分组 Hue 灯光上的 colormode 属性 (<a href="https://github.com/marcelveldt" target="_blank" rel="noopener noreferrer" class="rp-link">@marcelveldt</a> - [#113071])</p>
+</li>
+<li>
+<p>将轴碰撞到 v54 (<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a> - [#113091])</p>
+</li>
+<li>
+<p>将 aiodhcpwatcher 升级到 0.8.1 (<a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a> - [#113096])</p>
+</li>
+<li>
+<p>将 pytedee_async 提升到 0.2.16 ([@zweckj] - [#113135])</p>
+</li>
+<li>
+<p>将错误请求错误中的消息添加到 HassioAPIError ([@agners] - [#113144])</p>
+</li>
+<li>
+<p>将意图提升至 2023.3.12 ([@synesthesiam] - [#113160])</p>
+</li>
+<li>
+<p>将airthings_ble提升至0.7.1 ([@LaStrada] - [#113172])</p>
+</li>
+<li>
+<p>将 rokuecp 提升至 0.19.2 ([@ctalkington] - [#113198])</p>
+</li>
+<li>
+<p>将 <code>brother</code> 库升级为 <code>4.0.2</code> 版本 ([@bieniu] - [#113235])</p>
+</li>
+<li>
+<p>ZHA 中 2024.3.1 修复发布的修复程序导入错误 (<a href="https://github.com/frenck" target="_blank" rel="noopener noreferrer" class="rp-link">@frenck</a> - [#113250])</p>
+</li>
+<li>
+<p>修复 Twitch 身份验证令牌刷新 ([@jonnybergdahl] - [#112833])</p>
+</li>
+<li>
+<p>修复失败的谷歌诊断测试（<a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a> - [#113095]）</p>
+</li>
+<li>
+<p>添加 IPP 诊断 ([@ctalkington] - [#113205])
+-应用失败建议，主管修复失败（[@mdegat01] - [#113372]）</p>
+</li>
+<li>
+<p>主管在失败时发布更新重试 ([@mdegat01] - [#113373])</p>
+</li>
+<li>
+<p>将记录器添加到 Husqvarna Automower ([@Thomas55555] - [#113381])</p>
+</li>
+<li>
+<p>将 pyipp 提升至 0.15.0 ([@ctalkington] - [#113204])[#108254]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/108254" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/108254</a>
+[#110185]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/110185" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/110185</a>
+[#110253]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/110253" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/110253</a>
+[#110882]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/110882" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/110882</a>
+[#111133]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/111133" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/111133</a>
+[#111441]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/111441" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/111441</a>
+[#111487]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/111487" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/111487</a>
+[#111648]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/111648" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/111648</a>
+[#112262]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112262" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112262</a>
+[#112272]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112272" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112272</a>
+[#112415]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112415" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112415</a>
+[#112515]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112515" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112515</a>
+[#112516]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112516" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112516</a>
+[#112554]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112554" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112554</a>
+[#112578]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112578" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112578</a>
+[#112589]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112589" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112589</a>
+[#112590]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112590" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112590</a>
+[#112618]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112618" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112618</a>
+[#112619]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112619" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112619</a>
+[#112620]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112620" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112620</a>
+[#112623]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112623" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112623</a>
+[#112627]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112627" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112627</a>
+[#112629]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112629" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112629</a>
+[#112632]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112632" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112632</a>
+[#112646]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112646" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112646</a>
+[#112661]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112661" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112661</a>
+[#112675]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112675" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112675</a>
+[#112676]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112676" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112676</a>
+[#112686]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112686" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112686</a>
+[#112696]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112696" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112696</a>
+[#112701]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112701" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112701</a>
+[#112718]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112718" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112718</a>
+[#112745]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112745" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112745</a>
+[#112747]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112747" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112747</a>
+[#112783]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112783" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112783</a>
+[#112795]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112795" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112795</a>
+[#112796]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112796" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112796</a>
+[#112833]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112833" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112833</a>
+[#112838]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112838" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112838</a>
+[#112861]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112861" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112861</a>
+[#112890]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112890" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112890</a>
+[#113007]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113007" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113007</a>
+[#113008]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113008" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113008</a>
+[#113019]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113019" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113019</a>
+[#113021]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113021" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113021</a>
+[#113034]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113034" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113034</a>
+[#113035]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113035" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113035</a>
+[#113054]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113054" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113054</a>
+[#113056]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113056" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113056</a>
+[#113064]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113064" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113064</a>
+[#113066]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113066" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113066</a>
+[#113071]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113071" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113071</a>
+[#113091]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113091" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113091</a>
+[#113095]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113095" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113095</a>
+[#113096]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113096" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113096</a>
+[#113135]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113135" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113135</a>
+[#113144]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113144" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113144</a>
+[#113160]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113160" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113160</a>
+[#113172]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113172" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113172</a>
+[#113198]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113198" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113198</a>
+[#113204]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113204" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113204</a>
+[#113205]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113205" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113205</a>
+[#113235]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113235" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113235</a>
+[#113250]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113250" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113250</a>
+[#113372]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113372" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113372</a>
+[#113373]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113373" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113373</a>
+[#113381]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113381" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113381</a>
+[@Ernst79]: <a href="https://github.com/Ernst79" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/Ernst79</a>
+[@FieldofClay]: <a href="https://github.com/FieldofClay" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/FieldofClay</a>
+[@FlyingFeng2021]: <a href="https://github.com/FlyingFeng2021" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/FlyingFeng2021</a>
+<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a>: <a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/Kane610</a>
+[@LaStrada]: <a href="https://github.com/LaStrada" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/LaStrada</a>
+[@LukasdeBoer]: <a href="https://github.com/LukasdeBoer" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/LukasdeBoer</a>
+[@OnFreund]: <a href="https://github.com/OnFreund" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/OnFreund</a>
+[@StevenLooman]: <a href="https://github.com/StevenLooman" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/StevenLooman</a>
+[@Thomas55555]: <a href="https://github.com/Thomas55555" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/Thomas55555</a>
+[@agners]: <a href="https://github.com/agners" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/agners</a>
+[@alinbalutoiu]: <a href="https://github.com/alinbalutoiu" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/alinbalutoiu</a>
+[@alistair23]: <a href="https://github.com/alistair23" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/alistair23</a>
+[@allenporter]: <a href="https://github.com/allenporter" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/allenporter</a>
+[@bachya]: <a href="https://github.com/bachya" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/bachya</a>
+<a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">@balloob</a>: <a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/balloob</a>
+<a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a>: <a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/bdraco</a>
+[@bieniu]: <a href="https://github.com/bieniu" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/bieniu</a>
+<a href="https://github.com/bramkragten" target="_blank" rel="noopener noreferrer" class="rp-link">@bramkragten</a>: <a href="https://github.com/bramkragten" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/bramkragten</a>
+[@catsmanac]: <a href="https://github.com/catsmanac" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/catsmanac</a>
+[@clssn]: <a href="https://github.com/clssn" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/clssn</a>
+[@cottsay]: <a href="https://github.com/cottsay" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/cottsay</a>
+[@ctalkington]: <a href="https://github.com/ctalkington" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/ctalkington</a>
+[@dknowles2]: <a href="https://github.com/dknowles2" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/dknowles2</a>
+<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a>: <a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/emontnemery</a>
+[@folke]: <a href="https://github.com/folke" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/folke</a>
+<a href="https://github.com/frenck" target="_blank" rel="noopener noreferrer" class="rp-link">@frenck</a>: <a href="https://github.com/frenck" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/frenck</a>
+[@j-stienstra]: <a href="https://github.com/j-stienstra" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/j-stienstra</a>
+[@janiversen]: <a href="https://github.com/janiversen" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/janiversen</a>
+<a href="https://github.com/jbouwh" target="_blank" rel="noopener noreferrer" class="rp-link">@jbouwh</a>: <a href="https://github.com/jbouwh" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/jbouwh</a>
+[@jeeftor]: <a href="https://github.com/jeeftor" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/jeeftor</a>
+[@jonnybergdahl]: <a href="https://github.com/jonnybergdahl" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/jonnybergdahl</a>
+[@lextm]: <a href="https://github.com/lextm" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/lextm</a>
+<a href="https://github.com/marcelveldt" target="_blank" rel="noopener noreferrer" class="rp-link">@marcelveldt</a>: <a href="https://github.com/marcelveldt" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/marcelveldt</a>
+[@mattmccormack]: <a href="https://github.com/mattmccormack" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/mattmccormack</a>
+[@mdegat01]: <a href="https://github.com/mdegat01" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/mdegat01</a>
+[@mikewoudenberg]: <a href="https://github.com/mikewoudenberg" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/mikewoudenberg</a>
+[@mrchi]: <a href="https://github.com/mrchi" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/mrchi</a>
+<a href="https:///github.com/puddly" target="_blank" rel="noopener noreferrer" class="rp-link">@puddly</a>: <a href="https://github.com/puddly" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/puddly</a>
+[@synesthesiam]: <a href="https://github.com/synesthesiam" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/synesthesiam</a>
+[@thecode]: <a href="https://github.com/thecode" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/thecode</a>
+[@tr4nt0r]: <a href="https://github.com/tr4nt0r" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/tr4nt0r</a>
+[@zweckj]: <a href="https://github.com/zweckj##" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/zweckj##</a> 发布 2024.3.2 - 3 月 22 日</p>
+</li>
+<li>
+<p>简化Notion访问更新（刷新令牌和用户配置ID）（[@bachya] - [#112832]）</p>
+</li>
+<li>
+<p>将 aioautomower 升级到 2024.3.2 ([@Thomas55555] - [#113162])</p>
+</li>
+<li>
+<p>将 aioautomower 升级到 2024.3.3 ([@Thomas55555] - [#113430])</p>
+</li>
+<li>
+<p>检查 UniFi Protect 的 EA 发布通道 ([@AngellusMortis] - [#113432])</p>
+</li>
+<li>
+<p>将 <code>pysnmp-lextudio</code> 转换为版本 <code>6.0.11</code> ([@lextm] - [#113463])</p>
+</li>
+<li>
+<p>Tado 修理热水器 ([@erwindouna] - [#113464])</p>
+</li>
+<li>
+<p>将 aiodhcpwatcher 升级到 0.8.2 (<a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a> - [#113466])</p>
+</li>
+<li>
+<p>将轴碰撞到 v55 (<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a> - [#113479])</p>
+</li>
+<li>
+<p>将 croniter 升级到 2.0.2 ([@dgomes] - [#113494])</p>
+</li>
+<li>
+<p>在 Risco init 中恢复设置通信延迟 ([@OnFreund] - [#113497])</p>
+</li>
+<li>
+<p>将 Pyrisco 提升至 0.5.10 ([@OnFreund] - [#113505])</p>
+</li>
+<li>
+<p>修复从模板活动脚本时丢失的上下文（<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a> - [#113523]）</p>
+</li>
+<li>
+<p>将 ical 升级到 7.0.3 以修复本地待办事项持续存在无效 DTSTART 值的问题 ([@allenporter] - [#113526])</p>
+</li>
+<li>
+<p>修复 Airthings BLE 照度传感器名称 ([@joostlek] - [#113560])</p>
+</li>
+<li>
+<p>使用 cfgChanged None 忽略 Shelly 块更新 ([@thecode] - [#113587])</p>
+</li>
+<li>
+<p>在<code>Brother</code>配置流程中捕获<code>TimeoutError</code> ([@bieniu] - [#113593])</p>
+</li>
+<li>
+<p>将轴碰撞到 v56 (<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a> - [#113608])</p>
+</li>
+<li>
+<p>将 pyunifiprotect 升级到 5.0.1 ([@AngellusMortis] - [#113630])</p>
+</li>
+<li>
+<p>将 pyunifiprotect 升级到 5.0.2 ([@AngellusMortis] - [#113651])</p>
+</li>
+<li>
+<p>为 Shelly 电池传感器添加删除条件 ([@bieniu] - [#113703])</p>
+</li>
+<li>
+<p>将 aioraven 提升至 0.5.2 ([@cottsay] - [#113714])</p>
+</li>
+<li>
+<p>修复 onewire 中的未知值 ([@epenet] - [#113731])</p>
+</li>
+<li>
+<p>凹凸 pymodbus v3.6.6 ([@janiversen] - [#113796])</p>
+</li>
+<li>
+<p>Oncast media_player服务处理程序中捕获API错误（<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a> - [#113839]）</p>
+</li>
+<li>
+<p>将 pychromecast 升级到 14.0.1 (<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a> - [#113841])</p>
+</li>
+<li>
+<p>修复演员阵容中的启动竞赛（<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a> - [#113843]）</p>
+</li>
+<li>
+<p>编辑 traccar 服务器地理区域（[@ludeeus] - [#113861]）</p>
+</li>
+<li>
+<p>将 pytedee_async 升级到 0.2.17 ([@zweckj] - [#113933])</p>
+</li>
+<li>
+<p>将轴碰撞到 v57 (<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a> - [#113952])[#111133]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/111133" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/111133</a>
+[#111441]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/111441" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/111441</a>
+[#111648]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/111648" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/111648</a>
+[#112516]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112516" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112516</a>
+[#112832]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/112832" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/112832</a>
+[#113162]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113162" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113162</a>
+[#113249]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113249" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113249</a>
+[#113430]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113430" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113430</a>
+[#113432]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113432" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113432</a>
+[#113463]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113463" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113463</a>
+[#113464]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113464" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113464</a>
+[#113466]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113466" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113466</a>
+[#113479]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113479" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113479</a>
+[#113494]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113494" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113494</a>
+[#113497]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113497" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113497</a>
+[#113505]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113505" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113505</a>
+[#113523]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113523" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113523</a>
+[#113526]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113526" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113526</a>
+[#113560]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113560" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113560</a>
+[#113587]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113587" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113587</a>
+[#113593]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113593" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113593</a>
+[#113608]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113608" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113608</a>
+[#113630]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113630" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113630</a>
+[#113651]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113651" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113651</a>
+[#113703]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113703" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113703</a>
+[#113714]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113714" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113714</a>
+[#113731]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113731" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113731</a>
+[#113796]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113796" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113796</a>
+[#113839]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113839" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113839</a>
+[#113841]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113841" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113841</a>
+[#113843]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113843" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113843</a>
+[#113861]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113861" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113861</a>
+[#113933]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113933" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113933</a>
+[#113952]: <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113952" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/home-assistant/核心/pull/113952</a>
+[@AngellusMortis]: <a href="https://github.com/AngellusMortis" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/AngellusMortis</a>
+<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a>: <a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/Kane610</a>
+[@OnFreund]: <a href="https://github.com/OnFreund" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/OnFreund</a>
+[@Thomas55555]: <a href="https://github.com/Thomas55555" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/Thomas55555</a>
+[@allenporter]: <a href="https://github.com/allenporter" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/allenporter</a>
+[@bachya]: <a href="https://github.com/bachya" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/bachya</a>
+<a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">@balloob</a>: <a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/balloob</a>
+<a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">@bdraco</a>: <a href="https://github.com/bdraco" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/bdraco</a>
+[@bieniu]: <a href="https://github.com/bieniu" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/bieniu</a>
+[@cottsay]: <a href="https://github.com/cottsay" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/cottsay</a>
+[@dgomes]: <a href="https://github.com/dgomes" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/dgomes</a>
+<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a>: <a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/emontnemery</a>
+[@epenet]: <a href="https://github.com/epenet" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/epenet</a>
+[@erwindouna]: <a href="https://github.com/erwindouna" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/erwindouna</a>
+<a href="https://github.com/frenck" target="_blank" rel="noopener noreferrer" class="rp-link">@frenck</a>: <a href="https://github.com/frenck" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/frenck</a>
+[@janiversen]: <a href="https://github.com/janiversen" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/janiversen</a>
+[@joostlek]: <a href="https://github.com/joostlek" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/joostlek</a>
+[@lextm]: <a href="https://github.com/lextm" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/lextm</a>
+[@ludeeus]: <a href="https://github.com/ludeeus" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/ludeeus</a>
+[@thecode]: <a href="https://github.com/thecode" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/thecode</a>
+[@zweckj]: <a href="https://github.com/zweckj" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/zweckj</a></p>
+</li>
+</ul>
+<h2 class="rp-toc-include" id="发布-202433---3-月-22-日"><a href="#发布-202433---3-月-22-日" class="rp-header-anchor rp-link" aria-hidden="true">#</a>发布 2024.3.3 - 3 月 22 日</h2>
+<ul>
+<li>将 cosign 更新到 2.2.3 (<a href="https://github.com/frenck" target="_blank" rel="noopener noreferrer" class="rp-link">@frenck</a> - <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/113996" target="_blank" rel="noopener noreferrer" class="rp-link">#113996</a>)</li>
+<li>将轴碰撞到 v58 (<a href="https://github.com/Kane610" target="_blank" rel="noopener noreferrer" class="rp-link">@Kane610</a> - <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/114008" target="_blank" rel="noopener noreferrer" class="rp-link">#114008</a>)</li>
+</ul>
+<h2 class="rp-toc-include" id="需要帮助吗加入社区"><a href="#需要帮助吗加入社区" class="rp-header-anchor rp-link" aria-hidden="true">#</a>需要帮助吗？加入社区！</h2>
+<p>Home Assistant 拥有一个庞大的用户社区，他们都非常愿意
+互相帮助。那么，加入我们吧！我们非常活跃的 <a href="/home-assistant/join-chat" class="rp-link">Discord 聊天服务器</a> 是一个绝佳的地方
+，并且不要忘记加入我们精彩的<a href="https://community.home-assistant.io/" target="_blank" rel="noopener noreferrer" class="rp-link">论坛</a>。</p>
+<p>发现错误或问题？请在我们的<a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/issues" target="_blank" rel="noopener noreferrer" class="rp-link">问题跟踪器</a> 中报告它，
+把它修好！或者，查看<a href="/home-assistant/help" class="rp-link">我们的帮助页面</a> 以获取更多指导
+你可以去的地方。</p>
+<p>您更喜欢电子邮件吗？ <a href="/home-assistant/newsletter" class="rp-link">订阅我们的“打造开放之家”时事通讯</a>
+获取有关功能、社区中发生的事情的最新消息以及
+有关建造开放之家的其他新闻；直接进入您的收件箱。</p>
+<h2 class="rp-toc-include" id="向后不兼容的更改"><a href="#向后不兼容的更改" class="rp-header-anchor rp-link" aria-hidden="true">#</a>向后不兼容的更改</h2>
+<p>中午之后无法获取当天的每日数据，并且
+现在会了。 自动化和脚本依赖于 <code>day[0]</code> 进行检查
+第二天的天气预报必须调整为使用 <code>day[1]</code>。</p>
+<p>(<a href="https://github.com/Noltari" target="_blank" rel="noopener noreferrer" class="rp-link">@Noltari</a> - <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/107795" target="_blank" rel="noopener noreferrer" class="rp-link">#107795</a>) (<a href="/home-assistant/integrations/aemet.html" class="rp-link">文档</a>)</p>
+<p>JuiceNet 集成已被删除。</p>
+<p>Enel X 已从 JuiceNet 迁移到 JuicePass，渲染 JuiceNet
+集成没用。 Juicenet 的背景和替代解决方案
+集成可以在相关的
+<a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/issues/86588" target="_blank" rel="noopener noreferrer" class="rp-link">问题</a>。</p>
+<p>（<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a> - <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/111477" target="_blank" rel="noopener noreferrer" class="rp-link">#111477</a>）</p>
+<p>met.no 集成之前为每个配置创建了两个实体
+位置： 提供每日天气预报，
+其中一个提供每小时天气预报。</p>
+<p>met.no 集成现在只创建一个提供
+每日和每小时天气预报。</p>
+<p>(<a href="https://github.com/emontnemery" target="_blank" rel="noopener noreferrer" class="rp-link">@emontnemery</a> - <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/97023" target="_blank" rel="noopener noreferrer" class="rp-link">#97023</a>) (<a href="/home-assistant/integrations/met.html" class="rp-link">文档</a>)</p>
+<p>辅助热量已在 Home Assistant Core 2023.9 中弃用，现已从
+MQTT温控。</p>
+<p>(<a href="https://github.com/jbouwh" target="_blank" rel="noopener noreferrer" class="rp-link">@jbouwh</a> - <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/109513" target="_blank" rel="noopener noreferrer" class="rp-link">#109513</a>) (<a href="/home-assistant/integrations/MQTT" class="rp-link">文档</a>)</p>
+<p>对于 Z-Wave <code>climate</code> 实体，<code>climate.turn_on</code> 服务的行为
+已经改变了。以前，服务将按以下顺序运行，具体取决于
+是否满足相应的条件：</p>
+<ol>
+<li>如果实体支持<code>off</code>模式以及恰好一种附加模式，
+<code>climate.turn_on</code> 会将模式设置为附加模式。</li>
+<li>如果不满足1的条件并且至少有以下模式之一
+可用时，服务会将模式设置为它找到的第一个模式
+按指定顺序：<code>heat_cool</code>、<code>heat</code>、<code>cool</code>。</li>
+<li>如果不满足 1 和 2 的条件，服务将默默地不执行任何操作。</li>
+</ol>
+<p>现在，服务按顺序遵循以下行为：</p>
+<p>1.如果实体支持<code>resume</code>恒温模式，则将用于
+恢复实体关闭前最后使用的模式。
+2. 如果不满足1的条件并且实体在
+Home Assistant，Home Assistant未重新启动，Home Assistant
+记住最后一个“开启”模式并将其设置为该模式。Home Assistant
+如果 Home Assistant 将无法将实体设置为之前的模式
+从已经处于 <code>off</code> 模式的实体开始，因为集成将
+不知道以前的模式是什么。
+3. 如果不满足条件 1 和 2，并且至少满足以下条件之一
+模式可用，服务将模式设置为它找到的第一个模式
+按指定顺序：<code>heat_cool</code>、<code>heat</code>、<code>cool</code>
+（上述条件 2 不变）。
+4. 如果不满足1、2、3的条件，则模式将设置为第一种
+它找到的支持模式（如 <code>dry</code> 或 <code>fan_only</code>）。(<a href="https://github.com/raman325" target="_blank" rel="noopener noreferrer" class="rp-link">@raman325</a> - <a href="https://github.com/home-assistant/%E6%A0%B8%E5%BF%83/pull/109187" target="_blank" rel="noopener noreferrer" class="rp-link">#109187</a>) (<a href="/home-assistant/integrations/zwave_js.html" class="rp-link">文档</a>)</p>
+<p>如果您是一名自定义集成开发人员并且想要了解如何打破
+可用于您的集成的更改和新功能：请务必遵循我们的
+[开发者博客][开发博客]。以下是本次发布中最值得注意的内容：</p>
+<ul>
+<li><a href="https://%E5%BC%80%E5%8F%91%E8%80%85.home-assistant.io/%E5%8D%9A%E5%AE%A2/2024/02/12/async_update_entry/" target="_blank" rel="noopener noreferrer" class="rp-link">更改配置条目</a></li>
+<li><a href="https://%E5%BC%80%E5%8F%91%E8%80%85.home-assistant.io/%E5%8D%9A%E5%AE%A2/2024/02/27/deprecate-bind-hass-and-hass-components" target="_blank" rel="noopener noreferrer" class="rp-link">弃用@bind_hass和hass.components</a></li>
+<li><a href="https://%E5%BC%80%E5%8F%91%E8%80%85.home-assistant.io/%E5%8D%9A%E5%AE%A2/2024/02/28/devices-name-translations" target="_blank" rel="noopener noreferrer" class="rp-link">介绍设备名称翻译</a></li>
+<li><a href="https://%E5%BC%80%E5%8F%91%E8%80%85.home-assistant.io/%E5%8D%9A%E5%AE%A2/2024/02/12/%E7%81%AF%E5%85%89-color-mode-mandatory/" target="_blank" rel="noopener noreferrer" class="rp-link">灯光现在需要设置颜色模式</a></li>
+<li><a href="https://%E5%BC%80%E5%8F%91%E8%80%85.home-assistant.io/%E5%8D%9A%E5%AE%A2/2024/02/25/%E6%B8%A9%E6%8E%A7-%E5%88%87%E6%8D%A2-%E6%9C%8D%E5%8A%A1" target="_blank" rel="noopener noreferrer" class="rp-link">新温控实体切换方法</a></li>
+<li><a href="https://%E5%BC%80%E5%8F%91%E8%80%85.home-assistant.io/%E5%8D%9A%E5%AE%A2/2024/02/26/single-instance-only-manifest-option" target="_blank" rel="noopener noreferrer" class="rp-link">新的仅限单实例清单选项</a></li>
+<li><a href="https://%E5%BC%80%E5%8F%91%E8%80%85.home-assistant.io/%E5%8D%9A%E5%AE%A2/2024/03/05/platform_entity_translations_deprecation" target="_blank" rel="noopener noreferrer" class="rp-link">将删除对单独文件中平台翻译的支持</a></li>
+</ul>
+<h2 class="rp-toc-include" id="所有更改"><a href="#所有更改" class="rp-header-anchor rp-link" aria-hidden="true">#</a>所有更改</h2>
+<p>当然，这篇文章还有很多内容。您可以找到以下列表
+此处所做的所有更改：<a href="/home-assistant/changelogs/core-2024.3.html" class="rp-link">Home Assistant Core 2024.3 的完整变更日志</a></p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客首页</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#全新的实验性-sections-视图" class="rp-toc-item rp-link" title="全新的实验性 Sections 视图" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">全新的实验性 Sections 视图</span></a><a href="#拖放式重新排列动作和部分" class="rp-toc-item rp-link" title="拖放式重新排列动作和部分！" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">拖放式重新排列动作和部分！</span></a><a href="#如何拖放" class="rp-toc-item rp-link" title="如何拖放" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">如何拖放</span></a><a href="#使用用户输入从仪表盘运行脚本" class="rp-toc-item rp-link" title="使用用户输入从仪表盘运行脚本" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">使用用户输入从仪表盘运行脚本</span></a><a href="#个人设备新能源图" class="rp-toc-item rp-link" title="个人设备新能源图" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">个人设备新能源图</span></a><a href="#协助的新句子" class="rp-toc-item rp-link" title="协助的新句子" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">协助的新句子</span></a><a href="#禁用-home-assistant-远程用户界面的远程激活" class="rp-toc-item rp-link" title="禁用 Home Assistant 远程用户界面的远程激活" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">禁用 Home Assistant 远程用户界面的远程激活</span></a><a href="#翻译模板中的状态" class="rp-toc-item rp-link" title="翻译模板中的状态" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">翻译模板中的状态</span></a><a href="#home-assistant-启动速度提高两倍" class="rp-toc-item rp-link" title="Home Assistant 启动速度提高两倍" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Home Assistant 启动速度提高两倍</span></a><a href="#其他含义的变化" class="rp-toc-item rp-link" title="其他含义的变化" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">其他含义的变化</span></a><a href="#新集成" class="rp-toc-item rp-link" title="新集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">新集成</span></a><a href="#集成现在可以从-ui-进行设置" class="rp-toc-item rp-link" title="集成现在可以从 UI 进行设置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">集成现在可以从 UI 进行设置</span></a><a href="#发布-202433---3-月-22-日" class="rp-toc-item rp-link" title="发布 2024.3.3 - 3 月 22 日" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">发布 2024.3.3 - 3 月 22 日</span></a><a href="#需要帮助吗加入社区" class="rp-toc-item rp-link" title="需要帮助吗？加入社区！" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">需要帮助吗？加入社区！</span></a><a href="#向后不兼容的更改" class="rp-toc-item rp-link" title="向后不兼容的更改" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">向后不兼容的更改</span></a><a href="#所有更改" class="rp-toc-item rp-link" title="所有更改" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">所有更改</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

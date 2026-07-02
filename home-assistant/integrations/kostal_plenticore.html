@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kostal Plenticore Solar Inverter - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Kostal Plenticore Solar Inverter - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Kostal Plenticore 集成可让您从 Kostal Plenticore(https://www.kostal-solar-electric.com/) 太阳能逆变器获取数据，并将其接入 Home Assistant。它还允许您修改逆变器的部分设置值。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Kostal Plenticore 集成可让您从 Kostal Plenticore(https://www.kostal-solar-electric.com/) 太阳能逆变器获取数据，并将其接入 Home Assistant。它还允许您修改逆变器的部分设置值。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="kostal-plenticore-solar-inverter"><a href="#kostal-plenticore-solar-inverter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Kostal Plenticore Solar Inverter<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Kostal Plenticore</strong> 集成可让您从 <a href="https://www.kostal-solar-electric.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Kostal Plenticore</a> 太阳能逆变器获取数据，并将其接入 Home Assistant。它还允许您修改逆变器的部分设置值。</p>
+<p>此集成使用 REST API 接口，而该接口也同样由内置 Web UI 使用，因此密码相同。</p>
+<h2 class="rp-toc-include" id="安装人员访问权限"><a href="#安装人员访问权限" class="rp-header-anchor rp-link" aria-hidden="true">#</a>安装人员访问权限</h2>
+<p>此集成支持使用 Master key 和 Service Code 的安装人员级别访问权限。这样可以访问将来新增的、通常仅限认证安装人员使用的设置。</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">Warning</div><div class="rp-callout__content"><p>
+使用安装人员凭据时：</p><ul>
+<li>仅应在您完全理解相关影响时使用</li>
+<li>可能会使保修失效</li>
+<li>如果设置错误，可能会损坏设备</li>
+<li>必须极其谨慎地使用</li>
+</ul><p>:::
+要启用安装人员访问权限，请在添加集成时将 Master Key 填写为密码，并在配置中填写 Service Code。</p><p>有关如何获取安装人员凭据的信息，请查阅设备文档或联系认证安装人员。</p><p>:::note 配置
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h2 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h2>
+<p>默认情况下，此集成会禁用大多数传感器。您可以在 <em>Entity</em> 页面中启用它们。传感器分为两组，一组用于过程数据，一组用于设置值。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+Plenticore 逆变器还提供更多数据端点，其中一些也取决于固件版本。如果您发现缺少某些过程数据值，请附带必要信息提交 issue，或直接提交 pull request。</p></div></div>
+<h3 class="rp-toc-include" id="过程数据传感器"><a href="#过程数据传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>过程数据传感器</h3>
+<p>库中可用的传感器如下：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Name</th><th>Unit</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td>Inverter State</td><td></td><td style="text-align:left">State of the inverter.</td></tr><tr><td>Solar Power</td><td>W</td><td style="text-align:left">Sum of all DC strings (including battery).</td></tr><tr><td>Grid Power</td><td>W</td><td style="text-align:left">Power from (+)/to (-) the grid.</td></tr><tr><td>Home Power from Battery</td><td>W</td><td style="text-align:left">Power from the battery for home consumption.</td></tr><tr><td>Home Power from Grid</td><td>W</td><td style="text-align:left">Power from the grid for home consumption.</td></tr><tr><td>Home Power from PV</td><td>W</td><td style="text-align:left">Power from the PV for home consumption.</td></tr><tr><td>Home Power</td><td>W</td><td style="text-align:left">Power used for home consumption.</td></tr><tr><td>AC Power</td><td>W</td><td style="text-align:left">Output power of the inverter.</td></tr><tr><td>DC1 Power</td><td>W</td><td style="text-align:left">Power of string 1.</td></tr><tr><td>DC2 Power</td><td>W</td><td style="text-align:left">Power of string 2.</td></tr><tr><td>DC3 Power</td><td>W</td><td style="text-align:left">Power of string 3.</td></tr><tr><td>DC1 Voltage</td><td>V</td><td style="text-align:left">Voltage of string 1.</td></tr><tr><td>DC2 Voltage</td><td>V</td><td style="text-align:left">Voltage of string 2.</td></tr><tr><td>DC3 Voltage</td><td>V</td><td style="text-align:left">Voltage of string 3.</td></tr><tr><td>DC1 Current</td><td>A</td><td style="text-align:left">Current of string 1.</td></tr><tr><td>DC2 Current</td><td>A</td><td style="text-align:left">Current of string 2.</td></tr><tr><td>DC3 Current</td><td>A</td><td style="text-align:left">Current of string 3.</td></tr><tr><td>PV to Battery Power</td><td>W</td><td style="text-align:left">Power used to charge the battery.</td></tr><tr><td>Energy Manager State</td><td></td><td style="text-align:left">State of the energy manager.</td></tr><tr><td>Battery Cycles</td><td></td><td style="text-align:left">Number of full charge/discharge cycles.</td></tr><tr><td>Battery Power</td><td>W</td><td style="text-align:left">Power from (+)/to (-) the battery.</td></tr><tr><td>Battery SoC</td><td>%</td><td style="text-align:left">SoC of the Battery.</td></tr><tr><td>Autarky Day</td><td>%</td><td style="text-align:left">Autarky of the current day.</td></tr><tr><td>Autarky Month</td><td>%</td><td style="text-align:left">Autarky of the current month.</td></tr><tr><td>Autarky Year</td><td>%</td><td style="text-align:left">Autarky of the current year.</td></tr><tr><td>Autarky Total</td><td>%</td><td style="text-align:left">Autarky total.</td></tr><tr><td>Own Consumption Rate Day</td><td>%</td><td style="text-align:left">Own consumption rate of the current day.</td></tr><tr><td>Own Consumption Rate Month</td><td>%</td><td style="text-align:left">Own consumption rate of the current month.</td></tr><tr><td>Own Consumption Rate Year</td><td>%</td><td style="text-align:left">Own consumption rate of the current year.</td></tr><tr><td>Own Consumption Rate Total</td><td>%</td><td style="text-align:left">Own consumption rate total.</td></tr><tr><td>Home Consumption Day</td><td>kWh</td><td style="text-align:left">Home energy consumption of the current day.</td></tr><tr><td>Home Consumption Month</td><td>kWh</td><td style="text-align:left">Home energy consumption of the current month.</td></tr><tr><td>Home Consumption Year</td><td>kWh</td><td style="text-align:left">Home energy consumption of the current year.</td></tr><tr><td>Home Consumption Total</td><td>kWh</td><td style="text-align:left">Home energy consumption total.</td></tr><tr><td>Home Consumption from Battery Day</td><td>kWh</td><td style="text-align:left">Home energy consumption from the battery of the current day.</td></tr><tr><td>Home Consumption from Battery Month</td><td>kWh</td><td style="text-align:left">Home energy consumption from the battery of the current month.</td></tr><tr><td>Home Consumption from Battery Year</td><td>kWh</td><td style="text-align:left">Home energy consumption from the battery of the current year.</td></tr><tr><td>Home Consumption from Battery Total</td><td>kWh</td><td style="text-align:left">Home energy consumption from the battery total.</td></tr><tr><td>Home Consumption from Grid Day</td><td>kWh</td><td style="text-align:left">Home energy consumption from the Grid of the current day.</td></tr><tr><td>Home Consumption from Grid Month</td><td>kWh</td><td style="text-align:left">Home energy consumption from the Grid of the current month.</td></tr><tr><td>Home Consumption from Grid Year</td><td>kWh</td><td style="text-align:left">Home energy consumption from the Grid of the current year.</td></tr><tr><td>Home Consumption from Grid Total</td><td>kWh</td><td style="text-align:left">Home energy consumption from the Grid total.</td></tr><tr><td>Home Consumption from PV Day</td><td>kWh</td><td style="text-align:left">Home energy consumption from the PV of the current day.</td></tr><tr><td>Home Consumption from PV Month</td><td>kWh</td><td style="text-align:left">Home energy consumption from the PV of the current month.</td></tr><tr><td>Home Consumption from PV Year</td><td>kWh</td><td style="text-align:left">Home energy consumption from the PV of the current year.</td></tr><tr><td>Home Consumption from PV Total</td><td>kWh</td><td style="text-align:left">Home energy consumption from the PV total.</td></tr><tr><td>Energy PV1 Day</td><td>kWh</td><td style="text-align:left">Energy of PV string 1 of the current day.</td></tr><tr><td>Energy PV1 Month</td><td>kWh</td><td style="text-align:left">Energy of PV string 1 of the current month.</td></tr><tr><td>Energy PV1 Year</td><td>kWh</td><td style="text-align:left">Energy of PV string 1 of the current year.</td></tr><tr><td>Energy PV1 Total</td><td>kWh</td><td style="text-align:left">Energy of PV string 1 total.</td></tr><tr><td>Energy PV2 Day</td><td>kWh</td><td style="text-align:left">Energy of PV string 2 of the current day.</td></tr><tr><td>Energy PV2 Month</td><td>kWh</td><td style="text-align:left">Energy of PV string 2 of the current month.</td></tr><tr><td>Energy PV2 Year</td><td>kWh</td><td style="text-align:left">Energy of PV string 2 of the current year.</td></tr><tr><td>Energy PV2 Total</td><td>kWh</td><td style="text-align:left">Energy of PV string 2 total.</td></tr><tr><td>Energy PV3 Day</td><td>kWh</td><td style="text-align:left">Energy of PV string 3 of the current day.</td></tr><tr><td>Energy PV3 Month</td><td>kWh</td><td style="text-align:left">Energy of PV string 3 of the current month.</td></tr><tr><td>Energy PV3 Year</td><td>kWh</td><td style="text-align:left">Energy of PV string 3 of the current year.</td></tr><tr><td>Energy PV3 Total</td><td>kWh</td><td style="text-align:left">Energy of PV string 3 total.</td></tr><tr><td>Energy Yield Day</td><td>kWh</td><td style="text-align:left">Energy yield of the current day.</td></tr><tr><td>Energy Yield Month</td><td>kWh</td><td style="text-align:left">Energy yield of the current month.</td></tr><tr><td>Energy Yield Year</td><td>kWh</td><td style="text-align:left">Energy yield of the current year.</td></tr><tr><td>Energy Yield Total</td><td>kWh</td><td style="text-align:left">Energy yield total.</td></tr><tr><td>Energy Discharge to Grid Day</td><td>kWh</td><td style="text-align:left">Energy discharged from battery to the Grid of the current day.</td></tr><tr><td>Energy Discharge to Grid Month</td><td>kWh</td><td style="text-align:left">Energy discharged from battery to the Grid of the current month.</td></tr><tr><td>Energy Discharge to Grid Year</td><td>kWh</td><td style="text-align:left">Energy discharged from battery to the Grid of the current year.</td></tr><tr><td>Energy Discharge to Grid Total</td><td>kWh</td><td style="text-align:left">Energy discharged from battery to the Grid total.</td></tr><tr><td>Battery Charge from Grid Day</td><td>kWh</td><td style="text-align:left">Energy charged to the battery from the Grid of the current day.</td></tr><tr><td>Battery Charge from Grid Month</td><td>kWh</td><td style="text-align:left">Energy charged to the battery from the Grid of the current month.</td></tr><tr><td>Battery Charge from Grid Year</td><td>kWh</td><td style="text-align:left">Energy charged to the battery from the Grid of the current year.</td></tr><tr><td>Battery Charge from Grid Total</td><td>kWh</td><td style="text-align:left">Energy charged to the battery from the Grid total.</td></tr><tr><td>Battery Charge from PV Day</td><td>kWh</td><td style="text-align:left">Energy to the battery on the DC side charged by PV during the current day.</td></tr><tr><td>Battery Charge from PV Month</td><td>kWh</td><td style="text-align:left">Energy to the battery on the DC side charged by PV during the current month.</td></tr><tr><td>Battery Charge from PV Year</td><td>kWh</td><td style="text-align:left">Energy to the battery on the DC side charged by PV during the current year.</td></tr><tr><td>Battery Charge from PV Total</td><td>kWh</td><td style="text-align:left">Energy to the battery on the DC side charged by PV  total.</td></tr><tr><td>Battery Discharge Day</td><td>kWh</td><td style="text-align:left">Energy from the battery on the DC side discharged during the current day.</td></tr><tr><td>Battery Discharge Month</td><td>kWh</td><td style="text-align:left">Energy from PV on DC-side used to charge the battery of the current month.</td></tr><tr><td>Battery Discharge Year</td><td>kWh</td><td style="text-align:left">Energy from PV on DC-side used to charge the battery of the current year.</td></tr><tr><td>Battery Discharge Total</td><td>kWh</td><td style="text-align:left">Energy from PV on DC-side used to charge the battery total.</td></tr><tr><td>Energy to Grid Day</td><td>kWh</td><td style="text-align:left">Energy fed into the grid for the current day.</td></tr><tr><td>Energy to Grid Month</td><td>kWh</td><td style="text-align:left">Energy fed into the grid for the current month.</td></tr><tr><td>Energy to Grid Year</td><td>kWh</td><td style="text-align:left">Energy fed into the grid for the current year.</td></tr><tr><td>Energy to Grid Total</td><td>kWh</td><td style="text-align:left">Energy fed into the grid in total, since the system was installed.</td></tr><tr><td>Sum power of all PV DC inputs</td><td>W</td><td style="text-align:left">Total sum of power provided by all PV inputs together.</td></tr></tbody></table></div>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+逆变器本身不会直接提供馈入电网的能量数据，但 <code>pykoplenti</code> 库会通过虚拟过程数据提供这些信息。</p></div></div>
+<h4 class="rp-toc-include" id="能源仪表板配置"><a href="#能源仪表板配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>能源仪表板配置</h4>
+<p>以下传感器可用于 <a href="/home-assistant/docs/energy/index.html" class="rp-link">energy dashboard</a>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Energy dashboard</th><th style="text-align:left">Sensor</th></tr></thead><tbody><tr><td>Grid consumption</td><td style="text-align:left">Home Consumption from Grid Total</td></tr><tr><td>Solar production</td><td style="text-align:left">Energy PV1 Total, Energy PV2 Total, Energy PV3 Total</td></tr><tr><td>Battery systems</td><td style="text-align:left">Battery Discharge Total, Battery Charge from PV Total</td></tr></tbody></table></div>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+部分能量是在 DC 侧测量，部分则在 AC 侧测量，因此由于 DC 与 AC 之间的损耗，数值可能会有轻微差异。</p></div></div>
+<h3 class="rp-toc-include" id="配置实体"><a href="#配置实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置实体</h3>
+<p>以下实体可用于设备配置：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Name</th><th>Unit</th><th>Domain</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td>Battery min home consumption</td><td>W</td><td>Number</td><td style="text-align:left">Min. home consumption power for battery</td></tr><tr><td>Battery min Soc</td><td>%</td><td>Number</td><td style="text-align:left">Min. SoC of battery</td></tr><tr><td>Battery dynamic SoC</td><td></td><td>Select</td><td style="text-align:left">Dynamic SoC</td></tr><tr><td>Battery smart control</td><td></td><td>Switch</td><td style="text-align:left">Enable smart battery control</td></tr><tr><td>Battery strategy</td><td></td><td>Switch</td><td style="text-align:left">Battery strategy</td></tr><tr><td>Shadow management</td><td></td><td>Switch</td><td style="text-align:left">PV string shadow management</td></tr></tbody></table></div>
+<p>如果您使用安装人员访问权限进行连接，还可以访问以下传感器：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Name</th><th>Unit</th><th>Domain</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td>Battery manual charge</td><td></td><td>Switch</td><td style="text-align:left">Force the battery to charge from AC</td></tr></tbody></table></div>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+设置值变化较少，因此这些传感器仅每 5 分钟轮询一次。</p></div></div>
+<h4 class="rp-toc-include" id="电池策略"><a href="#电池策略" class="rp-header-anchor rp-link" aria-hidden="true">#</a>电池策略</h4>
+<p>该传感器默认开启，对应 Kostal Plenticore Plus 文档中的 “Automatically” 模式。此模式建议用于降雪较少的地区。</p>
+<p>关闭该传感器则对应 “Automatically economical” 模式。在这种模式下，逆变器会自动控制电池充电，但当 PV 能量长时间不足以为电池充电时，会关闭电池。此模式建议用于降雪较多的地区。</p>
+<h4 class="rp-toc-include" id="电池智能控制"><a href="#电池智能控制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>电池智能控制</h4>
+<p>电池智能控制传感器会显示为一个名为 “battery charging / usage mode” 的选择字段，包含以下三个选项：</p>
+<ul>
+<li><strong>None</strong>：只要有多余的 PV 能量，就立即给电池充电。</li>
+<li><strong>Battery:SmartBatteryControl:Enable</strong>：优化电网馈入和电池充电。这一设置适用于电网馈入受限的情况，例如被限制为 Plenticore Plus 峰值功率的 70%。</li>
+<li><strong>Battery:TimeControl:Enable</strong>：可在不同时间段（电价时段）灵活配置电池充电和放电。详细设置必须在 Kostal Plenticore Plus 逆变器的 Web 前端中完成。此选项会启用按时间控制的电池使用模式。</li>
+</ul>
+<h4 class="rp-toc-include" id="电池手动充电"><a href="#电池手动充电" class="rp-header-anchor rp-link" aria-hidden="true">#</a>电池手动充电</h4>
+<p>电池手动充电传感器允许您强制将电池充到 100%，不受 PV 发电量或家庭用电情况影响。
+该设置仅在使用安装人员访问权限时可用，因此也应以与安装人员访问权限相同的谨慎程度使用。</p>
+<p>更多信息请参阅 <a href="#installer-access" class="rp-link">安装人员访问权限</a>。</p>
+<h4 class="rp-toc-include" id="阴影管理"><a href="#阴影管理" class="rp-header-anchor rp-link" aria-hidden="true">#</a>阴影管理</h4>
+<p>阴影管理开关会根据支持的 DC 串自动创建。</p>
+<h2 class="rp-toc-include" id="数值"><a href="#数值" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数值</h2>
+<p>以下 Number 实体可用。这些值也可以在 Home Assistant 中直接更改。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Name</th><th>Unit</th><th>RW</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td>Battery min home Ccnsumption</td><td>W</td><td>RW</td><td style="text-align:left">Min. home consumption power for battery.</td></tr><tr><td>Battery min SoC</td><td>%</td><td>RW</td><td style="text-align:left">Min. SoC of battery.</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="诊断"><a href="#诊断" class="rp-header-anchor rp-link" aria-hidden="true">#</a>诊断</h2>
+<p>以下诊断传感器可用。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Name</th><th>Data Type</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td>Active errors</td><td>Integer</td><td style="text-align:left">Count of currently active errors.</td></tr></tbody></table></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#安装人员访问权限" class="rp-toc-item rp-link" title="安装人员访问权限" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">安装人员访问权限</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#过程数据传感器" class="rp-toc-item rp-link" title="过程数据传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">过程数据传感器</span></a><a href="#能源仪表板配置" class="rp-toc-item rp-link" title="能源仪表板配置" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">能源仪表板配置</span></a><a href="#配置实体" class="rp-toc-item rp-link" title="配置实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配置实体</span></a><a href="#电池策略" class="rp-toc-item rp-link" title="电池策略" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">电池策略</span></a><a href="#电池智能控制" class="rp-toc-item rp-link" title="电池智能控制" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">电池智能控制</span></a><a href="#电池手动充电" class="rp-toc-item rp-link" title="电池手动充电" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">电池手动充电</span></a><a href="#阴影管理" class="rp-toc-item rp-link" title="阴影管理" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">阴影管理</span></a><a href="#数值" class="rp-toc-item rp-link" title="数值" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数值</span></a><a href="#诊断" class="rp-toc-item rp-link" title="诊断" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">诊断</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

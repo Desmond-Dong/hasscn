@@ -1,0 +1,52 @@
+# MessageBird
+
+The **MessageBird** integration sends notifications as SMS messages using [MessageBird](https://www.messagebird.com/) to your mobile phone.
+
+## Setup
+
+Go to [MessageBird](https://www.messagebird.com/) to retrieve your API key.
+
+## Configuration
+
+To enable MessageBird notifications in your installation, add the following to your "`configuration.yaml`" file.
+:::tip
+更改配置后需要重启 Home Assistant。
+:::
+
+```yaml
+# Example configuration.yaml entry
+notify:
+  - name: NOTIFIER_NAME
+    platform: message_bird
+    api_key: YOUR_API_KEY
+```
+
+```yaml
+api_key:
+  description: Your MessageBird API key.
+  required: true
+  type: string
+name:
+  description: Setting the optional parameter `name` allows multiple notifiers to be created. The notifier will bind to the `notify.NOTIFIER_NAME` action.
+  required: false
+  default: notify
+  type: string
+sender:
+  description: Setting the optional parameter `sender`. This will be the sender of the SMS. It may be either a telephone number (e.g., `+4915112345678`) or a text with a maximum length of 11 characters.
+  required: false
+  default: HA
+  type: string
+```
+
+### Usage
+
+MessageBird is a notify platform and thus can be controlled by calling the notify action [as described here](/home-assistant/integrations/notify/index.md). It will send a notification to the specified mobile phone number(s).
+
+#### Example action payload
+
+```json
+{
+  "message": "A message for many people",
+  "target": [ "+49123456789", "+43123456789" ]
+}
+```

@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Nest - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Google Nest - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Google Nest 集成可让你在 Home Assistant 中接入部分受支持(https://developers.google.com/nest/device-access/supported-devices)的 Google Nest(https://store.google.com/us/cat。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Google Nest 集成可让你在 Home Assistant 中接入部分受支持(https://developers.google.com/nest/device-access/supported-devices)的 Google Nest(https://store.google.com/us/cat。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="https://my.home-assistant.io/badges/config_flow_start.svg"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/setup_prompt.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/api_project_needed.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/console_project_id.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/enable_sdm_api.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_consent_create.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_consent_test_users.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_consent_production_status.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/create_credentials.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_client_id.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_redirect_uri.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_created.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/device_access.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/accept_terms.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/project_name.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/device_access_oauth_client_id.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/cloud_pubsub_create_topic.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/cloud_pubsub_add_principal.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/cloud_pubsub_add_principal_role.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/device_access_topic_disabled.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/device_access_validate_pubsub.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/device_access_complete.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_approve.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_app_verification.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_grant1.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_grant2.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/oauth_confirm.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/config_flow_with_topic.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/config_flow_subscription.png"/><link rel="preload" as="image" href="https://my.home-assistant.io/badges/automations.svg"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/device_triggers.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/google_home_notification_settings.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/application_credentials.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/redirect_uri_mismatch.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/nest/redirect_uris_fix.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><p><strong>Google Nest</strong> 集成可让你在 Home Assistant 中接入部分<a href="https://developers.google.com/nest/device-access/supported-devices" target="_blank" rel="noopener noreferrer" class="rp-link">受支持</a>的 Google <a href="https://store.google.com/us/category/connected_home?" target="_blank" rel="noopener noreferrer" class="rp-link">Nest</a> 设备。此集成使用 <a href="https://developers.google.com/nest/device-access/api" target="_blank" rel="noopener noreferrer" class="rp-link">Smart Device Management</a> API 和 Google Cloud Pub/Sub，高效监听设备状态变化和其他事件。有关 SDM API 支持的全部设备，请参阅<a href="https://developers.google.com/nest/device-access/supported-devices" target="_blank" rel="noopener noreferrer" class="rp-link">支持的设备</a>。</p>
+<p>Home Assistant 目前支持以下设备类型：</p>
+<ul>
+<li><a href="#climate" class="rp-link">气候</a></li>
+<li><a href="#%E4%BC%A0%E6%84%9F%E5%99%A8" class="rp-link">传感器</a></li>
+<li><a href="#%E7%9B%B8%E6%9C%BA" class="rp-link">相机</a></li>
+<li><a href="#%E6%B4%BB%E5%8A%A8" class="rp-link">活动</a></li>
+</ul>
+<p>摄像头和门铃使用<a href="#device-triggers" class="rp-link">自动化和设备触发器</a>处理事件，并使用<a href="#media-source" class="rp-link">媒体源</a>在支持的设备上获取媒体图像。SDM API 目前不支持其他设备类型，例如烟雾与一氧化碳报警器或安防系统。</p>
+<p>您可以控制向 Home Assistant 公开的信息和功能。您可以为任何特定设备授权单个设备、多个设备或不同级别的功能，例如运动事件、实时流。该集成足够灵活，可以根据您的允许进行调整。</p>
+<h1 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<ul>
+<li>
+<p>自 2025 年 1 月 23 日起，Nest 设备访问控制台 Pub/Sub 设置流程已更改。 <strong>请确保您使用的是最新版本的 Home Assistant。</strong></p>
+</li>
+<li>
+<p>Nest 智能设备管理 (SDM) API <strong>需要 5 美元费用</strong>。购买前，请确保您的设备<a href="https://developers.google.com/nest/device-access/supported-devices" target="_blank" rel="noopener noreferrer" class="rp-link">受支持</a>。</p>
+</li>
+<li>
+<p>SDM API 还与某些 Google 帐号类型或安全设置不兼容，包括 Google Workspace 和高级保护计划。请参阅下面的<a href="#known-limitations" class="rp-link">已知限制</a>。</p>
+</li>
+</ul>
+<h2 class="rp-toc-include" id="配置"><a href="#配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置</h2>
+<details>
+<summary>重要：请先移除现有 Google 凭据</summary>
+<p>如果您之前设置过 Google 集成或 Nest 集成，则应先删除任何现有的 Google 集成凭据，然后再继续。</p>
+<p>要移除现有凭据：</p>
+<ol>
+<li>前往 <strong><a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong>。</li>
+<li>选择右上角的三点菜单 (⋮)。</li>
+<li>检查列表中是否已有旧的 Google 或 Nest 集成。</li>
+<li>选择对应的 Google/Nest 集成并点击“Delete”将其移除。</li>
+</ol>
+<p>这样可以确保 Home Assistant 使用你最新的 Google 集成配置，并避免认证冲突。</p>
+</details>
+<p>要将 <strong>Nest</strong> 集成添加到 Home Assistant，请使用下面这个 My Home Assistant 按钮：
+<a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=nest" target="_blank" rel="noopener noreferrer" class="rp-link"><img src="https://my.home-assistant.io/badges/config_flow_start.svg" alt="Open Add integration in your Home Assistant instance."/></a></p>
+<p><img src="/home-assistant/images/integrations/nest/setup_prompt.png" alt="安装提示的屏幕截图"/></p>
+<details>
+<summary>手动配置步骤</summary>
+<ol>
+<li>打开你的 Home Assistant 实例。</li>
+<li>前往 <strong><a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; Devices &amp; services</a></strong>。</li>
+<li>在右下角点击 <strong><a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=nest" target="_blank" rel="noopener noreferrer" class="rp-link">Add integration</a></strong> 按钮。</li>
+<li>在列表中选择 <strong>Nest</strong>，然后按照屏幕上的说明继续操作。</li>
+</ol>
+</details>
+<p>集成设置步骤将引导您完成配置 Google Cloud 项目、设备访问项目的过程，最后将您的帐户链接到 Home Assistant。确保您运行的是最新版本的 Home Assistant。</p>
+<details>
+<summary>创建并配置云项目 [Cloud Console]</summary>
+<p>在本节结束时，您将拥有一个启用了必要 API 的云项目</p>
+<ol>
+<li>
+<p>转到 <a href="https://console.developers.google.com/apis/credentials" target="_blank" rel="noopener noreferrer" class="rp-link">Google Cloud Console</a>。</p>
+</li>
+<li>
+<p>如果这是您第一次来到这里，您可能需要创建一个新的 Google Cloud 项目。单击“<strong>创建项目</strong>”，然后单击“<strong>新建”
+项目</strong>。
+<img src="/home-assistant/images/integrations/nest/api_project_needed.png" alt="没有现有项目的 API 和服务 Cloud 控制台的屏幕截图"/></p>
+</li>
+<li>
+<p>为您的云项目命名，然后单击<strong>创建</strong>。</p>
+</li>
+<li>
+<p>您需要保留您的<em>云项目 ID</em> 才能启用订阅以接收来自设备的更新。访问<a href="https://console.cloud.google.com/home/dashboard" target="_blank" rel="noopener noreferrer" class="rp-link">Cloud Console</a>并复制Home Assistant所需的<em>项目ID</em>。</p>
+</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/nest/console_project_id.png" alt="成功截图"/></p>
+<ol start="5">
+<li>
+<p>前往 <a href="https://console.cloud.google.com/apis/library" target="_blank" rel="noopener noreferrer" class="rp-link">API 与服务 &gt; 库</a>，您可以在其中启用 API。</p>
+</li>
+<li>
+<p>从 API 库中搜索 <a href="https://console.cloud.google.com/apis/library/smartdevicemanagement.googleapis.com" target="_blank" rel="noopener noreferrer" class="rp-link">智能设备管理</a>，然后单击 <strong>启用</strong>。</p>
+</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/nest/enable_sdm_api.png" alt="搜索 SDM API 的屏幕截图"/></p>
+<ol start="7">
+<li>在 Cloud Console 的 API 库中搜索 <a href="https://console.developers.google.com/apis/library/pubsub.googleapis.com" target="_blank" rel="noopener noreferrer" class="rp-link">Cloud Pub/Sub API</a>，然后点击 <strong>启用</strong>。</li>
+</ol>
+<p>您现在已经有了一个云项目，可以在下一部分中使用 OAuth 配置身份验证。</p>
+</details>
+<details>
+<summary>配置 OAuth 同意屏幕 [Cloud Console]</summary>
+<p>在本节结束时，您将配置 OAuth 同意屏幕，这是为 Home Assistant 提供访问权限所需的
+您的云项目。</p>
+<ol>
+<li>
+<p>转到 <a href="https://console.developers.google.com/apis/credentials" target="_blank" rel="noopener noreferrer" class="rp-link">Google API 控制台</a>。</p>
+</li>
+<li>
+<p>单击 <a href="https://console.cloud.google.com/apis/credentials/consent" target="_blank" rel="noopener noreferrer" class="rp-link">OAuth 同意屏幕</a> 并进行配置。</p>
+</li>
+<li>
+<p>选择“<strong>外部</strong>”，然后单击“<strong>创建</strong>”。当您在这里时，您可以点击<em>让我们知道您的想法</em>，向 Google 的 OAuth 团队提供有关您为自托管软件配置凭据的体验的任何反馈。他们定期改进此流程，并且似乎很重视反馈。
+<img src="/home-assistant/images/integrations/nest/oauth_consent_create.png" alt="OAuth 同意屏幕创建的屏幕截图"/></p>
+</li>
+<li>
+<p><em>应用程序信息</em>屏幕需要您输入<strong>应用程序名称</strong>和<strong>用户支持电子邮件</strong>，然后在<strong>开发人员联系电子邮件</strong>下再次输入您的电子邮件。仅当您稍后通过 OAuth 流程授权 Home Assistant 访问您的帐户时，才会显示这些信息。单击“<strong>保存并继续</strong>”。省略不必要的信息（例如徽标），以避免 Google 进行额外审查。</p>
+</li>
+<li>
+<p>在“范围”步骤中，单击“<strong>保存并继续</strong>”。</p>
+</li>
+<li>
+<p>在“测试用户”步骤中，您需要将您的 Google 帐户（例如，您的 @gmail.com 地址）添加到列表中。单击您的测试帐户上的“保存”，然后单击“保存并继续”以完成同意流程。
+<img src="/home-assistant/images/integrations/nest/oauth_consent_test_users.png" alt="OAuth 同意屏幕测试用户的屏幕截图"/></p>
+</li>
+<li>
+<p>导航回 <em>OAuth 同意屏幕</em>，然后单击 <strong>Publish App</strong> 将 <em>Publishing status</em> 设置为 <strong>In Production</strong>。</p>
+</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/nest/oauth_consent_production_status.png" alt="OAuth 同意屏幕生产状态的屏幕截图"/></p>
+<ol start="8">
+<li>
+<p>该警告表示，任何拥有 Google 帐户的用户都可以使用您的<em>应用程序</em>，这是指如果有人找到该 URL，您在“应用程序信息”屏幕上输入的字段。这不会泄露您的 Google 帐户或 Nest 数据。</p>
+</li>
+<li>
+<p>确保状态不是<em>测试</em>，否则您将每 7 天注销一次。</p>
+</li>
+</ol>
+</details>
+<details>
+<summary>配置 OAuth 应用凭据 [Cloud Console]</summary>
+<p>在本节结束时，您将获得应用程序凭据设置所需的 OAuth <em>客户端 ID</em> 和 <em>客户端密钥</em>。</p>
+<p>以下步骤使用 <em>Web 应用程序身份验证</em> 和 <em>My Home Assistant</em> 来处理 Google 严格的 URL 验证规则，例如需要 SSL 和可公开解析的重定向 URL。</p>
+<ol>
+<li>
+<p>导航到 <a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener noreferrer" class="rp-link">凭据</a> 页面，然后单击 <strong>创建凭据</strong>。
+<img src="/home-assistant/images/integrations/nest/create_credentials.png" alt="API 和服务云控制台屏幕截图"/></p>
+</li>
+<li>
+<p>从下拉列表中选择 <em>OAuth 客户端 ID</em>。
+<img src="/home-assistant/images/integrations/nest/oauth_client_id.png" alt="OAuth 客户端 ID 选择的屏幕截图"/></p>
+</li>
+<li>
+<p>在应用程序类型中输入<em>Web 应用程序</em>。</p>
+</li>
+<li>
+<p>为您的凭证选择一个名称。</p>
+</li>
+<li>
+<p>添加 <strong>授权重定向 URI</strong> 最后输入 <code>https://my.home-assistant.io/redirect/oauth</code></p>
+</li>
+<li>
+<p>单击<em>创建</em>以创建凭据。
+<img src="/home-assistant/images/integrations/nest/oauth_redirect_uri.png" alt="创建 OAuth 凭据的屏幕截图"/></p>
+</li>
+<li>
+<p>现在您应该会看到一条 <em>OAuth 客户端已创建</em> 消息。</p>
+</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/nest/oauth_created.png" alt="OAuth 客户端 ID 和客户端密钥的屏幕截图"/></p>
+<ol start="8">
+<li>您现在拥有 Home Assistant 所需的 <em>OAuth 客户端 ID</em> 和 <em>OAuth 客户端密钥</em>。  按照<a href="/home-assistant/integrations/application_credentials.html" class="rp-link">应用程序凭据说明</a> 在 Home Assistant 中添加 <em>OAuth 客户端 ID</em> 和 <em>OAuth 客户端密钥</em>。</li>
+</ol>
+</details>
+<details>
+<summary>创建设备访问项目 [Device Access Console]</summary>
+<p>现在您已经配置了身份验证，您将创建一个 Nest 设备访问项目，该项目<em>需要 5 美元的费用</em>。完成后，您将拥有一个<em>设备访问项目 ID</em>。</p>
+<ol>
+<li>转到<a href="https://developers.google.com/nest/device-access/registration" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问注册</a>页面。</li>
+</ol>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+继续之前，请先阅读页面中的警告信息，包括 Google 帐号类型限制。</p><p>:::
+2. 选择按钮 <strong><a href="https://console.nest.google.com/device-access/" target="_blank" rel="noopener noreferrer" class="rp-link">转至设备访问控制台</a></strong>。
+<img src="/home-assistant/images/integrations/nest/device_access.png" alt="设备访问注册屏幕截图"/></p><ol start="3">
+<li>
+<p>勾选“接受服务条款”框，然后选择<strong>继续付款</strong>，您需要支付费用（目前为 5 美元）。
+<img src="/home-assistant/images/integrations/nest/accept_terms.png" alt="接受条款的屏幕截图"/></p>
+</li>
+<li>
+<p>现在 <a href="https://console.nest.google.com/device-access/project-list" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问控制台</a> 应该可见。选择<strong>创建项目</strong>。</p>
+</li>
+<li>
+<p>为您的设备访问项目命名并选择<strong>下一步</strong>。
+<img src="/home-assistant/images/integrations/nest/project_name.png" alt="命名项目的屏幕截图"/></p>
+</li>
+<li>
+<p>接下来，系统将要求您提供在上一步中创建的 <strong>OAuth 客户端 ID</strong>，然后选择 <strong>下一步</strong>。
+<img src="/home-assistant/images/integrations/nest/device_access_oauth_client_id.png" alt="设备访问控制台 OAuth 客户端 ID 的屏幕截图"/></p>
+</li>
+<li>
+<p>暂时取消选中<strong>启用事件</strong>并<strong>创建项目</strong>。您需要一个 Pub/Sub 主题
+（在下一节中创建）以启用事件。这需要在
+Google Cloud Pub/Sub 控制台，因此我们暂时跳过该步骤，然后返回
+下一节。</p>
+</li>
+<li>
+<p>您现在拥有 Home Assistant 所需的<em>设备访问项目 ID</em>。</p>
+</li>
+</ol></div></div></details><details>
+<summary>启用事件和 Pub/Sub 主题 [Device Access &amp; Cloud Console]</summary><p>自 2025 年 1 月 23 日起，Nest 设备访问控制台 Pub/Sub 设置流程已发生更改。 <strong>请确保您使用的是最新版本的 Home Assistant。</strong>。</p><p>本节介绍如何使用 Pub/Sub 主题配置设备访问项目
+发布您家中设备的事件。家庭助理和设备访问项目必须配置为使用<em>主题名称</em>，否则您将不会收到事件。</p><p>如果您之前设置过事件，那么您的设备访问项目可能已经为您创建了一个主题，并且您可以使用该主题名称。对于新项目，或者如果您禁用事件，您需要按照以下说明自行创建主题。</p><ol>
+<li>
+<p>转到 <a href="https://console.cloud.google.com/cloudpubsub/topic/list" target="_blank" rel="noopener noreferrer" class="rp-link">Pub/Sub Google Cloud 控制台</a>。</p>
+</li>
+<li>
+<p>Select <strong>Create Topic</strong>.</p>
+</li>
+<li>
+<p>输入<strong>主题 ID</strong>，例如“home-assistant-nest”。您可以保留默认设置。</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/cloud_pubsub_create_topic.png" alt="OAuth 确认屏幕截图"/></p><ol start="4">
+<li>
+<p>选择“<strong>创建</strong>”来创建主题。</p>
+</li>
+<li>
+<p>您现在拥有设备访问控制台和 Home Assistant 所需的 <strong>主题名称</strong>。包含您的云项目 ID 和 <strong>主题 ID</strong> 的完整<strong>主题名称</strong>，例如“projects/<cloud console="" id="">/topics/home-assistant-nest”。</cloud></p>
+</li>
+<li>
+<p>接下来，您需要授予设备访问控制台发布到您的主题的权限。从 Pub/Sub 主题页面中选择 <strong>添加主体</strong>。</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/cloud_pubsub_add_principal.png" alt="OAuth 确认屏幕截图"/></p><ol start="7">
+<li>
+<p>在 <strong>新委托人</strong> 中输入 <code>sdm-publisher@googlegroups.com</code></p>
+</li>
+<li>
+<p>在 <strong>Pub/Sub</strong> 下的 <strong>选择角色</strong> 中，选择 <strong>Pub/Sub 发布者</strong> 和 <strong>创建</strong>。</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/cloud_pubsub_add_principal_role.png" alt="OAuth 确认屏幕截图"/></p><ol start="9">
+<li>
+<p>接下来，您可以配置设备访问控制台以使用此主题。访问<a href="https://console.nest.google.com/device-access/" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问控制台</a>。</p>
+</li>
+<li>
+<p>选择您之前创建的设备访问项目。它应该显示 Pub/Sub 主题
+作为禁用。如果显示了现有主题，那么您可以将其删除并使用
+您刚刚创建的一个，以避免将它们混淆。</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/device_access_topic_disabled.png" alt="OAuth 确认屏幕截图"/></p><ol start="11">
+<li>
+<p>选择 <strong>Pub/Sub 主题</strong> 旁边的 <em>...</em>，然后选择 <strong>启用具有 PubSub 主题的事件</strong>。</p>
+</li>
+<li>
+<p>输入完整的 Pub/Sub <strong>主题名称</strong>，然后选择 <strong>添加并验证</strong>。如果您看到错误，那么
+再次查看前面的步骤并配置主题和权限。</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/device_access_validate_pubsub.png" alt="OAuth 确认屏幕截图"/></p><ol start="13">
+<li>您已成功配置 Home Assistant 使用的事件和 Pub/Sub 主题。</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/device_access_complete.png" alt="OAuth 确认屏幕截图"/></p></details><details>
+<summary>关联 Google 帐号</summary><p>在本部分中，您将通过生成<em>身份验证令牌</em>来授权 Home Assistant 访问您的帐户。</p><p>请参阅下面的<a href="#troubleshooting" class="rp-link">疑难解答</a>，了解解决导致 <em>无法链接...</em> 或来自 Google 的 <em>错误 400</em> 等错误的常见错误配置的步骤。</p><ol>
+<li>
+<p>在 Home Assistant 中，您应该已经完成​​了设置流程。如果没有，请返回并单击上面的“我的：添加集成”按钮开始设置。集成将要求您提供所有必要的集成配置。</p>
+</li>
+<li>
+<p>在 Home Assistant 中输入所有配置信息后，将打开一个新选项卡，允许您选择 Google 帐户。这应该与您上面配置的开发者帐户相同。</p>
+</li>
+<li>
+<p><em>Google Nest 权限</em> 屏幕将允许您选择要配置的设备，并允许您从多个家庭中选择设备。您可能想要启用所有功能，但是，您可以省略任何您不想与 Home Assistant 使用的功能。</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/oauth_approve.png" alt="Nest权限授权截图"/></p><ol start="4">
+<li>
+<p>您将被重定向到另一个帐户选择页面。</p>
+</li>
+<li>
+<p>您可能会看到一个警告屏幕，显示“Google 尚未验证此应用程序”，因为您刚刚设置了未经验证的开发人员工作流程。单击<em>继续</em>继续。</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/oauth_app_verification.png" alt="OAuth 警告屏幕截图"/></p><ol start="6">
+<li>
+<p>然后系统会要求您授予其他权限。单击<em>允许</em>。
+<img src="/home-assistant/images/integrations/nest/oauth_grant1.png" alt="授予权限截图1"/>
+<img src="/home-assistant/images/integrations/nest/oauth_grant2.png" alt="授予权限截图2"/></p>
+</li>
+<li>
+<p>确认您想要允许持续访问 Home Assistant。
+<img src="/home-assistant/images/integrations/nest/oauth_confirm.png" alt="OAuth 确认屏幕截图"/></p>
+</li>
+<li>
+<p>现在，您将看到由 <em>My Home Assistant</em> 托管的页面，询问您是否愿意 <em>将帐户链接到 Home Assistant？</em> 单击 <strong>链接帐户</strong> 继续。</p>
+</li>
+<li>
+<p>如果一切顺利，您接下来将配置事件和 Pub/Sub 主题。 Nest将尝试
+自动查找由设备访问控制台创建的 Pub/sub 主题
+或由您手动操作。</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/config_flow_with_topic.png" alt="OAuth 确认屏幕截图"/></p><ol start="10">
+<li>
+<p>如果您看到错误消息 <em>未找到符合条件的 Pub/Sub 主题，请确保设备访问控制台具有 Pub/Sub 主题。</em>，然后按照上一节中的步骤启用事件并在另一个浏览器选项卡中创建 Pub/Sub 主题。创建并配置主题后，您可以在此屏幕上按 <strong>提交</strong> 刷新主题列表并继续。</p>
+</li>
+<li>
+<p>Home Assistant 使用<em>订阅</em>来订阅在该主题上发布的设备事件。您可以选择在设备访问控制台中创建的订阅，如果您还没有订阅，集成将自动为您创建订阅。
+<img src="/home-assistant/images/integrations/nest/config_flow_subscription.png" alt="OAuth 确认屏幕截图"/></p>
+</li>
+<li>
+<p>如果一切顺利，您就可以出发了！</p>
+</li>
+</ol><p><img src="/home-assistant/images/integrations/nest/device_access_complete.png" alt="成功截图"/></p></details><h2 class="rp-toc-include" id="气候"><a href="#气候" class="rp-header-anchor rp-link" aria-hidden="true">#</a>气候</h2><p>所有 Google Nest Thermostat 模型都公开为使用 SDM API 中的 <a href="https://developers.google.com/nest/device-access/traits/device/thermostat-hvac" target="_blank" rel="noopener noreferrer" class="rp-link">Thermostat Traits</a> 的“气候”实体。恒温器的状态变化通过 Cloud Pubsub 订阅者报告给 Home Assistant。</p><p>给定一个名为“Upstairs”的恒温器，然后使用“climate.upstairs”等名称创建气候实体</p><p>:::note
+此功能通过以下权限启用：</p><ul>
+<li><em>允许家庭助理访问和控制您的恒温器</em></li>
+</ul>
+<h2 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h2>
+<p>所有 Google Nest Thermostat 模型都具有从 SDM API 公开的特征。传感器的初始值在启动时获取，然后使用 Cloud Pubsub 订阅者定期更新。传感器支持以下特征：</p>
+<ul>
+<li><a href="https://developers.google.com/nest/device-access/traits/device/Temperature" target="_blank" rel="noopener noreferrer" class="rp-link">温度</a></li>
+<li><a href="https://developers.google.com/nest/device-access/traits/device/humidity" target="_blank" rel="noopener noreferrer" class="rp-link">湿度</a></li>
+</ul>
+<p>给定一个名为“Upstairs”的恒温器，然后使用“sensor.upstairs_Temperature”或“sensor.upstairs_humidity”等名称创建传感器。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+此功能通过以下权限启用：</p><ul>
+<li><em>允许家庭助理访问和控制您的恒温器</em></li>
+</ul></div></div>
+<h2 class="rp-toc-include" id="相机"><a href="#相机" class="rp-header-anchor rp-link" aria-hidden="true">#</a>相机</h2>
+<p>Home Assistant 支持所有 SDM API 功能。但是，每个摄像头或门铃设备都有一组不同的内置功能。摄像头设备具有以下实时流类型之一：</p>
+<ul>
+<li><strong>RTSP</strong>：这些设备具有由 Home Assistant Core 提供服务的 HLS 流。这些相机支持服务器端“相机”操作，例如流录制或图像预览。请参阅<a href="/home-assistant/integrations/stream.html#ll-hls" class="rp-link">低延迟 HLS</a>，这是一个减少流延迟的绝佳选项。</li>
+<li><strong>WebRTC</strong>：这些设备支持浏览器到相机的直接通信和超低延迟流。 <a href="/home-assistant/dashboards/picture-glance/index.html" class="rp-link">图片概览卡</a> 可以在网格中显示实时流，并将<em>摄像头视图</em>设置为“实时”（不建议用于电池供电的摄像头）。 <em>不支持</em>诸如流录制之类的“相机”操作。</li>
+</ul>
+<p>给定一个名为“Front Yard”的相机，然后使用“camera.front_yard”等名称创建相机。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+此功能通过以下权限启用：</p><ul>
+<li><em>允许家庭助理查看并显示您相机的直播</em></li>
+<li><em>Nest 或 Google Home 应用中的其他权限</em>。</li>
+</ul><p>:::
+所有摄像机还公开事件实体以实现自动化。部分相机型号还
+支持通过设备触发器捕获媒体（快照或剪辑）。下表总结了每个设备的<a href="https://developers.google.com/nest/device-access/supported-devices" target="_blank" rel="noopener noreferrer" class="rp-link">支持的 SDM API 功能</a>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Device</th><th style="text-align:center">Live stream</th><th style="text-align:center">Event entities / triggers</th><th style="text-align:center">Media source<br/> for triggers</th></tr></thead><tbody><tr><td>Nest Cam (indoor, wired)<br/>Nest Cam (outdoor, battery)</td><td style="text-align:center">WebRTC</td><td style="text-align:center">Motion<br/>Person</td><td style="text-align:center">N/A</td></tr><tr><td>Nest Cam Indoor<br/>Nest Cam IQ Indoor<br/>Nest Cam IQ Outdoor<br/>Nest Cam Outdoor</td><td style="text-align:center">RTSP<br/>Recording</td><td style="text-align:center">Motion<br/>Person<br/>Sound</td><td style="text-align:center">Snapshot (jpg)</td></tr><tr><td>Nest Cam with floodlight</td><td style="text-align:center">WebRTC</td><td style="text-align:center">Motion<br/>Person</td><td style="text-align:center">N/A</td></tr><tr><td>Nest Doorbell (battery)</td><td style="text-align:center">WebRTC</td><td style="text-align:center">Motion<br/>Person<br/>Chime</td><td style="text-align:center">Clip Preview (mp4, gif)</td></tr><tr><td>Nest Doorbell (wired, 1st gen)</td><td style="text-align:center">RTSP<br/>Recording</td><td style="text-align:center">Motion<br/>Person<br/>Sound<br/>Chime</td><td style="text-align:center">Snapshot (jpg)</td></tr><tr><td>Nest Doorbell (wired, 2nd gen)</td><td style="text-align:center">WebRTC</td><td style="text-align:center">Motion<br/>Person<br/>Chime</td><td style="text-align:center">Clip Preview (mp4, gif)</td></tr><tr><td>Nest Hub Max</td><td style="text-align:center">RTSP<br/>Recording</td><td style="text-align:center">Motion<br/>Person<br/>Sound<br/></td><td style="text-align:center">Snapshot (jpg)</td></tr></tbody></table></div><h2 class="rp-toc-include" id="事件"><a href="#事件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>事件</h2><p>所有门铃和摄像头都支持事件实体。有关如何在自动化中使用事件实体的更多信息，请参阅<a href="https://www.home-assistant.io/integrations/event/" target="_blank" rel="noopener noreferrer" class="rp-link">事件</a>集成文档。</p><p>根据上述相机功能，有两类可用的事件实体：</p><ul>
+<li>支持任何事件类型“camera_motion”、“camera_person”或“camera_sound”的摄像机的“motion”</li>
+<li>“门铃”适用于所有作为门铃并支持“doorbell_chime”事件的摄像机</li>
+</ul><p>收到事件消息后，嵌套事件实体会立即更新
+无需等待任何媒体被获取。请参阅设备触发器以获取媒体支持。</p><h2 class="rp-toc-include" id="设备触发器"><a href="#设备触发器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设备触发器</h2><p>Nest 集成提供<a href="/home-assistant/docs/automation/trigger/index.html#device-triggers" class="rp-link">设备触发器</a> 以在 Home Assistant 中启用自动化。您应该查看 <a href="/home-assistant/getting-started/automation/index.html" class="rp-link">自动化家庭助理</a> 自动化入门指南或 <a href="/home-assistant/docs/automation/index.html" class="rp-link">自动化</a> 文档以了解完整详细信息。</p><p>下载与事件关联的任何媒体后，设备触发器将等待触发。使用
+无需媒体即可立即通知的事件实体。</p><p><a href="https://my.home-assistant.io/redirect/automations/" target="_blank" rel="noopener noreferrer" class="rp-link"><img src="https://my.home-assistant.io/badges/automations.svg" alt="Open Settings &gt; Automations &amp; scenes in your Home Assistant instance."/></a></p><p><img src="/home-assistant/images/integrations/nest/device_triggers.png" alt="屏幕截图设备触发器"/></p><details>
+<summary>设备触发器 / 事件负载示例</summary><p>这是可用于驱动自动化的设备触发器的“nest_event”有效负载的示例。</p><div class="rp-codeblock language-json"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="json"><code><span class="line"><span style="color:var(--shiki-foreground)">{</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    &quot;event_type&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;nest_event&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    &quot;data&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;device_id&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;EXAMPLE_DEVICE_ID&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;type&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;doorbell_chime&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;timestamp&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;2022-01-26T04:56:54.031000+00:00&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;nest_event_id&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;EXAMPLE_EVENT_ID&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        &quot;attachment&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          &quot;image&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;/api/nest/event_media/DEVICE_ID/EVENT_ID/thumbnail&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          &quot;video&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;/api/nest/event_media/DEVICE_ID/EVENT_ID&quot;</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        }</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">        &quot;zones&quot;</span><span style="color:var(--shiki-foreground)">: [</span><span style="color:var(--shiki-token-string-expression)">&quot;Zone 1&quot;</span><span style="color:var(--shiki-foreground)">]</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    }</span><span style="color:var(--shiki-token-punctuation)">,</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><ul>
+<li><code>device_id</code>：相机的 Home Assistant 设备标识符</li>
+<li><code>nest_event_id</code>：是标识事件的不透明标识符。</li>
+<li><code>附件</code>：如果设备支持快照或剪辑，则可能存在，具体取决于设备的功能。这是可以从媒体源获取媒体的 URL。</li>
+<li><code>zones</code>：触发事件的区域（如果可用）。区域是在 Google Home 应用程序中配置的，但并非所有摄像头都支持。命名区域之外的区域中的事件将是空区域名称。</li>
+</ul></details><p>继续阅读下面的<em>媒体源附件</em>，了解如何将媒体与通知操作结合使用。</p><p>:::note
+此功能通过以下权限启用：</p><ul>
+<li><em>Allow Home Assistant to know when there&#x27;s a camera event</em></li>
+<li><em>Allow Home Assistant to know when there&#x27;s a doorbell event</em></li>
+<li><em>Other permissions and notification settings in the Nest or Google Home apps</em>.</li>
+</ul></div></div>
+<h2 class="rp-toc-include" id="google-home-应用通知设置"><a href="#google-home-应用通知设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Google Home 应用通知设置</h2>
+<p>Google Home 应用通知设置不仅控制将哪些通知发送到您的手机，
+还包括发布到 Pub/Sub feed 的内容。</p>
+<p>例如，如果您启用<em>仅限外出通知</em>，Home Assistant 将仅在您的手机离开家时接收事件。</p>
+<p>另一件可能不直观的事情是，在设备历史记录中看到该事件并不意味着它已发布到源中。
+但是，如果您收到推送通知，则这些设置可能有效。</p>
+<p>注意：它们对源的确切设置和效果可能会因相机型号或应用程序版本而异。</p>
+<p>如果您仍然没有收到通知，您可以阅读此[来自 Google 的问题排查指南]<!-- -->
+(<a href="https://support.google.com/googlenest/answer/9230439#zippy=%2Cyour-camera-detected-something-but-you-didnt-get-a-camera-alert" target="_blank" rel="noopener noreferrer" class="rp-link">https://support.google.com/googlenest/answer/9230439#zippy=%2Cyour-camera-detected-something-but-you-didnt-get-a-camera-alert</a>)</p>
+<!-- -->
+<details>
+<summary>Google Home 应用通知设置</summary>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Google Home App Setting</th><th style="text-align:center">Notes</th></tr></thead><tbody><tr><td>Notifications: Push</td><td style="text-align:center">Required for any detection event to be published</td></tr><tr><td>Notifications: Away-Only</td><td style="text-align:center">Events will only be published when a user is detected as away from home</td></tr><tr><td>Seen: Motion</td><td style="text-align:center">Required for <code>Motion</code> events to be published</td></tr><tr><td>Seen: Person</td><td style="text-align:center">Required for <code>Person</code> events to be published</td></tr></tbody></table></div>
+<p><img src="/home-assistant/images/integrations/nest/google_home_notification_settings.png" alt="Google Home 应用通知设置的屏幕截图"/></p>
+</details>
+<h2 class="rp-toc-include" id="媒体源"><a href="#媒体源" class="rp-header-anchor rp-link" aria-hidden="true">#</a>媒体源</h2>
+<p>Nest <a href="/home-assistant/integrations/media_source.html" class="rp-link">媒体源</a> 平台允许您浏览最近摄像机事件的剪辑。 Home Assistant 并非旨在成为网络录像机 (NVR) 平台，但支持捕获最近事件的基本支持。</p>
+<p>上表描述了哪些设备支持图像快照或 10 帧 mp4 视频剪辑。</p>
+<h3 class="rp-toc-include" id="媒体附件"><a href="#媒体附件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>媒体附件</h3>
+<p>媒体源 API 可以在<a href="https://companion.home-assistant.io/docs/notifications/notification-attachments" target="_blank" rel="noopener noreferrer" class="rp-link">配套应用程序附件</a> 中用于通知，作为上述设备触发器的操作，例如 <em>按下门铃</em>。您需要熟悉相机支持的媒体源以及配套应用程序的媒体功能。</p>
+<ul>
+<li>
+<p><code>/api/nest/event_media/DEVICE_ID/EVENT_ID</code>：事件媒体，根据相机类型支持图像快照 (jpg) 或剪辑预览 (mp4)。</p>
+</li>
+<li>
+<p><code>/api/nest/event_media/DEVICE_ID/EVENT_ID/thumbnail</code>：媒体的缩略图预览，根据相机类型支持图像快照（jpg）或剪辑预览（gif）。</p>
+</li>
+</ul>
+<p>您可以在 <a href="/home-assistant/getting-started/automation/index.html" class="rp-link">automation</a> 中使用 Nest 设备触发器负载字段 <code>attachment.image</code> 或 <code>attachment.video</code> 从 <a href="/home-assistant/getting-started/automation-action/" class="rp-link">actions</a> 发送通知，如下面的示例所示。</p>
+<details>
+<summary>操作示例：适用于 Android 或 iOS 的剪辑预览（mp4）附件</summary>
+<p>支持与 iOS 一起使用的剪辑预览的相机示例，可以在通知中渲染视频。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.mobile_app_iphone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Doorbell Pressed</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Someone pressed the doorbell</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    image</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data.attachment.image }}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    video</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data.attachment.video }}&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<details>
+<summary>操作示例：适用于 Android 或 iOS 的剪辑预览缩略图（gif）</summary>
+<p>支持剪辑预览但转码为动画 gif 的相机示例（Android 不呈现视频通知）。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.mobile_app_android</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Doorbell Pressed</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Someone pressed the doorbell</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    image</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data.attachment.image }}&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<details>
+<summary>操作示例：适用于 Android 或 iOS 的快照（jpg）附件</summary>
+<p>Android 或 iOS 上支持快照 (jpg) 的相机示例。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.mobile_app</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Doorbell Pressed</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Someone pressed the doorbell</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    image</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{ trigger.event.data.attachment.image }}&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+此功能通过以下权限启用：</p><ul>
+<li><em>根据您选择从此设备共享的事件，允许家庭助理访问相机视频剪辑</em></li>
+<li><em>根据您选择从此设备共享的事件，允许 Home Assistant 访问相机快照</em></li>
+<li><em>Nest 或 Google Home 应用中的其他权限</em>。</li>
+</ul></div></div>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<h3 class="rp-toc-include" id="google-帐号类型"><a href="#google-帐号类型" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Google 帐号类型</h3>
+<p>Google 帐户使用 SDM API 存在一些限制。有关详细信息，请参阅<a href="https://developers.google.com/nest/device-access/registration" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问注册</a> 文档。</p>
+<p>主要限制如下：</p>
+<ul>
+<li>不支持 Google Workspace 帐户。只能使用消费者帐户（例如 gmail.com）。</li>
+<li>Google 帐户一旦与您的设备访问项目关联，就无法更改。在继续之前，请确保您已登录正确的 Google 帐户。</li>
+</ul>
+<p>请记住，5 美元的注册费不可退还。</p>
+<h3 class="rp-toc-include" id="google-高级保护计划"><a href="#google-高级保护计划" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Google 高级保护计划</h3>
+<p><a href="https://landing.google.com/intl/en_in/advancedprotection/" target="_blank" rel="noopener noreferrer" class="rp-link">Google 高级保护计划</a> 用户会自动屏蔽设备控制所需的“受限”API 范围。</p>
+<p>:::important
+变通方法：如果你启用了 AP，请创建并使用一个次要的标准 Google 帐号（非 AP）来托管这些设备：</p>
+<ol>
+<li>
+<p>创建一个<em>不带</em>高级保护的新 Google 帐户（如果您还没有）。</p>
+</li>
+<li>
+<p>使用此新帐户在 Google Home 应用中创建新的 <strong>Home</strong>。</p>
+</li>
+<li>
+<p>从主帐户中删除您的 Nest 设备，然后将它们重新添加到这个新的<strong>主页</strong>。请注意，这可能会删除某些设备保存的视频历史记录或设置。</p>
+</li>
+<li>
+<p>邀请您的主帐户（有 AP 的帐户）作为 <strong>家庭成员</strong> 到新的 <strong>主页</strong>。这使您可以保留对手机上 Google Home 应用的控制权。</p>
+</li>
+<li>
+<p>使用新的标准帐号凭据连接 Home Assistant。</p>
+</li>
+</ol>
+<p>:::
+*[AP]：高级保护计划</p>
+<h3 class="rp-toc-include" id="google-home-应用迁移和相机"><a href="#google-home-应用迁移和相机" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Google Home 应用迁移和相机</h3>
+<p>将相机迁移到 Google Home 应用会将相机从 RTSP 转换为 WebRTC，这会导致快照功能丢失。此外，还有一个已知问题，即目前尚未发布这些活动的媒体；这已报告给 Nest SDM 团队，这是他们迁移的意外副作用。</p>
+<h3 class="rp-toc-include" id="部分支持温度传感器"><a href="#部分支持温度传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>部分支持温度传感器</h3>
+<p>SDM API 不支持其他 Nest 温度传感器。 API 报告的温度将从当前配置为主动传感器的任何设备中获取，可以通过手动选择或 Nest 应用中提供的时间表进行调整。如果有多个传感器可用，则仅显示活动传感器的温度。</p>
+<h2 class="rp-toc-include" id="故障排查"><a href="#故障排查" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排查</h2>
+<h3 class="rp-toc-include" id="无法关联-google-帐号"><a href="#无法关联-google-帐号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>无法关联 Google 帐号</h3>
+<h4 class="rp-toc-include" id="症状无法链接到项目名称如果问题仍然存在请联系项目名称"><a href="#症状无法链接到项目名称如果问题仍然存在请联系项目名称" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：无法链接到[项目名称]：如果问题仍然存在，请联系[项目名称]</h4>
+<h5 class="rp-toc-include" id="description"><a href="#description" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>错误 <em>无法链接到 [项目名称]</em> 通常意味着使用的 <em>OAuth 客户端 ID</em> 是
+家庭助理 <a href="/home-assistant/integrations/application_credentials/index.html" class="rp-link">应用程序凭据</a> 中不匹配。</p>
+<h5 class="rp-toc-include" id="resolution"><a href="#resolution" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<p>最简单的方法是从 Home Assistant 中删除应用程序凭据，然后进行验证
+使用的 <em>OAuth 客户端 ID</em> 必须在这三个地方保持一致：</p>
+<ul>
+<li><a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener noreferrer" class="rp-link">Google Cloud Console</a> - 请参阅上面的说明以创建新的 Web Auth OAuth 凭据（如果需要）。</li>
+<li><a href="https://console.nest.google.com/device-access/project-list" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问项目</a> - 设备访问项目的 OAuth 客户端 ID 必须引用 Google Cloud Console 中的 Web Auth OAuth 客户端 ID。</li>
+<li>确保您在设备访问控制台和 Google Cloud Console 中使用相同的 Google 帐户。例如，仔细检查屏幕右上角的照片和帐户名称。</li>
+<li><a href="/home-assistant/integrations/application_credentials/index.html" class="rp-link">应用程序凭据</a> - Home Assistant 需要配置相同的凭据。如果现有条目不匹配，请删除它们，然后手动输入或在设置过程中重新输入。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/nest/application_credentials.png" alt="成功截图"/></p>
+<h4 class="rp-toc-include" id="症状无法访问合作伙伴信息或无法检索信息"><a href="#症状无法访问合作伙伴信息或无法检索信息" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：无法访问合作伙伴信息或无法检索信息</h4>
+<h5 class="rp-toc-include" id="description-1"><a href="#description-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>显示错误“无法访问合作伙伴信息”或“无法检索信息”
+在帐户链接过程中意味着所使用的 Google 帐户无法访问 Google Home。</p>
+<h5 class="rp-toc-include" id="resolution-1"><a href="#resolution-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<ul>
+<li>您可以在 Google Home 应用中整理您的家庭和设备，并跨帐户<a href="https://support.google.com/googlenest/answer/9155535" target="_blank" rel="noopener noreferrer" class="rp-link">共享家庭和设备</a>。确保所使用的帐户有权访问主页。</li>
+<li>如果您以前有 Nest 帐户，请确保其已成功迁移到 Google 帐户。如果您的 Google Home 有多个成员，请注意，最初设置家庭的个人必须完成将其 Nest 帐户迁移到 Google 帐户，然后您才能与 Home Assistant 建立连接。</li>
+</ul>
+<h4 class="rp-toc-include" id="症状错误-400redirect_uri_mismatch"><a href="#症状错误-400redirect_uri_mismatch" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：错误 400：redirect_uri_mismatch</h4>
+<h5 class="rp-toc-include" id="description-2"><a href="#description-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>此错误 <em>错误 400：redirect_uri_mismatch</em> 表示您的 OAuth 客户端 ID 未配置为与 <em>My Home Assistant</em> 回调 URL 匹配。自您最初设置以来，Home Assistant 的重定向 URL 行为可能已发生变化！</p>
+<h5 class="rp-toc-include" id="resolution-2"><a href="#resolution-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<p>对于具有默认配置的用户：</p>
+<ul>
+<li>这应该在错误消息中显示重定向 URI <code>https://my.home-assistant.io/redirect/oauth</code>。如果错误消息有不同的 URL，那么您正在运行旧版本的 Home Assistant，需要升级或手动禁用 My Home Assistant（见下文）。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/nest/redirect_uri_mismatch.png" alt="成功截图"/></p>
+<ul>
+<li>返回 <a href="https://console.developers.google.com/apis/credentials" target="_blank" rel="noopener noreferrer" class="rp-link">API 控制台</a> 并选择您的 <em>OAuth 2.0 客户端 ID</em>。</li>
+<li>将 URL <code>https://my.home-assistant.io/redirect/oauth</code> 添加到<em>授权重定向 URI</em> 列表中，然后单击 <strong>保存</strong> 并重新开始流程。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/nest/redirect_uris_fix.png" alt="成功截图"/></p>
+<p>对于手动禁用 <em>My Home Assistant</em> 的用户：</p>
+<ul>
+<li>
+<p>Google 应用严格的<a href="https://developers.google.com/identity/protocols/oauth2/web-server#uri-validation" target="_blank" rel="noopener noreferrer" class="rp-link">重定向 URI 验证规则</a> 以确保您的登录凭据安全。实际上，这意味着您必须<em>通过 SSL</em> 和<em>公共顶级域</em> 访问 Home Assistant。请参阅有关 <a href="/home-assistant/docs/configuration/securing/index.html" class="rp-link">Securing</a> 的文档，并注意您实际上不需要启用远程访问。</p>
+</li>
+<li>
+<p>如果您的安装上没有<a href="/home-assistant/integrations/my.html" class="rp-link">我的家庭助理</a>，
+您可以使用 <code>&lt;HOME_ASSISTANT_URL&gt;/auth/external/callback</code> 作为重定向 URI
+相反。</p>
+</li>
+<li>
+<p><code>&lt;HOME_ASSISTANT_URL&gt;</code> 必须与配置期间使用的相同/
+认证过程。</p>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="症状出现问题如果问题仍然存在请联系此应用程序的开发人员"><a href="#症状出现问题如果问题仍然存在请联系此应用程序的开发人员" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：出现问题：如果问题仍然存在，请联系此应用程序的开发人员</h4>
+<h5 class="rp-toc-include" id="description-3"><a href="#description-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>这通常意味着您使用了错误类型的凭据或拥有凭据
+帐户之间混淆。</p>
+<h5 class="rp-toc-include" id="resolution-3"><a href="#resolution-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<p>按照上述说明，确保 <a href="https://console.developers.google.com/apis/credentials" target="_blank" rel="noopener noreferrer" class="rp-link">Google Cloud Console</a> 中的凭据是 <em>Web 应用程序</em> 凭据。如果您有多个 Google 帐户登录到当前浏览器会话，则在页面之间切换时 Google 可能会默认使用第一个登录的帐户。为了避免这种情况，请注销其他帐户或使用私人/隐身浏览器窗口，仅登录所需的 Google 帐户。</p>
+<h4 class="rp-toc-include" id="症状出现问题请几分钟后重试"><a href="#症状出现问题请几分钟后重试" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：出现问题，请几分钟后重试</h4>
+<h5 class="rp-toc-include" id="description-4"><a href="#description-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>根据 Google 的<a href="https://developers.google.com/nest/device-access/reference/errors/pcm" target="_blank" rel="noopener noreferrer" class="rp-link">合作伙伴连接管理器错误参考</a>，此错误涵盖了合作伙伴连接中的所有其他未记录的内部错误。导致此错误的问题之一是 Nest 和 Google Home 应用程序之间的同步问题。</p>
+<h5 class="rp-toc-include" id="resolution-4"><a href="#resolution-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<p>确认您的 Nest 设备在 Google Home 应用和同一 Home 下的 Nest 应用中可见。如果 Google Home 中缺少它，请在 Nest 应用上创建一个新的虚拟主页，这会触发同步过程。 （这是 Google 支持团队推荐的解决方法）。一旦 Nest 设备在 Google Home 应用中可见，就可以删除虚拟条目。</p>
+<h4 class="rp-toc-include" id="症状错误-403access_denied-或访问被阻止home-assistantio-尚未完成-google-的验证过程"><a href="#症状错误-403access_denied-或访问被阻止home-assistantio-尚未完成-google-的验证过程" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：错误 403：access_denied 或访问被阻止：home-assistant.io 尚未完成 Google 的验证过程</h4>
+<h5 class="rp-toc-include" id="description-5"><a href="#description-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>错误 <em>Error 403: access_denied</em> 意味着 OAuth Consent 屏幕可能配置错误，
+要么是因为它不允许访问您的 Google 帐户，要么是因为您已输入
+触发 Google 验证过程的额外信息。谷歌将要求
+当您向品牌页面添加额外信息时进行验证。</p>
+<h4 class="rp-toc-include" id="resolution-5"><a href="#resolution-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h4>
+<p>访问 OAuth <a href="https://console.cloud.google.com/auth/verification" target="_blank" rel="noopener noreferrer" class="rp-link">验证中心</a> 并
+确认<em>验证状态</em>为<em>不需要验证</em>。如果验证
+需要：</p>
+<ol>
+<li>导航至<a href="https://console.cloud.google.com/auth/branding" target="_blank" rel="noopener noreferrer" class="rp-link">品牌</a>页面。</li>
+<li>删除不需要的其他字段并保存。请参阅上面的设置说明并
+确保不要输入额外的字段。</li>
+<li>返回验证中心，确认状态正确。</li>
+</ol>
+<p>此外，您需要按照以下步骤确保受众配置正确：</p>
+<ol>
+<li>访问 OAuth <a href="https://console.cloud.google.com/auth/audience" target="_blank" rel="noopener noreferrer" class="rp-link">受众</a> 页面。</li>
+<li>确保帐户设置为<em>在生产中</em>。</li>
+</ol>
+<p>您现在可以重复集成设置和帐户链接步骤。</p>
+<h4 class="rp-toc-include" id="症状错误invalid_client-无应用程序名称"><a href="#症状错误invalid_client-无应用程序名称" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：错误：invalid_client 无应用程序名称</h4>
+<h5 class="rp-toc-include" id="description-6"><a href="#description-6" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>错误 <em>Error: invalid_client no application name</em> 表示 OAuth 同意屏幕尚未
+已针对项目进行了完全配置，并且需要其他信息。</p>
+<h4 class="rp-toc-include" id="resolution-6"><a href="#resolution-6" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h4>
+<p>访问 <a href="https://console.developers.google.com/apis/credentials/consent" target="_blank" rel="noopener noreferrer" class="rp-link">OAuth 同意屏幕</a> 并
+输入必填字段（应用程序名称、支持电子邮件、开发人员电子邮件），并将其他所有内容保留为默认值。</p>
+<h3 class="rp-toc-include" id="找不到设备"><a href="#找不到设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>找不到设备</h3>
+<h4 class="rp-toc-include" id="症状设备未出现在-home-assistant-中"><a href="#症状设备未出现在-home-assistant-中" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：设备未出现在 Home Assistant 中</h4>
+<h5 class="rp-toc-include" id="description-7"><a href="#description-7" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>这通常意味着 Home Assistant 无权访问该设备，因为该设备未归还
+来自 SDM API。</p>
+<h5 class="rp-toc-include" id="resolution-7"><a href="#resolution-7" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<p>您可以在 Nest <a href="https://nestservices.google.com/partnerconnections" target="_blank" rel="noopener noreferrer" class="rp-link">合作伙伴连接管理器</a> 中管理与 Home Assistant 共享的设备和权限。 Home Assistant 会自动更新以反映您所做的任何更改。有关更多详细信息，请参阅 <a href="https://developers.google.com/nest/device-access/authorize#modify_account_permissions" target="_blank" rel="noopener noreferrer" class="rp-link">SDM API 故障排除</a> 文档。</p>
+<h4 class="rp-toc-include" id="症状恒温器未出现在-home-assistant-中或不可用"><a href="#症状恒温器未出现在-home-assistant-中或不可用" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：恒温器未出现在 Home Assistant 中或不可用</h4>
+<p>有报告称，由于 SDM API 中的错误，恒温器可能不会出现或不可用。让 API 重新工作的常见修复方法是尝试以下步骤：</p>
+<ul>
+<li>重新启动恒温器设备。有关更多详细信息，请参阅<a href="https://support.google.com/googlenest/answer/9247296" target="_blank" rel="noopener noreferrer" class="rp-link">如何重新启动或重置 Nest 恒温器</a>。</li>
+<li>在官方 Nest 应用程序或 <a href="https://home.nest.com" target="_blank" rel="noopener noreferrer" class="rp-link">https://home.nest.com</a> 上：将恒温器移至其他房间或假房间/临时房间。</li>
+<li>Home Assistant 会自动更新以反映您所做的任何更改，并将发现 API 中出现的新设备。</li>
+</ul>
+<h4 class="rp-toc-include" id="症状禁用-api-时不显示设备"><a href="#症状禁用-api-时不显示设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：禁用 API 时不显示设备</h4>
+<h5 class="rp-toc-include" id="description-8"><a href="#description-8" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>当 SDM API 被禁用时，SDM API 可能不会返回授权帐户的设备。</p>
+<h5 class="rp-toc-include" id="resolution-8"><a href="#resolution-8" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<p>仔细检查 GCP 是否配置正确并<a href="https://developers.google.com/nest/device-access/get-started#set_up_google_cloud_platform" target="_blank" rel="noopener noreferrer" class="rp-link">启用 API</a>，并在 OAuth 设置流程中至少授权一台设备。如果您在这里遇到问题，那么您可能需要浏览 Google 说明并直接针对 API 发出命令，直到成功取回设备。</p>
+<h3 class="rp-toc-include" id="认证问题"><a href="#认证问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>认证问题</h3>
+<h4 class="rp-toc-include" id="症状经常需要重新身份验证"><a href="#症状经常需要重新身份验证" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：经常需要重新身份验证</h4>
+<h5 class="rp-toc-include" id="description-9"><a href="#description-9" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>您可能会被要求比预期更频繁地重新进行身份验证，例如每 7 天一次。这意味着 OAuth 同意屏幕配置错误，或者您的身份验证令牌因其他原因被 Google 撤销。</p>
+<h5 class="rp-toc-include" id="resolution-9"><a href="#resolution-9" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<ul>
+<li>最可能的原因是 <em>OAuth 同意屏幕</em> 默认设置为 <em>测试</em>，令牌将在 7 天后过期。</li>
+<li>按照上述步骤将其设置为<em>生产</em>以解决此问题，并再次重新授权您的集成以获得新令牌。</li>
+<li>您可能还会看到错误消息<em>invalid_grant：令牌已过期或撤销</em>。</li>
+<li>请参阅 <a href="https://developers.google.com/identity/protocols/oauth2#expiration" target="_blank" rel="noopener noreferrer" class="rp-link">Google Identity：刷新令牌过期</a>，了解有关令牌可能过期的更多原因。</li>
+</ul>
+<h3 class="rp-toc-include" id="集成设置失败"><a href="#集成设置失败" class="rp-header-anchor rp-link" aria-hidden="true">#</a>集成设置失败</h3>
+<h4 class="rp-toc-include" id="症状配置错误无法创建订阅者订阅名称未找到"><a href="#症状配置错误无法创建订阅者订阅名称未找到" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：配置错误：无法创建订阅者“订阅/名称”未找到</h4>
+<h5 class="rp-toc-include" id="description-10"><a href="#description-10" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>集成无法启动，因为它尝试创建具有订阅的订阅者
+在您的 Google 帐户中找不到的名称。默认情况下，Google 发布/订阅订阅将在 31 天不活动后被删除（<a href="https://cloud.google.com/knowledge/kb/pub-sub-subscriptions-disappeared-without-any-deletion-logs-000004170" target="_blank" rel="noopener noreferrer" class="rp-link">参考</a>）。如果发生这种情况，集成将失败，您将在 Home Assistant 日志中看到前面的日志行。</p>
+<h5 class="rp-toc-include" id="resolution-10"><a href="#resolution-10" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution.</h5>
+<p>要修复该订阅：</p>
+<ol>
+<li>转到 <a href="https://console.nest.google.com/device-access/project-list" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问控制台</a> 并重新启用 Pub/Sub 主题。</li>
+<li>可能需要重新创建 Nest 集成才能获取新的 Pub/Sub 主题。</li>
+<li>（可选）为防止将来过期，请转到 <a href="https://console.cloud.google.com/cloudpubsub/subscription/list" target="_blank" rel="noopener noreferrer" class="rp-link">Google Cloud Console Pub/Sub 订阅页面</a> 并将 Nest 创建的 Pub/Sub 订阅编辑为默认不会过期。</li>
+</ol>
+<h3 class="rp-toc-include" id="nest-集成数据问题"><a href="#nest-集成数据问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Nest 集成数据问题</h3>
+<h4 class="rp-toc-include" id="症状未接收到相机运动和人物事件"><a href="#症状未接收到相机运动和人物事件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：未接收到相机运动和人物事件</h4>
+<p>Nest 集成订阅 Google Pub/sub 订阅以侦听相机运动
+或人物事件。 Google Home 应用中的设置还可以控制哪些事件
+已发布，因此如果设置不正确，您可能不会收到事件。</p>
+<h4 class="rp-toc-include" id="resolution-11"><a href="#resolution-11" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h4>
+<ul>
+<li>确认您已允许 Home Assistant 访问摄像头流，并且在 <a href="https://nestservices.google.com/partnerconnections" target="_blank" rel="noopener noreferrer" class="rp-link">合作伙伴连接管理器</a> 中正确设置了权限。</li>
+<li>如果您仍然看不到事件，则可能需要调整 Google Home 应用设置。有关详细信息，请参阅 <a href="#google-home-app-notification-settings" class="rp-link">Google Home 应用通知设置</a>。</li>
+</ul>
+<h4 class="rp-toc-include" id="症状设备未接收更新信息"><a href="#症状设备未接收更新信息" class="rp-header-anchor rp-link" aria-hidden="true">#</a>症状：设备未接收更新信息</h4>
+<h5 class="rp-toc-include" id="description-11"><a href="#description-11" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Description</h5>
+<p>您可能会看到 Google Home 中的更改出乎意料地没有反映在 Home Assistant 中。 Nest 集成订阅来自 Google Pub/sub 订阅的更新以及陈旧信息的问题
+通常表明订阅者配置有问题。</p>
+<p>传感器或恒温器温度设置点等内容的更改应立即发布到主题，并在一切配置正确后由家庭助理订阅者接收。</p>
+<h5 class="rp-toc-include" id="resolution-12"><a href="#resolution-12" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Resolution</h5>
+<ul>
+<li>要详细了解 Google Pub/Sub 的工作原理，请参阅<a href="https://cloud.google.com/pubsub/docs/pull#pull-workflow" target="_blank" rel="noopener noreferrer" class="rp-link">拉取订阅工作流程文档</a>。以下部分中的步骤将：</li>
+</ul>
+<ol>
+<li>验证 Nest 设备访问控制台是否配置了用于发布消息的 Pub/Sub 主题</li>
+<li>（可选）验证主题消息发布。这些步骤适用于某些主题配置。</li>
+<li>验证Pub/Sub订阅消息路由</li>
+<li>验证 Home Assistant 是否正在接收 Pub/Sub 订阅上的消息</li>
+</ol>
+<ul>
+<li><strong>验证 Nest 设备访问控制台配置</strong></li>
+</ul>
+<p>1.访问<a href="https://console.nest.google.com/device-access/project-list" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问控制台</a>
+2.点击Home Assistant设备接入项目
+3. 验证<em>发布/订阅主题</em>是否已<em>启用</em>。如果没有，请按照集成配置说明进行操作。
+4. 如果 Pub/Sub 主题以 <code>projects/&lt;您的云项目&gt;/topics/home-assistant-</code> 开头，则您正在使用由 Home Assistant 创建的主题。您可以按照下一节中的步骤来验证该主题。
+5. 如果 Pub/Sub 主题以 <code>projects/sdm-prod/topics</code> 开头，则您正在使用由设备访问控制台创建的主题。这是老方法，但效果完全没问题。您应该跳过下一节。</p>
+<ul>
+<li><strong>（可选）验证主题消息发布。</strong> 如果使用以 <code>projects/sdm-prod/topics</code> 开头的主题名称，请跳过此部分</li>
+</ul>
+<ol>
+<li>访问 Pub/Sub 主题 <a href="https://console.cloud.google.com/cloudpubsub/topic/list" target="_blank" rel="noopener noreferrer" class="rp-link">Cloud Console</a></li>
+<li>单击与设备访问控制台配置匹配的 Home Assistant 主题 ID。</li>
+<li>查看<em>订阅</em>选项卡并确认有订阅 ID。这将在下一节中得到验证。</li>
+<li>单击<em>指标</em>选项卡并将缩放设置为<em>6 小时</em>或<em>1 天</em>。</li>
+<li>查看<em>已发布消息计数</em>。这对设备向主题发布的消息进行计数。如果消息数量不符合您的预期，则表明：
+<ul>
+<li>设备连接到 Google 时出现问题：验证设备在 Google Home 应用中是否正常工作。</li>
+<li>SDM API 的问题：这需要<a href="https://developers.google.com/nest/device-access/support" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问支持</a> 来诊断或解决。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>验证 Pub/Sub 订阅消息路由</strong></li>
+</ul>
+<ol>
+<li>访问 Pub/Sub 订阅 <a href="https://console.cloud.google.com/cloudpubsub/subscription/list" target="_blank" rel="noopener noreferrer" class="rp-link">Cloud Console</a></li>
+<li>单击 Home Assistant 订阅 ID</li>
+<li>确认<em>主题名称</em>与上面的 Nest 设备访问控制台中的相同。</li>
+<li>查看底部面板中的<em>Metrics</em> 选项卡，其中包括：</li>
+</ol>
+<ul>
+<li><em>传送指标</em>：<em>发布消息计数</em>显示在路由到订阅的主题上发布的消息。您可能需要向下滚动才能看到这一点。
+<ul>
+<li><em>最早的未确认消息年龄</em>显示 Home Assistant Nest 集成未完全接收消息。请参阅下一节进行诊断。</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>单击“消息”选项卡</li>
+<li>单击“拉取”以查看收到的有关该主题的消息的示例。这些对应于上一节中可选地通过<em>已发布消息计数</em>验证的消息。如果没有发布消息，则表明：</li>
+</ol>
+<ul>
+<li>订阅配置错误：确认<em>主题 ID</em> 与设备访问控制台匹配。如果它们不匹配，请按照集成配置说明来解决此问题。
+<ul>
+<li>设备连接到 Google 时出现问题：验证设备在 Google Home 应用中是否正常工作。</li>
+<li>SDM API 的问题：这需要<a href="https://developers.google.com/nest/device-access/support" target="_blank" rel="noopener noreferrer" class="rp-link">设备访问支持</a> 来诊断或解决。</li>
+</ul>
+</li>
+</ul>
+<ol start="7">
+<li>单击已接收消息的箭头可<em>查看所有行内容</em>，以便更轻松地查看已接收消息的完整内容。您可以确认该消息包含您期望看到的信息，并且与下一部分中 Home Assistant 收到的消息相对应。</li>
+</ol>
+<ul>
+<li><strong>验证家庭助理正在接收消息</strong></li>
+</ul>
+<ol>
+<li>启用 Nest 集成的调试日志。有关说明，请参阅<a href="/home-assistant/docs/configuration/troubleshooting/index.html#debug-logs-and-diagnostics" class="rp-link">调试日志和诊断</a>。
+2.查看原始日志</li>
+<li>成功接收的事件消息将出现在调试日志中，类似于以下内容：</li>
+</ol>
+  <details>
+<summary>调试日志示例：收到 1 条消息</summary>
+<div class="rp-codeblock language-text"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="text"><code><span class="line"><span>2025-11-08 09:15:57.620 DEBUG (MainThread) [google_nest_sdm.streaming_manager] Received 1 messages</span></span>
+<span class="line"><span>2025-11-08 09:15:57.621 DEBUG (MainThread) [google_nest_sdm.event] EventMessage raw_data={&#x27;eventId&#x27;: &#x27;xxxxxx-yyyy-zzzz-aaaa&#x27;, &#x27;timestamp&#x27;: &#x27;2025-11-08T17:15:56.470930Z&#x27;, &#x27;resourceUpdate&#x27;: {&#x27;name&#x27;: &#x27;enterprises/...&#x27;}}</span></span>
+<span class="line"><span>2025-11-08 09:15:57.621 DEBUG (MainThread) [google_nest_sdm.device] Processing update xxxxxx-yyyy-zzzz-aaaa @ 2025-11-08 17:15:56.470930+00:00</span></span>
+<span class="line"><span>2025-11-08 09:15:57.621 DEBUG (MainThread) [google_nest_sdm.device] Trait update {&#x27;sdm.devices.traits.ThermostatMode&#x27;: {&#x27;mode&#x27;: &#x27;COOL&#x27;, &#x27;availableModes&#x27;: [&#x27;HEAT&#x27;, &#x27;COOL&#x27;, &#x27;HEATCOOL&#x27;, &#x27;OFF&#x27;]}, &#x27;sdm.devices.traits.ThermostatEco&#x27;: {&#x27;availableModes&#x27;: [&#x27;OFF&#x27;, &#x27;MANUAL_ECO&#x27;], &#x27;mode&#x27;: &#x27;OFF&#x27;, &#x27;heatCelsius&#x27;: 4.4444427, &#x27;coolCelsius&#x27;: 24.444443}, &#x27;sdm.devices.traits.ThermostatTemperatureSetpoint&#x27;: {&#x27;coolCelsius&#x27;: 25.997345}, &#x27;name&#x27;: &#x27;enterprises/&lt;project id&gt;/devices/&lt;device_id&gt;&#x27;}</span></span>
+<span class="line"><span>2025-11-08 09:17:14.406 DEBUG (MainThread) [google_nest_sdm.subscriber_client] Sending streaming pull request (acking 1 messages)</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<ol start="4">
+<li>订阅拉取请求长时间运行，并且每隔几分钟重新连接。这是正常现象，您将看到诸如“流拉取中的 API 错误”和“已建立事件流连接”之类的调试消息。 <a href="https://cloud.google.com/pubsub/docs/pull#pull-workflow" target="_blank" rel="noopener noreferrer" class="rp-link">拉取订阅工作流程文档</a> 更详细地描述了其工作原理。以下调试日志表明订阅连接工作正常。</li>
+</ol>
+  <details>
+<summary>调试日志示例：事件流连接已建立</summary>
+<div class="rp-codeblock language-text"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="text"><code><span class="line"><span>2025-11-08 09:19:50.827 DEBUG (MainThread) [google_nest_sdm.subscriber_client] API error in streaming pull: 503 The service was unable to fulfill your request. Please try again. [code=8a75]</span></span>
+<span class="line"><span>2025-11-08 09:19:50.828 DEBUG (MainThread) [google_nest_sdm.streaming_manager] Disconnected from event stream: API error when streaming iterator: 503 The service was unable to fulfill your request. Please try again. [code=8a75]</span></span>
+<span class="line"><span>2025-11-08 09:19:50.830 DEBUG (MainThread) [google_nest_sdm.streaming_manager] Reconnecting stream in 10.0 seconds</span></span>
+<span class="line"><span>...</span></span>
+<span class="line"><span>2025-11-08 09:20:00.837 DEBUG (MainThread) [google_nest_sdm.subscriber_client] Sending streaming pull request for projects/&lt;your cloud project&gt;/subscriptions/home-assistant-prod</span></span>
+<span class="line"><span>...</span></span>
+<span class="line"><span>2025-11-08 09:20:01.004 DEBUG (MainThread) [google_nest_sdm.streaming_manager] Event stream connection established</span></span>
+<span class="line"><span>2025-11-08 09:20:01.004 DEBUG (MainThread) [google_nest_sdm.subscriber_client] Starting streaming iterator</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<ol start="5">
+<li>确认调试日志中“发送流式拉取请求”消息中的订阅 ID 与上面在云控制台中验证的订阅 ID 匹配。如果它们不匹配，请按照集成配置说明来解决此问题。</li>
+</ol>
+<ul>
+<li>报告 Nest 集成问题时，请提供设备发布的消息等详细信息以及调试日志中的详细信息。</li>
+</ul>
+<h2 class="rp-toc-include" id="移除集成"><a href="#移除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>移除集成</h2>
+<p>此集成遵循标准移除流程，不需要额外步骤。</p>
+<h3 class="rp-toc-include" id="从-home-assistant-中移除集成实例"><a href="#从-home-assistant-中移除集成实例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 Home Assistant 中移除集成实例</h3>
+<ol>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>设备与服务</strong></a> 并选择该集成卡片。</li>
+<li>在设备列表中，选择你想移除的集成实例。</li>
+<li>在对应条目旁，选择三点菜单 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon>，然后选择 <strong>删除</strong>。</li>
+</ol>
+<p>删除集成后，你可能还想清理设置过程中添加到 Google 帐号中的未使用信息。可查看本集成的配置说明，了解如何找到已配置的 OAuth 凭据和设备访问项目位置。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#配置" class="rp-toc-item rp-link" title="配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置</span></a><a href="#气候" class="rp-toc-item rp-link" title="气候" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">气候</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#相机" class="rp-toc-item rp-link" title="相机" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">相机</span></a><a href="#事件" class="rp-toc-item rp-link" title="事件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">事件</span></a><a href="#设备触发器" class="rp-toc-item rp-link" title="设备触发器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">设备触发器</span></a><a href="#google-home-应用通知设置" class="rp-toc-item rp-link" title="Google Home 应用通知设置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Google Home 应用通知设置</span></a><a href="#媒体源" class="rp-toc-item rp-link" title="媒体源" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">媒体源</span></a><a href="#媒体附件" class="rp-toc-item rp-link" title="媒体附件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">媒体附件</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#google-帐号类型" class="rp-toc-item rp-link" title="Google 帐号类型" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Google 帐号类型</span></a><a href="#google-高级保护计划" class="rp-toc-item rp-link" title="Google 高级保护计划" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Google 高级保护计划</span></a><a href="#google-home-应用迁移和相机" class="rp-toc-item rp-link" title="Google Home 应用迁移和相机" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Google Home 应用迁移和相机</span></a><a href="#部分支持温度传感器" class="rp-toc-item rp-link" title="部分支持温度传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">部分支持温度传感器</span></a><a href="#故障排查" class="rp-toc-item rp-link" title="故障排查" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排查</span></a><a href="#无法关联-google-帐号" class="rp-toc-item rp-link" title="无法关联 Google 帐号" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">无法关联 Google 帐号</span></a><a href="#症状无法链接到项目名称如果问题仍然存在请联系项目名称" class="rp-toc-item rp-link" title="症状：无法链接到[项目名称]：如果问题仍然存在，请联系[项目名称]" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：无法链接到[项目名称]：如果问题仍然存在，请联系[项目名称]</span></a><a href="#症状无法访问合作伙伴信息或无法检索信息" class="rp-toc-item rp-link" title="症状：无法访问合作伙伴信息或无法检索信息" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：无法访问合作伙伴信息或无法检索信息</span></a><a href="#症状错误-400redirect_uri_mismatch" class="rp-toc-item rp-link" title="症状：错误 400：redirect_uri_mismatch" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：错误 400：redirect_uri_mismatch</span></a><a href="#症状出现问题如果问题仍然存在请联系此应用程序的开发人员" class="rp-toc-item rp-link" title="症状：出现问题：如果问题仍然存在，请联系此应用程序的开发人员" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：出现问题：如果问题仍然存在，请联系此应用程序的开发人员</span></a><a href="#症状出现问题请几分钟后重试" class="rp-toc-item rp-link" title="症状：出现问题，请几分钟后重试" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：出现问题，请几分钟后重试</span></a><a href="#症状错误-403access_denied-或访问被阻止home-assistantio-尚未完成-google-的验证过程" class="rp-toc-item rp-link" title="症状：错误 403：access_denied 或访问被阻止：home-assistant.io 尚未完成 Google 的验证过程" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：错误 403：access_denied 或访问被阻止：home-assistant.io 尚未完成 Google 的验证过程</span></a><a href="#resolution" class="rp-toc-item rp-link" title="Resolution" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Resolution</span></a><a href="#症状错误invalid_client-无应用程序名称" class="rp-toc-item rp-link" title="症状：错误：invalid_client 无应用程序名称" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：错误：invalid_client 无应用程序名称</span></a><a href="#resolution-1" class="rp-toc-item rp-link" title="Resolution" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Resolution</span></a><a href="#找不到设备" class="rp-toc-item rp-link" title="找不到设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">找不到设备</span></a><a href="#症状设备未出现在-home-assistant-中" class="rp-toc-item rp-link" title="症状：设备未出现在 Home Assistant 中" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：设备未出现在 Home Assistant 中</span></a><a href="#症状恒温器未出现在-home-assistant-中或不可用" class="rp-toc-item rp-link" title="症状：恒温器未出现在 Home Assistant 中或不可用" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：恒温器未出现在 Home Assistant 中或不可用</span></a><a href="#症状禁用-api-时不显示设备" class="rp-toc-item rp-link" title="症状：禁用 API 时不显示设备" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：禁用 API 时不显示设备</span></a><a href="#认证问题" class="rp-toc-item rp-link" title="认证问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">认证问题</span></a><a href="#症状经常需要重新身份验证" class="rp-toc-item rp-link" title="症状：经常需要重新身份验证" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：经常需要重新身份验证</span></a><a href="#集成设置失败" class="rp-toc-item rp-link" title="集成设置失败" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">集成设置失败</span></a><a href="#症状配置错误无法创建订阅者订阅名称未找到" class="rp-toc-item rp-link" title="症状：配置错误：无法创建订阅者“订阅/名称”未找到" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：配置错误：无法创建订阅者“订阅/名称”未找到</span></a><a href="#nest-集成数据问题" class="rp-toc-item rp-link" title="Nest 集成数据问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Nest 集成数据问题</span></a><a href="#症状未接收到相机运动和人物事件" class="rp-toc-item rp-link" title="症状：未接收到相机运动和人物事件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：未接收到相机运动和人物事件</span></a><a href="#resolution-2" class="rp-toc-item rp-link" title="Resolution" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Resolution</span></a><a href="#症状设备未接收更新信息" class="rp-toc-item rp-link" title="症状：设备未接收更新信息" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">症状：设备未接收更新信息</span></a><a href="#移除集成" class="rp-toc-item rp-link" title="移除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">移除集成</span></a><a href="#从-home-assistant-中移除集成实例" class="rp-toc-item rp-link" title="从 Home Assistant 中移除集成实例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从 Home Assistant 中移除集成实例</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

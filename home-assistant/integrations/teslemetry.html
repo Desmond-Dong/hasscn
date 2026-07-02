@@ -1,0 +1,1580 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teslemetry - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Teslemetry - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Teslemetry 集成可公开与你的 Teslemetry(https://teslemetry.com/) 订阅关联的 Tesla 车辆和能源站点中的各种命令与传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Teslemetry 集成可公开与你的 Teslemetry(https://teslemetry.com/) 订阅关联的 Tesla 车辆和能源站点中的各种命令与传感器。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="teslemetry"><a href="#teslemetry" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Teslemetry<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Teslemetry</strong> 集成可公开与你的 <a href="https://teslemetry.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Teslemetry</a> 订阅关联的 Tesla 车辆和能源站点中的各种命令与传感器。</p>
+<h2 class="rp-toc-include" id="先决条件"><a href="#先决条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>先决条件</h2>
+<p>你必须拥有一个已激活订阅的 <a href="https://teslemetry.com" target="_blank" rel="noopener noreferrer" class="rp-link">Teslemetry</a> 账户。</p>
+<p>2024 年及之后交付的车辆需要配置<a href="https://teslemetry.com/docs/topics/virtualkey" target="_blank" rel="noopener noreferrer" class="rp-link">虚拟钥匙</a>才能执行某些命令。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h2 class="rp-toc-include" id="实体"><a href="#实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>实体</h2>
+<p>以下是 Teslemetry 集成提供的实体。并非所有实体默认启用，也并非所有值都始终可用。
+其中 device tracker 平台的实体需要 <code>Vehicle location</code> scope，否则会显示为不可用。</p>
+<h3 class="rp-toc-include" id="车辆"><a href="#车辆" class="rp-header-anchor rp-link" aria-hidden="true">#</a>车辆</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Domain</th><th>Name</th><th>Enabled</th></tr></thead><tbody><tr><td>Binary sensor</td><td>Automatic blind spot camera</td><td>No</td></tr><tr><td>Binary sensor</td><td>Automatic emergency braking off</td><td>No</td></tr><tr><td>Binary sensor</td><td>Battery heater</td><td>No</td></tr><tr><td>Binary sensor</td><td>Blind spot collision warning chime</td><td>No</td></tr><tr><td>Binary sensor</td><td>BMS full charge</td><td>No</td></tr><tr><td>Binary sensor</td><td>Brake pedal</td><td>No</td></tr><tr><td>Binary sensor</td><td>Cabin overheat protection actively cooling</td><td>No</td></tr><tr><td>Binary sensor</td><td>Cellular</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Charge cable</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Charge enable request</td><td>No</td></tr><tr><td>Binary sensor</td><td>Charge port cold weather mode</td><td>No</td></tr><tr><td>Binary sensor</td><td>Charger has multiple phases</td><td>No</td></tr><tr><td>Binary sensor</td><td>Dashcam</td><td>No</td></tr><tr><td>Binary sensor</td><td>DC DC</td><td>No</td></tr><tr><td>Binary sensor</td><td>Defrost for preconditioning</td><td>No</td></tr><tr><td>Binary sensor</td><td>Drive rail</td><td>No</td></tr><tr><td>Binary sensor</td><td>Driver seat belt</td><td>No</td></tr><tr><td>Binary sensor</td><td>Driver seat occupied</td><td>No</td></tr><tr><td>Binary sensor</td><td>Emergency lane departure avoidance</td><td>No</td></tr><tr><td>Binary sensor</td><td>Europe vehicle</td><td>No</td></tr><tr><td>Binary sensor</td><td>Fast charger present</td><td>No</td></tr><tr><td>Binary sensor</td><td>Front driver door</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Front driver window</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Front passenger door</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Front passenger window</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>GPS state</td><td>No</td></tr><tr><td>Binary sensor</td><td>Guest mode enabled</td><td>No</td></tr><tr><td>Binary sensor</td><td>Hazard lights</td><td>No</td></tr><tr><td>Binary sensor</td><td>High beams</td><td>No</td></tr><tr><td>Binary sensor</td><td>Homelink nearby</td><td>No</td></tr><tr><td>Binary sensor</td><td>HVAC auto mode</td><td>No</td></tr><tr><td>Binary sensor</td><td>High voltage interlock loop fault</td><td>No</td></tr><tr><td>Binary sensor</td><td>Located at favorite</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Located at home</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Located at work</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Offroad lightbar</td><td>No</td></tr><tr><td>Binary sensor</td><td>Passenger seat belt</td><td>No</td></tr><tr><td>Binary sensor</td><td>Pin to drive enabled</td><td>No</td></tr><tr><td>Binary sensor</td><td>Preconditioning enabled</td><td>No</td></tr><tr><td>Binary sensor</td><td>Preconditioning</td><td>No</td></tr><tr><td>Binary sensor</td><td>Rear display HVAC</td><td>No</td></tr><tr><td>Binary sensor</td><td>Rear driver door</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Rear driver window</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Rear passenger door</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Rear passenger window</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Remote start</td><td>No</td></tr><tr><td>Binary sensor</td><td>Right hand drive</td><td>No</td></tr><tr><td>Binary sensor</td><td>Scheduled charging pending</td><td>No</td></tr><tr><td>Binary sensor</td><td>Seat vent enabled</td><td>No</td></tr><tr><td>Binary sensor</td><td>Service mode</td><td>No</td></tr><tr><td>Binary sensor</td><td>Speed limited</td><td>No</td></tr><tr><td>Binary sensor</td><td>Status</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Supercharger session trip planner</td><td>No</td></tr><tr><td>Binary sensor</td><td>Tire pressure warning front left</td><td>No</td></tr><tr><td>Binary sensor</td><td>Tire pressure warning front right</td><td>No</td></tr><tr><td>Binary sensor</td><td>Tire pressure warning rear left</td><td>No</td></tr><tr><td>Binary sensor</td><td>Tire pressure warning rear right</td><td>No</td></tr><tr><td>Binary sensor</td><td>Trip charging</td><td>No</td></tr><tr><td>Binary sensor</td><td>User present</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Wi-Fi</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Wiper heat</td><td>No</td></tr><tr><td>Button</td><td>Flash lights</td><td>Yes</td></tr><tr><td>Button</td><td>HomeLink</td><td>Yes</td></tr><tr><td>Button</td><td>Honk horn</td><td>Yes</td></tr><tr><td>Button</td><td>Keyless driving</td><td>Yes</td></tr><tr><td>Button</td><td>Play fart</td><td>Yes</td></tr><tr><td>Button</td><td>Wake</td><td>Yes</td></tr><tr><td>Climate</td><td>Cabin overheat protection</td><td>Yes</td></tr><tr><td>Climate</td><td>Climate</td><td>Yes</td></tr><tr><td>Cover</td><td>Charge port door</td><td>Yes</td></tr><tr><td>Cover</td><td>Frunk</td><td>Yes</td></tr><tr><td>Cover</td><td>Sunroof</td><td>No</td></tr><tr><td>Cover</td><td>Trunk</td><td>Yes</td></tr><tr><td>Cover</td><td>Vent windows</td><td>Yes</td></tr><tr><td>Device tracker</td><td>Location</td><td>Yes</td></tr><tr><td>Device tracker</td><td>Origin</td><td>No</td></tr><tr><td>Device tracker</td><td>Route</td><td>Yes</td></tr><tr><td>Lock</td><td>Charge cable lock</td><td>Yes</td></tr><tr><td>Lock</td><td>Lock</td><td>Yes</td></tr><tr><td>Lock</td><td>Speed limit</td><td>Yes</td></tr><tr><td>Media player</td><td>Media player</td><td>Yes</td></tr><tr><td>Number</td><td>Charge current</td><td>Yes</td></tr><tr><td>Number</td><td>Charge limit</td><td>Yes</td></tr><tr><td>Select</td><td>Seat heater front left</td><td>Yes</td></tr><tr><td>Select</td><td>Seat heater front right</td><td>Yes</td></tr><tr><td>Select</td><td>Seat heater rear center</td><td>No</td></tr><tr><td>Select</td><td>Seat heater rear left</td><td>No</td></tr><tr><td>Select</td><td>Seat heater rear right</td><td>No</td></tr><tr><td>Select</td><td>Seat heater third row left</td><td>No</td></tr><tr><td>Select</td><td>Seat heater third row right</td><td>No</td></tr><tr><td>Select</td><td>Steering wheel heater</td><td>Yes</td></tr><tr><td>Sensor</td><td>Battery level</td><td>Yes</td></tr><tr><td>Sensor</td><td>Battery range</td><td>Yes</td></tr><tr><td>Sensor</td><td>BMS state</td><td>No</td></tr><tr><td>Sensor</td><td>Brake pedal position</td><td>No</td></tr><tr><td>Sensor</td><td>Brick voltage max</td><td>No</td></tr><tr><td>Sensor</td><td>Brick voltage min</td><td>No</td></tr><tr><td>Sensor</td><td>Charge cable</td><td>No</td></tr><tr><td>Sensor</td><td>Charge energy added</td><td>Yes</td></tr><tr><td>Sensor</td><td>Charge rate</td><td>Yes</td></tr><tr><td>Sensor</td><td>Charger current</td><td>Yes</td></tr><tr><td>Sensor</td><td>Charger power</td><td>Yes</td></tr><tr><td>Sensor</td><td>Charger voltage</td><td>Yes</td></tr><tr><td>Sensor</td><td>Charging</td><td>Yes</td></tr><tr><td>Sensor</td><td>Cruise follow distance</td><td>No</td></tr><tr><td>Sensor</td><td>Cruise set speed</td><td>No</td></tr><tr><td>Sensor</td><td>Current speed limit</td><td>No</td></tr><tr><td>Sensor</td><td>DC charging energy in</td><td>No</td></tr><tr><td>Sensor</td><td>DC charging power</td><td>No</td></tr><tr><td>Sensor</td><td>Distance to arrival</td><td>Yes</td></tr><tr><td>Sensor</td><td>Driver temperature setting</td><td>No</td></tr><tr><td>Sensor</td><td>Estimate battery range</td><td>No</td></tr><tr><td>Sensor</td><td>Exterior color</td><td>No</td></tr><tr><td>Sensor</td><td>Fast charger type</td><td>No</td></tr><tr><td>Sensor</td><td>Front drive inverter axle speed</td><td>No</td></tr><tr><td>Sensor</td><td>Front drive inverter battery voltage</td><td>No</td></tr><tr><td>Sensor</td><td>Front drive inverter heatsink temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Front drive inverter motor current</td><td>No</td></tr><tr><td>Sensor</td><td>Front drive inverter state</td><td>No</td></tr><tr><td>Sensor</td><td>Front drive inverter temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Front drive unit actual torque</td><td>No</td></tr><tr><td>Sensor</td><td>Front drive unit stator temperature</td><td>No</td></tr><tr><td>Sensor</td><td>HVAC power state</td><td>No</td></tr><tr><td>Sensor</td><td>Ideal battery range</td><td>No</td></tr><tr><td>Sensor</td><td>Inside temperature</td><td>Yes</td></tr><tr><td>Sensor</td><td>Left temperature request</td><td>No</td></tr><tr><td>Sensor</td><td>Odometer</td><td>No</td></tr><tr><td>Sensor</td><td>Outside temperature</td><td>Yes</td></tr><tr><td>Sensor</td><td>Passenger temperature setting</td><td>No</td></tr><tr><td>Sensor</td><td>Power</td><td>No</td></tr><tr><td>Sensor</td><td>Rear drive inverter axle speed</td><td>No</td></tr><tr><td>Sensor</td><td>Rear drive inverter battery voltage</td><td>No</td></tr><tr><td>Sensor</td><td>Rear drive inverter heatsink temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Rear drive inverter motor current</td><td>No</td></tr><tr><td>Sensor</td><td>Rear drive inverter state</td><td>No</td></tr><tr><td>Sensor</td><td>Rear drive inverter temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Rear drive unit actual torque</td><td>No</td></tr><tr><td>Sensor</td><td>Rear drive unit stator temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Rear left drive inverter axle speed</td><td>No</td></tr><tr><td>Sensor</td><td>Rear left drive inverter battery voltage</td><td>No</td></tr><tr><td>Sensor</td><td>Rear left drive inverter heatsink temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Rear left drive inverter motor current</td><td>No</td></tr><tr><td>Sensor</td><td>Rear left drive inverter state</td><td>No</td></tr><tr><td>Sensor</td><td>Rear left drive inverter temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Rear left drive unit actual torque</td><td>No</td></tr><tr><td>Sensor</td><td>Rear left drive unit stator temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Rear right drive inverter axle speed</td><td>No</td></tr><tr><td>Sensor</td><td>Rear right drive inverter battery voltage</td><td>No</td></tr><tr><td>Sensor</td><td>Rear right drive inverter heatsink temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Rear right drive inverter motor current</td><td>No</td></tr><tr><td>Sensor</td><td>Rear right drive inverter state</td><td>No</td></tr><tr><td>Sensor</td><td>Rear right drive inverter temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Rear right drive unit actual torque</td><td>No</td></tr><tr><td>Sensor</td><td>Rear right drive unit stator temperature</td><td>No</td></tr><tr><td>Sensor</td><td>Right temperature request</td><td>No</td></tr><tr><td>Sensor</td><td>Roof color</td><td>No</td></tr><tr><td>Sensor</td><td>Scheduled charging mode</td><td>No</td></tr><tr><td>Sensor</td><td>Scheduled charging start time</td><td>No</td></tr><tr><td>Sensor</td><td>Scheduled departure time</td><td>No</td></tr><tr><td>Sensor</td><td>Secondary drive unit torque command</td><td>No</td></tr><tr><td>Sensor</td><td>Sentry mode</td><td>Yes</td></tr><tr><td>Sensor</td><td>Shift state</td><td>No</td></tr><tr><td>Sensor</td><td>Speed</td><td>No</td></tr><tr><td>Sensor</td><td>State of charge at arrival</td><td>No</td></tr><tr><td>Sensor</td><td>Time at arrival</td><td>Yes</td></tr><tr><td>Sensor</td><td>Time at full charge</td><td>Yes</td></tr><tr><td>Sensor</td><td>Time to arrival</td><td>Yes</td></tr><tr><td>Sensor</td><td>Time to full charge</td><td>Yes</td></tr><tr><td>Sensor</td><td>Tire pressure front left</td><td>No</td></tr><tr><td>Sensor</td><td>Tire pressure front right</td><td>No</td></tr><tr><td>Sensor</td><td>Tire pressure last measured front left</td><td>No</td></tr><tr><td>Sensor</td><td>Tire pressure last measured front right</td><td>No</td></tr><tr><td>Sensor</td><td>Tire pressure last measured rear left</td><td>No</td></tr><tr><td>Sensor</td><td>Tire pressure last measured rear right</td><td>No</td></tr><tr><td>Sensor</td><td>Tire pressure rear left</td><td>No</td></tr><tr><td>Sensor</td><td>Tire pressure rear right</td><td>No</td></tr><tr><td>Sensor</td><td>Traffic delay</td><td>No</td></tr><tr><td>Sensor</td><td>Usable Battery level</td><td>No</td></tr><tr><td>Sensor</td><td>Drive unit torque command</td><td>No</td></tr><tr><td>Switch</td><td>Auto seat climate left</td><td>Yes</td></tr><tr><td>Switch</td><td>Auto seat climate right</td><td>Yes</td></tr><tr><td>Switch</td><td>Auto steering wheel heater</td><td>Yes</td></tr><tr><td>Switch</td><td>Charge</td><td>Yes</td></tr><tr><td>Switch</td><td>Defrost</td><td>Yes</td></tr><tr><td>Switch</td><td>Guest mode</td><td>Yes</td></tr><tr><td>Switch</td><td>Sentry mode</td><td>Yes</td></tr><tr><td>Switch</td><td>Valet mode</td><td>Yes</td></tr><tr><td>Update</td><td>Update</td><td>Yes</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="能源站点"><a href="#能源站点" class="rp-header-anchor rp-link" aria-hidden="true">#</a>能源站点</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Domain</th><th>Name</th><th>Enabled</th></tr></thead><tbody><tr><td>Binary sensor</td><td>Backup capable</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Grid services active</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Grid services enabled</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Grid status</td><td>Yes</td></tr><tr><td>Binary sensor</td><td>Storm watch active</td><td>Yes</td></tr><tr><td>Number</td><td>Backup reserve</td><td>Yes</td></tr><tr><td>Number</td><td>Off grid reserve</td><td>Yes</td></tr><tr><td>Select</td><td>Allow export</td><td>Yes</td></tr><tr><td>Select</td><td>Operation mode</td><td>Yes</td></tr><tr><td>Sensor</td><td>Battery power</td><td>Yes</td></tr><tr><td>Sensor</td><td>Consumer imported from battery</td><td>No</td></tr><tr><td>Sensor</td><td>Consumer imported from generator</td><td>No</td></tr><tr><td>Sensor</td><td>Consumer imported from grid</td><td>No</td></tr><tr><td>Sensor</td><td>Consumer imported from solar</td><td>No</td></tr><tr><td>Sensor</td><td>Energy left</td><td>Yes</td></tr><tr><td>Sensor</td><td>Generator exported</td><td>Yes</td></tr><tr><td>Sensor</td><td>Generator power</td><td>No</td></tr><tr><td>Sensor</td><td>Grid exported</td><td>Yes</td></tr><tr><td>Sensor</td><td>Grid exported from battery</td><td>No</td></tr><tr><td>Sensor</td><td>Grid exported from generator</td><td>No</td></tr><tr><td>Sensor</td><td>Grid exported from solar</td><td>No</td></tr><tr><td>Sensor</td><td>Grid imported</td><td>No</td></tr><tr><td>Sensor</td><td>Grid power</td><td>Yes</td></tr><tr><td>Sensor</td><td>Grid services exported</td><td>No</td></tr><tr><td>Sensor</td><td>Grid services imported</td><td>No</td></tr><tr><td>Sensor</td><td>Grid services power</td><td>Yes</td></tr><tr><td>Sensor</td><td>Home usage</td><td>Yes</td></tr><tr><td>Sensor</td><td>Island status</td><td>Yes</td></tr><tr><td>Sensor</td><td>Load power</td><td>Yes</td></tr><tr><td>Sensor</td><td>Percentage charged</td><td>Yes</td></tr><tr><td>Sensor</td><td>Solar exported</td><td>No</td></tr><tr><td>Sensor</td><td>Solar generated</td><td>Yes</td></tr><tr><td>Sensor</td><td>Solar power</td><td>Yes</td></tr><tr><td>Sensor</td><td>Total pack energy</td><td>No</td></tr><tr><td>Sensor</td><td>Version</td><td>Yes</td></tr><tr><td>Sensor</td><td>VPP backup reserve</td><td>Yes</td></tr><tr><td>Switch</td><td>Allow charging from grid</td><td>Yes</td></tr><tr><td>Switch</td><td>Storm watch</td><td>Yes</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="壁挂充电器"><a href="#壁挂充电器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>壁挂充电器</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Domain</th><th>Name</th><th>Enabled</th></tr></thead><tbody><tr><td>Sensor</td><td>Fault state</td><td>No</td></tr><tr><td>Sensor</td><td>Power</td><td>Yes</td></tr><tr><td>Sensor</td><td>State</td><td>Yes</td></tr><tr><td>Sensor</td><td>Vehicle</td><td>Yes</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="元数据"><a href="#元数据" class="rp-header-anchor rp-link" aria-hidden="true">#</a>元数据</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Domain</th><th>Name</th><th>Enabled</th></tr></thead><tbody><tr><td>Sensor</td><td>Teslemetry credits</td><td>Yes</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="动作"><a href="#动作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作</h2>
+<p>Teslemetry 提供多个自定义动作，可直接与 Tesla Fleet API 交互。</p>
+<h3 class="rp-toc-include" id="导航到坐标"><a href="#导航到坐标" class="rp-header-anchor rp-link" aria-hidden="true">#</a>导航到坐标</h3>
+<p><code>teslemetry.navigation_gps_request</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Field</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>device_id</td><td>车辆的设备 ID</td><td>0d462c0c4c0b064b1a91cdbd1ffcbd31</td></tr><tr><td>gps</td><td>坐标字典</td><td></td></tr><tr><td>gps.latitude</td><td>纬度（度）</td><td>-27.9699373</td></tr><tr><td>gps.longitude</td><td>经度（度）</td><td>153.4081865</td></tr><tr><td>order</td><td>该目的地的顺序</td><td>1</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="设置计划充电"><a href="#设置计划充电" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置计划充电</h3>
+<p><code>teslemetry.set_scheduled_charging</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Field</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>device_id</td><td>车辆的设备 ID</td><td>0d462c0c4c0b064b1a91cdbd1ffcbd31</td></tr><tr><td>enable</td><td>启用或禁用计划充电</td><td>true</td></tr><tr><td>time</td><td>开始充电时间（HH:MM）</td><td>6:00</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="设置计划出发"><a href="#设置计划出发" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置计划出发</h3>
+<p><code>teslemetry.set_scheduled_departure</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Field</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>device_id</td><td>车辆的设备 ID</td><td>0d462c0c4c0b064b1a91cdbd1ffcbd31</td></tr><tr><td>enable</td><td>启用或禁用计划出发</td><td>true</td></tr><tr><td>preconditioning_enabled</td><td>启用预处理</td><td>true</td></tr><tr><td>preconditioning_weekdays_only</td><td>仅在工作日启用预处理</td><td>false</td></tr><tr><td>departure_time</td><td>计划出发时间（HH:MM）</td><td>6:00</td></tr><tr><td>off_peak_charging_enabled</td><td>启用错峰充电</td><td>false</td></tr><tr><td>off_peak_charging_weekdays_only</td><td>仅在工作日启用错峰充电</td><td>false</td></tr><tr><td>end_off_peak_time</td><td>期望完成充电时间（HH:MM）</td><td>5:00</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="代客模式"><a href="#代客模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>代客模式</h3>
+<p><code>teslemetry.valet_mode</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Field</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>device_id</td><td>车辆的设备 ID</td><td>0d462c0c4c0b064b1a91cdbd1ffcbd31</td></tr><tr><td>enable</td><td>启用或禁用代客模式</td><td>true</td></tr><tr><td>pin</td><td>4 位 PIN 码</td><td>1234</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="限速"><a href="#限速" class="rp-header-anchor rp-link" aria-hidden="true">#</a>限速</h3>
+<p><code>teslemetry.speed_limit</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Field</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>device_id</td><td>车辆的设备 ID</td><td>0d462c0c4c0b064b1a91cdbd1ffcbd31</td></tr><tr><td>enable</td><td>启用或禁用限速</td><td>true</td></tr><tr><td>pin</td><td>4 位 PIN 码</td><td>1234</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="分时电价"><a href="#分时电价" class="rp-header-anchor rp-link" aria-hidden="true">#</a>分时电价</h3>
+<p><code>teslemetry.time_of_use</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Field</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>device_id</td><td>能源站点的设备 ID</td><td>0d462c0c4c0b064b1a91cdbd1ffcbd31</td></tr><tr><td>tou_settings</td><td>分时电价设置</td><td>详情请参阅 <a href="https://developer.tesla.com/docs/fleet-api#time_of_use_settings" target="_blank" rel="noopener noreferrer" class="rp-link">Tesla Fleet API 文档</a></td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="能源仪表板"><a href="#能源仪表板" class="rp-header-anchor rp-link" aria-hidden="true">#</a>能源仪表板</h2>
+<p>Tesla Fleet API 仅为 Powerwall 和 Solar 产品提供功率数据，这意味着它们不能直接用于能源仪表板。</p>
+<p>你可以基于 <code>Battery power</code> 和 <code>Grid power</code> 传感器，使用 <a href="/home-assistant/integrations/template/index.html" class="rp-link">Template Sensor</a> 将正负值拆分为导入与导出值，从而计算能量流。
+然后可将 <code>Load power</code>、<code>Solar power</code> 以及模板传感器通过 <a href="/home-assistant/integrations/integration/index.html" class="rp-link">Riemann Sum</a> 把瞬时功率（kW）转换为累计电量（kWh），
+并用于能源仪表板。</p>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p>Teslemetry 集成会根据车辆类型和配置，结合流式传输与轮询来获取数据。</p>
+<h3 class="rp-toc-include" id="流式传输"><a href="#流式传输" class="rp-header-anchor rp-link" aria-hidden="true">#</a>流式传输</h3>
+<p>对于大多数现代车辆（不包括 2021 年前的 Model S/X），数据会先从车辆实时流式传输到 Teslemetry，再通过 Server-Sent Events（SSE）流式传输到 Home Assistant。这可提供低延迟的传感器与状态更新。要启用流式传输，需要在车辆侧完成特定配置，可在 <a href="https://teslemetry.com/console" target="_blank" rel="noopener noreferrer" class="rp-link">Teslemetry Console</a> 中管理。</p>
+<h3 class="rp-toc-include" id="轮询"><a href="#轮询" class="rp-header-anchor rp-link" aria-hidden="true">#</a>轮询</h3>
+<p>旧款车辆（2021 年前 Model S/X）和能源站点使用云端轮询。</p>
+<ul>
+<li><strong>旧款车辆：</strong> 每 60 秒轮询一次。</li>
+<li><strong>能源站点：</strong> 每 30 秒轮询一次。</li>
+</ul>
+<p>该集成的设计不会为轮询数据而唤醒车辆。车辆休眠期间更新会暂停，直到车辆自然唤醒或被交互唤醒。</p>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<ul>
+<li><strong>车辆休眠：</strong> 集成不会主动唤醒车辆来获取数据。不过，发送命令（如上锁、解锁、空调控制）会唤醒车辆。</li>
+<li><strong>速率限制：</strong> 虽然 Teslemetry 会处理与 Tesla 上游的速率限制，但过于激进的自动化可能因频繁轮询或命令触发临时 API 限制。</li>
+<li><strong>虚拟钥匙：</strong> 新款车辆需要<a href="https://teslemetry.com/docs/topics/virtualkey" target="_blank" rel="noopener noreferrer" class="rp-link">虚拟钥匙</a>才能操作。请按照 <a href="https://teslemetry.com/console" target="_blank" rel="noopener noreferrer" class="rp-link">Teslemetry Console</a> 中的说明完成设置。</li>
+</ul>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<h3 class="rp-toc-include" id="无效令牌"><a href="#无效令牌" class="rp-header-anchor rp-link" aria-hidden="true">#</a>无效令牌</h3>
+<p>如果 Teslemetry 认证令牌失效或过期，Home Assistant 会提示你重新认证。通常需要在集成配置流程中重新登录。</p>
+<h3 class="rp-toc-include" id="超时"><a href="#超时" class="rp-header-anchor rp-link" aria-hidden="true">#</a>超时</h3>
+<p>超时可能由 Home Assistant、Teslemetry、Tesla 或车辆本身之间的连接问题导致（例如车辆所在区域蜂窝信号较差）。这通常是临时现象。若持续超时，请联系 <code>support@teslemetry.com</code>。</p>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<h3 class="rp-toc-include" id="常见用例"><a href="#常见用例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>常见用例</h3>
+<ul>
+<li><strong>太阳能充电：</strong> 根据太阳能富余发电量自动调整车辆充电电流或状态，最大化可再生能源利用。</li>
+<li><strong>智能预处理：</strong> 使用日历事件或定时触发，在出发前自动预处理车内温度。</li>
+<li><strong>车库门自动开启：</strong> 在导航接近家时自动打开车库门。</li>
+</ul>
+<h3 class="rp-toc-include" id="自动化"><a href="#自动化" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自动化</h3>
+<p><strong>基于太阳能发电自动充电</strong></p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Charge Tesla from Solar&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    trigger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">platform</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.home_solar_power</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        above</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 3000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> switch.my_tesla_charge</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> number.set_value</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> number.my_tesla_charge_current</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          value</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 16</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p><strong>在日历事件前预处理车辆</strong></p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Precondition for Work&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    trigger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">platform</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> calendar</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        event</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> start</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        offset</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;-00:15:00&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> calendar.work</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> climate.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> climate.my_tesla_climate</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="蓝图"><a href="#蓝图" class="rp-header-anchor rp-link" aria-hidden="true">#</a>蓝图</h3>
+<p><strong>基于导航打开车库门</strong></p>
+<p>使用 distance to arrival 传感器精确判断你何时接近特定地点（如家），并打开车库门或其他 cover 实体。需要你正在导航到目标地点，即使你并不需要路线指引。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">blueprint</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Teslemetry Garage Door Opener</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  author</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Brett Adams</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Opens a garage door when your Tesla is approaching</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  domain</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> automation</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  input</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    distance_to_arrival_entity</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Distance to arrival entity</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      selector</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">            - </span><span style="color:var(--shiki-token-keyword)">integration</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> teslemetry</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              domain</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              device_class</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> distance</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    distance_to_arrival</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Distance to arrival value to trigger open</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      selector</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        number</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          min</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          max</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 100</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          step</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> any</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          mode</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> box</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    route_entity</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Route entity</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      selector</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">            - </span><span style="color:var(--shiki-token-keyword)">integration</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> teslemetry</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              domain</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> device_tracker</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    route_zone</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Route destination</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      selector</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">            - </span><span style="color:var(--shiki-token-keyword)">domain</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> zone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    cover_entity</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Garage door entity</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      selector</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          filter</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">            - </span><span style="color:var(--shiki-token-keyword)">domain</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">platform</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> numeric_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_id</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">!input</span><span style="color:var(--shiki-token-string-expression)"> distance_to_arrival_entity</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    below</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> !input</span><span style="color:var(--shiki-token-string-expression)"> distance_to_arrival</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    above</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> zone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> !input</span><span style="color:var(--shiki-token-string-expression)"> route_entity</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zone</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> !input</span><span style="color:var(--shiki-token-string-expression)"> route_zone</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cover.open_cover</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> !input</span><span style="color:var(--shiki-token-string-expression)"> cover_entity</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">mode</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> restart</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#先决条件" class="rp-toc-item rp-link" title="先决条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">先决条件</span></a><a href="#实体" class="rp-toc-item rp-link" title="实体" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">实体</span></a><a href="#车辆" class="rp-toc-item rp-link" title="车辆" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">车辆</span></a><a href="#能源站点" class="rp-toc-item rp-link" title="能源站点" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">能源站点</span></a><a href="#壁挂充电器" class="rp-toc-item rp-link" title="壁挂充电器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">壁挂充电器</span></a><a href="#元数据" class="rp-toc-item rp-link" title="元数据" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">元数据</span></a><a href="#动作" class="rp-toc-item rp-link" title="动作" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">动作</span></a><a href="#导航到坐标" class="rp-toc-item rp-link" title="导航到坐标" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">导航到坐标</span></a><a href="#设置计划充电" class="rp-toc-item rp-link" title="设置计划充电" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">设置计划充电</span></a><a href="#设置计划出发" class="rp-toc-item rp-link" title="设置计划出发" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">设置计划出发</span></a><a href="#代客模式" class="rp-toc-item rp-link" title="代客模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">代客模式</span></a><a href="#限速" class="rp-toc-item rp-link" title="限速" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">限速</span></a><a href="#分时电价" class="rp-toc-item rp-link" title="分时电价" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">分时电价</span></a><a href="#能源仪表板" class="rp-toc-item rp-link" title="能源仪表板" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">能源仪表板</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#流式传输" class="rp-toc-item rp-link" title="流式传输" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">流式传输</span></a><a href="#轮询" class="rp-toc-item rp-link" title="轮询" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">轮询</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#无效令牌" class="rp-toc-item rp-link" title="无效令牌" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">无效令牌</span></a><a href="#超时" class="rp-toc-item rp-link" title="超时" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">超时</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#常见用例" class="rp-toc-item rp-link" title="常见用例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">常见用例</span></a><a href="#自动化" class="rp-toc-item rp-link" title="自动化" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自动化</span></a><a href="#蓝图" class="rp-toc-item rp-link" title="蓝图" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">蓝图</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

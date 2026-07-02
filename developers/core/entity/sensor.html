@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>传感器实体 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="传感器实体 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="传感器是提供一些信息的只读实体。信息具有价值，并且可选地具有测量单位。平台实体派生自homeassistant.components.sensor.SensorEntity(https://github.com/home-assistant/home-assistant/blob/master/homeass。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="传感器是提供一些信息的只读实体。信息具有价值，并且可选地具有测量单位。平台实体派生自homeassistant.components.sensor.SensorEntity(https://github.com/home-assistant/home-assistant/blob/master/homeass。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/developers/" class="rp-nav-menu__item__container rp-link">开发者首页</a></li><li class="rp-nav-menu__item"><a href="/developers/architecture_index" class="rp-nav-menu__item__container rp-link">架构</a></li><li class="rp-nav-menu__item"><a href="/developers/development_index" class="rp-nav-menu__item__container rp-link">Core</a></li><li class="rp-nav-menu__item"><a href="/developers/creating_component_index" class="rp-nav-menu__item__container rp-link">创建集成</a></li><li class="rp-nav-menu__item"><a href="/developers/frontend" class="rp-nav-menu__item__container rp-link">前端</a></li><li class="rp-nav-menu__item"><a href="/developers/voice/overview" class="rp-nav-menu__item__container rp-link">语音</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/api_lib_index" class="rp-hover-group__item__link rp-link" aria-label="API">API</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/supervisor" class="rp-hover-group__item__link rp-link" aria-label="Supervisor">Supervisor</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/operating-system" class="rp-hover-group__item__link rp-link" aria-label="操作系统">操作系统</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/android" class="rp-hover-group__item__link rp-link" aria-label="Android">Android</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/apps" class="rp-hover-group__item__link rp-link" aria-label="Apps">Apps</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/documenting" class="rp-hover-group__item__link rp-link" aria-label="文档规范">文档规范</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>开始使用</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>首页</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/architecture_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>架构总览</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/development_environment.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发环境</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/development_submitting.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发工作流</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant Core</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/development_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Core 概览</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/creating_component_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>创建集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/config_entries_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>配置流</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/configuration_yaml_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>YAML 配置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/automations.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>自动化</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/core/entity.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>实体模型</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/asyncio_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Asyncio</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/auth_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>认证与权限</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/bluetooth.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Bluetooth</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/intent_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Intent</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/device_automation_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>设备自动化</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/data_entry_flow_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>数据录入流</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/device_registry_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>设备注册表</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/entity_registry_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>实体注册表</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/network_discovery.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>网络发现</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>API 与数据访问</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/api/rest.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>REST API</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/api/websocket.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>WebSocket API</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/api/native-app-integration.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>原生应用集成 API</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/api/supervisor/endpoints.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Supervisor API</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/api_lib_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Python 库</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/instance_url.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>实例 URL</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>平台与客户端</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/frontend.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>前端</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/supervisor.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Supervisor</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/operating-system.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>操作系统</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/android.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Android</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/apps.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>App 指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/voice/overview.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/documenting.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档规范</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/internationalization.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>国际化</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/translations.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>翻译</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/misc.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>杂项</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>进阶主题</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/architecture/core.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>架构：Core</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/architecture/devices-and-services.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>架构：设备与服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/asyncio_101.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Asyncio 101</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/asyncio_blocking_operations.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>阻塞操作</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/asyncio_working_with_async.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>使用异步</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/apps/tutorial.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>应用教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/apps/configuration.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>应用配置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/apps/publishing.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>应用发布</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/operating-system/boards/overview.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>操作系统开发板</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/voice/intent-recognition.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>意图识别</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/voice/pipelines.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音管道</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/core/llm.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>LLM API</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>开发博客</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/blog/2019-07-19-building-all-the-things.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2018-2020</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/blog/2022-10-26-new-unit-enumerators.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2021-2022</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/blog/2023-02-28-custom-tile-features.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2023</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="传感器实体"><a href="#传感器实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器实体<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>传感器是提供一些信息的只读实体。信息具有价值，并且可选地具有测量单位。平台实体派生自<a href="https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/sensor/__init__.py" target="_blank" rel="noopener noreferrer" class="rp-link"><code>homeassistant.components.sensor.SensorEntity</code></a></p>
+<h2 class="rp-toc-include" id="特性"><a href="#特性" class="rp-header-anchor rp-link" aria-hidden="true">#</a>特性</h2>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+属性应该始终只从内存返回信息，而不执行 I/O（如网络请求）。实现 <code>update()</code> 或 <code>async_update()</code> 来获取数据。</p></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>名称</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead><tbody><tr><td>device_class</td><td><code>SensorDeviceClass | None</code></td><td><code>None</code></td><td>传感器类型。</td></tr><tr><td>last_reset</td><td><code>datetime.datetime | None</code></td><td><code>None</code></td><td>电表、煤气表、水表等累计传感器初始化的时间。如果初始化时间未知，则设置为<code>None</code>。请注意，当更新实体的状态属性时，<code>last_reset</code> 属性返回的 <code>datetime.datetime</code> 将转换为 ISO 8601 格式的字符串。更改 <code>last_reset</code> 时，<code>state</code> 必须是有效号码。</td></tr><tr><td>native_unit_of_measurement</td><td><code>str | None</code></td><td><code>None</code></td><td>传感器值表示的测量单位。如果 <code>native_unit_of_measurement</code> 为 °C 或 °F，且 <code>device_class</code> 为温度，则传感器的 <code>unit_of_measurement</code> 将是用户配置的首选温度单位，传感器的 <code>state</code> 将是经过可选单位转换后的 <code>native_value</code>。如果是 <a href="/developers/internationalization/core.html#unit-of-measurement-of-entities" class="rp-link">提供单位翻译</a>，则不应定义 <code>native_unit_of_measurement</code>。</td></tr><tr><td>native_value</td><td><code>str | int | float | date | datetime | Decimal | None</code></td><td><strong>Required</strong></td><td>传感器的<code>native_unit_of_measurement</code>中的传感器值。使用 <code>device_class</code> 可能会限制此属性可返回的类型。</td></tr><tr><td>options</td><td><code>list[str] | None</code></td><td><code>None</code></td><td>如果该传感器提供文本状态，则该属性可用于提供可能状态的列表。需要设置 <code>enum</code> 设备类别。不能与 <code>state_class</code> 或 <code>native_unit_of_measurement</code> 组合使用。</td></tr><tr><td>state_class</td><td><code>SensorStateClass | str | None</code></td><td><code>None</code></td><td>状态类型。如果不是 <code>None</code>，则假定传感器是数字传感器，并将在前端显示为折线图，而不是离散值。</td></tr><tr><td>suggested_display_precision</td><td><code>int | None</code></td><td><code>None</code></td><td>显示传感器状态时应使用的小数位数。</td></tr><tr><td>suggested_unit_of_measurement</td><td><code>str | None</code></td><td><code>None</code></td><td>用于传感器状态的测量单位。对于具有 <code>unique_id</code> 的传感器，这将用作初始测量单位，然后用户可以覆盖该单位。对于没有 <code>unique_id</code> 的传感器，这将是传感器状态的测量单位。此属性旨在供集成用来覆盖自动单位转换规则，例如，使温度传感器始终以 <code>°C</code> 显示，无论配置的单位系统是首选 <code>°C</code> 还是 <code>°F</code>，或者使距离传感器始终以英里显示，即使配置的单位系统是公制。</td></tr></tbody></table></div>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+不要为传感器实体添加 <code>extra_state_attributes</code>，而是创建一个附加传感器实体。不改变的属性只在数据库中保存一次。如果 <code>extra_state_attributes</code> 和传感器值都频繁变化，这会快速增加数据库的大小。</p></div></div>
+<h3 class="rp-toc-include" id="可用设备类别"><a href="#可用设备类别" class="rp-header-anchor rp-link" aria-hidden="true">#</a>可用设备类别</h3>
+<p>如果指定设备类别，您的传感器实体还需要返回正确的测量单位。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>常量</th><th>支持单位</th><th>说明</th></tr></thead><tbody><tr><td><code>SensorDeviceClass.ABSOLUTE_HUMIDITY</code></td><td>g/m³, mg/m³</td><td>绝对湿度</td></tr><tr><td><code>SensorDeviceClass.APPARENT_POWER</code></td><td>mVA, VA, kVA</td><td>视在功率</td></tr><tr><td><code>SensorDeviceClass.AQI</code></td><td>None</td><td>空气质量指数</td></tr><tr><td><code>SensorDeviceClass.AREA</code></td><td>m², cm², km², mm², in², ft², yd², mi², ac, ha</td><td>区域</td></tr><tr><td><code>SensorDeviceClass.ATMOSPHERIC_PRESSURE</code></td><td>cbar, bar, hPa, mmHG, inHg, inH₂O, kPa, mbar, Pa, psi</td><td>气压</td></tr><tr><td><code>SensorDeviceClass.BATTERY</code></td><td>%</td><td>剩余电量百分比</td></tr><tr><td><code>SensorDeviceClass.BLOOD_GLUCOSE_CONCENTRATION</code></td><td>mg/dL, mmol/L</td><td>血糖浓度</td></tr><tr><td><code>SensorDeviceClass.CO2</code></td><td>ppm</td><td>二氧化碳的浓度。</td></tr><tr><td><code>SensorDeviceClass.CO</code></td><td>ppb, ppm, µg/m³, mg/m³</td><td>一氧化碳浓度。</td></tr><tr><td><code>SensorDeviceClass.CONDUCTIVITY</code></td><td>S/cm, mS/cm, µS/cm</td><td>电导率</td></tr><tr><td><code>SensorDeviceClass.CURRENT</code></td><td>A, mA</td><td>当前的</td></tr><tr><td><code>SensorDeviceClass.DATA_RATE</code></td><td>bit/s, kbit/s, Mbit/s, Gbit/s, B/s, kB/s, MB/s, GB/s, KiB/s, MiB/s, GiB/s</td><td>数据速率</td></tr><tr><td><code>SensorDeviceClass.DATA_SIZE</code></td><td>bit, kbit, Mbit, Gbit, B, kB, MB, GB, TB, PB, EB, ZB, YB, KiB, MiB, GiB, TiB, PiB, EiB, ZiB, YiB</td><td>数据大小</td></tr><tr><td><code>SensorDeviceClass.DATE</code></td><td></td><td>日期。要求 <code>native_value</code> 是 Python <code>datetime.date</code> 对象或 <code>None</code>。</td></tr><tr><td><code>SensorDeviceClass.DISTANCE</code></td><td>km, m, cm, mm, mi, nmi, yd, in</td><td>通用距离</td></tr><tr><td><code>SensorDeviceClass.DURATION</code></td><td>d, h, min, s, ms, µs</td><td>时间段。不应仅因时间流逝而更新。设备或服务需要提供新的数据点来更新。</td></tr><tr><td><code>SensorDeviceClass.ENERGY</code></td><td>J, kJ, MJ, GJ, mWh, Wh, kWh, MWh, GWh, TWh, cal, kcal, Mcal, Gcal</td><td>能源，该设备类应用于表示能源消耗的传感器，例如电表。代表_power_超过_time_。不要与 <code>power</code> 混淆。</td></tr><tr><td><code>SensorDeviceClass.ENERGY_DISTANCE</code></td><td>kWh/100km, Wh/km, mi/kWh, km/kWh</td><td>每距离能量，该设备类应用于表示按距离的能量消耗，例如电动汽车消耗的电能量。</td></tr><tr><td><code>SensorDeviceClass.ENERGY_STORAGE</code></td><td>J, kJ, MJ, GJ, mWh, Wh, kWh, MWh, GWh, TWh, cal, kcal, Mcal, Gcal</td><td>存储能量，该设备类应用于表示存储能量的传感器，例如当前存储在电池中的电能数量或电池的容量。代表_power_超过_time_。不要与 <code>power</code> 混淆。</td></tr><tr><td><code>SensorDeviceClass.ENUM</code></td><td></td><td>传感器具有一组有限的（非数字）状态。使用此设备类时，必须将 <code>options</code> 属性设置为可能状态的列表。</td></tr><tr><td><code>SensorDeviceClass.FREQUENCY</code></td><td>Hz, kHz, MHz, GHz</td><td>频率</td></tr><tr><td><code>SensorDeviceClass.GAS</code></td><td>L, m³, ft³, CCF, MCF</td><td>气体体积。以千瓦时而非体积为单位测量的燃气消耗量应归类为能源。</td></tr><tr><td><code>SensorDeviceClass.HUMIDITY</code></td><td>%</td><td>相对湿度</td></tr><tr><td><code>SensorDeviceClass.ILLUMINANCE</code></td><td>lx</td><td>光照水平</td></tr><tr><td><code>SensorDeviceClass.IRRADIANCE</code></td><td>W/m², BTU/(h⋅ft²)</td><td>辐照度</td></tr><tr><td><code>SensorDeviceClass.MOISTURE</code></td><td>%</td><td>水分</td></tr><tr><td><code>SensorDeviceClass.MONETARY</code></td><td><a href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes" target="_blank" rel="noopener noreferrer" class="rp-link">ISO 4217</a></td><td>货币的货币价值。</td></tr><tr><td><code>SensorDeviceClass.NITROGEN_DIOXIDE</code></td><td>ppb, ppm, µg/m³</td><td>二氧化氮浓度</td></tr><tr><td><code>SensorDeviceClass.NITROGEN_MONOXIDE</code></td><td>ppb, µg/m³</td><td>一氧化氮浓度</td></tr><tr><td><code>SensorDeviceClass.NITROUS_OXIDE</code></td><td>µg/m³</td><td>一氧化二氮浓度</td></tr><tr><td><code>SensorDeviceClass.OZONE</code></td><td>ppb, ppm, µg/m³</td><td>臭氧浓度</td></tr><tr><td><code>SensorDeviceClass.PH</code></td><td>None</td><td>水溶液的氢势 (pH)</td></tr><tr><td><code>SensorDeviceClass.PM1</code></td><td>µg/m³</td><td>颗粒物浓度小于1微米</td></tr><tr><td><code>SensorDeviceClass.PM25</code></td><td>µg/m³</td><td>颗粒物浓度小于2.5微米</td></tr><tr><td><code>SensorDeviceClass.PM4</code></td><td>µg/m³</td><td>颗粒物浓度小于4微米</td></tr><tr><td><code>SensorDeviceClass.PM10</code></td><td>µg/m³</td><td>颗粒物浓度小于10微米</td></tr><tr><td><code>SensorDeviceClass.POWER</code></td><td>mW, W, kW, MW, GW, TW</td><td>力量。</td></tr><tr><td><code>SensorDeviceClass.POWER_FACTOR</code></td><td>%, None</td><td>功率因数</td></tr><tr><td><code>SensorDeviceClass.PRECIPITATION</code></td><td>cm, in, mm</td><td>累计降水量</td></tr><tr><td><code>SensorDeviceClass.PRECIPITATION_INTENSITY</code></td><td>in/d, in/h, mm/d, mm/h</td><td>降水强度</td></tr><tr><td><code>SensorDeviceClass.PRESSURE</code></td><td>cbar, bar, hPa, mmHg, inHg, kPa, mbar, Pa, psi, mPa</td><td>压力。</td></tr><tr><td><code>SensorDeviceClass.REACTIVE_ENERGY</code></td><td>varh, kvarh</td><td>无功电能</td></tr><tr><td><code>SensorDeviceClass.REACTIVE_POWER</code></td><td>mvar, var, kvar</td><td>无功功率</td></tr><tr><td><code>SensorDeviceClass.SIGNAL_STRENGTH</code></td><td>dB, dBm</td><td>信号强度</td></tr><tr><td><code>SensorDeviceClass.SOUND_PRESSURE</code></td><td>dB, dBA</td><td>声压</td></tr><tr><td><code>SensorDeviceClass.SPEED</code></td><td>ft/s, in/d, in/h, in/s, km/h, kn, m/s, mph, mm/d, mm/s</td><td>通用速度</td></tr><tr><td><code>SensorDeviceClass.SULPHUR_DIOXIDE</code></td><td>ppb, µg/m³</td><td>二氧化硫浓度</td></tr><tr><td><code>SensorDeviceClass.TEMPERATURE</code></td><td>°C, °F, K</td><td>温度。</td></tr><tr><td><code>SensorDeviceClass.TEMPERATURE_DELTA</code></td><td>°C, °F, K</td><td>该设备类别表示温度间隔 (delta)，即两个温度值之间的差异。</td></tr><tr><td><code>SensorDeviceClass.TIMESTAMP</code></td><td></td><td>时间戳。要求 <code>native_value</code> 返回带有时区信息的 Python <code>datetime.datetime</code> 对象或 <code>None</code>。</td></tr><tr><td><code>SensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS</code></td><td>µg/m³, mg/m³</td><td>挥发性有机化合物浓度</td></tr><tr><td><code>SensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS_PARTS</code></td><td>ppm, ppb</td><td>挥发性有机化合物比例</td></tr><tr><td><code>SensorDeviceClass.VOLTAGE</code></td><td>V, mV, µV, kV, MV</td><td>电压</td></tr><tr><td><code>SensorDeviceClass.VOLUME</code></td><td>L, mL, gal, fl. oz., m³, ft³, CCF, MCF</td><td>通用卷，此设备类应用于表示消耗的传感器，例如车辆消耗的燃料量。</td></tr><tr><td><code>SensorDeviceClass.VOLUME_FLOW_RATE</code></td><td>m³/h, m³/min, m³/s, ft³/min, L/h, L/min, L/s, gal/d, gal/h, gal/min, mL/s</td><td>体积流量，该设备类别应用于表示一定体积流量的传感器，例如瞬间消耗的水量。</td></tr><tr><td><code>SensorDeviceClass.VOLUME_STORAGE</code></td><td>L, mL, gal, fl. oz., m³, ft³, CCF, MCF</td><td>通用存储容量，此设备类应用于表示存储容量的传感器，例如油箱中的燃油量。</td></tr><tr><td><code>SensorDeviceClass.WATER</code></td><td>L, gal, m³, ft³, CCF, MCF</td><td>用水量</td></tr><tr><td><code>SensorDeviceClass.WEIGHT</code></td><td>kg, g, mg, µg, oz, lb, st</td><td>通用质量；使用 <code>weight</code> 代替 <code>mass</code> 以适应日常语言。</td></tr><tr><td><code>SensorDeviceClass.WIND_DIRECTION</code></td><td>°</td><td>风向，如果风速为0或风速太低而无法准确测量风向，则应设置为<code>None</code>。</td></tr><tr><td><code>SensorDeviceClass.WIND_SPEED</code></td><td>ft/s, km/h, kn, m/s, mph</td><td>风速</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="可用状态类"><a href="#可用状态类" class="rp-header-anchor rp-link" aria-hidden="true">#</a>可用状态类</h3>
+<div class="rp-callout rp-callout--caution"><div class="rp-callout__title">Caution</div><div class="rp-callout__content"><p>
+请谨慎选择传感器的状态类别。在大多数情况下，应选择状态类 <code>SensorStateClass.MEASUREMENT</code> 或不带 <code>last_reset</code> 的状态类 <code>SensorStateClass.TOTAL</code>，这将在下面的 <a href="#how-to-choose-state_class-and-last_reset" class="rp-link">如何选择<code>state_class</code>和<code>last_reset</code></a> 中进一步解释。</p></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>SensorStateClass.MEASUREMENT</code></td><td>状态代表_当前的测量_，而不是历史聚合，例如统计数据或对未来的预测。应分类为 <code>SensorStateClass.MEASUREMENT</code> 的示例包括：当前温度、湿度或电力。  不应归类为 <code>SensorStateClass.MEASUREMENT</code> 的示例：明天的预测温度、昨天的能源消耗或不包括_当前_测量的任何其他内容。对于支持的传感器，每小时最小、最大和平均传感器读数的统计数据每 5 分钟更新一次。</td></tr><tr><td><code>SensorStateClass.MEASUREMENT_ANGLE</code></td><td>与上面的 <code>SensorStateClass.MEASUREMENT</code> 类似，该状态表示_当前时间的测量_以度为单位测量的角度 (<code>°</code>)。应分类为 <code>SensorStateClass.MEASUREMENT_ANGLE</code> 的示例是当前风向</td></tr><tr><td><code>SensorStateClass.TOTAL</code></td><td>状态表示可以增加和减少的总量，例如净能量计。自首次添加以来传感器值的累计增长或下降的统计数据每 5 分钟更新一次。此状态类不应用于关注绝对值而不是累积增长或下降的传感器，例如剩余电池容量或 CPU 负载；在这种情况下，应使用状态类 <code>SensorStateClass.MEASUREMENT</code>。</td></tr><tr><td><code>SensorStateClass.TOTAL_INCREASING</code></td><td>与 <code>SensorStateClass.TOTAL</code> 类似，限制是状态表示单调递增的正总数，定期从 0 重新开始计数，例如每日消耗的燃气量、每周的水消耗量或终生能源消耗量。自首次添加以来传感器值的累计增长统计数据每 5 分钟更新一次。减小的值被解释为新的仪表周期的开始或更换仪表。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="实体选项"><a href="#实体选项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>实体选项</h3>
+<p>用户可以配置传感器，这是通过将 <code>sensor</code> 实体选项存储在传感器的实体注册表项中来完成的。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>选项</th><th>说明</th></tr></thead><tbody><tr><td><code>unit_of_measurement</code></td><td>对于设备类别为 <code>SensorDeviceClass.PRESSURE</code> 或 <code>SensorDeviceClass.TEMPERATURE</code> 的传感器，可以覆盖传感器的测量单位。</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="恢复传感器状态"><a href="#恢复传感器状态" class="rp-header-anchor rp-link" aria-hidden="true">#</a>恢复传感器状态</h2>
+<p>重新启动或重新加载后恢复状态的传感器不应扩展 <code>RestoreEntity</code>，因为它不存储 <code>native_value</code>，而是存储可能已被传感器基础实体修改的 <code>state</code>。恢复状态的传感器应扩展 <code>RestoreSensor</code> 并从 <code>async_added_to_hass</code> 调用 <code>await self.async_get_last_sensor_data</code>，以访问存储的 <code>native_value</code> 和 <code>native_unit_of_measurement</code>。</p>
+<h2 class="rp-toc-include" id="长期统计"><a href="#长期统计" class="rp-header-anchor rp-link" aria-hidden="true">#</a>长期统计</h2>
+<p>如果实体有，Home Assistant支持将传感器存储为长期统计数据
+正确的属性。要选择统计数据，传感器必须具有
+<code>state_class</code> 设置为有效状态类之一：<code>SensorStateClass.MEASUREMENT</code>、<code>SensorStateClass.TOTAL</code> 或
+<code>SensorStateClass.TOTAL_INCREASING</code>。
+对于某些设备类别，统计数据的单位被标准化为例如
+可以在一张图中绘制多个传感器。</p>
+<h3 class="rp-toc-include" id="不代表总金额的实体"><a href="#不代表总金额的实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>不代表总金额的实体</h3>
+<p>Home Assistant 跟踪统计期间的最小值、最大值和平均值。这
+<code>state_class</code> 属性必须设置为 <code>SensorStateClass.MEASUREMENT</code>，并且 <code>device_class</code> 不得设置为
+<code>SensorDeviceClass.DATE</code>、<code>SensorDeviceClass.ENUM</code>、<code>SensorDeviceClass.ENERGY</code>、<code>SensorDeviceClass.GAS</code>、<code>SensorDeviceClass.MONETARY</code> 之一，
+<code>SensorDeviceClass.TIMESTAMP</code>、<code>SensorDeviceClass.VOLUME</code> 或 <code>SensorDeviceClass.WATER</code>。</p>
+<h3 class="rp-toc-include" id="代表总金额的实体"><a href="#代表总金额的实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>代表总金额的实体</h3>
+<p>跟踪总金额的实体有一个可以选择定期重置的值，
+例如本月的能源消耗量、今天的能源产量、上周用于房屋供暖的颗粒重量或每年的增长量
+股票投资组合。编译第一个统计数据时传感器的值用作初始零点。</p>
+<h4 class="rp-toc-include" id="如何选择state_class和last_reset"><a href="#如何选择state_class和last_reset" class="rp-header-anchor rp-link" aria-hidden="true">#</a>如何选择<code>state_class</code>和<code>last_reset</code></h4>
+<p>建议尽可能使用不带 <code>last_reset</code> 的状态类别 <code>SensorStateClass.TOTAL</code>，仅当不带 <code>last_reset</code> 的状态类别 <code>SensorStateClass.TOTAL</code> 不适用于传感器时，才应使用带 <code>last_reset</code> 的状态类别 <code>SensorStateClass.TOTAL_INCREASING</code> 或 <code>SensorStateClass.TOTAL</code>。</p>
+<p>示例：</p>
+<ul>
+<li>传感器的值永远不会重置，例如一生总能源消耗或生产：state_class <code>SensorStateClass.TOTAL</code>、<code>last_reset</code> 未设置或设置为 <code>None</code></li>
+<li>传感器的值可能会重置为 0，并且其值只能增加：状态类别 <code>SensorStateClass.TOTAL_INCREASING</code>。示例：能源消耗与计费周期一致，例如每月，每次断开连接时电能表都会重置为 0</li>
+<li>传感器的值可以重置为 0，并且其值可以增加和减少：状态类 <code>SensorStateClass.TOTAL</code>、<code>last_reset</code> 在值重置时更新。示例：净能耗与计费周期一致，例如每月。</li>
+<li>每次状态更新时都会重置传感器的状态，例如传感器每分钟都会更新过去一分钟的能耗：状态类 <code>SensorStateClass.TOTAL</code>、<code>last_reset</code> 每次状态更改都会更新。</li>
+</ul>
+<h4 class="rp-toc-include" id="国家级sensorstateclasstotal"><a href="#国家级sensorstateclasstotal" class="rp-header-anchor rp-link" aria-hidden="true">#</a>国家级<code>SensorStateClass.TOTAL</code></h4>
+<p>对于状态类别为 <code>SensorStateClass.TOTAL</code> 的传感器，<code>last_reset</code> 属性可以
+可选择设置为获得仪表周期的手动控制。
+传感器首次添加到 Home Assistant 时的状态用作初始状态
+零点。当<code>last_reset</code>改变时，零点将被设置为0。
+如果没有设置last_reset，则传感器第一次添加时的值将用作
+计算 <code>sum</code> 统计数据时的零点。</p>
+<p>换句话说：更新统计数据时的逻辑是更新
+当前状态与前一个状态之差的总和列
+除非 <code>last_reset</code> 已更改，在这种情况下不要添加任何内容。</p>
+<p>没有last_reset的状态类<code>SensorStateClass.TOTAL</code>的示例：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th style="text-align:left">t</th><th style="text-align:right">状态</th><th style="text-align:right">和</th><th style="text-align:right">总和增加</th><th style="text-align:right">总和减少</th></tr></thead><tbody><tr><td style="text-align:left">2021-08-01T13:00:00</td><td style="text-align:right">1000</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td></tr><tr><td style="text-align:left">2021-08-01T14:00:00</td><td style="text-align:right">1010</td><td style="text-align:right">10</td><td style="text-align:right">10</td><td style="text-align:right">0</td></tr><tr><td style="text-align:left">2021-08-01T15:00:00</td><td style="text-align:right">0</td><td style="text-align:right">-1000</td><td style="text-align:right">10</td><td style="text-align:right">1010</td></tr><tr><td style="text-align:left">2021-08-01T16:00:00</td><td style="text-align:right">5</td><td style="text-align:right">-995</td><td style="text-align:right">15</td><td style="text-align:right">1010</td></tr></tbody></table></div>
+<p>状态类 <code>SensorStateClass.TOTAL</code> 与 last_reset 的示例：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th style="text-align:left">t</th><th style="text-align:right">状态</th><th>最后重置</th><th style="text-align:right">和</th><th style="text-align:right">总和增加</th><th style="text-align:right">总和减少</th></tr></thead><tbody><tr><td style="text-align:left">2021-08-01T13:00:00</td><td style="text-align:right">1000</td><td>2021-08-01T13:00:00</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td></tr><tr><td style="text-align:left">2021-08-01T14:00:00</td><td style="text-align:right">1010</td><td>2021-08-01T13:00:00</td><td style="text-align:right">10</td><td style="text-align:right">10</td><td style="text-align:right">0</td></tr><tr><td style="text-align:left">2021-08-01T15:00:00</td><td style="text-align:right">1005</td><td>2021-08-01T13:00:00</td><td style="text-align:right">5</td><td style="text-align:right">10</td><td style="text-align:right">5</td></tr><tr><td style="text-align:left">2021-08-01T16:00:00</td><td style="text-align:right">0</td><td>2021-09-01T16:00:00</td><td style="text-align:right">5</td><td style="text-align:right">10</td><td style="text-align:right">5</td></tr><tr><td style="text-align:left">2021-08-01T17:00:00</td><td style="text-align:right">5</td><td>2021-09-01T16:00:00</td><td style="text-align:right">10</td><td style="text-align:right">15</td><td style="text-align:right">5</td></tr></tbody></table></div>
+<p>状态类 <code>SensorStateClass.TOTAL</code> 的示例，其中初始状态位于开始处
+新的仪表周期的值不为0，但以0作为零点：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th style="text-align:left">t</th><th style="text-align:right">状态</th><th>最后重置</th><th style="text-align:right">和</th><th style="text-align:right">总和增加</th><th style="text-align:right">总和减少</th></tr></thead><tbody><tr><td style="text-align:left">2021-08-01T13:00:00</td><td style="text-align:right">1000</td><td>2021-08-01T13:00:00</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td></tr><tr><td style="text-align:left">2021-08-01T14:00:00</td><td style="text-align:right">1010</td><td>2021-08-01T13:00:00</td><td style="text-align:right">10</td><td style="text-align:right">10</td><td style="text-align:right">0</td></tr><tr><td style="text-align:left">2021-08-01T15:00:00</td><td style="text-align:right">1005</td><td>2021-08-01T13:00:00</td><td style="text-align:right">5</td><td style="text-align:right">10</td><td style="text-align:right">5</td></tr><tr><td style="text-align:left">2021-08-01T16:00:00</td><td style="text-align:right">5</td><td>2021-09-01T16:00:00</td><td style="text-align:right">10</td><td style="text-align:right">15</td><td style="text-align:right">5</td></tr><tr><td style="text-align:left">2021-08-01T17:00:00</td><td style="text-align:right">10</td><td>2021-09-01T16:00:00</td><td style="text-align:right">15</td><td style="text-align:right">20</td><td style="text-align:right">5</td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="国家级sensorstateclasstotal_increasing"><a href="#国家级sensorstateclasstotal_increasing" class="rp-header-anchor rp-link" aria-hidden="true">#</a>国家级<code>SensorStateClass.TOTAL_INCREASING</code></h4>
+<p>对于 state_class <code>SensorStateClass.TOTAL_INCREASING</code> 的传感器，递减的值是
+解释为新仪表周期的开始或更换仪表。这是
+重要的是，集成确保该值不会错误地减少
+从存在测量噪声的传感器计算值的情况。有
+一定的容忍度，状态变化之间的减少 &lt; 10% 将不会触发新的仪表
+循环。该状态类适用于煤气表、电表、水表等。
+计算时传感器读数减小时的值不会作为零点
+<code>sum</code> 统计，零点将设置为 0。</p>
+<p>换句话说：更新统计数据时的逻辑是更新
+当前状态与前一个状态之差的总和列
+除非差值为负，在这种情况下不要添加任何内容。</p>
+<p>状态类 <code>SensorStateClass.TOTAL_INCREASING</code> 的示例：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th style="text-align:left">t</th><th style="text-align:right">状态</th><th style="text-align:right">和</th></tr></thead><tbody><tr><td style="text-align:left">2021-08-01T13:00:00</td><td style="text-align:right">1000</td><td style="text-align:right">0</td></tr><tr><td style="text-align:left">2021-08-01T14:00:00</td><td style="text-align:right">1010</td><td style="text-align:right">10</td></tr><tr><td style="text-align:left">2021-08-01T15:00:00</td><td style="text-align:right">0</td><td style="text-align:right">10</td></tr><tr><td style="text-align:left">2021-08-01T16:00:00</td><td style="text-align:right">5</td><td style="text-align:right">15</td></tr></tbody></table></div>
+<p>状态类 <code>SensorStateClass.TOTAL_INCREASING</code> 的示例，其中传感器未重置为 0：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th style="text-align:left">t</th><th style="text-align:right">状态</th><th style="text-align:right">和</th></tr></thead><tbody><tr><td style="text-align:left">2021-08-01T13:00:00</td><td style="text-align:right">1000</td><td style="text-align:right">0</td></tr><tr><td style="text-align:left">2021-08-01T14:00:00</td><td style="text-align:right">1010</td><td style="text-align:right">10</td></tr><tr><td style="text-align:left">2021-08-01T15:00:00</td><td style="text-align:right">5</td><td style="text-align:right">15</td></tr><tr><td style="text-align:left">2021-08-01T16:00:00</td><td style="text-align:right">10</td><td style="text-align:right">20</td></tr></tbody></table></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/developers/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>首页</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#特性" class="rp-toc-item rp-link" title="特性" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">特性</span></a><a href="#可用设备类别" class="rp-toc-item rp-link" title="可用设备类别" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">可用设备类别</span></a><a href="#可用状态类" class="rp-toc-item rp-link" title="可用状态类" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">可用状态类</span></a><a href="#实体选项" class="rp-toc-item rp-link" title="实体选项" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">实体选项</span></a><a href="#恢复传感器状态" class="rp-toc-item rp-link" title="恢复传感器状态" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">恢复传感器状态</span></a><a href="#长期统计" class="rp-toc-item rp-link" title="长期统计" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">长期统计</span></a><a href="#不代表总金额的实体" class="rp-toc-item rp-link" title="不代表总金额的实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">不代表总金额的实体</span></a><a href="#代表总金额的实体" class="rp-toc-item rp-link" title="代表总金额的实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">代表总金额的实体</span></a><a href="#如何选择state_class和last_reset" class="rp-toc-item rp-link" title="如何选择state_class和last_reset" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">如何选择<code>state_class</code>和<code>last_reset</code></span></a><a href="#国家级sensorstateclasstotal" class="rp-toc-item rp-link" title="国家级SensorStateClass.TOTAL" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">国家级<code>SensorStateClass.TOTAL</code></span></a><a href="#国家级sensorstateclasstotal_increasing" class="rp-toc-item rp-link" title="国家级SensorStateClass.TOTAL_INCREASING" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">国家级<code>SensorStateClass.TOTAL_INCREASING</code></span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

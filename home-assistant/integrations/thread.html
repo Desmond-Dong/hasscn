@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thread - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Thread - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Thread 集成可帮助您跟踪家中的不同 Thread 网络，并存储 Thread 网络凭据（类似于 Wi-Fi 密码）。Home Assistant 中的 Thread 集成目前仍在持续完善中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Thread 集成可帮助您跟踪家中的不同 Thread 网络，并存储 Thread 网络凭据（类似于 Wi-Fi 密码）。Home Assistant 中的 Thread 集成目前仍在持续完善中。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/thread-requires-border-router.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/matter_onpackbadge_logo.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/apple-works-with-homekit-logo.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/matter/matter_thread_infographic.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/thread-preferred-network-ha-only.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/thread-no-preferred-network-but-third-party-present.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/information-outline.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/thread-google-br.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/thread-ha-preferred.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/thread-no-3rd-party-credentials.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/thread-import-credentials.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/thread/thread-preferred-network.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="thread"><a href="#thread" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Thread<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Thread</strong> 集成可帮助您跟踪家中的不同 Thread 网络，并存储 Thread 网络凭据（类似于 Wi-Fi 密码）。Home Assistant 中的 Thread 集成目前仍在持续完善中。</p>
+<p>您无需手动安装此集成。当 Home Assistant 检测到<a href="#about-thread-border-routers" class="rp-link">边界路由器</a>时，Thread 集成会自动出现。</p>
+<h2 class="rp-toc-include" id="thread-智能家居设备上的标识"><a href="#thread-智能家居设备上的标识" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Thread 智能家居设备上的标识</h2>
+<p>如果您购买的是基于 Thread 的消费级设备，通常会在包装上看到 Thread 标识。</p>
+<p class="img"><img width="200" src="/home-assistant/images/integrations/thread/thread-requires-border-router.png"/></p>
+<p><code>Built on Thread: requires border router</code> 标识表示 Thread 是此设备唯一支持的网络协议。您不能通过 Wi-Fi 与该设备通信。</p>
+<p>此外，包装上通常还会看到 Matter 或 Apple HomeKit 标识。</p>
+<p>Matter 和 Apple HomeKit 都是智能家居协议。它们负责处理 Thread 凭据，并将 Thread 设备连接到 Thread 网络。要控制设备，必须依赖某种智能家居协议。Home Assistant 原生支持这两种家庭自动化标准。</p>
+<h2 class="rp-toc-include" id="将基于-thread-的设备添加到-home-assistant"><a href="#将基于-thread-的设备添加到-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将基于 Thread 的设备添加到 Home Assistant</h2>
+<p>基于 Thread 的设备如何添加到 Home Assistant，取决于它使用的是哪种家庭自动化标准。</p>
+<ol>
+<li>
+<p>如果您在设备包装上看到 Matter 标识，请按照<a href="/home-assistant/integrations/matter/index.html#adding-a-matter-device-to-home-assistant" class="rp-link">将 Matter 设备添加到 Home Assistant</a>中的步骤操作。</p>
+<img src="/home-assistant/images/integrations/thread/matter_onpackbadge_logo.png" width="200"/>
+</li>
+<li>
+<p>如果您在设备包装上看到 Apple HomeKit 标识，请按照<a href="/home-assistant/integrations/homekit_controller/index.html#adding-a-homekit-device-through-thread" class="rp-link">将 HomeKit 设备添加到 Home Assistant</a>中的步骤操作。</p>
+<img src="/home-assistant/images/integrations/thread/apple-works-with-homekit-logo.png" width="200"/>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="关于-thread"><a href="#关于-thread" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于 Thread</h2>
+<p>本节将介绍 <em>Thread</em> 和 <em>border router</em> 这两个概念，并列出 Home Assistant 支持的边界路由器。</p>
+<h3 class="rp-toc-include" id="一种面向-iot-设备的通信协议"><a href="#一种面向-iot-设备的通信协议" class="rp-header-anchor rp-link" aria-hidden="true">#</a>一种面向 IoT 设备的通信协议</h3>
+<p>Thread 是一种面向 IoT 设备的低功耗网状网络标准。低功耗特性对于电池供电的智能家居设备非常重要。但它同时也是低带宽的，因此非常适合数据量不大的应用，例如开关或运动传感器。</p>
+<p>Thread 使用与 Zigbee 相同的 <abbr title="radio frequency">RF</abbr> 技术（IEEE 802.15.4），但提供了类似 Wi-Fi 的 IP 连接能力。与 Zigbee 不同，Thread 本身并不负责控制设备：它只是通信协议。要控制 Thread 设备，还需要更高层的协议，例如 Matter 或 Apple HomeKit。Thread 设备通过 IPv6 标准在网状网络内外进行通信。</p>
+<p><a href="/" class="rp-link" id="about-thread-border-routers"></a></p>
+<h3 class="rp-toc-include" id="关于-thread-边界路由器"><a href="#关于-thread-边界路由器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于 Thread 边界路由器</h3>
+<p>Thread 边界路由器是一种网络设备，用于将 Thread 网状网络（由低功耗 IoT 设备构成）连接到以太网或 Wi-Fi 等其他 IP 网络。</p>
+<p>IoT 设备通过 Thread 边界路由器与网状网络外部的任意 IPv6 设备通信。Thread 边界路由器会通过 Wi-Fi 或以太网连接到您的网络，并利用其 <abbr title="radio frequency">RF</abbr> 无线芯片与 Thread 网状网络通信。<abbr title="Thread border router">TBR</abbr> 会在本地网络与 Thread 网状网络之间路由数据包。边界路由器不会检查这些数据包的内容，只负责转发。</p>
+<p>Thread 边界路由器不负责控制设备。设备控制由 Matter 或 Apple HomeKit 这类应用层协议负责。</p>
+<p><img src="/home-assistant/images/integrations/matter/matter_thread_infographic.png" alt="Home Assistant matter thread infographic"/></p>
+<p>图片来自 Thread Group 的 <a href="https://www.threadgroup.org/support#Resources" target="_blank" rel="noopener noreferrer" class="rp-link">Thread Smart Home Fact Sheet</a>。它展示了 Matter、Thread 和边界路由器之间的整体关系。这里除了 Matter，也可以换成其他协议，例如 HomeKit。</p>
+<p>与其他协议不同，Thread 可以在单一网络中使用多个边界路由器。这能提升无线覆盖范围，并降低单点故障风险。对于设备数量多、分布范围广的家庭自动化场景非常理想。</p>
+<h4 class="rp-toc-include" id="openthread-边界路由器"><a href="#openthread-边界路由器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>OpenThread 边界路由器</h4>
+<p>OpenThread 是 Thread 的开源实现，最初由 Google 发布。市面上几乎所有商用 Thread 边界路由器都基于这一开源实现。不过，<abbr title="Thread border routers">TBR</abbr> 的配置方式并不属于 Thread 标准的一部分。这意味着 Google 和 Apple 的 <abbr title="Thread border routers">TBR</abbr> 实现是由各自生态系统进行设置和配置的。</p>
+<p>虽然 Home Assistant 可以<em>使用</em>任意边界路由器，但它只能<em>配置</em>和<em>控制</em>那些基于开源实现、并启用了 REST API 的 OpenThread 边界路由器。<strong>OpenThread Border Router</strong> 应用正是基于这套开源 OpenThread 代码构建，并启用了 REST API。</p>
+<h3 class="rp-toc-include" id="thread-边界路由器设备列表"><a href="#thread-边界路由器设备列表" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Thread 边界路由器设备列表</h3>
+<p>Home Assistant 本身可以充当 Thread 边界路由器，同时也支持第三方边界路由器。很多时候，Thread 边界路由只是某个智能家居设备的附带功能。例如，Nest Hub（第二代）既是智能显示屏、Google Home 控制器和 Chromecast 目标设备，同时也内置了 Thread 边界路由器。</p>
+<p>目前，已知以下 <abbr title="Thread border router">TBR</abbr> 设备可与 Home Assistant 配合工作。
+这些边界路由器在接入过程中可能需要 iPhone 或 Android 手机。具体要求取决于您的设备所使用的家庭自动化协议（Matter 或 Apple HomeKit）。购买边界路由器前，请先查看相应流程中的前提条件：</p>
+<ul>
+<li><a href="/home-assistant/integrations/matter/index.html#adding-a-matter-device-to-home-assistant" class="rp-link">将 Matter 设备添加到 Home Assistant</a></li>
+<li><a href="/home-assistant/integrations/homekit_controller/index.html#adding-a-homekit-device-through-thread" class="rp-link">通过 Thread 添加 Apple HomeKit 设备</a></li>
+</ul>
+<h4 class="rp-toc-include" id="home-assistant"><a href="#home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Home Assistant</h4>
+<p>默认情况下，Home Assistant Connect ZBT-1、<a href="/home-assistant/connect/zbt-2/" class="rp-link">Connect ZBT-2</a> 和 Yellow 运行的是 Zigbee，而不是 Thread。目前启用 Thread 仍需要手动操作。基于 Home Assistant 的 Thread 边界路由器与 Matter 的集成也仍在开发中。</p>
+<ul>
+<li>如果您使用的是 Home Assistant Yellow、Connect ZBT-1 或 <a href="/home-assistant/connect/zbt-2/" class="rp-link">Connect ZBT-2</a>，可以使用其 Thread 无线模块。请按照以下步骤<a href="#turning-home-assistant-into-a-thread-border-router" class="rp-link">将 Home Assistant 变成 Thread 边界路由器</a>。</li>
+</ul>
+<h4 class="rp-toc-include" id="google"><a href="#google" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Google</h4>
+<ul>
+<li><strong>显示设备</strong>：Nest Hub（第二代）、Nest Hub Max</li>
+<li><strong>Wi-Fi 路由器</strong>：Nest Wifi Pro（Wi-Fi 6E）、Nest Wifi</li>
+<li><strong>电视设备</strong>：Google TV Streamer（4K）</li>
+</ul>
+<h4 class="rp-toc-include" id="apple"><a href="#apple" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Apple</h4>
+<ul>
+<li><strong>音箱</strong>：HomePod（第二代）、HomePod mini</li>
+<li><strong>电视设备</strong>：Apple TV 4K（第三代，Wi-Fi + 以太网）、Apple TV 4K（第二代）</li>
+</ul>
+<h4 class="rp-toc-include" id="其他"><a href="#其他" class="rp-header-anchor rp-link" aria-hidden="true">#</a>其他</h4>
+<p>还有其他公司也提供具备边界路由器能力的设备，例如 Nanoleaf 或 Amazon。</p>
+<p><a href="/" class="rp-link" id="turning-home-assistant-into-a-thread-border-router"></a></p>
+<h2 class="rp-toc-include" id="将-home-assistant-变成-thread-边界路由器"><a href="#将-home-assistant-变成-thread-边界路由器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 Home Assistant 变成 Thread 边界路由器</h2>
+<p>如果您想使用 Yellow、Connect ZBT-1 或其他兼容无线电设备的 Thread 无线模块，将 Home Assistant 变成 Thread 边界路由器，请按以下步骤操作。</p>
+<p>先确认您是否已经有 Thread 网络：</p>
+<ul>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>。</li>
+<li>如果没有看到 <strong>Thread</strong> 集成，请先添加它。</li>
+<li>然后选择 <strong>Configure</strong>，检查概览页面中是否已有任何 Thread 网络。</li>
+<li>情况 1：如果您还没有任何 Thread 网络，请参阅<a href="#case-1-making-home-assistant-your-first-thread-network" class="rp-link">情况 1：将 Home Assistant 作为您的第一个 Thread 网络</a></li>
+<li>情况 2：如果您已经有现有网络，请参阅<a href="#case-2-creating-a-ha-border-router-when-there-is-an-existing-network" class="rp-link">情况 2：在已有网络时创建 Home Assistant 边界路由器</a></li>
+</ul>
+<p><a href="/" class="rp-link" id="case-1-making-home-assistant-your-first-thread-network"></a></p>
+<h3 class="rp-toc-include" id="情况-1将-home-assistant-作为您的第一个-thread-网络"><a href="#情况-1将-home-assistant-作为您的第一个-thread-网络" class="rp-header-anchor rp-link" aria-hidden="true">#</a>情况 1：将 Home Assistant 作为您的第一个 Thread 网络</h3>
+<p>如果您想使用 Yellow、Connect ZBT-1、Connect ZBT-2 或其他兼容无线电设备的 Thread 无线模块，将 Home Assistant 变成 Thread 边界路由器，并且当前还没有任何第三方 Thread 网络，请按以下步骤操作。这会自动创建一个名为 <code>ha-thread-xxxx</code> 的新 Thread 网络，末尾四位是网络专属标识符（PAN ID）。</p>
+<h4 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h4>
+<ul>
+<li>一台带有 Thread 无线模块的设备，例如 Home Assistant Yellow、Connect ZBT-1、<a href="/home-assistant/connect/zbt-2/" class="rp-link">Connect ZBT-2</a> 或其他兼容无线电设备</li>
+<li>Android 手机或 iPhone</li>
+<li>当前不存在第三方 Thread 网络</li>
+</ul>
+<h4 class="rp-toc-include" id="将-home-assistant-设为第一个-thread-网络"><a href="#将-home-assistant-设为第一个-thread-网络" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 Home Assistant 设为第一个 Thread 网络</h4>
+<ol>
+<li>
+<p>要在 Home Assistant Yellow、Connect ZBT-1 或 <a href="/home-assistant/connect/zbt-2/" class="rp-link">Connect ZBT-2</a> 上启用 Thread 支持，您需要安装 <strong>OpenThread Border Router</strong> 应用。请按对应流程操作：</p>
+<ul>
+<li><a href="https://support.nabucasa.com/hc/articles/25742476767517" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Yellow 上启用 Thread</a>。</li>
+<li><a href="https://support.nabucasa.com/hc/sections/26122472719517" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Connect ZBT-1 上启用 Thread</a>。</li>
+<li><a href="https://support.nabucasa.com/hc/sections/31260019451421" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Connect ZBT-2 上启用 Thread</a>。</li>
+<li><a href="#adding-a-thread-adapter-to-home-assistant" class="rp-link">将 Thread 适配器添加到 Home Assistant</a>。</li>
+</ul>
+</li>
+<li>
+<p>确保 Home Assistant Thread 网络已被设为首选网络。</p>
+<ul>
+<li>
+<p>正常情况下会自动完成，但仍建议检查确认。</p>
+</li>
+<li>
+<p>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>，选择 <strong>Thread</strong> 集成。</p>
+</li>
+<li>
+<p>然后选择 <strong>Configure</strong>。</p>
+</li>
+<li>
+<p>您应能在 <strong>Preferred network</strong> 下看到 Home Assistant 标识。</p>
+<p><img src="/home-assistant/images/integrations/thread/thread-preferred-network-ha-only.png" alt="Home Assistant thread preferred network ha only"/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>在添加基于 Matter 的 Thread 设备之前，您的手机需要知道刚创建的 Thread 网络凭据。</p>
+<ul>
+<li>若要将凭据共享给 Android 手机，请打开 Home Assistant Companion 应用。
+<ul>
+<li>在 Companion 应用中，前往 <strong>Settings</strong> &gt; <strong>Companion app</strong> &gt; <strong>Troubleshooting</strong>，然后选择 <strong>Sync Thread credentials</strong>。</li>
+<li>按照屏幕提示操作。</li>
+<li><strong>结果</strong>：您会看到确认信息，说明来自 Home Assistant 的 Thread 凭据已添加到该设备。</li>
+</ul>
+</li>
+<li>若要将凭据共享给 iPhone，请打开 Home Assistant Companion 应用。
+<ul>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>，选择 <strong>Thread</strong> 集成。</li>
+<li>在 <strong>Services</strong> 下选择 <strong>Configure</strong>。</li>
+<li>在首选网络框底部选择 <strong>Send credentials to phone</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>要添加基于 Matter 的 Thread 设备，请按<a href="/home-assistant/integrations/matter/index.html#adding-a-matter-device-to-home-assistant" class="rp-link">将 Matter 设备添加到 Home Assistant</a>中的步骤操作。</p>
+</li>
+</ol>
+<p><a href="/" class="rp-link" id="case-2-creating-a-ha-border-router-when-there-is-an-existing-network"></a></p>
+<h3 class="rp-toc-include" id="情况-2在已有网络时创建-home-assistant-边界路由器"><a href="#情况-2在已有网络时创建-home-assistant-边界路由器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>情况 2：在已有网络时创建 Home Assistant 边界路由器</h3>
+<p>如果您想使用 Yellow、Connect ZBT-1 或其他兼容无线电设备的 Thread 无线模块，将 Home Assistant 变成 Thread 边界路由器，但当前已经存在第三方 Thread 网络，请按以下步骤操作。这些步骤会让 Home Assistant 的 Thread 边界路由器加入现有的 Thread 网络。</p>
+<p><img src="/home-assistant/images/integrations/thread/thread-no-preferred-network-but-third-party-present.png" alt="Home Assistant thread no preferred network but third party present"/></p>
+<p>如果您同时存在 Google 和 Apple 的 Thread 网络，请先决定要让 Home Assistant 边界路由器加入哪一个。</p>
+<h4 class="rp-toc-include" id="前提条件-1"><a href="#前提条件-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h4>
+<ul>
+<li>一台带有 Thread 无线模块的设备，例如 Home Assistant Yellow、Connect ZBT-1、Connect ZBT-2，或其他兼容无线电设备</li>
+<li>已列出的第三方 Thread 网络</li>
+<li>若是 Google Thread 网络则需 Android 手机；若是 Apple Thread 网络则需 iPhone</li>
+</ul>
+<h4 class="rp-toc-include" id="在已有网络时创建-home-assistant-边界路由器"><a href="#在已有网络时创建-home-assistant-边界路由器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在已有网络时创建 Home Assistant 边界路由器</h4>
+<p>注意：这里的步骤和图片展示的是 Google Thread 网络的流程。但如果您使用的是 Apple Thread 网络和 iPhone，整体过程也非常相似。</p>
+<ol>
+<li>
+<p>请确保您有 Android 手机或 iPhone，并且手机与 Google 边界路由器处于同一 Wi-Fi 网络。</p>
+</li>
+<li>
+<p>首先，您需要导入 Google Thread 网络的凭据。</p>
+<ul>
+<li>在 Companion 应用中，前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>，选择 <strong>Thread</strong> 集成。</li>
+<li>在 Android 上，选择 <strong>Configure</strong> 和 <strong>Import Credentials</strong>。
+<ul>
+<li><strong>结果</strong>：您应会看到凭据已导入的通知。</li>
+</ul>
+</li>
+<li>在 iOS 上，选择 <strong>Send credentials to Home Assistant</strong>。</li>
+</ul>
+</li>
+<li>
+<p>刷新页面。</p>
+<ul>
+<li>现在您应能看到一个 <img width="30px" src="/home-assistant/images/integrations/thread/information-outline.png"/> 图标，表示 Home Assistant 已拥有该网络的凭据。</li>
+</ul>
+</li>
+<li>
+<p>选择 <strong>Make preferred network</strong>。</p>
+<ul>
+<li><strong>结果</strong>：所选网络现在会显示为首选网络。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/thread/thread-google-br.png" alt="Home Assistant thread google br"/></p>
+</li>
+<li>
+<p>要启用 Thread 支持，您需要安装 <strong>OpenThread Border Router</strong> 应用。请按对应流程操作：</p>
+<ul>
+<li><a href="https://support.nabucasa.com/hc/articles/25742476767517" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Yellow 上启用 Thread</a>。</li>
+<li><a href="https://support.nabucasa.com/hc/sections/26122472719517" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Connect ZBT-1 上启用 Thread</a>。</li>
+<li><a href="https://support.nabucasa.com/hc/sections/31260019451421" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Connect ZBT-2 上启用 Thread</a>。</li>
+<li><a href="#adding-a-thread-adapter-to-home-assistant" class="rp-link">将 Thread 适配器添加到 Home Assistant</a>。</li>
+<li><strong>结果</strong>：该网络现在会显示为首选网络，并已加入第三方网络。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/thread/thread-ha-preferred.png" alt="Home Assistant thread ha preferred"/></p>
+<ul>
+<li>🎉 您已成功创建 Home Assistant Thread 网络，并将其与现有第三方网络连接起来。</li>
+</ul>
+</li>
+</ol>
+<p><a href="/" class="rp-link" id="adding-a-thread-adapter-to-home-assistant"></a></p>
+<h2 class="rp-toc-include" id="将第三方-thread-适配器添加到-home-assistant"><a href="#将第三方-thread-适配器添加到-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将第三方 Thread 适配器添加到 Home Assistant</h2>
+<p>如果您想设置第三方 Thread 适配器，请按以下步骤操作。</p>
+<p>如果您使用的是 Home Assistant Thread 适配器，请改为参考对应说明：</p>
+<ul>
+<li><a href="https://support.nabucasa.com/hc/articles/25742476767517" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Yellow 上启用 Thread</a>。</li>
+<li><a href="https://support.nabucasa.com/hc/sections/26122472719517" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Connect ZBT-1 上启用 Thread</a>。</li>
+<li><a href="https://support.nabucasa.com/hc/sections/31260019451421" target="_blank" rel="noopener noreferrer" class="rp-link">在 Home Assistant Connect ZBT-2 上启用 Thread</a>。</li>
+</ul>
+<h3 class="rp-toc-include" id="前提条件-2"><a href="#前提条件-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h3>
+<ul>
+<li>智能家居主机上已安装 <a href="/home-assistant/docs/glossary/index.html#home-assistant-operating-system" class="rp-link">Home Assistant Operating System</a>。例如：
+<ul>
+<li>Home Assistant Green（预装 Home Assistant OS）</li>
+<li>Home Assistant Yellow 或 Raspberry Pi</li>
+</ul>
+</li>
+<li>已安装最新更新</li>
+<li>一个新的 Thread 适配器和一根 USB 延长线
+<ul>
+<li>如果您的适配器支持多种协议：
+<ul>
+<li>它可能默认安装了其他固件（例如 Zigbee）。</li>
+<li>请查阅其文档，并在适配器上安装 OpenThread 固件。</li>
+<li>请查阅其文档并记录波特率。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="将-thread-适配器添加到-openthread-border-router-应用"><a href="#将-thread-适配器添加到-openthread-border-router-应用" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 Thread 适配器添加到 OpenThread Border Router 应用</h3>
+<ol>
+<li>安装 <strong>OpenThread Border Router</strong> 应用。
+<ul>
+<li>前往 <a href="https://my.home-assistant.io/redirect/supervisor_addon/?addon=core_openthread_border_router" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Apps</strong></a>，然后选择 <strong>OpenThread Border Router</strong> 应用。</li>
+</ul>
+</li>
+<li>将适配器插入延长线，再将延长线插入 Home Assistant 主机。</li>
+<li>前往 <a href="https://my.home-assistant.io/redirect/supervisor_addon/?addon=core_openthread_border_router" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Apps</strong> &gt; <strong>OpenThread Border Router</strong></a>，选择 <strong>Configuration</strong> 选项卡。</li>
+<li>在 <strong>Devices</strong> 下选择您的适配器。</li>
+<li>按照适配器文档输入 <strong>Baudrate</strong>。
+<ul>
+<li>如果找不到波特率，请尝试 <code>460800</code>，或联系厂商支持。</li>
+<li>保存更改。</li>
+<li><strong>故障排查</strong>：
+<ul>
+<li>检查日志。</li>
+<li>如果应用崩溃或无法与 Thread 集成通信：切换 <strong>Hardware flow control</strong> 选项后重试。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重启应用并检查日志。等待片刻。</li>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>，选择 <strong>Thread</strong> 集成。
+<ul>
+<li>选择齿轮图标 <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>。</li>
+<li><strong>结果</strong>：您现在应该能看到一个新的 <code>ha-thread</code> Thread 网络。</li>
+<li><strong>故障排查</strong>：如果没有看到该网络，请返回应用配置，根据需要调整设置后重试。</li>
+</ul>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="将-thread-网络迁移到新适配器"><a href="#将-thread-网络迁移到新适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 Thread 网络迁移到新适配器</h2>
+<p>如果您已经在使用一个 Thread 适配器，但希望切换到新适配器，请按以下步骤操作。</p>
+<p>如果您想迁移到 Home Assistant Connect ZBT-2，请按照 <a href="https://support.nabucasa.com/hc/articles/32087461954589" target="_blank" rel="noopener noreferrer" class="rp-link">Home Assistant Connect ZBT-2 文档</a>中的步骤操作。</p>
+<h3 class="rp-toc-include" id="前提条件-3"><a href="#前提条件-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h3>
+<ul>
+<li>您的智能家居主机上已安装 <a href="/home-assistant/docs/glossary/index.html#home-assistant-operating-system" class="rp-link">Home Assistant Operating System</a>。例如：
+<ul>
+<li>Home Assistant Green（预装 Home Assistant OS）</li>
+<li>Home Assistant Yellow 或 Raspberry Pi</li>
+</ul>
+</li>
+<li>现有 Thread 适配器已连接到 Home Assistant 主机</li>
+<li>已安装最新更新</li>
+<li>一个新的 Thread 适配器和一根 USB 延长线
+<ul>
+<li>如果您的适配器支持多种协议：
+<ul>
+<li>它可能默认安装了其他固件（例如 Zigbee）。</li>
+<li>请查阅其文档，并在适配器上安装 OpenThread 固件。</li>
+<li>请查阅其文档并记录波特率。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Thread 设备</li>
+</ul>
+<h3 class="rp-toc-include" id="将现有-thread-网络迁移到新适配器"><a href="#将现有-thread-网络迁移到新适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将现有 Thread 网络迁移到新适配器</h3>
+<ol>
+<li>将新适配器插入延长线，再将延长线插入 Home Assistant 主机。</li>
+<li>前往 <a href="https://my.home-assistant.io/redirect/supervisor_addon/?addon=core_openthread_border_router" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Apps</strong> &gt; <strong>OpenThread Border Router</strong></a>，选择 <strong>Configuration</strong> 选项卡。</li>
+<li>在 <strong>Devices</strong> 下选择您的适配器。</li>
+<li>按照适配器文档输入 <strong>Baudrate</strong>。
+<ul>
+<li>如果找不到波特率，请尝试 <code>460800</code>，或联系厂商支持。</li>
+<li>保存更改。</li>
+<li><strong>故障排查</strong>：
+<ul>
+<li>检查日志。</li>
+<li>如果应用崩溃或无法与 Thread 集成通信：切换 <strong>Hardware flow control</strong> 选项后重试。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重启应用并检查日志。等待片刻。
+<ul>
+<li><strong>说明</strong>：您的 Thread 网络由 Home Assistant 管理，而不是保存在适配器中。迁移适配器意味着 Home Assistant 会开始使用新适配器的无线模块，而不是旧的那个。</li>
+</ul>
+</li>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>，选择 <strong>Thread</strong> 集成。
+<ul>
+<li>选择齿轮图标 <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>。</li>
+<li><strong>结果</strong>：您现在应能看到 Thread 网络仍然存在。</li>
+<li><strong>故障排查</strong>：如果没有看到该网络，请返回应用配置，根据需要调整设置后重试。</li>
+</ul>
+</li>
+<li>如果您不再使用旧适配器，现在可以将其拔下。</li>
+</ol>
+<h2 class="rp-toc-include" id="了解-thread-配置页面"><a href="#了解-thread-配置页面" class="rp-header-anchor rp-link" aria-hidden="true">#</a>了解 Thread 配置页面</h2>
+<p>本节解释为什么您可能会在 Thread 配置页面中看到多个网络，以及这对您的网络意味着什么。</p>
+<h3 class="rp-toc-include" id="关于不同的-thread-网络"><a href="#关于不同的-thread-网络" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于不同的 Thread 网络</h3>
+<p>如今，每个厂商在您开始使用其产品时，通常都会建立自己的 Thread 网络。这意味着您家中可能会同时存在 Home Assistant、Apple 和 Google 的 Thread 网络。Thread 配置面板会列出所有 Thread 边界路由器，并按 Thread 网络进行分组。</p>
+<p class="img"><img width="400" src="/home-assistant/images/integrations/thread/thread-no-3rd-party-credentials.png"/>
+Thread 配置页面展示了三个厂商专属的 Thread 网络。
+</p>
+<p>这些都是使用不同凭据的独立网络，这意味着设备无法在这些 Thread 网络之间漫游。</p>
+<p><img width="30px" src="/home-assistant/images/integrations/thread/information-outline.png"/> 图标表示 Home Assistant 已拥有该网络的凭据。在这个例子中，Home Assistant 只知道 <code>home assistant</code> 网络的凭据。</p>
+<p>Home Assistant 能发现网络中的所有 Thread 边界路由器，是因为它们会发送 mDNS/DNS-SD 广播。这些本地广播不包含网络凭据，因此您能看到网络本身，却看不到凭据。</p>
+<h4 class="rp-toc-include" id="关于首选网络"><a href="#关于首选网络" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于首选网络</h4>
+<p>Home Assistant 中 <strong>Preferred network</strong> 的设计目的是：在添加基于 Thread 的设备时，将它作为默认网络使用。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+<strong>preferred network</strong> 功能尚未完全实现。尤其是在通过 Companion 应用添加 Matter 设备时，实际使用的是移动设备上的首选网络。</p></div></div>
+<h4 class="rp-toc-include" id="将某个网络设为首选网络"><a href="#将某个网络设为首选网络" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将某个网络设为首选网络</h4>
+<p>只有在已知网络凭据的前提下，您才能将某个 Thread 网络设为首选网络。</p>
+<ol>
+<li>
+<p>要导入 Thread 凭据，您需要 Android 或 iOS 的 Companion 应用。</p>
+</li>
+<li>
+<p>在 Companion 应用中，进入 Thread 配置页面。</p>
+<ul>
+<li>您应能在右下角看到 <strong>Import credentials</strong> 按钮。</li>
+</ul>
+<img width="400" src="/home-assistant/images/integrations/thread/thread-import-credentials.png"/>
+<ul>
+<li>导入凭据后，由 Google 或 Apple 创建的 Thread 网络就可以作为 Home Assistant 的首选网络。
+<img width="400" src="/home-assistant/images/integrations/thread/thread-preferred-network.png"/>
+</li>
+</ul>
+</li>
+<li>
+<p>如果显示 <strong>Make preferred network</strong> 按钮，请选择它。</p>
+<ul>
+<li>更多信息请参阅<a href="#combining-thread-networks" class="rp-link">合并 Thread 网络</a>部分。</li>
+</ul>
+</li>
+</ol>
+<p><a href="/" class="rp-link" id="combining-thread-networks"></a></p>
+<h3 class="rp-toc-include" id="合并-thread-网络"><a href="#合并-thread-网络" class="rp-header-anchor rp-link" aria-hidden="true">#</a>合并 Thread 网络</h3>
+<p>在当前实现中，来自不同厂商的多个 <abbr title="Thread border routers">TBR</abbr> 会形成使用不同凭据的独立网络，这会阻止设备在这些 Thread 网络之间漫游。从理论上讲，最好将所有 Thread 网络合并为单一网络，以扩大网状网络规模。更密集的网状网络通常会带来更好的 <abbr title="radio frequency">RF</abbr> 覆盖和链路质量，从而降低传输延迟并提升通信速度。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#thread-智能家居设备上的标识" class="rp-toc-item rp-link" title="Thread 智能家居设备上的标识" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Thread 智能家居设备上的标识</span></a><a href="#将基于-thread-的设备添加到-home-assistant" class="rp-toc-item rp-link" title="将基于 Thread 的设备添加到 Home Assistant" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">将基于 Thread 的设备添加到 Home Assistant</span></a><a href="#关于-thread" class="rp-toc-item rp-link" title="关于 Thread" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">关于 Thread</span></a><a href="#一种面向-iot-设备的通信协议" class="rp-toc-item rp-link" title="一种面向 IoT 设备的通信协议" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">一种面向 IoT 设备的通信协议</span></a><a href="#关于-thread-边界路由器" class="rp-toc-item rp-link" title="关于 Thread 边界路由器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">关于 Thread 边界路由器</span></a><a href="#openthread-边界路由器" class="rp-toc-item rp-link" title="OpenThread 边界路由器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">OpenThread 边界路由器</span></a><a href="#thread-边界路由器设备列表" class="rp-toc-item rp-link" title="Thread 边界路由器设备列表" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Thread 边界路由器设备列表</span></a><a href="#home-assistant" class="rp-toc-item rp-link" title="Home Assistant" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Home Assistant</span></a><a href="#google" class="rp-toc-item rp-link" title="Google" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Google</span></a><a href="#apple" class="rp-toc-item rp-link" title="Apple" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Apple</span></a><a href="#其他" class="rp-toc-item rp-link" title="其他" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">其他</span></a><a href="#将-home-assistant-变成-thread-边界路由器" class="rp-toc-item rp-link" title="将 Home Assistant 变成 Thread 边界路由器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">将 Home Assistant 变成 Thread 边界路由器</span></a><a href="#情况-1将-home-assistant-作为您的第一个-thread-网络" class="rp-toc-item rp-link" title="情况 1：将 Home Assistant 作为您的第一个 Thread 网络" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">情况 1：将 Home Assistant 作为您的第一个 Thread 网络</span></a><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#将-home-assistant-设为第一个-thread-网络" class="rp-toc-item rp-link" title="将 Home Assistant 设为第一个 Thread 网络" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">将 Home Assistant 设为第一个 Thread 网络</span></a><a href="#情况-2在已有网络时创建-home-assistant-边界路由器" class="rp-toc-item rp-link" title="情况 2：在已有网络时创建 Home Assistant 边界路由器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">情况 2：在已有网络时创建 Home Assistant 边界路由器</span></a><a href="#前提条件-1" class="rp-toc-item rp-link" title="前提条件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#在已有网络时创建-home-assistant-边界路由器" class="rp-toc-item rp-link" title="在已有网络时创建 Home Assistant 边界路由器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">在已有网络时创建 Home Assistant 边界路由器</span></a><a href="#将第三方-thread-适配器添加到-home-assistant" class="rp-toc-item rp-link" title="将第三方 Thread 适配器添加到 Home Assistant" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">将第三方 Thread 适配器添加到 Home Assistant</span></a><a href="#前提条件-2" class="rp-toc-item rp-link" title="前提条件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#将-thread-适配器添加到-openthread-border-router-应用" class="rp-toc-item rp-link" title="将 Thread 适配器添加到 OpenThread Border Router 应用" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">将 Thread 适配器添加到 OpenThread Border Router 应用</span></a><a href="#将-thread-网络迁移到新适配器" class="rp-toc-item rp-link" title="将 Thread 网络迁移到新适配器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">将 Thread 网络迁移到新适配器</span></a><a href="#前提条件-3" class="rp-toc-item rp-link" title="前提条件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#将现有-thread-网络迁移到新适配器" class="rp-toc-item rp-link" title="将现有 Thread 网络迁移到新适配器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">将现有 Thread 网络迁移到新适配器</span></a><a href="#了解-thread-配置页面" class="rp-toc-item rp-link" title="了解 Thread 配置页面" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">了解 Thread 配置页面</span></a><a href="#关于不同的-thread-网络" class="rp-toc-item rp-link" title="关于不同的 Thread 网络" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">关于不同的 Thread 网络</span></a><a href="#关于首选网络" class="rp-toc-item rp-link" title="关于首选网络" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">关于首选网络</span></a><a href="#将某个网络设为首选网络" class="rp-toc-item rp-link" title="将某个网络设为首选网络" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">将某个网络设为首选网络</span></a><a href="#合并-thread-网络" class="rp-toc-item rp-link" title="合并 Thread 网络" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">合并 Thread 网络</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

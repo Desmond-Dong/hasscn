@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reolink - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Reolink - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Reolink 集成可让您在 Home Assistant 中控制 Reolink(https://reolink.com/) NVR 或摄像头。Reolink 摄像头以本地存储著称，无需云订阅或云账号即可使用。设备可在局域网内完全本地运行，优先保障隐私。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Reolink 集成可让您在 Home Assistant 中控制 Reolink(https://reolink.com/) NVR 或摄像头。Reolink 摄像头以本地存储著称，无需云订阅或云账号即可使用。设备可在局域网内完全本地运行，优先保障隐私。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/home-assistant/images/screenshots/device-options.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__small_notification.jpg"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__big_notification.jpg"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__settings.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__automations_and_scenes.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__create_automation.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__new_automation.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__add_trigger.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__entity.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__state.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__new_trigger.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__entity_select.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__state_select.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__device_tracker_condition.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__cooldown_time_condition.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__add_action.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__camera.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__take_snapshot.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__chose_entity.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__select_fluent_camera.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__screenshot_take_snapshot.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__notifications.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__send_to_mobile_button.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__send_to_mobile.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/rich_notification__save.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__overview.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__dropdown.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__timer.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__automation_when.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__automation_when_timer.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__automation_triggered_by.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__automation_select_first.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__automation_choose.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__automation_start_timer.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__condition.png"/><link rel="preload" as="image" href="/home-assistant/images/integrations/reolink/auto_pause__result_when_running.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="reolink"><a href="#reolink" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Reolink<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Reolink</strong> 集成可让您在 Home Assistant 中控制 <a href="https://reolink.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink</a> NVR 或摄像头。Reolink 摄像头以本地存储著称，无需云订阅或云账号即可使用。设备可在局域网内完全本地运行，优先保障隐私。即使阻断 Reolink 设备的互联网访问，Home Assistant 集成以及 Reolink app/client 仍可照常工作。Reolink 摄像头在白天与夜间都能提供清晰画质，且价格相对亲民。摄像头内置 SD 卡可进行本地录像，选配的 Reolink NVR/Hub 则可在室内提供更大的录像容量。从本文档中的实体列表也可看出，Reolink 摄像头具备高度可配置性，并与 Home Assistant 深度集成。</p>
+<p>该集成已获 Reolink 官方授权，由 @StarkillerOG 作为主要开发者，并基于 Reolink 官方资源支持构建。</p>
+<h2 class="rp-toc-include" id="先决条件"><a href="#先决条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>先决条件</h2>
+<p>全新的 Reolink 摄像头需要先接入网络并完成初始化。初始化过程中需要设置摄像头登录凭据。详细步骤请参阅<a href="#%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE" class="rp-link">初始设置</a>。</p>
+<ul>
+<li>为保证该集成正常运行，Reolink 设备上需要使用具有管理员权限的账号。</li>
+<li>Reolink 设备密码仅可包含字符 <code>a-z, A-Z, 0-9 or @$*~_-+=!?.,:;&#x27;()[]</code>。其他特殊字符会导致本集成使用的视频流出现编码问题，因此不受支持。若密码中包含不兼容的特殊字符，集成会提示您修改密码。</li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Host</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Reolink 设备的主机名或 IP 地址，例如 &#x27;192.168.1.25&#x27;。您可在路由器中查看，或在 Reolink app 的 **Settings** &gt; **Device**（顶部图标）&gt; **Networkinformation** &gt; **IP-address** 中查看。通常设备会被自动发现，无需手动填写。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Username</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;用于登录 Reolink 设备本机的用户名，不是 Reolink 云账号。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;用于登录 Reolink 设备本机的密码，不是 Reolink 云账号。&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="options"><a href="#options" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Options</h2>
+<p>To define options for Reolink, follow these steps:</p>
+<ol>
+<li>
+<p>In Home Assistant, go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>.</p>
+</li>
+<li>
+<p>If multiple instances of Reolink are configured, choose the instance you want to configure.</p>
+</li>
+<li>
+<p>On the card, select the cogwheel <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>.</p>
+<ul>
+<li>If the card does not have a cogwheel, the integration does not support options for this device.</li>
+</ul>
+<p><img src="/home-assistant/images/screenshots/device-options.png" alt="Screenshot showing the cogwheel icon on an integration card in the Settings &gt; Devices &amp; services page"/></p>
+</li>
+<li>
+<p>Edit the options, then select <strong>Submit</strong> to save the changes.</p>
+</li>
+</ol>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Protocol</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 可在 &lt;abbr title=&quot;real-time streaming protocol&quot;&gt;RTSP&lt;/abbr&gt;、&lt;abbr title=&quot;real-time messaging protocol&quot;&gt;RTMP&lt;/abbr&gt; 或 &lt;abbr title=&quot;flash video&quot;&gt;FLV&lt;/abbr&gt; 流协议之间切换。&lt;abbr title=&quot;real-time streaming protocol&quot;&gt;RTSP&lt;/abbr&gt; 支持 4K（h265 编码）视频流，而 &lt;abbr title=&quot;real-time messaging protocol&quot;&gt;RTMP&lt;/abbr&gt; 与 &lt;abbr title=&quot;flash video&quot;&gt;FLV&lt;/abbr&gt; 不支持。&lt;abbr title=&quot;flash video&quot;&gt;FLV&lt;/abbr&gt; 对摄像头资源占用最低。</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="本文档实体名称后的星号"><a href="#本文档实体名称后的星号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>本文档实体名称后的星号（*）</h2>
+<p>如果下方列出的实体名称后带有星号（*），表示该实体默认禁用。要使用该实体，请先<a href="/home-assistant/common-tasks/general/index.html#enabling-entities" class="rp-link">启用实体</a>。</p>
+<h2 class="rp-toc-include" id="数据更新本文档实体名称后的加号"><a href="#数据更新本文档实体名称后的加号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新：本文档实体名称后的加号（+）</h2>
+<p>如果下方列出的实体名称后带有加号（+），表示该实体支持推送更新，状态变化几乎可实时反映。
+为保证冗余，所有实体状态也会通过轮询更新。对于连接到 NVR/Hub 的摄像头，轮询间隔为每台摄像头 10 秒，且总间隔最少 60 秒。对于直连摄像头，轮询间隔为 60 秒。对于没有加号（+）的实体，轮询是唯一更新方式，因此设备状态变化在 Home Assistant 中可能会有一定延迟。
+固件更新实体是一个例外，其轮询间隔为每 24 小时一次。
+电池摄像头是另一个例外：大多数实体仍然每 60 秒 polls 一次。但会导致摄像头从休眠中唤醒的实体，只会在以下事件发生时轮询：</p>
+<ul>
+<li>摄像头自行唤醒（PIR 事件），且距离上次更新已超过 1 小时。</li>
+<li>摄像头超过 6 小时未唤醒。</li>
+<li>所有电池摄像头超过 12 小时未在同一时间处于唤醒状态。</li>
+</ul>
+<p>如需执行所有实体的完整更新（这会唤醒同一 hub/NVR 下的所有电池摄像头），可对某台摄像头的任一 Reolink 实体（例如移动检测二进制传感器）调用 <code>homeassistant.update_entity</code> 操作。</p>
+<h2 class="rp-toc-include" id="支持的功能"><a href="#支持的功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的功能</h2>
+<h3 class="rp-toc-include" id="摄像头视频流"><a href="#摄像头视频流" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头视频流</h3>
+<p>该集成会创建多个摄像头实体，不同流类型对应不同分辨率：</p>
+<ul>
+<li>Fluent（低分辨率）</li>
+<li>Balanced*（中等分辨率）</li>
+<li>Clear*（高分辨率，资源占用较高）</li>
+<li>Snapshots Fluent*（低分辨率）</li>
+<li>Snapshots Clear*（高分辨率）</li>
+</ul>
+<p>Fluent 流摄像头实体默认启用，其他流默认禁用。
+Snapshots 流通过连续图片快照实现极低延迟，但帧率也会很低；当 RTMP/RTSP/FLV 视频流延迟过高时可考虑使用。
+双镜头摄像头会为第二个镜头提供额外视频流。</p>
+<h3 class="rp-toc-include" id="二进制传感器"><a href="#二进制传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二进制传感器</h3>
+<p>根据摄像头支持的功能（<a href="#tested-models" class="rp-link">参见 Reolink.com 上对应型号的规格</a>），会添加以下二进制传感器：</p>
+<ul>
+<li>移动检测++</li>
+<li>访客++（门铃按压）</li>
+<li>AI 人员检测++</li>
+<li>AI 车辆检测++</li>
+<li>AI 自行车检测+</li>
+<li>AI 宠物检测++</li>
+<li>AI 动物检测++</li>
+<li>AI 人脸检测++</li>
+<li>AI 包裹检测++</li>
+<li>AI 婴儿哭声检测+（声音检测）</li>
+<li>AI 越线人员+（最多 3 条线）</li>
+<li>AI 越线车辆+（最多 3 条线）</li>
+<li>AI 越线动物+（最多 3 条线）</li>
+<li>AI 入侵人员+（最多 3 个区域）</li>
+<li>AI 入侵车辆+（最多 3 个区域）</li>
+<li>AI 入侵动物+（最多 3 个区域）</li>
+<li>AI 逗留人员+（最多 3 个区域）</li>
+<li>AI 逗留车辆+（最多 3 个区域）</li>
+<li>AI 逗留动物+（最多 3 个区域）</li>
+<li>AI 物品遗留+（最多 3 个区域）</li>
+<li>AI 物品带走+（最多 3 个区域）</li>
+<li>IO 输入+</li>
+<li>睡眠状态+</li>
+</ul>
+<p>++ 这些传感器会按优先顺序使用以下 4 种方式接收事件：TCP push、ONVIF push、ONVIF long polling、fast polling（每 5 秒）。
+其中 TCP push 延迟最低，fast polling 延迟最高。集成会自动选择检测到可用且最快的方法，较慢的方法不会启用。
+为保证冗余，这些传感器也会与其他实体一起每 60 秒轮询一次。
+如需进一步降低延迟，请参阅<a href="#reducing-latency-of-motion-events" class="rp-link">降低移动事件延迟</a>。</p>
+<p>对于 <strong>crossline</strong>、<strong>intrusion</strong>、<strong>linger</strong>、<strong>item forgotten</strong> 和 <strong>item taken</strong> 实体，需要先在 Reolink app 中配置线/区域（<strong>Settings</strong> &gt; <strong>Detection alarm</strong> &gt; <strong>Smart event detection</strong>）。在 Reolink app 中最多可添加 3 条线/3 个区域，并可分别启用或禁用人员/车辆/动物检测。更改后 60 秒内，对应实体会自动出现在 Home Assistant 中。</p>
+<h3 class="rp-toc-include" id="数值实体"><a href="#数值实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数值实体</h3>
+<p>根据摄像头支持的功能（<a href="#tested-models" class="rp-link">参见 Reolink.com 上对应型号的规格</a>），会添加以下数值实体：</p>
+<ul>
+<li>光学变焦控制+</li>
+<li>对焦控制+</li>
+<li>泛光灯开启亮度*+</li>
+<li>泛光灯事件亮度*+</li>
+<li>红外灯亮度</li>
+<li>泛光灯事件点亮时长*</li>
+<li>泛光灯事件闪烁时长*</li>
+<li>音量（摄像头）</li>
+<li>语音音量（摄像头）</li>
+<li>门铃音量（摄像头）</li>
+<li>警报音量（Home Hub）</li>
+<li>消息音量（Home Hub）</li>
+<li>Chime 音量</li>
+<li>Chime 静音时长</li>
+<li>音频降噪*</li>
+<li>返回守卫位时长</li>
+<li>移动灵敏度</li>
+<li>PIR 灵敏度</li>
+<li>PIR 间隔*</li>
+<li>AI 人脸灵敏度</li>
+<li>AI 人员灵敏度</li>
+<li>AI 车辆灵敏度</li>
+<li>AI 自行车灵敏度</li>
+<li>AI 包裹灵敏度</li>
+<li>AI 宠物灵敏度</li>
+<li>AI 动物灵敏度</li>
+<li>AI 越线灵敏度+（最多 3 条线）</li>
+<li>AI 入侵灵敏度+（最多 3 个区域）</li>
+<li>AI 逗留灵敏度+（最多 3 个区域）</li>
+<li>AI 物品遗留灵敏度+（最多 3 个区域）</li>
+<li>AI 物品带走灵敏度+（最多 3 个区域）</li>
+<li>AI 人脸延迟*</li>
+<li>AI 人员延迟*</li>
+<li>AI 车辆延迟*</li>
+<li>AI 自行车延迟*</li>
+<li>AI 包裹延迟*</li>
+<li>AI 宠物延迟*</li>
+<li>AI 动物延迟*</li>
+<li>AI 入侵延迟+（最多 3 个区域）</li>
+<li>AI 逗留延迟+（最多 3 个区域）</li>
+<li>AI 物品遗留延迟+（最多 3 个区域）</li>
+<li>AI 物品带走延迟+（最多 3 个区域）</li>
+<li>婴儿哭声灵敏度</li>
+<li>自动快捷回复延迟</li>
+<li>自动追踪左限位</li>
+<li>自动追踪右限位</li>
+<li>自动追踪消失时间</li>
+<li>自动追踪停止时间</li>
+<li>日夜切换阈值*</li>
+<li>图像亮度*+（默认 128）</li>
+<li>图像对比度*+（默认 128）</li>
+<li>图像饱和度*+（默认 128）</li>
+<li>图像锐度*+（默认 128）</li>
+<li>图像色调*+（默认 128）</li>
+<li>预录制时长*</li>
+<li>预录制停止电量阈值*</li>
+</ul>
+<p><strong>Floodlight turn on brightness</strong> 用于控制泛光灯在由摄像头内部逻辑开启时（参见 <strong>Floodlight mode</strong> 选择实体），或通过 <strong>Floodlight</strong> 灯光实体开启时的亮度。
+<strong>Floodlight event brightness</strong> 用于控制泛光灯在摄像头检测到事件（例如人员或车辆）后自动开启时的亮度，参见 <strong>Floodlight event mode</strong> 实体。</p>
+<p>若 <strong>Floodlight event mode</strong> 不处于 <code>on</code> 状态，<strong>Floodlight event on time</strong> 会显示为 <code>unknown</code>。
+若 <strong>Floodlight event mode</strong> 不处于 <code>flash</code> 状态，<strong>Floodlight event flash time</strong> 会显示为 <code>unknown</code>。</p>
+<p>当摄像头在 <strong>Guard return time</strong> 设定的秒数内没有发生移动，且未检测到人员/宠物/动物/车辆，同时 <strong>Guard return</strong> 开关为 ON 时，摄像头会自动回到守卫位。</p>
+<p>当 Reolink 门铃被按下时，若 <strong>Auto quick reply message</strong> 未设为 off，系统会在 <strong>Auto quick reply time</strong> 秒后播放 <strong>Auto quick reply message</strong> 选择实体中设置的快捷回复。</p>
+<p>如果启用了 <strong>Auto tracking</strong> 开关实体，当目标从画面中消失，或在 <strong>Auto track disappear time</strong>/<strong>Auto track stop time</strong> 内停止移动时，摄像头会回到原始位置。</p>
+<p><strong>Day night switch threshold</strong> 用于决定摄像头在何种光照水平下从 <strong>Color</strong> 切换到 <strong>Black &amp; white</strong>。该值仅在 <strong>Day night mode</strong> 选择为 <strong>Auto</strong> 时生效。</p>
+<h3 class="rp-toc-include" id="按钮实体"><a href="#按钮实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>按钮实体</h3>
+<p>根据摄像头支持的功能（<a href="#tested-models" class="rp-link">参见 Reolink.com 上对应型号的规格</a>），会添加以下按钮实体：</p>
+<ul>
+<li><abbr title="pan, tilt, and zoom">PTZ</abbr> 停止</li>
+<li>PTZ 左</li>
+<li>PTZ 右</li>
+<li>PTZ 上</li>
+<li>PTZ 下</li>
+<li>PTZ 左上*</li>
+<li>PTZ 左下*</li>
+<li>PTZ 右上*</li>
+<li>PTZ 右下*</li>
+<li>PTZ 校准</li>
+<li>PTZ 放大*</li>
+<li>PTZ 缩小*</li>
+<li>PTZ 持续旋转*</li>
+<li>返回守卫位</li>
+<li>将当前位置设为守卫位</li>
+<li>重启*</li>
+</ul>
+<p><strong>PTZ left</strong>、<strong>right</strong>、<strong>up</strong>、<strong>down</strong>、<strong>left up</strong>、<strong>left down</strong>、<strong>right up</strong>、<strong>right down</strong>、<strong>zoom in</strong> 和 <strong>zoom out</strong> 会持续将摄像头朝对应方向移动，直到调用 <strong>PTZ stop</strong> 或达到硬件极限。
+<strong>PTZ continuous rotation</strong> 会让摄像头持续旋转，直到调用 <strong>PTZ stop</strong>，或者再次调用 <strong>PTZ continuous rotation</strong>。</p>
+<p><strong>Guard set current position</strong> 会将当前位置设为新的守卫位。</p>
+<h4 class="rp-toc-include" id="操作-reolinkptz_move"><a href="#操作-reolinkptz_move" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作 <code>reolink.ptz_move</code></h4>
+<p>某些 Reolink <abbr title="pan, tilt, and zoom">PTZ</abbr> 摄像头支持以不同速度移动。对于这些摄像头，可以将 <code>reolink.ptz_move</code> 操作与 <strong>PTZ left</strong>、<strong>right</strong>、<strong>up</strong>、<strong>down</strong>、<strong>zoom in</strong> 或 <strong>zoom out</strong> 实体配合使用，以指定速度属性。如果在 <code>reolink.ptz_move</code> 操作的 <strong>targets</strong> 下 <strong>Choose entity</strong> 中看不到某台摄像头的 <abbr title="pan, tilt, and zoom">PTZ</abbr> 按钮实体，则表示该摄像头不支持自定义 <abbr title="pan, tilt, and zoom">PTZ</abbr> 速度。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>否</td><td>要控制的 Reolink <abbr title="pan, tilt, and zoom">PTZ</abbr> 按钮实体名称。例如 <code>button.trackmix_ptz_left</code>。</td></tr><tr><td><code>speed</code></td><td>否</td><td><abbr title="pan, tilt, and zoom">PTZ</abbr> 移动速度。例如 <code>10</code>。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="选择实体"><a href="#选择实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选择实体</h3>
+<p>根据摄像头支持的功能（<a href="#tested-models" class="rp-link">参见 Reolink.com 上对应型号的规格</a>），会添加以下选择实体：</p>
+<ul>
+<li>泛光灯模式（Off、Auto、On at night、Schedule、Adaptive、Auto adaptive）</li>
+<li>泛光灯事件模式（Off、On、Flash）</li>
+<li>日夜模式+（Auto、Color、Black&amp;White）</li>
+<li><abbr title="pan, tilt, and zoom">PTZ</abbr> preset</li>
+<li>播放快捷回复消息</li>
+<li>自动快捷回复消息</li>
+<li>自动追踪方式（Digital、Digital first、Pan/Tilt first）</li>
+<li>门铃 LED（Stay off、Auto、Auto &amp; always on at night）</li>
+<li>HDR*（Off、On、Auto）</li>
+<li>Binning 模式*（Off、On、Auto）</li>
+<li>图像曝光模式*（Auto、Low noise、Anti-smearing、Manual）</li>
+<li>Clear 帧率*</li>
+<li>Fluent 帧率*</li>
+<li>Clear 码率*</li>
+<li>Fluent 码率*</li>
+<li>Chime 移动铃声</li>
+<li>Chime 人形铃声</li>
+<li>Chime 宠物铃声</li>
+<li>Chime 车辆铃声</li>
+<li>Chime 访客铃声</li>
+<li>Hub 警报铃声</li>
+<li>Hub 访客铃声</li>
+<li>Hub 场景模式（Off、Disarmed、Home、Away）</li>
+<li>录像打包时间</li>
+<li>预录制帧率*</li>
+<li>录像后持续时间</li>
+<li>Clear 编码*（h264、h265）</li>
+<li>Fluent 编码*（h264、h265）</li>
+</ul>
+<p>可在 Reolink app/windows/web 客户端中设置 <strong>PTZ preset</strong> 位置，预设名称会在集成启动时加载到 Home Assistant 中。新增预设位置后，请重启 Reolink 集成。</p>
+<p><strong>Play quick reply messages</strong> / <strong>Auto quick reply messages</strong> 可在 Reolink 手机应用中录制，并同时指定名称。新的或更新后的快捷回复消息会在集成启动时加载到 Home Assistant 中。新增快捷回复消息后，请重启 Reolink 集成。</p>
+<p><strong>Hub scene modes</strong> 可在 Reolink app/client 中设置。场景名称会在集成启动时加载到 Home Assistant 中。新增自定义场景后，请重启 Reolink 集成。</p>
+<h4 class="rp-toc-include" id="操作-reolinkplay_chime"><a href="#操作-reolinkplay_chime" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作 <code>reolink.play_chime</code></h4>
+<p>要在 Reolink chime 上播放铃声，可使用 <code>reolink.play_chime</code> 操作。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据属性</th><th>可选</th><th>说明</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>否</td><td>要控制的 Reolink Chime 设备 ID 列表。例如 <code>- 12a34b56c7d8ef9ghijklm0n1op2345q</code>。</td></tr><tr><td><code>ringtone</code></td><td>否</td><td>要播放的铃声。例如 <code>operetta</code>。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="警笛实体"><a href="#警笛实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>警笛实体</h3>
+<p>如果摄像头或 Hub 支持警笛，则会创建一个警笛实体。
+调用警笛开启操作后，警笛会持续响起，直到调用关闭操作为止。</p>
+<p>某些摄像头型号在发送关闭命令后，到声音停止之间可能有最长 5 秒的延迟。警笛开启操作支持设置音量和持续时间（这种情况下无需再额外调用关闭操作）。</p>
+<h3 class="rp-toc-include" id="开关实体"><a href="#开关实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关实体</h3>
+<p>根据摄像头支持的功能（<a href="#tested-models" class="rp-link">参见 Reolink.com 上对应型号的规格</a>），会添加以下开关实体：</p>
+<ul>
+<li>夜视模式下红外灯</li>
+<li>录制音频</li>
+<li>事件触发警笛</li>
+<li>自动追踪</li>
+<li>自动对焦</li>
+<li>返回守卫位</li>
+<li>PTZ 巡航（开始/停止）</li>
+<li>门铃按键声音</li>
+<li>录像</li>
+<li>手动录像+</li>
+<li>预录制</li>
+<li>监控规则</li>
+<li>隐私模式+</li>
+<li>隐私遮罩</li>
+<li>推送通知</li>
+<li>Hub 事件铃声</li>
+<li>事件邮件通知</li>
+<li>FTP 上传</li>
+<li>PIR 启用*</li>
+<li>PIR 降低误报*</li>
+<li>Chime LED</li>
+<li>硬接线门铃启用*</li>
+</ul>
+<p>当 <strong>Privacy mode</strong> 为 ON 时，几乎所有其他实体都会不可用，因为摄像头会关闭 API 和视频流。当 <strong>Privacy mode</strong> 关闭后，所有实体会重新可用。编写自动化时请考虑这一点；在通过其他实体修改摄像头设置前，请先确保 <strong>Privacy mode</strong> 为 OFF。</p>
+<p>只有在 Reolink app/client 中的 <strong>settings</strong>（齿轮图标）&gt; <strong>Display</strong> &gt; <strong>Privacy Mask</strong> 配置了隐私遮罩后，才会添加 <strong>Privacy mask</strong> 开关。添加隐私遮罩后，需要在 Home Assistant 中重新加载 Reolink 集成，<strong>Privacy mask</strong> 开关才会显示出来。</p>
+<p>当 <strong>Infrared lights in night mode</strong> 实体设为 OFF 时，红外 LED 将始终关闭。当其设为 ON 时，红外 LED 会在摄像头进入夜视模式时开启。更多信息请参阅 <strong>Day night mode</strong> 选择实体。</p>
+<p>对于 NVR，<strong>Record</strong>、<strong>Push</strong>、<strong>Hub ringtone on event</strong>、<strong>Email</strong> 和 <strong>FTP</strong> 会在 NVR 设备下提供全局开关，同时在摄像头设备下为 NVR 的每个通道提供单独开关。只有当全局开关和对应通道开关都启用时，该功能才会对该通道生效（Reolink app/client 中也是同样逻辑）。</p>
+<p>只有满足以下条件时，手机才会收到 <strong>Push</strong> 通知：</p>
+<ul>
+<li>Home Assistant 中的 <strong>Push notifications</strong> 开关为 ON。</li>
+<li>对于 NVR，全局开关和通道开关都为 ON。</li>
+<li>该手机在 Reolink App 中的 Push-notification 已开启。</li>
+</ul>
+<p>Reolink app 中的 Push-notification 设置独立于 Home Assistant，也独立于其他连接到同一摄像头手机上的设置。Reolink 这样设计，是为了让您可以按手机分别控制是否接收推送通知。</p>
+<p>必须先在 Reolink <a href="https://support.reolink.com/hc/en-us/articles/360008746833/" target="_blank" rel="noopener noreferrer" class="rp-link">app</a>/<a href="https://support.reolink.com/hc/en-us/articles/900003738126/" target="_blank" rel="noopener noreferrer" class="rp-link">windows</a>/web 客户端中配置 <strong>PTZ patrol</strong> 位置。若未配置任何位置，则不会添加 PTZ patrol 实体。首次添加巡航位置后，需要重启 Reolink 集成。</p>
+<p><strong>Manual record</strong> 开关会在 10 分钟后自动关闭。因此，录像会在手动录像开关关闭时，或 10 分钟到达时结束。</p>
+<p>轮询 <strong>Hardwired chime enabled</strong> 开关状态时，可能会让硬接线门铃因型号不同而发出轻微抖动声。因此，该开关的状态只会被轮询一次（约在集成启动 1 分钟后）。启动时出现抖动声只会发生在您启用了该开关的情况下。</p>
+<h3 class="rp-toc-include" id="灯光实体"><a href="#灯光实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>灯光实体</h3>
+<p>根据摄像头支持的功能（<a href="#tested-models" class="rp-link">参见 Reolink.com 上对应型号的规格</a>），会添加以下灯光实体：</p>
+<ul>
+<li>泛光灯+</li>
+<li>状态 LED</li>
+</ul>
+<p>当 <strong>floodlight</strong> 实体为 ON 时，泛光灯会始终保持开启；当为 OFF 时，则由摄像头内部的泛光灯模式（Off、Auto、Schedule）控制，参见 <strong>Floodlight mode</strong> 选择实体。</p>
+<h3 class="rp-toc-include" id="传感器实体"><a href="#传感器实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器实体</h3>
+<p>根据摄像头支持的功能（<a href="#tested-models" class="rp-link">参见 Reolink.com 上对应型号的规格</a>），会添加以下传感器实体：</p>
+<ul>
+<li>人员类型+（man、woman）</li>
+<li>动物类型+（dog、cat）</li>
+<li>车辆类型+（sedan、SUV、pickup truck、motorcycle）</li>
+<li>PTZ 水平位置+</li>
+<li>PTZ 俯仰位置+</li>
+<li>日夜状态+（color、black and white、color with floodlight）</li>
+<li>Wi-Fi 信号*</li>
+<li>CPU 使用率*</li>
+<li>HDD/SD 存储*</li>
+<li>电池百分比+</li>
+<li>电池温度*+</li>
+<li>电池状态*+（discharging、charging、charge complete）</li>
+</ul>
+<h3 class="rp-toc-include" id="更新实体"><a href="#更新实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>更新实体</h3>
+<p>集成提供了一个更新实体，每 24 小时检查一次固件更新。
+更新会同时通过摄像头 API 和 <a href="https://reolink.com/download-center/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink 下载中心</a> 进行检查。
+因此，Home Assistant 中的更新实体有时能够发现并安装来自 <a href="https://reolink.com/download-center/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink 下载中心</a> 的固件更新，而 Reolink app/windows/web 客户端却不一定能发现该更新。</p>
+<h3 class="rp-toc-include" id="用于播放录像的媒体浏览器"><a href="#用于播放录像的媒体浏览器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>用于播放录像的媒体浏览器</h3>
+<p>如果摄像头支持录制到 SD 卡或 NVR/Hub（<a href="#tested-models" class="rp-link">参见 Reolink.com 上对应型号的规格</a>），Reolink 集成会提供一个媒体浏览器，用于访问摄像头录制的视频。
+在侧边栏中选择 “Media” &gt; “Reolink”，然后选择您想查看录像的 <strong>camera</strong>。您还可以选择高或低 <strong>resolution</strong> 视频流，并选择录像 <strong>date</strong>。之后会显示当天所有可用的视频文件。
+在 Home Assistant 中可以查看最多 1 个月内的录像。</p>
+<h2 class="rp-toc-include" id="已测试型号"><a href="#已测试型号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已测试型号</h2>
+<p>下方列表中加粗的型号已通过 <strong>Works with Home Assistant</strong> 计划认证。</p>
+<h3 class="rp-toc-include" id="已测试的直连型号"><a href="#已测试的直连型号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已测试的直连型号</h3>
+<p>以下型号已经过测试，并确认可直接连接 Home Assistant：</p>
+<ul>
+<li>C1 Pro*</li>
+<li>C2 Pro*</li>
+<li><a href="https://reolink.com/product/cx410/" target="_blank" rel="noopener noreferrer" class="rp-link">CX410</a></li>
+<li><a href="https://reolink.com/product/cx810/" target="_blank" rel="noopener noreferrer" class="rp-link">CX810</a></li>
+<li><a href="https://reolink.com/product/e1/" target="_blank" rel="noopener noreferrer" class="rp-link">E1</a></li>
+<li><a href="https://reolink.com/product/e1-pro/" target="_blank" rel="noopener noreferrer" class="rp-link">E1 Pro</a></li>
+<li><a href="https://reolink.com/product/e1-zoom/" target="_blank" rel="noopener noreferrer" class="rp-link">E1 Zoom</a></li>
+<li><a href="https://reolink.com/product/e1-outdoor/" target="_blank" rel="noopener noreferrer" class="rp-link">E1 Outdoor</a></li>
+<li><a href="https://reolink.com/product/e1-outdoor-poe/" target="_blank" rel="noopener noreferrer" class="rp-link">E1 Outdoor PoE</a></li>
+<li><a href="https://reolink.com/product/e1-outdoor-pro/" target="_blank" rel="noopener noreferrer" class="rp-link">E1 Outdoor Pro</a></li>
+<li><a href="https://reolink.com/product/e331/" target="_blank" rel="noopener noreferrer" class="rp-link">E331</a></li>
+<li><a href="https://reolink.com/product/elite-floodlight-wifi/" target="_blank" rel="noopener noreferrer" class="rp-link">Elite Floodlight WiFi</a>（需要市电供电，通过 USB 供电时无法接入）</li>
+<li><a href="https://reolink.com/product/fe-p/" target="_blank" rel="noopener noreferrer" class="rp-link">FE-P</a>（视频流仅支持 “fisheye” 或 “5-in-1” 视图，不支持 “dual panoramic”、“quad”、“cylindrical”、“defished” 或 “hemispheric” 视图）</li>
+<li><a href="https://reolink.com/product/fe-w/" target="_blank" rel="noopener noreferrer" class="rp-link">FE-W</a>（视频流仅支持 “fisheye” 或 “5-in-1” 视图，不支持 “dual panoramic”、“quad”、“cylindrical”、“defished” 或 “hemispheric” 视图）</li>
+<li><a href="https://reolink.com/product/lumus-pro/" target="_blank" rel="noopener noreferrer" class="rp-link">Lumus Pro</a></li>
+<li>RLC-410*</li>
+<li><a href="https://reolink.com/product/rlc-410w/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-410W</a></li>
+<li>RLC-411*</li>
+<li>RLC-420*</li>
+<li>RLC-423*</li>
+<li><a href="https://reolink.com/product/rlc-510a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-510A</a></li>
+<li>RLC-511*</li>
+<li>RLC-511W*</li>
+<li><a href="https://reolink.com/product/rlc-511wa/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-511WA</a>*</li>
+<li>RLC-520*</li>
+<li><a href="https://reolink.com/product/rlc-520a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-520A</a></li>
+<li>RLC-522*</li>
+<li><a href="https://reolink.com/product/rlc-810a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-810A</a></li>
+<li><a href="https://reolink.com/product/rlc-810wa/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-810WA</a></li>
+<li><a href="https://reolink.com/product/rlc-811a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-811A</a></li>
+<li><a href="https://reolink.com/product/rlc-81ma/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-81MA</a></li>
+<li><a href="https://reolink.com/product/rlc-81pa/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-81PA</a></li>
+<li><a href="https://reolink.com/product/rlc-820a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-820A</a></li>
+<li><a href="https://reolink.com/product/rlc-822a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-822A</a></li>
+<li><a href="https://reolink.com/product/rlc-823a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-823A</a></li>
+<li><strong><a href="https://reolink.com/product/rlc-823s2/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-823S2</a></strong></li>
+<li><a href="https://reolink.com/product/rlc-830a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-830A</a></li>
+<li><a href="https://reolink.com/product/rlc-833a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-833A</a></li>
+<li><a href="https://reolink.com/product/rlc-840a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-840A</a></li>
+<li><a href="https://reolink.com/product/rlc-843a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-843A</a></li>
+<li><a href="https://reolink.com/product/rlc-1212a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-1212A</a></li>
+<li><strong><a href="https://reolink.com/product/rlc-1224a/" target="_blank" rel="noopener noreferrer" class="rp-link">RLC-1224A</a></strong></li>
+<li><a href="https://reolink.com/product/rln8-410/" target="_blank" rel="noopener noreferrer" class="rp-link">RLN8-410 NVR</a></li>
+<li><a href="https://reolink.com/product/rln16-410/" target="_blank" rel="noopener noreferrer" class="rp-link">RLN16-410 NVR</a></li>
+<li><a href="https://reolink.com/product/rln36/" target="_blank" rel="noopener noreferrer" class="rp-link">RLN36 NVR</a></li>
+<li><a href="https://reolink.com/product/rln12w/" target="_blank" rel="noopener noreferrer" class="rp-link">RLN12W NVR</a></li>
+<li><a href="https://reolink.com/product/nvs8/" target="_blank" rel="noopener noreferrer" class="rp-link">NVS8 NVR</a>（RLN8 的零售版）</li>
+<li><a href="https://reolink.com/product/nvs16/" target="_blank" rel="noopener noreferrer" class="rp-link">NVS16 NVR</a>（RLN16 的零售版）</li>
+<li><a href="https://reolink.com/product/rp-pcb8mz/" target="_blank" rel="noopener noreferrer" class="rp-link">RP-PCB8MZ</a></li>
+<li><a href="https://reolink.com/product/reolink-chime/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Chime</a>（连接到门铃或 Home Hub 时）</li>
+<li><a href="https://reolink.com/product/reolink-duo-wifi-v1/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Duo WiFi</a></li>
+<li><a href="https://reolink.com/product/reolink-duo-wifi/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Duo 2 WiFi</a></li>
+<li><strong><a href="https://reolink.com/product/reolink-duo-3-poe/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Duo 3 PoE</a></strong></li>
+<li><a href="https://reolink.com/product/reolink-duo-3v-poe/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Duo 3V PoE</a></li>
+<li>Reolink Duo Floodlight（<a href="https://reolink.com/product/reolink-duo-floodlight-poe/" target="_blank" rel="noopener noreferrer" class="rp-link">PoE</a> 和 <a href="https://reolink.com/product/reolink-duo-floodlight-wifi/" target="_blank" rel="noopener noreferrer" class="rp-link">Wi-Fi</a>）</li>
+<li><a href="https://reolink.com/product/elite-wifi/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Elite WiFi</a></li>
+<li><a href="https://reolink.com/product/reolink-floodlight/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Floodlight PoE and Wi-Fi*</a></li>
+<li><a href="https://reolink.com/product/reolink-home-hub/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Home Hub</a></li>
+<li><a href="https://reolink.com/product/reolink-home-hub-pro/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Home Hub Pro</a></li>
+<li><a href="https://reolink.com/product/reolink-lumus/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Lumus</a></li>
+<li><strong><a href="https://reolink.com/product/reolink-trackmix-poe/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink TrackMix PoE</a></strong></li>
+<li><a href="https://reolink.com/product/reolink-trackmix-wifi/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink TrackMix Wi-Fi</a></li>
+<li>Reolink Video Doorbell（<a href="https://reolink.com/product/reolink-video-doorbell/" target="_blank" rel="noopener noreferrer" class="rp-link">PoE Black</a>、<a href="https://reolink.com/product/reolink-video-doorbell/" target="_blank" rel="noopener noreferrer" class="rp-link">PoE White</a>）</li>
+<li><strong>Reolink Video Doorbell（<a href="https://reolink.com/product/reolink-video-doorbell-wifi/" target="_blank" rel="noopener noreferrer" class="rp-link">Wi-Fi Black</a>、<a href="https://reolink.com/product/reolink-video-doorbell-wifi/" target="_blank" rel="noopener noreferrer" class="rp-link">Wi-Fi White</a>）</strong></li>
+</ul>
+<p>*这些型号已经停产且不再销售，但仍会继续支持 Home Assistant。</p>
+<h3 class="rp-toc-include" id="已测试的电池供电型号"><a href="#已测试的电池供电型号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已测试的电池供电型号</h3>
+<p>电池供电的 Reolink 摄像头可以借助 <a href="https://reolink.com/product/reolink-home-hub/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Home Hub</a> 或 NVR 与 Home Assistant 配合使用。Home Hub/NVR 会作为电池摄像头与 Home Assistant 之间的桥接设备，从而节省电池寿命。电池摄像头的大多数功能都能像普通供电摄像头一样使用。在 Home Assistant 中查看摄像头视频流时，会使电池摄像头在查看期间保持唤醒，从而消耗电量。因此，请避免将该视频流放在会被持续查看的仪表板上，例如墙面面板仪表板。您可以通过检查 &quot;Sleep status&quot; 实体是否会在电池摄像头未被主动使用时变为 &quot;Sleeping&quot; 来确认运行是否正常。</p>
+<p>以下 Hub/NVR 已经过测试，并确认可在 Home Assistant 中与电池供电型号配合使用：</p>
+<ul>
+<li><strong><a href="https://reolink.com/product/reolink-home-hub/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Home Hub</a></strong></li>
+<li><a href="https://reolink.com/product/reolink-home-hub-pro/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Home Hub Pro</a></li>
+<li><a href="https://reolink.com/product/rln8-410/" target="_blank" rel="noopener noreferrer" class="rp-link">RLN8-410 NVR</a>（仅硬件版本 N7MB01、N3MB01、N2MB02 或 H3MB18。硬件版本 H3MB02 和 H3MB16 自 2022 年以来未获得固件更新）</li>
+<li><a href="https://reolink.com/product/rln16-410/" target="_blank" rel="noopener noreferrer" class="rp-link">RLN16-410 NVR</a>（仅硬件版本 N6MB01 或 H3MB18。硬件版本 H3MB02 自 2022 年以来未获得固件更新）</li>
+<li><a href="https://reolink.com/product/rln36/" target="_blank" rel="noopener noreferrer" class="rp-link">RLN36 NVR</a></li>
+<li><a href="https://reolink.com/product/nvs8/" target="_blank" rel="noopener noreferrer" class="rp-link">NVS8 NVR</a>（RLN8 的零售版）</li>
+<li><a href="https://reolink.com/product/nvs16/" target="_blank" rel="noopener noreferrer" class="rp-link">NVS16 NVR</a>（RLN16 的零售版）</li>
+</ul>
+<p>以下电池供电型号已经过测试，并确认可通过 Reolink Home Hub/NVR 正常工作：</p>
+<ul>
+<li><a href="https://reolink.com/product/argus-3-pro/" target="_blank" rel="noopener noreferrer" class="rp-link">Argus 3 Pro</a></li>
+<li><a href="https://reolink.com/product/argus-4-pro/" target="_blank" rel="noopener noreferrer" class="rp-link">Argus 4 Pro</a></li>
+<li><a href="https://reolink.com/product/argus-eco/" target="_blank" rel="noopener noreferrer" class="rp-link">Argus Eco</a></li>
+<li><a href="https://reolink.com/product/argus-eco-ultra/" target="_blank" rel="noopener noreferrer" class="rp-link">Argus Eco Ultra</a></li>
+<li><a href="https://reolink.com/product/argus-pt/" target="_blank" rel="noopener noreferrer" class="rp-link">Argus PT</a></li>
+<li><strong><a href="https://reolink.com/product/argus-track/" target="_blank" rel="noopener noreferrer" class="rp-link">Argus Track</a></strong></li>
+<li><a href="https://reolink.com/product/reolink-altas/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Altas</a></li>
+<li><a href="https://reolink.com/product/altas-pt-ultra/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Altas PT Ultra</a></li>
+<li><strong><a href="https://reolink.com/product/reolink-doorbell-battery/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink Doorbell Battery</a></strong></li>
+</ul>
+<p>Reolink 还提供了<a href="https://support.reolink.com/hc/en-us/articles/32379509281561-Reolink-Home-Hub-Compatibility/" target="_blank" rel="noopener noreferrer" class="rp-link">一份更完整的电池摄像头型号列表</a>，这些型号与 Home Hub 兼容，并且理论上应可与 Home Assistant 配合使用。</p>
+<h3 class="rp-toc-include" id="仅兼容-nvrhome-hub-的型号"><a href="#仅兼容-nvrhome-hub-的型号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>仅兼容 NVR/Home Hub 的型号</h3>
+<p>以下型号缺少 HTTP Web 服务器 API，因此无法直接与此集成配合使用。
+不过，这些摄像头仍可通过已连接到 Home Assistant 的 NVR 或 Home Hub 与此集成协同工作。</p>
+<ul>
+<li>B400*</li>
+<li>B500*</li>
+<li>B500W*</li>
+<li>B800*</li>
+<li>B800W*</li>
+<li>B1200*</li>
+<li>D400*</li>
+<li>D500*</li>
+<li>D800*</li>
+<li>D1200*</li>
+</ul>
+<p>*这些型号仅以包含 NVR 的套装形式销售。</p>
+<h3 class="rp-toc-include" id="不兼容型号"><a href="#不兼容型号" class="rp-header-anchor rp-link" aria-hidden="true">#</a>不兼容型号</h3>
+<p>Reolink LTE 摄像头不支持此集成。</p>
+<ul>
+<li>Reolink Go Plus</li>
+<li>Reolink Go PT Plus</li>
+<li>Reolink Go PT Ultra</li>
+<li>Reolink Go Ranger PT</li>
+<li>Reolink Go Ultra</li>
+<li>Reolink TrackMix LTE</li>
+<li>Reolink TrackMix LTE Plus</li>
+</ul>
+<h2 class="rp-toc-include" id="初始设置"><a href="#初始设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>初始设置</h2>
+<h3 class="rp-toc-include" id="1-初始化并配置摄像头凭据"><a href="#1-初始化并配置摄像头凭据" class="rp-header-anchor rp-link" aria-hidden="true">#</a>1. 初始化并配置摄像头凭据</h3>
+<p>全新的 Reolink 摄像头需要先接入网络并完成初始化。在初始化过程中，需要为摄像头设置登录凭据。
+可通过以下几种方式完成：</p>
+<h4 class="rp-toc-include" id="通过-appclient-连接-reolink"><a href="#通过-appclient-连接-reolink" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 app/client 连接 Reolink</h4>
+<p>推荐方式是使用 <a href="https://reolink.com/software-and-manual/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink 手机应用、Windows 或 Mac 客户端</a>，然后按照屏幕提示操作。</p>
+<h4 class="rp-toc-include" id="通过-web-浏览器连接-reolink"><a href="#通过-web-浏览器连接-reolink" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 Web 浏览器连接 Reolink</h4>
+<p>如果您的摄像头带有 LAN 端口（大多数 Wi-Fi 摄像头也都有 LAN 端口）：</p>
+<ol>
+<li>先使用网线将摄像头接入网络。</li>
+<li>找到摄像头的 IP 地址（例如在路由器中查看），然后在浏览器中访问该地址。</li>
+<li>按照屏幕提示先设置凭据（在 Home Assistant 中也请使用相同凭据）。</li>
+<li>如果是 Wi-Fi 摄像头：
+<ul>
+<li>前往 <strong>settings</strong>（齿轮图标）&gt; <strong>Network</strong>，填写您的 Wi-Fi SSID 和密码。
+<ul>
+<li>如果您同时有 2.4 GHz 和 5 GHz 网络，请查看摄像头用户指南以确认支持的频段。</li>
+</ul>
+</li>
+<li>完成后即可断开网线，摄像头会自动切换到 Wi-Fi 连接。</li>
+</ul>
+</li>
+</ol>
+<h4 class="rp-toc-include" id="二维码"><a href="#二维码" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二维码</h4>
+<p>您也可以使用自制二维码连接 Wi-Fi 摄像头。连接成功后，请继续按照 <strong>Web browser</strong> 小节中的说明操作。
+请使用 ISO-8859-1 字符编码（不是 UTF-8）并使用以下 XML 字符串生成二维码：</p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span>&lt;QR&gt;&lt;S&gt;ssid&lt;/S&gt;&lt;P&gt;password&lt;/P&gt;&lt;C&gt;last4&lt;/C&gt;&lt;/QR&gt;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>其中 <code>ssid</code> 和 <code>password</code> 请填写您的 Wi-Fi 网络信息。
+<code>last4</code> 指摄像头机身（通常在底部）印刷二维码的最后 4 位数字。
+通常这些数字会直接印在二维码下方。您也可以扫描二维码并提取最后 4 位数字。</p>
+<p>然后在摄像头对准二维码的情况下给它通电。初始化、读取二维码并连接到 Wi-Fi 大约需要一分钟。</p>
+<h3 class="rp-toc-include" id="2-在-home-assistant-中添加集成"><a href="#2-在-home-assistant-中添加集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>2. 在 Home Assistant 中添加集成</h3>
+<p>使用您在步骤 1 中设置的凭据，在 Home Assistant 中完成 Reolink 集成设置。</p>
+<h2 class="rp-toc-include" id="删除集成"><a href="#删除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除集成</h2>
+<h3 class="rp-toc-include" id="删除直连摄像头nvrhome-hub"><a href="#删除直连摄像头nvrhome-hub" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除直连摄像头/NVR/Home Hub</h3>
+<p>要删除直连摄像头/NVR/Home Hub，可以按以下步骤移除集成：</p>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol>
+<p>这也会一并将连接到该 NVR/Home Hub 的所有摄像头和 chime 从 Home Assistant 中移除。</p>
+<h3 class="rp-toc-include" id="从-nvrhome-hub-中移除摄像头"><a href="#从-nvrhome-hub-中移除摄像头" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从 NVR/Home Hub 中移除摄像头</h3>
+<p>要从 NVR/Home Hub 中移除摄像头，可按以下步骤删除设备：</p>
+<ol>
+<li>如果摄像头是直接通过 PoE 连接到 NVR，请先物理拔掉它与 NVR 之间的网线。</li>
+<li>然后按照 <a href="https://support.reolink.com/hc/en-us/articles/900003769346-How-to-delete-offline-camera-information-on-Channel-Management-Page-via-Reolink-NVR-New-UI-/" target="_blank" rel="noopener noreferrer" class="rp-link">NVR 说明</a> 或 <a href="https://support.reolink.com/hc/en-us/articles/33883674141977-How-to-Change-Camera-Order-Remove-Device-from-Reolink-Home-Hub/" target="_blank" rel="noopener noreferrer" class="rp-link">Home Hub 说明</a> 从 NVR/Home Hub 中移除摄像头。</li>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> 并选择该集成卡片。</li>
+<li>在集成条目列表中，选择您要移除摄像头的 NVR/Home Hub 集成实例下方的 <strong>x devices</strong>。</li>
+<li>在设备列表中选择要移除的摄像头。</li>
+<li>在 <strong>Device info</strong> 下方点击三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单，然后选择 <strong>Delete</strong>。</li>
+</ol>
+<h3 class="rp-toc-include" id="移除-chime"><a href="#移除-chime" class="rp-header-anchor rp-link" aria-hidden="true">#</a>移除 chime</h3>
+<p>要将 chime 从门铃中移除，可按以下步骤删除 chime：</p>
+<ol>
+<li>前往 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> 并选择该集成卡片。</li>
+<li>在集成条目列表中，选择您要移除 chime 的 Doorbell/NVR/Home Hub 集成实例下方的 <strong>x devices</strong>。</li>
+<li>在设备列表中选择要移除的 chime。</li>
+<li>在 <strong>Device info</strong> 下方点击三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单，然后选择 <strong>Delete</strong>。</li>
+</ol>
+<p>这也会在 Reolink app/client 中解除 chime 与门铃的配对。因此，门铃按下时，chime 将不再响铃。</p>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<h3 class="rp-toc-include" id="在仪表板中显示摄像头"><a href="#在仪表板中显示摄像头" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在仪表板中显示摄像头</h3>
+<p>在仪表板中显示摄像头的一种方式是使用 picture glance 卡片。
+例如，您可以在卡片上放置方向按钮来<a href="/home-assistant/dashboards/picture-glance/index.html#creating-a-card-to-control-the-camera" class="rp-link">控制摄像头</a>。</p>
+<h3 class="rp-toc-include" id="发送富通知"><a href="#发送富通知" class="rp-header-anchor rp-link" aria-hidden="true">#</a>发送富通知</h3>
+<p>当有人按下 Reolink 门铃，或 Reolink 摄像头检测到移动、人员等事件时，您可以在手机上收到富通知。</p>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__small_notification.jpg" alt="Screenshot: Small phone notification"/>
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__big_notification.jpg" alt="Screenshot: Expanded phone notification"/>
+</p>
+<details>
+<summary>富通知教程</summary>
+<p>先决条件：</p>
+<ul>
+<li>此 <a href="#configuration" class="rp-link">Reolink 集成</a></li>
+<li><a href="https://companion.home-assistant.io/docs/getting_started#setting-up" target="_blank" rel="noopener noreferrer" class="rp-link">Android 或 iOS Companion App</a></li>
+<li><a href="https://www.home-assistant.io/docs/configuration/remote/" target="_blank" rel="noopener noreferrer" class="rp-link">Home Assistant 远程访问</a>。即使没有远程访问，您也能收到纯文本通知；但若想在通知中看到摄像头图像（富通知），手机必须能够访问 Home Assistant。若手机与 Home Assistant 位于同一网络中，则即使没有远程访问，富通知也始终可用。</li>
+</ul>
+<ol>
+<li>要接收这种富通知，我们需要在 Home Assistant 中创建一个自动化。前往 <a href="https://my.home-assistant.io/redirect/automations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Automations &amp; scenes</strong></a>，选择 <strong>Create automation</strong> &gt; <strong>Create new automation</strong>。</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/reolink/rich_notification__settings.png" alt="Settings button"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__automations_and_scenes.png" alt="Automations &amp; scenes button"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__create_automation.png" alt="Create automation button"/></p>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__new_automation.png" alt="Screenshot: new automation"/>
+</p>
+<ol start="2">
+<li>在 <strong>When</strong> 下选择：<strong>Add trigger</strong> &gt; <strong>Entity</strong> &gt; <strong>State</strong>。</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/reolink/rich_notification__add_trigger.png" alt="Add trigger"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__entity.png" alt="Entity"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__state.png" alt="State"/></p>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__new_trigger.png" alt="Screenshot: new trigger"/>
+</p>
+<p>然后在 <strong>Entity</strong> 下，从下拉列表中选择与您希望接收富通知的摄像头事件相对应的二进制传感器。对于 Reolink 集成，可选项包括：</p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span>- binary_sensor.*camera name*_motion</span></span>
+<span class="line"><span>- binary_sensor.*camera name*_person</span></span>
+<span class="line"><span>- binary_sensor.*camera name*_vehicle</span></span>
+<span class="line"><span>- binary_sensor.*camera name*_pet</span></span>
+<span class="line"><span>- binary_sensor.*camera name*_animal</span></span>
+<span class="line"><span>- binary_sensor.*camera name*_visitor (doorbell press)</span></span>
+<span class="line"><span>- binary_sensor.*camera name*_package</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__entity_select.png" alt="Screenshot: Entity select"/>
+</p>
+<p>请注意，这些实体名称会按您为 Home Assistant 配置的语言进行翻译。您可以直接输入以搜索全部实体。如果您想针对人员检测、车辆检测等多个摄像头事件发送同一条消息，也可以添加多个触发器。您还可以为不同事件创建多条自动化并发送不同消息。这里我们选择的是门铃按下对应的 visitor 检测：</p>
+<ol start="3">
+<li>在 <strong>To</strong> 下选择事件被检测到时的状态：visitor 选择 <strong>On</strong>，其他传感器选择 <strong>Detected</strong>：</li>
+</ol>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__state_select.png" alt="Screenshot: State select"/>
+</p>
+<ol start="4">
+<li>在 <strong>And if</strong> 下，您可以<strong>可选地</strong>限制通知发送条件。</li>
+</ol>
+<ul>
+<li>
+<p>例如，只在您不在家时发送。若您在设置 companion app 时允许位置跟踪，应用会根据手机 GPS 提供一个 device_tracker 实体。这里我们以此为例，但您可以根据需要添加任意数量的条件：</p>
+<p>选择 <strong>+ Add Condition</strong> &gt; <strong>Entity</strong> &gt; <strong>State</strong>。然后在 <strong>Entity</strong> 下选择您手机的 device_tracker 实体，并在 <strong>State</strong> 下选择 <strong>Home</strong>。</p>
+</li>
+</ul>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__device_tracker_condition.png" alt="Screenshot: Device tracker condition"/>
+</p>
+<ul>
+<li>
+<p>如果您想通过冷却时间限制通知发送频率，可以使用以下模板条件：</p>
+<p>再次选择 <strong>Add Condition</strong> &gt; <strong>Other conditions</strong> &gt; <strong>Template</strong>。然后在 <strong>Value template</strong> 中输入以下内容：</p>
+</li>
+</ul>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-foreground)">{{</span><span style="color:var(--shiki-token-string)">as_timestamp(now()) - as_timestamp(state_attr(&#x27;automation.reolink_push&#x27;</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-string-expression)"> &#x27;last_triggered&#x27;</span><span style="color:var(--shiki-token-string)">)</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-string)"> 0) &gt; 30</span><span style="color:var(--shiki-foreground)">}}</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>其中 <code>automation.reolink_push</code> 是该自动化的名称，会在步骤 7 中设置；<code>30</code> 则是以秒为单位的冷却时间。</p>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__cooldown_time_condition.png" alt="Screenshot: cooldown time condition"/>
+</p>
+<ol start="5">
+<li>在 <strong>Then do</strong> 下，选择 <strong>Add Action</strong> &gt; <strong>Camera</strong> &gt; <strong>Take snapshot</strong>。</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/reolink/rich_notification__add_action.png" alt="Add action button"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__camera.png" alt="Camera button"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__take_snapshot.png" alt="Take snapshot button"/></p>
+<p>在 <strong>Targets</strong> 下选择 <strong>Choose entity</strong>，然后选择您想将图像附加到通知中的摄像头。</p>
+<p><img src="/home-assistant/images/integrations/reolink/rich_notification__chose_entity.png" alt="Choose entity button"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__select_fluent_camera.png" alt="Select Fluent camera"/></p>
+<p>在 <strong>Filename</strong> 中填写 <code>/media/reolink_snapshot/last_snapshot_doorbell.jpg</code>。前面的 <code>/media/</code> 是绝对必要的，这样手机在收到通知时才能访问已保存的图片。其后的目录和文件名可以自行调整，只要在步骤 6 中填写相同文件名即可。</p>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__screenshot_take_snapshot.png" alt="Screenshot: take snapshot"/>
+</p>
+<ol start="6">
+<li>再添加一个操作：选择 <strong>Add Action</strong> &gt; <strong>Notifications</strong> &gt; <strong>Send a notification via mobile_app_<phone name=""></phone></strong>。</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/reolink/rich_notification__add_action.png" alt="Add action button"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__notifications.png" alt="Notifications button"/>
+<img src="/home-assistant/images/integrations/reolink/rich_notification__send_to_mobile_button.png" alt="Send a notification via mobile app"/></p>
+<p>在 <strong>message</strong> 中输入您想在通知中接收到的文本。例如 “Someone rang the doorbell”。
+如果您想为通知添加标题，请选择 <strong>title</strong> 选项。例如，如果有多个摄像头会发送通知，可以将标题设为摄像头名称：<code>Doorbell</code>。
+选择 <strong>data</strong> 选项，并填写 <code>image: /media/local/reolink_snapshot/last_snapshot_doorbell.jpg</code>。请注意，步骤 5 中文件名前缀的 <code>/media/</code> 在这里需要改为 <code>/media/local/</code>，其余文件名部分则必须与步骤 5 保持一致。</p>
+<p class="img">
+  <img src="/home-assistant/images/integrations/reolink/rich_notification__send_to_mobile.png" alt="Screenshot: send notification"/>
+</p>
+<p>您还可以进一步个性化通知，甚至控制在手机上点击通知时会发生什么；<a href="https://companion.home-assistant.io/docs/notifications/notifications-basic/" target="_blank" rel="noopener noreferrer" class="rp-link">更多说明见此</a>。</p>
+<ol start="7">
+<li>选择 <strong>Save</strong>，为自动化命名，例如 <code>doorbell notification</code>，然后再次选择 <strong>save</strong>。</li>
+</ol>
+<p><img src="/home-assistant/images/integrations/reolink/rich_notification__save.png" alt="Save"/></p>
+<p>这样就设置完成了。按一下门铃，您应该就能在手机上看到通知。请记得，只有满足 <strong>And if</strong> 中设置的条件时，您才会收到通知。</p>
+</details>
+<h3 class="rp-toc-include" id="自动化思路"><a href="#自动化思路" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自动化思路</h3>
+<ul>
+<li>当摄像头检测到人员、车辆或动物时，打开附近的（室外）灯光，以提升夜间图像清晰度。</li>
+<li>当您回家时（例如基于地理围栏）关闭通知和录像，离家后再重新开启。</li>
+<li>自动暂停富通知一段时间。</li>
+</ul>
+<details>
+<summary>自动暂停富通知教程</summary>
+<p><strong>目标</strong>：完成本教程后，您将在仪表板上拥有一个下拉框，可选择不同的暂停时长来临时关闭通知。倒计时结束后，通知会自动恢复。效果如下：</p>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__overview.png" alt="Overview of end result"/></p>
+<ol>
+<li>
+<p>先前往 <strong>Settings</strong> &gt; <strong>Devices &amp; services</strong> &gt; <strong>Helpers</strong> &gt; <strong>+ Create Helper</strong> &gt; <strong>Dropdown</strong> 创建下拉框。</p>
+<ul>
+<li>先决定您想提供多少个暂停时长选项。</li>
+<li>按下图把这些选项都添加到下拉框中。</li>
+<li>第一项需要是 &quot;Notifications active&quot;（或相近表述），用于表示通知开启状态。</li>
+<li>您可以添加任意数量的时间选项，也可以自定义任意时长，比如 22 分钟、2 小时。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__dropdown.png" alt="Dropdown"/></p>
+</li>
+<li>
+<p>接下来，同样在 <strong>Helpers</strong> 中创建一个 <strong>Timer</strong>。</p>
+<ul>
+<li>
+<p>时长保持全 0，并勾选 <strong>Restore state and time</strong>。</p>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__timer.png" alt="Timer"/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>现在创建一个新的自动化。</p>
+<ul>
+<li>在 <strong>When</strong> 中选择 <strong>+ Add Trigger</strong> &gt; <strong>Entity</strong> &gt; <strong>State</strong>，实体选择刚创建的下拉框，<strong>From</strong> 选择 &quot;Notifications active&quot;（或您设置的第一项名称）。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__automation_when.png" alt="Automation When dropdown"/></p>
+</li>
+<li>
+<p>再添加一个触发器：<strong>+ Add Trigger</strong> &gt; <strong>Entity</strong> &gt; <strong>State</strong>，实体选择刚创建的计时器，<strong>To</strong> 选择 &quot;Idle&quot;。</p>
+<ul>
+<li>然后打开该触发器右侧的三点菜单 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon>，选择 <strong>Edit ID</strong>，在 <strong>Trigger ID</strong> 中输入 &quot;TIMER DONE&quot;。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__automation_when_timer.png" alt="Automation When timer"/></p>
+</li>
+<li>
+<p><strong>And if</strong> 保持为空。在 <strong>Then do</strong> 中选择 <strong>add building block</strong>，再选择 <strong>Choose</strong>。</p>
+<ul>
+<li>这里需要创建的分支数量 = 下拉框的时间选项数量 + 1（用于重置下拉框）。</li>
+<li>先创建用于重置下拉框的分支，并确保它位于第一项。</li>
+<li>在 <strong>Option 1</strong> 下选择 <strong>+ Add Condition</strong> &gt; <strong>Other conditions</strong> &gt; <strong>Triggered by</strong>。</li>
+<li>勾选 &quot;TIMER DONE&quot;。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__automation_triggered_by.png" alt="Automation Triggered by"/></p>
+</li>
+<li>
+<p>在这个 <strong>Option 1</strong> 下添加动作，动作类型选择 <strong>Select</strong>，然后选择 <strong>First</strong>。</p>
+<ul>
+<li>实体选择您的下拉框。</li>
+<li>这样在计时器结束后，下拉框会自动回到第一项。</li>
+<li>这会让通知自动化重新生效。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__automation_select_first.png" alt="Automation Select first"/></p>
+</li>
+<li>
+<p>现在设置第一个“暂停通知时长”分支。</p>
+<ul>
+<li>在 <strong>Option 2</strong> 下选择 <strong>+ Add Condition</strong> &gt; <strong>Entity</strong> &gt; <strong>State</strong>。</li>
+<li><strong>Entity</strong> 选下拉框，<strong>State</strong> 选择第一个暂停时长选项。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__automation_choose.png" alt="Automation Choose"/></p>
+</li>
+<li>
+<p>在 <strong>+ Add Action</strong> 中选择 <strong>Helpers</strong> &gt; <strong>Timer</strong> &gt; <strong>Start</strong>，并选择您的计时器实体。</p>
+<ul>
+<li>勾选 duration，并填入与该选项对应的时长，格式为 <code>HH:MM:SS</code>。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__automation_start_timer.png" alt="Automation Start timer"/></p>
+</li>
+<li>
+<p>接下来只需把 Option 2 复制为与下拉框时间选项数量一致。</p>
+<ul>
+<li>每个复制出的分支只需要修改两处：下拉框对应的 <strong>State</strong>（时长选项）以及计时器时长。</li>
+<li>可以通过每个分支右侧的三点菜单 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 快速复制。</li>
+</ul>
+</li>
+<li>
+<p>最后，将这个功能应用到实际自动化中。</p>
+<ul>
+<li>打开您的富通知自动化（或任何想支持“暂停控制”的自动化），添加一个条件。</li>
+<li>例如在 <strong>And if</strong> 中选择 <strong>+ Add condition</strong> &gt; <strong>Entity</strong> &gt; <strong>State</strong>，实体选择该下拉框，状态选择第一项 &quot;Notifications Active&quot;。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__condition.png" alt="Condition"/></p>
+</li>
+<li>
+<p>把下拉框和计时器都添加到仪表板后，就完成了。</p>
+<ul>
+<li>下图是“暂停通知”运行中的效果。</li>
+<li>若要提前结束，可直接打开计时器并选择 finish。计时器会立即变为 idle，自动化也会把下拉框重置回通知开启状态。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/reolink/auto_pause__result_when_running.png" alt="Result when running"/></p>
+</li>
+</ol>
+</details>
+<ul>
+<li>当有人按下门铃时，在全屋音箱（Echo Dot/Google Home/智能中枢）上播放铃声。</li>
+<li>当门铃被按下时暂停电视，并在电视上显示通知标记（仅当电视已开启时）。</li>
+<li>仅在不在家（地理围栏）时播放 Reolink 门铃的快捷回复语音。</li>
+<li>当某个摄像头/运动传感器检测到事件时，唤醒附近其他电池摄像头并开始录像。</li>
+<li>当某个摄像头检测到人员、车辆或动物时，联动开启附近其他摄像头的补光灯或警笛。</li>
+<li>当某个摄像头检测到人员/车辆/动物时，使用 <abbr title="pan, tilt, and zoom">PTZ</abbr> 预设位让其他 <abbr title="pan, tilt, and zoom">PTZ</abbr> 摄像头转向该方向。</li>
+<li>使用 <abbr title="pan, tilt, and zoom">PTZ</abbr> 预设位和快照操作，制作不同方向的延时序列。</li>
+<li>根据日出日落时间，或（室外）灯光状态，切换日夜模式（Color / IR Black&amp;White），而不是依赖摄像头内置光照传感器。</li>
+<li>根据时间和/或在家状态（地理围栏）自动调整摄像头音量。</li>
+<li>检测到人员/车辆/动物时，提高摄像头帧率和最大码率；1 分钟无检测后再降低。这样可节省存储空间，在 24/7 录像场景下延长保存时长，同时保持事件期间的画质。</li>
+<li>当摄像头检测到人员时，按顺序并带延时开启靠窗室内灯光，营造“家里有人”的效果。</li>
+<li>当有人按门铃时，在墙面面板、平板或 Google Home 显示屏上全屏显示摄像头画面。</li>
+<li>根据日出日落切换摄像头 HDR 模式。</li>
+<li>创建一个 input boolean helper，一键关闭所有摄像头通知，并在 1 小时后自动重新开启。</li>
+</ul>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<ul>
+<li>Reolink Home Assistant 集成暂不支持双向音频或文本转语音（Text-to-speech）。</li>
+<li>4K 摄像头流通常使用 H265 编码，而浏览器（Chrome/Firefox/Edge/Safari 等）对 H265 的播放支持仍较有限。因此，4K 的 Clear 流在部分浏览器或部分 Home Assistant Companion App 手机端可能无法播放。默认启用的是低分辨率的 Fluent 摄像头实体，Fluent 使用 H264 编码，可在几乎所有浏览器和手机上播放。</li>
+</ul>
+<h2 class="rp-toc-include" id="故障排查"><a href="#故障排查" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排查</h2>
+<h3 class="rp-toc-include" id="无法设置集成"><a href="#无法设置集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>无法设置集成</h3>
+<ul>
+<li>旧版固件不会暴露集成运行所需的必要信息。请先将摄像头更新到<a href="https://reolink.com/download-center/" target="_blank" rel="noopener noreferrer" class="rp-link">最新固件</a>后再配置集成。注意，Reolink app/windows/web 客户端里的自动更新或检查更新，常常不会显示最新版本，因此请以在线 <a href="https://reolink.com/download-center/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink 下载中心</a>为准。</li>
+<li>在浏览器中测试是否可以通过 IP 访问摄像头：<code>https://&lt;your-camera-ip&gt;</code>。若无法访问，请在 <a href="https://reolink.com/software-and-manual/" target="_blank" rel="noopener noreferrer" class="rp-link">Reolink 手机应用、Windows 或 Mac 客户端</a>中确认至少启用了一个 HTTP/HTTPS 端口：手机端路径是 <strong>Settings</strong> &gt; <strong>top camera model box</strong> &gt; <strong>Network Information</strong> &gt; <strong>Advanced</strong>，PC 端路径是 <strong>Settings</strong> &gt; <strong>Network</strong> &gt; <strong>Advanced</strong> &gt; <strong>Port Settings</strong>。更多信息请参阅 Reolink 的<a href="https://support.reolink.com/hc/en-us/articles/900000621783-How-to-Set-up-Reolink-Ports-Settings/" target="_blank" rel="noopener noreferrer" class="rp-link">附加说明</a>。</li>
+<li>某些摄像头型号需要启用 RTMP 端口，HTTP(S) 端口才能正常工作。如果您在已启用 HTTP/HTTPS 端口的情况下仍出现 <code>Cannot connect to host</code> 错误，请同时启用 RTMP 端口。</li>
+<li>若启用 HTTP/HTTPS 端口后，集成和浏览器仍都无法连接摄像头，可尝试在摄像头上新建一个用户账号；该方法在部分场景下可解决问题。</li>
+<li>Home Assistant 设备与 Reolink 设备之间使用 VLAN 或其他网络隔离是可行的，但配置不当时也容易出问题。请确保未阻断 HTTP（80）、HTTPS（443）、RTMP（1935）、RTSP（554）、ONVIF（8000）和 TCP（9000）通信。排查问题时，建议先将 Reolink 设备临时移到与 Home Assistant 相同的 VLAN，并取消二者之间的网络限制，确认问题是否消失。</li>
+</ul>
+<h3 class="rp-toc-include" id="实体间歇性变为-unavailable"><a href="#实体间歇性变为-unavailable" class="rp-header-anchor rp-link" aria-hidden="true">#</a>实体间歇性变为 unavailable</h3>
+<ul>
+<li>请注意，当 <strong>Privacy mode</strong> 设为 ON 时，几乎所有实体（包括移动/AI 检测和视频流）都会变为 unavailable。请先查看 <strong>Privacy mode</strong> 实体历史，确认是否是此原因。</li>
+<li>建议在路由器中为 Reolink 摄像头/NVR 绑定静态 IP，以避免 IP 变化导致的临时连接问题。</li>
+<li>不要在 Reolink 设备本机里设置静态 IP。请保持 <strong>Settings</strong> &gt; <strong>Network</strong> &gt; <strong>Network Information</strong> &gt; <strong>Set Up</strong> 下的 <strong>Connection Type</strong> 为 <strong>DHCP</strong>。若在设备中改为 <strong>static</strong>，已知会触发异常 DHCP 请求，导致 Home Assistant 使用错误 IP，从而出现连接问题。该问题源于 Reolink 固件：即使设置了静态 IP，设备仍会持续发送 DHCP 请求。</li>
+<li>Reolink 摄像头可承载的并发连接数量有限。若同时使用 Frigate、Blue Iris、Scrypted 等第三方软件，或同时启用 ONVIF 集成，摄像头可能会断开部分连接，导致实体短暂 unavailable。尤其当这些连接来自与 Home Assistant 相同的主机（同一 IP）时，摄像头更容易混淆并丢弃其中一个连接。若您遇到此问题，请先临时关闭其他连接（如 Frigate）进行验证。若确认为此原因，可尝试把第三方软件迁移到另一台主机（不同 IP），通常能改善问题。也可以尝试在 Home Assistant 和/或第三方软件中改用 <abbr title="flash video">FLV</abbr> 协议，该协议对摄像头资源占用更低。</li>
+<li>如果 Reolink 实体只是短时间变为 unavailable，可能是摄像头请求过载导致短暂掉线。请先检查集成是否已使用 <code>ONVIF push</code>，而不是 <code>ONVIF long polling</code>（资源占用较高）或 <code>Fast polling</code>（资源占用很高），详见<a href="#reducing-latency-of-motion-events" class="rp-link">降低移动事件延迟</a>。此外，可尝试切换到资源占用最低的 <abbr title="flash video">FLV</abbr> 流协议，详见<a href="#options" class="rp-link">选项</a>。</li>
+</ul>
+<h3 class="rp-toc-include" id="电池耗电过快"><a href="#电池耗电过快" class="rp-header-anchor rp-link" aria-hidden="true">#</a>电池耗电过快</h3>
+<p>Reolink Home Assistant 集成理论上只会每 6 小时唤醒一次电池摄像头（持续几秒），或在电池摄像头自行唤醒时进行数据更新（最多每小时一次）。这通常不会明显影响续航。您可以通过 <strong>Sleep status</strong> 实体确认是否工作正常。不过，以下因素会显著增加耗电：</p>
+<ul>
+<li>请确认所有电池摄像头实体都关闭了 <strong>Preload camera stream</strong>：路径为 <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> &gt; Reolink 集成卡片 &gt; <strong>x devices</strong> &gt; 选择电池摄像头 &gt; 选择摄像头流（对所有启用流都要检查）&gt; 齿轮图标 <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>。开启 Preload camera stream 会长期保持活动视频流，导致摄像头持续唤醒并快速耗电。</li>
+<li>请确认 <strong>Manual Record</strong> 开关为关闭状态。该开关开启时，摄像头会持续唤醒并录像，频繁使用会明显增加耗电。</li>
+<li>使用电池摄像头实体的 <strong>Automations</strong> 可能会唤醒摄像头。修改设置或请求快照会让电池摄像头唤醒 10-30 秒。若自动化触发过于频繁，也会造成额外耗电。</li>
+<li>已知某些用于仪表板看流的 <strong>Custom cards</strong> 会让电池摄像头持续唤醒，从而加速耗电。</li>
+<li>当您打开包含 Reolink 电池摄像头 picture-entity 卡片的 <strong>dashboard</strong> 时，摄像头会被唤醒以提供最新快照和/或视频流。因此建议将这些卡片放在单独的仪表板/标签页中，仅在确实需要查看时再进入。</li>
+</ul>
+<h3 class="rp-toc-include" id="视频流或录像无法播放"><a href="#视频流或录像无法播放" class="rp-header-anchor rp-link" aria-hidden="true">#</a>视频流或录像无法播放</h3>
+<ul>
+<li>大多数 Reolink 摄像头为了节省存储和带宽，会在高分辨率录像与 Clear 流中使用 H265 编码。并非所有浏览器或应用都支持 H265 播放，因此高分辨率录像和/或 Clear 流可能无法在您的所有终端上正常播放。若要确认摄像头使用的是 H264 还是 H265，请<a href="/home-assistant/docs/configuration/troubleshooting/index.html#download-diagnostics" class="rp-link">下载诊断文本文件</a>，并在文本中查找 <code>&quot;encoding main&quot;: &quot;h265&quot;\&quot;h264&quot;</code>。低分辨率录像与 Fluent 流始终使用 H264，因此通常不会受此问题影响。</li>
+</ul>
+<h3 class="rp-toc-include" id="reducing-latency-of-motion-events"><a href="#reducing-latency-of-motion-events" class="rp-header-anchor rp-link" aria-hidden="true">#</a>降低移动事件延迟</h3>
+<p>相比 ONVIF long polling，TCP push 和 ONVIF push 会让移动/AI 二进制传感器状态变化更快一些。
+另外，TCP push 和 ONVIF push 对摄像头资源占用也低于 ONVIF long polling 或 fast polling，因此通常连接问题更少。
+TCP push 没有额外要求；但 ONVIF push 有一些网络配置前提：</p>
+<ul>
+<li>
+<p>Reolink 设备无法把 ONVIF 移动事件推送到 HTTPS 地址（SSL）。
+因此，请在 <a href="https://my.home-assistant.io/redirect/network/" target="_blank" rel="noopener noreferrer" class="rp-link">网络设置</a> 的 <strong>Home Assistant URL</strong> 中配置一个 Home Assistant 可访问的（本地）HTTP 地址。
+例如可填写 <code>http://192.168.1.10:8123</code>，其中 <code>192.168.1.10</code> 是 Home Assistant 设备的 IP。</p>
+</li>
+<li>
+<p>由于需要 HTTP 地址，Reolink push 与全局 SSL 证书不兼容。
+因此，请确认在 <a href="/home-assistant/integrations/http/index.html#ssl_certificate" class="rp-link"><code>configuration.yaml</code> 的 HTTP 配置</a>中未启用全局 SSL 证书。
+如果您仍希望外网连接强制使用 SSL，可改用 <a href="https://github.com/home-assistant/addons/tree/master/nginx_proxy" target="_blank" rel="noopener noreferrer" class="rp-link">NGINX 插件</a> 或 <a href="https://github.com/hassio-addons/addon-nginx-proxy-manager" target="_blank" rel="noopener noreferrer" class="rp-link">NGINX Proxy Manager 插件</a>来实现，而不是启用全局 SSL。</p>
+</li>
+</ul>
+<p>若要确认 Reolink 集成当前使用的是 <code>TCP push</code>、<code>ONVIF push</code>、<code>ONVIF long polling</code> 还是 <code>Fast polling</code>，请<a href="/home-assistant/docs/configuration/troubleshooting/index.html#download-diagnostics" class="rp-link">下载诊断文本文件</a>，并在文本中查找 <code>&quot;event connection&quot;: &quot;TCP push&quot;\&quot;ONVIF push&quot;\&quot;ONVIF long polling&quot;\&quot;Fast polling&quot;</code>。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#先决条件" class="rp-toc-item rp-link" title="先决条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">先决条件</span></a><a href="#options" class="rp-toc-item rp-link" title="Options" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Options</span></a><a href="#本文档实体名称后的星号" class="rp-toc-item rp-link" title="本文档实体名称后的星号（*）" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">本文档实体名称后的星号（*）</span></a><a href="#数据更新本文档实体名称后的加号" class="rp-toc-item rp-link" title="数据更新：本文档实体名称后的加号（+）" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新：本文档实体名称后的加号（+）</span></a><a href="#支持的功能" class="rp-toc-item rp-link" title="支持的功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的功能</span></a><a href="#摄像头视频流" class="rp-toc-item rp-link" title="摄像头视频流" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">摄像头视频流</span></a><a href="#二进制传感器" class="rp-toc-item rp-link" title="二进制传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">二进制传感器</span></a><a href="#数值实体" class="rp-toc-item rp-link" title="数值实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">数值实体</span></a><a href="#按钮实体" class="rp-toc-item rp-link" title="按钮实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">按钮实体</span></a><a href="#操作-reolinkptz_move" class="rp-toc-item rp-link" title="操作 reolink.ptz_move" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">操作 <code>reolink.ptz_move</code></span></a><a href="#选择实体" class="rp-toc-item rp-link" title="选择实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">选择实体</span></a><a href="#操作-reolinkplay_chime" class="rp-toc-item rp-link" title="操作 reolink.play_chime" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">操作 <code>reolink.play_chime</code></span></a><a href="#警笛实体" class="rp-toc-item rp-link" title="警笛实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">警笛实体</span></a><a href="#开关实体" class="rp-toc-item rp-link" title="开关实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">开关实体</span></a><a href="#灯光实体" class="rp-toc-item rp-link" title="灯光实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">灯光实体</span></a><a href="#传感器实体" class="rp-toc-item rp-link" title="传感器实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器实体</span></a><a href="#更新实体" class="rp-toc-item rp-link" title="更新实体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">更新实体</span></a><a href="#用于播放录像的媒体浏览器" class="rp-toc-item rp-link" title="用于播放录像的媒体浏览器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">用于播放录像的媒体浏览器</span></a><a href="#已测试型号" class="rp-toc-item rp-link" title="已测试型号" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已测试型号</span></a><a href="#已测试的直连型号" class="rp-toc-item rp-link" title="已测试的直连型号" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">已测试的直连型号</span></a><a href="#已测试的电池供电型号" class="rp-toc-item rp-link" title="已测试的电池供电型号" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">已测试的电池供电型号</span></a><a href="#仅兼容-nvrhome-hub-的型号" class="rp-toc-item rp-link" title="仅兼容 NVR/Home Hub 的型号" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">仅兼容 NVR/Home Hub 的型号</span></a><a href="#不兼容型号" class="rp-toc-item rp-link" title="不兼容型号" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">不兼容型号</span></a><a href="#初始设置" class="rp-toc-item rp-link" title="初始设置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">初始设置</span></a><a href="#1-初始化并配置摄像头凭据" class="rp-toc-item rp-link" title="1. 初始化并配置摄像头凭据" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">1. 初始化并配置摄像头凭据</span></a><a href="#通过-appclient-连接-reolink" class="rp-toc-item rp-link" title="通过 app/client 连接 Reolink" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">通过 app/client 连接 Reolink</span></a><a href="#通过-web-浏览器连接-reolink" class="rp-toc-item rp-link" title="通过 Web 浏览器连接 Reolink" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">通过 Web 浏览器连接 Reolink</span></a><a href="#二维码" class="rp-toc-item rp-link" title="二维码" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">二维码</span></a><a href="#2-在-home-assistant-中添加集成" class="rp-toc-item rp-link" title="2. 在 Home Assistant 中添加集成" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">2. 在 Home Assistant 中添加集成</span></a><a href="#删除集成" class="rp-toc-item rp-link" title="删除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">删除集成</span></a><a href="#删除直连摄像头nvrhome-hub" class="rp-toc-item rp-link" title="删除直连摄像头/NVR/Home Hub" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">删除直连摄像头/NVR/Home Hub</span></a><a href="#从-nvrhome-hub-中移除摄像头" class="rp-toc-item rp-link" title="从 NVR/Home Hub 中移除摄像头" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从 NVR/Home Hub 中移除摄像头</span></a><a href="#移除-chime" class="rp-toc-item rp-link" title="移除 chime" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">移除 chime</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#在仪表板中显示摄像头" class="rp-toc-item rp-link" title="在仪表板中显示摄像头" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在仪表板中显示摄像头</span></a><a href="#发送富通知" class="rp-toc-item rp-link" title="发送富通知" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">发送富通知</span></a><a href="#自动化思路" class="rp-toc-item rp-link" title="自动化思路" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自动化思路</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#故障排查" class="rp-toc-item rp-link" title="故障排查" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排查</span></a><a href="#无法设置集成" class="rp-toc-item rp-link" title="无法设置集成" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">无法设置集成</span></a><a href="#实体间歇性变为-unavailable" class="rp-toc-item rp-link" title="实体间歇性变为 unavailable" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">实体间歇性变为 unavailable</span></a><a href="#电池耗电过快" class="rp-toc-item rp-link" title="电池耗电过快" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">电池耗电过快</span></a><a href="#视频流或录像无法播放" class="rp-toc-item rp-link" title="视频流或录像无法播放" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">视频流或录像无法播放</span></a><a href="#reducing-latency-of-motion-events" class="rp-toc-item rp-link" title="降低移动事件延迟" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">降低移动事件延迟</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

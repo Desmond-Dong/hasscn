@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bluetooth - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Bluetooth - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="蓝牙集成将检测附近的蓝牙设备。发现的设备将显示在配置面板集成页面的已发现部分。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="蓝牙集成将检测附近的蓝牙设备。发现的设备将显示在配置面板集成页面的已发现部分。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="bluetooth"><a href="#bluetooth" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Bluetooth<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>蓝牙</strong>集成将检测附近的蓝牙设备。发现的设备将显示在配置面板集成页面的已发现部分。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h2 class="rp-toc-include" id="开始之前"><a href="#开始之前" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开始之前</h2>
+<p>在许多情况下，使用 ESP32 蓝牙代理比直接连接适配器或卡是更好的方法，因为 Linux 内核更新之前曾破坏过蓝牙功能，而且蓝牙驱动对 Linux 上较新适配器的支持通常落后于其他操作系统。蓝牙代理对于虚拟化实例的用户尤其有用，因为 USB 直通可能会导致额外的问题。更多信息可在下面的远程适配器部分找到，或访问 ESPhome 的<a href="https://esphome.io/projects/?type=bluetooth" target="_blank" rel="noopener noreferrer" class="rp-link">蓝牙代理页面</a>。</p>
+<p>假设蓝牙代理不适合您的使用场景。在使用本地适配器时，请考虑使用 Home Assistant 操作系统，因为它包含其他操作系统中未解决的蓝牙问题的补丁。</p>
+<h2 class="rp-toc-include" id="配置"><a href="#配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置</h2>
+<p>虽然此集成是 <a href="/home-assistant/integrations/default_config/index.html" class="rp-link"><code>default_config:</code></a> 的一部分，用于启用蓝牙适配器的自动发现，但它只有在设置配置流程或手动添加到您的 &quot;<code>configuration.yaml</code>&quot; 文件后才会启用。
+:::tip
+更改配置后需要重启 Home Assistant。
+:::</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># Example configuration.yaml entry</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">bluetooth</span><span style="color:var(--shiki-token-keyword)">:</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="linux-系统要求"><a href="#linux-系统要求" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Linux 系统要求</h2>
+<p>要在 Linux 系统上使蓝牙功能正常工作：</p>
+<ul>
+<li>Home Assistant 必须能够访问 <a href="https://en.wikipedia.org/wiki/D-Bus" target="_blank" rel="noopener noreferrer" class="rp-link">D-Bus</a> 套接字。</li>
+<li>蓝牙适配器必须可被 D-Bus 访问，并运行 <a href="http://www.bluez.org/" target="_blank" rel="noopener noreferrer" class="rp-link">BlueZ</a> &gt;= 5.43。强烈建议使用 BlueZ &gt;= 5.63，因为旧版本已被报告不可靠。</li>
+<li>D-Bus 实现应该是 <a href="https://github.com/bus1/dbus-broker" target="_blank" rel="noopener noreferrer" class="rp-link">dbus-broker</a>。</li>
+<li>主机系统应运行 Linux 内核 5.15.62 或更高版本。</li>
+</ul>
+<h3 class="rp-toc-include" id="按安装方法的附加要求"><a href="#按安装方法的附加要求" class="rp-header-anchor rp-link" aria-hidden="true">#</a>按安装方法的附加要求</h3>
+<ul>
+<li>Home Assistant 操作系统：升级到 Home Assistant OS 版本 9.0 或更高版本。所有蓝牙要求都会自动配置。</li>
+<li>Home Assistant 容器：主机系统必须运行 BlueZ，并且 D-Bus 套接字必须可从容器<strong>内部</strong>的 Home Assistant 访问。需要额外配置（见下文）。</li>
+</ul>
+<h3 class="rp-toc-include" id="容器的附加详情"><a href="#容器的附加详情" class="rp-header-anchor rp-link" aria-hidden="true">#</a>容器的附加详情</h3>
+<details>
+<summary>蓝牙的容器配置</summary>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+您只需要为 Home Assistant 容器安装执行这些配置步骤。Home Assistant 操作系统会自动处理所有蓝牙配置。</p><p>:::
+Home Assistant 容器需要特定配置才能访问蓝牙适配器。</p><p><strong>所需权限：</strong></p><p>在容器配置中添加以下 Linux 权限以启用完整的蓝牙管理：</p><p><strong>Docker Compose:</strong></p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">cap_add</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-string-expression)">NET_ADMIN</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-string-expression)">NET_RAW</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">volumes</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-string-expression)">/run/dbus:/run/dbus:ro</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><p><strong>Docker run:</strong></p><div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">docker</span><span style="color:var(--shiki-token-string)"> run</span><span style="color:var(--shiki-token-string)"> --cap-add=NET_ADMIN</span><span style="color:var(--shiki-token-string)"> --cap-add=NET_RAW</span><span style="color:var(--shiki-token-string)"> -v</span><span style="color:var(--shiki-token-string)"> /run/dbus:/run/dbus:ro</span><span style="color:var(--shiki-token-string)"> ...</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><p><strong>D-Bus 套接字：</strong></p><p>对于大多数系统，D-Bus 套接字位于 <code>/run/dbus</code>。您需要使该套接字在容器中可用，以便 Home Assistant 连接到 D-Bus 并访问蓝牙适配器。如果主机系统上的 D-Bus 套接字位于 <code>/var/run/dbus</code>，请改用 <code>-v /var/run/dbus:/run/dbus:ro</code>。</p><p><strong>缺少这些权限会发生什么：</strong></p><p>如果缺少 <code>NET_ADMIN</code> 和 <code>NET_RAW</code> 权限：</p><ul>
+<li>您的蓝牙将以降级模式运行，功能有限</li>
+<li>自动适配器恢复不可用——当适配器停止响应时无法重置</li>
+<li>连接参数和管理 API 命令将失败</li>
+<li>原始广播数据将缺失，导致设备更新不可靠</li>
+<li>日志中将出现错误：&quot;Missing required permissions for Bluetooth management&quot;</li>
+</ul></div></div></details><details>
+<summary>从 dbus-daemon 切换到 dbus-broker</summary><p>按照<a href="https://github.com/bus1/dbus-broker/wiki" target="_blank" rel="noopener noreferrer" class="rp-link">说明</a>切换到 dbus-broker。</p></details><details>
+<summary>安装 BlueZ</summary><p>在基于 Debian 的主机系统上，<code>sudo apt-get -y install bluez</code> 命令将安装 BlueZ。</p></details><h2 class="rp-toc-include" id="安装-usb-蓝牙适配器"><a href="#安装-usb-蓝牙适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>安装 USB 蓝牙适配器</h2><p>某些系统可能没有蓝牙，需要 USB 适配器。首次安装适配器可能需要多次重启才能完全识别设备。</p><p>如果您遇到蓝牙连接不稳定，在蓝牙适配器和 Home Assistant 服务器之间安装一条短的 USB 延长线可能会提高可靠性。</p><p>对于开发和测试，此蓝牙集成的开发者主要使用 <a href="https://www.feasycom.com/datasheet/fsc-bp119.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">Feasycom FSC-BP119</a> (CSR8510A10) 📶。</p><h3 class="rp-toc-include" id="已知可工作的高性能适配器"><a href="#已知可工作的高性能适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知可工作的高性能适配器</h3><h4 class="rp-toc-include" id="剑桥硅无线电-csr-适配器"><a href="#剑桥硅无线电-csr-适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>剑桥硅无线电 (CSR) 适配器</h4><ul>
+<li>ANNE PRO CSR 4.0 (CSR8510A10)</li>
+<li>Avantree BTDG-40S (CSR8510A10)</li>
+<li>DIGITUS DN-30210-1 (CSR8510A10)</li>
+<li>Enbiawit BT403 (CSR8510A10)</li>
+<li>Feasycom FSC-BP119 (CSR8510A10) 📶</li>
+<li>Gold Touch E-USB-BT4 (CSR8510A10)</li>
+<li>HIDEEZ BT0015-01 (CSR8510A10)</li>
+<li>Maxesla CSR 4.0 (CSR8510A10)</li>
+<li>Nuu You BT40 (CSR8510A10)</li>
+<li>ORICO BTA-403 (CSR8510A10)</li>
+<li>ORICO BTA-409 (CSR8510A10)</li>
+<li>Panda Wireless PBU40 (CSR8510A10)</li>
+<li>PlanexCOMM BT-Micro4 (CSR8510A10)</li>
+<li>QGOO BT-06A (CSR8510A10)</li>
+<li>ROCKETEK BT4Y (CSR8510A10)</li>
+<li>SABRENT BT-UB40 (CSR8510A10)</li>
+<li>Sena UD100-G03 (CSR8510A10) 📶</li>
+<li>StarTech USBBT1EDR4 (CSR8510A10)</li>
+<li>Techkey PBT06H (CSR8510A10)</li>
+<li>TRENDnet TBW-106UB (CSR8510A10)</li>
+<li>TRENDnet TBW-107UB (CSR8510A10)</li>
+<li>UGREEN CM109 (CSR8510A10)</li>
+<li>Warmstor WBT-AD01 (CSR8510A10)</li>
+<li>WAVLINK WL-BT4001 (CSR8510A10)</li>
+</ul><p>📶 表示外置天线</p><p>大多数这些适配器可以同时保持五 (5) 个连接。</p><p>这些适配器通常提供最快的连接时间，不需要额外的驱动程序或补丁文件。</p><h4 class="rp-toc-include" id="博通-bcm-适配器"><a href="#博通-bcm-适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>博通 (BCM) 适配器</h4><p>:::warning
+这些适配器可能需要 <a href="https://github.com/winterheart/broadcom-bt-firmware" target="_blank" rel="noopener noreferrer" class="rp-link"></a><a href="https://github.com/winterheart/broadcom-bt-firmware" target="_blank" rel="noopener noreferrer" class="rp-link">https://github.com/winterheart/broadcom-bt-firmware</a> 提供的额外补丁文件才能稳定运行。</p><p>目前没有支持的方法在使用 Home Assistant 操作系统时安装这些补丁文件。</p>
+<details>
+<summary>博通 (BCM) 适配器</summary>
+<ul>
+<li>ASUS USB-BT400 (BCM20702A0)</li>
+<li>Cable Matters 604002-BLK (BCM20702A0)</li>
+<li>GMYLE 3340 (BCM20702A0)</li>
+<li>IOGEAR GBU521W6 (BCM20702A0)</li>
+<li>INSIGNIA NS-PCY5BMA (BCM20702A0)</li>
+<li>Kinivo BTD-400 (BCM20702A0)</li>
+<li>LM Technologies LM506 (BCM20702A1)</li>
+<li>LM Technologies LM1010 (BCM20702A0) 📶</li>
+<li>Plugable USB-BT4LE (BCM20702A0)</li>
+<li>SoundBot SB342 (BCM20702A0)</li>
+<li>StarTech USBBT2EDR4 (BCM20702A0)</li>
+<li>Targus ACB10US1 (BCM20702A0)</li>
+</ul>
+</details>
+<p>📶 表示外置天线</p>
+<p>大多数这些适配器可以同时保持七 (7) 个连接。</p>
+<h4 class="rp-toc-include" id="cypress-适配器"><a href="#cypress-适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Cypress 适配器</h4>
+<ul>
+<li>Raspberry Pi 3B+ (CYW43455)</li>
+<li>Raspberry Pi 4B (CYW43455)</li>
+</ul>
+<p>这些适配器通过 UART 总线连接，可能会限制其性能。</p>
+<h4 class="rp-toc-include" id="高性能判定方法"><a href="#高性能判定方法" class="rp-header-anchor rp-link" aria-hidden="true">#</a>高性能判定方法</h4>
+<p>性能主要由芯片和适配器的 Linux 驱动程序组合决定。一些使用相同芯片的供应商性能不可接受，被列为不支持。</p>
+<p>适配器要被标记为高性能，必须满足以下要求：</p>
+<ul>
+<li>在约 1 秒或更短时间内建立连接</li>
+<li>每秒至少处理一次来自设备的广播而不丢失数据</li>
+<li>95% 的连接尝试在两次内成功</li>
+<li>满足上述要求，使用 Home Assistant 2022.11.1 或更高版本以及 Home Assistant 操作系统 9.3 或更高版本</li>
+<li>必须能够同时保持五 (5) 个连接</li>
+</ul>
+<p>性能测试使用以下硬件：</p>
+<ul>
+<li>在 BlueZ 缓存 GATT 服务后与 Nanoleaf A19 灯泡 NL45-0800 建立活动连接</li>
+<li>来自 Oral-B iO 系列 8 的广播</li>
+<li>仅外部适配器：运行 Home Assistant 操作系统 9.3 的 Home Assistant Blue，配有 USB 延长线。</li>
+</ul>
+<h3 class="rp-toc-include" id="已知可工作的适配器"><a href="#已知可工作的适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知可工作的适配器</h3>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+已知可工作的适配器列出了不满足高性能要求但通常可以工作的适配器。这些适配器的性能差异很大，可能需要长达三十秒或更长时间才能建立连接。这些适配器也可能错过广播，如按钮按下或温度更新。</p></div></div>
+<h4 class="rp-toc-include" id="realtek-rtl8761bu-适配器"><a href="#realtek-rtl8761bu-适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Realtek RTL8761BU 适配器</h4>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">Warning</div><div class="rp-callout__content"><p>
+这些适配器没有复位引脚。当它们停止响应时，内核目前无法自动重置它们，可能需要物理拔出并重新插入才能恢复操作。</p></div></div>
+<details>
+<summary>Realtek RTL8761BU 适配器</summary>
+<ul>
+<li>ASUS USB-BT500 (RTL8761BU)</li>
+<li>Avantree DG45 (RTL8761BU)</li>
+<li>COMCAST CF-B03 (RTL8761BU)</li>
+<li>COMCAST CF-B05 (RTL8761BU) 📶</li>
+<li>EDUP LOVE EP-B3536 (RTL8761BU) 📶</li>
+<li>ISEKIE KW-B3519 (RTL8761BU)</li>
+<li>Maxuni BT-501 (RTL8761BU)</li>
+<li>MPOW BH45A (RTL8761BU)</li>
+<li>Plugable USB-BT5 (RTL8761BU)</li>
+<li>StarTech USBA-BLUETOOTH-V5-C2 (RTL8761BU)</li>
+<li>SUMEE BT501 (RTL8761BU)</li>
+<li>UGREEN CM390 (RTL8761BU)</li>
+<li>XDO BT802 (RTL8761BU) 📶</li>
+<li>ZEXMTE BT-505 (RTL8761BU) 📶</li>
+<li>ZEXMTE BT-DG54 (RTL8761BU) 📶</li>
+<li>ZEXMTE Z01 (RTL8761BU) 📶</li>
+<li>ZETSAGE BH451A (RTL8761BU) 📶</li>
+</ul>
+</details>
+<p>📶 表示外置天线</p>
+<h3 class="rp-toc-include" id="不支持的适配器"><a href="#不支持的适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>不支持的适配器</h3>
+<details>
+<summary>不支持的适配器</summary>
+<ul>
+<li>Alfa AWUS036EACS (RTL8821CU) - 频繁连接失败和掉线</li>
+<li>BASEUS BR8651A01 BA04 - 广播掉线</li>
+<li>Belkin F8T003 ver 2. - 设置和添加失败</li>
+<li>Bluegiga BLED112 - USB ID <code>2458:0001</code> 尚无可用的驱动程序</li>
+<li>EDIMAX EW-7611ULB (RTL8723BU) - 频繁连接失败和掉线</li>
+<li>EDUP EP-AC1661 (RTL8821CU) - 频繁连接失败和掉线</li>
+<li>eppfun AK3040G (ATS2851) - USB ID <code>10d7:b012</code> 尚无可用的驱动程序</li>
+<li>eppfun AK3040A (ATS2851) - USB ID <code>10d7:b012</code> 尚无可用的驱动程序</li>
+<li>KOAMTAC KBD 401G (CSR8510A10) - 适配器不稳定并掉线</li>
+<li>TRIPP-LITE CU885A/U261-001-BT4 (CSR8510A10) - 适配器不稳定并掉线</li>
+<li>QUMOX Bluetooth 5.0 (Barrot 8041A02) - 没有可工作的驱动程序</li>
+<li>UGREEEN CM591 (ATS2851) - USB ID <code>10d7:b012</code> 尚无可用的驱动程序</li>
+<li>UGREEEN CM749 (Barrot chipset) 📶 - USB ID <code>33fa:0010</code> 尚无可用的驱动程序</li>
+<li>tp-link UB400 (CSR4) - 有活动连接时频繁连接失败</li>
+<li>tp-link UB500 (RTL8761BU) - 有活动连接时频繁连接失败</li>
+<li>USB ID 为 <code>0a12:0001</code> 的 CSR 4.0 克隆版 - 不可恢复的驱动程序故障：这些克隆版插入时通常会在系统日志中显示类似 <code>CSR: Unbranded CSR clone detected; adding workarounds and force-suspending once...</code> 的消息。
+<ul>
+<li>多个标记为 CSR 4.0 的无品牌适配器</li>
+<li>5 CORE CSR 4.0</li>
+</ul>
+</li>
+</ul>
+</details>
+<p>📶 表示外置天线</p>
+<h2 class="rp-toc-include" id="多个适配器"><a href="#多个适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>多个适配器</h2>
+<p>蓝牙集成采用自动故障转移和连接路径逻辑来实现高可用性。</p>
+<p>仅 Linux 系统支持多个本地蓝牙适配器。将适配器放置得相距足够远以减少干扰。</p>
+<p>已知以下方法可以添加多个适配器：</p>
+<ul>
+<li><a href="#%E8%BF%9C%E7%A8%8B%E9%80%82%E9%85%8D%E5%99%A8%E8%93%9D%E7%89%99%E4%BB%A3%E7%90%86" class="rp-link">远程适配器（蓝牙代理）</a></li>
+<li>长 USB 延长线</li>
+<li>USB-以太网扩展器</li>
+<li><a href="https://usbip.sourceforge.net/" target="_blank" rel="noopener noreferrer" class="rp-link">USB/IP</a></li>
+</ul>
+<p>遵循<a href="https://developers.home-assistant.io/docs/bluetooth/?_highlight=Best+practices#best-practices-for-library-authors" target="_blank" rel="noopener noreferrer" class="rp-link">库作者最佳实践</a>的集成将自动通过信号最好的适配器连接，如果一个适配器不可用，则故障转移到活动适配器。</p>
+<h2 class="rp-toc-include" id="被动扫描"><a href="#被动扫描" class="rp-header-anchor rp-link" aria-hidden="true">#</a>被动扫描</h2>
+<p>如果主机系统运行启用了实验功能的 BlueZ 5.63 或更高版本，可以在选项流程中为每个适配器启用 Linux 上的被动扫描。此功能在 Home Assistant 操作系统 9.4 及更高版本中可用。</p>
+<p>许多集成需要主动扫描，在被动扫描时可能无法工作。</p>
+<h2 class="rp-toc-include" id="选项"><a href="#选项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选项</h2>
+<ol>
+<li>在 Home Assistant 中，前往 <a href="https://my.home-assistant.io/redirect/config_bluetooth/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>设置</strong> &gt; <strong>蓝牙</strong></a>。</li>
+<li>选择 <strong>适配器</strong>。</li>
+<li>在感兴趣的适配器上，选择齿轮图标 <iconify-icon inline="" icon="mdi:cog-outline" title="cog outline"></iconify-icon>，然后选择您的选项。
+<ul>
+<li>并非所有适配器都有选项。如果您没有看到齿轮图标，说明您的适配器不支持选项。</li>
+</ul>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="远程适配器蓝牙代理"><a href="#远程适配器蓝牙代理" class="rp-header-anchor rp-link" aria-hidden="true">#</a>远程适配器（蓝牙代理）</h2>
+<p>蓝牙集成支持从外部适配器接收不需要活动连接的设备和传感器的广播数据，以及建立活动连接。远程扫描器的数量仅受主机系统性能的限制。</p>
+<p>在添加多个远程适配器以增加范围或可用连接槽时，请将它们分开足够远以避免相互干扰。</p>
+<p>对于蓝牙代理的开发和测试，Home Assistant 蓝牙集成团队主要使用 <a href="https://www.olimex.com/Products/IoT/ESP32/ESP32-POE-ISO/open-source-hardware" target="_blank" rel="noopener noreferrer" class="rp-link">Olimex ESP32-POE-ISO-EA</a> 配合 <a href="https://www.olimex.com/Products/IoT/ESP32/BOX-ESP32-POE-ISO/" target="_blank" rel="noopener noreferrer" class="rp-link">Olimex BOX-ESP32-POE-ISO-EA-F</a>。这些设备与 <a href="https://esphome.io/projects/" target="_blank" rel="noopener noreferrer" class="rp-link">ESPHome 现成项目</a>兼容。</p>
+<p>:::tip</p>
+<ul>
+<li><code>-EA</code> 变体比标准非 <code>EA</code> 型号提供显著更好的射频性能。</li>
+<li>如果 <code>ESP32-POE-ISO-EA</code> 缺货，<code>ESP32-POE-ISO-EA-IND</code> 是一个不错的替代品。</li>
+<li><code>ESP32-POE-ISO-WROVER-EA</code> 型号<strong>不推荐</strong>，因为它使用不同的引脚配置，与 ESPHome 现成项目不兼容。</li>
+</ul>
+<p>:::
+支持以下远程适配器：</p>
+<ul>
+<li><a href="https://esphome.io/projects/?type=bluetooth" target="_blank" rel="noopener noreferrer" class="rp-link">ESPHome</a>
+<ul>
+<li>蓝牙广播监听：ESPHome ESP32 设备，固件 2022.8.2 或更高版本</li>
+<li>蓝牙广播捆绑：ESPHome ESP32 设备，固件 2023.6.0 或更高版本</li>
+<li>单个活动连接：ESPHome ESP32 设备，固件 2022.9.3 或更高版本</li>
+<li>多个活动连接：ESPHome ESP32 设备，固件 2022.11.0 或更高版本</li>
+</ul>
+</li>
+<li><a href="/home-assistant/integrations/shelly/index.html" class="rp-link">Shelly</a>
+<ul>
+<li>蓝牙广播监听：Shelly Gen2+ 设备</li>
+<li>蓝牙广播捆绑：Shelly Gen2+ 设备</li>
+<li>单个活动连接：不支持</li>
+<li>多个活动连接：不支持</li>
+</ul>
+</li>
+</ul>
+<p>蓝牙广播捆绑减少了 Home Assistant 和代理之间的流量，显著提高了性能，并减少了共享无线电的设备的蓝牙和 WiFi 竞争空中时间的情况。</p>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<h3 class="rp-toc-include" id="广播监视器"><a href="#广播监视器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>广播监视器</h3>
+<p>配置蓝牙后，<a href="https://my.home-assistant.io/redirect/bluetooth_advertisement_monitor/" target="_blank" rel="noopener noreferrer" class="rp-link">Bluetooth Advertisement Monitor</a> 将允许您查看范围内正在广播的设备。</p>
+<h3 class="rp-toc-include" id="连接监视器"><a href="#连接监视器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>连接监视器</h3>
+<p>配置蓝牙后，<a href="https://my.home-assistant.io/redirect/bluetooth_connection_monitor/" target="_blank" rel="noopener noreferrer" class="rp-link">Bluetooth Connection Monitor</a> 将允许您查看当前连接的设备。</p>
+<h3 class="rp-toc-include" id="改善连接时间"><a href="#改善连接时间" class="rp-header-anchor rp-link" aria-hidden="true">#</a>改善连接时间</h3>
+<p>连接时间和性能因蓝牙适配器和干扰而异很大。</p>
+<p>:::warning
+当切换到性能更好的适配器时，请禁用旧的、性能较差的适配器。在建立连接时会考虑最佳信号和可用连接槽，性能将受限于信号最好的、性能最差的适配器到达远程设备的能力。</p>
+<p>:::
+以下适配器按性能从最佳到最差排列：</p>
+<ul>
+<li>运行 ESPHome 2023.6.0 或更高版本并启用<a href="https://esphome.io/components/esp32_ble_tracker/#configuration-variables" target="_blank" rel="noopener noreferrer" class="rp-link">被动扫描</a>的<a href="#%E8%BF%9C%E7%A8%8B%E9%80%82%E9%85%8D%E5%99%A8%E8%93%9D%E7%89%99%E4%BB%A3%E7%90%86" class="rp-link">以太网连接蓝牙代理</a></li>
+<li>启用<a href="#%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F" class="rp-link">被动扫描</a>的 <a href="#%E5%B7%B2%E7%9F%A5%E5%8F%AF%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E9%80%82%E9%85%8D%E5%99%A8" class="rp-link">USB 高性能适配器</a></li>
+<li>运行 ESPHome 2023.6.0 或更高版本并启用<a href="https://esphome.io/components/esp32_ble_tracker/#configuration-variables" target="_blank" rel="noopener noreferrer" class="rp-link">被动扫描</a>的 <a href="#%E8%BF%9C%E7%A8%8B%E9%80%82%E9%85%8D%E5%99%A8%E8%93%9D%E7%89%99%E4%BB%A3%E7%90%86" class="rp-link">Wi-Fi 连接蓝牙代理</a></li>
+<li>运行 ESPHome 2023.6.0 或更高版本并启用<a href="https://esphome.io/components/esp32_ble_tracker/#configuration-variables" target="_blank" rel="noopener noreferrer" class="rp-link">主动扫描</a>的<a href="#%E8%BF%9C%E7%A8%8B%E9%80%82%E9%85%8D%E5%99%A8%E8%93%9D%E7%89%99%E4%BB%A3%E7%90%86" class="rp-link">以太网连接蓝牙代理</a></li>
+<li>启用主动扫描的 <a href="#%E5%B7%B2%E7%9F%A5%E5%8F%AF%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E9%80%82%E9%85%8D%E5%99%A8" class="rp-link">USB 高性能适配器</a></li>
+<li>运行 ESPHome 2023.6.0 或更高版本并启用<a href="https://esphome.io/components/esp32_ble_tracker/#configuration-variables" target="_blank" rel="noopener noreferrer" class="rp-link">主动扫描</a>的 <a href="#%E8%BF%9C%E7%A8%8B%E9%80%82%E9%85%8D%E5%99%A8%E8%93%9D%E7%89%99%E4%BB%A3%E7%90%86" class="rp-link">Wi-Fi 连接蓝牙代理</a></li>
+<li>启用<a href="#%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F" class="rp-link">被动扫描</a>的<a href="#cypress-based-adapters" class="rp-link">板载高性能适配器</a></li>
+<li>启用主动扫描的<a href="#cypress-based-adapters" class="rp-link">板载高性能适配器</a></li>
+<li>启用<a href="#%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F" class="rp-link">被动扫描</a>的<a href="#%E5%B7%B2%E7%9F%A5%E5%8F%AF%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%82%E9%85%8D%E5%99%A8" class="rp-link">已知可工作的适配器</a></li>
+<li>启用主动扫描的<a href="#%E5%B7%B2%E7%9F%A5%E5%8F%AF%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%82%E9%85%8D%E5%99%A8" class="rp-link">已知可工作的适配器</a></li>
+</ul>
+<h3 class="rp-toc-include" id="需要独占使用蓝牙适配器的集成"><a href="#需要独占使用蓝牙适配器的集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>需要独占使用蓝牙适配器的集成</h3>
+<p>虽然较新的集成可以共享蓝牙适配器，但一些旧集成需要独占使用适配器。启用此集成可能会阻止尚未更新使用新方法的集成正常工作。</p>
+<p>删除此集成的配置条目将释放适配器的控制权，并允许另一个集成获得蓝牙适配器的独占使用权。如果您手动将 <code>bluetooth:</code> 添加到您的 &quot;<code>configuration.yaml</code>&quot;，您还必须删除它以防止配置被重新创建。如果您需要继续使用旧集成，请考虑在 Linux 系统上添加第二个蓝牙适配器，因为将来会有更多集成转而使用蓝牙集成。</p>
+<h3 class="rp-toc-include" id="蓝牙与其他设备的干扰"><a href="#蓝牙与其他设备的干扰" class="rp-header-anchor rp-link" aria-hidden="true">#</a>蓝牙与其他设备的干扰</h3>
+<p>无线电干扰源可能导致传输/接收丢失或连接问题，并表现出诸如发送和接收蓝牙消息时出错/失败等症状，这可能导致性能显著下降。以下是一些基本但重要的提示，用于获得良好的设置起点，以实现更好的信号质量、覆盖范围和扩展范围。</p>
+<p>遵循以下所有优化提示应该能显著改善蓝牙无线电适配器的接收。以下见解描述了如何解决低功耗 2.4 GHz 数字无线电的已知限制。它可以解决或避免许多由干扰或蓝牙无线电适配器或设备放置不当引起的已知问题。</p>
+<p>计算机、外设和设备会产生<a href="https://en.wikipedia.org/wiki/Electromagnetic_interference" target="_blank" rel="noopener noreferrer" class="rp-link">电磁干扰（也称为 EMI/EMI/RMI）</a>，这可能会干扰 2.4 GHz 无线电频段频率上的信号传输，并降低与蓝牙适配器/设备的无线通信。</p>
+<p>例如，未屏蔽的 USB 3 端口及其电缆是出了名的影响 2.4 GHz 无线电接收的因素。请使用足够屏蔽的长 USB 延长线将蓝牙适配器放置在尽可能远离任何潜在 EMI/EMI/RMI 源的地方。</p>
+<h4 class="rp-toc-include" id="应该能改善大多数蓝牙设置的简单操作和常见的干扰原因"><a href="#应该能改善大多数蓝牙设置的简单操作和常见的干扰原因" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应该能改善大多数蓝牙设置的简单操作和常见的干扰原因</h4>
+<ul>
+<li>蓝牙适配器硬件：
+<ul>
+<li>旧/过时的蓝牙适配器硬件或糟糕的蓝牙适配器天线导致性能不佳：
+<ul>
+<li>购买并使用基于较新/现代芯片硬件的支持蓝牙 USB 适配器。
+<ul>
+<li>考虑购买带有外置天线的蓝牙适配器。</li>
+<li>虽然旧适配器可能可以工作，但它们可能有陈旧的硬件或旧固件，无法可靠运行。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>蓝牙适配器上的蓝牙适配器固件差或过时：
+<ul>
+<li>更新蓝牙适配器上的蓝牙芯片固件到最新版本。如果制造商或芯片制造商提供固件，更新通常很简单。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>蓝牙适配器对 RFI 敏感，可能非常容易受到各种 EMI/EMF 干扰：
+<ul>
+<li>蓝牙适配器放置不当或蓝牙适配器天线方向错误：
+<ul>
+<li>使用长 USB 延长线将蓝牙适配器放置在远离干扰和障碍物的地方。
+<ul>
+<li>确保 USB 延长线足够屏蔽（粗电缆通常有此功能）。
+<ul>
+<li>USB 延长线使蓝牙适配器/天线的方向更容易调整。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>尝试蓝牙适配器或其天线的不同物理位置和方向：
+<ul>
+<li>蓝牙适配器的最佳位置是尽可能靠近房子的中央。</li>
+<li>尝试将蓝牙适配器放置在远离墙壁、天花板和地板的地方。</li>
+<li>尝试适配器外置天线的不同方向（或整个蓝牙适配器）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>USB 3.0 端口/计算机/外设是 RFI/EMI/EMF 干扰的已知原因。（参见参考 <a href="https://www.usb.org/sites/default/files/327216.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">1</a> 和 <a href="https://www.unit3compliance.co.uk/2-4ghz-intra-system-or-self-platform-interference-demonstration/" target="_blank" rel="noopener noreferrer" class="rp-link">2</a>）。
+<ul>
+<li>确保只将蓝牙 USB 适配器连接到 USB 2.0 端口（而不是 USB 3.x 端口）。
+<ul>
+<li>如果您的计算机只有 USB 3.x 端口，则通过有源 USB 2.0 集线器连接适配器：
+<ul>
+<li>USB 2.0 集线器将把 USB 3.0 转换为 USB 2.0 端口，避免 USB 3.0 EMF。
+<ul>
+<li>使用外部电源的 USB 2.0 集线器将确保满足电源要求。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>通过添加全金属外壳/底盘/机箱来屏蔽任何未屏蔽的计算机/外设/设备。
+<ul>
+<li>单板计算机和 USB 3.x 硬盘驱动器是 EMF/EMI/RFI 的已知来源。
+<ul>
+<li>请注意，金属外壳可能会降低内置/内置蓝牙适配器的性能。</li>
+</ul>
+</li>
+<li>另外，请确保为任何此类外设/设备使用足够屏蔽的 USB 电缆。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>来自 Wi-Fi 路由器和 Wi-Fi 接入点或其他设备的 2.4 GHz RF 干扰 (RFI)：
+<ul>
+<li>虽然蓝牙设计为与 Wi-Fi 共存，但其较强的信号可能会产生干扰。
+<ul>
+<li>为了安全起见，请尝试将蓝牙适配器远离 Wi-Fi 接入点。</li>
+</ul>
+</li>
+<li>将蓝牙适配器远离电线/电缆、电源和家用电器。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="rp-toc-include" id="已发现的集成"><a href="#已发现的集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已发现的集成</h2>
+<p>以下集成会被蓝牙集成自动发现：</p>
+<ul>
+<li><a href="/home-assistant/integrations/acaia/index.html" class="rp-link">Acaia</a></li>
+<li><a href="/home-assistant/integrations/airthings_ble/index.html" class="rp-link">Airthings BLE</a></li>
+<li><a href="/home-assistant/integrations/aranet/index.html" class="rp-link">Aranet</a></li>
+<li><a href="/home-assistant/integrations/bluemaestro/index.html" class="rp-link">BlueMaestro</a></li>
+<li><a href="/home-assistant/integrations/bthome/index.html" class="rp-link">BTHome</a></li>
+<li><a href="/home-assistant/integrations/dormakaba_dkey/index.html" class="rp-link">Dormakaba dKey</a></li>
+<li><a href="/home-assistant/integrations/eq3btsmart/index.html" class="rp-link">eQ-3 Bluetooth Smart Thermostats</a></li>
+<li><a href="/home-assistant/integrations/eufylife_ble/index.html" class="rp-link">EufyLife</a></li>
+<li><a href="/home-assistant/integrations/fjaraskupan/index.html" class="rp-link">Fjäråskupan</a></li>
+<li><a href="/home-assistant/integrations/gardena_bluetooth/index.html" class="rp-link">Gardena Bluetooth</a></li>
+<li><a href="/home-assistant/integrations/govee_ble/index.html" class="rp-link">Govee Bluetooth</a></li>
+<li><a href="/home-assistant/integrations/homekit_controller/index.html" class="rp-link">HomeKit Device</a></li>
+<li><a href="/home-assistant/integrations/husqvarna_automower_ble/index.html" class="rp-link">Husqvarna Automower BLE</a></li>
+<li><a href="/home-assistant/integrations/ibeacon/index.html" class="rp-link">iBeacon Tracker</a></li>
+<li><a href="/home-assistant/integrations/idasen_desk/index.html" class="rp-link">IKEA Idasen Desk</a></li>
+<li><a href="/home-assistant/integrations/improv_ble/index.html" class="rp-link">Improv via BLE</a></li>
+<li><a href="/home-assistant/integrations/inkbird/index.html" class="rp-link">INKBIRD</a></li>
+<li><a href="/home-assistant/integrations/iron_os/index.html" class="rp-link">IronOS</a></li>
+<li><a href="/home-assistant/integrations/kegtron/index.html" class="rp-link">Kegtron</a></li>
+<li><a href="/home-assistant/integrations/keymitt_ble/index.html" class="rp-link">Keymitt MicroBot Push</a></li>
+<li><a href="/home-assistant/integrations/kulersky/index.html" class="rp-link">Kuler Sky</a></li>
+<li><a href="/home-assistant/integrations/lamarzocco/index.html" class="rp-link">La Marzocco</a></li>
+<li><a href="/home-assistant/integrations/ld2410_ble/index.html" class="rp-link">LD2410 BLE</a></li>
+<li><a href="/home-assistant/integrations/led_ble/index.html" class="rp-link">LED BLE</a></li>
+<li><a href="/home-assistant/integrations/medcom_ble/index.html" class="rp-link">Medcom Bluetooth</a></li>
+<li><a href="/home-assistant/integrations/melnor/index.html" class="rp-link">Melnor Bluetooth</a></li>
+<li><a href="/home-assistant/integrations/moat/index.html" class="rp-link">Moat</a></li>
+<li><a href="/home-assistant/integrations/mopeka/index.html" class="rp-link">Mopeka</a></li>
+<li><a href="/home-assistant/integrations/motionblinds_ble/index.html" class="rp-link">Motionblinds Bluetooth</a></li>
+<li><a href="/home-assistant/integrations/oralb/index.html" class="rp-link">Oral-B</a></li>
+<li><a href="/home-assistant/integrations/probe_plus/index.html" class="rp-link">Probe Plus</a></li>
+<li><a href="/home-assistant/integrations/qingping/index.html" class="rp-link">Qingping</a></li>
+<li><a href="/home-assistant/integrations/rapt_ble/index.html" class="rp-link">RAPT Bluetooth</a></li>
+<li><a href="/home-assistant/integrations/ruuvitag_ble/index.html" class="rp-link">Ruuvi BLE</a></li>
+<li><a href="/home-assistant/integrations/sensirion_ble/index.html" class="rp-link">Sensirion BLE</a></li>
+<li><a href="/home-assistant/integrations/sensorpro/index.html" class="rp-link">SensorPro</a></li>
+<li><a href="/home-assistant/integrations/sensorpush/index.html" class="rp-link">SensorPush</a></li>
+<li><a href="/home-assistant/integrations/snooz/index.html" class="rp-link">Snooz</a></li>
+<li><a href="/home-assistant/integrations/switchbot/index.html" class="rp-link">SwitchBot Bluetooth</a></li>
+<li><a href="/home-assistant/integrations/thermobeacon/index.html" class="rp-link">ThermoBeacon</a></li>
+<li><a href="/home-assistant/integrations/thermopro/index.html" class="rp-link">ThermoPro</a></li>
+<li><a href="/home-assistant/integrations/tilt_ble/index.html" class="rp-link">Tilt Hydrometer BLE</a></li>
+<li><a href="/home-assistant/integrations/xiaomi_ble/index.html" class="rp-link">Xiaomi BLE</a></li>
+<li><a href="/home-assistant/integrations/yalexs_ble/index.html" class="rp-link">Yale Access Bluetooth</a></li>
+</ul><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#开始之前" class="rp-toc-item rp-link" title="开始之前" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">开始之前</span></a><a href="#配置" class="rp-toc-item rp-link" title="配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置</span></a><a href="#linux-系统要求" class="rp-toc-item rp-link" title="Linux 系统要求" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Linux 系统要求</span></a><a href="#按安装方法的附加要求" class="rp-toc-item rp-link" title="按安装方法的附加要求" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">按安装方法的附加要求</span></a><a href="#容器的附加详情" class="rp-toc-item rp-link" title="容器的附加详情" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">容器的附加详情</span></a><a href="#安装-usb-蓝牙适配器" class="rp-toc-item rp-link" title="安装 USB 蓝牙适配器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">安装 USB 蓝牙适配器</span></a><a href="#已知可工作的高性能适配器" class="rp-toc-item rp-link" title="已知可工作的高性能适配器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">已知可工作的高性能适配器</span></a><a href="#剑桥硅无线电-csr-适配器" class="rp-toc-item rp-link" title="剑桥硅无线电 (CSR) 适配器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">剑桥硅无线电 (CSR) 适配器</span></a><a href="#博通-bcm-适配器" class="rp-toc-item rp-link" title="博通 (BCM) 适配器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">博通 (BCM) 适配器</span></a><a href="#cypress-适配器" class="rp-toc-item rp-link" title="Cypress 适配器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Cypress 适配器</span></a><a href="#高性能判定方法" class="rp-toc-item rp-link" title="高性能判定方法" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">高性能判定方法</span></a><a href="#已知可工作的适配器" class="rp-toc-item rp-link" title="已知可工作的适配器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">已知可工作的适配器</span></a><a href="#realtek-rtl8761bu-适配器" class="rp-toc-item rp-link" title="Realtek RTL8761BU 适配器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Realtek RTL8761BU 适配器</span></a><a href="#不支持的适配器" class="rp-toc-item rp-link" title="不支持的适配器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">不支持的适配器</span></a><a href="#多个适配器" class="rp-toc-item rp-link" title="多个适配器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">多个适配器</span></a><a href="#被动扫描" class="rp-toc-item rp-link" title="被动扫描" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">被动扫描</span></a><a href="#选项" class="rp-toc-item rp-link" title="选项" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">选项</span></a><a href="#远程适配器蓝牙代理" class="rp-toc-item rp-link" title="远程适配器（蓝牙代理）" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">远程适配器（蓝牙代理）</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#广播监视器" class="rp-toc-item rp-link" title="广播监视器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">广播监视器</span></a><a href="#连接监视器" class="rp-toc-item rp-link" title="连接监视器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">连接监视器</span></a><a href="#改善连接时间" class="rp-toc-item rp-link" title="改善连接时间" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">改善连接时间</span></a><a href="#需要独占使用蓝牙适配器的集成" class="rp-toc-item rp-link" title="需要独占使用蓝牙适配器的集成" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">需要独占使用蓝牙适配器的集成</span></a><a href="#蓝牙与其他设备的干扰" class="rp-toc-item rp-link" title="蓝牙与其他设备的干扰" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">蓝牙与其他设备的干扰</span></a><a href="#应该能改善大多数蓝牙设置的简单操作和常见的干扰原因" class="rp-toc-item rp-link" title="应该能改善大多数蓝牙设置的简单操作和常见的干扰原因" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">应该能改善大多数蓝牙设置的简单操作和常见的干扰原因</span></a><a href="#已发现的集成" class="rp-toc-item rp-link" title="已发现的集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已发现的集成</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

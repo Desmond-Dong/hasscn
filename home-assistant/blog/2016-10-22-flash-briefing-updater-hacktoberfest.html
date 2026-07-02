@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0.31：为你播报新闻、一些严肃事项、Hacktoberfest，以及破坏性 Z-Wave 变更 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="0.31：为你播报新闻、一些严肃事项、Hacktoberfest，以及破坏性 Z-Wave 变更 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="支持 Alexa Flash Briefing API、持久通知中的 Markdown、全新的 updater 组件、Hacktoberfest，以及破坏性的 Z-Wave 变更。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="支持 Alexa Flash Briefing API、持久通知中的 Markdown、全新的 updater 组件、Hacktoberfest，以及破坏性的 Z-Wave 变更。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/images/blog/2016-10-hacktoberfest/hacktoberfest.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2016-10-flash-briefing-updater-hacktoberfest/map.png"/><link rel="preload" as="image" href="/home-assistant/images/blog/2016-10-flash-briefing-updater-hacktoberfest/stay-classy.jpg"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item rp-hover-group__item--active" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客首页</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-03-04-release-20263.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.3: 大扫除</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-02-24-heiman-joins-works-with-home-assistant.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Heiman 加入 WWHa</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-02-04-release-20262.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.2: 家，甜蜜的概览</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2026-01-07-release-20261.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2026.1: 家就是仪表盘所在</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-12-17-music-assistant-2-7.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Music Assistant 2.7</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-12-03-release-202512.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.12: 触发节日</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-11-05-release-202511.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.11: 选择、自动化和派</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-10-01-release-202510.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2025.10: 撤销、重做</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/blog/2025-09-17-home-assistant-turns-12.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Home Assistant 12 岁</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="031为你播报新闻一些严肃事项hacktoberfest以及破坏性-z-wave-变更"><a href="#031为你播报新闻一些严肃事项hacktoberfest以及破坏性-z-wave-变更" class="rp-header-anchor rp-link" aria-hidden="true">#</a>0.31：为你播报新闻、一些严肃事项、Hacktoberfest，以及破坏性 Z-Wave 变更<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>朋友，你好，又见面了。</p>
+<p>最近怎么样？今天过得好吗？我们过得相当不错。如果你今天状态一般，希望这篇内容能让你开心一点……</p>
+<p>每隔一个周末，我们这里都会进入一阵忙碌，然后在向世界发布 Home Assistant 新版本时长舒一口气。这次也一样。我们的开发者社区再次带来了一个漂亮的新发布，包含大量新功能与改进。希望你会喜欢。</p>
+<p>开始之前还有最后一件事要提醒你……<a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">@balloob</a> 这周稍微偷了个懒，于是又让我（<a href="https://github.com/robbiet480" target="_blank" rel="noopener noreferrer" class="rp-link">@robbiet480</a>）来写这篇博客并发布版本。看来我在 <a href="/%E5%8D%9A%E5%AE%A2/2016/08/28/%E9%80%9A%E7%9F%A5-hue-fake-unification/" class="rp-link">0.27</a> 里表现还不算差。至于这次会有什么惊喜，你永远猜不到。好了，铺垫结束，开始正题……</p>
+<h2 class="rp-toc-include" id="统计更新"><a href="#统计更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>统计更新</h2>
+<p>遗憾的是，这次没有特别炸裂的数据可以分享，不过我们最近确实突破了 7,000 次提交！本次发布共有 45 位贡献者参与。希望借助新的 updater 组件，我们能在 0.32 的博客文章里给你带来更有意思的统计数据。</p>
+<h2 class="rp-toc-include" id="hacktoberfest"><a href="#hacktoberfest" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hacktoberfest</h2>
+<p><img src="/images/blog/2016-10-hacktoberfest/hacktoberfest.png" alt="Hacktoberfest logo"/></p>
+<p>十月就意味着 Hacktoberfest，我们的社区这次也交出了非常出色的改进和新增内容。在写这篇文章时，<a href="https://github.com/home-assistant/home-assistant/labels/Hacktoberfest" target="_blank" rel="noopener noreferrer" class="rp-link">home-assistant 仓库</a>已合并 194 个、仍有 41 个打开的拉取请求；<a href="https://github.com/home-assistant/home-assistant.io/labels/Hacktoberfest" target="_blank" rel="noopener noreferrer" class="rp-link">home-assistant.github.io 仓库</a>已合并 209 个、仍有 28 个打开的拉取请求。如果你也想一起参与，欢迎看看我们的 <a href="/%E5%8D%9A%E5%AE%A2/2016/10/02/hacktoberfest/" class="rp-link">Hacktoberfest</a> 博客文章或 <a href="https://hacktoberfest.digitalocean.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Hacktoberfest 官方网站</a>。只要你在十月里有 4 个拉取请求被合并，就能免费拿到一件超棒的 T 恤！我们甚至还有一些非开发者只需一点点努力就能完成的任务。不过要抓紧了，只剩 9 天，而且大多数简单任务已经被领走了！</p>
+<h2 class="rp-toc-include" id="️-大幅改进的-updater-组件请务必阅读️"><a href="#️-大幅改进的-updater-组件请务必阅读️" class="rp-header-anchor rp-link" aria-hidden="true">#</a>⚠️ 大幅改进的 updater 组件（请务必阅读！）⚠️</h2>
+<p>这个发布对我们的 <a href="/integrations/updater/" class="rp-link">updater</a> 组件进行了更新。updater 组件的职责是检查是否有新版本可用，并在有更新时通知用户。</p>
+<p>过去，这个组件会通过 <a href="https://pypi.python.org/pypi" target="_blank" rel="noopener noreferrer" class="rp-link">PyPi</a>（Python 包管理平台）检查是否有新更新。这会带来几个问题：</p>
+<ol>
+<li>我们无法进行渐进式发布</li>
+<li>我们无法向用户展示额外信息（比如更新日志链接或发布日期）</li>
+<li>我们无法就关键安全更新向用户发出警告</li>
+</ol>
+<p>为了解决这些问题，我们决定自行托管版本检查服务。既然本来就要搭建基础设施，我们就顺势更进一步。这就引出了这次更新里最重要的部分：</p>
+<h3 class="rp-toc-include" id="你需要了解的内容重点"><a href="#你需要了解的内容重点" class="rp-header-anchor rp-link" aria-hidden="true">#</a>你需要了解的内容（重点）</h3>
+<p>还记得我在标题里说过这次发布有点“严肃内容”吗？我们在 updater 组件中加入了基础分析数据，这些数据会发送到服务器并存储下来，帮助我们更好地了解用户群体。</p>
+<p>每个运行 updater 组件的 Home Assistant 实例都会生成一个<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener noreferrer" class="rp-link">唯一 ID</a>（基于 UUIDv4），用于区分不同实例。这个 UUID 会保存在你配置目录中的 <code>.uuid</code> 文件里。</p>
+<h4 class="rp-toc-include" id="选择退出"><a href="#选择退出" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选择退出</h4>
+<p>你有两种方式选择退出。第一种是使用 updater 的新选项 <code>opt_out</code>。这样 updater 仍会继续检查更新，但不会向我们共享你的系统信息。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">updater</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  reporting</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>你也可以从 <code>configuration.yaml</code> 中移除 <code>updater:</code> 来彻底禁用 updater 组件，不过<strong>我们不建议你这样做</strong>，因为你会错过关键更新。</p>
+<p>最后，你也可以删除 <code>.uuid</code> 文件并重启 Home Assistant，以重置唯一标识符。</p>
+<h4 class="rp-toc-include" id="home-assistant-更新服务器上存储的数据"><a href="#home-assistant-更新服务器上存储的数据" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Home Assistant 更新服务器上存储的数据</h4>
+<p>下面是我生产环境 Home Assistant 实例在服务器端看到的数据：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Name</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>arch</code></td><td>CPU 架构</td><td><code>x86_64</code></td></tr><tr><td><code>distribution</code></td><td>Linux 发行版名称（仅 Linux）</td><td><code>Ubuntu</code></td></tr><tr><td><code>docker</code></td><td>是否在 Docker 内运行</td><td><code>false</code></td></tr><tr><td><code>os_name</code></td><td>操作系统名称</td><td><code>Darwin</code></td></tr><tr><td><code>os_version</code></td><td>操作系统版本</td><td><code>10.12</code></td></tr><tr><td><code>python_version</code></td><td>Python 版本</td><td><code>3.5.2</code></td></tr><tr><td><code>timezone</code></td><td>时区</td><td><code>America/Los_Angeles</code></td></tr><tr><td><code>user_agent</code></td><td>提交分析数据时使用的 user agent</td><td><code>python-requests/2.11.1</code></td></tr><tr><td><code>uuid</code></td><td>唯一标识符</td><td><code>10321ee6094d4a2ebb5ed55c675d5f5e</code></td></tr><tr><td><code>version</code></td><td>Home Assistant 版本</td><td><code>0.31.0</code></td></tr><tr><td><code>virtualenv</code></td><td>是否在 virtualenv 内运行</td><td><code>true</code></td></tr></tbody></table></div>
+<p>除了上述采集的数据外，服务器还会基于你的 IP 地址进行地理查询，以确定你所在的城市。这里要非常、非常明确地说明：<strong>Home Assistant updater 不会：在数据库中存储你的 IP 地址，也不会上传你 <code>configuration.yaml</code> 中的位置配置信息。</strong></p>
+<p class="img">
+  <img src="/home-assistant/images/blog/2016-10-flash-briefing-updater-hacktoberfest/map.png"/>
+  我的 IP 经过地理查询后定位到 Oakland，经纬度指向该城市的地理中心。
+</p>
+<p>服务器还会为数据增加两个时间戳：首次看到该实例 UUID 的时间，以及最近一次看到该实例的时间。因此会得到以下额外数据：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Name</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>first_seen_datetime</code></td><td>首次提交实例 ID 的时间</td><td><code>2016-10-22T19:56:03.542Z</code></td></tr><tr><td><code>geo_city</code></td><td>GeoIP 判定的城市</td><td><code>Oakland</code></td></tr><tr><td><code>geo_country_code</code></td><td>GeoIP 判定的国家代码</td><td><code>US</code></td></tr><tr><td><code>geo_country_name</code></td><td>GeoIP 判定的国家名称</td><td><code>United States</code></td></tr><tr><td><code>geo_latitude</code></td><td>GeoIP 判定的纬度（城市级）</td><td><code>37.8047</code></td></tr><tr><td><code>geo_longitude</code></td><td>GeoIP 判定的经度（城市级）</td><td><code>-122.2124</code></td></tr><tr><td><code>geo_metro_code</code></td><td>GeoIP 判定的都会区代码</td><td><code>807</code></td></tr><tr><td><code>geo_region_code</code></td><td>GeoIP 判定的地区代码</td><td><code>CA</code></td></tr><tr><td><code>geo_region_name</code></td><td>GeoIP 判定的地区名称</td><td><code>California</code></td></tr><tr><td><code>geo_time_zone</code></td><td>GeoIP 判定的时区</td><td><code>America/Los_Angeles</code></td></tr><tr><td><code>geo_zip_code</code></td><td>GeoIP 判定的邮编</td><td><code>94602</code></td></tr><tr><td><code>last_seen_datetime</code></td><td>最近一次提交实例 ID 的时间</td><td><code>2016-10-22T19:56:03.542Z</code></td></tr></tbody></table></div>
+<p>这些数据会在最高等级的安全措施下保存。更新系统运行在由我（<a href="https://github.com/robbiet480" target="_blank" rel="noopener noreferrer" class="rp-link">@robbiet480</a>）持有的安全 Amazon Web 服务账户中。我本人有 5 年复杂 AWS 部署经验和深厚的安全背景。我已审计整个系统，并确保采取了一切必要措施来保护数据，包括严格限制访问权限（只有 <a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">@balloob</a> 和我本人）。虽然这些数据并不直接指向个人身份，但我们完全理解有些用户会对此顾虑。请理解，我们收集这些信息仅用于更好地了解用户群体，以便提供比现在更好的长期支持和功能开发。</p>
+<p>我们目前没有任何公开披露这些信息的计划。如果未来有这类计划，我们当然会提前通知你。还需要明确的是，我们绝不会出售这些信息，也不会允许其被用于 Home Assistant 之外的用途。</p>
+<p>感谢你理解我们收集这些数据的原因。我们希望你保持该功能开启，但如果你对此感到不适，我们也完全理解。</p>
+<p><em>本段已于 10 月 24 日更新，以更清楚地说明地理查询仅在城市级别进行。<a href="https://github.com/home-assistant/home-assistant.io/blob/c937242d154e509d2d84d10c51f654e20556fa21/source/_posts/2016-10-22-flash-briefing-updater-hacktoberfest.markdown" target="_blank" rel="noopener noreferrer" class="rp-link">查看原始版本。</a></em></p>
+<p>现在，回到有趣的内容……</p>
+<h2 class="rp-toc-include" id="晚上好我是-ron-burgundy下面为你带来今晚世界正在发生的事"><a href="#晚上好我是-ron-burgundy下面为你带来今晚世界正在发生的事" class="rp-header-anchor rp-link" aria-hidden="true">#</a>晚上好。我是 Ron Burgundy，下面为你带来今晚世界正在发生的事。</h2>
+<p>最近 Home Assistant 突然有了个疯狂想法：它觉得自己做得还不够多，还想继续挑战极限。我也不太明白它怎么冒出这个奇怪念头，但它现在显然认为，自己最新的“业余爱好”应该是兼职当个新闻主播。</p>
+<p>0.31 新增了对全新 <a href="https://developer.amazon.com/alexa-skills-kit/flash-briefing" target="_blank" rel="noopener noreferrer" class="rp-link">Alexa Flash Briefing API</a> 的支持，让你在请求 Alexa 播报简报时，随时获得来自 Home Assistant 的更新。你可能会问这有什么用？比如现在我每天早上起床听简报时，Home Assistant 会在末尾补上这段内容：</p>
+<blockquote>
+<p>Drive time with traffic is 35 minutes. There is an UberPOOL that will cost $11.52, estimated to be 2 minutes away, for a total of 37 minutes. BART is currently estimated to take 29 minutes. You should take BART, as it is estimated to be faster by 8 minutes.</p>
+</blockquote>
+<p>这样我每天早上就知道怎么最快去 <a href="http://runway.is" target="_blank" rel="noopener noreferrer" class="rp-link">我的本职工作</a> 了（不，Home Assistant <em>并不是</em> 我的本职工作，虽然有时候看起来很像）。这显然不是最典型的家庭自动化示例，但你应该已经明白思路了。你完全可以用它来播报昨晚家里发生的重要事件，或者朗读你所在区域的本地天气。得益于音频支持，你甚至可以把 Alexa Flash Briefing 默认来源全部换成你自己的新闻源。Home Assistant 同时支持文本和音频内容，也支持在 Alexa App 中展示数据。还要特别说明一点：与现有 Skill 集成不同，Flash Briefing API <em>不要求</em> HTTPS（<em>但如果可以，你仍然应该使用 HTTPS</em>）。更多信息请查看新的<a href="/integrations/alexa/" class="rp-link">文档</a>。</p>
+<p class="img">
+  <img src="/home-assistant/images/blog/2016-10-flash-briefing-updater-hacktoberfest/stay-classy.jpg"/>
+  继续保持优雅，圣地亚哥。（这个梗好笑在于 balloob 就住在圣地亚哥）
+</p>
+<h2 class="rp-toc-include" id="z-wave-即将迎来重大不兼容变更"><a href="#z-wave-即将迎来重大不兼容变更" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Z-Wave 即将迎来重大不兼容变更</h2>
+<p>最近 <a href="https://github.com/lukas-hetzenecker" target="_blank" rel="noopener noreferrer" class="rp-link">@lukas-hetzenecker</a> 发现了一个相当棘手的 Z-Wave <a href="https://github.com/home-assistant/home-assistant/pull/3759" target="_blank" rel="noopener noreferrer" class="rp-link">问题</a>。如果你有多个同型号 Z-Wave 设备，它们有不小概率会尝试使用同一个实体 ID。为了解决这个问题，我们现在会把内部 Z-Wave 索引追加到所有 Z-Wave 实体 ID 的末尾。</p>
+<p>这对所有 Z-Wave 用户意味着：你需要更新配置来适配这项变化。我自己有不少（17 个）Z-Wave 设备，这周刚完整走过一遍。下面是我做的事情：</p>
+<ul>
+<li>更新自定义配置（customizations）</li>
+<li>更新分组（groups）</li>
+<li>更新我的 <code>zwave.customize</code> 配置段</li>
+<li>更新使用旧实体 ID 的 Alexa skills</li>
+<li>因为我在 Alexa 中使用了 <code>emulated_hue</code>，且 <code>emulated_hue</code> 以实体 ID 作为唯一标识，所以我还需要先从 Alexa 删除所有 Z-Wave 设备，再重新添加</li>
+</ul>
+<p>你的待办清单可能和我不完全一样，我只是把自己做过的步骤列出来，帮你梳理需要考虑的点。整个过程并不算难，尤其是在 Sublime Text 里用全局查找替换时更快，不过我也大概花了 20 分钟才完成。</p>
+<p>我知道这真的很烦人，尤其是我们曾在 <a href="/%E5%8D%9A%E5%AE%A2/2016/01/30/insteon-lifx-twitter-and-Zigbee/#backwards-incompatible-changes" class="rp-link">0.12</a> 里说过 Z-Wave ID 理论上不该再变化了，但这次我们不得不收回那句话。我依然会说，未来 Z-Wave ID 应该不会再改动，不过显然我们也看到了这种承诺的风险。总结一下这部分：抱歉，但这次真的不得不改。</p>
+<h2 class="rp-toc-include" id="all-changes"><a href="#all-changes" class="rp-header-anchor rp-link" aria-hidden="true">#</a>All changes</h2>
+<ul>
+<li><a href="/integrations/updater/" class="rp-link">Updater</a> component (<a href="https://github.com/infamy" target="_blank" rel="noopener noreferrer" class="rp-link">@infamy</a>, <a href="https://github.com/robbiet480" target="_blank" rel="noopener noreferrer" class="rp-link">@robbiet480</a>, <a href="https://github.com/kellerza" target="_blank" rel="noopener noreferrer" class="rp-link">@kellerza</a>)</li>
+<li>Continue to 设置 other platforms when 1 platform config is invalid (<a href="https://github.com/kellerza" target="_blank" rel="noopener noreferrer" class="rp-link">@kellerza</a>)</li>
+<li>Create <a href="/integrations/persistent_notification/" class="rp-link">persistent 通知</a> when a platform contains invalid config (<a href="https://github.com/kellerza" target="_blank" rel="noopener noreferrer" class="rp-link">@kellerza</a>)</li>
+<li>Logbook: Allow <a href="/integrations/logbook/" class="rp-link">filtering</a> domains and 实体 to be shown (<a href="https://github.com/wokar" target="_blank" rel="noopener noreferrer" class="rp-link">@wokar</a>)</li>
+<li>HTTP: Change <code>approved_ips</code> from string to CIDR validation (<a href="https://github.com/mweinelt" target="_blank" rel="noopener noreferrer" class="rp-link">@mweinelt</a>)</li>
+<li>Persistent 通知: Allow using <a href="/integrations/persistent_notification/" class="rp-link">markdown</a> (<a href="https://github.com/justweb1" target="_blank" rel="noopener noreferrer" class="rp-link">@justweb1</a>)</li>
+<li>Netatmo: Add <a href="/integrations/netatmo/" class="rp-link">discovery</a> support (<a href="https://github.com/jabesq" target="_blank" rel="noopener noreferrer" class="rp-link">@jabesq</a>)</li>
+<li>Netatmo Welcome 摄像头: Add <a href="/integrations/netatmo#binary-%E4%BC%A0%E6%84%9F%E5%99%A8" class="rp-link">二元sensor</a> (<a href="https://github.com/jabesq" target="_blank" rel="noopener noreferrer" class="rp-link">@jabesq</a>)</li>
+<li>Support added for <a href="/integrations/haveibeenpwned" class="rp-link">HaveIBeenPwned</a> (<a href="https://github.com/joyrider3774" target="_blank" rel="noopener noreferrer" class="rp-link">@joyrider3774</a>)</li>
+<li>设备 tracker: <code>known_devices.yaml</code> reading and writing tweaks and fixes (<a href="https://github.com/kellerza" target="_blank" rel="noopener noreferrer" class="rp-link">@kellerza</a>)</li>
+<li>Fix 温控 platforms showing the wrong temperature unit (<a href="https://github.com/rcloran" target="_blank" rel="noopener noreferrer" class="rp-link">@rcloran</a>)</li>
+<li>Lots of voluptuous love (<a href="https://github.com/fabaff" target="_blank" rel="noopener noreferrer" class="rp-link">@fabaff</a>)</li>
+<li>Ensure proper attribution for 天气 platforms (<a href="https://github.com/fabaff" target="_blank" rel="noopener noreferrer" class="rp-link">@fabaff</a>)</li>
+<li>Fix Telegram in Docker (<a href="https://github.com/jeanregisser" target="_blank" rel="noopener noreferrer" class="rp-link">@jeanregisser</a>)</li>
+<li>Support recursive config inclusions in YAML (<a href="https://github.com/lwis" target="_blank" rel="noopener noreferrer" class="rp-link">@lwis</a>)</li>
+<li>摄像头: <a href="/integrations/synology" class="rp-link">Synology</a> SS 摄像头 now supported (<a href="https://github.com/jgriff2" target="_blank" rel="noopener noreferrer" class="rp-link">@jgriff2</a>)</li>
+<li>History: Allow filtering domains and 实体 to be shown (<a href="https://github.com/wokar" target="_blank" rel="noopener noreferrer" class="rp-link">@wokar</a>)</li>
+<li>Media Player - Squeezebox: Now able to show artist and album (<a href="https://github.com/ih8gates" target="_blank" rel="noopener noreferrer" class="rp-link">@ih8gates</a>)</li>
+<li>Alexa: Flash Briefing skill support added (<a href="https://github.com/robbiet480" target="_blank" rel="noopener noreferrer" class="rp-link">@robbiet480</a>)</li>
+<li>设备 Tracker: Add support for Bbox Modem Router (<a href="https://github.com/HydrelioxGithub" target="_blank" rel="noopener noreferrer" class="rp-link">@HydrelioxGithub</a>)</li>
+<li>传感器: Add support for Bbox Modem Router (<a href="https://github.com/HydrelioxGithub" target="_blank" rel="noopener noreferrer" class="rp-link">@HydrelioxGithub</a>)</li>
+<li>Input select: 服务 added to pick next and prev option (<a href="https://github.com/persandstrom" target="_blank" rel="noopener noreferrer" class="rp-link">@persandstrom</a>)</li>
+<li>传感器: <a href="/integrations/arwn" class="rp-link">ARWN</a> now supported (<a href="https://github.com/sdague" target="_blank" rel="noopener noreferrer" class="rp-link">@sdague</a>)</li>
+<li>Pushbullet: Push an URL note if an url is provided inside data (<a href="https://github.com/jabesq" target="_blank" rel="noopener noreferrer" class="rp-link">@jabesq</a>)</li>
+<li>Z-Wave: Allow certain 设备 to be not added to Home Assistant (<a href="https://github.com/lukas-hetzenecker" target="_blank" rel="noopener noreferrer" class="rp-link">@lukas-hetzenecker</a>)</li>
+<li>New support for <a href="/integrations/zoneminder/" class="rp-link">Zoneminder</a> added (<a href="https://github.com/Khabi" target="_blank" rel="noopener noreferrer" class="rp-link">@Khabi</a>)</li>
+<li>天气: Allow tracking severe 天气 alerts with <a href="/integrations/wunderground" class="rp-link">WUnderground</a> (<a href="https://github.com/tchellomello" target="_blank" rel="noopener noreferrer" class="rp-link">@tchellomello</a>)</li>
+<li>传感器: New support added to track <a href="/integrations/min_max" class="rp-link">min/max/mean</a> (<a href="https://github.com/fabaff" target="_blank" rel="noopener noreferrer" class="rp-link">@fabaff</a>)</li>
+<li>Convert EntityComponent to be async (<a href="https://github.com/pvizeli" target="_blank" rel="noopener noreferrer" class="rp-link">@pvizeli</a>, <a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">@balloob</a>)</li>
+<li>Z-Wave: Add association 服务 (<a href="https://github.com/turbokongen" target="_blank" rel="noopener noreferrer" class="rp-link">@turbokongen</a>)</li>
+<li>前端 - 服务 dev tool: persist 状态 and tweak UI (<a href="https://github.com/justweb1" target="_blank" rel="noopener noreferrer" class="rp-link">@justweb1</a>)</li>
+<li>传感器: Support added for <a href="/integrations/scrape" class="rp-link">scraping</a> websites (<a href="https://github.com/fabaff" target="_blank" rel="noopener noreferrer" class="rp-link">@fabaff</a>)</li>
+<li>Clean up of tests (<a href="https://github.com/capellini" target="_blank" rel="noopener noreferrer" class="rp-link">@capellini</a>)</li>
+<li>New <code>fail</code> filter added to 模板 to raise on UndefinedError (<a href="https://github.com/jaharkes" target="_blank" rel="noopener noreferrer" class="rp-link">@jaharkes</a>)</li>
+<li>Support added for <a href="/integrations/emoncms_history/" class="rp-link">Emoncms history</a> (<a href="https://github.com/joyrider3774" target="_blank" rel="noopener noreferrer" class="rp-link">@joyrider3774</a>)</li>
+<li>Support for <a href="/integrations/apns" class="rp-link">Apple Push 通知 服务</a> (<a href="https://github.com/sam-io" target="_blank" rel="noopener noreferrer" class="rp-link">@sam-io</a>)</li>
+<li>Thermostat: Netatmo now supported (<a href="https://github.com/gieljnssns" target="_blank" rel="noopener noreferrer" class="rp-link">@gieljnssns</a>)</li>
+<li>报警 control 面板: <a href="/integrations/concord232#%E6%8A%A5%E8%AD%A6-control-%E9%9D%A2%E6%9D%BF" class="rp-link">Concord232</a> now supported (<a href="https://github.com/JasonCarter80" target="_blank" rel="noopener noreferrer" class="rp-link">@JasonCarter80</a>)</li>
+<li>通知: <a href="/integrations/matrix/#%E9%80%9A%E7%9F%A5" class="rp-link">Matrix</a> support added (<a href="https://github.com/mweinelt" target="_blank" rel="noopener noreferrer" class="rp-link">@mweinelt</a>)</li>
+<li>设备 tracker - nmap: Allow specifying multiple inputs for <a href="/integrations/nmap_tracker" class="rp-link">nmap</a> (<a href="https://github.com/hcooper" target="_blank" rel="noopener noreferrer" class="rp-link">@hcooper</a>)</li>
+<li>设备 Tracker - snmp: SNMPv3 now supported (<a href="https://github.com/T3m3z" target="_blank" rel="noopener noreferrer" class="rp-link">@T3m3z</a>)</li>
+<li>通知: Telstra SMS now supported (<a href="https://github.com/nvella" target="_blank" rel="noopener noreferrer" class="rp-link">@nvella</a>)</li>
+<li>摄像头: <a href="/integrations/verisure" class="rp-link">Verisure</a> now supported (<a href="https://github.com/turbokongen" target="_blank" rel="noopener noreferrer" class="rp-link">@turbokongen</a>)</li>
+<li>Support added for <a href="/integrations/neato#%E5%BC%80%E5%85%B3" class="rp-link">Neato</a> Connected Robot (<a href="https://github.com/jabesq" target="_blank" rel="noopener noreferrer" class="rp-link">@jabesq</a>)</li>
+<li>Media player: More options for <a href="/integrations/yamaha" class="rp-link">Yamaha</a> AVR (<a href="https://github.com/ehagan" target="_blank" rel="noopener noreferrer" class="rp-link">@ehagan</a>)</li>
+<li>传感器: Support for <a href="/integrations/pilight#%E4%BC%A0%E6%84%9F%E5%99%A8" class="rp-link">Pilight</a> 传感器 (<a href="https://github.com/DavidLP" target="_blank" rel="noopener noreferrer" class="rp-link">@DavidLP</a>)</li>
+<li>iOS support (<a href="https://github.com/robbiet480" target="_blank" rel="noopener noreferrer" class="rp-link">@robbiet480</a>)</li>
+<li>Minor features and bug fixes by <a href="https://github.com/mtl010957" target="_blank" rel="noopener noreferrer" class="rp-link">@mtl010957</a>, <a href="https://github.com/molobrakos" target="_blank" rel="noopener noreferrer" class="rp-link">@molobrakos</a>, <a href="https://github.com/flyte" target="_blank" rel="noopener noreferrer" class="rp-link">@flyte</a>, <a href="https://github.com/fabaff" target="_blank" rel="noopener noreferrer" class="rp-link">@fabaff</a>, <a href="https://github.com/phardy" target="_blank" rel="noopener noreferrer" class="rp-link">@phardy</a>, <a href="https://github.com/sander76" target="_blank" rel="noopener noreferrer" class="rp-link">@sander76</a>, <a href="https://github.com/T3m3z" target="_blank" rel="noopener noreferrer" class="rp-link">@T3m3z</a>, <a href="https://github.com/c-w" target="_blank" rel="noopener noreferrer" class="rp-link">@c-w</a>, <a href="https://github.com/balloob" target="_blank" rel="noopener noreferrer" class="rp-link">@balloob</a>, <a href="https://github.com/robbiet480" target="_blank" rel="noopener noreferrer" class="rp-link">@robbiet480</a>, <a href="https://github.com/StaticCube" target="_blank" rel="noopener noreferrer" class="rp-link">@StaticCube</a>, <a href="https://github.com/vittoriom" target="_blank" rel="noopener noreferrer" class="rp-link">@vittoriom</a>, <a href="https://github.com/hartmms" target="_blank" rel="noopener noreferrer" class="rp-link">@hartmms</a>, <a href="https://github.com/kirichkov" target="_blank" rel="noopener noreferrer" class="rp-link">@kirichkov</a>, <a href="https://github.com/mezz64" target="_blank" rel="noopener noreferrer" class="rp-link">@mezz64</a>, <a href="https://github.com/ishults" target="_blank" rel="noopener noreferrer" class="rp-link">@ishults</a>, <a href="https://github.com/Danielhiversen" target="_blank" rel="noopener noreferrer" class="rp-link">@Danielhiversen</a> and <a href="https://github.com/tchellomello" target="_blank" rel="noopener noreferrer" class="rp-link">@tchellomello</a>.</li>
+</ul>
+<h3 class="rp-toc-include" id="发布-0311---october-24"><a href="#发布-0311---october-24" class="rp-header-anchor rp-link" aria-hidden="true">#</a>发布 0.31.1 - October 24</h3>
+<ul>
+<li>Identify special character encoding 错误 in YAML files (<a href="https://github.com/kellerza" target="_blank" rel="noopener noreferrer" class="rp-link">@kellerza</a>, <a href="https://github.com/lwis" target="_blank" rel="noopener noreferrer" class="rp-link">@lwis</a>)</li>
+<li>iOS app component bug fixes (<a href="https://github.com/robbiet480" target="_blank" rel="noopener noreferrer" class="rp-link">@robbiet480</a>)</li>
+<li>Fix a spelling problem on 用户-facing 错误 (<a href="https://github.com/robbiet480" target="_blank" rel="noopener noreferrer" class="rp-link">@robbiet480</a>)</li>
+<li>YAML includes will ignore dirs/files prefixed with . (<a href="https://github.com/lwis" target="_blank" rel="noopener noreferrer" class="rp-link">@lwis</a>)</li>
+</ul>
+<h2 class="rp-toc-include" id="backward-incompatible-changes"><a href="#backward-incompatible-changes" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Backward-incompatible changes</h2>
+<ul>
+<li>The <a href="/integrations/http/" class="rp-link">HTTP</a> component now takes a different format for authenticating IPs</li>
+<li>配置 format has changed for <a href="/integrations/proximity/" class="rp-link">Proximity</a></li>
+<li>The <a href="/integrations/arduino/" class="rp-link">Arduino</a> platform are now covered by the 配置 check. Please check the 文档 to see how.</li>
+<li>The Z-Wave 实体 ID change mentioned above</li>
+</ul>
+<h2 class="rp-toc-include" id="如果你需要帮助"><a href="#如果你需要帮助" class="rp-header-anchor rp-link" aria-hidden="true">#</a>如果你需要帮助</h2>
+<p>如果你需要帮助，欢迎使用我们的 <a href="https://community.home-assistant.io/" target="_blank" rel="noopener noreferrer" class="rp-link">论坛</a>，或者加入我们的 <a href="https://discord.gg/c5DvZ4e" target="_blank" rel="noopener noreferrer" class="rp-link">聊天室</a>。发布说明也开放了评论，但我们更希望你使用前面的那些交流渠道。谢谢。</p>
+<h2 class="rp-toc-include" id="下次见"><a href="#下次见" class="rp-header-anchor rp-link" aria-hidden="true">#</a>下次见</h2>
+<p>感谢你读完上面的全部内容，尤其是这周的文章确实有点长。我们应该会在 11 月 5 日左右带着介绍 0.32 的新文章回来。</p>
+<p>-- Robbie</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客首页</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#统计更新" class="rp-toc-item rp-link" title="统计更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">统计更新</span></a><a href="#hacktoberfest" class="rp-toc-item rp-link" title="Hacktoberfest" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Hacktoberfest</span></a><a href="#️-大幅改进的-updater-组件请务必阅读️" class="rp-toc-item rp-link" title="⚠️ 大幅改进的 updater 组件（请务必阅读！）⚠️" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">⚠️ 大幅改进的 updater 组件（请务必阅读！）⚠️</span></a><a href="#你需要了解的内容重点" class="rp-toc-item rp-link" title="你需要了解的内容（重点）" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">你需要了解的内容（重点）</span></a><a href="#选择退出" class="rp-toc-item rp-link" title="选择退出" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">选择退出</span></a><a href="#home-assistant-更新服务器上存储的数据" class="rp-toc-item rp-link" title="Home Assistant 更新服务器上存储的数据" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Home Assistant 更新服务器上存储的数据</span></a><a href="#晚上好我是-ron-burgundy下面为你带来今晚世界正在发生的事" class="rp-toc-item rp-link" title="晚上好。我是 Ron Burgundy，下面为你带来今晚世界正在发生的事。" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">晚上好。我是 Ron Burgundy，下面为你带来今晚世界正在发生的事。</span></a><a href="#z-wave-即将迎来重大不兼容变更" class="rp-toc-item rp-link" title="Z-Wave 即将迎来重大不兼容变更" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Z-Wave 即将迎来重大不兼容变更</span></a><a href="#all-changes" class="rp-toc-item rp-link" title="All changes" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">All changes</span></a><a href="#发布-0311---october-24" class="rp-toc-item rp-link" title="发布 0.31.1 - October 24" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">发布 0.31.1 - October 24</span></a><a href="#backward-incompatible-changes" class="rp-toc-item rp-link" title="Backward-incompatible changes" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Backward-incompatible changes</span></a><a href="#如果你需要帮助" class="rp-toc-item rp-link" title="如果你需要帮助" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">如果你需要帮助</span></a><a href="#下次见" class="rp-toc-item rp-link" title="下次见" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">下次见</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

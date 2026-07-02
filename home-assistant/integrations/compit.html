@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compit - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Compit - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Compit 集成允许您将空调、通风和供暖控制器与 Home Assistant 集成。您需要一个 Compit iNext 账户，可以在 inext.compit.pl(https://inext.compit.pl) 设置。 本页属于 Home Assistant 中文文档。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Compit 集成允许您将空调、通风和供暖控制器与 Home Assistant 集成。您需要一个 Compit iNext 账户，可以在 inext.compit.pl(https://inext.compit.pl) 设置。 本页属于 Home Assistant 中文文档。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="compit"><a href="#compit" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Compit<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Compit</strong> 集成允许您将空调、通风和供暖控制器与 Home Assistant 集成。您需要一个 Compit iNext 账户，可以在 <a href="https://inext.compit.pl" target="_blank" rel="noopener noreferrer" class="rp-link">inext.compit.pl</a> 设置。</p>
+<h2 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h2>
+<ol>
+<li>在 <a href="https://inext.compit.pl" target="_blank" rel="noopener noreferrer" class="rp-link">inext.compit.pl</a> 创建账户。</li>
+<li>在您的账户中配置 Compit 设备。</li>
+</ol>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Username</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;您的 Compit iNext 账户用户名。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;您的 Compit iNext 账户密码。&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="支持的设备"><a href="#支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备</h2>
+<p>此集成支持 Compit 大多数型号的恒温器、控制器和传感器。</p>
+<h3 class="rp-toc-include" id="恒温器"><a href="#恒温器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>恒温器</h3>
+<ul>
+<li><a href="https://compit.pl/produkty/termostaty-pokojowe/8-termostat-pokojowy-nano-color.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">Nano Color</a> – 房间恒温器</li>
+<li><a href="https://compit.pl/produkty/termostaty-pokojowe/88-termostat-pokojowy-nano-color-2.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">Nano Color 2</a> – 房间恒温器</li>
+<li><a href="https://compit.pl/produkty/termostaty-pokojowe/24-termostat-pokojowy-nano-one.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">Nano One</a> – 房间恒温器</li>
+</ul>
+<h3 class="rp-toc-include" id="控制器"><a href="#控制器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>控制器</h3>
+<ul>
+<li><a href="https://compit.pl/produkty/osprzet/91-af-1.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">AF-1</a> – 防冻系统</li>
+<li><a href="https://compit.pl/dokumenty-do-pobrania/sterowniki-do-kot%C5%82%C3%B2w-dokumenty-do-pobrania/category/50-sterownik-kot%C5%82a-pelletowego-biomax-742.html?download=90:sterownik-kot%C5%82a-pelletowego-biomax-742-wersja-u7" target="_blank" rel="noopener noreferrer" class="rp-link">BioMax742</a> – 颗粒锅炉控制器</li>
+<li><a href="https://compit.pl/dokumenty-do-pobrania/sterowniki-do-kot%C5%82%C3%B3w-dokumenty-do-pobrania/category/126-sterownik-kotla-pelletowego-biomax-775.html?download=313:sterownik-kotla-pelletowego-biomax-775-wersja-7" target="_blank" rel="noopener noreferrer" class="rp-link">BioMax775</a>, BioMax772 – 颗粒锅炉控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-ogrzewania-podlogowego/40-sterownik-ogrzewania-podlogowego-l2.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">BWC310</a> – 混水阀控制器</li>
+<li><a href="https://compit.pl/produkty/osprzet/92-combo.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">COMBO</a> – Combo 模块</li>
+<li><a href="https://compit.pl/produkty/sterowniki-do-kotlow/73-sterownik-kotla-elektrycznego-el750-1.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">EL750</a> – 电锅炉控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-ogrzewania-podlogowego/40-sterownik-ogrzewania-podlogowego-l2.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">L2</a> – 地暖控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-uniwerslane/78-sterownik-do-podgrzewania-wody-r350-cwu.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R350.CWU</a> – 通用控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-instalacji/42-dwustopniowy-sterownik-temperatury-regulator-pi-regulator-krokowy-sterowanie-3-punktowe-r350-07.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R350 T3</a> – 通用控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-uniwerslane/85-pogodowy-regulator-temperatury-obiegu-grzewczego-z-mieszaczem-r350m.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R350.M</a> – 通用控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-pomp-ciepla/86-sterownik-kaskady-pomp-ciepla-r377-wersja-2.html" target="_blank" rel="noopener noreferrer" class="rp-link">R377B</a> – 热泵级联控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-pomp-ciepla/10-sterownik-pompy-ciepla-r470-one.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R470</a>, R480 – 热泵控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-pomp-ciepla/12-sterownik-pompy-ciepla-R490-one.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R490</a> – 热泵控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-do-kotlow/83-pogodowy-regulator-kotla-retortowego-i-instalacji-grzewczej-r771-2.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R770RS</a>, <a href="https://compit.pl/produkty/sterowniki-do-kotlow/83-pogodowy-regulator-kotla-retortowego-i-instalacji-grzewczej-r771-2.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R771RS</a> – 锅炉控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-instalacji/43-pogodowy-regulator-temperatury-obiegu-grzewczego-r810.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R810</a> – 供暖回路控制器</li>
+<li><a href="https://compit.pl/produkty/sterowniki-pomp-ciepla/89-r900.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">R900</a> – 热泵控制器</li>
+<li><a href="https://compit.pl/produkty/regulatory-solarne/22-sterownik-ukladu-solarnego-solarcomp-951.html" target="_blank" rel="noopener noreferrer" class="rp-link">SolarComp951</a> – 太阳能系统控制器</li>
+<li><a href="https://compit.pl/produkty/regulatory-solarne/23-sterownik-ukladu-solarnego-z-pwm-solarcomp-971.html" target="_blank" rel="noopener noreferrer" class="rp-link">SolarComp971</a> – 太阳能系统控制器</li>
+<li><a href="https://compit.pl/produkty/regulatory-solarne/70-sterownik-ukladu-solarnego-z-pwm-solarcomp-971c.html" target="_blank" rel="noopener noreferrer" class="rp-link">SolarComp971C</a> – 太阳能系统控制器</li>
+</ul>
+<h3 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<ul>
+<li><a href="https://compit.pl/produkty/osprzet/67-czujnik-stezenia-dwutlenku-wegla-wilgotnosci-i-temperatury-w-pomieszczeniach-shc.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">SHC</a> – CO₂、湿度和温度传感器</li>
+<li><a href="https://compit.pl/produkty/osprzet/87-czujnik-jakosci-powietrza-spm.html?ic=1" target="_blank" rel="noopener noreferrer" class="rp-link">SPM</a> – 空气质量传感器</li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+当 SPM 传感器连接到 Nano Color 恒温器时，在 Home Assistant 中显示为 <code>SPM - Nano Color</code>。当连接到 Nano Color 2 恒温器时，显示为 <code>SPM - Nano Color 2</code>。</p></div></div>
+<h2 class="rp-toc-include" id="支持的功能"><a href="#支持的功能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的功能</h2>
+<p><strong>Compit</strong> 集成提供以下实体。</p>
+<h3 class="rp-toc-include" id="传感器-1"><a href="#传感器-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<p>集成根据您的设备型号提供各种传感器。以下是可用传感器及其支持设备的完整列表。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+当 SPM 传感器连接到 Nano Color 恒温器时，在 Home Assistant 中显示为 <code>SPM - Nano Color</code>。当连接到 Nano Color 2 恒温器时，显示为 <code>SPM - Nano Color 2</code>。</p></div></div>
+<h4 class="rp-toc-include" id="温度传感器"><a href="#温度传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>温度传感器</h4>
+<ul>
+<li>
+<p><strong>室外温度</strong></p>
+<ul>
+<li><strong>描述</strong>：当前室外温度。</li>
+<li><strong>支持的设备</strong>：
+<ul>
+<li>R810（供暖回路控制器）</li>
+<li>R350 T3（通用控制器）</li>
+<li>Nano Color（房间恒温器）</li>
+<li>CO2 SHC（CO₂、湿度和温度传感器）</li>
+<li>R470（热泵控制器）</li>
+<li>BioMax742（颗粒锅炉控制器）</li>
+<li>R350.CWU（通用控制器）</li>
+<li>BioMax772（颗粒锅炉控制器）</li>
+<li>R770RS / R771RS（锅炉控制器）</li>
+<li>BioMax775（颗粒锅炉控制器）</li>
+<li>R350.M（通用控制器）</li>
+<li>Nano Color 2（房间恒温器）</li>
+<li>R900（热泵控制器）</li>
+<li>SPM（空气质量传感器）</li>
+<li>AF-1（防冻系统）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>锅炉温度</strong></p>
+<ul>
+<li><strong>描述</strong>：锅炉当前温度。</li>
+<li><strong>支持的设备</strong>：
+<ul>
+<li>BioMax742（颗粒锅炉控制器）</li>
+<li>BioMax772（颗粒锅炉控制器）</li>
+<li>R770RS / R771RS（锅炉控制器）</li>
+<li>BioMax775（颗粒锅炉控制器）</li>
+<li>EL750（电锅炉控制器）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>计算供暖温度</strong></p>
+<ul>
+<li><strong>描述</strong>：计算的目标供暖温度。</li>
+<li><strong>支持的设备</strong>：R810（供暖回路控制器）、BWC310（混水阀控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>目标供暖温度</strong></p>
+<ul>
+<li><strong>描述</strong>：目标供暖温度设置。</li>
+<li><strong>支持的设备</strong>：R810（供暖回路控制器）、BWC310（混水阀控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>回水温度</strong></p>
+<ul>
+<li><strong>描述</strong>：回水温度。</li>
+<li><strong>支持的设备</strong>：R810（供暖回路控制器）、AF-1（防冻系统）</li>
+</ul>
+</li>
+<li>
+<p><strong>计算目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：系统计算的目标温度。</li>
+<li><strong>支持的设备</strong>：R350 T3（通用控制器）、R350.CWU（通用控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>回路目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：供暖回路目标温度。</li>
+<li><strong>支持的设备</strong>：R350 T3（通用控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>混水器温度</strong></p>
+<ul>
+<li><strong>描述</strong>：混水阀处温度。</li>
+<li><strong>支持的设备</strong>：R350 T3（通用控制器）、R350.M（通用控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 1 混水器温度</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 1 混水器温度。</li>
+<li><strong>支持的设备</strong>：R770RS / R771RS（锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 2 混水器温度</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 2 混水器温度。</li>
+<li><strong>支持的设备</strong>：R770RS / R771RS（锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>集热器温度</strong></p>
+<ul>
+<li><strong>描述</strong>：太阳能集热器温度。</li>
+<li><strong>支持的设备</strong>：
+<ul>
+<li>SolarComp 951（太阳能系统控制器）</li>
+<li>SolarComp971（太阳能系统控制器）</li>
+<li>SolarComp971C（太阳能系统控制器）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>水箱温度 T2（底部）</strong></p>
+<ul>
+<li><strong>描述</strong>：水箱底部温度（传感器 T2）。</li>
+<li><strong>支持的设备</strong>：
+<ul>
+<li>SolarComp 951（太阳能系统控制器）</li>
+<li>SolarComp971（太阳能系统控制器）</li>
+<li>SolarComp971C（太阳能系统控制器）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>水箱温度 T3（顶部）</strong></p>
+<ul>
+<li><strong>描述</strong>：水箱顶部温度（传感器 T3）。</li>
+<li><strong>支持的设备</strong>：
+<ul>
+<li>SolarComp 951（太阳能系统控制器）</li>
+<li>SolarComp971（太阳能系统控制器）</li>
+<li>SolarComp971C（太阳能系统控制器）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>水箱温度 T4</strong></p>
+<ul>
+<li><strong>描述</strong>：传感器 T4 位置温度。</li>
+<li><strong>支持的设备</strong>：SolarComp 951（太阳能系统控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>生活热水温度</strong></p>
+<ul>
+<li><strong>描述</strong>：生活热水温度。</li>
+<li><strong>支持的设备</strong>：EL750（电锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>生活热水测量温度</strong></p>
+<ul>
+<li><strong>描述</strong>：测量的生活热水温度。</li>
+<li><strong>支持的设备</strong>：R350.CWU（通用控制器）、R480（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>缓冲回水温度</strong></p>
+<ul>
+<li><strong>描述</strong>：缓冲回水温度。</li>
+<li><strong>支持的设备</strong>：EL750（电锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>低位热源温度</strong></p>
+<ul>
+<li><strong>描述</strong>：低位热源温度。</li>
+<li><strong>支持的设备</strong>：R490（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>高位热源温度</strong></p>
+<ul>
+<li><strong>描述</strong>：高位热源温度。</li>
+<li><strong>支持的设备</strong>：R490（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>实际缓冲温度</strong></p>
+<ul>
+<li><strong>描述</strong>：当前缓冲温度。</li>
+<li><strong>支持的设备</strong>：R480（热泵控制器）、R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>实际生活热水温度</strong></p>
+<ul>
+<li><strong>描述</strong>：当前生活热水温度。</li>
+<li><strong>支持的设备</strong>：R480（热泵控制器）、R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>保护温度</strong></p>
+<ul>
+<li><strong>描述</strong>：保护温度传感器读数。</li>
+<li><strong>支持的设备</strong>：R350.M（通用控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>缓冲设定温度</strong></p>
+<ul>
+<li><strong>描述</strong>：缓冲温度设定点。</li>
+<li><strong>支持的设备</strong>：R377B（控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 1 实际供暖回路温度</strong></p>
+<ul>
+<li><strong>描述</strong>：供暖回路区域 1 当前温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 2 实际供暖回路温度</strong></p>
+<ul>
+<li><strong>描述</strong>：供暖回路区域 2 当前温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 3 实际供暖回路温度</strong></p>
+<ul>
+<li><strong>描述</strong>：供暖回路区域 3 当前温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 4 实际供暖回路温度</strong></p>
+<ul>
+<li><strong>描述</strong>：供暖回路区域 4 当前温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>实际高位热源温度</strong></p>
+<ul>
+<li><strong>描述</strong>：当前高位热源温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>计算缓冲温度</strong></p>
+<ul>
+<li><strong>描述</strong>：计算的缓冲温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>计算生活热水温度</strong></p>
+<ul>
+<li><strong>描述</strong>：计算的生活热水温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>计算高位热源温度</strong></p>
+<ul>
+<li><strong>描述</strong>：计算的高位热源温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 1 供暖目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 1 目标供暖温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 2 供暖目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 2 目标供暖温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 3 供暖目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 3 目标供暖温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 4 供暖目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 4 目标供暖温度。</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="空气质量传感器"><a href="#空气质量传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>空气质量传感器</h4>
+<ul>
+<li>
+<p><strong>PM2.5 等级</strong></p>
+<ul>
+<li><strong>描述</strong>：PM2.5 颗粒物状态等级（正常、警告、超标）。</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>PM10 等级</strong></p>
+<ul>
+<li><strong>描述</strong>：PM10 颗粒物状态等级（正常、警告、超标）。</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>PM2.5 测量值</strong></p>
+<ul>
+<li><strong>描述</strong>：PM2.5 颗粒物浓度（µg/m³）。</li>
+<li><strong>支持的设备</strong>：SPM（空气质量传感器）</li>
+</ul>
+</li>
+<li>
+<p><strong>PM10 测量值</strong></p>
+<ul>
+<li><strong>描述</strong>：PM10 颗粒物浓度（µg/m³）。</li>
+<li><strong>支持的设备</strong>：SPM（空气质量传感器）</li>
+</ul>
+</li>
+<li>
+<p><strong>PM1 等级测量值</strong></p>
+<ul>
+<li><strong>描述</strong>：PM1 颗粒物浓度（µg/m³）。</li>
+<li><strong>支持的设备</strong>：SPM - Nano Color 2（连接到 Nano Color 2 的空气质量传感器）</li>
+</ul>
+</li>
+<li>
+<p><strong>PM4 等级测量值</strong></p>
+<ul>
+<li><strong>描述</strong>：PM4 颗粒物浓度（µg/m³）。</li>
+<li><strong>支持的设备</strong>：SPM - Nano Color 2（连接到 Nano Color 2 的空气质量传感器）</li>
+</ul>
+</li>
+<li>
+<p><strong>CO₂ 等级</strong></p>
+<ul>
+<li><strong>描述</strong>：二氧化碳浓度（ppm）。</li>
+<li><strong>支持的设备</strong>：SPM - Nano Color 2（连接到 Nano Color 2 的空气质量传感器）</li>
+</ul>
+</li>
+<li>
+<p><strong>CO₂ 百分比</strong></p>
+<ul>
+<li><strong>描述</strong>：二氧化碳百分比。</li>
+<li><strong>支持的设备</strong>：SPM - Nano Color 2（连接到 Nano Color 2 的空气质量传感器）</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="湿度传感器"><a href="#湿度传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>湿度传感器</h4>
+<ul>
+<li><strong>湿度</strong>
+<ul>
+<li><strong>描述</strong>：相对湿度（%）。</li>
+<li><strong>支持的设备</strong>：SHC（CO₂、湿度和温度传感器）、SPM（空气质量传感器）</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="功率和能源传感器"><a href="#功率和能源传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>功率和能源传感器</h4>
+<ul>
+<li>
+<p><strong>集热器功率</strong></p>
+<ul>
+<li><strong>描述</strong>：太阳能集热器当前功率输出（kW）。</li>
+<li><strong>支持的设备</strong>：
+<ul>
+<li>SolarComp 951（太阳能系统控制器）</li>
+<li>SolarComp971（太阳能系统控制器）</li>
+<li>SolarComp971C（太阳能系统控制器）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>今日能源</strong></p>
+<ul>
+<li><strong>描述</strong>：今日收集的能源（kWh）。</li>
+<li><strong>支持的设备</strong>：SolarComp971（太阳能系统控制器）、SolarComp971C（太阳能系统控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>能源消耗</strong></p>
+<ul>
+<li><strong>描述</strong>：当前能源消耗（MW）。</li>
+<li><strong>支持的设备</strong>：SolarComp 971SD1（太阳能系统控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>总能源</strong></p>
+<ul>
+<li><strong>描述</strong>：总消耗能源（kWh）。</li>
+<li><strong>支持的设备</strong>：R350.CWU（通用控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>昨日能源</strong></p>
+<ul>
+<li><strong>描述</strong>：昨日消耗能源（kWh）。</li>
+<li><strong>支持的设备</strong>：R350.CWU（通用控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>昨日智能电网能源</strong></p>
+<ul>
+<li><strong>描述</strong>：昨日通过智能电网消耗的能源（kWh）。</li>
+<li><strong>支持的设备</strong>：R350.CWU（通用控制器）</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="燃料和电池传感器"><a href="#燃料和电池传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>燃料和电池传感器</h4>
+<ul>
+<li>
+<p><strong>燃料液位</strong></p>
+<ul>
+<li><strong>描述</strong>：当前燃料液位（%）。</li>
+<li><strong>支持的设备</strong>：
+<ul>
+<li>BioMax742（颗粒锅炉控制器）</li>
+<li>BioMax772（颗粒锅炉控制器）</li>
+<li>BioMax775（颗粒锅炉控制器）</li>
+<li>R770RS（锅炉控制器）</li>
+<li>R771RS（锅炉控制器）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>电池电量</strong></p>
+<ul>
+<li><strong>描述</strong>：电池电量（%）。</li>
+<li><strong>支持的设备</strong>：AF-1（防冻系统）</li>
+</ul>
+</li>
+<li>
+<p><strong>充电功率</strong></p>
+<ul>
+<li><strong>描述</strong>：电池充电电流（mA）。</li>
+<li><strong>支持的设备</strong>：AF-1（防冻系统）</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="诊断传感器"><a href="#诊断传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>诊断传感器</h4>
+<ul>
+<li>
+<p><strong>通风报警</strong></p>
+<ul>
+<li><strong>描述</strong>：通风系统报警状态。</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>通风档位</strong></p>
+<ul>
+<li><strong>描述</strong>：当前通风档位设置。</li>
+<li><strong>支持的设备</strong>：Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>报警代码</strong></p>
+<ul>
+<li><strong>描述</strong>：系统报警代码。</li>
+<li><strong>支持的设备</strong>：AF-1（防冻系统）</li>
+</ul>
+</li>
+<li>
+<p><strong>PK1 功能</strong></p>
+<ul>
+<li><strong>描述</strong>：PK1 功能模式状态。</li>
+<li><strong>支持的设备</strong>：Combo（Combo 模块）</li>
+</ul>
+</li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+可用传感器取决于您的具体 Compit 设备配置。并非所有设备都有所有传感器。</p></div></div>
+<h3 class="rp-toc-include" id="二值传感器"><a href="#二值传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二值传感器</h3>
+<ul>
+<li>
+<p><strong>通风中</strong></p>
+<ul>
+<li><strong>描述</strong>：指示窗户是否打开进行通风。</li>
+<li><strong>支持的设备</strong>：Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>电池充电中</strong></p>
+<ul>
+<li><strong>描述</strong>：指示电池是否正在充电。</li>
+<li><strong>支持的设备</strong>：AF-1（防冻系统）</li>
+</ul>
+</li>
+<li>
+<p><strong>CO₂ 警报</strong></p>
+<ul>
+<li><strong>描述</strong>：指示 CO₂ 水平是否超过阈值。</li>
+<li><strong>支持的设备</strong>：SPM - Nano Color 2（连接到 Nano Color 2 的空气质量传感器）</li>
+</ul>
+</li>
+<li>
+<p><strong>CO₂ 等级</strong></p>
+<ul>
+<li><strong>描述</strong>：指示 CO₂ 水平是否有问题。</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）、SPM（空气质量传感器）、SHC（CO₂、湿度和温度传感器）</li>
+</ul>
+</li>
+<li>
+<p><strong>粉尘警报</strong></p>
+<ul>
+<li><strong>描述</strong>：指示粉尘水平是否超过阈值。</li>
+<li><strong>支持的设备</strong>：SPM - Nano Color 2（连接到 Nano Color 2 的空气质量传感器）</li>
+</ul>
+</li>
+<li>
+<p><strong>有电池</strong></p>
+<ul>
+<li><strong>描述</strong>：指示设备是否安装了电池。</li>
+<li><strong>支持的设备</strong>：AF-1（防冻系统）</li>
+</ul>
+</li>
+<li>
+<p><strong>有外部电源</strong></p>
+<ul>
+<li><strong>描述</strong>：指示设备是否连接外部电源。</li>
+<li><strong>支持的设备</strong>：AF-1（防冻系统）</li>
+</ul>
+</li>
+<li>
+<p><strong>泵状态</strong></p>
+<ul>
+<li><strong>描述</strong>：指示泵是否正在运行。</li>
+<li><strong>支持的设备</strong>：AF-1（防冻系统）</li>
+</ul>
+</li>
+<li>
+<p><strong>温度警报</strong></p>
+<ul>
+<li><strong>描述</strong>：指示温度是否超过阈值。</li>
+<li><strong>支持的设备</strong>：SPM - Nano Color 2（连接到 Nano Color 2 的空气质量传感器）</li>
+</ul>
+</li>
+</ul>
+<p>二值传感器提供 Compit 设备的状态信息。</p>
+<h3 class="rp-toc-include" id="气候"><a href="#气候" class="rp-header-anchor rp-link" aria-hidden="true">#</a>气候</h3>
+<p>气候实体反映当前供暖或制冷状态以及<strong>活动</strong>目标温度。当您想临时或在当前会话中更改目标温度时使用气候实体（例如，晚上调高暖气）。气候实体是您设置设备当前目标温度的地方。</p>
+<h3 class="rp-toc-include" id="风扇"><a href="#风扇" class="rp-header-anchor rp-link" aria-hidden="true">#</a>风扇</h3>
+<ul>
+<li><strong>通风</strong>
+<ul>
+<li><strong>描述</strong>：控制通风风扇。您可以打开或关闭风扇并设置速度。</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）。</li>
+<li><strong>备注</strong>：风扇有 5 个速度级别，在 Home Assistant 中以百分比显示。</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="数字"><a href="#数字" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数字</h3>
+<p>数字实体让您设置<strong>默认</strong>温度设定点和其他配置值。这些是每种操作模式（如舒适、节能或假期）使用的预设目标温度。它们不用于临时或一次性更改；对于这些，请改用气候实体。</p>
+<ul>
+<li>
+<p><strong>舒适目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：舒适模式目标室温。</li>
+<li><strong>范围</strong>：0–40 °C</li>
+<li><strong>支持的设备</strong>：Nano One（房间恒温器）、Nano Color（房间恒温器）、Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>节能目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：节能模式目标室温。</li>
+<li><strong>范围</strong>：0–40 °C</li>
+<li><strong>支持的设备</strong>：Nano One（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>假期目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：度假期间目标室温。</li>
+<li><strong>范围</strong>：0–40 °C</li>
+<li><strong>支持的设备</strong>：Nano One（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>冬季节能目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：冬季季节节能模式目标室温。</li>
+<li><strong>范围</strong>：0–40 °C</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>制冷节能目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：制冷期间节能模式目标室温。</li>
+<li><strong>范围</strong>：0–40 °C</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>外出目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：无人在家时目标室温。</li>
+<li><strong>范围</strong>：0–40 °C</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>恒定目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：供暖回路恒定目标温度。</li>
+<li><strong>范围</strong>：0–95 °C</li>
+<li><strong>支持的设备</strong>：R810（供暖回路控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>供暖恒定目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：热泵供暖回路恒定目标温度。</li>
+<li><strong>范围</strong>：0–95 °C</li>
+<li><strong>支持的设备</strong>：R470（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>混水器目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：混水阀回路目标温度。</li>
+<li><strong>范围</strong>：0–90 °C</li>
+<li><strong>支持的设备</strong>：R350.M（通用控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 1 混水器目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 1 混水阀回路目标温度。</li>
+<li><strong>范围</strong>：0–95 °C</li>
+<li><strong>支持的设备</strong>：R770RS（锅炉控制器）、R771RS（锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 2 混水器目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 2 混水阀回路目标温度。</li>
+<li><strong>范围</strong>：0–95 °C</li>
+<li><strong>支持的设备</strong>：R770RS（锅炉控制器）、R771RS（锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>锅炉目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：锅炉目标温度。</li>
+<li><strong>范围</strong>：0–95 °C</li>
+<li><strong>支持的设备</strong>：BioMax742（颗粒锅炉控制器）、EL750（电锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>锅炉恒定目标温度</strong></p>
+<ul>
+<li><strong>描述</strong>：锅炉恒定目标温度。</li>
+<li><strong>范围</strong>：0–90 °C</li>
+<li><strong>支持的设备</strong>：BioMax742（颗粒锅炉控制器）、BioMax772（颗粒锅炉控制器）、BioMax775（颗粒锅炉控制器）</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="选择"><a href="#选择" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选择</h3>
+<ul>
+<li>
+<p><strong>语言</strong></p>
+<ul>
+<li><strong>描述</strong>：设备界面语言。</li>
+<li><strong>选项</strong>：Polish、English</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）、Nano One（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>Aero by pass</strong></p>
+<ul>
+<li><strong>描述</strong>：通风系统旁路模式。</li>
+<li><strong>选项</strong>：Off、Auto、On</li>
+<li><strong>支持的设备</strong>：Nano Color（房间恒温器）、Nano Color 2（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>Nano 工作模式</strong></p>
+<ul>
+<li><strong>描述</strong>：恒温器操作模式。</li>
+<li><strong>选项</strong>：Manual 3、Manual 2、Manual 1、Manual 0、Schedule、Christmas、Out of home</li>
+<li><strong>支持的设备</strong>：Nano One（房间恒温器）</li>
+</ul>
+</li>
+<li>
+<p><strong>操作模式</strong></p>
+<ul>
+<li><strong>描述</strong>：设备主要操作模式。</li>
+<li><strong>选项</strong>：Disabled、Eco、Hybrid（适用于 R900、R490、R480）；Disabled、Auto、Eco（适用于 R470）</li>
+<li><strong>支持的设备</strong>：R900（热泵控制器）、R490（热泵控制器）、R470（热泵控制器）、R480（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>工作模式</strong></p>
+<ul>
+<li><strong>描述</strong>：季节性操作模式。</li>
+<li><strong>选项</strong>：Winter、Summer、Cooling</li>
+<li><strong>支持的设备</strong>：R490（热泵控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>供暖修正源</strong></p>
+<ul>
+<li><strong>描述</strong>：供暖温度修正源。</li>
+<li><strong>选项</strong>：No corrections、Schedule、Thermostat、Nano nr 1、Nano nr 2、Nano nr 3、Nano nr 4、Nano nr 5</li>
+<li><strong>支持的设备</strong>：R470（热泵控制器）、BioMax742（颗粒锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>SolarComp 操作模式</strong></p>
+<ul>
+<li><strong>描述</strong>：太阳能控制器操作模式。</li>
+<li><strong>选项</strong>：Auto、De-icing、Holiday、Disabled</li>
+<li><strong>支持的设备</strong>：SolarComp951（太阳能系统控制器）、SolarComp971（太阳能系统控制器）和 SolarComp971C（太阳能系统控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 1 混水器模式</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 1 混水阀操作模式。</li>
+<li><strong>选项</strong>：Disabled、Without thermostat、Schedule、Thermostat、Nano nr 1、Nano nr 2、Nano nr 3、Nano nr 4、Nano nr 5</li>
+<li><strong>支持的设备</strong>：BioMax775（颗粒锅炉控制器）、BioMax772（颗粒锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>区域 2 混水器模式</strong></p>
+<ul>
+<li><strong>描述</strong>：区域 2 混水阀操作模式。</li>
+<li><strong>选项</strong>：Disabled、Without thermostat、Schedule、Thermostat、Nano nr 1、Nano nr 2、Nano nr 3、Nano nr 4、Nano nr 5</li>
+<li><strong>支持的设备</strong>：BioMax775（颗粒锅炉控制器）、BioMax772（颗粒锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>混水器模式</strong></p>
+<ul>
+<li><strong>描述</strong>：混水阀操作模式。</li>
+<li><strong>选项</strong>：No corrections、Schedule、Thermostat、Nano nr 1、Nano nr 2、Nano nr 3、Nano nr 4、Nano nr 5</li>
+<li><strong>支持的设备</strong>：R350 T3（通用控制器）、BioMax742（颗粒锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>生活热水循环</strong></p>
+<ul>
+<li><strong>描述</strong>：生活热水循环模式。</li>
+<li><strong>选项</strong>：Disabled、Constant、Schedule</li>
+<li><strong>支持的设备</strong>：BioMax775（颗粒锅炉控制器）、BioMax742（颗粒锅炉控制器）、BioMax772（颗粒锅炉控制器）</li>
+</ul>
+</li>
+<li>
+<p><strong>缓冲模式</strong></p>
+<ul>
+<li><strong>描述</strong>：缓冲水箱操作模式。</li>
+<li><strong>选项</strong>：Schedule、Manual、Disabled</li>
+<li><strong>支持的设备</strong>：R480（热泵控制器）</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="热水器"><a href="#热水器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>热水器</h3>
+<ul>
+<li><strong>热水器</strong>
+<ul>
+<li><strong>描述</strong>：控制生活热水参数。</li>
+<li><strong>支持的设备</strong>：BioMax742、BioMax772、BioMax775、EL750、R350.CWU、R377B、R470、R480、R490、R770RS、R771RS、R900、SolarComp951、SolarComp971、SolarComp971C</li>
+<li><strong>备注</strong>：
+<ul>
+<li>太阳能控制器和 R350.CWU 仅支持设置目标温度。</li>
+<li>其他设备还支持开/关和操作模式。
+<ul>
+<li>状态 <code>off</code> 对应 Compit 中的 <code>off</code></li>
+<li>状态 <code>performance</code> 对应 Compit 中的 <code>on</code></li>
+<li>状态 <code>eco</code> 对应 Compit 中的 <code>schedule</code></li>
+</ul>
+</li>
+<li>太阳能控制器不支持当前温度属性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="rp-toc-include" id="移除集成"><a href="#移除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>移除集成</h2>
+<p>此集成遵循标准集成移除流程。无需额外步骤。</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#支持的设备" class="rp-toc-item rp-link" title="支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备</span></a><a href="#恒温器" class="rp-toc-item rp-link" title="恒温器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">恒温器</span></a><a href="#控制器" class="rp-toc-item rp-link" title="控制器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">控制器</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#支持的功能" class="rp-toc-item rp-link" title="支持的功能" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的功能</span></a><a href="#传感器-1" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#温度传感器" class="rp-toc-item rp-link" title="温度传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">温度传感器</span></a><a href="#空气质量传感器" class="rp-toc-item rp-link" title="空气质量传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">空气质量传感器</span></a><a href="#湿度传感器" class="rp-toc-item rp-link" title="湿度传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">湿度传感器</span></a><a href="#功率和能源传感器" class="rp-toc-item rp-link" title="功率和能源传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">功率和能源传感器</span></a><a href="#燃料和电池传感器" class="rp-toc-item rp-link" title="燃料和电池传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">燃料和电池传感器</span></a><a href="#诊断传感器" class="rp-toc-item rp-link" title="诊断传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">诊断传感器</span></a><a href="#二值传感器" class="rp-toc-item rp-link" title="二值传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">二值传感器</span></a><a href="#气候" class="rp-toc-item rp-link" title="气候" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">气候</span></a><a href="#风扇" class="rp-toc-item rp-link" title="风扇" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">风扇</span></a><a href="#数字" class="rp-toc-item rp-link" title="数字" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">数字</span></a><a href="#选择" class="rp-toc-item rp-link" title="选择" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">选择</span></a><a href="#热水器" class="rp-toc-item rp-link" title="热水器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">热水器</span></a><a href="#移除集成" class="rp-toc-item rp-link" title="移除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">移除集成</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

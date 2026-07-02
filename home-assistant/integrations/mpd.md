@@ -1,0 +1,30 @@
+# Music Player Daemon (MPD)
+
+The **Music Player Daemon** integration allows you to control a [Music Player Daemon](https://www.musicpd.org/) from Home Assistant. Unfortunately, it does not allow you to manipulate the playlist (add or delete songs) or add transitions between the songs.
+
+Even though no playlist manipulation is possible, it is possible to use the `play_media` action to load an existing saved playlist as part of an automation or scene.
+
+:::note 配置
+此集成可通过 UI 配置。前往 **设置 > 设备与服务** 添加。
+:::
+
+Example script to load a saved playlist called "DeckMusic" and set the volume:
+
+```yaml
+relaxdeck:
+    sequence:
+    - action: media_player.play_media
+      target:
+        entity_id: media_player.main
+      data:
+        media_content_type: playlist
+        media_content_id: DeckMusic
+
+    - action: media_player.volume_set
+      target:
+        entity_id: media_player.main
+      data:
+        volume_level: 0.60
+```
+
+This platform works with [Music Player Daemon](https://www.musicpd.org/) and [mopidy](https://www.mopidy.com/) with [Mopidy-MPD](https://mopidy.com/ext/mpd/) as used by [Pi MusicBox](https://pimusicbox.github.io/). While all of these rely on the common MPD protocol, not all implementations support all features, especially with regard to album artwork, embedded artwork and volume control. The platform will fall back gracefully if support isn't detected.

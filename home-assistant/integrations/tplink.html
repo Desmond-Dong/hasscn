@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP-Link Smart Home - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="TP-Link Smart Home - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="TP-Link Smart Home 集成可让你控制 TP-Link Kasa Smart Home 设备(https://www.kasasmart.com/)和 TP-Link Tapo 设备(https://www.tapo.com/)，包括摄像头、门铃、铃声设备、灯光、插座、墙壁开关、扫地机器人、Hu。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="TP-Link Smart Home 集成可让你控制 TP-Link Kasa Smart Home 设备(https://www.kasasmart.com/)和 TP-Link Tapo 设备(https://www.tapo.com/)，包括摄像头、门铃、铃声设备、灯光、插座、墙壁开关、扫地机器人、Hu。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="tp-link-smart-home"><a href="#tp-link-smart-home" class="rp-header-anchor rp-link" aria-hidden="true">#</a>TP-Link Smart Home<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>TP-Link Smart Home</strong> 集成可让你控制 <a href="https://www.kasasmart.com/" target="_blank" rel="noopener noreferrer" class="rp-link">TP-Link Kasa Smart Home 设备</a>和 <a href="https://www.tapo.com/" target="_blank" rel="noopener noreferrer" class="rp-link">TP-Link Tapo 设备</a>，包括摄像头、门铃、铃声设备、灯光、插座、墙壁开关、扫地机器人、Hub 及 Hub 挂载设备。</p>
+<h2 class="rp-toc-include" id="你可以如何使用此集成"><a href="#你可以如何使用此集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>你可以如何使用此集成</h2>
+<p>TP-Link 集成支持多种能力，例如根据计划或事件开关设备、在 Home Assistant 仪表板中监控能耗、查看摄像头实时画面，以及手动或通过自动化控制设备配置。</p>
+<h2 class="rp-toc-include" id="先决条件"><a href="#先决条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>先决条件</h2>
+<p>新购买的设备在通过集成添加前，需要先完成入网配置。你可以使用 <a href="https://python-kasa.readthedocs.io/en/latest/cli.html#provisioning" target="_blank" rel="noopener noreferrer" class="rp-link">kasa 命令行工具</a>，或先将设备添加到官方 Kasa / Tapo 应用后再尝试添加到 Home Assistant。TP-Link 其他产品的部分应用（如 Deco）也可添加 Kasa 与 Tapo 设备。由于这些设备都使用同一个 TP-Link 云账户授权，因此同样可用于此集成。</p>
+<p>如果你的设备是较新的 Kasa 或 Tapo 型号，则需要 TP-Link 云账户用户名与密码用于本地访问认证。
+如果你的旧设备当前无需认证，你可以考虑关闭自动固件更新，以维持该行为。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Host</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> |</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">    你的 TP-Link 设备主机名或 IP 地址。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Username</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> |</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">    你的 TP-Link 云账户用户名，也就是区分大小写的邮箱地址。Tapo 及较新的 Kasa 设备必填。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> |</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">    你的 TP-Link 云账户密码。Tapo 及较新的 Kasa 设备必填。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Live view</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> |</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">    勾选后会为 Tapo 摄像头创建实时画面摄像头实体。需要使用你在 Tapo 应用 **Device Settings** &gt; **Advanced Settings** &gt; **Camera Account** 中设置的摄像头账户凭据。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Camera account username</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> |</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">    你在 Tapo 应用中配置的摄像头账户用户名。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Camera account password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> |</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">    你在 Tapo 应用中为设备配置的摄像头账户密码。</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="supported-devices"><a href="#supported-devices" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Supported Devices</h2>
+<p>最新支持列表（含硬件和固件版本）请参阅 <a href="https://python-kasa.readthedocs.io/en/stable/SUPPORTED.html" target="_blank" rel="noopener noreferrer" class="rp-link">python-kasa 的 Supported Devices</a>。</p>
+<p>未列出的设备也可能可用；如遇问题，请向 <a href="https://github.com/python-kasa/python-kasa" target="_blank" rel="noopener noreferrer" class="rp-link">python-kasa</a> 提交缺陷报告。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+Hub 挂载的 Tapo 按钮 S200B 和 S200D 当前不支持按下时告警。</p><p>:::
+:::note
+部分 Tapo 摄像头固件版本在原生 Tapo 应用中未启用 <strong>Tapo Lab</strong> &gt; <strong>Third-Party Compatibility</strong> 时无法认证。
+或者你也可以恢复出厂设置，然后阻止设备访问互联网。</p></div></div>
+<h3 class="rp-toc-include" id="支持的-kasa-设备"><a href="#支持的-kasa-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的 Kasa 设备</h3>
+<ul>
+<li><strong>Plugs</strong>: EP10, EP25<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>, HS100<sup><a href="#user-content-fn-2" class="rp-link" id="user-content-fnref-2" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>, HS103, HS105, HS110, KP100, KP105, KP115, KP125, KP125M<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1-2" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>, KP401</li>
+<li><strong>Power Strips</strong>: EP40, EP40M<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1-3" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>, HS107, HS300, KP200, KP303, KP400</li>
+<li><strong>Wall Switches</strong>: ES20M, HS200<sup><a href="#user-content-fn-2" class="rp-link" id="user-content-fnref-2-2" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>, HS210, HS220<sup><a href="#user-content-fn-2" class="rp-link" id="user-content-fnref-2-3" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>, KP405, KS200, KS200M, KS205<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1-4" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>, KS220, KS220M, KS225<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1-5" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>, KS230, KS240<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1-6" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup></li>
+<li><strong>Bulbs</strong>: KL110, KL120, KL125, KL130, KL135, KL50, KL60, LB110</li>
+<li><strong>Light Strips</strong>: KL400L5, KL420L5, KL430</li>
+<li><strong>Hubs</strong>: KH100<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1-7" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup></li>
+<li><strong>Hub-Connected Devices<sup><a href="#user-content-fn-3" class="rp-link" id="user-content-fnref-3" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup></strong>: KE100<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1-8" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup></li>
+</ul>
+<h3 class="rp-toc-include" id="支持的-tapo-设备"><a href="#支持的-tapo-设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的 Tapo<sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1-9" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup> 设备</h3>
+<ul>
+<li><strong>Plugs</strong>: P100, P105, P110, P110M, P115, P125M, P135, TP15</li>
+<li><strong>Power Strips</strong>: P210M, P300, P304M, P306, TP25</li>
+<li><strong>Wall Switches</strong>: S210, S220, S500D, S505, S505D</li>
+<li><strong>Bulbs</strong>: L510B, L510E, L530E, L630</li>
+<li><strong>Light Strips</strong>: L900-10, L900-5, L920-5, L930-5</li>
+<li><strong>Cameras</strong>: C100, C120, C210, C220, C225, C325WB, C520WS, C720, TC65, TC70</li>
+<li><strong>Doorbells and chimes</strong>: D100C, D130, D230</li>
+<li><strong>Vacuums</strong>: RV20 Max Plus, RV30 Max</li>
+<li><strong>Hubs</strong>: H100, H200</li>
+<li><strong>Hub-Connected Devices<sup><a href="#user-content-fn-3" class="rp-link" id="user-content-fnref-3-2" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup></strong>: S200B, S200D, T100, T110, T300, T310, T315</li>
+</ul>
+<h2 class="rp-toc-include" id="supported-functionality"><a href="#supported-functionality" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Supported functionality</h2>
+<h3 class="rp-toc-include" id="摄像头门铃和铃声设备"><a href="#摄像头门铃和铃声设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头、门铃和铃声设备</h3>
+<p>当前仅支持 Tapo 摄像头、门铃和铃声设备。
+要在支持的设备上使用实时画面，你需要在 Tapo 应用 <strong>Device Settings</strong> &gt; <strong>Advanced Settings</strong> &gt; <strong>Camera Account</strong> 中启用摄像头账户。
+如果你不想启用，请在添加设备时不要勾选 <strong>Live view</strong>。后续可通过集成条目的 <code>reconfigure</code> 选项修改。</p>
+<p>根据摄像头支持的功能，你可以控制隐私模式、云台转动、移动侦测告警等设置。</p>
+<h3 class="rp-toc-include" id="灯光"><a href="#灯光" class="rp-header-anchor rp-link" aria-hidden="true">#</a>灯光</h3>
+<p>灯泡、灯带和调光开关会创建 light 实体。
+根据设备支持能力，集成可调整亮度、颜色、色温和灯效。</p>
+<p>如果设备支持灯效，可在灯光卡片底部选择。
+也支持灯光预设，可在设备页面的配置预设下拉菜单中设置。</p>
+<p>根据设备支持能力，你还可控制开关过渡、自动开关等其他配置。</p>
+<h3 class="rp-toc-include" id="插座和开关"><a href="#插座和开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>插座和开关</h3>
+<p>插座、普通墙壁开关和排插会创建 switch 实体。除开关控制外，你还可配置设备支持的选项，如自动开关和自动固件更新。</p>
+<h3 class="rp-toc-include" id="扫地机器人"><a href="#扫地机器人" class="rp-header-anchor rp-link" aria-hidden="true">#</a>扫地机器人</h3>
+<p>扫地机器人会创建 vacuum 实体。除启动和暂停外，你还可以让其回充、定位设备并控制风速等配置。</p>
+<h3 class="rp-toc-include" id="能耗监控"><a href="#能耗监控" class="rp-header-anchor rp-link" aria-hidden="true">#</a>能耗监控</h3>
+<p>如果设备支持能耗监控，会创建对应传感器用于采集能耗指标，并可接入 Home Assistant 能源仪表板。</p>
+<h3 class="rp-toc-include" id="hub-挂载设备"><a href="#hub-挂载设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub 挂载设备</h3>
+<p>支持多种 Hub 挂载设备，例如提供温控、移动检测、湿度监测和漏水检测的设备。</p>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p>设备每 5 秒轮询一次更新数据。当你通过 Home Assistant 更改状态（例如开设备）时，设备状态会立即更新，而不是等待下一次轮询。
+该集成通过局域网直连设备，不经过 TP-Link 云。这与原生 Tapo/Kasa 应用不同，后者在设备可联网时会通过 TP-Link 云连接设备。</p>
+<h2 class="rp-toc-include" id="known-limitations"><a href="#known-limitations" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Known limitations</h2>
+<h3 class="rp-toc-include" id="摄像头连接"><a href="#摄像头连接" class="rp-header-anchor rp-link" aria-hidden="true">#</a>摄像头连接</h3>
+<p>部分 Tapo 摄像头固件版本在未启用 <strong>Tapo Lab</strong> &gt; <strong>Third-Party Compatibility</strong> 时无法认证。
+或者你也可以恢复出厂设置，然后阻止设备访问互联网。</p>
+<h3 class="rp-toc-include" id="subnets-and-discovery"><a href="#subnets-and-discovery" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Subnets and discovery</h3>
+<p>如果设备与 Home Assistant 不在同一子网，自动发现将无法工作。
+此时建议通过 IP 地址添加设备，并为其配置静态 IP，避免地址变化带来问题。</p>
+<h3 class="rp-toc-include" id="buttons"><a href="#buttons" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Buttons</h3>
+<p>Hub 挂载的 Tapo 按钮 S200B 和 S200D 当前不支持按下时告警。</p>
+<h3 class="rp-toc-include" id="hub-attached-cameras"><a href="#hub-attached-cameras" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub-attached cameras</h3>
+<p>未来将支持 Hub 挂载摄像头。出于电池续航考虑，这类设备不支持实时画面。</p>
+<h3 class="rp-toc-include" id="no-light-effects-on-kasa-bulbs"><a href="#no-light-effects-on-kasa-bulbs" class="rp-header-anchor rp-link" aria-hidden="true">#</a>No light effects on kasa bulbs</h3>
+<p>Kasa 灯泡当前不支持灯效。</p>
+<h3 class="rp-toc-include" id="kasa-power-strips"><a href="#kasa-power-strips" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Kasa power strips</h3>
+<p>由于设备限制，Kasa 排插子插孔的能耗状态仅每 60 秒更新一次。</p>
+<p>如有需要，你可以在 <strong>Developer tools</strong> &gt; <strong>Actions</strong> &gt; <strong>Home Assistant Core Integration: Update entity</strong> 中传入子实体列表以手动触发更新。</p>
+<h2 class="rp-toc-include" id="troubleshooting"><a href="#troubleshooting" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Troubleshooting</h2>
+<h3 class="rp-toc-include" id="device-connections"><a href="#device-connections" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Device connections</h3>
+<ul>
+<li>注意上文关于子网的已知限制。</li>
+<li>确认用户名是 TP-Link 云账户用户名，即区分大小写的邮箱地址。</li>
+<li>确认已在 Tapo 应用中启用 <strong>Tapo Lab</strong> &gt; <strong>Third-Party Compatibility</strong>。完成后你可能需要恢复出厂并重新添加到 Tapo 应用。某些排插和插座型号在该设置未正确处理时会连接失败，集成会报通信错误。</li>
+<li>禁用或移除与本集成支持的 TP-Link 设备冲突的自定义集成。</li>
+<li>确保 Home Assistant 与设备之间网络连接稳定。</li>
+<li>在接入新设备前，先断开网络中已存在的 TP-Link/Tapo 设备。TP-Link Simple Setup（TSS）协议会从已有设备共享凭据，可能导致认证异常。若问题持续，请恢复新设备出厂，并在无其他 TP-Link 设备在线时重新添加。</li>
+<li>查看下方<a href="#reported-connection-solutions" class="rp-link">已报告的连接解决方案</a>。</li>
+<li>查看<a href="#supported-devices" class="rp-link">支持设备列表</a>，确认设备是否经过测试并受支持。</li>
+<li>尝试运行 <a href="https://github.com/python-kasa/python-kasa" target="_blank" rel="noopener noreferrer" class="rp-link">kasa 工具</a>连接设备。简单方式是先<a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank" rel="noopener noreferrer" class="rp-link">安装 uv</a>，再运行 <code>uvx --from python-kasa kasa --username &lt;tplink cloud username&gt; --password &lt;tplink cloud password&gt;</code>。</li>
+<li>提交支持问题。请参阅下文<a href="#raising-support-issues" class="rp-link">提交支持问题</a>指南。</li>
+</ul>
+<h4 class="rp-toc-include" id="reported-connection-solutions"><a href="#reported-connection-solutions" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Reported connection solutions</h4>
+<p>以下是 Home Assistant 用户反馈可解决设备连接问题的一些方法：</p>
+<ul>
+<li>将 TP-Link 云账户邮箱用户名首字母改为大写，这可能是首次在 Tapo 应用输入时被自动大写导致。</li>
+<li>从 Tapo 应用移除设备后，按正确型号搜索并重新添加（不要使用自动发现）。</li>
+<li>退出 Tapo 和 Kasa 应用，恢复设备出厂，重新登录 Tapo 应用，再把设备重新添加到 Tapo 应用。</li>
+<li>针对摄像头，可在 Tapo 应用 <strong>Settings</strong> &gt; <strong>Advanced Settings</strong> &gt; <strong>Camera account</strong> 中先关闭再开启相关选项。</li>
+<li>针对摄像头，可在 Tapo 应用 <strong>Settings</strong> &gt; <strong>Advanced Settings</strong> &gt; <strong>Camera account</strong> 中重置账户凭据。</li>
+</ul>
+<h3 class="rp-toc-include" id="unavailable-entities"><a href="#unavailable-entities" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Unavailable entities</h3>
+<p>如果某些实体已从集成中移除，它们可能显示为 Unavailable。</p>
+<h4 class="rp-toc-include" id="total-consumption-传感器"><a href="#total-consumption-传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Total consumption 传感器</h4>
+<p>此实体仅由较旧 Kasa 设备上报。
+当前 Tapo 设备和较新的 Kasa 设备不会上报总耗电；在 2024.6 期间曾短暂错误地将“今日耗电”上报为“总耗电”。如果在较新 Kasa 或 Tapo 设备上该实体显示不可用，你可以安全删除。</p>
+<h4 class="rp-toc-include" id="update-available-传感器"><a href="#update-available-传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Update available 传感器</h4>
+<p>该实体因调用 TP-Link 云 API 检查更新时存在稳定性问题而被移除。未来版本会以新的 Update 实体替代。如果你有以 <code>binary_sensor.</code> 开头、以 <code>update</code> 结尾且显示 Unavailable 的实体 ID，可以安全删除。</p>
+<h3 class="rp-toc-include" id="raising-support-issues"><a href="#raising-support-issues" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Raising support issues</h3>
+<p>为便于 TP-Link 集成维护者有效协助排查，请遵循以下指南：</p>
+<ul>
+<li>在 <a href="https://github.com/home-assistant/core/issues" target="_blank" rel="noopener noreferrer" class="rp-link">Home Assistant Core</a> 提交 issue。</li>
+<li>尽可能完整填写 issue 模板字段。</li>
+<li>如适用，请列出你在上文<a href="#device-connections" class="rp-link">设备连接故障排除</a>中已执行的步骤。</li>
+<li>上传从 Home Assistant 启动到错误出现期间的<a href="#enable-debug-logging" class="rp-link">调试日志</a>。</li>
+</ul>
+<h3 class="rp-toc-include" id="enable-debug-logging"><a href="#enable-debug-logging" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Enable debug logging</h3>
+<p>要捕获从 Home Assistant 启动开始的调试日志，请将 <a href="https://www.home-assistant.io/docs/configuration/" target="_blank" rel="noopener noreferrer" class="rp-link"><code>configuration.yaml</code></a> 更新为如下内容：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">logger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> warning</span><span style="color:var(--shiki-token-comment)">  # This will already be present. Add the lines below.</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  logs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    homeassistant.components.tplink</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    kasa</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>然后重启 Home Assistant，复现错误，并在 <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Logs</strong> &gt; <strong>Download logs</strong> 下载日志。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+排查完成后请记得关闭调试日志，以避免日志过快增长并影响性能。</p></div></div>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<h3 class="rp-toc-include" id="自动化思路"><a href="#自动化思路" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自动化思路</h3>
+<ul>
+<li>天黑时自动开灯，并通过语音命令关灯。</li>
+<li>离家时（基于地理围栏）关闭室内摄像头隐私模式并开启移动侦测，回家后自动切回。</li>
+</ul>
+<h3 class="rp-toc-include" id="灯效服务"><a href="#灯效服务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>灯效服务</h3>
+<p>有两个可在自动化中使用的灯效服务。</p>
+<p>这些服务可用于支持灯效的设备（如灯泡和灯带），但 <a href="#no-light-effects-on-kasa-bulbs" class="rp-link">Kasa 灯泡</a>除外。</p>
+<h4 class="rp-toc-include" id="random-effect---动作-tplinkrandom_effect"><a href="#random-effect---动作-tplinkrandom_effect" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Random Effect - 动作 <code>tplink.random_effect</code></h4>
+<p>灯带支持设置随机效果。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Description</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>The entity_id of the light strip to set the effect on</td></tr><tr><td><code>init_states</code></td><td>Initial HSV sequence</td></tr><tr><td><code>backgrounds</code></td><td>List of HSV sequences (Max 16)</td></tr><tr><td><code>segments</code></td><td>List of segments (0 for all)</td></tr><tr><td><code>brightness</code></td><td>Initial brightness</td></tr><tr><td><code>duration</code></td><td>Duration</td></tr><tr><td><code>transition</code></td><td>Transition</td></tr><tr><td><code>fadeoff</code></td><td>Fade off</td></tr><tr><td><code>hue_range</code></td><td>Range of hue</td></tr><tr><td><code>saturation_range</code></td><td>Range of saturation</td></tr><tr><td><code>brightness_range</code></td><td>Range of brightness</td></tr><tr><td><code>transition_range</code></td><td>Range of transition</td></tr><tr><td><code>random_seed</code></td><td>Random seed</td></tr></tbody></table></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)">#Example action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> tplink.random_effect</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_id</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">light.strip</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  init_states</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 199,99,96</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  backgrounds</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - - </span><span style="color:var(--shiki-token-constant)">199</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">89</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">50</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - - </span><span style="color:var(--shiki-token-constant)">160</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">50</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">50</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - - </span><span style="color:var(--shiki-token-constant)">180</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">100</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">50</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  segments</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 0, 2, 4, 6, 8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  brightness</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 90</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  transition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 2000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  fadeoff</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 2000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  hue_range</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 340, 360</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  saturation_range</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 40, 95</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  brightness_range</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 90, 100</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  transition_range</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 2000, 6000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  random_seed</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 80</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h4 class="rp-toc-include" id="sequence-effect---动作-tplinksequence_effect"><a href="#sequence-effect---动作-tplinksequence_effect" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sequence Effect - 动作 <code>tplink.sequence_effect</code></h4>
+<p>灯带支持设置序列效果。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Description</th></tr></thead><tbody><tr><td><code>entity_id</code></td><td>The entity_id of the light strip to set the effect on</td></tr><tr><td><code>sequence</code></td><td>List of HSV sequences (Max 16)</td></tr><tr><td><code>segments</code></td><td>List of segments (0 for all)</td></tr><tr><td><code>brightness</code></td><td>Initial brightness</td></tr><tr><td><code>duration</code></td><td>Duration</td></tr><tr><td><code>repeat_times</code></td><td>Repetitions (0 for continuous)</td></tr><tr><td><code>transition</code></td><td>Transition</td></tr><tr><td><code>spread</code></td><td>Speed of spread</td></tr><tr><td><code>direction</code></td><td>Direction</td></tr></tbody></table></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)">#Example action</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> tplink.sequence_effect</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_id</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">light.strip</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  sequence</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - - </span><span style="color:var(--shiki-token-constant)">340</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">20</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">50</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - - </span><span style="color:var(--shiki-token-constant)">20</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">50</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">50</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - - </span><span style="color:var(--shiki-token-constant)">0</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">100</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-constant)">50</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  segments</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 0, 2, 4, 6, 8</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  brightness</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 80</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  transition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 2000</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  spread</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  direction</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="删除集成"><a href="#删除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除集成</h2>
+<p>此集成遵循标准移除流程，无需额外步骤。</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol>
+<section data-footnotes="" class="footnotes"><h2 class="rp-toc-include sr-only" id="footnote-label"><a href="#footnote-label" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Footnotes</h2>
+<ol>
+<li id="user-content-fn-1">
+<p>该型号需要认证 <a href="#user-content-fnref-1" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1">↩</a> <a href="#user-content-fnref-1-2" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1-2">↩<sup>2</sup></a> <a href="#user-content-fnref-1-3" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1-3">↩<sup>3</sup></a> <a href="#user-content-fnref-1-4" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1-4">↩<sup>4</sup></a> <a href="#user-content-fnref-1-5" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1-5">↩<sup>5</sup></a> <a href="#user-content-fnref-1-6" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1-6">↩<sup>6</sup></a> <a href="#user-content-fnref-1-7" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1-7">↩<sup>7</sup></a> <a href="#user-content-fnref-1-8" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1-8">↩<sup>8</sup></a> <a href="#user-content-fnref-1-9" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1-9">↩<sup>9</sup></a></p>
+</li>
+<li id="user-content-fn-2">
+<p>较新版本需要认证 <a href="#user-content-fnref-2" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 2">↩</a> <a href="#user-content-fnref-2-2" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 2-2">↩<sup>2</sup></a> <a href="#user-content-fnref-2-3" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 2-3">↩<sup>3</sup></a></p>
+</li>
+<li id="user-content-fn-3">
+<p>设备可能可在 TAPO/KASA 品牌 Hub 之间工作 <a href="#user-content-fnref-3" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 3">↩</a> <a href="#user-content-fnref-3-2" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 3-2">↩<sup>2</sup></a></p>
+</li>
+</ol>
+</section><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#你可以如何使用此集成" class="rp-toc-item rp-link" title="你可以如何使用此集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">你可以如何使用此集成</span></a><a href="#先决条件" class="rp-toc-item rp-link" title="先决条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">先决条件</span></a><a href="#supported-devices" class="rp-toc-item rp-link" title="Supported Devices" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Supported Devices</span></a><a href="#支持的-kasa-设备" class="rp-toc-item rp-link" title="支持的 Kasa 设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">支持的 Kasa 设备</span></a><a href="#支持的-tapo-设备" class="rp-toc-item rp-link" title="支持的 Tapo 设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">支持的 Tapo 设备</span></a><a href="#supported-functionality" class="rp-toc-item rp-link" title="Supported functionality" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Supported functionality</span></a><a href="#摄像头门铃和铃声设备" class="rp-toc-item rp-link" title="摄像头、门铃和铃声设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">摄像头、门铃和铃声设备</span></a><a href="#灯光" class="rp-toc-item rp-link" title="灯光" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">灯光</span></a><a href="#插座和开关" class="rp-toc-item rp-link" title="插座和开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">插座和开关</span></a><a href="#扫地机器人" class="rp-toc-item rp-link" title="扫地机器人" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">扫地机器人</span></a><a href="#能耗监控" class="rp-toc-item rp-link" title="能耗监控" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">能耗监控</span></a><a href="#hub-挂载设备" class="rp-toc-item rp-link" title="Hub 挂载设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Hub 挂载设备</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#known-limitations" class="rp-toc-item rp-link" title="Known limitations" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Known limitations</span></a><a href="#摄像头连接" class="rp-toc-item rp-link" title="摄像头连接" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">摄像头连接</span></a><a href="#subnets-and-discovery" class="rp-toc-item rp-link" title="Subnets and discovery" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Subnets and discovery</span></a><a href="#buttons" class="rp-toc-item rp-link" title="Buttons" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Buttons</span></a><a href="#hub-attached-cameras" class="rp-toc-item rp-link" title="Hub-attached cameras" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Hub-attached cameras</span></a><a href="#no-light-effects-on-kasa-bulbs" class="rp-toc-item rp-link" title="No light effects on kasa bulbs" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">No light effects on kasa bulbs</span></a><a href="#kasa-power-strips" class="rp-toc-item rp-link" title="Kasa power strips" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Kasa power strips</span></a><a href="#troubleshooting" class="rp-toc-item rp-link" title="Troubleshooting" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Troubleshooting</span></a><a href="#device-connections" class="rp-toc-item rp-link" title="Device connections" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Device connections</span></a><a href="#reported-connection-solutions" class="rp-toc-item rp-link" title="Reported connection solutions" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Reported connection solutions</span></a><a href="#unavailable-entities" class="rp-toc-item rp-link" title="Unavailable entities" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Unavailable entities</span></a><a href="#total-consumption-传感器" class="rp-toc-item rp-link" title="Total consumption 传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Total consumption 传感器</span></a><a href="#update-available-传感器" class="rp-toc-item rp-link" title="Update available 传感器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Update available 传感器</span></a><a href="#raising-support-issues" class="rp-toc-item rp-link" title="Raising support issues" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Raising support issues</span></a><a href="#enable-debug-logging" class="rp-toc-item rp-link" title="Enable debug logging" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Enable debug logging</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#自动化思路" class="rp-toc-item rp-link" title="自动化思路" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自动化思路</span></a><a href="#灯效服务" class="rp-toc-item rp-link" title="灯效服务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">灯效服务</span></a><a href="#random-effect---动作-tplinkrandom_effect" class="rp-toc-item rp-link" title="Random Effect - 动作 tplink.random_effect" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Random Effect - 动作 <code>tplink.random_effect</code></span></a><a href="#sequence-effect---动作-tplinksequence_effect" class="rp-toc-item rp-link" title="Sequence Effect - 动作 tplink.sequence_effect" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Sequence Effect - 动作 <code>tplink.sequence_effect</code></span></a><a href="#删除集成" class="rp-toc-item rp-link" title="删除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">删除集成</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

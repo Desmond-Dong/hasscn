@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Assistant - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Google Assistant - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Google Assistant 集成允许您通过手机、平板或 Google Home 设备上的 Google Assistant 控制 Home Assistant 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Google Assistant 集成允许您通过手机、平板或 Google Home 设备上的 Google Assistant 控制 Home Assistant 设备。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="google-assistant"><a href="#google-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Google Assistant<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Google Assistant</strong> 集成允许您通过手机、平板或 Google Home 设备上的 Google Assistant 控制 Home Assistant 设备。</p>
+<p>如果您想向 Google Assistant 发送命令来控制 Google Assistant 支持但 Home Assistant 不支持的设备，或者向 Google Assistant 扬声器和显示器广播消息而不中断音乐/视频播放，请查看 <a href="/home-assistant/integrations/google_assistant_sdk.html" class="rp-link">Google Assistant SDK</a> 集成。</p>
+<h2 class="rp-toc-include" id="通过-home-assistant-cloud-自动设置"><a href="#通过-home-assistant-cloud-自动设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 Home Assistant Cloud 自动设置</h2>
+<p>使用 <a href="/home-assistant/cloud/index.html" class="rp-link">Home Assistant Cloud</a>，您只需简单点击几下即可将 Home Assistant 实例连接到 Google Assistant。使用 Home Assistant Cloud，您无需处理动态 DNS、SSL 证书或在路由器上开放端口。只需通过用户界面登录，即可与云端建立安全连接。Home Assistant Cloud 在 30 天免费试用后需要付费订阅。</p>
+<p>对于 Home Assistant Cloud 用户，可以在<a href="https://www.nabucasa.com/config/google_assistant/" target="_blank" rel="noopener noreferrer" class="rp-link">此处</a>找到文档。</p>
+<h2 class="rp-toc-include" id="手动设置如果您没有-home-assistant-cloud"><a href="#手动设置如果您没有-home-assistant-cloud" class="rp-header-anchor rp-link" aria-hidden="true">#</a>手动设置（如果您没有 Home Assistant Cloud）</h2>
+<p>由于 Google 要求设置 Assistant App 的方式，Google Assistant 集成（没有 Home Assistant Cloud）比大多数集成需要更多的设置。</p>
+<h3 class="rp-toc-include" id="前提条件"><a href="#前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>前提条件</h3>
+<p>要使用 Google Assistant，您的 Home Assistant 配置必须<a href="/home-assistant/docs/configuration/remote/index.html" class="rp-link">可通过主机名和 SSL 证书从外部访问</a>。</p>
+<ul>
+<li>如果您尚未配置，应在继续之前进行配置。</li>
+<li>如果您进行 DNS 更改来实现这一点，请确保已允许最多 48 小时让 DNS 更改传播，否则 Google 可能无法访问您的服务器。</li>
+<li>一旦您确认可以从家庭网络外部访问 Home Assistant，您就可以设置 Google 集成：</li>
+</ul>
+<h3 class="rp-toc-include" id="google-cloud-platform-配置"><a href="#google-cloud-platform-配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Google Cloud Platform 配置</h3>
+<ol>
+<li>
+<p>在 <a href="https://console.home.google.com/projects" target="_blank" rel="noopener noreferrer" class="rp-link">Google Developer Console</a> 中创建一个新项目。</p>
+<ol>
+<li>选择 <strong>Create a Project</strong></li>
+<li>在 <strong>Get started</strong> 页面，选择 <strong>Create project</strong>。
+<ul>
+<li>为您的项目命名并选择 <strong>Create project</strong>。</li>
+</ul>
+</li>
+<li>保存您的项目 ID（位于主项目名称下方）以备后用。</li>
+<li>选择 <strong>Add a Cloud-to-Cloud integration</strong>。</li>
+<li>在右下角，选择 <strong>Next: Develop</strong>，然后选择 <strong>Next: Setup</strong>。</li>
+<li>选择所有适用的设备类型（您可以选择全部）。</li>
+<li>创建一个 144 x 144 像素的应用图标并上传。</li>
+<li>在 <strong>Account Linking</strong> 下，在 <strong>OAuth Client ID</strong> 字段中输入 <code>https://oauth-redirect.googleusercontent.com/r/[YOUR_PROJECT_ID]</code>。</li>
+<li>将 <code>[YOUR_PROJECT_ID]</code> 替换为您上面的项目 ID。</li>
+<li>填写详细信息：
+<ul>
+<li>在 <strong>Client Secret</strong> 字段中，添加任意字符串（不含特殊字符）。Home Assistant 不需要此字段。</li>
+<li>在 <strong>Authorization URL</strong> 字段中，输入 <code>https://[yourdomain:port]/auth/authorize</code>。</li>
+<li>在 <strong>Token URL</strong> 字段中，输入 <code>https://[yourdomain:port]/auth/token</code>。</li>
+<li>在 <strong>Cloud fulfillment URL</strong> 字段中，输入 <code>https://[yourdomain:port]/api/google_assistant</code>。</li>
+<li>目前，跳过 <strong>Local fulfillment</strong> 和 <strong>App Flip</strong>。</li>
+<li>在 <strong>Scope(s)</strong> 下，输入 <code>email</code>。选择 <strong>Add scope</strong> 并输入 <code>name</code>。</li>
+<li>保持复选框 <strong>Have Google transmit Client ID and secret via HTTP basic auth header</strong> 未选中/清除。</li>
+<li>选择 <strong>Save</strong>。
+<ul>
+<li><strong>结果</strong>：您将看到项目已保存，状态为 <strong>Draft</strong>。</li>
+<li>您不需要进行测试。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>在项目左侧菜单中，选择 <strong>Analytics</strong> 链接。</p>
+<ul>
+<li>选择左上角的汉堡 <iconify-icon inline="" icon="mdi:hamburger-menu" title="hamburger menu"></iconify-icon> 菜单并选择 <strong>APIs and Services</strong>。</li>
+</ul>
+</li>
+<li>
+<p>启用设备同步（<a href="#utilize-device-sync" class="rp-link">详见下文</a>）。</p>
+<ol>
+<li>在左侧菜单中，选择 <strong>Credentials</strong>。</li>
+<li>在 <strong>Credentials</strong> 视图中，选择 <strong>Create credentials</strong>，然后选择 <strong>Service account</strong>。
+<ol>
+<li><strong>Service account name</strong>：为您的账户指定一个自定义名称。</li>
+<li>选择 <strong>Create and Continue</strong>。</li>
+<li>在 <strong>Select a role</strong> 下，选择 <strong>Service Accounts</strong> &gt; <strong>Service Account Token Creator</strong>。</li>
+<li>选择 <strong>Continue</strong>，然后选择 <strong>Done</strong>。</li>
+</ol>
+</li>
+<li>在 <strong>Service Accounts</strong> 下，现在应该有一个名为 [步骤 3.2.1 的名称]@[项目名称].iam.gserviceaccount.com 的账户。</li>
+<li>选择该服务账户的铅笔按钮。</li>
+<li>转到 <strong>Keys</strong> 并选择 <strong>Add key</strong>。</li>
+<li>创建 JSON 格式的私钥。</li>
+<li>这将开始下载 JSON 文件。
+<ol>
+<li>将文件重命名为 <code>SERVICE_ACCOUNT.json</code>。</li>
+<li>在 Home Assistant 中，将此文件添加到您的配置文件夹。这与您的 &quot;<code>configuration.yaml</code>&quot; 所在的文件夹相同。</li>
+</ol>
+</li>
+<li>在 Google Cloud 导航栏中，选择 <strong>放大镜</strong> 图标，搜索 <strong>Homegraph API</strong>，然后选择它。</li>
+<li>启用 HomeGraph API。</li>
+</ol>
+</li>
+<li>
+<p>将 <code>google_assistant</code> 集成配置添加到您的 &quot;<code>configuration.yaml</code>&quot; 文件中，并按照下面的<a href="#yaml-configuration" class="rp-link">配置指南</a>重启 Home Assistant。</p>
+</li>
+<li>
+<p>在 Google Home 应用中添加服务（注意应用版本可能略有不同）。</p>
+<ol>
+<li>打开 Google Home 应用。</li>
+<li>选择底部的设备选项卡，并选择右下角的 <code>+ Add</code> 按钮。</li>
+<li>在 <strong>Choose a device</strong> 屏幕中，选择 <strong>Works with Google Home</strong>。您应该会在 <strong>Add new</strong> 下看到列出的 <code>[test] &lt;Action Name&gt;</code>。选择它应该会将您带到浏览器登录您的 Home Assistant 实例，然后重定向回一个屏幕，您可以在其中为设备设置房间和昵称（如果您愿意）。</li>
+</ol>
+</li>
+</ol>
+<p>:::important
+如果您已将 Home Assistant 添加到手机的主屏幕，您必须先将其从主屏幕移除。否则，此 HTML5 应用将显示而不是浏览器。使用它将阻止 Home Assistant 重定向回 Google Home 应用。</p>
+<p>:::</p>
+<h3 class="rp-toc-include" id="允许其他用户"><a href="#允许其他用户" class="rp-header-anchor rp-link" aria-hidden="true">#</a>允许其他用户</h3>
+<p>如果您想允许其他家庭成员控制设备：</p>
+<ol>
+<li>在 <a href="https://console.home.google.com/projects" target="_blank" rel="noopener noreferrer" class="rp-link">Google Developer Console</a> 中打开您创建的项目。</li>
+<li>在页面顶部选择 <strong>Members</strong>。这将重定向到 Google Cloud Platform IAM 权限页面。</li>
+<li>在页面中间选择 <strong>Grant access</strong>。
+<ol>
+<li>输入您想添加的用户的电子邮件地址。</li>
+<li>选择 <strong>Select a role</strong> 并选择 <strong>Project</strong> &gt; <strong>Viewer</strong>。</li>
+<li>选择 <strong>Save</strong>。</li>
+<li>复制项目链接（<code>https://console.home.google.com/projects/YOUR_PROJECT_ID</code>）并与新用户分享。</li>
+</ol>
+</li>
+<li>让新用户使用自己的 Google 账户打开链接，同意 <strong>Terms of Service</strong> 弹窗。</li>
+<li>让新用户转到其 <strong>Google Assistant</strong> 应用，将 <code>[test] your app name</code> 添加到其账户。</li>
+</ol>
+<h3 class="rp-toc-include" id="使用设备同步"><a href="#使用设备同步" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用设备同步</h3>
+<p>您现在可以支持向 Google 服务器主动报告状态（配置选项 <code>report_state</code>）并将 Home Assistant 设备与 Google Home 应用同步（<code>google_assistant.request_sync</code> 服务）。</p>
+<p>尝试说 &quot;OK Google, sync my devices&quot; - Google Home 应用应该会导入您公开的 Home Assistant 设备，并提示您将它们分配到房间。</p>
+<h3 class="rp-toc-include" id="启用本地执行"><a href="#启用本地执行" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启用本地执行</h3>
+<p>Google Assistant 设备可以在本地向 Home Assistant 发送命令，从而更快地响应。</p>
+<p>您的 Home Assistant 实例需要与您正在对话的 Google Assistant 设备连接到同一网络，以便可以通过 mDNS 发现（UDP 广播）发现它。</p>
+<p>您的 Google Assistant 设备仍将通过互联网进行通信以：</p>
+<ul>
+<li>获取凭据以建立本地连接。</li>
+<li>发送涉及<a href="#secure-devices" class="rp-link">安全设备</a>的命令。</li>
+<li>如果本地执行失败，发送命令。</li>
+</ul>
+<p>:::important
+<a href="/home-assistant/integrations/http.html" class="rp-link">HTTP 集成</a> 必须<strong>不</strong>配置为使用带有 <a href="/home-assistant/integrations/http/index.html#ssl_certificate" class="rp-link"><code>ssl_certificate</code> 选项</a> 的 SSL 证书。</p>
+<p>这是因为 Google Assistant 设备将直接连接到您的 Home Assistant 实例的 IP，如果遇到无效的 SSL 证书则会失败。</p>
+<p>对于安全的远程访问，请使用反向代理，如 <a href="https://my.home-assistant.io/redirect/supervisor_addon/?addon=core_nginx_proxy" target="_blank" rel="noopener noreferrer" class="rp-link">NGINX SSL</a> 应用（以前称为 NGINX SSL 插件），而不是将外部流量直接定向到 Home Assistant。</p>
+<p>:::</p>
+<ol>
+<li>在 <a href="https://console.home.google.com/projects" target="_blank" rel="noopener noreferrer" class="rp-link">Google Developer Console</a> 中打开您创建的项目。</li>
+<li>展开左侧的 <strong>Cloud-to-cloud</strong> 菜单并选择 <strong>Develop</strong>，然后选择您的集成旁边的 <strong>Edit</strong>。</li>
+<li>向下滚动并启用 <strong>Local fulfillment</strong></li>
+<li>上传 JavaScript 文件
+<ol>
+<li>从<a href="https://github.com/NabuCasa/home-assistant-google-assistant-local-sdk/releases/latest" target="_blank" rel="noopener noreferrer" class="rp-link">此处</a>下载 <code>app.js</code></li>
+<li>选择 <strong>Upload your JavaScript targeting Node</strong> 并上传步骤 4.1 中的 <code>app.js</code>。</li>
+<li>选择 <strong>Upload your JavaScript targeting Chrome (browser)</strong> 并上传步骤 4.1 中相同的 <code>app.js</code>。</li>
+</ol>
+</li>
+<li>勾选 <strong>Support local queries</strong>。</li>
+<li>添加设备扫描配置：
+<ol>
+<li>如果没有配置，选择 <strong>+ Add scan configuration</strong>。</li>
+<li>对于 Discovery protocol 选择 <strong>mDNS</strong>。</li>
+<li>将 <strong>Enter mDNS service name</strong> 设置为 <code>_home-assistant._tcp.local</code></li>
+<li>选择 <strong>Add field</strong>，然后在 <strong>Select a field</strong> 下选择 <strong>Name</strong>。</li>
+<li>输入一个新的 <strong>Value</strong> 字段设置为 <code>.*\\._home-assistant\\._tcp\\.local</code></li>
+</ol>
+</li>
+<li>滚动到页面底部并 <strong>Save</strong> 您的更改。</li>
+<li>等待 30 分钟，或重启所有 Google Assistant 设备。</li>
+<li>重启 Home Assistant Core。</li>
+<li>使用 Google Assistant 设备，尝试说 &quot;OK Google, sync my devices。&quot; 这有助于避免问题，特别是如果您在添加云端 Google Assistant 支持一段时间后才启用本地执行。</li>
+</ol>
+<p>您可以按照<a href="https://developers.home.google.com/local-home/test#debugging_from_chrome" target="_blank" rel="noopener noreferrer" class="rp-link">这些说明</a>调试设置。</p>
+<h3 class="rp-toc-include" id="yaml-配置"><a href="#yaml-配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>YAML 配置</h3>
+<p>现在将您的设置添加到 &quot;<code>configuration.yaml</code>&quot; 文件中，例如：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># 示例 configuration.yaml 条目</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">google_assistant</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  project_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> YOUR_PROJECT_ID</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  service_account</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> !include</span><span style="color:var(--shiki-token-string-expression)"> SERVICE_ACCOUNT.json</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  report_state</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  exposed_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">switch</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    - </span><span style="color:var(--shiki-token-string-expression)">light</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  entity_config</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    switch.kitchen</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> CUSTOM_NAME_FOR_GOOGLE_ASSISTANT</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      aliases</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">BRIGHT_LIGHTS</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">        - </span><span style="color:var(--shiki-token-string-expression)">ENTRY_LIGHTS</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    light.living_room</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      expose</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      room</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> LIVING_ROOM</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">project_id</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Actions on Google 控制台中的项目 ID（看起来像 `words-2ab12`）</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">secure_devices_pin</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;当您想与安全设备交互时需要说的 PIN 码。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">service_account</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 服务账户信息。您可以使用 include 语句包含下载的 JSON 文件，在此处直接输入数据，或使用 secrets 文件填充。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    private_key</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> PEM 格式的私钥</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    client_email</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 服务电子邮件地址</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">report_state</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 主动报告实体的状态变化。这加快了影响多个实体的动作的响应时间，因为 Google Assistant 事先知道它们处于什么状态。视觉控件上的某些功能也需要它。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> boolean</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">expose_by_default</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;默认情况下公开所有支持域中的设备。如果设置了 `exposed_domains` 域，则默认只公开这些域。如果 `expose_by_default` 设置为 false，则必须在 `entity_config` 中手动公开设备。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> boolean</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">exposed_domains</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 如果 `expose_by_default` 设置为 true，则向 Google Assistant 公开的实体域列表。如果 `expose_by_default` 设置为 false，则此选项无效。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">entity_config</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Google Assistant 的实体特定配置</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    YOUR_ENTITY_ID</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 要配置的实体</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> map</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      keys</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 在 Google Assistant 中显示的实体名称</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        expose</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 强制公开/排除实体。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> boolean</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> true</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        aliases</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 也可用于引用此实体的别名</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> list</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        room</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 允许将此设备关联到 Google Assistant 中的房间。</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          required</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> false</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> string</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="可用域"><a href="#可用域" class="rp-header-anchor rp-link" aria-hidden="true">#</a>可用域</h3>
+<p>目前，以下域可与 Google Assistant 一起使用，列出了它们的默认类型：</p>
+<ul>
+<li>alarm_control_panel（布防/撤防）</li>
+<li>binary_sensor（设备类为 <code>carbon_monoxide</code>、<code>door</code>、<code>garage_door</code>、<code>lock</code>、<code>moisture</code>、<code>opening</code>、<code>smoke</code>、<code>window</code> 的实体）</li>
+<li>button（场景）</li>
+<li>camera（流媒体，需要兼容的摄像头）</li>
+<li>climate（开/关、温度设置、hvac_mode）</li>
+<li>cover（开/关/设置位置/停止/启动=切换遮盖）</li>
+<li>event（仅支持设备类为 <code>doorbell</code> 的实体）</li>
+<li>fan（开/关/速度百分比/预设模式）</li>
+<li>group（开/关）</li>
+<li>humidifier（湿度设置/开/关/模式）</li>
+<li>input_boolean（开/关）</li>
+<li>input_button（场景）</li>
+<li>input_select（选项/设置/模式/值）</li>
+<li>light（开/关/亮度/RGB颜色/色温）</li>
+<li>lawn_mower（停靠/启动/暂停）</li>
+<li>lock</li>
+<li>media_player（开/关/设置音量（通过设置音量）/源（通过设置输入源）/控制播放）</li>
+<li>scene</li>
+<li>script（场景）</li>
+<li>select</li>
+<li>sensor（设备类为 <code>aqi</code>、<code>carbon_dioxide</code>、<code>carbon_monoxide</code>、<code>humidity</code>、<code>pm10</code>、<code>pm25</code>、<code>temperature</code>、<code>volatile_organic_compounds</code> 的实体）</li>
+<li>switch（开/关）</li>
+<li>vacuum（停靠/启动/停止/暂停）</li>
+<li>valve（打开/关闭/设置位置/停止/启动=切换阀门）</li>
+<li>water_heater（开-关/温度设置/操作模式）</li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+某些设备可能在 Google Home 应用中无法正确显示，例如 media_player，但语音命令仍然有效。</p></div></div>
+<h3 class="rp-toc-include" id="安全设备"><a href="#安全设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>安全设备</h3>
+<p>某些设备被视为安全设备。这包括 <code>lock</code> 域、<code>alarm_control_panel</code> 域中的设备，以及设备类型为 <code>door</code>、<code>garage</code> 或 <code>gate</code> 的 <code>covers</code>。</p>
+<p>默认情况下，除非设置了 <code>secure_devices_pin</code> 码，否则 Google Assistant 无法打开安全设备。要允许打开，请将 <code>secure_devices_pin</code> 设置为某个值。然后，打开设备时系统会提示您说出 PIN 码。关闭或锁定这些设备不需要 PIN 码。</p>
+<p>如果为报警控制面板设置了代码，它必须与 <code>secure_devices_pin</code> 相同。如果 <code>code_arm_required</code> 设置为 <code>false</code>，系统将在不提示输入 PIN 码的情况下布防。</p>
+<h3 class="rp-toc-include" id="房间区域支持"><a href="#房间区域支持" class="rp-header-anchor rp-link" aria-hidden="true">#</a>房间/区域支持</h3>
+<p>未明确分配到房间但已放置在 Home Assistant 区域中的实体将向 Google 返回房间提示，其中包含这些区域中的设备。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+某些设备，如 <code>scene</code> 或 <code>script</code>，必须分配到 <code>area</code>，然后共享 Google Home 家庭的其他成员才能使用它们。这是因为共享 Google Home 中的家庭成员将无法查看未分配到房间的设备，<em>除非</em> 他们是将服务链接到 Google Home 的用户。此问题不会立即显现，因为 <code>script</code> 和 <code>scene</code> 设备在 Google Home 主仪表板中不可见。</p><p>当您的 Google 账户中设置了多个住宅时，自动房间分配将不起作用。</p></div></div>
+<h3 class="rp-toc-include" id="climate-操作模式"><a href="#climate-操作模式" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Climate 操作模式</h3>
+<p>Home Assistant 和 Google Assistant 的可用操作模式并非一一对应。
+以下是当前可用的模式：</p>
+<ul>
+<li>off</li>
+<li>heat</li>
+<li>cool</li>
+<li>heatcool（auto）</li>
+<li>fan-only</li>
+<li>dry</li>
+<li>eco</li>
+</ul>
+<h3 class="rp-toc-include" id="电视频道"><a href="#电视频道" class="rp-header-anchor rp-link" aria-hidden="true">#</a>电视频道</h3>
+<p>Home Assistant 中没有电视频道对象。电视频道只能通过数字更改，不能通过名称更改（例如，<code>Turn to channel two</code>）。</p>
+<h3 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h3>
+<h4 class="rp-toc-include" id="请求同步时的-404-错误"><a href="#请求同步时的-404-错误" class="rp-header-anchor rp-link" aria-hidden="true">#</a>请求同步时的 404 错误</h4>
+<p>一段时间后（可能大约 30 天），从 Google Assistant 同步可能会失败，因为您的 Actions on Google 应用技术上处于测试模式，从未发布。最终，测试似乎会过期。设备控制将继续工作，但同步可能不行。如果您说 &quot;Ok Google, sync my devices&quot; 并收到响应 &quot;Unable to sync Home Assistant&quot;（或您命名的任何项目名称），通常可以通过返回 <a href="https://console.actions.google.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Actions on Google 控制台</a> 中的测试应用并点击 <code>TEST</code> 下的 <code>Simulator</code> 来解决。重新生成草稿版本测试应用，然后再次尝试让 Google 同步您的设备。如果重新生成草稿不起作用，请返回 <code>Action</code> 部分，只需按 URL 的 <code>enter</code> 键即可重新创建预览。</p>
+<p>从 Home Assistant 同步将始终有效，并自动更新实体更改。</p>
+<p><code>request_sync</code> 服务要求来自 Google 的初始同步包含 <code>agent_user_id</code>。如果不包含，服务将记录一个错误，内容类似于 &quot;Request contains an invalid argument&quot;。如果发生这种情况，请从 Home Control <a href="https://support.google.com/googlenest/answer/7126338" target="_blank" rel="noopener noreferrer" class="rp-link">取消链接账户</a>并重新链接。</p>
+<p>如果 HomeGraph API 的 <code>project_id</code> 与 <a href="https://console.actions.google.com" target="_blank" rel="noopener noreferrer" class="rp-link">Actions on Google 控制台</a> 上项目首选项中的 Actions SDK 的 <code>project_id</code> 不同，<code>request_sync</code> 服务可能会失败并显示 404。解决方法：</p>
+<ol>
+<li>从 <a href="https://console.cloud.google.com" target="_blank" rel="noopener noreferrer" class="rp-link">Google Cloud API Console</a> 删除您的项目。</li>
+<li>向 <a href="https://console.actions.google.com" target="_blank" rel="noopener noreferrer" class="rp-link">Actions on Google 控制台</a> 添加新项目。在这里您将获得一个新的 <code>project_id</code>。</li>
+<li>按照前面提到的 [Actions on Google 控制台] 设置说明操作，直到创建 <code>service_account</code> 的步骤。</li>
+<li>一旦开始在 [Google Cloud API Console] 中创建新的 <code>service_account</code>，请确保通过验证 <code>project_id</code> 选择在 [Actions on Google 控制台] 中创建的项目。</li>
+<li>为新项目启用 HomeGraph API。</li>
+</ol>
+<p>验证 Google Assistant 在 <code>https://[YOUR HOME ASSISTANT URL:PORT]/api/google_assistant</code> 上可用。如果正常工作，在浏览器或通过 curl 打开时应返回 <code>405: Method Not Allowed</code>。</p>
+<h4 class="rp-toc-include" id="请求同步时的-403-错误"><a href="#请求同步时的-403-错误" class="rp-header-anchor rp-link" aria-hidden="true">#</a>请求同步时的 403 错误</h4>
+<p>如果未启用 HomeGraph API，<code>request_sync</code> 动作可能会失败并显示 403。转到 <a href="https://console.cloud.google.com/apis/api/homegraph.googleapis.com/overview" target="_blank" rel="noopener noreferrer" class="rp-link">Google API Console</a> 并验证您的项目已启用 HomeGraph API。</p>
+<h4 class="rp-toc-include" id="报告状态时的-404-错误"><a href="#报告状态时的-404-错误" class="rp-header-anchor rp-link" aria-hidden="true">#</a>报告状态时的 404 错误</h4>
+<p>如果您在日志中收到与报告状态相关的 404 错误，则 Home Assistant 正在报告从未同步到 Google 的实体的状态。让您的 Google Home <code>Sync my devices</code> 或运行 <code>google_assistant.request_sync</code> 动作。</p>
+<h4 class="rp-toc-include" id="链接期间出错could-not-update-the-setting-please-check-your-connection"><a href="#链接期间出错could-not-update-the-setting-please-check-your-connection" class="rp-header-anchor rp-link" aria-hidden="true">#</a>链接期间出错：&quot;Could not update the setting. Please check your connection&quot;</h4>
+<p>您的 fulfillment URL 可能无效或无法访问。重新检查 <a href="#manual-setup-if-you-dont-have-home-assistant-cloud" class="rp-link">手动设置</a> 中指定的 <code>Fulfillment URL</code> 并验证其可公开访问。</p>
+<h4 class="rp-toc-include" id="请求同步时的-500--429-错误"><a href="#请求同步时的-500--429-错误" class="rp-header-anchor rp-link" aria-hidden="true">#</a>请求同步时的 500 / 429 错误</h4>
+<p>如果服务密钥无效，可能会发生此错误。尝试删除并创建新的服务账户和密钥。</p>
+<h4 class="rp-toc-include" id="nginx"><a href="#nginx" class="rp-header-anchor rp-link" aria-hidden="true">#</a>NGINX</h4>
+<p>使用 NGINX 时，请确保您的 <code>proxy_pass</code> 行 <em>没有</em> 尾随 <code>/</code>，因为这会导致错误。您的行应如下所示：</p>
+<div class="rp-codeblock language-txt"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="txt"><code><span class="line"><span>proxy_pass http://localhost:8123;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="取消链接并重新链接"><a href="#取消链接并重新链接" class="rp-header-anchor rp-link" aria-hidden="true">#</a>取消链接并重新链接</h3>
+<p>如果您在取消链接服务后遇到 <em>Account linking failed</em> 问题，请尝试清除浏览器历史记录和缓存。</p>
+<h3 class="rp-toc-include" id="链接失败---could-not-update-the-setting-please-check-your-connection"><a href="#链接失败---could-not-update-the-setting-please-check-your-connection" class="rp-header-anchor rp-link" aria-hidden="true">#</a>链接失败 - Could not update the setting. Please check your connection</h3>
+<p>如果您在链接账户时遇到问题，登录 Home Assistant 实例后出现错误消息 <code>Could not update the setting. Please check your connection</code>，请尝试设置 <code>expose_by_default: false</code>，然后公开一个简单的设备（最好是灯或开关）。如果遇到问题，还值得检查是否禁用了任何家庭广告拦截器。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#通过-home-assistant-cloud-自动设置" class="rp-toc-item rp-link" title="通过 Home Assistant Cloud 自动设置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">通过 Home Assistant Cloud 自动设置</span></a><a href="#手动设置如果您没有-home-assistant-cloud" class="rp-toc-item rp-link" title="手动设置（如果您没有 Home Assistant Cloud）" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">手动设置（如果您没有 Home Assistant Cloud）</span></a><a href="#前提条件" class="rp-toc-item rp-link" title="前提条件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">前提条件</span></a><a href="#google-cloud-platform-配置" class="rp-toc-item rp-link" title="Google Cloud Platform 配置" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Google Cloud Platform 配置</span></a><a href="#允许其他用户" class="rp-toc-item rp-link" title="允许其他用户" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">允许其他用户</span></a><a href="#使用设备同步" class="rp-toc-item rp-link" title="使用设备同步" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用设备同步</span></a><a href="#启用本地执行" class="rp-toc-item rp-link" title="启用本地执行" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启用本地执行</span></a><a href="#yaml-配置" class="rp-toc-item rp-link" title="YAML 配置" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">YAML 配置</span></a><a href="#可用域" class="rp-toc-item rp-link" title="可用域" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">可用域</span></a><a href="#安全设备" class="rp-toc-item rp-link" title="安全设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">安全设备</span></a><a href="#房间区域支持" class="rp-toc-item rp-link" title="房间/区域支持" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">房间/区域支持</span></a><a href="#climate-操作模式" class="rp-toc-item rp-link" title="Climate 操作模式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Climate 操作模式</span></a><a href="#电视频道" class="rp-toc-item rp-link" title="电视频道" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">电视频道</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#请求同步时的-404-错误" class="rp-toc-item rp-link" title="请求同步时的 404 错误" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">请求同步时的 404 错误</span></a><a href="#请求同步时的-403-错误" class="rp-toc-item rp-link" title="请求同步时的 403 错误" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">请求同步时的 403 错误</span></a><a href="#报告状态时的-404-错误" class="rp-toc-item rp-link" title="报告状态时的 404 错误" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">报告状态时的 404 错误</span></a><a href="#链接期间出错could-not-update-the-setting-please-check-your-connection" class="rp-toc-item rp-link" title="链接期间出错：&quot;Could not update the setting. Please check your connection&quot;" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">链接期间出错：&quot;Could not update the setting. Please check your connection&quot;</span></a><a href="#请求同步时的-500--429-错误" class="rp-toc-item rp-link" title="请求同步时的 500 / 429 错误" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">请求同步时的 500 / 429 错误</span></a><a href="#nginx" class="rp-toc-item rp-link" title="NGINX" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">NGINX</span></a><a href="#取消链接并重新链接" class="rp-toc-item rp-link" title="取消链接并重新链接" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">取消链接并重新链接</span></a><a href="#链接失败---could-not-update-the-setting-please-check-your-connection" class="rp-toc-item rp-link" title="链接失败 - Could not update the setting. Please check your connection" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">链接失败 - Could not update the setting. Please check your connection</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

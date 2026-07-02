@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SwitchBot Cloud - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="SwitchBot Cloud - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="The SwitchBot Cloud integration allows you to control SwitchBot devices(https://www.switch-bot.com/) connected through the SwitchBot hub. 本页属于 Home。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="The SwitchBot Cloud integration allows you to control SwitchBot devices(https://www.switch-bot.com/) connected through the SwitchBot hub. 本页属于 Home。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="switchbot-cloud"><a href="#switchbot-cloud" class="rp-header-anchor rp-link" aria-hidden="true">#</a>SwitchBot Cloud<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>The <strong>SwitchBot Cloud</strong> integration allows you to control SwitchBot <a href="https://www.switch-bot.com/" target="_blank" rel="noopener noreferrer" class="rp-link">devices</a> connected through the SwitchBot hub.</p>
+<h2 class="rp-toc-include" id="prerequisites"><a href="#prerequisites" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Prerequisites</h2>
+<p>In order to use this integration, you will need at least a SwitchBot Hub and a SwitchBot account to get a token and secret key from the SwitchBot mobile app in <strong>Profiles</strong> &gt; <strong>Preferences</strong> &gt; <strong>Developer Options</strong>. If <strong>Developer Options</strong> is not present in preferences, tap the App Version (e.g. 6.24) several times (5~15 times) in succession to open the <strong>Developer Options</strong>. See also <a href="https://blog.switch-bot.com/switchbot-x-home-assistant-the-official-setup-tips-guide-you-asked-for-3/#cloud-integration" target="_blank" rel="noopener noreferrer" class="rp-link">SwitchBot&#x27;s blog</a> for more information specific to the app.</p>
+<p>Please note, device names configured in the SwitchBot app are transferred into Home Assistant.</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h2 class="rp-toc-include" id="supported-devices"><a href="#supported-devices" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Supported devices</h2>
+<h3 class="rp-toc-include" id="plugs-and-switches"><a href="#plugs-and-switches" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Plugs and switches</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-bot" target="_blank" rel="noopener noreferrer" class="rp-link">Bot (WoHand)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-relay-switch-2pm" target="_blank" rel="noopener noreferrer" class="rp-link">Relay Switch 2PM</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-relay-switch-1" target="_blank" rel="noopener noreferrer" class="rp-link">Relay Switch 1</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-relay-switch-1pm" target="_blank" rel="noopener noreferrer" class="rp-link">Relay Switch 1PM</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-plug-mini" target="_blank" rel="noopener noreferrer" class="rp-link">Plug Mini (WoPlug)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-plug-mini-homekit-enabled" target="_blank" rel="noopener noreferrer" class="rp-link">Plug Mini (HomeKit Enabled)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-plug-mini-eu" target="_blank" rel="noopener noreferrer" class="rp-link">Plug Mini (EU)</a></li>
+<li>Plug (Wi-Fi only, only available in Japan)</li>
+</ul>
+<h3 class="rp-toc-include" id="cover"><a href="#cover" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Cover</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-curtain" target="_blank" rel="noopener noreferrer" class="rp-link">Curtain (WoCurtain)</a> (version 1 &amp; 2)</li>
+<li><a href="https://switch-bot.com/pages/switchbot-curtain-3" target="_blank" rel="noopener noreferrer" class="rp-link">Curtain 3 (WoCtn3)</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-blind-tilt" target="_blank" rel="noopener noreferrer" class="rp-link">Blind Tilt (WoBlindTilt)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-roller-shade" target="_blank" rel="noopener noreferrer" class="rp-link">Roller Shade</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-garage-door-opener" target="_blank" rel="noopener noreferrer" class="rp-link">Garage Door Opener</a></li>
+</ul>
+<h3 class="rp-toc-include" id="lights"><a href="#lights" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Lights</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-led-strip-light-3" target="_blank" rel="noopener noreferrer" class="rp-link">LED Strip Light 3</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-floor-lamp" target="_blank" rel="noopener noreferrer" class="rp-link">Floor Lamp</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-color-bulb" target="_blank" rel="noopener noreferrer" class="rp-link">Color Bulb (WoBulb)</a></li>
+<li><a href="https://www.switchbot.jp/products/switchbot-strip-light" target="_blank" rel="noopener noreferrer" class="rp-link">Light Strip (WoStrip)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-rgbicww-floor-lamp" target="_blank" rel="noopener noreferrer" class="rp-link">RGBICWW Floor Lamp</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-rgbicww-strip-light" target="_blank" rel="noopener noreferrer" class="rp-link">RGBICWW Strip Light</a></li>
+<li><a href="https://www.switchbot.jp/pages/switchbot-ceiling-light" target="_blank" rel="noopener noreferrer" class="rp-link">Ceiling Light / Ceiling Light Pro</a> (Japan only)</li>
+<li><a href="https://www.switch-bot.com/products/switchbot-rgbic-neon-rope-light" target="_blank" rel="noopener noreferrer" class="rp-link">RGBIC Neon Rope Light</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-rgbic-neon-wire-rope-light" target="_blank" rel="noopener noreferrer" class="rp-link">RGBIC Neon Wire Rope Light</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-candle-warmer-lamp" target="_blank" rel="noopener noreferrer" class="rp-link">Candle Warmer Lamp</a></li>
+</ul>
+<h3 class="rp-toc-include" id="locks"><a href="#locks" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Locks</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-lock" target="_blank" rel="noopener noreferrer" class="rp-link">Lock (WoLock)</a></li>
+<li><a href="https://www.switch-bot.com/pages/switchbot-lock-pro" target="_blank" rel="noopener noreferrer" class="rp-link">Lock Pro (WoLockPro)</a></li>
+<li>Lock Pro Wifi</li>
+<li>Lock Lite</li>
+<li><a href="https://www.switch-bot.com/products/switchbot-lock-ultra" target="_blank" rel="noopener noreferrer" class="rp-link">Lock Ultra</a></li>
+<li>Lock Vision</li>
+<li>Lock Vision Pro</li>
+</ul>
+<h3 class="rp-toc-include" id="sensors"><a href="#sensors" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sensors</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-meter" target="_blank" rel="noopener noreferrer" class="rp-link">Meter</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-meter-plus" target="_blank" rel="noopener noreferrer" class="rp-link">Meter Plus</a></li>
+<li><a href="https://switch-bot.com/pages/switchbot-indoor-outdoor-thermo-hygrometer" target="_blank" rel="noopener noreferrer" class="rp-link">Indoor/Outdoor Meter (WoIOSensorTH)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-meter-pro" target="_blank" rel="noopener noreferrer" class="rp-link">Meter Pro</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-meter-pro-co2-monitor" target="_blank" rel="noopener noreferrer" class="rp-link">Meter Pro CO2 Monitor</a></li>
+<li><a href="https://www.switch-bot.com/products/contact-sensor" target="_blank" rel="noopener noreferrer" class="rp-link">Contact Sensor</a></li>
+<li><a href="https://www.switch-bot.com/products/motion-sensor" target="_blank" rel="noopener noreferrer" class="rp-link">Motion Sensor</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-water-leak-detector" target="_blank" rel="noopener noreferrer" class="rp-link">Water Leak Detector</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-home-climate-panel" target="_blank" rel="noopener noreferrer" class="rp-link">Climate Panel</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-presence-sensor" target="_blank" rel="noopener noreferrer" class="rp-link">Presence Sensor</a></li>
+</ul>
+<h3 class="rp-toc-include" id="hubs"><a href="#hubs" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hubs</h3>
+<ul>
+<li><a href="https://switch-bot.com/pages/switchbot-hub-2" target="_blank" rel="noopener noreferrer" class="rp-link">Hub 2 (WoHub2)</a> (currently only supports retrieving sensor data, does not yet support device control)</li>
+<li><a href="https://www.switch-bot.com/products/switchbot-hub-3" target="_blank" rel="noopener noreferrer" class="rp-link">Hub 3</a> (currently only supports retrieving sensor data, does not yet support device control)</li>
+<li>IR appliances exposed through the different hubs:
+<ul>
+<li>ON/OFF for all appliance types except for <em>Others</em></li>
+<li>Change temperature and mode for <em>Air Conditioner</em></li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="humidifiers"><a href="#humidifiers" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Humidifiers</h3>
+<ul>
+<li><a href="https://www.switchbot.jp/products/switchbot-smart-humidifier" target="_blank" rel="noopener noreferrer" class="rp-link">Humidifier (WoHumi)</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-evaporative-humidifier-auto-refill" target="_blank" rel="noopener noreferrer" class="rp-link">Evaporative Humidifier</a></li>
+</ul>
+<h3 class="rp-toc-include" id="vacuums"><a href="#vacuums" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Vacuums</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-mini-robot-vacuum-k10" target="_blank" rel="noopener noreferrer" class="rp-link">K10+</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-mini-robot-vacuum-k10-pro" target="_blank" rel="noopener noreferrer" class="rp-link">K10+ Pro</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-k10-pro-combo" target="_blank" rel="noopener noreferrer" class="rp-link">K10+ Pro Combo</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-robot-vacuum-k11" target="_blank" rel="noopener noreferrer" class="rp-link">K11+</a></li>
+<li><a href="https://www.switchbot.jp/products/switchbot-robot-vacuum-cleaner-k20-pro" target="_blank" rel="noopener noreferrer" class="rp-link">K20+ Pro</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-floor-cleaning-robot-s20" target="_blank" rel="noopener noreferrer" class="rp-link">S20</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-floor-cleaning-robot-s10" target="_blank" rel="noopener noreferrer" class="rp-link">S10</a></li>
+<li><a href="https://www.switchbot.jp/products/switchbot-robot-vacuum-cleaner?&amp;variant=41850919420079" target="_blank" rel="noopener noreferrer" class="rp-link">S1</a></li>
+<li><a href="https://www.switchbot.jp/products/switchbot-robot-vacuum-cleaner" target="_blank" rel="noopener noreferrer" class="rp-link">S1 Plus</a></li>
+</ul>
+<h3 class="rp-toc-include" id="fans"><a href="#fans" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Fans</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-battery-circulator-fan" target="_blank" rel="noopener noreferrer" class="rp-link">Circulator Fan</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-air-purifier" target="_blank" rel="noopener noreferrer" class="rp-link">Air Purifier</a></li>
+<li><a href="https://www.switch-bot.com/products/switchbot-air-purifier-table" target="_blank" rel="noopener noreferrer" class="rp-link">Air Purifier Table</a></li>
+</ul>
+<h3 class="rp-toc-include" id="water-heater"><a href="#water-heater" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Water heater</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-smart-radiator-thermostat" target="_blank" rel="noopener noreferrer" class="rp-link">Smart Radiator Thermostat</a></li>
+</ul>
+<h3 class="rp-toc-include" id="image"><a href="#image" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Image</h3>
+<ul>
+<li><a href="https://www.switch-bot.com/products/switchbot-ai-art-frame" target="_blank" rel="noopener noreferrer" class="rp-link">AI Art Frame</a></li>
+</ul>
+<h2 class="rp-toc-include" id="supported-functionality"><a href="#supported-functionality" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Supported functionality</h2>
+<h3 class="rp-toc-include" id="plugs-and-switches-1"><a href="#plugs-and-switches-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Plugs and switches</h3>
+<h4 class="rp-toc-include" id="bot"><a href="#bot" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Bot</h4>
+<p>Features:</p>
+<ul>
+<li>acted as a Switch in <code>switchMode</code> and <code>customizeMode</code>, as a Button in <code>pressMode</code></li>
+<li>turn on or off</li>
+<li>press</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="plug-mini"><a href="#plug-mini" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Plug Mini</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>get power consumption readings</li>
+</ul>
+<h4 class="rp-toc-include" id="relay-switch-2pm"><a href="#relay-switch-2pm" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Relay Switch 2PM</h4>
+<p>Features:
+displayed as two switches with the following properties or actions individually,</p>
+<ul>
+<li>turn on or off</li>
+<li>get power</li>
+<li>get voltage</li>
+<li>get current</li>
+<li>get daily used electricity or power consumption</li>
+</ul>
+<h4 class="rp-toc-include" id="relay-switch-1"><a href="#relay-switch-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Relay Switch 1</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+</ul>
+<h4 class="rp-toc-include" id="relay-switch-1pm"><a href="#relay-switch-1pm" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Relay Switch 1PM</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>get power</li>
+<li>get voltage</li>
+<li>get current</li>
+</ul>
+<h4 class="rp-toc-include" id="plug"><a href="#plug" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Plug</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+</ul>
+<h3 class="rp-toc-include" id="cover-1"><a href="#cover-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Cover</h3>
+<h4 class="rp-toc-include" id="curtain"><a href="#curtain" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Curtain</h4>
+<p>Features:</p>
+<ul>
+<li>open/close/pause</li>
+<li>set position</li>
+<li>get position</li>
+<li>get battery level</li>
+<li>get calibration state</li>
+</ul>
+<h4 class="rp-toc-include" id="curtain-3"><a href="#curtain-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Curtain 3</h4>
+<p>Features:</p>
+<ul>
+<li>open/close/pause</li>
+<li>set position</li>
+<li>get position</li>
+<li>get battery level</li>
+<li>get calibration state</li>
+</ul>
+<h4 class="rp-toc-include" id="blind-tilt"><a href="#blind-tilt" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Blind Tilt</h4>
+<p>Features:</p>
+<ul>
+<li>close up/close down</li>
+<li>set position</li>
+<li>get position</li>
+<li>get battery level</li>
+<li>get calibration state</li>
+</ul>
+<h4 class="rp-toc-include" id="roller-shade"><a href="#roller-shade" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Roller Shade</h4>
+<p>Features:</p>
+<ul>
+<li>open/close</li>
+<li>set position</li>
+<li>get position</li>
+<li>get battery level</li>
+<li>get calibration state</li>
+</ul>
+<h4 class="rp-toc-include" id="garage-door-opener"><a href="#garage-door-opener" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Garage Door Opener</h4>
+<p>Features:</p>
+<ul>
+<li>open/close</li>
+<li>set position</li>
+<li>get position</li>
+<li>get calibration state</li>
+</ul>
+<h3 class="rp-toc-include" id="sensors-1"><a href="#sensors-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sensors</h3>
+<h4 class="rp-toc-include" id="meter"><a href="#meter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Meter</h4>
+<p>Features:</p>
+<ul>
+<li>get temperature</li>
+<li>get humidity</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="meter-plus"><a href="#meter-plus" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Meter Plus</h4>
+<p>Features:</p>
+<ul>
+<li>get temperature</li>
+<li>get humidity</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="indooroutdoor-meter"><a href="#indooroutdoor-meter" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Indoor/Outdoor Meter</h4>
+<p>Features:</p>
+<ul>
+<li>get temperature</li>
+<li>get humidity</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="meter-pro"><a href="#meter-pro" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Meter Pro</h4>
+<p>Features:</p>
+<ul>
+<li>get temperature</li>
+<li>get humidity</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="meter-pro-co2-monitor"><a href="#meter-pro-co2-monitor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Meter Pro CO2 Monitor</h4>
+<p>Features:</p>
+<ul>
+<li>get temperature</li>
+<li>get humidity</li>
+<li>get carbon dioxide</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="contact-sensor"><a href="#contact-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Contact Sensor</h4>
+<p>Features:</p>
+<ul>
+<li>get motion detection state</li>
+<li>get light state</li>
+<li>get open state</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="motion-sensor"><a href="#motion-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Motion Sensor</h4>
+<p>Features:</p>
+<ul>
+<li>get motion detection state</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="presence-sensor"><a href="#presence-sensor" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Presence Sensor</h4>
+<p>Features:</p>
+<ul>
+<li>get motion detection state</li>
+<li>get light level</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="water-leak-detector"><a href="#water-leak-detector" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Water Leak Detector</h4>
+<p>Features:</p>
+<ul>
+<li>get leak state</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="climate-panel"><a href="#climate-panel" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Climate Panel</h4>
+<p>Features:</p>
+<ul>
+<li>get temperature</li>
+<li>get humidity</li>
+<li>get battery level</li>
+<li>light detect</li>
+<li>motion detect</li>
+</ul>
+<h3 class="rp-toc-include" id="lights-1"><a href="#lights-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Lights</h3>
+<h4 class="rp-toc-include" id="led-strip-light-3"><a href="#led-strip-light-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>LED Strip Light 3</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>change brightness</li>
+<li>change color temperature</li>
+<li>change color</li>
+</ul>
+<h4 class="rp-toc-include" id="floor-lamp"><a href="#floor-lamp" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Floor Lamp</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>change brightness</li>
+<li>change color temperature</li>
+<li>change color</li>
+</ul>
+<h4 class="rp-toc-include" id="color-bulb"><a href="#color-bulb" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Color Bulb</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>change brightness</li>
+<li>change color temperature</li>
+<li>change color</li>
+</ul>
+<h4 class="rp-toc-include" id="led-strip-light"><a href="#led-strip-light" class="rp-header-anchor rp-link" aria-hidden="true">#</a>LED Strip Light</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>change brightness</li>
+<li>change color</li>
+</ul>
+<h4 class="rp-toc-include" id="ceiling-light--ceiling-light-pro"><a href="#ceiling-light--ceiling-light-pro" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Ceiling Light / Ceiling Light Pro</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>change brightness</li>
+<li>change color temperature</li>
+</ul>
+<h4 class="rp-toc-include" id="rgbicww-floor-lamp--rgbicww-strip-light"><a href="#rgbicww-floor-lamp--rgbicww-strip-light" class="rp-header-anchor rp-link" aria-hidden="true">#</a>RGBICWW Floor Lamp / RGBICWW Strip Light</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>change brightness</li>
+<li>change color</li>
+<li>change color temperature</li>
+</ul>
+<h4 class="rp-toc-include" id="rgbic-neon-rope-light--rgbic-neon-wire-rope-light"><a href="#rgbic-neon-rope-light--rgbic-neon-wire-rope-light" class="rp-header-anchor rp-link" aria-hidden="true">#</a>RGBIC Neon Rope Light / RGBIC Neon Wire Rope Light</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>change brightness</li>
+<li>change color</li>
+</ul>
+<h4 class="rp-toc-include" id="candle-warmer-lamp"><a href="#candle-warmer-lamp" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Candle Warmer Lamp</h4>
+<p>Features:</p>
+<ul>
+<li>turn on or off</li>
+<li>change brightness</li>
+</ul>
+<h3 class="rp-toc-include" id="locks-1"><a href="#locks-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Locks</h3>
+<h4 class="rp-toc-include" id="lock"><a href="#lock" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Lock</h4>
+<p>Features:</p>
+<ul>
+<li>Lock or unlock</li>
+<li>open or closed state</li>
+<li>calibration state</li>
+<li>get battery level</li>
+</ul>
+<h4 class="rp-toc-include" id="lock-pro"><a href="#lock-pro" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Lock Pro</h4>
+<p>Features:</p>
+<ul>
+<li>Lock or unlock</li>
+<li>open or closed state</li>
+<li>calibration state</li>
+<li>get battery level</li>
+</ul>
+<h3 class="rp-toc-include" id="hubs-1"><a href="#hubs-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hubs</h3>
+<p>Some of the hubs can be served as a bridge while the sensor data can be retrieved. Hub 2 displays temperature and humidity through a sensor cable. Without a digital display, Hub Mini Matter Enabled can also read from a sensor cable.</p>
+<h4 class="rp-toc-include" id="hub-2"><a href="#hub-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub 2</h4>
+<p>Features:</p>
+<ul>
+<li>get temperature</li>
+<li>get humidity</li>
+</ul>
+<h4 class="rp-toc-include" id="hub-3"><a href="#hub-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Hub 3</h4>
+<p>Features:</p>
+<ul>
+<li>get motion detection state</li>
+<li>get temperature</li>
+<li>get humidity</li>
+<li>get light level</li>
+</ul>
+<h3 class="rp-toc-include" id="humidifiers-1"><a href="#humidifiers-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Humidifiers</h3>
+<p>Humidifier entities are added for Humidifier and  Evaporative Humidifier.</p>
+<h4 class="rp-toc-include" id="humidifier"><a href="#humidifier" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Humidifier</h4>
+<p>Features:</p>
+<ul>
+<li>turn on</li>
+<li>turn off</li>
+<li>set mode</li>
+<li>set humidity</li>
+</ul>
+<h4 class="rp-toc-include" id="evaporative-humidifier"><a href="#evaporative-humidifier" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Evaporative Humidifier</h4>
+<p>Note: Not all modes support unless you bind the temperature and humidity sensor.</p>
+<p>Features:</p>
+<ul>
+<li>turn on</li>
+<li>turn off</li>
+<li>set mode</li>
+<li>set humidity</li>
+</ul>
+<h3 class="rp-toc-include" id="fans-1"><a href="#fans-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Fans</h3>
+<h4 class="rp-toc-include" id="battery-circulator-fancirculator-fan"><a href="#battery-circulator-fancirculator-fan" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Battery Circulator Fan/Circulator Fan</h4>
+<p>Features:</p>
+<ul>
+<li>turn on</li>
+<li>turn off</li>
+<li>set speed, only applicable for [direct mode]</li>
+<li>set mode</li>
+<li>get battery, only applicable for [Battery Circulator Fan]</li>
+</ul>
+<h4 class="rp-toc-include" id="air-purifier"><a href="#air-purifier" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Air Purifier</h4>
+<p>Features:</p>
+<ul>
+<li>get states</li>
+<li>turn on</li>
+<li>turn off</li>
+<li>set mode</li>
+</ul>
+<h4 class="rp-toc-include" id="air-purifier-table"><a href="#air-purifier-table" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Air Purifier Table</h4>
+<p>Features:</p>
+<ul>
+<li>get states</li>
+<li>turn on</li>
+<li>turn off</li>
+<li>set mode</li>
+</ul>
+<h3 class="rp-toc-include" id="vacuums-1"><a href="#vacuums-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Vacuums</h3>
+<p>Vacuum entities are added for K10+, K10+ Pro, K10+ Pro Combo, K11+, K20+ Pro, S10, S20.</p>
+<p>Features:</p>
+<ul>
+<li>get states</li>
+<li>start/clean</li>
+<li>pause</li>
+<li>set cleaning mode</li>
+<li>return to base</li>
+<li>get battery</li>
+</ul>
+<h3 class="rp-toc-include" id="water-heater-1"><a href="#water-heater-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Water Heater</h3>
+<h4 class="rp-toc-include" id="smart-radiator-thermostat"><a href="#smart-radiator-thermostat" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Smart Radiator Thermostat</h4>
+<p>Features:</p>
+<ul>
+<li>turn on</li>
+<li>turn off</li>
+<li>set temperature</li>
+<li>get temperature</li>
+<li>set mode</li>
+<li>get battery</li>
+</ul>
+<h3 class="rp-toc-include" id="image-1"><a href="#image-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Image</h3>
+<h4 class="rp-toc-include" id="ai-art-frame"><a href="#ai-art-frame" class="rp-header-anchor rp-link" aria-hidden="true">#</a>AI Art Frame</h4>
+<p>Features:</p>
+<ul>
+<li>get battery</li>
+<li>switch picture</li>
+<li>display current picture</li>
+</ul>
+<h2 class="rp-toc-include" id="important-considerations"><a href="#important-considerations" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Important considerations</h2>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+Each sensor will request a status update from the SwitchBot Cloud API once every 10 minutes (600 seconds). The SwitchBot Cloud API limits users to 10,000 requests per day.</p><p>:::
+:::warning
+For IR Appliances, the state is inferred from previous commands in Home Assistant and might not reflect reality if you use other ways to control the device.</p></div></div>
+<h2 class="rp-toc-include" id="webhook-support"><a href="#webhook-support" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Webhook support</h2>
+<p>For vacuums, the states are updated from SwitchBot&#x27;s cloud.</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">Warning</div><div class="rp-callout__content"><p>
+Only ONE webhook URL seems to be accepted by the SwitchBot&#x27;s cloud. So, if you want several applications notified,  you need to use a “proxy” to re-dispatch the message to the other applications.</p></div></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#prerequisites" class="rp-toc-item rp-link" title="Prerequisites" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Prerequisites</span></a><a href="#supported-devices" class="rp-toc-item rp-link" title="Supported devices" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Supported devices</span></a><a href="#plugs-and-switches" class="rp-toc-item rp-link" title="Plugs and switches" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Plugs and switches</span></a><a href="#cover" class="rp-toc-item rp-link" title="Cover" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Cover</span></a><a href="#lights" class="rp-toc-item rp-link" title="Lights" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Lights</span></a><a href="#locks" class="rp-toc-item rp-link" title="Locks" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Locks</span></a><a href="#sensors" class="rp-toc-item rp-link" title="Sensors" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Sensors</span></a><a href="#hubs" class="rp-toc-item rp-link" title="Hubs" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Hubs</span></a><a href="#humidifiers" class="rp-toc-item rp-link" title="Humidifiers" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Humidifiers</span></a><a href="#vacuums" class="rp-toc-item rp-link" title="Vacuums" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Vacuums</span></a><a href="#fans" class="rp-toc-item rp-link" title="Fans" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Fans</span></a><a href="#water-heater" class="rp-toc-item rp-link" title="Water heater" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Water heater</span></a><a href="#image" class="rp-toc-item rp-link" title="Image" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Image</span></a><a href="#supported-functionality" class="rp-toc-item rp-link" title="Supported functionality" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Supported functionality</span></a><a href="#plugs-and-switches-1" class="rp-toc-item rp-link" title="Plugs and switches" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Plugs and switches</span></a><a href="#bot" class="rp-toc-item rp-link" title="Bot" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Bot</span></a><a href="#plug-mini" class="rp-toc-item rp-link" title="Plug Mini" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Plug Mini</span></a><a href="#relay-switch-2pm" class="rp-toc-item rp-link" title="Relay Switch 2PM" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Relay Switch 2PM</span></a><a href="#relay-switch-1" class="rp-toc-item rp-link" title="Relay Switch 1" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Relay Switch 1</span></a><a href="#relay-switch-1pm" class="rp-toc-item rp-link" title="Relay Switch 1PM" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Relay Switch 1PM</span></a><a href="#plug" class="rp-toc-item rp-link" title="Plug" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Plug</span></a><a href="#cover-1" class="rp-toc-item rp-link" title="Cover" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Cover</span></a><a href="#curtain" class="rp-toc-item rp-link" title="Curtain" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Curtain</span></a><a href="#curtain-3" class="rp-toc-item rp-link" title="Curtain 3" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Curtain 3</span></a><a href="#blind-tilt" class="rp-toc-item rp-link" title="Blind Tilt" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Blind Tilt</span></a><a href="#roller-shade" class="rp-toc-item rp-link" title="Roller Shade" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Roller Shade</span></a><a href="#garage-door-opener" class="rp-toc-item rp-link" title="Garage Door Opener" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Garage Door Opener</span></a><a href="#sensors-1" class="rp-toc-item rp-link" title="Sensors" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Sensors</span></a><a href="#meter" class="rp-toc-item rp-link" title="Meter" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Meter</span></a><a href="#meter-plus" class="rp-toc-item rp-link" title="Meter Plus" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Meter Plus</span></a><a href="#indooroutdoor-meter" class="rp-toc-item rp-link" title="Indoor/Outdoor Meter" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Indoor/Outdoor Meter</span></a><a href="#meter-pro" class="rp-toc-item rp-link" title="Meter Pro" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Meter Pro</span></a><a href="#meter-pro-co2-monitor" class="rp-toc-item rp-link" title="Meter Pro CO2 Monitor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Meter Pro CO2 Monitor</span></a><a href="#contact-sensor" class="rp-toc-item rp-link" title="Contact Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Contact Sensor</span></a><a href="#motion-sensor" class="rp-toc-item rp-link" title="Motion Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Motion Sensor</span></a><a href="#presence-sensor" class="rp-toc-item rp-link" title="Presence Sensor" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Presence Sensor</span></a><a href="#water-leak-detector" class="rp-toc-item rp-link" title="Water Leak Detector" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Water Leak Detector</span></a><a href="#climate-panel" class="rp-toc-item rp-link" title="Climate Panel" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Climate Panel</span></a><a href="#lights-1" class="rp-toc-item rp-link" title="Lights" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Lights</span></a><a href="#led-strip-light-3" class="rp-toc-item rp-link" title="LED Strip Light 3" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">LED Strip Light 3</span></a><a href="#floor-lamp" class="rp-toc-item rp-link" title="Floor Lamp" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Floor Lamp</span></a><a href="#color-bulb" class="rp-toc-item rp-link" title="Color Bulb" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Color Bulb</span></a><a href="#led-strip-light" class="rp-toc-item rp-link" title="LED Strip Light" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">LED Strip Light</span></a><a href="#ceiling-light--ceiling-light-pro" class="rp-toc-item rp-link" title="Ceiling Light / Ceiling Light Pro" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Ceiling Light / Ceiling Light Pro</span></a><a href="#rgbicww-floor-lamp--rgbicww-strip-light" class="rp-toc-item rp-link" title="RGBICWW Floor Lamp / RGBICWW Strip Light" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">RGBICWW Floor Lamp / RGBICWW Strip Light</span></a><a href="#rgbic-neon-rope-light--rgbic-neon-wire-rope-light" class="rp-toc-item rp-link" title="RGBIC Neon Rope Light / RGBIC Neon Wire Rope Light" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">RGBIC Neon Rope Light / RGBIC Neon Wire Rope Light</span></a><a href="#candle-warmer-lamp" class="rp-toc-item rp-link" title="Candle Warmer Lamp" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Candle Warmer Lamp</span></a><a href="#locks-1" class="rp-toc-item rp-link" title="Locks" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Locks</span></a><a href="#lock" class="rp-toc-item rp-link" title="Lock" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Lock</span></a><a href="#lock-pro" class="rp-toc-item rp-link" title="Lock Pro" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Lock Pro</span></a><a href="#hubs-1" class="rp-toc-item rp-link" title="Hubs" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Hubs</span></a><a href="#hub-2" class="rp-toc-item rp-link" title="Hub 2" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Hub 2</span></a><a href="#hub-3" class="rp-toc-item rp-link" title="Hub 3" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Hub 3</span></a><a href="#humidifiers-1" class="rp-toc-item rp-link" title="Humidifiers" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Humidifiers</span></a><a href="#humidifier" class="rp-toc-item rp-link" title="Humidifier" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Humidifier</span></a><a href="#evaporative-humidifier" class="rp-toc-item rp-link" title="Evaporative Humidifier" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Evaporative Humidifier</span></a><a href="#fans-1" class="rp-toc-item rp-link" title="Fans" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Fans</span></a><a href="#battery-circulator-fancirculator-fan" class="rp-toc-item rp-link" title="Battery Circulator Fan/Circulator Fan" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Battery Circulator Fan/Circulator Fan</span></a><a href="#air-purifier" class="rp-toc-item rp-link" title="Air Purifier" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Air Purifier</span></a><a href="#air-purifier-table" class="rp-toc-item rp-link" title="Air Purifier Table" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Air Purifier Table</span></a><a href="#vacuums-1" class="rp-toc-item rp-link" title="Vacuums" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Vacuums</span></a><a href="#water-heater-1" class="rp-toc-item rp-link" title="Water Heater" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Water Heater</span></a><a href="#smart-radiator-thermostat" class="rp-toc-item rp-link" title="Smart Radiator Thermostat" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Smart Radiator Thermostat</span></a><a href="#image-1" class="rp-toc-item rp-link" title="Image" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Image</span></a><a href="#ai-art-frame" class="rp-toc-item rp-link" title="AI Art Frame" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">AI Art Frame</span></a><a href="#important-considerations" class="rp-toc-item rp-link" title="Important considerations" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Important considerations</span></a><a href="#webhook-support" class="rp-toc-item rp-link" title="Webhook support" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Webhook support</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>应用程序配置 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="应用程序配置 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="每个应用程序（以前称为加载项，Add-on）都存放在一个文件夹中。文件结构如下所示：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="每个应用程序（以前称为加载项，Add-on）都存放在一个文件夹中。文件结构如下所示：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/developers/" class="rp-nav-menu__item__container rp-link">开发者首页</a></li><li class="rp-nav-menu__item"><a href="/developers/architecture_index" class="rp-nav-menu__item__container rp-link">架构</a></li><li class="rp-nav-menu__item"><a href="/developers/development_index" class="rp-nav-menu__item__container rp-link">Core</a></li><li class="rp-nav-menu__item"><a href="/developers/creating_component_index" class="rp-nav-menu__item__container rp-link">创建集成</a></li><li class="rp-nav-menu__item"><a href="/developers/frontend" class="rp-nav-menu__item__container rp-link">前端</a></li><li class="rp-nav-menu__item"><a href="/developers/voice/overview" class="rp-nav-menu__item__container rp-link">语音</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/api_lib_index" class="rp-hover-group__item__link rp-link" aria-label="API">API</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/supervisor" class="rp-hover-group__item__link rp-link" aria-label="Supervisor">Supervisor</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/operating-system" class="rp-hover-group__item__link rp-link" aria-label="操作系统">操作系统</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/android" class="rp-hover-group__item__link rp-link" aria-label="Android">Android</a></li><li class="rp-hover-group__item rp-hover-group__item--active" style="padding-left:8px" data-depth="0"><a href="/developers/apps" class="rp-hover-group__item__link rp-link" aria-label="Apps">Apps</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/developers/documenting" class="rp-hover-group__item__link rp-link" aria-label="文档规范">文档规范</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>开始使用</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>首页</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/architecture_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>架构总览</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/development_environment.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发环境</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/development_submitting.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发工作流</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant Core</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/development_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Core 概览</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/creating_component_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>创建集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/config_entries_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>配置流</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/configuration_yaml_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>YAML 配置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/automations.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>自动化</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/core/entity.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>实体模型</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/asyncio_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Asyncio</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/auth_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>认证与权限</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/bluetooth.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Bluetooth</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/intent_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Intent</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/device_automation_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>设备自动化</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/data_entry_flow_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>数据录入流</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/device_registry_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>设备注册表</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/entity_registry_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>实体注册表</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/network_discovery.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>网络发现</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>API 与数据访问</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/api/rest.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>REST API</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/api/websocket.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>WebSocket API</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/api/native-app-integration.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>原生应用集成 API</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/api/supervisor/endpoints.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Supervisor API</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/api_lib_index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Python 库</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/instance_url.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>实例 URL</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>平台与客户端</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/frontend.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>前端</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/supervisor.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Supervisor</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/operating-system.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>操作系统</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/android.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Android</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/apps.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>App 指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/voice/overview.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/documenting.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档规范</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/internationalization.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>国际化</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/translations.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>翻译</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/misc.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>杂项</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>进阶主题</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/architecture/core.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>架构：Core</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/architecture/devices-and-services.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>架构：设备与服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/asyncio_101.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>Asyncio 101</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/asyncio_blocking_operations.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>阻塞操作</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/asyncio_working_with_async.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>使用异步</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/apps/tutorial.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>应用教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/apps/configuration.html" class="rp-sidebar-item rp-sidebar-item--active rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>应用配置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/apps/publishing.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>应用发布</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/operating-system/boards/overview.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>操作系统开发板</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/voice/intent-recognition.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>意图识别</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/voice/pipelines.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音管道</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/core/llm.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>LLM API</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>开发博客</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/developers/blog/2019-07-19-building-all-the-things.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2018-2020</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/blog/2022-10-26-new-unit-enumerators.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2021-2022</span></div><div class="rp-sidebar-item__right"></div></a><a href="/developers/blog/2023-02-28-custom-tile-features.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>2023</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="应用程序配置"><a href="#应用程序配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应用程序配置<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p>每个应用程序（以前称为加载项，Add-on）都存放在一个文件夹中。文件结构如下所示：</p>
+<div class="rp-codeblock language-text"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="text"><code><span class="line"><span>addon_name/</span></span>
+<span class="line"><span>  translations/</span></span>
+<span class="line"><span>    en.yaml</span></span>
+<span class="line"><span>  apparmor.txt</span></span>
+<span class="line"><span>  build.yaml</span></span>
+<span class="line"><span>  CHANGELOG.md</span></span>
+<span class="line"><span>  config.yaml</span></span>
+<span class="line"><span>  DOCS.md</span></span>
+<span class="line"><span>  Dockerfile</span></span>
+<span class="line"><span>  icon.png</span></span>
+<span class="line"><span>  logo.png</span></span>
+<span class="line"><span>  README.md</span></span>
+<span class="line"><span>  run.sh</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+翻译文件<code>config</code> 和<code>build</code> 均支持<code>.json</code>、<code>.yml</code> 和<code>.yaml</code> 作为文件类型。</p>为了简单起见，所有示例都使用 <code>.yaml</code></div></div>
+<h2 class="rp-toc-include" id="应用程序脚本"><a href="#应用程序脚本" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应用程序脚本</h2>
+<p>与每个 Docker 容器一样，您需要一个脚本在容器启动时运行。用户可能会运行许多应用程序，因此如果您正在做简单的事情，建议尝试坚持使用 Bash 脚本。</p>
+<p>我们所有的图像也安装了 <a href="https://github.com/hassio-addons/bashio" target="_blank" rel="noopener noreferrer" class="rp-link">bashio</a>。它包含一组常用的操作，可用于包含在应用程序中，以减少应用程序之间的代码重复，从而使开发和维护应用程序变得更加容易。</p>
+<p>开发脚本时：</p>
+<ul>
+<li><code>/data</code> 是用于持久存储的卷。</li>
+<li><code>/data/options.json</code> 包含用户配置。您可以使用 Bashio 来解析此数据。</li>
+</ul>
+<div class="rp-codeblock language-shell"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="shell"><code><span class="line"><span style="color:var(--shiki-foreground)">CONFIG_PATH</span><span style="color:var(--shiki-token-keyword)">=</span><span style="color:var(--shiki-token-string)">/data/options.json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-foreground)">TARGET</span><span style="color:var(--shiki-token-keyword)">=</span><span style="color:var(--shiki-token-string-expression)">&quot;$(</span><span style="color:var(--shiki-token-function)">bashio::config</span><span style="color:var(--shiki-token-string-expression)"> &#x27;target&#x27;)&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>所以如果你的<code>options</code>包含</p>
+<div class="rp-codeblock language-json"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="json"><code><span class="line"><span style="color:var(--shiki-foreground)">{ </span><span style="color:var(--shiki-token-keyword)">&quot;target&quot;</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;beer&quot;</span><span style="color:var(--shiki-foreground)"> }</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>那么之后你的bash文件的环境中就会有一个包含<code>beer</code>的变量<code>TARGET</code>。</p>
+<h2 class="rp-toc-include" id="应用程序-dockerfile"><a href="#应用程序-dockerfile" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应用程序 Dockerfile</h2>
+<p>所有应用程序（以前称为加载项，Add-on）都基于最新的 Alpine Linux 镜像。Home Assistant 会根据机器架构自动替换为正确的基础镜像。如果您需要使用不同时区，请添加 <code>tzdata</code>；我们的基础镜像已包含该软件包。</p>
+<div class="rp-codeblock language-dockerfile"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="dockerfile"><code><span class="line"><span style="color:var(--shiki-token-keyword)">ARG</span><span style="color:var(--shiki-foreground)"> BUILD_FROM</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">FROM</span><span style="color:var(--shiki-foreground)"> $BUILD_FROM</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-comment)"># Install requirements for app</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">RUN</span><span style="color:var(--shiki-foreground)"> \</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  apk add --no-cache \</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">    example_alpine_package</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-comment)"># Copy data for app</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">COPY</span><span style="color:var(--shiki-foreground)"> run.sh /</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">RUN</span><span style="color:var(--shiki-foreground)"> chmod a+x /run.sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">CMD</span><span style="color:var(--shiki-foreground)"> [ </span><span style="color:var(--shiki-token-string-expression)">&quot;/run.sh&quot;</span><span style="color:var(--shiki-foreground)"> ]</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>如果您不在设备上使用本地构建或我们的构建脚本，请确保 Dockerfile 还具有一组标签，其中包括：</p>
+<div class="rp-codeblock language-dockerfile"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="dockerfile"><code><span class="line"><span style="color:var(--shiki-token-keyword)">LABEL</span><span style="color:var(--shiki-foreground)"> \</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  io.hass.version=</span><span style="color:var(--shiki-token-string-expression)">&quot;VERSION&quot;</span><span style="color:var(--shiki-foreground)"> \</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  io.hass.type=</span><span style="color:var(--shiki-token-string-expression)">&quot;addon&quot;</span><span style="color:var(--shiki-foreground)"> \</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  io.hass.arch=</span><span style="color:var(--shiki-token-string-expression)">&quot;armhf|aarch64|i386|amd64&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>可以将您自己的基础映像与<code>build.yaml</code>一起使用，或者如果您不需要自动多架构构建的支持，您也可以使用简单的docker<code>FROM</code>。您还可以在 Dockerfile 后添加特定架构的后缀，以针对特定架构使用特定的 Dockerfile，即 <code>Dockerfile.amd64</code>。</p>
+<h3 class="rp-toc-include" id="构建参数"><a href="#构建参数" class="rp-header-anchor rp-link" aria-hidden="true">#</a>构建参数</h3>
+<p>我们默认支持以下构建参数：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>ARG</th><th>描述</th></tr></thead><tbody><tr><td>@@保护0@@</td><td>保存我们系统上的动态构建或建筑物的图像。</td></tr><tr><td>@@保护0@@</td><td>应用程序版本（从<code>config.yaml</code>读取）。</td></tr><tr><td>@@保护0@@</td><td>将当前的构建拱门保存在内部。</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="应用程序配置-1"><a href="#应用程序配置-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应用程序配置</h2>
+<p>应用程序（以前称为附加组件）的配置存储在<code>config.yaml</code> 中。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Hello world&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">version</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;1.1.0&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">slug</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> folder</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">  &quot;Long description&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">arch</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-string-expression)">amd64</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">url</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;website with more information about the app (e.g., a forum thread for support)&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">ports</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  123/tcp</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 123</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">map</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> share</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    read_only</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> False</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> ssl</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">type</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> homeassistant_config</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    read_only</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> False</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    path</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> /custom/config/path</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">image</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> repo/{arch}-my-custom-addon</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+避免在应用程序中使用 <code>config.yaml</code> 作为应用程序配置以外的任何内容的文件名。 Supervisor 在应用程序存储库中递归搜索 <code>config.yaml</code>。</p></div></div>
+<h3 class="rp-toc-include" id="所需的配置选项"><a href="#所需的配置选项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>所需的配置选项</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>钥匙</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>@@保护0@@</td><td>细绳</td><td>应用程序的名称。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>应用程序的版本。如果您使用带有 <code>image</code> 选项的 docker 映像，则这需要与将使用的映像的标签相匹配。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>应用程序的 Slug。这在应用程序发布的 <a href="/developers/apps/repository.html" class="rp-link">repository</a> 范围内必须是唯一的并且 URI 友好。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>应用程序的描述。</td></tr><tr><td>@@保护0@@</td><td>列表</td><td>支持的架构列表：<code>armhf</code>、<code>armv7</code>、<code>aarch64</code>、<code>amd64</code>、<code>i386</code>。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="可选配置选项"><a href="#可选配置选项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>可选配置选项</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>钥匙</th><th>类型</th><th>默认</th><th>描述</th></tr></thead><tbody><tr><td>@@保护0@@</td><td>列表</td><td></td><td>默认支持所有机器类型。您可以将应用程序配置为仅在特定计算机上运行。您可以在机器类型之前使用<code>!</code>来否定它。</td></tr><tr><td>@@保护0@@</td><td>网址</td><td></td><td>应用程序的主页。您可以在此处解释该应用程序和选项。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>@@保护0@@</td><td><code>initialize</code> 将在设置 Home Assistant 时启动该应用程序。 <code>system</code> 适用于数据库之类的东西，不依赖于其他东西。 <code>services</code> 将在 Home Assistant 之前启动，而 <code>application</code> 之后启动。最后<code>once</code> 适用于不作为守护进程运行的应用程序。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td></td><td>此应用程序的 Web 界面的 URL。与<code>http://[HOST]:[PORT:2839]/dashboard</code>一样，该端口需要内部端口，该端口将被替换为有效端口。还可以使用以下命令将协议部分绑定到配置选项：<code>[PROTO:option_name]://[HOST]:[PORT:2839]/dashboard</code>，并查找它是否是<code>true</code>，并且它将查找<code>https</code>。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>@@保护0@@</td><td><code>auto</code> 启动时启动由系统控制，<code>manual</code> 将应用程序配置为仅手动启动。如果插件不应该在启动时自动启动，请使用 <code>manual_only</code> 来防止用户更改它。</td></tr><tr><td>@@保护0@@</td><td>词典</td><td></td><td>从容器公开的网络端口。格式为<code>&quot;container-port/type&quot;: host-port</code>。如果主机端口是<code>null</code>，则映射被禁用。</td></tr><tr><td>@@保护0@@</td><td>词典</td><td></td><td>网络端口描述映射。格式为<code>&quot;container-port/type&quot;: &quot;description of this port&quot;</code>。或者使用<a href="#port-description-translations" class="rp-link">Port description translations</a>。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>如果<code>true</code>，则应用程序在主机网络上运行。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>允许与其他人共享 IPC 命名空间。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>将主机 D-Bus 服务映射到应用程序中。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>允许容器在主机 PID 命名空间上运行。仅适用于不受保护的应用程序。 <strong>警告：</strong> 不适用于 S6 Overlay。如果需要将其设置为 <code>true</code> 并且您使用普通应用程序基础映像，则可以通过覆盖 <code>/init</code> 来禁用 S6。或者使用备用基础映像。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>使用主机 UTS 命名空间。</td></tr><tr><td>@@保护0@@</td><td>列表</td><td></td><td>要映射到应用程序的设备列表。格式为：<code>&lt;path_on_host&gt;</code>。例如，<code>/dev/ttyAMA0</code></td></tr><tr><td>@@保护0@@</td><td>细绳</td><td></td><td>固定应用程序所需的最低 Home Assistant Core 版本。值是版本字符串，如 <code>2022.10.5</code>。</td></tr><tr><td>@@保护0@@</td><td>斯特</td><td>@@保护0@@</td><td>基于角色的 Supervisor API 访问权限。可用值：<code>default</code>、<code>homeassistant</code>、<code>backup</code>、<code>manager</code> 或 <code>admin</code></td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>此应用程序可以访问 Supervisor 的 REST API。使用<code>http://supervisor</code>。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>此应用程序可以访问 Home Assistant REST API 代理。使用<code>http://supervisor/core/api</code>。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>允许应用程序对 Docker API 进行只读访问。仅适用于不受保护的应用程序。</td></tr><tr><td>@@保护0@@</td><td>列表</td><td></td><td>访问硬件/系统的权限。可用访问：<code>BPF</code>、<code>CHECKPOINT_RESTORE</code>、<code>DAC_READ_SEARCH</code>、<code>IPC_LOCK</code>、<code>NET_ADMIN</code>、<code>NET_RAW</code>、<code>PERFMON</code>、<code>SYS_ADMIN</code>、<code>SYS_MODULE</code>、<code>SYS_NICE</code>、<code>SYS_PTRACE</code>、<code>SYS_RAWIO</code>、 <code>SYS_RESOURCE</code> 或<code>SYS_TIME</code>。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>提供对硬件的完全访问权限，就像 Docker 中的特权模式一样。仅适用于不受保护的应用程序。考虑使用其他应用程序选项来代替此选项，例如<code>devices</code>。如果启用此选项，请勿添加<code>devices</code>、<code>uart</code>、<code>usb</code> 或<code>gpio</code>，因为不需要。</td></tr><tr><td>@@保护0@@</td><td>布尔/字符串</td><td>@@保护0@@</td><td>启用或禁用 AppArmor 支持。如果启用，您还可以使用具有配置文件名称的自定义配置文件。</td></tr><tr><td>@@保护0@@</td><td>列表</td><td></td><td>要绑定挂载到容器中的 Home Assistant 目录类型列表。可能的值：<code>homeassistant_config</code>、<code>addon_config</code>、<code>ssl</code>、<code>addons</code>、<code>backup</code>、<code>share</code>、<code>media</code>、<code>all_addon_configs</code> 和 <code>data</code>。默认为只读，您可以通过添加属性<code>read_only: false</code>来更改它。默认情况下，所有路径都映射到插件容器内的<code>/&lt;type-name&gt;</code>，但也可以提供可选的<code>path</code>属性来配置路径（示例：<code>path: /custom/config/path</code>）。如果使用，路径不能为空，且与为插件定义的任何其他路径不同，并且不能是根路径。请注意，<code>data</code> 目录始终是映射且可写的，但<code>path</code> 属性可以使用相同的约定进行设置。</td></tr><tr><td>@@保护0@@</td><td>词典</td><td></td><td>用于运行应用程序的环境变量字典。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>标记此应用程序以使用内部音频系统。我们将工作的 PulseAudio 设置映射到容器中。如果您的应用程序不支持 PulseAudio，您可能需要安装：Alpine Linux <code>alsa-plugins-pulse</code> 或 Debian/Ubuntu <code>libasound2-plugins</code>。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>标记此应用程序以使用内部视频系统。所有可用设备都将映射到应用程序中。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>如果设置为 <code>true</code>，<code>/sys/class/gpio</code> 将映射到应用程序以从内核访问 GPIO 接口。有些库还需要 <code>/dev/mem</code> 和 <code>SYS_RAWIO</code> 来对该设备进行读/写访问。在启用了 AppArmor 的系统上，您需要禁用 AppArmor 或为应用程序提供您自己的配置文件，这更有利于安全。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>如果设置为 <code>true</code>，它将把原始 USB 访问 <code>/dev/bus/usb</code> 映射到具有即插即用支持的应用程序中。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>默认<code>false</code>。自动将所有 UART/串行设备从主机映射到应用程序。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>默认<code>false</code>。将其设置为 <code>true</code> 会将主机 udev 数据库只读安装到应用程序中。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>如果设置为 <code>true</code>，<code>/device-tree</code> 将映射到应用程序中。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>将主机内核模块和配置映射到应用程序（只读）并授予您<code>SYS_MODULE</code>权限。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>如果启用，您可以将 STDIN 与 Home Assistant API 结合使用。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>如果 Docker 镜像没有 <code>hass.io</code> 标签，您可以启用旧模式以使用配置数据。</td></tr><tr><td>@@保护0@@</td><td>词典</td><td></td><td>应用程序的默认选项值。</td></tr><tr><td>@@保护0@@</td><td>词典</td><td></td><td>应用程序选项值的架构。它可以是 <code>false</code> 来禁用模式验证和选项。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td></td><td>用于 Docker Hub 和其他容器注册表。这应该仅设置为图像的名称（例如，<code>ghcr.io/home-assistant/{arch}-addon-example</code>）。如果使用此选项，请使用 <code>version</code> 选项设置活动 docker 标记。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td></td><td>与 Codenotary CAS 一起使用。这是用于通过 Codenotary 验证您的图像的电子邮件地址（例如，<code>example@home-assistant.io</code>）。这应该与 <a href="#app-extended-build" class="rp-link">app&#x27;s extended build options</a> 中用作签名者的电子邮件地址匹配</td></tr><tr><td>@@保护0@@</td><td>整数</td><td>10</td><td>默认 10（秒）。等待 Docker 守护进程完成或将被终止的超时时间。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>如果将其设置为 <code>true</code>，则容器 <code>/tmp</code> 使用 tmpfs（一种内存文件系统）。</td></tr><tr><td>@@保护0@@</td><td>列表</td><td></td><td>此应用程序为 Home Assistant 提供的服务列表。</td></tr><tr><td>@@保护0@@</td><td>列表</td><td></td><td>将通过此应用程序提供或使用的服务列表。格式为<code>service</code>:<code>function</code>，功能为：<code>provide</code>（此应用程序可以提供此服务），<code>want</code>（此应用程序可以使用此服务）或<code>need</code>（此应用程序需要此服务才能正常工作）。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>允许访问 Home Assistant 用户后端。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>启用应用程序的入口功能。</td></tr><tr><td>@@保护0@@</td><td>整数</td><td>@@保护0@@</td><td>对于在主机网络上运行的应用程序，您可以使用 <code>0</code> 并稍后通过 API 读取端口。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>@@保护0@@</td><td>修改URL入口点。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>启用后，对应用程序的请求将被传输</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>@@保护0@@</td><td><a href="https://materialdesignicons.com/" target="_blank" rel="noopener noreferrer" class="rp-link">MDI icon</a> 用于菜单面板集成。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td></td><td>默认为应用程序名称，但可以使用此选项进行修改。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>使菜单项仅对管理员组中的用户可用。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>@@保护0@@</td><td><code>hot</code> 或 <code>cold</code>。如果<code>cold</code>，主管在进行备份之前关闭应用程序（使用<code>cold</code> 时将忽略<code>pre/post</code> 选项）。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td></td><td>在进行备份之前在应用程序上下文中执行的命令。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td></td><td>备份后在应用程序上下文中执行的命令。</td></tr><tr><td>@@保护0@@</td><td>列表</td><td></td><td>从备份中排除的文件/路径列表（支持 glob）。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>将其设置为 <code>true</code> 以要求用户启用“高级”模式才能显示。</td></tr><tr><td>@@保护0@@</td><td>细绳</td><td>@@保护0@@</td><td>使用以下属性标记应用程序：<code>stable</code>、<code>experimental</code> 或<code>deprecated</code>。除非用户启用高级模式，否则设置为 <code>experimental</code> 或 <code>deprecated</code> 的应用程序不会显示在商店中。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>将其设置为 <code>false</code> 以禁用 Docker 默认系统 init。如果映像有自己的初始化系统（如<a href="https://github.com/just-containers/s6-overlay" target="_blank" rel="noopener noreferrer" class="rp-link">s6-overlay</a>），请使用此选项。 <em>注意：从 S6 V3 开始，需要将其设置为<code>false</code>，否则插件将无法启动，请参阅<a href="https://developers.home-assistant.io/blog/2022/05/12/s6-overlay-base-images" target="_blank" rel="noopener noreferrer" class="rp-link">here</a> 了解更多信息。</em></td></tr><tr><td>@@保护0@@</td><td>细绳</td><td></td><td>用于监控应用程序运行状况的 URL。与<code>http://[HOST]:[PORT:2839]/dashboard</code>一样，该端口需要内部端口，该端口将被替换为有效端口。还可以使用以下命令将协议部分绑定到配置选项：<code>[PROTO:option_name]://[HOST]:[PORT:2839]/dashboard</code>，并查找它是否是<code>true</code>，并且它将查找<code>https</code>。对于简单的 TCP 端口监控，您可以使用 <code>tcp://[HOST]:[PORT:80]</code>。它适用于主机或内部网络上的应用程序。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>授予应用程序访问主机计划的权限，包括<code>SYS_NICE</code>以更改执行时间/优先级。</td></tr><tr><td>@@保护0@@</td><td>布尔值</td><td>@@保护0@@</td><td>如果设置为<code>true</code>，主机的系统日志将以只读方式映射到应用程序中。大多数情况下，日志位于<code>/var/log/journal</code> 中，但在某些主机上，您会在<code>/run/log/journal</code> 中找到它。依赖此功能的应用程序应检查目录<code>/var/log/journal</code>是否已填充，如果没有，则回退到<code>/run/log/journal</code>。</td></tr><tr><td>@@保护0@@</td><td>列表</td><td></td><td>插件的破坏版本列表。如果更新为破坏性版本或跨越破坏性版本，则始终需要手动更新，即使用户为插件启用了自动更新。</td></tr><tr><td>@@保护0@@</td><td>词典</td><td></td><td>应用程序容器的资源限制 (ulimit) 设置字典。每个限制可以是普通整数值，也可以是带有键 <code>soft</code> 和 <code>hard</code> 的字典，每个限制都采用普通整数进行细粒度控制。各个值不得大于主机的硬限制（可通过 <code>ulimit -Ha</code> 检查；例如，在 Home Assistant 操作系统中 <code>nofile</code> 限制的情况下为 524288）。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="选项架构"><a href="#选项架构" class="rp-header-anchor rp-link" aria-hidden="true">#</a>选项/架构</h3>
+<p><code>options</code> 字典包含所有可用选项及其默认值。将默认值设为 <code>null</code>，或在 <code>schema</code> 字典中定义数据类型，即可把某个选项设为必填。这样，用户必须在应用程序（以前称为加载项，Add-on）启动前提供该选项。支持嵌套数组和字典，最大深度为 2。</p>
+<p>要使选项真正可选（没有默认值），需要使用 <code>schema</code> 字典。将 <code>?</code> 放在数据类型的末尾，并且<em>不要</em>在 <code>options</code> 字典中定义任何默认值。如果给出任何默认值，则该选项将成为必需值。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;custom things&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">logins</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">username</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> beer</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    password</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;123456&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">username</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> cheep</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    password</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;654321&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">random</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-string-expression)">haha</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-string-expression)">hihi</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">link</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;http://example.com/&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">size</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 15</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">count</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 1.2</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+如果您从已部署给用户的应用程序中删除配置选项，建议删除该选项以避免类似 <code>Option &#x27;&lt;options_key&gt;&#x27; does not exist in the schema for &lt;App Name&gt; (&lt;app slug&gt;)</code> 的警告。</p><p>要删除选项，可以使用 Supervisor 的加载项 API。使用 bashio 时，可以直接调用 <code>bashio::addon.option &#x27;&lt;options_key&gt;&#x27;</code>（不带额外参数即可删除该选项键）。要检查该选项是否仍已设置，请检查选项字典的内容，如下所示：</p><div class="rp-codeblock language-sh"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="sh"><code><span class="line"><span style="color:var(--shiki-foreground)">options</span><span style="color:var(--shiki-token-keyword)">=</span><span style="color:var(--shiki-foreground)">$(</span><span style="color:var(--shiki-token-function)">bashio::addon.options</span><span style="color:var(--shiki-foreground)">)</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">old_key</span><span style="color:var(--shiki-token-keyword)">=</span><span style="color:var(--shiki-token-string-expression)">&#x27;test&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">if</span><span style="color:var(--shiki-token-function)"> bashio::jq.exists</span><span style="color:var(--shiki-token-string-expression)"> &quot;${options}&quot;</span><span style="color:var(--shiki-token-string-expression)"> &quot;.${old_key}&quot;</span><span style="color:var(--shiki-foreground)">; </span><span style="color:var(--shiki-token-keyword)">then</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    bashio::log.info</span><span style="color:var(--shiki-token-string-expression)"> &quot;Removing ${old_key}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">    bashio::addon.option</span><span style="color:var(--shiki-token-string-expression)"> &quot;${old_key}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">fi</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div></div></div>
+<p><code>schema</code> 看起来像<code>options</code> 但描述了我们应该如何验证用户输入。例如：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> str</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">logins</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">username</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> str</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    password</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> str</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">random</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-string-expression)">&quot;match(^\\w*$)&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">ssh</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  private_key</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> str</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  public_key</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> str</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">link</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> url</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">size</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;int(5,20)&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">count</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> float</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">not_need</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;str?&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>我们支持：</p>
+<ul>
+<li><code>str</code> / <code>str(min,)</code> / <code>str(,max)</code> / <code>str(min,max)</code></li>
+<li>@@保护0@@</li>
+<li><code>int</code> / <code>int(min,)</code> / <code>int(,max)</code> / <code>int(min,max)</code></li>
+<li><code>float</code> / <code>float(min,)</code> / <code>float(,max)</code> / <code>float(min,max)</code></li>
+<li>@@保护0@@</li>
+<li>@@保护0@@</li>
+<li>@@保护0@@</li>
+<li>@@保护0@@</li>
+<li>@@保护0@@</li>
+<li><code>列表（val1 | 值2 | ...)</code></li>
+<li><code>device</code> / <code>device(filter)</code>：设备过滤器可以采用以下格式：<code>subsystem=TYPE</code>，即串行设备的<code>subsystem=tty</code>。</li>
+</ul>
+<h2 class="rp-toc-include" id="应用程序扩展构建"><a href="#应用程序扩展构建" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应用程序扩展构建</h2>
+<p>应用程序的其他构建选项存储在<code>build.yaml</code>中。该文件将从我们的构建系统中读取。
+仅当您不使用默认图像或需要其他东西时才需要这样做。</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">build_from</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  armhf</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> mycustom/base-image:latest</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">args</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  my_build_arg</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> xy</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>钥匙</th><th>必需的</th><th>描述</th></tr></thead><tbody><tr><td>构建自</td><td>不</td><td>以硬件架构为键、基础 Docker 镜像为值的字典。</td></tr><tr><td>参数</td><td>不</td><td>允许额外的 Docker 构建参数作为字典。</td></tr><tr><td>标签</td><td>不</td><td>允许附加 Docker 标签作为字典。</td></tr><tr><td>代码公证人</td><td>不</td><td>使用 codenotary CAS 启用容器签名。</td></tr><tr><td>代码公证人.signer</td><td>不</td><td>该图像的所有者签名者电子邮件地址。</td></tr><tr><td>codenotary.base_image</td><td>不</td><td>验证基础容器镜像。如果您使用我们的官方图片，请使用<code>notary@home-assistant.io</code></td></tr></tbody></table></div>
+<p>我们提供了一组<a href="https://github.com/home-assistant/docker-base" target="_blank" rel="noopener noreferrer" class="rp-link">基础镜像</a>，应该可以满足很多需求。如果您不想使用基于 Alpine 的版本或需要特定的图像标签，请随时使用 <code>build_from</code> 选项为您的构建固定此要求。</p>
+<h2 class="rp-toc-include" id="应用程序翻译"><a href="#应用程序翻译" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应用程序翻译</h2>
+<p>应用程序（以前称为加载项，Add-on）可以为 UI 中使用的配置选项提供翻译文件。</p>
+<p>翻译文件的示例路径：<code>addon/translations/{language_code}.yaml</code></p>
+<p>对于<code>{language_code}</code>，请使用有效的语言代码，例如<code>en</code>，对于<a href="https://github.com/home-assistant/frontend/blob/dev/src/translations/translationMetadata.json" target="_blank" rel="noopener noreferrer" class="rp-link">full list have a look here</a>，<code>en.yaml</code> 将是有效的文件名。</p>
+<p>该文件支持 2 个主键<code>configuration</code> 和<code>network</code>。</p>
+<h3 class="rp-toc-include" id="配置翻译"><a href="#配置翻译" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置翻译</h3>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">configuration</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  ssl</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Enable SSL</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Enable usage of SSL on the webserver inside the app</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  ssh</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> SSH Options</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Configure SSH authentication options</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    fields</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      public_key</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Public Key</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Client Public Key</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      private_key</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Private Key</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> Client Private Key</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p><em>在本例中，<code>configuration</code> (<code>ssl</code>) 下的密钥需要与 <code>schema</code> 配置中的密钥（在 <a href="#app-configuration" class="rp-link"><code>config.yaml</code></a> 中）相匹配。</em></p>
+<h3 class="rp-toc-include" id="端口描述翻译"><a href="#端口描述翻译" class="rp-header-anchor rp-link" aria-hidden="true">#</a>端口描述翻译</h3>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">network</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  80/TCP</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> The webserver port (Not used for Ingress)</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p><em>在本例中，<code>network</code> (<code>80/TCP</code>) 下的密钥需要与 <code>ports</code> 配置中的密钥（在 <a href="#app-configuration" class="rp-link"><code>config.yaml</code></a> 中）相匹配。</em></p>
+<h2 class="rp-toc-include" id="应用程序高级选项"><a href="#应用程序高级选项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>应用程序高级选项</h2>
+<p>有时，应用程序开发人员可能希望允许用户配置以提供自己的文件，然后将这些文件作为其配置的一部分直接提供给内部服务。一些例子包括：</p>
+<ol>
+<li>内部服务需要一个已配置项目的列表，并且每个项目的架构都很复杂，但该服务没有提供用于执行此操作的 UI，更容易将用户指向其文档并请求该架构中的文件。</li>
+<li>内部服务需要二进制文件或外部配置的某些文件作为其配置的一部分。</li>
+<li>内部服务支持配置更改时的实时重新加载，并且您希望通过询问用户在其架构中提供要实时重新加载的文件来支持其部分或全部配置。</li>
+</ol>
+<p>在这种情况下，您应在加载项的配置文件中把 <code>addon_config</code> 添加到 <code>map</code>。然后告知用户将该文件放入 <code>/addon_configs/{REPO}_&lt;your addon&#x27;s slug&gt;</code> 文件夹中。如果应用程序安装自本地，<code>{REPO}</code> 将是 <code>local</code>；如果应用程序来自 GitHub 仓库，<code>{REPO}</code> 则是根据仓库 URL 生成的哈希标识符（例如：<code>https://github.com/xy/my_hassio_addons</code>）。
+该文件夹会在运行时挂载到加载项的 Docker 容器内的 <code>/config</code>。您应在加载项的 schema 中提供一个选项，用来收集相对于该文件夹的文件路径，或者依赖固定文件名并在文档中说明。</p>
+<p><code>addon_config</code> 的另一个用例，是让加载项提供基于文件的输出，或允许用户访问内部文件进行调试。一些例子包括：</p>
+<ol>
+<li>内部服务日志记录到一个文件，并且您希望允许用户访问该日志文件</li>
+<li>内部服务使用数据库，并且您希望允许用户访问该数据库进行调试</li>
+<li>内部服务生成旨在在其自己的配置中使用的文件，并且您也希望允许用户访问它们</li>
+</ol>
+<p>在这种情况下，您应将 <code>addon_config:rw</code> 添加到 <code>map</code>，以便加载项可以读写该文件夹。然后，在加载项运行时把这些文件写入 <code>/config</code>，让用户能够查看并访问它们。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><a href="/developers/apps/tutorial.html" class="rp-prev-next-page__item rp-prev-next-page__prev rp-link"><span class="rp-prev-next-page__item__desc">上一页</span><span class="rp-prev-next-page__item__title"><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon rp-prev-next-page__rotate_180"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg><span>应用教程</span></span></a><a href="/developers/apps/publishing.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>应用发布</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#应用程序脚本" class="rp-toc-item rp-link" title="应用程序脚本" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">应用程序脚本</span></a><a href="#应用程序-dockerfile" class="rp-toc-item rp-link" title="应用程序 Dockerfile" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">应用程序 Dockerfile</span></a><a href="#构建参数" class="rp-toc-item rp-link" title="构建参数" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">构建参数</span></a><a href="#应用程序配置" class="rp-toc-item rp-link" title="应用程序配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">应用程序配置</span></a><a href="#所需的配置选项" class="rp-toc-item rp-link" title="所需的配置选项" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">所需的配置选项</span></a><a href="#可选配置选项" class="rp-toc-item rp-link" title="可选配置选项" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">可选配置选项</span></a><a href="#选项架构" class="rp-toc-item rp-link" title="选项/架构" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">选项/架构</span></a><a href="#应用程序扩展构建" class="rp-toc-item rp-link" title="应用程序扩展构建" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">应用程序扩展构建</span></a><a href="#应用程序翻译" class="rp-toc-item rp-link" title="应用程序翻译" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">应用程序翻译</span></a><a href="#配置翻译" class="rp-toc-item rp-link" title="配置翻译" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">配置翻译</span></a><a href="#端口描述翻译" class="rp-toc-item rp-link" title="端口描述翻译" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">端口描述翻译</span></a><a href="#应用程序高级选项" class="rp-toc-item rp-link" title="应用程序高级选项" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">应用程序高级选项</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zigbee Home Automation - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Zigbee Home Automation - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Zigbee 家庭自动化 (ZHA) integration 允许您使用称为Zigbee 协调器 的众多兼容硬件适配器之一将许多现成的 Zigbee-based devices(https://csa-iot.org/csa-iotproducts/) 直接无线连接到 Home Assistant。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Zigbee 家庭自动化 (ZHA) integration 允许您使用称为Zigbee 协调器 的众多兼容硬件适配器之一将许多现成的 Zigbee-based devices(https://csa-iot.org/csa-iotproducts/) 直接无线连接到 Home Assistant。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="https://my.home-assistant.io/badges/config_flow_start.svg"/><link rel="preload" as="image" href="/home-assistant/images/integrations/zha/zha-change-channel.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="zigbee-home-automation"><a href="#zigbee-home-automation" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee Home Automation<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Zigbee 家庭自动化</strong> (ZHA) integration 允许您使用称为_Zigbee 协调器_ 的众多兼容硬件适配器之一将许多现成的 <a href="https://csa-iot.org/csa-iot_products/" target="_blank" rel="noopener noreferrer" class="rp-link">Zigbee-based devices</a> 直接无线连接到 Home Assistant。</p>
+<p>此 integration 目前支持 Home Assistant 中的以下设备类型：</p>
+<ul>
+<li><a href="/home-assistant/integrations/alarm_control_panel/index.html" class="rp-link">Alarm control panel</a></li>
+<li><a href="/home-assistant/integrations/binary_sensor/index.html" class="rp-link">Binary sensor</a></li>
+<li><a href="/home-assistant/integrations/button/index.html" class="rp-link">Button</a></li>
+<li><a href="/home-assistant/integrations/climate/index.html" class="rp-link">Climate</a>（测试版）</li>
+<li><a href="/home-assistant/integrations/cover/index.html" class="rp-link">Cover</a></li>
+<li><a href="/home-assistant/integrations/device_tracker/index.html" class="rp-link">Device tracker</a></li>
+<li><a href="/home-assistant/integrations/fan/index.html" class="rp-link">Fan</a></li>
+<li><a href="/home-assistant/integrations/light/index.html" class="rp-link">Light</a></li>
+<li><a href="/home-assistant/integrations/lock/index.html" class="rp-link">Lock</a></li>
+<li><a href="/home-assistant/integrations/number/index.html" class="rp-link">Number</a>（即模拟输入/输出）</li>
+<li><a href="/home-assistant/integrations/select/index.html" class="rp-link">Select</a></li>
+<li><a href="/home-assistant/integrations/sensor/index.html" class="rp-link">Sensor</a></li>
+<li><a href="/home-assistant/integrations/siren/index.html" class="rp-link">Siren</a></li>
+<li><a href="/home-assistant/integrations/switch/index.html" class="rp-link">Switch</a></li>
+<li><a href="/home-assistant/integrations/update/index.html" class="rp-link">Update</a></li>
+</ul>
+<h2 class="rp-toc-include" id="简介"><a href="#简介" class="rp-header-anchor rp-link" aria-hidden="true">#</a>简介</h2>
+<p>ZHA 集成是一种独立于硬件的 Zigbee 网关实现，可以取代大多数专有的 Zigbee 网关（或网桥、集线器或控制器）。 ZHA 创建一个 Zigbee 网络，您可以向其中添加大多数基于 Zigbee 的设备。</p>
+<p>ZHA 使用名为 <a href="https://github.com/zigpy/zigpy" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy</a> 的开源 Python 库，因此任何与 zigpy 兼容的协调器都可以与 ZHA 一起使用。在购买 Zigbee 设备之前查看 <a href="#compatible-hardware" class="rp-link">compatible hardware</a> 建议。</p>
+<h3 class="rp-toc-include" id="zigbee-terms"><a href="#zigbee-terms" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee 术语说明</h3>
+<ul>
+<li><strong>Zigbee 网络</strong>：具有使用低带宽通信协议的低功耗数字无线电的设备的网状网络。</li>
+<li><strong>Zigbee 协调器</strong>：硬件无线电适配器（通常是 USB 适配器），可直接插入运行 Home Assistant 安装的同一台计算机。</li>
+<li><strong>Zigbee 路由器设备</strong>：始终由主电源 (AC) 供电的硬件设备，例如插座或风扇。</li>
+<li><strong>Zigbee 终端设备</strong>：通常由电池供电 (DC) 的硬件设备，例如遥控器或运动传感器。</li>
+<li><strong>Zigbee组</strong>：两个或多个相同类型的Zigbee设备的集合，与Home Assistant的<a href="/home-assistant/integrations/group/index.html" class="rp-link">Groups</a>不同。</li>
+</ul>
+<h3 class="rp-toc-include" id="zigbee-concepts"><a href="#zigbee-concepts" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee 基本概念</h3>
+<ul>
+<li>Zigbee 网络可以有<strong>只有一个</strong> Zigbee 协调器，</li>
+<li>Zigbee 协调器可以连接多个 <strong>Zigbee 路由器</strong> 或 <strong>Zigbee 终端设备</strong>，</li>
+<li>每个 Zigbee 路由器设备可以连接多个 <strong>Zigbee 终端设备</strong>，</li>
+<li>Zigbee 设备只能连接到单个 Zigbee 网络，</li>
+<li>Zigbee 网络在很大程度上依赖于拥有多个 <a href="#using-router-devices-to-add-more-devices" class="rp-link">Zigbee Router devices</a> 来扩大覆盖范围并增加设备容量。</li>
+<li>路由器设备有助于将消息传递到 Zigbee 网络中的其他附近设备，因此可以扩大范围并增加可添加的设备数量。</li>
+</ul>
+<h2 class="rp-toc-include" id="兼容的硬件"><a href="#兼容的硬件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>兼容的硬件</h2>
+<p>该集成的独立于硬件的设计为不同制造商提供的许多 Zigbee 协调器提供支持，只要协调器与 <a href="https://github.com/zigpy/zigpy" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy</a> 库兼容即可。</p>
+<h3 class="rp-toc-include" id="推荐的-zigbee-无线电适配器和模块"><a href="#推荐的-zigbee-无线电适配器和模块" class="rp-header-anchor rp-link" aria-hidden="true">#</a>推荐的 Zigbee 无线电适配器和模块</h3>
+<ul>
+<li>使用 EZSP 协议的基于 Silicon Labs EmberZNet 的无线电（通过用于 zigpy 的 <a href="https://github.com/zigpy/bellows" target="_blank" rel="noopener noreferrer" class="rp-link">bellows</a> 库）
+<ul>
+<li><a href="/home-assistant/connect/zbt-2/" class="rp-link">Home Assistant Connect ZBT-2</a>（基于 EFR32MG24 的 USB 适配器）</li>
+<li><a href="/home-assistant/connectzbt1/" class="rp-link">Home Assistant Connect ZBT-1</a>（基于 EFR32MG21 的 USB 加密狗）</li>
+<li><a href="/home-assistant/yellow/" class="rp-link">Home Assistant Yellow</a> 具有集成 MGM210P 无线电，基于 EFR32MG21</li>
+<li><a href="https://itead.cc/product/zigbee-3-0-usb-dongle/" target="_blank" rel="noopener noreferrer" class="rp-link">ITead SONOFF Zigbee 3.0 USB Dongle Plus Model &quot;ZBDongle-E&quot; (EFR32MG21 variant)</a></li>
+<li><a href="https://smlight.tech/product/slzb-07/" target="_blank" rel="noopener noreferrer" class="rp-link">SMLIGHT SLZB-07</a>（基于 EFR32MG21 的 USB 加密狗）</li>
+</ul>
+</li>
+<li>基于 Texas Instruments 的无线电（通过用于 zigpy 的 <a href="https://github.com/zigpy/zigpy-znp" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy-znp</a> 库）
+<ul>
+<li><a href="https://www.zigbee2mqtt.io/guide/adapters/" target="_blank" rel="noopener noreferrer" class="rp-link">CC2652P/CC2652R/CC2652RB USB stick, module, or dev board hardware flashed with Z-Stack coordinator firmware</a></li>
+<li><a href="https://www.zigbee2mqtt.io/guide/adapters/" target="_blank" rel="noopener noreferrer" class="rp-link">CC1352P/CC1352R USB stick, module, or dev board hardware flashed with Z-Stack coordinator firmware</a></li>
+</ul>
+</li>
+<li>dresden elektronik 基于 deCONZ 的 Zigbee 无线电（通过用于 zigpy 的 <a href="https://github.com/zigpy/zigpy-deconz" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy-deconz</a> 库）
+<ul>
+<li><a href="https://phoscon.de/conbee3" target="_blank" rel="noopener noreferrer" class="rp-link">ConBee III (a.k.a. ConBee 3) USB adapter from dresden elektronik</a></li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="其他支持但不推荐的-zigbee-无线电适配器或模块"><a href="#其他支持但不推荐的-zigbee-无线电适配器或模块" class="rp-header-anchor rp-link" aria-hidden="true">#</a>其他支持但不推荐的 Zigbee 无线电适配器或模块</h3>
+<p>支持以下硬件，但_不推荐_。每个部分均注明了具体型号和详细信息。</p>
+<details>
+<summary>不推荐的硬件列表</summary>
+<div class="rp-callout rp-callout--caution"><div class="rp-callout__title">Caution</div><div class="rp-callout__content"><ul>
+<li>
+<p><strong>不建议</strong>通过<strong>串行代理服务器</strong>_（也称为串行到IP桥或Ser2Net远程适配器）_运行协调器：</p>
+<ul>
+<li><strong>无线网络</strong>，</li>
+<li><strong>WAN</strong>，或</li>
+<li><strong>VPN</strong></li>
+</ul>
+</li>
+<li>
+<p>协调器需要与其串行端口接口建立稳定的本地连接，且与主机上运行的 Zigbee 网关应用程序的通信不会中断。</p>
+</li>
+<li>
+<p>协调器使用的串行协议没有足够的稳健性、弹性或容错能力来处理不稳定连接上可能发生的数据包丢失和延迟延迟。</p>
+</li>
+</ul><p>:::
+<strong>基于 Silicon Labs EmberZNet 的无线电，使用使用 EZSP 协议的传统硬件（通过用于 zigpy 的 <a href="https://github.com/zigpy/bellows" target="_blank" rel="noopener noreferrer" class="rp-link">bellows</a> 库）</strong></p><ul>
+<li>
+<p><a href="https://elelabs.com/products/elelabs-usb-adapter.html" target="_blank" rel="noopener noreferrer" class="rp-link">Elelabs Zigbee USB Adapter</a>/POPP ZB 棒</p>
+<ul>
+<li>建议<a href="https://github.com/Elelabs/elelabs-zigbee-ezsp-utility" target="_blank" rel="noopener noreferrer" class="rp-link">upgrade the EmberZNet NCP application firmware</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://elelabs.com/products/elelabs-zigbee-shield.html" target="_blank" rel="noopener noreferrer" class="rp-link">Elelabs Zigbee Raspberry Pi Shield</a></p>
+<ul>
+<li>建议<a href="https://github.com/Elelabs/elelabs-zigbee-ezsp-utility" target="_blank" rel="noopener noreferrer" class="rp-link">upgrade the EmberZNet NCP application firmware</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://itead.cc/product/sonoff-zbbridge/" target="_blank" rel="noopener noreferrer" class="rp-link">ITead Sonoff ZBBridge</a></p>
+<ul>
+<li>注：<a href="https://github.com/home-assistant/home-assistant.io/issues/17170" target="_blank" rel="noopener noreferrer" class="rp-link">WiFi-based bridges are not recommended for ZHA with EZSP radios</a>。</li>
+<li>这些首先需要使用 <a href="https://www.digiblur.com/2020/07/how-to-use-sonoff-zigbee-bridge-with.html" target="_blank" rel="noopener noreferrer" class="rp-link">Tasmota firmware and Silabs EmberZNet NCP EZSP UART Host firmware to use as Serial-to-IP adapter</a> 进行闪存</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/" target="_blank" rel="noopener noreferrer" class="rp-link">Nortek GoControl QuickStick Combo Model HUSBZB-1 (Z-Wave &amp; Zigbee Ember 3581 USB Adapter)</a></p>
+<ul>
+<li>建议<a href="https://github.com/walthowd/husbzb-firmware" target="_blank" rel="noopener noreferrer" class="rp-link">upgrade the EmberZNet NCP application firmware</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://manuals.smabit.eu/len/av2010_10.html" target="_blank" rel="noopener noreferrer" class="rp-link">Bitron Video/Smabit BV AV2010/10 USB-Stick</a> 与 Silicon Labs Ember 3587</p>
+</li>
+<li>
+<p>Telegesis ETRX357USB/ETRX357USB-LR/ETRX357USB-LRS+8M</p>
+<ul>
+<li>这些首先需要是 <a href="https://github.com/walthowd/husbzb-firmware" target="_blank" rel="noopener noreferrer" class="rp-link">flashed with other EmberZNet firmware</a><strong>基于德州仪器 (Texas Instruments) 的无线电使用传统硬件（通过用于 zigpy 的 <a href="https://github.com/zigpy/zigpy-znp" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy-znp</a> 库）</strong></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.zigbee2mqtt.io/information/supported_adapters" target="_blank" rel="noopener noreferrer" class="rp-link">CC2538 USB stick, module, or dev board hardware flashed with Z-Stack coordinator firmware</a></p>
+<ul>
+<li>不再推荐这样做，因为它只能运行已弃用（旧的/寿命终止）的固件。</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.zigbee2mqtt.io/information/supported_adapters" target="_blank" rel="noopener noreferrer" class="rp-link">CC2530/CC2531 USB stick, module, or dev board hardware flashed with Z-Stack coordinator firmware</a></p>
+<ul>
+<li>不再推荐这样做，因为它使用已弃用的硬件和非常旧的、报废的固件。</li>
+<li>如果 Zigbee 网络有超过 15-20 个设备，这将无法正常工作。</li>
+</ul>
+</li>
+</ul><p><strong>基于 deCONZ 的 dresden elektronik 使用传统硬件的 Zigbee 无线电（通过用于 zigpy 的 <a href="https://github.com/zigpy/zigpy-deconz" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy-deconz</a> 库）</strong></p><ul>
+<li><a href="https://phoscon.de/conbee2" target="_blank" rel="noopener noreferrer" class="rp-link">ConBee II (a.k.a. ConBee 2) USB adapter from dresden elektronik</a></li>
+<li><a href="https://phoscon.de/raspbee2" target="_blank" rel="noopener noreferrer" class="rp-link">RaspBee II (a.k.a. RaspBee 2) Raspberry Pi Shield from dresden elektronik</a></li>
+<li><a href="https://phoscon.de/conbee" target="_blank" rel="noopener noreferrer" class="rp-link">ConBee USB adapter from dresden elektronik</a></li>
+<li><a href="https://phoscon.de/raspbee" target="_blank" rel="noopener noreferrer" class="rp-link">RaspBee Raspberry Pi Shield from dresden elektronik</a></li>
+</ul><p><strong>基于 Digi XBee Zigbee 的无线电（通过用于 zigpy 的 <a href="https://github.com/zigpy/zigpy-xbee" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy-xbee</a> 库）</strong></p><ul>
+<li><a href="https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/2-4-ghz-rf-modules/xbee3-zigbee-3" target="_blank" rel="noopener noreferrer" class="rp-link">Digi XBee Series 3 (xbee3-24)</a> 和 <a href="https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/2-4-ghz-rf-modules/xbee-zigbee" target="_blank" rel="noopener noreferrer" class="rp-link">Digi XBee Series S2C</a> 模块
+<ul>
+<li>建议<a href="https://www.digi.com/resources/documentation/Digidocs/90002002/Default.htm#Tasks/t_load_zb_firmware.htm" target="_blank" rel="noopener noreferrer" class="rp-link">upgrade XBee Series 3 and S2C to newest firmware using XCTU</a></li>
+</ul>
+</li>
+<li><a href="https://www.digi.com/support/productdetail?pid=3430" target="_blank" rel="noopener noreferrer" class="rp-link">Digi XBee Series 2 (S2)</a> 模块
+<ul>
+<li>这些首先需要是 <a href="https://www.digi.com/support/productdetail?pid=3430" target="_blank" rel="noopener noreferrer" class="rp-link">flashed with Zigbee Coordinator API firmware</a></li>
+</ul>
+</li>
+</ul><p><strong>基于 ZiGate 的无线电（通过用于 zigpy 的 <a href="https://github.com/zigpy/zigpy-zigate" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy-zigate</a> 库，并且需要固件 3.1d 或更高版本）</strong></p><ul>
+<li><a href="https://zigate.fr/produit/zigate-usb/" target="_blank" rel="noopener noreferrer" class="rp-link">ZiGate USB</a></li>
+<li><a href="https://zigate.fr/produit/zigatev2-usb-din/" target="_blank" rel="noopener noreferrer" class="rp-link">ZiGate USB-DIN</a></li>
+<li><a href="https://zigate.fr/produit/pizigatev2/" target="_blank" rel="noopener noreferrer" class="rp-link">PiZiGate (ZiGate Raspberry Pi module)</a></li>
+<li><a href="https://zigate.fr/produit/zigate-ethernet/" target="_blank" rel="noopener noreferrer" class="rp-link">ZiGate-Ethernet (Ethernet gateway board for PiZiGate)</a></li>
+<li><a href="https://zigate.fr/produit/zigatev2-pack-wifi/" target="_blank" rel="noopener noreferrer" class="rp-link">ZiGate + WiFi Pack</a></li>
+</ul></div></div></details><p>如果您发现有机会改进此信息，请参阅有关如何 <a href="#how-to-add-support-for-new-and-unsupported-devices" class="rp-link">add support for new and unsupported devices</a> 的部分。</p><h2 class="rp-toc-include" id="配置要求"><a href="#配置要求" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置要求</h2><p>:::important
+在继续配置之前，请务必连接兼容的无线电模块并重新启动 Home Assistant。</p><p>:::
+一旦配置了 Zigbee 协调器，ZHA 将自动创建 Zigbee 网络；然后您可以添加兼容的设备。</p><p>强烈建议您查看 <a href="#zigbee-interference-avoidance-and-network-rangecoverage-optimization" class="rp-link">Zigbee interference avoidance and network range/coverage optimization</a> 的指南。</p><h2 class="rp-toc-include" id="配置"><a href="#配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>配置</h2><p>To add the <strong>Zigbee Home Automation</strong> hub to your Home Assistant instance, use this My button:</p><p><a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=zha" target="_blank" rel="noopener noreferrer" class="rp-link"><img src="https://my.home-assistant.io/badges/config_flow_start.svg" alt="Open Add integration in your Home Assistant instance."/></a></p><p>Zigbee Home Automation can be auto-discovered by Home Assistant. If an instance is found, it will be shown as <strong>Discovered</strong> and can be set up right away.</p><details>
+<summary>手动配置步骤</summary><ul>
+<li>Browse to your Home Assistant instance.</li>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a>.</li>
+<li>In the lower-right corner, select <a href="https://my.home-assistant.io/redirect/config_flow_start/?domain=zha" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Add integration</strong></a>.</li>
+<li>From the list, select <strong>Zigbee Home Automation</strong>.</li>
+<li>Follow the instructions on screen to complete the setup.</li>
+</ul></details><ol>
+<li>在弹出对话框中，从系统上检测到的选项中选择 <strong>串行设备路径</strong>。
+<ul>
+<li>选择您的收音机所连接的收音机。</li>
+</ul>
+</li>
+<li>选择<strong>提交</strong>。</li>
+<li>提交后，integration 将尝试自动检测无线电类型。</li>
+<li>如果不成功，您需要手动设置无线电类型：
+<ul>
+<li>选择您的<strong>无线电类型</strong>：
+<ul>
+<li><strong>ezsp</strong>：Silicon Labs EmberZNet 协议（例如，Home Assistant ZBT-1 或 ZBT-2、Elelabs、HUSBZB-1、Telegesis）</li>
+<li><strong>deCONZ</strong>：dresden elektronik deCONZ 协议（例如 ConBee I/II、RaspBee I/II）</li>
+<li><strong>znp</strong>：德州仪器（例如，CC253x、CC26x2、CC13x2）</li>
+<li><strong>zigate</strong>：ZiGate 串行协议（例如，ZiGate USB-TTL、PiZiGate、ZiGate WiFi）</li>
+<li><strong>xbee</strong>：Digi XBee ZB 协调器固件协议（例如，Digi XBee 系列 2、2C、3）</li>
+</ul>
+</li>
+<li>选择<strong>提交</strong>以继续下一步。</li>
+</ul>
+</li>
+<li>输入<strong>串口设备路径</strong>：
+<ul>
+<li>大多数设备至少需要串行设备路径，例如 <code>/dev/ttyUSB0</code>，但建议使用 <code>/dev/serial/by-id</code> 文件夹中的设备路径（例如，<code>/dev/serial/by-id/usb-Silicon_Labs_HubZ_Smart_Home_Controller_C0F003D3-if01-port0</code>）。</li>
+<li>可用设备路径列表可在 <a href="https://my.home-assistant.io/redirect/hardware/" target="_blank" rel="noopener noreferrer" class="rp-link">Settings &gt; System &gt; Hardware</a> &gt; <strong>点菜单</strong> &gt; <strong>所有硬件</strong> 中找到。</li>
+</ul>
+</li>
+<li>设置<strong>端口速度</strong>（不适用于所有无线电）。</li>
+<li>设置<strong>数据流控制</strong>（不适用于所有无线电）。</li>
+<li>按<strong>提交</strong>。
+<ul>
+<li>如果不成功，弹出窗口中将显示错误。</li>
+<li>如果 Home Assistant 无法访问 USB 设备或者您的设备不是最新的，则可能会出现错误。</li>
+<li>请参阅下面的 <a href="#troubleshooting" class="rp-link">Troubleshooting</a> 了解更多信息。</li>
+</ul>
+</li>
+</ol><h3 class="rp-toc-include" id="zigate-or-sonoff-zbridge-devices"><a href="#zigate-or-sonoff-zbridge-devices" class="rp-header-anchor rp-link" aria-hidden="true">#</a>ZiGate 或 Sonoff ZBridge 设备配置</h3><p>如果您使用 ZiGate 或 Sonoff ZBridge 设备，则需要 <code>usb_path</code> 的额外配置。</p><details>
+<summary>额外的 ZBBridge 配置</summary><ul>
+<li>ZiGate USB TTL 或 DIN：<code>/dev/ttyUSB0</code> 或 <code>auto</code> 自动发现 zigate</li>
+<li>PiZgate：<code>pizigate:/dev/ttyS0</code></li>
+<li>Wifi Zigate：<code>socket://[IP]:[PORT]</code> — 例如 <code>socket://192.168.1.10:9999</code></li>
+<li>Sonoff ZBridge：<code>socket://[IP]:[PORT]</code> — 例如 <code>socket://192.168.1.11:8888</code></li>
+</ul></details><h3 class="rp-toc-include" id="全局选项"><a href="#全局选项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>全局选项</h3><p>配置 ZHA 后，有一些全局选项可用。要访问这些设置，请转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a> 并选择 <strong>选项</strong>。</p><p>选项如下：</p><div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-string-expression)">加入时识别：</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  描述：“当新设备加入网络时，它会执行识别过程（例如闪烁），以便您可以找到它。如果您批量添加许多设备并且不需要视觉反馈，或者特定设备的识别行为具有破坏性（例如发出蜂鸣声的警报器），请关闭此功能。默认值：`on`。”</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">光转换时间：</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  描述：“更改灯光状态时使用的默认过渡时间（以秒为单位）。设置为 `0` 以禁用过渡。如果您希望默认情况下所有灯光淡入和淡出，而不必在每个自动化上设置过渡，请增加此值（例如，设置为 `1` 或 `2`）。默认值：`0`。”</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">平滑过渡上电：</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  描述：“对于较旧的非 Zigbee 3。0 灯，这允许从关闭状态平滑过渡到新颜色或亮度级别，而无需首先显示旧颜色。如果您有较旧的灯泡（例如较旧的IKEA或Philips灯泡），在打开过渡时会短暂闪烁以前的颜色，请启用此功能。仅在绝对必要时才启用此选项。如果同时打开多个灯，可能会导致暂时的网络拥塞。默认值：`off`。”</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">防止滑块在过渡期间跳跃：</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  描述：“防止亮度滑块在灯光转换时跳转到中间值。这可以避免在使用过渡效果打开灯光时 UI 中出现令人困惑的视觉闪烁。如果您正在调试灯光行为并希望在过渡期间查看实际的中间亮度值，请禁用此功能。默认值：`on`。”</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">假设组的状态：</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  描述：“当你打开ZHA组灯时，所有组成员都会乐观地更新到`on`状态，而不是等待被轮询。如果组中有不可靠的灯泡有时不响应，请禁用此功能，以便 UI 反映实际状态而不是假设状态。默认值：`on`。”</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">考虑在以下情况后主电源供电设备不可用：</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  描述：“经过一段时间（以秒为单位），没有活动的主电源供电设备将被视为不可用。设置为 `0` 以禁用。如果您希望在插头或灯泡断电时更快地进行检测，请降低此值（例如，设置为 `3600`（1 小时））。默认值：`7200`（2 小时）。”</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">考虑电池供电设备在以下情况后不可用：</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  描述：“经过一段时间（以秒为单位），没有活动的电池供电设备被视为不可用。设置为 `0` 以禁用。对于仅在触发时报告的休眠传感器（例如门或温度传感器），请提高此值，以防止它们反复变得不可用。如果您希望在电池电量耗尽时更快收到通知，请将其降低。默认值：`21600`（6 小时）。”</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">启动时刷新主电源供电设备状态：</span></span>
+<span class="line"><span style="color:var(--shiki-token-string-expression)">  描述：“当 ZHA 启动时，轮询主电源供电的设备以刷新其状态。如果您的网络很大并且启动轮询导致拥塞，或者您的设备在重新启动后重新连接速度很慢，请禁用此功能。默认值：`on`。”</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><p>###关于网络信息</p><p>网络信息页面提供有关 Zigbee 网络和协调器的详细信息。要打开它，请转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a> 并选择 <strong>网络信息</strong>。</p><p>显示以下信息：</p><ul>
+<li><strong>通道</strong>：网络当前使用的 Zigbee 通道。有效频道为 11–26（全部位于 2.4 GHz 频段）。这是您唯一可以更改的字段。要编辑它，请选择铅笔 <iconify-icon inline="" icon="mdi:edit" title="edit"></iconify-icon> 图标。</li>
+<li><strong>PAN ID</strong>：Zigbee 网络的 16 位个人局域网标识符。该值唯一标识附近 Zigbee 网络中的网络。</li>
+<li><strong>扩展 PAN ID</strong>：PAN ID 的 64 位扩展版本。该值用于唯一标识更长距离和更多设备的网络。</li>
+<li><strong>协调器 IEEE</strong>：Zigbee 协调器的 IEEE 802.15.4 硬件地址（MAC 地址）。该地址对于协调器硬件来说是固定且唯一的。</li>
+<li><strong>无线电类型</strong>：协调器使用的 Zigbee 无线电堆栈。常见值为 <code>ezsp</code> (Silicon Labs)、<code>znp</code> (Texas Instruments)、<code>deconz</code> (ConBee/RaspBee)、<code>zigate</code> 和 <code>xbee</code>。</li>
+<li><strong>串行端口</strong>：协调器连接到的串行设备的路径，例如网络连接适配器的 <code>/dev/ttyUSB0</code> 或 <code>socket://</code> URL。</li>
+<li><strong>波特率</strong>：串行连接的通信速度，以每秒位数为单位（例如，<code>115200</code>）。该字段仅在直接串行连接时显示，对于基于网络/套接字（以太网）适配器则隐藏。</li>
+</ul><h3 class="rp-toc-include" id="定义要使用的-zigbee-通道"><a href="#定义要使用的-zigbee-通道" class="rp-header-anchor rp-link" aria-hidden="true">#</a>定义要使用的 Zigbee 通道</h3><p>:::important
+最佳实践是<strong>不要更改 ZHA 默认值的 Zigbee 通道</strong>。</p><p>:::
+B64PMTEXP64B
+<strong>在更改现有网络上的 Zigbee 通道之前</strong>，请查看本页上的以下部分：</p><ul>
+<li><a href="#best-practices-to-avoid-pairingconnection-difficulties" class="rp-link">Best practices to avoid pairing/connection difficulties</a></li>
+<li><a href="#zigbee-interference-avoidance-and-network-rangecoverage-optimization" class="rp-link">Zigbee interference avoidance and network range/coverage optimization</a></li>
+</ul><p>这些部分都提供了有关提高 Zigbee 网络性能的有用建议。</p>
+<h4 class="rp-toc-include" id="更改-zigbee-通道"><a href="#更改-zigbee-通道" class="rp-header-anchor rp-link" aria-hidden="true">#</a>更改 Zigbee 通道</h4>
+<ol>
+<li>
+<p>转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a>。</p>
+</li>
+<li>
+<p>选择<strong>网络信息</strong>。</p>
+</li>
+<li>
+<p>要编辑 Zigbee 通道，请选择铅笔 <iconify-icon inline="" icon="mdi:edit" title="edit"></iconify-icon>。</p>
+</li>
+<li>
+<p>从下拉菜单中选择所需的 Zigbee 通道。- <strong>智能</strong>：扫描所有频道，然后选择最佳频道，优先选择 <code>15</code>、<code>20</code>、<code>25</code> 而非所有其他频道。</p>
+<ul>
+<li>这是一次性操作。如果检测到干扰，它不会连续监视信道并更改信道。</li>
+<li>这很可能是最好的选择。仅当您有特定原因时才更改它。</li>
+</ul>
+<p><img src="/home-assistant/images/integrations/zha/zha-change-channel.png" alt="Changing the Zigbee channel"/></p>
+</li>
+<li>
+<p>要确认，请选择 <strong>更改频道</strong>。</p>
+</li>
+<li>
+<p>所有设备重新连接到新通道可能需要长达一个小时的时间。</p>
+<ul>
+<li>要检查状态，请查看 <a href="#visualization-of-the-zigbee-network-topology-and-device-links" class="rp-link">visualization of the Zigbee network topology</a>。</li>
+<li>要加快此过程，请重新启动 Zigbee 终端设备。</li>
+</ul>
+</li>
+</ol>
+<h4 class="rp-toc-include" id="zigbee-channel-troubleshooting"><a href="#zigbee-channel-troubleshooting" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee 通道故障排除</h4>
+<p>除其他事项外，上述相关故障排除部分将告诉您，如果您遇到 Wi-Fi 和 Zigbee 之间频率重叠的问题，那么通常最好首先尝试在 Wi-Fi 路由器或所有 Wi-Fi 接入点上更改和设置静态 Wi-Fi 通道（而不是仅仅更改为另一个 Zigbee 通道）。</p>
+<p>MetaGeek 支持有一篇关于 <a href="https://support.metageek.com/hc/en-us/articles/203845040-ZigBee-and-WiFi-Coexistence" target="_blank" rel="noopener noreferrer" class="rp-link">Zigbee and WiFi coexistence</a> 通道选择的很好的参考文章。</p>
+<h4 class="rp-toc-include" id="关于-zigbee-通道"><a href="#关于-zigbee-通道" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于 Zigbee 通道</h4>
+<p>Zigbee 规范标准将 2.4 GHz ISM 无线电频段划分为 16 个 Zigbee 通道（即 Zigbee 的不同无线电频率）。为了使所有 Zigbee 设备能够进行通信，它们必须支持在 Zigbee 协调器上设置的相同 Zigbee 通道（即 Zigbee 射频）作为用于其 Zigbee 网络的通道。并非所有 Zigbee 设备都支持所有 Zigbee 通道。通道支持通常取决于硬件和固件的寿命以及设备的额定功率。</p>
+<p>一般建议仅使用通道 15、20 或 25，以避免与 Zigbee 设备的互操作性问题。不仅因为 Wi-Fi 网络对其他通道上的 Zigbee 网络产生过多干扰的可能性较小，而且还因为并非所有 Zigbee 设备都支持所有通道。</p>
+<h3 class="rp-toc-include" id="修改设备类型"><a href="#修改设备类型" class="rp-header-anchor rp-link" aria-hidden="true">#</a>修改设备类型</h3>
+<p>由于并非所有设备制造商都遵循 Zigbee 标准，有时设备可能会被错误分类。例如，开关可以归类为灯。</p>
+<p>要更正设备类型（也称为域），请将以下内容添加到 B64PNDI=P64B 并重新启动 Home Assistant：</p>
+<p>B64元创方==P64B</p>
+<p><code>{ieee}</code> 是设备硬件地址，在查看_设备信息_时可以从 Home Assistant UI 读取。从设备信息中，您可以通过查看_Zigbee设备签名_找到<code>{endpoint_id}</code>。</p>
+<h3 class="rp-toc-include" id="zigbee-device-firmware-ota-updates"><a href="#zigbee-device-firmware-ota-updates" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee 设备 OTA 固件更新</h3>
+<p>ZHA 集成能够执行 Zigbee 设备的 OTA（无线）固件更新。该功能默认启用。由于它在 Home Assistant 中使用标准 <a href="/home-assistant/integrations/update/index.html" class="rp-link">Update</a> 实体，因此如果特定设备有可用的 OTA 固件更新，用户将收到 UI 通知，并可以选择启动更新或忽略该设备的特定更新。</p>
+<p>要查看设备的 OTA 更新，该设备必须支持 OTA 更新，并且设备的固件映像必须由制造商公开提供。 ZHA 目前仅包括少数公开提供这些更新的制造商的 OTA 提供商。</p>
+<p><strong>包括的制造商：</strong></p>
+<ul>
+<li>IKEA</li>
+<li>伊诺维利</li>
+<li>朗德万斯/欧司朗</li>
+<li>索诺夫/iTead</li>
+<li>第三现实</li>
+</ul>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">Warning</div><div class="rp-callout__content"><p>
+在更新设备之前，您应该查找是否有任何缺点，或者是否需要安装可用的更新。某些固件更新可能会破坏您可能使用的功能（例如IKEA设备的组绑定）。某些更新可能还需要对 ZHA 进行更改。在极少数情况下，您甚至可以通过安装固件更新来使设备变砖。</p></div></div>
+<h4 class="rp-toc-include" id="高级-ota-配置"><a href="#高级-ota-配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>高级 OTA 配置</h4>
+<p>少数制造商默认启用 OTA，目前包括 Ledvance、Sonoff、Inovelli 和 ThirdReality。支持其他制造商，但默认情况下禁用，因为他们的更新可能会更改或删除设备功能，可能需要您重新配置设备，或者由社区贡献并且可能经过最低限度的测试。</p>
+<p>有关其他 OTA 提供商的更多信息，请参阅 <a href="https://github.com/zigpy/zigpy/wiki/OTA-Configuration" target="_blank" rel="noopener noreferrer" class="rp-link">zigpy documentation for OTA configuration</a>。</p>
+<h2 class="rp-toc-include" id="添加设备"><a href="#添加设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>添加设备</h2>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+添加设备时，请查看此页面上的以下部分：</p><ul>
+<li><a href="#best-practices-to-avoid-pairingconnection-difficulties" class="rp-link">Best practices to avoid pairing/connection difficulties</a></li>
+<li><a href="#zigbee-interference-avoidance-and-network-rangecoverage-optimization" class="rp-link">Zigbee interference avoidance and network range/coverage optimization</a></li>
+</ul><p>这些部分都提供了有关提高 Zigbee 网络性能的有用建议。</p><p>:::
+<strong>添加新的 Zigbee 设备：</strong></p><ol>
+<li>转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a>。
+2.要开始扫描新设备，请在屏幕右下角选择“<strong>添加设备</strong>”。</li>
+<li>根据制造商提供的设备说明将 Zigbee 设备重置为出厂默认设置（例如，打开/关闭灯最多 10 次；开关通常具有重置按钮/引脚）。设备可能需要几秒钟的时间才会出现。您可以单击 <strong>显示日志</strong> 以获取更详细的输出。</li>
+<li>找到设备后，它将出现在该页面上，并自动添加到您的设备中。您可以选择更改其名称并将其添加到区域（您可以稍后更改）。您可以再次搜索以添加其他设备，也可以返回到已添加的设备列表。</li>
+</ol><h3 class="rp-toc-include" id="使用路由器设备添加更多设备"><a href="#使用路由器设备添加更多设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用路由器设备添加更多设备</h3><p>大多数市电供电设备（例如 Zigbee 网络中的许多始终供电的墙壁插头或灯泡）将自动充当 Zigbee 路由器设备（有时也称为 Zigbee“信号中继器”或“范围扩展器”）。</p><p>由于 Zigbee 应使用 <a href="https://en.wikipedia.org/wiki/Wireless_mesh_network" target="_blank" rel="noopener noreferrer" class="rp-link">wireless mesh network</a> 才能发挥作用，因此您需要添加 Zigbee 路由器设备以增加 Zigbee 网络中可使用的 Zigbee 设备的数量，包括可添加的设备总数以及网络的总范围和覆盖范围。一些 Zigbee 路由器设备在路由和转发 Zigbee 信号和消息方面比其他一些设备做得更好。您的设置不应让 Zigbee 路由器设备（例如灯泡）经常关闭。  Zigbee 路由器设备应始终可用。</p><p>所有 Zigbee 协调器固件都只允许您直接连接一定数量的设备。设置该限制有两个原因：首先，不要使 Zigbee 协调器过载，其次，鼓励您的 Zigbee 网络快速开始使用“<a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank" rel="noopener noreferrer" class="rp-link">mesh networking</a>”拓扑，而不仅仅是“<a href="https://en.wikipedia.org/wiki/Star_network" target="_blank" rel="noopener noreferrer" class="rp-link">star network</a>”拓扑。</p><p>Zigbee 网络上可以拥有的 Zigbee 设备总数取决于几个因素。 Zigbee 协调器硬件及其固件仅在具有大量设备的 Zigbee 网络中发挥更大的作用。更重要的是直接连接的设备（“直接子设备”）的数量与连接到 Zigbee 协调器的路由器的数量。 ZHA integration 所依赖的 Zigpy 库的上限为 32 个直接子级，但您仍然可以通过 Zigbee 路由器设备通过路由间接连接总共数百个 Zigbee 设备。</p><p>在此理论示例中，基于 CC2652 的 Zigbee 协调器具有三个 CC2530 Zigbee 路由器设备，总共限制为 77 个设备：</p><ul>
+<li>协调器：32 个 Zigbee 终端设备 - 3 个路由器 = 29</li>
+<li>路由器一：+ 16 个设备</li>
+<li>路由器二：+ 16 个设备</li>
+<li>路由器三：+ 16 个设备</li>
+<li>设备总数限制 = <strong>77 台设备</strong></li>
+</ul><p>实际上，您可能需要添加比本示例更多的 Zigbee 路由器设备，才能扩展网络覆盖范围以覆盖那么多设备。</p><h3 class="rp-toc-include" id="通过-usb-或-zeroconf-发现"><a href="#通过-usb-或-zeroconf-发现" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 USB 或 Zeroconf 发现</h3><p>某些设备可以自动发现，这可以简化 ZHA 设置过程。以下设备已经过发现测试，并提供快速设置体验。</p><details>
+<summary>通过 USB 发现的设备</summary><ul>
+<li><strong>比特龙</strong>
+<ul>
+<li><a href="https://manuals.smabit.eu/len/av2010_10.html" target="_blank" rel="noopener noreferrer" class="rp-link">Bitron Video/SMaBiT BV AV2010/10</a>
+<ul>
+<li>标识符：<code>10C4:8B34</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>康蜂</strong>
+<ul>
+<li><a href="https://phoscon.de/conbee2" target="_blank" rel="noopener noreferrer" class="rp-link">ConBee II</a>
+<ul>
+<li>标识符：<code>1CF1:0030</code></li>
+</ul>
+</li>
+<li><a href="https://phoscon.de/conbee3" target="_blank" rel="noopener noreferrer" class="rp-link">ConBee III</a>
+<ul>
+<li>标识符：<code>0403:6015</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>IT领导</strong>
+<ul>
+<li><a href="https://itead.cc/product/zigbee-3-0-usb-dongle/" target="_blank" rel="noopener noreferrer" class="rp-link">ITead SONOFF Zigbee 3.0 USB Dongle Plus V2 Model &quot;ZBDongle-E&quot; (EFR32MG21 variant)</a>
+<ul>
+<li>标识符：<code>1A86:55D4</code></li>
+</ul>
+</li>
+<li><a href="https://itead.cc/product/sonoff-zigbee-3-0-usb-dongle-plus" target="_blank" rel="noopener noreferrer" class="rp-link">ITead SONOFF Zigbee 3.0 USB Dongle Plus Model &quot;ZBDongle-P&quot; (CC2652P variant)</a>
+<ul>
+<li>标识符：<code>10C4:EA60</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>诺泰克</strong>
+<ul>
+<li><a href="https://www.nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/" target="_blank" rel="noopener noreferrer" class="rp-link">Nortek HUSBZB-1</a>
+<ul>
+<li>标识符：<code>10C4:8A2A</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>slae.sh</strong>
+<ul>
+<li><a href="https://slae.sh/projects/cc2652/" target="_blank" rel="noopener noreferrer" class="rp-link">slae.sh CC2652RB development stick</a>
+<ul>
+<li>标识符：<code>10C4:EA60</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>小光</strong>
+<ul>
+<li><a href="https://smlight.tech/product/slzb-07/" target="_blank" rel="noopener noreferrer" class="rp-link">SMLIGHT SLZB-07</a>
+<ul>
+<li>标识符：<code>10C4:EA60</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>管</strong>
+<ul>
+<li><a href="https://www.tubeszb.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Tube’s EFR32 Pro Ethernet/Serial Coordinator</a>
+<ul>
+<li>标识符：<code>10C4:EA60</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>ZigStar</strong>
+<ul>
+<li><a href="https://zig-star.com/projects/zigbee-stick-v4/" target="_blank" rel="noopener noreferrer" class="rp-link">ZigStar Stick (CC2652 + CH340B variant)</a>
+<ul>
+<li>标识符：<code>1A86:7523</code></li>
+</ul>
+</li>
+<li><a href="https://zig-star.com/" target="_blank" rel="noopener noreferrer" class="rp-link">ZigStar Coordinators</a>
+<ul>
+<li>标识符：<code>1A86:7523</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details><details>
+<summary>通过 Zeroconf 发现的设备</summary><ul>
+<li><strong>鳕鱼.m</strong>
+<ul>
+<li><a href="https://docs.codm.de/zigbee/coordinator/" target="_blank" rel="noopener noreferrer" class="rp-link">cod.m Zigbee Coordinator</a>
+<ul>
+<li>标识符：<code>czc._tcp.local.</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>小光</strong>
+<ul>
+<li><a href="https://smlight.tech/product/slzb-06/" target="_blank" rel="noopener noreferrer" class="rp-link">SMLIGHT SLZB-06 POE Zigbee LAN WiFi USB Adapter</a>
+<ul>
+<li>标识符：<code>slzb-06.local.</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>管</strong>
+<ul>
+<li><a href="https://www.tubeszb.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Tube&#x27;s CC2652P2 USB-powered Zigbee to Ethernet Serial Coordinator</a>
+<ul>
+<li>标识符：<code>tube_zb_gw_cc2652p2.local.</code></li>
+</ul>
+</li>
+<li><a href="https://www.tubeszb.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Tube&#x27;s CC2652P2 PoE-powered Zigbee to Ethernet Serial Coordinator</a>
+<ul>
+<li>标识符：<code>tube_zb_gw_cc2652p2_poe.local.</code></li>
+</ul>
+</li>
+<li><a href="https://www.tubeszb.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Tube&#x27;s EFR32 Based Zigbee to Ethernet Serial Coordinator</a>
+<ul>
+<li>标识符：<code>tube_zb_gw_efr32.local.</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>XZG</strong>
+<ul>
+<li><a href="https://xzg.xyzroe.cc/" target="_blank" rel="noopener noreferrer" class="rp-link">XZG - Universal Firmware for Zigbee Gateway</a>
+<ul>
+<li>标识符：<code>xzg.local.</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>ZigStar</strong>
+<ul>
+<li><a href="https://uzg.zig-star.com" target="_blank" rel="noopener noreferrer" class="rp-link">ZigStar UZG Universal Zigbee Gateway (UZG-01)</a>
+<ul>
+<li>标识符：<code>uzg-01._tcp.local.</code></li>
+</ul>
+</li>
+<li><a href="https://zig-star.com/projects/zigbee-gw-lan/" target="_blank" rel="noopener noreferrer" class="rp-link">ZigStar LAN/POE Coordinators</a>
+<ul>
+<li>标识符：<code>zigstargw.local.</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></details><p><a href="#compatible-hardware" class="rp-link">Compatible hardware</a> 部分中的其他设备可能是可发现的，但是上面仅列出了已确认可发现的设备。</p><h2 class="rp-toc-include" id="行动"><a href="#行动" class="rp-header-anchor rp-link" aria-hidden="true">#</a>行动</h2><h3 class="rp-toc-include" id="行动许可zhapermit-操作打开网络以加入新设备"><a href="#行动许可zhapermit-操作打开网络以加入新设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>行动：许可<code>zha.permit</code> 操作打开网络以加入新设备。</h3><p>要将新设备添加到网络，请单击 <strong>开发人员工具</strong> 中的 <strong>操作</strong> 选项卡，然后在 <strong>操作</strong> 下拉框中键入 <code>zha.permit</code>。接下来，按照设备说明进行添加、扫描或执行恢复出厂设置。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>duration</code></td><td><code>duration</code></td><td>是的</td></tr><tr><td><code>ieee</code></td><td><code>ieee</code></td><td>是的</td></tr></tbody></table></div><p>要使用安装代码（ZB3 设备）加入新设备，请使用以下数据属性（必须仅使用参数
+来自同一组：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据</th><th>参数组</th><th>描述</th></tr></thead><tbody><tr><td><code>src_ieee</code></td><td>安装代码</td><td>加入 ZB3 设备的 IEEE 地址。与 <code>install_code</code> 一起使用</td></tr><tr><td><code>install_code</code></td><td><code>install_code</code></td><td>安装代码</td></tr><tr><td><code>qr_code</code></td><td><code>qr_code</code></td><td>二维码</td></tr></tbody></table></div><p>:::note
+目前 <code>qr_code</code> 支持以下二维码安装代码：
+- 阿卡拉
+- 博世
+- 意识
+- 照亮</p></div></div>
+<h3 class="rp-toc-include" id="操作删除"><a href="#操作删除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：删除</h3>
+<p><code>zha.remove</code> 操作从网络中删除现有设备。您可以在 Zigbee 设备的设备卡上找到设备的 IEEE 地址。 IEEE 地址数据参数格式的示例是 <code>00:0d::6f:00:05:7d:2d:34</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>ieee</code></td><td><code>ieee</code></td><td>没有</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="操作设置锁定用户代码"><a href="#操作设置锁定用户代码" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：设置锁定用户代码</h3>
+<p><code>zha.set_lock_user_code</code> 操作在 Zigbee 锁上设置锁定代码。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>code_slot</code></td><td><code>code_slot</code></td><td>没有</td></tr><tr><td><code>user_code</code></td><td><code>user_code</code></td><td>没有</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="操作清除锁定用户代码"><a href="#操作清除锁定用户代码" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：清除锁定用户代码</h3>
+<p><code>zha.clear_lock_user_code</code> 操作清除 Zigbee 锁的锁定代码。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>code_slot</code></td><td><code>code_slot</code></td><td>没有</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="操作启用锁定用户代码"><a href="#操作启用锁定用户代码" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：启用锁定用户代码</h3>
+<p><code>zha.enable_lock_user_code</code> 操作启用 Zigbee 锁上的锁码。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>code_slot</code></td><td><code>code_slot</code></td><td>没有</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="操作禁用锁定用户代码"><a href="#操作禁用锁定用户代码" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作：禁用锁定用户代码</h3>
+<p><code>zha.disable_lock_user_code</code> 操作禁用 Zigbee 锁上的锁定代码。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>数据</th><th>可选</th><th>描述</th></tr></thead><tbody><tr><td><code>code_slot</code></td><td><code>code_slot</code></td><td>没有</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="zigbee-groups-and-binding-devices"><a href="#zigbee-groups-and-binding-devices" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee 分组与设备绑定</h2>
+<p>ZHA 支持创建 Zigbee 组（与 Home Assistant 的 <a href="/home-assistant/integrations/group/index.html" class="rp-link">Group</a> 集成不同），以及设备之间的绑定。组和设备绑定可以彼此独立设置，但也可以组合使用（例如将一个设备绑定到另一组设备）。</p>
+<h3 class="rp-toc-include" id="团体"><a href="#团体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>团体</h3>
+<p>Zigbee 组是两个或多个 Zigbee 灯、开关或风扇的集合。然后可以仅使用一个命令/实体来控制 Zigbee 组。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+虽然使用本机 Zigbee 组而不是 Home Assistant 的 <a href="/home-assistant/integrations/group/index.html" class="rp-link">Group</a> 集成可以提高视觉响应能力，但如果重复发出，发出的广播命令可能会淹没 Zigbee 网络。</p></div></div>
+<h4 class="rp-toc-include" id="创建-zigbee-组"><a href="#创建-zigbee-组" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建 Zigbee 组</h4>
+<ol>
+<li>转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a>。</li>
+<li>选择 <strong>组</strong> 并选择 <strong>创建组</strong> 按钮。</li>
+<li>输入组的名称。</li>
+<li>选择要包含在组中的设备：
+<ul>
+<li>在创建组实体之前，必须至少将两个设备添加到 Zigbee 组。</li>
+<li>该组应由相同设备类型的产品组成（所有灯、所有开关或所有风扇）。
+5.要确认，请选择“<strong>创建组</strong>”。</li>
+<li>您现在可以使用单个命令或实体控制组中的所有设备。例如，您可以向仪表板添加一个开关来打开/关闭组中的所有灯。</li>
+</ul>
+</li>
+</ol>
+<h3 class="rp-toc-include" id="绑定"><a href="#绑定" class="rp-header-anchor rp-link" aria-hidden="true">#</a>绑定</h3>
+<p>绑定 Zigbee 设备将一个设备的端点附加到另一设备（或组）的端点。</p>
+<p>绑定设备之间发送的命令绕过 ZHA（即使 ZHA 或 Home Assistant 未工作）并直接控制目标设备。绑定设备还可以实现更快的响应时间和更流畅的控制。</p>
+<p>绑定设备前，请注意以下事项：</p>
+<ul>
+<li>ZHA 默认将遥控器绑定到 Zigbee 协调器，以便将点击事件转发到 Home Assistant。</li>
+<li>部分遥控器只能绑定单个目标；您可能需要先将遥控器与协调器解除绑定，然后再将其绑定到另一个目标。</li>
+<li>所有遥控器对于可以绑定的设备数量都有一定的上限。</li>
+<li>并非所有设备都支持绑定，有的只支持绑定组，有的只支持设备；请参阅设备制造商或社区的文档来确认功能。</li>
+</ul>
+<h4 class="rp-toc-include" id="管理-zigbee-设备的绑定"><a href="#管理-zigbee-设备的绑定" class="rp-header-anchor rp-link" aria-hidden="true">#</a>管理 Zigbee 设备的绑定</h4>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+<strong>本节仅概述如何管理一般绑定。它不会涵盖所有用例。</strong></p><p>先决条件和步骤可能会有所不同，具体取决于设备类型、制造商和您所需的最终结果。</p></div></div>
+<ol>
+<li>转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a>。</li>
+<li>选择<strong>设备</strong>，然后选择您要管理绑定的设备。</li>
+<li>在 <strong>重新配置</strong> 按钮旁边的三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单中，选择 <strong>管理 Zigbee 设备</strong>。</li>
+<li>在弹出的对话框中，选择“<strong>绑定</strong>”选项卡。</li>
+<li>从 <strong>可绑定设备</strong>（或 <strong>可绑定组</strong>）列表中选择设备。</li>
+<li>如果遥控器是电池供电或低功耗的，请在发送命令之前按下按钮将其唤醒。</li>
+<li>确认<strong>绑定</strong>或<strong>取消绑定</strong>操作：
+<ul>
+<li>要绑定设备，请选择<strong>绑定</strong>（或<strong>绑定组</strong>）。</li>
+<li>要取消绑定设备，请选择<strong>取消绑定</strong>（或<strong>取消绑定组</strong>）。</li>
+</ul>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="备份和迁移"><a href="#备份和迁移" class="rp-header-anchor rp-link" aria-hidden="true">#</a>备份和迁移</h2>
+<p>ZHA integration 执行 Zigbee 网络的自动备份，允许您从备份恢复/恢复网络或迁移到不同的 Zigbee 协调器（无线电适配器）。</p>
+<p>恢复 Home Assistant 备份后，您可以重新配置 ZHA 或迁移到新的 Zigbee 协调器，而不会丢失任何设置或已连接的设备。如果您当前的无线电出现故障或者您想要迁移到新的无线电适配器类型/型号，这会很有帮助。</p>
+<p>还可以从 <strong>网络设置</strong> 下的配置页面创建手动备份。</p>
+<h3 class="rp-toc-include" id="迁移到-zha-内的新-zigbee-适配器"><a href="#迁移到-zha-内的新-zigbee-适配器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>迁移到 ZHA 内的新 Zigbee 适配器</h3>
+<p>ZHA 支持在基于 Silicon Labs、Texas Instruments 或 ConBee/RaspBee 芯片的不同 Zigbee 适配器之间迁移 Zigbee 网络（如果备份是从 ZHA 内部进行的）。</p>
+<h4 class="rp-toc-include" id="先决条件"><a href="#先决条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>先决条件</h4>
+<p>迁移前请确认您满足以下要求：</p>
+<ul>
+<li>之前的适配器用于 ZHA integration，而不用于 deCONZ 或 Zigbee2MQTT。</li>
+<li>无线电类型是以下之一：
+<ul>
+<li>ezsp <em>(Silicon Labs EmberZNet)</em></li>
+<li>znp <em>（德州仪器 Z-Stack ZNP）</em></li>
+<li>deCONZ <em>（德累斯顿电子公司的 ConBee/RaspBee）</em>
+<ul>
+<li>确保它运行的是 <a href="https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Firmware-Changelog" target="_blank" rel="noopener noreferrer" class="rp-link">firmware 0x26700700 (from 2021-08-18)</a> 或更高版本。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<details>
+<summary>在 ZHA 中迁移到新的 Zigbee 适配器：</summary>
+<p>:::important
+您将无法控制现有的 Zigbee 设备，直到它们在迁移后加入网络。 <strong>这可能需要几分钟。</strong></p>
+<p>如果某些现有设备在一段时间后没有恢复正常功能，请尝试重新启动它们以尝试重新加入网络。</p>
+<p>:::</p>
+<ol>
+<li>转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a>。</li>
+<li>选择<strong>迁移</strong>。</li>
+<li>插入新的 Zigbee 适配器。
+<ul>
+<li>尽量减少干扰：
+<ul>
+<li>使用 USB 延长线。</li>
+<li>使用 USB 2.0 端口或供电的 USB 2.0 集线器。</li>
+<li>让 Zigbee 适配器远离 USB 3.0 设备。</li>
+<li><a href="https://support.nabucasa.com/hc/articles/26124431414557" target="_blank" rel="noopener noreferrer" class="rp-link">video</a> 显示了干扰的影响。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ZHA 重新配置开始。选择<strong>提交</strong>。
+<ul>
+<li>将执行自动备份。</li>
+</ul>
+</li>
+<li>在“<strong>迁移或更改适配器设置</strong>”下，选择“<strong>迁移到新适配器</strong>”。</li>
+<li>从串行端口列表中选择新的 Zigbee 适配器，然后选择 <strong>提交</strong>。</li>
+<li>选择用于迁移的备份：
+<ul>
+<li><strong>选项 1</strong>：要使用在此迁移期间创建的备份，请选择 <strong>自动迁移（推荐）</strong>。
+<ul>
+<li>这是完成迁移的最快方法。</li>
+</ul>
+</li>
+<li><strong>选项 2</strong>：要恢复特定的较旧备份，请选择 <strong>高级迁移</strong>。- 这将让您选择您选择的备份。</li>
+</ul>
+</li>
+<li>在极少数情况下，新无线电需要覆盖 IEEE 地址（唯一的 MAC 地址），您将看到 <strong>覆盖无线电 IEEE 地址</strong> 的提示。
+<ul>
+<li>选中 <strong>永久替换无线电 IEEE 地址</strong> 框，然后单击 <strong>提交</strong>。</li>
+<li>要成功完成迁移过程，需要选择此选项。</li>
+<li>覆盖 IEEE 地址可能需要一段时间。</li>
+<li>新旧 Zigbee 适配器现在都具有相同的 Zigbee IEEE 地址。</li>
+<li>除非更改其 Zigbee IEEE 地址，否则不应在同一区域操作旧适配器。</li>
+<li>如果您不从旧的 Zigbee 适配器迁移 Zigbee IEEE 地址，则必须重新连接许多设备才能保持它们正常工作。</li>
+</ul>
+</li>
+<li>迁移过程现已完成。
+<ul>
+<li>旧适配器正在重置。</li>
+<li>对于 Z-Wave 和 Zigbee 组合适配器（例如 HUSBZB-1 适配器），仅重置 Zigbee 无线电部分。</li>
+<li><strong>信息</strong>：在设备重新加入网络之前，您将无法控制它们。
+<ul>
+<li>通常，他们会在一小时内重新加入。</li>
+<li>您也许可以通过重新启动设备来加速该过程。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>现在您可以卸下旧的 Zigbee 适配器。</li>
+</ol>
+</details>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+为了帮助解决任何问题或兼容性问题，请通过调试日志将错误报告为问题。</p></div></div>
+<h3 class="rp-toc-include" id="限制"><a href="#限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>限制</h3>
+<p>ZHA 限制列表可能并不详尽。</p>
+<details>
+<summary>ZHA 的限制列表：</summary>
+<p><strong>ZHA 仅支持将单个专用 Zigbee 协调器连接到单个 Zigbee 网络：</strong></p>
+<ul>
+<li>Zigbee 协调器不能已被任何其他应用程序连接或使用。</li>
+<li>当前或之前连接到另一个 Zigbee 实施的设备需要重置为其出厂默认设置，然后才能与 ZHA 配对/加入。</li>
+<li>有关重置步骤，请参阅每个设备制造商的文档。</li>
+</ul>
+<p><strong>一台 Zigbee 设备只能连接到一个 Zigbee 协调器（只能连接一个 Zigbee 网关）：</strong></p>
+<ul>
+<li>这是 Zigbee 协议规范中的限制，由 <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener noreferrer" class="rp-link">CSA (Connectivity Standards Alliance)</a> 管理，适用于所有 Zigbee 实现而不仅仅是 ZHA 实现。</li>
+</ul>
+<p><strong>支持通过 <code>zha.permit</code> 操作通过“安装代码”或“QR 代码”调试 Zigbee 3.0 设备：</strong></p>
+<ul>
+<li>到目前为止，这仅针对 ZHA 中的“ezsp”（Silicon Labs EmberZNet）或“znp”（德州仪器）无线电类型实现。</li>
+<li>其他无线电类型在各自的 <a href="https://github.com/zigpy/" target="_blank" rel="noopener noreferrer" class="rp-link">radio libraries for zigpy</a> 或制造商的固件命令/API 中缺少支持。</li>
+</ul>
+<p><strong>ZHA 目前_不_支持只能使用的设备：</strong></p>
+<ul>
+<li>ZGP（“Zigbee 绿色能源”）配置文件：
+<ul>
+<li>这用于一些无电池自供电或能量收集设备（例如Philips Hue Click、Philips Hue Tap 和一些“Friends of Hue”合作开关）。</li>
+</ul>
+</li>
+<li>ZSE（“Zigbee 智能能源”）简介：
+<ul>
+<li>这是由于“Zigbee SE”规范不是标准 Zigbee 3.0 规范的一部分，因此未在大多数常用 Zigbee 协调器无线电适配器和模块的 Zigbee 协议栈中实现。</li>
+</ul>
+</li>
+</ul>
+</details>
+<h3 class="rp-toc-include" id="了解支持哪些设备"><a href="#了解支持哪些设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>了解支持哪些设备</h3>
+<p>Home Assistant 的 ZHA integration 支持 <a href="https://csa-iot.org/all-solutions/zigbee/" target="_blank" rel="noopener noreferrer" class="rp-link">CSA (Connectivity Standards Alliance, formerly the Zigbee Alliance)</a> 定义的所有标准 Zigbee 设备类型。</p>
+<p><strong>因此，没有可与 ZHA integration 开箱即用的设备的官方兼容性列表。</strong></p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+查看 <a href="https://zigbee.blakadder.com" target="_blank" rel="noopener noreferrer" class="rp-link">blakadder&#x27;s unofficial Zigbee Device Compatibility Repository</a>。</p><p>此非官方列表包含独立社区成员针对多种家庭自动化网关/网桥/集线器软件（包括 ZHA、Zigbee2MQTT 和 Tasmota/Zigbee2Tasmota 等开源 Zigbee 实现）的报告_（或特定于设备的配对技巧）_。</p><p>任何人都可以通过向网站提交设备兼容性信息来帮助维护该网站。</p><p>:::
+并非所有硬件制造商都完全遵守该标准。这可以包括：</p><ul>
+<li>实现独特（但非标准）的功能，</li>
+<li>未显示 Home Assistant integration 概述中的所有预期实体。</li>
+<li>在 Home Assistant 中根本不显示任何实体。</li>
+</ul><p>开发人员（甚至高级用户）可以通过在自定义设备处理程序中添加转换/翻译代码来解决此类互操作性问题。有关详细信息，请参阅 <a href="#how-to-add-support-for-new-and-unsupported-devices" class="rp-link">How to add support for new and unsupported devices</a>。</p><p>:::note
+<strong>如果设备根本无法加入/配对</strong>，请查看本页上的以下部分：</p><ul>
+<li><a href="#best-practices-to-avoid-pairingconnection-difficulties" class="rp-link">Best practices to avoid pairing/connection difficulties</a></li>
+<li><a href="#zigbee-interference-avoidance-and-network-rangecoverage-optimization" class="rp-link">Zigbee interference avoidance and network range/coverage optimization</a></li>
+</ul><p>这些部分都提供了有关提高 Zigbee 网络性能的有用建议。</p></div></div>
+<h3 class="rp-toc-include" id="如何添加对新设备和不受支持的设备的支持"><a href="#如何添加对新设备和不受支持的设备的支持" class="rp-header-anchor rp-link" aria-hidden="true">#</a>如何添加对新设备和不受支持的设备的支持</h3>
+<p>如果您的 Zigbee 设备与 ZHA integration 成功配对/加入，但未显示所有预期实体：</p>
+<ol>
+<li>尝试多次重新配对/重新加入设备。</li>
+<li>查看故障排除部分。
+3、在Home Assistant <a href="https://www.home-assistant.io/help/" target="_blank" rel="noopener noreferrer" class="rp-link">community forum or Discord chat server</a>中搜索类似情况。</li>
+<li>还没工作？您可能需要一个自定义设备处理程序。该处理程序将具有异常处理代码来解决特定于设备的问题。</li>
+</ol>
+<h4 class="rp-toc-include" id="zha-device-handlers"><a href="#zha-device-handlers" class="rp-header-anchor rp-link" aria-hidden="true">#</a>ZHA 设备处理器</h4>
+<p>对于不遵循 CSA ZCL（Zigbee 集群库）中定义的标准的设备，ZHA integration 依赖于名为“<a href="https://github.com/zigpy/zha-device-handlers" target="_blank" rel="noopener noreferrer" class="rp-link">ZHA Device Handlers (also known as &quot;zha-quirk&quot;)</a>”的项目。</p>
+<p>该项目包含称为“quirks”的特定于设备的 Python 脚本，可以通过实现自定义 Zigbee 配置的动态转换或通过为特定设备实现制造商特定的功能来解决合规性和互操作性问题。</p>
+<p>其他 Zigbee 网关解决方案具有类似的概念，即为非标准设备使用自定义处理程序/转换器，例如使用 <a href="https://www.zigbee2mqtt.io/advanced/support-new-devices/01_support_new_devices.html" target="_blank" rel="noopener noreferrer" class="rp-link">zigbee-herdsman converters</a> 的 Zigbee2MQTT（和 IoBroker）。</p>
+<p>如果您不想自己创建“怪癖”，则可以将“设备支持请求”作为新问题提交给 <a href="https://github.com/zigpy/zha-device-handlers/issues" target="_blank" rel="noopener noreferrer" class="rp-link">ZHA Device Handlers project repository on GitHub</a>。</p>
+<details>
+<summary>提交新的设备支持请求：</summary>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+如果没有设备支持请求，志愿者开发人员社区可能不会意识到您的特定 Zigbee 设备无法在 ZHA 中正常工作。</p><p>请注意，该项目依赖于志愿者；提交新设备支持请求并不能保证有人会为 ZHA 开发自定义怪癖。</p><p>:::
+1.登录GitHub.com（需要有账号）
+2. 转到<a href="https://github.com/zigpy/zha-device-handlers/issues" target="_blank" rel="noopener noreferrer" class="rp-link">ZHA Device Handlers project issues page</a>
+3. 选择 <strong>新问题</strong> 并按照说明进行操作。
+- 新设备支持请求需要设备签名+诊断信息。
+- 您可能还需要积极帮助进一步测试或向志愿开发人员提供更多信息。</p></div></div></details><h3 class="rp-toc-include" id="避免配对连接困难的最佳实践"><a href="#避免配对连接困难的最佳实践" class="rp-header-anchor rp-link" aria-hidden="true">#</a>避免配对/连接困难的最佳实践</h3><p>如果您在配对设备时遇到问题，请验证您是否遵循最佳实践以避免配对/连接问题：</p><p>1、减少网络干扰：
+- 检查您的设置和环境是否已优化以避免干扰。
+- 避免干扰本身就是一个极其重要的话题。查看下面单独部分中有关 Zigbee 干扰避免和网络范围/覆盖范围优化的提示。
+2. 加强你的网络：
+- 检查您是否有足够的 Zigbee 路由器设备（Zigbee 信号中继器或范围扩展器）。
+- 如果没有，您应该添加额外的电源供电设备作为 Zigbee 路由器。
+- 在添加电池供电的设备之前，首先尝试使用主电源供电的设备。
+-“弱”Zigbee 网络网格可能会阻止某些设备配对（例如距离 Zigbee 路由器或协调器太远的设备）。
+- 还需要 Zigbee 路由器设备来增加可连接到 Zigbee 网状网络的设备数量上限。
+- 某些 Zigbee 设备不完全兼容所有品牌的 Zigbee 路由器设备。
+- 已知Xiaomi/Aqara 设备无法与 Centralite、General Electrics、Iris、Ledvance/OSRAM、LIGHTIFY/Sylvania、Orvibo、PEQ、Securifi 和 SmartThings/Samsung 的 Zigbee 路由器设备配合使用。
+- 使用市电供电设备 IKEA 和 Nue/3A Home 或基于 Texas Instruments CC253x/CC26x2 和 XBee 系列 2/3 Zigbee 无线电的专用 DIY 路由设备通常可以获得更好的结果。
+3. 规划您的配对：
+- 尝试在您打算使用 Zigbee 设备的地方进行配对：
+- 如果您打算以后移动 Zigbee 协调器的位置，请避免在 Zigbee 协调器旁边配对。
+- 将协调器旁边的设备配对并稍后移动可能会导致连接性能下降。
+- 如果您要添加的设备之前已与另一个网络配对，您可能需要手动将设备恢复出厂设置才能添加/配对。
+- 已知某些电池供电的 Zigbee 设备如果电池电压较低，会出现配对问题。
+- 有些人报告更换新收到的Xiaomi/Aqara 设备上的电池解决了配对问题。
+4.要有耐心：
+- 某些 Zigbee 设备的配对可能需要多次或重复尝试。- 某些设备（例如Xiaomi/Aqara 的设备）可能不完全符合 Zigbee 标准，因此可能需要 10-20 分钟或更长时间的多次配对尝试。</p><h3 class="rp-toc-include" id="zigbee-interference-avoidance-and-network-rangecoverage-optimization"><a href="#zigbee-interference-avoidance-and-network-rangecoverage-optimization" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee 干扰规避与网络覆盖优化</h3><p>无线电干扰源可能会导致连接问题、发送和接收 Zigbee 消息/信号的错误以及性能的显着下降。实施一些良好的做法可以作为实现更好的信号质量和接收、改善覆盖范围和扩大范围的起点。</p><p>了解低功耗/低带宽 2.4 GHz 数字无线电的已知限制非常重要，以避免因 Zigbee 无线电适配器或设备的干扰或放置不当而导致问题。</p><p>所有电气设备/电器，尤其是计算机和计算机外围设备，都会产生 EMI/EMF/RMI（引起 <a href="https://en.wikipedia.org/wiki/Electromagnetic_interference" target="_blank" rel="noopener noreferrer" class="rp-link">electromagnetic interference</a> 的电磁场）。这通常称为“射频干扰”或“信号噪声”，它会干扰 2.4 GHz 无线电的信号传输。它可能会部分降低甚至完全干扰 Zigbee 适配器和设备之间的无线通信。</p><p>现实世界的干扰源示例包括：</p><ul>
+<li>来自 USB 3.x 端口的信号噪声，</li>
+<li>非屏蔽 USB 3.x 设备，</li>
+<li>非屏蔽 USB 3.x 外围电缆
+<ul>
+<li>众所周知，这些会影响低功率/低带宽设备的 2.4 GHz 无线电接收。</li>
+<li>您应始终将 Zigbee 适配器放置在远离任何潜在 EMI/EMI/RMI 源的位置，最好使用足够长的屏蔽 USB 延长线连接到 USB 2.0 端口。</li>
+</ul>
+</li>
+</ul><p>Zigbee 依赖于 <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank" rel="noopener noreferrer" class="rp-link">mesh networking</a> 的概念，大多数主电源供电设备都是“Zigbee 路由器”，充当信号中继器和范围扩展器。总的来说，它们通过中间设备的 Zigbee 网络网格传递数据消息来长距离传输数据，以到达更远的 Zigbee 设备。</p><p>:::tip
+要拥有一个健康的 Zigbee 网络，您需要许多彼此相对靠近的 Zigbee 路由器设备，以实现良好的覆盖范围和范围。</p>
+<h4 class="rp-toc-include" id="优化-zigbee-协调器无线电硬件的操作"><a href="#优化-zigbee-协调器无线电硬件的操作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>优化 Zigbee 协调器无线电硬件的操作</h4>
+<p>性能不可靠的常见根本原因通常是过时的 Zigbee 协调器无线电适配器硬件，受到过时芯片、不良天线设计或旧/有缺陷的固件的限制。您可以通过使用良好的 Zigbee 协调器无线电适配器并对其进行维护来改进大多数 Zigbee 设置。</p>
+<ul>
+<li>
+<p>购买并使用基于更新/现代芯片硬件的受支持的 Zigbee 协调器 USB 适配器。</p>
+<ul>
+<li>考虑使用带有外部天线的 Zigbee 协调器 USB 适配器，以获得更大的灵活性。</li>
+</ul>
+</li>
+<li>
+<p>在现有无线电适配器上更新到更高版本的 Zigbee 协调器固件。</p>
+<ul>
+<li>大多数制造商通常提供简单的固件更新指南。</li>
+</ul>
+</li>
+<li>
+<p>尝试 Zigbee 协调器及其天线的不同物理放置和方向。</p>
+<ul>
+<li>Zigbee 适配器的最佳放置位置是尽可能靠近房子的中间。</li>
+<li>尝试将 Zigbee 协调器放置在距离墙壁、天花板和地板一定距离的位置。</li>
+<li>尝试 Zigbee 协调器适配器或其天线的不同方向。</li>
+</ul>
+</li>
+</ul>
+<p>虽然使用较旧的 Zigbee 协调器无线电适配器硬件可能可行，但使用过时的硬件和/或旧固件可能会妨碍可靠的操作。如果设备出现问题，在进一步排除故障之前升级 Zigbee 协调器固件通常也是一个好主意。</p>
+<h4 class="rp-toc-include" id="避免或解决-emiemfrmi-干扰的措施"><a href="#避免或解决-emiemfrmi-干扰的措施" class="rp-header-anchor rp-link" aria-hidden="true">#</a>避免或解决 EMI/EMF/RMI 干扰的措施</h4>
+<p>由于所有 Zigbee 协调器无线电适配器对所有类型的 EMI/EMF/RMI 都非常敏感/敏感，因此您应该始终尝试优化 Zigbee 协调器的放置并避免已知的干扰源。</p>
+<ul>
+<li>
+<p>使用长 USB 延长线并将 Zigbee 协调器放置在远离干扰和障碍物的地方。</p>
+<ul>
+<li>确保 USB 延长线有足够的屏蔽（较粗的电缆通常具有更好的屏蔽）。</li>
+<li>将 Zigbee 协调器放置在远离电线/电缆、电源和家用电器的地方。</li>
+<li>延长线还可以更轻松地尝试适配器/天线的不同方向。</li>
+</ul>
+</li>
+<li>
+<p>避免使用 USB 3.0 端口/计算机/外围设备，因为它们是 RFI/EMI/EMF 干扰的已知罪魁祸首。 （参见参考号 <a href="https://www.usb.org/sites/default/files/327216.pdf" target="_blank" rel="noopener noreferrer" class="rp-link">1</a> 和 <a href="https://www.unit3compliance.co.uk/2-4ghz-intra-system-or-self-platform-interference-demonstration/" target="_blank" rel="noopener noreferrer" class="rp-link">2</a>）。</p>
+<ul>
+<li>确保仅将 Zigbee USB 适配器连接到 USB 2.0 端口（而不是 USB 3.x 端口）。</li>
+<li>如果计算机只有 USB 3。x 端口，然后购买 Zigbee 协调器并通过供电的 USB 2.0 集线器连接。</li>
+</ul>
+</li>
+<li>
+<p>通过添加全金属外壳/机箱/外壳来屏蔽任何未屏蔽的计算机/外围设备/设备。</p>
+<ul>
+<li>对所有外部外围设备/设备使用屏蔽 USB 电缆，尤其是 USB 3.x 外围设备。</li>
+<li>请注意，金属外壳可能会降低内部/内置 Zigbee 协调器的性能。</li>
+</ul>
+</li>
+<li>
+<p>避免使用 Wi-Fi 路由器和 Wi-Fi 接入点，或者更改 Wi-Fi 通道或 Zigbee 通道。</p>
+<ul>
+<li>将 Zigbee 协调器放置在远离任何 Wi-Fi 接入点和所有其他 WiFi 来源的地方。</li>
+<li>Wi-Fi 频率范围可能与 Zigbee 重叠，请参阅上面有关定义 Zigbee 通道使用的部分。</li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="通过-ota-升级-zigbee-设备固件时出现问题"><a href="#通过-ota-升级-zigbee-设备固件时出现问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通过 OTA 升级 Zigbee 设备固件时出现问题</h3>
+<p>在升级任何 OTA 固件之前，建议在设备中安装新电池。 OTA 固件更新非常耗电，某些设备在开始升级之前会检查最低电池电量。如果电池电量太低，这些设备可能会拒绝启动更新过程。但是，并非所有设备固件都包含此检查。</p>
+<p>如果 Zigbee 终端设备（即电池供电产品）上没有启动 Zigbee 固件升级，请注意，您通常需要“唤醒设备”（例如触发状态更改或按下按钮（如果可用）），以便设备唤醒并能够接收启动 OTA 升级的命令。原因是电池供电的产品被称为“休眠设备”，因此它们通常处于休眠状态，并且仅在设备状态改变时才接收命令。</p>
+<p>如果升级仍然无法开始，请尝试通过断开电源/电池几秒钟来手动重新启动设备，然后重试；然后再次确保在发送更新请求之前通过触发状态更改或按下设备上的按钮来激活设备。有时，通过重复按下按钮或触发状态更改，直到您在用户界面中看到第一条“正在更新...”消息，尝试保持设备唤醒也有帮助。</p>
+<p>请注意，每个设备的 Zigbee 设备的 OTAU（空中升级）通常需要大约 10 分钟，如果需要更长的时间，则 Zigbee 固件升级无法启动、花费很长时间甚至失败的另一个常见原因是接收不良或没有稳定的 Zigbee 网络网格。采取行动尝试优化您的 Zigbee 网络，避免射频干扰并添加许多 Zigbee 路由器设备（中继器/扩展器）以扩展范围和覆盖范围。尝试遵循故障排除下的 <a href="#zigbee-interference-avoidance-and-network-rangecoverage-optimization" class="rp-link">Zigbee interference avoidance and network range/coverage optimization)</a> 部分中的所有最佳实践提示。</p>
+<h3 class="rp-toc-include" id="visualization-of-the-zigbee-network-topology-and-device-links"><a href="#visualization-of-the-zigbee-network-topology-and-device-links" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee 网络拓扑与设备链路可视化</h3>
+<p>要可视化 Zigbee 网络拓扑中的设备链接，请转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a> 并选择 <strong>显示地图</strong>。</p>
+<p>网络可视化可以帮助识别连接较差的设备（即链路上的值较低）。您需要查看 ZHA 日志以查找故障排除所需的更多详细信息。</p>
+<p>该可视化显示配对设备之间的多跳连接及其报告的接收信号强度指示器 (RSSI) 和链路质量指示 (LQI) 的累积值。</p>
+<p>报告这些值的确切方法取决于每个设备上使用的 Zigbee 网络堆栈。当消息通过网状网络矩阵传播时，LQI 值可以在每一步进行修改。</p>
+<h4 class="rp-toc-include" id="为什么-zigbee-网络拓扑图中缺少某些链路"><a href="#为什么-zigbee-网络拓扑图中缺少某些链路" class="rp-header-anchor rp-link" aria-hidden="true">#</a>为什么 Zigbee 网络拓扑图中缺少某些链路</h4>
+<p>Zigbee 网络可视化图中 Zigbee 终端设备（通常是电池供电设备）之间的链接缺失很常见。如果设备仍在报告状态更改，那么它们通常不是设备故障的迹象。这种情况发生在休眠的 Zigbee 终端设备上，并不意味着该设备不再连接。</p>
+<p>某些终端设备（例如Xiaomi门传感器）会长时间休眠，导致父 Zigbee 路由器通过称为路由器子老化的功能将它们从子表中删除。由于使用子老化并将其从子表中删除是 Zigbee 3.0 的一项功能，因此这种情况并不总是发生，因为并非所有 Zigbee 路由器设备都使用子老化。</p>
+<p>这就是导致设备显示缺失链接的原因。即使设备不再位于子表中，终端设备仍然可以通过父 Zigbee 路由器进行通信。</p>
+<h4 class="rp-toc-include" id="如何解释-rssi-和-lqi-值解释-rssi-和-lqi-值可能很复杂因为网络健康状况和通信质量的指标是由设备本身提供的并且每个设备可以通过不同的方式获取结果除非您自己是-zigbee-专家或受到专家的指导否则请忽略这些值它们可能会产生误导"><a href="#如何解释-rssi-和-lqi-值解释-rssi-和-lqi-值可能很复杂因为网络健康状况和通信质量的指标是由设备本身提供的并且每个设备可以通过不同的方式获取结果除非您自己是-zigbee-专家或受到专家的指导否则请忽略这些值它们可能会产生误导" class="rp-header-anchor rp-link" aria-hidden="true">#</a>如何解释 RSSI 和 LQI 值解释 RSSI 和 LQI 值可能很复杂，因为网络健康状况和通信质量的指标是由设备本身提供的，并且每个设备可以通过不同的方式获取结果。除非您自己是 Zigbee 专家或受到专家的指导，否则请忽略这些值。它们可能会产生误导。</h4>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+重要的是不要自行判断 RSSI 或 LQI 值。在对被丢弃的 Zigbee 消息进行故障排除时，您必须解释 RSSI 和 LQI 的组合。</p></div></div>
+<details>
+<summary>关于 RSSI（接收信号强度指示）</summary>
+<p>RSSI（接收信号强度指示器）值是两个设备之间的原始信号强度的指示器值。</p>
+<p>RSSI 值是负数，采用 -dBm 格式，范围为 0 到 -100 功率比（以 1 毫瓦为参考的测量功率的分贝）。较低的负值表示干扰较少且信号良好。</p>
+<p>该值是端点设备和来自该设备的第一跳之间的测量值。它可能不一定向 Zigbee 协调器显示信号强度，但可能向最近的 Zigbee 路由器设备显示信号强度。</p>
+<p>一般来说：</p>
+<ul>
+<li>值 -60 及以上（即 -50、-40 等）表示信号较强且丢失消息的风险非常低。</li>
+<li>-80 及以下的值（即 -85、-90 等）表示环境“嘈杂”，您可能会面临丢失消息的风险。</li>
+</ul>
+</details>
+<details>
+<summary>关于 LQI（链路质量指标）</summary>
+<p>LQI（链路质量指数）值在刻度上显示为正数，但对于 Zigbee 来说很难解释，并且不像用于故障排除的单独指标那么有用。</p>
+<p>这是由于 Zigbee 和 IEEE 802.15.4 规范未标准化如何执行 LQI 测量。 Zigbee 设备提供的 LQI 值并不是使用所有设备制造商和 Zigbee 堆栈的统一标准来测量的，并且 LQI 通常只是最后一跳链路质量的度量，这并不总是有用的信息。</p>
+<p>理论上，LQI 值越高越好，LQI 值越低越差。根据您的设备，这可能并不总是反映现实。一个好的做法是仅将 LQI 与其他类型的指标或数据点一起包含在内，而不是作为独立指标。</p>
+<p>特定于供应商的示例：</p>
+<ul>
+<li>基于 Silicon Labs EmberZNet 堆栈的 Zigbee 设备使用正数显示 LQI，其中值越高越好，值越低越差。</li>
+<li>Texas Instruments Z-Stack 根据原始接收信号强度指数 (RSSI) 计算每个接收数据包的 LQI，方法是在无线电定义的最小和最大 RF 功率级别之间进行线性缩放，实际上提供基于接收信号强度的 LQI 值。
+<ul>
+<li>如果您处于同一频率范围内存在干扰的嘈杂环境中，这可能会产生误导，因为即使真实的链路质量下降，RSSI 值也可能显示为增加。</li>
+</ul>
+</li>
+<li>其他制造商和 Zigbee 堆栈以另一种方式测量和计算 LQI 值。</li>
+</ul>
+</details>
+<h3 class="rp-toc-include" id="报告问题"><a href="#报告问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>报告问题</h3>
+<p>有关报告问题的地点和方式的更多详细信息，请参阅 <a href="/home-assistant/help/reporting_issues/" class="rp-link">Reporting issues page</a>。</p>
+<p>在问题跟踪器上报告与 ZHA 集成相关的潜在错误时，除了标准问题模板要求的信息之外，请始终提供以下 ZHA/Zigbee 特定信息：</p>
+<ol>
+<li>问题的调试日志，请参阅 <a href="#debug-logging" class="rp-link">debug logging</a>。</li>
+<li>所使用的 Zigbee 无线电（Zigbee 协调器适配器）的确切型号和固件。</li>
+<li>如果问题与特定 Zigbee 设备相关，请提供 <strong>Zigbee 设备签名</strong> 和 <strong>诊断</strong> 信息。
+<ul>
+<li>转至 <a href="https://my.home-assistant.io/redirect/config_zha/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Zigbee</strong></a>。
+<ol>
+<li>选择 <strong>设备</strong>，然后从列表中选择您的设备。</li>
+<li>在 <strong>重新配置</strong> 按钮旁边的三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单中，选择 <strong>下载诊断</strong>。</li>
+<li>在 <strong>重新配置</strong> 按钮旁边的三点 <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> 菜单中，选择 <strong>管理 Zigbee 设备</strong>。</li>
+<li>打开<strong>签名</strong>选项卡并复制签名。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+要进行故障排除，请阅读本页的以下部分。它们提供有关提高 Zigbee 网络性能的信息。</p><ul>
+<li><a href="#best-practices-to-avoid-pairingconnection-difficulties" class="rp-link">Best practices to avoid pairing/connection difficulties</a></li>
+<li><a href="#zigbee-interference-avoidance-and-network-rangecoverage-optimization" class="rp-link">Zigbee interference avoidance and network range/coverage optimization</a></li>
+</ul></div></div>
+<h3 class="rp-toc-include" id="调试日志记录"><a href="#调试日志记录" class="rp-header-anchor rp-link" aria-hidden="true">#</a>调试日志记录</h3>
+<p>要启用 ZHA integration 和无线电库的调试日志记录，请将以下 <a href="/home-assistant/integrations/logger/index.html" class="rp-link">logger</a> 配置添加到 B64PODc=P64B：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">logger</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  default</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> info</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  logs</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    homeassistant.core</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    homeassistant.components.zha</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    bellows.zigbee.application</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    bellows.ezsp</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zigpy</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zigpy_deconz.zigbee.application</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zigpy_deconz.api</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zigpy_xbee.zigbee.application</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zigpy_xbee.api</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zigpy_zigate</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zigpy_znp</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    zhaquirks</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> debug</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="添加之前已添加到另一个桥的-philips-hue-灯泡在-zha-中搜索以添加-zigbee-设备时之前已与另一个网桥网关配对的-philips-hue-灯泡将不会显示-灯泡必须恢复至出厂默认设置"><a href="#添加之前已添加到另一个桥的-philips-hue-灯泡在-zha-中搜索以添加-zigbee-设备时之前已与另一个网桥网关配对的-philips-hue-灯泡将不会显示-灯泡必须恢复至出厂默认设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>添加之前已添加到另一个桥的 Philips Hue 灯泡在 ZHA 中搜索以添加 Zigbee 设备时，之前已与另一个网桥/网关配对的 Philips Hue 灯泡将不会显示。 <strong>灯泡必须恢复至出厂默认设置</strong>。</h3>
+<p>:::important
+<strong>您必须将设备恢复出厂设置。</strong></p>
+<ul>
+<li>简单地从旧桥/网关中“删除”它们是不够的。</li>
+<li>使用此方法时，请确保附近没有其他刚刚打开电源的 Hue 灯泡，否则您将面临在此过程中重置它们的风险。</li>
+</ul>
+<p>:::
+可以使用以下重置方法（取决于灯泡版本）：</p>
+<ul>
+<li><strong>Zigbee 遥控器：</strong>
+<ul>
+<li>下面概述了 <em>Philips Hue 调光器开关</em> 或 <em>Lutron Connected Bulb Remote</em> 的步骤。</li>
+<li>遥控器不必与您之前的桥配对。</li>
+</ul>
+</li>
+<li><strong>通过 Android 应用程序蓝牙：</strong>
+<ul>
+<li>较新的Philips Hue 灯泡可以使用官方 Android 应用程序通过蓝牙重置。</li>
+<li>即使灯泡已经与桥接器配对，这也是一个选项。</li>
+</ul>
+</li>
+<li><strong>Hue Thief 命令行工具</strong>：
+<ul>
+<li>高级用户可以使用名为 <a href="https://github.com/vanviegen/hue-thief/" target="_blank" rel="noopener noreferrer" class="rp-link">Hue Thief</a> 的第三方工具。</li>
+<li>这需要基于 EZSP 的 Zigbee USB 记忆棒。</li>
+</ul>
+</li>
+</ul>
+<h4 class="rp-toc-include" id="使用-zigbee-遥控器恢复出厂设置"><a href="#使用-zigbee-遥控器恢复出厂设置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用 Zigbee 遥控器恢复出厂设置</h4>
+<p>各代遥控器的图标或按钮名称可能有所不同。用于重置的遥控器不必与您之前的桥配对。</p>
+<details>
+<summary>使用遥控器重置：</summary>
+<ol>
+<li>确定稍后将使用哪些按钮来执行重置（根据遥控器品牌）：
+<ul>
+<li><strong>Philips Hue 调光开关</strong>：
+<ul>
+<li>使用 <strong>(I)/(ON)</strong> 和 <strong>(O)/(OFF)</strong> 按钮。</li>
+<li>按钮标签或图标可能因 Hue 遥控器的代次而异。</li>
+</ul>
+</li>
+<li><strong>路创连接灯泡遥控器：</strong>
+<ul>
+<li>使用 <strong>第二个（向上箭头）</strong> 和 <strong>第四个（指示灯关闭）</strong> 按钮。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>打开要重置的 Hue 灯泡。
+<ul>
+<li><strong>重要的是灯泡_刚刚_通电。</strong></li>
+</ul>
+</li>
+<li>将遥控器靠近灯泡，距离小于 10 厘米（约 4 英寸）。</li>
+<li>按住第一步中标识的两个按钮，并在灯泡开始闪烁后继续按住它们。
+<ul>
+<li>当灯泡闪烁时，预计再按住按钮约 10 秒钟。</li>
+<li><strong>路创连接灯泡遥控器：</strong> 遥控器上的绿色 LED 也应开始缓慢闪烁。</li>
+</ul>
+</li>
+<li>灯泡关闭后松开两个按钮。
+<ul>
+<li><strong>路创连接灯泡遥控器：</strong> 当遥控器上的绿色 LED 停止闪烁后，您可以松开按钮。</li>
+</ul>
+</li>
+<li>灯泡将立即重新亮起，表示恢复出厂设置已完成。
+<ul>
+<li>按照 <a href="#adding-devices" class="rp-link">adding devices</a> 的正常步骤，灯泡现已准备好与 ZHA 配对。</li>
+</ul>
+</li>
+</ol>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">Tip</div><div class="rp-callout__content"><p>
+Philips Hue 调光器开关遥控器左上方的绿灯表示您的灯泡已成功重置为出厂默认设置。</p></div></div>
+</details>
+<p>如果您无法使用上述方法重置灯泡，请将其从 Hue Bridge 中取出（如果 Hue Bridge 重新发现了它），然后重试该过程。</p>
+<h3 class="rp-toc-include" id="zha-home-assistant-or-home-assistant-container-startup-issues"><a href="#zha-home-assistant-or-home-assistant-container-startup-issues" class="rp-header-anchor rp-link" aria-hidden="true">#</a>ZHA 与 Home Assistant 容器启动问题</h3>
+<p>在 Linux 主机上，ZHA 在 HA 启动或重新启动期间可能无法启动，因为主机的调制解调器管理器服务正在声明 Zigbee USB 设备。要解决此问题，请禁用主机系统上的调制解调器管理器。</p>
+<p>要从 Debian/Ubuntu 主机删除调制解调器管理器，请运行以下命令：</p>
+<div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">sudo</span><span style="color:var(--shiki-token-string)"> apt-get</span><span style="color:var(--shiki-token-string)"> purge</span><span style="color:var(--shiki-token-string)"> modemmanager</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="无法连接到-usb-设备并使用-docker"><a href="#无法连接到-usb-设备并使用-docker" class="rp-header-anchor rp-link" aria-hidden="true">#</a>无法连接到 USB 设备并使用 Docker</h3>
+<p>如果您使用 Docker 并且无法连接，您很可能需要将设备从主机转发到 Docker 实例。这可以通过将设备映射添加到启动字符串的末尾或最好使用 Docker compose 来实现。</p>
+<h4 class="rp-toc-include" id="docker-compose"><a href="#docker-compose" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Docker Compose</h4>
+<p>为您的平台安装 Docker-Compose (Linux - <code>sudo apt-get install docker-compose</code>)。</p>
+<p>使用以下数据创建 <code>docker-compose.yml</code>：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">version</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &#x27;2&#x27;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">services</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  homeassistant</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">    # customizable name</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    container_name</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> home-assistant</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">    # must be image for your platform, this is the rpi3 variant</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    image</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> homeassistant/raspberrypi3-homeassistant</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    volumes</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-string-expression)">&lt;DIRECTORY HOLDING HOME ASSISTANT CONFIG FILES&gt;:/config</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-string-expression)">/etc/localtime:/etc/localtime:ro</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    devices</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-comment)">      # your usb device forwarding to the docker image</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-string-expression)">/dev/ttyUSB0:/dev/ttyUSB0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    restart</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> always</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    network_mode</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> host</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="ezsp-errors-and-other-log-messages"><a href="#ezsp-errors-and-other-log-messages" class="rp-header-anchor rp-link" aria-hidden="true">#</a>EZSP 错误与其他日志信息</h3>
+<h4 class="rp-toc-include" id="ncp-entered-failed-state"><a href="#ncp-entered-failed-state" class="rp-header-anchor rp-link" aria-hidden="true">#</a>NCP 进入失败状态</h4>
+<p>当您在正常操作期间在日志中看到 <code>NCP entered failed state. Requesting APP controller restart</code> 时，表示 ZHA 与 Silabs EmberZNet Zigbee 协调器的串行接口之间的通信中断。</p>
+<p>Silicon Labs EmberZNet Zigbee 协调器适配器使用的 EZSP（EmberZNet 串行协议）接口需要与串行端口的稳定连接；因此，不建议使用 Wi-Fi、WAN、VPN 等连接。</p>
+<h3 class="rp-toc-include" id="zigbee-30-support"><a href="#zigbee-30-support" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Zigbee 3.0 支持情况</h3>
+<p>某些协调器可能不支持支持 Zigbee 3.0 的固件，但它们仍然可以完全满足您的需求。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+硬件制造商应该向他们提供此类固件。如果您的协调器附带较旧的固件版本，您可以手动升级固件。</p></div></div><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#简介" class="rp-toc-item rp-link" title="简介" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">简介</span></a><a href="#zigbee-terms" class="rp-toc-item rp-link" title="Zigbee 术语说明" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Zigbee 术语说明</span></a><a href="#zigbee-concepts" class="rp-toc-item rp-link" title="Zigbee 基本概念" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Zigbee 基本概念</span></a><a href="#兼容的硬件" class="rp-toc-item rp-link" title="兼容的硬件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">兼容的硬件</span></a><a href="#推荐的-zigbee-无线电适配器和模块" class="rp-toc-item rp-link" title="推荐的 Zigbee 无线电适配器和模块" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">推荐的 Zigbee 无线电适配器和模块</span></a><a href="#其他支持但不推荐的-zigbee-无线电适配器或模块" class="rp-toc-item rp-link" title="其他支持但不推荐的 Zigbee 无线电适配器或模块" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">其他支持但不推荐的 Zigbee 无线电适配器或模块</span></a><a href="#配置要求" class="rp-toc-item rp-link" title="配置要求" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置要求</span></a><a href="#配置" class="rp-toc-item rp-link" title="配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">配置</span></a><a href="#zigate-or-sonoff-zbridge-devices" class="rp-toc-item rp-link" title="ZiGate 或 Sonoff ZBridge 设备配置" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">ZiGate 或 Sonoff ZBridge 设备配置</span></a><a href="#全局选项" class="rp-toc-item rp-link" title="全局选项" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">全局选项</span></a><a href="#定义要使用的-zigbee-通道" class="rp-toc-item rp-link" title="定义要使用的 Zigbee 通道" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">定义要使用的 Zigbee 通道</span></a><a href="#更改-zigbee-通道" class="rp-toc-item rp-link" title="更改 Zigbee 通道" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">更改 Zigbee 通道</span></a><a href="#zigbee-channel-troubleshooting" class="rp-toc-item rp-link" title="Zigbee 通道故障排除" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Zigbee 通道故障排除</span></a><a href="#关于-zigbee-通道" class="rp-toc-item rp-link" title="关于 Zigbee 通道" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">关于 Zigbee 通道</span></a><a href="#修改设备类型" class="rp-toc-item rp-link" title="修改设备类型" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">修改设备类型</span></a><a href="#zigbee-device-firmware-ota-updates" class="rp-toc-item rp-link" title="Zigbee 设备 OTA 固件更新" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Zigbee 设备 OTA 固件更新</span></a><a href="#高级-ota-配置" class="rp-toc-item rp-link" title="高级 OTA 配置" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">高级 OTA 配置</span></a><a href="#添加设备" class="rp-toc-item rp-link" title="添加设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">添加设备</span></a><a href="#使用路由器设备添加更多设备" class="rp-toc-item rp-link" title="使用路由器设备添加更多设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用路由器设备添加更多设备</span></a><a href="#通过-usb-或-zeroconf-发现" class="rp-toc-item rp-link" title="通过 USB 或 Zeroconf 发现" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过 USB 或 Zeroconf 发现</span></a><a href="#行动" class="rp-toc-item rp-link" title="行动" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">行动</span></a><a href="#行动许可zhapermit-操作打开网络以加入新设备" class="rp-toc-item rp-link" title="行动：许可zha.permit 操作打开网络以加入新设备。" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">行动：许可<code>zha.permit</code> 操作打开网络以加入新设备。</span></a><a href="#操作删除" class="rp-toc-item rp-link" title="操作：删除" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：删除</span></a><a href="#操作设置锁定用户代码" class="rp-toc-item rp-link" title="操作：设置锁定用户代码" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：设置锁定用户代码</span></a><a href="#操作清除锁定用户代码" class="rp-toc-item rp-link" title="操作：清除锁定用户代码" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：清除锁定用户代码</span></a><a href="#操作启用锁定用户代码" class="rp-toc-item rp-link" title="操作：启用锁定用户代码" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：启用锁定用户代码</span></a><a href="#操作禁用锁定用户代码" class="rp-toc-item rp-link" title="操作：禁用锁定用户代码" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作：禁用锁定用户代码</span></a><a href="#zigbee-groups-and-binding-devices" class="rp-toc-item rp-link" title="Zigbee 分组与设备绑定" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Zigbee 分组与设备绑定</span></a><a href="#团体" class="rp-toc-item rp-link" title="团体" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">团体</span></a><a href="#创建-zigbee-组" class="rp-toc-item rp-link" title="创建 Zigbee 组" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">创建 Zigbee 组</span></a><a href="#绑定" class="rp-toc-item rp-link" title="绑定" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">绑定</span></a><a href="#管理-zigbee-设备的绑定" class="rp-toc-item rp-link" title="管理 Zigbee 设备的绑定" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">管理 Zigbee 设备的绑定</span></a><a href="#备份和迁移" class="rp-toc-item rp-link" title="备份和迁移" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">备份和迁移</span></a><a href="#迁移到-zha-内的新-zigbee-适配器" class="rp-toc-item rp-link" title="迁移到 ZHA 内的新 Zigbee 适配器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">迁移到 ZHA 内的新 Zigbee 适配器</span></a><a href="#先决条件" class="rp-toc-item rp-link" title="先决条件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">先决条件</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#限制" class="rp-toc-item rp-link" title="限制" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">限制</span></a><a href="#了解支持哪些设备" class="rp-toc-item rp-link" title="了解支持哪些设备" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">了解支持哪些设备</span></a><a href="#如何添加对新设备和不受支持的设备的支持" class="rp-toc-item rp-link" title="如何添加对新设备和不受支持的设备的支持" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">如何添加对新设备和不受支持的设备的支持</span></a><a href="#zha-device-handlers" class="rp-toc-item rp-link" title="ZHA 设备处理器" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">ZHA 设备处理器</span></a><a href="#避免配对连接困难的最佳实践" class="rp-toc-item rp-link" title="避免配对/连接困难的最佳实践" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">避免配对/连接困难的最佳实践</span></a><a href="#zigbee-interference-avoidance-and-network-rangecoverage-optimization" class="rp-toc-item rp-link" title="Zigbee 干扰规避与网络覆盖优化" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Zigbee 干扰规避与网络覆盖优化</span></a><a href="#优化-zigbee-协调器无线电硬件的操作" class="rp-toc-item rp-link" title="优化 Zigbee 协调器无线电硬件的操作" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">优化 Zigbee 协调器无线电硬件的操作</span></a><a href="#避免或解决-emiemfrmi-干扰的措施" class="rp-toc-item rp-link" title="避免或解决 EMI/EMF/RMI 干扰的措施" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">避免或解决 EMI/EMF/RMI 干扰的措施</span></a><a href="#通过-ota-升级-zigbee-设备固件时出现问题" class="rp-toc-item rp-link" title="通过 OTA 升级 Zigbee 设备固件时出现问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">通过 OTA 升级 Zigbee 设备固件时出现问题</span></a><a href="#visualization-of-the-zigbee-network-topology-and-device-links" class="rp-toc-item rp-link" title="Zigbee 网络拓扑与设备链路可视化" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Zigbee 网络拓扑与设备链路可视化</span></a><a href="#为什么-zigbee-网络拓扑图中缺少某些链路" class="rp-toc-item rp-link" title="为什么 Zigbee 网络拓扑图中缺少某些链路" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">为什么 Zigbee 网络拓扑图中缺少某些链路</span></a><a href="#如何解释-rssi-和-lqi-值解释-rssi-和-lqi-值可能很复杂因为网络健康状况和通信质量的指标是由设备本身提供的并且每个设备可以通过不同的方式获取结果除非您自己是-zigbee-专家或受到专家的指导否则请忽略这些值它们可能会产生误导" class="rp-toc-item rp-link" title="如何解释 RSSI 和 LQI 值解释 RSSI 和 LQI 值可能很复杂，因为网络健康状况和通信质量的指标是由设备本身提供的，并且每个设备可以通过不同的方式获取结果。除非您自己是 Zigbee 专家或受到专家的指导，否则请忽略这些值。它们可能会产生误导。" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">如何解释 RSSI 和 LQI 值解释 RSSI 和 LQI 值可能很复杂，因为网络健康状况和通信质量的指标是由设备本身提供的，并且每个设备可以通过不同的方式获取结果。除非您自己是 Zigbee 专家或受到专家的指导，否则请忽略这些值。它们可能会产生误导。</span></a><a href="#报告问题" class="rp-toc-item rp-link" title="报告问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">报告问题</span></a><a href="#调试日志记录" class="rp-toc-item rp-link" title="调试日志记录" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">调试日志记录</span></a><a href="#添加之前已添加到另一个桥的-philips-hue-灯泡在-zha-中搜索以添加-zigbee-设备时之前已与另一个网桥网关配对的-philips-hue-灯泡将不会显示-灯泡必须恢复至出厂默认设置" class="rp-toc-item rp-link" title="添加之前已添加到另一个桥的 Philips Hue 灯泡在 ZHA 中搜索以添加 Zigbee 设备时，之前已与另一个网桥/网关配对的 Philips Hue 灯泡将不会显示。 灯泡必须恢复至出厂默认设置。" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">添加之前已添加到另一个桥的 Philips Hue 灯泡在 ZHA 中搜索以添加 Zigbee 设备时，之前已与另一个网桥/网关配对的 Philips Hue 灯泡将不会显示。 <strong>灯泡必须恢复至出厂默认设置</strong>。</span></a><a href="#使用-zigbee-遥控器恢复出厂设置" class="rp-toc-item rp-link" title="使用 Zigbee 遥控器恢复出厂设置" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">使用 Zigbee 遥控器恢复出厂设置</span></a><a href="#zha-home-assistant-or-home-assistant-container-startup-issues" class="rp-toc-item rp-link" title="ZHA 与 Home Assistant 容器启动问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">ZHA 与 Home Assistant 容器启动问题</span></a><a href="#无法连接到-usb-设备并使用-docker" class="rp-toc-item rp-link" title="无法连接到 USB 设备并使用 Docker" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">无法连接到 USB 设备并使用 Docker</span></a><a href="#docker-compose" class="rp-toc-item rp-link" title="Docker Compose" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Docker Compose</span></a><a href="#ezsp-errors-and-other-log-messages" class="rp-toc-item rp-link" title="EZSP 错误与其他日志信息" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">EZSP 错误与其他日志信息</span></a><a href="#ncp-entered-failed-state" class="rp-toc-item rp-link" title="NCP 进入失败状态" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">NCP 进入失败状态</span></a><a href="#zigbee-30-support" class="rp-toc-item rp-link" title="Zigbee 3.0 支持情况" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Zigbee 3.0 支持情况</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habitica - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Habitica - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Habitica 集成可让你在 Home Assistant 中监控自己在 Habitica(https://habitica.com/) 中的冒险者进度和属性，并无缝整合待办事项、日常任务等内容。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Habitica 集成可让你在 Home Assistant 中监控自己在 Habitica(https://habitica.com/) 中的冒险者进度和属性，并无缝整合待办事项、日常任务等内容。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="https://my.home-assistant.io/badges/blueprint_import.svg"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="habitica"><a href="#habitica" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Habitica<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Habitica</strong> 集成可让你在 Home Assistant 中监控自己在 <a href="https://habitica.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Habitica</a> 中的冒险者进度和属性，并无缝整合待办事项、日常任务等内容。</p>
+<h2 class="rp-toc-include" id="关于-habitica"><a href="#关于-habitica" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关于 Habitica</h2>
+<p>Habitica 是一个游戏化任务管理器和习惯追踪器，它会把你的日常目标和待办事项变成角色扮演游戏，帮助你在获取奖励、提升角色等级的同时保持动力和效率。</p>
+<h2 class="rp-toc-include" id="你可以如何使用此集成"><a href="#你可以如何使用此集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>你可以如何使用此集成</h2>
+<p>Habitica 集成可让你自动化管理任务，例如在家电运行完成时创建待办事项，或通过智能传感器将日常任务标记为已完成。你还可以在 Home Assistant 仪表板中可视化任务和属性，或为到期任务创建通知，帮助你保持条理并持续朝目标前进。</p>
+<h2 class="rp-toc-include" id="habitica-集成前提条件"><a href="#habitica-集成前提条件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Habitica 集成前提条件</h2>
+<ul>
+<li>要设置 Habitica 集成，你首先需要一个有效的 Habitica 账户。你可以在 <a href="https://habitica.com/" target="_blank" rel="noopener noreferrer" class="rp-link">Habitica.com</a> 注册。</li>
+<li>在 Home Assistant 的设置过程中，你可以在两种登录方式之间进行选择：
+<ul>
+<li>“Login to Habitica”：使用你的<em>用户名</em>或<em>电子邮件地址</em>以及<em>密码</em>登录。</li>
+<li>“Login to other instances”：需要提供你的 <code>User ID</code> 和 <code>API Token</code>。你可以登录 Habitica 账户后，前往 <strong>Settings</strong> 菜单并选择 <strong>Site Data</strong> 来获取 <code>User ID</code> 和 <code>API Token</code>。</li>
+<li>此外，你还需要提供想要连接的 Habitica 实例 URL；默认 URL 为 <code>https://habitica.com</code>，如果你使用的是其他 Habitica 实例或自托管实例，也可以指定不同的 URL。</li>
+</ul>
+</li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<h3 class="rp-toc-include" id="登录到-habitica"><a href="#登录到-habitica" class="rp-header-anchor rp-link" aria-hidden="true">#</a>登录到 Habitica</h3>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-string-expression)">&quot;Email or username&quot;</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;用于将 Home Assistant 连接到 Habitica 账户的电子邮件或用户名（区分大小写）&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;用于将 Home Assistant 连接到 Habitica 的账户密码&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h3 class="rp-toc-include" id="高级配置"><a href="#高级配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>高级配置</h3>
+<p>如果你选择“<strong>Login to other instances</strong>”，将看到以下配置选项：</p>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-string-expression)">&quot;User ID&quot;</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;你的 Habitica 账户的 User ID（*参见[前提条件](#prerequisites-for-habitica-integration)*）&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">API Token</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Habitica 账户的 API Token（*参见[前提条件](#prerequisites-for-habitica-integration)*）&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">URL</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;要连接的 Habitica 安装实例 URL。默认为 `https://habitica.com`（*参见[前提条件](#prerequisites-for-habitica-integration)*）&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Verify SSL certificate</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> 为安全连接启用 SSL 证书验证。仅当连接使用自签名证书的 Habitica 实例时才应禁用</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h2>
+<ul>
+<li><strong>Class</strong>：显示角色职业（Warrior、Rogue、Healer 或 Mage）。</li>
+<li><strong>Display name</strong>：显示角色昵称。</li>
+<li><strong>Experience</strong>：显示角色当前经验值（例如 &quot;144 XP&quot;）。</li>
+<li><strong>Gold</strong>：显示角色拥有的金币数量（例如 &quot;22.29 GP&quot;）。</li>
+<li><strong>Health</strong>：显示角色当前生命值（例如 &quot;42 HP&quot;）。</li>
+<li><strong>Level</strong>：显示角色当前等级。</li>
+<li><strong>Mana</strong>：显示角色当前法力值（例如 &quot;61 MP&quot;）。</li>
+<li><strong>Max. mana</strong>：显示角色在当前等级下可拥有的最大法力值（例如 &quot;70 MP&quot;）。</li>
+<li><strong>Next level</strong>：显示升到下一级所需的剩余经验值（例如 &quot;440 XP&quot;）。</li>
+<li><strong>Gems</strong>：显示角色当前拥有的宝石总数，可用于购买物品和个性化内容。</li>
+<li><strong>Mystic hourglasses</strong>：显示作为订阅者获得的神秘沙漏数量，可兑换过去活动中的专属物品。</li>
+<li><strong>Strength, intelligence, constitution, perception</strong>：显示角色属性点。传感器属性中会细分等级、战斗装备、职业装备加成、分配点数和增益带来的贡献。</li>
+<li><strong>Eggs</strong>：显示背包中的蛋总数。传感器属性会提供每种蛋的详细类型和数量列表。</li>
+<li><strong>Pet food</strong>：显示当前可用食物总量。传感器属性会列出每种食物的类型和数量。你可以把它喂给宠物，它们也许会成长为坐骑。</li>
+<li><strong>Saddles</strong>：显示你拥有的马鞍数量，可用于立即将宠物培养为坐骑。</li>
+<li><strong>Hatching potions</strong>：显示可用孵化药水总数。传感器属性会详细列出每种药水的类型和数量。把它倒在蛋上即可孵化宠物。</li>
+<li><strong>Quest scrolls</strong>：显示背包中的任务卷轴总数。传感器属性中会提供每种任务卷轴及其数量列表。</li>
+<li><strong>Pending damage</strong>：显示当天通过完成任务累积的总伤害值。该伤害会在当天结束时用于攻击任务 Boss。</li>
+<li><strong>Pending quest items</strong>：显示当天完成任务时获得的任务物品。总数会在当天结束时计入任务目标。</li>
+<li><strong>Last check-in</strong>：显示用户上次签到时间。</li>
+</ul>
+<h2 class="rp-toc-include" id="二进制传感器"><a href="#二进制传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二进制传感器</h2>
+<ul>
+<li><strong>Pending quest invitation</strong>：显示你是否有等待回应的任务邀请。</li>
+</ul>
+<h2 class="rp-toc-include" id="图像"><a href="#图像" class="rp-header-anchor rp-link" aria-hidden="true">#</a>图像</h2>
+<ul>
+<li><strong>Avatar</strong>：显示角色当前头像（注意：当前不支持动态头像，会以静态图片显示）。</li>
+</ul>
+<h2 class="rp-toc-include" id="待办列表"><a href="#待办列表" class="rp-header-anchor rp-link" aria-hidden="true">#</a>待办列表</h2>
+<p>以下 Habitica 任务会在 Home Assistant 中作为待办列表提供。你可以添加、删除、编辑并勾选已完成任务。</p>
+<ul>
+<li><strong>To-Do&#x27;s</strong>：显示活动中和已完成的待办事项完整列表。每个待办事项都会在适用时显示截止日期，方便你勾选、编辑、删除或创建新的待办事项。</li>
+<li><strong>Dailies</strong>：显示今天或未来需要完成的日常任务。昨天完成的任务在新一天开始前，仍可作为 &quot;yesterdailies&quot; 进行标记。</li>
+</ul>
+<h2 class="rp-toc-include" id="日历"><a href="#日历" class="rp-header-anchor rp-link" aria-hidden="true">#</a>日历</h2>
+<p>将创建以下日历：</p>
+<ul>
+<li><strong>To-Do calendar</strong>：列出所有活动中待办任务的截止日期。该日历中的每个事件都代表一个设置了截止日期的待办事项，方便你追踪即将到来的期限并安排计划。</li>
+<li><strong>Dailies calendar</strong>：显示今天安排且仍处于活动状态的所有日常任务，也会显示未来日期安排的任务，帮助你保持条理并跟踪即将到来的日程。如果今天还有未完成任务，日历传感器会处于活动状态，并显示下一个到期的日常任务（如果当天有多个任务，则按排序顺序决定）。</li>
+<li><strong>To-Do reminders calendar</strong>：列出与你在 Habitica 中待办事项相关的提醒事件，帮助你了解特定待办事项的通知何时触发。</li>
+<li><strong>Dailies reminders calendar</strong>：显示与你在 Habitica 中日常任务相关的提醒事件，确保你知道日常任务通知何时发生。</li>
+</ul>
+<h2 class="rp-toc-include" id="按钮控制"><a href="#按钮控制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>按钮控制</h2>
+<ul>
+<li><strong>Start my day</strong>：在 Habitica 中启动每日例行流程，包括重置日常任务、结算未完成日常任务和任务 Boss 造成的伤害、调整习惯、结束增益效果，以及根据已完成日常任务恢复法力。</li>
+<li><strong>Revive from death</strong>：让角色在 Habitica 中复活。复活后生命值会完全恢复，但角色会失去所有金币、1 个等级、全部经验值、1 个属性点以及 1 件装备。</li>
+<li><strong>Buy a health potion</strong>：让角色在 Habitica 中购买生命药水。购买后会立即使用，消耗 25 GP 恢复 15 HP。</li>
+<li><strong>Allocate all stat points</strong>：根据之前设置的自动分配方式分配所有未分配属性点。如果未设置分配方式，则所有点数都会分配给力量（STR）。</li>
+</ul>
+<h2 class="rp-toc-include" id="职业技能按钮控制"><a href="#职业技能按钮控制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>职业技能按钮控制</h2>
+<p>如果你已解锁职业系统，则会根据你选择的职业提供施放个人和队伍技能的按钮控制。任务技能请参见<a href="#action-habiticacast_skill" class="rp-link">动作 <code>habitica.cast_skill</code></a>。</p>
+<h3 class="rp-toc-include" id="mage"><a href="#mage" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Mage</h3>
+<ul>
+<li><strong>Ethereal surge</strong>：你牺牲法力，让队伍中除其他法师外的成员获得 MP。（基于：INT）</li>
+<li><strong>Earthquake</strong>：你的精神力量撼动大地，并提升全队的智力。（基于：未加成 INT）</li>
+<li><strong>Chilling frost</strong>：施放后，寒冰会冻结你的所有连击，使其明天不会归零。</li>
+</ul>
+<h3 class="rp-toc-include" id="warrior"><a href="#warrior" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Warrior</h3>
+<ul>
+<li><strong>Defensive stance</strong>：你压低身形并获得体质增益。（基于：未加成 CON）</li>
+<li><strong>Valorous presence</strong>：你的勇气会提升全队的力量。（基于：未加成 STR）</li>
+<li><strong>Intimidating gaze</strong>：你凶狠的目光会提升全队的体质。（基于：未加成 CON）</li>
+</ul>
+<h3 class="rp-toc-include" id="rogue"><a href="#rogue" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Rogue</h3>
+<ul>
+<li><strong>Tools of the trade</strong>：你的技巧会提升全队的感知。（基于：未加成 PER）</li>
+<li><strong>Stealth</strong>：每次施放后，你的一部分未完成日常任务今晚将不会造成伤害，它们的连击和颜色也不会变化。（基于：PER）</li>
+</ul>
+<h3 class="rp-toc-include" id="healer"><a href="#healer" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Healer</h3>
+<ul>
+<li><strong>Healing light</strong>：闪耀的光芒会恢复你的生命值。（基于：CON 和 INT）</li>
+<li><strong>Searing brightness</strong>：一道强光会让你的任务更偏蓝、没那么偏红。（基于：INT）</li>
+<li><strong>Protective aura</strong>：你通过提升队伍体质来保护全队。（基于：未加成 CON）</li>
+<li><strong>Blessing</strong>：你安抚人心的法术会恢复全队生命值。（基于：CON 和 INT）</li>
+</ul>
+<h2 class="rp-toc-include" id="开关控制"><a href="#开关控制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关控制</h2>
+<ul>
+<li><strong>Rest in the Inn</strong>：启用后，角色可在 Habitica 的旅店中休息，并暂停来自日常任务和任务 Boss 的伤害。</li>
+</ul>
+<h2 class="rp-toc-include" id="通知器"><a href="#通知器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>通知器</h2>
+<ul>
+<li><strong>Party chat</strong>：向队伍群聊发送消息。</li>
+<li><strong>Private message</strong>：向队伍中的单个成员发送私信。系统会为队伍中的每位成员创建一个单独的 notify 实体。</li>
+</ul>
+<h2 class="rp-toc-include" id="队伍"><a href="#队伍" class="rp-header-anchor rp-link" aria-hidden="true">#</a>队伍</h2>
+<p>如果你属于某个队伍，此集成会创建一个包含以下实体的设备。</p>
+<ul>
+<li><strong>Boss health</strong>：任务 Boss 的总生命值。</li>
+<li><strong>Boss health remaining</strong>：任务 Boss 的剩余生命值。</li>
+<li><strong>Collected quest items</strong>：显示已收集物品总数。属性中会细分每种所需物品类型，并显示已收集数量和所需数量。</li>
+<li><strong>Group leader</strong>：队伍队长的用户名。</li>
+<li><strong>Member count</strong>：当前队伍成员数量。</li>
+<li><strong>Quest</strong>：显示队伍当前正在进行的任务名称。</li>
+<li><strong>Quest boss</strong>：显示队伍当前正在对战的敌人名称和图像。</li>
+<li><strong>Boss rage</strong>：任务参与者未完成日常任务时累积的怒气值。</li>
+<li><strong>Boss rage limit break</strong>：任务 Boss 可积累的最大怒气值。达到上限后，Boss 会释放怒气技能。</li>
+</ul>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+某些实体仅会在你参与 Boss 任务或收集任务时提供。</p></div></div>
+<h3 class="rp-toc-include" id="关注你的队友状态"><a href="#关注你的队友状态" class="rp-header-anchor rp-link" aria-hidden="true">#</a>关注你的队友状态</h3>
+<p>你可以将队伍成员添加到 Home Assistant 中，以便查看他们的生命值和其他关键属性。要添加队伍成员，请前往 <a href="https://my.home-assistant.io/redirect/integration/?domain=habitica" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong> &gt; <strong>Habitica</strong></a>，然后选择 <strong><iconify-icon inline="" icon="mdi:plus" title="plus"></iconify-icon> Add party member</strong>。</p>
+<p>添加后，Home Assistant 会创建一个新的条目，其中包含以下实体：</p>
+<ul>
+<li><strong>Sensors</strong>：Class、display name、health、mana、max. mana、experience、next level、strength、intelligence、constitution 和 perception。</li>
+<li><strong>Image</strong>：Avatar</li>
+</ul>
+<p>有关这些实体的详细说明，请参见上方的 <a href="#sensors" class="rp-link"><strong>Sensors</strong></a> 和 <a href="#image" class="rp-link"><strong>Image</strong></a> 部分。</p>
+<h2 class="rp-toc-include" id="动作"><a href="#动作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作</h2>
+<h3 class="rp-toc-include" id="动作施放技能"><a href="#动作施放技能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：施放技能</h3>
+<p><code>habitica.cast_skill</code> 动作会让你的 Habitica 角色对特定任务使用技能或法术，以影响其进度或状态。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>要施放技能的角色对应的配置条目。</td></tr><tr><td><code>skill</code></td><td>no</td><td>要对任务施放的技能或法术。只能使用角色职业可用的技能。</td></tr><tr><td><code>task</code></td><td>no</td><td>要作为目标的任务名称。你也可以使用 <code>task ID</code> 或 <strong>alias</strong>。支持的任务类型包括 <strong>to-do</strong>、<strong>habit</strong> 和 <strong>daily</strong>。</td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="可用技能"><a href="#可用技能" class="rp-header-anchor rp-link" aria-hidden="true">#</a>可用技能</h4>
+<ul>
+<li><strong>Rogue</strong>: <code>pickpocket</code>, <code>backstab</code></li>
+<li><strong>Warrior</strong>: <code>smash</code></li>
+<li><strong>Mage</strong>: <code>fireball</code></li>
+</ul>
+<p>要使用任务别名，请确保已在 <a href="https://habitica.com/user/settings/siteData" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Site Data</strong></a> 下启用 <strong>Developer Mode</strong>。任务别名只能通过 <strong>Habitica</strong> Web 客户端编辑。</p>
+<h3 class="rp-toc-include" id="动作接受任务"><a href="#动作接受任务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：接受任务</h3>
+<p><code>habitica.accept_quest</code> 动作用于接受待处理的任务邀请。示例请参见<a href="#auto-accept-quest-invitation" class="rp-link"><code>自动接受任务邀请</code></a>自动化，其中演示了如何使用此动作自动接受任务邀请。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>用于接受任务邀请的角色配置条目。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作拒绝任务"><a href="#动作拒绝任务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：拒绝任务</h3>
+<p><code>habitica.reject_quest</code> 动作用于拒绝待处理的任务邀请。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>用于拒绝任务邀请的角色配置条目。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作离开任务"><a href="#动作离开任务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：离开任务</h3>
+<p><code>habitica.leave_quest</code> 动作用于离开你当前参与的任务。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>用于离开任务的角色配置条目。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作终止任务-"><a href="#动作终止任务-" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：终止任务 🔒</h3>
+<p><code>habitica.abort_quest</code> 动作用于终止队伍当前正在进行的任务。所有进度都会丢失，任务卷轴会退回到拥有者的背包中。只有任务发起者或队长才能执行此动作。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>用于终止任务的角色配置条目。</td></tr></tbody></table></div>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+带有 🔒 标记的动作存在使用限制。详情请参阅对应动作说明。</p></div></div>
+<h3 class="rp-toc-include" id="动作开始任务-"><a href="#动作开始任务-" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：开始任务 🔒</h3>
+<p><code>habitica.start_quest</code> 动作用于立即开始任务，并跳过所有尚未接受或拒绝的待处理邀请。只有任务发起者或队长才能执行此动作。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>用于强制开始任务的角色配置条目。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作取消任务-"><a href="#动作取消任务-" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：取消任务 🔒</h3>
+<p><code>habitica.cancel_quest</code> 动作用于取消尚未开始的任务。所有已接受和待处理的邀请都会被取消，任务卷轴会退回到拥有者的背包中。只有任务发起者或队长才能执行此动作。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>用于取消任务的角色配置条目。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作记录习惯"><a href="#动作记录习惯" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：记录习惯</h3>
+<p><code>habitica.score_habit</code> 动作用于增加某个习惯的正向或负向连击。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>用于记录该习惯的角色配置条目。</td></tr><tr><td><code>task</code></td><td>no</td><td>要记录的习惯名称、<code>task ID</code> 或 <strong>alias</strong>。</td></tr><tr><td><code>direction</code></td><td>no</td><td><code>up</code> 表示记录正向进展，<code>down</code> 表示记录负向进展。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作购买奖励"><a href="#动作购买奖励" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：购买奖励</h3>
+<p><code>habitica.score_reward</code> 动作用于用金币购买自定义奖励。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>用于购买奖励的角色配置条目。</td></tr><tr><td><code>task</code></td><td>no</td><td>要购买的自定义奖励名称、<code>task ID</code> 或 <strong>alias</strong>。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作变形"><a href="#动作变形" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：变形</h3>
+<p><code>habitica.transformation</code> 动作用于对你自己或队伍成员使用 Habitica 角色背包中的变形道具。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>使用变形道具的角色配置条目。</td></tr><tr><td><code>item</code></td><td>no</td><td>要使用的变形道具。该道具必须在角色背包中。</td></tr><tr><td><code>target</code></td><td>no</td><td>要使用变形道具的目标角色。可按显示名、用户名或用户 ID 匹配。</td></tr></tbody></table></div>
+<h4 class="rp-toc-include" id="可用变形道具"><a href="#可用变形道具" class="rp-header-anchor rp-link" aria-hidden="true">#</a>可用变形道具</h4>
+<ul>
+<li><strong>Snowball</strong>：<code>snowball</code>（变成雪人伙伴）</li>
+<li><strong>Spooky sparkles</strong>：<code>spooky_sparkles</code>（变成幽灵）</li>
+<li><strong>Seafoam</strong>：<code>seafoam</code>（变成海星）</li>
+<li><strong>Shiny seed</strong>：<code>shiny_seed</code>（变成花朵）</li>
+</ul>
+<h3 class="rp-toc-include" id="动作获取任务"><a href="#动作获取任务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：获取任务</h3>
+<p><code>habitica.get_tasks</code> 动作用于从你的 Habitica 账户中获取任务，并可通过可选筛选条件缩小结果范围，以更精确地检索任务。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>选择要从中获取任务的 Habitica 角色。</td></tr><tr><td><code>type</code></td><td>yes</td><td>按类型筛选任务。有效值：<code>habits</code>、<code>dailies</code>、<code>todos</code>、<code>rewards</code>。</td></tr><tr><td><code>priority</code></td><td>yes</td><td>按难度筛选任务。有效值：<code>trivial</code>、<code>easy</code>、<code>medium</code>、<code>hard</code>。</td></tr><tr><td><code>task</code></td><td>yes</td><td>通过任务名称（或任务 ID）选择特定任务。</td></tr><tr><td><code>tag</code></td><td>yes</td><td>筛选带有一个或多个所选标签的任务。</td></tr><tr><td><code>keyword</code></td><td>yes</td><td>按关键字筛选任务，会在标题、备注和检查清单中搜索。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作更新奖励"><a href="#动作更新奖励" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：更新奖励</h3>
+<p><code>habitica.update_reward</code> 动作用于更新所选 Habitica 角色的特定奖励。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>选择要更新奖励的 Habitica 账户。</td></tr><tr><td><code>task</code></td><td>no</td><td>要更新的奖励名称（或任务 ID）。</td></tr><tr><td><code>rename</code></td><td>yes</td><td>Habitica 奖励的新标题。</td></tr><tr><td><code>notes</code></td><td>yes</td><td>Habitica 奖励的新备注。</td></tr><tr><td><code>cost</code></td><td>yes</td><td>更新奖励花费。</td></tr><tr><td><code>tag</code></td><td>yes</td><td>为 Habitica 奖励添加标签。如果标签不存在，将自动创建。</td></tr><tr><td><code>remove_tag</code></td><td>yes</td><td>从 Habitica 奖励中移除标签。</td></tr><tr><td><code>alias</code></td><td>yes</td><td>可使用任务别名代替名称或任务 ID。仅支持短横线、下划线和字母数字字符，且该别名在所有任务中必须唯一。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作创建奖励"><a href="#动作创建奖励" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：创建奖励</h3>
+<p><code>habitica.create_reward</code> 动作用于为所选 Habitica 角色创建奖励。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>选择要创建奖励的 Habitica 账户。</td></tr><tr><td><code>name</code></td><td>no</td><td>Habitica 奖励的标题。</td></tr><tr><td><code>notes</code></td><td>yes</td><td>Habitica 奖励的备注。</td></tr><tr><td><code>cost</code></td><td>no</td><td>奖励花费。</td></tr><tr><td><code>tag</code></td><td>yes</td><td>为 Habitica 奖励添加标签。如果标签不存在，将自动创建。</td></tr><tr><td><code>alias</code></td><td>yes</td><td>可使用任务别名代替名称或任务 ID。仅支持短横线、下划线和字母数字字符，且该别名在所有任务中必须唯一。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作更新习惯"><a href="#动作更新习惯" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：更新习惯</h3>
+<p><code>habitica.update_habit</code> 动作用于更新所选 Habitica 角色的特定习惯。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>选择要更新习惯的 Habitica 账户。</td></tr><tr><td><code>task</code></td><td>no</td><td>要更新的习惯名称（或任务 ID）。</td></tr><tr><td><code>rename</code></td><td>yes</td><td>Habitica 习惯的新标题。</td></tr><tr><td><code>notes</code></td><td>yes</td><td>Habitica 习惯的新备注。</td></tr><tr><td><code>up_down</code></td><td>yes</td><td>Update if the habit is good and rewarding (positive), bad and penalizing (negative) or both. Valid values: <code>up</code>, <code>down</code>, or <code>[up, down]</code></td></tr><tr><td><code>priority</code></td><td>yes</td><td>Update the difficulty of a habit. Valid values: <code>trivial</code>, <code>easy</code>, <code>medium</code>, <code>hard</code></td></tr><tr><td><code>frequency</code></td><td>yes</td><td>Update when a habit&#x27;s counter resets. Valid values: <code>daily</code>, <code>weekly</code>, <code>monthly</code></td></tr><tr><td><code>tag</code></td><td>yes</td><td>为 Habitica 习惯添加标签。如果标签不存在，将自动创建。</td></tr><tr><td><code>remove_tag</code></td><td>yes</td><td>Remove tags from the Habitica habit.</td></tr><tr><td><code>counter_up</code></td><td>yes</td><td>Update the up counter of a positive habit.</td></tr><tr><td><code>counter_down</code></td><td>yes</td><td>Update the down counter of a negative habit.</td></tr><tr><td><code>alias</code></td><td>yes</td><td>可使用任务别名代替名称或任务 ID。仅支持短横线、下划线和字母数字字符，且该别名在所有任务中必须唯一。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作创建习惯"><a href="#动作创建习惯" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：创建习惯</h3>
+<p><code>habitica.create_habit</code> 动作用于为所选 Habitica 角色创建习惯。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>选择要创建习惯的 Habitica 账户。</td></tr><tr><td><code>name</code></td><td>no</td><td>Habitica 习惯的标题。</td></tr><tr><td><code>notes</code></td><td>yes</td><td>Habitica 习惯的备注。</td></tr><tr><td><code>up_down</code></td><td>yes</td><td>Defines if the habit is good and rewarding (positive), bad and penalizing (negative) or both. Valid values: <code>up</code>, <code>down</code>, or <code>[up, down]</code></td></tr><tr><td><code>priority</code></td><td>yes</td><td>Sets the difficulty of the habit. Valid values: <code>trivial</code>, <code>easy</code>, <code>medium</code>, <code>hard</code>. Default: <code>easy</code></td></tr><tr><td><code>frequency</code></td><td>yes</td><td>Defines when the habit&#x27;s counter resets. Valid values: <code>daily</code>, <code>weekly</code>, <code>monthly</code>. Default: <code>daily</code></td></tr><tr><td><code>tag</code></td><td>yes</td><td>为 Habitica 习惯添加标签。如果标签不存在，将自动创建。</td></tr><tr><td><code>alias</code></td><td>yes</td><td>可使用任务别名代替名称或任务 ID。仅支持短横线、下划线和字母数字字符，且该别名在所有任务中必须唯一。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作更新待办事项"><a href="#动作更新待办事项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：更新待办事项</h3>
+<p>The <code>habitica.update_todo</code> action updates a specific to-do for the selected Habitica character.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>Select the Habitica account to update a to-do.</td></tr><tr><td><code>task</code></td><td>no</td><td>The name (or task ID) of the to-do you want to update.</td></tr><tr><td><code>rename</code></td><td>yes</td><td>The new title for the Habitica to-do.</td></tr><tr><td><code>notes</code></td><td>yes</td><td>The new notes for the Habitica to-do.</td></tr><tr><td><code>add_checklist_item</code></td><td>yes</td><td>The items to add to the to-do&#x27;s checklist.</td></tr><tr><td><code>remove_checklist_item</code></td><td>yes</td><td>Remove items from a to-do&#x27;s checklist.</td></tr><tr><td><code>score_checklist_item</code></td><td>yes</td><td>Mark items from a to-do&#x27;s checklist as completed.</td></tr><tr><td><code>unscore_checklist_item</code></td><td>yes</td><td>Undo completion of items of a to-do&#x27;s checklist.</td></tr><tr><td><code>collapse_checklist</code></td><td>yes</td><td>Whether the checklist is displayed as collapsed or expanded.</td></tr><tr><td><code>priority</code></td><td>yes</td><td>Update the difficulty of a to-do. Valid values: <code>trivial</code>, <code>easy</code>, <code>medium</code>, <code>hard</code></td></tr><tr><td><code>date</code></td><td>yes</td><td>The to-do&#x27;s due date.</td></tr><tr><td><code>clear_date</code></td><td>yes</td><td>Remove the due date from a to-do.</td></tr><tr><td><code>reminder</code></td><td>yes</td><td>Add reminders to a Habitica to-do.</td></tr><tr><td><code>remove_reminder</code></td><td>yes</td><td>Remove specific reminders from a Habitica to-do.</td></tr><tr><td><code>clear_reminder</code></td><td>yes</td><td>Remove all reminders from a Habitica to-do.</td></tr><tr><td><code>tag</code></td><td>yes</td><td>Add tags to the Habitica to-do. If a tag does not already exist, a new one will be created.</td></tr><tr><td><code>remove_tag</code></td><td>yes</td><td>Remove tags from the Habitica to-do.</td></tr><tr><td><code>alias</code></td><td>yes</td><td>A task alias can be used instead of the name or task ID. Only dashes, underscores, and alphanumeric characters are supported. The task alias must be unique among all your tasks.</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作创建待办事项"><a href="#动作创建待办事项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：创建待办事项</h3>
+<p>The <code>habitica.create_todo</code> action creates a to-do for the selected Habitica character.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>Select the Habitica account to create a to-do.</td></tr><tr><td><code>name</code></td><td>no</td><td>The title for the Habitica to-do.</td></tr><tr><td><code>notes</code></td><td>yes</td><td>The notes for the Habitica to-do.</td></tr><tr><td><code>add_checklist_item</code></td><td>yes</td><td>The items to add to the to-do&#x27;s checklist.</td></tr><tr><td><code>collapse_checklist</code></td><td>yes</td><td>Whether the checklist is displayed as collapsed or expanded.</td></tr><tr><td><code>priority</code></td><td>yes</td><td>The difficulty of the to-do. Valid values: <code>trivial</code>, <code>easy</code>, <code>medium</code>, <code>hard</code></td></tr><tr><td><code>date</code></td><td>yes</td><td>The to-do&#x27;s due date.</td></tr><tr><td><code>reminder</code></td><td>yes</td><td>Add reminders to a Habitica to-do.</td></tr><tr><td><code>tag</code></td><td>yes</td><td>Add tags to the Habitica to-do. If a tag does not already exist, a new one will be created.</td></tr><tr><td><code>alias</code></td><td>yes</td><td>A task alias can be used instead of the name or task ID. Only dashes, underscores, and alphanumeric characters are supported. The task alias must be unique among all your tasks.</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作更新日常任务"><a href="#动作更新日常任务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：更新日常任务</h3>
+<p>The <code>habitica.update_daily</code> action updates a specific daily for the selected Habitica character.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>Select the Habitica account to update a daily.</td></tr><tr><td><code>task</code></td><td>no</td><td>The name (or task ID) of the daily you want to update.</td></tr><tr><td><code>rename</code></td><td>yes</td><td>The new title for the Habitica daily.</td></tr><tr><td><code>notes</code></td><td>yes</td><td>The new notes for the Habitica daily.</td></tr><tr><td><code>add_checklist_item</code></td><td>yes</td><td>The items to add to the daily&#x27;s checklist.</td></tr><tr><td><code>remove_checklist_item</code></td><td>yes</td><td>Remove items from a daily&#x27;s checklist.</td></tr><tr><td><code>score_checklist_item</code></td><td>yes</td><td>Mark items from a daily&#x27;s checklist as completed.</td></tr><tr><td><code>unscore_checklist_item</code></td><td>yes</td><td>Undo completion of items of a daily&#x27;s checklist.</td></tr><tr><td><code>collapse_checklist</code></td><td>yes</td><td>Whether the checklist is displayed as collapsed or expanded.</td></tr><tr><td><code>priority</code></td><td>yes</td><td>Update the difficulty of a daily. Valid values: <code>trivial</code>, <code>easy</code>, <code>medium</code>, <code>hard</code></td></tr><tr><td><code>start_date</code></td><td>yes</td><td>Defines when the daily task becomes active and specifies the exact weekday or day of the month it repeats on.</td></tr><tr><td><code>frequency</code></td><td>yes</td><td>The repetition interval of a daily. Valid values: <code>daily</code>, <code>weekly</code>, <code>monthly</code>, <code>yearly</code>.</td></tr><tr><td><code>every_x</code></td><td>yes</td><td>The number of intervals (<code>days</code>, <code>weeks</code>, <code>months</code>, or <code>years</code>) after which the daily repeats, based on the chosen repetition interval. A value of 0 makes the daily inactive (a <em>Gray Daily</em>).</td></tr><tr><td><code>repeat</code></td><td>yes</td><td>The days of the week the daily repeats. Applicable when the repetition interval is set to weekly.</td></tr><tr><td><code>repeat_monthly</code></td><td>yes</td><td>Whether a monthly recurring task repeats on the same calendar day each month (<code>day_of_month</code>), or on the same weekday and week of the month (<code>day_of_week</code>), based on the start date. Applicable when the repetition interval is set to monthly.</td></tr><tr><td><code>reminder</code></td><td>yes</td><td>Add reminders to a Habitica daily.</td></tr><tr><td><code>remove_reminder</code></td><td>yes</td><td>Remove specific reminders from a Habitica daily.</td></tr><tr><td><code>clear_reminder</code></td><td>yes</td><td>Remove all reminders from a Habitica daily.</td></tr><tr><td><code>tag</code></td><td>yes</td><td>Add tags to the Habitica daily. If a tag does not already exist, a new one will be created.</td></tr><tr><td><code>remove_tag</code></td><td>yes</td><td>Remove tags from the Habitica daily.</td></tr><tr><td><code>streak</code></td><td>yes</td><td>Adjust or reset the streak counter of the daily.</td></tr><tr><td><code>alias</code></td><td>yes</td><td>A task alias can be used instead of the name or task ID. Only dashes, underscores, and alphanumeric characters are supported. The task alias must be unique among all your tasks.</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="动作创建日常任务"><a href="#动作创建日常任务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：创建日常任务</h3>
+<p>The <code>habitica.create_daily</code> action creates a daily for the selected Habitica character.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Data attribute</th><th>Optional</th><th>Description</th></tr></thead><tbody><tr><td><code>config_entry</code></td><td>no</td><td>Select the Habitica account to create a daily.</td></tr><tr><td><code>name</code></td><td>no</td><td>The title for the Habitica daily.</td></tr><tr><td><code>notes</code></td><td>yes</td><td>The new notes for the Habitica daily.</td></tr><tr><td><code>add_checklist_item</code></td><td>yes</td><td>The items to add to the daily&#x27;s checklist.</td></tr><tr><td><code>collapse_checklist</code></td><td>yes</td><td>Whether the checklist is displayed as collapsed or expanded.</td></tr><tr><td><code>priority</code></td><td>yes</td><td>The difficulty of a daily. Valid values: <code>trivial</code>, <code>easy</code>, <code>medium</code>, <code>hard</code></td></tr><tr><td><code>start_date</code></td><td>yes</td><td>The date when the daily becomes active and specifies the exact weekday or day of the month it repeats on.</td></tr><tr><td><code>frequency</code></td><td>yes</td><td>The repetition interval of a daily. Valid values: <code>daily</code>, <code>weekly</code>, <code>monthly</code>, <code>yearly</code>.</td></tr><tr><td><code>every_x</code></td><td>yes</td><td>The number of intervals (<code>days</code>, <code>weeks</code>, <code>months</code>, or <code>years</code>) after which the daily repeats, based on the chosen repetition interval. A value of 0 makes the daily inactive (a <em>Gray Daily</em>).</td></tr><tr><td><code>repeat</code></td><td>yes</td><td>The days of the week the daily repeats. Applicable when the repetition interval is set to weekly.</td></tr><tr><td><code>repeat_monthly</code></td><td>yes</td><td>Whether a monthly recurring task repeats on the same calendar day each month (<code>day_of_month</code>), or on the same weekday and week of the month (<code>day_of_week</code>), based on the start date. Applicable when the repetition interval is set to monthly.</td></tr><tr><td><code>reminder</code></td><td>yes</td><td>Add reminders to a Habitica daily.</td></tr><tr><td><code>tag</code></td><td>yes</td><td>Add tags to the Habitica daily. If a tag does not already exist, a new one will be created.</td></tr><tr><td><code>alias</code></td><td>yes</td><td>A task alias can be used instead of the name or task ID. Only dashes, underscores, and alphanumeric characters are supported. The task alias must be unique among all your tasks.</td></tr></tbody></table></div>
+<h2 class="rp-toc-include" id="自动化"><a href="#自动化" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自动化</h2>
+<p>你可以从以下 Habitica 自动化示例开始，每个示例都附带可直接使用的蓝图。</p>
+<h3 class="rp-toc-include" id="自动接受任务邀请"><a href="#自动接受任务邀请" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自动接受任务邀请</h3>
+<p>自动接受来自 Habitica 队伍的任务邀请，并创建持久通知，告知你任务已成功接受。</p>
+<p><a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fcommunity.home-assistant.io%2Ft%2Fhabitica-auto-accept-quest-invitation%2F791002" target="_blank" rel="noopener noreferrer" class="rp-link"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open Import blueprint in your Home Assistant instance."/></a></p>
+<details>
+<summary>YAML 配置示例</summary>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> binary_sensor.habitica_pending_quest_invitation</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> habitica.accept_quest</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      config_entry</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> config_entry_id</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    response_variable</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> action_response</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> notify.persistent_notification</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      title</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> You have been invited to a quest!</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      message</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-keyword)"> &gt;-</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">        ![{{action_response[&quot;key&quot;]}}](https://habitica-assets.s3.amazonaws.com/mobileApp/images/inventory_quest_scroll_{{action_response[&quot;key&quot;]}}.png)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-string)">        The invitation has been accepted, and the quest {% if</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">        action_response[&quot;active&quot;] %}has already started{% else %}is waiting</span></span>
+<span class="line"><span style="color:var(--shiki-token-string)">        for other party members to join{% endif %}.</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">Note</div><div class="rp-callout__content"><p>
+创建自动化时，请注意<a href="#known-limitations" class="rp-link">速率限制</a>。频繁触发或同时运行多个自动化，可能很快就会超过允许的请求数量。</p></div></div>
+<h3 class="rp-toc-include" id="创建清空洗碗机待办事项"><a href="#创建清空洗碗机待办事项" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建“清空洗碗机”待办事项</h3>
+<p>在洗碗机完成洗涤周期时自动创建 Habitica 待办事项。</p>
+<p><a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fcommunity.home-assistant.io%2Ft%2Fhabitica-create-to-do-when-dishwasher-finishes-its-cycle%2F786625" target="_blank" rel="noopener noreferrer" class="rp-link"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open Import blueprint in your Home Assistant instance."/></a></p>
+<details>
+<summary>YAML 配置示例</summary>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.dishwasher</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    from</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;off&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> todo.add_item</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      item</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Empty the dishwasher 🥣🍽️&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      due_date</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;{{now().date()}}&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Empty the clean dishes from the dishwasher and load any dirty dishes that are waiting.&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> todo.habitica_to_dos</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<h3 class="rp-toc-include" id="完成-habitica-日常列表中的刷牙任务"><a href="#完成-habitica-日常列表中的刷牙任务" class="rp-header-anchor rp-link" aria-hidden="true">#</a>完成 Habitica 日常列表中的刷牙任务</h3>
+<p>当检测到牙刷正在使用时，自动将你早晨和晚上的刷牙日常任务标记为已完成。</p>
+<p><a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fcommunity.home-assistant.io%2Ft%2Fhabitica-complete-toothbrushing-tasks-on-your-habitica-dailies-list%2F786631" target="_blank" rel="noopener noreferrer" class="rp-link"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open Import blueprint in your Home Assistant instance."/></a></p>
+<details>
+<summary>YAML 配置示例</summary>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">trigger</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> sensor.oralb_toothbrush_state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;running&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    for</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      hours</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      minutes</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 0</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">      seconds</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-constant)"> 10</span><span style="color:var(--shiki-token-comment)"> # Time delay for debouncing to avoid false triggers</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">choose</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">conditions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> time</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            after</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;05:00:00&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            before</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;12:00:00&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        sequence</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> todo.update_item</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              item</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Brush your teeth in the morning 🪥&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              status</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> completed</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> todo.habitica_dailies</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">conditions</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-foreground)"> </span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">condition</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> time</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            after</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;18:00:00&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            before</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;23:59:00&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        sequence</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> todo.update_item</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              item</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;Brush your teeth before bed 🪥&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              status</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> completed</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">            target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">              entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> todo.habitica_dailies</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+</details>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p>此集成每 60 秒与 Habitica 同步一次，以保持你的个人数据为最新状态。
+队伍数据（包括你作为子条目添加的所有队伍成员）每 15 分钟刷新一次。</p>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<p>Habitica 对第三方应用设置了每分钟 30 次请求的速率限制，这一限制会作用于你使用的所有工具和集成的总请求量。</p>
+<p>此集成会执行以下请求：</p>
+<ul>
+<li>每次数据更新会发起 3 次请求（每 60 秒一次）。</li>
+<li>每执行一个动作会发起 1 次请求，例如施放技能或与待办事项、日常任务交互。</li>
+<li>在执行动作后 5 秒，还会额外发起 1 次请求，以便与 Habitica 同步数据。</li>
+</ul>
+<p>请牢记这些限制，以避免超出 Habitica 允许的请求额度。目前仍在持续优化该集成，以减少其发出的请求数量。</p>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<p>Habitica 集成依赖有效的互联网连接来与 <strong>Habitica</strong> 通信。如果你遇到问题，请先确认网络连接稳定。此外，Habitica 服务本身也可能因突发故障或计划维护而暂时不可用。遇到这种情况时，你可以参考由社区维护的 Habitica Wiki 上的 <a href="https://habitica.fandom.com/wiki/Outage_Instructions" target="_blank" rel="noopener noreferrer" class="rp-link">Habitica Outage Instructions</a>。</p>
+<p>无论如何，在报告问题时，请启用<a href="/home-assistant/docs/configuration/troubleshooting/index.html#debug-logs-and-diagnostics" class="rp-link">调试日志</a>，重启该集成，并在问题再次出现后立即停止调试日志（<em>调试日志文件会自动开始下载</em>）。此外，如果条件允许，也请下载<a href="/home-assistant/integrations/diagnostics.html" class="rp-link">诊断</a>数据。如果你已经收集了调试日志和诊断数据，请一并附在问题报告中。</p>
+<h2 class="rp-toc-include" id="移除此集成"><a href="#移除此集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>移除此集成</h2>
+<p>你可以按以下步骤移除此集成：</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#关于-habitica" class="rp-toc-item rp-link" title="关于 Habitica" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">关于 Habitica</span></a><a href="#你可以如何使用此集成" class="rp-toc-item rp-link" title="你可以如何使用此集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">你可以如何使用此集成</span></a><a href="#habitica-集成前提条件" class="rp-toc-item rp-link" title="Habitica 集成前提条件" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Habitica 集成前提条件</span></a><a href="#登录到-habitica" class="rp-toc-item rp-link" title="登录到 Habitica" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">登录到 Habitica</span></a><a href="#高级配置" class="rp-toc-item rp-link" title="高级配置" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">高级配置</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#二进制传感器" class="rp-toc-item rp-link" title="二进制传感器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">二进制传感器</span></a><a href="#图像" class="rp-toc-item rp-link" title="图像" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">图像</span></a><a href="#待办列表" class="rp-toc-item rp-link" title="待办列表" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">待办列表</span></a><a href="#日历" class="rp-toc-item rp-link" title="日历" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">日历</span></a><a href="#按钮控制" class="rp-toc-item rp-link" title="按钮控制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">按钮控制</span></a><a href="#职业技能按钮控制" class="rp-toc-item rp-link" title="职业技能按钮控制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">职业技能按钮控制</span></a><a href="#mage" class="rp-toc-item rp-link" title="Mage" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Mage</span></a><a href="#warrior" class="rp-toc-item rp-link" title="Warrior" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Warrior</span></a><a href="#rogue" class="rp-toc-item rp-link" title="Rogue" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Rogue</span></a><a href="#healer" class="rp-toc-item rp-link" title="Healer" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Healer</span></a><a href="#开关控制" class="rp-toc-item rp-link" title="开关控制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">开关控制</span></a><a href="#通知器" class="rp-toc-item rp-link" title="通知器" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">通知器</span></a><a href="#队伍" class="rp-toc-item rp-link" title="队伍" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">队伍</span></a><a href="#关注你的队友状态" class="rp-toc-item rp-link" title="关注你的队友状态" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">关注你的队友状态</span></a><a href="#动作" class="rp-toc-item rp-link" title="动作" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">动作</span></a><a href="#动作施放技能" class="rp-toc-item rp-link" title="动作：施放技能" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：施放技能</span></a><a href="#可用技能" class="rp-toc-item rp-link" title="可用技能" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">可用技能</span></a><a href="#动作接受任务" class="rp-toc-item rp-link" title="动作：接受任务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：接受任务</span></a><a href="#动作拒绝任务" class="rp-toc-item rp-link" title="动作：拒绝任务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：拒绝任务</span></a><a href="#动作离开任务" class="rp-toc-item rp-link" title="动作：离开任务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：离开任务</span></a><a href="#动作终止任务-" class="rp-toc-item rp-link" title="动作：终止任务 🔒" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：终止任务 🔒</span></a><a href="#动作开始任务-" class="rp-toc-item rp-link" title="动作：开始任务 🔒" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：开始任务 🔒</span></a><a href="#动作取消任务-" class="rp-toc-item rp-link" title="动作：取消任务 🔒" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：取消任务 🔒</span></a><a href="#动作记录习惯" class="rp-toc-item rp-link" title="动作：记录习惯" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：记录习惯</span></a><a href="#动作购买奖励" class="rp-toc-item rp-link" title="动作：购买奖励" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：购买奖励</span></a><a href="#动作变形" class="rp-toc-item rp-link" title="动作：变形" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：变形</span></a><a href="#可用变形道具" class="rp-toc-item rp-link" title="可用变形道具" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">可用变形道具</span></a><a href="#动作获取任务" class="rp-toc-item rp-link" title="动作：获取任务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：获取任务</span></a><a href="#动作更新奖励" class="rp-toc-item rp-link" title="动作：更新奖励" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：更新奖励</span></a><a href="#动作创建奖励" class="rp-toc-item rp-link" title="动作：创建奖励" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：创建奖励</span></a><a href="#动作更新习惯" class="rp-toc-item rp-link" title="动作：更新习惯" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：更新习惯</span></a><a href="#动作创建习惯" class="rp-toc-item rp-link" title="动作：创建习惯" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：创建习惯</span></a><a href="#动作更新待办事项" class="rp-toc-item rp-link" title="动作：更新待办事项" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：更新待办事项</span></a><a href="#动作创建待办事项" class="rp-toc-item rp-link" title="动作：创建待办事项" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：创建待办事项</span></a><a href="#动作更新日常任务" class="rp-toc-item rp-link" title="动作：更新日常任务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：更新日常任务</span></a><a href="#动作创建日常任务" class="rp-toc-item rp-link" title="动作：创建日常任务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：创建日常任务</span></a><a href="#自动化" class="rp-toc-item rp-link" title="自动化" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">自动化</span></a><a href="#自动接受任务邀请" class="rp-toc-item rp-link" title="自动接受任务邀请" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自动接受任务邀请</span></a><a href="#创建清空洗碗机待办事项" class="rp-toc-item rp-link" title="创建“清空洗碗机”待办事项" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">创建“清空洗碗机”待办事项</span></a><a href="#完成-habitica-日常列表中的刷牙任务" class="rp-toc-item rp-link" title="完成 Habitica 日常列表中的刷牙任务" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">完成 Habitica 日常列表中的刷牙任务</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#移除此集成" class="rp-toc-item rp-link" title="移除此集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">移除此集成</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

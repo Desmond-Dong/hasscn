@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bosch Alarm - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Bosch Alarm - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="Bosch 报警面板 集成允许您将 Bosch 报警面板(https://www.boschsecurity.com) 连接到 Home Assistant，以控制和监控您的 Bosch 报警面板。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="Bosch 报警面板 集成允许您将 Bosch 报警面板(https://www.boschsecurity.com) 连接到 Home Assistant，以控制和监控您的 Bosch 报警面板。 本页属于 Home Assistant 中文文档，适合查阅安装部署、集成、自动化与日常使用说明。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">返回首页</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/index" class="rp-nav-menu__item__container rp-link">Home Assistant</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/installation/index" class="rp-nav-menu__item__container rp-link">安装</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/getting-started/index" class="rp-nav-menu__item__container rp-link">入门指南</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/home-assistant/integrations/index" class="rp-nav-menu__item__container rp-link">集成</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/dashboards/index" class="rp-nav-menu__item__container rp-link">仪表盘</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/common-tasks/index" class="rp-nav-menu__item__container rp-link">常见任务</a></li><li class="rp-nav-menu__item"><a href="/home-assistant/voice_control/index" class="rp-nav-menu__item__container rp-link">语音控制</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">更多<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/cloud/index" class="rp-hover-group__item__link rp-link" aria-label="云服务">云服务</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/developers/index" class="rp-hover-group__item__link rp-link" aria-label="开发者">开发者</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/docs/index" class="rp-hover-group__item__link rp-link" aria-label="文档">文档</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/faq/index" class="rp-hover-group__item__link rp-link" aria-label="常见问题">常见问题</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/home-assistant/blog/index" class="rp-hover-group__item__link rp-link" aria-label="博客">博客</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>Home Assistant</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/home-assistant/blog/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>博客</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/changelogs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新日志</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/cloud/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>云服务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/common-tasks/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见任务</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/dashboards/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>仪表盘</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/developers/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>开发者</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/docs/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>文档</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/faq/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>常见问题</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/getting-started/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>入门指南</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/installation/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>安装</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/integrations/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>集成</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/more-info/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更多信息</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/public/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>公开</span></div><div class="rp-sidebar-item__right"></div></a><a href="/home-assistant/voice_control/index.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>语音控制</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="bosch-alarm"><a href="#bosch-alarm" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Bosch Alarm<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<p><strong>Bosch 报警面板</strong> 集成允许您将 <a href="https://www.boschsecurity.com" target="_blank" rel="noopener noreferrer" class="rp-link">Bosch 报警面板</a> 连接到 Home Assistant，以控制和监控您的 Bosch 报警面板。</p>
+<div class="rp-callout rp-callout--note"><div class="rp-callout__title">配置</div><div class="rp-callout__content"><p>
+此集成可通过 UI 配置。前往 <strong>设置 &gt; 设备与服务</strong> 添加。</p></div></div>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">Host</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;您面板的 IP 地址。您可以在路由器中或 A-Link Plus / RPS 中找到它。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Port</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;您面板使用的端口。除非在配置面板时更改过，否则通常为 7700。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Password</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;为您面板设置的自动化代码。可以在 A-Link Plus 或 RPS 中找到。由 AMAX、B 和 G 系列面板使用。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">User code</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;此集成将与面板通信的用户代码。通常是您通过键盘布防或撤防面板时使用的代码。由 Solution 系列面板使用。&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">Installer code</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    description</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;您面板的安装者代码。可以在 A-Link Plus 中找到。由 AMAX 系列面板使用。&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<p>:::important
+由于 <em>Mode 2</em> 自动化用户具有&quot;超级用户&quot;权限，它会绕过常规配置的报警密码：通过集成布防/撤防时，您_不会_被提示输入_用户_代码。</p>
+<p>:::</p>
+<h2 class="rp-toc-include" id="支持的设备"><a href="#支持的设备" class="rp-header-anchor rp-link" aria-hidden="true">#</a>支持的设备</h2>
+<ul>
+<li><em>Solution 2000/3000/4000</em></li>
+<li>B 系列：<em>B3512/B4512/B5512/B6512</em></li>
+<li>G 系列：<em>B8512G/B9512G</em></li>
+<li><em>AMAX 2100/3000/4000</em></li>
+<li><em>D7412GV4/D9412GV4</em> <sup><a href="#user-content-fn-1" class="rp-link" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup></li>
+</ul>
+<h2 class="rp-toc-include" id="提供的实体"><a href="#提供的实体" class="rp-header-anchor rp-link" aria-hidden="true">#</a>提供的实体</h2>
+<p>提供以下实体：</p>
+<ul>
+<li><a href="#alarm-control-panel" class="rp-link">报警控制面板</a></li>
+<li><a href="#binary-sensor" class="rp-link">二值传感器</a></li>
+<li><a href="#sensor" class="rp-link">传感器</a></li>
+<li><a href="#switch" class="rp-link">开关</a></li>
+</ul>
+<h3 class="rp-toc-include" id="报警控制面板"><a href="#报警控制面板" class="rp-header-anchor rp-link" aria-hidden="true">#</a>报警控制面板</h3>
+<p>此集成为每个配置的区域添加一个报警控制面板设备，具有发出布防/撤防命令的能力。
+此实体报告状态（<em>disarmed</em>、<em>armed_away</em> 等）。</p>
+<h3 class="rp-toc-include" id="二值传感器"><a href="#二值传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>二值传感器</h3>
+<p>为报警上配置的每个点添加一个二值传感器。</p>
+<p>为每个区域添加两个二值传感器，以指示是否可以外出布防或在家布防。</p>
+<h3 class="rp-toc-include" id="传感器"><a href="#传感器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>传感器</h3>
+<p>为每个区域提供一个传感器，列出当前处于故障状态的点数。</p>
+<p>为以下每种报警类型提供一个传感器，显示该报警的健康状况</p>
+<ul>
+<li>火灾</li>
+<li>气体</li>
+<li>入侵</li>
+</ul>
+<p>传感器的状态可以是以下之一：</p>
+<ul>
+<li>
+<p>无问题</p>
+</li>
+<li>
+<p>故障</p>
+<p>这些信号表示系统内的故障或失败。这些信号通常指向如果不解决可能导致系统完全失效的问题。例如，断线或烟雾探测器故障可能会触发故障信号。这些信号通常需要及时采取措施，以确保系统继续按预期工作。</p>
+</li>
+<li>
+<p>监管</p>
+<p>这些信号与需要注意但并非立即面临故障风险的系统组件有关。它们通常不紧急，表示系统内的某些东西需要维护或功能不佳。这些信号可能包括关闭的阀门或已停用的灭火器。</p>
+</li>
+<li>
+<p>报警</p>
+<p>报警当前已触发。</p>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="开关"><a href="#开关" class="rp-header-anchor rp-link" aria-hidden="true">#</a>开关</h3>
+<p>为面板上配置的每个输出添加一个开关。请注意，对于某些面板，只有类型设置为<strong>远程输出</strong>的输出才能通过 <em>Mode 2</em> API 控制。</p>
+<p>每扇门添加三个开关，允许锁定、安全或临时解锁门。</p>
+<h2 class="rp-toc-include" id="动作"><a href="#动作" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作</h2>
+<p>集成提供以下动作。</p>
+<h3 class="rp-toc-include" id="动作设置面板日期和时间"><a href="#动作设置面板日期和时间" class="rp-header-anchor rp-link" aria-hidden="true">#</a>动作：设置面板日期和时间</h3>
+<p><code>bosch_alarm.set_date_time</code> 动作用于更新面板上的日期和时间。</p>
+<ul>
+<li>
+<p><strong>数据属性</strong>：<code>config_entry_id</code></p>
+<ul>
+<li><strong>描述</strong>：正在更新的面板配置条目的 ID。</li>
+<li><strong>可选</strong>：否</li>
+</ul>
+</li>
+<li>
+<p><strong>数据属性</strong>：<code>datetime</code></p>
+<ul>
+<li><strong>描述</strong>：要设置的日期和时间。如果未设置，则默认为当前日期和时间。</li>
+<li><strong>可选</strong>：是</li>
+</ul>
+</li>
+</ul>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-comment)"># 示例：更新面板的日期和时间</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> bosch_alarm.set_date_time</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">data</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  config_entry_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;YOUR_CONFIG_ENTRY_ID&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">  datetime</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;2025-05-01T12:00:00&quot;</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="身份验证"><a href="#身份验证" class="rp-header-anchor rp-link" aria-hidden="true">#</a>身份验证</h2>
+<p><em>Mode 2</em> API 的主要身份验证方式是_自动化_密码。它需要至少 10 个字符长，与用于布防/撤防面板的较短数字密码_用户_代码不同。
+集成将提示输入所需的密码，这取决于面板类型。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>面板</th><th>代码</th></tr></thead><tbody><tr><td>Solution</td><td>用户 <sup><a href="#user-content-fn-2" class="rp-link" id="user-content-fnref-2" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup></td></tr><tr><td>B 系列</td><td>自动化</td></tr><tr><td>G 系列</td><td>自动化</td></tr><tr><td>AMAX</td><td>两者</td></tr></tbody></table></div>
+<p>:::important
+由于 <em>Mode 2</em> 自动化用户具有&quot;超级用户&quot;权限，它会绕过常规配置的报警密码：通过集成布防/撤防时，您_不会_被提示输入_用户_代码。</p>
+<p>:::</p>
+<h2 class="rp-toc-include" id="数据更新"><a href="#数据更新" class="rp-header-anchor rp-link" aria-hidden="true">#</a>数据更新</h2>
+<p><strong>Bosch Alarm</strong> 集成每 30 秒从设备获取数据。
+较新的设备和固件版本可以推送数据，而不需要依赖轮询。
+启动时，集成会检查您的面板是否支持推送数据更新，如果不支持则回退到轮询。</p>
+<h2 class="rp-toc-include" id="示例"><a href="#示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>示例</h2>
+<h3 class="rp-toc-include" id="走进房间时打开灯"><a href="#走进房间时打开灯" class="rp-header-anchor rp-link" aria-hidden="true">#</a>走进房间时打开灯</h3>
+<div class="rp-codeblock language-yaml"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="yaml"><code><span class="line"><span style="color:var(--shiki-token-keyword)">automation</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">  - </span><span style="color:var(--shiki-token-keyword)">alias</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;走进房间时打开灯&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    triggers</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">platform</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> state</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        entity_id</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">          - </span><span style="color:var(--shiki-token-string-expression)">binary_sensor.bosch_solution_3000_bedroom</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        to</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;on&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">    actions</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-foreground)">      - </span><span style="color:var(--shiki-token-keyword)">action</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.turn_on</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">        target</span><span style="color:var(--shiki-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword)">          entity_id</span><span style="color:var(--shiki-token-keyword)">:</span><span style="color:var(--shiki-token-string-expression)"> light.bedroom_light</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="currentColor" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div>
+<h2 class="rp-toc-include" id="重新配置"><a href="#重新配置" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重新配置</h2>
+<p>此集成支持重新配置，因此可以在配置后更改 IP 地址等配置。</p>
+<h2 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h2>
+<h3 class="rp-toc-include" id="bosch-solution-200030004000-面板的问题"><a href="#bosch-solution-200030004000-面板的问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Bosch Solution 2000/3000/4000 面板的问题</h3>
+<p>我们发现某些面板最终会具有与集成不兼容的配置。
+发生这种情况时，即使凭据正确，尝试与面板通信时也会出现连接错误。
+如果重启面板后仍然出现连接错误，则您的配置有问题。
+解决此问题的最简单方法是按照下面概述的完全重置和恢复步骤操作。</p>
+<h4 class="rp-toc-include" id="重置配置并恢复集成"><a href="#重置配置并恢复集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重置配置并恢复集成</h4>
+<ol>
+<li>更新固件（推荐）。
+<ol>
+<li>从 Bosch Security 网站下载并安装控制面板和 IP 模块的最新固件。</li>
+</ol>
+</li>
+<li>备份现有配置。
+<ol>
+<li>通过 A-Link Plus 连接到面板。</li>
+<li>执行面板配置上传。</li>
+<li>将配置保存到您的计算机。</li>
+</ol>
+</li>
+<li>恢复控制面板默认设置。
+<ol>
+<li>按下面板上的默认/重置按钮。</li>
+<li>使用安装者代码 1234。</li>
+<li>设置：
+<ol>
+<li>位置 0081 = 3（启用 IP 模块模式）</li>
+<li>位置 4456 = 4（启用 RSC+ 通信）</li>
+</ol>
+</li>
+<li>使用主码 <code>25806#</code> 设置日期和时间。</li>
+</ol>
+</li>
+<li>初始 Home Assistant 测试。
+<ol>
+<li>重置面板后等待 2 到 5 分钟。</li>
+<li>使用其 IP 地址在面板上设置集成。</li>
+<li>Home Assistant 应使用默认配置连接并显示面板状态。</li>
+</ol>
+</li>
+<li>恢复原始配置。
+<ol>
+<li>使用 A-Link Plus 重新连接到面板。</li>
+<li>修改区域、输出和用户代码以匹配原始设置。</li>
+<li>保存并将更新的配置下载到面板。</li>
+<li>等待 2 到 5 分钟。</li>
+</ol>
+</li>
+<li>重新连接到 Home Assistant。
+<ol>
+<li>打开 Home Assistant。</li>
+<li>集成现在应检测到更新的配置。</li>
+<li>所有相关实体（区域、分区、输出）应自动出现。</li>
+</ol>
+</li>
+</ol>
+<h4 class="rp-toc-include" id="重启面板网络栈"><a href="#重启面板网络栈" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重启面板网络栈</h4>
+<p>我们发现 Solution 面板有一个错误，它们可能进入网络模块停止让我们使用 <em>Mode 2</em> API 的状态。
+如果您的配置信息正确，但仍无法连接到面板，则您可能遇到了此错误。
+这可以通过重启网络模块来解决，可以使用以下步骤完成。</p>
+<h5 class="rp-toc-include" id="重置网络模块-1"><a href="#重置网络模块-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重置网络模块 1</h5>
+<p>使用键盘，输入您的主码，然后按 <code>[9][4][1]</code> 和 <code>[#]</code> 键。</p>
+<h5 class="rp-toc-include" id="重置网络模块-2"><a href="#重置网络模块-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重置网络模块 2</h5>
+<p>使用键盘，输入您的主码，然后按 <code>[9][4][2]</code> 和 <code>[#]</code> 键。</p>
+<h3 class="rp-toc-include" id="bosch-bg-系列-b3512b4512b5512b8512b9512-的问题"><a href="#bosch-bg-系列-b3512b4512b5512b8512b9512-的问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Bosch B/G 系列 (B3512/B4512/B5512/B8512/B9512) 的问题</h3>
+<p>以下步骤可用于正确配置面板，使其与集成一起工作。</p>
+<h4 class="rp-toc-include" id="面板配置步骤"><a href="#面板配置步骤" class="rp-header-anchor rp-link" aria-hidden="true">#</a>面板配置步骤</h4>
+<ol>
+<li>更新固件（推荐）。
+<ol>
+<li>使用 RPS 将控制面板和 B426（如果使用的 IP 模块）更新到最新固件。</li>
+<li>从 Bosch Security 网站下载固件。</li>
+</ol>
+</li>
+<li>设置 IP 地址。
+<ol>
+<li>使用 RPS 或通过键盘配置面板的 IP 设置。</li>
+<li>使用 DHCP 进行初始设置（可选），或分配静态 IP。</li>
+</ol>
+</li>
+<li>配置自动化设备。
+<ol>
+<li>在 RPS 中：
+<ol>
+<li>将<strong>自动化设备</strong>设置为<strong>Mode 2</strong>（Bosch 标准协议）。</li>
+<li>设置您的自动化密码（用于 Home Assistant 身份验证）。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>等待更改应用。
+<ol>
+<li>等待 2 到 5 分钟让面板重启并应用设置。</li>
+</ol>
+</li>
+<li>连接到 Home Assistant。
+<ol>
+<li>使用面板的 IP 地址设置集成。</li>
+<li>在 Home Assistant 配置中输入自动化密码。</li>
+<li>Home Assistant 应连接并显示面板状态、区域和分区。</li>
+</ol>
+</li>
+</ol>
+<h4 class="rp-toc-include" id="tls-问题"><a href="#tls-问题" class="rp-header-anchor rp-link" aria-hidden="true">#</a>TLS 问题</h4>
+<p>这些面板的某些较旧固件使用 Home Assistant 不再信任的过时证书。如果您在连接时遇到问题并在日志中看到 TLS 错误，请更新面板上的固件。</p>
+<h2 class="rp-toc-include" id="已知限制"><a href="#已知限制" class="rp-header-anchor rp-link" aria-hidden="true">#</a>已知限制</h2>
+<ul>
+<li>集成不允许您配置面板；您可以通过面板的配置实用程序进行此操作。</li>
+<li>Solution / AMAX 系列面板的某些较旧固件版本一次仅支持单个连接。如果您尝试在这些面板上同时使用云连接和集成，面板的网络栈可能会锁定，集成将停止工作。</li>
+</ul>
+<h2 class="rp-toc-include" id="移除集成"><a href="#移除集成" class="rp-header-anchor rp-link" aria-hidden="true">#</a>移除集成</h2>
+<p>此集成遵循标准集成移除流程。无需额外步骤。</p>
+<h3 class="rp-toc-include" id="to-remove-an-integration-instance-from-home-assistant"><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>To remove an integration instance from Home Assistant</h3>
+<ol>
+<li>Go to <a href="https://my.home-assistant.io/redirect/integrations/" target="_blank" rel="noopener noreferrer" class="rp-link"><strong>Settings</strong> &gt; <strong>Devices &amp; services</strong></a> and select the integration card.</li>
+<li>From the list of devices, select the integration instance you want to remove.</li>
+<li>Next to the entry, select the three-dot <iconify-icon inline="" icon="mdi:dots-vertical" title="dots vertical"></iconify-icon> menu. Then, select <strong>Delete</strong>.</li>
+</ol>
+<section data-footnotes="" class="footnotes"><h2 class="rp-toc-include sr-only" id="footnote-label"><a href="#footnote-label" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Footnotes</h2>
+<ol>
+<li id="user-content-fn-1">
+<p>固件 2.0+ <a href="#user-content-fnref-1" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
+</li>
+<li id="user-content-fn-2">
+<p>如果您希望与历史事件交互，用户需要具有&quot;主码功能&quot;权限。 <a href="#user-content-fnref-2" class="data-footnote-backref rp-link" data-footnote-backref="" aria-label="Back to reference 2">↩</a></p>
+</li>
+</ol>
+</section><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><a href="/home-assistant/blog/index.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">下一页</span><span class="rp-prev-next-page__item__title"><span>博客</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#支持的设备" class="rp-toc-item rp-link" title="支持的设备" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">支持的设备</span></a><a href="#提供的实体" class="rp-toc-item rp-link" title="提供的实体" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">提供的实体</span></a><a href="#报警控制面板" class="rp-toc-item rp-link" title="报警控制面板" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">报警控制面板</span></a><a href="#二值传感器" class="rp-toc-item rp-link" title="二值传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">二值传感器</span></a><a href="#传感器" class="rp-toc-item rp-link" title="传感器" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">传感器</span></a><a href="#开关" class="rp-toc-item rp-link" title="开关" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">开关</span></a><a href="#动作" class="rp-toc-item rp-link" title="动作" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">动作</span></a><a href="#动作设置面板日期和时间" class="rp-toc-item rp-link" title="动作：设置面板日期和时间" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">动作：设置面板日期和时间</span></a><a href="#身份验证" class="rp-toc-item rp-link" title="身份验证" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">身份验证</span></a><a href="#数据更新" class="rp-toc-item rp-link" title="数据更新" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">数据更新</span></a><a href="#示例" class="rp-toc-item rp-link" title="示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">示例</span></a><a href="#走进房间时打开灯" class="rp-toc-item rp-link" title="走进房间时打开灯" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">走进房间时打开灯</span></a><a href="#重新配置" class="rp-toc-item rp-link" title="重新配置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">重新配置</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#bosch-solution-200030004000-面板的问题" class="rp-toc-item rp-link" title="Bosch Solution 2000/3000/4000 面板的问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Bosch Solution 2000/3000/4000 面板的问题</span></a><a href="#重置配置并恢复集成" class="rp-toc-item rp-link" title="重置配置并恢复集成" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">重置配置并恢复集成</span></a><a href="#重启面板网络栈" class="rp-toc-item rp-link" title="重启面板网络栈" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">重启面板网络栈</span></a><a href="#bosch-bg-系列-b3512b4512b5512b8512b9512-的问题" class="rp-toc-item rp-link" title="Bosch B/G 系列 (B3512/B4512/B5512/B8512/B9512) 的问题" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">Bosch B/G 系列 (B3512/B4512/B5512/B8512/B9512) 的问题</span></a><a href="#面板配置步骤" class="rp-toc-item rp-link" title="面板配置步骤" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">面板配置步骤</span></a><a href="#tls-问题" class="rp-toc-item rp-link" title="TLS 问题" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">TLS 问题</span></a><a href="#已知限制" class="rp-toc-item rp-link" title="已知限制" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">已知限制</span></a><a href="#移除集成" class="rp-toc-item rp-link" title="移除集成" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">移除集成</span></a><a href="#to-remove-an-integration-instance-from-home-assistant" class="rp-toc-item rp-link" title="To remove an integration instance from Home Assistant" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">To remove an integration instance from Home Assistant</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>

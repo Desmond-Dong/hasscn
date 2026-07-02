@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonoff iHost 刷机步骤 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.82c8003294.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home-assistant-theme.css">
+<script defer src="/static/js/styles.03bf96e4ef.js"></script>
+<script defer src="/static/js/lib-react.4dc7a85ba5.js"></script>
+<script defer src="/static/js/lib-router.61c716e24a.js"></script>
+<script defer src="/static/js/56706.914b18aee4.js"></script>
+<script defer src="/static/js/index.df4b93013c.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" type="module"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="author" content="老王杂谈说">
+<meta name="application-name" content="Home Assistant 中文网">
+<meta name="apple-mobile-web-app-title" content="Home Assistant 中文网">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#18bcf2">
+<meta name="keywords" content="Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理">
+<meta property="og:title" content="Sonoff iHost 刷机步骤 - Home Assistant (家庭助理) | Home Assistant 中文网 | 公众号：老王杂谈说">
+<meta property="og:description" content="推荐使用 Balena Etcher(https://etcher.balena.io/) 或 Raspberry Pi Imager(https://www.raspberrypi.com/software/) 烧录镜像，二者选其一即可。 本页属于 Home Assistant 中文网文档内容。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hasscn.top">
+<meta property="og:site_name" content="Home Assistant 中文网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hasscn.top/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Assistant 中文网 | 老王杂谈说">
+<meta name="twitter:description" content="Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。">
+<meta name="twitter:image" content="https://www.hasscn.top/icon.png">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/icon.png">
+<meta name="description" content="推荐使用 Balena Etcher(https://etcher.balena.io/) 或 Raspberry Pi Imager(https://www.raspberrypi.com/software/) 烧录镜像，二者选其一即可。 本页属于 Home Assistant 中文网文档内容。">
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3MhQABjxy4RZQ6Ig",ck:"3MhQABjxy4RZQ6Ig"})</script>
+</head>
+
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-light.png"/><link rel="preload" as="image" href="/home-assistant-wordmark-with-margins-color-on-dark.png"/><link rel="preload" as="image" href="/static/image/etcher-main-cn.26a86e400f.png"/><link rel="preload" as="image" href="/static/image/etcher-select-file-cn.9503ab783d.png"/><link rel="preload" as="image" href="/static/image/etcher-select-target-cn.3839849a96.png"/><link rel="preload" as="image" href="/static/image/pi-imager-main-cn.24eca7dc07.png"/><link rel="preload" as="image" href="/static/image/pi-imager-device-cn.f09bd26adb.png"/><link rel="preload" as="image" href="/static/image/pi-imager-os-cn.5efbedc42a.png"/><link rel="preload" as="image" href="/static/image/pi-imager-custom-cn.9607c83d64.png"/><link rel="preload" as="image" href="/static/image/pi-imager-storage-cn.3af0da57f5.png"/><link rel="preload" as="image" href="/static/image/pi-imager-settings-cn.a7da0f7439.png"/><link rel="preload" as="image" href="/static/image/pi-imager-clear-cn.858bcd368d.png"/><link rel="preload" as="image" href="/static/image/pi-imager-confirm-cn.a3204af702.png"/><link rel="preload" as="image" href="/static/image/pi-imager-flashing-cn.6098f525ba.png"/><link rel="preload" as="image" href="/static/image/boot-blue-light.d7992f4db2.gif"/><link rel="preload" as="image" href="/static/image/boot-failure.dc85ad7597.gif"/><link rel="preload" as="image" href="/static/image/switch-back.fe4d6855df.gif"/><link rel="preload" as="image" href="/static/image/ihost-hardware-control-cn.51ba76511d.png"/><link rel="preload" as="image" href="/static/image/bluetooth-settings-cn.1ff8c99c15.png"/><link rel="preload" as="image" href="/static/image/wifi-settings-cn.fb5ba1a52f.png"/><link rel="preload" as="image" href="/static/image/zigbee-settings-cn.7e515cf9de.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/home-assistant-wordmark-with-margins-color-on-light.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--light"/><img src="/home-assistant-wordmark-with-margins-color-on-dark.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image rp-nav__title__logo-image--dark"/></div></a></div></div><div class="rp-nav__right"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/" class="rp-nav-menu__item__container rp-link">首页</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">汉化资源<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/hacscn" class="rp-hover-group__item__link rp-link" aria-label="HACS 极速版">HACS 极速版</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/addoncn" class="rp-hover-group__item__link rp-link" aria-label="Home Assistant OS 加载项">Home Assistant OS 加载项</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/blueprints" class="rp-hover-group__item__link rp-link" aria-label="汉化蓝图">汉化蓝图</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/integrations" class="rp-hover-group__item__link rp-link" aria-label="热门集成推荐">热门集成推荐</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/hass-agent/" class="rp-hover-group__item__link rp-link" aria-label="HASS Agent 汉化手册">HASS Agent 汉化手册</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="https://gitee.com/ha-china/Translated/" target="_blank" class="rp-hover-group__item__link rp-link" aria-label="其它汉化资源">其它汉化资源</a></li></ul></li><li class="rp-nav-menu__item"><a href="/download" class="rp-nav-menu__item__container rp-link">下载专区</a></li><li class="rp-nav-menu__item"><a href="/QandA" class="rp-nav-menu__item__container rp-link">快速问答</a></li><li class="rp-nav-menu__item"><a href="/roadmap.html" class="rp-nav-menu__item__container rp-link">OHF roadmap汉化</a></li><li class="rp-nav-menu__item"><a href="/sponsor" class="rp-nav-menu__item__container rp-link">支持我</a></li><li class="rp-nav-menu__item"><div class="rp-nav-menu__item__container">关于<svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-nav-menu__item__icon"><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></div><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--center"><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/about" class="rp-hover-group__item__link rp-link" aria-label="关于本站">关于本站</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/no-baidu" class="rp-hover-group__item__link rp-link" aria-label="搜索引擎">搜索引擎</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="/MajorEvents" class="rp-hover-group__item__link rp-link" aria-label="重要事件">重要事件</a></li><li class="rp-hover-group__item" style="padding-left:8px" data-depth="0"><a href="https://status.hasscn.top/status/1" target="_blank" class="rp-hover-group__item__link rp-link" aria-label="服务器状态(China Only)">服务器状态(China Only)</a></li></ul></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">主题</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="/community.html" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213c0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098a10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05c-.857-2.578.157-4.972 1.932-6.446c1.703-1.415 3.882-1.98 5.853-1.838c-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178a1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786c-1.72 1.428-2.687 3.72-1.78 6.22c.942 2.453 3.666 4.229 6.884 4.229c.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247c0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156a.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983a.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></div></div></a><a href="https://github.com/ha-china/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><a href="https://space.bilibili.com/358562782" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/></svg></div></div></a><a href="https://gitee.com/desmond_GT/hassio-addons" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>菜单</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">目录</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="sonoff-ihost-刷机步骤"><a href="#sonoff-ihost-刷机步骤" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Sonoff iHost 刷机步骤<!-- --> </h1><div class="rp-not-doc rp-llms-container"><button class="rp-not-doc rp-llms-button rp-llms-copy-button"><div class="rp-llms-copy-button__icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-success"><path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-llms-copy-button__icon-copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg></div><span>复制 Markdown</span></button><button class="rp-llms-button rp-llms-view-options__trigger "><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-llms-view-options__arrow "><path fill="currentColor" d="M16 22 6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"></path></svg></button></div>
+<blockquote>
+<p>本手册引用自Sonoff官方开源<a href="https://github.com/iHost-Open-Source-Project/ha-operating-system/blob/master/README_CN.md" target="_blank" rel="noopener noreferrer" class="rp-link">仓库</a></p>
+</blockquote>
+<h2 class="rp-toc-include" id="home-assistant-for-sonoff-ihost"><a href="#home-assistant-for-sonoff-ihost" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Home Assistant For SONOFF iHost</h2>
+<h2 class="rp-toc-include" id="操作前必读"><a href="#操作前必读" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作前必读</h2>
+<ul>
+<li>一台 iHost 且 iHost 系统版本需至少为 <code>V2.5.1</code></li>
+<li>建议使用<a href="https://www.sdcard.org/developers/overview/application/index.html" target="_blank" rel="noopener noreferrer" class="rp-link">一个 Application Class 2</a> 的 SD Card。检查卡上的标签 A2，A2 类卡的性能更好，尤其是在小型读写操作中，更适合主机应用程序，SD Card 存储空间至少 32 GB</li>
+<li>iHost 处理器为32位</li>
+</ul>
+<h2 class="rp-toc-include" id="sd-card-烧录"><a href="#sd-card-烧录" class="rp-header-anchor rp-link" aria-hidden="true">#</a>SD Card 烧录</h2>
+<h3 class="rp-toc-include" id="所需硬件"><a href="#所需硬件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>所需硬件</h3>
+<ul>
+<li>iHost  一台</li>
+<li>32GB 及以上 A2 SD Card 一张</li>
+<li>读卡器一个：大多数笔记本电脑已带有该功能，但如果您没有独立的 USB 适配器，您可以购买独立的 USB 读卡器。品牌无关紧要，只要选最便宜的就好。</li>
+</ul>
+<h3 class="rp-toc-include" id="所需软件"><a href="#所需软件" class="rp-header-anchor rp-link" aria-hidden="true">#</a>所需软件</h3>
+<ul>
+<li>SD Card 烧录工具：<a href="https://etcher.balena.io/" target="_blank" rel="noopener noreferrer" class="rp-link">Balena Etcher</a> 或 <a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener noreferrer" class="rp-link">Raspberry Pi Imager</a> 等</li>
+<li>可在 iHost 上运行的 Home Assistant</li>
+<li>从本站下载最新的镜像文件.</li>
+</ul>
+<h3 class="rp-toc-include" id="操作步骤"><a href="#操作步骤" class="rp-header-anchor rp-link" aria-hidden="true">#</a>操作步骤</h3>
+<p>推荐使用 <a href="https://etcher.balena.io/" target="_blank" rel="noopener noreferrer" class="rp-link">Balena Etcher</a> 或 <a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener noreferrer" class="rp-link">Raspberry Pi Imager</a> 烧录镜像，二者选其一即可</p>
+<h4 class="rp-toc-include" id="balena-etcher"><a href="#balena-etcher" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Balena Etcher</h4>
+<ul>
+<li>将 SD Card 接入读卡器中，并插在电脑上(Windows/MacOS/Linux)</li>
+<li>运行 Balena Etcher</li>
+</ul>
+<p><img alt="etcher main cn" src="/static/image/etcher-main-cn.26a86e400f.png"/></p>
+<ul>
+<li>&quot;从文件烧录&quot; -&gt; 选择下载到本地的<code>Home Assistant OS 极速版</code>镜像文件</li>
+</ul>
+<p><img alt="etcher select file cn" src="/static/image/etcher-select-file-cn.9503ab783d.png"/></p>
+<ul>
+<li>&quot;选择目标磁盘&quot; -&gt; 选择您所插入的 SD Card [!!!请注意不要选错磁盘!!!]</li>
+</ul>
+<p><img alt="etcher select target cn" src="/static/image/etcher-select-target-cn.3839849a96.png"/></p>
+<ul>
+<li>点击&quot;现在烧录！&quot;开始将下载的<code>Home Assistant OS 极速版</code>镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card</li>
+</ul>
+<h4 class="rp-toc-include" id="raspberry-pi-imager"><a href="#raspberry-pi-imager" class="rp-header-anchor rp-link" aria-hidden="true">#</a>Raspberry Pi Imager</h4>
+<ul>
+<li>将 SD Card 接入读卡器中，并插在电脑上(Windows/MacOS/Linux)</li>
+<li>运行  Raspberry Pi Imager</li>
+</ul>
+<p><img alt="pi imager main cn" src="/static/image/pi-imager-main-cn.24eca7dc07.png"/></p>
+<ul>
+<li>&quot;选择设备&quot; -&gt; 选择 No filtering</li>
+</ul>
+<p><img alt="pi imager device cn" src="/static/image/pi-imager-device-cn.f09bd26adb.png"/></p>
+<ul>
+<li>&quot;选择操作系统&quot; -&gt; 选择 Use custom&gt; 选择下载到本地的<code>Home Assistant OS 极速版</code>镜像文件</li>
+</ul>
+<p><img alt="pi imager os cn" src="/static/image/pi-imager-os-cn.5efbedc42a.png"/></p>
+<p><img alt="pi imager custom cn" src="/static/image/pi-imager-custom-cn.9607c83d64.png"/></p>
+<ul>
+<li>&quot;选择SD卡&quot; -&gt; 选择您所插入的 SD Card [!!!请注意不要选错磁盘!!!]</li>
+</ul>
+<p><img alt="pi imager storage cn" src="/static/image/pi-imager-storage-cn.3af0da57f5.png"/></p>
+<ul>
+<li>点击&quot;NEXT&quot;-&gt; 允许清空SD卡的所有数据</li>
+</ul>
+<p><img alt="pi imager settings cn" src="/static/image/pi-imager-settings-cn.a7da0f7439.png"/></p>
+<p><img alt="pi imager clear cn" src="/static/image/pi-imager-clear-cn.858bcd368d.png"/></p>
+<p><img alt="pi imager confirm cn" src="/static/image/pi-imager-confirm-cn.a3204af702.png"/></p>
+<p><img alt="pi imager flashing cn" src="/static/image/pi-imager-flashing-cn.6098f525ba.png"/></p>
+<ul>
+<li>开始将下载的<code>Home Assistant OS 极速版</code>镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card</li>
+</ul>
+<h2 class="rp-toc-include" id="在-ihost-中启动-home-assistant"><a href="#在-ihost-中启动-home-assistant" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 iHost 中启动 Home Assistant</h2>
+<h3 class="rp-toc-include" id="可选-zigbee-设备迁移"><a href="#可选-zigbee-设备迁移" class="rp-header-anchor rp-link" aria-hidden="true">#</a>(可选) Zigbee 设备迁移</h3>
+<p>iHost 支持下载 Zigbee 设备备份文件到本地，可将已经在 iHost 中添加的Zigbee设备恢复到Home Assistant 的 ZHA 或 Zigbee2MQTT中。该功能仅迁移 Zigbee 网络和设备状态，关于在 iHost 上对 Zigbee 设备设置的定时器、群组、场景、设备名称都无法迁移，可查看 <a href="https://appcms.coolkit.cn/extra/26967.html" target="_blank" rel="noopener noreferrer" class="rp-link">操作指引</a>。</p>
+<h3 class="rp-toc-include" id="正常启动流程"><a href="#正常启动流程" class="rp-header-anchor rp-link" aria-hidden="true">#</a>正常启动流程</h3>
+<ul>
+<li>待烧录完成后，取出 SD Card 并插入iHost SD Card 卡槽</li>
+<li>给 iHost 连接网线并上电，在通电同时不断按下静音按键 ♪ ，直至 iHost 的灯条出现蓝色呼吸，系统将开始改变为 SD Card 卡上的 Home Assistant；</li>
+</ul>
+<p><img alt="boot blue light" src="/static/image/boot-blue-light.d7992f4db2.gif"/></p>
+<ul>
+<li>
+<p>在看到蓝色呼吸灯的十分钟内，您将能够访问您的新 Home Assistant，第一次启动需要的时间会长一点</p>
+</li>
+<li>
+<p>在桌面系统的浏览器中，输入 <a href="http://homeassistant.local:8123/" target="_blank" rel="noopener noreferrer" class="rp-link">homeassistant.local：8123</a></p>
+<p><em>注意</em>：</p>
+<ul>
+<li><em>如果您运行的是较旧的 Windows 版本或具有更严格的网络配置，则可能需要在 <a href="http://homeassistant:8123/" target="_blank" rel="noopener noreferrer" class="rp-link">homeassistant：8123</a> 或 <code>http://X.X.X.X:8123</code> 访问 Home Assistant（请将 X.X.X.X 替换为您的 iHost 的 IP 地址）</em></li>
+<li><em>在启动过程中可使用 http://&lt;HA_IP or HA_DOMAIN&gt;:4357（这是 Supervisor 的诊断接口）， 确认 Supervisor 是否有起来，因为在 Supervisor 启动过程中会去拉取一些镜像，这需要一点时间； 当确认Supervisor启动成功后，HA core 还需要一定时间启动，按照我们实测正常情况大约1分钟左右能进入，这可以作为一个参考值。</em></li>
+<li><em>等待很长时间没有访问成功，你可以通过 ping iHost 的 ip 来检查</em></li>
+<li><em>在整个使用过程中为了避免出现未知问题，导致系统无法正常启动，切勿随意断开电源。 你可以通过长按（按住不放等待10s）iHost 顶部的电源按键来关闭 iHost , 在关机的状态下单击电源按键来开启 iHost</em></li>
+</ul>
+</li>
+</ul>
+<h3 class="rp-toc-include" id="启动失败"><a href="#启动失败" class="rp-header-anchor rp-link" aria-hidden="true">#</a>启动失败</h3>
+<ul>
+<li>如果 10分钟内没有正常访问，则可能是图像写入不正确，请尝试再次刷写 SD 卡，甚至可能尝试不同的 SD 卡。</li>
+<li>若在通电5秒后未看到蓝色呼吸灯即进入失败（指示灯显示红色呼吸），您需要再次断电重启来尝试从SD Card卡启动Home assistant</li>
+</ul>
+<p><img alt="boot failure" src="/static/image/boot-failure.dc85ad7597.gif"/></p>
+<p>此时您不需要单击静音按键，因为 iHost 会记住您上一次是从TF卡启动 Home assisatnt，在您断电重启后会自动尝试从SD Card卡启动 Home assistant 。</p>
+<h3 class="rp-toc-include" id="切换回-ewelink-cube"><a href="#切换回-ewelink-cube" class="rp-header-anchor rp-link" aria-hidden="true">#</a>切换回 eWeLink CUBE</h3>
+<ul>
+<li>若需要切换回 eWeLink CUBE，重复此通电及按键操作（在通电后3s内不断按下静音按键）即可，切换 eWeLink-CUBE 系统成功后，灯条灯效从蓝色呼吸改为红色跑马灯</li>
+</ul>
+<p><img alt="switch back" src="/static/image/switch-back.fe4d6855df.gif"/></p>
+<p>注:</p>
+<ul>
+<li>若您的局域网中有超过一台运行 HomeAssistant 设备，则无法通过 homeassistant.local 域名进行访问，需通过路由器后台或 mDNS 广播[_home-assistant._tcp.]查找 IP 地址</li>
+<li>若您的 iHost 上次启动为 SD Card，当您移除 SD Card 且没有切换为 eWeLink CUBE 系统时，灯条灯效将表现为红色呼吸</li>
+</ul>
+<h2 class="rp-toc-include" id="硬件资源"><a href="#硬件资源" class="rp-header-anchor rp-link" aria-hidden="true">#</a>硬件资源</h2>
+<p>在 iHost 上成功启动 Home Assistant 后，您可以在 Home Assistant 中使用 iHost 提供的硬件资源。</p>
+<ul>
+<li>
+<p>按键及指示灯</p>
+<p>可通过在Home Assistant 安装运行 &quot;iHost Hardware Control&quot;add-on 来控制 iHost 机身上的按键和指示灯效果，该 add-on 会将按键和指示灯分别注册为设备和不同的实体，可利用Home Assistant 中的自动化来控制按键和指示灯的不同效果</p>
+<p><img alt="ihost hardware control cn" src="/static/image/ihost-hardware-control-cn.51ba76511d.png"/></p>
+</li>
+<li>
+<p>蓝牙</p>
+</li>
+<li>
+<ul>
+<li>型号:RTL8723DS</li>
+<li>相关信息:设置-&gt;设备与服务-&gt;已配置-&gt;Bluetooth</li>
+<li>识别方式:自动</li>
+</ul>
+</li>
+</ul>
+<p><img alt="bluetooth settings cn" src="/static/image/bluetooth-settings-cn.1ff8c99c15.png"/></p>
+<ul>
+<li>
+<p>WiFi</p>
+</li>
+<li>
+<ul>
+<li>型号:RTL8723DS</li>
+<li>相关信息:设置-&gt;系统-&gt;网络-&gt;配置网络接口-&gt;WLAN0</li>
+<li>识别方式:自动</li>
+</ul>
+</li>
+</ul>
+<p><img alt="wifi settings cn" src="/static/image/wifi-settings-cn.fb5ba1a52f.png"/></p>
+<ul>
+<li>
+<p>Zigbee 协调器</p>
+</li>
+<li>
+<ul>
+<li>型号: EFR32MG21A020F768IM32-B（RAM 64kB,Flash 768kB）</li>
+<li>相关信息:设置-&gt;系统-&gt;硬件-&gt;全部硬件-&gt;/dev/ttyS4</li>
+<li>识别方式:使用ZHA或者Z2M</li>
+</ul>
+</li>
+</ul>
+<p><img alt="zigbee settings cn" src="/static/image/zigbee-settings-cn.7e515cf9de.png"/></p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><div class="rp-prev-next-page__placeholder"></div><div class="rp-prev-next-page__placeholder"></div></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">目录<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#home-assistant-for-sonoff-ihost" class="rp-toc-item rp-link" title="Home Assistant For SONOFF iHost" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">Home Assistant For SONOFF iHost</span></a><a href="#操作前必读" class="rp-toc-item rp-link" title="操作前必读" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">操作前必读</span></a><a href="#sd-card-烧录" class="rp-toc-item rp-link" title="SD Card 烧录" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">SD Card 烧录</span></a><a href="#所需硬件" class="rp-toc-item rp-link" title="所需硬件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">所需硬件</span></a><a href="#所需软件" class="rp-toc-item rp-link" title="所需软件" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">所需软件</span></a><a href="#操作步骤" class="rp-toc-item rp-link" title="操作步骤" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">操作步骤</span></a><a href="#balena-etcher" class="rp-toc-item rp-link" title="Balena Etcher" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Balena Etcher</span></a><a href="#raspberry-pi-imager" class="rp-toc-item rp-link" title="Raspberry Pi Imager" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">Raspberry Pi Imager</span></a><a href="#在-ihost-中启动-home-assistant" class="rp-toc-item rp-link" title="在 iHost 中启动 Home Assistant" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">在 iHost 中启动 Home Assistant</span></a><a href="#可选-zigbee-设备迁移" class="rp-toc-item rp-link" title="(可选) Zigbee 设备迁移" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">(可选) Zigbee 设备迁移</span></a><a href="#正常启动流程" class="rp-toc-item rp-link" title="正常启动流程" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">正常启动流程</span></a><a href="#启动失败" class="rp-toc-item rp-link" title="启动失败" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">启动失败</span></a><a href="#切换回-ewelink-cube" class="rp-toc-item rp-link" title="切换回 eWeLink CUBE" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">切换回 eWeLink CUBE</span></a><a href="#硬件资源" class="rp-toc-item rp-link" title="硬件资源" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">硬件资源</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
+  </body>
+</html>
