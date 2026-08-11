@@ -1,8 +1,6 @@
 ---
-description: 'layout: doc。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
----
---- 
-layout: doc 
+layout: doc
+description: 'Home Assistant 中文站及公众号发展历程中的重要时刻记录。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 ---
 
 # ✨ 主要事件

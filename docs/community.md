@@ -1,9 +1,9 @@
 ---
-description: 'layout: doc。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
-
+layout: doc
+description: '加入 Home Assistant 中文社群与联系方式。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 ---
 # 🎉 加入社群 & 联系我
----
+
 ## 📲 扫码加好友
 
 :::tip 请注意

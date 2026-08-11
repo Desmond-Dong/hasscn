@@ -56,5 +56,3 @@ og:
 :::info
 💡 **Home Assistant OS 极速版 让 Home Assistant 更懂中国用户，体验前所未有的丝滑与便捷！**
 :::
-
-</div>

@@ -1,8 +1,6 @@
 ---
-description: 'layout: doc。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
----
---- 
-layout: doc 
+layout: doc
+description: 'Home Assistant OS 极速版与官方原版系统互转的完整教程。 本页属于 Home Assistant 中文网文档内容，适合继续浏览相关安装、使用与进阶说明。'
 ---
 # 和官方原版互转无忧
 

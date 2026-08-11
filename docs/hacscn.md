@@ -18,7 +18,7 @@ HACS极速版是依赖于有github帐号的玩家共享token来实现免帐号�
 
 
 
-### 安装/更新
+## 安装/更新
 
 :::tip
 本项目是HACS官方集成的修改版，安装本项目会覆盖官方的集成，但是无需重新配置集成(共用一套配置)，因此你可以放心安装。如果想切换到官方版本，使用官方的shell命令再安装即可。
@@ -29,7 +29,7 @@ HACS极速版是依赖于有github帐号的玩家共享token来实现免帐号�
 :::
 
 
-#### 方法1️⃣: 使用命令安装
+### 方法1️⃣: 使用命令安装
 
 ```shell
 wget -O - https://get.hacs.vip | bash -
@@ -42,7 +42,7 @@ curl -fsSL get.hacs.vip | bash
 - 如果是haos/hassio/supervised版本的HA，可直接在宿主机或`Terminal & SSH`加载项中执行上面的命令
 - 如果是core/docker版本的HA，需要ssh登陆宿主机后，并cd进入到HA配置目录再执行安装命令
 
-#### 方法2️⃣: [`加载项安装器: https://hacs.vip/get-addon`](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgitee.com%2Fhacs-china%2Faddons)
+### 方法2️⃣: [`加载项安装器: https://hacs.vip/get-addon`](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgitee.com%2Fhacs-china%2Faddons)
 
 > 需要HAOS或Supervised版本的HA
 
@@ -51,14 +51,14 @@ curl -fsSL get.hacs.vip | bash
 3. 启动加载项并观察日志
 4. 重启HA
 
-#### 方法3️⃣: [`upgrade`](https://my.home-assistant.io/redirect/developer_call_service/?service=hacs.upgrade)服务
+### 方法3️⃣: [`upgrade`](https://my.home-assistant.io/redirect/developer_call_service/?service=hacs.upgrade)服务
 
 > 需要已安装HACS极速版v1.33.0.3版本及以上
 
 1. 在开发者工具中执行服务 [`service: hacs.upgrade`](https://my.home-assistant.io/redirect/developer_call_service/?service=hacs.upgrade)
 2. 重启HA使更新后的HACS生效
 
-#### 方法4️⃣: [`shell_command`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_hacs_china)服务
+### 方法4️⃣: [`shell_command`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_hacs_china)服务
 
 1. 复制代码到HA配置文件 `configuration.yaml`
     ```yaml
@@ -70,7 +70,7 @@ curl -fsSL get.hacs.vip | bash
 3. 在开发者工具中执行动作 [`action: shell_command.update_hacs_china`](https://my.home-assistant.io/redirect/developer_call_service/?service=shell_command.update_hacs_china)
 4. 再次重启HA使更新后的HACS生效
 
-#### 方法5️⃣: [`Docker安装`](https://hub.docker.com/r/hacn/hacn)
+### 方法5️⃣: [`Docker安装`](https://hub.docker.com/r/hacn/hacn)
 
 > 仅针对未安装HACS的**Docker**版本的HA
 
@@ -102,7 +102,7 @@ curl -fsSL get.hacs.vip | bash
     ```
 3. 启动后[添加HACS集成](https://my.home-assistant.io/redirect/config_flow_start/?domain=hacs)
 
-#### 方法6️⃣: 手动安装
+### 方法6️⃣: 手动安装
 
 - [点击这里下载](https://github.com/hacs-china/integration/releases/latest/download/hacs.zip)安装包并解压 (如果下载不了请点[这里](https://ghproxy.com/github.com/hacs-china/integration/releases/latest/download/hacs.zip)或[这里](https://hub.fastgit.xyz/hacs-china/integration/releases/latest/download/hacs.zip))
 - 通过samba/ftp进入HA配置目录，通常为以下目录：
