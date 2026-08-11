@@ -2,17 +2,17 @@
 description: '推荐使用 Balena Etcher(https://etcher.balena.io/) 或 Raspberry Pi Imager(https://www.raspberrypi.com/software/) 烧录镜像，二者选其一即可。 本页属于 Home Assistant 中文网文档内容。'
 ---
 # 树莓派刷机步骤
-### 所需软件
+## 所需软件
 
 - SD Card 烧录工具：[Balena Etcher](https://etcher.balena.io/) 或 [Raspberry Pi Imager](https://www.raspberrypi.com/software/) 等 
 - 从本站下载最新的对应的树莓派镜像文件.
 
 
-### 操作步骤
+## 操作步骤
 
 推荐使用 [Balena Etcher](https://etcher.balena.io/) 或 [Raspberry Pi Imager](https://www.raspberrypi.com/software/) 烧录镜像，二者选其一即可
 
-#### Balena Etcher
+### Balena Etcher
 
 - 将 SD Card 接入读卡器中，并插在电脑上(Windows/MacOS/Linux)
 - 运行 Balena Etcher
@@ -29,7 +29,7 @@ description: '推荐使用 Balena Etcher(https://etcher.balena.io/) 或 Raspberr
 
 - 点击"现在烧录！"开始将下载的`Home Assistant OS 极速版`镜像文件烧录到 SD Card中，烧录过程中请不要操作 SD Card
 
-#### Raspberry Pi Imager
+### Raspberry Pi Imager
 
 - 将 SD Card 接入读卡器中，并插在电脑上(Windows/MacOS/Linux)
 - 运行  Raspberry Pi Imager

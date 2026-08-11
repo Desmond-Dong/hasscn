@@ -5,7 +5,6 @@ description: '推荐使用 Balena Etcher(https://etcher.balena.io/) 或 Raspberr
 
 > 本手册引用自Sonoff官方开源[仓库](https://github.com/iHost-Open-Source-Project/ha-operating-system/blob/master/README_CN.md)
 
-
 ## Home Assistant For SONOFF iHost
 
 ## 操作前必读
@@ -27,8 +26,6 @@ description: '推荐使用 Balena Etcher(https://etcher.balena.io/) 或 Raspberr
 - SD Card 烧录工具：[Balena Etcher](https://etcher.balena.io/) 或 [Raspberry Pi Imager](https://www.raspberrypi.com/software/) 等 
 - 可在 iHost 上运行的 Home Assistant
 - 从本站下载最新的镜像文件.
-
-
 
 ### 操作步骤
 
@@ -95,7 +92,6 @@ description: '推荐使用 Balena Etcher(https://etcher.balena.io/) 或 Raspberr
 - 待烧录完成后，取出 SD Card 并插入iHost SD Card 卡槽
 - 给 iHost 连接网线并上电，在通电同时不断按下静音按键 ♪ ，直至 iHost 的灯条出现蓝色呼吸，系统将开始改变为 SD Card 卡上的 Home Assistant；
 
-
 ![boot blue light](../images/ihost/boot-blue-light.gif)
 
 - 在看到蓝色呼吸灯的十分钟内，您将能够访问您的新 Home Assistant，第一次启动需要的时间会长一点
@@ -140,26 +136,23 @@ description: '推荐使用 Balena Etcher(https://etcher.balena.io/) 或 Raspberr
   ![ihost hardware control cn](../images/ihost/ihost-hardware-control-cn.png)
 
 - 蓝牙 
-
-- - 型号:RTL8723DS 
+  - 型号:RTL8723DS 
   - 相关信息:设置->设备与服务->已配置->Bluetooth
   - 识别方式:自动
 
-![bluetooth settings cn](../images/ihost/bluetooth-settings-cn.png)
+  ![bluetooth settings cn](../images/ihost/bluetooth-settings-cn.png)
 
 - WiFi  
-
-- - 型号:RTL8723DS
+  - 型号:RTL8723DS
   - 相关信息:设置->系统->网络->配置网络接口->WLAN0
   - 识别方式:自动
 
-![wifi settings cn](../images/ihost/wifi-settings-cn.png)
+  ![wifi settings cn](../images/ihost/wifi-settings-cn.png)
 
 - Zigbee 协调器
-
-- - 型号: EFR32MG21A020F768IM32-B（RAM 64kB,Flash 768kB）
+  - 型号: EFR32MG21A020F768IM32-B（RAM 64kB,Flash 768kB）
   - 相关信息:设置->系统->硬件->全部硬件->/dev/ttyS4
   - 识别方式:使用ZHA或者Z2M
 
-![zigbee settings cn](../images/ihost/zigbee-settings-cn.png)
+  ![zigbee settings cn](../images/ihost/zigbee-settings-cn.png)
 
