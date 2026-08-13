@@ -2,16 +2,17 @@
   "name": "hasscn.top",
   "version": "2026.08.13",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "rspress build && node scripts/cleanup-search-index.js",
+    "build": "rspress build && node scripts/cleanup-search-index.cjs",
     "check": "biome check --write",
     "dev": "rspress dev",
     "format": "prettier --write .",
     "lint": "eslint .",
     "preview": "rspress preview",
-    "sync:ma": "node scripts/sync-music-assistant.js",
-    "sync:ma:download": "node scripts/sync-music-assistant.js --download",
-    "sync:ma:init": "node scripts/sync-music-assistant.js --init"
+    "sync:ma": "node scripts/sync-music-assistant.cjs",
+    "sync:ma:download": "node scripts/sync-music-assistant.cjs --download",
+    "sync:ma:init": "node scripts/sync-music-assistant.cjs --init"
   },
   "dependencies": {
     "@rspress/core": "^2.0.19",
