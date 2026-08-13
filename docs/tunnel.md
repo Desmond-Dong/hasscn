@@ -23,6 +23,7 @@ keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistan
 - ✅ **开箱即用**：专为 Home Assistant 优化部署，安装即可体验；
 - ✅ **半贡献保本**：贡献为主，保本为辅，不以盈利为目标，以半贡献保本的方式解决你的远程需求。
 - ✅ **丝滑迁移**：重装、换机器不失效，只需填入 uid 即可无缝迁移。
+- ✅ **合规安全**：数据不出境，境外无法访问，符合国内合规要求。
 
 如有需要，请联系客服微信：[点击咨询](https://work.weixin.qq.com/kfid/kfcdcf37def1208bbb9)
 
@@ -86,3 +87,22 @@ docker run -d --net host \
 如果该文件已存在，说明之前登录过，请先退出账号，停止容器，修改 uid，再重新启动容器。
 
 同时请将你的 Home Assistant 局域网访问地址告知我（建通道时需要填写），例如：`http://192.168.0.110:8123`
+
+## 常见错误
+
+### 外网访问400 错误
+
+2026.08.0之前的版本需要在`configuration.yaml`里添加以下配置并重启
+``` yaml
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.30.32.0/23
+    - 127.0.0.1
+    - ::1
+    # docker 版本额外添加一个你家里局域网的网段
+    # 如： - 192.168.0.0/24
+```
+2026.08.0版本以及以上的版本需要在网络配置里添加如下内容
+
+![Reverse_Setting](./images/Reverse_Setting.png)
