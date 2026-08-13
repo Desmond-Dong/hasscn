@@ -71,11 +71,11 @@ keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistan
 
 ### Docker 版
 
-需要单独运行一个 WebTunnel 容器：
+需要单独运行一个 WebTunnel 容器。
 
 不同平台下的部署方式请参阅 [WebTunnel 官方手册](https://d.pgrm.top/client/docker.html)，以下为参考命令：
 
-``` bash
+``` bash title="docker run"
 docker run -d --net host \
   -v /etc/hostname:/etc/hostname:ro \
   -v /etc/localtime:/etc/localtime:ro \
@@ -86,7 +86,7 @@ docker run -d --net host \
 
 在 `-v ~/:/root/.webtunnel` 映射的目录中添加 `config.json`：
 
-``` json
+``` json title="config.json"
 {"uid":"这里填我给你的uid","time":1785734538734}
 ```
 
@@ -100,7 +100,7 @@ docker run -d --net host \
 
 2026.08.0 之前的版本需要在 `configuration.yaml` 里添加以下配置并重启：
 
-``` yaml
+``` yaml title="configuration.yaml"
 http:
   use_x_forwarded_for: true
   trusted_proxies:
@@ -111,6 +111,6 @@ http:
     # 如： - 192.168.0.0/24
 ```
 
-2026.08.0 版本以及以上的版本需要在网络配置里添加如下内容：
+2026.08.0 版本及以上需要在网络配置中添加如下内容：
 
 ![Reverse_Setting](./images/Reverse_Setting.png)
