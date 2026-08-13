@@ -49,11 +49,15 @@ keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistan
 如果之前已有账号登录，请先退出，否则 uid 会被旧账户覆盖。
 :::
 
-**Home Assistant OS 极速版** 用户可一键直达，无需手动添加仓库：
+### HAOS 极速版
+
+一键直达，无需手动添加仓库：
 
 [![极速安装 WebTunnel](https://img.shields.io/badge/Home%20Assistant%20OS%20%E6%9E%81%E9%80%9F%E7%89%88-WebTunnel-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=core_webtunnel)
 
-**Home Assistant OS 官方版** 用户请先添加仓库，再搜索安装：
+### HAOS 官方版
+
+先添加仓库，再搜索安装：
 
 [![一键添加加载项仓库](https://img.shields.io/badge/Home%20Assistant-Addons-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons)
 
@@ -65,7 +69,9 @@ keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistan
 
 ![WebTunnel](./images/webtunnel_config.png)
 
-**Home Assistant Docker版** 用户则需要单独运行一个 WebTunnel 容器：
+### Docker 版
+
+需要单独运行一个 WebTunnel 容器：
 
 不同平台下的部署方式请参阅 [WebTunnel 官方手册](https://d.pgrm.top/client/docker.html)，以下为参考命令：
 
@@ -90,9 +96,10 @@ docker run -d --net host \
 
 ## 常见错误
 
-### 外网访问400 错误
+### 外网访问 400 错误
 
-2026.08.0之前的版本需要在`configuration.yaml`里添加以下配置并重启
+2026.08.0 之前的版本需要在 `configuration.yaml` 里添加以下配置并重启：
+
 ``` yaml
 http:
   use_x_forwarded_for: true
@@ -103,6 +110,7 @@ http:
     # docker 版本额外添加一个你家里局域网的网段
     # 如： - 192.168.0.0/24
 ```
-2026.08.0版本以及以上的版本需要在网络配置里添加如下内容
+
+2026.08.0 版本以及以上的版本需要在网络配置里添加如下内容：
 
 ![Reverse_Setting](./images/Reverse_Setting.png)
