@@ -17,7 +17,6 @@ concurrency:
 
 jobs:
   check-version:
-    if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
     outputs:
       changed: ${{ steps.version-check.outputs.changed }}
@@ -31,7 +30,9 @@ jobs:
         id: version-check
         run: |
           changed="false"
-          if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            changed="true"
+          elif [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
             changed="true"
           elif git diff "${{ github.event.before }}" "${GITHUB_SHA}" -- package.json 2>/dev/null \
             | grep -qE '^[+-][[:space:]]*"version"'; then
@@ -41,7 +42,7 @@ jobs:
 
   build-and-publish:
     needs: check-version
-    if: github.event_name == 'workflow_dispatch' || needs.check-version.outputs.changed == 'true'
+    if: needs.check-version.outputs.changed == 'true'
     runs-on: ubuntu-latest
 
     steps:
