@@ -37,6 +37,10 @@ export const globalNav = [
     link: '/download',
   },
   {
+    text: '穿透服务',
+    link: '/tunnel',
+  },
+  {
     text: "OHF roadmap汉化",
     link: "/roadmap.html"
   },
