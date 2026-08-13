@@ -37,10 +37,6 @@ export const globalNav = [
     link: '/download',
   },
   {
-    text: '快速问答',
-    link: '/QandA',
-  },
-  {
     text: "OHF roadmap汉化",
     link: "/roadmap.html"
   },
@@ -54,6 +50,10 @@ export const globalNav = [
       {
         text: '关于本站',
         link: '/about',
+      },
+      {
+        text: '快速问答',
+        link: '/QandA',
       },
       {
         text: '搜索引擎',
