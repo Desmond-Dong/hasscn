@@ -6,9 +6,11 @@ description: '1. 下载对应的固件，并且解压缩成.qcow2格式。 本�
 1. 下载对应的固件，并且解压缩成.qcow2格式
 
 2. 上传.qcow2文件到 Proxmox VE 控制台的本地存储中
+
 ![upload](../images/proxmox/upload.png)
 
 3. 登录 Proxmox VE 控制台，在右上角点击新建虚拟机
+
 ![new](../images/proxmox/new.png)
 
 ![General](../images/proxmox/General.png)

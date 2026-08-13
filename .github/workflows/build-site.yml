@@ -16,7 +16,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.version-check.outputs.changed }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Check if hasscn.top version changed
+        id: version-check
+        run: |
+          changed="false"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            changed="true"
+          elif [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            changed="true"
+          elif git diff "${{ github.event.before }}" "${GITHUB_SHA}" -- package.json 2>/dev/null \
+            | grep -qE '^[+-][[:space:]]*"version"'; then
+            changed="true"
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
   build-and-publish:
+    needs: check-version
+    if: needs.check-version.outputs.changed == 'true'
     runs-on: ubuntu-latest
 
     steps:
