@@ -96,6 +96,16 @@ docker run -d --net host \
 
 同时请将你的 Home Assistant 局域网访问地址告知我（建通道时需要填写），例如：`http://192.168.0.110:8123`
 
+### 命令行版
+
+适用于无图形桌面环境的 Linux 服务器/终端。从[官方网站](https://www.pgrm.top/)下载命令行版本，然后在本机运行：
+
+``` bash title="WebTunnelCore"
+/WebTunnelCore --config="自定义保存配置目录" --uid="我提供给你的uid"
+```
+
+同时请将你的 Home Assistant 局域网访问地址告知我（建通道时需要填写），例如：`http://192.168.0.110:8123`
+
 ## 常见错误
 
 ### 外网访问 400 错误
