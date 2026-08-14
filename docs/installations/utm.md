@@ -3,7 +3,7 @@ description: '在 Mac 的 UTM 虚拟机中安装 Home Assistant OS 极速版。 
 ---
 # UTM 安装（Mac）
 
-UTM 使用适用于 Apple Silicon（aarch64）的固件，可在[下载页](/download)下载对应的 `qcow2` 固件。
+UTM 使用适用于 Apple Silicon（aarch64）的 `qcow2` 固件，在[下载页](/download)下载对应的 `qcow2` 固件即可。
 
 ## 操作步骤
 
@@ -16,7 +16,7 @@ brew install utm
 brew install qemu
 ```
 
-2. 从[下载页](/download)下载对应的 `qcow2` 固件并解压
+2. 在[下载页](/download)下载对应的 `qcow2` 固件
 
 3. 扩容磁盘（可选）
 

@@ -3,13 +3,13 @@ description: '在 VMware ESXi 虚拟机中安装 Home Assistant OS 极速版。 
 ---
 # ESXi 安装
 
-ESXi 使用的固件为 `vmdk` 版本，可在[下载页](/download)下载。
+ESXi 使用的固件为 `vmdk` 版本，在[下载页](/download)下载对应的 `vmdk` 固件即可。
 
 ## 操作步骤
 
 > 图片来源：[通过 ESXi 安装 Home Assistant OS，必装插件推荐](https://sspai.com/post/72983)（少数派）
 
-1. 从[下载页](/download)下载 `vmdk` 版本的固件并解压
+1. 在[下载页](/download)下载对应的 `vmdk` 固件
 
 2. 登录 ESXi，新建虚拟机
 

@@ -3,13 +3,13 @@ description: '在威联通（QNAP）NAS 的虚拟机工作站中安装 Home Assi
 ---
 # 威联通（QNAP）安装
 
-威联通使用的固件为 `ova` 版本，可在[下载页](/download)下载。
+威联通使用的固件为 `ova` 版本，在[下载页](/download)下载对应的 `ova` 固件即可。
 
 ## 操作步骤
 
 > 图片来源：[图文教程：威联通安装 Home Assistant OS 极速版](https://mp.weixin.qq.com/s/OSGU-JnSCqRJ3obT2hAGnw)
 
-1. 从[下载页](/download)下载 `ova` 版本的固件
+1. 在[下载页](/download)下载对应的 `ova` 固件
 
 ![下载固件](./images/qnap/01.png)
 
