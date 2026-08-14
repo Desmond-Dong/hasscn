@@ -36,5 +36,3 @@ description: '在飞牛 NAS（fnOS）虚拟机中直接通过 qcow2 镜像安装
 ![启动虚拟机](./images/fnos/06.png)
 
 5. 等待初始化完成后，浏览器访问 `http://<虚拟机IP>:8123`
-
-![正在加载](./images/fnos/07.png)
