@@ -23,10 +23,6 @@ export const globalNav = [
         link: '/integrations',
       },
       {
-        text: 'HASS Agent 汉化手册',
-        link: '/hass-agent/',
-      },
-      {
         text: '其它汉化资源',
         link: 'https://gitee.com/ha-china/Translated/',
       },
