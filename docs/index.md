@@ -20,8 +20,8 @@ hero:
       text: 无损转换
       link: how-to
     - theme: alt
-      text: 更新日志
-      link: Changelog
+      text: 安装指南
+      link: installations
   image:
     src:
       light: /home-assistant-wordmark-vertical-color-on-light.png

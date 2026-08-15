@@ -52,6 +52,10 @@ export const globalNav = [
         link: '/about',
       },
       {
+        text: '更新日志',
+        link: '/Changelog',
+      },
+      {
         text: '快速问答',
         link: '/QandA',
       },
