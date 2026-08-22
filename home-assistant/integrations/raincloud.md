@@ -1,0 +1,111 @@
+# Melnor RainCloud
+
+The **Melnor RainCloud** integration allows you to integrate your [Melnor RainCloud](https://wifiaquatimer.com) sprinkler system in Home Assistant.
+
+There is currently support for the following device types within Home Assistant:
+
+* [Binary sensor](#binary-sensor)
+* [Sensor](#sensor)
+* [Switch](#switch)
+
+## Configuration
+
+To enable it, add the following to your "`configuration.yaml`" file.
+:::tip
+更改配置后需要重启 Home Assistant。
+:::
+
+```yaml
+# Example configuration.yaml entry
+raincloud:
+  username: YOUR_USERNAME
+  password: YOUR_PASSWORD
+```
+
+```yaml
+username:
+  description: The username for accessing your Melnor RainCloud account.
+  required: true
+  type: string
+password:
+  description: The password for accessing your Melnor RainCloud account.
+  required: true
+  type: string
+```
+
+## Binary sensor
+
+Once you have enabled the [Raincloud integration](#configuration), add the following to your "`configuration.yaml`" file:
+
+```yaml
+# Example configuration.yaml entry
+binary_sensor:
+  - platform: raincloud
+```
+
+```yaml
+monitored_conditions:
+  description: Conditions to display in the frontend. The following conditions can be monitored.
+  required: false
+  type: list
+  default: If not specified, all conditions below will be enabled.
+  keys:
+    is_watering:
+      description: Return if is currently watering per zone.
+    status:
+      description: Return status from the Melnor RainCloud Controller and Melnor RainCloud Faucet.
+```
+
+## Sensor
+
+Once you have enabled the [Raincloud integration](#configuration), add the following to your "`configuration.yaml`" file:
+
+```yaml
+# Example configuration.yaml entry
+sensor:
+  - platform: raincloud
+```
+
+```yaml
+monitored_conditions:
+  description: Conditions to display in the frontend. The following conditions can be monitored.
+  required: false
+  default: If not specified, all conditions below will be enabled.
+  type: list
+  keys:
+    battery:
+      description: Return the battery level the Melnor RainCloud faucet.
+    next_cycle:
+      description: Return the next schedulle watering cycle per zone.
+    rain_delay:
+      description: Return the number of days the automatic watering will be delayed due to raining per zone.
+    watering_time:
+      description: Return the watering remaining minutes per zone.
+```
+
+## Switch
+
+Once you have enabled the [Raincloud integration](#configuration), add the following to your "`configuration.yaml`" file:
+
+```yaml
+# Example configuration.yaml entry
+switch:
+  - platform: raincloud
+```
+
+```yaml
+watering_minutes:
+  description: "Value in minutes to watering your garden via frontend. The values allowed are: 5, 10, 15, 30, 45, 60."
+  required: false
+  default: 15
+  type: integer
+monitored_conditions:
+  description: Conditions to display in the frontend. If not specified, all conditions below will be enabled by default.
+  required: false
+  type: list
+  keys:
+    auto_watering:
+      description: Toggle the watering scheduled per zone.
+    manual_watering:
+      description: Toggle manually the watering per zone. It will inherent the value in minutes specified on the RainCloud hub integration.
+```

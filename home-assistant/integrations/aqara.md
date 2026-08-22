@@ -1,0 +1,23 @@
+# Aqara
+
+[Aqara](https://www.aqara.com/) is a member of the Works with Home Assistant partner program for their Matter products. Aqara is committed to making sure their products are up-to-date and ready to use in Home Assistant.
+
+Aqara Matter devices work locally and integrate seamlessly with the Matter integration in Home Assistant. As all connectivity happens locally, status updates and device control happen instantly in Home Assistant.
+
+[![Open Add device in your Home Assistant instance.](https://my.home-assistant.io/badges/add_matter_device.svg)](https://my.home-assistant.io/redirect/add_matter_device/?domain=aqara)
+
+[Learn more about Matter in Home Assistant.](/home-assistant/integrations/matter/index.md)
+
+## 支持的设备
+
+* [Hub M3](https://www.aqara.com/en/product/hub-m3/)
+* [LED Bulb T2 (E26, CCT)](https://www.aqara.com/en/product/led-bulb-t2/)
+* [LED Bulb T2 (E26, RGB+CT)](https://www.aqara.com/en/product/led-bulb-t2/)
+* [Smart Lock U200](https://www.aqara.com/en/product/smart-lock-u200/)
+* [Smart Lock U300](https://www.aqara.com/en/product/smart-lock-u300/)
+* [Motion and Light Sensor P2](https://www.aqara.com/en/product/motion-and-light-sensor-p2/)
+* [Door and Window Sensor P2](https://www.aqara.com/en/product/door-and-window-sensor-p2/)
+* [Climate Sensor](https://www.aqara.com/en/product/climate-sensor-w100/)
+* [Light Switch H2 US](https://www.aqara.com/us/product/light-switch-h2-us/)
+* [Light Switch H2 EU](https://www.aqara.com/en/product/light-switch-h2-eu/)
+* [Presence Sensor FP300](https://www.aqara.com/en/product/presence-multi-sensor-fp300/)

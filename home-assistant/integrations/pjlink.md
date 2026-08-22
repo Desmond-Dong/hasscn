@@ -1,0 +1,43 @@
+# PJLink
+
+The **PJLink** integration allows you to control from Home Assistant, projectors with support for the [PJLink protocol](https://pjlink.jbmia.or.jp/english/index.html).
+
+## Configuration
+
+To add a PJLink projector to your installation, add the following to your "`configuration.yaml`" file.
+:::tip
+更改配置后需要重启 Home Assistant。
+:::
+
+```yaml
+# Example configuration.yaml entry
+media_player:
+  - platform: pjlink
+    host: 192.168.1.2
+```
+
+```yaml
+host:
+  description: IP address or hostname of the device. Example:`192.168.1.2`.
+  required: true
+  type: string
+port:
+  description: port on which the PJLink service runs on the device.
+  required: false
+  type: integer
+  default: 4352
+name:
+  description: Name of the device.
+  required: false
+  type: string
+  default: name of the device as returned by PJLink.
+encoding:
+  description: Character encoding to use to communicate with the device.
+  required: false
+  type: string
+  default: utf-8
+password:
+  description: Password to authenticate with the projector.
+  required: false
+  type: string
+```
