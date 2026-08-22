@@ -1,34 +1,33 @@
 ---
-title: "该文档描述了已知支持/不支持的设备"
-description: '许多Home Assistant用户根据Home Assistant是否支持来购买设备。 为了让用户更容易地了解某个设备是否受支持，文档应描述已知的受支持或不受支持的设备。 这将减少用户在尝试设置设备时发现其设备不受支持的不良体验。 本页属于 Home Assistant 开发者文档。'
+title: "文档描述了已知支持 / 不支持的设备"
+sidebar_label: 🥇 docs-supported-devices
 ---
-# 该文档描述了已知支持/不支持的设备
 
-## 推理
+## 原理说明
 
-许多Home Assistant用户根据Home Assistant是否支持来购买设备。
-为了让用户更容易地了解某个设备是否受支持，文档应描述已知的受支持或不受支持的设备。
-这将减少用户在尝试设置设备时发现其设备不受支持的不良体验。
+许多 Home Assistant 用户会根据 Home Assistant 是否支持来决定购买哪些设备。
+为了让用户更容易确认某设备是否受支持，文档应描述已知支持或不支持的设备。
+这将减少用户尝试设置设备时才得知设备不受支持所带来的糟糕体验。
 
-## 实施示例
+## 示例实现
 
 ```markdown showLineNumbers
 
-## Supported devices
+## 支持的设备
 
-The following devices are known to be supported by the integration:
+以下设备已知受该集成支持：
 - Device 1
 - Device 2
-- Every appliance that runs MyOS
+- 所有运行 MyOS 的设备
 
-## Unsupported devices
+## 不支持的设备
 
-The following devices are not supported by the integration:
+以下设备不受该集成支持：
 - Device 3
-- Appliances built before 2010
+- 2010 年之前生产的设备
 ```
 
 ## 例外情况
 
-此规则不适用于不连接到设备或服务的集成。
-此规则也不适用于不集成物理设备的集成。
+本规则不适用于不连接设备或服务的集成。
+本规则也不适用于不集成物理设备的集成。

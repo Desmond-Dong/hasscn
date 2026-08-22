@@ -1,17 +1,16 @@
 ---
 title: "备份"
-description: '集成实现备份平台主要有两个目的：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+sidebar_label: "备份"
 ---
-# 备份
 
-集成实现备份平台主要有两个目的：
+集成实现备份平台有两个主要目的：
 
-1. 添加一个备份代理，用于将备份上传到本地或远程位置。
-2. 在创建备份前暂停或准备集成相关操作，并在备份后执行必要的后续操作。
+1. 添加一个 backup agent，可以将备份上传到某个本地或远程位置。
+2. 在创建备份之前暂停或准备集成操作，和/或在备份后运行某些操作。
 
 ## 备份代理
 
-要添加一个或多个备份代理，请在 `backup.py` 中实现 `async_get_backup_agents` 和 `async_register_backup_agents_listener` 这两个方法。例如：
+要添加一个或多个 backup agents，请在 `backup.py` 中实现 `async_get_backup_agents` 和 `async_register_backup_agents_listener` 这两个方法。示例：
 
 ```python
 async def async_get_backup_agents(
@@ -45,14 +44,14 @@ def async_register_backup_agents_listener(
     return remove_listener
 ```
 
-每当需要重新加载备份代理、移除过期代理并添加新代理时，都应调用在 `async_register_backup_agents_listener` 中注册的监听器。这可以通过在 `async_setup_entry` 期间注册状态变更监听来实现：
+存储在 `async_register_backup_agents_listener` 中的 listener 应在每次需要重新加载 backup agents 时被调用，以移除过期的 agents 并添加新的 agents。这可以通过在 `async_setup_entry` 期间注册 listeners 来完成：
 
 ```python
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up config entry."""
     # do things to set up your config entry
 
-    # Notify backup listeners
+    # 通知 backup listeners
     def notify_backup_listeners() -> None:
         for listener in hass.data.get(DATA_BACKUP_AGENT_LISTENERS, []):
             listener()
@@ -61,7 +60,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     return True
 ```
 
-备份代理应实现 `BackupAgent` 基类定义的抽象接口，如下例所示：
+Backup agent 应实现 `BackupAgent` 基类的抽象接口，如下例所示：
 
 ```python
 from homeassistant.components.backup import BackupAgent, BackupAgentError, OnProgressCallback
@@ -130,29 +129,29 @@ class ExampleBackupAgent(BackupAgent):
         """
 ```
 
-备份代理在发生错误时应抛出 `BackupAgentError`（或其子类）。不应让其他异常从备份代理中泄漏出来。
+Backup agents 应在出错时抛出 `BackupAgentError`（或 `BackupAgentError` 的子类）异常。其他异常不应从 backup agent 中抛出。
 
 ### 报告上传进度
 
-`async_upload_backup` 方法会接收一个 `on_progress` 回调，代理可以用它来报告上传进度。调用时传入截至当前已上传的总字节数：
+`async_upload_backup` 方法接收一个 `on_progress` callback，agents 可以使用它来报告上传进度。调用 callback 时传入到目前为止上传的总字节数（整数）：
 
 ```python
 on_progress(bytes_uploaded=bytes_sent)
 ```
 
-备份管理器会利用这些信息触发 `UploadBackupEvent` 事件，从而让前端向用户显示上传进度。代理应在上传期间定期调用该回调，例如在发送每个数据块之后。
+备份管理器使用此信息来触发 `UploadBackupEvent` 事件，允许 frontend 向用户显示上传进度。Agents 应在上传过程中定期调用此 callback，例如在每次发送数据块之后。
 
-## 备份前后操作
+## 预操作和后操作
 
-当 Home Assistant 创建备份时，可能需要暂停集成中的某些操作，或者先导出数据，以确保之后能够正确恢复。
+当 Home Assistant 正在创建备份时，可能需要暂停集成中的某些操作，或 dump 数据以便正确恢复。
 
-这可以通过在 `backup.py` 中添加两个函数（`async_pre_backup` 和 `async_post_backup`）来实现。
+这是通过在 `backup.py` 中添加两个函数（`async_pre_backup` 和 `async_post_backup`）来完成的。
 
 ### 添加支持
 
-为新集成添加备份支持的最快方式，是使用内置脚手架模板。在 Home Assistant 开发环境中，运行 `python3 -m script.scaffold backup` 并按照提示操作。
+为新集成添加备份支持的最快方法是使用我们内置的 scaffold 模板。从 Home Assistant 开发环境运行 `python3 -m script.scaffold backup` 并按照说明操作。
 
-如果你更希望手动完成，请在集成目录中创建一个名为 `backup.py` 的新文件，并实现以下方法：
+如果你更喜欢手动方式，请在集成文件夹中创建一个名为 `backup.py` 的新文件，并实现以下方法：
 
 ```python
 from homeassistant.core import HomeAssistant

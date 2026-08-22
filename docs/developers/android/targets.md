@@ -1,26 +1,24 @@
 ---
-title: "安卓目标"
-description: '本文档概述了 Home Assistant 应用程序支持的各种 Android 目标。每个目标都有其特定的要求和考虑因素。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "Android 目标"
 sidebar_label: "目标"
 ---
-# 安卓目标
 
 ## Android 目标
 
-本文档概述了 Home Assistant 应用程序支持的各种 Android 目标。每个目标都有其特定的要求和考虑因素。
+本文档概述了 Home Assistant 应用支持的各种 Android 目标。每个目标都有自己特定的要求和注意事项。
 
 ## 📱 应用（主要目标）
 
-主要目标基于 Gradle `:app` 模块。它支持**最低 API 级别为 21**。这是大多数用户使用的主要应用程序。
+主要目标基于 Gradle `:app` 模块。它支持**最低 API 级别 21**。这是大多数用户主要使用的应用。
 
-## 🚗 汽车
+## 🚗 Automotive
 
-汽车目标也基于 `:app` 模块，但包括针对汽车用例定制的特定清单条目。它与主应用程序共享相同的源代码并支持**最低 API 级别为 29**。
+Automotive 目标也基于 `:app` 模块，但包含了专门为 automotive 用例定制的 manifest 条目。它与主应用共享相同的源代码，并支持**最低 API 级别 29**。
 
-## 📺 电视
+## 📺 TV
 
-该应用程序可以安装在 Android TV 上，但目前导航体验并不理想。为了提供更好的体验，需要专用的 Gradle 模块和改进的导航支持。
+该应用可以安装到 Android TV 上，尽管目前的导航体验并不理想。为了提供更好的体验，需要专门的 Gradle 模块和改进的导航支持。
 
-## ⌚ 穿戴操作系统
+## ⌚ Wear OS
 
-Wear OS 目标将 Home Assistant 功能引入可穿戴设备。它支持**最低 API 级别为 26**。它是**专用应用程序**，但它需要移动应用程序来登录和连接到服务器。
+Wear OS 目标将 Home Assistant 功能带入可穿戴设备。它支持**最低 API 级别 26**。它是一个**独立的应用**，但在 onboarding 和连接到服务器时需要移动应用。

@@ -1,25 +1,23 @@
 ---
-title: "设备 自动化"
-description: '我们目前正在探索 设备 自动化的替代方案。现有的 设备 自动化将继续工作，但新的 设备 自动化将不被接受。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "设备自动化"
 sidebar_label: 介绍
 ---
-# 设备 自动化
 
 :::warning
-我们目前正在探索 设备 自动化的替代方案。现有的 设备 自动化将继续工作，但新的 设备 自动化将不被接受。
+我们目前正在探索 device automations 的替代方案。现有的 device automations 将继续工作，但新的 device automations 将不再被接受。
 :::
 
-设备 自动化在 Home Assistant 的 Core 概念之上为用户提供了一个以 设备 为中心的层。创建自动化时，用户不再需要处理状态和事件等 Core 概念。相反，他们将能够选择 设备，然后从预定义的触发器、条件和操作列表中进行选择。
+Device Automations 在 Home Assistant 的核心概念之上为用户提供了以设备为中心的抽象层。在创建自动化时，用户不再需要直接处理 state 和 event 等核心概念。相反，他们可以选择一个设备，然后从预定义的 trigger、condition 和 action 列表中进行选择。
 
-集成 可以通过公开函数来生成预定义的触发器、条件、操作并具有可以侦听触发器、检查条件并执行操作的函数来挂钩该系统。
+集成可以通过暴露生成预定义 trigger、condition、action 的函数，以及能够监听 trigger、检查 condition 并执行 action 的函数来接入该系统。
 
-设备 自动化不会暴露额外的功能，而是用户不必学习新概念的一种方式。 设备 自动化在幕后使用事件、状态和服务操作助手。
+Device automations 并未提供额外的功能，而是让用户无需学习新概念的一种方式。Device automations 在底层使用了 event、state 和 service action 的辅助工具。
 
-### 二次 设备 自动化
+### 次要设备自动化
 
-某些 设备 可能会暴露大量 设备 自动化。为了不让用户感到不知所措，可以将 设备 自动化标记为次要自动化。标记为次要的 设备 自动化仍将向用户显示，但可能会在其他 设备 自动化之后显示，或者可能要求用户选择“显示更多”选项或类似选项。
+某些设备可能会暴露大量的 device automation。为了避免给用户带来过多负担，可以将某个 device automation 标记为 secondary。被标记为 secondary 的 device automation 仍然会展示给用户，但可能会在其他 device automation 之后展示，或者要求用户选择"显示更多"选项或类似操作。
 
-如果 设备 自动化通过 `entity_id` 键引用 实体，并且引用的 实体 被隐藏或者引用的 实体 的 实体 类别不是 `None`，则辅助标志将自动设置为 `True`。下面的示例显示如何将 设备 自动化标记为辅助自动化。
+如果 device automation 通过 `entity_id` 键引用了一个实体，那么当被引用的实体被隐藏时，或者当被引用实体的 entity category 不是 `None` 时，secondary 标志将自动设置为 `True`。下面的示例展示了如何将 device automation 标记为 secondary。
 
 ```python
 from homeassistant.const import (

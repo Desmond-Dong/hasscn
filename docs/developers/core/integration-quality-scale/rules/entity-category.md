@@ -1,19 +1,18 @@
 ---
-title: "实体被正确分配 EntityCategory"
-description: '当默认类别不合适时，应为实体适当分配EntityCategory，以确保它们被正确分类并且可以轻松识别。 例如，实体类别用于自动生成的仪表板。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "entity 分配了适当的 EntityCategory"
+sidebar_label: 🥇 entity-category
 ---
-# 实体被正确分配 EntityCategory
 
-## 推理
+## 理由
 
-当默认类别不合适时，应为实体适当分配EntityCategory，以确保它们被正确分类并且可以轻松识别。
-例如，实体类别用于自动生成的仪表板。
+entity 应分配适当的 EntityCategory，以确保在默认 category 不适当时，它们能被正确分类并容易被识别。
+entity category 用于例如自动生成的 dashboard。
 
-## 实施示例
+## 示例实现
 
-在此示例中，我们有一个返回诊断值的传感器。
+在本示例中，我们有一个返回诊断值的 sensor。
 
-ZZ保护0ZZ
+`sensor.py`
 ```python {4} showLineNumbers
 class MySensor(SensorEntity):
     """Representation of a sensor."""
@@ -23,10 +22,10 @@ class MySensor(SensorEntity):
     def __init__(self, ...) -> None:
 ```
 
-## 其他资源
+## 附加资源
 
-要了解有关北极属性的更多信息，请查看有关它的[documentation](/developers/core/entity#registry-properties)。
+要了解有关 registry properties 的更多信息，请参阅[文档](/developers/core/entity#registry-properties)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。

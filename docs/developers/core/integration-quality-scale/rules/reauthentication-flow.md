@@ -1,6 +1,6 @@
 ---
-title: "需要通过界面重新验证"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "重新身份验证需要通过 UI 可用"
+sidebar_label: 🥈 reauthentication-flow
 related_rules:
   - config-flow
   - test-before-configure
@@ -8,29 +8,27 @@ related_rules:
   - test-before-setup
   - reconfiguration-flow
 ---
-# 需要通过界面重新验证
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-用户可能会更改设备或服务的密码，但忘记他们的设备或帐户仍链接到 Home Assistant。
-为了避免用户必须删除配置条目并重新添加它，我们启动重新身份验证流程。
-在此流程中，用户可以提供从现在开始使用的新凭据。
+用户可能会更改设备或服务密码，却忘记设备或账户仍然与 Home Assistant 关联。
+为了避免用户必须删除配置条目并重新添加，我们会启动重新身份验证流程。
+在此流程中，用户可以提供新的凭据以供后续使用。
 
-这是一种非常用户友好的方式，让用户知道他们需要采取行动并更新他们的凭据。
+这是一种非常友好的方式，让用户知道他们需要采取行动并更新凭据。
 
-## 实施示例
+## 示例实现
 
-在下面的示例中，我们展示了一个身份验证流程，允许用户使用新的 API 令牌重新进行身份验证。
-当我们收到新令牌时，我们会检查是否可以连接到服务，以避免用户输入无效令牌。
-如果连接成功，我们将使用新令牌更新配置条目。
+在下面的示例中，我们展示了一个身份验证流程，允许用户使用新的 API token 重新验证身份。
+当我们收到新 token 时，会检查是否能够连接到服务，以避免用户输入无效的 token。
+如果连接成功，我们将使用新 token 更新配置条目。
 
-ZZ保护0ZZ:
+`config_flow.py`:
 ```python {6-11,13-35} showLineNumbers
 class MyConfigFlow(ConfigFlow, domain=DOMAIN):
     """My config flow."""
-    
+
     host: str
 
     async def async_step_reauth(
@@ -94,13 +92,13 @@ class MyConfigFlow(ConfigFlow, domain=DOMAIN):
         )
 ```
 
-## 其他资源
+## 更多资源
 
-有关处理过期凭据的更多信息，请检查 [documentation](/developers/integration_setup_failures#handling-expired-credentials)。
+关于处理过期凭据的更多信息，请查阅[相关文档](/developers/integration_setup_failures#handling-expired-credentials)。
 
-## 例外情况
+## 例外
 
-如果集成不需要任何形式的身份验证，则此规则不适用。
+如果集成不需要任何身份验证，本规则不适用。
 
 ## 相关规则
 

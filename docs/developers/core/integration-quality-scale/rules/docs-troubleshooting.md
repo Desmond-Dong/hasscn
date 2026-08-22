@@ -1,50 +1,49 @@
 ---
-title: "文档应提供故障排查信息"
-description: '我们应提供如何解决常见问题的说明。 如果可以，故障排查内容应包括症状描述，以及解决问题所需采取的步骤。 这能减少支持请求，并改善用户体验。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "文档提供了故障排除信息"
+sidebar_label: 🥇 docs-troubleshooting
 ---
-# 文档应提供故障排查信息
 
 ## 理由
 
-我们应提供如何解决常见问题的说明。
-如果可以，故障排查内容应包括症状描述，以及解决问题所需采取的步骤。
-这能减少支持请求，并改善用户体验。
+我们应提供解决常见问题的说明。
+在可能的情况下，故障排除主题应包含症状描述以及解决问题所需的步骤。
+这能减少支持请求的数量，并改善用户体验。
 
-## 实现示例
+## 示例实现
 
 ```markdown showLineNumbers
-## Troubleshooting
+## 故障排除
 
-### Can’t set up the device
+### 无法设置设备
 
-#### Symptom: “This device can’t be reached”
+#### 症状："无法访问此设备"
 
-When trying to set up the integration, the form shows the message “This device can’t be reached”.
+在尝试设置集成时，表单显示消息"无法访问此设备"。
 
-##### Description
+##### 说明
 
-This means the settings on the device are incorrect, since the device needs to be enabled for local communication.
+这意味着设备的设置不正确，因为设备需要启用本地通信功能。
 
-##### Resolution
+##### 解决方法
 
-To resolve this issue, try the following steps:
+要解决此问题，请尝试以下步骤：
 
-1. Make sure your device is powered up (LEDs are on).
-2. Make sure your device is connected to the internet:
-   - Make sure the app of the manufacturer can see the device.
-3. Make sure the device has the local communication enabled:
-   - Check the device’s settings.
-   - Check the device’s manual.
+1. 确保设备已上电（LED 亮起）。
+2. 确保设备已连接到互联网：
+   - 确保制造商的应用能够看到该设备。
+3. 确保设备已启用本地通信：
+   - 检查设备的设置。
+   - 检查设备的用户手册。
 ...
- 
-### I can't see my devices
-Make sure the devices are visible and controllable via the manufacturer's app.
-If they are not, check the device's power and network connection.
 
-### The device goes unavailable after a day
-Make sure you turned off the device's power-saving mode.
+### 我看不到我的设备
+请确保设备可通过制造商的应用看到并控制。
+如果不能，请检查设备的电源和网络连接。
+
+### 设备一天后变为不可用
+请确保你已关闭设备的省电模式。
 ```
 
 ## 例外
 
-此规则没有例外。
+本规则没有例外。

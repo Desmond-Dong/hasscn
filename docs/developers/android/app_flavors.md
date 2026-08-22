@@ -1,47 +1,45 @@
 ---
-title: "安卓风格"
-description: '仅:app 和:automotive 模块受这些风格影响。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: "品味"
+title: "Android 风味"
+sidebar_label: "Flavors"
 ---
-# 安卓风格
 
 :::info
-仅`:app` 和`:automotive` 模块受这些风格影响。
+只有 `:app` 和 `:automotive` 模块受这些 flavors 影响。
 :::
 
 ## 概述
 
-Android应用采用三种风格构建：`full` 和 `minimal`。这些风格使我们能够满足不同用户的喜好。本文档解释了各种风格之间的差异、它们的功能以及它们实现背后的基本原理。
+Android 应用构建了两个 flavor：`full` 和 `minimal`。这些 flavor 使我们能够迎合不同的用户偏好。本文档解释了 flavor 之间的区别、它们的功能以及实现它们背后的原因。
 
-## 应用风格程序
+## App 变体
 
 ### 共享代码
 
-我们努力尝试使集中源码的所有内容与风格无关`main`，以便每个人都可以从新功能中受益。如果可以的话，我们将始终支持开源解决方案。
+我们尽量将所有内容都放在 flavor 无关的 `main` source set 中，以便所有人都能受益于新功能。只要有可能，我们总是优先选择开源方案。
 
-### 风格外观
+### 完整变体
 
-`full` 风格使用**谷歌播放服务**，支持以下功能：
+`full` flavor 使用 **Google Play Services**，启用以下功能：
 
-- 位置追踪
-- 群众通知
+- 位置跟踪
+- Push 通知
 - 与 Wear OS 设备通信
 
-这种口味是通过 Google Play 商店分发的。
+该 flavor 通过 Google Play Store 分发。
 
-### 最小的味道
+### 精简变体
 
-`minimal`风格专为喜欢或不需要带**谷歌播放服务**的应用程序的用户而设计。它有以下限制：
+`minimal` flavor 旨在为偏好或需要无 **Google Play Services** 应用的场景设计。它具有以下限制：
 
-- ❌[presence detection](https://www.home-assistant.io/getting-started/presence-detection/#adding-zone-presence-detection-with-a-mobile-phone) 没有位置跟踪
-- ❌使用集体无通知（通过WebSocket [local notification](https://companion.home-assistant.io/docs/notifications/notification-local#requirements)时）
-- ❌ 无法与 Wear OS 设备通信
-- ❌没有崩溃报告
+- ❌ 不支持 [存在检测](https://www.home-assistant.io/getting-started/presence-detection/#adding-zone-presence-detection-with-a-mobile-phone) 的位置跟踪
+- ❌ 不支持 push 通知（除通过 WebSocket 使用 [本地通知](https://companion.home-assistant.io/docs/notifications/notification-local#requirements) 外）
+- ❌ 不支持与 Wear OS 设备通信
+- ❌ 不支持崩溃报告
 
-尽管有这些限制，`minimal`风格使我们能够向更广泛的受众提供该应用程序，包括没有Google Play服务的设备的用户。如果找到Google Play服务功能的小型开源替代方案，则考虑将它们存在于可以存在于`minimal`风格中以消除存在这些限制。
+尽管有这些限制，`minimal` flavor 使我们能够向更广泛的受众提供应用，包括没有 Google Play Services 的设备用户。如果找到了可行的替代 Google Play Services 功能的开源方案，可能会考虑将其纳入 `minimal` flavor 以移除这些限制。
 
-使用这种味道，例如：
+该 flavor 被用于以下场景：
 
-- 用于手动下载APK或通过F-Droid。
-- 适用于Meta Quest 设备。
-- 适用于OEM的汽车制造。
+- 手动下载 APK 或通过 F-Droid 获取。
+- Meta Quest 设备。
+- OEM 的 Automotive 构建。

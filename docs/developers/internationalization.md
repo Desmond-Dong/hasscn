@@ -1,21 +1,19 @@
 ---
 title: "国际化"
-description: 'Home Assistant 国际化项目包括准备 平台 和 前端 进行本地化，以及本地化字符串的实际翻译。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 国际化
 
-Home Assistant 国际化项目包括准备 平台 和 前端 进行本地化，以及本地化字符串的实际翻译。
+Home Assistant 的国际化项目包括为平台及前端准备本地化环境，以及实际翻译本地化字符串。
 
-某些组件和 平台 将具有需要专门针对该 平台 进行本地化的字符串。这些字符串在 Core 中进行管理[家庭助理](https://github.com/home-assistant/core)存储库。 Home Assistant 后端 将根据运行实例中加载的组件向客户端提供字符串。
+某些 components 和 platforms 会包含需要针对该平台专门本地化的字符串。这些字符串在核心的 [home-assistant](https://github.com/home-assistant/core) 仓库中进行管理。Home Assistant 后端会根据运行实例中加载的 components，向客户端提供相应的字符串。
 
-还有仅存在于 前端 上的可本地化字符串。这些字符串在[家庭助理 前端](https://github.com/home-assistant/frontend)存储库。这些字符串与 前端 一起存储，并且不依赖于 后端 配置。
+还有一些可本地化的字符串仅存在于前端。这些字符串在 [home-assistant frontend](https://github.com/home-assistant/frontend) 仓库中进行管理。这些字符串与前端一起存储，不依赖于后端配置。
 
-|类型|地点|
+| Type              | Location |
 | ----------------- | -------- |
-|实体 状态|Core|
-|配置流s|Core|
-|选项流s|Core|
-|设备自动化|Core|
-|UI 中的文本|前端|
+| Entity states     | Core     |
+| Config flows      | Core     |
+| Options flows     | Core     |
+| Device automation | Core     |
+| Text in UI        | Frontend |
 
-我们的字符串是由社区使用在线翻译工具翻译的[洛卡利斯](https://lokalise.co/).
+我们的字符串由社区使用在线翻译工具 [Lokalise](https://lokalise.com/) 进行翻译。

@@ -1,38 +1,37 @@
 ---
-title: "该文档描述了所有集成安装参数"
-description: '设置集成时，没有什么比不知道需要哪些信息更令人沮丧的了。 为了改善用户体验，文档应描述安装过程中所需的所有参数。 这应该有助于用户在开始安装过程之前收集所有必要的信息。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "文档描述了集成所有的安装参数"
+sidebar_label: 🥈 docs-installation-parameters
 ---
-# 该文档描述了所有集成安装参数
 
-## 推理
+## 原理说明
 
-设置集成时，没有什么比不知道需要哪些信息更令人沮丧的了。
-为了改善用户体验，文档应描述安装过程中所需的所有参数。
-这应该有助于用户在开始安装过程之前收集所有必要的信息。
+在设置集成时，没有什么比不知道需要填写哪些信息更令人沮丧了。
+为了提升用户体验，文档应描述安装过程中所需的所有参数。
+这将帮助用户在开始安装过程之前收集好所有必要的信息。
 
-## 实施示例
+## 示例实现
 
-如果通过配置流使用集成:
+如果集成通过 config flow 使用：
 
 ```markdown showLineNumbers
 {% configuration_basic %}
-Host:
-    description: "The IP address of your bridge. You can find it in your router or in the Integration app under **Bridge Settings** > **Local API**."
-Local access token:
-    description: "The local access token for your bridge. You can find it in the Integration app under **Bridge Settings** > **Local API**."
+Host：
+    description: "您的 bridge 的 IP 地址。您可以在路由器中找到，或在集成应用的 **Bridge Settings** > **Local API** 下找到。"
+Local access token：
+    description: "您的 bridge 的本地访问令牌。您可以在集成应用的 **Bridge Settings** > **Local API** 下找到。"
 {% endconfiguration_basic %}
 ```
 
-如果通过 `configuration.yaml` 中的 YAML 集成设置:
+如果集成通过 `configuration.yaml` 中的 YAML 设置：
 
 ```markdown showLineNumbers
 {% configuration %}
-Host:
-    description: "The IP address of your bridge. You can find it in your router or in the Integration app under **Bridge Settings** -> **Local API**."
+Host：
+    description: "您的 bridge 的 IP 地址。您可以在路由器中找到，或在集成应用的 **Bridge Settings** -> **Local API** 下找到。"
     required: false
     type: string
-Local access token:
-    description: "The local access token for your bridge. You can find it in the Integration app under **Bridge Settings** -> **Local API**."
+Local access token：
+    description: "您的 bridge 的本地访问令牌。您可以在集成应用的 **Bridge Settings** -> **Local API** 下找到。"
     required: false
     type: string
 {% endconfiguration %}
@@ -40,4 +39,4 @@ Local access token:
 
 ## 例外情况
 
-这条规则没有例外。
+本规则没有例外。

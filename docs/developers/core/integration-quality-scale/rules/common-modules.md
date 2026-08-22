@@ -1,27 +1,26 @@
 ---
-title: "将通用模式放置在通用模块中"
-description: 'Home Assistant 代码库有一些随着时间的推移而产生的常见模式。 例如，大多数新集成都使用协调器来集中数据获取。 协调器应放置在 coordinator.py 中。 这提高了集成之间的一致性，并且更容易找到特定集成的协调员。 本页属于 Home Assistant 开发者文档。'
+title: "将通用模式放在通用模块中"
+sidebar_label: 🥉 common-modules
 ---
-# 将通用模式放置在通用模块中
 
-## 推理
+## 理由
 
-Home Assistant 代码库有一些随着时间的推移而产生的常见模式。
-例如，大多数新集成都使用协调器来集中数据获取。
-协调器应放置在 `coordinator.py` 中。
-这提高了集成之间的一致性，并且更容易找到特定集成的协调员。
+Home Assistant 的代码库中有一些随时间积累而来的通用模式。
+例如，大多数新集成都使用一个 coordinator 来集中处理数据获取。
+coordinator 应放置在 `coordinator.py` 中。
+这提高了集成之间的一致性，并更容易找到某个特定集成的 coordinator。
 
-第二个常见模式是基本实体。
-由于许多集成提供了更多类型的实体，因此基本实体对于减少代码重复非常有用。
-基础实体应放置在`entity.py`中。
+第二个通用模式是 base entity。
+由于很多集成会提供多种类型的 entity，使用 base entity 可以有效减少代码重复。
+base entity 应放置在 `entity.py` 中。
 
-为提高集成之间的一致性所做的努力对代码库的质量和开发人员体验产生了积极的影响。
+为提高集成之间一致性所做的努力，对代码库的质量和开发者体验都有积极影响。
 
-## 实施示例
+## 示例实现
 
-示例中，我们有一个存储在 `coordinator.py` 中的协调器和一个存储在 `entity.py` 中的基本实体。
+在本示例中，我们有一个存储在 `coordinator.py` 中的 coordinator，以及一个存储在 `entity.py` 中的 base entity。
 
-ZZ保护0ZZ
+`coordinator.py`
 ```python showLineNumbers
 class MyCoordinator(DataUpdateCoordinator[MyData]):
     """Class to manage fetching data."""
@@ -37,7 +36,7 @@ class MyCoordinator(DataUpdateCoordinator[MyData]):
         self.client = client
 ```
 
-ZZ保护0ZZ
+`entity.py`
 ```python showLineNumbers
 class MyEntity(CoordinatorEntity[MyCoordinator]):
     """Base entity for MyIntegration."""
@@ -50,7 +49,6 @@ class MyEntity(CoordinatorEntity[MyCoordinator]):
         self._attr_device_info = ...
 ```
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
-
+本规则没有例外。

@@ -1,28 +1,26 @@
 ---
 title: "所有集成模块的测试覆盖率超过 95%"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+sidebar_label: 🥈 test-coverage
 related_rules:
   - config-flow-test-coverage
 ---
-# 所有集成模块的测试覆盖率超过 95%
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-由于我们支持许多不同的集成，因此我们并没有所有设备或服务都可用于实际测试。
-为了确保我们不会破坏任何东西，在接受代码更改时，我们需要对所有集成模块进行良好的测试覆盖率。
-这可以防止引入错误和回归。
+由于我们支持大量的不同集成，我们并非拥有每一个设备或服务来进行手动测试。
+为确保在接受代码更改时不会破坏任何功能，我们需要对所有集成模块有良好的测试覆盖率。
+这可以防止 bug 和回归的引入。
 
-它还允许新开发人员了解代码库并进行更改，而不会破坏任何现有用例。
+这也让新开发者能够理解代码库，并在不破坏任何现有用例的情况下进行更改。
 
-## 其他资源
+## 更多资源
 
-有关测试以及如何计算测试覆盖率的更多信息，请参阅 [Testing your code](/developers/development_testing) 页面。
+关于测试以及如何计算测试覆盖率的更多信息，请参见[Testing your code](/developers/development_testing)页面。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

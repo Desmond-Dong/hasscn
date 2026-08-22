@@ -1,0 +1,55 @@
+---
+author: Bram Kragten
+authorURL: https://github.com/bramkragten
+authorTwitter: bramkragten
+title: "Lazy-loading more-info controls"
+---
+
+在 0.115 中，我们将 more info controls 转换为 lazy-loaded。这样做是因为 more info dialog 总是在页面加载的早期阶段加载。每个 domain 都可以有自己的 controls，而且它们可能很重。我们不需要在页面加载时拥有所有这些 elements，因此我们决定仅在需要时加载它们。
+
+我们收到 Lovelace custom card 开发者的反馈，称这破坏了他们的 cards，因为并非所有 elements 都可用了。虽然我们不支持在 custom cards 中使用内部 elements（原因见下文），但我们决定在 0.115 中撤销此变更。
+在 0.116 中，我们将重新添加 more info dialog controls 的 lazy loading。为了帮助 Lovelace custom card 开发者，我们使我们用于 lazy-load more info controls 的函数可供 custom card 开发者使用。
+这意味着如果你的 card 需要某个 domain 的 controls，你可以加载它。
+
+:::info
+请注意，我们以任何方式都不支持此功能。我们不保证未来更新中会保留相同的 elements，依赖我们的 elements 时将发生 breaking changes。
+:::
+
+一个加载 `light` domain 的 more info controls 的示例：
+```js
+const helpers = await loadCardHelpers();
+helpers.importMoreInfoControl("light");
+```
+
+## 我们为什么要这样做？
+
+我们总是尝试使前端尽可能快。不仅是在拥有光纤网络的速度极快的台式机上，还是在只有 3G 的低端手机上。
+
+我们尝试优化的一件事是加载代码。加载的代码越少，加载速度越快，我们就可以越早开始渲染页面。如果我们不加载所有内容，也会使用更少的内存。
+然而存在权衡，如果我们总是只想加载需要的部分，就必须能够单独加载每个 element。这将意味着大量小型网络请求，由于网络请求的开销，最终比加载稍多但请求次数更少要慢。
+
+因此，这总是在 chunk 大小和所需 chunk 数量之间寻找合适的平衡。我们的代码拆分为 chunks 是通过 bundler 完成的。目前，我们使用 Webpack 来完成这一点。
+
+一些 custom Lovelace 开发者问我们，为什么不能将所有内部使用的 elements 暴露给 custom cards。这仅仅是因为你需要的 element 可能尚未加载，因为它之前并不需要。
+
+使这变得格外困难的是，我们使用 custom elements。Custom elements 只能定义一次，如果你尝试再次定义它，将会报错。这意味着我们无法同时拥有较大的 chunks 和单独的 elements，因为第二次加载时会报错。
+
+如果我们希望实现这一点，要么必须在首次加载时加载每个 component（这将使首次加载非常慢），要么必须将每个 component 拆分为自己的 chunk（这将导致大量小型网络请求，从而降低体验）。
+
+此外，我们内部使用的 elements 本就不打算由外部开发者使用，其 API 未记录也不受支持，随时可能破坏。我们可以在任何 release 中决定替换某个 element，因为有更好的 element 或新的使用场景。或者更改 API，就像我们最近对 `chart` element 所做的那样。如果我们必须支持所有内部使用的 elements，就无法保持目前的速度。我们开发的是一个应用，elements 只是我们的构建模块。
+
+## 那外部 elements 呢？
+
+我们在前端中使用外部 custom elements，如 Google 的 [Material Web Components](https://github.com/material-components/material-components-web-components)。虽然我们很希望你使用相同的 elements 以提供统一的体验，但我们不能建议这样做。
+
+就像我们自己的 elements 一样，外部 elements 也是我们 code splitted chunks 的一部分，并且很可能被 lazy-loaded。这意味着它们不会一直可用，可能会在稍后加载。
+这意味着如果 custom card 在需要时因为 `mwc` element 不可用而加载并定义了它，而我们之后在 lazy-loaded 时尝试这样做，Home Assistant 前端就会遇到错误。
+
+遗憾的是，目前对此没有技术解决方案。有一些解决方案，如来自 open-wc 的 [scoped elements](https://open-wc.org/docs/development/scoped-elements/)，但它们在大多数情况下不起作用，因为导入的 element 要么自行注册，要么定义了无法被 scoping 的 sub-elements。
+关于 [Scoped Custom Element Definitions](https://github.com/w3c/webcomponents/issues/716) 的提案讨论，可能会解决这个问题，但在提案被接受（如果能被接受的话）之前，可能需要很长时间才能在所有我们支持的浏览器中可用。
+
+## 有解决方案吗？
+
+有没有解决所有这些问题的方案？使 custom cards 能够提供相同的统一用户体验，而无需担心每次 release 都有 breaking changes 的风险？
+
+我们看到的最佳解决方案是一套由 custom card 社区创建的 elements。这套 elements 将拥有自己的 namespace，不会与 Home Assistant 使用的 elements 的 namespace 冲突。所有 custom cards 都可以使用这些 elements，而无需担心 breaking changes 的风险。

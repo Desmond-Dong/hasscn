@@ -1,20 +1,14 @@
 ---
 title: "权限"
-description: '这是一项实验性功能，目前尚未启用，也不会被强制执行。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 权限
 
-:::info
-这是一项实验性功能，目前尚未启用，也不会被强制执行。
-:::
+Permissions 限制用户可以访问或控制的内容。Permissions 附加到 groups 上，用户可以成为其成员。用户所属的所有 groups 的 permissions 合并后，决定用户可以查看或控制什么。
 
-权限用于限制用户可以访问或控制的内容。权限附加在组上，用户可以属于一个或多个组。用户所属全部组的权限合并后，决定了该用户可以查看或控制什么。
+Permissions 不适用于被标记为 "owner" 的用户。该用户将始终拥有对一切的访问权限。
 
-权限不适用于被标记为“所有者”的用户。此类用户始终拥有对所有内容的访问权限。
+## 通用权限结构
 
-## 一般权限结构
-
-策略是在根层级由不同权限类别组成的字典。在当前实现中，这仅适用于实体。
+Policies 是字典，在根级别由不同类别的 permissions 组成。在当前的实现中，这仅限于 entities。
 
 ```python
 {
@@ -24,7 +18,7 @@ description: '这是一项实验性功能，目前尚未启用，也不会被强
 }
 ```
 
-每个类别还可以继续细分为描述该类别不同部分的子类别。
+每个 category 可以进一步拆分为描述该 category 各部分的 subcategories。
 
 ```python
 {
@@ -39,15 +33,15 @@ description: '这是一项实验性功能，目前尚未启用，也不会被强
 }
 ```
 
-如果省略某个类别，则表示用户没有该类别下的任何权限。
+如果某个 category 被省略，用户将没有该 category 的权限。
 
-定义策略时，任意层级中的任意字典值都可以替换为 `True` 或 `None`。`True` 表示授予权限，`None` 表示使用默认值，也就是拒绝访问。
+在定义 policy 时，任何位置的任何字典值都可以用 `True` 或 `None` 替换。`True` 表示授予权限，`None` 表示使用默认值，即拒绝访问。
 
 ## 实体
 
-可以通过 `entity_ids`、`device_ids`、`area_ids` 和 `domains` 这些子类别，在单个实体或整个域的层级上设置实体权限。您既可以将值设为 `True` 来授予全部权限，也可以针对单个实体分别指定 `read`、`control`、`edit` 权限。
+Entity permissions 可以通过 `entity_ids`、`device_ids`、`area_ids` 和 `domains` 这些 subcategories 在按 entity 和按 domain 的基础上进行设置。你可以通过将值设为 `True` 来授予所有访问权限，也可以使用 "read"、"control"、"edit" permissions 逐个指定每个 entity。
 
-系统会按以下顺序返回第一个匹配结果：`entity_ids`、`device_ids`、`area_ids`、`domains`、`all`。
+系统将按照 `entity_ids`、`device_ids`、`area_ids`、`domains`、`all` 的顺序返回第一个匹配的结果。
 
 ```json
 {
@@ -67,13 +61,13 @@ description: '这是一项实验性功能，目前尚未启用，也不会被强
 
 ## 合并策略
 
-如果用户属于多个组，这些组的权限策略会在运行时合并为一个策略。合并时，系统会遍历字典的每一层，并按以下规则比较各来源的值：
+如果用户是多个 groups 的成员，这些 groups 的 permission policies 将在运行时合并为一个单一的 policy。在合并 policies 时，我们将检查字典的每一层，并使用以下方法对每个来源的值进行比较：
 
-1. 如果其中任何一个值为 `True`，则合并后的值将变为 `True`。
-2. 如果任一值是字典，则合并结果也会是一个字典，并继续按相同规则递归处理其中的每个值。
-3. 如果所有值都是 `None`，则合并后的值将变为 `None`。
+1. 如果任何值为 `True`，则合并后的值为 `True`。
+2. 如果任何值为字典，则合并后的值成为一个通过递归使用此方法检查每个值而创建的字典。
+3. 如果所有值都是 `None`，则合并后的值为 `None`。
 
-例如：
+来看一个示例：
 
 ```python
 {
@@ -93,7 +87,7 @@ description: '这是一项实验性功能，目前尚未启用，也不会被强
 }
 ```
 
-合并后的结果为：
+合并后变为
 
 ```python
 {
@@ -105,17 +99,17 @@ description: '这是一项实验性功能，目前尚未启用，也不会被强
 
 ## 检查权限
 
-目前有两类权限检查：一类是检查用户是否可以对实体执行 `read`、`control`、`edit` 操作；另一类是检查用户是否为管理员，从而判断其是否可以更改相关配置。
+我们目前有两种不同的 permission checks：用户能否对 entity 执行 read/control/edit 操作，以及用户是否为 admin 从而被允许更改此 configuration setting。
 
-某些 API 始终对所有用户开放，但会根据权限限制可访问的范围，例如模板渲染。
+某些 APIs 对所有用户始终可访问，但可能根据 permissions 提供有限的范围，例如渲染 template。
 
 ### 检查权限
 
-要检查权限，您需要先拿到用户对象。有了用户对象后，权限检查就很直接。
+要检查 permission，你需要能够访问 user object。一旦有了 user object，检查 permission 就很容易了。
 
 ```python
 from homeassistant.exceptions import Unauthorized
-from homeassistant.permissions.const import POLICY_READ, POLICY_CONTROL, POLICY_EDIT
+from homeassistant.auth.permissions.const import POLICY_READ, POLICY_CONTROL, POLICY_EDIT
 
 # Raise error if user is not an admin
 if not user.is_admin:
@@ -128,11 +122,11 @@ if not user.permissions.check_entity(entity_id, POLICY_CONTROL):
     raise Unauthorized()
 ```
 
-### 上下文对象
+### context 对象
 
-Home Assistant 中的所有服务调用、触发事件和状态变更都带有一个上下文对象。该对象可用于追踪事件与操作的来源，并包含用于权限检查的用户 ID。
+Home Assistant 中的所有 service actions、fired events 和 states 都有一个 context object。该对象允许我们将更改归因于 events 和 actions。这些 context objects 还包含一个 user id，用于检查 permissions。
 
-对于权限检查而言，关键在于：代表用户执行的操作必须在带有用户 ID 的上下文中进行。如果您处于服务处理函数中，应复用传入的 `call.context`。如果您位于 WebSocket API 或 REST API 端点中，则应使用正确的用户来创建上下文：
+对于 permission checking 来说，至关重要的是，代表用户执行的操作必须使用包含用户 ID 的 context 来完成。如果你在 service action handler 中，应该重用传入的 context `call.context`。如果你在 WebSocket API 或 Rest API endpoint 中，应该使用正确的用户创建 context：
 
 ```python
 from homeassistant.core import Context
@@ -142,40 +136,37 @@ await hass.services.async_call(
 )
 ```
 
-### 如果权限检查失败
+### 权限检查失败时
 
-当检测到未获授权的操作时，应抛出 `homeassistant.exceptions.Unauthorized` 异常。该异常会终止当前操作，并通知用户其请求未获授权。
+当你检测到 unauthorized action 时，应该抛出 `homeassistant.exceptions.Unauthorized` 异常。此异常将取消当前操作并通知用户其操作未被授权。
 
-`Unauthorized` 异常支持多个参数，用于描述失败的权限检查。所有字段都是可选的。
+`Unauthorized` 异常有多个参数，用于标识失败的 permission check。所有字段都是可选的。
 
-| # 并非所有操作都有 ID（例如添加配置条目）
-| # 因此我们使用这个后备字段来说明是哪一类权限检查失败
+| Parameter | Description
+| --------- | -----------
+| context | The context of the current call.
+| user_id | The user ID that we tried to operate on.
+| entity_id | The entity ID that we tried to operate on.
+| config_entry_id | The config entry ID that we tried to operate on.
+| perm_category | The permission category that we tested. Only necessary if we don't have an object ID that the user tried to operate on (like when we create a config entry).
+| permission | The permission that we tested, ie `POLICY_READ`.
 
-|字段|说明|
-| --------- | ----------- |
-|`context`|当前调用的上下文。|
-|`user_id`|尝试操作的用户 ID。|
-|`entity_id`|尝试操作的实体 ID。|
-|`config_entry_id`|尝试操作的配置条目 ID。|
-|`perm_category`|所检查的权限类别。只有在没有具体对象 ID 可用时才需要提供，例如创建配置条目时。|
-|`permission`|所检查的权限，例如 `POLICY_READ`。|
+### 保护 service action handler
 
-### 保护服务处理函数
+Actions 允许用户控制 entities 或与整个 integration 进行交互。Service action 使用附加的 context 来查看哪个用户触发了命令。由于使用了 context，重要的是你还要将 call context 传递给所有 service actions。
 
-服务允许用户控制实体，或对整个集成执行操作。服务调用会借助附加上下文判断是哪个用户发起了请求，因此把调用上下文继续传递给后续服务操作也非常重要。
-
-通过实体组件 (`component.async_register_entity_service()`) 注册的所有服务都会自动执行权限检查。
+所有通过 entity component（`component.async_register_entity_service()`）注册的 service actions 将自动进行权限检查。
 
 #### 检查实体权限
 
-您的服务处理函数需要检查其将要操作的每个实体的权限。
+你的 service action handler 需要检查它将操作的每个 entity 的 permissions。
 
 ```python
 from homeassistant.exceptions import Unauthorized, UnknownUser
 from homeassistant.auth.permissions.const import POLICY_CONTROL
 
 
-async def handle_entity_service(call):
+async def handle_entity_service(call: ServiceCall) -> None:
     """Handle a service action call."""
     entity_ids = call.data["entity_id"]
 
@@ -200,30 +191,32 @@ async def handle_entity_service(call):
         # Do action on entity
 
 
-async def async_setup(hass, config):
+async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     hass.services.async_register(DOMAIN, "my_service", handle_entity_service)
     return True
 ```
 
 #### 检查管理员权限
 
-从 Home Assistant 0.90 开始，提供了一个专门的辅助方法，用于注册需要管理员权限的服务。
+有一个特殊的 helper 用于保护需要 admin 访问权限的 service actions。
 
 ```python
-# New in Home Assistant 0.90
-async def handle_admin_service(call):
+from homeassistant.helpers.service import async_register_admin_service
+
+
+async def handle_admin_service(call: ServiceCall) -> None:
     """Handle a service action call."""
     # Do admin action
 
 
-async def async_setup(hass, config):
-    hass.helpers.service.async_register_admin_service(
-        DOMAIN, "my_service", handle_admin_service, vol.Schema({})
+async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
+    async_register_admin_service(
+        hass, DOMAIN, "my_service", handle_admin_service, vol.Schema({})
     )
     return True
 ```
 
-### 保护 REST API 端点
+### 保护 REST API endpoint
 
 ```python
 from homeassistant.core import Context
@@ -252,15 +245,15 @@ class MyView(HomeAssistantView):
         return self.json_message("Done.")
 ```
 
-### 保护 WebSocket API 端点
+### 保护 Websocket API endpoint
 
-在 WebSocket API 端点中，可以通过 `connection.user` 访问当前用户并进行权限检查。如果需要检查管理员权限，可以使用内置的 `@require_admin` 装饰器。
+在 Websocket API endpoint 中验证 permissions 可以通过访问 `connection.user` 来获取用户。如果需要检查 admin 访问权限，可以使用内置的 `@require_admin` decorator。
 
 ```python
 from homeassistant.components import websocket_api
 
 
-async def async_setup(hass, config):
+async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     websocket_api.async_register_command(hass, websocket_create)
     return True
 
@@ -270,7 +263,11 @@ async def async_setup(hass, config):
 @websocket_api.websocket_command(
     {vol.Required("type"): "my-component/my-action",}
 )
-async def websocket_create(hass, connection, msg):
+async def websocket_create(
+    hass: HomeAssistant,
+    connection: ActiveConnection,
+    msg: dict,
+) -> None:
     """Create a user."""
     # Do action
 ```

@@ -1,64 +1,72 @@
 ---
-title: "文档写作风格指南"
-description: 'Home Assistant 文档使用 Markdown 编写，并遵循 GitHub Flavored Markdown 规范(https://github.github.com/gfm/)。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "文档风格指南"
 ---
-# 文档写作风格指南
 
-Home Assistant 文档使用 Markdown 编写，并遵循 [GitHub Flavored Markdown 规范](https://github.github.com/gfm/)。
+Home Assistant 的文档使用 Markdown 编写，遵循 [GitHub Flavored Markdown specification](https://github.github.com/gfm/)。
 
-总体上，文档应遵循 [Microsoft Style Guide](https://learn.microsoft.com/style-guide/welcome/)。
-本页整理了我们额外采用的一些更具体的写作规范。
+总体而言，文档应遵循 [Microsoft Style Guide](https://learn.microsoft.com/style-guide/welcome/)。需要更多细节时，参考 [Merriam-Webster Dictionary](https://www.merriam-webster.com/)。Microsoft Style Guide 本身也使用 Merriam-Webster。本页汇总了我们额外遵循的一些更具体的指导原则。
 
 ## 语言与语气
 
-- 文档原文使用美式英语。
-- 当列表中包含三个及以上项目时，请在连词前使用 serial comma（也称 Oxford comma）。例如："Through the use of additional adapters, Home Assistant allows the use of Zigbee, Z-Wave, and other protocols"。
-- 请遵循基本语法和句法规则，例如句子结尾应使用句号。
-- 保持客观，不使用带有性别偏向、煽动对立、涉及种族歧视或忽视宗教敏感性的表达。不符合这一要求的贡献可能违反我们的 [Code of Conduct](https://github.com/home-assistant/core/blob/master/CODE_OF_CONDUCT.md)。
-- 不要使用 "e.g."，请改用 _for example_、_such as_ 或 _like_。
-- [不要使用 "master/slave"](https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/m/master-slave)。请改用 "client/server"、"leader/follower"、"main/replica" 或 "controller/device" 等替代说法。
-- 品牌名、服务名、协议名、集成名和平台名的大小写必须与官方写法一致。例如应写作 "Z-Wave"，而不是 "Zwave"、"Z-wave"、"Z Wave" 或 "ZWave"；同样应写作 "Input Select"，而不是 "input select" 或 "Input select"。
+- 文档使用美式英语。
+- 在包含三个或更多项的列表中，连词前使用序列逗号（又称 Oxford comma）。例如："Through the use of additional adapters, Home Assistant allows the use of Zigbee, Z-Wave, and other protocols"。
+- 遵循语法和句法规则。例如，句末加句号。
+- 避免过度使用 em dash（AI 生成的内容常出现）。如使用 em dash，请遵循 [Merriam-Webster style](https://www.merriam-webster.com/grammar/em-dash-en-dash-how-to-use)，em dash 两侧不留空格。
+  - 一般来说，可考虑将句子拆分为较短的句子。
+  - 如果 em dash 用于引入列表，改用冒号。
+  - 如果用于插入语，可考虑改用括号。
+- 保持客观，不偏袒任何性别，不引起分裂，不涉及种族或宗教不当内容。不符合此要求的贡献可能违反我们的 [Code of Conduct](https://github.com/home-assistant/core/blob/master/CODE_OF_CONDUCT.md)。
+- 不要使用 "e.g."。改用 _for example_、_such as_ 或 _like_。
+- [不要使用 "master/slave"](https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/m/master-slave)。改用 "client/server"、"leader/follower"、"main/replica" 或 "controller/device" 等替代词。
+- 品牌名、服务名、协议名、集成名和平台名的大小写必须与其官方对应。例如，"Z-Wave"，_不是_ "Zwave"、"Z-wave"、"Z Wave" 或 "ZWave"。同样，"Input Select"，_不是_ "input select" 或 "Input select"。
 
-## 基础格式
+## 格式基础
 
 以下是最常见的格式问题：
 
-- 行宽没有硬性限制，请使用自然连贯的段落写法。
-- 句号后不要添加两个空格。
+- 不限制行长度。采用流畅的段落式写法。
+- 句号后不要加两个空格。
 
 ## 标题
 
-页面的第一个标题就是页面标题，它通过顶部 front matter 中的字段定义：
+页面中的第一个标题是其页面标题，在页面顶部的 front matter 中定义：
 
 ```markdown
 ---
-title: "文档风格指南"
+title: "Documentation style guide"
 ---
 ```
 
-正文中请使用 Markdown 的 2 到 6 级标题：
+使用 Markdown 的 2 至 6 级标题：
 
 ```markdown
-## Heading level 2
-### Heading level 3
-#### Heading level 4
-##### Heading level 5
-###### Heading level 6
+## 标题级别 2
+### 标题级别 3
+#### 标题级别 4
+##### 标题级别 5
+###### 标题级别 6
 ```
 
-请使用 [sentence-style capitalization](https://learn.microsoft.com/en-us/style-guide/capitalization)。
+使用 [sentence-style capitalization](https://learn.microsoft.com/en-us/style-guide/capitalization)。
 
-不要跳级使用标题。
+不要跳过标题级别。
+
+右侧目录中只显示 2 级和 3 级标题。
 
 ## 强调
 
-强调单词时，请使用 `_italics_`，不要使用 `*asterisks*`。
+要强调某个词，使用斜体。
+用下划线（`_`）表示斜体，例如：`_emphasized words_`。不要用星号（`*`）。
 
-不要使用全大写来表示强调。
+不要使用全大写表示强调。
 
 ## UI 元素与操作步骤
 
-提到 UI 元素时，请使用 `**bold**`；表示面包屑路径时，请使用 `>`。
+引用 UI 元素时使用粗体。
+用双星号（`**`）表示粗体，例如：`**bolded words**`。
+
+书写 UI 步骤时，在面包屑导航中使用大于号（`>`）。
+不要加粗。
 
 例如：
 
@@ -71,23 +79,23 @@ title: "文档风格指南"
 
 ### 选择 UI 元素
 
-避免使用动词 "click"，因为它只适用于鼠标操作。请改用适用于多种设备的动词，例如 "select"。
+避免使用 "click" 这个动词。它仅适用于鼠标操作。改用适用于多种设备的动词，如 "select"。
 
-如果需要描述明确的鼠标行为，也可以使用 "click"，例如 "right-click" 或 "double-click"。
+描述具体鼠标动作时，可以使用 "click"。例如 "right-click" 或 "double-click"。
 
 ## 文件路径、文件名、变量与文本输入
 
-提到文件路径、文件名、变量名，或需要用户在输入框中键入的文本时，请使用反引号。
+引用文件路径、文件名、变量名或在字段中输入的文本时使用反引号。
 例如：
 
-- The `/boot/config.txt` file
-- The `this` variable
-- Enter `/newbot`
+- `/boot/config.txt` 文件
+- `this` 变量
+- 输入 `/newbot`
 
 ## 列表
 
-- 无序列表请使用 `-`，不要使用 `*`。
-- 有序列表请使用递增编号。
+- 无序列表使用 `-`，不要用 `*`。
+- 有序列表使用递增数字。
 
   ```yaml
   # Good
@@ -103,7 +111,7 @@ title: "文档风格指南"
 
 ## 代码块
 
-请使用 Markdown 代码块，并用三个反引号包裹：
+使用 Markdown 代码块，以三个反引号分隔：
 
 ````markdown
 ```markdown
@@ -111,7 +119,7 @@ title: "文档风格指南"
 ```
 ````
 
-如果要在代码块中展示另一个代码块（如上例），请在外层代码块中使用四个或更多反引号：
+要在代码块中嵌套代码块（如上面的示例），外部代码块使用四个或更多反引号：
 
 `````markdown
 In general, use Markdown code blocks, delimited by three backticks:
@@ -123,94 +131,103 @@ In general, use Markdown code blocks, delimited by three backticks:
 ````
 `````
 
-在起始反引号后，你可以指定语法高亮所用语言，例如：
+在开引号后，可以指定用于语法高亮的语言，例如：
 
 - `markdown`
 - `shell`
 - `yaml`
 
-所有支持的语言可参考 [Rouge lexers 列表](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers)。
-
-### Jinja2 模板示例
-
-所有包含 Jinja2 模板的示例，都应在代码块 _外层_ 使用 `{% raw %}` 包裹。
-
-例如：
-
-````markdown
-{% raw %}
-
-```yaml
-type: markdown
-content: |
-  Hello, {{user}}
-```
-
-{% endraw %}
-````
+所有支持的语言见 [list of Rouge lexers](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers)。
 
 ## 表格
 
-- 尽量避免使用表格，优先改用列表。如果必须使用表格，请尽量减少列数，并缩短单元格中的文本：
-  - 过宽的表格在手持设备上会很难浏览。
-  - 内容越少，表格越容易阅读。
-  - 如果表格只有两列，它大概率更适合写成列表。
-- 如果确实无法缩短内容，请考虑换用其他表达方式，例如列表或 `{% configuration_basic %}`。
+- 避免使用表格。改用列表。如无法避免表格，尽量减少列数，并将文本内容尽可能缩短：
+  - 过宽的表格在手持设备上难以浏览。
+  - 内容更少使表格更易读。
+  - 如果表格只有两列，它很可能应该是一个列表。
+- 当无法限制文本量时，考虑使用其他数据结构来表示信息。例如，可以使用列表或 `{% configuration_basic %}`。
 
 ## 链接
 
-- 链接到站内页面时，请使用 `/` 结尾，而不是文件扩展名（如 `.markdown`、`.md`、`.mdx`）。
-  例如：`[ZBT-2](/developers/connect/zbt-2/)`，不要写成 `[ZBT-2](/developers/connect/zbt-2.markdown)`。
-- 链接同一仓库内的页面时，请使用从仓库根路径开始的站内链接。
-  例如：`[ZBT-2](/developers/connect/zbt-2/)`，不要写成 `[ZBT-2](https://www.home-assistant.io/connect/zbt-2/)`。
-- 不要使用联盟链接或带追踪参数的链接。
-- 不要直接裸写 URL，例如 `https://example.org` 或 `<https://example.org>`。
+- 不要使用文件的扩展名（`.markdown`、`.md`、`.mdx`），改用斜杠。
+  例如：`[ZBT-2](/connect/zbt-2/)` 而不是 `[ZBT-2](/connect/zbt-2.markdown)`。
+- 链接到同一仓库中的页面时：
+  - 使用绝对链接，但忽略 `source` 目录。
+  - 忽略第一级目录前的下划线（`_`）。
+
+  例如，要链接到 `source/_integrations/date.markdown`，使用：`[Date](/integrations/date/)`。
+- 不要使用联盟链接或追踪链接。
+- 不要使用裸 URL：`https://example.org` 或 `<https://example.org>`。
 
 ### 图片
 
-如果使用图片，请将其上传到文档仓库中的 `images` 目录及对应子目录。
-不要引用外部图片，例如你私人 GitHub 仓库中的图片。
+如果使用图片，请上传到文档仓库中的 `images` 文件夹及其相关子文件夹。
+不要链接到外部图片，例如你自己的私人 GitHub 仓库中的图片。
 
-插入截图时，请使用 Markdown 语法：
+对于截图，使用 Markdown 语法：
 
 ```markdown
-![descriptive alt text](/developers/images/my_image.png)
+![descriptive alt text](/images/my_image.png)
 ```
 
 也可以使用 HTML：
 
-- 如果希望图片在暗色模式下自动反相，请使用带 `invertDark` 类名的 HTML。
-- 如果要添加图注，请将图注文字写在 `<p>` 标签内。
+- 在文档以深色模式查看时反转图片颜色，请使用带 `invertDark` class 的 HTML。
+- 要添加说明文字，将其放入 `<p>` 标签中。
 
 例如：
 
 ```html
 <p class='img'>
 <img class='invertDark'
-    src='/developers/img/en/documentation/glossary-term_tooltip.png'
+    src='/img/en/documentation/glossary-term_tooltip.png'
     alt='Styling of a glossary term tooltip'
   />
-  Styling of a glossary term tooltip
+  词表术语 tooltip 的样式
 </p>
 ```
 
-如果想了解为集成添加图片时的要求，请参见[图片、图标与 logo](/developers/documenting/create-page#images-icons-and-logos)。
+添加集成时关于图片的内容，请参见 [Images, icons, and logos](/developers/documenting/create-page#images-icons-and-logos)。
+
+#### 灯箱
+
+当文档页面和博客文章中的图片足够大，且不是链接、按钮、SVG、内联图标、品牌 logo 或被标记为排除时，可以点击并在 lightbox 中打开。
+
+若要防止图片在 lightbox 中打开，请在 `<img>` 标签或其父元素上添加 `data-no-lightbox` 属性或 `no-lightbox` class。
+
+例如：
+
+```html
+<img
+  src="/images/example.png"
+  alt="Description of the image"
+  data-no-lightbox
+>
+```
+
+```html
+<img
+  class="no-lightbox"
+  src="/images/example.png"
+  alt="Description of the image"
+>
+```
 
 ### 视频
 
-引用 YouTube 视频时，请使用以下语法。
+使用以下语法引用 YouTube 上的视频。
 
-如果希望视频从指定时间开始播放，请使用 `videoStartAt`。
+使用 `videoStartAt` 可在视频的特定时间开始播放。
 
 <p class='img'>
 <img class='invertDark'
-    src='/developers/img/en/documentation/youtube_ref_start_at.webp'
-  alt='从指定时间开始播放的 YouTube 视频'
+    src='/img/en/documentation/youtube_ref_start_at.webp'
+    alt='YouTube video starting at a specified time'
   />
-  从指定时间开始播放的 YouTube 视频
+  在指定时间开始的 YouTube 视频
 </p>
 
-`videoid` 应填写 YouTube 链接中 `watch?v=` 后面的那一段。
+`videoid` 使用 YouTube URL 中 `watch?v=` 之后的部分。
 
 ```html
 <lite-youtube
@@ -222,31 +239,31 @@ content: |
 
 ## 可复用文本
 
-对于某些主题，我们已经提供了可直接复用的预定义文本片段。
+对于某些主题，有预定义的文本元素可供复用。
 
-如果要引入 [`source/_includes`](https://github.com/home-assistant/home-assistant.io/tree/current/source/_includes) 中的片段，请使用以下 Liquid 语法：
+要引入 [`source/_includes`](https://github.com/home-assistant/home-assistant.io/tree/current/source/_includes) 中的片段，使用以下 Liquid 语法：
 
 ```liquid
 {% include path/to/file.md %}
 ```
 
-关于编写集成文档时可复用的示例，请参见 [Configuration](/developers/documenting/create-page#configuration)。
+关于编写集成文档时有用的示例，请参见 [Configuration](/developers/documenting/create-page#configuration)。
 
 ## Liquid 语法
 
-我们在 Markdown 中使用 [Liquid](https://shopify.github.io/liquid/) 进行模板处理。
+我们在 Markdown 中使用 [Liquid](https://shopify.github.io/liquid/) 语法进行模板渲染。
 
-### My links
+### 我的链接
 
-表示 Home Assistant UI 中的位置时，请使用 [My link](https://www.home-assistant.io/docs/tools/quick-search/#my-links)。
-用户选择 My link 后，会直接在自己的 Home Assistant 实例中打开对应页面。
+要指示 UI 中的位置，请使用 [My link](https://www.home-assistant.io/docs/tools/quick-search/#my-links)。
+选择 My link 会在用户自己的 Home Assistant 安装中打开对应页面。
 
 <p class='img'>
 <img class='invertDark'
-    src='/developers/img/en/documentation/my-links_formatting.png'
-  alt='My link 的样式'
+    src='/img/en/documentation/my-links_formatting.png'
+    alt='Styling of My links'
   />
-  My link 的样式
+  Styling of My links
 </p>
 
 例如：
@@ -265,19 +282,19 @@ content: |
 - {% my profile title="**User profile**" %}
 ```
 
-如果要获取某个页面对应的 My link，请先在 Home Assistant 中打开该页面，再按下 `m` 键。
+要在 Home Assistant 中识别 My link，打开感兴趣的页面并按 `m` 键。
 
 ### 术语表引用
 
-部分 Home Assistant 术语和概念在[术语表](https://www.home-assistant.io/docs/glossary/)中有专门解释。
-如果你添加了术语定义引用，术语定义会以提示框的形式展示出来。
+一些 Home Assistant 的术语和概念在 [the glossary](https://www.home-assistant.io/docs/glossary/) 中有解释。
+如果添加了术语定义的引用，术语定义将作为 tooltip 显示。
 
 <p class='img'>
 <img class='invertDark'
-    src='/developers/img/en/documentation/glossary-term_tooltip.png'
-  alt='术语提示框的样式'
+    src='/img/en/documentation/glossary-term_tooltip.png'
+    alt='Styling of a glossary term tooltip'
   />
-  术语提示框的样式
+  词表术语 tooltip 的样式
 </p>
 
 语法：
@@ -295,19 +312,19 @@ content: |
 {% term "Home Assistant Operating System" %}
 ```
 
-关于术语表的推荐用法，请参见[术语表与术语提示](/developers/documenting/standards#glossary--terminology-tooltips)。
+关于 glossary 用法的更多推荐信息，请参见 [Glossary & terminology tooltips](/developers/documenting/standards#glossary--terminology-tooltips)。
 
-### 缩略词与首字母缩写
+### 缩写和缩略语
 
-如果可以，请尽量避免使用缩略词和首字母缩写。
-如果确实需要使用，可以通过缩写标签在提示框中显示其完整含义。
+如果可能，尽量避免使用缩写和首字母缩略词。
+如需使用，可以添加缩写标签，将全称作为 tooltip 显示。
 
 <p class='img'>
 <img class='invertDark'
-    src='/developers/img/en/documentation/abbreviation_tooltip.png'
-  alt='缩写提示框的样式'
+    src='/img/en/documentation/abbreviation_tooltip.png'
+    alt='Styling of an abbreviation tooltip'
   />
-  缩写提示框的样式
+  缩写 tooltip 的样式
 </p>
 
 示例：
@@ -326,17 +343,16 @@ content: |
 or <abbr title="USB-On-The-Go">USB-OTG</abbr>.
 ```
 
-### 行内图标
+### 内联图标
 
-如果要在文档中提到 UI 图标，可以使用
-[Iconify 库](https://icon-sets.iconify.design/mdi/)中的图标。
+要引用 UI 中的图标，可以使用来自 [Iconify library](https://icon-sets.iconify.design/mdi/) 的图标。
 
 <p class='img'>
 <img class='invertDark'
-    src='/developers/img/en/documentation/inline_icons.png'
-  alt='一些行内图标示例'
+    src='/img/en/documentation/inline_icons.png'
+    alt='Some inline icons'
   />
-  一些行内图标示例
+  一些内联图标
 </p>
 
 使用示例：
@@ -362,14 +378,14 @@ or <abbr title="USB-On-The-Go">USB-OTG</abbr>.
 
 ### 可折叠文本块
 
-如果要让一段文本可折叠，请使用 details 区块。不要使用 HTML5 原生写法，而应使用我们提供的 Liquid 版本。
+使用 details 块使文本块可折叠。不要使用 HTML5 变体，而应使用我们的 Liquid 变体。
 
 <p class='img'>
 <img class='invertDark'
-    src='/developers/img/en/documentation/collapsible_text_block.webp'
-  alt='可折叠文本块的行为效果'
+    src='/img/en/documentation/collapsible_text_block.webp'
+    alt='Behavior of a collapsible text block'
   />
-  可折叠文本块的行为效果
+  可折叠文本块的行为
 </p>
 
 例如：
@@ -384,39 +400,113 @@ or <abbr title="USB-On-The-Go">USB-OTG</abbr>.
 {% enddetails %}
 ```
 
-### 文本提示框
+### 文本框
 
-文本提示框可用于突出重要信息。
-但不要过度使用，否则会让文档在视觉上显得过于拥挤。
+使用文本框突出显示重要信息。
+不要过度使用，因为它们可能会在视觉上使文档过载。
 
 <p class='img'>
   <img class='invertDark'
-      src='/developers/img/en/documentation/text_boxes.png'
-      alt='文本提示框示例'
+      src='/img/en/documentation/text_boxes.png'
+      alt='Example text boxes'
     />
-    文本提示框示例：
+    文本框示例：
 </p>
 
-#### Tip
+#### 提示
 
 ```liquid
 {% tip %}
-可以使用 tip 突出推荐做法。
+使用 tip 来突出推荐。
 {% endtip %}
 ```
 
-#### Note
+#### 备注
 
 ```liquid
 {% note %}
-可以使用 note 突出需要特别说明的内容。
+使用 note 来突出一个章节。
 {% endnote %}
 ```
 
-#### Important
+#### 重要
 
 ```liquid
 {% important %}
-可以使用 "important" 突出你认为非常重要的内容。
+使用 "important" 来突出你认为非常重要的章节。
 {% endimportant %}
+```
+
+#### 注意
+
+```liquid
+{% caution %}
+使用 "caution" 来建议不要执行可能导致数据丢失、意外行为或其他难以撤销后果的操作。
+{% endcaution %}
+```
+
+#### 警告
+
+```liquid
+{% warning %}
+使用 warning 来提醒用户注意可能危及系统安全性或完整性，或造成人身伤害的风险。
+{% endwarning %}
+```
+
+#### 实验功能
+
+在文档化 Labs 中的功能时使用此文本框：
+
+```liquid
+{% labs %}
+Requires the **Feature Name** Labs preview feature. Enable it at {% my labs title="**Settings** > **System** > **Labs**" %}.
+{% endlabs %}
+```
+
+#### YAML 示例
+
+使用此文本框为某些元素提供交互式语法高亮。要查看下面的渲染效果，请参见 [Automation: sync a ceiling fan speed to the ceiling light](https://www.home-assistant.io/triggers/light.brightness_changed/#automation-sync-a-ceiling-fan-speed-to-the-ceiling-light)。
+
+```liquid
+{% example %}
+automation: |
+  alias: "Match fan to ceiling light"
+  triggers:
+    - trigger: light.brightness_changed
+      target:
+        entity_id: light.living_room_ceiling
+      options:
+        threshold: 10
+  actions:
+    - action: fan.set_percentage
+      target:
+        entity_id: fan.living_room
+      data:
+        percentage: "{{ state_attr('light.living_room_ceiling', 'brightness_pct') | int }}"
+{% endexample %}
+```
+
+第一行的单词（此处为 `automation`）会渲染在代码块上方。
+
+可用的单词（在 [`plugins/example.rb`](https://github.com/home-assistant/home-assistant.io/blob/current/plugins/example.rb) 的 `INPUT_TYPES` 中定义）：
+
+- `action`
+- `automation`
+- `condition`
+- `script`
+- `template`
+- `trigger`
+
+此外，还可以使用 `output` 渲染代码的结果。在文档化 template 时非常有用。例如：
+
+```liquid
+{% example %}
+template: |
+  {% from 'formatter.jinja' import format_entity %}
+  {{ format_entity('sensor.outdoor_temperature') }}
+  {{ format_entity('sensor.indoor_temperature') }}
+output: |
+  Outdoor temperature: 22.5
+  Indoor temperature: 21.0
+{% endexample %}
 ```

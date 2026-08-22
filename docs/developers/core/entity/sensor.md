@@ -1,230 +1,252 @@
 ---
-title: 传感器实体
-description: '传感器是提供一些信息的只读实体。信息具有价值，并且可选地具有测量单位。平台实体派生自homeassistant.components.sensor.SensorEntity(https://github.com/home-assistant/home-assistant/blob/master/homeass。'
-sidebar_label: 传感器
+title: Sensor entity
+sidebar_label: Sensor
 ---
-# 传感器实体
 
-传感器是提供一些信息的只读实体。信息具有价值，并且可选地具有测量单位。平台实体派生自[`homeassistant.components.sensor.SensorEntity`](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/sensor/__init__.py)
+Sensor 是一种提供某些信息的 read-only entity。信息具有一个 value，以及选项性的计量单位。从 [`homeassistant.components.sensor.SensorEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/sensor/__init__.py) 派生 entity platforms。
 
-## 特性
+## 属性
 
 :::tip
-属性应该始终只从内存返回信息，而不执行 I/O（如网络请求）。实现 `update()` 或 `async_update()` 来获取数据。
+Properties 应该只从内存返回信息，而不要执行 I/O（如网络请求）。请实现 `update()` 或 `async_update()` 来获取数据。
 :::
 
-| 名称 | 类型 | 默认值 | 说明
+| Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| device_class | <code>SensorDeviceClass &#124; None</code> | `None` | 传感器类型。
-| last_reset | <code>datetime.datetime &#124; None</code> | `None` | 电表、煤气表、水表等累计传感器初始化的时间。如果初始化时间未知，则设置为`None`。请注意，当更新实体的状态属性时，`last_reset` 属性返回的 `datetime.datetime` 将转换为 ISO 8601 格式的字符串。更改 `last_reset` 时，`state` 必须是有效号码。
-| native_unit_of_measurement | <code>str &#124; None</code> | `None` | 传感器值表示的测量单位。如果 `native_unit_of_measurement` 为 °C 或 °F，且 `device_class` 为温度，则传感器的 `unit_of_measurement` 将是用户配置的首选温度单位，传感器的 `state` 将是经过可选单位转换后的 `native_value`。如果是 [提供单位翻译](/developers/internationalization/core#unit-of-measurement-of-entities)，则不应定义 `native_unit_of_measurement`。
-| native_value | <code>str &#124; int &#124; float &#124; date &#124; datetime &#124; Decimal &#124; None</code> | **Required** | 传感器的`native_unit_of_measurement`中的传感器值。使用 `device_class` 可能会限制此属性可返回的类型。
-| options | <code>list[str] &#124; None</code> | `None` | 如果该传感器提供文本状态，则该属性可用于提供可能状态的列表。需要设置 `enum` 设备类别。不能与 `state_class` 或 `native_unit_of_measurement` 组合使用。
-| state_class | <code>SensorStateClass &#124; str &#124; None</code> | `None` | 状态类型。如果不是 `None`，则假定传感器是数字传感器，并将在前端显示为折线图，而不是离散值。
-| suggested_display_precision | <code>int &#124; None</code> | `None` | 显示传感器状态时应使用的小数位数。
-| suggested_unit_of_measurement | <code>str &#124; None</code> | `None` | 用于传感器状态的测量单位。对于具有 `unique_id` 的传感器，这将用作初始测量单位，然后用户可以覆盖该单位。对于没有 `unique_id` 的传感器，这将是传感器状态的测量单位。此属性旨在供集成用来覆盖自动单位转换规则，例如，使温度传感器始终以 `°C` 显示，无论配置的单位系统是首选 `°C` 还是 `°F`，或者使距离传感器始终以英里显示，即使配置的单位系统是公制。
+| device_class | `SensorDeviceClass \| None` | `None` | Sensor 的类型。
+| last_reset | `datetime.datetime \| None` | `None` | 累积型 sensor（如 electricity usage meter、gas meter、water meter 等）被初始化的时间。如果初始化时间未知，设为 `None`。注意，`last_reset` property 返回的 `datetime.datetime` 在更新 entity 的 state attributes 时将被转换为 ISO 8601 格式字符串。更改 `last_reset` 时，`state` 必须是有效的 number。
+| native_unit_of_measurement | `str \| None` | `None` | Sensor 的 value 所表示的计量单位。如果 `native_unit_of_measurement` 是 °C 或 °F，且其 `device_class` 是 temperature，则 sensor 的 `unit_of_measurement` 将为用户配置的 preferred temperature unit，sensor 的 `state` 将是可选单位转换后的 `native_value`。如果提供了 [unit translation](/developers/internationalization/core#unit-of-measurement-of-entities)，则不应定义 `native_unit_of_measurement`。
+| native_value | `str \| int \| float \| date \| datetime \| Decimal \| None` | **必需** | Sensor 的 `native_unit_of_measurement` 中的 value。使用 `device_class` 可能限制此 property 可返回的 types。
+| options | `list[str] \| None` | `None` | 如果此 sensor 提供 text state，此 property 可用于提供可能的 states 列表。要求设置 `enum` device class。不能与 `state_class` 或 `native_unit_of_measurement` 组合使用。
+| state_class | `SensorStateClass \| str \| None` | `None` | State 的类型。如果非 `None`，则假设 sensor 为数值型，前端将显示为 line-chart 而不是离散 values。
+| suggested_display_precision | `int \| None` | `None` | 显示 sensor 的 state 时应使用的小数位数。
+| suggested_unit_of_measurement | `str \| None` | `None` | 用于 sensor state 的计量单位。对于具有 `unique_id` 的 sensors，这将用作初始计量单位，用户随后可以覆盖。对于没有 `unique_id` 的 sensors，这将是 sensor state 的计量单位。此 property 旨在供集成覆盖自动单位转换规则，例如使 temperature sensor 无论配置的 unit system 首选 `°C` 还是 `°F` 都始终显示为 `°C`，或使 distance sensor 即使配置的 unit system 是 metric 也始终显示为 miles。
 
 :::tip
-不要为传感器实体添加 `extra_state_attributes`，而是创建一个附加传感器实体。不改变的属性只在数据库中保存一次。如果 `extra_state_attributes` 和传感器值都频繁变化，这会快速增加数据库的大小。
+对于 sensor entity，不要添加 `extra_state_attributes`，而应创建额外的 sensor entity。不改变的 attributes 只保存一次到 database 中。如果 `extra_state_attributes` 和 sensor value 都频繁变化，会迅速增加 database 的大小。
 :::
 
-### 可用设备类别
+### 可用的设备类型
 
-如果指定设备类别，您的传感器实体还需要返回正确的测量单位。
+如果指定 device class，你的 sensor entity 还需要返回正确的计量单位。
 
-| 常量 | 支持单位 | 说明
+| Constant | Supported units | Description
 | ---- | ---- | -----------
-| `SensorDeviceClass.ABSOLUTE_HUMIDITY` | g/m³, mg/m³ | 绝对湿度
-| `SensorDeviceClass.APPARENT_POWER` | mVA, VA, kVA | 视在功率
-| `SensorDeviceClass.AQI` | None | 空气质量指数
-| `SensorDeviceClass.AREA` | m², cm², km², mm², in², ft², yd², mi², ac, ha | 区域
-| `SensorDeviceClass.ATMOSPHERIC_PRESSURE` | cbar, bar, hPa, mmHG, inHg, inH₂O, kPa, mbar, Pa, psi | 气压
-| `SensorDeviceClass.BATTERY` | % | 剩余电量百分比
-| `SensorDeviceClass.BLOOD_GLUCOSE_CONCENTRATION` | mg/dL, mmol/L | 血糖浓度
-| `SensorDeviceClass.CO2` | ppm | 二氧化碳的浓度。
+| `SensorDeviceClass.ABSOLUTE_HUMIDITY` | g/m³, mg/m³ | Absolute humidity
+| `SensorDeviceClass.APPARENT_POWER` | mVA, VA, kVA | Apparent power
+| `SensorDeviceClass.AQI` | None | Air Quality Index
+| `SensorDeviceClass.AREA` | m², cm², km², mm², in², ft², yd², mi², ac, ha | Area
+| `SensorDeviceClass.ATMOSPHERIC_PRESSURE` | cbar, bar, hPa, mmHG, inHg, inH₂O, kPa, mbar, Pa, psi | Atmospheric pressure
+| `SensorDeviceClass.BATTERY` | % | 剩余 battery 百分比
+| `SensorDeviceClass.BLOOD_GLUCOSE_CONCENTRATION` | mg/dL, mmol/L | Blood glucose concentration
+| `SensorDeviceClass.CO2` | ppm | 二氧化碳浓度。
 | `SensorDeviceClass.CO` | ppb, ppm, µg/m³, mg/m³ | 一氧化碳浓度。
-| `SensorDeviceClass.CONDUCTIVITY` | S/cm, mS/cm, µS/cm | 电导率
-| `SensorDeviceClass.CURRENT` | A, mA | 当前的
-| `SensorDeviceClass.DATA_RATE` | bit/s, kbit/s, Mbit/s, Gbit/s, B/s, kB/s, MB/s, GB/s, KiB/s, MiB/s, GiB/s | 数据速率
-| `SensorDeviceClass.DATA_SIZE` | bit, kbit, Mbit, Gbit, B, kB, MB, GB, TB, PB, EB, ZB, YB, KiB, MiB, GiB, TiB, PiB, EiB, ZiB, YiB | 数据大小
-| `SensorDeviceClass.DATE` |  | 日期。要求 `native_value` 是 Python `datetime.date` 对象或 `None`。
-| `SensorDeviceClass.DISTANCE` | km, m, cm, mm, mi, nmi, yd, in | 通用距离
-| `SensorDeviceClass.DURATION` | d, h, min, s, ms, µs | 时间段。不应仅因时间流逝而更新。设备或服务需要提供新的数据点来更新。
-| `SensorDeviceClass.ENERGY` | J, kJ, MJ, GJ, mWh, Wh, kWh, MWh, GWh, TWh, cal, kcal, Mcal, Gcal | 能源，该设备类应用于表示能源消耗的传感器，例如电表。代表_power_超过_time_。不要与 `power` 混淆。
-| `SensorDeviceClass.ENERGY_DISTANCE` | kWh/100km, Wh/km, mi/kWh, km/kWh | 每距离能量，该设备类应用于表示按距离的能量消耗，例如电动汽车消耗的电能量。
-| `SensorDeviceClass.ENERGY_STORAGE` | J, kJ, MJ, GJ, mWh, Wh, kWh, MWh, GWh, TWh, cal, kcal, Mcal, Gcal | 存储能量，该设备类应用于表示存储能量的传感器，例如当前存储在电池中的电能数量或电池的容量。代表_power_超过_time_。不要与 `power` 混淆。
-| `SensorDeviceClass.ENUM` |  | 传感器具有一组有限的（非数字）状态。使用此设备类时，必须将 `options` 属性设置为可能状态的列表。
-| `SensorDeviceClass.FREQUENCY` | Hz, kHz, MHz, GHz | 频率
-| `SensorDeviceClass.GAS` | L, m³, ft³, CCF, MCF | 气体体积。以千瓦时而非体积为单位测量的燃气消耗量应归类为能源。
-| `SensorDeviceClass.HUMIDITY` | % | 相对湿度
-| `SensorDeviceClass.ILLUMINANCE` | lx | 光照水平
-| `SensorDeviceClass.IRRADIANCE` | W/m², BTU/(h⋅ft²) | 辐照度
-| `SensorDeviceClass.MOISTURE` | % | 水分
-| `SensorDeviceClass.MONETARY` | [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) | 货币的货币价值。
+| `SensorDeviceClass.CONDUCTIVITY` | S/cm, mS/cm, µS/cm | Conductivity
+| `SensorDeviceClass.CURRENT` | A, mA, µA | Current
+| `SensorDeviceClass.DATA_RATE` | bit/s, kbit/s, Mbit/s, Gbit/s, B/s, kB/s, MB/s, GB/s, KiB/s, MiB/s, GiB/s | Data rate
+| `SensorDeviceClass.DATA_SIZE` | bit, kbit, Mbit, Gbit, B, kB, MB, GB, TB, PB, EB, ZB, YB, KiB, MiB, GiB, TiB, PiB, EiB, ZiB, YiB | Data size
+| `SensorDeviceClass.DATE` | | Date。要求 `native_value` 是 Python `datetime.date` 对象，或 `None`。
+| `SensorDeviceClass.DISTANCE` | km, m, cm, mm, mi, nmi, yd, in | Generic distance
+| `SensorDeviceClass.DURATION` | d, h, min, s, ms, µs | Time period。不应仅因时间流逝而更新。Device 或 service 需要给出新的数据点才能更新。
+| `SensorDeviceClass.ENERGY` | J, kJ, MJ, GJ, mWh, Wh, kWh, MWh, GWh, TWh, cal, kcal, Mcal, Gcal | Energy，此 device class 应用于表示 energy consumption 的 sensors，例如 electricity meter。表示 _power_ over _time_。不要与 `power` 混淆。
+| `SensorDeviceClass.ENERGY_DISTANCE` | kWh/100km, Wh/km, mi/kWh, km/kWh | Energy per distance，此 device class 应用于表示按距离的 energy consumption，例如 electric car 消耗的 electric energy 量。
+| `SensorDeviceClass.ENERGY_STORAGE` | J, kJ, MJ, GJ, mWh, Wh, kWh, MWh, GWh, TWh, cal, kcal, Mcal, Gcal | Stored energy，此 device class 应用于表示 stored energy 的 sensors，例如 battery 中当前存储的 electric energy 量或 battery 的 capacity。表示 _power_ over _time_。不要与 `power` 混淆。
+| `SensorDeviceClass.ENUM` | | Sensor 具有有限的（非 numeric）states 集。使用此 device class 时，`options` property 必须设为可能的 states 列表。
+| `SensorDeviceClass.FREQUENCY` | mHz, Hz, kHz, MHz, GHz | Frequency
+| `SensorDeviceClass.GAS` | L, m³, ft³, CCF, MCF | Gas 的体积。以 kWh 的 energy 测量的 gas consumption 而不是体积，应归类为 energy。
+| `SensorDeviceClass.HUMIDITY` | % | Relative humidity
+| `SensorDeviceClass.ILLUMINANCE` | lx | Light level
+| `SensorDeviceClass.IRRADIANCE` | W/m², BTU/(h⋅ft²) | Irradiance
+| `SensorDeviceClass.MOISTURE` | % | Moisture
+| `SensorDeviceClass.MONETARY` | [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) | 带有 currency 的 Monetary value。
 | `SensorDeviceClass.NITROGEN_DIOXIDE` | ppb, ppm, µg/m³ | 二氧化氮浓度
 | `SensorDeviceClass.NITROGEN_MONOXIDE` | ppb, µg/m³ | 一氧化氮浓度
 | `SensorDeviceClass.NITROUS_OXIDE` | µg/m³ | 一氧化二氮浓度
 | `SensorDeviceClass.OZONE` | ppb, ppm, µg/m³ | 臭氧浓度
-| `SensorDeviceClass.PH` | None | 水溶液的氢势 (pH)
-| `SensorDeviceClass.PM1` | µg/m³ | 颗粒物浓度小于1微米
-| `SensorDeviceClass.PM25` | µg/m³ | 颗粒物浓度小于2.5微米
-| `SensorDeviceClass.PM4` | µg/m³ | 颗粒物浓度小于4微米
-| `SensorDeviceClass.PM10` | µg/m³ | 颗粒物浓度小于10微米
-| `SensorDeviceClass.POWER` | mW, W, kW, MW, GW, TW | 力量。
-| `SensorDeviceClass.POWER_FACTOR` | %, None | 功率因数
-| `SensorDeviceClass.PRECIPITATION` | cm, in, mm | 累计降水量
-| `SensorDeviceClass.PRECIPITATION_INTENSITY` | in/d, in/h, mm/d, mm/h | 降水强度
-| `SensorDeviceClass.PRESSURE` | cbar, bar, hPa, mmHg, inHg, kPa, mbar, Pa, psi, mPa | 压力。
-| `SensorDeviceClass.REACTIVE_ENERGY` | varh, kvarh | 无功电能
-| `SensorDeviceClass.REACTIVE_POWER` | mvar, var, kvar | 无功功率
-| `SensorDeviceClass.SIGNAL_STRENGTH` | dB, dBm | 信号强度
-| `SensorDeviceClass.SOUND_PRESSURE` | dB, dBA | 声压
-| `SensorDeviceClass.SPEED` | ft/s, in/d, in/h, in/s, km/h, kn, m/s, mph, mm/d, mm/s | 通用速度
+| `SensorDeviceClass.PH` | None | 水溶液的 Potential hydrogen（pH）
+| `SensorDeviceClass.PM1` | µg/m³ | 小于 1 微米的 particulate matter 浓度
+| `SensorDeviceClass.PM25` | µg/m³ | 小于 2.5 微米的 particulate matter 浓度
+| `SensorDeviceClass.PM4` | µg/m³ | 小于 4 微米的 particulate matter 浓度
+| `SensorDeviceClass.PM10` | µg/m³ | 小于 10 微米的 particulate matter 浓度
+| `SensorDeviceClass.POWER` | mW, W, kW, MW, GW, TW | Power。
+| `SensorDeviceClass.POWER_FACTOR` | %, None | Power Factor
+| `SensorDeviceClass.PRECIPITATION` | cm, in, mm | Accumulated precipitation
+| `SensorDeviceClass.PRECIPITATION_INTENSITY` | in/d, in/h, mm/d, mm/h | Precipitation intensity
+| `SensorDeviceClass.PRESSURE` | cbar, bar, hPa, mmHg, inHg, kPa, mbar, Pa, psi, mPa | Pressure。
+| `SensorDeviceClass.RADON` | Bq/m³, pCi/L | Radon 浓度
+| `SensorDeviceClass.REACTIVE_ENERGY` | varh, kvarh | Reactive energy
+| `SensorDeviceClass.REACTIVE_POWER` | mvar, var, kvar | Reactive power
+| `SensorDeviceClass.SIGNAL_STRENGTH` | dB, dBm | Signal strength
+| `SensorDeviceClass.SOUND_PRESSURE` | dB, dBA | Sound pressure
+| `SensorDeviceClass.SPEED` | ft/s, in/d, in/h, in/s, km/h, kn, m/s, mph, mm/d, mm/s | Generic speed
 | `SensorDeviceClass.SULPHUR_DIOXIDE` | ppb, µg/m³ | 二氧化硫浓度
-| `SensorDeviceClass.TEMPERATURE` | °C, °F, K | 温度。
-| `SensorDeviceClass.TEMPERATURE_DELTA` | °C, °F, K | 该设备类别表示温度间隔 (delta)，即两个温度值之间的差异。
-| `SensorDeviceClass.TIMESTAMP` |  | 时间戳。要求 `native_value` 返回带有时区信息的 Python `datetime.datetime` 对象或 `None`。
-| `SensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS` | µg/m³, mg/m³ | 挥发性有机化合物浓度
-| `SensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS_PARTS` | ppm, ppb | 挥发性有机化合物比例
-| `SensorDeviceClass.VOLTAGE` | V, mV, µV, kV, MV | 电压
-| `SensorDeviceClass.VOLUME` | L, mL, gal, fl. oz., m³, ft³, CCF, MCF | 通用卷，此设备类应用于表示消耗的传感器，例如车辆消耗的燃料量。
-| `SensorDeviceClass.VOLUME_FLOW_RATE` | m³/h, m³/min, m³/s, ft³/min, L/h, L/min, L/s, gal/d, gal/h, gal/min, mL/s | 体积流量，该设备类别应用于表示一定体积流量的传感器，例如瞬间消耗的水量。
-| `SensorDeviceClass.VOLUME_STORAGE` | L, mL, gal, fl. oz., m³, ft³, CCF, MCF | 通用存储容量，此设备类应用于表示存储容量的传感器，例如油箱中的燃油量。
-| `SensorDeviceClass.WATER` | L, gal, m³, ft³, CCF, MCF | 用水量
-| `SensorDeviceClass.WEIGHT` | kg, g, mg, µg, oz, lb, st | 通用质量；使用 `weight` 代替 `mass` 以适应日常语言。
-| `SensorDeviceClass.WIND_DIRECTION` | ° | 风向，如果风速为0或风速太低而无法准确测量风向，则应设置为`None`。
-| `SensorDeviceClass.WIND_SPEED` | ft/s, km/h, kn, m/s, mph | 风速
+| `SensorDeviceClass.TEMPERATURE` | °C, °F, K | Temperature。
+| `SensorDeviceClass.TEMPERATURE_DELTA` | °C, °F, K | 此 device class 表示 temperature interval（delta），即两个 temperature values 之间的差。
+| `SensorDeviceClass.TIMESTAMP` | | Timestamp。要求 `native_value` 返回 Python `datetime.datetime` 对象，带 timezone 信息，或 `None`。
+| `SensorDeviceClass.UPTIME` | | Timestamp。表示 device 上次 boot 的 datetime。要求 `native_value` 返回 Python `datetime.datetime` 对象，带 timezone 信息，或 `None`。
+| `SensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS` | µg/m³, mg/m³ | Volatile organic compounds 浓度
+| `SensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS_PARTS` | ppm, ppb | Volatile organic compounds 比率
+| `SensorDeviceClass.VOLTAGE` | V, mV, µV, kV, MV | Voltage
+| `SensorDeviceClass.VOLUME` | L, mL, gal, fl. oz., m³, ft³, CCF, MCF | Generic volume，此 device class 应用于表示 consumption 的 sensors，例如 vehicle 消耗的 fuel 量。
+| `SensorDeviceClass.VOLUME_FLOW_RATE` | m³/h, m³/min, m³/s, ft³/min, L/h, L/min, L/s, gal/d, gal/h, gal/min, mL/s | Volume flow rate，此 device class 应用于表示某些 volume 的 flow 的 sensors，例如瞬间消耗的水量。
+| `SensorDeviceClass.VOLUME_STORAGE` | L, mL, gal, fl. oz., m³, ft³, CCF, MCF | Generic stored volume，此 device class 应用于表示 stored volume 的 sensors，例如 fuel tank 中的 fuel 量。
+| `SensorDeviceClass.WATER` | L, gal, m³, ft³, CCF, MCF | Water consumption
+| `SensorDeviceClass.WEIGHT` | kg, g, mg, µg, oz, lb, st | Generic mass；`weight` 用于代替 `mass` 以符合日常语言。
+| `SensorDeviceClass.WIND_DIRECTION` | ° | Wind direction，如果 wind speed 为 0 或太低而无法准确测量 wind direction，则应设为 `None`。
+| `SensorDeviceClass.WIND_SPEED` | ft/s, km/h, kn, m/s, mph | Wind speed
 
-### 可用状态类
+### 可用的 state classes
 
 :::caution
-请谨慎选择传感器的状态类别。在大多数情况下，应选择状态类 `SensorStateClass.MEASUREMENT` 或不带 `last_reset` 的状态类 `SensorStateClass.TOTAL`，这将在下面的 [如何选择`state_class`和`last_reset`](#how-to-choose-state_class-and-last_reset) 中进一步解释。
+选择 sensor 的 state class 时要谨慎。在大多数情况下，应选择 state class `SensorStateClass.MEASUREMENT` 或没有 `last_reset` 的 state class `SensorStateClass.TOTAL`，下面 [How to choose `state_class` and `last_reset`](#how-to-choose-state_class-and-last_reset) 中进一步解释了这一点。
 :::
 
-| 类型 | 说明
+| Type | Description
 | ---- | -----------
-| `SensorStateClass.MEASUREMENT` | 状态代表_当前的测量_，而不是历史聚合，例如统计数据或对未来的预测。应分类为 `SensorStateClass.MEASUREMENT` 的示例包括：当前温度、湿度或电力。  不应归类为 `SensorStateClass.MEASUREMENT` 的示例：明天的预测温度、昨天的能源消耗或不包括_当前_测量的任何其他内容。对于支持的传感器，每小时最小、最大和平均传感器读数的统计数据每 5 分钟更新一次。
-| `SensorStateClass.MEASUREMENT_ANGLE` | 与上面的 `SensorStateClass.MEASUREMENT` 类似，该状态表示_当前时间的测量_以度为单位测量的角度 (`°`)。应分类为 `SensorStateClass.MEASUREMENT_ANGLE` 的示例是当前风向
-| `SensorStateClass.TOTAL` | 状态表示可以增加和减少的总量，例如净能量计。自首次添加以来传感器值的累计增长或下降的统计数据每 5 分钟更新一次。此状态类不应用于关注绝对值而不是累积增长或下降的传感器，例如剩余电池容量或 CPU 负载；在这种情况下，应使用状态类 `SensorStateClass.MEASUREMENT`。
-| `SensorStateClass.TOTAL_INCREASING` | 与 `SensorStateClass.TOTAL` 类似，限制是状态表示单调递增的正总数，定期从 0 重新开始计数，例如每日消耗的燃气量、每周的水消耗量或终生能源消耗量。自首次添加以来传感器值的累计增长统计数据每 5 分钟更新一次。减小的值被解释为新的仪表周期的开始或更换仪表。
+| `SensorStateClass.MEASUREMENT` | State 表示 _present time 的 measurement_，而不是历史聚合（如统计）或未来预测。应归类为 `SensorStateClass.MEASUREMENT` 的示例有：current temperature、humidity 或 electric power。不应归类为 `SensorStateClass.MEASUREMENT` 的示例有：明天的 forecasted temperature、昨天的 energy consumption 或任何不包含 _current_ measurement 的内容。对于支持的 sensors，每小时 min、max 和平均 sensor readings 的 statistics 每 5 分钟更新一次。
+| `SensorStateClass.MEASUREMENT_ANGLE` | 与上述 `SensorStateClass.MEASUREMENT` 类似，state 表示以 degrees（`°`）测量的 angles 在 _present time 的 measurement_。应归类为 `SensorStateClass.MEASUREMENT_ANGLE` 的示例有：current wind direction
+| `SensorStateClass.TOTAL` | State 表示既可以增加又可以减少的 total amount，例如 net energy meter。从 sensor 首次添加以来其 value 的 accumulated growth 或 decline 的 statistics 每 5 分钟更新一次。此 state class 不应用于对 absolute value 感兴趣而不是 accumulated growth 或 decline 的 sensors，例如剩余 battery capacity 或 CPU load；在这种情况下应改用 state class `SensorStateClass.MEASUREMENT`。
+| `SensorStateClass.TOTAL_INCREASING` | 类似于 `SensorStateClass.TOTAL`，但限制为 state 表示单调递增的 positive total，并定期从 0 重新开始计数，例如每日消耗的 gas 量、每周 water consumption 或 lifetime energy consumption。从 sensor 首次添加以来其 value 的 accumulated growth 的 statistics 每 5 分钟更新一次。Decreasing value 被解释为新 meter cycle 的开始或 meter 的更换。
 
-### 实体选项
+### entity 选项
 
-用户可以配置传感器，这是通过将 `sensor` 实体选项存储在传感器的实体注册表项中来完成的。
+Sensors 可以由用户配置，这是通过在其 entity registry entry 中存储 `sensor` entity options 来实现的。
 
-| 选项 | 说明
+| Option | Description
 | ------ | -----------
-| `unit_of_measurement` | 对于设备类别为 `SensorDeviceClass.PRESSURE` 或 `SensorDeviceClass.TEMPERATURE` 的传感器，可以覆盖传感器的测量单位。
+| `unit_of_measurement` | 对于 device class 为 `SensorDeviceClass.PRESSURE` 或 `SensorDeviceClass.TEMPERATURE` 的 sensors，可以覆盖 sensor 的计量单位。
 
-## 恢复传感器状态
+## 恢复 sensor 状态
 
-重新启动或重新加载后恢复状态的传感器不应扩展 `RestoreEntity`，因为它不存储 `native_value`，而是存储可能已被传感器基础实体修改的 `state`。恢复状态的传感器应扩展 `RestoreSensor` 并从 `async_added_to_hass` 调用 `await self.async_get_last_sensor_data`，以访问存储的 `native_value` 和 `native_unit_of_measurement`。
+在 restart 或 reload 后恢复 state 的 sensors 不应扩展 `RestoreEntity`，因为它不存储 `native_value`，而是存储可能被 sensor base entity 修改的 `state`。恢复 state 的 sensors 应扩展 `RestoreSensor`，并从 `async_added_to_hass` 调用 `await self.async_get_last_sensor_data`，以访问存储的 `native_value` 和 `native_unit_of_measurement`。
 
 ## 长期统计
 
-如果实体有，Home Assistant支持将传感器存储为长期统计数据
-正确的属性。要选择统计数据，传感器必须具有
-`state_class` 设置为有效状态类之一：`SensorStateClass.MEASUREMENT`、`SensorStateClass.TOTAL` 或
+Home Assistant 支持将 sensors 存储为 long-term statistics，前提是 entity 具有
+正确的 properties。要 opt-in 进入 statistics，sensor 必须将
+`state_class` 设为有效的 state class 之一：`SensorStateClass.MEASUREMENT`、`SensorStateClass.TOTAL` 或
 `SensorStateClass.TOTAL_INCREASING`。
-对于某些设备类别，统计数据的单位被标准化为例如
-可以在一张图中绘制多个传感器。
+对于某些 device classes，statistics 的 unit 会被 normalized，例如使
+能够在单个 graph 中绘制多个 sensors。
 
-### 不代表总金额的实体
+### 不表示总量的 entities
 
-Home Assistant 跟踪统计期间的最小值、最大值和平均值。这
-`state_class` 属性必须设置为 `SensorStateClass.MEASUREMENT`，并且 `device_class` 不得设置为
-`SensorDeviceClass.DATE`、`SensorDeviceClass.ENUM`、`SensorDeviceClass.ENERGY`、`SensorDeviceClass.GAS`、`SensorDeviceClass.MONETARY` 之一，
-`SensorDeviceClass.TIMESTAMP`、`SensorDeviceClass.VOLUME` 或 `SensorDeviceClass.WATER`。
+Home Assistant 在 statistics 期间跟踪 min、max 和 mean value。
+`state_class` property 必须设为 `SensorStateClass.MEASUREMENT`，且 `device_class` 不能
+是 `SensorDeviceClass.DATE`、`SensorDeviceClass.ENUM`、`SensorDeviceClass.ENERGY`、`SensorDeviceClass.GAS`、`SensorDeviceClass.MONETARY`、
+`SensorDeviceClass.TIMESTAMP`、`SensorDeviceClass.VOLUME` 或 `SensorDeviceClass.WATER` 中的任何一种。
 
-### 代表总金额的实体
+### 表示总量的 entities
 
-跟踪总金额的实体有一个可以选择定期重置的值，
-例如本月的能源消耗量、今天的能源产量、上周用于房屋供暖的颗粒重量或每年的增长量
-股票投资组合。编译第一个统计数据时传感器的值用作初始零点。
+跟踪 total amount 的 entities 具有一个可能定期重置的 value，
+例如本月 energy consumption、今天的 energy production、过去一周用于供暖的 pellets 重量，或 stock portfolio 的年度增长。首次编译 statistics 时 sensor 的 value 用作初始零基准点。
 
-#### 如何选择`state_class`和`last_reset`
+#### 如何选择 `state_class` 和 `last_reset`
 
-建议尽可能使用不带 `last_reset` 的状态类别 `SensorStateClass.TOTAL`，仅当不带 `last_reset` 的状态类别 `SensorStateClass.TOTAL` 不适用于传感器时，才应使用带 `last_reset` 的状态类别 `SensorStateClass.TOTAL_INCREASING` 或 `SensorStateClass.TOTAL`。
+建议尽可能使用没有 `last_reset` 的 state class `SensorStateClass.TOTAL`，只有在没有 `last_reset` 的 state class `SensorStateClass.TOTAL` 不适用于 sensor 时，才应使用 state class `SensorStateClass.TOTAL_INCREASING` 或带有 `last_reset` 的 `SensorStateClass.TOTAL`。
 
 示例：
 
-- 传感器的值永远不会重置，例如一生总能源消耗或生产：state_class `SensorStateClass.TOTAL`、`last_reset` 未设置或设置为 `None`
-- 传感器的值可能会重置为 0，并且其值只能增加：状态类别 `SensorStateClass.TOTAL_INCREASING`。示例：能源消耗与计费周期一致，例如每月，每次断开连接时电能表都会重置为 0
-- 传感器的值可以重置为 0，并且其值可以增加和减少：状态类 `SensorStateClass.TOTAL`、`last_reset` 在值重置时更新。示例：净能耗与计费周期一致，例如每月。
-- 每次状态更新时都会重置传感器的状态，例如传感器每分钟都会更新过去一分钟的能耗：状态类 `SensorStateClass.TOTAL`、`last_reset` 每次状态更改都会更新。
+- Sensor 的 value 从不重置，例如 lifetime total energy consumption 或 production：state_class `SensorStateClass.TOTAL`，`last_reset` 未设置或设为 `None`
+- Sensor 的 value 可能重置为 0，且其 value 只能增加：state class `SensorStateClass.TOTAL_INCREASING`。示例：与 billing cycle 对齐的 energy consumption（例如每月），每次断开连接时重置为 0 的 energy meter
+- Sensor 的 value 可能重置为 0，且其 value 既可以增加又可以减少：state class `SensorStateClass.TOTAL`，在 value 重置时更新 `last_reset`。示例：与 billing cycle 对齐的 net energy consumption（例如每月）。
+- Sensor 的 state 每次 state update 时重置，例如每分钟更新一次、显示过去一分钟 energy consumption 的 sensor：state class `SensorStateClass.TOTAL`，每次 state change 时更新 `last_reset`。
 
-#### 国家级`SensorStateClass.TOTAL`
+#### 状态类 `SensorStateClass.TOTAL`
 
-对于状态类别为 `SensorStateClass.TOTAL` 的传感器，`last_reset` 属性可以
-可选择设置为获得仪表周期的手动控制。
-传感器首次添加到 Home Assistant 时的状态用作初始状态
-零点。当`last_reset`改变时，零点将被设置为0。
-如果没有设置last_reset，则传感器第一次添加时的值将用作
-计算 `sum` 统计数据时的零点。
+对于 state class 为 `SensorStateClass.TOTAL` 的 sensors，`last_reset` attribute 可以
+选项性地设置，以获取对 meter cycles 的 manual control。
+Sensor 首次添加到 Home Assistant 时的 state 用作初始
+零基准点。当 `last_reset` 改变时，零基准点将设为 0。
+如果未设置 last_reset，则计算 `sum` statistics 时使用 sensor 首次添加时的 value 作为
+零基准点。
 
-换句话说：更新统计数据时的逻辑是更新
-当前状态与前一个状态之差的总和列
-除非 `last_reset` 已更改，在这种情况下不要添加任何内容。
+换句话说：更新 statistics 时的逻辑是用当前 state 与前一个 state 之间的差来更新
+sum 列，除非 `last_reset` 已改变，此时不添加任何内容。
 
-没有last_reset的状态类`SensorStateClass.TOTAL`的示例：
+没有 last_reset 的 state class `SensorStateClass.TOTAL` 示例：
 
-| t | 状态 | 和 | 总和增加 | 总和减少
+| t                      | state  | sum    | sum_increase | sum_decrease
 | :--------------------- | -----: | -----: | -----------: | -----------:
-| 2021-08-01T13:00:00 | 1000 | 0 | 0 | 0
-| 2021-08-01T14:00:00 | 1010 | 10 | 10 | 0
-| 2021-08-01T15:00:00 | 0 | -1000 | 10 | 1010
-| 2021-08-01T16:00:00 | 5 | -995 | 15 | 1010
+|   2021-08-01T13:00:00  |  1000  |     0  |           0  |           0
+|   2021-08-01T14:00:00  |  1010  |    10  |          10  |           0
+|   2021-08-01T15:00:00  |     0  | -1000  |          10  |        1010
+|   2021-08-01T16:00:00  |     5  |  -995  |          15  |        1010
 
-状态类 `SensorStateClass.TOTAL` 与 last_reset 的示例：
+带有 last_reset 的 state class `SensorStateClass.TOTAL` 示例：
 
-| t | 状态 | 最后重置 | 和 | 总和增加 | 总和减少
+| t                      | state  | last_reset          | sum    | sum_increase | sum_decrease
 | :--------------------- | -----: | ------------------- | -----: | -----------: | -----------:
-| 2021-08-01T13:00:00 | 1000 | 2021-08-01T13:00:00 | 0 | 0 | 0
-| 2021-08-01T14:00:00 | 1010 | 2021-08-01T13:00:00 | 10 | 10 | 0
-| 2021-08-01T15:00:00 | 1005 | 2021-08-01T13:00:00 | 5 | 10 | 5
-| 2021-08-01T16:00:00 | 0 | 2021-09-01T16:00:00 | 5 | 10 | 5
-| 2021-08-01T17:00:00 | 5 | 2021-09-01T16:00:00 | 10 | 15 | 5
+|   2021-08-01T13:00:00  |  1000  | 2021-08-01T13:00:00 |     0  |           0  |           0
+|   2021-08-01T14:00:00  |  1010  | 2021-08-01T13:00:00 |    10  |          10  |           0
+|   2021-08-01T15:00:00  |  1005  | 2021-08-01T13:00:00 |     5  |          10  |           5
+|   2021-08-01T16:00:00  |     0  | 2021-09-01T16:00:00 |     5  |          10  |           5
+|   2021-08-01T17:00:00  |     5  | 2021-09-01T16:00:00 |    10  |          15  |           5
 
-状态类 `SensorStateClass.TOTAL` 的示例，其中初始状态位于开始处
-新的仪表周期的值不为0，但以0作为零点：
+新 meter cycle 开始时初始 state 不为 0、但将 0 用作零基准点的 state class `SensorStateClass.TOTAL` 示例：
 
-| t | 状态 | 最后重置 | 和 | 总和增加 | 总和减少
+| t                      | state  | last_reset          | sum    | sum_increase | sum_decrease
 | :--------------------- | -----: | ------------------- | -----: | -----------: | -----------:
-| 2021-08-01T13:00:00 | 1000 | 2021-08-01T13:00:00 | 0 | 0 | 0
-| 2021-08-01T14:00:00 | 1010 | 2021-08-01T13:00:00 | 10 | 10 | 0
-| 2021-08-01T15:00:00 | 1005 | 2021-08-01T13:00:00 | 5 | 10 | 5
-| 2021-08-01T16:00:00 | 5 | 2021-09-01T16:00:00 | 10 | 15 | 5
-| 2021-08-01T17:00:00 | 10 | 2021-09-01T16:00:00 | 15 | 20 | 5
+|   2021-08-01T13:00:00  |  1000  | 2021-08-01T13:00:00 |     0  |           0  |           0
+|   2021-08-01T14:00:00  |  1010  | 2021-08-01T13:00:00 |    10  |          10  |           0
+|   2021-08-01T15:00:00  |  1005  | 2021-08-01T13:00:00 |     5  |          10  |           5
+|   2021-08-01T16:00:00  |     5  | 2021-09-01T16:00:00 |    10  |          15  |           5
+|   2021-08-01T17:00:00  |    10  | 2021-09-01T16:00:00 |    15  |          20  |           5
 
-#### 国家级`SensorStateClass.TOTAL_INCREASING`
+#### 状态类 `SensorStateClass.TOTAL_INCREASING`
 
-对于 state_class `SensorStateClass.TOTAL_INCREASING` 的传感器，递减的值是
-解释为新仪表周期的开始或更换仪表。这是
-重要的是，集成确保该值不会错误地减少
-从存在测量噪声的传感器计算值的情况。有
-一定的容忍度，状态变化之间的减少 < 10% 将不会触发新的仪表
-循环。该状态类适用于煤气表、电表、水表等。
-计算时传感器读数减小时的值不会作为零点
-`sum` 统计，零点将设置为 0。
+对于 state_class 为 `SensorStateClass.TOTAL_INCREASING` 的 sensors，decreasing value 被
+解释为新 meter cycle 的开始或 meter 的更换。重要的是，集成要确保从带有 measurement noise 的 sensor 计算 value 时，value 不会错误地减少。
+有一定的容差，state change 之间减少 < 10% 不会触发新 meter cycle。此 state class 适用于 gas meters、electricity meters、water meters 等。
+计算 `sum` statistics 时，sensor reading 减少时的 value 不会用作零基准点，而是将零基准点设为 0。
 
-换句话说：更新统计数据时的逻辑是更新
-当前状态与前一个状态之差的总和列
-除非差值为负，在这种情况下不要添加任何内容。
+换句话说：更新 statistics 时的逻辑是用当前 state 与前一个 state 之间的差来更新
+sum 列，除非该差为负，此时不添加任何内容。
 
-状态类 `SensorStateClass.TOTAL_INCREASING` 的示例：
+State class `SensorStateClass.TOTAL_INCREASING` 示例：
 
-| t | 状态 | 和
+| t                      | state  | sum
 | :--------------------- | -----: | ---:
-| 2021-08-01T13:00:00 | 1000 | 0
-| 2021-08-01T14:00:00 | 1010 | 10
-| 2021-08-01T15:00:00 | 0 | 10
-| 2021-08-01T16:00:00 | 5 | 15
+|   2021-08-01T13:00:00  |  1000  |   0
+|   2021-08-01T14:00:00  |  1010  |  10
+|   2021-08-01T15:00:00  |     0  |  10
+|   2021-08-01T16:00:00  |     5  |  15
 
-状态类 `SensorStateClass.TOTAL_INCREASING` 的示例，其中传感器未重置为 0：
+Sensor 不重置为 0 的 state class `SensorStateClass.TOTAL_INCREASING` 示例：
 
-| t | 状态 | 和
+| t                      | state  | sum
 | :--------------------- | -----: | ---:
-| 2021-08-01T13:00:00 | 1000 | 0
-| 2021-08-01T14:00:00 | 1010 | 10
-| 2021-08-01T15:00:00 | 5 | 15
-| 2021-08-01T16:00:00 | 10 | 20
+|   2021-08-01T13:00:00  |  1000  |   0
+|   2021-08-01T14:00:00  |  1010  |  10
+|   2021-08-01T15:00:00  |     5  |  15
+|   2021-08-01T16:00:00  |    10  |  20
+
+### 处理从不支持到支持计量单位的迁移
+
+集成可能有具有自定义计量单位的 sensors，即它们不使用 Home Assistant 常量来设置 units。
+在将这样的 sensor 迁移到 Home Assistant unit system 支持的 unit 时，旧的自定义 unit 必须与 Home Assistant 常量的值完全匹配，否则 Home Assistant 会将其视为 unit change。
+
+例如，集成可能已将 energy sensor 的 unit 设为 `KWh`，这与 `UnitOfEnergy.KILO_WATT_HOUR`（kWh）的值不同。
+
+在编译 long-term statistics 时会检测到这种 unit change。在没有旧 unit 和新 unit 之间关系的知识的情况下，
+会抑制 statistics 的收集并生成关于 unit 不稳定的 warning。
+
+为了便于这些 migration 情况，集成可以提供自定义 unit mapping 来声明任何不支持的 unit
+等同于一个支持的 unit。这通过在集成的目录中创建 recorder platform `recorder.py`
+并实现函数 `async_custom_equivalent_units`，为任何相关的 `entity_id` 返回一个 equivalent units 字典来完成。
+此 mapping 将在 statistics 编译期间收集，并使集成能够平稳过渡到 Home Assistant 的 unit system。
+
+示例实现：
+```python
+@callback
+def async_custom_equivalent_units(hass: HomeAssistant) -> dict[str, dict[str | None, str]]:
+    """Return custom equivalent units per entity id."""
+    return {
+        "sensor.example_sensor_1": {
+            "b/s": UnitOfDataRate.BYTES_PER_SECOND, # B/s
+        },
+        "sensor.example_sensor_2": {
+            "KWh": UnitOfEnergy.KILO_WATT_HOUR, # kWh
+        },
+    }
+```

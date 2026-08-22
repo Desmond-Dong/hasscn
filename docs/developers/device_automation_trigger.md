@@ -1,44 +1,42 @@
 ---
-title: "设备 触发器"
-description: '我们目前正在探索 设备 自动化的替代方案。现有的 设备 自动化将继续工作，但新的 设备 自动化将不被接受。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "设备触发器"
 sidebar_label: 触发器
 ---
-# 设备 触发器
 
 :::warning
-我们目前正在探索 设备 自动化的替代方案。现有的 设备 自动化将继续工作，但新的 设备 自动化将不被接受。
+我们目前正在探索 device automations 的替代方案。现有的 device automations 将继续工作，但新的 device automations 将不再被接受。
 :::
 
-设备 触发器是与特定 设备 以及事件或状态更改关联的自动化触发器。例如“灯打开”或“检测到水”。
+Device triggers 是与特定设备和 event 或 state change 关联的自动化触发器。例如，"灯被打开"或"检测到水"。
 
-设备 触发器可以由提供 设备（例如 ZHA、deCONZ）的 集成 或 设备 具有 实体 的 实体 集成（例如灯、开关）提供。前者的一个示例是与 ZX​​QPH4ZXQ 无关的事件，例如遥控器或触摸面板上的按键按下，而后者的一个示例可能是灯已打开。
+Device triggers 可以由提供该设备的集成（例如 ZHA、deCONZ）提供，也可以由设备拥有实体的实体集成（例如 light、switch）提供。前者的例子是不与实体关联的 event，例如遥控器或触摸面板上的按键；后者的例子则可能是灯被打开。
 
-要添加对 设备 触发器的支持，集成 需要有 `device_trigger.py` 以及：
+若要添加 Device Triggers 支持，一个集成需要包含一个 `device_trigger.py` 文件，并完成以下工作：
 
-- *定义一个`TRIGGER_SCHEMA`*：代表触发器的字典，比如设备和事件类型
-- *创建触发器*：创建包含 设备 或 实体 以及架构定义的受支持事件或状态更改的字典。
-- *附加触发器*：将触发器配置与事件或状态更改相关联，例如在事件总线上触发的消息。
-- *添加文本和翻译*：为每个触发器指定一个人类可读的名称。
+- *定义 `TRIGGER_SCHEMA`*：一个代表触发器的字典，例如设备和 event 类型
+- *创建触发器*：创建包含设备或实体以及按 schema 定义所支持的 event 或 state change 的字典。
+- *关联触发器*：将触发器配置与一个 event 或 state change 关联，例如在 event bus 上触发的消息。
+- *添加文本和翻译*：为每个触发器提供一个人类可读的名称。
 
-不要手动应用静态架构。如果触发器架构被定义为 集成 的 `device_trigger.py` 模块中的常量，则 Core 将应用该架构。
+不要手动应用静态 schema。如果触发器 schema 被定义为集成 `device_trigger.py` 模块中的常量，核心会自动应用该 schema。
 
-如果触发reqUIres动态验证静态`TRIGGER_SCHEMA`无法提供，则可以实现`async_validate_trigger_config`功能。
+如果触发器需要静态的 `TRIGGER_SCHEMA` 无法提供的动态校验，可以实现一个 `async_validate_trigger_config` 函数。
 
 ```py
 async def async_validate_trigger_config(hass: HomeAssistant, config: ConfigType) -> ConfigType:
     """Validate config."""
 ```
 
-Home Assistant 包含一个用于开始使用 设备 触发器的模板。首先，在开发环境 `python3 -m script.scaffold device_trigger` 中运行。
+Home Assistant 提供了一个模板来帮助你开始编写 device triggers。在开发环境中运行 `python3 -m script.scaffold device_trigger` 即可开始。
 
-该模板将在您的 集成 文件夹中创建一个新文件 `device_trigger.py` 和一个匹配的测试文件。该文件包含以下函数和常量：
+该模板会在你的集成文件夹中创建一个新的 `device_trigger.py` 文件和对应的测试文件。该文件包含以下函数和常量：
 
 
-#### 定义一个`TRIGGER_SCHEMA`
+#### 定义 `TRIGGER_SCHEMA`
 
-设备 触发器被定义为字典。这些字典由您的 集成 创建，并由您的 集成 消耗以附加触发器。
+Device triggers 被定义为字典。这些字典由你的集成创建，并被你的集成消费以关联触发器。
 
-这是一个华丽的模式，用于验证特定的触发器字典是否代表您的 集成 可以处理的配置。这应该从 `device_automation/__init__.py` 扩展 TRIGGER_BASE_SCHEMA。
+这是一个 voluptuous schema，用于验证某个特定的触发器字典是否表示你的集成可以处理的配置。它应该扩展自 `device_automation/__init__.py` 中的 TRIGGER_BASE_SCHEMA。
 
 ```python
 from homeassistant.const import (
@@ -55,11 +53,11 @@ TRIGGER_SCHEMA = TRIGGER_BASE_SCHEMA.extend(
 )
 ```
 
-此示例有一个 `type` 字段，指示支持的事件类型。
+该示例有一个 `type` 字段，指示所支持的事件类型。
 
 #### 创建触发器
 
-`async_get_triggers` 方法返回 设备 或任何关联的 实体 支持的触发器列表。这些是向用户公开的用于创建自动化的触发器。
+`async_get_triggers` 方法返回该设备或其关联实体所支持的触发器列表。这些是向用户暴露以供创建自动化的触发器。
 
 ```python
 from homeassistant.const import (
@@ -92,11 +90,11 @@ async def async_get_triggers(hass, device_id):
     return triggers
 ```
 
-#### 连接触发器
+#### 关联触发器
 
-连接它：给定 `TRIGGER_SCHEMA` 配置，确保触发触发器时调用 `action`。
+要进行接线：给定一个 `TRIGGER_SCHEMA` 配置，确保在触发器被触发时调用 `action`。
 
-例如，您可以将触发器和操作附加到[已触发的事件](/developers/integration_events)通过您的 集成 乘坐活动巴士。
+例如，你可以将触发器和 action 关联到你的集成在 event bus 上触发的[事件](integration_events.md)。
 
 ```python
 async def async_attach_trigger(hass, config, action, trigger_info):
@@ -116,11 +114,11 @@ async def async_attach_trigger(hass, config, action, trigger_info):
     )
 ```
 
-返回值是一个分离触发器的函数。
+返回值是一个用于解除触发器关联的函数。
 
 #### 添加文本和翻译
 
-自动化用户界面将在映射到事件类型的 设备 自动化中显示人类可读的字符串。  使用您支持的触发器类型和子类型更新 `strings.json`：
+Automation 用户界面会显示一个映射到 event 类型的人类可读字符串。用你支持的 trigger 类型和子类型更新 `strings.json`：
 
 ```json
 {
@@ -132,5 +130,4 @@ async def async_attach_trigger(hass, config, action, trigger_info):
 }
 ```
 
-要在开发过程中测试您的翻译，请运行 `python3 -m script.translations develop`。
-
+在开发过程中测试你的翻译，请运行 `python3 -m script.translations develop`。

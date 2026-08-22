@@ -1,16 +1,14 @@
 ---
-title: "自定义卡片功能"
-description: '一些 dashboard cards 支持 features(https://www.home-assistant.io/dashboards/features/)。这些小部件会为 card 添加快捷控制。我们提供了许多内置 features，但你并不局限于 Home Assistant 默认包含的那些。'
+title: "自定义卡片 feature"
 ---
-# 自定义卡片功能
 
-一些 dashboard cards 支持 [features](https://www.home-assistant.io/dashboards/features/)。这些小部件会为 card 添加快捷控制。我们提供了许多内置 features，但你并不局限于 Home Assistant 默认包含的那些。你可以像定义[custom cards](/developers/frontend/custom-ui/custom-card)一样构建并使用自己的 feature。
+一些 dashboard 卡片支持 [features](https://www.home-assistant.io/dashboards/features/)。这些 widget 为卡片添加快速控制。我们提供了许多内置的 feature，但你并不局限于我们决定包含在 Home Assistant 中的那些。你可以像定义 [custom cards](/developers/frontend/custom-ui/custom-card) 一样构建并使用自己的 feature。
 
-## 定义你的卡片功能
+## 定义你的卡片 feature
 
-下面是一个用于 [button entity](/developers/core/entity/button) 的 custom card feature 示例。
+以下是针对 [button entity](/developers/core/entity/button) 的自定义卡片 feature 示例。
 
-![Screenshot of the custom card feature example](/developers/img/en/frontend/dashboard-custom-card-feature-screenshot.png)
+![Screenshot of the custom card feature example](/img/en/frontend/dashboard-custom-card-feature-screenshot.png)
 
 ```js
 import {
@@ -19,7 +17,11 @@ import {
   css,
 } from "https://unpkg.com/lit-element@2.0.1/lit-element.js?module";
 
-const supportsButtonPressCardFeature = (stateObj) => {
+const supportsButtonPressCardFeature = (hass, context) => {
+  const stateObj = context.entity_id
+    ? hass.states[context.entity_id]
+    : undefined;
+  if (!stateObj) return false;
   const domain = stateObj.entity_id.split(".")[0];
   return domain === "button";
 };
@@ -29,7 +31,7 @@ class ButtonPressCardFeature extends LitElement {
     return {
       hass: undefined,
       config: undefined,
-      stateObj: undefined,
+      context: undefined,
     };
   }
 
@@ -47,10 +49,17 @@ class ButtonPressCardFeature extends LitElement {
     this.config = config;
   }
 
+  get _stateObj() {
+    if (!this.hass || !this.context?.entity_id) return undefined;
+    return this.hass.states[this.context.entity_id];
+  }
+
   _press(ev) {
     ev.stopPropagation();
+    const stateObj = this._stateObj;
+    if (!stateObj) return;
     this.hass.callService("button", "press", {
-      entity_id: this.stateObj.entity_id,
+      entity_id: stateObj.entity_id,
     });
   }
 
@@ -58,8 +67,8 @@ class ButtonPressCardFeature extends LitElement {
     if (
       !this.config ||
       !this.hass ||
-      !this.stateObj ||
-      !supportsButtonPressCardFeature(this.stateObj)
+      !this.context ||
+      !supportsButtonPressCardFeature(this.hass, this.context)
     ) {
       return null;
     }
@@ -99,20 +108,29 @@ window.customCardFeatures = window.customCardFeatures || [];
 window.customCardFeatures.push({
   type: "button-press-card-feature",
   name: "Button press",
-  supported: supportsButtonPressCardFeature, // Optional
-  configurable: true, // Optional - defaults to false
+  isSupported: supportsButtonPressCardFeature, // 可选
+  configurable: true, // 可选 - 默认为 false
 });
 ```
 
-如果你希望你的 feature 更好地融入 home assistant 的默认设计，可以使用这些 CSS 变量：
+## 上下文
+
+Card feature 在卡片内部渲染，并接收与卡片绑定相同的 context。该 context 既作为 `context` 属性传递给 element，也作为 `isSupported` 函数的第二个参数。
+
+`context` 对象暴露以下内容：
+
+- `entity_id` _(optional)_: 来自父卡片的 entity id。
+- `area_id` _(optional)_: 来自父卡片的 area id。
+
+如果你希望你的 feature 更好地与 Home Assistant 的默认设计集成，可以使用这些 CSS 变量：
 
 - `--feature-height`: 推荐高度（42px）。
-- `--feature-border-radius`: 推荐圆角半径（12px）。这对设置按钮或滑块的圆角可能很有用。
-- `--feature-button-spacing`: 推荐按钮间距（12px）。如果你的 feature 中有多个按钮，这会很有用。
+- `--feature-border-radius`: 推荐圆角（12px）。用于设置 button 或 slider 的圆角很有用。
+- `--feature-button-spacing`: 推荐 button 之间的间距（12px）。如果你的 feature 中有多个 button，这会很有用。
 
 与 custom cards 的主要区别在于图形化配置选项。
-若要让它显示在 card editor 中，你必须将描述它的对象添加到数组 `window.customCardFeatures` 中。
+若要在卡片编辑器中显示，你必须将描述它的对象添加到数组 `window.customCardFeatures` 中。
 
-该对象的必需属性是 `type` 和 `name`。建议定义带函数的 `supported` 选项，这样 editor 只会在 feature 与 card 中所选实体兼容时才推荐它。如果你的实体带有额外配置（例如上面示例中的 `label` 选项），请将 `configurable` 设为 `true`，以便 editor 正常工作。
+该对象的必填属性是 `type` 和 `name`。建议定义 `isSupported` 选项，使用函数 `(hass, context) => boolean`，这样编辑器只有在 feature 与卡片中选定的 entity 兼容时才会推荐它。如果你的 entity 有额外的配置（例如上方示例中的 `label` 选项），请将 `configurable` 设为 `true`。
 
-此外，静态函数 `getConfigElement` 和 `getStubConfig` 的工作方式与普通 custom cards 相同。
+此外，静态函数 `getConfigElement` 和 `getStubConfig` 的工作原理与普通的 custom cards 相同。

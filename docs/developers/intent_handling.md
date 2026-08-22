@@ -1,38 +1,39 @@
 ---
-title: "意图处理"
-description: '任何组件都可以注册来处理意图。这使得单个组件能够处理由多个语音助手触发的意图。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "处理意图"
 ---
-# 意图处理
 
-任何组件都可以注册来处理意图。这使得单个组件能够处理由多个语音助手触发的意图。
+任何 component 都可以注册来处理 intents。这使得单个 component 能够处理来自多个 voice assistants 所 fire 的 intents。
 
-组件必须为它想处理的每一种类型注册一个意图处理器。意图处理器必须继承 `homeassistant.helpers.intent.IntentHandler`。
+一个 component 需要为它想要处理的每一种类型注册一个 intent handler。Intent handlers 必须继承 `homeassistant.helpers.intent.IntentHandler`。
 
 ```python
+from homeassistant.core import HomeAssistant
 from homeassistant.helpers import intent
+from homeassistant.helpers.typing import ConfigType
 
 DATA_KEY = "example_key"
 
 
-async def async_setup(hass, config):
+async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     hass.data[DATA_KEY] = 0
     intent.async_register(hass, CountInvocationIntent())
+    return True
 
 
 class CountInvocationIntent(intent.IntentHandler):
     """Handle CountInvocationIntent intents."""
 
-    # Type of intent to handle
+    # 要处理的 intent 类型
     intent_type = "CountInvocationIntent"
 
     description = "Count how often it has been called"
 
-    # Optional. A validation schema for slots
+    # 可选。用于校验 slots 的 schema
     # slot_schema = {
     #     'item': cv.string
     # }
 
-    async def async_handle(self, intent_obj):
+    async def async_handle(self, intent_obj: intent.Intent) -> intent.IntentResponse:
         """Handle the intent."""
         intent_obj.hass.data[DATA_KEY] += 1
         count = intent_obj.hass.data[DATA_KEY]

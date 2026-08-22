@@ -1,37 +1,35 @@
 ---
-title: "如果互联网/设备/服务不可用，则在不可用时记录一次，在重新连接时记录一次"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "如果互联网/设备/服务不可用，仅在不可用时记录一次，重新连接时记录一次"
+sidebar_label: 🥈 log-when-unavailable
 related_rules:
   - entity-unavailable
 ---
-# 如果互联网/设备/服务不可用，则在不可用时记录一次，在重新连接时记录一次
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
-当设备或服务不可访问时，实体通常会变得不可用。
-为了让用户找出发生这种情况的原因，集成应该在发生这种情况时记录日志。
-确保总共只记录一次，以避免垃圾邮件日志。
+当设备或服务无法访问时，entities 通常会变为 unavailable。
+为了允许用户了解原因，集成应在此发生时进行记录。
+确保总共只记录一次，以避免日志刷屏。
 
-当设备或服务再次可访问时，集成也应记录该情况。
-这对于使用日志来查明设备或服务何时不可用以及何时恢复在线非常有用。
+当设备或服务再次可访问时，集成也应记录这一点。
+这对于使用日志查找设备或服务何时不可用、何时恢复在线非常有用。
 
 :::info
-日志记录应发生在 `info` 级别。
+日志应使用 `info` 级别。
 :::
 
-## 实施示例
+## 示例实现
 
-由于可以通过多种不同的方式来实现，因此我们将仅提供使用协调器进行集成以及通过 `async_update` 进行实体更新的示例。
+由于实现方式多种多样，我们只针对使用 coordinator 的集成和通过 `async_update` 更新的 entity 提供示例。
 
-### 使用协调器进行集成的示例
+### 使用 coordinator 的集成示例
 
-在此示例中，我们有一个使用协调器来获取数据的集成。
-协调器一旦内置就有日志记录的逻辑。
-您在协调器中唯一需要做的就是在设备或服务不可用时引发 `UpdateFailed`。
+在此示例中，我们有一个使用 coordinator 获取数据的集成。
+coordinator 内置了只记录一次的逻辑。
+你在 coordinator 中唯一需要做的是，当设备或服务不可用时抛出 `UpdateFailed`。
 
-ZZ保护0ZZ
+`coordinator.py`
 ```python {18} showLineNumbers
 class MyCoordinator(DataUpdateCoordinator[MyData]):
     """Class to manage fetching data."""
@@ -53,13 +51,13 @@ class MyCoordinator(DataUpdateCoordinator[MyData]):
             raise UpdateFailed(f"The device is unavailable: {ex}")
 ```
 
-### 通过 `async_update` 更新实体的示例
+### 通过 `async_update` 更新的 entity 示例
 
-在此示例中，我们有一个通过 `async_update` 更新其值的传感器。
-该示例将在传感器不可用时进行记录，并在传感器重新联机时进行记录。
-请注意，实例属性用于跟踪消息是否已被记录以避免垃圾邮件日志。
+在此示例中，我们有一个通过 `async_update` 更新其值的 sensor。
+示例将在 sensor 不可用时记录，并在 sensor 重新上线时记录。
+注意，使用实例属性来跟踪消息是否已记录，以避免日志刷屏。
 
-ZZ保护0ZZ
+`sensor.py`
 ```python {10-12,16-18} showLineNumbers
 class MySensor(SensorEntity):
 
@@ -81,13 +79,13 @@ class MySensor(SensorEntity):
                 self._unavailable_logged = False
 ```
 
-## 其他资源
+## 更多资源
 
-有关管理集成状态的更多信息，请参阅 [documentation](/developers/integration_fetching_data)
+有关管理集成状态的更多信息，请参见[文档](/developers/integration_fetching_data)
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+此规则没有例外。
 
 ## 相关规则
 

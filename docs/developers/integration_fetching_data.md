@@ -1,43 +1,40 @@
 ---
-title: "获取数据"
-description: '你的集成需要从 API 获取数据并提供给 Home Assistant。这个 API 可能通过网络（本地或云端）、套接字、由 USB 设备暴露出来的串口等方式访问。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "Fetching data"
 ---
-# 获取数据
 
-你的集成需要从 API 获取数据并提供给 Home Assistant。这个 API 可能通过网络（本地或云端）、套接字、由 USB 设备暴露出来的串口等方式访问。
+你的 integration 需要从 API 获取 data，以便提供给 Home Assistant。这个 API 可能通过 web（本地或云端）、sockets、通过 USB 设备暴露的 serial ports 等方式提供。
 
-## 推送与轮询
+## Push vs poll
 
-API 的形式多种多样，但在 Core 中通常分为两类：推送和轮询。
+APIs 有各种形式，但核心上分为两类：push 和 poll。
 
-对于推送模式，我们订阅 API，并在新数据可用时收到通知，也就是由 API 主动把变更推送给我们。推送式 API 很理想，因为它消耗的资源更少：只有在状态变化时才会收到通知，而不需要反复重新拉取全部数据再找差异。由于实体可能被禁用，你应确保实体在 `async_added_to_hass` 回调中建立订阅，并在实体移除时取消订阅。
+使用 push 时，我们订阅一个 API，当有新的 data 可用时，API 会通知我们。它把变更推送给我们。Push APIs 非常好，因为它们消耗的资源更少。当发生变更时，我们可以收到变更通知，而不必重新获取所有 data 并找出变更。由于 entities 可以被禁用，你应该确保你的 entity 在 `async_added_to_hass` callback 内部订阅，并在移除时取消订阅。
 
-对于轮询模式，我们会按指定时间间隔从 API 获取最新数据。然后集成把这些数据提供给对应实体，再由实体写入 Home Assistant。
+使用 polling 时，我们会按指定的时间间隔从 API 获取最新的 data。你的 integration 然后将这些数据提供给它的 entity，并写入 Home Assistant。
 
-由于轮询非常常见，Home Assistant 默认假定实体是轮询型的。如果不是这样，请让 `Entity.should_poll` 返回 `False`。关闭轮询后，集成必须主动调用以下方法之一，通知 Home Assistant 该把实体状态写入状态机了：
+由于 polling 非常常见，Home Assistant 默认假设你的 entity 是基于 polling 的。如果不是，请从 `Entity.should_poll` property 返回 `False`。当你禁用 polling 时，你的 integration 将负责调用其中一个方法，通知 Home Assistant 是时候将 entity state 写入 Home Assistant：
 
-- 如果你在异步函数中执行，并且不需要调用实体更新方法，请调用 `Entity.async_write_ha_state()`。这是一个异步安全的 callback，会在事件循环下一次让出执行权时把状态写入状态机。
-- `Entity.schedule_update_ha_state()` 会调度实体更新。如果 `force_refresh` 设为 `True`，Home Assistant 会在写入状态前先调用实体的更新方法（`Entity.update()` 或 `Entity.async_update()`）。
+- 如果你在一个 async function 内部执行，且不需要调用你的 entity update method，请调用 `Entity.async_write_ha_state()`。这是一个 async callback，会在不将控制权让出给 event loop 的情况下，将 state 写入 state machine。
+- `Entity.schedule_update_ha_state(force_refresh=False)` / `Entity.async_schedule_update_ha_state(force_refresh=False)` 会安排一次 entity 更新。如果将 `force_refresh` 设置为 `True`，Home Assistant 会在写入 state 之前先调用你的 entity update method（`update()` / `async_update()`）。
 
-## 轮询 API 端点
+## Polling API endpoints
 
-下面说明几种常见的 API 形态，以及在 Home Assistant 中的推荐集成方式。请注意，一个集成可能同时遇到多种情况。
+我们将解释几种不同的 API 类型以及集成到 Home Assistant 的最佳方式。注意，有些 integrations 会遇到下面几种类型的组合。
 
-### 协调式：单个 API 轮询全部实体数据
+### 为所有 entities 协调、单次 API poll 获取 data
 
-这种 API 往往提供一个方法，一次返回 Home Assistant 中所有实体的数据。在这种情况下，理想做法是只对这个端点做一次定期轮询，然后在有新数据时立即通知相关实体。
+这个 API 将有一个单一的方法，用于获取你在 Home Assistant 中所有 entities 的 data。在这种情况下，我们希望在该 endpoint 上进行单次周期性 poll，然后尽快让 entities 知道有新的 data 可用。
 
-Home Assistant 提供了 `DataUpdateCoordinator` 类，帮助你以尽可能高效的方式管理这一流程。
+Home Assistant 提供了一个 `DataUpdateCoordinator` 类来帮助你尽可能高效地管理这一点。
 
-使用 `DataUpdateCoordinator` 时，通常默认轮询得到的数据大部分时间是不变的。例如，你轮询一盏一周才开一次的灯，那么返回数据大多数时候都可能相同。默认行为是在每次数据更新后都回调监听器，即使数据没有变化也是如此。如果 API 返回的数据支持通过 Python 的 `__eq__` 判断是否变化，那么在创建 `DataUpdateCoordinator` 时可设置 `always_update=False`，以避免不必要的回调和状态写入。
+使用 `DataUpdateCoordinator` 时，被 poll 的 data 通常预期保持基本不变。例如，如果你 poll 一个每周只开一次灯的 light，其 data 在绝大多数时间里可能是相同的。默认行为是每当 data 更新时就回调 listeners，即使 data 没有变化。如果从 API 返回的 data 可以通过 Python 的 `__eq__` method 比较变更，请在创建 `DataUpdateCoordinator` 时将 `always_update` 设置为 `False`，以避免不必要的 callbacks 和对 state machine 的写入。
 
 ```python
 """Example integration using DataUpdateCoordinator."""
 
+import asyncio
 from datetime import timedelta
 import logging
-
-import async_timeout
 
 from homeassistant.components.light import LightEntity
 from homeassistant.core import callback
@@ -48,15 +45,13 @@ from homeassistant.helpers.update_coordinator import (
     UpdateFailed,
 )
 
-from .const import DOMAIN
-
 _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
     """Config entry example."""
-    # assuming API object stored here by __init__.py
-    my_api = hass.data[DOMAIN][config_entry.entry_id]
+    # assuming API object stored as runtime_data by __init__.py
+    my_api = config_entry.runtime_data
     coordinator = MyCoordinator(hass, config_entry, my_api)
 
     # Fetch initial data so we have data when entities subscribe
@@ -115,7 +110,7 @@ class MyCoordinator(DataUpdateCoordinator):
         try:
             # Note: asyncio.TimeoutError and aiohttp.ClientError are already
             # handled by the data update coordinator.
-            async with async_timeout.timeout(10):
+            async with asyncio.timeout(10):
                 # Grab active context variables to limit data required to be fetched from API
                 # Note: using context is not required if there is no need or ability to limit
                 # data retrieved from API.
@@ -166,15 +161,15 @@ class MyEntity(CoordinatorEntity, LightEntity):
         await self.coordinator.async_request_refresh()
 ```
 
-### 对每个实体单独轮询
+### 每个独立 entity 单独 poll
 
-有些 API 会为每个设备提供单独的端点。有时无法把一个 API 设备精确映射到单个实体；如果你会从同一个设备端点创建多个实体，请参考上一节。
+有些 API 会为每个 device 提供一个 endpoint。有时无法将一个 API device 映射到一个单一的 entity。如果你从一个 API device endpoint 创建了多个 entities，请参阅上一节。
 
-如果你可以把一个设备端点精确映射到单个实体，那么就可以在 `Entity.update()` 或 `Entity.async_update()` 中获取该实体的数据。确保轮询设置为 `True`，Home Assistant 就会定期调用这个方法。
+如果你可以将一个 device endpoint 精确映射到一个单一 entity，你可以在 `update()` / `async_update()` method 中获取该 entity 的 data。请确保 polling 设置为 `True`，Home Assistant 会定期调用此 method。
 
-如果你的实体需要在首次写入 Home Assistant 之前先获取数据，请给 `add_entities` 传入 `update_before_add=True`，例如：`add_entities([MyEntity()], update_before_add=True)`。
+如果你的 entities 在首次写入 Home Assistant 之前需要获取 data，请将 `update_before_add=True` 传递给 `add_entities` method：`add_entities([MyEntity()], update_before_add=True)`。
 
-你可以通过在平台中定义 `SCAN_INTERVAL` 常量来控制集成的轮询间隔。不要把它设得太低，否则会消耗 Home Assistant 资源、压垮托管 API 的设备，或者导致你被云 API 限流。允许的最小值是 5 秒。
+你可以通过在 platform 中定义一个 `SCAN_INTERVAL` constant 来控制 integration 的 polling interval。注意不要将此值设置得太低。它会占用 Home Assistant 的资源，可能压垮承载 API 的 device，或被 cloud APIs 封禁。允许的最小值是 5 秒。
 
 ```python
 from datetime import timedelta
@@ -182,22 +177,22 @@ from datetime import timedelta
 SCAN_INTERVAL = timedelta(seconds=5)
 ```
 
-## 推送 API 端点
+## Pushing API endpoints
 
-如果你的 API 端点是推送式的，仍然可以在需要时使用数据更新协调器。做法是：创建 coordinator 时，不向构造函数传入轮询相关的 `update_method` 和 `update_interval` 参数。
+如果你的 API endpoint 是 push data 的，你仍然可以使用 data update coordinator。做法是不要将 polling 参数 `update_method` 和 `update_interval` 传递给构造函数。
 
-当新数据到达时，调用 `coordinator.async_set_updated_data(data)` 将数据传递给实体。如果这个方法用于原本带轮询的 coordinator，它还会重置下一次轮询的计时。
+当新的 data 到达时，使用 `coordinator.async_set_updated_data(data)` 将 data 传递给 entities。如果在 poll 的 coordinator 上使用此 method，它会重置到下一次 poll data 的时间。
 
-## 请求并行度
+## Request parallelism
 
 :::info
-这是一个高级主题。
+Home Assistant 会自动管理 request parallelism；大多数 integrations 无需更改此处描述的任何内容。
 :::
 
-Home Assistant 内置了并发控制逻辑，用于确保某个集成不会压垮 API，也不会耗尽 Home Assistant 的可用资源。它的核心就是限制并行请求数量。该机制会在服务调用和实体更新期间自动生效。
+Home Assistant 有内置的 logic，确保 integrations 不会 hammer APIs 并耗尽 Home Assistant 的所有可用资源。这个 logic 围绕限制并行请求的数量构建。这个 logic 会在 service action 调用和 entity 更新期间自动使用。
 
-Home Assistant 通过为每个集成维护一个 [`asyncio.Semaphore`](https://docs.python.org/3/library/asyncio-sync.html#asyncio.Semaphore) 来控制并行更新（即调用 `update()`）的数量。例如，如果 semaphore 只允许 1 个并发连接，那么更新和服务调用在已有请求进行时就会等待。如果这个值为 0，则由集成本身负责在需要时限制并行请求数。
+Home Assistant 通过为每个 integration 维护一个 [semaphore](https://docs.python.org/3/library/asyncio-sync.html#asyncio.Semaphore) 来控制并行更新（对 `update()` 的调用）的数量。例如，如果 semaphore 允许 1 个并行连接，那么当有一个正在进行时，updates 和 service action 调用会等待。如果该值为 0，integration 本身负责在必要时限制并行请求的数量。
 
-平台的默认并行请求数，取决于添加到 Home Assistant 的第一个实体：如果实体定义了 `async_update`，默认值为 0；否则为 1。这是一个历史遗留决策。
+平台并行请求的默认值由添加的到 Home Assistant 的第一个 entity 决定。如果 entity 定义了 `async_update` method，则为 0，否则为 1。（这是一个遗留决策）
 
-平台可以通过在平台文件中（例如 `rflink/light.py`）定义 `PARALLEL_UPDATES` 常量来覆盖这个默认值。
+Platforms 可以通过在它们的 platform（如 `rflink/light.py`）中定义 `PARALLEL_UPDATES` constant 来覆盖默认值。

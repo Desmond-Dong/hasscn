@@ -1,374 +1,374 @@
 ---
-title: "模型"
-description: '这些模型用于描述 Supervisor API 返回的对象。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "Models"
 ---
-# 模型
 
-这些模型用于描述 Supervisor API 返回的对象。
+这些模型描述了从 supervisor API 返回的对象。
 
-## App（旧称 add-on）
+## 应用（原称 add-on）
 
-| 键 | 类型 | 说明 |
-| ---------------- | -------------- | ----------------------------------------------------- |
-| name             | string         | 应用名称 |
-| slug             | string         | 应用 slug |
-| advanced         | boolean        | `true` 表示仅对高级用户可见 |
-| description      | string         | 应用说明 |
-| repository       | string         | 应用来源仓库 |
-| version          | string or null | 应用已安装版本 |
-| version_latest   | string         | 应用当前发布的最新版本 |
-| update_available | boolean        | `true` 表示有可用更新 |
-| installed        | string         | `true` 表示该应用已安装 |
-| available        | boolean        | `false` 表示该应用无法安装 |
-| icon             | bool           | 应用是否有图标文件 |
-| logo             | bool           | 应用是否有 logo 文件 |
-| state            | string         | 应用状态（started、stopped） |
-| system_managed   | bool           | 表示该应用是否由 Home Assistant 管理 |
+| key | type | description |
+|-----|------|-------------|
+| name | string | app 的名称 |
+| slug | string | app 的 slug |
+| advanced | boolean | 已弃用且被忽略；自 Supervisor 2026.03.0 起始终为 `false` |
+| description | string | app 的描述 |
+| repository | string | app 来自的 repository |
+| version | string or null | app 已安装的版本 |
+| version_latest | string | app 最新发布版本 |
+| update_available | boolean | 有更新可用时为 `true` |
+| installed | string | 已安装时为 `true` |
+| available | boolean | 无法安装时为 `false` |
+| icon | bool | app 拥有 icon 文件 |
+| logo | bool | app 拥有 logo 文件 |
+| state | string | app 的 state（started, stopped） |
+| system_managed | bool | 指示该 app 是否由 Home Assistant 管理 |
 
-## Application
+## 应用
 
-| 键 | 类型 | 说明 |
-| ------------ | ------- | -------------------------------------- |
-| name         | string  | 应用名称 |
-| index        | int     | TODO：这是什么？ |
-| stream_index | int     | TODO：这是什么？ |
-| stream_type  | string  | 流的类型（INPUT、OUTPUT） |
-| volume       | float   | 当前音量 |
-| mute         | boolean | `true` 表示该应用已静音 |
-| addon        | string  | 应用 slug |
+| key | type | description |
+|-----|------|-------------|
+| name | string | application 名称 |
+| index | int | TODO: What is this? |
+| stream_index | int | TODO: What is this? |
+| stream_type | string | stream 的类型（INPUT, OUTPUT） |
+| volume | float | 当前音量 |
+| mute | boolean | 该 application 被静音时为 `true` |
+| addon | string | app 的 slug |
 
-## Audio
+## 音频
 
-| 键 | 类型 | 说明 |
-| ----------- | ---- | ----------------------------------------------- |
-| card        | list | [Card 模型](#card)列表 |
-| input       | list | [音频设备模型](#audio-device)列表 |
-| output      | list | [输出设备模型](#audio-device)列表 |
-| application | list | [Application 模型](#application)列表 |
+| key | type | description |
+|-----|------|-------------|
+| card | list | [Card models](#card) 列表 |
+| input | list | [Audio device models](#audio-device) 列表 |
+| output | list | [Output device models](#audio-device) 列表 |
+| application | list | [Application models](#application) 列表 |
 
-## Audio device
+## 音频设备
 
-| 键 | 类型 | 说明 |
-| ------------ | ----------- | -------------------------------------------- |
-| name         | string      | 设备名称 |
-| index        | int         | TODO：这是什么？ |
-| description  | string      | 设备说明 |
-| volume       | float       | 当前音量 |
-| mute         | string      | `true` 表示设备已静音 |
-| default      | string      | `true` 表示该设备为默认设备 |
-| card         | int or null | TODO：这是什么？ |
-| applications | string      | [Application 模型](#application)列表 |
+| key | type | description |
+|-----|------|-------------|
+| name | string | 设备名称 |
+| index | int | TODO: What is this? |
+| description | string | 设备描述 |
+| volume | float | 当前音量 |
+| mute | string | 设备被静音时为 `true` |
+| default | string | 设备为默认时为 `true` |
+| card | int or null | TODO: What is this? |
+| applications | string | [Application models](#application) 列表 |
 
-## Audio profile
+## 音频配置文件
 
-| key         | type    | description                     |
-| ----------- | ------- | ------------------------------- |
-| name        | string  | The name of the profile         |
-| description | string  | The description of the profile  |
-| active      | boolean | `true` if the profile is active |
+| key | type | description |
+|-----|------|-------------|
+| name | string | profile 名称 |
+| description | string | profile 描述 |
+| active | boolean | 该 profile 处于活动状态时为 `true` |
 
-## Card
+## 卡片
 
-| key      | type   | description                                      |
-| -------- | ------ | ------------------------------------------------ |
-| name     | string | The name of the card                             |
-| index    | int    | TODO: What is this?                              |
-| driver   | string | The name of the card driver                      |
-| profiles | list   | A list of [Audio profile models](#audio-profile) |
+| key | type | description |
+|-----|------|-------------|
+| name | string | card 名称 |
+| index | int | TODO: What is this? |
+| driver | string | card driver 名称 |
+| profiles | list | [Audio profile models](#audio-profile) 列表 |
 
-## Discovery
+## 发现
 
-| key     | type   | description               |
-| ------- | ------ | ------------------------- |
-| addon   | string | The app slug           |
-| service | string | The service name          |
-| uuid    | string | The UUID of the discovery |
-| config  | dict   | The configuration         |
+| key | type | description |
+|-----|------|-------------|
+| addon | string | app 的 slug |
+| service | string | 服务名称 |
+| uuid | string | discovery 的 UUID |
+| config | dict | 配置 |
 
-## Host service
+## 主机服务
 
-| key         | type   | description             |
-| ----------- | ------ | ----------------------- |
-| name        | string | The service name        |
-| description | string | The service description |
-| state       | string | The service state       |
+| key | type | description |
+|-----|------|-------------|
+| name | string | 服务名称 |
+| description | string | 服务描述 |
+| state | string | 服务 state |
 
-## Network interface
+## 网络接口
 
-| key         | type    | description                                                                                   |
-| ----------- | ------- | --------------------------------------------------------------------------------------------- |
-| interface   | string  | The interface name i.e eth0.                                                                  |
-| type        | string  | The interface type: `ethernet`, `wireless` or `vlan`.                                         |
-| enabled     | boolean | Return True if the interface is enabled.                                                      |
-| connected   | boolean | Return True if the interface is connected to the network.                                     |
-| primary     | boolean | `true` if it's the primary network interface.                                                 |
-| ipv6        | struct or null  | An [IPv6 configuration](#ipv6-configuration) struct with IPv6 connection details.     |
-| ipv4        | struct or null  | An [IPv4 configuration](#ipv4-configuration) struct with IPv4 connection details.     |
-| wifi        | struct or null  | A [Wifi configuration](#wifi-configuration) struct with wireless connection details.  |
-| vlan        | struct or null  | A [VLAN configuration](#vlan-configuration) struct with details about the vlan.       |
+| key | type | description |
+|-----|------|-------------|
+| interface | string | 接口名称，例如 eth0。 |
+| type | string | 接口类型：`ethernet`、`wireless` 或 `vlan`。 |
+| enabled | boolean | 接口已启用时返回 True。 |
+| connected | boolean | 接口已连接到网络时返回 True。 |
+| primary | boolean | 为主网络接口时为 `true`。 |
+| ipv6 | struct or null | 包含 IPv6 连接详情的 [IPv6 configuration](#ipv6-configuration) struct。 |
+| ipv4 | struct or null | 包含 IPv4 连接详情的 [IPv4 configuration](#ipv4-configuration) struct。 |
+| wifi | struct or null | 包含无线连接详情的 [Wifi configuration](#wifi-configuration) struct。 |
+| vlan | struct or null | 包含 vlan 详情的 [VLAN configuration](#vlan-configuration) struct。 |
 
 ### IPv6 configuration
 
-| key           | type    | description                                                                                 |
-| ------------- | ------- | ------------------------------------------------------------------------------------------- |
-| method        | string  | The method used to set the IP can be `static`, `auto` or `disabled`.                        |
-| addr_gen_mode | string  | Address generation mode can be `eui64` or `stable-privacy`, `default-or-eui64` or `default` |
-| ip6_privacy   | string  | Privacy extensions options are `disabled`, `enabled-prefer-public`, `enabled` or `default`  |
-| address       | list    | A list with IP address and the netmask in a ::/XXX format.                                  |
-| gateway       | string  | The IP address of the gateway.                                                              |
-| nameservers   | list    | A list containing the IP addresses of the configured nameservers as strings.                |
-| route_metric  | int     | Route metric. Lower value has higher priority. The kernel accepts zero (0) but coerces it to 1024 (user default). |
+| key | type | description |
+|-----|------|-------------|
+| method | string | 设置 IP 的方法可以是 `static`、`auto` 或 `disabled`。 |
+| addr_gen_mode | string | Address generation mode 可以是 `eui64` 或 `stable-privacy`、`default-or-eui64` 或 `default` |
+| ip6_privacy | string | Privacy extensions 选项有 `disabled`、`enabled-prefer-public`、`enabled` 或 `default` |
+| address | list | 包含 IP 地址和 netmask 的列表，格式为 ::/XXX。 |
+| gateway | string | 网关的 IP 地址。 |
+| nameservers | list | 包含配置的 nameservers IP 地址的字符串列表。 |
+| route_metric | int | Route metric。值越低优先级越高。内核接受零（0）但会将其强制转换为 1024（用户默认值）。 |
 
 ### IPv4 configuration
 
-| key          | type    | description                                                                  |
-| ------------ | ------- | ---------------------------------------------------------------------------- |
-| method       | string  | The method used to set the IP can be `static`, `auto` or `disabled`.         |
-| address      | list    | A list with IP address and the netmask in a X.X.X.X/XX format.               |
-| gateway      | string  | The IP address of the gateway.                                               |
-| nameservers  | list    | A list containing the IP addresses of the configured nameservers as strings. |
-| route_metric | int     | Route metric. Lower value has higher priority.                               |
+| key | type | description |
+|-----|------|-------------|
+| method | string | 设置 IP 的方法可以是 `static`、`auto` 或 `disabled`。 |
+| address | list | 包含 IP 地址和 netmask 的列表，格式为 X.X.X.X/XX。 |
+| gateway | string | 网关的 IP 地址。 |
+| nameservers | list | 包含配置的 nameservers IP 地址的字符串列表。 |
+| route_metric | int | Route metric。值越低优先级越高。 |
 
-### Wifi configuration
+### Wi-Fi 配置
 
-| key         | type    | description                                                                  |
-| ----------- | ------- | ---------------------------------------------------------------------------- |
-| mode        | string  | Set the mode `infrastructure`, `mesh`, `adhoc` or `ap`.                      |
-| auth        | string  | Set the auth mode: `open`, `web` or `wpa-psk`.                               |
-| ssid        | string  | Set the SSID for the Wireless.                                               |
-| signal      | integer | Percentage of signal strength.                                               |
+| key | type | description |
+|-----|------|-------------|
+| mode | string | 设置模式 `infrastructure`、`mesh`、`adhoc` 或 `ap`。 |
+| auth | string | 设置 auth 模式：`open`、`web` 或 `wpa-psk`。 |
+| ssid | string | 为 Wireless 设置 SSID。 |
+| signal | integer | 信号强度百分比。 |
 
 ### VLAN configuration
 
-| key     | type    | description                                                                  |
-| ------- | ------- | ---------------------------------------------------------------------------- |
-| id      | integer | The VLAN ID.                                                                 |
-| parent  | string  | Parent interface which is the vlan attached.                                 |
+| key | type | description |
+|-----|------|-------------|
+| id | integer | VLAN ID。 |
+| parent | string | VLAN 附加到的父接口。 |
 
 ## 接入点
 
-| key        | type    | description                                                                  |
-| ---------- | ------- | ---------------------------------------------------------------------------- |
-| mode       | string  | One of: `infrastructure`, `mesh` or `adhoc`.                                 |
-| ssid       | string  | Wireless network ID.                                                         |
-| frequency  | integer | The operating frequency of this Access Point.                                |
-| signal     | integer | Percentage of signal strength.                                               |
-| mac        | string  | MAC Address of the Access Point.                                             |
+| key | type | description |
+|-----|------|-------------|
+| mode | string | 之一：`infrastructure`、`mesh` 或 `adhoc`。 |
+| ssid | string | Wireless 网络 ID。 |
+| frequency | integer | 此 Access Point 的工作频率。 |
+| signal | integer | 信号强度百分比。 |
+| mac | string | Access Point 的 MAC Address。 |
 
-## Panel
+## 面板
 
-| key    | type    | description                            |
-| ------ | ------- | -------------------------------------- |
-| enable | boolean | `true` if it's enabled                 |
-| icon   | string  | The sidebar icon                       |
-| title  | string  | The sidebar title                      |
-| admin  | boolean | `true` if it's for admin accounts only |
+| key | type | description |
+|-----|------|-------------|
+| enable | boolean | 已启用时为 `true` |
+| icon | string | sidebar icon |
+| title | string | sidebar title |
+| admin | boolean | 仅供 admin 账户使用时为 `true` |
 
-## Repository
+## 仓库
 
-| key        | type           | description                           |
-| ---------- | -------------- | ------------------------------------- |
-| slug       | string         | The repository slug                   |
-| name       | string         | The name of the repository            |
-| source     | string         | The URL to the repository             |
-| url        | string or null | URL for repository website            |
-| maintainer | string         | The name of the repository maintainer |
+| key | type | description |
+|-----|------|-------------|
+| slug | string | repository slug |
+| name | string | repository 名称 |
+| source | string | 指向 repository 的 URL |
+| url | string or null | repository website 的 URL |
+| maintainer | string | repository 维护者名称 |
 
-## Service
+## 服务
 
-| key       | type    | description                         |
-| --------- | ------- | ----------------------------------- |
-| slug      | string  | The service slug                    |
-| available | boolean | `true` if the service is available  |
-| providers | list    | A list of providers for the service |
+| key | type | description |
+|-----|------|-------------|
+| slug | string | service slug |
+| available | boolean | 服务可用时为 `true` |
+| providers | list | 该服务的 providers 列表 |
 
-## Backup
+## 备份
 
-| key       | type    | description                                                                |
-| --------- | ------- | -------------------------------------------------------------------------- |
-| slug      | string  | A generated slug for the backup                                            |
-| date      | string  | ISO date string representation of the date the backup was created          |
-| name      | string  | The name given to the backup                                               |
-| type      | string  | The type of backup (full, partial)                                         |
-| protected | boolean | `true` if the backup is password protected                                 |
-| content | dictionary | Details of the backup content. See [Backup -> content](#backup---content) |
-| compressed | boolean | `true` if the backup is saved in a compressed archive                     |
+| key | type | description |
+|-----|------|-------------|
+| slug | string | 为 backup 生成的 slug |
+| date | string | backup 创建日期的 ISO 日期字符串表示 |
+| name | string | 赋予 backup 的名称 |
+| type | string | backup 的类型（full, partial） |
+| protected | boolean | backup 受密码保护时为 `true` |
+| content | dictionary | backup content 详情。参见 [Backup -> content](#backup---content) |
+| compressed | boolean | backup 以压缩归档保存时为 `true` |
 
-### 备份 -> content
+### 备份到内容
 
-备份对象中的 `content` 键包含以下字段：
+Backup 对象的 `content` key 包含以下 key：
 
-| key       | type    | description                                                           |
-| --------- | ------- | --------------------------------------------------------------------- |
-| homeassistant      | boolean  | `true` if the backup contains homeassistant
-| addons      | list  | A list of app slugs included in the backup
-| folders      | list  | A list of folder names included in the backup
+| key | type | description |
+|-----|------|-------------|
+| homeassistant | boolean | backup 包含 homeassistant 时为 `true` |
+| addons | list | backup 中包含的 app slugs 列表 |
+| folders | list | backup 中包含的文件夹名称列表 |
 
-## Backup details
+## 备份 details
 
-| key                            | type           | description                                                                                                               |
-| ------------------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| slug                           | string         | A generated slug for the backup                                                                                           |
-| type                           | string         | The type of backup (full, partial)                                                                                        |
-| name                           | string         | The name given to the backup                                                                                              |
-| date                           | string         | ISO date string representation of the date the backup was created                                                         |
-| size                           | string         | The size of the backup in MB                                                                                              |
-| protected                      | boolean        | `true` if the backup is password protected                                                                                |
-| location                       | string or null | The name of the backup mount it's stored on.  `null` if it's stored locally.                                              |
-| homeassistant                  | string         | The version of Home Assistant that was in use                                                                             |
-| addons                         | list           | A list of apps in the backup. Apps are represented as a dictionary with these keys [`slug`,`name`,`version`,`size`] |
-| repositories                   | list           | A list of app repository URL's as strings                                                                              |
-| folders                        | list           | A list of strings representing directories                                                                                |
-| homeassistant_exclude_database | boolean        | `true` if the Home Assistant database file was excluded from this backup                                                  |
+| key | type | description |
+|-----|------|-------------|
+| slug | string | 为 backup 生成的 slug |
+| type | string | backup 的类型（full, partial） |
+| name | string | 赋予 backup 的名称 |
+| date | string | backup 创建日期的 ISO 日期字符串表示 |
+| size | string | backup 大小（MB） |
+| protected | boolean | backup 受密码保护时为 `true` |
+| location | string or null | backup 存储所在的 backup mount 名称。本地存储时为 `null`。 |
+| homeassistant | string | 当时使用的 Home Assistant 版本 |
+| addons | list | backup 中的 apps 列表。Apps 以字典形式表示，包含这些 key：[`slug`,`name`,`version`,`size`] |
+| repositories | list | app repository URL 字符串列表 |
+| folders | list | 表示目录的字符串列表 |
+| homeassistant_exclude_database | boolean | Home Assistant 数据库文件被从此 backup 中排除时为 `true` |
 
-## Stats
+## 统计
 
-| key            | type  | description                               |
-| -------------- | ----- | ----------------------------------------- |
-| cpu_percent    | float | The percentage of the CPU that is used    |
-| memory_usage   | int   | The current memory usage in bytes         |
-| memory_limit   | int   | The max allowed memory usage in bytes     |
-| memory_percent | float | The percentage of the memory that is used |
-| network_tx     | int   | Network transmission usage                |
-| network_rx     | int   | Network receiver usage                    |
-| blk_read       | int   | File system read usage                    |
-| blk_write      | int   | File system write usage                   |
+| key | type | description |
+|-----|------|-------------|
+| cpu_percent | float | 已使用的 CPU 百分比 |
+| memory_usage | int | 当前内存使用量（字节） |
+| memory_limit | int | 允许的最大内存使用量（字节） |
+| memory_percent | float | 已使用的内存百分比 |
+| network_tx | int | 网络发送使用量 |
+| network_rx | int | 网络接收使用量 |
+| blk_read | int | 文件系统读取使用量 |
+| blk_write | int | 文件系统写入使用量 |
 
-## Issue
+## 问题
 
-| key       | type        | description                                         |
-| ----------| ----------- | --------------------------------------------------- |
-| uuid      | str         | A generated uuid as issue ID                        |
-| type      | str         | Type of the issue                                   |
-| context   | str         | In which context the issue occurs                   |
-| reference | str or null | Depend on the Context, a reference to another Model |
+| key | type | description |
+|-----|------|-------------|
+| uuid | str | 作为 issue ID 的生成 uuid |
+| type | str | issue 类型 |
+| context | str | issue 发生的上下文 |
+| reference | str or null | 取决于上下文；对另一个 model 的引用（例如 app slug） |
+| reference_extra | dict or null | 关于该 issue 的额外上下文特定元数据（例如哪个端口存在冲突） |
 
-## Suggestion
+## 建议
 
-| key       | type        | description                                         |
-| ----------| ----------- | --------------------------------------------------- |
-| uuid      | str         | A generated uuid as suggestion ID                   |
-| type      | str         | Type of the suggestion                              |
-| context   | str         | In which context the suggestion occurs              |
-| reference | str or null | Depend on the Context, a reference to another Model |
-| auto      | bool        | True if the suggested fix will be auto-applied      |
+| key | type | description |
+|-----|------|-------------|
+| uuid | str | 作为 suggestion ID 的生成 uuid |
+| type | str | suggestion 类型 |
+| context | str | suggestion 发生的上下文 |
+| reference | str or null | 取决于上下文；对另一个 model 的引用（例如 app slug） |
+| reference_extra | dict or null | 关于该 suggestion 的额外上下文特定元数据（例如要清除哪个端口） |
+| auto | bool | 建议的修复将自动应用时为 True |
 
-## Check
+## 检查
 
-| key       | type        | description                                         |
-| ----------| ----------- | --------------------------------------------------- |
-| slug      | str         | A generated slug for the check                      |
-| enable    | bool        | The enabled state of the check                      |
+| key | type | description |
+|-----|------|-------------|
+| slug | str | 为 check 生成的 slug |
+| enable | bool | check 的启用状态 |
 
-## Device
+## 设备
 
-| key        | type           | description                                                           |
-| ---------- | -------------- | --------------------------------------------------------------------- |
-| name       | string         | Name of the device object                                             |
-| sysfs      | string         | Path to sysfs device object                                           |
-| dev_path   | string         | Path to devfs                                                         |
-| subsystem  | string or null | Subsystem type of the device (tty, input, sound, block, misc)         |
-| parent     | string or null | Path to the parent sysfs device object                                |
-| by_id      | string or null | Udev by ID link                                                       |
-| attributes | dict           | A dict with pure udev device attributes for debug and understanding   |
-| children   | list           | A list of path to the children sysfs devices                          |
+| key | type | description |
+|-----|------|-------------|
+| name | string | 设备对象名称 |
+| sysfs | string | 指向 sysfs 设备对象的路径 |
+| dev_path | string | 指向 devfs 的路径 |
+| subsystem | string or null | 设备的 subsystem 类型（tty, input, sound, block, misc） |
+| parent | string or null | 指向父 sysfs 设备对象的路径 |
+| by_id | string or null | Udev by ID 链接 |
+| attributes | dict | 包含用于调试和理解的纯 udev 设备 attributes 的 dict |
+| children | list | 指向子 sysfs 设备的路径列表 |
 
-## Disk
+## 磁盘
 
-| key        | type           | description                                                            |
-| ---------- | -------------- | ---------------------------------------------------------------------- |
-| name       | string         | Name of the disk device                                                |
-| vendor     | string         | Vendor of the disk device                                              |
-| model      | string         | Model of the disk device                                               |
-| serial     | string         | Serial number of the disk device                                       |
-| size       | int            | Size of disk in bytes                                                  |
-| id         | string         | Unique ID for the disk device (either UDisks2 drive ID or device path) |
-| dev_path   | string         | Device path for the disk device                                        |
+| key | type | description |
+|-----|------|-------------|
+| name | string | 磁盘设备名称 |
+| vendor | string | 磁盘设备厂商 |
+| model | string | 磁盘设备型号 |
+| serial | string | 磁盘设备的序列号 |
+| size | int | 磁盘大小（字节） |
+| id | string | 磁盘设备的唯一 ID（UDisks2 drive ID 或设备路径） |
+| dev_path | string | 磁盘设备的设备路径 |
 
-## Mount
+## 挂载
 
-| key        | type           | description                                                            | request/response |
-| ---------- | -------------- | ---------------------------------------------------------------------- | ---------------- |
-| name       | string         | Name of the mount                                                      | both             |
-| type       | string         | Type of the mount (cifs or nfs)                                        | both             |
-| usage      | string         | Usage of the mount (backup, media, or share)                           | both             |
-| server     | string         | IP address or hostname of the network share server                     | both             |
-| port       | int            | Port to use (if not using the standard one for the mount type)         | both             |
-| read_only  | bool           | Mount is read-only (not available for backup mounts)                   | both             |
-| path       | string         | (nfs mounts only) Path to mount from the network share                 | both             |
-| share      | string         | (cifs mounts only) Share to mount from the network share               | both             |
-| username   | string         | (cifs mounts only) Username to use for authentication                  | request only     |
-| password   | string         | (cifs mounts only) Password to use for authentication                  | request only     |
-| state      | string         | Current state of the mount (active, failed, etc.)                      | response only    |
+| key | type | description | request/response |
+|-----|------|-------------|------------------|
+| name | string | mount 名称 | both |
+| type | string | mount 类型（cifs 或 nfs） | both |
+| usage | string | mount 用途（backup, media, 或 share） | both |
+| server | string | 网络共享服务器的 IP 地址或主机名 | both |
+| port | int | 要使用的端口（如果不使用该 mount 类型的标准端口） | both |
+| read_only | bool | mount 为只读（不适用于 backup mounts） | both |
+| path | string | (仅 nfs mounts) 从网络共享挂载的路径 | both |
+| share | string | (仅 cifs mounts) 从网络共享挂载的 share | both |
+| username | string | (仅 cifs mounts) 用于认证的 username | request only |
+| password | string | (仅 cifs mounts) 用于认证的 password | request only |
+| state | string | mount 的当前 state（active, failed 等） | response only |
 
-仅请求字段可以出现在请求中，但永远不会出现在响应里。
-仅响应字段会出现在响应中，但不能包含在请求里。
+Request only 字段可以包含在 requests 中，但永远不会出现在 responses 中。
+Response only 字段会出现在 responses 中，但不能包含在 requests 中。
 
-## Job
+## 任务
 
-| key        | type    | description                                                   |
-| ---------- | ------- | ------------------------------------------------------------- |
-| name       | string  | Name of the job                                               |
-| reference  | string  | A unique ID for instance the job is acting on (if applicable) |
-| uuid       | string  | Unique ID of the job                                          |
-| progress   | int     | Progress of the job (if accurate progress is obtainable)      |
-| stage      | string  | A name for the stage the job is in (if applicable)            |
-| done       | boolean | Is the job complete                                           |
-| created    | string  | Date and time when job was created in ISO format              |
-| child_jobs | list    | A list of child [jobs](#job) started by this one              |
-| errors     | list    | A list of [errors](#job-error) that occurred during execution |
-| extra      | dictionary or null | Additional metadata relevant to the job or stage (if applicable) |
+| key | type | description |
+|-----|------|-------------|
+| name | string | job 名称 |
+| reference | string | job 所作用的实例的唯一 ID（如果适用） |
+| uuid | string | job 的唯一 ID |
+| progress | int | job 的进度（如果可以获得准确的进度） |
+| stage | string | job 所处 stage 的名称（如果适用） |
+| done | boolean | job 是否完成 |
+| created | string | job 创建的日期和时间（ISO 格式） |
+| child_jobs | list | 由该 job 启动的子[jobs](#job)列表 |
+| errors | list | 执行期间发生的[errors](#job-error)列表 |
+| extra | dictionary or null | 与该 job 或 stage 相关的额外元数据（如果适用） |
 
-## Job error
+## 任务错误
 
-| key        | type    | description                                    |
-| ---------- | ------- | ---------------------------------------------- |
-| type       | string  | Type of error that occurred                    |
-| message    | string  | Human-readable description of what went wrong  |
-| stage      | string  | A name for the stage the job was in at the time the error occurred (if applicable) |
+| key | type | description |
+|-----|------|-------------|
+| type | string | 发生的错误类型 |
+| message | string | 出错情况的人类可读描述 |
+| stage | string | 错误发生时 job 所处 stage 的名称（如果适用） |
 
-## Boot slot
+## 启动槽位
 
-| key        | type    | description                                     |
-| ---------- | ------- | ----------------------------------------------- |
-| state      | string  | Active or inactive (active slot is in use)      |
-| status     | string  | Status of the last boot from slot (good or bad) |
-| version    | string  | Version of OS installed                         |
+| key | type | description |
+|-----|------|-------------|
+| state | string | Active 或 inactive（active slot 正在使用中） |
+| status | string | 从该 slot 最后一次启动的状态（good 或 bad） |
+| version | string | 已安装 OS 的版本 |
 
-## User
+## 用户
 
-| key        | type    | description                                                   |
-| ---------- | ------- | ------------------------------------------------------------- |
-| username   | string  | Username used to login                                        |
-| name       | string  | Name of the user                                              |
-| is_owner   | boolean | Is the user the owner                                         |
-| is_active  | boolean | Is the user active                                            |
-| local_only | boolean | Can the user login from the network (e.g. via http)           |
-| group_ids  | list    | Role(s) the user has (admin, etc)                             |
+| key | type | description |
+|-----|------|-------------|
+| username | string | 用于登录的 Username |
+| name | string | 用户名称 |
+| is_owner | boolean | 该用户是否为 owner |
+| is_active | boolean | 该用户是否 active |
+| local_only | boolean | 用户能否从网络登录（例如通过 http） |
+| group_ids | list | 用户拥有的 role(s)（admin 等） |
 
-## Drive
+## 驱动器
 
-| key            | type     | description                                                 |
-| -------------- | -------- | ----------------------------------------------------------- |
-| vendor         | string   | Drive vendor                                                |
-| model          | string   | Drive model                                                 |
-| serial         | string   | Drive serial number                                         |
-| id             | string   | Unique and persistent id for drive                          |
-| size           | int      | Size of the drive in bytes                                  |
-| time_detected  | datetime | Time drive was detected by system                           |
-| connection_bus | string   | Physical connection bus of the drive (USB, etc.)            |
-| seat           | string   | Identifier of seat drive is plugged into                    |
-| removable      | boolean  | Is the drive removable by the user?                         |
-| ejectable      | boolean  | Is the drive ejectable by the system?                       |
-| filesystems    | list     | A list of [filesystem partitions](#filesystem) on the drive |
+| key | type | description |
+|-----|------|-------------|
+| vendor | string | Drive vendor |
+| model | string | Drive 型号 |
+| serial | string | Drive 序列号 |
+| id | string | Drive 的唯一且持久 id |
+| size | int | Drive 大小（字节） |
+| time_detected | datetime | Drive 被系统检测到的时间 |
+| connection_bus | string | Drive 的物理连接总线（USB 等） |
+| seat | string | Drive 所插入的 seat 标识符 |
+| removable | boolean | Drive 是否可由用户移除？ |
+| ejectable | boolean | Drive 是否可由系统弹出？ |
+| filesystems | list | Drive 上的[filesystem partitions](#filesystem)列表 |
 
-## Filesystem
+## 文件系统
 
-| key          | type    | description                                               |
-| ------------ | ------- | --------------------------------------------------------- |
-| device       | string  | Special device file for the filesystem (e.g. `/dev/sda1`) |
-| id           | string  | Unique and persistent id for filesystem                   |
-| size         | int     | Size of the filesystem in bytes                           |
-| name         | string  | Name of the filesystem (if known)                         |
-| system       | boolean | `true` if filesystem considered a system/internal device  |
-| mount_points | list    | List of paths where the filesystem is mounted.            |
+| key | type | description |
+|-----|------|-------------|
+| device | string | filesystem 的特殊设备文件（例如 `/dev/sda1`） |
+| id | string | filesystem 的唯一且持久 id |
+| size | int | filesystem 大小（字节） |
+| name | string | filesystem 名称（如果已知） |
+| system | boolean | filesystem 被视为 system/internal 设备时为 `true` |
+| mount_points | list | filesystem 挂载的路径列表。 |

@@ -1,10 +1,8 @@
 ---
 title: "示例"
-description: '以下示例说明如何与 Supervisor API 交互。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 示例
 
-以下示例说明如何与 Supervisor API 交互。
+如何与 supervisor API 对接的示例。
 
 ## 使用 cURL 获取网络信息
 
@@ -12,7 +10,7 @@ description: '以下示例说明如何与 Supervisor API 交互。 本页属于 
 curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/network/info
 ```
 
-**响应：**
+**response:**
 
 ```json
 {
@@ -33,13 +31,13 @@ curl -sSL -H "Authorization: Bearer $SUPERVISOR_TOKEN" http://supervisor/network
 }
 ```
 
-## 测试 Supervisor 连通性
+## 向 supervisor 发送 Ping
 
 ```bash
 curl -sSL http://supervisor/supervisor/ping
 ```
 
-**响应：**
+**response:**
 
 ```json
 {

@@ -1,30 +1,28 @@
 ---
-title: "陈旧设备已被删除"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "移除失效设备"
+sidebar_label: 🥇 stale-devices
 related_rules:
   - dynamic-devices
 ---
-# 陈旧设备已被删除
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-当设备从集线器或帐户中删除时，它也应该从 Home Assistant 中删除。
-这样，用户界面将不会显示不再可用的设备。
+当设备从 hub 或账户中移除时，也应从 Home Assistant 中移除。
+这样，用户界面就不会再显示已不可用的设备。
 
-我们应该只删除我们确定不再可用的设备。
-如果您无法确定设备是否仍然可用，请务必实施 `async_remove_config_entry_device`。
-这允许用户手动从设备注册表中删除设备。
+我们只应移除那些确定已不可用的设备。
+如果无法确定设备是否仍可用，请务必实现 `async_remove_config_entry_device`。
+这将允许用户手动从 device registry 中删除设备。
 
-## 实施示例
+## 示例实现
 
-在此示例中，我们有一个从服务获取数据的协调器。
-更新数据后，我们会检查是否有任何设备已被删除。
-如果是这样，我们会将它们从设备注册表中删除。
-这也会导致与该设备关联的所有实体被删除。
+在此示例中，我们有一个从服务获取数据的 coordinator。
+当数据更新时，我们会检查是否有设备被移除。
+如果有，我们会将它们从 device registry 中移除。
+同时也会导致与该设备关联的所有实体被移除。
 
-ZZ保护0ZZ
+`coordinator.py`
 ```python {13,20-30} showLineNumbers
 class MyCoordinator(DataUpdateCoordinator[dict[str, MyDevice]]):
     """Class to manage fetching data."""
@@ -59,14 +57,14 @@ class MyCoordinator(DataUpdateCoordinator[dict[str, MyDevice]]):
         return data
 ```
 
-为了展示第二个示例，其中有人可以手动从设备注册表中删除设备，我们在 `__init__.py` 中实现 `async_remove_config_entry_device`。
-定义此函数将启用 UI 中设备页面上的删除按钮。
-在此示例中，集成只能获取设备的更新，而无法获取已连接设备的完整列表，因此它无法自动删除设备。
+为了展示一个用户可以手动从 device registry 中删除设备的示例，我们在 `__init__.py` 中实现 `async_remove_config_entry_device`。
+定义此函数将在 UI 的设备页面上启用删除按钮。
+在此示例中，集成只能获取设备的更新，而无法获取已连接设备的完整列表，因此无法自动删除设备。
 在 `async_remove_config_entry_device` 中，我们应该实现一个函数来检查设备是否仍然可用。
-如果不是，我们返回 `True` 以允许用户手动删除设备。
-在这里，如果我们一段时间没有收到任何更新，我们假设该设备无法工作。
+如果不可用，我们返回 `True` 以允许用户手动删除设备。
+此处，如果一段时间内没有收到设备的任何更新，则假设设备已无法工作。
 
-ZZ保护0ZZ
+`__init__.py`
 ```python showLineNumbers
 async def async_remove_config_entry_device(
     hass: HomeAssistant, config_entry: MyConfigEntry, device_entry: dr.DeviceEntry
@@ -80,13 +78,13 @@ async def async_remove_config_entry_device(
     )
 ```
 
-## 其他资源
+## 更多资源
 
-有关设备的更多信息，请查看[设备注册表文档](/developers/device_registry_index)。
+关于设备的更多信息，请查阅[device registry 文档](/developers/device_registry_index)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

@@ -1,19 +1,17 @@
 ---
-title: "Python库：建模数据"
-description: '现在我们已经进行了身份验证，我们可以开始发出经过身份验证的请求并获取数据！。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 建模数据
+title: "Python 库：数据建模"
+sidebar_label: Modelling data
 ---
-# Python库：建模数据
 
-现在我们已经进行了身份验证，我们可以开始发出经过身份验证的请求并获取数据！
+既然认证已经就绪，我们就可以开始发起经过认证的请求并获取数据了！
 
-在对数据进行建模时，重要的是我们与 API 提供的结构相同的结构公开来自 API 的数据。某些 API 设计可能没有多大意义或包含剪贴错误。重要的是我们仍然在我们的对象中代表它们。这使得您的库的开发人员可以轻松地使用 API 文档并了解它如何在您的库中工作。
+在建模数据时，重要的是我们要以 API 所提供的相同结构来暴露数据。某些 API 设计可能不太合理，或者包含拼写错误。我们仍然需要在对象中如实表示它们。这使得使用你的库的开发者可以轻松参考 API 文档，并了解它在你的库中如何工作。
 
-API 库应该学做。，因此可以将数据结构表示为类，但不宜将数据从一个值转换为另一个值。例如，您不宜实现摄氏温度和华氏温度之间的决定转换。这涉及对结果精度的影响，因此应转用该库的开发人员。
+API 库应尽量做到最少。因此，将数据结构表示为类是可以的，但你不应该将一个值转换为另一个值。例如，你不应该实现 Celsius 和 Fahrenheit 温度之间的转换。这涉及到对结果精度的决策，因此应该交由使用库的开发者来处理。
 
-在此示例中，我们将名为 ExampleHub 的 Rest API 建模一个异步库，该库有两个端点：
+在这个示例中，我们将为名为 ExampleHub 的 Rest API 构建一个 async 库，它有两个 endpoints：
 
-- get `/light/<id>`：查询单个灯的信息。
+- get `/light/<id>`：查询单个 light 的信息。
 
   ```json
   {
@@ -23,9 +21,9 @@ API 库应该学做。，因此可以将数据结构表示为类，但不宜将�
   }
   ```
 
-- 后`/light/<id>`：控制灯光。要发送的示例 JSON：`{ "is_on": false }`。以新的光状态做出响应。
+- post `/light/<id>`：控制 light。发送的示例 JSON：`{ "is_on": false }`。返回 light 的新状态。
 
-- 获取`/lights`：返回所有灯的列表
+- get `/lights`：返回所有 lights 的列表
   ```json
   [
     {
@@ -41,7 +39,7 @@ API 库应该学做。，因此可以将数据结构表示为类，但不宜将�
   ]
   ```
 
-由于这个 API 代表灯光，我们首先要创建一个类来代表灯光。
+由于此 API 表示 lights，我们首先要创建一个类来表示 light。
 
 ```python
 from .auth import Auth
@@ -87,7 +85,7 @@ class Light:
         self.raw_data = await resp.json()
 ```
 
-现在我们有了一个轻量级，我们可以对 API 的根进行建模，它提供数据的入口点。
+现在我们有了 light 类，可以建模 API 的根部分，它提供了数据的入口点。
 
 ```python
 from typing import List
@@ -116,7 +114,7 @@ class ExampleHubAPI:
         return Light(await resp.json(), self.auth)
 ```
 
-有了这两个文件，我们现在可以像这样控制灯光：
+有了这两个文件，我们现在可以这样控制 lights：
 
 ```python
 import asyncio

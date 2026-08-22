@@ -1,42 +1,40 @@
 ---
-title: "认证API"
-description: '本页介绍应用程序如何获取对 Home Assistant 实例的授权并完成集成。查看演示(https://hass-auth-demo.glitch.me)，该演示基于我们的辅助库 home-assistant-js-websocket(https://github.com/home-assistant/ho。'
+title: "认证 API"
 sidebar_label: API
 ---
-# 认证API
 
-本页介绍应用程序如何获取对 Home Assistant 实例的授权并完成集成。[查看演示](https://hass-auth-demo.glitch.me)，该演示基于我们的辅助库 [home-assistant-js-websocket](https://github.com/home-assistant/home-assistant-js-websocket)。
+本页将描述你的应用程序对 Home Assistant 实例进行授权和集成所需的步骤。[查看演示](https://hass-auth-demo.glitch.me)，由我们的 helper lib [home-assistant-js-websocket](https://github.com/home-assistant/home-assistant-js-websocket) 提供支持。
 
-每个用户都有自己的 Home Assistant 实例，因此每位用户都能掌控自己的数据。同时，我们也希望第三方开发者能够轻松创建与 Home Assistant 集成的应用。为此，我们采用了 [OAuth 2 规范][oauth2-spec]，并结合 [OAuth 2 IndieAuth 扩展][indieauth-spec] 来生成客户端。
+每个用户都有自己的 Home Assistant 实例，这使每个用户能够控制自己的数据。然而，我们也希望使第三方开发者能够轻松创建允许用户与 Home Assistant 集成的应用程序。为此，我们采用了 [OAuth 2 规范][oauth2-spec]，并结合 [OAuth 2 IndieAuth 扩展][indieauth-spec] 来生成客户端。
 
-## 客户端
+## 客户端（Clients）
 
-在让用户通过您的应用授权其实例之前，您需要先准备一个客户端。在传统 OAuth2 中，客户端通常由服务器生成，然后用户再进行授权。但由于这里的每个服务器都归某个用户所有，因此我们采用了与 [IndieAuth 客户端][indieauth-clients] 类似的方式。
+在你请求用户将其实例与你的应用程序授权之前，你需要一个客户端。在传统的 OAuth2 中，服务器需要在用户授权之前生成客户端。然而，由于每个服务器都属于一个用户，我们采用了与 [IndieAuth][indieauth-clients] 略有不同的方法。
 
-要使用的客户端 ID 就是您应用程序的网站地址。重定向 URL 必须与客户端 ID 具有相同的主机和端口。例如：
+你需要使用的 client ID 是你应用程序的网站。redirect URI 必须与 client ID 使用相同的主机和端口。例如：
 
-- 客户端 ID：`https://www.my-application.io`
-- 重定向 URI：`https://www.my-application.io/hass/auth_callback`
+- client ID：`https://www.my-application.io`
+- redirect URI：`https://www.my-application.io/hass/auth_callback`
 
-如果您需要使用不同的重定向 URL（例如在构建原生应用时），可以在应用网站（即客户端 ID 对应的网站）的 HTML 中添加已批准的重定向 URL。例如，若要将重定向 URI `hass://auth` 加入白名单，需要在网站中添加：
+如果你需要不同的 redirect URI（例如在构建原生应用时），你可以在你的应用程序网站（即 client ID）的内容中添加一个 HTML 标签，包含已批准的 redirect URI。例如，将此添加到你的站点以允许 redirect URI `hass://auth`：
 
 ```html
 <link rel='redirect_uri' href='hass://auth'>
 ```
 
-Home Assistant 将扫描网站的前 10kB 来查找链接标签。
+Home Assistant 将扫描网站的前 10kB 以查找 link 标签。
 
-## 授权
+## 授权（Authorize）
 
 <a href='https://www.websequencediagrams.com/?lz=dGl0bGUgQXV0aG9yaXphdGlvbiBGbG93CgpVc2VyIC0-IENsaWVudDogTG9nIGludG8gSG9tZSBBc3Npc3RhbnQKABoGIC0-IFVzZXI6AEMJZSB1cmwgAD4JACgOOiBHbyB0bwAeBWFuZCBhAC0ICgBQDgB1DACBFw5jb2RlAHELAE4RZXQgdG9rZW5zIGZvcgAoBgBBGlQAJQUK&s=qsd'>
-<img class='invertDark' src='/developers/img/en/auth/authorize_flow.png' alt='Overview of how the different parts interact' />
+<img class='invertDark' src='/img/en/auth/authorize_flow.png' alt='各部分之间如何交互的概览' />
 </a>
 
 :::info
-此处显示的所有示例URL均带有额外的空格和换行符，仅用于显示目的。
+此处所有示例 URL 为显示目的添加了额外的空格和换行。
 :::
 
-授权 URL 应包含 `client_id` 和 `redirect_uri` 这两个查询参数。
+Authorize URL 应包含 `client_id` 和 `redirect_uri` 作为查询参数。
 
 ```txt
 http://your-instance.com/auth/authorize?
@@ -44,38 +42,38 @@ http://your-instance.com/auth/authorize?
     redirect_uri=https%3A%2F%2Fhass-auth-demo.glitch.me%2F%3Fauth_callback%3D1
 ```
 
-您还可以选择加入 `state` 参数，该参数会在重定向时原样带回。它很适合用来保存您发起认证时所对应的实例 URL。例如：
+你还可以选择包含一个 `state` 参数，它将被添加到 redirect URI 中。state 非常适合存储你正在认证的实例 URL。示例：
 
 ```txt
 http://your-instance.com/auth/authorize?
     client_id=https%3A%2F%2Fhass-auth-demo.glitch.me&
     redirect_uri=https%3A%2F%2Fhass-auth-demo.glitch.me%2Fauth_callback&
-    state=http%3A%2F%2Fhassio.local%3A8123
+    state=http%3A%2F%2Fhomeassistant.local
 ```
 
-用户访问该链接后，会看到登录并授权您的应用程序的页面。授权完成后，用户会被重定向回 `redirect_uri`，并在查询参数中附带授权码和 `state`。例如：
+用户将导航到该链接，并看到登录并授权你的应用程序的说明。一旦授权，用户将被重定向回传入的 redirect URI，其中包含 authorization code 和 state 作为查询参数的一部分。示例：
 
 ```txt
 https://hass-auth-demo.glitch.me/auth_callback?
     code=12345&
-    state=http%3A%2F%2Fhassio.local%3A8123
+    state=http%3A%2F%2Fhomeassistant.local
 ```
 
-随后可将该授权码发送到令牌端点，以换取令牌（见下一节）。
+这个 authorization code 可以通过将其发送到 token 端点来交换为 tokens（见下一节）。
 
-## 令牌
+## Token
 
-令牌端点会为有效授权返回令牌。这里的授权既可以是从授权端点获取的授权码，也可以是刷新令牌。对于刷新令牌，令牌端点还支持执行撤销操作。
+Token 端点在给定有效 grant 时返回 tokens。该 grant 是从 authorize 端点获取的 authorization code 或 refresh token。在 refresh token 的情况下，token 端点还能够撤销 token。
 
-与该端点的所有交互都必须通过向 `http://your-instance.com/auth/token` 发送 HTTP POST 请求完成，且请求体需要使用 `application/x-www-form-urlencoded` 编码。
+与该端点的所有交互都需要向 `http://your-instance.com/auth/token` 发送 HTTP POST 请求，并使用 `application/x-www-form-urlencoded` 编码请求体。
 
-### 授权码
+### Authorization code
 
 :::tip
-发往该端点的所有请求都必须包含此前用于将用户重定向到授权端点的客户端 ID。
+所有对 token 端点的请求必须包含与将用户重定向到 authorize 端点时使用的完全相同的 client ID。
 :::
 
-当用户成功完成授权后，使用 `authorization_code` 授权类型来获取令牌。请求体如下：
+在用户成功完成 authorize 步骤后，使用 grant type `authorization_code` 获取 tokens。请求体为：
 
 ```txt
 grant_type=authorization_code&
@@ -83,7 +81,7 @@ code=12345&
 client_id=https%3A%2F%2Fhass-auth-demo.glitch.me
 ```
 
-返回结果会包含访问令牌和刷新令牌：
+返回的响应将是一个 access token 和 refresh token：
 
 ```json
 {
@@ -94,9 +92,9 @@ client_id=https%3A%2F%2Fhass-auth-demo.glitch.me
 }
 ```
 
-访问令牌是短期令牌，可用于访问 API。刷新令牌可用于换取新的访问令牌。`expires_in` 表示访问令牌的有效秒数。
+Access token 是一个短期有效的 token，可用于访问 API。Refresh token 可用于获取新的 access token。`expires_in` 值是 access token 有效的秒数。
 
-如果请求无效，接口会返回 HTTP 状态码 400。如果是为未激活用户请求令牌，则会返回 HTTP 状态码 403。
+如果发出了无效请求，将返回 HTTP 状态码 400。如果为非活动用户请求 token，HTTP 状态码将为 403。
 
 ```json
 {
@@ -105,9 +103,9 @@ client_id=https%3A%2F%2Fhass-auth-demo.glitch.me
 }
 ```
 
-### 刷新令牌
+### Refresh token
 
-通过 `authorization_code` 获取到刷新令牌后，您便可以用它换取新的访问令牌。请求体如下：
+一旦通过 grant type `authorization_code` 获取了 refresh token，你就可以使用它来获取新的 access token。请求体为：
 
 ```txt
 grant_type=refresh_token&
@@ -115,7 +113,7 @@ refresh_token=IJKLMNOPQRST&
 client_id=https%3A%2F%2Fhass-auth-demo.glitch.me
 ```
 
-返回结果会包含一个访问令牌：
+返回的响应将是一个 access token：
 
 ```json
 {
@@ -125,7 +123,7 @@ client_id=https%3A%2F%2Fhass-auth-demo.glitch.me
 }
 ```
 
-如果发出无效请求，将返回 HTTP 状态代码 400。
+如果发出了无效请求，将返回 HTTP 状态码 400。
 
 ```json
 {
@@ -134,37 +132,43 @@ client_id=https%3A%2F%2Fhass-auth-demo.glitch.me
 }
 ```
 
-### 撤销刷新令牌
+### 撤销 refresh token
 
 :::tip
-撤销刷新令牌时无需提供 `client_id`
+撤销 refresh token 不需要 `client_id`
 :::
-令牌端点也支持撤销刷新令牌。撤销后，该刷新令牌以及它曾签发的所有访问令牌都会立即失效。要撤销刷新令牌，请发送以下请求：
+
+要撤销 refresh token，请向 `http://your-instance.com/auth/revoke` 发送 HTTP POST 请求，并使用 `application/x-www-form-urlencoded` 编码请求体。撤销 refresh token 将立即撤销该 refresh token 以及它曾经授予的所有 access token。请求体为：
+
+```txt
+token=IJKLMNOPQRST
+```
+
+请求将始终返回空响应体和 HTTP 状态 200，无论请求是否成功。
+
+以前，撤销是通过向 token 端点（`/auth/token`）发送 `action=revoke` 来完成的。此形式已弃用，但为了向后兼容仍然有效：
 
 ```txt
 token=IJKLMNOPQRST&
 action=revoke
 ```
 
-无论请求是否成功，接口都会返回空响应体和 HTTP 状态码 200。
+## 长期 access token
 
-## 长期访问令牌
+长期 access token 的有效期为 10 年。它们适用于与第三方 API 和 webhook 风格的集成。长期 access token 可以在用户 Home Assistant 个人资料页面底部的 **"Long-Lived Access Tokens"** 部分中创建。
 
-长期访问令牌的有效期为 10 年。它们非常适合用于第三方 API 集成以及 webhook 风格的集成。用户可以在 Home Assistant 个人资料页面底部的 **“长期访问令牌”** 部分创建此类令牌。
-
-您也可以通过 WebSocket 命令 `auth/long_lived_access_token` 生成长期访问令牌，这会为当前用户创建一个新的长期访问令牌。Home Assistant 不会保存该访问令牌字符串，因此您必须自行妥善保管。
+你还可以使用 WebSocket 命令 `auth/long_lived_access_token` 生成长期 access token，它将为当前用户创建一个长期 access token。Access token 字符串不会保存在 Home Assistant 中；你必须将其记录在安全的地方。
 
 ```json
 {
     "id": 11,
     "type": "auth/long_lived_access_token",
     "client_name": "GPS Logger",
-    "client_icon": null,
     "lifespan": 365
 }
 ```
 
-响应包括一个长期访问令牌：
+响应包含一个长期 access token：
 
 ```json
 {
@@ -175,13 +179,13 @@ action=revoke
 }
 ```
 
-## 发出经过身份验证的请求
+## 发起经过认证的请求
 
-获得访问令牌后，您就可以向 Home Assistant API 发起已认证请求。
+一旦你有了 access token，你就可以向 Home Assistant API 发起经过认证的请求。
 
-对于 WebSocket 连接，请在[认证消息](/developers/api/websocket#authentication-phase)中发送访问令牌。
+对于 WebSocket 连接，在 [authentication message](/developers/api/websocket#authentication-phase) 中传递 access token。
 
-对于 HTTP 请求，请在 `Authorization` 请求头中提供令牌类型和访问令牌：
+对于 HTTP 请求，将 token type 和 access token 作为 authorization header 传递：
 
 ```http
 Authorization: Bearer ABCDEFGH
@@ -224,34 +228,34 @@ fetch('https://your.awesome.home/api/error/all', {
 });
 ```
 
-如果访问令牌已失效，您会收到 HTTP 状态码 401 Unauthorized。这表示您需要使用刷新令牌获取新的访问令牌。如果刷新令牌也失效，则表示该用户的授权状态已经失效。此时您应清除本地保存的用户数据，并要求用户重新授权。
+如果 access token 不再有效，你将收到 HTTP 状态码 401 unauthorized 的响应。这意味着你需要刷新 token。如果 refresh token 不起作用，说明 token 已不再有效，用户已登出。你应该清除用户数据并请求用户重新授权。
 
-[oauth2-spec]：https://tools.ietf.org/html/rfc6749
+[oauth2-spec]: https://tools.ietf.org/html/rfc6749
 [indieauth-spec]: https://indieauth.spec.indieweb.org/
 [indieauth-clients]: https://indieauth.spec.indieweb.org/#client-identifier
 
-## 签名路径
+## 签名路径（Signed paths）
 
-有时您会希望用户直接向 Home Assistant 发出 GET 请求来下载数据。在这种场景下，常规认证机制无法生效，因为我们无法把用户与一个带有认证请求头的 API 请求绑定起来。这时，签名路径就很有用。
+有时你希望用户向 Home Assistant 发起 GET 请求以下载数据。在这种情况下，普通的认证系统无法满足要求，因为我们无法将用户与带有认证头的 API 关联起来。在这种情况下，签名路径可以帮助。
 
-签名路径是服务器上的普通路径，例如 `/api/states`，只是额外附带了一个安全签名。用户可以直接访问该路径，并以创建该签名路径时所对应的访问令牌权限完成授权。签名路径可通过 WebSocket 连接创建，且仅短时间有效，默认超时时间为 30 秒。
+签名路径是我们服务器上的一个普通路径，如 `/api/states`，但附加了安全认证签名。用户可以导航到该路径，并将作为创建签名路径的 access token 进行授权。签名路径可以通过 WebSocket 连接创建，并且设计为短期有效。默认过期时间为 30 秒。
 
-获取签名路径有两种方式。
+有两种方式获取签名路径。
 
-如果您正在开发集成，请从 `homeassistant.components.http.auth` 导入 `async_sign_path`。如果它是在 HTTP 请求或 WebSocket 连接对应的上下文中调用，系统会自动使用相应的刷新令牌。如果两者都不可用（例如在自动化内部调用时），则会使用一个特殊的 “Home Assistant Content” 用户。
+如果你正在创建集成，请从 `homeassistant.components.http.auth` 导入 `async_sign_path`。该方法在从 HTTP 请求或 WebSocket 连接的上下文中调用时，会自动采用 refresh token。如果两者都不可用（例如，因为它在一个自动化内部），它将使用一个特殊的 "Home Assistant Content" 用户。
 
-如果您在前端中使用，则可以通过以下 WebSocket 命令创建签名路径：
+如果你正在处理前端，你可以使用以下 WebSocket 命令创建签名路径：
 
 ```js
 {
   "type": "auth/sign_path",
   "path": "/api/states",
-  // optional, expiration time in seconds. Defaults to 30 seconds
+  // 可选，过期时间以秒为单位。默认为 30 秒
   "expires": 20
 }
 ```
 
-响应中将包含签名路径：
+响应将包含签名路径：
 
 ```js
 {
@@ -259,9 +263,9 @@ fetch('https://your.awesome.home/api/error/all', {
 }
 ```
 
-关于签名路径，需要注意以下几点：
+关于签名路径的注意事项：
 
-- 如果刷新令牌被删除，签名 URL 将立即失效。
-- 如果用户被删除，签名 URL 也会失效，因为对应的刷新令牌会被删除。
-- 如果 Home Assistant 重启，签名 URL 将失效。
-- 访问权限只会在收到请求时校验一次。如果响应过程持续超过过期时间（例如下载大文件），下载仍会继续完成。
+- 如果 refresh token 被删除，签名 URL 将不再有效。
+- 如果用户被删除，签名 URL 将不再有效（因为 refresh token 将被删除）。
+- 如果 Home Assistant 重启，签名 URL 将不再有效。
+- 访问仅在收到请求时验证。如果响应耗时超过过期时间（例如下载大文件），下载将在过期时间过去后继续进行。

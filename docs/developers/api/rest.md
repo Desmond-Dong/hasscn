@@ -1,23 +1,20 @@
 ---
 title: "REST API"
-description: 'import ApiEndpoint from ''@site/static/js/apiendpoint.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# REST API
-
 import ApiEndpoint from '@site/static/js/api_endpoint.jsx'
 
-Home Assistant 在与 Web 前端相同的端口上提供 REST API（默认端口为 8123）。
+Home Assistant 在与 web frontend 相同的端口上提供了一个 RESTful API。Home Assistant OS 安装上默认为 80，否则为 8123，除非通过 `SETUP_PORT` 环境变量更改了端口。
 
-如果你的配置中未使用 [`frontend`](https://www.home-assistant.io/integrations/frontend/)，则需要在 `configuration.yaml` 中添加 [`api` 集成](https://www.home-assistant.io/integrations/api/)。
+如果你的配置中没有使用 [`frontend`](https://www.home-assistant.io/integrations/frontend/)，则需要在 `configuration.yaml` 文件中添加 [`api` 集成](https://www.home-assistant.io/integrations/api/)。
 
-- `http://IP_ADDRESS:8123/` 是控制 Home Assistant 的界面。
-- `http://IP_ADDRESS:8123/api/` 是 REST API。
+- `http://IP_ADDRESS:8123/` 是用于控制 Home Assistant 的接口。
+- `http://IP_ADDRESS:8123/api/` 是一个 RESTful API。
 
-该 API 只接受并返回 JSON 编码对象。
+API 只接受和返回 JSON 编码的对象。
 
-所有 API 调用都必须带上 `Authorization: Bearer TOKEN` 请求头，其中 `TOKEN` 需替换为你的唯一访问令牌。你可以在浏览器登录前端后，进入 [个人资料](https://www.home-assistant.io/docs/authentication/#your-account-profile) 页面 `http://IP_ADDRESS:8123/profile` 获取该令牌（Long-Lived Access Token）。请注意完整复制整个密钥。
+所有 API 调用都必须附带 header `Authorization: Bearer TOKEN`，其中 `TOKEN` 应替换为你的唯一 access token。你可以使用 Web 浏览器登录 frontend，然后转到[你的 profile](https://www.home-assistant.io/docs/authentication/#your-account-profile) `http://IP_ADDRESS:8123/profile` 来获取一个 token（"Long-Lived Access Token"）。注意复制完整的 key。
 
-调用 Home Assistant REST API 有多种方式，其中一种是使用 `curl`：
+有多种方式可以消费 Home Assistant Rest API。其中一种是使用 `curl`：
 
 ```shell
 curl \
@@ -26,7 +23,7 @@ curl \
   http://IP_ADDRESS:8123/ENDPOINT
 ```
 
-另一种方式是使用 Python 与 [Requests](https://requests.readthedocs.io/en/latest/) 模块。
+另一种选择是使用 Python 和 [Requests](https://requests.readthedocs.io/en/latest/) 模块。
 
 ```python
 from requests import get
@@ -41,7 +38,7 @@ response = get(url, headers=headers)
 print(response.text)
 ```
 
-还可以在 Home Assistant 自动化或脚本中使用 [RESTful Command integration](https://www.home-assistant.io/integrations/rest_command/)。
+另一种选择是在 Home Assistant 自动化或脚本中使用 [RESTful Command 集成](https://www.home-assistant.io/integrations/rest_command/)。
 
 ```yaml
 turn_light_on:
@@ -53,7 +50,7 @@ turn_light_on:
   payload: '{"state":"on"}'
 ```
 
-成功调用将返回状态码 200 或 201。还可能返回以下状态码：
+成功的调用将返回状态码 200 或 201。还可能返回的其他状态码有：
 
 - 400 (Bad Request)
 - 401 (Unauthorized)
@@ -62,7 +59,7 @@ turn_light_on:
 
 ### 操作
 
-该 API 支持以下操作：
+API 支持以下 actions：
 
 <ApiEndpoint path="/api/" method="get">
 
@@ -82,13 +79,13 @@ curl \
   -H "Content-Type: application/json" http://localhost:8123/api/
 ```
 
-注意：请确保包含末尾的 `/`，完整路径是 `/api/`，不是 `/api`。
+注意：请确保包含末尾的 `/`，完整路径是 `/api/`，而不是 `/api`
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/api/config" method="get">
 
-以 JSON 形式返回当前配置。
+以 JSON 形式返回当前的 configuration。
 
 ```json
 {
@@ -143,7 +140,7 @@ curl \
 
 <ApiEndpoint path="/api/components" method="get">
 
-返回当前已加载组件的列表。
+返回当前已加载的 components 列表。
 
 ```
 [
@@ -177,7 +174,7 @@ curl \
 
 <ApiEndpoint path="/api/events" method="get">
 
-返回事件对象数组。每个事件对象都包含事件名称和监听器数量。
+返回一个 event 对象数组。每个 event 对象包含 event 名称和 listener 计数。
 
 ```json
 [
@@ -204,7 +201,7 @@ curl \
 
 <ApiEndpoint path="/api/services" method="get">
 
-返回服务对象数组。每个对象都包含所属 domain 以及它包含的服务。
+返回一个 service 对象数组。每个对象包含 domain 以及它所包含的 services。
 
 ```json
 [
@@ -236,22 +233,22 @@ curl \
 
 <ApiEndpoint path="/api/history/period/<timestamp>" method="get">
 
-返回过去一段时间内的状态变化数组。每个对象都包含对应实体的详细信息。
+返回过去状态变化的数组。每个对象包含实体的更多详细信息。
 
-`<timestamp>`（`YYYY-MM-DDThh:mm:ssTZD`）是可选参数，默认为请求时间前 1 天，用于确定时间区间的起点。
+`<timestamp>`（`YYYY-MM-DDThh:mm:ssTZD`）是可选的，默认为请求时间前 1 天。它决定了该期间的开始。
 
-以下参数为**必填**：
+以下参数是**必需的**：
 
-- `filter_entity_id=<entity_ids>`：按一个或多个实体过滤，多个实体使用逗号分隔。
+- `filter_entity_id=<entity_ids>` 按一个或多个 entities 过滤，以逗号分隔。
 
-你还可以传入以下可选 GET 参数：
+你可以传递以下可选 GET 参数：
 
-- `end_time=<timestamp>`：以 URL 编码格式指定时间区间的结束时间（默认持续 1 天）。
-- `minimal_response`：除首尾状态外，仅返回 `last_changed` 和 `state`（速度更快）。
-- `no_attributes`：不返回数据库中的 attributes（速度更快）。
-- `significant_changes_only`：仅返回显著状态变化。
+- `end_time=<timestamp>` 以 URL 编码格式选择期间的结束时间（默认为 1 天）。
+- `minimal_response` 仅对第一个和最后一个 state 以外的 states 返回 `last_changed` 和 `state`（快得多）。
+- `no_attributes` 跳过从数据库返回 attributes（快得多）。
+- `significant_changes_only` 仅返回重要的 state 变化。
 
-不使用 `minimal_response` 的示例
+不带 `minimal_response` 的示例
 
 ```json
 [
@@ -280,7 +277,7 @@ curl \
 ]
 ```
 
-使用 `minimal_response` 的示例
+带 `minimal_response` 的示例
 
 ```json
 [
@@ -320,7 +317,7 @@ curl \
 示例 `curl` 命令：
 
 ```shell
-# History of the entity 'sensor.temperature' of the past day (default)
+# 过去一天的实体 'sensor.temperature' 的历史（默认）
 curl \
   -H "Authorization: Bearer TOKEN" \
   -H "Content-Type: application/json" \
@@ -328,7 +325,7 @@ curl \
 ```
 
 ```shell
-# Minimal history of the entity 'sensor.temperature' and 'sensor.kitchen_temperature' of the past day where the beginning date is set manually to 2023-09-04
+# 过去一天中实体 'sensor.temperature' 和 'sensor.kitchen_temperature' 的最小历史，起始日期手动设置为 2023-09-04
 curl \
   -H "Authorization: Bearer TOKEN" \
   -H "Content-Type: application/json" \
@@ -336,8 +333,8 @@ curl \
 ```
 
 ```shell
-# History of the entity 'sensor.temperature' during the period from 2021-09-04 to 2023-09-04
-# Using URL encoded timestamps
+# 实体 'sensor.temperature' 在 2021-09-04 到 2023-09-04 期间的历史
+# 使用 URL 编码的 timestamps
 curl \
   -H "Authorization: Bearer TOKEN" \
   -H "Content-Type: application/json" \
@@ -348,14 +345,14 @@ curl \
 
 <ApiEndpoint path="/api/logbook/<timestamp>" method="get">
 
-返回日志簿条目数组。
+返回一个 logbook 条目数组。
 
-`<timestamp>`（`YYYY-MM-DDThh:mm:ssTZD`）是可选参数，默认为请求时间前 1 天，用于确定时间区间的起点。
+`<timestamp>`（`YYYY-MM-DDThh:mm:ssTZD`）是可选的，默认为请求时间前 1 天。它决定了该期间的开始。
 
-你还可以传入以下可选 GET 参数：
+你可以传递以下可选 GET 参数：
 
-- `entity=<entity_id>`：按单个实体进行过滤。
-- `end_time=<timestamp>`：以 URL 编码格式指定从 `<timestamp>` 开始这段时间范围的结束时间。
+- `entity=<entity_id>` 按单个 entity 过滤。
+- `end_time=<timestamp>` 以 URL 编码格式选择从 `<timestamp>` 开始的期间结束时间。
 
 示例
 ```json
@@ -414,7 +411,7 @@ curl \
 
 <ApiEndpoint path="/api/states" method="get">
 
-返回状态对象数组。每个状态都包含以下属性：`entity_id`、`state`、`last_changed` 和 `attributes`。
+返回一个 state 对象数组。每个 state 具有以下 attributes：`entity_id`、`state`、`last_changed` 和 `attributes`。
 
 ```json
 [
@@ -445,7 +442,7 @@ curl \
 
 <ApiEndpoint path="/api/states/<entity_id>" method="get">
 
-返回指定 `entity_id` 的状态对象；若不存在则返回 404。
+返回指定 `entity_id` 的 state 对象。如果未找到则返回 404。
 
 ```json
 {
@@ -476,7 +473,7 @@ curl \
 
 <ApiEndpoint path="/api/error_log" method="get">
 
-以纯文本响应的形式获取 Home Assistant 当前会话期间记录的所有错误。
+作为纯文本响应检索 Home Assistant 当前会话期间记录的所有错误。
 
 ```text
 15-12-20 11:02:50 homeassistant.components.recorder: Found unfinished sessions
@@ -497,7 +494,7 @@ curl \
 
 <ApiEndpoint path="/api/camera_proxy/<camera entity_id>" method="get">
 
-返回指定摄像头 `entity_id` 的数据（图像）。
+返回指定 camera `entity_id` 的数据（image）。
 
 示例 `curl` 命令：
 
@@ -511,10 +508,9 @@ curl \
 
 </ApiEndpoint>
 
-
 <ApiEndpoint path="/api/calendars" method="get">
 
-返回日历实体列表。
+返回 calendar entities 列表。
 
 ```json
 [
@@ -542,9 +538,9 @@ curl \
 
 <ApiEndpoint path="/api/calendars/<calendar entity_id>?start=<timestamp>&end=<timestamp>" method="get">
 
-返回指定日历 `entity_id` 在 `start` 与 `end` 之间（不含边界）的 [calendar events](/developers/core/entity/calendar#calendarevent) 列表。
+返回指定 calendar `entity_id` 在 `start` 和 `end` 时间（不含）之间的[calendar events](/developers/core/entity/calendar#calendarevent)列表。
 
-响应中的事件会包含 `start` 和 `end` 字段；对于全天事件，其中会使用 `date`，否则使用 `dateTime`。
+响应中的 events 包含 `start` 和 `end`，全天事件的值为 `date`，其他事件为 `dateTime`。
 ```json
 [
   {
@@ -583,13 +579,13 @@ curl \
 
 <ApiEndpoint path="/api/states/<entity_id>" method="post">
 
-更新或创建一个状态。你可以创建任意状态，它不一定需要对应 Home Assistant 中的实际实体。
+更新或创建一个 state。你可以创建任何你想要的 state，它不需要由 Home Assistant 中的 entity 支持。
 
 :::info
-该端点仅会设置设备在 Home Assistant 中的表示状态，不会与真实设备通信。如需与设备通信，请使用 [POST /api/services/&lt;domain>/&lt;service>](#post-apiservicesltdomainltservice) 端点。
+此 endpoint 设置设备在 Home Assistant 内部的表示，不会与实际设备通信。要与设备通信，请使用 [POST /api/services/&lt;domain>/&lt;service>](#post-api-services-domain-service) endpoint。
 :::
 
-请求体应为一个至少包含 `state` 属性的 JSON 对象：
+期望一个 JSON 对象，至少包含一个 state 属性：
 
 ```json
 {
@@ -601,7 +597,7 @@ curl \
 }
 ```
 
-如果实体已存在，则返回状态码 200；如果设置了一个新实体的状态，则返回 201。响应还会通过 `Location` 头返回新资源的 URL，响应体则包含 JSON 编码的 State 对象。
+如果 entity 已存在，返回码为 200；如果是新 entity 的 state 被设置，返回码为 201。将返回一个包含新资源 URL 的 location header。响应体将包含一个 JSON 编码的 State 对象。
 
 ```json
 {
@@ -626,7 +622,7 @@ curl \
   http://localhost:8123/api/states/sensor.kitchen_temperature
 ```
 
-使用 [Requests](https://requests.readthedocs.io/en/master/) 模块的 Python 示例：
+使用 [Requests](https://requests.readthedocs.io/en/master/) 模块的示例 `python` 命令：
 
 ```shell
 from requests import post
@@ -643,9 +639,9 @@ print(response.text)
 
 <ApiEndpoint path="/api/events/<event_type>" method="post">
 
-触发一个 `event_type` 对应的事件。请留意数据结构，并参考我们的 [Data Science portal](https://data.home-assistant.io/docs/events/#database-table) 文档。
+以 `event_type` 触发一个 event。请注意 [Data Science portal](https://data.home-assistant.io/docs/events/#database-table) 上记录的数据结构。
 
-你可以传入一个可选 JSON 对象，作为 `event_data`。
+你可以传递一个可选的 JSON 对象作为 `event_data`。
 
 ```json
 {
@@ -653,7 +649,7 @@ print(response.text)
 }
 ```
 
-成功时返回一条消息。
+如果成功，则返回一条消息。
 
 ```json
 {
@@ -665,9 +661,9 @@ print(response.text)
 
 <ApiEndpoint path="/api/services/<domain>/<service>" method="post">
 
-调用指定 domain 下的服务。服务执行完成后返回。
+在特定 domain 内调用一个 service。将在 service 执行完毕后返回。
 
-你可以传入一个可选 JSON 对象，作为 `service_data`。
+你可以传递一个可选的 JSON 对象作为 `service_data`。
 
 ```json
 {
@@ -675,7 +671,7 @@ print(response.text)
 }
 ```
 
-返回服务执行期间发生变化的状态列表；如果该服务支持，还会额外返回响应数据。
+返回 service 执行期间发生变化的 states 列表，以及（如果 service 支持）可选的 response data。
 
 ```json
 [
@@ -695,10 +691,10 @@ print(response.text)
 ```
 
 :::tip
-结果中会包含服务执行期间发生变化的所有状态，即使这些变化实际上是由系统中的其他事件引起的。
+结果将包括 service 执行期间发生的所有 state 变化，即使这些变化是由系统中其他事件引起的。
 :::
 
-如果你调用的服务支持返回响应数据，可以在 URL 后加上 `?return_response`。这样响应中会同时包含变更实体列表和服务返回的数据。
+如果你调用的 service 支持返回 response data，你可以通过在 URL 中添加 `?return_response` 来获取它。你的响应随后将同时包含已变化 entities 列表和 service response data。
 
 ```json
 {
@@ -740,14 +736,14 @@ print(response.text)
 ```
 
 :::note
-有些服务不会返回数据，有些服务可选返回响应数据，还有些服务则始终返回响应数据。
+一些 services 不返回数据，一些可选择性地返回 response data，还有一些总是返回 response data。
 
-如果调用一个必须返回数据的服务时未使用 `return_response`，API 会返回 400；同样地，如果对一个不返回数据的服务使用了 `return_response`，也会收到 400。
+如果你调用一个必须返回数据的 service 但没有使用 `return_response`，API 将返回 400。同样，如果你调用一个不返回任何数据的 service 但使用了 `return_response`，也会收到 400。
 :::
 
 示例 `curl` 命令：
 
-打开灯光：
+打开灯：
 
 ```shell
 curl \
@@ -757,9 +753,9 @@ curl \
   http://localhost:8123/api/services/switch/turn_on
 ```
 
-使用 [Requests](https://requests.readthedocs.io/en/master/) 模块的 Python 示例：
+使用 [Requests](https://requests.readthedocs.io/en/master/) 模块的示例 `python` 命令：
 
-打开灯光：
+打开灯：
 
 ```shell
 from requests import post
@@ -796,7 +792,7 @@ curl \
 
 <ApiEndpoint path="/api/template" method="post">
 
-渲染一个 Home Assistant 模板。[更多信息见模板文档。](https://www.home-assistant.io/docs/configuration/templating)
+渲染一个 Home Assistant template。[更多信息请参阅 template 文档。](https://www.home-assistant.io/docs/configuration/templating)
 
 ```json
 {
@@ -804,7 +800,7 @@ curl \
 }
 ```
 
-以纯文本形式返回渲染后的模板。
+以纯文本形式返回渲染后的 template。
 
 ```text
 Paulus is at work!
@@ -823,9 +819,9 @@ curl \
 
 <ApiEndpoint path="/api/config/core/check_config" method="post">
 
-触发对 `configuration.yaml` 的检查。该请求无需额外数据，但需要启用 config 集成。
+触发对 `configuration.yaml` 的检查。此请求无需传递额外数据。需要启用 config 集成。
 
-检查成功时将返回：
+如果检查成功，将返回以下内容：
 
 ```json
 {
@@ -834,7 +830,7 @@ curl \
 }
 ```
 
-检查失败时，对象中的 `errors` 属性会列出导致失败的原因，例如：
+如果检查失败，对象中的 errors 属性将列出导致检查失败的原因。例如：
 
 ```json
 {
@@ -847,9 +843,9 @@ curl \
 
 <ApiEndpoint path="/api/intent/handle" method="post">
 
-处理一个意图。
+处理一个 intent。
 
-你必须在 `configuration.yaml` 中添加 `intent:` 才能启用该端点。
+你必须在 `configuration.yaml` 中添加 `intent:` 才能启用此 endpoint。
 
 示例 `curl` 命令：
 
@@ -865,7 +861,7 @@ curl \
 
 <ApiEndpoint path="/api/states/<entity_id>" method="delete">
 
-删除指定 `entity_id` 的实体。
+删除具有指定 `entity_id` 的 entity。
 
 示例 `curl` 命令：
 

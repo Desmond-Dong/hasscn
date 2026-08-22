@@ -1,28 +1,26 @@
 ---
-title: "实体有翻译名称"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "entity 具有翻译后的名称"
+sidebar_label: 🥇 entity-translations
 related_rules:
   - has-entity-name
   - entity-device-class
   - icon-translations
   - exception-translations
 ---
-# 实体有翻译名称
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
 Home Assistant 被世界各地的人们使用。
-为了让非英语用户更容易使用 Home Assistant，具有翻译名称的实体非常重要。
-这使得人们更容易理解实体是什么。
+为了让非英语用户也能更轻松地使用 Home Assistant，entity 具有翻译后的名称非常重要。
+这能帮助用户更容易理解 entity 的含义。
 
-## 实施示例
+## 示例实现
 
-在示例中，传感器的中文名称为“PhaseVoltage”。
-与设备名称相结合，该实体将自己命名为“我的设备相电压”。
+在本示例中，sensor 的英文名称为 "Phase voltage"。
+结合设备名称，此 entity 会将自己命名为 "My device Phase voltage"。
 
-ZZ保护0ZZ:
+`sensor.py`:
 ```python {5} showLineNumbers
 class MySensor(SensorEntity):
     """Representation of a sensor."""
@@ -38,7 +36,7 @@ class MySensor(SensorEntity):
         )
 ```
 
-ZZ保护0ZZ:
+`strings.json`:
 ```json {5} showLineNumbers
 {
     "entity": {
@@ -52,17 +50,17 @@ ZZ保护0ZZ:
 ```
 
 :::info
-如果您的实体平台是 `binary_sensor`、`number`、`sensor` 或 `update`，并且它设置了设备类，并且希望实体与设备具有类相同的名称，则可以省略转换键，因为实体将自动使用设备类名称。
+如果 entity 的 platform 是 `binary_sensor`、`number`、`sensor` 或 `update`，并且设置了 device class，而你希望 entity 使用与 device class 相同的名称，则可以省略 translation key，因为此时 entity 将自动使用 device class 名称。
 :::
 
-## 其他资源
+## 附加资源
 
-有关翻译流程的更多信息，请参阅[国际化文档](/developers/internationalization/core)，其中也包含实体翻译的说明。
-相关实体命名的更多信息可以在[entity](/developers/core/entity#has_entity_name-true-mandatory-for-new-integrations)文档中找到。
+关于翻译流程的更多信息，请参阅 [翻译文档](/developers/internationalization/core)，其中还包含有关 [entity 翻译](/developers/internationalization/core#name-of-entities)的信息。
+关于 entity 命名的更多信息，请参阅 [entity 文档](/developers/core/entity#has_entity_name-true-mandatory-for-new-integrations)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

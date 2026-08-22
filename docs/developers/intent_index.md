@@ -1,36 +1,34 @@
 ---
 title: "意图"
-description: '意图是对用户意图的描述。意图由用户操作产生，例如要求 Amazon Echo 打开一盏灯。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: "简介"
+sidebar_label: "介绍"
 ---
-# 意图
 
-意图是对用户意图的描述。意图由用户操作产生，例如要求 Amazon Echo 打开一盏灯。
+一个 intent 是对用户意图的描述。Intents 由用户的操作生成，例如让 Amazon Echo 打开一盏灯。
 
 <a href='https://docs.google.com/drawings/d/1i9AsOQNCBCaeM14QwEglZizV0lZiWKHZgroZc9izB0E/edit'>
   <img class='invertDark'
-    src='/developers/img/en/intents/overview.png'
-    alt='Home Assistant 中意图的架构概览'
+    src='/img/en/intents/overview.png'
+    alt='Architectural overview of intents in Home Assistant'
   />
 </a>
 
-意图由从外部来源/服务接收意图的组件触发。目前 conversation、Alexa、API.ai 和 Snips 都可以作为意图来源。
+Intents 由接收来自外部源/服务的 intents 的 components fire。Conversation、Alexa、API.ai 和 Snips 目前都在提供 intents。
 
-任何组件都可以处理意图。这让开发者能够非常轻松地一次性接入所有语音助手。
+任何 component 都可以处理 intents。这使得开发者可以轻松地一次性与所有 voice assistants 集成。
 
-意图通过 `homeassistant.helpers.intent.Intent` 类实现。它包含以下属性：
+Intents 使用 `homeassistant.helpers.intent.Intent` 类实现。它包含以下属性：
 
-| Name          | Type           | Description |
-|---------------|----------------|-------------|
-| `hass`        | Home Assistant | 触发该意图的 Home Assistant 实例。 |
-| `platform`    | string         | 触发该意图的平台 |
-| `intent_type` | string         | 意图的类型（名称） |
-| `slots`       | dictionary     | 包含以 slot 名称为键的 slot 值。 |
-| `text_input`  | string         | 可选。触发该意图的原始文本输入。 |
-| `language`    | string         | 可选。文本输入的语言（默认使用已配置语言）。 |
+| Name          | Type           | Description                                                                 |
+|---------------|----------------|-----------------------------------------------------------------------------|
+| `hass`        | Home Assistant | fire 该 intent 的 Home Assistant 实例。                                      |
+| `platform`    | string         | fire 该 intent 的 platform                                                    |
+| `intent_type` | string         | 该 intent 的类型（名称）                                                     |
+| `slots`       | dictionary     | 包含以 slot name 为 key 的 slot 值。                                         |
+| `text_input`  | string         | 可选。发起该 intent 的原始文本输入。                                         |
+| `language`    | string         | 可选。文本输入的语言（默认为配置的语言）。                                   |
 
-slots 字典中的值说明如下。
+Slots dictionary 值的说明。
 
-| Name  | Type     | Description |
-|-------|----------|-------------|
-| Value | anything | slot 的值。 |
+| Name  | Type     | Description        |
+|-------|----------|--------------------|
+| Value | anything | 该 slot 的值。     |

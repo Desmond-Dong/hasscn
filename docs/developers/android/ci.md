@@ -1,126 +1,134 @@
 ---
-title: "安卓持续集成与交付"
-description: '本文档概述了 Android 部署项目的持续集成 (CI) 和持续交付 (CD) 流程。我们使用 GitHub 操作 作为我们的 CI/CD 平台，配置了许多工作流程以确保代码质量、自动化构建和简化。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: "持续集成和交付"
+title: "Android 持续集成与持续交付"
+sidebar_label: "持续集成与持续交付"
 ---
-# 安卓持续集成与交付
 
-## Android持续集成与交付
+## Android 持续集成与持续交付
 
-本文档概述了 Android 部署项目的持续集成 (CI) 和持续交付 (CD) 流程。我们使用 **GitHub 操作** 作为我们的 CI/CD 平台，配置了许多工作流程以确保代码质量、自动化构建和简化。
+本文档概述了 Android 项目的持续集成 (CI) 和持续交付 (CD) 流程。我们使用 **GitHub Actions** 作为 CI/CD 平台，并配置了多个工作流，以确保代码质量、自动化构建并简化部署。
 
 ## 概述
 
-我们 CI/CD 流程的主要目标是：
+我们的 CI/CD 流程的主要目标是：
 
-- ✅ 验证一切都按预期运行。
-- 🚨如果出现问题，通知相关人员。
-- 🚀 实现应用程序的持续交付。
-- 🔄通过将公共代码提取到`.github/actions`下的可重用本地中操作来避免重复。
+- ✅ 验证一切是否按预期工作。
+- 🚨 在出现问题时通知相关人员。
+- 🚀 支持应用的完全自动化持续交付。
+- 🔄 通过将公共代码提取为 `.github/actions` 下的可复用本地 action，避免重复。
 
 ## 版本控制
 
-我们遵循与核心项目相同的版本控制规定，使用[CalVer]（日历版本控制）。这确保了所有版本的一致性。
+我们遵循与核心项目相同的版本控制约定，使用 [CalVer]（日历版本号）。这确保了所有版本发布之间的一致性。
 
-## 工作流程
+## 工作流
 
-### 根据拉取请求
+### Pull request 时
 
-当拉取请求(PR)打开或更新时，`pr.yml`工作流程将被触发。其目标是：
+当 pull request (PR) 被创建或更新时，会触发 `pr.yml` 工作流。其目标是：
 
-- 🧹验证代码是否符合我们的[linters](/developers/android/linter)。
-- 🔨确保代码构建成功。
+- 🧹 验证代码是否符合我们的 [linter](/developers/android/linter) 要求。
+- 🔨 确保代码构建成功。
 - ✅ 运行所有测试以验证正确性。
-- 📦 将生成的 APK 保留在 GitHub Actions 选项卡中以供审核。
+- 📦 在 GitHub Actions 选项卡中持久保存生成的 APK 以供审查。
 
-如果步骤任何失败：
+如果任何步骤失败：
 
-- CI 通知 PR 业主。
-- 在问题得到解决之前，PR 将被阻止合并。
-- 必须提交修复，这会自动重新启动工作流程。
+- CI 会通知 PR 所有者。
+- PR 在问题解决之前会被阻止合并。
+- 修复必须提交，这将自动重新启动工作流。
 
 :::note
-对于给定的 PR，一次仅运行一个工作流程。如果快速连续主动多个作业，CI 将取消发起的构建并仅处理最新的作业。
+对于给定的 PR，同时只运行一个工作流。如果在短时间内连续推送多个提交，CI 会取消正在进行的构建，仅处理最新的提交。
 :::
 
-#### 调试版本
+#### Debug 构建
 
-为了在 CI 上调试应用程序，我们使用位于 `/.github/mock-google-services.json` 的模拟 Google 服务文件。
+为了在 CI 中以 debug 模式构建应用，我们使用位于 `/.github/mock-google-services.json` 的 mock Google services 文件。
 
-#### 从拉取请求下载 APK
+#### 仪器化测试
 
-有关如何从拉取请求下载和安装APK的说明，请参见[Testing pull request builds](/developers/android/tips/testing_pr_builds)提示。
+##### Android（Emulator.wtf 上）
 
-### 工人到`main`
+Android 应用的仪器化测试运行在 [Emulator.wtf](https://emulator.wtf) 上。每次 pull request，都会针对我们支持的每个 Android API 级别执行完整的测试套件，整个过程只需几秒钟即可完成，使得反馈循环极快。
 
-当提交被主动到`main`分支时，`onPush.yml`工作流程被触发。其目标是：
+##### Wear OS 和 Automotive（GitHub Actions 上）
 
-- 🌐来自[Lokalise](/developers/translations) 下载翻译。
-- 📝生成发行说明。
-- 🔧 构建所有应用程序的发布变体。
-- 📤 将应用程序部署到 Firebase。
-- 🛒 部署到 Play 商店的内部轨道。
-- 📦将生成的APK保留在GitHub Actions选项卡中。
-- 🔐注入发布所需的机密和文件。
+Wear OS 和 Automotive 的仪器化测试运行在 [GitHub Actions](https://github.com/features/actions) 上经典的 Android 模拟器中，速度明显较慢，因此对于这些目标我们只覆盖少数几个 API 级别。
 
-我们使用[Fastlane](https://fastlane.tools/)来简化到不同商店的部署。所有Fastlane配置都可以在`fastlane`文件夹中找到。
+#### 从 pull request 下载 APK
+
+请参阅 [Testing pull request builds](/developers/android/tips/testing_pr_builds) 技巧，了解如何从 pull request 下载并安装 APK 的说明。
+
+### 推送到 `main` 时
+
+当提交推送到 `main` 分支时，会触发 `onPush.yml` 工作流。其目标是：
+
+- 🌐 从 [Lokalise](/developers/translations) 下载翻译。
+- 📝 生成发布说明。
+- 🔧 构建所有应用的 release 变体。
+- 📤 将应用部署到 Firebase。
+- 🛒 部署到 Play Store 的内部轨道。
+- 📦 在 GitHub Actions 选项卡中持久保存生成的 APK。
+- 🔐 注入发布所需的 secrets 和文件。
+
+我们使用 [Fastlane](https://fastlane.tools/) 来简化向不同商店的部署。所有 Fastlane 配置均可在 `fastlane` 文件夹中找到。
 
 :::note
-还可以使用`beta`标志手动触发此工作流程，以将构建提升到商店的beta轨道。
+该工作流也可以通过 `beta` 标志手动触发，以将某个构建提升到商店的 beta 轨道。
 :::
 
 ### 每周构建
 
-每个星期日凌晨 4:00 UTC，`weekly.yml` 工作流程都会自动触发。其目标是：
+每周日 UTC 时间凌晨 4:00，`weekly.yml` 工作流会自动触发。其目标是：
 
-- 🛠创建每周 GitHub 预发布。
-- 🚀 调用`onPush.yml` 工作流程，并将`beta` 标志设置为`true`。
+- 🛠 创建一个每周的 GitHub pre-release。
+- 🚀 调用 `onPush.yml` 工作流，并将 `beta` 标志设置为 `true`。
 
-这确保了每周都会将新版本的应用程序主动程序到 Play 商店的测试版本中。
+这确保了每周都会向 Play Store 的 beta 轨道推送一个新版本的应用。
 
 ### 每月版本标签
 
-每个月的第一天，`monthly.yml` 工作流程都会运行以创建 `YYYY.MM.0` 格式的初始版本标签。这符合我们的 [CalVer] 版本控制策略。
+在每月的第一天，`monthly.yml` 工作流运行，以创建一个格式为 `YYYY.MM.0` 的初始版本标签。这符合我们的 [CalVer] 版本控制策略。
 
 ### 发布
 
-`release.yml` 工作流程是手动触发的，只有将最新的测试版本升级到生产环境。这确保了稳定性并且经过测试的版本才会发布给最终用户。
+`release.yml` 工作流由手动触发，以将最新的 beta 构建提升到生产环境。这确保了只有稳定且经过测试的构建才会发布给最终用户。
 
-#### 在F-Droid上发布
+#### F-Droid 上的发布
 
-当我们积极参与 GitHub 版本时，[F-Droid](https://f-droid.org) 商店会自行构建应用程序。此过程使用[metadata](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/io.homeassistant.companion.android.minimal.yml)。
+[F-Droid](https://f-droid.org) 商店会在我们推送 GitHub release 时自行构建应用。该过程使用 [metadata](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/io.homeassistant.companion.android.minimal.yml)。
 
-每个 GitHub 版本都包含 F-Droid 使用的以下文件：
+每个 GitHub release 包含以下 F-Droid 使用的文件：
 
-- `version_code.txt` - 用于应用程序的版本控制（在`main`分支的版本每个上创建）
-- `strings.zip` - 包含构建时 Lokalise 的所有应用程序翻译
-- `locales_config.xml` - 从下载的应用程序翻译生成[locales configuration](https://developer.android.com/guide/topics/resources/app-languages#use-localeconfig)
+- `version_code.txt` - 用于应用的版本控制（每次从 `main` 分支发布时创建）
+- `strings.zip` - 在构建时包含来自 Lokalise 的所有应用翻译
+- `locales_config.xml` - 根据下载的应用翻译生成的 [locales 配置](https://developer.android.com/guide/topics/resources/app-languages#use-localeconfig)
 
 :::warning
-我们不保证应用程序在发布后何时可在 F-Droid 上使用。您可以找到应用程序[on F-Droid](https://f-droid.org/packages/io.homeassistant.companion.android.minimal/)。
+我们无法保证在发布后应用何时会在 F-Droid 上可用。你可以在 [F-Droid](https://f-droid.org/packages/io.homeassistant.companion.android.minimal/) 上找到该应用。
 :::
 
-### 在预发布或每月标签上
+### 创建 pre-release 或月度标签时
 
-当在`pre-release`状态下创建发布或每月每月标签时，会触发`prepareNextRelease.yml`工作流程。此工作流程创建一个拉取请求，更新`changelog_master.xml`以文件反映新版本。需要手动批准此拉取请求。此过程有助于保持变更日志版本与应用程序版本一致。
+当创建一个处于 `pre-release` 状态的发布或推送月度标签时，会触发 `prepareNextRelease.yml` 工作流。该工作流会创建一个 pull request，将 `changelog_master.xml` 文件更新以反映新版本。需要对该 pull request 进行手动批准。此过程有助于保持 changelog 版本与应用版本的一致性。
 
-## 工作流程摘要
+## 工作流汇总
 
-|工作流程 | 扳机 | 目标|
+| Workflow         | Trigger                     | Goals                                                                 |
 |-------------------|-----------------------------|----------------------------------------------------------------------|
-|@@保护0@@ | PR开放或更新时间 | Lint、构建、测试和保留 APK。|
-|@@保护0@@ | 工人到`main` | 构建、部署并发布到 Firebase 和 Play 商店。|
-|@@保护0@@ | 每周日凌晨 4:00 | 创建预发行版并将测试版全民发布到 Play 商店。|
-|@@保护0@@ | 那月的第一天 | 创建初始版本标签 (`YYYY.MM.0`)。|
-|@@保护0@@ | 手动触发 | 将测试版本升级为生产版本。|
-|@@保护0@@ | 在预发布或每月标签上 | 在 PR 中更新`changelog_master.xml`。|
+| `pr.yml`         | PR 创建或更新时             | Lint、构建、测试并持久保存 APK。                                    |
+| `onPush.yml`     | 推送到 `main` 时          | 构建、部署并发布到 Firebase 和 Play Store。                          |
+| `weekly.yml`     | 每周日凌晨 4:00             | 创建 pre-release 并将 beta 构建推送到 Play Store。                   |
+| `monthly.yml`    | 每月第一天                  | 创建初始版本标签（`YYYY.MM.0`）。                                    |
+| `release.yml`    | 手动触发                    | 将 beta 构建提升到生产环境。                                         |
+| `prepareNextRelease.yml` | 创建 pre-release 或月度标签时 | 在 PR 中更新 `changelog_master.xml`。                    |
 
 ---
 
-## 观点和最佳实践
+## 注意事项与最佳实践
 
-- 🛠 将公共代码提取到`.github/actions` 下的可重用操作中，居民重复。
-- 🕒 注意工作流程消耗，占用的资源使用。
-- 🔒确保机密和敏感文件在工作流程中得到正确的管理和输入。
+- 🛠 将公共代码提取为 `.github/actions` 下的可复用 action，以避免重复。
+- 🕒 注意工作流触发条件，避免不必要的资源消耗。
+- 🔒 确保 secrets 和敏感文件在工作流中得到了妥善管理和注入。
 
 [CalVer]: https://calver.org/

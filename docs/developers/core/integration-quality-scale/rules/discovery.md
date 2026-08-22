@@ -1,49 +1,47 @@
 ---
-title: "可以发现设备"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "设备可以被发现"
+sidebar_label: 🥇 discovery
 related_rules:
   - config-flow
   - test-before-configure
   - unique-config-entry
   - config-flow-test-coverage
 ---
-# 可以发现设备
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-许多设备都有被发现的能力。
-这可以使用以下方法之一来实现:
-- 应用程序（以前称为附加组件）
-- ZZ保护0ZZ
-- ZZ保护0ZZ
-- ZZ保护0ZZ
-- ZZ保护0ZZ
-- ZZ保护0ZZ
-- ZZ保护0ZZ
-- ZZ保护0ZZ
+许多设备都具备被发现的能力。
+这可以通过以下方法之一实现：
+- App（以前称为 add-ons）
+- [Bluetooth](/developers/creating_integration_manifest#bluetooth)
+- [DHCP](/developers/creating_integration_manifest#dhcp)
+- [HomeKit](/developers/creating_integration_manifest#homekit)
+- [mDNS](/developers/creating_integration_manifest#zeroconf)
+- [MQTT](/developers/creating_integration_manifest#mqtt)
+- [SSDP](/developers/creating_integration_manifest#ssdp)
+- [USB](/developers/creating_integration_manifest#usb)
 
-这是让用户更轻松地查找和设置设备的好方法，因为他们不必手动查找要使用的集成，然后输入主机。
+这是一种让用户更容易找到和设置设备的好方法，因为用户无需手动查找应使用哪个集成，然后再输入 host。
 这大大减少了设置设备所需的工作量，从而改善了用户体验。
 
-使用基于网络的设置，还允许在设备收到新的 IP 地址后更新集成的。
+使用基于网络的设置方式，还允许在设备获得新 IP 地址时更新集成的配置。
 
-## 实施示例
+## 示例实现
 
-在以下示例中，可以使用 mDNS 发现集成。
-该设备将通过提供 `_mydevice._tcp.local.` 服务来生产自身可发现。
-Home Assistant 将拾取此信息并为用户启动发现流程。
-然后，用户将能够确认发现并设置集成。
+在下面的示例中，集成可以通过 mDNS 被发现。
+设备通过提供 `_mydevice._tcp.local.` 服务来使自己可被发现。
+Home Assistant 将捕获此信息并为用户启动发现流程。
+用户随后可以确认发现结果并设置集成。
 
-ZZ保护0ZZ:
+`manifest.json`:
 ```json {2} showLineNumbers
 {
   "zeroconf": ["_mydevice._tcp.local."]
 }
 ```
 
-ZZ保护0ZZ:
+`config_flow.py`:
 ```python {8-23,25-36} showLineNumbers
 class MyConfigFlow(ConfigFlow, domain=DOMAIN):
     """My config flow."""
@@ -113,16 +111,17 @@ class MyConfigFlow(ConfigFlow, domain=DOMAIN):
         )
 ```
 
-## 其他资源
+## 更多资源
 
-要了解有关配置流的更多信息，请查看[config flow documentation](/developers/config_entries_config_flow_handler)。
-要了解有关网络协议发现的更多信息，请查看 [Networking and discovery documentation](/developers/network_discovery)。
-要了解有关蓝牙设备发现的更多信息，请查看[Bluetooth documentation](/developers/bluetooth)。
+要了解有关配置流程的更多信息，请查阅[config flow 文档](/developers/core/integration/config_flow)。
+要了解有关网络协议发现的信息，请查阅[Networking and discovery 文档](/developers/network_discovery)。
+要了解有关蓝牙设备发现的信息，请查阅[Bluetooth 文档](/developers/bluetooth)。
+要了解有关在 manifest 中指定不同发现方法的信息，请查阅[Integration Manifest 文档](/developers/creating_integration_manifest)。
 
-## 例外情况
+## 例外
 
-此规则的例外是并非所有设备都可以被发现。
-无法发现设备的集成不受此规则的约束。
+本规则的例外情况是并非每个设备都可以被发现。
+设备无法被发现的集成免于此规则。
 
 ## 相关规则
 

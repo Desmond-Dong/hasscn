@@ -1,13 +1,11 @@
 ---
 title: "内置意图"
-description: 'import intents from ''!!yaml-loader!../intents/intents.yaml'';。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 toc_max_heading_level: 2
 ---
-# 内置意图
 
 import intents from '!!yaml-loader!../intents/intents.yaml';
 
-以下意图为**受支持**：
+以下 intents 受到**支持**：
 
 <ul>
 <li>
@@ -22,28 +20,26 @@ import intents from '!!yaml-loader!../intents/intents.yaml';
 </li>
 </ul>
 
-以下意图已**弃用**：
+以下 intents 已被**弃用**：
 
- * HassOpenCover, HassCloseCover, HassToggle, HassHumidifierSetpoint, HassHumidifierMode, HassShoppingListLastItems
+ * HassOpenCover、HassCloseCover、HassToggle、HassHumidifierSetpoint、HassHumidifierMode、HassShoppingListLastItems
 
-**槽位**
+**Slots**
 
-对于 *HassTurnOn* 和 *HassTurnOff*，*槽位*是可选的。
+对于 *HassTurnOn* 和 *HassTurnOff*，*slots* 是可选的。
 
-可用的槽位组合有：
-
+可能的 slot 组合如下：
 
 | Slot combination        | Example                          |
 | ----------------------- | ---------------------------------|
-| 仅名称                  | table light                      |
-| 仅区域                  | kitchen                          |
-| 区域和名称              | living room reading light        |
-| 区域和 domain           | kitchen lights                   |
-| 区域和设备类别          | bathroom humidity                |
-| 设备类别和 domain       | carbon dioxide sensors           |
+| 仅 name                 | 桌灯                             |
+| 仅 area                 | 厨房                             |
+| area 和 name            | 客厅阅读灯                       |
+| area 和 domain          | 厨房灯光                         |
+| area 和 device class    | 浴室湿度                         |
+| device class 和 domain  | 二氧化碳传感器                   |
 
-
-## 受支持的意图
+## 支持的意图
 
 <>
 {
@@ -55,7 +51,7 @@ import intents from '!!yaml-loader!../intents/intents.yaml';
         <h3>{intent}</h3>
         <p>{info.description}</p>
         {info.slots &&
-          (<b>槽位</b>) && (
+          (<b>Slots</b>) && (
           <ul>
             {Object.entries(info.slots).map(([slot, slotInfo]) => (
               <li>
@@ -72,10 +68,9 @@ import intents from '!!yaml-loader!../intents/intents.yaml';
 }
 </>
 
-## 已弃用的意图
+## 已弃用的 intents
 
-这些是旧版意图，不受模板匹配句子支持，计划被移除或替换。
-
+这些是旧版 intents，不被 template matching sentences 支持，计划将其移除或替换。
 
 ### HassOpenCover
 
@@ -83,9 +78,9 @@ _已弃用；请改用 `HassTurnOn`。_
 
 打开一个 cover。
 
-| Slot name | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| name | string | Yes | 要打开的 cover 实体名称。 |
+| Slot name | Type | Required | Description
+| --------- | ---- | -------- | -----------
+| name | string | 是 | 要打开的 cover entity 名称。
 
 ### HassCloseCover
 
@@ -93,42 +88,41 @@ _已弃用；请改用 `HassTurnOff`。_
 
 关闭一个 cover。
 
-| Slot name | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| name | string | Yes | 要关闭的 cover 实体名称。 |
+| Slot name | Type | Required | Description
+| --------- | ---- | -------- | -----------
+| name | string | 是 | 要关闭的 cover entity 名称。
 
 ### HassToggle
 
-切换实体的状态。
+切换一个 entity 的 state。
 
-| Slot name | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| name | string | Yes | 要切换的实体名称。 |
+| Slot name | Type | Required | Description
+| --------- | ---- | -------- | -----------
+| name | string | 是 | 要切换的 entity 名称。
 
 ### HassHumidifierSetpoint
 
 设置目标湿度。
 
-| Slot name | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| name | string | Yes | 要控制的实体名称。 |
-| humidity | integer, 0-100 | Yes | 要设置的目标湿度。 |
+| Slot name | Type | Required | Description
+| --------- | ---- | -------- | -----------
+| name | string | 是 | 要控制的 entity 名称。
+| humidity | integer, 0-100 | 是 | 要设置的目标湿度。
 
 ### HassHumidifierMode
 
-如果加湿器支持，则设置其模式。
+如果 humidifier 支持，设置其 mode。
 
-| Slot name | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| name | string | Yes | 要控制的实体名称。 |
-| mode | string | Yes | 要切换到的模式。 |
+| Slot name | Type | Required | Description
+| --------- | ---- | -------- | -----------
+| name | string | 是 | 要控制的 entity 名称。
+| mode | string | 是 | 要切换到的 mode。
 
 ### HassShoppingListLastItems
 
-列出购物清单中的最后 5 个项目。
+列出购物清单上最近 5 个 items。
 
-_此意图没有槽位。_
-
+_此 intent 没有 slots。_
 
 
 [此页面基于 Intents 仓库自动生成。](https://github.com/home-assistant/intents/blob/main/intents.yaml)

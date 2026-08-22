@@ -1,38 +1,36 @@
 ---
-title: "如果是轮询集成，请设置适当的轮询间隔"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "如果是轮询集成，设置合适的轮询间隔"
+sidebar_label: 🥉 appropriate-polling
 related_rules:
   - parallel-updates
 ---
-# 如果是轮询集成，请设置适当的轮询间隔
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
-在理想的情况下，所有集成都将具有基于推送的数据接口，其中设备或服务会让我们知道新数据何时可用。
-这将减少 Home Assistant 发出的请求量。
+在理想世界中，所有集成都会使用基于推送的数据接口，即设备或服务会在有新数据时通知我们。
+这样可以减少 Home Assistant 发出的请求数量。
 
-然而，在现实世界中，许多设备和服务无法进行基于推送的通信，因此我们必须诉诸轮询。
-为了负责任地做到这一点，我们应该设置一个适当的轮询间隔来为大多数用户服务。
+然而，在现实世界中，许多设备和服务无法进行基于推送的通信，因此我们必须使用轮询。
+为了负责任地进行轮询，我们应该设置一个适用于大多数用户的合适轮询间隔。
 
-适当的轮询间隔没有真正的定义，因为它取决于被轮询的设备或服务。
-例如，我们不应该每 5 秒轮询一次空气质量传感器，因为数据不会经常更改。
-在这些情况下，超过 99% 的用户可以接受一分钟或更长的轮询间隔。
+实际上并没有明确的定义来界定什么是合适的轮询间隔，因为它取决于被轮询的设备或服务。
+例如，我们不应该每 5 秒轮询一次空气质量传感器，因为数据不会变化那么频繁。
+在这些情况下，超过 99% 的用户都会接受一分钟或更长的轮询间隔。
 
-举另一个例子，如果我们轮询云服务以获取太阳能电池板数据，其中数据每小时更新一次。
-对我们来说，每分钟进行一次民意调查是没有意义的，因为民意调查之间的数据不会发生变化。
+再举一个例子，如果我们轮询一个云服务的太阳能板数据，而数据每小时更新一次。
+每分钟轮询一次是没有意义的，因为两次轮询之间数据不会改变。
 
-对于确实想要更频繁更新的用户，他们可以 [define a custom polling interval](https://www.home-assistant.io/common-tasks/general/#defining-a-custom-polling-interval)
+对于确实希望更频繁更新的用户，他们可以[定义自定义轮询间隔](https://www.home-assistant.io/common-tasks/general/#defining-a-custom-polling-interval)
 
-## 实施示例
+## 示例实现
 
-有两种方法可以设置轮询间隔。
-使用哪一种取决于集成轮询数据的方式。
-使用更新协调器时，可以通过设置协调器中的`update_interval`参数或属性来设置轮询间隔。
-使用内置实体更新方法时，将 `should_poll` 实体属性设置为 `True` 后，可以通过在平台模块中设置 `SCAN_INTERVAL` 常量来设置轮询间隔。
+有两种方式设置轮询间隔。
+使用哪种方式取决于集成如何轮询数据。
+当使用 update coordinator 时，可以通过在 coordinator 中设置 `update_interval` 参数或属性来设置轮询间隔。
+当使用内置的 entity update 方法时，通过设置 `should_poll` entity 属性为 `True`，可以在 platform 模块中设置 `SCAN_INTERVAL` 常量来设置轮询间隔。
 
-ZZ保护0ZZ:
+`coordinator.py`:
 ```python {10} showLineNumbers
 class MyCoordinator(DataUpdateCoordinator[MyData]):
     """Class to manage fetching data."""
@@ -47,7 +45,7 @@ class MyCoordinator(DataUpdateCoordinator[MyData]):
         )
 ```
 
-ZZ保护0ZZ:
+`sensor.py`:
 ```python {1} showLineNumbers
 SCAN_INTERVAL = timedelta(minutes=1)
 
@@ -57,13 +55,13 @@ class MySensor(SensorEntity):
     _attr_should_poll = True
 ```
 
-## 其他资源
+## 更多资源
 
-有关轮询的更多信息可以在[documentation](/developers/integration_fetching_data)中找到。
+关于轮询的更多信息，请参见[文档](/developers/integration_fetching_data)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+此规则没有例外。
 
 ## 相关规则
 

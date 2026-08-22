@@ -1,44 +1,42 @@
 ---
-title: "身份验证提供商"
-description: '身份验证提供程序负责确认用户的身份。用户通过该提供程序发起的登录流程来证明自己的身份。身份验证提供程序定义了登录方式，并可以向用户询问所需的全部信息，通常包括用户名和密码，也可能包括 2FA 令牌或其他验证方式。 本页属于 Home Assistant 开发者文档。'
+title: "认证提供程序"
 ---
-# 身份验证提供商
 
-身份验证提供程序负责确认用户的身份。用户通过该提供程序发起的登录流程来证明自己的身份。身份验证提供程序定义了登录方式，并可以向用户询问所需的全部信息，通常包括用户名和密码，也可能包括 2FA 令牌或其他验证方式。
+认证提供程序确认用户的身份。用户通过 auth provider 的登录流程来证明其身份。Auth provider 定义登录流程，并要求用户提供所需的所有信息。这通常是用户名和密码，但也可以包括 2FA token 或其他挑战。
 
-一旦身份验证提供程序确认了用户身份，就会以 `Credentials` 对象的形式将结果提交给 Home Assistant。
+一旦认证提供程序确认了用户的身份，它将以 Credentials 对象的形式将其传递给 Home Assistant。
 
-## 定义身份验证提供者
+## 定义 auth provider
 
 :::info
-目前仅支持内置身份验证提供程序。未来可能会支持自定义身份验证提供程序。
+我们目前仅支持内置的 auth provider。对自定义 auth provider 的支持将来可能会推出。
 :::
 
-身份验证提供程序定义在 `homeassistant/auth/providers/<name of provider>.py` 中。身份验证提供程序模块需要实现 `AuthProvider` 类和 `LoginFlow` 类；后者会向用户收集信息，并基于 `data_entry_flow` 执行验证。
+Auth 提供程序定义在 `homeassistant/auth/providers/<提供程序名称>.py` 中。Auth 提供程序模块需要提供 `AuthProvider` 类和 `LoginFlow` 类的实现，它根据 `data_entry_flow` 向用户询问信息并对其进行验证。
 
-完整的身份验证提供程序实现示例请参阅 [insecure_example.py](https://github.com/home-assistant/core/blob/dev/homeassistant/auth/providers/insecure_example.py)。
+有关完全实现的 auth provider 示例，请参见 [insecure_example.py](https://github.com/home-assistant/core/blob/dev/homeassistant/auth/providers/insecure_example.py)。
 
-身份验证提供程序需要实现 `AuthProvider` 类中的以下方法。
+Auth 提供程序应扩展 `AuthProvider` 类的以下方法。
 
-|方法|必需|说明|
-| ------ | -------- | ----------- |
-|`async def async_login_flow(self)`|是|返回一个登录流程实例，供用户完成身份验证。|
-|`async def async_get_or_create_credentials(self, flow_result)`|是|根据登录流程的结果返回一个凭据对象，可以是已有凭据，也可以是新建凭据。|
-|`async def async_user_meta_for_credentials(self, credentials)`|否|当 Home Assistant 准备根据 `Credentials` 对象创建用户时调用，可用于补充用户的额外信息。|
+| 方法 | 必填 | 描述
+| ------ | -------- | -----------
+| async def async_login_flow(self, context: AuthFlowContext \| None) | 是 | 返回一个登录流程实例，供用户进行身份识别。
+| async def async_get_or_create_credentials(self, flow_result) | 是 | 给定登录流程的结果，返回一个 credentials 对象。它可以是现有的或新的。
+| async def async_user_meta_for_credentials(credentials) | 否 | 回调，当 Home Assistant 将从 Credentials 对象创建用户时调用。可用于为用户填充额外字段。
 
-身份验证提供程序还需要实现 `LoginFlow` 类中的以下方法。
+Auth 提供程序应扩展 `LoginFlow` 类的以下方法。
 
-|方法|必需|说明|
-| ------ | -------- | ----------- |
-|`async def async_step_init(self, user_input=None)`|是|处理登录表单，详见下文。|
+| 方法 | 必填 | 描述
+| ------ | -------- | -----------
+| async def async_step_init(self, user_input=None) | 是 | 处理登录表单，更多详细信息见下文。
 
 ## LoginFlow 的 async_step_init
 
 :::info
-我们可能会在不久的将来更改此界面。
+我们可能在未来不久更改此接口。
 :::
 
-`LoginFlow` 继承自 `data_entry_flow.FlowHandler`。数据录入流程的第一步固定为 `init`，因此每个流程都必须实现 `async_step_init` 方法。`async_step_init` 的基本模式如下伪代码：
+`LoginFlow` 继承自 `data_entry_flow.FlowHandler`。数据录入流程的第一步硬编码为 `init`，因此每个流程都必须实现 `async_step_init` 方法。`async_step_init` 的模式类似于以下伪代码：
 
 ```python
 async def async_step_init(self, user_input=None):

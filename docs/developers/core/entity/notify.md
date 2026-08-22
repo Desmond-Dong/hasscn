@@ -1,31 +1,29 @@
 ---
-title: 通知实体
-description: '通知实体是可以向设备或服务发送消息但从 Home Assistant 角度来看保持无状态的实体。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 通知
+title: Notify 实体
+sidebar_label: Notify
 ---
-# 通知实体
 
-通知实体是可以向设备或服务发送消息但从 Home Assistant 角度来看保持无状态的实体。
+Notify 实体是一种可以向设备或服务发送消息的实体，但从 Home Assistant 的角度来看是无状态的。
 
-通知实体源自[`homeassistant.components.notify.NotifyEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/notify/__init__.py)，
-并且可以帮助发送通知消息，如（但不限于）：
+Notify 实体派生自 [`homeassistant.components.notify.NotifyEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/notify/__init__.py)，
+在发送通知消息方面可能有所帮助（但不限于）：
 
-- 一条短信
-- 一封电子邮件
+- 短信 (SMS)
+- 电子邮件
 - 直接消息或聊天
 - 设备 LCD 显示屏上的屏幕消息
 
 ## 状态
 
-通知实体的状态是时间戳，表示最后发送消息的日期和时间。
-与 `text` 实体不同，`notify` 实体没有可设置的状态。
+Notify 实体的状态是一个时间戳，代表最后发送消息的日期和时间。
+与 `text` 实体不同，`notify` 实体没有可以设置的状态。
 
-如果您想要表示具有可以更改的文本值（因此具有实际状态）的内容，则应该使用 `text` 实体。
+如果你想表示一个可以更改的文本值（从而有实际状态），应使用 `text` 实体。
 
-## 特性
+## 属性
 
-由于此集成是无状态的，因此它本身不提供任何特定属性。
-所有实体共有的其他属性（例如 `icon` 和 `name` 等）仍然适用。
+由于此集成是无状态的，它不为其自身提供任何特定属性。
+所有实体共有的其他属性（如 `icon`、`name` 等）仍然适用。
 
 ## 方法
 
@@ -35,7 +33,7 @@ sidebar_label: 通知
 
 ```python
 class MyNotifier(NotifyEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
     def send_message(self, message: str, title: str | None = None) -> None:
         """Send a message."""
@@ -46,24 +44,24 @@ class MyNotifier(NotifyEntity):
 
 ### 记录通知
 
-某些集成提供自定义操作以及扩展的集成特定功能，用于发送通知或以其他方式从 Home Assistant 内触发通知。要跟踪通知的发送时间，集成可以调用 `_async_record_notification` 或 `_record_notification`。
+一些集成为发送通知提供带有扩展的、集成特定功能的自定义操作，或以其他方式在 Home Assistant 内部触发通知。为了跟踪通知发送的时间，集成可以调用 `_async_record_notification` 或 `_record_notification`。
 
 :::important
-只有来自 Home Assistant 内部的通知才应记录在通知实体上。不得记录外部生成的通知。请使用事件实体来代替。
+仅应记录源自 Home Assistant 内部的通知。外部生成的通知不得记录。对此应改用 event 实体。
 :::
 
 ```python
 class MyNotifier(NotifyEntity):
 
-    # Default method to send notification via notify.send_message action
+    # 默认通过 notify.send_message 操作发送通知的方法
     async def async_send_message(self, message: str, title: str | None = None) -> None:
         """Send a message."""
         await self._publish(message=message, title=title)
 
-    # Integration implements a custom entity action to send notifications
+    # 集成为发送通知实现了自定义实体操作
     async def publish(self, message: str, title: str | None = None, priority: int | None = None) -> None:
         """Send a message with priority."""
         await self._publish(message=message, title=title, priority=priority)
-        # Record that a notification was sent
+        # 记录已发送通知
         self._async_record_notification()
 ```

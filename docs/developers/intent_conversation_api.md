@@ -1,17 +1,15 @@
 ---
 title: "对话 API"
-description: '可以通过对话集成(https://www.home-assistant.io/integrations/conversation/)从文本中识别意图并触发它们。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 sidebar_label: "对话 API"
 ---
-# 对话 API
 
-可以通过[对话集成](https://www.home-assistant.io/integrations/conversation/)从文本中识别意图并触发它们。
+Intents 可以从文本中识别，并通过 [conversation integration](https://www.home-assistant.io/integrations/conversation/) 发出。
 
-这里提供了一个 API 端点，用于接收输入语句并生成[对话响应](#conversation-response)。通过传递由 Home Assistant 生成的[对话 ID](#conversation-id)，可以在多次输入与响应之间跟踪一次“对话”。
+有一个 API endpoint 可以接收一个输入句子并产生一个 [conversation response](#conversation-response)。一个 "conversation" 可以通过传递 Home Assistant 生成的 [conversation id](#conversation-id) 在多次输入和响应之间进行跟踪。
 
-该 API 可通过 Rest API 和 Websocket API 使用。
+该 API 可通过 Rest API 和 Websocket API 访问。
 
-可以像下面这样将一句话通过 POST 发送到 `/api/conversation/process`：
+可以将一个句子 POST 到 `/api/conversation/process`，例如：
 
 ```json
 {
@@ -20,7 +18,7 @@ sidebar_label: "对话 API"
 }
 ```
 
-或者通过 WebSocket API 发送，如下所示：
+或者通过 WebSocket API 发送，例如：
 
 ```json
 {
@@ -34,15 +32,15 @@ sidebar_label: "对话 API"
 
 | Name              | Type   | Description                                                                                 |
 |-------------------|--------|---------------------------------------------------------------------------------------------|
-| `text`            | string | 输入语句。                                                                                  |
-| `language`        | string | 可选。输入语句的语言（默认为已配置语言）。                                                  |
-| `agent_id`        | string | 可选。处理该请求的对话代理（默认为 _home_assistant_）。                                     |
-| `conversation_id` | string | 可选。用于[跟踪对话](#conversation-id)的唯一 ID。由 Home Assistant 生成。                    |
+| `text`            | string | 输入句子。                                                                                  |
+| `language`        | string | 可选。输入句子的语言（默认为已配置的语言）。                                                |
+| `agent_id`        | string | 可选。用于处理请求的 conversation agent（默认为 _home_assistant_）。                        |
+| `conversation_id` | string | 可选。用于 [跟踪 conversation](#conversation-id) 的唯一 id。由 Home Assistant 生成。        |
 
 
-## 对话响应 {#conversation-response}
+## 对话响应
 
-`/api/conversation/process` 返回的 JSON 响应包含已触发意图的执行结果信息，例如：
+`/api/conversation/process` 的 JSON response 包含有关所发出 intent 效果的信息，例如：
 
 ```json
 {
@@ -51,26 +49,19 @@ sidebar_label: "对话 API"
     "response_type": "action_done",
     "language": "en",
     "data": {
-      "targets": [
+      "success": [
         {
-          "type": "area",
           "name": "Living Room",
+          "type": "area",
           "id": "living_room"
         },
         {
-          "type": "domain",
-          "name": "light",
-          "id": "light"
-        }
-      ],
-      "success": [
-        {
-          "type": "entity",
           "name": "My Light",
+          "type": "entity",
           "id": "light.my_light"
         }
       ],
-      "failed": [],
+      "failed": []
     },
     "speech": {
       "plain": {
@@ -82,82 +73,80 @@ sidebar_label: "对话 API"
 }
 ```
 
-`"response"` 对象中可用的属性如下：
+`"response"` object 中可用的属性如下：
 
 | Name            | Type       | Description                                                                               |
 | --------------- | ---------- | ----------------------------------------------------------------------------------------- |
-| `response_type` | string     | `action_done`、`query_answer` 或 `error` 之一（见[响应类型](#response-types)）。            |
-| `data`          | dictionary | 与各[响应类型](#response_types)相关的数据。                                                |
-| `language`      | string     | 意图和响应所使用的语言。                                                                   |
-| `speech`        | dictionary | 可选。要对用户播报的响应文本（见[语音](#speech)）。                                        |
+| `response_type` | string     | `action_done`、`query_answer` 或 `error` 之一（见 [response types](#response-types)）。   |
+| `data`          | dictionary | 每个 [response type](#response-types) 的相关 data。                                       |
+| `language`      | string     | Intent 和 response 的语言。                                                               |
+| `speech`        | dictionary | 可选。要向用户宣读的 response text（见 [speech](#speech)）。                              |
 
+[Conversation id](#conversation-id) 会与 conversation response 一起返回。
 
-[对话 ID](#conversation-id) 会与对话响应一并返回。
-
-如果 `continue_conversation` 为 true，则表示对话代理预期用户继续跟进输入。
+如果 `continue_conversation` 设置为 `true`，conversation agent 期望用户进行后续交互。
 
 
 ## 响应类型
 
-### 动作已完成
+### 操作完成
 
-该意图在 Home Assistant 中产生了一个动作，例如打开灯。响应中的 `data` 属性包含一个 `targets` 列表，其中每个 target 的形式如下：
+该 intent 在 Home Assistant 中产生了一个 action，例如打开一个 light。Response 的 `data` 属性包含一个 `success` 列表和一个 `failed` 列表。这些列表中的每个条目都是被操作的 target，其格式如下：
 
-| Name       | Type    | Description                                                                            |
-|------------|---------|----------------------------------------------------------------------------------------|
-| `type`     | string  | 目标类型，可为 `area`、`domain`、`device_class`、`device`、`entity` 或 `custom`。       |
-| `name`     | string  | 被影响目标的名称。                                                                      |
-| `id`       | string  | 可选。目标的 ID。                                                                       |
+| Name       | Type    | Description                                                                                     |
+|------------|---------|-------------------------------------------------------------------------------------------------|
+| `name`     | string  | 受影响 target 的名称。                                                                          |
+| `type`     | string  | Target 类型。`area`、`floor`、`domain`、`device_class`、`device`、`entity` 或 `custom` 之一。  |
+| `id`       | string  | 可选。Target 的 id。                                                                            |
 
-还会包含另外两个 target 列表，其中包含执行 `success` 或 `failed` 的设备或实体：
+`success` 列表包含成功操作的 targets（如 areas、floors 和 entities/devices），而 `failed` 列表包含失败的 targets：
 
 ```json
 {
   "response": {
     "response_type": "action_done",
     "data": {
-      "targets": [
-        (area or domain)
-      ],
       "success": [
-        (entities/devices that succeeded)
+        (targets that succeeded)
       ],
       "failed": [
-        (entities/devices that failed)
+        (targets that failed)
       ]
     }
   }
 }
 ```
 
-一个意图可以包含多个 target，它们会叠加应用。target 必须按从一般到具体的顺序排列：
+一个 intent 可以有多个 targets，它们会叠加应用。Targets 必须从一般到具体排序：
 
+* `floor`
+  * 一个已注册的 floor，用于对多个 areas 进行分组
 * `area`
-  * 一个[已注册区域](https://developers.home-assistant.io/docs/area_registry_index/)
+  * 一个 [已注册的 area](https://developers.home-assistant.io/docs/area_registry_index/)
 * `domain`
-  * Home Assistant 集成 domain，例如 "light"
+  * Home Assistant integration domain，如 "light"
 * `device_class`
-  * 某个 domain 的设备类别，例如 "cover" domain 下的 "garage_door"
+  * 某个 domain 的 device class，如 "cover" domain 的 "garage_door"
 * `device`
-  * 一个[已注册设备](https://developers.home-assistant.io/docs/device_registry_index)
+  * 一个 [已注册的 device](https://developers.home-assistant.io/docs/device_registry_index)
 * `entity`
-  * 一个 [Home Assistant 实体](https://developers.home-assistant.io/docs/architecture/devices-and-services)
+  * 一个 [Home Assistant entity](https://developers.home-assistant.io/docs/architecture/devices-and-services)
 * `custom`
-  * 自定义 target
+  * 一个自定义 target
 
-大多数意图最终会得到 0、1 或 2 个 target。当前只有在涉及设备类别时才会出现 3 个 target。target 组合示例如下：
+大多数 intents 最终有 0、1 或 2 个 targets。目前只有当 device classes 参与时才会有 3 个 target。Target 组合示例：
 
- * "Turn off all lights"
-      * 1 个 target：`domain:light`
- * "Turn on the kitchen lights"
-      * 2 个 target：`area:kitchen`、`domain:light`
- * "Open the kitchen blinds"
-      * 3 个 target：`area:kitchen`、`domain:cover`、`device_class:blind`
+ * "关闭所有灯光"
+     * 1 个 target：`domain:light`
+ * "打开厨房的灯光"
+     * 2 个 targets：`area:kitchen`、`domain:light`
+ * "打开厨房的百叶窗"
+     * 3 个 targets：`area:kitchen`、`domain:cover`、`device_class:blind`
 
 
 ### 查询回答
 
-该响应是对问题的回答，例如“what is the temperature?”。回答文本见 [speech](#speech) 属性。
+该 response 是对一个问题的回答，例如 "温度是多少？"。请参见 [speech](#speech) 属性以获取回答文本。
 
 ```json
 {
@@ -170,21 +159,14 @@ sidebar_label: "对话 API"
       }
     },
     "data": {
-      "targets": [
-        {
-          "type": "domain",
-          "name": "climate",
-          "id": "climate"
-        }
-      ],
       "success": [
         {
-          "type": "entity",
           "name": "Ecobee",
+          "type": "entity",
           "id": "climate.ecobee"
         }
       ],
-      "failed": [],
+      "failed": []
     }
   },
   "conversation_id": "<generated-id-from-ha>",
@@ -194,7 +176,7 @@ sidebar_label: "对话 API"
 
 ### 错误
 
-在意图识别或处理期间发生了错误。具体错误类型请参见 `data.code`，错误消息请参见 [speech](#speech) 属性。
+在 intent 识别或处理过程中发生了错误。请查看 `data.code` 了解具体的错误类型，并查看 [speech](#speech) 属性以获取错误消息。
 
 ```json
 {
@@ -213,19 +195,19 @@ sidebar_label: "对话 API"
 }
 ```
 
-`data.code` 是一个字符串，可取值如下：
+`data.code` 是一个 string，可以是以下之一：
 
-* `no_intent_match` - 输入文本未匹配到任何意图。
-* `no_valid_targets` - 指定的区域、设备或实体不存在。
-* `failed_to_handle` - 处理该意图时发生意外错误。
-* `unknown` - 在意图处理范围之外发生了错误。
+* `no_intent_match` — 输入文本没有匹配到任何 intents。
+* `no_valid_targets` — 所指向的 area、device 或 entity 不存在。
+* `failed_to_handle` — 在处理 intent 时发生了意外的错误。
+* `unknown` — 在 intent 处理范围之外发生了错误。
 
 
 ## 语音
 
-对用户播报的响应通过响应中的 `speech` 属性提供。它可以是纯文本（默认），也可以是 [SSML](https://www.w3.org/TR/speech-synthesis11/)。
+向用户宣读的 response 在 response 的 `speech` 属性中提供。它既可以是纯文本（默认），也可以是 [SSML](https://www.w3.org/TR/speech-synthesis11/)。
 
-对于纯文本语音，响应如下所示：
+对于纯文本 speech，response 会如下所示：
 
 ```json
 {
@@ -242,7 +224,7 @@ sidebar_label: "对话 API"
 }
 ```
 
-如果语音使用 [SSML](https://www.w3.org/TR/speech-synthesis11/)，则会是下面这样：
+如果 speech 是 [SSML](https://www.w3.org/TR/speech-synthesis11/)，则会变为：
 
 ```json
 {
@@ -259,11 +241,11 @@ sidebar_label: "对话 API"
 }
 ```
 
-## 对话 ID {#conversation-id}
+## 对话 ID
 
-如果响应的对话代理支持，对话可以通过 Home Assistant 内部生成的唯一 ID 来跟踪。要继续一段对话，请从 HTTP API 响应中获取 `conversation_id`（与[对话响应](#conversation-response)一起返回），并将其添加到下一条输入语句中：
+如果回答的 conversation agent 支持，可以使用 Home Assistant 内部生成的唯一 id 来跟踪 conversations。要继续一个 conversation，请从 HTTP API response 中检索 `conversation_id`（与 [conversation response](#conversation-response) 一起返回），并将其添加到下一个输入句子中：
 
-初始输入语句：
+初始输入句子：
 
 ```json
 {
@@ -271,7 +253,7 @@ sidebar_label: "对话 API"
 }
 ```
 
-JSON 响应包含对话 ID：
+JSON response 包含 conversation id：
 
 ```json
 {
@@ -282,7 +264,7 @@ JSON 响应包含对话 ID：
 }
 ```
 
-使用下一条输入语句发起 POST：
+使用下一个输入句子 POST：
 
 ```json
 {
@@ -292,9 +274,9 @@ JSON 响应包含对话 ID：
 ```
 
 
-## 预加载句子
+## 预加载 sentences
 
-可以使用 WebSocket API 预加载某种语言的句子：
+可以通过 WebSocket API 预加载某种语言的 sentences：
 
 ```json
 {
@@ -307,4 +289,4 @@ JSON 响应包含对话 ID：
 
 | Name       | Type   | Description                                                                    |
 |------------|--------|--------------------------------------------------------------------------------|
-| `language` | string | 可选。要加载的句子语言（默认为已配置语言）。                                   |
+| `language` | string | 可选。要加载的 sentences 的语言（默认为已配置的语言）。                        |

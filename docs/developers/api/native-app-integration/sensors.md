@@ -1,16 +1,14 @@
 ---
 title: "传感器"
-description: 'mobileapp 集成支持暴露自定义传感器，并且这些传感器可以完全由你的应用管理。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 传感器
 
-`mobile_app` 集成支持暴露自定义传感器，并且这些传感器可以完全由你的应用管理。
+`mobile_app` 集成支持暴露自定义 sensors，这些 sensors 可以通过你的应用完全管理。
 
-## 注册传感器
+## 注册 sensor
 
-所有传感器都必须先注册，之后才能更新。与批量更新不同，注册时一次只能注册一个传感器。
+所有 sensors 在获得更新之前都必须先注册。与更新 sensors 不同，你一次只能注册一个 sensor。
 
-要注册传感器，请向 webhook 发送如下请求：
+要注册 sensor，请像这样向 webhook 发送请求：
 
 ```json
 {
@@ -33,29 +31,29 @@ description: 'mobileapp 集成支持暴露自定义传感器，并且这些传�
 }
 ```
 
-有效键如下：
+有效的 key 如下：
 
-| 键 | 类型 | 必填 | 说明                                                                                                                                                                                                     |
-|---------------------|-------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| attributes | object | 否 | 要附加到传感器上的 attributes。                                                                                                                                                                              |
-| device_class | string | 否 | 有效的 device class 之一。参见 [Binary Sensor Classes](https://www.home-assistant.io/integrations/binary_sensor/#device-class)、[Sensor Classes](https://www.home-assistant.io/integrations/sensor/#device-class)。 |
-| icon | Material Design Icon (string) | 否 | 必须以 `mdi:` 为前缀；未提供时默认值为 `mdi:cellphone`。                                                                                                                                      |
-| name | string | 是 | 传感器名称。                                                                                                                                                                                          |
-| state | bool, float, int, string | 是 | 传感器状态。                                                                                                                                                                                         |
-| type | string | 是 | 传感器类型，必须是 `binary_sensor` 或 `sensor` 之一。                                                                                                                                              |
-| unique_id | string | 是 | 当前应用安装实例内唯一的标识符，后续会用到。通常建议使用传感器名称的安全版本。                                                                          |
-| unit_of_measurement | string | 否 | 传感器的计量单位。                                                                                                                                                                          |
-| state_class | string | 否 | 实体的 [state class](/developers/core/entity/sensor)（仅适用于 sensors）。
-| entity_category | string | 否 | 实体的 entity category。
-| disabled | boolean | 否 | 实体应启用还是禁用。
+| Key | Type | Required | Description |
+|-----|------|----------|-------------|
+| attributes | object | No | 附加到 sensor 的 attributes |
+| device_class | string | No | 有效的 device classes 之一。[Binary Sensor Classes](https://www.home-assistant.io/integrations/binary_sensor/#device-class), [Sensor Classes](https://www.home-assistant.io/integrations/sensor/#device-class) |
+| icon | Material Design Icon (string) | No | 必须以 `mdi:` 为前缀。如果未提供，默认值为 `mdi:cellphone` |
+| name | string | Yes | sensor 的名称 |
+| state | bool, float, int, string | Yes | sensor 的 state |
+| type | string | Yes | sensor 的类型。必须是 `binary_sensor` 或 `sensor` 之一 |
+| unique_id | string | Yes | 对该应用的此安装唯一的标识符。你稍后会用到它。通常最好使用 sensor 名称的安全版本 |
+| unit_of_measurement | string | No | sensor 的测量单位 |
+| state_class | string | No | entity 的[state class](../../core/entity/sensor.md#available-state-classes)（仅适用于 sensors） |
+| entity_category | string | No | entity 的 category |
+| disabled | boolean | No | 该 entity 是否应启用或禁用。 |
 
-传感器在注册后会立即出现。
+Sensors 在注册后就会立即出现。
 
-## 更新传感器
+## 更新 sensor
 
-传感器注册完成后，就需要对其进行更新。更新方式与注册非常类似，但你可以一次更新所有传感器。
+一旦 sensor 已注册，你需要更新它。这与注册它非常相似，但你可以同时更新所有的 sensors。
 
-例如，要更新上面注册的那个传感器，可以发送以下内容：
+例如，要更新上述注册的 sensor，你需要发送以下内容：
 
 ```json
 {
@@ -74,21 +72,21 @@ description: 'mobileapp 集成支持暴露自定义传感器，并且这些传�
 }
 ```
 
-更新时只允许使用其中部分键：
+更新期间仅允许部分 key：
 
-| 键 | 类型 | 必填 | 说明                                                                                                                           |
-|---------------------|-------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------|
-| attributes | object | 否 | 要附加到传感器上的 attributes。                                                                                                    |
-| icon                | Material Design Icon (string) | No       | Must be prefixed `mdi:`                                                                                                               |
-| state | bool, float, int, string | 是 | 传感器状态。                                                                                                               |
-| type | string | 是 | 传感器类型，必须是 `binary_sensor` 或 `sensor` 之一。                                                                    |
-| unique_id | string | 是 | 当前应用安装实例内唯一的标识符，后续会用到。通常建议使用传感器名称的安全版本。 |
+| Key | Type | Required | Description |
+|-----|------|----------|-------------|
+| attributes | object | No | 附加到 sensor 的 attributes |
+| icon | Material Design Icon (string) | No | 必须以 `mdi:` 为前缀 |
+| state | bool, float, int, string | Yes | sensor 的 state |
+| type | string | Yes | sensor 的类型。必须是 `binary_sensor` 或 `sensor` 之一 |
+| unique_id | string | Yes | 对该应用的此安装唯一的标识符。你稍后会用到它。通常最好使用 sensor 名称的安全版本 |
 
-更新传感器后的响应是一个字典，格式为 `unique_id => 更新结果`。
+更新 sensor 的响应是一个以 unique_id => 更新结果为映射的字典。
 
-如果实体在 Home Assistant 内部已被禁用，那么成功更新的结果中会额外包含 `is_disabled` 键。这意味着应用可以停止向该传感器发送更新。
+如果 entity 在 Home Assistant 内部被禁用，成功的更新将添加 key `is_disabled`。这意味着应用可以停止向该 sensor 发送更新。
 
-如果更新失败，则会返回错误信息。
+如果更新不成功，将返回错误。
 
 ```json
 {
@@ -115,13 +113,13 @@ description: 'mobileapp 集成支持暴露自定义传感器，并且这些传�
 }
 ```
 
-## 保持传感器与 Home Assistant 同步
+## 保持 sensors 与 Home Assistant 同步
 
-用户可以在 Home Assistant 中启用或禁用实体。即使集成提供了某个实体，只要它被禁用，就不会被加入 Home Assistant。因此，手机继续向这些未启用的实体发送数据就没有意义。
+用户可以在 Home Assistant 中启用和禁用 entities。禁用的 entity 不会被添加到 Home Assistant，即使集成提供了它。这意味着手机继续向未在 Home Assistant 中启用的 entities 发送数据是没有意义的。
 
-**当应用内启用或禁用某个传感器时**，应用应为该传感器发送一个 `register_sensor` webhook，并把 `disabled` 设为 `true` 或 `false`。
+**当 sensor 在应用中启用/禁用时**，应用应为此 sensor 发送 `register_sensor` webhook，并将 `disabled` 设置为 `true` 或 `false`。
 
-**当移动应用通过 `update_sensor_states` webhook 更新一个已被禁用实体的数据时**，更新结果会包含值为 `true` 的 `is_disabled` 键。这表示移动应用需要把 Home Assistant 中的启用状态同步回应用。
+**当 mobile app 发送 `update_sensor_states` webhook 以更新被禁用的 entity 的数据时**，更新结果将包含 key `is_disabled`，其值为 `true`。这是 mobile app 需要将 Home Assistant 中的启用状态同步到 mobile app 的指示器。
 
 ```json
 {
@@ -135,9 +133,9 @@ description: 'mobileapp 集成支持暴露自定义传感器，并且这些传�
 }
 ```
 
-**当用户在 Home Assistant 中启用或禁用某个实体时，也需要把这一状态同步到移动应用。** `get_config` webhook 响应中包含 `entities` 键，它是一个把 `unique_id` 映射到 `{"disabled": boolean}` 的字典。移动应用应采用这些启用设置。
+**当用户在 Home Assistant 中启用/禁用 entity 时，需要将其同步到 mobile app。** `get_config` webhook 响应包含 key `entities`。这是一个将 `unique_id` 映射到 `{"disabled": boolean}` 的字典。mobile app 应采用这些启用设置。
 
-```json5
+```json
 {
   // ...
   "entities": {

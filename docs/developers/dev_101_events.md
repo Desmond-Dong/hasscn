@@ -1,26 +1,27 @@
 ---
 title: "事件"
-description: 'Home Assistant 的核心由事件驱动。这意味着如果你想对某些事情的发生作出响应，就必须响应事件。大多数情况下你不会直接与事件系统交互，而是使用某个事件监听辅助工具helpers。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 事件
 
-Home Assistant 的核心由事件驱动。这意味着如果你想对某些事情的发生作出响应，就必须响应事件。大多数情况下你不会直接与事件系统交互，而是使用某个[事件监听辅助工具][helpers]。
+Home Assistant 的核心由事件驱动。这意味着，如果你想对某件事做出响应，就必须对事件做出响应。大多数情况下你不会直接与 event system 交互，而是使用其中一个 [event listener helpers][helpers]。
 
-事件系统非常灵活。事件类型没有限制，只要它是字符串即可。每个事件都可以包含数据。数据是一个字典，只要可被 JSON 序列化，就可以包含任意内容。这意味着你可以使用数字、字符串、字典和列表。
+Event system 非常灵活。对 event type 没有限制，只要它是一个字符串。每个 event 都可以包含 data。该 data 是一个字典，可以包含任何数据，只要它是 JSON 可序列化的。这意味着你可以使用数字、字符串、字典和列表。
 
-[Home Assistant 触发的事件列表。][object]
+[Home Assistant 发出的事件列表。][object]
 
-## 触发事件
+## 发出事件（Firing events）
 
-要触发一个事件，你需要与事件总线交互。事件总线可通过 Home Assistant 实例上的 `hass.bus` 访问。请注意数据结构，并参考我们的 [Data Science portal](https://data.home-assistant.io/docs/events/#database-table) 中的文档。
+要发出事件，你需要与 event bus 交互。Event bus 在 Home Assistant 实例上以 `hass.bus` 的形式提供。请注意 [Data Science portal](https://data.home-assistant.io/docs/events/#database-table) 上记录的 data 结构。
 
-下面是一个组件示例，它会在加载时触发一个事件。请注意，自定义事件名称会以组件名作为前缀。
+以下是一个 component 示例，加载时会发出事件。注意自定义 event 名称以前缀 component 名称开头。
 
 ```python
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.typing import ConfigType
+
 DOMAIN = "example_component"
 
 
-def setup(hass, config):
+def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Set up is called when Home Assistant is loading our component."""
 
     # Fire event example_component_my_cool_event with event data answer=42
@@ -30,20 +31,23 @@ def setup(hass, config):
     return True
 ```
 
-## 监听事件
+## 监听事件（Listening to events）
 
-大多数时候你不会触发事件，而是监听事件。例如，实体的状态变化就会作为事件广播。
+大多数情况下你不会发出事件，而是监听事件。例如，实体的 state 变更会以事件形式广播。
 
 ```python
+from homeassistant.core import Event, HomeAssistant
+from homeassistant.helpers.typing import ConfigType
+
 DOMAIN = "example_component"
 
 
-def setup(hass, config):
+def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Set up is called when Home Assistant is loading our component."""
     count = 0
 
     # Listener to handle fired events
-    def handle_event(event):
+    def handle_event(event: Event) -> None:
         nonlocal count
         count += 1
         print(f"Answer {count} is: {event.data.get('answer')}")
@@ -55,9 +59,9 @@ def setup(hass, config):
     return True
 ```
 
-### 辅助工具
+### 辅助函数
 
-Home Assistant 内置了大量辅助工具，用于监听特定类型的事件。这些辅助工具可以跟踪某个时间点、时间间隔、状态变化或日落。[查看可用方法。][helpers]
+Home Assistant 附带了许多 bundled helpers 来监听特定类型的事件。有用于跟踪某个时间点的 helper，用于跟踪时间间隔的 helper，跟踪 state 变更的 helper，以及跟踪日落的 helper。[查看可用的 methods。][helpers]
 
 [helpers]: https://developers.home-assistant.io/docs/integration_listen_events#available-event-helpers
 [object]: https://www.home-assistant.io/docs/configuration/events/

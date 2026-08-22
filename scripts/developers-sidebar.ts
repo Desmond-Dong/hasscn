@@ -1,107 +1,163 @@
-import type { SidebarGroup } from "@rspress/core";
+import fs from 'node:fs';
+import path from 'node:path';
+import type { SidebarGroup } from '@rspress/core';
 
-function withPrefix(groups: SidebarGroup[]): SidebarGroup[] {
-  const prefixLink = (link: string) => link.startsWith("/developers/") ? link : `/developers${link}`;
-  return groups.map((group) => ({
-    ...group,
-    items: group.items?.map((item) => {
-      if ("link" in item) {
-        return { ...item, link: prefixLink(item.link) };
-      }
-      return item;
-    }),
-  }));
+type SidebarItem = NonNullable<SidebarGroup['items']>[number];
+
+type MetaItem =
+  | string
+  | {
+      type?: 'file' | 'dir' | 'divider' | 'section-header' | 'label';
+      name?: string;
+      label?: string;
+      collapsible?: boolean;
+      collapsed?: boolean;
+    };
+
+const docsRoot = path.join(__dirname, '..', 'docs', 'developers');
+const routePrefix = '/developers';
+
+function readJson(filePath: string): MetaItem[] | null {
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+
+  return JSON.parse(fs.readFileSync(filePath, 'utf8')) as MetaItem[];
 }
 
-export const developersSidebar: SidebarGroup[] = withPrefix([
-  {
-    text: "开始使用",
-    items: [
-      { text: "首页", link: "/index" },
-      { text: "架构总览", link: "/architecture_index" },
-      { text: "开发环境", link: "/development_environment" },
-      { text: "开发工作流", link: "/development_submitting" },
-    ],
-  },
-  {
-    text: "Home Assistant Core",
-    collapsible: true,
-    collapsed: false,
-    items: [
-      { text: "Core 概览", link: "/development_index" },
-      { text: "创建集成", link: "/creating_component_index" },
-      { text: "配置流", link: "/config_entries_index" },
-      { text: "YAML 配置", link: "/configuration_yaml_index" },
-      { text: "自动化", link: "/automations" },
-      { text: "实体模型", link: "/core/entity" },
-      { text: "Asyncio", link: "/asyncio_index" },
-      { text: "认证与权限", link: "/auth_index" },
-      { text: "Bluetooth", link: "/bluetooth" },
-      { text: "Intent", link: "/intent_index" },
-      { text: "设备自动化", link: "/device_automation_index" },
-      { text: "数据录入流", link: "/data_entry_flow_index" },
-      { text: "设备注册表", link: "/device_registry_index" },
-      { text: "实体注册表", link: "/entity_registry_index" },
-      { text: "网络发现", link: "/network_discovery" },
-    ],
-  },
-  {
-    text: "API 与数据访问",
-    collapsible: true,
-    collapsed: true,
-    items: [
-      { text: "REST API", link: "/api/rest" },
-      { text: "WebSocket API", link: "/api/websocket" },
-      { text: "原生应用集成 API", link: "/api/native-app-integration" },
-      { text: "Supervisor API", link: "/api/supervisor/endpoints" },
-      { text: "Python 库", link: "/api_lib_index" },
-      { text: "实例 URL", link: "/instance_url" },
-    ],
-  },
-  {
-    text: "平台与客户端",
-    collapsible: true,
-    collapsed: true,
-    items: [
-      { text: "前端", link: "/frontend" },
-      { text: "Supervisor", link: "/supervisor" },
-      { text: "操作系统", link: "/operating-system" },
-      { text: "Android", link: "/android" },
-      { text: "App 指南", link: "/apps" },
-      { text: "语音", link: "/voice/overview" },
-      { text: "文档规范", link: "/documenting" },
-      { text: "国际化", link: "/internationalization" },
-      { text: "翻译", link: "/translations" },
-      { text: "杂项", link: "/misc" },
-    ],
-  },
-  {
-    text: "进阶主题",
-    collapsible: true,
-    collapsed: true,
-    items: [
-      { text: "架构：Core", link: "/architecture/core" },
-      { text: "架构：设备与服务", link: "/architecture/devices-and-services" },
-      { text: "Asyncio 101", link: "/asyncio_101" },
-      { text: "阻塞操作", link: "/asyncio_blocking_operations" },
-      { text: "使用异步", link: "/asyncio_working_with_async" },
-      { text: "应用教程", link: "/apps/tutorial" },
-      { text: "应用配置", link: "/apps/configuration" },
-      { text: "应用发布", link: "/apps/publishing" },
-      { text: "操作系统开发板", link: "/operating-system/boards/overview" },
-      { text: "意图识别", link: "/voice/intent-recognition" },
-      { text: "语音管道", link: "/voice/pipelines" },
-      { text: "LLM API", link: "/core/llm" },
-    ],
-  },
-  {
-    text: "开发博客",
-    collapsible: true,
-    collapsed: true,
-    items: [
-      { text: "2018-2020", link: "/blog/2019-07-19-building-all-the-things" },
-      { text: "2021-2022", link: "/blog/2022-10-26-new-unit-enumerators" },
-      { text: "2023", link: "/blog/2023-02-28-custom-tile-features" },
-    ],
-  },
-]);
+function titleFromFile(filePath: string): string | null {
+  if (!filePath || !fs.existsSync(filePath)) {
+    return null;
+  }
+
+  const content = fs.readFileSync(filePath, 'utf8');
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (frontmatterMatch) {
+    const titleMatch = frontmatterMatch[1].match(
+      /(?:^|\n)title:\s*["']?(.+?)["']?(?:\n|$)/,
+    );
+    if (titleMatch) {
+      return titleMatch[1].trim();
+    }
+  }
+
+  const h1Match = content.match(/^#\s+(.+)$/m);
+  return h1Match ? h1Match[1].trim() : null;
+}
+
+function resolveFilePath(dirPath: string, name: string): string | null {
+  const mdPath = path.join(dirPath, `${name}.md`);
+  const mdxPath = path.join(dirPath, `${name}.mdx`);
+  if (fs.existsSync(mdPath)) {
+    return mdPath;
+  }
+  if (fs.existsSync(mdxPath)) {
+    return mdxPath;
+  }
+  return null;
+}
+
+function routeForItem(dirPath: string, name: string): string {
+  const dirRelative = path
+    .relative(docsRoot, dirPath)
+    .split(path.sep)
+    .join('/');
+  return `${routePrefix}${dirRelative ? `/${dirRelative}` : ''}/${name}`;
+}
+
+function buildItems(metaPath: string): SidebarItem[] {
+  const dirPath = path.dirname(metaPath);
+  const meta = readJson(metaPath) || [];
+
+  return meta
+    .map((item) => {
+      if (typeof item === 'string') {
+        const filePath = resolveFilePath(dirPath, item);
+        return {
+          text: titleFromFile(filePath || '') || item,
+          link: routeForItem(dirPath, item),
+        };
+      }
+
+      if (item.type === 'divider') {
+        return { dividerType: 'dashed' } as SidebarItem;
+      }
+
+      if (item.type === 'section-header' && item.label) {
+        return { sectionHeaderText: item.label } as SidebarItem;
+      }
+
+      if (item.type === 'dir' && item.name) {
+        const subMetaPath = path.join(dirPath, item.name, '_meta.json');
+        const subItems = buildItems(subMetaPath);
+        if (subItems.length === 0) {
+          // 目录无 _meta.json 时按文件系统自动展开
+          const subDir = path.join(dirPath, item.name);
+          const autoItems: SidebarItem[] = [];
+          for (const entry of fs.readdirSync(subDir, { withFileTypes: true })) {
+            if (entry.isDirectory()) {
+              const nested = buildItems(path.join(subDir, entry.name, '_meta.json'));
+              if (nested.length > 0) {
+                autoItems.push({
+                  text: entry.name,
+                  collapsible: true,
+                  collapsed: true,
+                  items: nested,
+                });
+              }
+              continue;
+            }
+            if (!/\.(md|mdx)$/.test(entry.name)) {
+              continue;
+            }
+            const name = entry.name.replace(/\.(md|mdx)$/, '');
+            if (name === 'index') {
+              continue;
+            }
+            autoItems.push({
+              text:
+                titleFromFile(path.join(subDir, entry.name)) || name,
+              link: routeForItem(subDir, name),
+            });
+          }
+          if (autoItems.length === 0) {
+            return null;
+          }
+          return {
+            text: item.label || item.name,
+            collapsible: item.collapsible !== false,
+            collapsed: item.collapsed ?? true,
+            items: autoItems,
+          };
+        }
+        return {
+          text: item.label || item.name,
+          collapsible: item.collapsible !== false,
+          collapsed: item.collapsed ?? true,
+          items: subItems,
+        };
+      }
+
+      if (item.type === 'file' && item.name) {
+        const filePath = resolveFilePath(dirPath, item.name);
+        return {
+          text: item.label || titleFromFile(filePath || '') || item.name,
+          link: routeForItem(dirPath, item.name),
+        };
+      }
+
+      return null;
+    })
+    .filter(Boolean) as SidebarItem[];
+}
+
+export const developersSidebar: SidebarGroup[] = fs.existsSync(
+  path.join(docsRoot, '_meta.json'),
+)
+  ? [
+      {
+        text: '开发者文档',
+        items: buildItems(path.join(docsRoot, '_meta.json')),
+      },
+    ]
+  : [];

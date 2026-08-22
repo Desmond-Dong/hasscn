@@ -1,34 +1,32 @@
 ---
-title: Home Assistant Supervisor 开发
-description: 'Supervisor 允许用户直接在 Home Assistant 中管理自己的安装环境。Supervisor 主要负责以下内容：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 简介
+title: Home Assistant Supervisor
+sidebar_label: 介绍
 ---
-# Home Assistant Supervisor 开发
 
-Supervisor 允许用户直接在 Home Assistant 中管理自己的安装环境。Supervisor 主要负责以下内容：
+Supervisor 允许用户从 Home Assistant 内部管理他们的 Home Assistant 安装。Supervisor 有以下职责：
 
 - 运行 Home Assistant Core
-- 更新 Home Assistant Core；如果更新失败会自动回滚。
-- 创建并恢复备份
-- 管理加载项（Add-ons）
-- 提供统一音频系统
-- 更新 Home Assistant 操作系统（在 Supervised 安装中禁用）
+- 更新 Home Assistant Core。如果更新失败则自动回滚。
+- 创建和恢复 backups
+- 安装和运行 Home Assistant Apps（前身为 Home Assistant add-ons）
+- 统一的 audio 系统
+- 更新 Home Assistant operating system（在 Supervised 安装中禁用）
 
 ## 架构
 
-<img class='invertDark' src='/developers/img/en/architecture/ha_architecture_2020.png'
-  alt='Home Assistant 架构概览' />
+<img class='invertDark' src='/img/en/architecture/ha_architecture_2020.png'
+  alt='Architecture Overview of Home Assistant' />
 
 <!--
   https://docs.google.com/drawings/d/13-72kr05yK31HrQEMpt7Y45jPqKsMxBeFYX1PUatTuE/edit?usp=sharing
 -->
 
-- **Home Assistant Core**：家庭自动化平台
-- **Add-ons**：用户希望在服务器上运行的加载项应用
-- **DNS**：允许 Core 与加载项（Add-ons）相互通信
-- **Audio**：允许 Core 与加载项（Add-ons）播放音频
-- **mDNS**：帮助发现并连接网络中的设备和服务
-- **Supervisor**：管理系统的所有部分并使其保持最新状态
-- **Docker**：用于运行应用程序的容器平台。
-- **Operating System**：基于 Linux 的操作系统
-- **D-Bus**：用于控制操作系统部分组件（如网络管理器）的通信系统
+- **Home Assistant Core**: 家庭自动化平台
+- **Apps（前身为 add-ons）**: 用户希望在其服务器上运行的额外应用程序
+- **DNS**: 允许 core 和 apps（前身为 add-ons）相互通信
+- **Audio**: 允许 core 和 apps（前身为 add-ons）播放 audio
+- **mDNS**: 帮助发现网络中的设备和连接服务
+- **Supervisor**: 管理系统的所有部分并保持其最新
+- **Docker**: 用于运行应用程序的 container 服务。
+- **Operating System**: 基于 Linux 的操作系统
+- **D-Bus**: 用于控制操作系统部分（如 network manager）的通信系统

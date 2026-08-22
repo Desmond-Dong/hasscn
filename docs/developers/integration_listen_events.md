@@ -1,16 +1,14 @@
 ---
 title: "监听事件"
-description: '当 Home Assistant 内部发生特定事件时，您的 集成 可能需要采取行动。 Home Assistant 提供事件助手来侦听特定事件类型并直接访问事件总线。这些助手经过高度优化，可最大程度地减少回调次数。如果您需要侦听的特定事件已经有一个帮助程序，那么最好使用该帮助程序而不是直接侦听事件总线。'
 ---
-# 监听事件
 
-当 Home Assistant 内部发生特定事件时，您的 集成 可能需要采取行动。 Home Assistant 提供事件助手来侦听特定事件类型并直接访问事件总线。这些助手经过高度优化，可最大程度地减少回调次数。如果您需要侦听的特定事件已经有一个帮助程序，那么最好使用该帮助程序而不是直接侦听事件总线。
+你的 integration 可能需要对 Home Assistant 内部发生的特定事件采取行动。Home Assistant 提供了 event helpers 来监听特定的 event 类型，并且可以直接访问 event bus。这些 helpers 经过高度优化，以尽量减少回调数量。如果你需要监听的事件已经有对应的 helper，那么优先使用 helper 而不是直接监听 event bus。
 
-## 可用的事件助手
+## 可用的 event helpers
 
-事件助手在 `homeassistant.helpers.event` 命名空间中可用。这些函数返回一个取消侦听器的可调用函数。
+Event helpers 位于 `homeassistant.helpers.event` 命名空间中。这些函数返回一个用于取消 listener 的 callable。
 
-以下函数的同步版本也可用，无需 `async_` 前缀。
+这些函数中许多也有不带 `async_` 前缀的同步版本。
 
 ### 示例
 
@@ -19,58 +17,58 @@ unsub = async_track_state_change_event(hass, entity_ids, state_automation_listen
 unsub()
 ```
 
-### 跟踪实体状态变化
+### 跟踪 entity state 变更
 
-|功能| Use case
+| Function                             | Use case
 | ------------------------------------ | --------------------------------------------------------------------------
-|`async_track_state_change`| Track specific state changes
-|`async_track_state_change_event`| Track specific state change events indexed by entity_id
-|`async_track_state_added_domain`| Track state change events when an entity is added to domains
-|`async_track_state_removed_domain`| Track state change events when an entity is removed from domains
-|`async_track_state_change_filtered`| Track state changes with a TrackStates filter that can be updated
-|`async_track_same_state`| Track the state of entities for a period and run an action
+| `async_track_state_change`           | 跟踪特定的 state 变更（已弃用，请使用 `async_track_state_change_event`）
+| `async_track_state_change_event`     | 跟踪以 entity_id 索引的特定 state 变更 events
+| `async_track_state_added_domain`     | 跟踪当 entity 被添加到 domains 时的 state 变更 events
+| `async_track_state_removed_domain`   | 跟踪当 entity 从 domains 中移除时的 state 变更 events
+| `async_track_state_change_filtered`  | 跟踪带有 TrackStates filter 的 state 变更，该 filter 可以更新
+| `async_track_same_state`             | 跟踪 entities 的 state 持续一段时间并执行 action
 
-### 跟踪模板更改
+### 跟踪 template 变更
 
-|功能| Use case
+| Function                             | Use case
 | ------------------------------------ | --------------------------------------------------------------------------
-|`async_track_template`| Add a listener that fires when a template evaluates to 'true'
-|`async_track_template_result`| Add a listener that fires when the result of a template changes
+| `async_track_template`               | 添加一个 listener，当 template 求值为 'true' 时触发
+| `async_track_template_result`        | 添加一个 listener，当 template 的结果发生变化时触发
 
-### 跟踪实体注册表更改
+### 跟踪 entity registry 变更
 
-|功能| Use case
+| Function                                    | Use case
 | ------------------------------------------- | --------------------------------------------------------------------------
-|`async_track_entity_registry_updated_event`| Track specific entity registry updated events indexed by entity_id
+| `async_track_entity_registry_updated_event` | 跟踪以 entity_id 索引的特定 entity registry 更新 events
 
-### 跟踪时间变化
+### 跟踪时间变更
 
-|功能| Use case
+| Function                                    | Use case
 | ------------------------------------------- | --------------------------------------------------------------------------
-|`async_track_point_in_time`| Add a listener that fires once after a specific point in time
-|`async_track_point_in_utc_time`| Add a listener that fires once after a specific point in UTC time
-|`async_call_later`| Add a listener that is called with a delay
-|`async_track_time_interval`| Add a listener that fires repetitively at every timedelta interval
-|`async_track_utc_time_change`| Add a listener that will fire if time matches a pattern
-|`async_track_time_change`| Add a listener that will fire if local time matches a pattern
+| `async_track_point_in_time`                 | 添加一个 listener，在特定时间点之后触发一次
+| `async_track_point_in_utc_time`             | 添加一个 listener，在特定 UTC 时间点之后触发一次
+| `async_call_later`                          | 添加一个带有延迟调用的 listener
+| `async_track_time_interval`                 | 添加一个 listener，在每个 timedelta 间隔重复触发
+| `async_track_utc_time_change`               | 添加一个 listener，当时间与某模式匹配时触发
+| `async_track_time_change`                   | 添加一个 listener，当本地时间与某模式匹配时触发
 
-### 追踪太阳
+### 跟踪太阳
 
-|功能| Use case
+| Function                                    | Use case
 | ------------------------------------------- | --------------------------------------------------------------------------
-|`async_track_sunrise`| Add a listener that will fire a specified offset from sunrise daily
-|`async_track_sunset`| Add a listener that will fire a specified offset from sunset daily
+| `async_track_sunrise`                       | 添加一个 listener，每天在 sunrise 之后指定偏移量触发
+| `async_track_sunset`                        | 添加一个 listener，每天在 sunset 之后指定偏移量触发
 
-## 直接监听事件总线
+## 直接监听 event bus
 
-有两个函数可用于创建侦听器。这两个函数都返回一个可取消侦听器的可调用函数。
+有两个函数可用于创建 listeners。这两个函数都返回一个取消 listener 的 callable。
 
-- `async_listen_once` - 监听该事件一次，不再触发
-- `async_listen` - 收听直至取消
+- `async_listen_once` — 监听一次该 event，之后不再触发
+- `async_listen` — 持续监听直到被取消
 
-使用 `async_listen` 的情况很少见，因为 `EVENT_HOMEASSISTANT_START`、`EVENT_HOMEASSISTANT_STARTED` 和 `EVENT_HOMEASSISTANT_STOP` 每次运行仅触发一次。
+`async_listen` 很少被使用，因为 `EVENT_HOMEASSISTANT_START`、`EVENT_HOMEASSISTANT_STARTED` 和 `EVENT_HOMEASSISTANT_STOP` 每次运行只触发一次。
 
-### 异步上下文
+### Async context
 
 ```python
 cancel = hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, disconnect_service)
@@ -82,7 +80,8 @@ cancel = hass.bus.async_listen(EVENT_STATE_CHANGED, forward_event)
 cancel()
 ```
 
-### 同步上下文
+### Sync context
+
 ```python
 cancel = hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, disconnect_service)
 cancel()
@@ -93,29 +92,29 @@ cancel = hass.bus.listen(EVENT_STATE_CHANGED, forward_event)
 cancel()
 ```
 
-### 常见事件
+### 常见 events
 
-以下事件通常是直接监听的。
+以下 events 通常被直接监听。
 
-|活动名称| Description
+| Event Name                        | Description
 | --------------------------------- | --------------------------------------------------------------------------
-|`EVENT_HOMEASSISTANT_START`| Completed the setup and entered the start phase
-|`EVENT_HOMEASSISTANT_STARTED`| Completed the start phase, and all integrations have had a chance to load; Mostly used by voice assistants and integrations that export states to external services
-|`EVENT_HOMEASSISTANT_STOP`| Entered the stop phase
+| `EVENT_HOMEASSISTANT_START`       | 已完成 setup 并进入 start 阶段
+| `EVENT_HOMEASSISTANT_STARTED`     | 已完成 start 阶段，且所有 integrations 都获得了加载的机会；主要用于 voice assistants 以及将 states 导出到外部服务的 integrations
+| `EVENT_HOMEASSISTANT_STOP`        | 已进入 stop 阶段
 
-### 其他活动
+### 其他 events
 
-除非 集成 是 Core 的一部分，否则很少直接监听这些事件。通常有一个可用的帮助程序来使用这些事件，在这种情况下，不应直接侦听它们。
+这些 events 很少被直接监听，除非该 integration 属于 core。通常会有消耗这些 events 的 helper 可用，此时不应直接监听。
 
-|活动名称|描述| Preferred helper
+| Event Name                        | Description                                  | Preferred helper
 | --------------------------------- | -------------------------------------------- | ----------------------------
-|`EVENT_HOMEASSISTANT_FINAL_WRITE`|将数据写入磁盘的最后机会| 
-|`EVENT_HOMEASSISTANT_CLOSE`|拆解| 
-|`EVENT_COMPONENT_LOADED`|集成 已完成加载| `homeassistant.helpers.start.async_at_start`
-|`EVENT_SERVICE_REGISTERED`|已注册新服务|
-|`EVENT_SERVICE_REMOVED`|服务已被删除|
-|`EVENT_CALL_SERVICE`|已调用服务|
-|`EVENT_STATE_CHANGED`|实体 的状态已更改| [Tracking entity state changes](#tracking-entity-state-changes)
-|`EVENT_THEMES_UPDATED`|主题已更新|
-|`EVENT_CORE_CONFIG_UPDATE`|Core配置已更新|
-|`EVENT_ENTITY_REGISTRY_UPDATED`|实体注册表已更新| [Tracking entity registry changes](#tracking-entity-registry-changes)
+| `EVENT_HOMEASSISTANT_FINAL_WRITE` | 最后一次将 data 写入磁盘的机会               |
+| `EVENT_HOMEASSISTANT_CLOSE`       | 拆除（Teardown）                             |
+| `EVENT_COMPONENT_LOADED`          | 一个 integration 已完成加载                  | `homeassistant.helpers.start.async_at_start`
+| `EVENT_SERVICE_REGISTERED`        | 注册了一个新的 service                       |
+| `EVENT_SERVICE_REMOVED`           | 移除了一个 service                           |
+| `EVENT_CALL_SERVICE`              | 调用了一个 service                           |
+| `EVENT_STATE_CHANGED`             | 一个 entity 的 state 发生了变化              | [跟踪 entity state 变更](#tracking-entity-state-changes)
+| `EVENT_THEMES_UPDATED`            | Themes 已更新                                |
+| `EVENT_CORE_CONFIG_UPDATE`        | Core configuration 已更新                    |
+| `EVENT_ENTITY_REGISTRY_UPDATED`   | Entity registry 已更新                       | [跟踪 entity registry 变更](#tracking-entity-registry-changes)

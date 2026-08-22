@@ -1,56 +1,54 @@
 ---
 title: "为 API 构建 Python 库"
-description: 'Home Assistant 的一条基础规则是：我们不包含任何特定协议的代码。相反，此类代码应放入独立的 Python 库中，并发布到 PyPI。本指南将介绍如何开始实践这一点！。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: "简介"
+sidebar_label: "Introduction"
 ---
-# 为 API 构建 Python 库
 
-Home Assistant 的一条基础规则是：我们不包含任何特定协议的代码。相反，此类代码应放入独立的 Python 库中，并发布到 PyPI。本指南将介绍如何开始实践这一点！
+Home Assistant 的基础规则之一是，我们不包含任何特定协议的代码。相反，这类代码应该放入一个独立的 Python 库并发布到 PyPI。本指南将介绍如何开始！
 
-## 库的基本要求
+## Basic library requirements
 
-- 该库必须提供源码发行包，不允许依赖仅提供二进制发行包的包。
-- 发布到 PyPI 的库版本应公共在线仓库中的带标签发布对应版本。
-- 向PyPI发布必须自动化。
-- 与外部设备或服务通信的外部Python库必须启用问题跟踪器。
-- 如果该库主要用于 Home Assistant 并且您是该集成的代码，建议使用标记[Home Assistant Core 问题](https://github.com/home-assistant/core/issues)链接的问题模板选择器。例如：[zwave-js-server-python - 新问题](https://github.com/home-assistant-libs/zwave-js-server-python/issues/new/choose)
-- 该库及其可能的子依赖必须使用 [OSI批准的许可证](https://opensource.org/license) 进行授权，并在库的元数据中体现出来。
+- 库必须提供 source distribution packages，不允许依赖仅具有 binary distribution packages 的包。
+- 发布在 PyPi 上的库版本应与公开在线仓库中标记的 releases 相对应。
+- PyPi 上的发布必须是自动化的。
+- 与外部设备或服务通信的外部 Python 库必须启用 issue trackers。
+- 如果库主要用于 Home Assistant，并且你是该 integration 的 code owner，建议使用带有指向 [Home Assistant Core Issues](https://github.com/home-assistant/core/issues) 链接的 issue template picker。例如：[zwave-js-server-python - New Issue](https://github.com/home-assistant-libs/zwave-js-server-python/issues/new/choose)
+- 库及其可能的子依赖必须使用 [OSI-approved license](https://opensource.org/license) 许可。这应在库的 metadata 中反映出来。
 
-在本指南中，我们假设要为一个可通过 HTTP 访问、并返回 JSON 对象结构数据的 REST API 构建一个库。这是最常见的一类 API。这些 API 既可以在设备本地运行，也可以在云端运行。
+在本指南中，我们将假设我们正在为可通过 HTTP 访问并返回 JSON 对象结构化数据的 Rest API 构建库。这是我们最常见的 API 类型。这些 API 可以在设备本身访问，也可以在云端访问。
 
-本指南不一定完全适用于所有API。您可能需要根据实际情况调整示例。
+本指南并不完美适用于所有 API。你可能需要对示例进行调整。
 
 :::info
-如果您是为自己的产品设计新API的制造商，[请先阅读这里关于最适合接入产品的API类型说明](https://www.home-assistant.io/blog/2016/02/12/classifying-the-internet-of-things/#local-device-pushing-new-state)。
+如果你是正在为产品设计新 API 的制造商，[请阅读此处关于为产品添加最佳 API 类型的建议](https://www.home-assistant.io/blog/2016/02/12/classifying-the-internet-of-things/#local-device-pushing-new-state)。
 :::
 
-HTTP API 请求由四个不同部分组成：
+HTTP API 请求由四个不同的部分组成：
 
-- URL。这是我们获取数据的路径。在 REST API 中，URL 会唯一标识资源。例如 `http://example.com/api/lights` 和 `http://example.com/api/light/1234`。
-- HTTP 方法。它定义了我们希望从 API 获取什么。最常见的是：
-  - `GET`：用于获取信息，例如灯的状态
-  - `POST`：用于让某件事发生（例如打开灯）
-- body。这是我们发送给服务器的数据，用于说明需要执行什么操作。在 `POST` 请求中，我们就是通过它发送命令。
-- 它包含用于描述请求的元数据，也用于将认证信息附加到请求中。
+- URL。这是我们要从中获取数据的路径。对于 Rest API，URL 将唯一标识资源。URL 的示例有 `http://example.com/api/lights` 和 `http://example.com/api/light/1234`。
+- HTTP method。它定义了我们希望从 API 获得什么。最常见的有：
+  - `GET` 用于获取信息，例如 light 的状态
+  - `POST` 用于执行操作（例如打开 light）
+- Body。这是我们要发送到服务器的数据，用于标识需要执行的操作。对于 `POST` 请求，这就是我们发送命令的方式。
+- Headers。它包含描述请求的 metadata。它将用于将 authorization 附加到请求中。
 
-## 组织库的结构
+## 构建库的结构
 
-我们的库将由两个不同部分组成：
+我们的库将包含两个不同的部分：
 
-- **认证：**负责向API端点发起带认证的HTTP请求并返回结果。这是唯一真正与API交互的代码部分。
-- **数据模型：**用于表示数据，并提供与数据交互的命令。
+- **Authentication：** 负责向 API endpoint 发起经过认证的 HTTP 请求并返回结果。这是唯一实际与 API 交互的代码部分。
+- **Data models：** 表示数据并提供与数据交互的命令。
 
 ## 在 Home Assistant 中试用你的库
 
-如果你想在发布到 PyPI 之前就在 Home Assistant 中试用你的库，那么需要以可编辑模式运行该库。
+如果你想将库发布到 PyPI 之前在 Home Assistant 中试用它，需要运行可编辑版本的库。
 
-做法是进入你的Home Assistant开发环境，激活虚拟环境，然后输入：
+进入你的 Home Assistant 开发环境，激活虚拟环境并输入：
 
 ```shell
 pip3 install -e ../my_lib_folder
 ```
 
-接下来在不从 PyPI 安装依赖的情况下运行 Home Assistant，巴勒斯坦覆盖你的包。
+现在运行 Home Assistant 时跳过从 PyPI 安装依赖，以避免覆盖你的包。
 
 ```shell
 hass --skip-pip-packages my_lib_module_name

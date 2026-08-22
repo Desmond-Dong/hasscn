@@ -1,27 +1,25 @@
 ---
-title: "支持配置项卸载"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "支持配置条目卸载"
+sidebar_label: 🥈 config-entry-unloading
 related_rules:
   - entity-event-setup
 ---
-# 支持配置项卸载
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-集成应支持卸载配置条目（config entry）。
-这样 Home Assistant 就能在运行时卸载集成，让用户无需重启 Home Assistant 也能删除或重新加载集成。
+集成应支持配置条目卸载。
+这允许 Home Assistant 在运行时卸载集成，使用户能够在无需重启 Home Assistant 的情况下移除集成或重新加载它。
 
-这改善了用户体验，因为用户无需重新启动 Home Assistant 即可执行更多操作。
+由于用户无需重启 Home Assistant 即可执行更多操作，这改善了用户体验。
 
-## 实施示例
+## 示例实现
 
-在 `async_unload_entry` 函数中，集成应清理所有订阅，并关闭设置配置条目期间打开的所有连接。
+在 `async_unload_entry` 接口函数中，集成应清理所有订阅，并关闭在集成设置期间打开的所有连接。
 
-例如，如果我们把一个监听器存放在配置条目（config entry）的 `runtime_data` 中，就应在卸载时清理它，以避免内存泄漏。
+在此示例中，我们有一个监听器，存储在配置条目的 `runtime_data` 中，我们希望对其进行清理以避免内存泄漏。
 
-ZZ保护0ZZ:
+`__init__.py`:
 ```python showLineNumbers
 async def async_unload_entry(hass: HomeAssistant, entry: MyConfigEntry) -> bool:
     """Unload a config entry."""
@@ -31,22 +29,22 @@ async def async_unload_entry(hass: HomeAssistant, entry: MyConfigEntry) -> bool:
 ```
 
 :::info
-集成可以使用 `entry.async_on_unload` 注册回调；当配置条目被卸载、卸载被取消或设置失败时，这些回调会被调用。
-这对于清理资源很有用，而无需自己跟踪删除方法。
-在以下情况下，已注册的回调会被调用：
- - `async_setup_entry` 触发 `ConfigEntryError`、`ConfigEntryAuthFailed` 或 `ConfigEntryNotReady`
- - `async_unload_entry` 成功，即返回 True 并且不触发。
+集成可以使用 `entry.async_on_unload` 注册回调函数，这些回调函数将在配置条目卸载或设置失败时被调用。
+这对于无需自己跟踪清理方法来清理资源非常有用。
+注册的回调函数将在以下情况下被调用：
+  - `async_setup_entry` 抛出 `ConfigEntryError`、`ConfigEntryAuthFailed` 或 `ConfigEntryNotReady`
+  - `async_unload_entry` 成功，即返回 True 且未抛出异常。
 
-请注意，集成始终需要实现 `async_unload_entry` 来支持配置条目卸载，仅调用 `entry.async_on_unload` 并不足够。
+请注意，集成始终需要实现 `async_unload_entry` 以支持配置条目卸载，仅调用 `entry.async_on_unload` 是不够的。
 :::
 
-## 其他资源
+## 更多资源
 
-有关配置条目（config entry）及其生命周期的更多信息，请参阅 [config entry documentation](/developers/config_entries_index)。
+关于配置条目及其生命周期的更多信息，请参见[config entry 文档](/developers/config_entries_index)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

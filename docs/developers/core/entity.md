@@ -1,19 +1,17 @@
 ---
-title: 实体
-description: '有关实体的一般介绍，请参阅实体架构(/developers/architecture/devices-and-services)。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: Entity
 sidebar_label: 介绍
 ---
-# 实体
 
-有关实体的一般介绍，请参阅[实体架构](/developers/architecture/devices-and-services)。
+关于实体的通用介绍，请参见 [entities architecture](../architecture/devices-and-services.md)。
 
-## 基本实现
+## 基础实现
 
-下面是一个示例开关实体，用于在内存中跟踪状态。
-示例中的开关代表设备的主要功能，
-因此实体与设备具有相同的名称。
+下面是一个 switch entity 的示例，它在内存中跟踪其 state。
+此外，示例中的 switch 代表设备的主要 feature，
+意味着 entity 与其 device 同名。
 
-请参阅[实体命名](#实体命名)，了解如何为实体设置名称。
+请查阅 [Entity naming](#entity-naming) 了解如何为 entity 设置自己的名称。
 
 ```python
 from homeassistant.components.switch import SwitchEntity
@@ -24,7 +22,7 @@ class MySwitch(SwitchEntity):
 
     def __init__(self):
         self._is_on = False
-        self._attr_device_info = ...  # For automatic device registration
+        self._attr_device_info = ...  # 用于自动 device 注册
         self._attr_unique_id = ...
 
     @property
@@ -41,129 +39,129 @@ class MySwitch(SwitchEntity):
         self._is_on = False
 ```
 
-这就是构建开关实体所需的全部内容！继续阅读以了解更多信息或查看[视频教程](https://youtu.be/Cfasc9EgbMU?t=737)。
+构建一个 switch entity 就这么多内容！继续阅读以了解更多，或者查看 [视频教程](https://youtu.be/Cfasc9EgbMU?t=737)。
 
-## 更新实体
+## 更新 entity
 
-一个实体代表一个设备。有多种策略可以使您的实体与设备状态保持同步，最流行的一种是轮询。
+Entity 代表一个 device。有多种策略可以让你的 entity 与 device 的 state 保持同步，其中最常用的是 polling。
 
 ### 轮询
 
-通过轮询，Home Assistant 会不时地（取决于组件的更新间隔）要求实体获取最新状态。当 `should_poll` 属性返回 `True`（默认值）时，Home Assistant 将轮询实体。您可以使用 `update()` 或异步方法 `async_update()` 实现更新逻辑。此方法应从设备获取最新状态并将其存储在实例变量中，以便属性返回它。
+在 polling 模式下，Home Assistant 会定时（取决于 component 的更新间隔）向 entity 请求最新的 state。当 `should_poll` 属性返回 `True`（默认值）时，Home Assistant 会轮询该 entity。你可以使用 `update()` 或异步方法 `async_update()` 来实现更新逻辑。该方法应从 device 获取最新的 state，并将其存储在 instance variable 中，以便 properties 返回它。
 
 ### 订阅更新
 
-当您订阅更新时，您的代码负责让 Home Assistant 知道有可用更新。确保您有 `should_poll` 属性返回 `False`。
+当你订阅 updates 时，你的代码需要负责通知 Home Assistant 有新的更新可用。请确保 `should_poll` 属性返回 `False`。
 
-每当您从订阅中收到新状态时，您都可以通过调用 `schedule_update_ha_state()` 或异步回调 `async_schedule_update_ha_state()` 告诉 Home Assistant 有可用更新。如果您希望 Home Assistant 在将更新写入 Home Assistant 之前调用您的更新方法，请将布尔值 `True` 传递给该方法。
+每当通过订阅收到新的 state 时，你可以通过调用 `schedule_update_ha_state()` 或异步回调 `async_schedule_update_ha_state()` 来通知 Home Assistant 有更新可用。如果希望 Home Assistant 在将更新写入 Home Assistant 之前先调用你的 update method，请将布尔值 `True` 传入该方法。
 
 ## 通用属性
 
-实体基类具有所有 Home Assistant 实体共有的一些属性。这些属性可以添加到任何实体，无论其类型如何。所有这些属性都是可选的，不需要实现。
+Entity 基类有一些在所有 Home Assistant entity 中通用的属性。这些属性可以添加到任何 entity 中，无论其类型如何。所有这些属性都是可选的，不需要实现。
 
-当状态写入状态机时，始终会调用这些属性。
+这些属性在 state 写入 state machine 时总是会被调用。
 
 :::tip
-属性应该始终只从内存返回信息，而不执行 I/O（如网络请求）。实现 `update()` 或 `async_update()` 来获取数据。
+Properties 应该只从内存返回信息，而不要执行 I/O（如网络请求）。请实现 `update()` 或 `async_update()` 来获取数据。
 
-由于在将状态写入状态机时始终会调用这些属性，因此在属性中执行尽可能少的工作非常重要。
+由于这些 properties 在 state 写入 state machine 时总是会被调用，因此在 property 中应尽可能少地执行工作。
 
-要避免在属性方法中进行计算，请设置相应的[实体类或实例属性](#实体类或实例属性)，或者如果值永远不会更改，请使用[实体描述](#实体描述)。
+为了避免在 property 方法中进行计算，请设置相应的 [entity 类属性或实例属性](#entity-class-or-instance-attributes)，或者如果值永不变化，请使用 [entity descriptions](#entity-description)。
 :::
 
-| 名称 | 类型 | 默认值 | 说明
+| Name                     | Type                          | Default | Description
 | ------------------------ | ------------------------------| ------- | -----------
-| assumed_state | `bool` | `False` | 如果状态基于我们的假设而不是从设备读取，则返回 `True`。
-| attribution | <code>str &#124; None</code> | `None` | API 提供商所需的品牌文本。
-| available | `bool` | `True` | 指示 Home Assistant 是否能够读取状态或控制底层设备，请参阅[实体不可用](/developers/core/integration-quality-scale/rules/entity-unavailable) 了解更多详细信息。
-| device_class | <code>str &#124; None</code> | `None` | 设备的额外分类。每个域都定义自己的设备类别。设备类别可能对测量单位和支持功能有额外要求。
-| entity_picture | <code>str &#124; None</code> | `None` | 要为实体显示的图片的 URL。
-| extra_state_attributes | <code>dict &#124; None</code> | `None` | 要存储在状态机中的额外信息。它需要是进一步解释状态的信息，它不应该是固件版本之类的静态信息。
-| has_entity_name | `bool` | `False` | 如果实体的 `name` 属性代表实体本身（新集成所需），则返回 `True`。下面对此进行更详细的解释。
-| name | <code>str &#124; None</code> | `None` | 实体名称。避免对自然语言名称进行硬编码，而应使用[国际化文档](/developers/internationalization/core)中介绍的译名机制。
-| should_poll | `bool` | `True` | Home Assistant 是否应主动轮询实体状态。如果设置为 `False`，实体需要通过调用[数据获取文档](/developers/integration_fetching_data)中介绍的方法来通知 Home Assistant 有新更新。
-| state | <code>str &#124; int &#124; float &#124; None</code> | `None` | 实体的状态。在大多数情况下，这是由域基础实体实现的，不应通过集成来实现。
-| supported_features | <code>int &#124; None</code> | `None` | 标记实体支持的功能。域指定自己的域。
-| translation_key | <code>str &#124; None</code> | `None` | 用于在[集成 `strings.json` 的 `entity` 部分](/developers/internationalization/core)中查找实体状态翻译，并将状态映射到匹配[图标](#图标)的键。 |
-| translation_placeholders | <code>dict &#124; None</code> | `None` | 翻译后实体名称所需的占位符定义，详见[国际化文档](/developers/internationalization/core)。
+| assumed_state            | `bool`                        | `False` | 如果 state 基于我们的假设而非从 device 读取，则返回 `True`。
+| attribution              | `str \| None`  | `None`  | API 提供商要求的品牌 text。
+| available                | `bool`                        | `True`  | 指示 Home Assistant 是否能够读取 state 或控制底层 device，更多详情请见 [entity-unavailable](/developers/core/integration-quality-scale/rules/entity-unavailable)。
+| device_class             | `str \| None`  | `None`  | 对 device 类型的额外分类。每个 domain 都有自己的定义。device class 可能附带对计量单位和受支持 features 的额外要求。
+| entity_picture           | `str \| None`  | `None`  | 用于显示 entity 的图片 URL。
+| extra_state_attributes   | `dict \| None` | `None`  | 存储在 state machine 中的额外信息。它应该是进一步解释 state 的信息，而不应该是 firmware 版本之类的静态信息。
+| has_entity_name          | `bool`                        | `False` | 如果 entity 的 `name` 属性代表 entity 本身（新集成所必需），则返回 `True`。下面有更详细的说明。
+| name                     | `str \| None`  | `None`  | Entity 的名称。避免硬编码自然语言名称，请改用 [translated name](/developers/internationalization/core#name-of-entities)。
+| should_poll              | `bool`                        | `True`  | Home Assistant 是否应向 entity 检查更新的 state。如果设为 `False`，entity 需要通过调用其中一个 [schedule update 方法](integration_fetching_data.md#push-vs-poll) 来通知 Home Assistant 新更新。
+| state                    | `str \| int \| float \| None` | `None` | Entity 的 state。在大多数情况下，这由 domain base entity 实现，集成不应自行实现。
+| supported_features       | `int \| None`  | `None`  | 标志 entity 支持的 features。各 domain 有自己的定义。
+| translation_key         | `str \| None`  | `None`  | 用于在集成的 `strings.json` 的 [`entity` section](/developers/internationalization/core#state-of-entities) 中查找 entity state 的 translations，并将 state 翻译为匹配的 [icon](#icons)。 |
+| translation_placeholders | `dict \| None` | `None`  | [translated entity name](/developers/internationalization/core#name-of-entities) 的占位符定义。
 
 :::warning
-允许更改 `device_class`、`supported_features` 或域的 `capability_attributes` 中包含的任意属性。但是，这些实体属性通常默认不会变化，而且某些实体消费者可能不会及时感知更新，因此建议仅在确有必要时、以适度频率更改。
+允许更改 `device_class`、`supported_features` 或包含在 domain 的 `capability_attributes` 中的任何属性。但是，由于这些 entity 属性通常不应发生变化，且某些 entity consumers 可能无法以较高的速率更新它们，我们建议仅在绝对必要时更改它们，并保持适度的间隔。
 
-例如，此类更改将导致语音助手集成与支持的云服务重新同步。
+例如，此类更改会导致 voice assistant 集成与支持它们的云服务重新同步。
 :::
 
 :::warning
-当 `extra_state_attributes` 也频繁更改时，生成大量状态更改的实体可以快速增加数据库的大小。通过删除非关键属性或创建其他 `sensor` 实体，最大限度地减少这些实体的 `extra_state_attributes` 数量。
+产生大量 state 变更的 entity 在 `extra_state_attributes` 也频繁变化时，会迅速增加 database 的大小。通过移除非关键 attributes 或创建额外的 `sensor` entity，来最小化这些 entity 的 `extra_state_attributes` 数量。
 :::
 
-## 注册表属性
+## Registry 属性
 
-以下属性用于填充实体和设备注册表。每次将实体添加到 Home Assistant 时都会读取它们。仅当 `unique_id` 不为 None 时，这些属性才有效。
+以下属性用于填充 entity 和 device registries。每次 entity 被添加到 Home Assistant 时都会读取它们。这些属性只有在 `unique_id` 不为 None 时才会生效。
 
-| 名称 | 类型 | 默认值 | 说明
+| Name                            | Type                                    | Default | Description
 | ------------------------------- | --------------------------------------- | ------- | -----------
-| device_info | <code>DeviceInfo &#124; None</code> | `None` | 用于[设备注册表](/developers/device_registry_index)自动注册设备的描述信息
-| entity_category | <code>EntityCategory &#124; None</code> | `None` | 非主要实体的分类。对于允许修改设备配置的实体（例如控制背光开关的开关实体），应设置为 `EntityCategory.CONFIG`。对于公开设备配置参数或诊断信息、但不允许修改这些值的实体，例如显示 RSSI 或 MAC 地址的传感器，应设置为 `EntityCategory.DIAGNOSTIC`。它也可用于触发设备识别机制的按钮实体（带有 `IDENTIFY` 设备类）。 |
-| entity_registry_enabled_default | `bool` | `True` | 指示首次添加到实体注册表时是否应启用或禁用实体。这包括快速变化的诊断实体或假设不太常用的实体。例如，暴露 RSSI 或电池电压的传感器通常应设置为 `False`；以防止这些实体进行不必要的（已记录的）状态更改或 UI 混乱。 |
-| entity_registry_visible_default | `bool` | `True` | 指示首次添加到实体注册表时实体应隐藏还是可见。 |
-| unique_id | <code>str &#124; None</code> | `None` | 该实体的唯一标识符。它必须在平台内唯一（例如 `light.hue`），且不应由用户配置或更改。更多信息请参阅[实体注册表](/developers/entity_registry_index)。 |
+| device_info                     | `DeviceInfo \| None`                    | `None`  | [Device registry](/developers/device_registry_index) 描述符，用于 [automatic device registration](/developers/device_registry_index#automatic-registration-through-an-entity)。
+| entity_category                 | `EntityCategory \| None`                | `None`  | 非 primary entity 的分类。对于允许更改 device 配置的 entity（例如 switch entity，可以开启和关闭 switch 的背景照明），设为 `EntityCategory.CONFIG`。对于暴露 device 的配置参数或 diagnostics 但不允许更改的 entity（例如显示 RSSI 或 MAC address 的 sensor），设为 `EntityCategory.DIAGNOSTIC`。对于触发 device 识别机制的 button entity（使用 `IDENTIFY` device class），也请使用它。 |
+| entity_registry_enabled_default | `bool` | `True`                         | 指示 entity 首次添加到 entity registry 时应启用还是禁用。这包括快速变化的 diagnostic entity 或假定较少使用的 entity。例如，暴露 RSSI 或 battery voltage 的 sensor 通常应设为 `False`，以防止这些 entity 引起不必要的（记录的）state 变更或 UI 杂乱。 |
+| entity_registry_visible_default | `bool` | `True`                         | 指示 entity 首次添加到 entity registry 时应隐藏还是可见。 |
+| unique_id                       | `str \| None`            | `None`  | 该 entity 的唯一标识符。它必须在平台内（如 `light.hue`）唯一。它不应可由用户配置或更改。[了解更多。](entity_registry_index.md#unique-id-requirements) |
 
-## 高级属性
+## 附加属性
 
-以下属性也可用于实体。然而，它们仅供高级使用，应谨慎使用。当状态写入状态机时，始终会调用这些属性。
+以下属性也可用于 entity，但应谨慎使用。这些属性在 state 写入 state machine 时总是会被调用。
 
-| 名称 | 类型 | 默认值 | 说明
+| Name                            | Type                         | Default | Description
 | ------------------------------- | ---------------------------- | ------- | -----------
-| capability_attributes | <code>dict &#124; None</code> | `None` | 存储在实体注册表中的状态属性。此属性由域基础实体实现，不应由集成实现。
-| force_update | `bool` | `False` | 每次更新都写入状态机，即使数据没有变化。示例：值直接来自已连接传感器而非缓存。请谨慎使用，否则会产生大量状态写入。 |
-| icon | <code>str &#124; None</code> | `None` | 在前端使用的图标。不建议使用此属性。[有关图标的更多信息](#图标)。 |
-| state_attributes | <code>dict &#124; None</code> | `None` | 状态基类实体提供的属性。此属性由域基础实体实现，不应由集成实现。
-| unit_of_measurement | <code>str &#124; None</code> | `None` | 实体状态所使用的测量单位。在大多数情况下，例如 `number` 和 `sensor` 域，此属性由域基础实体实现，不应由集成实现。
+| capability_attributes           | `dict \| None` | `None` | 存储在 entity registry 中的 state attributes。该属性由 domain base entity 实现，集成不应自行实现。
+| force_update                    | `bool`                       | `False` | 每次更新都写入 state machine，即使数据相同。示例用法：当你直接从连接的 sensor 读取值而不是从 cache 读取时。请谨慎使用，会频繁写入 state machine。 |
+| icon                            | `str \| None` | `None`  | 在前端使用的 icon。不建议使用此属性。[关于使用 icons 的更多信息](#icons)。 |
+| state_attributes                | `dict \| None` | `None` | Base domain 的 state attributes。该属性由 domain base entity 实现，集成不应自行实现。
+| unit_of_measurement             | `str \| None` |  entity state 所表示的计量单位。在大多数情况下（例如 `number` 和 `sensor` domain），这由 domain base entity 实现，集成不应自行实现。
 
 ## 系统属性
 
-以下属性由 Home Assistant 使用和控制，不应被集成覆盖。
+以下属性由 Home Assistant 使用和控制，集成不应 override。
 
-| 名称 | 类型 | 默认值 | 说明
+| Name    | Type    | Default | Description
 | ------- | ------- | ------- | -----------
-| enabled | `bool` | `True` | 指示实体注册表中是否启用了实体。如果平台不支持实体注册表，它还会返回 `True`。禁用实体不会添加到 Home Assistant。 |
+| enabled | `bool`  | `True`  | 指示 entity 是否在 entity registry 中启用。如果平台不支持 entity registry，也返回 `True`。被禁用的 entity 不会添加到 Home Assistant。 |
 
-## 实体命名
+## Entity 命名
 
-避免将实体名称写死为英文字符串；名称应使用[国际化机制](/developers/internationalization/core)进行翻译。不应翻译的名称包括专有名词、型号名以及第三方库提供的名称。
+避免将 entity 的名称设置为硬编码的英文字符串，而是，名称应该被 [translated](/developers/internationalization/core#name-of-entities)。名称不应被翻译的示例包括专有名词、model 名称以及由第三方库提供的名称。
 
-某些实体会根据其设备类别自动命名，其中包括 [`binary_sensor`](/developers/core/entity/binary-sensor)、[`button`](/developers/core/entity/button)、[`number`](/developers/core/entity/number) 和 [`sensor`](/developers/core/entity/sensor) 实体，并且在许多情况下不需要命名。
-例如，设备类别设置为 `temperature` 的未命名传感器将被命名为“Temperature”。
+一些 entity 会根据其 device class 自动命名，这包括 [`binary_sensor`](/developers/core/entity/binary-sensor)、[`button`](/developers/core/entity/button)、[`number`](/developers/core/entity/number) 和 [`sensor`](/developers/core/entity/sensor) entity，在许多情况下不需要命名。
+例如，一个未命名且 device class 设为 `temperature` 的 sensor 将被命名为 "Temperature"。
 
 :::note
-如果实体提供实体名称的翻译，则使用的名称取决于创建时的系统（后端）语言，而不是用户的 UI 语言。例如，如果您的后端设置为德语，则新实体将以德语命名 - 即使用户稍后将其 UI 切换为法语。更改后端语言只会影响更改后创建的实体；现有实体保留其原始名称。
+如果 entity 提供了 entity name 的 translations，所使用的名称取决于创建时的系统（backend）语言，而不是用户的 UI 语言。例如，如果你的 backend 设为德语，新 entity 将以德语命名——即使用户后来将 UI 切换为法语。更改 backend 语言只影响更改后创建的 entity；现有 entity 保留其原始名称。
 :::
 
 ### `has_entity_name` True（新集成必需）
 
-实体的名称属性仅标识实体所代表的数据点，不应包含设备的名称或实体的类型。因此，对于代表其设备的电量使用情况的传感器，这将是“电量使用情况”。
+Entity 的 name 属性只标识 entity 所代表的数据点，不应包含 device 名称或 entity 类型。因此，对于代表其 device 功耗的 sensor，这应该是 "Power usage"。
 
-如果实体代表设备的单个主要功能，则实体的名称属性通常应返回 `None`。
-例如，设备的“主要功能”是智能灯泡的 `LightEntity`。
+如果 entity 代表 device 的单一主要 feature，该 entity 的 name 属性通常应返回 `None`。
+Device 的"主要 feature"例如是智能灯泡的 `LightEntity`。
 
-`friendly_name` 状态属性由实体名称和设备名称组合生成，规则如下：
-- 该实体不是设备的成员：`friendly_name = entity.name`
-- 该实体是设备的成员，并且 `entity.name` 不是 `None`：`friendly_name = f"{device.name} {entity.name}"`
-- 该实体是设备的成员，`entity.name` 是 `None`: `friendly_name = f"{device.name}"`
+`friendly_name` state attribute 通过将 entity name 与 device name 组合生成，规则如下：
+- Entity 不是 device 的成员：`friendly_name = entity.name`
+- Entity 是 device 的成员且 `entity.name` 不为 `None`：`friendly_name = f"{device.name} {entity.name}"`
+- Entity 是 device 的成员且 `entity.name` 为 `None`：`friendly_name = f"{device.name}"`
 
-`entity_id` 由实体名称和设备名称组合生成，规则如下：
-- 该实体不是设备的成员，例如辅助实体“大家都在家”：`entity_id = binary_sensor.everyone_is_home`
-- 该实体是设备的成员，并且 `entity.name` 不是 `None`，例如名为“夜灯”的设备的电池：`entity_id = sensor.nightlight_battery`
-- 该实体是设备的成员，`entity.name` 是 `None`，例如名为“夜灯”的设备的灯光：`entity_id = light.nightlight`
+`entity_id` 通过将 entity name 与 device name 组合生成，规则如下：
+- Entity 不是 device 的成员，例如 helper "Everyone is home"：`entity_id = binary_sensor.everyone_is_home`
+- Entity 是 device 的成员且 `entity.name` 不为 `None`，例如名为 "nightlight" 的 device 的电池：`entity_id = sensor.nightlight_battery`
+- Entity 是 device 的成员且 `entity.name` 为 `None`，例如名为 "nightlight" 的 device 的 light：`entity_id = light.nightlight`
 
-实体名称应以大写字母开头，其余单词均小写（当然除非它是专有名词或大写缩写）。
+Entity name 应以大写开头，其余单词为小写（除非是专有名词或大写缩写）。
 
-#### 作为设备主要功能的开关实体示例
+#### 作为 device 主要 feature 的 switch entity 示例
 
-*注：此示例使用类属性实现实体属性；其他实现方式请参阅[属性实现](#属性实现)。*
-*注意：示例并不完整，必须实现 `unique_id` 属性，并且实体必须已在[设备注册表](/developers/device_registry_index)中注册。*
-
+*注意：示例使用类属性实现 properties，其他实现方式请参见 [Property implementation](#property-implementation)。*
+*注意：示例不完整，必须实现 `unique_id` 属性，并且 entity
+必须 [与 device 注册](/developers/device_registry_index#defining-devices)。*
 
 ```python
 from homeassistant.components.switch import SwitchEntity
@@ -175,10 +173,12 @@ class MySwitch(SwitchEntity):
 
 ```
 
-#### 开关实体示例：该实体不是设备的主要功能，或不属于某个设备：
+#### 作为非 device 主要 feature 或非 device 一部分的 switch entity 示例：
 
-*注：此示例使用类属性实现实体属性；其他实现方式请参阅[属性实现](#属性实现)。*
-*注意：如果实体属于某个设备，则必须实现 `unique_id` 属性，并且实体必须已在[设备注册表](/developers/device_registry_index)中注册。*
+*注意：示例使用类属性实现 properties，其他实现方式*
+*请参见 [Property implementation](#property-implementation)。*
+*注意：如果 entity 是 device 的一部分，必须实现 `unique_id` 属性，并且 entity
+必须 [与 device 注册](/developers/device_registry_index#defining-devices)。*
 
 ```python
 from homeassistant.components.switch import SwitchEntity
@@ -190,10 +190,10 @@ class MySwitch(SwitchEntity):
     @property
     def translation_key(self):
         """Return the translation key to translate the entity's name and states."""
-        return my_switch
+        return "my_switch"
 ```
 
-#### 未翻译的开关实体示例：该实体不是设备的主要功能，或不属于某个设备：
+#### 非翻译的 switch entity 示例（非 device 主要 feature 或非 device 一部分）：
 
 ```python
 from homeassistant.components.switch import SwitchEntity
@@ -208,15 +208,16 @@ class MySwitch(SwitchEntity):
         return "Model X"
 ```
 
-### `has_entity_name` 未实现或 False（已弃用）
+### `has_entity_name` 未实现或为 False（已弃用）
 
-实体的名称属性可以是设备名称和实体所表示的数据点的组合。
+Entity 的 name 属性可以是 device 名称与 entity 所代表的数据点的组合。
 
-## 属性实现
+## Property 实现
 
-### 属性方法
+### Property 函数
 
-为每个属性编写一个属性方法通常只需要几行代码，例如：
+为每个 property 编写 property method 只需要几行代码，
+例如
 
 ```python
 class MySwitch(SwitchEntity):
@@ -229,9 +230,9 @@ class MySwitch(SwitchEntity):
     ...
 ```
 
-### 实体类或实例属性
+### Entity 类属性或实例属性
 
-或者，也可以用更简洁的方式设置实体类属性或实例属性，例如：
+另一种较短的形式是，按照以下任一模式设置 Entity 类属性或实例属性：
 
 ```python
 class MySwitch(SwitchEntity):
@@ -250,28 +251,29 @@ class MySwitch(SwitchEntity):
     ...
 ```
 
-这与第一个示例完全等价，但依赖于基类中属性的默认实现。
-这些属性名以 `_attr_` 开头，后接实际属性名。例如，默认的
-`device_class` 属性返回 `_attr_device_class` 类属性。
+这与第一个示例完全相同，但依赖于基类中 property 的默认
+实现。该属性的名称以 `_attr_` 开头，后跟 property 名称。例如，默认
+的 `device_class` property 返回 `_attr_device_class` 类属性。
 
-并非所有实体类都支持通过 `_attr_` 设置对应的实体属性。
-具体支持哪些属性，请参考各实体类的文档。
+并非所有 entity 类都支持使用 `_attr_` 属性来实现其 entity
+特定属性，请参阅相应
+entity 类的文档以获取详细信息。
 
 :::tip
-如果集成需要访问自己的属性，则应访问属性 (`self.name`)，而不是类或实例属性 (`self._attr_name`)。
+如果集成需要访问自己的 properties，应访问 property（`self.name`），而不是类属性或实例属性（`self._attr_name`）。
 :::
 
-### 实体描述
+### Entity 描述
 
-设置实体属性的第三种方式是使用实体描述。为此，需要在 `Entity` 实例上设置名为 `entity_description` 的属性，并将其赋值为一个 `EntityDescription` 实例。实体描述是一个数据类，其字段对应大多数可用的 `Entity` 属性。每个支持实体平台的实体集成（例如 `switch` 集成）都会定义自己的 `EntityDescription` 子类，供希望使用实体描述的实现平台使用。
+设置 entity property 的第三种方法是使用 entity description。为此，请在 `Entity` 实例上设置一个名为 `entity_description` 的属性，其值为 `EntityDescription` 实例。Entity description 是一个 dataclass，其 attributes 对应于大多数可用的 `Entity` properties。每个支持 entity platform 的 entity 集成（例如 `switch` 集成）都会定义自己的 `EntityDescription` 子类，使用 entity descriptions 的实现 platform 应使用该子类。
 
-默认情况下，`EntityDescription` 实例有一个名为 `key` 的必填属性。它是一个字符串，对于该实现平台的所有实体描述都必须唯一。常见做法是将它包含在所描述实体的 `unique_id` 中。
+默认情况下，`EntityDescription` 实例有一个必需的 attribute 名为 `key`。这是一个字符串，旨在对实现 platform 的所有 entity descriptions 保持唯一。该 attribute 的一个常见用例是将其包含在描述 entity 的 `unique_id` 中。
 
-使用实体描述的主要好处是它以声明的方式定义平台的不同实体类型，使得当存在许多不同的实体类型时代码更容易阅读。
+使用 entity descriptions 的主要好处是，它以一种声明式的方式定义了 platform 的不同 entity types，当存在许多不同 entity type 时，这使得代码更易读。
 
 ### 示例
 
-下面的代码片段给出了何时实现属性函数、何时使用类或实例属性以及何时使用实体描述的最佳实践示例。
+下面的代码片段示例说明了何时应实现 property 函数、何时使用类属性或实例属性以及何时使用 entity descriptions 的最佳实践。
 
 ```py
 from __future__ import annotations
@@ -325,7 +327,7 @@ async def async_setup_entry(
     async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
     """Set up Example sensor based on a config entry."""
-    device: ExampleDevice = hass.data[DOMAIN][entry.entry_id]
+    device: ExampleDevice = entry.runtime_data
     async_add_entities(
         ExampleSensorEntity(device, description)
         for description in SENSORS
@@ -339,7 +341,7 @@ class ExampleSensorEntity(SensorEntity):
     entity_description: ExampleSensorEntityDescription
     _attr_entity_category = (
         EntityCategory.DIAGNOSTIC
-    )  # This will be common to all instances of ExampleSensorEntity
+    )  # 这对所有 ExampleSensorEntity 实例是通用的
 
     def __init__(
         self, device: ExampleDevice, entity_description: ExampleSensorEntityDescription
@@ -347,7 +349,7 @@ class ExampleSensorEntity(SensorEntity):
         """Set up the instance."""
         self._device = device
         self.entity_description = entity_description
-        self._attr_available = False  # This overrides the default
+        self._attr_available = False  # 这会覆盖默认值
         self._attr_unique_id = f"{device.serial}_{entity_description.key}"
 
     def update(self) -> None:
@@ -355,49 +357,49 @@ class ExampleSensorEntity(SensorEntity):
         try:
             self._device.update()
         except ExampleException:
-            if self.available:  # Read current state, no need to prefix with _attr_
+            if self.available:  # 读取当前 state，不需要加 _attr_ 前缀
                 LOGGER.warning("Update failed for %s", self.entity_id)
-            self._attr_available = False  # Set property value
+            self._attr_available = False  # 设置 property 值
             return
 
         self._attr_available = True
-        # We don't need to check if device available here
+        # 这里不需要检查 device 是否可用
         self._attr_native_value = self.entity_description.value_fn(
             self._device
-        )  # Update "native_value" property
+        )  # 更新 "native_value" property
 ```
 
-## 生命周期挂钩
+## 生命周期钩子
 
-使用这些生命周期挂钩在实体发生某些事件时执行代码。所有生命周期挂钩都是异步方法。
+使用这些 lifecycle hooks 在发生某些事件时执行代码。所有 lifecycle hooks 都是异步方法。
 
 ### `async_added_to_hass()`
 
-当实体首次写入状态机之前分配了实体 ID 和 hass 对象时调用。示例用途：恢复状态、订阅更新或设置回调/调度函数/侦听器。
+当 entity 被分配 entity_id 和 hass 对象后，且第一次写入 state machine 之前调用。示例用途：恢复 state、订阅 updates 或设置 callback/dispatch function/listener。
 
 ### `async_will_remove_from_hass()`
 
-当实体即将从 Home Assistant 中删除时调用。使用示例：与服务器断开连接或取消订阅更新。
+当 entity 即将从 Home Assistant 移除时调用。示例用途：断开与 server 的连接或取消订阅 updates。
 
 ## 图标
 
-Home Assistant 中的每个实体都有一个图标，作为视觉提示，便于在前端识别实体。Home Assistant 使用[Material Design Icons](https://materialdesignicons.com/) 图标集。
+Home Assistant 中的每个 entity 都有一个 icon，用作前端中更易识别 entity 的视觉指示器。Home Assistant 使用 [Material Design Icons](https://materialdesignicons.com/) icon 集。
 
-在大多数情况下，Home Assistant 会根据实体的域、`device_class` 和 `state` 自动选择图标。如果可能，最好使用默认图标，以提供一致的体验并避免用户混淆。但是，可以覆盖默认值并为实体提供自定义图标。
+在大多数情况下，Home Assistant 会根据 entity 的 domain、`device_class` 和 `state` 自动选择一个 icon。如果可能，优先使用默认 icon，以提供一致的体验并避免用户混淆。但是，也可以 override 默认值并为 entity 提供自定义 icon。
 
-无论提供什么图标，用户始终可以在前端根据自己的喜好自定义图标。
+无论提供什么 icon，用户总可以在前端按照自己的喜好自定义 icon。
 
-有两种方式可以为实体提供自定义图标：提供图标翻译，或直接提供图标标识符。
+有两种方式为 entity 提供自定义 icon：通过提供 icon translations 或通过提供 icon identifier。
 
 ### 图标翻译
 
-这是为实体提供自定义图标的首选方式。图标翻译的工作方式与[常规国际化机制](/developers/internationalization/core)类似，但它不是将实体状态翻译成文本，而是将实体状态映射到对应图标。
+这是为 entity 提供自定义 icon 的首选方式。Icon translations 的工作方式类似于 [常规 translations](/developers/internationalization/core#state-of-entities)，但它们不是翻译 entity 的 state，而是将 entity 的 states 翻译为 icons。
 
-请注意，状态翻译键必须使用 `snake_case`，与其他翻译键保持一致。
+请注意，translated states 必须像所有其他 translation key 一样是 `snake_case`。
 
-实体的 `translation_key` 属性定义要使用的图标翻译键。该属性用于在集成的 `icons.json` 文件的 `entity` 部分中查找翻译。
+Entity 的 `translation_key` 属性定义了要使用的 icon translation。该属性用于在集成的 `icons.json` 文件的 `entity` section 中查找 translation。
 
-为了区分实体及其翻译，请使用不同的翻译键。下面的示例展示了 Moon 域 `sensor` 实体的 `icons.json`，其 `translation_key` 属性设置为 `phase`：
+为了区分 entity 及其 translations，请提供不同的 translation keys。以下示例展示了 Moon domain `sensor` entity 的 `icons.json`，其 `translation_key` 属性设为 phase：
 
 ```json
 {
@@ -417,11 +419,11 @@ Home Assistant 中的每个实体都有一个图标，作为视觉提示，便�
 }
 ```
 
-请注意，图标值以 `mdi:` 加上[图标标识符](https://materialdesignicons.com/)组成。当实体状态未出现在 `state` 部分时，将使用 `default` 图标。`state` 部分是可选的；如果未提供，则所有状态都使用 `default` 图标。
+请注意，icons 以 `mdi:` 开头，后跟一个 [identifier](https://materialdesignicons.com/)。当 entity 的 state 不在 `state` section 中时，使用 `default` icon。`state` section 是可选的，如果未提供，`default` icon 将用于所有 states。
 
-如果前端支持显示状态属性图标，还可以为实体的状态属性提供图标。示例包括气候预设和风扇模式；其他状态属性则不能这样做。下面的示例为 `climate` 实体提供图标，其 `translation_key` 属性设置为 `ubercool`。该实体具有 `preset_mode` 状态属性，可设置为 `vacation` 或 `night`；前端会在气候卡等位置使用这些图标。
+在前端显示 state attributes 的 icons 时，也可以为 entity state attributes 提供 icons。示例包括 climate presets 和 fan modes。无法为其他 state attributes 提供 icons。以下示例为 `climate` entity 提供 icons，其 `translation_key` 属性设为 `ubercool`。该 entity 有一个 `preset_mode` state attribute，可以设为 `vacation` 或 `night`。前端将在例如 climate card 中使用它们。
 
-请注意，状态属性翻译键必须使用 `snake_case`，与其他翻译键保持一致。
+请注意，translated state attributes 必须像所有其他 translation key 一样是 `snake_case`。
 
 ```json
 {
@@ -445,7 +447,7 @@ Home Assistant 中的每个实体都有一个图标，作为视觉提示，便�
 
 ### 图标属性
 
-为实体提供图标的另一种方法是设置实体的 `icon` 属性，该属性返回引用 `mdi` 图标的字符串。由于此属性是一种方法，因此可以根据自定义逻辑返回不同的图标，这与图标翻译不同。例如，可以根据状态计算图标，如下例所示，或者根据不属于实体状态的内容返回不同的图标。
+为 entity 提供 icon 的另一种方法是设置 entity 的 `icon` 属性，该属性返回一个引用 `mdi` icon 的字符串。由于该属性是一个 method，与 icon translations 不同，它可以根据自定义逻辑返回不同的 icons。例如，可以像下面示例中那样根据 state 计算 icon，或者根据不属于 entity state 的内容返回不同的 icons。
 
 ```python
 class MySwitch(SwitchEntity):
@@ -460,25 +462,25 @@ class MySwitch(SwitchEntity):
     ...
 ```
 
-无法使用 `icon` 属性为状态属性提供图标。请注意，不鼓励使用 `icon` 属性；优先使用上述图标翻译。
+无法通过 `icon` 属性为 state attributes 提供 icons。请注意，不建议使用 `icon` 属性；优先使用上述的 icon translations。
 
-## 从记录器历史记录中排除状态属性
+## 从 recorder history 中排除状态属性
 
-不适合状态历史记录的状态属性应通过将其包含在 `_entity_component_unrecorded_attributes` 或 `_unrecorded_attributes` 中而从状态历史记录中排除。
-- `_entity_component_unrecorded_attributes: frozenset[str]` 可以在基本组件类中设置，例如在 `light.LightEntity` 中
-- `_unrecorded_attributes: frozenset[str]` 可以设置在集成平台中，例如在平台 `hue.light` 中定义的实体类中。
+不适合进行 state history 记录的 state attributes 应通过将其包含在 `_entity_component_unrecorded_attributes` 或 `_unrecorded_attributes` 中来排除在 state history 记录之外。
+- `_entity_component_unrecorded_attributes: frozenset[str]` 可在 base component 类中设置，例如在 `light.LightEntity` 中
+- `_unrecorded_attributes: frozenset[str]` 可在集成的 platform 中设置，例如在 platform `hue.light` 中定义的 entity 类中。
 
-`MATCH_ALL` 常量可用于排除所有属性，而不必逐个列出。这对于会提供未知属性的集成，或只想一次性排除全部属性的场景非常有用。
+`MATCH_ALL` 常量可用于排除所有 attributes，而无需逐一列出。对于提供未知 attributes 的集成，或者只是想排除所有而不逐一列出时，这非常有用。
 
-使用 `MATCH_ALL` 常量不会停止 `device_class`、`state_class`、`unit_of_measurement` 和 `friendly_name` 的记录，因为它们还可能用于其他目的，因此不应被排除在记录之外。
+使用 `MATCH_ALL` 常量不会停止对 `device_class`、`state_class`、`unit_of_measurement` 和 `friendly_name` 的记录，因为它们还可能服务于其他目的，因此不应排除在记录之外。
 
-从记录中排除的平台状态属性示例包括 `image` 实体的 `entity_picture` 属性（过一段时间后会失效）以及 `fan` 实体的 `preset_modes` 属性（通常不会变化）。
-从记录中排除的集成特定状态属性示例包括平台 `trafikverket.camera` 中不会变化的 `description` 和 `location` 状态属性。
+被排除在记录之外的 platform state attributes 示例包括 `image` entity 的 `entity_picture` attribute（一段时间后将会失效）和 `fan` entity 的 `preset_modes` attribute（不太可能变化）。
+被排除在记录之外的集成特定 state attributes 示例包括 platform `trafikverket.camera` 中的 `description` 和 `location` state attributes（不会变化）。
 
 :::tip
 `_entity_component_unrecorded_attributes` 和 `_unrecorded_attributes` 必须声明为类属性；实例属性将被忽略。
 :::
 
-## 更改实体模型
+## 更改 entity model
 
-如果您想为实体或其任意子类型（灯、开关等）添加新功能，需要先在我们的[架构仓库](https://github.com/home-assistant/architecture/discussions)中发起讨论。只有不同厂商之间通用的功能才会被考虑纳入。
+如果你想为 entity 或其任何 subtype（light、switch 等）添加新 feature，你需要先在我们的 [architecture repo](https://github.com/home-assistant/architecture/discussions) 中提出。只考虑各种厂商通用的 features。

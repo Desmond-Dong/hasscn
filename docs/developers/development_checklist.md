@@ -1,19 +1,18 @@
 ---
-title: "开发清单"
-description: '在提交任何更改之前，请根据以下要求检查您的工作：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 介绍
+title: "开发检查清单"
+sidebar_label: 简介
 ---
-# 开发清单
 
-在提交任何更改之前，请根据以下要求检查您的工作：
+在你提交任何更改之前，请对照以下要求检查工作成果：
 
-- 与外部 设备 或服务的所有通信都必须包装在托管于的外部 Python 库中[皮皮](https://pypi.org/).
-  - 库必须有可用的源分发包；不允许依赖只有二进制分发包的包。
-  - 必须为与外部 设备 或服务通信的外部 Python 库启用问题跟踪器。
-  - 如果该库主要用于 Home Assistant 并且您是 集成 的代码所有者，则鼓励使用带有链接的问题模板选择器[Home Assistant Core 问题](https://github.com/home-assistant/core/issues)。例如：[zwave-js-server-python - 新问题](https://github.com/home-assistant-libs/zwave-js-server-python/issues/new/choose)
-- 使用 `python3 -m script.gen_requirements_all` 将新依赖项添加到 `requirements_all.txt`（如果适用）
-- 使用 `python3 -m script.hassfest` 将新代码所有者添加到 `CODEOWNERS`（如果适用）
-- 如果 `.strict-typing` 文件提供了完整的类型提示源，则该文件会更新以包含您的代码。
-- 该代码使用 Ruff (`ruff format`) 进行格式化。
-- 文档的开发目的是[家庭助理.io](https://home-assistant.io/)
-  - 参观[网站文档](/developers/documenting)有关贡献的更多信息[家庭助理.io](https://github.com/home-assistant/home-assistant.io).
+- 与外部设备或服务的所有通信都必须封装在一个托管于 [pypi](https://pypi.org/) 的外部 Python 库中。
+  - 该库必须提供 source distribution 包；不允许依赖只有 binary distribution 包的包。
+  - 与外部设备或服务通信的外部 Python 库必须启用 issue tracker。
+  - 如果该库主要用于 Home Assistant，且你是该集成的 code owner，鼓励使用带链接到 [Home Assistant Core Issues](https://github.com/home-assistant/core/issues) 的 issue template picker。例如：[zwave-js-server-python - New Issue](https://github.com/home-assistant-libs/zwave-js-server-python/issues/new/choose)
+- 新依赖项已添加到 `requirements_all.txt`（如适用），使用 `python3 -m script.gen_requirements_all`
+- 新 codeowners 已添加到 `CODEOWNERS`（如适用），使用 `python3 -m script.hassfest`
+- `.strict-typing` 文件已更新以包含你的代码（如果它提供了完全类型标注的源代码）。
+- 代码已使用 Ruff 格式化（`ruff format`）。
+- 任何删除或更改现有行为的内容都遵循[废弃流程](/developers/deprecating)。
+- 已为 [home-assistant.io](https://home-assistant.io/) 开发文档
+  - 访问[网站文档](/developers/documenting)以获取更多有关为 [home-assistant.io](https://github.com/home-assistant/home-assistant.io) 做贡献的信息。

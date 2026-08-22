@@ -1,35 +1,33 @@
 ---
-title: "设备 条件"
-description: '我们目前正在探索 设备 自动化的替代方案。现有的 设备 自动化将继续工作，但新的 设备 自动化将不被接受。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 状况
+title: "设备条件"
+sidebar_label: 条件
 ---
-# 设备 条件
 
 :::warning
-我们目前正在探索 设备 自动化的替代方案。现有的 设备 自动化将继续工作，但新的 设备 自动化将不被接受。
+我们目前正在探索 device automations 的替代方案。现有的 device automations 将继续工作，但新的 device automations 将不再被接受。
 :::
 
-设备 条件允许用户检查是否满足特定条件。例如，灯亮着或地板湿了。
+Device conditions 允许用户检查某个条件是否满足。例如，灯是否打开，或者地面是否潮湿。
 
-设备 条件被定义为字典。这些字典由您的 集成 创建，并传递给您的 集成 以创建检查条件的函数。
+Device conditions 被定义为字典。这些字典由你的集成创建，并传回你的集成以生成一个检查条件的函数。
 
-设备 条件可由提供 设备（例如 ZHA、deCONZ）的 集成 或 设备 具有 实体 的 实体 集成（例如光、湿度传感器）提供。
-后者的一个示例是检查灯是否亮着或地板是否潮湿。
+Device conditions 可以由提供该设备的集成（例如 ZHA、deCONZ）提供，也可以由设备拥有实体的实体集成（例如 light、humidity sensor）提供。
+后者的例子可以是检查灯是否打开，或地面是否潮湿。
 
-如果静态`CONDITION_SCHEMA`无法提供条件reqUIres动态验证，则可以实现`async_validate_condition_config`功能。
+如果条件需要静态的 `CONDITION_SCHEMA` 无法提供的动态校验，可以实现一个 `async_validate_condition_config` 函数。
 
 ```py
 async def async_validate_condition_config(hass: HomeAssistant, config: ConfigType) -> ConfigType:
     """Validate config."""
 ```
 
-Home Assistant 包含一个用于开始使用 设备 条件的模板。首先，在开发环境 `python3 -m script.scaffold device_condition` 中运行。
+Home Assistant 提供了一个模板来帮助你开始编写 device conditions。在开发环境中运行 `python3 -m script.scaffold device_condition` 即可开始。
 
-该模板将在您的 集成 文件夹中创建一个新文件 `device_condition.py` 和一个匹配的测试文件。该文件包含以下函数和常量：
+该模板会在你的集成文件夹中创建一个新的 `device_condition.py` 文件和对应的测试文件。该文件包含以下函数和常量：
 
 #### `CONDITION_SCHEMA`
 
-这是条件的架构。基本模式应从 `homeassistant.helpers.config_validation.DEVICE_CONDITION_BASE_SCHEMA` 扩展。
+这是条件的 schema。基础 schema 应扩展自 `homeassistant.helpers.config_validation.DEVICE_CONDITION_BASE_SCHEMA`。
 
 #### `async_get_conditions`
 
@@ -40,7 +38,7 @@ async def async_get_conditions(
     """List device conditions for devices."""
 ```
 
-返回此 设备 支持的条件列表。
+返回该设备支持的条件列表。
 
 #### `async_condition_from_config`
 
@@ -52,6 +50,6 @@ def async_condition_from_config(
     """Create a function to test a device condition."""
 ```
 
-从函数创建条件函数。条件函数应该是一个异步友好的回调，它评估条件并返回 `bool`。
+根据配置创建一个条件函数。条件函数应当是一个 async 友好的 callback，用于评估条件并返回一个 `bool`。
 
-Core 将使用 `config_validation` 参数来根据定义的 `CONDITION_SCHEMA` 有条件地应用配置验证。
+`config_validation` 参数将被核心用来根据定义的 `CONDITION_SCHEMA` 有条件地应用配置校验。

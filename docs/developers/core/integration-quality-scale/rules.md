@@ -1,24 +1,21 @@
 ---
-title: "集成质量量表规则"
-description: 'import RuleOverview from ''./includes/ruleoverview.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "集成质量等级规则"
 ---
-# 集成质量量表规则
-
 import RuleOverview from './_includes/rule_overview.jsx'
 
-每个层的规则在下面定义，并带有其自己的页面，其中包含示例和更多信息。
+每个 tier 的规则如下所述，并配有各自的页面，包含示例和更多信息。
 
-### 🥉 铜牌
+### 🥉 Bronze
 <RuleOverview tier="bronze" />
 
 
-### 🥈 银
+### 🥈 Silver
 <RuleOverview tier="silver" />
 
 
-### 🥇 黄金
+### 🥇 Gold
 <RuleOverview tier="gold" />
 
 
-### 🏆 白金
+### 🏆 Platinum
 <RuleOverview tier="platinum" />

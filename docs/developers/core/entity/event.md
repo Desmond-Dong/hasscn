@@ -1,38 +1,36 @@
 ---
-title: 事件实体
-description: '事件是发生某些事情时发出的信号，例如，当用户按下门铃等物理按钮或按下遥控器上的按钮时。事件实体捕获物理世界中的这些事件，并使它们作为实体在 Home Assistant 中可用。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 事件
+title: Event 实体
+sidebar_label: Event
 ---
-# 事件实体
 
-事件是发生某些事情时发出的信号，例如，当用户按下门铃等物理按钮或按下遥控器上的按钮时。事件实体捕获物理世界中的这些事件，并使它们作为实体在 Home Assistant 中可用。
+Event 是在发生某事时发出的信号，例如用户按下门铃等物理按钮或按下遥控器上的按钮时。event 实体捕获物理世界中的这些事件，并将它们作为实体在 Home Assistant 中可用。
 
-事件实体源自[`homeassistant.components.event.EventEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/event/__init__.py)。
+Event 实体派生自 [`homeassistant.components.event.EventEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/event/__init__.py)。
 
 ## 状态
 
-事件实体是无状态的，这意味着您不必维护状态。相反，当物理世界发生某些事情时，您可以触发事件。 Home Assistant 将跟踪发出的最后一个事件，并将其显示为实体的当前状态。
+Event 实体是无状态的，这意味着你无需维护状态。相反，当物理世界中发生某事时，你可以触发一个事件。Home Assistant 会跟踪最后发出的事件，并将其显示为实体的当前状态。
 
-实体的主要状态是发出最后一个事件的时间戳，此外还跟踪事件的类型以及随事件提供的可选额外状态数据。
+实体的主要状态是最后发出事件的时间戳，此外，还会跟踪事件类型以及随事件提供的可选额外状态数据。
 
-## 特性
+## 属性
 
 :::tip
-属性应该始终只从内存返回信息，而不执行 I/O（如网络请求）。实现 `update()` 或 `async_update()` 来获取数据。
+属性应始终仅返回内存中的信息，而不是执行 I/O（如网络请求）。实现 `update()` 或 `async_update()` 来获取数据。
 :::
 
-| 名称 | 类型 | 默认值 | 说明 |
+| 名称        | 类型            | 默认值      | 描述                                          |
 | ----------- | --------------- | ------------ | ---------------------------------------------------- |
-| event_types | `list[str]` | **Required** | 该实体可以触发的可能事件类型的列表。 |
+| event_types | `list[str]`     | **必填** | 此实体可以发出的可能事件类型列表。 |
 
-所有实体共有的其他属性（例如 `device_class`、`icon`、`name` 等）也适用。
+所有实体共有的其他属性（如 `device_class`、`icon`、`name` 等）也适用。
 
-## 射击事件
+## 触发事件
 
-事件实体与其他实体相比略有不同。 Home Assistant 管理状态，但集成
-负责触发事件。这是通过调用事件实体上的 `_trigger_event` 方法来完成的。
+Event 实体与其他实体略有不同。Home Assistant 管理状态，但集成
+负责触发事件。这是通过调用 event 实体上的 `_trigger_event` 方法来实现的。
 
-此方法将事件类型作为第一个参数，并可选择额外的状态数据作为第二个参数。
+此方法以事件类型作为第一个参数，以额外的状态数据作为可选的第二个参数。
 
 ```python
 class MyEvent(EventEntity):
@@ -51,18 +49,43 @@ class MyEvent(EventEntity):
         my_device_api.listen(self._async_handle_event)
 ```
 
-只能触发 `event_types` 属性中定义的事件类型。如果触发未在 `event_types` 属性中定义的事件类型，则会引发 `ValueError`。
+只能发出在 `event_types` 属性中定义的事件类型。如果发出未定义在 `event_types` 属性中的事件类型，将引发 `ValueError`。
 
 :::tip
-当实体从 Home Assistant 中删除时，请务必取消注册任何回调。
+务必在实体从 Home Assistant 中移除时注销任何回调。
 :::
 
-### 可用设备类别
+### 可用的 device class
 
-可以选择指定它是什么类型的实体。
+可选指定实体是什么类型。
 
-| 常量 | 说明 |
+| 常量                    | 描述                                           |
 | --------------------------- | ----------------------------------------------------- |
-| `EventDeviceClass.BUTTON` | 遥控器的按钮被按下。 |
+| `EventDeviceClass.BUTTON`   | 按下了遥控器上的按钮。        |
 | `EventDeviceClass.DOORBELL` | 专门用于用作门铃的按钮。 |
-| `EventDeviceClass.MOTION` | 用于运动传感器检测到的运动事件。 |
+| `EventDeviceClass.MOTION`   | 用于运动传感器检测到的运动事件。        |
+
+### 标准事件类型
+
+某些 device class 定义了标准事件类型，以确保集成的了一致性，从而启用与底层集成无关的通用自动化。
+
+#### 门铃
+
+- `DoorbellEventType.RING`：表示标准的"门铃被按下"事件。**此事件类型是必需的**。
+
+#### 按钮
+
+- `ButtonEventType.PRESS_START`：按钮被按下。
+- `ButtonEventType.PRESS_END`：按钮在短暂按下后释放（标准的"点击"）。
+- `ButtonEventType.LONG_PRESS_START`：按钮被按住超过某个阈值。
+- `ButtonEventType.LONG_PRESS_END`：按钮在长按后释放。
+- `ButtonEventType.MULTI_PRESS_ONGOING`：检测到多按序列中的中间一次按下。
+- `ButtonEventType.MULTI_PRESS_END`：多按序列完成。
+
+`MULTI_PRESS_ONGOING` 和 `MULTI_PRESS_END` 在 `event_data` 中包含 `multi_press_count` 属性，表示按下的次数。
+
+如果设备每次交互仅发出一个事件，没有单独的按下和释放，则将其映射到对应的 `_end` 类型（短按为 `PRESS_END`，长按为 `LONG_PRESS_END`，以此类推）。
+
+对于从单个来源报告方向的按钮（例如上/下滚轮），优先按方向暴露独立的实体。当无法拆分为多个实体时，使用非标准的 `direction` 属性是可接受的替代方案。
+
+也允许其他非标准事件类型。

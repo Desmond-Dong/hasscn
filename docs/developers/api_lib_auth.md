@@ -1,27 +1,25 @@
 ---
-title: "Python库：身份验证"
-description: '此页面适用于用于集成第三方 API 的通用 Python 库开发。若要与 Home Assistant 的 API 交互，请参阅 Home Assistant REST API 文档(/developers/api/rest)。 本页属于 Home Assistant 开发者文档。'
-sidebar_label: 验证
+title: "Python 库：认证"
+sidebar_label: 认证
 ---
-# Python库：身份验证
 
-此页面适用于用于集成第三方 API 的通用 Python 库开发。若要与 Home Assistant 的 API 交互，请参阅 [Home Assistant REST API 文档](/developers/api/rest)。
+本页面向旨在集成第三方 API 的第三方库的一般 API 开发。有关与 Home Assistant API 交互的信息，请参见[Home Assistant REST API 文档](/developers/api/rest)。
 
-库中的身份验证部分负责获取凭据并发送已认证的请求。它不应了解请求内容本身。
+库的 Authentication 部分负责获取认证信息以及发起经过认证的请求。它不应该知道请求中包含了什么内容。
 
-身份验证有多种形式，但通常会在每个请求中附带带有访问令牌的 `authorization` 标头。访问令牌通常是一串随机的字母和数字。
+认证有许多种形式，但归根结底通常就是每个请求都附带一个 `authorization` header，其中包含一个 access token。access token 通常是一串随机数字和字母的字符串。
 
-您的库应能够获取身份验证令牌、在需要时刷新令牌，并使用这些凭据发出请求。它不应负责存储身份验证数据。
+你的库应该能够获取认证令牌、在必要时更新它们，并使用认证信息发起请求。它不应提供存储认证数据的功能。
 
-由于身份验证数据将由开发者存储，因此以可 JSON 序列化的格式返回这些数据非常重要。建议使用仅包含原始类型（`str`、`float`、`int`）的 `dict`。
+由于认证信息将由开发者存储，因此重要的是你要以可以 JSON 序列化的格式将认证信息返回给开发者。建议使用包含基本类型（`str`、`float`、`int`）的 `dict`。
 
-如果您的 API 可能部署在多个位置，则身份验证类应允许开发者指定 API 地址。
+如果你的 API 可以从多个位置提供，你的认证类应该允许开发者传入 API 的位置。
 
 ## 异步示例
 
-Python 允许开发者编写同步或异步代码（通过 `asyncio`）。Home Assistant 采用异步架构，但也可以使用同步库。我们更推荐异步库。
+Python 允许开发者编写同步或异步（通过 `asyncio`）的代码。Home Assistant 使用 async 编写，但也能够与同步库配合使用。我们更倾向于使用 async 库。
 
-如果您正在编写异步库，我们建议使用 `aiohttp`。它是一个现代、成熟且易用的 HTTP 库。
+如果你在编写 async 库，我们建议使用 `aiohttp`。它是一个现代且成熟的 HTTP 库，易于使用。
 
 ```python
 from aiohttp import ClientSession, ClientResponse
@@ -47,7 +45,7 @@ class Auth:
         )
 ```
 
-要使用此类，先创建一个 aiohttp `ClientSession`，再将其与 API 信息一起传给构造函数。
+要使用此类，你需要创建一个 aiohttp `ClientSession` 并将其与 API 信息一起传递给构造函数。
 
 ```python
 import asyncio
@@ -94,7 +92,7 @@ class Auth:
         )
 ```
 
-要使用此类，请使用 API 信息构造该类。
+要使用此类，请用 API 信息构造该类。
 
 ```python
 from my_package import Auth
@@ -110,11 +108,11 @@ print("HTTP response JSON content", resp.json())
 
 ## OAuth2
 
-OAuth2 是一种使用访问令牌和刷新令牌的[标准](https://tools.ietf.org/html/rfc6749)身份验证模式。访问令牌在签发后很快就会过期，而刷新令牌可用于获取新的访问令牌。
+OAuth2 是一种利用 refresh token 和 access token 的[标准化](https://tools.ietf.org/html/rfc6749)认证方案。access token 在颁发后短时间内即过期。refresh token 可用于获取新的 access token。
 
-刷新访问令牌通常依赖客户端 ID 和密钥，而这些信息可能由外部服务持有。因此，我们需要构建身份验证类，让开发者能够实现自己的令牌刷新逻辑。
+刷新 access token 依赖于 client ID 和 secret，它们可能由外部服务持有。我们需要设计认证类的结构，使其能够允许开发者实现自己的 token refresh 逻辑。
 
-Home Assistant 附带 Home Assistant Cloud 账户关联服务。这是一项免费云服务，允许用户通过 OAuth2 快速关联账户。Home Assistant 还内置了易于使用的工具，供用户配置基于 OAuth2 的集成。更多信息请参阅[此处](/developers/config_entries_config_flow_handler#configuration-via-oauth2)。如果您的库按如下示例实现，这些内置工具的兼容性最佳。
+Home Assistant 附带了 Home Assistant Cloud Account Linking 服务，这是一个免费的云服务，允许用户通过 OAuth2 快速连接账户。Home Assistant 内置了易于使用的工具，允许用户配置基于 OAuth2 的 integrations。更多信息，请[点击此处](core/integration/config_flow.md#configuration-via-oauth2)。如果你的库按照下面的示例方式实现，这些内置工具将发挥最佳效果。
 
 ### 异步示例
 
@@ -147,7 +145,7 @@ class AbstractAuth(ABC):
         )
 ```
 
-现在，使用您库的开发者必须实现该抽象方法来获取访问令牌。这里假设开发者已有自己的令牌管理器类。
+现在，使用你的库的开发者必须实现获取 access token 的 abstract method。假设开发者拥有自己的 token manager 类。
 
 ```python
 from my_package import AbstractAuth
@@ -172,7 +170,7 @@ class Auth(AbstractAuth):
 
 ### 同步示例
 
-如果您使用 `requests`，我们建议配合 `requests_oauthlib` 使用。下面是一个使用本地客户端 ID 和密钥的示例，同时也允许将令牌获取逻辑委托给 Home Assistant。
+如果你使用 `requests`，我们建议使用 `requests_oauthlib` 包。下面是一个示例，它可以使用本地的 client ID 和 secret，同时也允许将 token 获取工作委托给 Home Assistant。
 
 ```python
 from typing import Optional, Union, Callable, Dict
@@ -229,7 +227,7 @@ class Auth:
             return getattr(self._oauth, method)(url, **kwargs)
 ```
 
-开发者现在可以重写刷新令牌的方法，使其通过自己的外部服务完成。
+现在开发者可以覆盖 refresh token 函数，将其路由到自己的外部服务。
 
 ```python
 from my_package import AbstractAuth

@@ -1,27 +1,25 @@
 ---
 title: "依赖透明度"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+sidebar_label: 🥉 dependency-transparency
 related_rules:
   - async-dependency
 ---
-# 依赖透明度
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原理说明
 
-Home Assistant 使用大量依赖项来工作。
-这些依赖项将随新版本的 Home Assistant 一起提供。
-为了让项目信任依赖项，我们希望依赖项满足一组要求。
+Home Assistant 的运行依赖大量第三方依赖项。
+这些依赖项将随 Home Assistant 的新版本一起发布。
+为了让项目能够信任这些依赖项，我们制定了一套依赖项应满足的要求。
 
-- 依赖项的源代码必须在 OSI 批准的许可证下可用。
+- 该依赖项的源代码必须采用 OSI 批准的许可证发布。
 - 该依赖项必须在 PyPI 上可用。
-- 发布到 PyPI 的包应该内置在公共 CI 管道中并从公共 CI 管道中发布。
-- PyPI 上发布的依赖项版本应与开放在线存储库中的标记版本相对应。
+- 发布到 PyPI 的包应当由公开 CI 流水线构建并从中发布。
+- PyPI 上发布的依赖项版本应对应一个开放在线仓库中的带标签（tagged）版本。
 
 ## 例外情况
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

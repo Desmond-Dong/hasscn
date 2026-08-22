@@ -1,63 +1,61 @@
 ---
-title: "开发板元数据"
-description: '每个受支持的开发板都有一个名为 meta 的 Home Assistant Operating System（HAOS）专用元数据文件。本文档说明其中的变量及可用选项。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: Metadata
+title: "板卡元数据"
+sidebar_label: 元数据
 ---
-# 开发板元数据
 
-每个受支持的开发板都有一个名为 `meta` 的 Home Assistant Operating System（HAOS）专用元数据文件。本文档说明其中的变量及可用选项。
+每个受支持的板卡都有一个 Home Assistant Operating System（HAOS）特有的元数据文件，名为 `meta`。这记录了变量和可用的选项。
 
-## 开发板专用变量
+## 板卡特定变量
 
-`BOARD_ID`:
+`BOARD_ID`：
 
-开发板标识符。通常全部小写。用于生成文件名，并在 os-release 文件中作为 `VARIANT_ID` 使用。
+板卡标识符。通常为全小写。用于生成文件名，并在 os-release 文件中用作 `VARIANT_ID`。
 
-`BOARD_NAME`:
+`BOARD_NAME`：
 
-面向用户的开发板名称。用于 os-release 文件中的 `VERSION` 和 `VARIANT` 变量。
+用户友好的板卡名称。用于 os-release 文件中的 `VERSION` 和 `VARIANT` 变量。
 
-## 与启动相关的变量
+## 启动相关变量
 
-`BOOT_ENV_SIZE`:
+`BOOT_ENV_SIZE`：
 
-boot loader environment 的最大大小（十六进制）。rauc 必填。
+bootloader 环境的最大大小（以十六进制表示）。rauc 需要此参数。
 
-`BOOT_SYS`:
+`BOOT_SYS`：
 
 - efi
 - hybrid
 - mbr
 
-HAOS 会尽可能使用 GPT。若要使用 GPT，第二个逻辑块（LBA）必须可用。在某些开发板上，该块会被启动固件保留或要求使用。如果是这种情况，就必须采用经典 MBR 方案。
+HAOS 在可能的情况下尽量使用 GPT。要使用 GPT，第二个逻辑块（LBA）必须可用。在某些板卡上，该块被 boot 固件保留或需要。如果是这种情况，则需要使用经典 MBR 方法。
 
-如果可以使用 GPT，但底层固件仍要求 MBR，则使用 Hybrid，同时包含两种分区表。
+Hybrid 在 GPT 可用的情况下同时使用两种分区表，但底层固件仍需要 MBR。
 
-`BOOT_SPL`:
+`BOOT_SPL`：
 
 - true
 - false
 
-启用 SPL（secondary program loader，二级程序加载器）处理。某些 U-Boot 目标除了主 U-Boot 二进制文件外，还会生成一个较小的加载器（SPL）。
+启用 SPL（secondary program loader）处理。某些 U-Boot 目标除了主要的 U-Boot 二进制文件外，还会生成一个小的加载器（SPL）。
 
-`BOOTLOADER`:
+`BOOTLOADER`：
 
 - grub
 - uboot
 
-HAOS 主要使用 [U-Boot](https://www.denx.de/wiki/U-Boot)。对于 UEFI 系统，则使用 [GRUB](https://www.gnu.org/software/grub/)。
+HAOS 主要使用 [U-Boot](https://www.denx.de/wiki/U-Boot)。对于 UEFI 系统，使用 [GRUB](https://www.gnu.org/software/grub/)。
 
-`DISK_SIZE`:
+`DISK_SIZE`：
 
 默认值为 2。最终（未压缩）镜像的大小，单位为 GB。
 
-`KERNEL_FILE`:
+`KERNEL_FILE`：
 
-内核二进制文件名。通常 aarch64 为 `Image`，`armv7` 为 `zImage`，`amd64` 为 `bzImage`。
+内核二进制文件的文件名。aarch64 通常为 `Image`，`armv7` 为 `zImage`，`amd64` 为 `bzImage`。
 
-## 与 Supervisor 相关的变量
+## Supervisor 相关变量
 
-`SUPERVISOR_MACHINE`:
+`SUPERVISOR_MACHINE`：
 
 - generic-x86-64
 - khadas-vim3
@@ -77,11 +75,10 @@ HAOS 主要使用 [U-Boot](https://www.denx.de/wiki/U-Boot)。对于 UEFI 系统
 - raspberrypi4-64
 - tinker
 
-`SUPERVISOR_ARCH`:
+`SUPERVISOR_ARCH`：
 
 - amd64
 - i386
 - armhf
 - armv7
 - aarch64
-

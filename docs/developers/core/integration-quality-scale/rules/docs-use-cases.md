@@ -1,23 +1,22 @@
 ---
-title: "该文档描述了用例来说明如何使用此集成"
-description: '有时，看到集成到 Home Assistant 中的设备或服务会让您想知道:“我为什么要集成它？” 对于某些集成，其预期用途和好处比其他集成更明显。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "文档描述了使用场景以说明该集成如何使用"
+sidebar_label: 🥇 docs-use-cases
 ---
-# 该文档描述了用例来说明如何使用此集成
 
-## 推理
+## 原理说明
 
-有时，看到集成到 Home Assistant 中的设备或服务会让您想知道:“我为什么要集成它？”
-对于某些集成，其预期用途和好处比其他集成更明显。
+有时候，看到某个设备或服务被集成到 Home Assistant 中，你会不禁想："我为什么要集成这个？"
+对于一些集成，其预期用途和好处比其他集成更为明显。
 
-文档中的用例示例可以展示集成的价值。
+文档中的使用场景示例可以展示集成的价值。
 
-## 实施示例
+## 示例实现
 
 ```markdown showLineNumbers
-The motion detection devices of MyCompany are cheap and usable.
-When you combine it with their other device you can do x.
+MyCompany 的运动检测设备便宜且实用。
+将它与他们的其他设备结合使用时，您可以实现 x。
 ```
 
 ## 例外情况
 
-这条规则没有例外。
+本规则没有例外。

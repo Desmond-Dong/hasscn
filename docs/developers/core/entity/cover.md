@@ -1,191 +1,189 @@
 ---
-title: 覆盖实体
-description: '盖子实体控制开口或盖子，例如车库门或窗帘。平台实体派生自homeassistant.components.cover.CoverEntity(https://github.com/home-assistant/core/blob/dev/homeassistant/components/cover/init.。'
-sidebar_label: 覆盖
+title: Cover entity
+sidebar_label: Cover
 ---
-# 覆盖实体
 
-盖子实体控制开口或盖子，例如车库门或窗帘。平台实体派生自[`homeassistant.components.cover.CoverEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/cover/__init__.py)。
+Cover entity 控制 opening 或 cover，例如 garage door 或 window shade。从 [`homeassistant.components.cover.CoverEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/cover/__init__.py) 派生 platform entity。
 
 :::note
-盖实体只能用于控制开口或盖的设备。
-对于其他类型的设备，应使用 [数字](/developers/core/entity/number) 等实体，即使过去并非如此。
+Cover entity 应仅用于控制 opening 或 cover 的 devices。
+对于其他类型的 device entities（如 [Number](/developers/core/entity/number)），应改用它们，即使过去并非如此。
 :::
 
-## 特性
+## 属性
 
 :::tip
-属性应该始终只从内存返回信息，而不执行 I/O（如网络请求）。实现 `update()` 或 `async_update()` 来获取数据。
+Properties 应该只从内存返回信息，而不要执行 I/O（如网络请求）。请实现 `update()` 或 `async_update()` 来获取数据。
 :::
 
-| 名称 | 类型 | 默认值 | 说明
+| Name | Type | Default | Description
 | ----------------------- | ---- | ------- | -----------
-| current_cover_position | <code>int &#124; None</code> | `None` | 盖子的当前位置，0 表示关闭，100 表示完全打开。
-| current_cover_tilt_position | <code>int &#124; None</code> | `None` | 盖子的当前倾斜位置，其中 0 表示关闭/无倾斜，100 表示打开/最大倾斜。
-| is_closed | <code>bool &#124; None</code> | **Required** | 盖子是否关闭。用于确定 `state`。
-| is_closing | <code>bool &#124; None</code> | `None` | 盖子是否关闭。用于确定 `state`。
-| is_opening | <code>bool &#124; None</code> | `None` | 盖子是否打开。用于确定 `state`。
+| current_cover_position | `int \| None` | `None` | Cover 的当前位置，其中 0 表示 closed，100 表示 fully open。
+| current_cover_tilt_position | `int \| None` | `None` | Cover 的当前 tilt position，其中 0 表示 closed/no tilt，100 表示 open/maximum tilt。
+| is_closed | `bool \| None` | **必需** | Cover 是否 closed。用于确定 `state`。
+| is_closing | `bool \| None` | `None` | Cover 是否正在 closing。用于确定 `state`。
+| is_opening | `bool \| None` | `None` | Cover 是否正在 opening。用于确定 `state`。
 
 ### 状态
 
-状态是通过设置上述属性来定义的。结果状态是使用 `CoverState` 枚举返回以下成员之一。
+State 通过设置上述 properties 来定义。Resulting state 使用 `CoverState` enum 返回以下成员之一。
 
-| 值 | 说明 |
+| Value       | Description                                                        |
 |-------------|--------------------------------------------------------------------|
-| `CLOSED` | 盖子已关闭。 |
-| `CLOSING` | 盖子正在关闭。 |
-| `OPENING` | 盖子正在打开。 |
-| `OPEN` | 盖子打开。 |
+| `CLOSED`    | Cover 已 closed。                                                |
+| `CLOSING`   | Cover 正在 closing。                                               |
+| `OPENING`   | Cover 正在 opening。                                               |
+| `OPEN`      | Cover 已 open。                                                  |
 
-### 设备类别
+### 设备类型
 
-| 常量 | 说明
+| Constant | Description
 |----------|-----------------------|
-| `CoverDeviceClass.AWNING` | 控制遮阳篷，例如外部可伸缩窗户、门或露台盖。
-| `CoverDeviceClass.BLIND` | 百叶窗的控制，百叶窗是相连的板条，可以展开或折叠以覆盖开口，或者可以倾斜以部分覆盖开口，例如百叶窗。
-| `CoverDeviceClass.CURTAIN` | 控制窗帘或窗帘，通常是悬挂在可打开的窗户或门上方的织物。
-| `CoverDeviceClass.DAMPER` | 控制机械阻尼器，减少气流、声音或光线。
-| `CoverDeviceClass.DOOR` | 控制可进入通常属于建筑物一部分的区域的门。
-| `CoverDeviceClass.GARAGE` | 控制可进入车库的车库门。
-| `CoverDeviceClass.GATE` | 控制通往车道或其他区域的大门。大门位于建筑物外部，通常是栅栏的一部分。
-| `CoverDeviceClass.SHADE` | 控制遮光帘，遮光帘是材料的连续平面或在开口上展开或折叠的连接单元，例如窗帘。
-| `CoverDeviceClass.SHUTTER` | 百叶窗的控制，百叶窗是链接的板条，可以向外/向内摆动以覆盖开口，或者可以倾斜以部分覆盖开口，例如室内或外百叶窗。
-| `CoverDeviceClass.WINDOW` | 控制打开和关闭或可能倾斜的物理窗口。
+| `CoverDeviceClass.AWNING` | 控制 awning，例如外部可伸缩 window、door 或 patio cover。
+| `CoverDeviceClass.BLIND` | 控制 blinds，即连接的 slats，可以展开或折叠以覆盖 opening，或倾斜以部分覆盖 opening，例如 window blinds。
+| `CoverDeviceClass.CURTAIN` | 控制 curtains 或 drapes，通常是悬挂在 window 或 door 上方的 fabric，可以拉开。
+| `CoverDeviceClass.DAMPER` | 控制减少 air flow、sound 或 light 的机械 damper。
+| `CoverDeviceClass.DOOR` | 控制提供进入通常属于结构一部分的区域 access 的 door。
+| `CoverDeviceClass.GARAGE` | 控制提供进入 garage access 的 garage door。
+| `CoverDeviceClass.GATE` | 控制提供进入 driveway 或其他区域 access 的 gate。Gates 位于结构外部，通常属于 fence 的一部分。
+| `CoverDeviceClass.SHADE` | 控制 shades，即连续的 material plane 或连接的 cells，可以展开或折叠覆盖 opening，例如 window shades。
+| `CoverDeviceClass.SHUTTER` | 控制 shutters，即连接的 slats，可以 swing out/in 以覆盖 opening，或倾斜以部分覆盖 opening，例如室内或室外 window shutters。
+| `CoverDeviceClass.WINDOW` | 控制物理 window，可以打开和关闭，或可以倾斜。
 
 ## 支持的功能
 
-支持的功能通过使用 `CoverEntityFeature` 枚举中的值来定义
-和 使用按位或 (`|`) 运算符进行组合。
+Supported features 通过使用 `CoverEntityFeature` enum 中的值来定义，
+并使用按位或（`|`）运算符组合。
 
-| 值 | 说明 |
+| Value               | Description                                                                      |
 | ------------------- | -------------------------------------------------------------------------------- |
-| `OPEN` | 盖板支持打开。 |
-| `CLOSE` | 盖板支持关闭。 |
-| `SET_POSITION` | 盖子支持在打开和关闭之间移动到特定位置。 |
-| `STOP` | 盖板支持停止当前动作（打开、关闭、设定位置） |
-| `OPEN_TILT` | 盖板支持倾斜打开。 |
-| `CLOSE_TILT` | 盖体支持倾斜关闭。 |
-| `SET_TILT_POSITION` | 盖子支持在打开和关闭之间移动到特定的倾斜位置。 |
-| `STOP_TILT` | 盖板支持停止当前倾斜动作（打开、关闭、设定位置） |
+| `OPEN`              | Cover 支持被 open。                                                 |
+| `CLOSE`             | Cover 支持被 closed。                                                 |
+| `SET_POSITION`      | Cover 支持在 open 和 closed 之间移动到特定 position。      |
+| `STOP`              | Cover 支持停止当前 action（open、close、set position）       |
+| `OPEN_TILT`         | Cover 支持 tilt open。                                           |
+| `CLOSE_TILT`        | Cover 支持 tilt closed。                                         |
+| `SET_TILT_POSITION` | Cover 支持在 open 和 closed 之间移动到特定 tilt position。 |
+| `STOP_TILT`         | Cover 支持停止当前 tilt action（open、close、set position）  |
 
 ## 方法
 
-### 打开盖子
+### 打开
 
-仅当设置了标志 `SUPPORT_OPEN` 时才实现此方法。
+仅当设置了 `CoverEntityFeature.OPEN` 标志时，才实现此 method。
 
 ```python
 class MyCover(CoverEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
-    def open_cover(self, **kwargs):
+    def open_cover(self, **kwargs: Any) -> None:
         """Open the cover."""
 
-    async def async_open_cover(self, **kwargs):
+    async def async_open_cover(self, **kwargs: Any) -> None:
         """Open the cover."""
 ```
 
-### 关闭盖子
+### 关闭
 
-仅当设置了标志 `SUPPORT_CLOSE` 时才实现此方法。
+仅当设置了 `CoverEntityFeature.CLOSE` 标志时，才实现此 method。
 
 ```python
 class MyCover(CoverEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
-    def close_cover(self, **kwargs):
+    def close_cover(self, **kwargs: Any) -> None:
         """Close cover."""
 
-    async def async_close_cover(self, **kwargs):
+    async def async_close_cover(self, **kwargs: Any) -> None:
         """Close cover."""
 ```
 
-### 设置盖子位置
+### 设置位置
 
-仅当设置了标志 `SUPPORT_SET_POSITION` 时才实现此方法。
+仅当设置了 `CoverEntityFeature.SET_POSITION` 标志时，才实现此 method。
 
 ```python
 class MyCover(CoverEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
-    def set_cover_position(self, **kwargs):
+    def set_cover_position(self, **kwargs: Any) -> None:
         """Move the cover to a specific position."""
 
-    async def async_set_cover_position(self, **kwargs):
+    async def async_set_cover_position(self, **kwargs: Any) -> None:
         """Move the cover to a specific position."""
 ```
 
-### 停止盖
+### 停止
 
-仅当设置了标志 `SUPPORT_STOP` 时才实现此方法。
+仅当设置了 `CoverEntityFeature.STOP` 标志时，才实现此 method。
 
 ```python
 class MyCover(CoverEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
-    def stop_cover(self, **kwargs):
+    def stop_cover(self, **kwargs: Any) -> None:
         """Stop the cover."""
 
-    async def async_stop_cover(self, **kwargs):
+    async def async_stop_cover(self, **kwargs: Any) -> None:
         """Stop the cover."""
 ```
 
-### 开盖倾斜
+### 打开 tilt
 
-仅当设置了标志 `SUPPORT_OPEN_TILT` 时才实现此方法。
+仅当设置了 `CoverEntityFeature.OPEN_TILT` 标志时，才实现此 method。
 
 ```python
 class MyCover(CoverEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
-    def open_cover_tilt(self, **kwargs):
+    def open_cover_tilt(self, **kwargs: Any) -> None:
         """Open the cover tilt."""
 
-    async def async_open_cover_tilt(self, **kwargs):
+    async def async_open_cover_tilt(self, **kwargs: Any) -> None:
         """Open the cover tilt."""
 ```
 
-### 关闭盖板倾斜
+### 关闭 tilt
 
-仅当设置了标志 `SUPPORT_CLOSE_TILT` 时才实现此方法。
+仅当设置了 `CoverEntityFeature.CLOSE_TILT` 标志时，才实现此 method。
 
 ```python
 class MyCover(CoverEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
-    def close_cover_tilt(self, **kwargs):
+    def close_cover_tilt(self, **kwargs: Any) -> None:
         """Close the cover tilt."""
 
-    async def async_close_cover_tilt(self, **kwargs):
+    async def async_close_cover_tilt(self, **kwargs: Any) -> None:
         """Close the cover tilt."""
 ```
 
-### 设置机盖倾斜位置
+### 设置 tilt 位置
 
-仅当设置了标志 `SUPPORT_SET_TILT_POSITION` 时才实现此方法。
+仅当设置了 `CoverEntityFeature.SET_TILT_POSITION` 标志时，才实现此 method。
 
 ```python
 class MyCover(CoverEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
-    def set_cover_tilt_position(self, **kwargs):
+    def set_cover_tilt_position(self, **kwargs: Any) -> None:
         """Move the cover tilt to a specific position."""
 
-    async def async_set_cover_tilt_position(self, **kwargs):
+    async def async_set_cover_tilt_position(self, **kwargs: Any) -> None:
         """Move the cover tilt to a specific position."""
 ```
 
-### 停止盖倾斜
+### 停止 tilt
 
-仅当设置了标志 `SUPPORT_STOP_TILT` 时才实现此方法。
+仅当设置了 `CoverEntityFeature.STOP_TILT` 标志时，才实现此 method。
 
 ```python
 class MyCover(CoverEntity):
-    # Implement one of these methods.
+    # 实现以下方法之一。
 
-    def stop_cover_tilt(self, **kwargs):
+    def stop_cover_tilt(self, **kwargs: Any) -> None:
         """Stop the cover."""
 
-    async def async_stop_cover_tilt(self, **kwargs):
+    async def async_stop_cover_tilt(self, **kwargs: Any) -> None:
         """Stop the cover."""
 ```

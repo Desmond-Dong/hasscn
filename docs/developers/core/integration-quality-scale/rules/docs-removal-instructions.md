@@ -1,26 +1,25 @@
 ---
-title: "该文档提供了删除说明"
-description: '从 Home Assistant 中删除设备或服务并不总是那么简单。 该文档应提供有关如何删除设备或服务的明确说明。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "文档提供了移除说明"
+sidebar_label: 🥉 docs-removal-instructions
 ---
-# 该文档提供了删除说明
 
-## 推理
+## 理由
 
-从 Home Assistant 中删除设备或服务并不总是那么简单。
-该文档应提供有关如何删除设备或服务的明确说明。
+从 Home Assistant 中移除设备或服务并不总是很简单。
+文档应提供有关如何移除设备或服务的清晰说明。
 
-## 实施示例
+## 示例实现
 
 ```markdown showLineNumbers
-## Removing the integration
+## 移除集成
 
-This integration follows standard integration removal. No extra steps are required.
+此集成遵循标准的集成移除方式。无需额外步骤。
 
 {% include integrations/remove_device_service.md %}
 
-After deleting the integration, go to the app of the manufacturer and remove the Home Assistant integration from there as well.
+删除集成后，请前往制造商的应用，并从中移除 Home Assistant 集成。
 ```
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。

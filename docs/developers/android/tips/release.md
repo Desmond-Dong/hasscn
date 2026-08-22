@@ -1,73 +1,71 @@
 ---
-title: "为发布而构建"
-description: '确保密钥库安全存储且不包含在版本控制中。它也适用于凭证。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: "为发布而构建"
+title: "构建 release"
+sidebar_label: "构建 release"
 ---
-# 为发布而构建
 
 :::warning
-确保密钥库安全存储且不包含在版本控制中。它也适用于凭证。
+确保 keystore 安全存储且未包含在版本控制中。凭据同样适用此要求。
 :::
 
-## 构建以供发布
+## 构建 release
 
-要构建用于发布的应用程序，您需要对其进行签名。请按照下列步骤操作：
+要为发布构建应用，你需要对其进行签名。请遵循以下步骤：
 
-### 步骤 1：创建或使用现有密钥库
+### 步骤 1：创建或使用现有 keystore
 
-在构建应用程序之前，您必须有一个密钥库。您可以创建一个新的密钥库或使用现有的密钥库。
+在构建应用之前，你必须拥有一个 keystore。你可以创建一个新的或使用现有的 keystore。
 
-#### 创建密钥库
+#### 创建 keystore
 
-您可以直接从 Android Studio 创建密钥库：
+你可以直接从 Android Studio 创建 keystore：
 
-1. 转到**菜单** > **建造** > **生成签名的APK**。
-2. 选择创建新密钥库的选项。
-3. **记住密码和密钥别名** 供将来使用。
+1. 进入 **菜单** > **Build** > **Generate Signed APK**。
+2. 选择创建新 keystore 的选项。
+3. **记住密码和 key alias**，以便将来使用。
 
-#### 使用现有的密钥库
+#### 使用现有 keystore
 
-如果您已有密钥库，请确保其名为 `release_keystore.keystore` 并放置在以下文件夹中：
-- @@保护0@@
-- @@保护0@@
+如果你已有 keystore，请确保其命名为 `release_keystore.keystore` 并放置在以下文件夹中：
+- `app`
+- `wear`
 
-或者，您可以通过设置 `KEYSTORE_PATH` 环境变量来指定自定义位置。
+或者，你可以通过设置 `KEYSTORE_PATH` 环境变量来指定自定义位置。
 
 ---
 
-### 第 2 步：构建应用程序
+### 步骤 2：构建应用
 
-您可以使用 Android Studio 或命令行 (CLI) 构建应用程序。
+你可以使用 Android Studio 或命令行（CLI）来构建应用。
 
-#### 来自 Android Studio
+#### 从 Android Studio
 
 1. 打开 Android Studio。
-2. 转到**菜单** > **建造** > **生成签名的APK**。
-3. 选择您创建的密钥库或现有的密钥库。
-4. 按照步骤构建应用程序。
+2. 进入 **菜单** > **Build** > **Generate Signed APK**。
+3. 选择你创建的 keystore 或现有的一个。
+4. 按照步骤构建应用。
 
 #### 从 CLI
 
-1. @@格式0@@
-定义 `app/build.gradle.kts` 中使用的以下环境变量：
-   - @@保护0@@
-   - @@保护0@@
-   - @@保护0@@
-   - `KEYSTORE_PATH`（如果您的密钥库位于自定义位置）
+1. **设置环境变量**
+   定义 `app/build.gradle.kts` 中使用的以下环境变量：
+   - `KEYSTORE_PASSWORD`
+   - `KEYSTORE_ALIAS`
+   - `KEYSTORE_ALIAS_PASSWORD`
+   - `KEYSTORE_PATH`（如果 keystore 位于自定义位置）
 
-2. @@格式0@@
-要构建 APK，请运行：
+2. **构建应用**
+   要构建 APK，请运行：
 
    ```bash
-   ./gradlew assembleRelease # To build all the apps
-   # OR
-   ./gradlew :<GRADLE_MODULE>:assembleRelease # To build a specific module, such as :app, :automotive, or :wear
+   ./gradlew assembleRelease # 构建所有应用
+   # 或
+   ./gradlew :<GRADLE_MODULE>:assembleRelease # 构建特定模块，例如 :app、:automotive 或 :wear
    ```
 
-要构建 AAB，请运行：
+   要构建 AAB，请运行：
 
    ```bash
-   ./gradlew bundleRelease # To build all the apps
-   # OR
-   ./gradlew :<GRADLE_MODULE>:bundleRelease # To build a specific module, such as :app, :automotive, or :wear
+   ./gradlew bundleRelease # 构建所有应用
+   # 或
+   ./gradlew :<GRADLE_MODULE>:bundleRelease # 构建特定模块，例如 :app、:automotive 或 :wear
    ```

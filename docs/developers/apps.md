@@ -1,30 +1,28 @@
 ---
 title: "开发应用"
-description: 'Home Assistant 的应用（此前称为 add-ons）允许用户扩展 Home Assistant 周边功能。这既可以是运行一个可供 Home Assistant 集成的应用程序（例如 MQTT broker），也可以是通过 Samba 共享配置，便于从其他电脑进行编辑。'
 sidebar_label: 简介
 ---
-# 开发应用
 
-Home Assistant 的应用（此前称为 add-ons）允许用户扩展 Home Assistant 周边功能。这既可以是运行一个可供 Home Assistant 集成的应用程序（例如 MQTT broker），也可以是通过 Samba 共享配置，便于从其他电脑进行编辑。应用可以通过 Home Assistant 中的 Supervisor 面板进行配置。
+Home Assistant 的 app（以前称为 add-ons）允许用户扩展 Home Assistant 周边的功能。这可以是运行 Home Assistant 可以集成的应用程序（如 MQTT broker），或者通过 Samba 共享配置以便于从其他计算机编辑。app 可以通过 Home Assistant 中的 Supervisor 面板进行配置。
 
-在底层，应用是发布到容器注册表中的容器镜像，例如 [GitHub container registry](https://github.com/features/packages) 和 [Docker Hub](https://hub.docker.com/)。开发者可以创建包含多个应用的 [GitHub](https://github.com) 仓库，以便更方便地与社区共享。
+在底层，app 是发布到容器 registry（如 [GitHub container registry](https://github.com/features/packages) 和 [Docker Hub](https://hub.docker.com/)）的容器镜像。开发者可以创建 [GitHub](https://github.com) 仓库，其中包含多个 app，以便于与社区分享。
 
-- [教程：制作你的第一个应用](/developers/apps/tutorial)
-- [配置](/developers/apps/configuration)
-- [通信](/developers/apps/communication)
-- [本地测试](/developers/apps/testing)
-- [发布](/developers/apps/publishing)
-- [展示](/developers/apps/presentation)
-- [仓库](/developers/apps/repository)
-- [安全性](/developers/apps/security)
+- [教程：制作你的第一个 app](apps/tutorial.md)
+- [配置](apps/configuration.md)
+- [通信](apps/communication.md)
+- [本地测试](apps/testing.md)
+- [发布](apps/publishing.md)
+- [展示](apps/presentation.md)
+- [仓库](apps/repository.md)
+- [安全](apps/security.md)
 
-有用的链接：
+有用链接：
 
-- [示例应用仓库](https://github.com/home-assistant/addons-example)
+- [示例 app 仓库](https://github.com/home-assistant/addons-example)
 - [Home Assistant Supervisor](https://github.com/home-assistant/supervisor)
-- [Home Assistant Core 应用](https://github.com/home-assistant/addons)
+- [Home Assistant Core app](https://github.com/home-assistant/addons)
 - [Home Assistant Docker 基础镜像](https://github.com/home-assistant/docker-base)
-- [Home Assistant Builder](https://github.com/home-assistant/builder)
-- [Home Assistant 社区应用](https://github.com/hassio-addons)
-- [Home Assistant Operating System](https://github.com/home-assistant/operating-system)
+- [Home Assistant Builder actions](https://github.com/home-assistant/builder)
+- [Home Assistant 社区 app](https://github.com/hassio-addons)
+- [Home Assistant 操作系统](https://github.com/home-assistant/operating-system)
 - [Home Assistant Docker 镜像](https://github.com/home-assistant/docker)

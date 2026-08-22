@@ -1,28 +1,26 @@
 ---
-title: "异常消息是可翻译的"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "异常消息可被翻译"
+sidebar_label: 🥇 exception-translations
 related_rules:
   - entity-translations
   - action-exceptions
 ---
-# 异常消息是可翻译的
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原理说明
 
-有时会出现问题，我们希望向用户显示错误消息。
-由于 Home Assistant 被世界各地的人们使用，因此这些错误消息的翻译性非常重要。
-对于不使用英语的应用程序的人来说，这提高了 Home Assistant 的可用性。
+有时会出现问题，我们想向用户显示错误消息。
+由于 Home Assistant 被世界各地的人使用，确保这些错误消息可被翻译非常重要。
+这提高了不使用英语的用户的 Home Assistant 可用性。
 
-Home Assistant 具有对翻译来自 `HomeAssistantError` 异常消息的内置支持。
+Home Assistant 内置了对来自 `HomeAssistantError` 异常的翻译消息的支持。
 
-## 实施示例
+## 示例实现
 
-在此示例中，我们展示了注册为 Home Assistant 服务操作的函数。
-引发异常时，会传递集成域和翻译密钥。
-该异常应继承`HomeAssistantError`以支持翻译。
-然后在集成 `strings.json` 文件中定义错误消息。
+在这个示例中，我们展示了一个注册为 Home Assistant 服务 action 的函数。
+在抛出异常时，会传入集成 domain 和翻译的 key。
+异常应继承自 `HomeAssistantError` 以支持翻译。
+错误消息随后在集成的 `strings.json` 文件中定义。
 
 ```python {6-9,13-16} showLineNumbers
 async def async_set_schedule(call: ServiceCall) -> ServiceResponse:
@@ -43,7 +41,7 @@ async def async_set_schedule(call: ServiceCall) -> ServiceResponse:
         ) from err
 ```
 
-ZZ保护0ZZ:
+`strings.json`：
 ```json
 {
     "exceptions": {
@@ -57,13 +55,13 @@ ZZ保护0ZZ:
 }
 ```
 
-## 其他资源
+## 补充资料
 
-有关引发异常的更多信息，请检查[documentation](/developers/core/platform/raising_exceptions)。
+有关抛出异常的更多信息，请参阅 [documentation](/developers/core/platform/raising_exceptions)。
 
 ## 例外情况
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

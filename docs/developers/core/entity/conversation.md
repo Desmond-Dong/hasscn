@@ -1,38 +1,35 @@
 ---
-title: 对话实体
-description: '对话实体允许用户与 Home Assistant 对话。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 对话
+title: Conversation 实体
+sidebar_label: Conversation
 ---
-# 对话实体
 
-对话实体允许用户与 Home Assistant 对话。
+Conversation 实体允许用户与 Home Assistant 对话。
 
-对话实体源自[`homeassistant.components.conversation.ConversationEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/conversation/entity.py)。
+Conversation 实体派生自 [`homeassistant.components.conversation.ConversationEntity`](https://github.com/home-assistant/core/blob/dev/homeassistant/components/conversation/entity.py)。
 
-## 特性
+## 属性
 
 :::tip
-属性应该始终只从内存返回信息，而不执行 I/O（如网络请求）。
+属性应始终仅返回内存中的信息，而不是执行 I/O（如网络请求）。
 :::
 
-| 名称 | 类型 | 默认值 | 说明
+| 名称 | 类型 | 默认值 | 描述
 | ---- | ---- | ------- | -----------
-| supported_languages | `list[str]` \ | `Literal["*"]` | @@格式0@@ | The supported languages of the service. Return `"*"` if you support all.
+| supported_languages | `list[str]` \| `Literal["*"]` | **必填** | 服务支持的语言。如果支持所有语言，则返回 `"*"`。
 
 ## 支持的功能
 
-支持的功能通过使用 `ConversationEntityFeature` 枚举中的值来定义
-和 使用按位或 (`|`) 运算符进行组合。
+支持的功能通过使用 `ConversationEntityFeature` 枚举中的值来定义，并使用按位或（`|`）运算符进行组合。
 
-| 值 | 说明
+| 值                      | 描述
 | -------------------------- | -------------------------------------------------------------------------------------------
-| `CONTROL` | 该实体能够控制Home Assistant。
+| `CONTROL`       | 实体能够控制 Home Assistant。
 
 ## 方法
 
 ### 处理消息
 
-该方法用于处理传入的聊天消息。
+此方法用于处理传入的聊天消息。
 
 ```python
 from homeassistant.components.conversation import ChatLog, ConversationEntity
@@ -64,25 +61,24 @@ class MyConversationEntity(ConversationEntity):
 
 `ConversationInput` 对象包含以下数据：
 
-| 名称 | 类型 | 说明
+| 名称 | 类型 | 描述
 | ---- | ---- | -----------
 | `text` | `str` | 用户输入
-| `context` | `Context` | 附加到 HA 中的操作的 HA 上下文
+| `context` | `Context` | 附加到 HA 中操作的 HA context
 | `conversation_id` | `Optional[str]` | 可用于跟踪多轮对话。如果不支持则返回 None
-| `language` | `str` | 文本的语言。如果用户未提供，则将其设置为 HA 配置的语言。
-| `continue_conversation` | `bool` | 如果代理期望用户做出响应。如果未设置，则假定为 False。
+| `language` | `str` | 文本的语言。如果用户未提供，则设置为 HA 配置的语言。
 
-_我们曾经推广`async_process`作为处理消息的方法。已更改为 `_async_handle_message` 以自动包含聊天日志。更改是向后兼容的。_
+_我们曾将 `async_process` 作为处理消息的方法来推荐。现已更改为 `_async_handle_message` 以自动包含 chat log。此更改向后兼容。_
 
-#### 聊天记录 {#chat-log}
+#### 聊天记录
 
-聊天日志对象允许对话实体读取对话历史并向其添加消息和工具调用。
+chat log 对象允许 conversation 实体读取对话历史，并向其中添加消息和工具调用。
 
-有关完整类型化 API，请参阅[Python 接口](https://github.com/home-assistant/core/blob/dev/homeassistant/components/conversation/chat_log.py)。
+有关完整的类型化 API，请参阅 [Python 接口](https://github.com/home-assistant/core/blob/dev/homeassistant/components/conversation/chat_log.py)。
 
 ### 准备
 
-一旦 Home Assistant 知道有请求到来，我们就会让对话实体做好准备。这可用于加载语言模型或其他资源。该功能是可选实现的。
+一旦 Home Assistant 知道请求即将到来，我们将让 conversation 实体为之做好准备。这可用于加载语言模型或其他资源。此函数为可选项。
 
 ```python
 class MyConversationEntity(ConversationEntity):

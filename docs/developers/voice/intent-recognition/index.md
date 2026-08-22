@@ -1,19 +1,16 @@
 ---
-title: "从用户输入中识别意图"
-description: '语音助手的核心在于意图识别。意图识别会尝试从用户输入中提取用户想表达的意图。随后，Home Assistant 会执行对应的意图。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "从用户输入识别意图"
 sidebar_label: "简介"
 ---
-# 从用户输入中识别意图
 
-语音助手的核心在于意图识别。意图识别会尝试从用户输入中提取用户想表达的意图。随后，Home Assistant 会执行对应的意图。
+语音助手的演变围绕 intent recognition（意图识别）展开。Intent recognition 尝试从用户的输入中提取用户的意图。该意图（一种数据格式）随后将由 Home Assistant 执行。
 
-Home Assistant 的意图识别由 [hassil](https://github.com/home-assistant/hassil) 提供支持。Hassil 通过将用户输入与句子模板进行匹配来识别意图。
+Home Assistant 的 intent recognition 由 [hassil](https://github.com/home-assistant/hassil) 提供支持。Hassil 通过将用户输入与 sentence templates（句子模板）进行匹配来识别 intents。
 
-句子模板是包含 slots（数据占位符）的一类句子，并支持多种语法，从而让单个模板能够匹配大量相似句子。
+Sentence template 是一种包含 slots（即数据的占位符）的句子，并支持各种语法，允许单个 template 匹配大量相似的句子。
 
 > `(turn | switch) on [the] {area} lights`
 
-这个示例句子模板既能匹配 `turn on kitchen lights`，也能匹配 `switch on the kitchen lights`。在这两种情况下，它都会提取额外数据 `area`，其值为 `kitchen`。
+这个示例 sentence template 既能匹配 `turn on kitchen lights`，也能匹配 `switch on the kitchen lights`。在两种情况下，它都会提取额外数据 `area` 并设为 `kitchen`。
 
-在 Home Assistant 中，我们将句子模板收集在 [GitHub](https://github.com/home-assistant/intents) 上。该仓库的目标是为每种语言，以及 Home Assistant 中每个[受支持的意图](/developers/intent_builtin)，收录用户可能说出的句子。
-
+在 Home Assistant 中，我们将 sentence templates 收集在 [GitHub](https://github.com/home-assistant/intents) 上。该仓库旨在针对每种语言和 Home Assistant 中的每个 [supported intent](../../intent_builtin)，包含用户可能会说的各种句子。

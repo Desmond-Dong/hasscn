@@ -1,35 +1,33 @@
 ---
-title: "设备 动作"
-description: '我们目前正在探索 设备 自动化的替代方案。现有的 设备 自动化将继续工作，但新的 设备 自动化将不被接受。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 行动
+title: "设备动作"
+sidebar_label: 动作
 ---
-# 设备 动作
 
 :::warning
-我们目前正在探索 设备 自动化的替代方案。现有的 设备 自动化将继续工作，但新的 设备 自动化将不被接受。
+我们目前正在探索 device automations 的替代方案。现有的 device automations 将继续工作，但新的 device automations 将不再被接受。
 :::
 
-设备 操作允许用户让 设备 执行某些操作。例如打开灯或打开门。
+Device actions 允许用户让设备执行某个操作。例如，打开一盏灯或打开一扇门。
 
-设备 操作被定义为字典。这些字典由您的 集成 创建，并传递给您的 集成 以创建执行操作的函数。
+Device actions 被定义为字典。这些字典由你的集成创建，并传回你的集成以生成一个执行该动作的函数。
 
-设备 动作可以由提供 设备（例如 ZHA、deCONZ）的 集成 或 设备 具有 实体 的 实体 集成（例如灯、开关）来提供。
-前者的示例可以是重新启动 设备，而后者的示例可以是打开灯。
+Device actions 可以由提供该设备的集成（例如 ZHA、deCONZ）提供，也可以由设备拥有实体的实体集成（例如 light、switch）提供。
+前者的例子可以是重启设备，而后者的例子可以是打开一盏灯。
 
-如果静态`ACTION_SCHEMA`无法提供action reqUIres动态验证，则可以实现`async_validate_action_config`功能。
+如果动作需要静态的 `ACTION_SCHEMA` 无法提供的动态校验，可以实现一个 `async_validate_action_config` 函数。
 
 ```py
 async def async_validate_action_config(hass: HomeAssistant, config: ConfigType) -> ConfigType:
     """Validate config."""
 ```
 
-Home Assistant 包含一个用于开始使用 设备 操作的模板。首先，在开发环境 `python3 -m script.scaffold device_action` 中运行。
+Home Assistant 提供了一个模板来帮助你开始编写 device actions。在开发环境中运行 `python3 -m script.scaffold device_action` 即可开始。
 
-该模板将在您的 集成 文件夹中创建一个新文件 `device_action.py` 和一个匹配的测试文件。该文件包含以下函数和常量：
+该模板会在你的集成文件夹中创建一个新的 `device_action.py` 文件和对应的测试文件。该文件包含以下函数和常量：
 
 #### `ACTION_SCHEMA`
 
-这是操作的架构。基本模式应从 `homeassistant.helpers.config_validation.DEVICE_ACTION_BASE_SCHEMA` 扩展。不要手动应用架构。如果操作模式在 集成 的 `device_action.py` 模块中定义为常量，则 Core 将应用该模式。
+这是动作的 schema。基础 schema 应扩展自 `homeassistant.helpers.config_validation.DEVICE_ACTION_BASE_SCHEMA`。不要手动应用该 schema。如果动作 schema 被定义为集成 `device_action.py` 模块中的常量，核心会自动应用该 schema。
 
 #### `async_get_actions`
 
@@ -38,7 +36,7 @@ async def async_get_actions(hass: HomeAssistant, device_id: str) -> list[dict]:
     """List device actions for devices."""
 ```
 
-返回此 设备 支持的操作列表。
+返回该设备支持的动作列表。
 
 #### `async_call_action_from_config`
 
@@ -49,4 +47,4 @@ async def async_call_action_from_config(
     """Execute a device action."""
 ```
 
-执行传入的操作。
+执行传入的动作。

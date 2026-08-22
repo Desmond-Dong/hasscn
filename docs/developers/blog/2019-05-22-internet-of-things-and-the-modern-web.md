@@ -1,0 +1,109 @@
+---
+author: Paulus Schoutsen
+authorURL: https://twitter.com/balloob
+authorImageURL: /img/profile/paulus.jpg
+authorTwitter: balloob
+title: 物联网与现代 Web
+---
+
+import DiscussionBox from '../static/js/discourse_discussion.jsx'
+
+[Home Assistant](https://www.home-assistant.io) 是全球最大的开源家庭自动化平台。它[支持](https://www.home-assistant.io/components/)超过 1000 种设备和服务，并被广泛使用：家庭、[船只](https://hasspodcast.io/ha048/) 和 [博物馆](https://twitter.com/sjvanterpool/status/1124035433212649475)。
+
+今天我想谈谈我们的 UI、我们要解决的问题以及我们如何解决问题。<span class='hide-small'>在深入探讨原因、内容和方式之前，让我们先看看我们的用户界面。这是<a href='https://demo.home-assistant.io' target='_blank'>我们的演示</a>的嵌入式版本，完全可交互。</span>
+
+<iframe id='demo' class='hide-small' src="https://demo.home-assistant.io"></iframe>
+
+<p class='show-small'><i>嵌入式演示已隐藏，因为屏幕太小。<a href='https://demo.home-assistant.io' target='_blank'>在新屏幕中打开演示。</a></i></p>
+
+# 使用场景
+
+在构建物联网平台时，有许多使用场景需要用户界面。请注意，为了这篇博文，我们专注于尺寸相当于手机或更大的设备上的图形用户界面。
+
+**安全。** 当用户不在家时，想要快速查看房屋情况。他们想快速检查车库门是否关闭，或者收到后院意外运动或水槽下方漏水的通知需要查看。这些用户会希望看到包含最近安全相关事件的 logbook、当前摄像头流以及门、窗、水位和运动传感器的当前 state。
+
+**控制一切。** 用户希望有一个单一的地方来控制所有设备。他们的目标是快速概览房屋的各个部分，并控制 lights、switches、thermostats 和音乐。
+
+**控制单个房间。** 用户正在为每个房间中的设备构建界面。这些设备需要暴露单个房间的所有控制，以及可选的关于整个房屋的额外信息和控制房屋其他部分的选项。
+
+**监控。** 用户希望构建自己的 dashboards，以可视化 Home Assistant 和其他数据库（如 InfluxDB）中的所有当前和历史数据。他们想跟踪能源消耗、互联网速度或当前通勤时间。
+
+**管理和自动化。** 用户希望拥有包含管理 Home Assistant 控件的 dashboards。其中包含 automations、scripts 和各种输入控件，用于配置 automations 和 scripts 的参数。
+
+如果你正在使用 Home Assistant，那么你的 UI 很可能是上述几个使用场景的混合体。今天的博文将讨论我们使用了哪些技术来构建一个 UI，让用户能够构建适合所有这些使用场景的 UI。
+
+<!--truncate-->
+
+# 需求
+
+去年当我们开始重新架构界面的一部分时，我们根据使用场景、构建前一个界面的经验以及遇到的问题，提出了一份需求清单。
+
+* **它需要零运行时 magic。** 每个用户想要的东西都不同，因此如果在运行时做决定，人们会要求配置选项来影响这个决定。我们的 UI 需要基于配置做出所有决定，只有在不提供配置时才进行智能干预。我们仍然可以向用户建议配置，但一旦用户编辑了它，他们就拥有了它，并且是唯一更新它的人。
+* **它需要可自定义。** 用户希望能够更改一切。我们允许用户指定配置选项来更改样式、名称或图标等，这非常重要。
+* **它需要 mobile first。** Home Assistant 不附带单独的 mobile 应用。我们的 UI 将在移动设备、笔记本电脑和介于两者之间的设备上使用。需要仅用一部手机就能安装、使用和配置 Home Assistant。
+* **它需要适应新兴市场。** Home Assistant 希望让智能家居对所有人触手可及。因为我们是免费和开源的，所以全球各地广泛的人群都可以使用我们。大多数人使用的是低端手机，并且网络不稳定。我们的用户界面仍然需要可用，并且能够在许多不同的手机上运行。
+* **它需要可扩展。** 由于要涵盖许多使用场景，因此 UI 的可扩展性很重要。可扩展性允许开发者进行实验，并允许我们支持所有内容，而不必在 Home Assistant core 中满足所有边缘情况/独特功能，因为一旦放入，就必须永远维护。
+* **它需要易于开发。** 在工具中迷失方向很容易。尤其是在尝试维护对所有不同设备的支持的同时，还要提供简单的 theming 和配置。应该让任何人都可以轻松地从现在用户转变为开发者，而无需花费 2 天时间准备开发环境。
+
+# 现代 Web 是我们的平台之选
+
+相当长一份需求清单。Home Assistant 是一个开源项目，得益于用户的慷慨支持，有 2 名全职开发者，加上遍布全球的志愿者开发者大军。在这样的配置下，我们必须做出决策来实现我们的目标。而只有一个平台完全符合我们的要求，一个允许我们提供 theming、默认配置选项，还允许用户导入外部组件来渲染页面部分，并允许我们以简单的方式组织代码以便用户从任何设备轻松访问它的平台：现代 Web。
+
+请注意我说的是现代。近年来，浏览器、Web 框架和工具在提供解决我们挑战的方法方面取得了长足的进步。我们看到了 CSS properties、custom elements 的引入，以及所有主要 Web 工具开箱即用地支持 code splitting。
+
+所有这些现代 Web 优势都广泛可用：桌面浏览器已变得 evergreen，意味着它们无需用户干预即可自动更新。Android 用户可以通过 Play Store 获取浏览器更新，而 Apple 倾向于为其手机提供 5 年的更新，每次更新都包含更新的浏览器。
+
+# 实现
+
+我们所做的事情大多基于或受他人启发。虽然我没有一份列出所有启发我们选择或方法的人的完整名单，但它确实受到了 [Alex Russel](https://twitter.com/slightlylate)、[Rich Harris](https://twitter.com/Rich_Harris)、[Justin Fagnani](https://twitter.com/justinfagnani)、[Malte Ubl](https://twitter.com/cramforce) 的推文和演讲，以及 Polymer 团队的信条 "Do less and be lazy" 的启发。这些人帮助我们塑造了如何构建优秀 UI 的心态。
+
+如果你好奇一个开源项目是如何拥有我们做的这么多酷炫功能的，其实正是因为我们是一个开源项目。对于参与其中的志愿者来说，这是乐趣所在。我们热爱跟进最新的前端发展并实现它们，而无需担心有人抱怨我们的时间应该花在别的地方。
+
+* **[TypeScript](https://www.typescriptlang.org/) 是我们的首选语言。** Home Assistant 支持许多不同类型的设备，包含大量 API，并在前端支持许多不同的 widgets。指望人们记住这一切是不可能的，通过利用 TypeScript，没有人需要记住。TypeScript 是 JavaScript 的带类型版本，提供编译时类型检查和出色的自动补全。当我们发布时，TypeScript 会被转换为 JavaScript，因此浏览器中不需要特殊的运行时。
+* **[Lit Element](https://lit-element.polymer-project.org/) 是我们的首选 Web 框架，为我们的用户界面提供动力。** Lit Element 是一个允许声明式模板的 Web 框架，gzip 后仅 6KB，速度极快，并具有出色的 TypeScript 支持。Lit Element 不需要任何构建工具，因此它也成为了我们开发者创建 UI 扩展的首选框架。
+* **使用 [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) 作为可扩展性的首选技术。** Web 不断变化，我们希望吸引广泛的开发者。所以我们不想选择一个框架并强制用户使用它。因此，我们选择了浏览器内置的兼容层：custom elements。Custom elements 是一个浏览器规范，允许开发者指定自己的 HTML 标签，这些标签添加到 DOM 后，会与你的 JavaScript 代码交互以更新页面。
+
+  Custom elements 非常灵活。可以在实际 JavaScript 加载之前将标签添加到页面中。一旦加载，它将接管并渲染正确的 UI。这使得无需预先加载所有内容即可快速构建页面成为可能。浏览器还允许我们监听 custom element 何时被定义，从而随着内容的加载重建 UI 的部分。
+* **使用 Shadow DOM 隔离我们的 components。** 虽然我们想让用户在我们的页面上运行代码，但我们不希望他们不小心弄乱我们的内置 components，甚至更糟——破坏整个页面。为了保护我们的 components，我们使用 Shadow DOM。这使我们能够封装 components 的 DOM 和样式。
+* **使用 CSS properties 实现 theming。** 用户想要自定义内置 components，还想要自定义他们导入的第三方 components。无论开发者使用什么 Web 框架来构建他们的 widgets，这都必须有效。我们使用 CSS properties 解决了这个问题。CSS properties 是用户可以在整个 UI 上、每个 tab 上，有时是每个 card 上设置以自定义外观的 CSS 值。
+* **依赖静态 DOM。** 当页面首次加载时，我们将根据用户的配置构建页面。之后，我们不会再触碰它。相反，当 state 改变时，我们会将 state 传递给所有相关 components，lit-html 将高效地更改需要更新的部分。
+* **交付现代 JavaScript。** 我们构建两个前端版本。一个版本面向现代浏览器，作为 module 导入，可以利用 lambdas、classes 和 async/await 等现代功能。现代版本生成的代码更少，浏览器中的 JavaScript 引擎可以更好地理解代码意图，从而执行更快。
+
+  我们以前使用浏览器 user agent 检测来决定交付哪个版本，但最近通过利用 `type=module`、`nomodule` 以及一个特定的检查，以确保 Safari 10.1 不会同时加载两者，转而采用前端功能检测。
+* **使用 Service Workers 激进地预缓存。** Home Assistant 附带一个 service worker。Service worker 是一个在网站后台运行的独立 JavaScript 脚本，我们将其设置为提前下载显示我们 UI 所需的所有代码。这意味着一旦 service worker 启动并运行，对服务器的唯一请求就是数据请求！我们在你登录的同时就已经注册了 service worker，这样当你完成登录时，前端就已经下载好了。我们使用 [Workbox](https://developers.google.com/web/tools/workbox/) 在构建时生成我们的 service worker。
+* **解耦获取数据的代码和渲染 UI 的代码。** 我们在页面上加载的第一样东西是一个 5KB 的 JS 文件，它将启动与服务器的连接并开始请求必要的数据。与此同时，浏览器正在解析渲染初始页面所需的其他 JavaScript。我们使用 `link rel=preload` 来确保该 JavaScript 文件在页面加载后立即成为第一个被下载的内容。
+* **简单的 state management。** 为了能够将 state 与任何 component（无论是内部还是外部）共享，我们决定自己实现 state management。它是一个简单的对象，包含房屋当前的 state，并沿着我们的 component 树向下传递。每当 state 改变时，我们复制一份并更新更改的部分，然后再次将其传递给所有 components。Components 随后重新渲染并显示最新的 state。所有 state 更新都由 Home Assistant JS Websocket 管理，并且全部在服务器上生成。它们通过 web sockets 推送到前端，使所有打开的 UI 保持同步，因为它们都能在第一时间收到最新更改。
+
+  [Home Assistant JS Websocket](https://github.com/home-assistant/home-assistant-js-websocket/) 是我们 4KB 的 WebSocket + Auth 库，可以添加到任何网站中，将其与 Home Assistant 实例集成。关于一个使用 50 行 JavaScript 构建的独立 Home Assistant UI，请参见[这个 glitch](https://hass-auth-demo.glitch.me/)。
+* **使用 modules 和 unpkg 轻松进行扩展开发。** 开发者无需运行任何工具即可开发自己的 card。你只需要创建一个 JavaScript 文件，在配置的 resource 部分引用它，就可以开始使用了（[文档中的示例](/developers/frontend/custom-ui/custom-card#example-using-js-modules)）。我们默认将资源作为 type=module 导入，这样开发者可以在开发过程中直接从 http://unpkg.com 导入他们的依赖。
+* **使 bundle 中的 bloat 易于发现。** 如果我们使发现不必要打包的内容变得更容易，开发者就更有可能发现它并花时间去除 bloat。为此，我们在仓库中包含脚本，允许任何人快速使用 [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) 运行 bundle 分析，并查看哪些包增加了我们的 bundle 大小。这些分析看起来[是这样的](https://s3.amazonaws.com/home-assistant-demos/bundle-analysis/report-20190522.html)。
+* **拆分翻译的 code。** 我们使用 [lokalise.com](https://lokalise.com/) 管理我们的 translations。我们代码库中的所有翻译字符串会自动上传到 lokalise.co，志愿者在那里翻译可用的字符串。我们构建了构建工具，根据 UI 中不同的 panel 拆分我们的 translations。这使我们能够仅按需动态加载所需的 translations。
+* **去中心化路由。** 应用的顶层只知道如何路由 url 的第一部分。它知道要加载哪些代码以及实例化哪个 web component。它会将 url 的其余部分传递给 panel，进一步的路由可以从那里完成。这将避免初始 bundle 随着更多部分被拆分而不断增长。我们还为 web components 创建了一个简单易用的 router，支持 code splitting 和加载屏幕，使我们的开发者很容易做正确的事。
+* **避免在解析 source 或初始化 classes 时执行操作。** 这属于 "Do less and be lazy" 类别。尽快达到初始渲染很重要。因此，避免任何不必要的操作非常重要。Lit Element 通过提供在 update 完成后运行的生命周期的 hooks 来帮助我们。没有 "组件更新前运行" 的生命周期。
+
+  在 Polymer 中，这个信条的一个很好的例子是 debounce。它的 debounce 不会生成一个防抖函数，而是你只需在想要调用函数时调用它。然后它可能会调用函数，并返回一段 state，你需要在下次调用时传回。这样你就不需要在需要之前生成防抖函数。
+
+# 挑战 / 未来改进
+
+我们做了很多酷炫的事情，但工作永远不会结束。以下是一些我们面临的挑战和可能探索的未来改进。在编写这份列表时，我有一个有趣的观察：我们的一些问题并非由于糟糕的设计，而是因为超出了设计的范围。当 UI 较小时，这些设计是正确的，但现在我们成长了，需要适应。
+
+* **处理重复的 custom element 名称。** Custom element 只能定义一次。这意味着如果一个 component 导入了不同的版本，这将会出问题。Home Assistant 拥有自己的专用操作系统 [Hass.io](https://www.home-assistant.io/hassio/)，它随自身发布周期附带自己的 control panel。我们无法对版本兼容性做任何保证，在我们弄坏用户 UI 太多次之后，我们坐下来解决了它：我们在 iframe 中运行 Hass.io control panel，以便 custom elements 与父页面隔离。
+
+  我们还为此功能提供了开发者扩展点。通过 [custom panel integration](https://www.home-assistant.io/components/panel_custom/)，他们可以构建自己的 panel，可选地支持 iframe 隔离。我们为 iframe 隔离发现的另一个使用场景是 React。这个 Web 框架很流行，但无法在 ShadowDOM 中工作。通过在 iframe 中隔离它，我们也解决了这个问题（[示例代码](https://github.com/home-assistant/custom-panel-starter-kit-react)）。
+* **不再尝试将所有内容放入 Webpack。** 当项目从 HTML imports 迁移到 JS imports 时，我们切换到 WebPack 作为我们的 bundler。我们有点过于兴奋，在 WebPack 中做了所有事情，包括生成 HTML。由于我们有前端两个构建版本，实际上我们有两个 WebPack 构建。通过将所有内容放入 WebPack，我们无法创建能够引用现代和 ES5 版本构建的哈希文件名的文件。我们的目标是将 WebPack 的职责最小化到转换 TypeScript、打包文件和压缩。通过减少职责，将更容易尝试其他 bundler。我很期待尝试 [Rollup](https://rollupjs.org/) + [Closure Compiler plugin](https://github.com/ampproject/rollup-plugin-closure-compiler)。
+* **在现代 JavaScript 构建中使用 [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_imports)。** WebPack 只有捆绑构建的单一输出模式，它在运行时使用自己的依赖注入系统。如果我们能切换到 Rollup，我们应该能够利用 dynamic imports，这是浏览器内置的。
+* **从主 bundle 中移除 Polymer。** UI 的第一版本是使用 Polymer Web 框架和 [Paper elements](https://www.webcomponents.org/collection/polymerelements/paper-elements)（一组使用 Polymer 构建的 material design components）构建的。我们仍然有一些依赖 Polymer 的核心 UI 代码，这意味着它仍然是初始 UI bundle 的一部分。这意味着目前 Polymer 和 Lit Element 都是我们初始 bundle 的一部分，使该 bundle 不必要地臃肿。
+* **翻译所有字符串。** 我们仍然交付尚未翻译的文本。Home Assistant 被各种人群在家庭中使用。让用户使用他们能理解的语言使用 UI 很重要。此外，我们最近在 RTL 支持方面取得了很大进展，大部分已覆盖，但仍有可以改进的地方。
+* **去中心化一切。** 我从 Malte Ubl 关于[设计大型 JavaScript 应用](https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3)的文章中获得的关键要点之一是避免集中配置。集中配置会随着应用的成长而不断增长，如果它是主 bundle 的一部分，你将交付不必要的内容。这目前在我们的代码中体现在两个地方：
+    * 我们交付一个在发布时构建的 iconset，包含整个 UI 中引用的所有图标。随着 UI 的增长，这个 iconset 也在增长。它现在包含大量初始加载不再需要的图标，但仍然被加载。一个可探索的选项是用支持包含 SVG 图标的 lit-html 模板的组件替换我们当前的图标渲染组件。然后我们可以通过正常的 JS import 开始加载图标。这将允许我们的 JS bundler 仅包含 bundle 中代码引用的图标。我们应该确保可以标记这些文件为允许重复，否则 JS bundler 会生成大量只包含单个图标的小 bundle。
+    * 我们目前按语言和 UI panel 分别拆分翻译文件，然后单独指纹验证每个文件。这个 manifest 文件包含在我们的初始构建中，随着我们的 app 在 panel 数量上的增长以及支持更多语言，我们的 manifest 文件现在成了初始 UI bundle 的一大块。我们的第一步应该是为每种语言生成单个 hash，使我们只能包含每种语言的一行。
+* **分析当前的 code splitting 算法。** 目前 WebPack 会确保每个 JavaScript 文件只加载一次（按照规范）。然而，这意味着我们最终以某些文件完全不被打包结束，因为有太多 code splitted 的代码片段引用该文件，导致它成为自己的 chunk。目前我们前端构建包含 126 个 code splitted chunks，其中 85 个小于 5KB！我们需要运行 traces 来查看这是否是个问题，或者 service worker 隐藏了大部分。
+* **停止使用 local storage。** 我们使用 local storage 存储 auth tokens、语言偏好以及是否显示侧边栏。由于 local storage 是同步访问的，浏览器会在等待从磁盘读取 local storage 时停止执行页面上的任何操作。浏览器厂商正在开发像 [kv-storage](https://github.com/WICG/kv-storage) 这样的替代方案，它是异步的，可能会成为一个可行的替代方案。
+* **将 Paper elements 替换为 [Material Web Components](https://github.com/material-components/material-components-web-components)。** Paper elements 不再维护，Material Web Components 将是继承者，但仍在开发中。MWC components 底层使用 Lit Element，并依赖 material.io 的 Material design VanillaJS 实现。这意味着它们将比当前的 Paper elements 轻得多，并且实际上会得到维护。
+
+## 评论
+
+<div id='discourse-comments'></div>
+
+<DiscussionBox discourseUrl="https://community.home-assistant.io/"
+      discourseEmbedUrl="https://developers.home-assistant.io/blog/2019/05/22/internet-of-things-and-the-modern-web.html" />

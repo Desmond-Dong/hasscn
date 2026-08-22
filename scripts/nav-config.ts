@@ -141,56 +141,20 @@ export const developersNav = [
     link: '/',
   },
   {
-    text: '开发者首页',
-    link: '/developers/',
-  },
-  {
-    text: '架构',
-    link: '/developers/architecture_index',
-  },
-  {
-    text: 'Core',
-    link: '/developers/development_index',
-  },
-  {
-    text: '创建集成',
-    link: '/developers/creating_component_index',
-  },
-  {
-    text: '前端',
-    link: '/developers/frontend',
-  },
-  {
-    text: '语音',
-    link: '/developers/voice/overview',
-  },
-  {
-    text: '更多',
+    text: 'Home Assistant',
     items: [
-      {
-        text: 'API',
-        link: '/developers/api_lib_index',
-      },
-      {
-        text: 'Supervisor',
-        link: '/developers/supervisor',
-      },
-      {
-        text: '操作系统',
-        link: '/developers/operating-system',
-      },
-      {
-        text: 'Android',
-        link: '/developers/android',
-      },
-      {
-        text: 'Apps',
-        link: '/developers/apps',
-      },
-      {
-        text: '文档规范',
-        link: '/developers/documenting',
-      },
+      { text: '总览', link: '/developers/architecture_index', activeMatch: '^/developers/architecture' },
+      { text: '核心', link: '/developers/development_index', activeMatch: '^/developers/development' },
+      { text: '前端', link: '/developers/frontend', activeMatch: '^/developers/frontend' },
+      { text: 'Supervisor', link: '/developers/supervisor', activeMatch: '^/developers/supervisor|^/developers/api/supervisor' },
+      { text: 'Apps', link: '/developers/apps', activeMatch: '^/developers/apps' },
+      { text: '操作系统', link: '/developers/operating-system', activeMatch: '^/developers/operating-system' },
+      { text: '语音', link: '/developers/voice/overview', activeMatch: '^/developers/voice' },
+      { text: '翻译', link: '/developers/translations', activeMatch: '^/developers/translations|^/developers/internationalization' },
+      { text: 'Android', link: '/developers/android', activeMatch: '^/developers/android' },
+      { text: 'Apple 平台', link: '/developers/apple/index', activeMatch: '^/developers/apple' },
     ],
   },
+  { text: '杂项', link: '/developers/misc', activeMatch: '^/developers/misc|^/developers/review-process|^/developers/ai_policy|^/developers/documenting|^/developers/api_lib|^/developers/asyncio' },
+  { text: '博客', link: '/developers/blog', activeMatch: '^/developers/blog' },
 ];

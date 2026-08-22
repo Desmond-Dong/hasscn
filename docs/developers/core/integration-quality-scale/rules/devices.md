@@ -1,26 +1,24 @@
 ---
 title: "集成创建设备"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+sidebar_label: 🥇 devices
 related_rules:
   - has-entity-name
 ---
-# 集成创建设备
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原理说明
 
-Home Assistant 中的设备用于对实体进行分组以表示单个物理设备或服务。
-这很有用，因为用户通常认为他们向系统添加了设备或服务，而不是单个实体。
-Home Assistant 将设备信息存储在设备中。
-为了让用户获得最好的体验，设备的信息应该尽可能完整。
+在 Home Assistant 中，设备（Devices）用于将实体（entities）分组，以表示单个物理设备或服务。
+这非常有用，因为用户通常认为自己是在系统中添加一个设备或服务，而不是单个实体。
+Home Assistant 将设备信息存储在设备注册表（device registry）中。
+为了让用户获得最佳体验，设备的信息应尽可能完整。
 
-## 实施示例
+## 示例实现
 
-在此示例中，有一个传感器实体定义了应将其添加到设备注册表中的哪个设备，以及有关该设备的一些元数据。
-这将提供丰富的设备信息页面，用户可以通过名称、序列号和其他字段识别设备。
+在这个示例中，有一个传感器实体，它定义了自己在设备注册表中应被添加到哪个设备，同时还提供了该设备的一些元数据。
+这将提供一个丰富的设备信息页面，用户可以根据设备名称、序列号及其他字段来识别设备。
 
-ZZ保护0ZZ:
+`sensor.py`：
 ```python {8-18} showLineNumbers
 class MySensor(SensorEntity):
     """Representation of a sensor."""
@@ -43,16 +41,16 @@ class MySensor(SensorEntity):
 ```
 
 :::info
-如果设备代表服务，请务必将 `entry_type=DeviceEntryType.SERVICE` 添加到 `DeviceInfo` 对象，以将设备标记为服务。
+如果设备表示的是一个服务，请务必在 `DeviceInfo` 对象中添加 `entry_type=DeviceEntryType.SERVICE`，以将该设备标记为服务。
 :::
 
-## 其他资源
+## 补充资料
 
-相关设备的更多信息可以在[device](/developers/device_registry_index)文档中找到。
+更多有关设备的详细信息，请参阅 [device](/developers/device_registry_index) 文档。
 
 ## 例外情况
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

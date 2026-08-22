@@ -1,27 +1,25 @@
 ---
 title: "推送通知"
-description: 'mobileapp 集成内置了通知平台，可用统一方式向用户发送推送通知，无需安装额外的自定义组件。推送通知既可以通过 WebSocket 连接投递，也可以通过云服务投递。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 推送通知
 
-`mobile_app` 集成内置了通知平台，可用统一方式向用户发送推送通知，无需安装额外的自定义组件。推送通知既可以通过 WebSocket 连接投递，也可以通过云服务投递。
+`mobile_app` 集成内置了一个 notify platform，允许以一种通用方式向用户发送 push notifications，而无需安装外部自定义组件。Push notifications 可以通过 websocket 连接或通过云服务交付。
 
-## 启用 websocket 推送通知
+## 启用 websocket push notifications
 
-你的应用可以通过 WebSocket API 连接到 Home Assistant，并订阅推送通知。要启用此功能，应用需要订阅云推送通知，或在注册信息的 `app_data` 对象中加入 `push_websocket_channel: true`。
+你的应用可以通过 WebSocket API 连接到 Home Assistant 来订阅 push notifications。要启用此功能，你的应用需要订阅 cloud push notifications，或者在注册时将 `push_websocket_channel: true` 添加到 `app_data` 对象中。
 
-要创建 WebSocket 通道，请先创建一个推送通知订阅：
+要创建 websocket channel，请创建 push notification 订阅：
 
 ```json
 {
   "id": 2,
   "type": "mobile_app/push_notification_channel",
   "webhook_id": "abcdefghkj",
-  "support_confirm": true // optional
+  "support_confirm": true // 可选
 }
 ```
 
-所有推送通知都会作为事件通过 WebSocket 连接发送：
+所有 push notifications 都会作为 websocket 连接上的 event 交付：
 
 ```json
 {
@@ -29,12 +27,12 @@ description: 'mobileapp 集成内置了通知平台，可用统一方式向用�
   "type": "event",
   "event": {
     "message": "Hello world",
-    "hass_confirm_id": "12345" // if confirm = true
+    "hass_confirm_id": "12345" // 如果 confirm = true
   },
 }
 ```
 
-如果启用了确认机制，你必须再发送一个 WebSocket 命令进行确认：
+如果启用了确认，你必须发送一个 websocket 命令来确认：
 
 ```json
 {
@@ -45,27 +43,28 @@ description: 'mobileapp 集成内置了通知平台，可用统一方式向用�
 }
 ```
 
-如果某个注册同时支持云推送通知，并且当前已连接可接收本地推送通知，那么通知会优先通过本地方式发送；若应用未确认该通知，则会回退到云推送。
+如果注册支持 cloud push notifications 且已连接以接收本地 push notifications，则 notifications 会先本地交付，如果应用未确认该 notification，则回退到 cloud。
 
-## 启用云推送通知
+## 启用 cloud push notifications
 
-要为你的应用启用通知平台，你必须在首次注册时或后续更新现有注册时，在 `app_data` 对象中设置两个键。
+要为你的应用启用 notify platform，你必须在初始注册期间或后来更新现有注册时，在 `app_data` 对象中设置两个 key。
 
-| 键 | 类型 | 说明
-| --- | ---- | -----------
-| `push_token` | string | 用户设备唯一的推送通知令牌，例如 APNS token 或 FCM Instance ID/token。
-| `push_url` | string | 你的服务器接收推送通知 HTTP POST 请求的 URL。
+| Key | Type | Description |
+| --- | ---- | ----------- |
+| `push_token` | string | 对用户的设备唯一的 push notification token。例如，这可以是 APNS token 或 FCM Instance ID/token。 |
+| `push_url` | string | 你的服务器上的 URL，push notifications 将通过 HTTP POST 发送到该 URL。 |
 
-设置这些键后，你应提示用户重启 Home Assistant，这样他们才能看到对应的通知目标，其格式为 `notify.mobile_app_<saved_device_name>`。
+你应该建议用户在设置这些 key 后重启 Home Assistant，以便他们能看到 notify target。它将以 `notify.mobile_app_<saved_device_name>` 的格式出现。
 
-### 部署服务器组件
+### 部署服务端组件
 
-通知平台本身并不负责如何真正通知用户。它只是把通知转发到你的外部服务器，由你的服务器实际处理该请求。
-这种方式让你能够完全掌控自己的推送通知基础设施。
+Notify platform 并不关心如何通知你的用户。它只是将一条 notification 转发到你的外部服务器，你应该在那里实际处理该请求。
 
-下一节提供了一个推送通知转发服务器的示例实现，使用 Firebase Cloud Functions 和 Firebase Cloud Messaging。
+这种方法允许你完全控制自己的 push notification 基础设施。
 
-你的服务器应能接收如下格式的 HTTP POST 负载：
+请参阅本文档的下一节，了解一个使用 Firebase Cloud Functions 和 Firebase Cloud Messaging 的 push notification forwarder 的示例服务器实现。
+
+你的服务器应该接受像这样的 HTTP POST payload：
 
 ```json
 {
@@ -85,28 +84,29 @@ description: 'mobileapp 集成内置了通知平台，可用统一方式向用�
 ```
 
 :::info
-`webhook_id` 仅会在 core-2021.11 及以上版本中包含。
+`webhook_id` 仅在 core-2021.11 或更高版本中提供。
 :::
 
-如果通知已成功加入发送队列，服务器应返回 `201` 状态码。
+假设 notification 已成功排队交付，它应该以 201 状态码响应。
 
 ### 错误
 
-如果发生错误，你应返回一个说明错误原因的响应，并使用 _不是_ 201 或 429 的状态码。错误响应必须是 JSON 对象，并可包含以下任一键：
+如果发生错误，你应当以 _非_ 201 或 429 的状态码返回对出错情况的描述。错误响应必须是 JSON 对象，可以包含以下 key 之一：
 
-| 键 | 类型 | 说明
-| --- | ---- | -----------
-| `errorMessage` | string | 如果提供，会追加到预设错误消息后。例如 `errorMessage` 为 "Could not communicate with Apple" 时，日志中会显示为 "Internal server error, please try again later: Could not communicate with Apple"。
-| `message` | string | 如果提供，会直接以 warning 级别写入日志。
+| Key | Type | Description |
+| --- | ---- | ----------- |
+| `errorMessage` | string | 如果提供，它将附加到预设的错误消息后面。例如，如果 `errorMessage` 为"Could not communicate with Apple"，它将以"Internal server error, please try again later: Could not communicate with Apple"的形式输出到日志中 |
+| `message` | string | 如果提供，它将以 warning 日志级别直接输出到日志中。 |
 
-无论使用哪个键，都应尽量清楚地说明出了什么问题，以及用户在可能的情况下该如何修复。
+无论使用哪个 key，你都应该尽可能详细地描述出了什么问题，以及如果可能的话，用户如何修复它。
 
 ### 速率限制
 
-通知平台还支持向用户暴露速率限制信息。Home Assistant 建议你采用较保守的限流策略，以控制成本，并避免用户给自己发送过多通知。
-作为参考，Home Assistant Companion 每 24 小时最多可发送 150 条通知。该限制会在 UTC 午夜对所有用户重置。当然，你也可以按自己的需求设计限流配置。
+Notify platform 还支持向用户公开速率限制。Home Assistant 建议你实现保守的速率限制，以保持成本较低，同时避免用户收到过多 notifications。
 
-如果你决定实现速率限制，成功响应应类似如下：
+仅供参考，Home Assistant Companion 每 24 小时最多可发送 150 条 notifications。速率限制会在 UTC 午夜对所有用户重置。当然，你可以自由使用任何配置来实现自己的速率限制。
+
+如果你选择实现速率限制，你成功的服务器响应应如下所示：
 
 ```json
 {
@@ -119,23 +119,24 @@ description: 'mobileapp 集成内置了通知平台，可用统一方式向用�
 }
 ```
 
-| 键 | 类型 | 说明
-| --- | ---- | -----------
-| `successful` | integer | 用户在当前限流周期内成功发送的推送通知数量。
-| `errors` | integer | 用户在当前限流周期内发送失败的推送通知数量。
-| `maximum` | integer | 用户在当前限流周期内允许发送的推送通知上限。
-| `resetsAt` | ISO8601 timestamp | 用户当前限流周期的重置时间戳，必须使用 UTC 时区。
+| Key | Type | Description |
+| --- | ---- | ----------- |
+| `successful` | integer | 用户在速率限制期间成功发送的 push notifications 数量。 |
+| `errors` | integer | 用户在速率限制期间发送失败的 push notifications 数量。 |
+| `maximum` | integer | 用户在速率限制期间最多可以发送的 push notifications 数量。 |
+| `resetsAt` | ISO8601 timestamp | 用户的速率限制期间过期的时间戳。必须以 UTC 时区提供。 |
 
-每次通知成功发送后，这些速率限制信息都会以 warning 级别写入日志。Home Assistant 还会输出距离当前限流周期重置还剩多久。
+每次成功发送 notification 后，速率限制都会以 warning 日志级别输出到日志中。Home Assistant 还会输出距离速率限制期间重置的剩余确切时间。
 
-当用户在当前限流周期内达到通知发送上限后，你应在该周期结束前持续返回 `429` 状态码。响应对象还可以选择包含 `message` 键，用于替代标准错误消息写入 Home Assistant 日志。
+一旦用户在速率限制期间达到最多发送的 notifications 数量，你应该开始以 429 状态码响应，直到速率限制期间过期。响应对象可以选择包含 key `message`，它将输出到 Home Assistant 日志中，而不是标准的错误消息。
 
-通知平台本身不会实施任何速率限制保护。用户仍然可以继续向你的服务器发送通知，因此你应尽早在业务逻辑中用 `429` 状态码拒绝超限请求。
+Notify platform 本身不实现任何速率限制保护。用户将持续向你发送 notifications，因此你应该在逻辑的尽可能早的阶段以 429 状态码拒绝他们。
 
-### 服务器实现示例
+### 示例服务器实现
 
-下面的代码是一个 Firebase Cloud Function，用于将通知转发到 Firebase Cloud Messaging。部署前，你应先创建一个名为 `rateLimits` 的 Firestore 数据库，然后部署以下代码。
-同时请确保项目已正确配置 APNS 和 FCM 所需的认证密钥。
+以下代码是一个 Firebase Cloud Function，它将 notifications 转发给 Firebase Cloud Messaging。要部署此代码，你应该创建一个名为 `rateLimits` 的 Firestore 数据库。然后，你可以部署以下代码。
+
+此外，请确保你已经使用正确的 APNS 和 FCM 认证密钥正确配置了你的项目。
 
 ```javascript
 'use strict';

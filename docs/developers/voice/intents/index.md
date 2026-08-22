@@ -1,12 +1,10 @@
 ---
 title: "意图"
-description: '有关意图，请参阅 Home Assistant Core 文档中的以下内容：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 意图
 
-有关意图，请参阅 Home Assistant Core 文档中的以下内容：
+请参阅 Home Assistant Core 文档中的 intents 部分，了解以下内容：
 
-- Home Assistant 支持的[内置意图](/developers/intent_builtin)。
-- 使用[对话 API](/developers/intent_conversation_api) 向 Home Assistant 发送文本命令并接收响应。
-- [注册意图处理器](/developers/intent_handling)，为 Home Assistant 添加新的意图。
-- 如果你有自己的句子匹配逻辑并希望由 Home Assistant 处理意图，可使用[触发意图](/developers/intent_firing)。
+- 由 Home Assistant 支持的 [内置 intents](../../intent_builtin)。
+- 使用 [Conversation API](../../intent_conversation_api) 向 Home Assistant 发送文本命令并接收响应。
+- [注册 intent handlers](../../intent_handling) 以向 Home Assistant 添加新的 intents。
+- [触发 intents](../../intent_firing)，如果你有自己句子匹配逻辑并希望 Home Assistant 处理这些 intents。

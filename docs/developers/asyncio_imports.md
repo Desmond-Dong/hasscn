@@ -1,36 +1,35 @@
 ---
 title: "使用 asyncio 导入代码"
-description: '在 asyncio 环境中，判断何时可以安全导入代码并不总是容易，因为存在两个限制：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 使用 asyncio 导入代码
 
-在 asyncio 环境中，判断何时可以安全导入代码并不总是容易，因为存在两个限制：
+在使用 asyncio 时，确定何时可以安全地导入代码可能很棘手，因为需要考虑两个约束：
 
-- 导入模块时，Python 可能需要从磁盘加载文件，这会产生阻塞 I/O
-- [CPython 的导入机制不是线程安全的](https://github.com/python/cpython/issues/83065)
+- 导入代码可能会执行阻塞 I/O 来从磁盘加载文件
+- 在 [cpython 中导入代码不是线程安全的](https://github.com/python/cpython/issues/83065)
 
 ## 模块级导入
 
-如果导入发生在**模块级**（也就是常规导入位置），并且所有必需模块都在 `__init__.py` 中导入，那么 Home Assistant 会在**事件循环启动前**，或通过**import executor** 在后台线程中加载你的集成。
+如果你的导入在**模块级**（也称为**顶层导入**），并且所有必要的模块都在 `__init__.py` 中导入，Home Assistant 将在 **event loop 启动之前** 或在后台线程中使用 **import executor** 加载你的集成。
 
-在这种情况下，导入通常会被安全处理，因此你**通常不需要担心**它们是否对事件循环安全。
+在这种情况下，你的导入通常会被安全地处理，所以你**不需要担心**它们是否是 event-loop safe。
 
-## 在模块级之外导入
+## 模块级之外的导入
 
-如果导入不在模块级进行，就必须仔细评估每一次导入。导入机制需要从磁盘读取模块文件，这可能导致阻塞 I/O。通常情况下，最好改成模块级导入，因为这样能降低复杂度和出错风险。导入模块既消耗 CPU，也可能涉及阻塞 I/O，因此需要确保这些操作在合适的线程中执行。
+如果你的导入不是在模块级进行的，你必须仔细考虑每个导入，因为导入机制需要从磁盘读取模块，这会执行阻塞 I/O。如果可能的话，通常最好改为模块级导入，因为它避免了大量复杂性和出错风险。导入模块既消耗 CPU，又涉及阻塞 I/O，因此确保这些操作在 executor 中执行至关重要。
 
-如果你可以确定某个模块已经被导入，那么直接使用普通的 [`import`](https://docs.python.org/3/reference/simple_stmts.html#import) 语句是安全的，因为 Python 不会重复加载它。
+如果你能确定模块已经被导入，那么使用裸 [`import`](https://docs.python.org/3/reference/simple_stmts.html#import) 语句是安全的，因为 Python 不会再次加载模块。
 
-如果集成始终都会使用某个模块，通常最好在 `__init__.py` 中进行模块级导入，以确保模块被提前加载。不过，如果这样会产生循环导入，就需要改用下面的方案之一。
+如果集成将始终使用该模块，通常最好在 `__init__.py` 中包含模块级导入，以确保模块被加载。然而，如果这导致循环导入，则需要改用下面解决方案之一。
 
-如果该模块只在特定条件下使用，并且只会在单个位置导入，可以使用标准的 executor 调用：
+如果模块仅在条件性使用时才会导入，并且只会在一个地方导入，则可以使用标准的 executor 调用：
 
-- 在 Home Assistant 内部导入：`hass.async_add_executor_job(_function_that_does_late_import)`
-- 在 Home Assistant 外部导入：[`loop.run_in_executor(None, _function_that_does_late_import)`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.run_in_executor)
+- 对于 Home Assistant 内部的导入：`hass.async_add_executor_job(_function_that_does_late_import)`
+- 对于 Home Assistant 外部的导入：[`loop.run_in_executor(None, _function_that_does_late_import)`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.run_in_executor)
 
-如果应用的不同部分可能同时导入同一个模块，请使用线程安全的 `homeassistant.helpers.importlib.import_module` helper。
+如果同一个模块可能在应用程序的不同部分并发导入，请使用线程安全的 `homeassistant.helpers.importlib.import_module` 辅助函数。
 
-如果模块可能通过多个不同路径被导入，请使用 `async_import_module`。例如：
+如果模块可能从多个不同路径导入，请使用 `async_import_module`：
+示例：
 
 ```python
 from homeassistant.helpers.importlib import async_import_module
@@ -38,25 +37,25 @@ from homeassistant.helpers.importlib import async_import_module
 platform = await async_import_module(hass, f"homeassistant.components.homeassistant.triggers.{platform_name}")
 ```
 
-## 判断模块是否已加载
+## 确定模块是否已加载
 
-如果你不确定某个模块是否已经加载，可以检查 [`sys.modules`](https://docs.python.org/3/library/sys.html#sys.modules)。但要注意，模块一开始加载就会出现在 `sys.modules` 中，而 [CPython 的导入机制不是线程安全的](https://github.com/python/cpython/issues/83065)。因此，当代码可能通过多个路径触发导入时，一定要认真考虑竞争条件。
+如果你不确定模块是否已经加载，可以检查模块是否已经在 [`sys.modules`](https://docs.python.org/3/library/sys.html#sys.modules) 中。你应该知道，模块一旦开始加载就会出现在 `sys.modules` 中，并且 [cpython 的导入不是线程安全的](https://github.com/python/cpython/issues/83065)。因此，当代码可能从多个路径导入时，考虑竞态条件非常重要。
 
 ## 避免仅用于类型检查的导入
 
-如果导入的模块只用于类型检查，建议使用 `if TYPE_CHECKING:` 进行保护，避免在运行时导入它。
+如果导入的模块仅用于类型检查，建议用 `if TYPE_CHECKING:` 块对其进行保护，以避免在运行时导入。
 
 ```python
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from some_module import SomeClass  # Only imported for type checking
+    from some_module import SomeClass  # 仅用于类型检查时导入
 
 def some_function() -> SomeClass:
-    # Function implementation
+    # 函数实现
     pass
 ```
 
 ## 避免导入很少使用的代码
 
-导入模块会占用 CPU 和 I/O 资源，因此应尽量避免导入很少使用的代码。虽然在模块级正常导入会带来一定启动开销，但如果某段代码只会偶尔用到，延迟导入通常更合适。这样可以只在真正需要时才消耗资源，从而减少不必要的处理并提升整体性能。
+导入模块既可能消耗 CPU 也可能消耗 I/O，因此避免导入很少使用的代码非常重要。虽然在模块级之外导入代码确实会增加一些运行时开销，但当代码仅在偶尔需要时才需要时，这种方法通常更高效。通过延迟导入，确保资源仅在必要时使用，减少不必要的处理并提高整体性能。

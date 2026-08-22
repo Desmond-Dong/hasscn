@@ -1,6 +1,6 @@
 ---
-title: "配置流程的完整测试覆盖率"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "config flow 具备完整测试覆盖率"
+sidebar_label: 🥉 config-flow-test-coverage
 related_rules:
   - config-flow
   - test-before-configure
@@ -9,32 +9,31 @@ related_rules:
   - reauthentication-flow
   - reconfiguration-flow
 ---
-# 配置流程的完整测试覆盖率
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
-配置流程是用户与集成发生的第一次交互。
-因此，确保配置流程按预期工作、用户能够顺利完成设置、且过程中不会遇到与配置流程相关的问题，至关重要。
+config flow 是用户与你的集成进行的第一次交互。
+确保 config flow 按预期工作，使用户能够毫无问题地（或与 config flow 相关的错误地）完成集成设置，这一点非常重要。
 
-这也是为什么我们希望配置流程具备 **100%** 的测试覆盖率。
-这些测试还应验证流程能够从错误中恢复，确保即使出现问题，用户仍能完成设置。
+这意味着我们希望对 config flow 达到 **100%** 的测试覆盖率。
+在这些测试中，我们要求验证 flow 能够从错误中恢复，以确认即使用户遇到某些问题时也能顺利完成 flow。
 
-由于我们也希望用户在重新配置、重新认证和选项流程中获得流畅体验，因此这条规则同样适用于这些流程。
+为了让用户在使用其他集成 flow 时获得顺畅体验，本规则也适用于 reconfigure、reauthentication 和 options flow。
 
-对集成进行测试还有一个额外好处：它能帮助开发者熟悉测试体系，从而更容易为集成的其他部分编写测试。
+为集成编写测试的额外好处是，它可以引导开发者接触测试，使其更容易为集成的其他部分编写测试。
 
 :::warning
-尽管用于检查配置条目唯一性的代码通常会被快乐路径测试覆盖到，但仍请确保专门测试该流程不会允许添加多个具有相同唯一 ID 的配置条目，以实现完整覆盖。
+尽管用于检查 config entry 唯一性的代码很可能会被 happy flow 测试触及，但仍请确保测试 flow 不允许添加超过一个唯一配置条目，以达到完整覆盖率。
 :::
 
-## 实施示例
+## 示例实现
 
-我们需要针对配置流的每种启动方式（例如用户发起、发现触发或导入触发）测试以下场景。
+我们需要针对 config flow 可以被触发的每种方式（由用户触发、通过 discovery 触发或通过 import flow 触发）测试以下场景。
 
-下面的示例展示了一个由用户发起的基础快乐路径流程。
+下面的示例展示了由用户发起的基本 happy flow。
 
+`test_config_flow.py`:
 ```python showLineNumbers
 async def test_full_flow(
     hass: HomeAssistant,
@@ -60,14 +59,14 @@ async def test_full_flow(
     }
 ```
 
-## 其他资源
+## 附加资源
 
-有关配置流的更多信息，请参阅 [config flow documentation](/developers/config_entries_config_flow_handler)。
-有关集成测试的更多信息，请参阅 [testing documentation](/developers/development_testing)。
+关于 config flow 的更多信息，请参阅 [config flow 文档](/developers/core/integration/config_flow)。
+关于集成测试的更多信息，请参阅 [测试文档](/developers/development_testing)。
 
-## 例外情况
+## 例外
 
-此规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

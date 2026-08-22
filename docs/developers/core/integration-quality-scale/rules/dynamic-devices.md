@@ -1,26 +1,24 @@
 ---
 title: "集成设置后添加的设备"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+sidebar_label: 🥇 dynamic-devices
 related_rules:
   - stale-devices
 ---
-# 集成设置后添加的设备
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
-正如规则 [stale-devices](/developers/core/integration-quality-scale/rules/stale-devices) 中所解释的，当我们应该确定设备不再连接时，设备被自动删除。
-这个规则的另一面也解释了，一旦有新设备连接，我们应该自动为该设备创建相关实体。
+正如规则 [stale-devices](/developers/core/integration-quality-scale/rules/stale-devices) 所解释的，当我们可以确定设备不再连接时，设备应被自动移除。
+本规则解释的是另一面：一旦新设备连接，我们应该自动为该设备创建相应的 entity。
 
-这使得用户体验更好，因为用户只需将设备添加到集成中，它就会自动显示在 Home Assistant 中。
+这能改善用户体验，因为用户只需将设备添加到集成中，它就会自动出现在 Home Assistant 中。
 
-## 实施示例
+## 示例实现
 
-在下面的示例中，我们使用协调器从服务中获取所有数据。
-更新 `_check_device` 都会检查是否有新设备可以创建实体并将其添加到 Home Assistant。
+在下面的示例中，我们使用 coordinator 从服务获取所有数据。
+每次更新时，`_check_device` 都会检查是否有需要创建 entity 的新设备，并将它们添加到 Home Assistant。
 
-ZZ保护0ZZ
+`coordinator.py`
 ```python showLineNumbers
 class MyCoordinator(DataUpdateCoordinator[dict[str, MyDevice]]):
     """Class to manage fetching data."""
@@ -42,7 +40,7 @@ class MyCoordinator(DataUpdateCoordinator[dict[str, MyDevice]]):
             raise UpdateFailed(f"The service is unavailable: {ex}")
 ```
 
-ZZ保护0ZZ
+`sensor.py`
 ```python {9,11-16,18-21} showLineNumbers
 async def async_setup_entry(
     hass: HomeAssistant,
@@ -67,9 +65,9 @@ async def async_setup_entry(
     )
 ```
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

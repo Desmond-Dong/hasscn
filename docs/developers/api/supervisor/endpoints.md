@@ -1,30 +1,27 @@
 ---
-title: "端点"
-description: 'import ApiEndpoint from ''@site/static/js/apiendpoint.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "Endpoints"
 ---
-# 端点
-
 import ApiEndpoint from '@site/static/js/api_endpoint.jsx'
 
-带有 :lock: 标记的 API 端点需要使用 `Bearer` token 形式的授权请求头。
+对于标记有 :lock: 的 API endpoints，你需要使用带有 `Bearer` token 的 authorization header。
 
-应用（以前称为附加组件）和 Home Assistant 可以通过以下方式获取该 token：
-`SUPERVISOR_TOKEN` 环境变量。
+该 token 对 apps（原称 add-ons）和 Home Assistant 可通过
+`SUPERVISOR_TOKEN` 环境变量获取。
 
-要查看每个端点的更多详细信息，请点击将其展开。
+要查看每个 endpoint 的更多细节，点击展开即可。
 
 ### 应用
 
 <ApiEndpoint path="/addons" method="get">
-返回已安装应用的概览信息。
+返回已安装 app 的概述信息。
 
-**负载：**
+**Payload:**
 
-| 键 | 类型 | 说明 |
-| ------------ | ---- | -------------------------------------------------- |
-| addons       | list | [Addon 模型](/developers/api/supervisor/models#addon)列表 |
+| key | type | description |
+|-----|------|-------------|
+| addons | list | [Addon models](api/supervisor/models.md#app-formerly-known-as-an-add-on) 列表 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -55,140 +52,139 @@ import ApiEndpoint from '@site/static/js/api_endpoint.jsx'
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/reload" method="post">
-重新加载已存储的应用信息。
+重新加载关于 app 的存储信息。
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/changelog" method="get">
-获取应用的更新日志。
+获取 app 的 changelog。
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/documentation" method="get">
-获取应用文档。
+获取 app 的 documentation。
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/logs" method="get">
 
-通过 Systemd journal 后端获取应用日志。
+通过 Systemd journal 后端获取 app 的 logs。
 
-该端点接受与 `/host/logs` 相同的请求头，并提供相同的功能。
+该 endpoint 接受与 `/host/logs` 相同的 headers 并提供相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/logs/follow" method="get">
 
-与 `/addons/<addon>/logs` 相同，但会持续返回新的日志条目。
+与 `/addons/<addon>/logs` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/logs/latest" method="get">
 
-返回该应用容器最近一次启动的全部日志。
+返回该 app 容器最近一次启动的所有 logs。
 
-会忽略 `Range` 请求头，但可以使用 `lines` 查询参数。
+`Range` header 被忽略，但可以使用 `lines` query 参数。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/logs/boots/<bootid>" method="get">
 
-获取与特定启动记录相关的应用日志。
+获取与特定 boot 相关的 app logs。
 
-`bootid` 参数的解释方式与 `/host/logs/boots/<bootid>` 中一致，
-该端点其余功能也与 `/host/logs` 相同。
+`bootid` 参数的解释方式与 `/host/logs/boots/<bootid>` 中相同，该 endpoint 否则提供与 `/host/logs` 相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/logs/boots/<bootid>/follow" method="get">
 
-与 `/addons/<addon>/logs/boots/<bootid>` 相同，但会持续返回新的日志条目。
+与 `/addons/<addon>/logs/boots/<bootid>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/icon" method="get">
-获取应用图标
+获取 app icon
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/info" method="get">
-获取应用详情
+获取关于 app 的详细信息
 
-**返回数据：**
+**Returned data:**
 
-| key                 | type               | description                                                                            |
-| ------------------- | ------------------ | -------------------------------------------------------------------------------------- |
-| advanced            | boolean            | `true` if advanced mode is enabled                                                     |
-| apparmor            | string             | disabled, default or the name of the profile                                           |
-| arch                | list               | A list of supported architectures for the app                                       |
-| audio               | boolean            | `true` if audio is enabled                                                             |
-| audio_input         | float or null      | The device index                                                                       |
-| audio_output        | float or null      | The device index                                                                       |
-| auth_api            | boolean            | `true` if auth api access is granted is enabled                                        |
-| auto_uart           | boolean            | `true` if auto_uart access is granted is enabled                                       |
-| auto_update         | boolean            | `true` if auto update is enabled                                                       |
-| available           | boolean            | `true` if the app is available                                                      |
-| boot                | string             | "auto" or "manual"                                                                     |
-| boot_config         | string             | Default boot mode of addon or "manual_only" if boot mode cannot be auto                |
-| build               | boolean            | `true` if local app                                                                 |
-| changelog           | boolean            | `true` if changelog is available                                                       |
-| description         | string             | The app description                                                                 |
-| detached            | boolean            | `true` if the app is running detached                                               |
-| devices             | list               | A list of attached devices                                                             |
-| devicetree          | boolean            | `true` if devicetree access is granted is enabled                                      |
-| discovery           | list               | A list of discovery services                                                           |
-| dns                 | list               | A list of DNS servers used by the app                                               |
-| docker_api          | boolean            | `true` if docker_api access is granted is enabled                                      |
-| documentation       | boolean            | `true` if documentation is available                                                   |
-| full_access         | boolean            | `true` if full access access is granted is enabled                                     |
-| gpio                | boolean            | `true` if gpio access is granted is enabled                                            |
-| hassio_api          | boolean            | `true` if hassio api access is granted is enabled                                      |
-| hassio_role         | string             | The hassio role (default, homeassistant, manager, admin)                               |
-| homeassistant       | string or null     | The minimum Home Assistant Core version                                                |
-| homeassistant_api   | boolean            | `true` if homeassistant api access is granted is enabled                               |
-| host_dbus           | boolean            | `true` if host dbus access is granted is enabled                                       |
-| host_ipc            | boolean            | `true` if host ipc access is granted is enabled                                        |
-| host_network        | boolean            | `true` if host network access is granted is enabled                                    |
-| host_pid            | boolean            | `true` if host pid access is granted is enabled                                        |
-| host_uts            | boolean            | `true` if host UTS namespace access is enabled.                                        |
-| hostname            | string             | The host name of the app                                                            |
-| icon                | boolean            | `true` if icon is available                                                            |
-| ingress             | boolean            | `true` if ingress is enabled                                                           |
-| ingress_entry       | string or null     | The ingress entrypoint                                                                 |
-| ingress_panel       | boolean or null    | `true` if ingress_panel is enabled                                                     |
-| ingress_port        | int or null        | The ingress port                                                                       |
-| ingress_url         | string or null     | The ingress URL                                                                        |
-| ip_address          | string             | The IP address of the app                                                           |
-| kernel_modules      | boolean            | `true` if kernel module access is granted is enabled                                   |
-| logo                | boolean            | `true` if logo is available                                                            |
-| long_description    | string             | The long app description                                                            |
-| machine             | list               | A list of supported machine types for the app                                       |
-| name                | string             | The name of the app                                                                 |
-| network             | dictionary or null | The network configuration for the app                                               |
-| network_description | dictionary or null | The description for the network configuration                                          |
-| options             | dictionary         | The app configuration                                                               |
-| privileged          | list               | A list of hardwars/system attributes the app has access to                         |
-| protected           | boolean            | `true` if protection mode is enabled                                                   |
-| rating              | int                | The addon rating                                                                       |
-| repository          | string             | The URL to the app repository                                                       |
-| schema              | dictionary or null | The schema for the app configuration                                                |
-| services_role       | list               | A list of services and the apps role for that service                               |
-| slug                | string             | The app slug                                                                        |
-| stage               | string             | The app stage (stable, experimental, deprecated)                                    |
-| startup             | string             | The stage when the app is started (initialize, system, services, application, once) |
-| state               | string or null     | The state of the app (started, stopped)                                             |
-| stdin               | boolean            | `true` if the app accepts stdin commands                                            |
-| system_managed      | boolean            | Indicates whether the app is managed by Home Assistant                              |
-| system_managed_config_entry | string     | Provides the configuration entry ID if the app is managed by Home Assistant         |
-| translations        | dictionary         | A dictionary containing content of translation files for the app                    |
-| udev                | boolean            | `true` if udev access is granted is enabled                                            |
-| update_available    | boolean            | `true` if an update is available                                                       |
-| url                 | string or null     | URL to more information about the app                                               |
-| usb                 | list               | A list of attached USB devices                                                         |
-| version             | string             | The installed version of the app                                                    |
-| version_latest      | string             | The latest version of the app                                                       |
-| video               | boolean            | `true` if video is enabled                                                             |
-| watchdog            | boolean            | `true` if watchdog is enabled                                                          |
-| webui               | string or null     | The URL to the web UI for the app                                                   |
-| signed              | boolean            | True if the image is signed and trust                                                  |
+| key | type | description |
+|-----|------|-------------|
+| advanced | boolean | 已弃用且被忽略；自 Supervisor 2026.03.0 起始终为 `false` |
+| apparmor | string | disabled、default 或 profile 名称 |
+| arch | list | app 支持的架构列表 |
+| audio | boolean | 已启用 audio 时为 `true` |
+| audio_input | float or null | 设备索引 |
+| audio_output | float or null | 设备索引 |
+| auth_api | boolean | 已授予 auth api 访问权限时为 `true` |
+| auto_uart | boolean | 已授予 auto_uart 访问权限时为 `true` |
+| auto_update | boolean | 已启用 auto update 时为 `true` |
+| available | boolean | app 可用时为 `true` |
+| boot | string | "auto" 或 "manual" |
+| boot_config | string | addon 的默认 boot 模式，或无法自动 boot 时为 "manual_only" |
+| build | boolean | 本地 app 时为 `true` |
+| changelog | boolean | changelog 可用时为 `true` |
+| description | string | app 描述 |
+| detached | boolean | app 以 detached 方式运行时为 `true` |
+| devices | list | 附加的设备列表 |
+| devicetree | boolean | 已授予 devicetree 访问权限时为 `true` |
+| discovery | list | discovery 服务列表 |
+| dns | list | app 使用的 DNS server 列表 |
+| docker_api | boolean | 已授予 docker_api 访问权限时为 `true` |
+| documentation | boolean | documentation 可用时为 `true` |
+| full_access | boolean | 已授予完全访问权限时为 `true` |
+| gpio | boolean | 已授予 gpio 访问权限时为 `true` |
+| hassio_api | boolean | 已授予 hassio api 访问权限时为 `true` |
+| hassio_role | string | hassio role（default, homeassistant, manager, admin） |
+| homeassistant | string or null | 最低的 Home Assistant Core 版本 |
+| homeassistant_api | boolean | 已授予 homeassistant api 访问权限时为 `true` |
+| host_dbus | boolean | 已授予 host dbus 访问权限时为 `true` |
+| host_ipc | boolean | 已授予 host ipc 访问权限时为 `true` |
+| host_network | boolean | 已授予 host network 访问权限时为 `true` |
+| host_pid | boolean | 已授予 host pid 访问权限时为 `true` |
+| host_uts | boolean | 已启用 host UTS 命名空间访问时为 `true`。 |
+| hostname | string | app 的 host 名 |
+| icon | boolean | icon 可用时为 `true` |
+| ingress | boolean | 已启用 ingress 时为 `true` |
+| ingress_entry | string or null | ingress 入口点 |
+| ingress_panel | boolean or null | 已启用 ingress_panel 时为 `true` |
+| ingress_port | int or null | ingress 端口 |
+| ingress_url | string or null | ingress URL |
+| ip_address | string | app 的 IP 地址 |
+| kernel_modules | boolean | 已授予 kernel module 访问权限时为 `true` |
+| logo | boolean | logo 可用时为 `true` |
+| long_description | string | app 的长描述 |
+| machine | list | app 支持的 machine 类型列表 |
+| name | string | app 名称 |
+| network | dictionary or null | app 的网络配置 |
+| network_description | dictionary or null | 网络配置的描述 |
+| options | dictionary | app 配置。已脱敏（空字典），除非调用者是 Home Assistant Core、查询自身信息的 app，或具有 `manager` 或 `admin` role 的 app，因为 options 可能包含密码或 API keys 等 secrets |
+| privileged | list | app 可访问的硬件/系统 attributes 列表 |
+| protected | boolean | 已启用 protection mode 时为 `true` |
+| rating | int | addon rating |
+| repository | string | 指向 app repository 的 URL |
+| schema | dictionary or null | app 配置的 schema |
+| services_role | list | services 及 app 在该 service 中 role 的列表 |
+| slug | string | app 的 slug |
+| stage | string | app 的 stage（stable, experimental, deprecated） |
+| startup | string | app 启动的 stage（initialize, system, services, application, once） |
+| state | string or null | app 的 state（started, stopped） |
+| stdin | boolean | app 接受 stdin 命令时为 `true` |
+| system_managed | boolean | 指示该 app 是否由 Home Assistant 管理 |
+| system_managed_config_entry | string | 如果 app 由 Home Assistant 管理，则提供 configuration entry ID |
+| translations | dictionary | 包含 app 翻译文件内容的字典 |
+| udev | boolean | 已授予 udev 访问权限时为 `true` |
+| update_available | boolean | 有更新可用时为 `true` |
+| url | string or null | 指向该 app 更多信息的 URL |
+| usb | list | 附加的 USB 设备列表 |
+| version | string | app 已安装的版本 |
+| version_latest | string | app 的最新版本 |
+| video | boolean | 已启用 video 时为 `true` |
+| watchdog | boolean | 已启用 watchdog 时为 `true` |
+| webui | string or null | 指向 app web UI 的 URL |
+| signed | boolean | 镜像已签名且受信任时为 True |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -277,39 +273,39 @@ import ApiEndpoint from '@site/static/js/api_endpoint.jsx'
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/install" method="post">
-安装应用
+安装一个 app
 
-**Deprecated!** Use [`/store/addons/<addon>/install`](#store) instead.
+**已弃用！** 请使用 [`/store/addons/<addon>/install`](#store) 代替。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/logo" method="get">
-获取应用 logo
+获取 app logo
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/options" method="post">
-设置应用选项。
+设置 app 的 options。
 
 :::tip
-若要重置自定义的 network/audio/options，请将其设为 `null`。
+要重置自定义的 network/audio/options，将其设为 `null`。
 :::
 
-**负载：**
+**Payload:**
 
-| 键 | 类型 | 说明 |
-| ------------- | ------------- | --------------------------------------- |
-| boot          | string        | (auto, manual)                          |
-| auto_update   | boolean       | `true` 表示应用应自动更新 |
-| network       | dictionary    | 网络配置映射。 |
-| options       | dictionary    | 应用配置 |
-| audio_output  | float or null | 音频输出设备索引 |
-| audio_input   | float or null | 音频输入设备索引 |
-| ingress_panel | boolean       | `true` 表示已启用 ingress_panel |
-| watchdog      | boolean       | `true` 表示已启用 watchdog |
+| key | type | description |
+|-----|------|-------------|
+| boot | string | (auto, manual) |
+| auto_update | boolean | app 应自动更新时为 `true` |
+| network | dictionary | network configuration 的映射。 |
+| options | dictionary | app 配置 |
+| audio_output | float or null | 音频输出设备的索引 |
+| audio_input | float or null | 音频输入设备的索引 |
+| ingress_panel | boolean | 已启用 ingress_panel 时为 `true` |
+| watchdog | boolean | 已启用 watchdog 时为 `true` |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
-**示例负载：**
+**Example payload:**
 
 ```json
 {
@@ -328,20 +324,20 @@ import ApiEndpoint from '@site/static/js/api_endpoint.jsx'
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/sys_options" method="post">
-修改系统托管应用的专用选项。
+更改 system managed addons 特有的 options。
 
-该端点只能由 Home Assistant 调用，其他客户端不能调用。
+此 endpoint 只能由 Home Assistant 调用，不能由其他任何客户端调用。
 
-**负载：**
+**Payload**
 
-| 键 | 类型 | 说明 |
-| --------------------------- | ------------- | --------------------------------------- |
-| system_managed              | boolean       | `true` 表示由 Home Assistant 管理 |
-| system_managed_config_entry | boolean       | 管理该应用的配置条目 ID |
+| key | type | description |
+|-----|------|-------------|
+| system_managed | boolean | 由 Home Assistant 管理时为 `true` |
+| system_managed_config_entry | boolean | 管理 addon 的 config entry ID |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
-**示例负载：**
+**Example payload:**
 
 ```json
 {
@@ -353,63 +349,63 @@ import ApiEndpoint from '@site/static/js/api_endpoint.jsx'
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/options/validate" method="post">
-针对当前已存储的应用配置或传入负载执行配置校验。
+针对当前存储的 app 配置或 payload 运行 configuration 验证。
 
-**负载：**
+**Payload:**
 
-可选：原始应用选项。
+可选地提供原始的 app options。
 
-**返回数据：**
+**Returned data:**
 
-| 键 | 类型 | 说明 |
-| ---------------- | ----------- | -------------------------------- |
-| message          | string      | 错误信息 |
-| valid            | boolean        | 配置是否有效 |
-| pwned            | boolean | None | 是否包含已泄露的密钥；出错时为 `None` |
+| key | type | description |
+|-----|------|-------------|
+| message | string | 包含错误消息 |
+| valid | boolean | 配置是否有效 |
+| pwned | boolean | None | True 或 false，指示是否包含被盗 secrets。出错时为 None |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/options/config" method="get">
-用于获取其自身渲染后配置的数据端点。
+获取其自身渲染后 configuration 的 Data endpoint。
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/rebuild" method="post">
-重新构建应用，仅支持本地构建型应用。
+重建 app，仅支持 local build apps。
 
-**负载：**
+**Payload:**
 
-| key   | type    | optional | description                                                       |
-| ----- | ------- | -------- | ----------------------------------------------------------------- |
-| force | boolean | True     | Force rebuild of the app even if pre-built images are provided |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| force | boolean | True | 即使提供了预构建镜像，也强制重建 app |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/restart" method="post">
-重启应用
+重启一个 app
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/security" method="post">
-Set the protection mode on an app.
+设置 app 的 protection mode。
 
-This function is not callable by itself and you can not use `self` as the slug here.
+此函数不能由自身调用，你不能在此处使用 `self` 作为 slug。
 
-**负载：**
+**Payload:**
 
-| key       | type    | description                     |
-| --------- | ------- | ------------------------------- |
-| protected | boolean | `true` if protection mode is on |
+| key | type | description |
+|-----|------|-------------|
+| protected | boolean | 已开启 protection mode 时为 `true` |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/start" method="post">
-启动应用
+启动一个 app
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/stats" method="get">
 
-返回该应用对应的 [Stats 模型](/developers/api/supervisor/models#stats)。
+为该 app 返回一个 [Stats model](api/supervisor/models.md#stats)。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -427,71 +423,71 @@ This function is not callable by itself and you can not use `self` as the slug h
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/stdin" method="post">
-向应用的 stdin 写入数据。
+向 app 的 stdin 写入数据。
 
-你想传递给应用的负载应作为请求体发送到该端点。
+你想传入 addon 的 payload 应作为请求的 body 提供给该 endpoint。
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/stop" method="post">
-停止应用
+停止一个 app
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/uninstall" method="post">
-卸载应用
+卸载一个 app
 
-**负载：**
+**Payload:**
 
-| 键 | 类型 | 可选 | 说明 |
-| ------------- | ------- | -------- | -------------------------------------- |
-| remove_config | boolean | True     | 删除应用的配置文件夹（如果有） |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| remove_config | boolean | True | 删除 addon 的 config 文件夹（如果使用了） |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/addons/<addon>/update" method="post">
-更新应用
+更新一个 app
 
-**已弃用！** 请改用 [`/store/addons/<addon>/update`](#store)。
+**已弃用！** 请使用 [`/store/addons/<addon>/update`](#store) 代替。
 
 </ApiEndpoint>
 
 ### 音频
 
 <ApiEndpoint path="/audio/default/input" method="post">
-Set a profile as the default input profile
+将一个 profile 设为默认输入 profile
 
-**负载：**
+**Payload:**
 
-| key  | type   | optional | description             |
-| ---- | ------ | -------- | ----------------------- |
-| name | string | False    | The name of the profile |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| name | string | False | profile 的名称 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/default/output" method="post">
-Set a profile as the default output profile
+将一个 profile 设为默认输出 profile
 
-**负载：**
+**Payload:**
 
-| key  | type   | optional | description             |
-| ---- | ------ | -------- | ----------------------- |
-| name | string | False    | The name of the profile |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| name | string | False | profile 的名称 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/info" method="get">
-Return information about the audio plugin.
+返回关于 audio 插件的信息。
 
-**返回数据：**
+**Returned data:**
 
-| key              | type       | description                      |
-| ---------------- | ---------- | -------------------------------- |
-| host             | string     | The IP address of the plugin     |
-| version          | string     | The installed observer version   |
-| version_latest   | string     | The latest published version     |
-| update_available | boolean    | `true` if an update is available |
-| audio            | dictionary | An [Audio model](/developers/api/supervisor/models#audio) |
+| key | type | description |
+|-----|------|-------------|
+| host | string | 插件的 IP 地址 |
+| version | string | 已安装的 observer 版本 |
+| version_latest | string | 最新发布的版本 |
+| update_available | boolean | 有更新可用时为 `true` |
+| audio | dictionary | 一个 [Audio model](api/supervisor/models.md#audio) |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -577,117 +573,113 @@ Return information about the audio plugin.
 
 <ApiEndpoint path="/audio/logs" method="get">
 
-Get logs for the audio plugin container via the Systemd journal backend.
+通过 Systemd journal 后端获取 audio 插件容器的 logs。
 
-The endpoint accepts the same headers and provides the same functionality as
-`/host/logs`.
+该 endpoint 接受与 `/host/logs` 相同的 headers 并提供相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/logs/follow" method="get">
 
-Identical to `/audio/logs` except it continuously returns new log entries.
+与 `/audio/logs` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/logs/latest" method="get">
 
-Return all logs of the latest startup of the audio plugin container.
+返回 audio 插件容器最近一次启动的所有 logs。
 
-The `Range` header is ignored but the `lines` query parameter can be used.
+`Range` header 被忽略，但可以使用 `lines` query 参数。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/logs/boots/<bootid>" method="get">
 
-Get logs for the audio plugin container related to a specific boot.
+获取与特定 boot 相关的 audio 插件容器 logs。
 
-The `bootid` parameter is interpreted in the same way as in
-`/host/logs/boots/<bootid>` and the endpoint otherwise provides the same
-functionality as `/host/logs`.
+`bootid` 参数的解释方式与 `/host/logs/boots/<bootid>` 中相同，该 endpoint 否则提供与 `/host/logs` 相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/logs/boots/<bootid>/follow" method="get">
 
-Identical to `/audio/logs/boots/<bootid>` except it continuously returns
-new log entries.
+与 `/audio/logs/boots/<bootid>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/mute/input" method="post">
-Mute input devices
+静音输入设备
 
-**负载：**
+**Payload:**
 
-| key    | type    | optional | description             |
-| ------ | ------- | -------- | ----------------------- |
-| index  | string  | False    | The index of the device |
-| active | boolean | False    | `true` if muted         |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| index | string | False | 设备的索引 |
+| active | boolean | False | 已静音时为 `true` |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/mute/input/<application>" method="post">
-Mute input for a specific application
+对特定 application 静音输入
 
-**负载：**
+**Payload:**
 
-| key    | type    | optional | description             |
-| ------ | ------- | -------- | ----------------------- |
-| index  | string  | False    | The index of the device |
-| active | boolean | False    | `true` if muted         |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| index | string | False | 设备的索引 |
+| active | boolean | False | 已静音时为 `true` |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/mute/output" method="post">
-Mute output devices
+静音输出设备
 
-**负载：**
+**Payload:**
 
-| key    | type    | optional | description             |
-| ------ | ------- | -------- | ----------------------- |
-| index  | string  | False    | The index of the device |
-| active | boolean | False    | `true` if muted         |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| index | string | False | 设备的索引 |
+| active | boolean | False | 已静音时为 `true` |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/mute/output/<application>" method="post">
-Mute output for a specific application
+对特定 application 静音输出
 
-**负载：**
+**Payload:**
 
-| key    | type    | optional | description             |
-| ------ | ------- | -------- | ----------------------- |
-| index  | string  | False    | The index of the device |
-| active | boolean | False    | `true` if muted         |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| index | string | False | 设备的索引 |
+| active | boolean | False | 已静音时为 `true` |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/profile" method="post">
-Create an audio profile
+创建一个 audio profile
 
-**负载：**
+**Payload:**
 
-| key  | type   | optional | description                  |
-| ---- | ------ | -------- | ---------------------------- |
-| card | string | False    | The name of the audio device |
-| name | string | False    | The name of the profile      |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| card | string | False | audio 设备的名称 |
+| name | string | False | profile 的名称 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/reload" method="post">
-Reload audio information
+重新加载 audio 信息
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/restart" method="post">
-Restart the audio plugin
+重启 audio 插件
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/stats" method="get">
 
-Returns a [Stats model](/developers/api/supervisor/models#stats) for the audio plugin.
+为该 audio 插件返回一个 [Stats model](api/supervisor/models.md#stats)。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -705,113 +697,113 @@ Returns a [Stats model](/developers/api/supervisor/models#stats) for the audio p
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/update" method="post">
-Update the audio plugin
+更新 audio 插件
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| version | string | The version you want to install, default is the latest version |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 要安装的版本，默认为最新版本 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/volume/input" method="post">
-Set the input volume
+设置输入音量
 
-**负载：**
+**Payload:**
 
-| key    | type   | optional | description                         |
-| ------ | ------ | -------- | ----------------------------------- |
-| index  | string | False    | The index of the device             |
-| volume | float  | False    | The volume (between `0.0`and `1.0`) |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| index | string | False | 设备的索引 |
+| volume | float | False | 音量（介于 `0.0` 和 `1.0` 之间） |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/volume/input/<application>" method="post">
-Set the input volume for a specific application
+为特定 application 设置输入音量
 
-**负载：**
+**Payload:**
 
-| key    | type   | optional | description                         |
-| ------ | ------ | -------- | ----------------------------------- |
-| index  | string | False    | The index of the device             |
-| volume | float  | False    | The volume (between `0.0`and `1.0`) |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| index | string | False | 设备的索引 |
+| volume | float | False | 音量（介于 `0.0` 和 `1.0` 之间） |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/volume/output" method="post">
-Set the output volume
+设置输出音量
 
-**负载：**
+**Payload:**
 
-| key    | type   | optional | description                         |
-| ------ | ------ | -------- | ----------------------------------- |
-| index  | string | False    | The index of the device             |
-| volume | float  | False    | The volume (between `0.0`and `1.0`) |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| index | string | False | 设备的索引 |
+| volume | float | False | 音量（介于 `0.0` 和 `1.0` 之间） |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/audio/volume/output/<application>" method="post">
-Set the output volume for a specific application
+为特定 application 设置输出音量
 
-**负载：**
+**Payload:**
 
-| key    | type   | optional | description                         |
-| ------ | ------ | -------- | ----------------------------------- |
-| index  | string | False    | The index of the device             |
-| volume | float  | False    | The volume (between `0.0`and `1.0`) |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| index | string | False | 设备的索引 |
+| volume | float | False | 音量（介于 `0.0` 和 `1.0` 之间） |
 
 </ApiEndpoint>
 
 ### 认证
 
 <ApiEndpoint path="/auth" method="get">
-You can do authentication against Home Assistant Core using Basic Authentication.
-Use the `X-Supervisor-Token` header to provide the Supervisor authentication token.
-See the corresponding POST method to provide JSON or urlencoded credentials.
+你可以使用 Basic Authentication 对 Home Assistant Core 进行认证。
+使用 `X-Supervisor-Token` header 提供 Supervisor authentication token。
+请参阅对应的 POST 方法以提供 JSON 或 urlencoded 凭据。
 </ApiEndpoint>
 
 <ApiEndpoint path="/auth" method="post">
-You can do authentication against Home Assistant Core.
-You can POST the data as JSON, as urlencoded (with `application/x-www-form-urlencoded` header) or by using use basic authentication.
-For using Basic authentication, you can use the `X-Supervisor-Token` for Supervisor authentication token.
+你可以对 Home Assistant Core 进行认证。
+你可以以 JSON、urlencoded（使用 `application/x-www-form-urlencoded` header）或使用 basic authentication 的方式 POST 数据。
+使用 Basic authentication 时，你可以使用 `X-Supervisor-Token` 作为 Supervisor authentication token。
 
-**负载：**
+**Payload:**
 
-| key      | type   | description               |
-| -------- | ------ | ------------------------- |
-| username | string | The username for the user |
-| password | string | The password for the user |
+| key | type | description |
+|-----|------|-------------|
+| username | string | 用户的 username |
+| password | string | 用户的 password |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/auth/reset" method="post">
-Set a new password for a Home Assistant Core user.
+为 Home Assistant Core 用户设置新密码。
 
-**负载：**
+**Payload:**
 
-| key      | type   | description                   |
-| -------- | ------ | ----------------------------- |
-| username | string | The username for the user     |
-| password | string | The new password for the user |
+| key | type | description |
+|-----|------|-------------|
+| username | string | 用户的 username |
+| password | string | 用户的新 password |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/auth/cache" method="delete">
 
-Reset internal authentication cache, this is useful if you have changed the password for a user and need to clear the internal cache.
+重置内部 authentication cache，如果你在更改用户密码后需要清除内部 cache，这将非常有用。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/auth/list" method="get">
 
-List all users in Home Assistant to help with credentials recovery. Requires an admin level authentication token.
+列出 Home Assistant 中的所有用户，以帮助凭据恢复。需要一个 admin 级别的 authentication token。
 
-**负载：**
+**Payload:**
 
-| key      | type   | description                                                        |
-| -------- | ------ | ------------------------------------------------------------------ |
-| users    | list   | List of the Home Assistant [users](/developers/api/supervisor/models#user). |
+| key | type | description |
+|-----|------|-------------|
+| users | list | Home Assistant [users](api/supervisor/models.md#user) 列表。 |
 
 </ApiEndpoint>
 
@@ -819,9 +811,9 @@ List all users in Home Assistant to help with credentials recovery. Requires an 
 
 <ApiEndpoint path="/backups" method="get">
 
-Return a list of [Backups](/developers/api/supervisor/models#backup)
+返回一个 [Backups](api/supervisor/models.md#backup) 列表
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -849,16 +841,16 @@ Return a list of [Backups](/developers/api/supervisor/models#backup)
 
 <ApiEndpoint path="/backups/info" method="get">
 
-Return information about backup manager.
+返回关于 backup manager 的信息。
 
-**返回数据：**
+**Returned data:**
 
-| key              | type       | description                                          |
-| ---------------- | ---------- | ---------------------------------------------------- |
-| backups          | list       | A list of [Backups](/developers/api/supervisor/models#backup) |
-| days_until_stale | int        | Number of days until a backup is considered stale    |
+| key | type | description |
+|-----|------|-------------|
+| backups | list | [Backups](api/supervisor/models.md#backup) 列表 |
+| days_until_stale | int | 距 backup 被视为 stale 的天数 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -887,20 +879,20 @@ Return information about backup manager.
 
 <ApiEndpoint path="/backups/new/full" method="post">
 
-Create a full backup.
+创建一个 full backup。
 
-**负载：**
+**Payload:**
 
-| key                            | type           | optional | description                                          |
-| ------------------------------ | -------------- | -------- | ---------------------------------------------------- |
-| name                           | string         | True     | The name you want to give the backup                 |
-| password                       | string         | True     | The password you want to give the backup             |
-| compressed                     | boolean        | True     | `false` to create uncompressed backups               |
-| location                       | string or null | True     | Name of a backup mount or `null` for /backup         |
-| homeassistant_exclude_database | boolean        | True     | Exclude the Home Assistant database file from backup |
-| background                     | boolean        | True     | Return `job_id` immediately, do not wait for backup to complete. Clients must check job for status and slug. |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| name | string | True | 你想赋予 backup 的名称 |
+| password | string | True | 你想赋予 backup 的密码 |
+| compressed | boolean | True | `false` 以创建未压缩的 backups |
+| location | string or null | True | backup mount 名称，或 `null` 表示 /backup |
+| homeassistant_exclude_database | boolean | True | 从 backup 中排除 Home Assistant 数据库文件 |
+| background | boolean | True | 立即返回 `job_id`，不等待 backup 完成。客户端必须检查 job 以获取 status 和 slug。 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -912,9 +904,9 @@ Create a full backup.
 
 <ApiEndpoint path="/backups/new/upload" method="post">
 
-Upload a backup.
+上传一个 backup。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -925,8 +917,8 @@ Upload a backup.
 
 :::note
 
-Error responses from this API may also include a `job_id` if the message alone cannot accurately describe what happened.
-Callers should direct users to review the job or supervisor logs to get an understanding of what occurred.
+如果单独的消息无法准确描述发生了什么，此 API 的错误响应也可能包含 `job_id`。
+调用者应引导用户查看 job 或 supervisor logs，以了解发生了什么。
 
 :::
 
@@ -934,25 +926,25 @@ Callers should direct users to review the job or supervisor logs to get an under
 
 <ApiEndpoint path="/backups/new/partial" method="post">
 
-Create a partial backup.
+创建一个 partial backup。
 
-**负载：**
+**Payload:**
 
-| key                            | type           | optional | description                                          |
-| ------------------------------ | -------------- | -------- | ---------------------------------------------------- |
-| name                           | string         | True     | The name you want to give the backup                 |
-| password                       | string         | True     | The password you want to give the backup             |
-| homeassistant                  | boolean        | True     | Add home assistant core settings to the backup       |
-| addons                         | list           | True     | A list of strings representing app slugs          |
-| folders                        | list           | True     | A list of strings representing directories           |
-| compressed                     | boolean        | True     | `false` to create uncompressed backups               |
-| location                       | string or null | True     | Name of a backup mount or `null` for /backup         |
-| homeassistant_exclude_database | boolean        | True     | Exclude the Home Assistant database file from backup |
-| background                     | boolean        | True     | Return `job_id` immediately, do not wait for backup to complete. Clients must check job for status and slug. |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| name | string | True | 你想赋予 backup 的名称 |
+| password | string | True | 你想赋予 backup 的密码 |
+| homeassistant | boolean | True | 将 home assistant core 设置添加到 backup 中 |
+| addons | list | True | 表示 app slugs 的字符串列表 |
+| folders | list | True | 表示目录的字符串列表 |
+| compressed | boolean | True | `false` 以创建未压缩的 backups |
+| location | string or null | True | backup mount 名称，或 `null` 表示 /backup |
+| homeassistant_exclude_database | boolean | True | 从 backup 中排除 Home Assistant 数据库文件 |
+| background | boolean | True | 立即返回 `job_id`，不等待 backup 完成。客户端必须检查 job 以获取 status 和 slug。 |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -963,88 +955,86 @@ Create a partial backup.
 
 :::note
 
-Error responses from this API may also include a `job_id` if the message alone cannot accurately describe what happened.
-Callers should direct users to review the job or supervisor logs to get an understanding of what occurred.
+如果单独的消息无法准确描述发生了什么，此 API 的错误响应也可能包含 `job_id`。
+调用者应引导用户查看 job 或 supervisor logs，以了解发生了什么。
 
 :::
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/backups/options" method="post">
-Update options for backup manager, you need to supply at least one of the payload keys to the API call.
+更新 backup manager 的 options，你需要在 API 调用中至少提供一个 payload key。
 
-**负载：**
+**Payload:**
 
-| key              | type           | description                                           |
-| ---------------- | -------------- | ----------------------------------------------------- |
-| days_until_stale | int            | Set number of days until a backup is considered stale |
+| key | type | description |
+|-----|------|-------------|
+| days_until_stale | int | 设置距 backup 被视为 stale 的天数 |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/backups/reload" method="post">
 
-Reload backup from storage.
+从存储中重新加载 backup。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/backups/freeze" method="post">
 
-Put Supervisor in a freeze state and prepare Home Assistant and addons for an external backup.
+将 Supervisor 置于 freeze 状态，并为外部 backup 准备 Home Assistant 和 addons。
 
 :::note
 
-This does not take a backup. It prepares Home Assistant and addons for one but the expectation
-is that the user is using an external tool to make the backup. Such as the snapshot feature in
-KVM or Proxmox. The caller should call `/backups/thaw` when done.
+此操作不会执行 backup。它只是为 Home Assistant 和 addons 准备 backup，但预期是用户使用外部工具来执行 backup。例如 KVM 或 Proxmox 的 snapshot 功能。调用者应在完成后调用 `/backups/thaw`。
 
 :::
 
-**负载：**
+**Payload:**
 
-| key     | type  | optional | description                                                                   |
-| ------- | ----- | -------- | ----------------------------------------------------------------------------- |
-| timeout | int   | True     | Seconds before freeze times out and thaw begins automatically (default: 600). |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| timeout | int | True | freeze 超时并自动开始 thaw 之前的秒数（默认：600）。 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/backups/thaw" method="post">
 
-End a freeze initiated by `/backups/freeze` and resume normal behavior in Home Assistant and addons.
+结束由 `/backups/freeze` 发起的 freeze，并恢复 Home Assistant 和 addons 的正常行为。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/backups/<backup>/download" method="get">
 
-Download the backup file with the given slug.
+以下载给定 slug 的 backup 文件。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/backups/<backup>/info" method="get">
 
-Returns a [Backup details model](/developers/api/supervisor/models#backup-details) for the app.
+为该 app 返回一个 [Backup details model](api/supervisor/models.md#backup-details)。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/backups/<backup>" method="delete">
 
-Removes the backup file with the given slug.
+移除给定 slug 的 backup 文件。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/backups/<backup>/restore/full" method="post">
 
-Does a full restore of the backup with the given slug.
+对给定 slug 的 backup 执行 full restore。
 
-**负载：**
+**Payload:**
 
-| key        | type    | optional | description                          |
-| ---------- | ------- | -------- | ------------------------------------ |
-| password   | string  | True     | The password for the backup if any   |
-| background | boolean | True     | Return `job_id` immediately, do not wait for restore to complete. Clients must check job for status. |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| password | string | True | backup 的密码（如果有） |
+| background | boolean | True | 立即返回 `job_id`，不等待 restore 完成。客户端必须检查 job 以获取 status。 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1054,8 +1044,8 @@ Does a full restore of the backup with the given slug.
 
 :::note
 
-Error responses from this API may also include a `job_id` if the message alone cannot accurately describe what happened.
-Callers should direct users to review the job or supervisor logs to get an understanding of what occurred.
+如果单独的消息无法准确描述发生了什么，此 API 的错误响应也可能包含 `job_id`。
+调用者应引导用户查看 job 或 supervisor logs，以了解发生了什么。
 
 :::
 
@@ -1063,21 +1053,21 @@ Callers should direct users to review the job or supervisor logs to get an under
 
 <ApiEndpoint path="/backups/<backup>/restore/partial" method="post">
 
-Does a partial restore of the backup with the given slug.
+对给定 slug 的 backup 执行 partial restore。
 
-**负载：**
+**Payload:**
 
-| key           | type    | optional | description                                    |
-| ------------- | ------- | -------- | ---------------------------------------------- |
-| homeassistant | boolean | True     | `true` if Home Assistant should be restored    |
-| addons        | list    | True     | A list of app slugs that should be restored |
-| folders       | list    | True     | A list of directories that should be restored  |
-| password      | string  | True     | The password for the backup if any             |
-| background    | boolean | True     | Return `job_id` immediately, do not wait for restore to complete. Clients must check job for status. |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| homeassistant | boolean | True | 应恢复 Home Assistant 时为 `true` |
+| addons | list | True | 应恢复的 app slugs 列表 |
+| folders | list | True | 应恢复的目录列表 |
+| password | string | True | backup 的密码（如果有） |
+| background | boolean | True | 立即返回 `job_id`，不等待 restore 完成。客户端必须检查 job 以获取 status。 |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1087,8 +1077,8 @@ Does a partial restore of the backup with the given slug.
 
 :::note
 
-Error responses from this API may also include a `job_id` if the message alone cannot accurately describe what happened.
-Callers should direct users to review the job or supervisor logs to get an understanding of what occurred.
+如果单独的消息无法准确描述发生了什么，此 API 的错误响应也可能包含 `job_id`。
+调用者应引导用户查看 job 或 supervisor logs，以了解发生了什么。
 
 :::
 
@@ -1097,17 +1087,17 @@ Callers should direct users to review the job or supervisor logs to get an under
 ### CLI
 
 <ApiEndpoint path="/cli/info" method="get">
-Returns information about the CLI plugin
+返回关于 CLI 插件的信息
 
-**返回数据：**
+**Returned data:**
 
-| key              | type       | description                      |
-| ---------------- | ---------- | -------------------------------- |
-| version          | string     | The installed cli version        |
-| version_latest   | string     | The latest published version     |
-| update_available | boolean    | `true` if an update is available |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 已安装的 cli 版本 |
+| version_latest | string | 最新发布的版本 |
+| update_available | boolean | 有更新可用时为 `true` |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1121,9 +1111,9 @@ Returns information about the CLI plugin
 
 <ApiEndpoint path="/cli/stats" method="get">
 
-Returns a [Stats model](/developers/api/supervisor/models#stats) for the CLI plugin.
+为 CLI 插件返回一个 [Stats model](api/supervisor/models.md#stats)。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1141,56 +1131,56 @@ Returns a [Stats model](/developers/api/supervisor/models#stats) for the CLI plu
 </ApiEndpoint>
 
 <ApiEndpoint path="/cli/update" method="post">
-Update the CLI plugin
+更新 CLI 插件
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| version | string | The version you want to install, default is the latest version |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 要安装的版本，默认为最新版本 |
 
 </ApiEndpoint>
 
-### Core
+### 核心
 
 <ApiEndpoint path="/core/api" method="get">
-Proxy GET API calls to the Home Assistant API
+将 GET API 调用代理到 Home Assistant API
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/api" method="post">
-Proxy POST API calls to the Home Assistant API
+将 POST API 调用代理到 Home Assistant API
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/check" method="post">
-Run a configuration check
+运行 configuration 检查
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/info" method="get">
-Returns information about the Home Assistant core
+返回关于 Home Assistant core 的信息
 
-**返回数据：**
+**Returned data:**
 
-| key                      | type           | description                                                |
-| ------------------------ | -------------- | ---------------------------------------------------------- |
-| version                  | string         | The installed core version                                 |
-| version_latest           | string         | The latest published version in the active channel         |
-| update_available         | boolean        | `true` if an update is available                           |
-| arch                     | string         | The architecture of the host (armhf, aarch64, i386, amd64) |
-| machine                  | string         | The machine type that is running the host                  |
-| ip_address               | string         | The internal docker IP address to the supervisor           |
-| image                    | string         | The container image that is running the core               |
-| boot                     | boolean        | `true` if it should start on boot                          |
-| port                     | int            | The port Home Assistant is running on                      |
-| ssl                      | boolean        | `true` if Home Assistant is using SSL                      |
-| watchdog                 | boolean        | `true` if watchdog is enabled                              |
-| wait_boot                | int            | Max time to wait during boot                               |
-| audio_input              | string or null | The description of the audio input device                  |
-| audio_output             | string or null | The description of the audio output device                 |
-| backups_exclude_database | boolean        | Backups exclude Home Assistant database file by default    |
-| duplicate_log_file       | boolean        | Home Assistant duplicates logs to a file                   |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 已安装的 core 版本 |
+| version_latest | string | 活动 channel 中最新发布的版本 |
+| update_available | boolean | 有更新可用时为 `true` |
+| arch | string | host 的架构（armhf, aarch64, i386, amd64） |
+| machine | string | 运行 host 的 machine 类型 |
+| ip_address | string | 指向 supervisor 的内部 docker IP 地址 |
+| image | string | 运行 core 的容器镜像 |
+| boot | boolean | 应在 boot 时启动时为 `true` |
+| port | int | Home Assistant 运行的端口 |
+| ssl | boolean | Home Assistant 使用 SSL 时为 `true` |
+| watchdog | boolean | 已启用 watchdog 时为 `true` |
+| wait_boot | int | boot 期间等待的最大时间 |
+| audio_input | string or null | audio 输入设备的描述 |
+| audio_output | string or null | audio 输出设备的描述 |
+| backups_exclude_database | boolean | 默认在 backups 中排除 Home Assistant 数据库文件 |
+| duplicate_log_file | boolean | Home Assistant 将 logs 复制到一个文件中 |
 
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1202,7 +1192,7 @@ Returns information about the Home Assistant core
   "ip_address": "172.0.0.15",
   "image": "homeassistant/home-assistant",
   "boot": true,
-  "port": 8123,
+  "port": 80,
   "ssl": false,
   "watchdog": true,
   "wait_boot": 800,
@@ -1215,105 +1205,101 @@ Returns information about the Home Assistant core
 
 <ApiEndpoint path="/core/logs" method="get">
 
-Get logs for the Home Assistant Core container via the Systemd journal backend.
+通过 Systemd journal 后端获取 Home Assistant Core 容器的 logs。
 
-The endpoint accepts the same headers and provides the same functionality as
-`/host/logs`.
+该 endpoint 接受与 `/host/logs` 相同的 headers 并提供相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/logs/follow" method="get">
 
-Identical to `/core/logs` except it continuously returns new log entries.
+与 `/core/logs` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/logs/latest" method="get">
 
-Return all logs of the latest startup of the Home Assistant Core container.
+返回 Home Assistant Core 容器最近一次启动的所有 logs。
 
-The `Range` header is ignored but the `lines` query parameter can be used.
+`Range` header 被忽略，但可以使用 `lines` query 参数。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/logs/boots/<bootid>" method="get">
 
-Get logs for the Home Assistant Core container related to a specific boot.
+获取与特定 boot 相关的 Home Assistant Core 容器 logs。
 
-The `bootid` parameter is interpreted in the same way as in
-`/host/logs/boots/<bootid>` and the endpoint otherwise provides the same
-functionality as `/host/logs`.
+`bootid` 参数的解释方式与 `/host/logs/boots/<bootid>` 中相同，该 endpoint 否则提供与 `/host/logs` 相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/logs/boots/<bootid>/follow" method="get">
 
-Identical to `/core/logs/boots/<bootid>` except it continuously returns
-new log entries.
+与 `/core/logs/boots/<bootid>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/options" method="post">
-Update options for Home Assistant, you need to supply at least one of the payload keys to the API call.
-You need to call `/core/restart` after updating the options.
+更新 Home Assistant 的 options，你需要在 API 调用中至少提供一个 payload key。
+更新 options 后，你需要调用 `/core/restart`。
 
 :::tip
-Passing `image`, `refresh_token`, `audio_input` or `audio_output` with `null` resets the option.
+传递 `image`、`refresh_token`、`audio_input` 或 `audio_output` 且值为 `null` 可重置该 option。
 :::
 
-**负载：**
+**Payload:**
 
-| key                      | type           | description                                                 |
-| ------------------------ | -------------- | ----------------------------------------------------------- |
-| boot                     | boolean        | Start Core on boot                                          |
-| image                    | string or null | Name of custom image                                        |
-| port                     | int            | The port that Home Assistant run on                         |
-| ssl                      | boolean        | `true` to enable SSL                                        |
-| watchdog                 | boolean        | `true` to enable the watchdog                               |
-| wait_boot                | int            | Time to wait for Core to startup                            |
-| refresh_token            | string or null | Token to authenticate with Core                             |
-| audio_input              | string or null | Profile name for audio input                                |
-| audio_output             | string or null | Profile name for audio output                               |
-| backups_exclude_database | boolean        | `true` to exclude Home Assistant database file from backups |
-| duplicate_log_file       | boolean        | `true` to duplicate Home Assistant logs to a file           |
+| key | type | description |
+|-----|------|-------------|
+| boot | boolean | 在 boot 时启动 Core |
+| image | string or null | 自定义镜像的名称 |
+| port | int | Home Assistant 运行的端口 |
+| ssl | boolean | 启用 SSL 时为 `true` |
+| watchdog | boolean | 启用 watchdog 时为 `true` |
+| wait_boot | int | 等待 Core 启动的时间 |
+| refresh_token | string or null | 用于与 Core 认证的 token |
+| audio_input | string or null | audio 输入的 profile 名称 |
+| audio_output | string or null | audio 输出的 profile 名称 |
+| backups_exclude_database | boolean | 从 backups 中排除 Home Assistant 数据库文件时为 `true` |
+| duplicate_log_file | boolean | 将 Home Assistant logs 复制到一个文件中时为 `true` |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/rebuild" method="post">
-Rebuild the Home Assistant core container
+重建 Home Assistant core 容器
 
-**负载：**
+**Payload:**
 
-| key       | type       | optional | description                      |
-| --------- | ---------- | -------- | -------------------------------- |
-| safe_mode | boolean    | True     | Rebuild Core into safe mode      |
-| force     | boolean    | True     | Force rebuild during a Home Assistant offline db migration |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| safe_mode | boolean | True | 以 safe mode 重建 Core |
+| force | boolean | True | 在 Home Assistant offline db migration 期间强制重建 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/restart" method="post">
-Restart the Home Assistant core container
+重启 Home Assistant core 容器
 
-**负载：**
+**Payload:**
 
-| key       | type       | optional | description                      |
-| --------- | ---------- | -------- | -------------------------------- |
-| safe_mode | boolean    | True     | Restart Core into safe mode      |
-| force     | boolean    | True     | Force restart during a Home Assistant offline db migration |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| safe_mode | boolean | True | 以 safe mode 重启 Core |
+| force | boolean | True | 在 Home Assistant offline db migration 期间强制重启 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/start" method="post">
-Start the Home Assistant core container
+启动 Home Assistant core 容器
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/stats" method="get">
 
-Returns a [Stats model](/developers/api/supervisor/models#stats) for the Home Assistant core.
+为 Home Assistant core 返回一个 [Stats model](api/supervisor/models.md#stats)。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1331,45 +1317,45 @@ Returns a [Stats model](/developers/api/supervisor/models#stats) for the Home As
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/stop" method="post">
-Stop the Home Assistant core container
+停止 Home Assistant core 容器
 
-**负载：**
+**Payload:**
 
-| key       | type       | optional | description                      |
-| --------- | ---------- | -------- | -------------------------------- |
-| force     | boolean    | True     | Force stop during a Home Assistant offline db migration |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| force | boolean | True | 在 Home Assistant offline db migration 期间强制停止 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/update" method="post">
-Update Home Assistant core
+更新 Home Assistant core
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| version | string | The version you want to install, default is the latest version |
-| backup | boolean | Create a partial backup of core and core configuration before updating, default is false |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 要安装的版本，默认为最新版本 |
+| backup | boolean | 在更新前创建 core 和 core configuration 的 partial backup，默认为 false |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/core/websocket" method="get">
-Proxy to Home Assistant Core websocket.
+代理到 Home Assistant Core websocket。
 </ApiEndpoint>
 
 ### 发现
 
 <ApiEndpoint path="/discovery" method="get">
-Return information about enabled discoveries.
+返回关于已启用 discoveries 的信息。
 
-**返回数据：**
+**Returned data:**
 
-| key       | type       | description                                                                     |
-| --------- | ---------- | ------------------------------------------------------------------------------- |
-| discovery | list       | A list of [Discovery models](/developers/api/supervisor/models#discovery)                                |
-| services  | dictionary | A dictionary of services that contains a list of apps that have that service. |
+| key | type | description |
+|-----|------|-------------|
+| discovery | list | [Discovery models](api/supervisor/models.md#discovery) 列表 |
+| services | dictionary | services 的字典，包含拥有该 service 的 apps 列表。 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1390,16 +1376,16 @@ Return information about enabled discoveries.
 </ApiEndpoint>
 
 <ApiEndpoint path="/discovery" method="post">
-Create a discovery service
+创建一个 discovery service
 
-**负载：**
+**Payload:**
 
-| key     | type       | optional | description                      |
-| ------- | ---------- | -------- | -------------------------------- |
-| service | string     | False    | The name of the service          |
-| config  | dictionary | False    | The configuration of the service |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| service | string | False | service 的名称 |
+| config | dictionary | False | service 的 configuration |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1411,34 +1397,34 @@ Create a discovery service
 
 <ApiEndpoint path="/discovery/<uuid>" method="get">
 
-Get a [discovery model](/developers/api/supervisor/models#discovery) for a UUID.
+获取一个 UUID 的 [discovery model](api/supervisor/models.md#discovery)。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/discovery/<uuid>" method="delete">
-Delete a specific service.
+删除一个特定的 service。
 </ApiEndpoint>
 
 ### DNS
 
 <ApiEndpoint path="/dns/info" method="get">
-Return information about the DNS plugin.
+返回关于 DNS 插件的信息。
 
-**返回数据：**
+**Returned data:**
 
-| key              | type    | description                      |
-| ---------------- | ------- | -------------------------------- |
-| fallback         | bool    | Try fallback DNS on failure      |
-| host             | string  | The IP address of the plugin     |
-| llmnr            | bool    | Can resolve LLMNR hostnames      |
-| locals           | list    | A list of DNS servers            |
-| mdns             | bool    | Can resolve MulticastDNS hostnames |
-| servers          | list    | A list of DNS servers            |
-| update_available | boolean | `true` if an update is available |
-| version          | string  | The installed observer version   |
-| version_latest   | string  | The latest published version     |
+| key | type | description |
+|-----|------|-------------|
+| fallback | bool | 失败时尝试 fallback DNS |
+| host | string | 插件的 IP 地址 |
+| llmnr | bool | 能解析 LLMNR hostnames |
+| locals | list | DNS servers 列表 |
+| mdns | bool | 能解析 MulticastDNS hostnames |
+| servers | list | DNS servers 列表 |
+| update_available | boolean | 有更新可用时为 `true` |
+| version | string | 已安装的 observer 版本 |
+| version_latest | string | 最新发布的版本 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1458,71 +1444,67 @@ Return information about the DNS plugin.
 
 <ApiEndpoint path="/dns/logs" method="get">
 
-Get logs for the DNS plugin container via the Systemd journal backend.
+通过 Systemd journal 后端获取 DNS 插件容器的 logs。
 
-The endpoint accepts the same headers and provides the same functionality as
-`/host/logs`.
+该 endpoint 接受与 `/host/logs` 相同的 headers 并提供相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/logs/follow" method="get">
 
-Identical to `/dns/logs` except it continuously returns new log entries.
+与 `/dns/logs` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/logs/latest" method="get">
 
-Return all logs of the latest startup of the DNS plugin container.
+返回 DNS 插件容器最近一次启动的所有 logs。
 
-The `Range` header is ignored but the `lines` query parameter can be used.
+`Range` header 被忽略，但可以使用 `lines` query 参数。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/logs/boots/<bootid>" method="get">
 
-Get logs for the DNS plugin container related to a specific boot.
+获取与特定 boot 相关的 DNS 插件容器 logs。
 
-The `bootid` parameter is interpreted in the same way as in
-`/host/logs/boots/<bootid>` and the endpoint otherwise provides the same
-functionality as `/host/logs`.
+`bootid` 参数的解释方式与 `/host/logs/boots/<bootid>` 中相同，该 endpoint 否则提供与 `/host/logs` 相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/logs/boots/<bootid>/follow" method="get">
 
-Identical to `/dns/logs/boots/<bootid>` except it continuously returns
-new log entries.
+与 `/dns/logs/boots/<bootid>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/options" method="post">
-Set DNS options
+设置 DNS options
 
-**负载：**
+**Payload:**
 
-| key      | type | optional | description                 |
-| -------  | ---- | -------- | --------------------------- |
-| fallback | bool | True     | Enable/Disable fallback DNS |
-| servers  | list | True     | A list of DNS servers       |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| fallback | bool | True | 启用/禁用 fallback DNS |
+| servers | list | True | DNS servers 列表 |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/reset" method="post">
-Reset the DNS configuration.
+重置 DNS configuration。
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/restart" method="post">
-Restart the DNS plugin
+重启 DNS 插件
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/stats" method="get">
 
-Returns a [Stats model](/developers/api/supervisor/models#stats) for the dns plugin.
+为 DNS 插件返回一个 [Stats model](api/supervisor/models.md#stats)。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1540,32 +1522,32 @@ Returns a [Stats model](/developers/api/supervisor/models#stats) for the dns plu
 </ApiEndpoint>
 
 <ApiEndpoint path="/dns/update" method="post">
-Update the DNS plugin
+更新 DNS 插件
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| version | string | The version you want to install, default is the latest version |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 要安装的版本，默认为最新版本 |
 
 </ApiEndpoint>
 
 ### Docker
 
 <ApiEndpoint path="/docker/info" method="get">
-Returns information about the docker instance.
+返回关于 docker 实例的信息。
 
-**返回数据：**
+**Returned data:**
 
-| key         | type   | description                        |
-| ----------- | ------ | ---------------------------------- |
-| version     | string | The version of the docker engine   |
-| enable_ipv6 | bool   | Enable/Disable IPv6 for containers |
-| storage     | string | The storage type                   |
-| logging     | string | The logging type                   |
-| registries  | dictionary | A dictionary of dictionaries containing `username` and `password` keys for registries. |
+| key | type | description |
+|-----|------|-------------|
+| version | string | docker engine 的版本 |
+| enable_ipv6 | bool | 为 containers 启用/禁用 IPv6 |
+| storage | string | 存储类型 |
+| logging | string | 日志类型 |
+| registries | dictionary | 包含 `username` 和 `password` keys 的字典集合，用于 registries。 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1580,22 +1562,22 @@ Returns information about the docker instance.
 </ApiEndpoint>
 
 <ApiEndpoint path="/docker/options" method="post">
-Set docker options
+设置 docker options
 
-**负载：**
+**Payload:**
 
-| key         | type | optional | description                        |
-| ----------- | ---- | -------- | ---------------------------------- |
-| enable_ipv6 | bool | True     | Enable/Disable IPv6 for containers |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| enable_ipv6 | bool | True | 为 containers 启用/禁用 IPv6 |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/docker/registries" method="get">
-Get all configured container registries, this returns a dict with the registry hostname as the key, and a dictionary containing the username configured for that registry.
+获取所有已配置的 container registries，返回一个 dict，以 registry hostname 作为 key，包含为对应 registry 配置的 username 字典。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1608,15 +1590,15 @@ Get all configured container registries, this returns a dict with the registry h
 </ApiEndpoint>
 
 <ApiEndpoint path="/docker/registries" method="post">
-Add a new container registry.
+添加一个新的 container registry。
 
-**负载：**
+**Payload:**
 
-| key      | type       | description                                                              |
-| -------- | ---------- | ------------------------------------------------------------------------ |
-| hostname | dictionary | A dictionary containing `username` and `password` keys for the registry. |
+| key | type | description |
+|-----|------|-------------|
+| hostname | dictionary | 包含为 registry 的 `username` 和 `password` keys 的字典。 |
 
-**示例负载：**
+**Example payload:**
 
 ```json
 {
@@ -1629,36 +1611,36 @@ Add a new container registry.
 
 :::note
 
-To login to the default container registry (Docker Hub), use `hub.docker.com` as the registry.
+要登录到默认的 container registry（Docker Hub），请使用 `hub.docker.com` 作为 registry。
 
 :::
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/docker/registries/<registry>" method="delete">
-Delete a registry from the configured container registries.
+从已配置的 container registries 中删除一个 registry。
 </ApiEndpoint>
 
 <ApiEndpoint path="/docker/migrate-storage-driver" method="post">
-Schedule a Docker storage driver migration. The migration will be applied on the next system reboot.
+安排 Docker storage driver 迁移。该迁移将在下次系统重启时应用。
 
-This endpoint allows migrating to either:
-- `overlayfs`: The Containerd overlayfs driver
-- `overlay2`: The Docker graph overlay2 driver
+此 endpoint 允许迁移到以下任一：
+- `overlayfs`: Containerd overlayfs driver
+- `overlay2`: Docker graph overlay2 driver
 
 :::note
 
-This endpoint requires Home Assistant OS 17.0 or newer. A `404` error will be returned on older versions or non-HAOS installations.
+此 endpoint 需要 Home Assistant OS 17.0 或更新版本。在较旧版本或非 HAOS 安装中将返回 `404` 错误。
 
 :::
 
-**负载：**
+**Payload:**
 
-| key            | type   | optional | description                                           |
-| -------------- | ------ | -------- | ----------------------------------------------------- |
-| storage_driver | string | False    | The target storage driver (`overlayfs` or `overlay2`) |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| storage_driver | string | False | 目标 storage driver（`overlayfs` 或 `overlay2`） |
 
-**示例负载：**
+**Example payload:**
 
 ```json
 {
@@ -1666,16 +1648,16 @@ This endpoint requires Home Assistant OS 17.0 or newer. A `404` error will be re
 }
 ```
 
-After calling this endpoint, a reboot is required to apply the migration. The response will create a `reboot_required` issue in the resolution center.
+调用此 endpoint 后，需要重启才能应用迁移。响应会在 resolution center 中创建一个 `reboot_required` issue。
 
 </ApiEndpoint>
 
 ### 硬件
 
 <ApiEndpoint path="/hardware/info" method="get">
-Get hardware information.
+获取 hardware 信息。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1723,19 +1705,19 @@ Get hardware information.
 }
 ```
 
-**返回数据：**
+**Returned data:**
 
-| key      | description                                                  |
-| -------- | ------------------------------------------------------------ |
-| devices  | A list of [Device models](/developers/api/supervisor/models#device)   |
-| drives   | A list of [Drive models](/developers/api/supervisor/models#drive)
+| key | description |
+|-----|-------------|
+| devices | [Device models](api/supervisor/models.md#device) 列表 |
+| drives | [Drive models](api/supervisor/models.md#drive) 列表 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/hardware/audio" method="get">
-Get audio devices
+获取 audio 设备
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1756,37 +1738,37 @@ Get audio devices
 ### 主机
 
 <ApiEndpoint path="/host/info" method="get">
-Return information about the host.
+返回关于 host 的信息。
 
 **Returned data**
 
-| key              | type           | description                               |
-| ---------------- | -------------- | ----------------------------------------- |
-| agent_version    | string or null | Agent version running on the Host         |
-| apparmor_version | string or null | The AppArmor version from host            |
-| boot_timestamp   | int            | The timestamp for the last boot in microseconds |
-| broadcast_llmnr  | bool or null   | Host is broadcasting its LLMNR hostname   |
-| broadcast_mdns   | bool or null   | Host is broadcasting its MulticastDNS hostname |
-| chassis          | string or null | The chassis type                          |
-| virtualization   | string or null | Virtualization hypervisor in use (if any) |
-| cpe              | string or null | The local CPE                             |
-| deployment       | string or null | The deployment stage of the OS if any     |
-| disk_total       | float          | Total space of the disk in MB             |
-| disk_used        | float          | Used space of the disk in MB              |
-| disk_free        | float          | Free space of the disk in MB              |
-| features         | list           | A list of features available for the host |
-| hostname         | string or null | The hostname of the host                  |
-| kernel           | string or null | The kernel version on the host            |
-| llmnr_hostname   | string or null | The hostname currently exposed on the network via LLMNR for host |
-| operating_system | string         | The operating system on the host          |
-| startup_time     | float          | The time in seconds it took for last boot |
-| disk_life_time   | float or null  | Percentage of estimated disk lifetime used (0–100). Not all disks provide this information, returns `null` if unavailable. |
-| timezone         | string         | The current timezone of the host. |
-| dt_utc           | string         | Current UTC date/time of the host in ISO 8601 format. |
-| dt_synchronized  | bool           | `true` if the host is synchronized with an NTP service. |
-| use_ntp          | bool           | `true` if the host is using an NTP service for time synchronization. |
+| key | type | description |
+|-----|------|-------------|
+| agent_version | string or null | host 上运行的 agent 版本 |
+| apparmor_version | string or null | host 的 AppArmor 版本 |
+| boot_timestamp | int | 最后一次 boot 的时间戳（微秒） |
+| broadcast_llmnr | bool or null | host 正在广播其 LLMNR hostname |
+| broadcast_mdns | bool or null | host 正在广播其 MulticastDNS hostname |
+| chassis | string or null | chassis 类型 |
+| virtualization | string or null | 正在使用的虚拟化 hypervisor（如果有） |
+| cpe | string or null | 本地 CPE |
+| deployment | string or null | OS 的部署 stage（如果有） |
+| disk_total | float | 磁盘总空间（GB） |
+| disk_used | float | 已使用的磁盘空间（GB） |
+| disk_free | float | 可用的磁盘空间（GB） |
+| features | list | host 可用 features 列表 |
+| hostname | string or null | host 的 hostname |
+| kernel | string or null | host 的 kernel 版本 |
+| llmnr_hostname | string or null | 当前通过网络通过 LLMNR 暴露的 hostname |
+| operating_system | string | host 的 operating system |
+| startup_time | float | 最后一次 boot 所用的时间（秒） |
+| disk_life_time | float or null | 估计的磁盘生命周期使用百分比（0–100）。并非所有磁盘都提供此信息，不可用时返回 `null`。 |
+| timezone | string | host 的当前 timezone。 |
+| dt_utc | string | host 的当前 UTC 日期/时间（ISO 8601 格式）。 |
+| dt_synchronized | bool | host 已与 NTP service 同步时为 `true`。 |
+| use_ntp | bool | host 使用 NTP service 进行时间同步时为 `true`。 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -1820,182 +1802,171 @@ Return information about the host.
 
 <ApiEndpoint path="/host/logs" method="get">
 
-Get systemd Journal logs from the host. Returns log entries in plain text, one
-log record per line.
+从 host 获取 systemd Journal logs。以纯文本形式返回 log entries，每行一条 log record。
 
 **HTTP Request Headers**
 
-| Header   | optional | description                                                                   |
-| -------- | -------- |-------------------------------------------------------------------------------|
-| Accept   | true     | Type of data (text/plain or text/x-log)                                       |
-| Range    | true     | Range of log entries. The format is `entries=cursor[[:num_skip]:num_entries]` |
+| Header | optional | description |
+|--------|----------|-------------|
+| Accept | true | 数据类型（text/plain 或 text/x-log） |
+| Range | true | log entries 的范围。格式为 `entries=cursor[[:num_skip]:num_entries]` |
 
 **HTTP Query Parameters**
 
-These are a convenience alternative to the headers shown above as query
-parameters are easier to use in development and with the Home Assistant proxy.
-You should only provide one or the other.
+这些是上述 headers 的便捷替代方案，因为 query 参数在开发中和与 Home Assistant proxy 一起使用时更易于使用。你应该只提供其中一种。
 
-| Query     | type  | description                                                                           |
-| --------  | ----- | -----------------------------------------------------------------------------------   |
-| verbose   | N/A   | If included, uses `text/x-log` as log output type (alternative to `Accept` header)    |
-| lines     | int   | Number of lines of output to return (alternative to `Range` header)                   |
-| no_colors | N/A   | If included, ANSI escape codes for terminal coloring will be stripped from the output |
+| Query | type | description |
+|-------|------|-------------|
+| verbose | N/A | 如果包含，使用 `text/x-log` 作为 log 输出类型（`Accept` header 的替代方案） |
+| lines | int | 要返回的输出行数（`Range` header 的替代方案） |
+| no_colors | N/A | 如果包含，ANSI 转义码用于终端着色将从输出中剥离 |
 
-查询字符串示例：
+示例 query string：
 
 ```text
 ?verbose&lines=100&no_colors
 ```
 
 :::tip
-To get the last log entries the Range request header supports negative values
-as `num_skip`. E.g. `Range: entries=:-9:` returns the last 10 entries. Or
-`Range: entries=:-200:100` to see 100 entries starting from the one 200 ago.
+要获取最后的 log entries，Range 请求 header 支持负值
+作为 `num_skip`。例如，`Range: entries=:-9:` 返回最后的 10 条 entries。或者
+`Range: entries=:-200:100` 查看从 200 条之前的 100 条 entries。
 :::
 
-API returns the last 100 lines by default. Provide a value for `Range` to see
-logs further in the past.
+API 默认返回最后的 100 行。提供一个 `Range` 值以查看更早的 logs。
 
-The `Accept` header can be set to `text/x-log` to get logs annotated with
-extra information, such as the timestamp and Systemd unit name. If no
-identifier is specified (i.e. for the host logs containing logs for multiple
-identifiers/units), this option is ignored - these logs are always annotated.
+`Accept` header 可以设为 `text/x-log` 以获取带有附加信息的 logs，例如时间戳和 Systemd unit 名称。如果未指定标识符（即对于 host logs 包含多个
+标识符/units 的 logs），此选项将被忽略——这些 logs 始终被标注。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/follow" method="get">
 
-Identical to `/host/logs` except it continuously returns new log entries.
+与 `/host/logs` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/identifiers">
 
-Returns a list of syslog identifiers from the systemd journal that you can use
-with `/host/logs/identifiers/<identifier>` and `/host/logs/boots/<bootid>/identifiers/<identifier>`.
+返回一个来自 systemd journal 的 syslog identifiers 列表，你可以用它们配合
+`/host/logs/identifiers/<identifier>` 和 `/host/logs/boots/<bootid>/identifiers/<identifier>` 使用。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/identifiers/<identifier>" method="get">
 
-Get systemd Journal logs from the host for entries related to a specific log
-identifier. Some examples of useful identifiers here include
+从 host 获取与特定 log identifier 相关的 systemd Journal logs。这里有用的一些 identifiers 示例包括
 
-- `audit` - If developing an apparmor profile shows you permission issues
-- `NetworkManager` - Shows NetworkManager logs when having network issues
-- `bluetoothd` - Shows bluetoothd logs when having bluetooth issues
+- `audit` - 如果在开发 apparmor profile 时遇到权限问题
+- `NetworkManager` - 遇到网络问题时显示 NetworkManager logs
+- `bluetoothd` - 遇到蓝牙问题时显示 bluetoothd logs
 
-A call to `GET /host/logs/identifiers` will show the complete list of possible
-values for `identifier`.
+调用 `GET /host/logs/identifiers` 将显示 `identifier` 可能值的全部列表。
 
-Otherwise it provides the same functionality as `/host/logs`.
+否则它提供与 `/host/logs` 相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/identifiers/<identifier>/follow" method="get">
 
-Identical to `/host/logs/identifiers/<identifier>` except it continuously returns
-new log entries.
+与 `/host/logs/identifiers/<identifier>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/boots">
 
-Returns a dictionary of boot IDs for this system that you can use with
-`/host/logs/boots/<bootid>` and `/host/logs/boots/<bootid>/identifiers/<identifier>`.
+返回一个该系统的 boot IDs 字典，你可以用它们配合
+`/host/logs/boots/<bootid>` 和 `/host/logs/boots/<bootid>/identifiers/<identifier>` 使用。
 
-The key for each item in the dictionary is the boot offset. 0 is the current boot,
-a negative number denotes how many boots ago that boot was.
+字典中每项的 key 是 boot 偏移量。0 是当前 boot，
+负数表示距当前 boot 往前的 boot 次数。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/boots/<bootid>" method="get">
 
-Get systemd Journal logs from the host for entries related to a specific boot.
-Call `GET /host/info/boots` to see the boot IDs. Alternatively you can provide a
-boot offset:
+从 host 获取与特定 boot 相关的 systemd Journal logs。
+调用 `GET /host/info/boots` 查看 boot IDs。或者你也可以提供一个
+boot 偏移量：
 
-- 0 - The current boot
-- Negative number - Count backwards from current boot (-1 is previous boot)
-- Positive number - Count forward from last known boot (1 is last known boot)
+- 0 - 当前 boot
+- 负数 - 从当前 boot 往前计数（-1 是前一次 boot）
+- 正数 - 从已知的最后一次 boot 往后计数（1 是已知的最后一次 boot）
 
-Otherwise it provides the same functionality as `/host/logs`.
+否则它提供与 `/host/logs` 相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/boots/<bootid>/follow" method="get">
 
-Identical to `/host/logs/boots/<bootid>` except it continuously returns
-new log entries.
+与 `/host/logs/boots/<bootid>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/boots/<bootid>/identifiers/<identifier>" method="get">
 
-Get systemd Journal logs entries for a specific log identifier and boot.
-A combination of `/host/logs/boots/<bootid>` and `/host/logs/identifiers/<identifier>`.
+获取特定 log identifier 和特定 boot 的 systemd Journal logs entries。
+它是 `/host/logs/boots/<bootid>` 和 `/host/logs/identifiers/<identifier>` 的组合。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/logs/boot/<bootid>/<identifier>/entries/follow" method="get">
 
-Identical to `/host/logs/boots/<bootid>/identifiers/<identifier>` except it continuously
-returns new log entries.
+与 `/host/logs/boots/<bootid>/identifiers/<identifier>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/options" method="post">
-Set host options
+设置 host options
 
-**负载：**
+**Payload:**
 
-| key      | type   | optional | description                                    |
-| -------- | ------ | -------- | ---------------------------------------------- |
-| hostname | string | True     | A string that will be used as the new hostname |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| hostname | string | True | 将用作新 hostname 的字符串 |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/reboot" method="post">
-Reboot the host
+重启 host
 
-**负载：**
+**Payload:**
 
-| key       | type       | optional | description                                               |
-| --------- | ---------- | -------- | --------------------------------------------------------- |
-| force     | boolean    | True     | Force reboot during a Home Assistant offline db migration |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| force | boolean | True | 在 Home Assistant offline db migration 期间强制重启 |
 
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/reload" method="post">
-Reload host information
+重新加载 host 信息
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/service/<service>/start" method="post">
-Start a service on the host.
+在 host 上启动一个 service。
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/service/<service>/stop" method="post">
-Stop a service on the host.
+在 host 上停止一个 service。
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/service/<service>/reload" method="post">
-Reload a service on the host.
+在 host 上重新加载一个 service。
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/services" method="get">
-Get information about host services.
+获取关于 host services 的信息。
 
-**返回数据：**
+**Returned data:**
 
-| key      | description                                                  |
-| -------- | ------------------------------------------------------------ |
-| services | A dictionary of [Host service models](/developers/api/supervisor/models#host-service) |
+| key | description |
+|-----|-------------|
+| services | [Host service models](api/supervisor/models.md#host-service) 字典 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2012,71 +1983,107 @@ Get information about host services.
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/shutdown" method="post">
-Shutdown the host
+关闭 host
 
-**负载：**
+**Payload:**
 
-| key       | type       | optional | description                                                 |
-| --------- | ---------- | -------- | ----------------------------------------------------------- |
-| force     | boolean    | True     | Force shutdown during a Home Assistant offline db migration |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| force | boolean | True | 在 Home Assistant offline db migration 期间强制关闭 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/host/disks/<disk>/usage" method="get">
-Get detailed disk usage information in bytes.
+获取以字节为单位的详细磁盘使用情况信息。
 
-The only supported `disk` for now is "default". It will return usage info for the data disk.
+`disk` 选择要测量的对象。使用 `default` 表示数据磁盘，或使用 mount 名称来测量该 mount。`default` 始终指向数据磁盘，因此同名 mount 无法通过此 endpoint 访问。
 
-Supports an optional `max_depth` query param. Defaults to 1
+支持可选的 `max_depth` query 参数，用于控制细分的深度。数据磁盘默认为 1，mount 默认为 0。
 
-**示例响应：**
+数据磁盘将其已知的一级路径报告为 children，`max_depth` 控制在其中内部继续细分的深度。
+
+Mount 没有这种固定层级，因此它通过遍历目录来测量，并且只有剩余深度超过一级时目录才会列出。因此 `max_depth` 为 0 或 1 仅返回总计，第一级目录在 2 时出现，再往下的每一级都需要多加一级。
+
+当 mount 列出 children 时，一个 `other` child 携带遍历未归因到目录的所有内容：直接位于 mount 根部的文件、保留空间以及无法读取的条目。当该余数为正时，节点 children 之和恰好等于其自身的 `used_bytes`。如果在遍历期间文件系统发生变化，目录总计可能与 `used_bytes` 不一致；在这种情况下，细分将完全被省略，仅报告总计，因此 children 之和永远不会超过其父节点。
+
+请求不存在的 mount 的使用情况将返回 `404`。对于不 active 的 mount、unit 仍报告 active 但已实际未挂载的 mount、无法读取的 mount 或 usage probe 在 60 秒内未完成的 mount，将返回 `400`。该 probe 在超时后仍会继续运行，因此重试请求将加入已在进行的 probe，而不是启动一个新的。
+
+**Example response:**
 
 ```json
 {
   "id": "root",
-  "label": "Default",
-  "total_space": 503312781312,
-  "used_space": 430245011456,
+  "label": "Root",
+  "total_bytes": 503312781312,
+  "used_bytes": 430245011456,
   "children": [
     {
       "id": "system",
       "label": "System",
-      "used_space": 75660903137
+      "used_bytes": 75660903137
     },
     {
       "id": "addons_data",
       "label": "Addons data",
-      "used_space": 42349200762
+      "used_bytes": 42349200762
     },
     {
       "id": "addons_config",
       "label": "Addons configuration",
-      "used_space": 5283318814
+      "used_bytes": 5283318814
     },
     {
       "id": "media",
       "label": "Media",
-      "used_space": 476680019
+      "used_bytes": 476680019
     },
     {
       "id": "share",
       "label": "Share",
-      "used_space": 37477206419
+      "used_bytes": 37477206419
     },
     {
       "id": "backup",
       "label": "Backup",
-      "used_space": 268350699520
+      "used_bytes": 268350699520
     },
     {
       "id": "ssl",
       "label": "SSL",
-      "used_space": 202912633
+      "used_bytes": 202912633
     },
     {
       "id": "homeassistant",
       "label": "Home assistant",
-      "used_space": 444090152
+      "used_bytes": 444090152
+    }
+  ]
+}
+```
+
+**Example response for a mount**，使用 `max_depth=2` 请求：
+
+```json
+{
+  "id": "media_nas",
+  "label": "media_nas",
+  "total_bytes": 2000398934016,
+  "used_bytes": 1240247081779,
+  "children": [
+    {
+      "id": "music",
+      "label": "music",
+      "used_bytes": 402653184000
+    },
+    {
+      "id": "movies",
+      "label": "movies",
+      "used_bytes": 800000000000
+    },
+    {
+      "id": "other",
+      "label": "Other",
+      "used_bytes": 37593897779
     }
   ]
 }
@@ -2088,13 +2095,13 @@ Supports an optional `max_depth` query param. Defaults to 1
 
 <ApiEndpoint path="/ingress/panels" method="get">
 
-**返回数据：**
+**Returned data:**
 
-| key    | type       | description                                  |
-| ------ | ---------- | -------------------------------------------- |
-| panels | dictionary | dictionary of [Panel models](/developers/api/supervisor/models#panel) |
+| key | type | description |
+|-----|------|-------------|
+| panels | dictionary | [Panel models](api/supervisor/models.md#panel) 字典 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2112,46 +2119,46 @@ Supports an optional `max_depth` query param. Defaults to 1
 </ApiEndpoint>
 
 <ApiEndpoint path="/ingress/session" method="post">
-Create a new session for access to the ingress service.
+创建一个用于访问 ingress service 的新 session。
 
-**负载：**
+**Payload:**
 
-| key      | type   | optional | description                                          |
-| -------- | ------ | -------- | ---------------------------------------------------- |
-| user_id  | string | True     | The ID of the user authenticated for the new session |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| user_id | string | True | 新 session 认证用户的 ID |
 
-**返回数据：**
+**Returned data:**
 
-| key     | type   | optional | description                       |
-| ------- | ------ | -------- | --------------------------------- |
-| session | string | False    | The token for the ingress session |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| session | string | False | ingress session 的 token |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/ingress/validate_session" method="post">
-Validate an ingress session, extending it's validity period.
+验证一个 ingress session，并延长其有效期。
 
-**负载：**
+**Payload:**
 
-| key     | type   | optional | description                       |
-| ------- | ------ | -------- | --------------------------------- |
-| session | string | False    | The token for the ingress session |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| session | string | False | ingress session 的 token |
 
 </ApiEndpoint>
 
 ### 任务
 
 <ApiEndpoint path="/jobs/info" method="get">
-Returns info on ignored job conditions and currently running or completed jobs
+返回关于被忽略的 job 条件和当前运行或已完成的 jobs 的信息
 
-**返回数据：**
+**Returned data:**
 
-| key               | type       | description                                                    |
-| ----------------- | ---------- | -------------------------------------------------------------- |
-| ignore_conditions | list       | List of job conditions being ignored                           |
-| jobs              | list       | List of running or completed [Jobs](/developers/api/supervisor/models#job) |
+| key | type | description |
+|-----|------|-------------|
+| ignore_conditions | list | 被忽略的 job 条件列表 |
+| jobs | list | 运行中或已完成的 [Jobs](api/supervisor/models.md#job) 列表 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2172,24 +2179,24 @@ Returns info on ignored job conditions and currently running or completed jobs
 </ApiEndpoint>
 
 <ApiEndpoint path="/jobs/options" method="post">
-Set options for job manager
+设置 job manager 的 options
 
-**负载：**
+**Payload:**
 
-| key               | type       | description                                               |
-| ----------------- | ---------- | --------------------------------------------------------- |
-| ignore_conditions | list       | List of job conditions to ignore (replaces existing list) |
+| key | type | description |
+|-----|------|-------------|
+| ignore_conditions | list | 要忽略的 job 条件列表（替换现有列表） |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/jobs/<job_id>" method="get">
-Returns info on a currently running or completed job
+返回关于当前运行或已完成 job 的信息
 
-**返回数据：**
+**Returned data:**
 
-See [Job](/developers/api/supervisor/models#job) model
+参见 [Job](api/supervisor/models.md#job) model
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2207,12 +2214,11 @@ See [Job](/developers/api/supervisor/models#job) model
 </ApiEndpoint>
 
 <ApiEndpoint path="/jobs/<job_id>" method="delete">
-Removes a completed job from Supervisor cache if client is no longer interested in it
+如果客户端不再关心该已完成的 job，则将其从 Supervisor cache 中移除
 </ApiEndpoint>
 
-
 <ApiEndpoint path="/jobs/reset" method="post">
-Reset job manager to defaults (stops ignoring any ignored job conditions)
+将 job manager 重置为默认值（停止忽略任何被忽略的 job 条件）
 
 </ApiEndpoint>
 
@@ -2220,9 +2226,9 @@ Reset job manager to defaults (stops ignoring any ignored job conditions)
 
 <ApiEndpoint path="/available_updates" method="get">
 
-Returns information about available updates
+返回关于可用更新的信息
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2253,54 +2259,54 @@ Returns information about available updates
 }
 ```
 
-**返回数据：**
+**Returned data:**
 
 | key | type | description |
-| -- | -- | -- |
-| update_type | string | `addon`, `os`, `core` or `supervisor` |
-| name | string | Returns the name (only if the `update_type` is `addon`) |
-| icon | string | Returns the path for the icon if any (only if the `update_type` is `addon`) |
-| version_latest | string | Returns the available version |
-| panel_path | string | Returns path where the UI can be loaded |
+|-----|------|-------------|
+| update_type | string | `addon`、`os`、`core` 或 `supervisor` |
+| name | string | 返回名称（仅当 `update_type` 为 `addon` 时） |
+| icon | string | 返回 icon 的路径（如果有）（仅当 `update_type` 为 `addon` 时） |
+| version_latest | string | 返回可用版本 |
+| panel_path | string | 返回 UI 可以加载的路径 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/reload_updates" method="post">
-This reloads information about main components (OS, Supervisor, Core, and
-Plug-ins).
+这将重新加载关于主要组件（OS、Supervisor、Core 和
+Plug-ins）的信息。
 </ApiEndpoint>
 
 <ApiEndpoint path="/refresh_updates" method="post">
-This reloads information about app repositories and fetches new version files.
-This endpoint is currently discouraged. Use `/reload_updates` or `/store/reload`
-instead.
+这将重新加载关于 app repositories 的信息并获取新的 version files。
+此 endpoint 目前不推荐使用。请使用 `/reload_updates` 或 `/store/reload`
+代替。
 </ApiEndpoint>
 
 <ApiEndpoint path="/info" method="get">
-Returns a dict with selected keys from other `/*/info` endpoints.
+返回一个包含来自其他 `/*/info` endpoints 的部分 key 的 dict。
 
-**返回数据：**
+**Returned data:**
 
-| key              | type           | description                                                  |
-| ---------------- | -------------- | ------------------------------------------------------------ |
-| supervisor       | string         | The installed version of the supervisor                      |
-| homeassistant    | string         | The installed version of Home Assistant                      |
-| hassos           | string or null | The version of Home Assistant OS or null                     |
-| docker           | string         | The docker version on the host                               |
-| hostname         | string         | The hostname on the host                                     |
-| operating_system | string         | The operating system on the host                             |
-| features         | list           | A list ov available features on the host                     |
-| machine          | string         | The machine type                                             |
-| machine_id       | string or null | The machine ID of the underlying operating system            |
-| arch             | string         | The architecture on the host                                 |
-| supported_arch   | list           | A list of supported host architectures                       |
-| supported        | boolean        | `true` if the environment is supported                       |
-| channel          | string         | The active channel (stable, beta, dev)                       |
-| logging          | string         | The active log level (debug, info, warning, error, critical) |
-| state | string | The core state of the Supervisor. |
-| timezone         | string         | The current timezone                                         |
+| key | type | description |
+|-----|------|-------------|
+| supervisor | string | 已安装的 supervisor 版本 |
+| homeassistant | string | 已安装的 Home Assistant 版本 |
+| hassos | string or null | Home Assistant OS 版本或 null |
+| docker | string | host 上的 docker 版本 |
+| hostname | string | host 上的 hostname |
+| operating_system | string | host 的 operating system |
+| features | list | host 上的可用 features 列表 |
+| machine | string | machine 类型 |
+| machine_id | string or null | 底层 operating system 的 machine ID |
+| arch | string | host 的架构 |
+| supported_arch | list | 受支持的 host 架构列表 |
+| supported | boolean | 环境受支持时为 `true` |
+| channel | string | 活动 channel（stable, beta, dev） |
+| logging | string | 活动 log 级别（debug, info, warning, error, critical） |
+| state | string | Supervisor 的 core state。 |
+| timezone | string | 当前 timezone |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2324,19 +2330,19 @@ Returns a dict with selected keys from other `/*/info` endpoints.
 
 </ApiEndpoint>
 
-### 挂载
+### 挂载点
 
 <ApiEndpoint path="/mounts" method="get">
-Returns information about mounts configured in Supervisor
+返回关于 Supervisor 中配置的 mounts 的信息
 
-**返回数据：**
+**Returned data:**
 
-| key                  | type           | description                                        |
-| -------------------- | -------------- | -------------------------------------------------- |
-| mounts               | list           | A list of [Mounts](/developers/api/supervisor/models#mount) |
-| default_backup_mount | string or null | Name of a backup mount or `null` for /backup       |
+| key | type | description |
+|-----|------|-------------|
+| mounts | list | [Mounts](api/supervisor/models.md#mount) 列表 |
+| default_backup_mount | string or null | backup mount 名称或 `null` 表示 /backup |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2358,29 +2364,28 @@ Returns information about mounts configured in Supervisor
 </ApiEndpoint>
 
 <ApiEndpoint path="/mounts/options" method="post">
-Set mount manager options
+设置 mount manager options
 
-**负载：**
+**Payload:**
 
-| key                  | type           | optional | description                                  |
-| -------------------- | -------------- | -------- | -------------------------------------------- |
-| default_backup_mount | string or null | True     | Name of a backup mount or `null` for /backup |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| default_backup_mount | string or null | True | backup mount 名称或 `null` 表示 /backup |
 
-**你至少需要在负载中提供一个键。**
+**你需要在 payload 中至少提供一个 key。**
 
 </ApiEndpoint>
 
-
 <ApiEndpoint path="/mounts" method="post">
-Add a new mount in Supervisor and mount it
+在 Supervisor 中添加一个新 mount 并挂载它
 
-**负载：**
+**Payload:**
 
-Accepts a [Mount](/developers/api/supervisor/models#mount)
+接受一个 [Mount](api/supervisor/models.md#mount)
 
-Value in `name` must be unique and can only consist of letters, numbers and underscores.
+`name` 中的值必须是唯一的，且只能由字母、数字和下划线组成。
 
-**示例负载：**
+**Example payload:**
 
 ```json
 {
@@ -2398,16 +2403,15 @@ Value in `name` must be unique and can only consist of letters, numbers and unde
 </ApiEndpoint>
 
 <ApiEndpoint path="/mounts/<name>" method="put">
-Update an existing mount in Supervisor and remount it
+更新 Supervisor 中现有的 mount 并重新挂载它
 
-**负载：**
+**Payload:**
 
-Accepts a [Mount](/developers/api/supervisor/models#mount).
+接受一个 [Mount](api/supervisor/models.md#mount)。
 
-The `name` field should be omitted. If included the value must match the existing
-name, it cannot be changed. Delete and re-add the mount to change the name.
+应省略 `name` 字段。如果包含，其值必须与现有名称匹配，不能更改。删除并重新添加 mount 以更改名称。
 
-**示例负载：**
+**Example payload:**
 
 ```json
 {
@@ -2422,29 +2426,29 @@ name, it cannot be changed. Delete and re-add the mount to change the name.
 </ApiEndpoint>
 
 <ApiEndpoint path="/mounts/<name>" method="delete">
-Unmount and delete an existing mount from Supervisor.
+卸载并从 Supervisor 中删除现有的 mount。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/mounts/<name>/reload" method="post">
-Unmount and remount an existing mount in Supervisor using the same configuration.
+卸载并使用相同的配置重新挂载 Supervisor 中现有的 mount。
 
 </ApiEndpoint>
 
-### 组播
+### Multicast
 
 <ApiEndpoint path="/multicast/info" method="get">
-Returns information about the multicast plugin
+返回关于 multicast 插件的信息
 
-**返回数据：**
+**Returned data:**
 
-| key              | type       | description                       |
-| ---------------- | ---------- | --------------------------------- |
-| version          | string     | The installed multicast version   |
-| version_latest   | string     | The latest published version      |
-| update_available | boolean    | `true` if an update is available  |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 已安装的 multicast 版本 |
+| version_latest | string | 最新发布的版本 |
+| update_available | boolean | 有更新可用时为 `true` |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2458,53 +2462,49 @@ Returns information about the multicast plugin
 
 <ApiEndpoint path="/multicast/logs" method="get">
 
-Get logs for the multicast plugin via the Systemd journal backend.
+通过 Systemd journal 后端获取 multicast 插件的 logs。
 
-The endpoint accepts the same headers and provides the same functionality as
-`/host/logs`.
+该 endpoint 接受与 `/host/logs` 相同的 headers 并提供相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/multicast/logs/follow" method="get">
 
-Identical to `/multicast/logs` except it continuously returns new log entries.
+与 `/multicast/logs` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/multicast/logs/latest" method="get">
 
-Return all logs of the latest startup of the multicast plugin container.
+返回 multicast 插件容器最近一次启动的所有 logs。
 
-The `Range` header is ignored but the `lines` query parameter can be used.
+`Range` header 被忽略，但可以使用 `lines` query 参数。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/multicast/logs/boots/<bootid>" method="get">
 
-Get logs for the multicast plugin related to a specific boot.
+获取与特定 boot 相关的 multicast 插件 logs。
 
-The `bootid` parameter is interpreted in the same way as in
-`/host/logs/boots/<bootid>` and the endpoint otherwise provides the same
-functionality as `/host/logs`.
+`bootid` 参数的解释方式与 `/host/logs/boots/<bootid>` 中相同，该 endpoint 否则提供与 `/host/logs` 相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/multicast/logs/boots/<bootid>/follow" method="get">
 
-Identical to `/multicast/logs/boots/<bootid>` except it continuously returns
-new log entries.
+与 `/multicast/logs/boots/<bootid>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/multicast/restart" method="post">
-Restart the multicast plugin.
+重启 multicast 插件。
 </ApiEndpoint>
 
 <ApiEndpoint path="/multicast/stats" method="get">
 
-Returns a [Stats model](/developers/api/supervisor/models#stats) for the multicast plugin.
+为 multicast 插件返回一个 [Stats model](api/supervisor/models.md#stats)。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2522,31 +2522,31 @@ Returns a [Stats model](/developers/api/supervisor/models#stats) for the multica
 </ApiEndpoint>
 
 <ApiEndpoint path="/multicast/update" method="post">
-Update the multicast plugin
+更新 multicast 插件
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| version | string | The version you want to install, default is the latest version |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 要安装的版本，默认为最新版本 |
 
 </ApiEndpoint>
 
 ### 网络
 
 <ApiEndpoint path="/network/info" method="get">
-Get network information.
+获取 network 信息。
 
-**返回数据：**
+**Returned data:**
 
-| key        | description                                                            |
-| ---------- | ---------------------------------------------------------------------- |
-| interfaces | A list of [Network interface models](/developers/api/supervisor/models#network-interface) |
-| docker     | Information about the internal docker network |
-| host_internet | Boolean to indicate if the host can reach the internet. |
-| supervisor_internet | Boolean to indicate if the Supervisor can reach the internet. |
+| key | description |
+|-----|-------------|
+| interfaces | [Network interface models](api/supervisor/models.md#network-interface) 列表 |
+| docker | 关于内部 docker network 的信息 |
+| host_internet | 指示 host 是否可以访问 internet 的 Boolean。 |
+| supervisor_internet | 指示 Supervisor 是否可以访问 internet 的 Boolean。 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2583,74 +2583,74 @@ Get network information.
 
 <ApiEndpoint path="/network/interface/<interface>/info" method="get">
 
-Returns a [Network interface model](/developers/api/supervisor/models#network-interface) for a specific network interface.
+返回特定 network interface 的 [Network interface model](api/supervisor/models.md#network-interface)。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/network/reload" method="post">
 
-Update all Network interface data.
+更新所有 Network interface 数据。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/network/interface/<interface>/update" method="post">
-Update the settings for a network interface.
+更新 network interface 的设置。
 
-**负载：**
+**Payload:**
 
-| key     | type   | optional | description                                                            |
-| ------- | ------ | -------- | ---------------------------------------------------------------------- |
-| enabled | bool   | True     | Enable/Disable an ethernet interface / VLAN got removed with disabled  |
-| ipv6    | dict   | True     | A struct with ipv6 interface settings                                  |
-| ipv4    | dict   | True     | A struct with ipv4 interface settings                                  |
-| wifi    | dict   | True     | A struct with Wireless connection settings                             |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| enabled | bool | True | 启用/禁用 ethernet interface / 禁用时 VLAN 被移除 |
+| ipv6 | dict | True | 包含 ipv6 interface 设置的 struct |
+| ipv4 | dict | True | 包含 ipv4 interface 设置的 struct |
+| wifi | dict | True | 包含 Wireless 连接设置的 struct |
 
 **ipv6:**
 
-| key           | type   | optional | description                                                                                         |
-| ------------- | ------ | -------- | --------------------------------------------------------------------------------------------------- |
-| method        | string | True     | Set IP configuration method can be `auto` for DHCP or Router Advertisements, `static` or `disabled` |
-| addr_gen_mode | string | True     | Address generation mode can be `eui64`, `stable-privacy`, `default-or-eui64` or `default`           |
-| ip6_privacy   | string | True     | Privacy extensions options are `disabled`, `enabled-prefer-public`, `enabled` or `default`          |
-| address       | list   | True     | The new IP address for the interface in the ::/XX format as list                                    |
-| nameservers   | list   | True     | List of DNS servers to use                                                                          |
-| gateway       | string | True     | The gateway the interface should use                                                                |
-| route_metric  | int    | True     | Route metric. Lower value has higher priority. The kernel accepts zero (0) but coerces it to 1024 (user default) |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| method | string | True | 设置 IP 配置方法，`auto` 表示 DHCP 或 Router Advertisements，`static` 或 `disabled` |
+| addr_gen_mode | string | True | Address generation mode 可以是 `eui64`、`stable-privacy`、`default-or-eui64` 或 `default` |
+| ip6_privacy | string | True | Privacy extensions 选项有 `disabled`、`enabled-prefer-public`、`enabled` 或 `default` |
+| address | list | True | 接口的新 IP 地址，以 ::/XX 格式作为列表 |
+| nameservers | list | True | 要使用的 DNS servers 列表 |
+| gateway | string | True | 接口应使用的 gateway |
+| route_metric | int | True | Route metric。值越低优先级越高。内核接受零（0）但会将其强制转换为 1024（用户默认值） |
 
 **ipv4:**
 
-| key          | type   | optional | description                                                                           |
-| ------------ | ------ | -------- | ------------------------------------------------------------------------------------- |
-| method       | string | True     | Set IP configuration method can be `auto` for DHCP, `static` or `disabled`            |
-| address      | list   | True     | The new IP address for the interface in the X.X.X.X/XX format as list                 |
-| nameservers  | list   | True     | List of DNS servers to use                                                            |
-| gateway      | string | True     | The gateway the interface should use                                                  |
-| route_metric | int    | True     | Route metric. Lower value has higher priority                                         |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| method | string | True | 设置 IP 配置方法，`auto` 表示 DHCP，`static` 或 `disabled` |
+| address | list | True | 接口的新 IP 地址，以 X.X.X.X/XX 格式作为列表 |
+| nameservers | list | True | 要使用的 DNS servers 列表 |
+| gateway | string | True | 接口应使用的 gateway |
+| route_metric | int | True | Route metric。值越低优先级越高 |
 
 **wifi:**
 
-| key    | type   | optional | description                                                                    |
-| ------ | ------ | -------- | ------------------------------------------------------------------------------ |
-| mode   | string | True     | Set the mode `infrastructure` (default), `mesh`, `adhoc` or `ap`               |
-| auth   | string | True     | Set the auth mode: `open` (default), `web`, `wpa-psk`                          |
-| ssid   | string | True     | Set the SSID for connect into                                                  |
-| psk    | string | True     | The shared key which is used with `web` or `wpa-psk`                           |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| mode | string | True | 设置模式 `infrastructure`（默认）、`mesh`、`adhoc` 或 `ap` |
+| auth | string | True | 设置 auth 模式：`open`（默认）、`web`、`wpa-psk` |
+| ssid | string | True | 设置要连接到的 SSID |
+| psk | string | True | 与 `web` 或 `wpa-psk` 一起使用的共享密钥 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/network/interface/<interface>/accesspoints" method="get">
 
-Return a list of available [Access Points](/developers/api/supervisor/models#access-points) on this Wireless interface.
+返回此 Wireless interface 上可用的 [Access Points](api/supervisor/models.md#access-points) 列表。
 
-**This function only works with Wireless interfaces!**
+**此功能仅适用于 Wireless interfaces！**
 
-**返回数据：**
+**Returned data:**
 
-| key          | description                                                            |
-| ------------ | ---------------------------------------------------------------------- |
-| accesspoints | A list of [Access Points](/developers/api/supervisor/models#access-points)      |
+| key | description |
+|-----|-------------|
+| accesspoints | [Access Points](api/supervisor/models.md#access-points) 列表 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2670,35 +2670,35 @@ Return a list of available [Access Points](/developers/api/supervisor/models#acc
 
 <ApiEndpoint path="/network/interface/<interface>/vlan/<id>" method="post">
 
-Create a new VLAN *id* on this network interface.
+在此 network interface 上创建一个新的 VLAN *id*。
 
-**This function only works with ethernet interfaces!**
+**此功能仅适用于 ethernet interfaces！**
 
-**负载：**
+**Payload:**
 
-| key     | type   | optional | description                                                            |
-| ------- | ------ | -------- | ---------------------------------------------------------------------- |
-| ipv6    | dict   | True     | A struct with ipv6 interface settings                                  |
-| ipv4    | dict   | True     | A struct with ipv4 interface settings                                  |
+| key | type | optional | description |
+|-----|------|----------|-------------|
+| ipv6 | dict | True | 包含 ipv6 interface 设置的 struct |
+| ipv4 | dict | True | 包含 ipv4 interface 设置的 struct |
 
 </ApiEndpoint>
 
-### Observer
+### 观察者
 
 <ApiEndpoint path="/observer/info" method="get">
 
-Returns information about the observer plugin
+返回关于 observer 插件的信息
 
-**返回数据：**
+**Returned data:**
 
-| key              | type       | description                      |
-| ---------------- | ---------- | -------------------------------- |
-| host             | string     | The IP address of the plugin     |
-| version          | string     | The installed observer version   |
-| version_latest   | string     | The latest published version     |
-| update_available | boolean    | `true` if an update is available |
+| key | type | description |
+|-----|------|-------------|
+| host | string | 插件的 IP 地址 |
+| version | string | 已安装的 observer 版本 |
+| version_latest | string | 最新发布的版本 |
+| update_available | boolean | 有更新可用时为 `true` |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2713,9 +2713,9 @@ Returns information about the observer plugin
 
 <ApiEndpoint path="/observer/stats" method="get">
 
-Returns a [Stats model](/developers/api/supervisor/models#stats) for the observer plugin.
+为 observer 插件返回一个 [Stats model](api/supervisor/models.md#stats)。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2734,13 +2734,13 @@ Returns a [Stats model](/developers/api/supervisor/models#stats) for the observe
 
 <ApiEndpoint path="/observer/update" method="post">
 
-Update the observer plugin
+更新 observer 插件
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| version | string | The version you want to install, default is the latest version |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 要安装的版本，默认为最新版本 |
 
 </ApiEndpoint>
 
@@ -2748,27 +2748,27 @@ Update the observer plugin
 
 <ApiEndpoint path="/os/config/sync" method="post">
 
-Load host configurations from a USB stick.
+从 USB 闪存驱动器加载 host configurations。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/os/info" method="get">
 
-Returns information about the OS.
+返回关于 OS 的信息。
 
-**返回数据：**
+**Returned data:**
 
-| key              | type    | description                                                                  |
-| ---------------- | ------- | ---------------------------------------------------------------------------- |
-| version          | string  | The current version of the OS                                                |
-| version_latest   | string  | The latest published version of the OS in the active channel                 |
-| update_available | boolean | `true` if an update is available                                             |
-| board            | string  | The name of the board                                                        |
-| boot             | string  | Which slot that are in use                                                   |
-| data_disk        | string  | Device which is used for holding OS data persistent                          |
-| boot_slots       | dict    | Dictionary of [boot slots](/developers/api/supervisor/models#boot-slot) keyed by name |
+| key | type | description |
+|-----|------|-------------|
+| version | string | OS 当前版本 |
+| version_latest | string | 活动 channel 中 OS 最新发布的版本 |
+| update_available | boolean | 有更新可用时为 `true` |
+| board | string | board 名称 |
+| boot | string | 正在使用的 slot |
+| data_disk | string | 用于持久存储 OS 数据的设备 |
+| boot_slots | dict | 以名称为 key 的 [boot slots](api/supervisor/models.md#boot-slot) 字典 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2797,40 +2797,43 @@ Returns information about the OS.
 
 <ApiEndpoint path="/os/update" method="post">
 
-Update Home Assistant OS
+更新 Home Assistant OS
 
-**负载：**
+完成此操作后需要重启才能完成更新。可以通过后续调用 `/host/reboot`
+完成，或者让用户按计划使用 repair 完成。
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| version | string | The version you want to install, default is the latest version |
+**Payload:**
+
+| key | type | description |
+|-----|------|-------------|
+| version | string | 要安装的版本，默认为最新版本 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/os/boot-slot" method="post">
 
-Change the active boot slot, **This will also reboot the device!** 
+更改 active boot slot，**这也会重启设备！**
 
-**负载：**
+**Payload:**
 
-| key       | type   | description                                                              |
-| --------- | ------ | ------------------------------------------------------------------------ |
-| boot_slot | string | Boot slot to change to. See options in `boot_slots` from `/os/info` API. |
+| key | type | description |
+|-----|------|-------------|
+| boot_slot | string | 要更改到的 boot slot。查看 `/os/info` API 中 `boot_slots` 的选项。 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/os/config/swap" method="get">
 
-Get current HAOS swap configuration. Unavailable on Supervised.
+获取当前 HAOS swap configuration。在 Supervised 上不可用。
 
-**返回数据：**
+**Returned data:**
 
-| key        | type   | description                      |
-|------------|--------|----------------------------------|
-| swap_size  | string | Current swap size.               |
-| swappiness | int    | Current kernel swappiness value. |
+| key | type | description |
+|-----|------|-------------|
+| swap_size | string | 当前 swap 大小。 |
+| swappiness | int | 当前 kernel swappiness 值。 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2843,28 +2846,28 @@ Get current HAOS swap configuration. Unavailable on Supervised.
 
 <ApiEndpoint path="/os/config/swap" method="post">
 
-Set HAOS swap configuration. Unavailable on Supervised.
+设置 HAOS swap configuration。在 Supervised 上不可用。
 
-**负载：**
+**Payload:**
 
-| key        | type   | description                                                                                |
-|------------|--------|--------------------------------------------------------------------------------------------|
-| swap_size  | string | New swap siz as number with optional units (K/M/G). Anything lower than 40K disables swap. |
-| swappiness | int    | New swappiness value (0-100).                                                              |
+| key | type | description |
+|-----|------|-------------|
+| swap_size | string | 新的 swap 大小，带可选单位的数字（K/M/G）。低于 40K 的值将禁用 swap。 |
+| swappiness | int | 新的 swappiness 值（0-100）。 |
 </ApiEndpoint>
 
 <ApiEndpoint path="/os/datadisk/list" method="get">
 
-Returns possible targets for the new data partition.
+返回新的 data partition 可能的目标。
 
-**返回数据：**
+**Returned data:**
 
-| key              | type    | description                                                                         |
-| ---------------- | ------- | ----------------------------------------------------------------------------------- |
-| devices          | list    | List of IDs of possible data disk targets                                           |
-| disks            | list    | List of [disks](/developers/api/supervisor/models#disk) which are possible data disk targets |
+| key | type | description |
+|-----|------|-------------|
+| devices | list | 可能的 data disk 目标 ID 列表 |
+| disks | list | 可能作为 data disk 目标的 [disks](api/supervisor/models.md#disk) 列表 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2899,58 +2902,51 @@ Returns possible targets for the new data partition.
 
 <ApiEndpoint path="/os/datadisk/move" method="post">
 
-Move datadisk to a new location, **This will also reboot the device!**
+将 datadisk 移动到新位置，**这也会重启设备！**
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                                     |
-| ------- | ------ | ------------------------------------------------------------------------------- |
-| device  | string | ID of the disk device which should be used as the target for the data migration |
+| key | type | description |
+|-----|------|-------------|
+| device | string | 用作 data 迁移目标的 disk 设备 ID |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/os/datadisk/wipe" method="post">
 
-Wipe the datadisk including all user data and settings, **This will also reboot the device!** This API requires an admin token
+擦除 datadisk 包括所有用户数据和设置，**这也会重启设备！** 此 API 需要 admin token
 
-This API will wipe all config/settings for addons, Home Assistant and the Operating
-System and any locally stored data in config, backups, media, etc. The machine will
-reboot during this.
+此 API 将擦除 addons、Home Assistant 和 Operating System 的所有 config/settings，以及 config、backups、media 等中本地存储的任何数据。机器将在此过程中重启。
 
-After the reboot completes the latest stable version of Home Assistant and Supervisor
-will be downloaded. Once the process is complete the user will see onboarding, like
-during initial setup.
+重启完成后将下载最新稳定版本的 Home Assistant 和 Supervisor。处理完成后用户将看到 onboarding，就像初始设置时一样。
 
-This wipe also includes network settings. So after the reboot the user may need to
-reconfigure those in order to access Home Assistant again.
+此擦除还包括 network 设置。因此重启后用户可能需要重新配置这些设置才能再次访问 Home Assistant。
 
-The operating system version as well as its boot configuration will be preserved.
+Operating system 版本及其 boot configuration 将被保留。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/os/boards/{board}" method="get">
 
-Returns information about your board if it has features or settings
-that can be modified from Home Assistant. The value for `board`
-is the value in the `board` field returned by `/os/info`.
+如果 board 有可以从 Home Assistant 修改的 features 或 settings，则返回关于它的信息。`board` 的值是 `/os/info` 返回的 `board` 字段中的值。
 
-Boards with such options are documented below.
+具有以下选项的 boards 记录如下。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/os/boards/yellow" method="get">
 
-If running on a yellow board, returns current values for its settings.
+如果在 yellow board 上运行，返回其 settings 的当前值。
 
-**返回数据：**
+**Returned data:**
 
-| key           | type    | description                  |
-| ------------- | ------- | ---------------------------- |
-| disk_led      | boolean | Is the disk LED enabled      |
-| heartbeat_led | boolean | Is the heartbeat LED enabled |
-| power_led     | boolean | Is the power LED enabled     |
+| key | type | description |
+|-----|------|-------------|
+| disk_led | boolean | disk LED 是否启用 |
+| heartbeat_led | boolean | heartbeat LED 是否启用 |
+| power_led | boolean | power LED 是否启用 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -2964,31 +2960,31 @@ If running on a yellow board, returns current values for its settings.
 
 <ApiEndpoint path="/os/boards/yellow" method="post">
 
-If running on a yellow board, changes one or more of its settings.
+如果在 yellow board 上运行，更改其一个或多个 settings。
 
-**负载：**
+**Payload:**
 
-| key           | type    | description                      |
-| ------------- | ------- | ---------------------------------|
-| disk_led      | boolean | Enable/disable the disk LED      |
-| heartbeat_led | boolean | Enable/disable the heartbeat LED |
-| power_led     | boolean | Enable/disable the power LED     |
+| key | type | description |
+|-----|------|-------------|
+| disk_led | boolean | 启用/禁用 disk LED |
+| heartbeat_led | boolean | 启用/禁用 heartbeat LED |
+| power_led | boolean | 启用/禁用 power LED |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/os/boards/green" method="get">
 
-If running on a green board, returns current values for its settings.
+如果在 green board 上运行，返回其 settings 的当前值。
 
-**返回数据：**
+**Returned data:**
 
-| key               | type    | description                             |
-| ----------------- | ------- | --------------------------------------- |
-| activity_led      | boolean | Is the green activity LED enabled       |
-| power_led         | boolean | Is the white power LED enabled          |
-| system_health_led | boolean | Is the yellow system health LED enabled |
+| key | type | description |
+|-----|------|-------------|
+| activity_led | boolean | green activity LED 是否启用 |
+| power_led | boolean | white power LED 是否启用 |
+| system_health_led | boolean | yellow system health LED 是否启用 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3002,33 +2998,71 @@ If running on a green board, returns current values for its settings.
 
 <ApiEndpoint path="/os/boards/green" method="post">
 
-If running on a green board, changes one or more of its settings.
+如果在 green board 上运行，更改其一个或多个 settings。
 
-**负载：**
+**Payload:**
 
-| key               | type    | description                                 |
-| ----------------- | ------- | ------------------------------------------- |
-| activity_led      | boolean | Enable/disable the green activity LED       |
-| power_led         | boolean | Enable/disable the white power LED          |
-| system_health_led | boolean | Enable/disable the yellow system health LED |
+| key | type | description |
+|-----|------|-------------|
+| activity_led | boolean | 启用/禁用 green activity LED |
+| power_led | boolean | 启用/禁用 white power LED |
+| system_health_led | boolean | 启用/禁用 yellow system health LED |
 
 </ApiEndpoint>
 
-### 解析中心
+<ApiEndpoint path="/os/boards/raspberrypi/firmware" method="get">
+
+返回 Raspberry Pi firmware 信息。在 Raspberry Pi 4 / 5 和 OS Agent 版本至少为 1.9.0 的 Home Assistant Yellow 上可用。报告的版本涵盖捆绑的 firmware payload（bootloader EEPROM 和 VL805 USB controller（如果存在））。如果 OS Agent 版本早于 1.9.0 则返回 `404`，如果运行中的 board 没有 Raspberry Pi firmware 接口则返回 `400`。
+
+**Returned data:**
+
+| key | type | description |
+|-----|------|-------------|
+| current_version | string | 当前安装的 firmware 版本 |
+| latest_version | string | OS 中捆绑的最新 firmware 版本 |
+| update_available | boolean | `latest_version` 比 `current_version` 新时为 `true` |
+| update_blocked | boolean | 当前 boot 设备或 board configuration 阻止捆绑的 updater 应用时为 `true` |
+| update_pending | boolean | 已应用 firmware 更新但系统尚未重启时为 `true` |
+| blocked_reason | string or null | 当 `update_blocked` 为 `true` 时的阻止原因；否则为 `null`。参见下面注释。 |
+
+每当 `update_blocked` 为 `true` 时，`blocked_reason` 始终为 `unsupported_boot_device`。根本原因各不相同（例如 USB/NVMe boot 设备，或禁用了 self-update 的 board）。未来可能会引入更具体的值。
+
+**Example response:**
+
+```json
+{
+  "current_version": "1765222194",
+  "latest_version": "1778498402",
+  "update_available": true,
+  "update_blocked": false,
+  "update_pending": false,
+  "blocked_reason": null
+}
+```
+
+</ApiEndpoint>
+
+<ApiEndpoint path="/os/boards/raspberrypi/firmware/update" method="post">
+
+应用捆绑的 Raspberry Pi firmware 更新（bootloader EEPROM 和 VL805（如果存在））。成功后，Supervisor 会提出 `reboot_required` issue；需要重启才能开始运行新 firmware。如果 OS Agent 版本早于 1.9.0 则返回 `404`，如果运行中的 board 没有 Raspberry Pi firmware 接口或该 board / boot 设备阻止了更新，则返回 `400`。
+
+</ApiEndpoint>
+
+### 分辨率
 
 <ApiEndpoint path="/resolution/info" method="get">
 
-**返回数据：**
+**Returned data:**
 
-| key      | type       | description                                      |
-| -------- | ---------- | ------------------------------------------------ |
-| unsupported | list | A list of reasons why an installation is marked as unsupported (container, dbus, docker_configuration, docker_version, lxc, network_manager, os, privileged, systemd) |
-| unhealthy | list | A list of reasons why an installation is marked as unhealthy (docker, supervisor, privileged, setup) |
-| issues | list | A list of [Issue models](/developers/api/supervisor/models#issues) |
-| suggestions | list | A list of [Suggestion models](/developers/api/supervisor/models#suggestion) actions |
-| checks | list | A list of [Check models](/developers/api/supervisor/models#check) |
+| key | type | description |
+|-----|------|-------------|
+| unsupported | list | 安装被标记为 unsupported 的原因列表（container, dbus, docker_configuration, docker_version, lxc, network_manager, os, privileged, systemd） |
+| unhealthy | list | 安装被标记为 unhealthy 的原因列表（docker, supervisor, privileged, setup） |
+| issues | list | [Issue models](api/supervisor/models.md#issue) 列表 |
+| suggestions | list | [Suggestion models](api/supervisor/models.md#suggestion) actions 列表 |
+| checks | list | [Check models](api/supervisor/models.md#check) 列表 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3039,8 +3073,9 @@ If running on a green board, changes one or more of its settings.
       "uuid": "A89924620F9A11EBBDC3C403FC2CA371",
       "type": "free_space",
       "context": "system",
-      "reference": null
-     }
+      "reference": null,
+      "reference_extra": null
+    }
   ],
   "suggestions": [
     {
@@ -3048,6 +3083,7 @@ If running on a green board, changes one or more of its settings.
       "type": "clear_backups",
       "context": "system",
       "reference": null,
+      "reference_extra": null,
       "auto": false
     }
   ],
@@ -3064,27 +3100,27 @@ If running on a green board, changes one or more of its settings.
 
 <ApiEndpoint path="/resolution/suggestion/<suggestion>" method="post">
 
-Apply a suggested action
+应用一个建议的 action
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/resolution/suggestion/<suggestion>" method="delete">
 
-Dismiss a suggested action
+忽略一个建议的 action
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/resolution/issue/<issue>/suggestions" method="get">
 
-Get suggestions that would fix an issue if applied.
+获取如果应用可以解决该 issue 的建议。
 
-**返回数据：**
+**Returned data:**
 
-| key         | type       | description                                                                |
-| ----------- | ---------- | -------------------------------------------------------------------------- |
-| suggestions | list       | A list of [Suggestion models](/developers/api/supervisor/models#suggestion) actions |
+| key | type | description |
+|-----|------|-------------|
+| suggestions | list | [Suggestion models](api/supervisor/models.md#suggestion) actions 列表 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3094,6 +3130,7 @@ Get suggestions that would fix an issue if applied.
       "type": "clear_backups",
       "context": "system",
       "reference": null,
+      "reference_extra": null,
       "auto": false
     }
   ]
@@ -3104,31 +3141,31 @@ Get suggestions that would fix an issue if applied.
 
 <ApiEndpoint path="/resolution/issue/<issue>" method="delete">
 
-Dismiss an issue
+忽略一个 issue
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/resolution/healthcheck" method="post">
 
-Execute a healthcheck and autofix & notification.
+执行 healthcheck 并自动修复和通知。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/resolution/check/<check>/options" method="post">
 
-Set options for this check.
+设置此 check 的 options。
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| enabled | bool   | If the check should be enabled or disabled                     |
+| key | type | description |
+|-----|------|-------------|
+| enabled | bool | check 应启用还是禁用 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/resolution/check/<check>/run" method="post">
 
-Execute a specific check right now.
+立即执行特定 check。
 
 </ApiEndpoint>
 
@@ -3136,13 +3173,13 @@ Execute a specific check right now.
 
 <ApiEndpoint path="/services" method="get">
 
-**返回数据：**
+**Returned data:**
 
-| key      | type       | description                                      |
-| -------- | ---------- | ------------------------------------------------ |
-| services | dictionary | dictionary of [Service models](/developers/api/supervisor/models#service) |
+| key | type | description |
+|-----|------|-------------|
+| services | dictionary | [Service models](api/supervisor/models.md#service) 字典 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3160,19 +3197,19 @@ Execute a specific check right now.
 
 <ApiEndpoint path="/services/mqtt" method="get">
 
-**返回数据：**
+**Returned data:**
 
-| key      | type    | description                             |
-| -------- | ------- | --------------------------------------- |
-| addon    | string  | The app slug                         |
-| host     | string  | The IP of the addon running the service |
-| port     | string  | The port the service is running on      |
-| ssl      | boolean | `true` if SSL is in use                 |
-| username | string  | The username for the service            |
-| password | string  | The password for the service            |
-| protocol | string  | The MQTT protocol                       |
+| key | type | description |
+|-----|------|-------------|
+| addon | string | app 的 slug |
+| host | string | 运行该 service 的 addon 的 IP |
+| port | string | service 运行的端口 |
+| ssl | boolean | 使用 SSL 时为 `true` |
+| username | string | service 的 username |
+| password | string | service 的 password |
+| protocol | string | MQTT protocol |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3190,42 +3227,42 @@ Execute a specific check right now.
 
 <ApiEndpoint path="/services/mqtt" method="post">
 
-Create a service definition
+创建一个 service definition
 
-**负载：**
+**Payload:**
 
-| key      | type    | description                             |
-| -------- | ------- | --------------------------------------- |
-| host     | string  | The IP of the addon running the service |
-| port     | string  | The port the service is running on      |
-| ssl      | boolean | `true` if SSL is in use                 |
-| username | string  | The username for the service            |
-| password | string  | The password for the service            |
-| protocol | string  | The MQTT protocol                       |
+| key | type | description |
+|-----|------|-------------|
+| host | string | 运行该 service 的 addon 的 IP |
+| port | string | service 运行的端口 |
+| ssl | boolean | 使用 SSL 时为 `true` |
+| username | string | service 的 username |
+| password | string | service 的 password |
+| protocol | string | MQTT protocol |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/services/mqtt" method="delete">
 
-Deletes the service definitions
+删除 service definitions
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/services/mysql" method="get">
 
-**返回数据：**
+**Returned data:**
 
-| key      | type    | description                             |
-| -------- | ------- | --------------------------------------- |
-| addon    | string  | The app slug                         |
-| host     | string  | The IP of the addon running the service |
-| port     | string  | The port the service is running on      |
-| ssl      | boolean | `true` if SSL is in use                 |
-| username | string  | The username for the service            |
-| password | string  | The password for the service            |
-| protocol | string  | The MQTT protocol                       |
+| key | type | description |
+|-----|------|-------------|
+| addon | string | app 的 slug |
+| host | string | 运行该 service 的 addon 的 IP |
+| port | string | service 运行的端口 |
+| ssl | boolean | 使用 SSL 时为 `true` |
+| username | string | service 的 username |
+| password | string | service 的 password |
+| protocol | string | MQTT protocol |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3241,32 +3278,32 @@ Deletes the service definitions
 
 <ApiEndpoint path="/services/mysql" method="post">
 
-Create a service definition
+创建一个 service definition
 
-**负载：**
+**Payload:**
 
-| key      | type   | description                             |
-| -------- | ------ | --------------------------------------- |
-| host     | string | The IP of the addon running the service |
-| port     | string | The port the service is running on      |
-| username | string | The username for the service            |
-| password | string | The password for the service            |
+| key | type | description |
+|-----|------|-------------|
+| host | string | 运行该 service 的 addon 的 IP |
+| port | string | service 运行的端口 |
+| username | string | service 的 username |
+| password | string | service 的 password |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/services/mysql" method="delete">
 
-Deletes the service definitions
+删除 service definitions
 
 </ApiEndpoint>
 
-### 商店
+### 存储
 
 <ApiEndpoint path="/store" method="get">
 
-Returns app store information.
+返回 app store 信息。
 
-**示例响应：**
+**Example response:**
 
 ```json
 { "addons":
@@ -3299,9 +3336,9 @@ Returns app store information.
 
 <ApiEndpoint path="/store/addons" method="get">
 
-Returns a list of store apps
+返回 store apps 列表
 
-**示例响应：**
+**Example response:**
 
 ```json
 [
@@ -3323,9 +3360,9 @@ Returns a list of store apps
 
 <ApiEndpoint path="/store/addons/<addon>" method="get">
 
-Returns information about a store app
+返回关于 store app 的信息
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3368,64 +3405,62 @@ Returns information about a store app
 
 <ApiEndpoint path="/store/addons/<addon>/install" method="post">
 
-Install an app from the store.
+从 store 安装一个 app。
 
-**负载：**
+**Payload:**
 
-| key        | type    | description                                                                                         |
-| ---------- | ------- | --------------------------------------------------------------------------------------------------- |
-| background | boolean | Return `job_id` immediately, do not wait for install to complete. Clients must check job for status |
+| key | type | description |
+|-----|------|-------------|
+| background | boolean | 立即返回 `job_id`，不等待安装完成。客户端必须检查 job 以获取 status |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/addons/<addon>/update" method="post">
 
-Update an app from the store.
+从 store 更新一个 app。
 
-**负载：**
+**Payload:**
 
-| key        | type    | description                                                                                        |
-| ---------- | ------- | -------------------------------------------------------------------------------------------------- |
-| backup     | boolean | Create a partial backup of the app, default is false                                            |
-| background | boolean | Return `job_id` immediately, do not wait for update to complete. Clients must check job for status |
+| key | type | description |
+|-----|------|-------------|
+| backup | boolean | 创建 app 的 partial backup，默认为 false |
+| background | boolean | 立即返回 `job_id`，不等待更新完成。客户端必须检查 job 以获取 status |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/addons/<addon>/changelog" method="get">
-Get the changelog for an app.
+获取 app 的 changelog。
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/addons/<addon>/documentation" method="get">
-Get the documentation for an app.
+获取 app 的 documentation。
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/addons/<addon>/icon" method="get">
-Get the app icon
+获取 app icon
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/addons/<addon>/logo" method="get">
-Get the app logo
+获取 app logo
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/addons/<addon>/availability" method="get">
 
-Returns 200 success status if the latest version of the app is able to be
-installed on the current system. Returns a 400 error status if it is not with a
-message explaining why.
+如果 app 的最新版本能够安装到当前系统上，则返回 200 成功状态。如果无法安装，则返回 400 错误状态，并附带说明原因的消息。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/reload" method="post">
 
-Reloads the information stored about apps.
+重新加载关于 app 的存储信息。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/repositories" method="get">
 
-Returns a list of store repositories
+返回 store repositories 列表
 
-**示例响应：**
+**Example response:**
 
 ```json
 [
@@ -3443,15 +3478,15 @@ Returns a list of store repositories
 
 <ApiEndpoint path="/store/repositories" method="post">
 
-Add an addon repository to the store
+向 store 添加一个 addon repository
 
-**负载：**
+**Payload:**
 
-| key        | type   | description                                      |
-| ---------- | ------ | ------------------------------------------------ |
-| repository | string | URL of the addon repository to add to the store. |
+| key | type | description |
+|-----|------|-------------|
+| repository | string | 要添加到 store 的 addon repository URL。 |
 
-**示例负载：**
+**Example payload:**
 
 ```json
 {
@@ -3463,9 +3498,9 @@ Add an addon repository to the store
 
 <ApiEndpoint path="/store/repositories/<repository>" method="get">
 
-Returns information about a store repository
+返回关于 store repository 的信息
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3481,13 +3516,13 @@ Returns information about a store repository
 
 <ApiEndpoint path="/store/repositories/<repository>" method="delete">
 
-Remove an unused addon repository from the store.
+从 store 移除一个未使用的 addon repository。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/store/repositories/<repository>/repair" method="post">
 
-Repair/reset an addon repository in the store that is missing or showing incorrect information.
+修复/重置 store 中缺失或显示不正确信息的 addon repository。
 
 </ApiEndpoint>
 
@@ -3495,16 +3530,16 @@ Repair/reset an addon repository in the store that is missing or showing incorre
 
 <ApiEndpoint path="/security/info" method="get">
 
-Returns information about the security features
+返回关于 security features 的信息
 
-**返回数据：**
+**Returned data:**
 
-| key                 | type         | description                                                   |
-| ------------------- | ------------ | ------------------------------------------------------------- |
-| pwned               | bool         | If pwned check is enabled or disabled on the backend          |
-| force_security      | bool         | If force-security is enabled or disabled on the backend       |
+| key | type | description |
+|-----|------|-------------|
+| pwned | bool | pwned 检查在 backend 上启用还是禁用 |
+| force_security | bool | force-security 在 backend 上启用还是禁用 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3517,45 +3552,45 @@ Returns information about the security features
 
 <ApiEndpoint path="/security/options" method="post">
 
-**负载：**
+**Payload:**
 
-| key                 | type   | description                                            |
-| ------------------- | ------ | ------------------------------------------------------ |
-| pwned               | bool   | Disable/Enable pwned                                   |
-| force_security      | bool   | Disable/Enable force-security                          |
+| key | type | description |
+|-----|------|-------------|
+| pwned | bool | 禁用/启用 pwned |
+| force_security | bool | 禁用/启用 force-security |
 
 </ApiEndpoint>
-
 
 ### Supervisor
 
 <ApiEndpoint path="/supervisor/info" method="get">
 
-Returns information about the supervisor
+返回关于 supervisor 的信息
 
-**返回数据：**
+**Returned data:**
 
-| key                 | type         | description                                                   |
-| ------------------- | ------------ | ------------------------------------------------------------- |
-| version             | string       | The installed supervisor version                              |
-| version_latest      | string       | The latest published version in the active channel            |
-| update_available    | boolean      | `true` if an update is available                              |
-| arch                | string       | The architecture of the host (armhf, aarch64, i386, amd64)    |
-| channel             | string       | The active channel (stable, beta, dev)                        |
-| timezone            | string       | The current timezone                                          |
-| healthy             | bool         | The supervisor is in a healthy state                          |
-| supported           | bool         | The environment is supported                                  |
-| logging             | string       | The current log level (debug, info, warning, error, critical) |
-| ip_address          | string       | The internal docker IP address to the supervisor              |
-| wait_boot           | int          | Max time to wait during boot                                  |
-| debug               | bool         | Debug is active                                               |
-| debug_block         | bool         | `true` if debug block is enabled                              |
-| diagnostics         | bool or null | Sending diagnostics is enabled                                |
-| addons_repositories | list         | A list of app repository URL's as strings                  |
-| auto_update         | bool         | Is auto update enabled for supervisor                         |
-| detect_blocking_io  | bool         | Supervisor raises exceptions for blocking I/O in event loop   |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 已安装的 supervisor 版本 |
+| version_latest | string | 活动 channel 中最新发布的版本 |
+| update_available | boolean | 有更新可用时为 `true` |
+| arch | string | host 的架构（armhf, aarch64, i386, amd64） |
+| channel | string | 活动 channel（stable, beta, dev） |
+| timezone | string | 当前 timezone |
+| healthy | bool | supervisor 处于健康状态 |
+| supported | bool | 环境受支持 |
+| logging | string | 当前 log 级别（debug, info, warning, error, critical） |
+| ip_address | string | 指向 supervisor 的内部 docker IP 地址 |
+| wait_boot | int | boot 期间等待的最大时间 |
+| debug | bool | Debug 已激活 |
+| debug_block | bool | 已启用 debug block 时为 `true` |
+| diagnostics | bool or null | 已启用发送 diagnostics |
+| addons_repositories | list | app repository URL 字符串列表 |
+| auto_update | bool | 是否已为 supervisor 启用 auto update |
+| detect_blocking_io | bool | Supervisor 针对事件循环中的 blocking I/O 抛出异常 |
+| feature_flags | dict | 开发 feature flag 名称与其启用状态的映射 |
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3575,7 +3610,10 @@ Returns information about the supervisor
   "diagnostics": null,
   "addons_repositories": ["https://example.com/addons"],
   "auto_update": true,
-  "detect_blocking_io": false
+  "detect_blocking_io": false,
+  "feature_flags": {
+    "supervisor_v2_api": false
+  }
 }
 ```
 
@@ -3583,96 +3621,92 @@ Returns information about the supervisor
 
 <ApiEndpoint path="/supervisor/logs" method="get">
 
-Get logs for the Supervisor container via the Systemd journal backend. If the
-Systemd journal gateway fails to provide the logs, raw Docker container logs are
-returned as the fallback.
+通过 Systemd journal 后端获取 Supervisor 容器的 logs。如果
+Systemd journal gateway 无法提供 logs，则以原始 Docker container logs 作为回退返回。
 
-The endpoint accepts the same headers and provides the same functionality as
-`/host/logs`.
+该 endpoint 接受与 `/host/logs` 相同的 headers 并提供相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/logs/follow" method="get">
 
-Identical to `/supervisor/logs` except it continuously returns new log entries.
+与 `/supervisor/logs` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/logs/latest" method="get">
 
-Return all logs of the latest startup of the Supervisor container.
+返回 Supervisor 容器最近一次启动的所有 logs。
 
-The `Range` header is ignored but the `lines` query parameter can be used.
+`Range` header 被忽略，但可以使用 `lines` query 参数。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/logs/boots/<bootid>" method="get">
 
-Get logs for the Supervisor container related to a specific boot.
+获取与特定 boot 相关的 Supervisor 容器 logs。
 
-The `bootid` parameter is interpreted in the same way as in
-`/host/logs/boots/<bootid>` and the endpoint otherwise provides the same
-functionality as `/host/logs`.
+`bootid` 参数的解释方式与 `/host/logs/boots/<bootid>` 中相同，该 endpoint 否则提供与 `/host/logs` 相同的功能。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/logs/boots/<bootid>/follow" method="get">
 
-Identical to `/supervisor/logs/boots/<bootid>` except it continuously returns
-new log entries.
+与 `/supervisor/logs/boots/<bootid>` 相同，区别在于它会持续返回新的 log entries。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/options" method="post">
 
-Update options for the supervisor, you need to supply at least one of the payload keys to the API call.
-You need to call `/supervisor/reload` after updating the options.
+更新 supervisor 的 options，你需要在 API 调用中至少提供一个 payload key。
+更新 options 后，你需要调用 `/supervisor/reload`。
 
-**负载：**
+**Payload:**
 
-| key                 | type   | description                                            |
-| ------------------- | ------ | ------------------------------------------------------ |
-| channel             | string | Set the active channel (stable, beta, dev)             |
-| timezone            | string | Set the timezone                                       |
-| wait_boot           | int    | Set the time to wait for boot                          |
-| debug               | bool   | Enable debug                                           |
-| debug_block         | bool   | Enable debug block                                     |
-| logging             | string | Set logging level                                      |
-| addons_repositories | list   | Set a list of URL's as strings for app repositories |
-| auto_update         | bool   | Enable/disable auto update for supervisor              |
-| detect_blocking_io  | string | Enable blocking I/O in event loop detection. Valid values are `on`, `off` and `on_at_startup`. |
+| key | type | description |
+|-----|------|-------------|
+| channel | string | 设置活动 channel（stable, beta, dev） |
+| timezone | string | 设置 timezone |
+| wait_boot | int | 设置等待 boot 的时间 |
+| debug | bool | 启用 debug |
+| debug_block | bool | 启用 debug block |
+| logging | string | 设置 logging 级别 |
+| addons_repositories | list | 设置 app repositories 的 URL 字符串列表 |
+| auto_update | bool | 为 supervisor 启用/禁用 auto update |
+| detect_blocking_io | string | 启用事件循环中的 blocking I/O 检测。有效值为 `on`、`off` 和 `on_at_startup`。 |
+| feature_flags | dict | 部分更新开发 feature flags。Keys 为 feature flag 名称（例如 `supervisor_v2_api`），values 为布尔值。省略的 keys 保持不变。 |
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/ping" method="get" unprotected>
 
-Ping the supervisor to check if it can return a response.
+向 supervisor 发送 Ping 以检查它是否能返回响应。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/reload" method="post">
 
-Reload parts of the supervisor, this enable new options, and check for updates.
+重新加载 supervisor 的部分内容，这将启用新的 options 并检查更新。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/restart" method="post">
 
-Restart the supervisor, can help to get the supervisor healthy again.
+重启 supervisor，有助于让 supervisor 恢复健康状态。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/repair" method="post">
 
-Repair docker overlay issues, and lost images.
+修复 docker overlay 问题和丢失的镜像。
 
 </ApiEndpoint>
 
 <ApiEndpoint path="/supervisor/stats" method="get">
 
-Returns a [Stats model](/developers/api/supervisor/models#stats) for the supervisor.
+为 supervisor 返回一个 [Stats model](api/supervisor/models.md#stats)。
 
-**示例响应：**
+**Example response:**
 
 ```json
 {
@@ -3691,36 +3725,36 @@ Returns a [Stats model](/developers/api/supervisor/models#stats) for the supervi
 
 <ApiEndpoint path="/supervisor/update" method="post">
 
-Update the supervisor
+更新 supervisor
 
-**负载：**
+**Payload:**
 
-| key     | type   | description                                                    |
-| ------- | ------ | -------------------------------------------------------------- |
-| version | string | The version to install. Defaults to the latest version. Development only: Only works in the Supervisor development environment. |
+| key | type | description |
+|-----|------|-------------|
+| version | string | 要安装的版本。默认为最新版本。仅限开发：仅在 Supervisor 开发环境中有效。 |
 
 </ApiEndpoint>
 
 ### 占位符
 
-Some of the endpoints uses placeholders indicated with `<...>` in the endpoint URL.
+一些 endpoints 在 endpoint URL 中使用以 `<...>` 表示的占位符。
 
-| placeholder | description                                                                                                                                           |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| addon       | The slug for the addon, to get the slug you can call `/addons`, to call endpoints for the app calling the endpoints you can use `self`as the slug. |
-| application | The name of an application, call `/audio/info` to get the correct name                                                                                |
-| backup      | A valid backup slug, example `skuwe823`, to get the slug you can call `/backups`                                                                      |
-| bootid      | An id or offset of a particular boot, used to filter logs. Call `/host/logs/boots` to get a list of boot ids or see `/host/logs/boots/<bootid>` to understand boot offsets |
-| check       | The slug of a system check in Supervisor's resolution manager. Call `/resolution/info` for a list of options from the `checks` field                  |
-| disk        | Identifier of a disk attached to host or `default`. See `/host/disks/<disk>/usage` for more details                                                   |
-| id          | Numeric id of a vlan on a particular interface. See `/network/interface/<interface>/vlan/<id>` for details                                            |         
-| identifier  | A syslog identifier used to filter logs. Call `/host/logs/identifiers` to get a list of options. See `/host/logs/identifiers/<identifier>` for some common examples |
-| interface   | A valid interface name, example `eth0`, to get the interface name you can call `/network/info`. You can use `default` to get the primary interface    |
-| issue       | The UUID of an issue with the system identified by Supervisor. Call `/resolution/info` for a list of options from the `issues` field                  |
-| job_id      | The UUID of a currently running or completed Supervisor job                                                                                           |
-| name        | Name of a mount added to Supervisor. Call `/mounts` to get a list of options from `mounts` field                                                      |
-| registry    | A registry hostname defined in the container registry configuration, to get the hostname you can call `/docker/registries`                            |
-| repository  | The slug of an addon repository added to Supervisor. Call `/store` for a list of options from the `repositories` field                                |
-| service     | The service name for a service on the host.                                                                                                           |
-| suggestion  | The UUID of a suggestion for a system issue identified by Supervisor. Call `/resolution/info` for a list of options from the `suggestions` field      |
-| uuid        | The UUID of a discovery service, to get the UUID you can call `/discovery`                                                                            |
+| placeholder | description |
+|-------------|-------------|
+| addon | addon 的 slug。要获取 slug，可以调用 `/addons`。要为调用 endpoint 的 app 调用 endpoints，可以使用 `self` 作为 slug。 |
+| application | application 名称。调用 `/audio/info` 获取正确的名称 |
+| backup | 有效的 backup slug，例如 `skuwe823`。要获取 slug，可以调用 `/backups` |
+| bootid | 特定 boot 的 id 或偏移量，用于筛选 logs。调用 `/host/logs/boots` 获取 boot ids 列表，或查看 `/host/logs/boots/<bootid>` 以了解 boot 偏移量 |
+| check | Supervisor resolution manager 中 system check 的 slug。调用 `/resolution/info` 从 `checks` 字段获取选项列表 |
+| disk | 附加到 host 的 disk 标识符或 `default`。查看 `/host/disks/<disk>/usage` 获取更多细节 |
+| id | 特定 interface 上 vlan 的数值 id。查看 `/network/interface/<interface>/vlan/<id>` 获取细节 |
+| identifier | 用于筛选 logs 的 syslog identifier。调用 `/host/logs/identifiers` 获取选项列表。查看 `/host/logs/identifiers/<identifier>` 了解一些常见示例 |
+| interface | 有效的 interface 名称，例如 `eth0`。要获取 interface 名称，可以调用 `/network/info`。可以使用 `default` 获取 primary interface |
+| issue | Supervisor 识别的系统 issue 的 UUID。调用 `/resolution/info` 从 `issues` 字段获取选项列表 |
+| job_id | 当前运行或已完成的 Supervisor job 的 UUID |
+| name | 添加到 Supervisor 的 mount 名称。调用 `/mounts` 从 `mounts` 字段获取选项列表 |
+| registry | 在 container registry configuration 中定义的 registry hostname。要获取 hostname，可以调用 `/docker/registries` |
+| repository | 添加到 Supervisor 的 addon repository 的 slug。调用 `/store` 从 `repositories` 字段获取选项列表 |
+| service | host 上 service 的 service name。 |
+| suggestion | Supervisor 识别的系统 issue 的 suggestion 的 UUID。调用 `/resolution/info` 从 `suggestions` 字段获取选项列表 |
+| uuid | discovery service 的 UUID。要获取 UUID，可以调用 `/discovery` |

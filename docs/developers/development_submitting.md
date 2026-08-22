@@ -1,51 +1,49 @@
 ---
-title: "提交你的作品"
-description: '始终将您的 Pull 请求基于当前 dev 分支，而不是 master。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "Submit your work"
 ---
-# 提交你的作品
 
 :::tip
-始终将您的 Pull 请求基于当前 **`dev`** 分支，而不是 `master`。
+请始终基于当前的 **`dev`** 分支创建 Pull Requests，而不是 `master`。
 :::
 
-使用 GitHub 将您的改进、修复和新功能一次提交到 Home Assistant[请求请求](https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)。步骤如下：
+使用 GitHub [Pull Requests](https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)，一次一个地将你的改进、修复和新功能提交给 Home Assistant。步骤如下：
 
-1. 从您的分支的开发分支中，创建一个新分支来保存您的更改：
+1. 从你的 fork 的 dev 分支中，创建一个新分支来保存你的更改：
 
-`git checkout -b some-feature`
+   `git checkout -b some-feature`
 
-2. 进行更改，创建[新平台](/developers/creating_platform_index)，开发一个[新集成](/developers/creating_component_index)，或修复[问题](https://github.com/home-assistant/core/issues).
+2. 进行你的更改，创建[新平台](creating_platform_index.md)，开发[新集成](creating_component_index.md)，或修复[issues](https://github.com/home-assistant/core/issues)。
 
-3. [测试您的更改](/developers/development_testing)并检查是否有样式违规。
-考虑添加测试以确保您的代码有效。
+3. [测试你的更改](development_testing.md) 并检查是否存在风格违规。
+   考虑添加测试以确保你的代码能够正常工作。
 
-4. 如果根据这些一切看起来都不错[必须](/developers/development_checklist)，提交您的更改：
+4. 如果根据这些[必须项](development_checklist.md) 一切看起来都没问题，提交你的更改：
 
-`git add .`
+   `git add .`
 
-`git commit -m "Add some feature"`
+   `git commit -m "Add some feature"`
 
-- 编写有意义的提交消息，而不仅仅是 `Update` 或 `Fix` 之类的内容。
-- 使用 cAPItal 字母以您的提交消息开头，并且不要以句号（句点）结束。
-- 不要在提交消息中添加 `[bla.bla]` 或 `platform:` 前缀。
-- 使用祈使语气编写您的提交消息，例如`Add some feature` 不是 `Adds some feature`。
-     
+    - 编写有意义的提交消息，而不仅仅是 `Update` 或 `Fix` 之类的内容。
+    - 使用大写字母开头，并且不要在末尾加句号。
+    - 不要用 `[bla.bla]` 或 `platform:` 前缀你的提交消息。
+    - 使用祈使语气编写提交消息，例如 `Add some feature`，而不是 `Adds some feature`。
 
-5. 将您提交的更改推送回 GitHub 上的分支：
 
-`git push origin HEAD`
+5. 将提交的更改推送到你在 GitHub 上的 fork：
 
-6. 跟随[这些步骤](https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)创建您的拉取请求。
+   `git push origin HEAD`
 
-- 在 GitHub 上，导航至[Home Assistant 存储库的主页](https://github.com/home-assistant/core).
-- 在“分支”菜单中，选择包含您的提交的分支（来自您的分支）。
-- 在“分支”菜单的右侧，单击“**新拉取请求**”。
-- 使用基本分支下拉菜单选择您想要将更改合并到的分支，然后使用比较分支下拉菜单选择您在其中进行更改的主题分支。确保 Home Assistant 分支与您的分叉分支 (`dev`) 匹配，否则您将建议分支之间的所有提交。
-- 输入标题并完成为您的拉取请求提供的模板。
-- 单击**创建拉取请求**。
+6. 按照[这些步骤](https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) 创建你的 pull request。
 
-7. 检查对您的拉取请求的评论和建议，并密切关注[CI输出](https://github.com/home-assistant/core/actions).
+   - 在 GitHub 上，导航到 [Home Assistant 仓库的主页面](https://github.com/home-assistant/core)。
+   - 在 "Branch" 菜单中，选择包含你提交（来自你的 fork）的分支。
+   - 点击 Branch 菜单右侧的 **New pull request**。
+   - 使用 base branch 下拉菜单选择要将更改合并到的分支，然后使用 compare branch 下拉菜单选择你进行更改的主题分支。确保 Home Assistant 分支与你的 fork 分支（`dev`）匹配，否则你将提交所有分支之间的提交。
+   - 输入标题并填写 pull request 的提供模板。
+   - 点击 **Create pull request**。
+
+7. 检查你的 pull request 上的评论和建议，并关注 [CI output](https://github.com/home-assistant/core/actions)。
 
 :::info
-如果这是您第一次提交拉取请求，则 CI 将不会运行，直到维护者批准运行它。只需等待，维护人员最终会过来并批准它。
+如果你是第一次提交 pull request，CI 在维护者批准之前不会运行。只需等待，维护者最终会前来并批准。
 :::

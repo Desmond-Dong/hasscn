@@ -1,33 +1,31 @@
 ---
-title: "服务操作在 async_setup 中注册"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "Service actions 在 async_setup 中注册"
+sidebar_label: 🥉 action-setup
 related_rules:
   - action-exceptions
 ---
-# 服务操作在 async_setup 中注册
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
-集成可以将自己的服务操作添加到Home Assistant。
-过去，他们经常在 `async_setup_entry` 方法中注册并在 `async_unload_entry` 方法中删除。
-这样做的结果是，服务操作仅在存在加载的条目时才可用。
-这并不理想，因为这样我们就无法验证用户创建的使用这些服务操作的自动化，因为配置条目可能无法加载。
+集成可以向 Home Assistant 添加自己的 service actions。
+过去，它们经常在 `async_setup_entry` 方法中注册，并在 `async_unload_entry` 方法中移除。
+这导致 service actions 仅在存在已加载的 entry 时才可用。
+这并不理想，因为这样我们无法验证用户使用这些 service actions 创建的 automations，因为可能存在 configuration entry 无法加载的情况。
 
-我们更喜欢集成在 `async_setup` 方法中设置其服务操作。
-这样，如果目标配置条目未加载，我们可以让用户知道服务操作不起作用的原因。
-验证应在服务操作内进行，并且如果输入无效，则应引发 `ServiceValidationError`。
+我们更倾向于集成在 `async_setup` 方法中设置它们的 service actions。
+这样，如果目标 configuration entry 未加载，我们可以让用户知道 service action 为什么不工作。
+验证应在 service action 内部进行，如果输入无效应引发 `ServiceValidationError`。
 
-## 实施示例
+## 示例实现
 
-下面的示例位于 `async_setup` 方法中注册服务操作的代码片段。
-在此示例中，服务调用需要配置条目 id 作为参数。
-这用于首先获取配置条目，然后检查它是否已加载。
-如果配置条目不存在或我们找到的配置条目未加载，我们会向用户显示相关错误。
-提供描述占位符以实现服务参数的转换，例如，引用外部资源（例如需要独立于服务描述进行本地化或更新文档 URL）。
+以下是 service action 在 `async_setup` 方法中注册的代码片段。
+在此示例中，service call 需要 configuration entry id 作为参数。
+这用于首先获取 configuration entry，然后检查它是否已加载。
+如果 configuration entry 不存在或找到的 configuration entry 未加载，我们将引发相关错误并显示给用户。
+提供 description placeholders 以启用 service 参数的翻译，例如，引用需要独立于 service 描述进行本地化或更新的外部资源（如文档 URL）。
 
-ZZ保护0ZZ:
+`__init__py`:
 ```python {13-20} showLineNumbers
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Set up my integration."""
@@ -51,13 +49,13 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     )
 ```
 
-## 其他资源
+## 附加资源
 
-有关如何设置服务操作的更多信息，请参阅 [service documentation](/developers/dev_101_services)。
+有关如何设置 service actions 的更多信息，请参阅[service 文档](/developers/dev_101_services)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+此规则没有例外。
 
 ## 相关规则
 

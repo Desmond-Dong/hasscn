@@ -1,28 +1,26 @@
 ---
-title: "在集成初始化期间检查我们是否能够正确设置它"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "在集成初始化时检查是否能够正确设置"
+sidebar_label: 🥉 test-before-setup
 related_rules:
   - runtime-data
 ---
-# 在集成初始化期间检查我们是否能够正确设置它
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-当我们初始化集成时，我们应该检查是否能够正确设置它。
-这样我们就可以立即让用户知道它不起作用。
+初始化集成时，我们应该检查是否能够正确设置。
+这样可以立即让用户知道集成无法正常工作。
 
-实施这些检查可以增强集成正确运行的信心，并提供一种用户友好的方式来显示错误。
+实现这些检查可以提高集成正确工作的信心，并以用户友好的方式展示错误。
 这将改善用户体验。
 
-## 实施示例
+## 示例实现
 
-当失败原因是暂时性的（例如设备暂时离线）时，我们应抛出 `ConfigEntryNotReady`，Home Assistant 会稍后重试设置该配置条目（config entry）。
-如果失败原因是密码错误或 API 密钥无效，我们应抛出 `ConfigEntryAuthFailed`，Home Assistant 会要求用户重新进行身份验证（如果已实现重新认证流程）。
-如果我们预期该集成在可预见的未来都无法正常工作，则应抛出 `ConfigEntryError`。
+当失败的原因是临时性的（例如设备暂时离线），我们应该抛出 `ConfigEntryNotReady`，Home Assistant 稍后会重试设置。
+如果失败的原因是密码不正确或 api key 无效，我们应该抛出 `ConfigEntryAuthFailed`，Home Assistant 会提示用户重新进行身份验证（如果已实现重新身份验证流程）。
+如果我们预计集成在可预见的将来无法工作，我们应该抛出 `ConfigEntryError`。
 
-ZZ保护0ZZ:
+`__init__.py`:
 ```python {6-13} showLineNumbers
 async def async_setup_entry(hass: HomeAssistant, entry: MyIntegrationConfigEntry) -> bool:
     """Set up my integration from a config entry."""
@@ -46,16 +44,16 @@ async def async_setup_entry(hass: HomeAssistant, entry: MyIntegrationConfigEntry
 ```
 
 :::info
-请注意，当通过 `await coordinator.async_config_entry_first_refresh()` 使用数据更新协调器时，这也可能会隐式实现。
+请注意，使用 data update coordinator 并通过 `await coordinator.async_config_entry_first_refresh()` 时，也可能隐式实现此功能。
 :::
 
-## 其他资源
+## 更多资源
 
-有关配置条目（config entry）及其生命周期的更多信息，请参阅 [config entry documentation](/developers/config_entries_index)。
+关于配置条目及其生命周期的更多信息，请参见[config entry 文档](/developers/config_entries_index)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

@@ -1,96 +1,130 @@
 ---
-title: "参与文档贡献"
-description: '用户文档位于 https://www.home-assistant.io(https://www.home-assistant.io)。 本节补充说明如何创建或修改文档内容。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "为文档做贡献"
 ---
-# 参与文档贡献
 
 用户文档位于 [https://www.home-assistant.io](https://www.home-assistant.io)。
-本节补充说明如何创建或修改文档内容。
+本节提供有关创建或修改内容的更多详细信息。
 
- [home-assistant.io](https://home-assistant.io) 网站基于 [Jekyll](https://github.com/jekyll/jekyll) 构建。
-页面使用 [Markdown](https://spec.commonmark.org/current/) 编写，因此新增页面时不需要了解 HTML。
+[home-assistant.io](https://home-assistant.io) 网站是使用 [Jekyll](https://github.com/jekyll/jekyll) 构建的。
+页面是用 [Markdown](https://spec.commonmark.org/current/) 编写的。要添加一个页面，你不需要了解 HTML。
 
-## 文档 Pull Request 评审流程
+## 文档 PR 审查流程
 
-在提交 Pull Request 之前，请先阅读[通用 Pull Request 评审流程](/developers/review-process)。
-此外，参与文档贡献时还需要遵循以下规范。
+在提交 PR 之前，请通读[通用 PR 审查流程](/developers/review-process)。
+此外，在贡献文档时，还需考虑以下文档指南。
 
-文档仓库主要使用两个分支：`current` 和 `next`：
+文档仓库有两个主要分支：`current` 和 `next`：
 
-- 如果你在为新增的集成或新功能补充文档，请提交到 `next` 分支。
-- 如果你是在改进已有文档，请提交到 `current` 分支。
+- 如果你在编写新集成或正在向代码添加功能的文档，请将目标指向 `next` 分支。
+- 如果你在改进现有文档，请将目标指向 `current` 分支。
 
-我们主要遵循 Microsoft Writing Style Guide，并额外补充了以下规范：
+我们主要遵循 Microsoft Writing Style Guide，并有一些额外的指南：
 
-- [Documentation standards](/developers/documenting/standards)
-- [Documentation style guide](/developers/documenting/general-style-guide)
+- [文档标准](/developers/documenting/standards)
+- [文档风格指南](/developers/documenting/general-style-guide)
 - [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/)
-- [YAML Style Guide](/developers/documenting/yaml-style-guide)
+- [Merriam-Webster Dictionary](https://www.merriam-webster.com/)
+- [YAML 风格指南](/developers/documenting/yaml-style-guide)
 
-## 小型改动
+## 小的更改
 
-你也可以直接在 GitHub 中打开对应页面的源文件进行在线编辑。这样会自动创建一个 fork，便于快速修改。需要注意的是，这种方式下无法上传图片。完成修改后，请通过 Pull Request（PR）提交。
+你可以使用 **Edit** 按钮或 **Edit this page** 链接来编辑页面，它会自动在 GitHub 中创建一个 fork，并允许你快速编辑。请注意，使用这种方式工作时无法上传图片。你在自己的更改上工作并通过 PR 提出。
 
-创建 Pull Request（PR）后，你可以在 Netlify 评论中点击 **Deploy Preview** 链接预览拟议改动。
+创建 PR 时，可以通过点击 Netlify 评论中的 **Deploy Preview** 链接来查看拟议更改的预览。
 
-## 较大改动
+## 较大的更改
 
-如果改动较大，建议先克隆网站仓库。这样你就可以在本地预览和检查修改结果。整体流程与参与 Home Assistant 本体开发并无本质区别。
+对于较大的更改，我们建议你克隆网站仓库。这样，你可以在本地查看更改。在网站上工作的过程与在 Home Assistant 本身上工作的过程没有区别。
 
-### 使用 Visual Studio Code + devcontainer 开发
+### 使用 Visual Studio Code + devcontainer 进行开发
 
-最简单的方式是使用 Visual Studio Code 配合 devcontainer，这与 Home Assistant Core 的开发环境配置方式相同。具体步骤请参考[开发环境](/developers/development_environment)页面。
-按照这些说明操作时，请将仓库从 Home Assistant Core 替换为 `home-assistant.io`。
+开始开发最简单的方法是使用带有 devcontainers 的 Visual Studio Code，这与在 Home Assistant Core 开发中工作的方式相同。请查看[开发环境](/developers/development_environment)页面获取说明。
+在按照这些说明操作时，将 Home Assistant Core 仓库替换为 `home-assistant.io` 仓库。
 
-要预览改动，请打开 VS Code 命令面板，选择 **Tasks: Run Task** > **Preview**。
-随后你应该可以通过 `http://localhost:4000` 访问本地运行的文档站点。
+要查看更改，请打开 VS Code 命令面板并选择 **Tasks: Run Task** > **Preview**。
+你应该能够访问在 `http://localhost:4000` 上本地运行的文档网站。
 
-### 手动配置环境
+### 手动环境
 
-你也可以使用更传统的本地开发环境。
+也可以设置一个更传统的开发环境。
 
-如果要在本地测试修改，需要安装 **Ruby** 及其依赖（gems）：
+#### 安装依赖项
 
-- 如果尚未安装，请先[安装 Ruby](https://www.ruby-lang.org/en/documentation/installation/)。
-  当前所需版本请参考 [.ruby-version](https://github.com/home-assistant/home-assistant.io/blob/current/.ruby-version)。
-- 安装 Ruby 的依赖管理工具 `bundler`：`gem install bundler`（某些环境下可能需要使用 `sudo` 执行）。
+要在本地测试更改，你需要 Ruby 及其依赖项（称为 gems）。
 
-- Fedora 快速安装命令：
+1. Fork 并克隆 home-assistant.io 的 [git 仓库](https://github.com/home-assistant/home-assistant.io)。
+2. 在本地 `home-assistant.io` 目录中，安装 Ruby。当前所需的版本请查看 [.ruby-version](https://github.com/home-assistant/home-assistant.io/blob/current/.ruby-version)。
+3. 为你的操作系统安装 Ruby 和 Bundler。
+
+    - Fedora：
+
+        ```shell
+        sudo dnf -y install \
+          gcc-c++ ruby ruby-devel rubygem-bundler rubygem-json rubygem-rake
+        bundle
+        ```
+
+    - Debian/Ubuntu：
+
+        ```shell
+        sudo apt-get install \
+          ruby ruby-dev ruby-bundler ruby-json g++ zlib1g-dev
+        bundle
+        ```
+
+    - macOS，如果捆绑的 Ruby 不起作用：
+
+        ```shell
+        RUBY_FORMULA="ruby@$(cut -d . -f 1,2 .ruby-version)"
+        brew install "$RUBY_FORMULA"
+        export PATH="$(brew --prefix "$RUBY_FORMULA")/bin:$PATH"
+        ```
+
+4. 如果在上一步中尚未安装 gems，请在 `home-assistant.io` 目录中运行 `bundle`。
+
+##### 可选：使用 mise-en-place 安装 Ruby
+
+如果你使用 [mise-en-place](https://mise.jdx.dev/) 管理 Ruby，请使用 `mise` 代替主流程中的第 3 步。
+
+在 Fedora 上，首先安装 `mise` 安装 Ruby 所需的包：
+
+```shell
+sudo dnf -y install \
+  gcc-c++ make perl-FindBin openssl-devel readline-devel \
+  zlib-ng-compat-devel libyaml-devel gmp-devel
+```
+
+信任仓库配置，以便 `mise` 从 `.ruby-version` 读取所需版本：
+
+```shell
+mise trust
+mise install ruby
+gem install bundler
+bundle
+```
+
+#### 在本地预览网站
+
+1. 生成第一次预览：
 
     ```shell
-    sudo dnf -y install gcc-c++ ruby ruby-devel rubygem-bundler rubygem-json && bundle
+    bundle exec rake generate
     ```
 
-- Debian/Ubuntu 快速安装命令：
+    这可能需要一分钟的时间。
+2. 创建、编辑或更新页面。集成文档位于 `source/_integrations/` 中。Home Assistant 文档位于 `source/_docs/` 中。
+3. 启动本地预览：
 
     ```shell
-    sudo apt-get install ruby ruby-dev ruby-bundler ruby-json g++ zlib1g-dev && bundle
+    bundle exec rake preview
     ```
 
-- macOS 快速安装命令（如果系统自带的 Ruby 不可用）：
+4. 在浏览器中打开 [http://127.0.0.1:4000](http://127.0.0.1:4000)。在预览运行期间，文件更改会被自动检测，受影响的页面会重新构建。在浏览器中刷新页面即可查看更新。
+5. 准备提交 PR 时，请按照[文档 PR 审查流程](#documentation-pull-request-review-process)操作。
 
-    ```shell
-    brew install ruby@3.1 && export PATH="/usr/local/opt/ruby@3.1/bin:$PATH"
-    ```
+#### 在无头机器上预览网站
 
-- macOS 快速安装命令（如果系统自带的 Ruby 不可用；请确保在 `home-assistant.io` 目录下执行）：
-
-   ```shell
-   brew install ruby@$(cat .ruby-version) && export PATH="/usr/local/opt/ruby@$(cat .ruby-version)/bin:$PATH"
-   ```
-
-- Fork `home-assistant.io` [git 仓库](https://github.com/home-assistant/home-assistant.io)。
-- 在 `home-assistant.io` 根目录执行 `bundle`，安装所需 gems。
-
-完成后即可开始处理文档：
-
-- 运行 `bundle exec rake generate` 生成首次预览，通常需要等待一分钟左右。
-- 创建、编辑或更新页面。集成 / 平台文档位于 `source/_integrations/`，Home Assistant 自身文档位于 `source/_docs/`。
-- 在本地测试 `home-assistant.io` 改动：执行 `bundle exec rake preview`，然后访问 [http://127.0.0.1:4000](http://127.0.0.1:4000)。命令运行期间，文件变更会自动被检测并更新对应页面，但仍需你手动刷新浏览器。
-- 如果文档对应的是新功能、平台或集成，请向 `home-assistant.io` 的 **next** 分支提交 Pull Request（PR）。
-- 如果是修正文档问题、添加 Cookbook 条目，或扩展已有文档，请向 `home-assistant.io` 的 **current** 分支提交 Pull Request（PR）。
-
-`bundle exec rake` 生成的站点仅能在本地访问。如果你是在无界面设备上开发，可以使用端口转发：
+通过 `bundle exec rake` 生成的站点只能本地访问。如果你在无头机器上进行开发，请使用端口转发：
 
 ```shell
 ssh -L 4000:localhost:4000 user_on_headless_machine@ip_of_headless_machine

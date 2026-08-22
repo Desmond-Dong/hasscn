@@ -1,58 +1,57 @@
 ---
-title: "应用程序通讯"
-description: 'Home Assistant 内的应用程序（以前称为附加组件）之间的通信方式有多种。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "App 通信"
+sidebar_label: "通信"
 ---
-# 应用程序通讯
 
-Home Assistant 内的应用程序（以前称为附加组件）之间的通信方式有多种。
+在 Home Assistant 中，app（以前称为 add-on）之间有多种不同的通信方式。
 
 ## 网络
 
-我们使用内部网络，允许使用每个应用程序的名称或别名与每个应用程序进行通信，包括与 Home Assistant 之间的通信。只有在主机网络上运行的应用程序受到限制，因为它们可以通过名称与所有内部应用程序进行通信，但所有其他应用程序都无法通过名称来寻址这些应用程序。但是，使用别名对两者都适用！
+我们使用一个内部网络，该网络允许通过名称或别名与每个 app（包括与 Home Assistant 之间）进行通信。仅在主机网络上运行的 app 受到的限制是，它们可以通过名称与所有内部 app 通信，但所有其他 app 无法通过名称寻址这些 app。然而，使用别名对两者都有效！
 
-姓名/别名用于 Home Assistant 内部的通信。
-该名称使用以下格式生成：`{REPO}_{SLUG}`，例如`local_xy` 或`3283fh_myaddon`。在此示例中，`{SLUG}` 在应用程序的`config.yaml` 文件中定义。您也可以使用此名称作为 DNS 名称，但需要将任何 `_` 替换为 `-` 以获得有效的主机名。如果应用程序安装在本地，`{REPO}` 将是`local`。如果应用程序是从 GitHub 存储库安装的，则 `{REPO}` 是从 GitHub 存储库的 URL 生成的哈希标识符（例如：`https://github.com/xy/my_hassio_addons`）。请参阅[here](https://github.com/home-assistant/supervisor/blob/4ac7f7dcf08abb6ae5a018536e57d078ace046c8/supervisor/store/utils.py#L17) 以了解如何生成此标识符。请注意，在使用 [Supervisor 应用程序 API][supervisor-addon-api] 的某些操作中需要此标识符。您可以通过向 Supervisor API `addons` 端点发出 GET 请求来查看所有当前安装的应用程序的存储库标识符。
+名称/别名用于 Home Assistant 内部的通信。
+名称的生成格式为：`{REPO}_{SLUG}`，例如 `local_xy` 或 `3283fh_myaddon`。在这个示例中，`{SLUG}` 定义在 app 的 `config.yaml` 文件中。你也可以将此名称用作 DNS 名称，但你需要将任何 `_` 替换为 `-` 才能成为有效的 hostname。如果 app 在本地安装，`{REPO}` 将是 `local`。如果 app 从 GitHub 仓库安装，`{REPO}` 是从 GitHub 仓库 URL 生成的哈希标识符（例如：`https://github.com/xy/my_hassio_addons`）。请参见[此处](https://github.com/home-assistant/supervisor/blob/4ac7f7dcf08abb6ae5a018536e57d078ace046c8/supervisor/store/utils.py#L17)了解此标识符的生成方式。请注意，在使用 [Supervisor app API][supervisor-addon-api] 的某些操作中需要此标识符。你可以通过向 Supervisor API `addons` endpoint 发送 GET 请求来查看所有当前已安装 app 的仓库标识符。
 
-使用`supervisor` 与内部API 进行通信。
+使用 `supervisor` 与内部 API 通信。
 
-## 家庭助理核心
+## Home Assistant 核心
 
-应用程序（以前称为附加组件）可以使用内部代理与 [Home Assistant Core API][core-api] 进行通信。这使得在不知道密码、端口或其他实例信息的情况下与 API 通信变得非常简单。使用 `http://supervisor/core/api/` 可以确保内部通信被重定向到正确位置。下一步是将 `homeassistant_api: true` 添加到 `config.yaml` 文件中，并读取环境变量 `SUPERVISOR_TOKEN`。发起请求时，可将其作为 Home Assistant Core 的 [Bearer Token](/developers/auth_api) 使用。
+app（以前称为 add-on）可以通过内部代理与 [Home Assistant Core API][core-api] 通信。这样你无需知道密码、端口或关于 Home Assistant 实例的任何其他信息，就能轻松地与 API 通信。使用此 URL：`http://supervisor/core/api/` 可以确保内部通信被重定向到正确的地方。下一步是在 `config.yaml` 文件中添加 `homeassistant_api: true` 并读取环境变量 `SUPERVISOR_TOKEN`。在发起请求时将其作为 Home Assistant Core [bearer token](/developers/auth_api#making-authenticated-requests) 使用。
 
-例如`curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" http://supervisor/core/api/config`
+例如 `curl -X GET -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" -H "Content-Type: application/json" http://supervisor/core/api/config`
 
-[Home Assistant Websocket API][core-websocket] 还有一个代理，其工作方式与上面的 API 代理类似，并且需要 `SUPERVISOR_TOKEN` 作为密码。使用此 URL：`ws://supervisor/core/websocket`。
+还有一个用于 [Home Assistant Websocket API][core-websocket] 的代理，它的工作原理与上面的 API 代理相同，需要 `SUPERVISOR_TOKEN` 作为密码。使用此 URL：`ws://supervisor/core/websocket`。
 
-还可以通过内部网络直接与名为 `homeassistant` 的 Home Assistant 实例进行通信。但是，您需要知道正在运行的实例使用的配置。
+你也可以在内部网络上直接与名为 `homeassistant` 的 Home Assistant 实例通信。然而，你需要知道正在运行的实例所使用的配置。
 
-我们在 Home Assistant 中有几个操作来运行任务。通过 STDIN 将数据发送到应用程序以使用 `hassio.addon_stdin` 操作。
+我们在 Home Assistant 中有几个 action 可以运行任务。通过 STDIN 向 app 发送数据以使用 `hassio.addon_stdin` action。
 
-## 主管API
+## Supervisor API
 
-要启用对 [Supervisor API][supervisor-api] 的调用，请将`hassio_api: true` 添加到`config.yaml` 文件并读取环境变量`SUPERVISOR_TOKEN`。现在您可以通过 URL 使用 API：`http://supervisor/`。使用`SUPERVISOR_TOKEN` 和标头`Authorization: Bearer`。您可能还需要将 Supervisor API 角色更改为`hassio_role: default`。
+要启用对 [Supervisor API][supervisor-api] 的调用，请在 `config.yaml` 文件中添加 `hassio_api: true` 并读取环境变量 `SUPERVISOR_TOKEN`。现在你可以在 URL `http://supervisor/` 上使用 API。使用 `Authorization: Bearer` 头携带 `SUPERVISOR_TOKEN`。你还需要将 Supervisor API 角色更改为 `hassio_role: default`。
 
-应用程序可以调用一些API命令，而无需设置`hassio_api: true`：
+app 可以在无需设置 `hassio_api: true` 的情况下调用某些 API 命令：
 
-- @@保护0@@
-- @@保护0@@
-- @@保护0@@
-- @@保护0@@
-- @@保护0@@
-- @@保护0@@
-- @@保护0@@
+- `/core/api`
+- `/core/api/stream`
+- `/core/websocket`
+- `/addons/self/*`
+- `/services*`
+- `/discovery*`
+- `/info`
 
-***笔记：*** 有关 Home Assistant API 访问要求，请参阅上文。
+***注意：*** 有关 Home Assistant API 访问要求，请参见上文。
 
-## 服务API
+## Services API
 
-我们有一个内部服务 API，可以将服务公开给其他应用程序，而无需用户添加任何配置。应用程序可以获得服务的完整配置以供使用和连接。应用程序需要在应用程序[configuration](/developers/apps/configuration)中标记服务的使用，以便能够访问服务。所有支持的服务（包括其可用选项）均记录在 [API 文档][supervisor-services-api] 中。
+我们有一个内部 services API，可以在无需用户添加任何配置的情况下将服务公开给其他 app。app 可以获取服务的全部配置来使用并连接到它。app 需要在 app [配置](configuration.md) 中标记服务的使用，才能访问服务。所有受支持的服务，包括其可用选项，都记录在 [API 文档][supervisor-services-api] 中。
 
 支持的服务有：
 
-- MQTT
+- mqtt
 - mysql
 
-您可以使用 Bashio 为您的应用程序 init 获取此信息：`bashio::services <service> <query>`
+你可以使用 Bashio 在 app 初始化时为 app 获取这些信息：`bashio::services <service> <query>`
 
 例如：
 
@@ -65,5 +64,5 @@ MQTT_PASSWORD=$(bashio::services mqtt "password")
 [core-api]: /api/rest.md
 [core-websocket]: /api/websocket.md
 [supervisor-api]: /api/supervisor/endpoints.md
-[supervisor-addon-api]: /api/supervisor/endpoints.md#addons
+[supervisor-addon-api]: /api/supervisor/endpoints.md#apps
 [supervisor-services-api]: /api/supervisor/endpoints.md#service

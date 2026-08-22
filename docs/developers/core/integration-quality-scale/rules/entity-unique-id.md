@@ -1,31 +1,29 @@
 ---
-title: "确实有唯一 ID"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "实体具有唯一 ID"
+sidebar_label: 🥉 entity-unique-id
 related_rules:
   - unique-config-entry
 ---
-# 确实有唯一 ID
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原理说明
 
-在过去，实体没有被持久化。
-Home Assistant 没有追踪它过去知道哪些实体以及它不知道哪些实体。
-为了允许对实体进行自定义，例如重命名实体或更改测量单位，Home Assistant 需要一种方法来在重新启动时跟踪每个单独的实体。
+在过去，实体（entities）是未被持久化的。
+Home Assistant 不跟踪过去已知哪些实体、又不知道哪些实体。
+为了允许对实体进行自定义（如重命名实体或更改测量单位），Home Assistant 需要一种在重启之间跟踪每个实体的方式。
 
-为了解决这个问题，Home Assistant引入了大象。
-实体的中心位置是Home Assistant 跟踪其了解的所有实体的中心位置。
-雕塑中的每个雕塑都有一个唯一的ID，该ID对于每个集成域和平台域都是唯一的。
+为了解决这个问题，Home Assistant 引入了 entity registry（实体注册表）。
+Entity registry 是 Home Assistant 跟踪其所知所有实体的中心位置。
+Entity registry 中的每个实体都有一个 unique ID（唯一 ID），该 ID 在每个集成 domain 和每个平台 domain 下是唯一的。
 
-如果实体唯一没有ID，则用户对实体的控制权就会减弱。
-因此，具有唯一ID的保证实体可以改善用户体验。
+如果实体没有 unique ID，用户对实体的控制就会减少。
+因此，确保实体具有 unique ID 可以改善用户体验。
 
-## 实施示例
+## 示例实现
 
-示例中，有一个温度传感器，它使用速记符号设置其唯一 ID。
+在这个示例中，有一个温度传感器使用简写表示法设置其 unique ID。
 
-ZZ保护0ZZ:
+`sensor.py`：
 ```python {6} showLineNumbers
 class MySensor(SensorEntity):
     """Representation of a sensor."""
@@ -35,13 +33,13 @@ class MySensor(SensorEntity):
         self._attr_unique_id = f"{device_id}_temperature"
 ```
 
-## 其他资源
+## 补充资料
 
-有关唯一标识符要求的更多信息，请参阅[实体注册表文档](/developers/entity_registry_index)。
+更多有关 unique ID 要求的信息可在 [documentation](/developers/entity_registry_index#unique-id-requirements) 中找到。
 
 ## 例外情况
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

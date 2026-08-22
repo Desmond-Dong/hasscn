@@ -1,25 +1,23 @@
 ---
 title: "语言负责人"
-description: 'Home Assistant 是一个全球化项目。我们希望确保每个人都能使用自己的母语来使用 Home Assistant。因此，我们为每种语言设立了语言负责人来主导维护工作。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 语言负责人
 
-Home Assistant 是一个全球化项目。我们希望确保每个人都能使用自己的母语来使用 Home Assistant。因此，我们为每种语言设立了语言负责人来主导维护工作。
+Home Assistant 是一个全球性项目。我们希望能确保每个人都能用自己的母语使用 Home Assistant。因此，我们为每种语言设有 language leader，负责领导维护工作。
 
-语言负责人负责审核其负责语言的贡献，并确保内容在语法上正确。
+Language leader 负责审核其语言下的贡献，并确保语法正确。
 
-当有人向其维护的语言提交新的贡献时，语言负责人会自动收到通知。他们有责任审核并接受这些贡献。
+Language leader 会自动收到他们所维护语言的任何新贡献通知。审核并接受该贡献是他们的职责。
 
-任何人只要满足以下要求，都可以申请成为语言负责人：
+任何人都可以申请成为 language leader，只要满足以下要求：
 
-- 是自己想负责语言的母语使用者
-- 向 intents 仓库提交过 2 个以上的 pull request
-- 参与过该语言 pull request 的审查
+- 是其所领导语言的母语使用者
+- 向 intents 仓库提交 2 个或以上的 pull request
+- 参与该语言的 pull request 审核工作
 
-如果你想申请成为语言负责人，请在 Discord 的 `#developers` 频道联系我们，或[发起一个讨论主题](https://github.com/home-assistant/intents/discussions)。
+如果你想申请成为 language leader，请加入 Discord 上的 `#developers` 频道或[发起一个讨论话题](https://github.com/home-assistant/intents/discussions)。
 
-## 失去语言负责人资格
+## 失去 language leader 身份
 
-语言负责人是某种语言及其质量的把关人。如果他们不活跃，该语言的贡献就无法得到处理。如果他们接受低质量贡献，系统将无法生成处理所需的正确匹配句子。
+Language leader 是一种语言及其质量的把关人。如果他们不活跃，该语言的贡献将不会被处理。如果他们接受低质量的贡献，将无法生成处理所需的正确匹配句子。
 
-如果语言负责人的不活跃成为瓶颈，或者质量未达到要求，那么该语言负责人将被移除。如果他们希望恢复资格，可以再次申请。
+如果 language leader 的不活跃成为瓶颈，或者质量不达标，该 language leader 将被移除。如果他们想恢复身份，可以再次申请。

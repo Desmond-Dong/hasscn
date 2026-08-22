@@ -1,30 +1,37 @@
 ---
-title: "该文档描述了所提供的可以使用的服务操作"
-description: '集成可以注册服务操作以提供标准实体无法提供的功能。 这些服务操作可能比标准服务操作更难使用，因此我们希望确保文档描述了它们的作用以及参数是什么。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "文档描述了可用的 service action"
+sidebar_label: 🥉 docs-actions
+related_rules:
+  - docs-triggers
+  - docs-conditions
 ---
-# 该文档描述了所提供的可以使用的服务操作
+import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
-集成可以注册服务操作以提供标准实体无法提供的功能。
-这些服务操作可能比标准服务操作更难使用，因此我们希望确保文档描述了它们的作用以及参数是什么。
+集成可以注册 service action，以提供标准 entity 无法实现的功能。
+这些 service action 可能比标准 service action 更难以使用，因此我们希望确保文档描述了它们的作用以及相关参数。
 
-## 实施示例
+## 示例实现
 
 ```markdown showLineNumbers
-## Actions
+## 操作
 
-The integration provides the following actions.
+该集成提供以下 action。
 
-### Action: Get schedule
+### Action：获取日程
 
-The `my_integration.get_schedule` service is used to fetch a schedule from the integration.
+`my_integration.get_schedule` service 用于从集成获取日程。
 
-- **Data attribute**: `config_entry_id`
-    - **Description**: The ID of the config entry to get the schedule from.
-    - **Optional**: No
+- **Data 属性**：`config_entry_id`
+    - **说明**：要获取日程的 config entry 的 ID。
+    - **可选**：否
 ```
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
+
+## 相关规则
+
+<RelatedRules relatedRules={frontMatter.related_rules}></RelatedRules>

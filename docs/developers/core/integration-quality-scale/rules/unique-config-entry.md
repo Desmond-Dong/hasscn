@@ -1,6 +1,6 @@
 ---
-title: "不允许同一设备或服务设置两次"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "不允许同一设备或服务被设置两次"
+sidebar_label: 🥉 unique-config-entry
 related_rules:
   - config-flow
   - test-before-configure
@@ -9,34 +9,32 @@ related_rules:
   - reauthentication-flow
   - reconfiguration-flow
 ---
-# 不允许同一设备或服务设置两次
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-由于使用 UI 可以轻松设置集成，因此用户可能会意外地将同一设备或服务设置两次。
-这可能会导致具有唯一标识符的重复设备和实体发生冲突，从而产生负面影响。
-任何发现流程还必须确保配置条目是唯一可识别的，否则它会发现已设置的设备。
+由于通过 UI 设置集成非常简便，用户可能会意外地将同一设备或服务设置两次。
+这可能导致重复的设备以及具有相同唯一标识符的实体发生冲突，从而产生负面影响。
+任何发现流程也必须确保配置条目具有唯一标识性，否则就会发现已经设置过的设备。
 
 为了防止这种情况，我们需要确保用户只能设置一次设备或服务。
 
-## 实施示例
+## 示例实现
 
-集成有两种常见的方法来检查它是否已经设置。
-第一种方法是将 `unique_id` 分配给配置条目。
-第二种方法是检查配置条目中的数据是否唯一。
+集成检查自己是否已经设置过通常有两种常见方式。
+第一种方式是为配置条目分配 `unique_id`。
+第二种方式是检查配置条目中的数据片段是否唯一。
 
 以下示例展示了如何在配置流程中实现这些检查。
 
 ### 唯一标识符
 
-第一种方法是将 `unique_id` 分配给配置条目。
-此唯一 ID 对于每个集成域都是唯一的，因此另一个集成可以毫无问题地使用相同的唯一 ID。
-下面是一个配置流程示例，该流程获取客户端输入的配置的 `unique_id` 并检查 `unique_id` 是否已存在。
-如果是这样，流程将中止并向用户显示错误消息。
+第一种方式是为配置条目分配 `unique_id`。
+该唯一 ID 在每个集成 domain 内是唯一的，因此其他集成可以使用相同的唯一 ID 而不会出现问题。
+下面是一个配置流程的示例，它通过 client 获取输入配置对应的 `unique_id`，并检查该 `unique_id` 是否已经存在。
+如果已存在，流程将中止并向用户显示错误信息。
 
-ZZ保护0ZZ:
+`config_flow.py`:
 ```python {16-17} showLineNumbers
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
@@ -66,13 +64,13 @@ ZZ保护0ZZ:
         )
 ```
 
-### 独特的数据
+### 唯一数据
 
-第二种方法是检查配置条目中的数据是否唯一。
-在以下示例中，用户填写主机和密码。
-如果同一主机已存在配置条目，流程将中止并向用户显示错误消息。
+第二种方式是检查配置条目中的数据片段是否唯一。
+在下面的示例中，用户输入 host 和密码。
+如果已经存在针对同一 host 的配置条目，流程将中止并向用户显示错误信息。
 
-ZZ保护0ZZ:
+`config_flow.py`:
 ```python
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
@@ -106,15 +104,14 @@ ZZ保护0ZZ:
         )
 ```
 
+## 更多资源
 
-## 其他资源
+关于配置流程的更多信息，请参见[config flow 文档](/developers/core/integration/config_flow)。
+关于唯一标识符要求的更多信息，请参见[相关文档](/developers/entity_registry_index#unique-id-requirements)。
 
-有关配置流的更多信息可以在 [config flow documentation](/developers/config_entries_config_flow_handler) 中找到。
-有关唯一标识符要求的更多信息，请参阅[实体注册表文档](/developers/entity_registry_index)。
+## 例外
 
-## 例外情况
-
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

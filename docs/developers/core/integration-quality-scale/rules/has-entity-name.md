@@ -1,27 +1,25 @@
 ---
-title: "实体使用 has_entity_name = True"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "entity 使用 has_entity_name = True"
+sidebar_label: 🥉 has-entity-name
 related_rules:
   - entity-translations
   - entity-device-class
   - devices
 ---
-# 实体使用 has_entity_name = True
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
-`has_entity_name` 是一个实体属性，用于改进 Home Assistant 中实体的命名。
-引入它是为了根据显示名称的上下文向用户显示更好的实体名称。
+`has_entity_name` 是一个 entity 属性，用于改善 Home Assistant 中 entity 的命名。
+它的引入旨在根据名称显示的上下文，向用户展示更好的 entity 名称。
 
-我们认为这是一个很好的实践，因为它允许集成之间命名的一致性。
+我们认为这是一种良好实践，因为它允许不同集成之间的命名保持一致性。
 
-## 实施示例
+## 示例实现
 
-在下面的示例中，如果设备名称为“我的设备”且字段为“温度”，则实体名称将显示为“我的设备温度”。
+在下面的示例中，如果设备名称为 "My device"，字段为 "temperature"，则 entity 名称将显示为 "My device temperature"。
 
-ZZ保护0ZZ
+`sensor.py`
 ```python {4} showLineNumbers
 class MySensor(SensorEntity):
     """Representation of a sensor."""
@@ -37,11 +35,11 @@ class MySensor(SensorEntity):
         self._attr_name = field
 ```
 
-但是，当事件名称设置为`None`时，设备名称将引发事件名称。
-在这种情况下，锁实体将被称为“我的设备”。
-这应该是为了设备的主要功能而完成的。
+但是，当 entity 名称设置为 `None` 时，将使用设备名称作为 entity 名称。
+在这种情况下，lock entity 将直接称为 "My device"。
+这应用于设备的主要功能。
 
-ZZ保护0ZZ
+`lock.py`
 ```python {4-5,11} showLineNumbers
 class MyLock(LockEntity):
     """Representation of a lock."""
@@ -57,14 +55,14 @@ class MyLock(LockEntity):
         )
 ```
 
-## 其他资源
+## 附加资源
 
-相关实体命名的更多信息可以在[entity](/developers/core/entity#has_entity_name-true-mandatory-for-new-integrations)文档中找到。
-相关设备的更多信息可以在[device](/developers/device_registry_index)文档中找到。
+关于 entity 命名的更多信息，请参阅 [entity 文档](/developers/core/entity#has_entity_name-true-mandatory-for-new-integrations)。
+关于设备的更多信息，请参阅 [device 文档](/developers/device_registry_index)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

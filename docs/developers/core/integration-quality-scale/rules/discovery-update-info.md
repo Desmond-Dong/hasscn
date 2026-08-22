@@ -1,33 +1,31 @@
 ---
-title: "集成使用发现信息来更新网络信息"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "集成使用发现信息更新网络信息"
+sidebar_label: 🥇 discovery-update-info
 ---
-# 集成使用发现信息来更新网络信息
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-大多数最终用户网络都使用动态 IP 地址。
-这意味着首次设置不同的 IP 地址时可获得设备和服务。
-为了避免用户将设备设置为静态 IP 地址（这并不总是需要支持），集成应使用发现信息来更新设备或服务的网络信息。
+大多数终端用户的网络使用动态 IP 地址。
+这意味着设备和服务可能会获得与首次设置时不同的 IP 地址。
+为了避免需要用户将设备设置为静态 IP 地址（这并不总是可行的），集成应使用发现信息来更新设备或服务的网络信息。
 
-只有当集成确定设备或服务与之前设置的设备或服务相同时，我们才应更新设备或服务的IP地址。
+只有在集成确定设备或服务与之前设置的是同一个时，才应更新设备或服务的 IP 地址。
 
-## 实施示例
+## 示例实现
 
-在下面的示例中，我们有一个使用 mDNS 来发现设备的集成。
-结果启动Zeroconf发现流时，集成都会将流的唯一ID设置为设备的序列号。
-如果已设置唯一ID，则设备IP地址发生更改时将进行更新，并且流程将中止。
+在下面的示例中，我们有一个使用 mDNS 发现设备的集成。
+每次启动 zeroconf 发现流程时，集成都会将流程的唯一 ID 设置为设备的序列号。
+如果唯一 ID 已存在，当设备 IP 地址发生变化时将对其进行更新，然后流程将中止。
 
-ZZ保护0ZZ:
+`manifest.json`:
 ```json
 {
   "zeroconf": ["_mydevice._tcp.local."]
 }
 ```
 
-ZZ保护0ZZ:
+`config_flow.py`:
 ```python {14-15} showLineNumbers
 class MyConfigFlow(ConfigFlow, domain=DOMAIN):
     """My config flow."""
@@ -55,17 +53,16 @@ class MyConfigFlow(ConfigFlow, domain=DOMAIN):
 ```
 
 :::info
-如果您使用DHCP发现，并且想要接收更新的IP地址的发现流，请务必在设备信息中注册MAC地址，并在清单中将`registered_devices`设置为`true`。
-这将为这些设备创建发现流。
+如果你使用 DHCP 发现，并希望针对更新的 IP 地址接收发现流程，请务必在 device info 中注册 MAC 地址，并在 manifest 中将 `registered_devices` 设置为 `true`。
+这将为这些设备创建设置流程。
 :::
 
-## 其他资源
+## 更多资源
 
-要了解有关配置流的更多信息，请查看[config flow documentation](/developers/config_entries_config_flow_handler)。
-要了解有关网络协议和发现的更多信息，请查看 [Networking and discovery documentation](/developers/network_discovery)。
+要了解有关配置流程的更多信息，请查阅[config flow 文档](/developers/core/integration/config_flow)。
+要了解有关网络协议和发现的信息，请查阅[Networking and discovery 文档](/developers/network_discovery)。
 
-## 例外情况
+## 例外
 
-此规则的例外是并非所有设备都可以被发现。
-无法发现设备的集成不受此规则的约束。
-
+本规则的例外情况是并非每个设备都可以被发现。
+设备无法被发现的集成免于此规则。

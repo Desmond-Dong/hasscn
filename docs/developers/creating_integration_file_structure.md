@@ -1,74 +1,42 @@
 ---
 title: "集成文件结构"
-description: '每个集成都存放在一个以集成域命名的目录中。域是由小写字符和下划线组成的简短标识符，必须唯一且不可更改。移动应用集成的域名示例为 mobileapp，因此该集成的所有文件都位于 mobileapp/ 目录中。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: "文件结构"
 ---
-# 集成文件结构
 
-每个集成都存放在一个以集成域命名的目录中。域是由小写字符和下划线组成的简短标识符，必须唯一且不可更改。移动应用集成的域名示例为 `mobile_app`，因此该集成的所有文件都位于 `mobile_app/` 目录中。
+每个集成都存储在一个以其集成 domain 命名的目录中。domain 是由字符和下划线组成的短名称。该 domain 必须唯一，且无法更改。mobile app 集成的 domain 示例：`mobile_app`。因此，该集成的所有文件都在文件夹 `mobile_app/` 中。
 
-该目录至少应包含以下内容：
+该文件夹的最基本内容如下：
 
-- `manifest.json`：manifest 文件，用于描述集成及其依赖项。[更多信息](/developers/creating_integration_manifest)
-- `__init__.py`：集成入口文件。如果该集成只提供平台，那么这个文件可以只保留一行文档字符串，例如 `"""The Mobile App integration."""`。
+- `manifest.json`：manifest 文件描述该集成及其依赖。[更多信息](creating_integration_manifest.md)
+- `__init__.py`：component 文件。如果该集成只提供了一个 platform，可以将此文件限制为一段介绍该集成的 docstring，例如 `"""The Mobile App integration."""`。
 
-## 设备平台 - `light.py`、`switch.py` 等
+## 集成设备 - `light.py`、`switch.py` 等
 
-如果您的集成需要接入一个或多个设备，通常应通过创建实体平台来实现。例如，如果要在 Home Assistant 中表示灯设备，就需要创建 `light.py`，并在其中实现灯平台。
+如果你的集成需要集成一个或多个设备，你需要通过创建一个与实体集成交互的 platform 来实现。例如，如果你想在 Home Assistant 中表示一个灯光设备，就需要创建 `light.py`，其中将包含用于 light 集成的 light platform。
 
-- 更多信息：[可用实体类型](/developers/core/entity).
-- 更多信息：[创建平台](/developers/creating_platform_index).
+- 更多有关[可用实体集成](core/entity.md)的信息。
+- 更多有关[创建 platform](creating_platform_index.md)的信息。
 
-## 服务操作 - `services.yaml`
+## 集成服务动作 - `services.yaml`
 
-如果您的集成需要注册服务操作，则应提供这些操作的说明。说明内容保存在 `services.yaml` 中。[有关 `services.yaml` 的更多信息。](/developers/dev_101_services)
+如果你的集成需要注册服务动作（service action），它需要提供可用动作的描述。该描述存储在 `services.yaml` 中。[更多有关 `services.yaml` 的信息。](dev_101_services.md)
 
-## 数据更新协调器 - `coordinator.py`
+## Data update coordinator - `coordinator.py`
 
-集成获取数据的方式可能有很多种，包括推送和轮询。很多情况下，集成会通过一个供所有实体共享的协调轮询器来获取数据，这通常意味着需要使用 `DataUpdateCoordinator`。
-如果您准备定义一个协调器类，或为其创建子类，建议将其放在 `coordinator.py` 中。[有关 `DataUpdateCoordinator` 的更多信息](/developers/integration_fetching_data#coordinated-single-api-poll-for-data-for-all-entities)
+你的集成可以通过多种途径接收数据，包括 push 或 poll。通常，集成会通过一次跨所有实体的协调 poll 来获取数据，这需要用到 `DataUpdateCoordinator`。
+如果你打算使用它，并且选择创建一个它的子类，建议在 `coordinator.py` 中定义该 coordinator 类。[更多有关 `DataUpdateCoordinator` 的信息](integration_fetching_data.md#coordinated-single-api-poll-for-data-for-all-entities)。
 
 ## Home Assistant 在哪里查找集成
 
-当 Home Assistant 在配置中看到某个域（例如 `mobile_app:`），或发现它是另一个集成的依赖项时，就会去查找对应集成。Home Assistant 会检查以下位置：
+当 Home Assistant 在配置文件中看到对某个 domain 的引用（即 `mobile_app:`），或者它是另一个集成的依赖时，就会查找该集成。Home Assistant 会查看以下位置：
 
 - `<config directory>/custom_components/<domain>`
 - `homeassistant/components/<domain>`（内置集成）
 
-## 品牌形象 - `brand/`
+你可以在 `<config directory>/custom_components` 文件夹中放置一个与内置集合同名 domain 的集成，从而覆盖内置集成。[当覆盖核心集成时，`manifest.json` 文件要求包含一个 version 标签](creating_integration_manifest/#version)。一个被覆盖的核心集成可以通过概览中集成框右上角的特定图标来识别 [![打开你的 Home Assistant 实例并显示你的集成。](https://my.home-assistant.io/badges/integrations.svg)](https://my.home-assistant.io/redirect/integrations/)
+注意，不建议覆盖内置集成，因为你不会再收到更新。建议使用一个唯一的名称。
 
-品牌图片（图标和徽标）存储在[品牌库](https://github.com/home-assistant/brands)。Home Assistant Core 会通过本地 API 代理这些图片，以便它们从与前端相同的源提供。
+## 品牌图片 - `brand/`
 
-可用的 API 端点如下：
-
-- `/api/brands/integration/{domain}/{image}` - 集成 图标和徽标
-- `/api/brands/hardware/{category}/{image}` - 硬件图像
-
-如果请求的图片不存在，所有端点默认都会返回通用占位图像。若想关闭此行为并接收 404，请添加 `?placeholder=no` 查询参数。
-
-这些端点需要身份验证。请求既可以使用标准的已认证会话（Bearer token），也可以通过 `token` 查询参数传入访问令牌来完成认证。前端会通过 `brands/access_token` WebSocket 命令获取该访问令牌，并自动将其附加到所有品牌图片 URL 上。
-
-支持以下图像文件名：
-
-- `icon.png` / `dark_icon.png`
-- `logo.png` / `dark_logo.png`
-- `icon@2x.png` / `dark_icon@2x.png`
-- `logo@2x.png` / `dark_logo@2x.png`
-
-### 自定义集成的本地品牌图片
-
-自定义集成可以在集成目录中包含 `brand/` 目录，以提供自己的品牌图片。例如：
-
-```text
-custom_components/my_integration/
-├── __init__.py
-├── manifest.json
-└── brand/
-    ├── icon.png
-    └── logo.png
-```
-
-当 `brand/` 目录存在时，图片会通过 `/api/brands/integration/{domain}/{image}` 端点直接从本地文件系统提供。本地图片的优先级高于品牌 CDN 中的图片。
-
-您也可以在 `<config directory>/custom_components` 中放置一个具有相同域名的集成，以覆盖内置集成。[当您覆盖 Core 集成时，`manifest.json` 必须包含版本字段](/developers/creating_integration_manifest#版本)。被覆盖的 Core 集成可通过集成概览页面中卡片右上角的特定图标识别：[![打开您的 Home Assistant 实例并显示您的集成。](https://my.home-assistant.io/badges/integrations.svg)](https://my.home-assistant.io/redirect/integrations/)
-请注意，不建议覆盖内置集成，因为这样您将无法继续获得其更新。通常更建议使用一个独特的名称。
+自定义集成可以通过在集成目录中添加 `brand/` 目录来包含其自己的品牌图片。
+有关品牌图片及其提供方式的更多信息，请参阅 [品牌图片](/developers/core/integration/brand_images)。

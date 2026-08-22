@@ -1,17 +1,15 @@
 ---
-title: "开始进行 Home Assistant 操作系统开发"
-description: '位于 github.com/home-assistant/operating-system/(https://github.com/home-assistant/operating-system/) 的主仓库包含通过 br2-external mechanism(https://buildroot.org/d。'
-sidebar_label: 入门
+title: "开始 Home Assistant Operating System 开发"
+sidebar_label: 快速入门
 ---
-# 开始进行 Home Assistant 操作系统开发
 
 ## 准备开发环境
 
 ### 检出源代码
 
-位于 [github.com/home-assistant/operating-system/](https://github.com/home-assistant/operating-system/) 的主仓库包含通过 [br2-external mechanism](https://buildroot.org/downloads/manual/manual.html#outside-br-custom) 实现的 Buildroot 定制内容，以及辅助脚本和 GitHub Action CI 脚本。主仓库通过 Git Submodule 指向 Buildroot 本体。虽然大多数定制都可以通过 br2 机制完成，但仍有一部分修改是直接应用在 Buildroot 本身上的。因此，我们还维护了一个 Buildroot fork：[github.com/home-assistant/buildroot/](https://github.com/home-assistant/buildroot/)。目标是尽可能减少叠加在上游 Buildroot 之上的补丁数量。
+主仓库位于 [github.com/home-assistant/operating-system/](https://github.com/home-assistant/operating-system/)，它通过 [br2-external 机制](https://buildroot.org/downloads/manual/manual.html#outside-br-custom) 包含 Buildroot 定制内容，以及辅助脚本和 GitHub Action CI 脚本。主仓库使用 Git Submodule 机制指向 Buildroot 本身。虽然大多数定制可以通过 br2 机制完成，但仍有一些修改直接作用于 Buildroot 本身。出于这个原因，我们还在 [github.com/home-assistant/buildroot/](https://github.com/home-assistant/buildroot/) 下维护一个 Buildroot 的 fork。我们的目标是尽量将基于上游 Buildroot 的补丁数量保持在最低水平。
 
-请确保系统中可用 `git`，然后按如下方式克隆主 HAOS 仓库：
+确保你已经安装了 `git`，并按如下方式克隆 HAOS 主仓库：
 
 ```shell
 git clone https://github.com/home-assistant/operating-system/
@@ -19,35 +17,35 @@ cd operating-system/
 git submodule update --init
 ```
 
-更新本地 git 仓库时，请确保同时更新 `buildroot` 子模块。这样可以确保在 Buildroot 本身也更新时，你得到与之匹配的版本。
+当你更新本地 git 仓库时，务必同时更新 `buildroot` 子模块。这样可以确保在 Buildroot 本身也更新时，你能获取与之匹配的版本。
 
 ```shell
 git pull
 git submodule update
 ```
 
-如果要恢复到一个干净状态，可使用以下两条命令（这会删除所有本地修改！）
+要恢复到初始洁净状态，请使用以下两条命令（这会删除所有本地修改！）
 
 ```shell
 git reset --hard
 git submodule update --init --force
 ```
 
-### 安装前置依赖
+### 安装依赖
 
-HAOS 使用构建容器来运行 Buildroot。请安装 Docker 容器引擎，并确保 `docker` 命令可用，且可以运行特权容器。构建脚本设计为由普通用户执行，但部分命令需要权限，因此还需要可用的 `sudo` 命令。
+HAOS 使用构建容器来运行 Buildroot。安装 Docker 容器引擎，并确保你有一个可用的 `docker` 命令，允许运行 privileged 容器。构建脚本设计为由普通用户运行，但部分命令会使用特权，因此也需要一个可用的 `sudo` 命令。
 
-虽然 Buildroot 可在大多数 Linux 发行版上原生运行，但仍强烈建议使用基于 Debian 的构建容器。这样可以获得一个稳定、已知且预装所有依赖的构建环境。
+虽然 Buildroot 可以直接运行在大多数 Linux 发行版上，但强烈建议使用基于 Debian 的构建容器。这样可以获得一个稳定且已知的构建环境，所有依赖均已预装。
 
 :::info
-构建容器必须以特权方式启动，因为在构建过程中会有一个由 loopback 设备支持的文件系统镜像被挂载到 Docker 容器内部。因此，rootless 容器无法用于构建 HAOS。
+构建容器必须以特权模式启动，因为在构建过程的某个阶段需要在 Docker 容器内挂载一个由 loopback 设备支持的新的文件系统镜像。因此，rootless 容器无法用于构建 HAOS。
 :::
 
 ## 使用构建容器构建镜像
 
-脚本 `scripts/enter.sh` 会构建构建容器镜像，并使用该镜像启动一个容器。传递给该脚本的参数会在容器内部执行。
+脚本 `scripts/enter.sh` 会构建构建容器镜像，并使用该镜像启动一个容器。传递给脚本的参数将在容器内部执行。
 
-HAOS 为每个受支持目标都提供了一个配置文件。要为特定目标（开发板）构建，需要将该配置文件传递给 `make`。配置文件位于 `buildroot-external/configs/`。请注意，后缀 `_defconfig` 会自动追加，因此*不要*传给 `make`。例如，要构建 Raspberry Pi 4 64-bit 的配置 `buildroot-external/configs/rpi4_64_defconfig`，请使用以下命令：
+HAOS 为每个受支持的目标使用一个配置文件。要为特定目标（板卡）构建，需要将配置文件传递给 `make`。配置文件存放在 `buildroot-external/configs/` 中。注意，后缀 `_defconfig` 会自动追加，并且*绝不能*传递给 `make`。例如，要构建 Raspberry Pi 4 64 位配置 `buildroot-external/configs/rpi4_64_defconfig`，请使用以下命令：
 
 ```
 $ scripts/enter.sh make rpi4_64
@@ -60,34 +58,33 @@ $ scripts/enter.sh make rpi4_64
 [...]
 ```
 
-该命令会在容器内使用源码仓库根目录的 `Makefile` 调用 make，而这个 makefile 又会进一步调用 Buildroot 的 makefile。
+这会在容器内的源代码仓库根目录中使用 `Makefile` 调用 make。这个 makefile 进而会调用 Buildroot 的 makefile。
 
-构建过程耗时取决于你的机器速度，通常为 0.5 到 1 小时。构建文件（目标文件、中间二进制文件等）会存放在 `output/` 目录中（在 rel-6 及更早分支中位于 `buildroot/output/`）。最终镜像文件存放在 `release/` 目录中。
+根据你的机器速度，构建过程需要 0.5 到 1 小时。构建文件（目标文件、中间二进制文件等）存储在 `output/` 文件夹中。最终的镜像文件存放在 `output/images/` 目录中。
 
-### 重新构建软件包
+### 重新构建包
 
-Buildroot 像常规发行版一样使用软件包。但与直接下载预构建包不同，Buildroot 软件包会下载源码并直接编译二进制文件。Buildroot 会记住哪些软件包已经构建过，因此第二次构建会快得多，因为只需重新生成最终镜像。如果你想强制 Buildroot 重新构建某个特定软件包，只需将它从 `output/build/` 目录中删除：
+Buildroot 像常规发行版一样使用包。但 Buildroot 包不是简单地下一个预构建的包，而是下载源文件并直接编译二进制文件。Buildroot 会记住哪些包已经构建过。这使得第二次构建快得多，因为只有最终镜像会被重新生成。如果你想强制 Buildroot 重新构建某个特定包，只需从 `output/build/` 目录中删除它：
 
 ```shell
 rm -rf output/build/linux-custom/
 ```
 
 :::tip
-你可以查看 `output/build/packages-file-list.txt`，了解最终镜像中的每个文件分别属于哪个软件包。这会让你更容易找到想要修改的软件包。
+你可以查看 `output/build/packages-file-list.txt` 来了解最终镜像中的文件分别属于哪个包。这样更容易找到你想要更改的包。
 :::
 
 ### 为多个目标构建
 
-若要在同一个源码目录中构建多个目标，必须使用不同的输出目录。可通过 `O=` 参数指定输出目录。推荐做法是直接使用以目标配置文件命名的输出目录：
-
+要在同一个源代码目录中为多个目标构建，必须使用不同的输出目录。输出目录可以通过 `O=` 参数指定。推荐的做法是直接使用与目标配置文件同名的输出目录：
 
 ```shell
 scripts/enter.sh make O=output_rpi4_64 rpi4_64
 ```
 
-### 交互式使用构建容器
+### 交互方式使用构建容器
 
-如果不给 `scripts/enter.sh` 传任何参数，将会进入一个 shell。
+如果不向 `scripts/enter.sh` 传递任何参数，就会呈现一个 shell。
 
 ```bash
 $ scripts/enter.sh
@@ -95,9 +92,9 @@ $ scripts/enter.sh
 builder@d3d7577663c9:/build$
 ```
 
-在这个 shell 中，可以使用 `make O=output_rpi4_64 rpi4_64` 启动与上面相同的构建。
+从该 shell 中，可以使用 `make O=output_rpi4_64 rpi4_64` 启动上述相同的构建。
 
-这样你还可以调用其他 Buildroot 目标，例如[生成软件包依赖图](https://buildroot.org/downloads/manual/manual.html#_graphing_the_dependencies_between_packages)。要使用其他 Buildroot 目标，请确保切换到 `buildroot/` 目录后再执行命令。
+这样可以调用其他 Buildroot 目标，例如，[绘制包之间的依赖关系图](https://buildroot.org/downloads/manual/manual.html#_graphing_the_dependencies_between_packages)。要使用其他 Buildroot 目标，请确保切换到 `buildroot/` 目录并从那里执行命令
 
 ```bash
 builder@c6dfb4cd4036:/build$ cd buildroot/
@@ -111,21 +108,21 @@ builder@c6dfb4cd4036:/build$
 
 ## 使用 Qemu 测试镜像
 
-目标 OVA（Open Virtual Appliance）包含适用于多种虚拟机的镜像。其中一种镜像格式是 QCOW2，这是 QEMU 的原生镜像格式。你可以使用它在 QEMU 中测试新的 HAOS 构建。
+目标 OVA（Open Virtual Appliance）包含适用于各种虚拟机的镜像。其中一种镜像格式是 QCOW2，即 QEMU 的原生镜像格式。它可以用来通过 QEMU 测试新的 HAOS 构建。
 
-由于 HAOS 需要 UEFI 支持，这比使用“经典”(/legacy) 的 MBR 镜像稍微复杂一些。在 *Debian* 主机上，请安装 [ovmf package](https://packages.debian.org/stable/ovmf)，它提供“64-bit x86 虚拟机的 UEFI firmware”。该软件包会在 `/usr/share/OVMF/OVMF_CODE.fd` 安装一个基于 **TianoCore** 的 QEMU UEFI 镜像，可与 QEMU 一起用于启动生成的 QCOW2 镜像。
+由于 HAOS 需要 UEFI 支持，这比基于"经典"/传统 MBR 的镜像稍微复杂一些。在 *Debian* 主机上安装 [ovmf 包](https://packages.debian.org/stable/ovmf)，它提供"64 位 x86 虚拟机的 UEFI 固件"。该包将在 `/usr/share/OVMF/OVMF_CODE.fd` 安装一个派生自 **TianoCore** 的 QEMU UEFI 镜像，可用于在 QEMU 中启动生成的 QCOW2 镜像。
 
 ```bash
 $ scripts/enter.sh make O=output_ova ova
 [...]
-$ unxz release/haos_ova-7.0.dev20211003.qcow2.xz
-$ qemu-system-x86_64 -enable-kvm -name haos -smp 2 -m 1G -drive file=release/haos_ova-7.0.dev20211003.qcow2,index=0,media=disk,if=virtio,format=qcow2 -drive file=/usr/share/ovmf/x64/OVMF_CODE.fd,if=pflash,format=raw,readonly=on
+$ unxz output_ova/images/haos_ova-7.0.dev20211003.qcow2.xz
+$ qemu-system-x86_64 -enable-kvm -name haos -smp 2 -m 2G -drive file=output_ova/images/haos_ova-18.0.dev0.qcow2,index=0,media=disk,if=virtio,format=qcow2 -drive file=/usr/share/ovmf/x64/OVMF_CODE.fd,if=pflash,format=raw,readonly=on
 ```
 
-这会显示 QEMU 的 SDL 界面，并应当启动 Home Assistant Operating System。启动完成并出现 Home Assistant CLI 提示符 `ha > ` 后，你可以使用 `login` 进入 root shell。
+这会显示 QEMU 的 SDL 界面，并应启动 Home Assistant Operating System。启动完成并显示 Home Assistant CLI 提示符 `ha > ` 后，你可以使用 `login` 访问 root shell。
 
 ## 创建 pull request 以供审核
 
-当你对修改满意后，请创建一个单独的 git 分支并提交。请尽量说明你认为该变更为什么重要、为什么应该应用到 HAOS。比如“update kernel”从修改本身就已经很明显了。维护者更关心的是你为什么认为应该更新内核。这个“为什么”可以很简单（例如更新内核以跟进最新变化），也可以包含一些有价值的细节（例如因为该新版本修复了某块开发板上的以太网问题，所以更新内核）。
+当你对自己的修改满意后，创建一个单独的 git 分支并提交。尽量描述你认为这项更改*为什么*重要，以及*为什么*应该应用到 HAOS。例如，"更新内核"从更改本身来看也很明显。维护者更感兴趣的是你为什么认为内核需要更新。这个*为什么*可以非常简单（更新内核以确保我们跟上最新的更改），也可以包含一些有趣的细节（更新内核，因为最新版本修复了 xy 板上的以太网问题）。
 
-如果你还没有 fork 上游 [github.com/home-assistant/operating-system](https://github.com/home-assistant/operating-system) 仓库，请先 fork，然后将你的分支推送到你自己的 GitHub fork 仓库，并创建一个新的 pull request。所有变更都应基于开发分支 `dev`。如果你希望该变更进入下一个稳定版本，请添加 `rel-x` 标签，以标记其需要回移植。
+fork 上游 [github.com/home-assistant/operating-system](https://github.com/home-assistant/operating-system) 仓库（如果你还没有的话），将你的分支推送到你的 forked GitHub 仓库中。然后打开一个新的 pull request。所有更改都应针对开发分支 `dev` 进行。如果你的更改希望出现在下一个稳定版本中，请添加 `rel-x` 标签，以便将其标记为待 backport。

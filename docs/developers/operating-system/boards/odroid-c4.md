@@ -1,21 +1,19 @@
 ---
 title: "Hardkernel ODROID-C4"
-description: 'ODROID-C4 的支持在很大程度上基于 Odroid-C2 和 N2 的配置。考虑到这些 SoC 的相似性，以及 Linux 内核中相近的支持程度，C4 理论上不应带来太多意外。不过，Home Assistant 对它的支持仍应视为实验性。 本页属于 Home Assistant 开发者文档。'
 sidebar_label: ODROID-C4
 ---
-# Hardkernel ODROID-C4
 
-## 实验性支持
+## Experimental
 
-ODROID-C4 的支持在很大程度上基于 Odroid-C2 和 N2 的配置。考虑到这些 SoC 的相似性，以及 Linux 内核中相近的支持程度，C4 理论上不应带来太多意外。不过，Home Assistant 对它的支持仍应视为实验性。
+ODROID-C4 支持大量基于 Odroid-C2 和 N2 的配置。鉴于 SoC 的相似性，以及 Linux kernel 中相当级别的支持，C4 应该不会有太多意外。然而，Home Assistant 的支持仍应被视为实验性的。
 
-另请参阅 [ODROID-C2](/developers/operating-system/boards/odroid-c2) 和 [Odroid-N2](/developers/operating-system/boards/odroid-n2) 的文档页面，其中部分信息同样适用于 C4。
+还请参考 [ODROID-C2](./odroid-c2.md) 和 [Odroid-N2](./odroid-n2.md) 的文档页面，因为其中部分信息同样可能适用于 C4。
 
-已专门测试并确认可正常工作的常见 C4 项目包括：
-- 从 SD 启动
-- 从 eMMC 启动
-- 从 eFuse 获取 MAC 地址
+已经专门测试并且看起来工作正常的常见 C4 问题：
+- boot from SD
+- boot from eMMC
+- MAC address obtained from eFuse
 
 ## GPIO
 
-请参阅 [the odroid wiki](https://wiki.odroid.com/odroid-c4/hardware/expansion_connectors)。
+请参考 [the odroid wiki](https://wiki.odroid.com/odroid-c4/hardware/expansion_connectors)。

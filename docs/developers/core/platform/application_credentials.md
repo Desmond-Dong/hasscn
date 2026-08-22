@@ -1,20 +1,19 @@
 ---
-title: "应用凭证"
-description: '集成可以支持通过 OAuth2 进行配置(/developers/configentriesconfigflowhandlerconfiguration-via-oauth2)，让 用户关联他们的账号。集成可以添加 applicationcredentials.py 文件，并实现下文介绍的功能。'
+title: 应用凭据
+sidebar_label: 应用凭据
 ---
-# 应用凭证
 
-集成可以支持[通过 OAuth2 进行配置](/developers/config_entries_config_flow_handler#configuration-via-oauth2)，让
-用户关联他们的账号。集成可以添加 `application_credentials.py` 文件，并实现下文介绍的功能。
+集成可以支持 [通过 OAuth2 配置](/developers/core/integration/config_flow#configuration-via-oauth2)，允许用户链接其账户。集成可以添加 `application_credentials.py` 文件并实现下面描述的功能。
 
-OAuth2 需要在应用与提供方之间共享的凭证。在 Home Assistant 中，可以通过一种或多种方式为特定集成提供 OAuth2 凭证：
+OAuth2 需要在应用程序和 provider 之间共享的凭据。在 Home Assistant 中，集成特定的 OAuth2 凭据通过一种或多种方法提供：
 
-- *带应用凭证组件的本地 OAuth*：用户通常以应用开发者的身份在云服务提供商处创建自己的凭证，然后在 Home Assistant 中为该集成注册这些凭证。所有支持 OAuth2 的集成都必须支持这种方式。
-- *通过云组件关联云账号*：Nabu Casa 会向云服务提供商注册凭证，从而提供更顺畅的用户体验。推荐采用这种方式（[更多信息](/developers/config_entries_config_flow_handler#configuration-via-oauth2)）。
+- *本地 OAuth 与 Application Credentials 组件*：用户与云 provider 创建自己的凭据，通常作为 application 开发者操作，然后将凭据注册到 Home Assistant 和集成中。此方法对所有支持 OAuth2 的集成是*必需的*。
+- *Cloud Account Linking 与 Cloud 组件*：Nabu Casa 与云 provider 注册凭据，提供无缝的用户体验。此方法提供无缝的用户体验，是*推荐的*（[更多信息](/developers/core/integration/config_flow#configuration-via-oauth2)）。
 
 ## 添加支持
 
-集成可通过在 `manifest.json` 中添加对 `application_credentials` 组件的依赖来支持应用凭证：
+集成通过在 `manifest.json` 中添加对 `application_credentials` 组件的依赖来支持 application credentials：
+
 ```json
 {
   ...
@@ -23,7 +22,7 @@ OAuth2 需要在应用与提供方之间共享的凭证。在 Home Assistant 中
 }
 ```
 
-然后在集成目录中添加名为 `application_credentials.py` 的文件，并实现以下内容：
+然后在集成文件夹中添加名为 `application_credentials.py` 的文件，并实现以下内容：
 
 ```python
 from homeassistant.core import HomeAssistant
@@ -38,18 +37,18 @@ async def async_get_authorization_server(hass: HomeAssistant) -> AuthorizationSe
     )
 ```
 
-### 授权服务器
+### AuthorizationServer
 
-`AuthorizationServer` 表示集成所使用的 [OAuth2 授权服务器](https://datatracker.ietf.org/doc/html/rfc6749)。
+`AuthorizationServer` 表示集成使用的 [OAuth2 授权服务器](https://datatracker.ietf.org/doc/html/rfc6749)。
 
-|名称|类型|是否必填|说明|
-| ------------- | ---- | -------- | ----------- |
-|`authorize_url`|`str`|**必填**|配置流程中将用户重定向到的 OAuth 授权 URL。|
-|`token_url`|`str`|**必填**|用于获取访问令牌的 URL。|
+| Name          | Type |                                                                                                    | Description |
+| ------------- | ---- | -------------------------------------------------------------------------------------------------- | ----------- |
+| authorize_url | str  | **必需** | 用户在配置流程中被重定向到的 OAuth 授权 URL。 |
+| token_url     | str  | **必需** | 用于获取 access token 的 URL。                                           |
 
 ### 自定义 OAuth2 实现
 
-集成也可以在 `application_credentials.py` 中提供自定义 `AbstractOAuth2Implementation`，如下所示：
+集成也可以在 `application_credentials.py` 中提供自定义的 `AbstractOAuth2Implementation`，如下所示：
 
 ```python
 from homeassistant.core import HomeAssistant
@@ -59,7 +58,7 @@ from homeassistant.components.application_credentials import AuthImplementation,
 
 class OAuth2Impl(AuthImplementation):
     """Custom OAuth2 implementation."""
-    # ... Override AbstractOAuth2Implementation details
+    # ... 覆盖 AbstractOAuth2Implementation 细节
 
 async def async_get_auth_implementation(
     hass: HomeAssistant, auth_domain: str, credential: ClientCredential
@@ -76,7 +75,7 @@ async def async_get_auth_implementation(
     )
 ```
 
-### 具有 PKCE 支持的授权流程
+### 支持 PKCE 的授权流程
 
 如果你想支持 [PKCE](https://www.rfc-editor.org/rfc/rfc7636)，可以在 `application_credentials.py` 中返回 `LocalOAuth2ImplementationWithPkce`，如下所示：
 
@@ -96,16 +95,16 @@ async def async_get_auth_implementation(
         credential.client_id,
         authorize_url="https://example.com/auth",
         token_url="https://example.com/oauth2/v4/token",
-        client_secret=credential.client_secret, # optional `""` is default
-        code_verifier_length=128 # optional
+        client_secret=credential.client_secret, # 可选，默认 `""`
+        code_verifier_length=128 # 可选
     )
 ```
 
-## 导入 YAML 凭证
+## 导入 YAML 凭据
 
-集成可以导入凭证。对于使用应用凭证的集成，可通过导入 API `async_import_client_credential` 接受来自 YAML 的凭证。
+以前接受 YAML 凭据的集成可以使用 application credentials 集成提供的 import API `async_import_client_credential` 导入凭据。
 
-以下是一个接受 YAML 凭证的集成示例：
+以下是来自一个以前接受 YAML 凭据的集成的示例：
 
 ```python
 from homeassistant.components.application_credentials import (
@@ -113,7 +112,7 @@ from homeassistant.components.application_credentials import (
     async_import_client_credential,
 )
 
-# Example configuration.yaml schema for an integration
+# 集成的示例 configuration.yaml schema
 CONFIG_SCHEMA = vol.Schema(
     {
         DOMAIN: vol.Schema(
@@ -140,31 +139,30 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     )
 ```
 
-新的集成不应再通过 `configuration.yaml` 接受用户提供的凭证。
-应改为让用户在应用凭证界面中输入凭证。
+新集成不应在 configuration.yaml 中接受凭据，因为用户可以在 Application Credentials 用户界面中输入凭据。
 
-### 客户凭证
+### ClientCredential
 
-`ClientCredential` 表示用户提供的客户端凭证。
+`ClientCredential` 表示由用户提供的 client 凭据。
 
-|名称|类型|是否必填|说明|
-| ------------- | ---- | -------- | ----------- |
-|`client_id`|`str`|**必填**|用户提供的 OAuth 客户端 ID。|
-|`client_secret`|`str`|**必填**|用户提供的 OAuth 客户端密钥。|
+| Name          | Type |                                                                           | Description |
+| ------------- | ---- | ------------------------------------------------------------------------- | ----------- |
+| client_id     | str  | **必需** | 用户提供的 OAuth Client ID。     |
+| client_secret | str  | **必需** | 用户提供的 OAuth Client Secret。 |
 
 ## 翻译
 
-应用凭证相关的翻译定义在组件翻译文件 `strings.json` 的 `application_credentials` 键下。例如：
+Application Credentials 的 translations 在组件翻译文件 `strings.json` 的 `application_credentials` key 下定义。例如：
 
 ```json
 {
     "application_credentials": {
-        "description": "前往 [developer console]({console_url}) 创建凭证，然后在下方输入。",
+        "description": "导航到 [developer console]({console_url}) 创建凭据，然后在下方输入。",
     }
 }
 ```
 
-你也可以在 `application_credentials.py` 中添加新方法，以提供描述文本中的占位符键。如下所示：
+你还可以可选地添加 description placeholder keys，通过在 `application_credentials.py` 中添加新方法来将占位符添加到消息中，如下所示：
 
 ```python
 from homeassistant.core import HomeAssistant
@@ -176,4 +174,4 @@ async def async_get_description_placeholders(hass: HomeAssistant) -> dict[str, s
     }
 ```
 
-在本地开发时，你需要运行 `python3 -m script.translations develop`，才能看到对 `strings.json` 的修改效果。更多信息请参阅[翻译 Home Assistant](/developers/translations)。
+在本地开发时，你需要运行 `python3 -m script.translations develop` 才能看到对 `strings.json` 所做的更改。[更多关于翻译 Home Assistant 的信息。](translations.md)

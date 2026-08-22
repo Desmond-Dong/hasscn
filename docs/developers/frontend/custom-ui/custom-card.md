@@ -1,45 +1,64 @@
 ---
 title: "自定义卡片"
-description: 'Dashboards(https://www.home-assistant.io/dashboards/) 是 Home Assistant 的界面定义方式。我们提供了许多内置 cards，但你并不局限于这些；你也可以构建并使用自己的 card！。 本页属于 Home Assistant 开发者文档。'
 ---
-# 自定义卡片
 
-[Dashboards](https://www.home-assistant.io/dashboards/) 是 Home Assistant 的界面定义方式。我们提供了许多内置 cards，但你并不局限于这些；你也可以构建并使用自己的 card！
+[Dashboards](https://www.home-assistant.io/dashboards/) 是我们为你定义 Home Assistant 用户界面的方式。我们提供了许多内置卡片，但你并不仅限于我们决定纳入 Home Assistant 的那些。你可以构建并使用自己的卡片！
 
 ## 定义你的卡片
 
-这是一个基础示例，用于展示其能力。
+下面是一个展示可能性的基本示例。
 
-在 Home Assistant config 目录中创建 `<config>/www/content-card-example.js`，内容如下：
+在你的 Home Assistant config 目录中创建新文件 `<config>/www/content-card-example.js`，并放入以下内容：
 
 ```js
 class ContentCardExample extends HTMLElement {
-  // Whenever the state changes, a new `hass` object is set. Use this to
-  // update your content.
-  set hass(hass) {
-    // Initialize the content if it's not there yet.
-    if (!this.content) {
-      this.innerHTML = `
-        <ha-card header="Example-card">
-          <div class="card-content"></div>
-        </ha-card>
-      `;
-      this.content = this.querySelector("div");
-    }
+  // card 连接到 DOM
+  connectedCallback() {
+    const event = new CustomEvent('context-request', {
+      bubbles: true,
+      composed: true,
+      cancelable: true,
+    });
+
+    event.context = 'states'; // HA 的 user context provider 使用的 key
+    event.subscribe = true; // 订阅此 context 的后续更新，而不只是获取当前值
+
+    event.callback = this._updateStates;
+
+    this.dispatchEvent(event);
+
+    // 初始渲染
+    this._render();
+  }
+
+  // 接收 states 更新并检查卡片是否需要重新渲染
+  _updateStates = (states, unsubscribe) => {
+    // 存储 unsubscribe 函数，以便在卡片从 DOM 中移除时调用
+    this._unsubscribe = unsubscribe;
 
     const entityId = this.config.entity;
-    const state = hass.states[entityId];
-    const stateStr = state ? state.state : "unavailable";
+    console.log("update states", states, entityId)
+    const state = states[entityId];
+    const stateString = state ? state.state : "unavailable";
+    console.log("stateString", stateString, this.stateString)
+    if (this.stateString !== stateString) {
+      console.log("stateString changed, re-rendering")
+      this.stateString = stateString;
+      this._render();
+    }
+  }
 
-    this.content.innerHTML = `
-      The state of ${entityId} is ${stateStr}!
+  // 仅在需要时渲染卡片的 html
+  _render = () => {
+    this.innerHTML = `
+      ${this.config.entity || "?"} 的状态是 ${this.stateString || "unavailable"}！
       <br><br>
       <img src="http://via.placeholder.com/350x150">
     `;
   }
 
-  // The user supplied configuration. Throw an exception and Home Assistant
-  // will render an error card.
+  // 用户提供的配置。抛出异常，Home Assistant
+  // 将渲染一个 error 卡片。
   setConfig(config) {
     if (!config.entity) {
       throw new Error("You need to define an entity");
@@ -47,13 +66,13 @@ class ContentCardExample extends HTMLElement {
     this.config = config;
   }
 
-  // The height of your card. Home Assistant uses this to automatically
-  // distribute all cards over the available columns in masonry view
+  // 你的卡片高度。Home Assistant 使用此值在 masonry view 中
+  // 自动将所有卡片分配到可用的列中
   getCardSize() {
     return 3;
   }
 
-  // The rules for sizing your card in the grid in sections view
+  // 在 sections view 的 grid 中确定卡片大小的规则
   getGridOptions() {
     return {
       rows: 3,
@@ -62,6 +81,13 @@ class ContentCardExample extends HTMLElement {
       max_rows: 3,
     };
   }
+
+  disconnectedCallback() {
+    if (this._unsubscribe) {
+      this._unsubscribe();
+      this._unsubscribe = undefined;
+    }
+  }
 }
 
 customElements.define("content-card-example", ContentCardExample);
@@ -69,14 +95,14 @@ customElements.define("content-card-example", ContentCardExample);
 
 ## 引用你的新卡片
 
-示例中定义的标签名是 `content-card-example`（见最后一行），因此 card 类型为 `custom:content-card-example`。由于该文件位于 `<config>/www`，因此会通过 `/local/` 这个 url 在浏览器中可访问（如果你刚创建 `www` 文件夹，则需要重启 Home Assistant 才能识别文件）。
+在我们的示例卡片中，我们定义了一个带 tag `content-card-example` 的卡片（见最后一行），因此我们的卡片类型将是 `custom:content-card-example`。并且由于你将文件创建在 `<config>/www` 目录中，它将可以通过 `/local/` URL 在你的浏览器中访问（如果你最近才添加 www 文件夹，需要重启 Home Assistant 才能加载文件）。
 
-在 dashboard 配置中添加资源，URL 为 `/local/content-card-example.js`，类型为 `module`（[resource docs](/developers/frontend/custom-ui/registering-resources)）。
+在你的 dashboard 配置中添加一个 resource，URL 为 `/local/content-card-example.js`，类型为 `module`（[resource docs](/developers/frontend/custom-ui/registering-resources)）。
 
-然后即可在 dashboard 配置中使用该 card：
+然后你就可以在 dashboard 配置中使用你的卡片：
 
 ```yaml
-# Example dashboard configuration
+# 示例 dashboard 配置
 views:
   - name: Example
     cards:
@@ -86,47 +112,50 @@ views:
 
 ## API
 
-Custom cards 被定义为 [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)。如何在元素内部渲染 DOM 由你决定。你可以使用 Polymer、Angular、Preact 或任何其他流行框架（React 除外——[这里有更多关于 React 的说明](https://custom-elements-everywhere.com/#react)）。
+Custom cards 被定义为 [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)。如何渲染你的 element 内部的 DOM 由你决定。你可以使用 Polymer、Angular、Preact 或其他任何主流框架（React 除外 – [更多信息请看这里](https://custom-elements-everywhere.com/#react)）。
 
 ### 配置
 
-配置变化时（较少见），Home Assistant 会调用 `setConfig(config)`。如果配置无效且你抛出异常，Home Assistant 会渲染 error card 来通知用户。
+Home Assistant 会在配置变更时（很少）调用 `setConfig(config)`。如果配置无效时你抛出异常，Home Assistant 会渲染一个 error 卡片来通知用户。
 
-Home Assistant 状态变化时（很频繁），会设置[`hass` 属性](/developers/frontend/data)。每次状态变化时，组件都必须更新自身以表示最新状态。
+### 数据上下文
 
-### masonry 视图中的尺寸
+在示例中，你看到我们使用一个 custom event 来请求 Home Assistant 的 states。这是从 Home Assistant 获取数据并订阅此数据后续更新的推荐方式。详细文档请看[这里](/developers/frontend/data#available-contexts)。
 
-你的 card 可以定义 `getCardSize` 方法，返回 card 的尺寸，可以是数字或 resolve 为数字的 promise。高度 `1` 等于 50 像素。这会帮助 Home Assistant 在 [masonry view](https://www.home-assistant.io/dashboards/masonry/) 中更均匀地分布 cards。若未定义此方法，则默认为 `1`。
+### 在 masonry view 中的 sizing
 
-如果你想获取另一个元素的 card size，由于某些元素可能是懒加载的，应先检查它已被定义。
+你的卡片可以定义一个 `getCardSize` 方法，返回一个数字或一个将 resolve 为数字的 promise，代表你卡片的大小。高度为 1 相当于 50 像素。这将帮助 Home Assistant 在 [masonry view](https://www.home-assistant.io/dashboards/masonry/) 中将卡片均匀分配到各列。如果未定义该方法，将假定卡片大小为 `1`。
+
+由于某些 element 可能会被 lazy load，如果你想获取另一个 element 的卡片大小，应首先检查它是否已定义。
 
 ```js
 return customElements
   .whenDefined(element.localName)
   .then(() => element.getCardSize());
 ```
-### sections 视图中的尺寸
 
-如果你的 card 用于 [sections view](https://www.home-assistant.io/dashboards/sections/)，你可以定义 `getGridOptions` 方法，返回 card 在网格中占用的最小、最大和默认单元格数量。每个 section 被划分为 12 列。若不定义此方法，card 会占用 12 列并忽略网格行。
+### 在 sections view 中的 sizing
 
-网格单元尺寸如下：
+你可以定义一个 `getGridOptions` 方法，返回你卡片在 [sections view](https://www.home-assistant.io/dashboards/sections/) 中使用的 grid 所占的最小、最大和默认单元格数量。每个 section 分为 12 列。如果你不定义此方法，卡片将占用 12 列，并忽略 grid 的 rows。
 
-- width: section 宽度除以 12（约 `30px`）
-- height: `56px`
-- gap between cells: `8px`
+grid 中一个单元格的尺寸定义如下：
 
-Grid 选项包括：
+- width：section 宽度除以 12（约 `30px`）
+- height：`56px`
+- 单元格间距：`8px`
 
-- `rows`: 默认占用行数；如果希望 card 忽略网格行，不要定义该值
-- `min_rows`: 最小行数（默认 `1`）
-- `max_rows`: 最大行数（默认未定义）
-- `columns`: 默认列数；设为 `full` 可强制全宽（默认 `12`）
-- `min_columns`: 最小列数（默认 `1`）
-- `max_columns`: 最大列数（默认未定义）
+不同的 grid 选项包括：
 
-对列数而言，`强烈` 建议默认值使用 3 的倍数（`3`、`6`、`9` 或 `12`），这样默认显示效果更好。
+- `rows`：卡片占用的默认行数。如果想让卡片忽略 grid 的 rows，不要定义此值（默认未定义）
+- `min_rows`：卡片占用的最小行数（默认为 `1`）
+- `max_rows`：卡片占用的最大行数（默认未定义）
+- `columns`：卡片占用的默认列数。设为 `full` 以强制卡片为全宽（默认为 `12`）
+- `min_columns`：卡片占用的最小列数（默认为 `1`）
+- `max_columns`：卡片占用的最大列数（默认未定义）
 
-示例实现：
+关于列数，非常建议使用 3 的倍数作为默认值（`3`、`6`、`9` 或 `12`），这样你的卡片在 dashboard 上默认会更美观。
+
+实现示例：
 
 ```js
 public getGridOptions() {
@@ -138,15 +167,15 @@ public getGridOptions() {
 }
 ```
 
-在此示例中，card 默认占用 6 x 2 个单元格，高度不能小于 2 行。按单元尺寸计算，card 高度为 `120px`（`2` * `56px` + `8px`）。
+在此示例中，卡片默认将占用 6 x 2 个单元格。卡片高度不能小于 2 行。根据单元格尺寸，卡片高度将为 `120px`（`2` * `56px` + `8px`）。
 
-## 高级示例
+## 使用 JS modules 的示例
 
-Dashboard 中要加载的资源会以 JS module import 的形式导入。下面是一个使用 JS modules 的 custom card 示例。
+dashboard 中加载的 resources 是作为 JS module import 导入的。下面是一个使用 JS modules 的 custom card 示例，它实现了所有高级功能。
 
-![Screenshot of the wired card](/developers/img/en/frontend/dashboard-custom-card-screenshot.png)
+![有线卡片截图](/img/en/frontend/dashboard-custom-card-screenshot.png)
 
-在 Home Assistant config 目录中创建 `<config>/www/wired-cards.js`，内容如下：
+在你的 Home Assistant config 目录中创建新文件 `<config>/www/wired-cards.js`，并放入以下内容：
 
 ```js
 import "https://unpkg.com/wired-card@0.8.1/wired-card.js?module";
@@ -190,7 +219,7 @@ class WiredToggleCard extends LitElement {
                   ></wired-toggle>
                 </div>
               `
-            : html` <div class="not-found">Entity ${ent} not found.</div> `;
+            : html` <div class="not-found">未找到 Entity ${ent}。</div> `;
         })}
       </wired-card>
     `;
@@ -203,8 +232,8 @@ class WiredToggleCard extends LitElement {
     this.config = config;
   }
 
-  // The height of your card. Home Assistant uses this to automatically
-  // distribute all cards over the available columns.
+  // 你的卡片高度。Home Assistant 使用此值自动
+  // 将所有卡片分配到可用的列中。
   getCardSize() {
     return this.config.entities.length + 1;
   }
@@ -214,6 +243,7 @@ class WiredToggleCard extends LitElement {
       entity_id: state.entity_id,
     });
   }
+
   static get styles() {
     return css`
       :host {
@@ -246,12 +276,12 @@ class WiredToggleCard extends LitElement {
 customElements.define("wired-toggle-card", WiredToggleCard);
 ```
 
-在 dashboard 配置中添加资源，URL 为 `/local/wired-cards.js`，类型为 `module`。
+在你的 dashboard 配置中添加一个 URL 为 `/local/wired-cards.js`、类型为 `module` 的 resource。
 
-配置如下：
+以及你的配置：
 
 ```yaml
-# Example dashboard configuration
+# 示例 dashboard 配置
 views:
   - name: Example
     cards:
@@ -264,16 +294,15 @@ views:
 
 ## 图形化卡片配置
 
-你的 card 可以定义 `getConfigElement` 方法，返回一个用于编辑用户配置的 custom element。Home Assistant 会在 dashboard 的 card editor 中显示该元素。
+你的卡片可以定义一个 `getConfigElement` 方法，返回一个用于编辑用户配置的 custom element。Home Assistant 将把这个 element 显示在 dashboard 的 card editor 中。
 
-你的 card 还可以定义 `getStubConfig` 方法，以 json 形式返回默认 card 配置（不包含 `type:` 参数），供 card type picker 使用。
+你的卡片还可以定义一个 `getStubConfig` 方法，以 json 形式返回一个默认的卡片配置（不含 `type:` 参数），供 dashboard 中的卡片类型选择器使用。
 
-Home Assistant 会在初始化时调用配置元素的 `setConfig` 方法。
-Home Assistant 会在状态变化时更新配置元素的 `hass` 属性，以及包含 dashboard 配置信息的 `lovelace` 元素。
+Home Assistant 将在设置时调用 config element 的 `setConfig` 方法。Home Assistant 会在状态变更时更新 config element 的 `hass` 属性，以及包含 dashboard 配置信息的 `lovelace` element。
 
-配置变更会通过分发 `config-changed` 事件传回 dashboard，新配置位于其 detail 中。
+配置的变更通过派发一个 `config-changed` 事件传回 dashboard，新配置包含在其 detail 中。
 
-要让 card 显示在 card picker dialog 中，请将描述它的对象添加到 `window.customCards` 数组。必需属性为 `type` 和 `name`（见下例）。
+要让你的卡片显示在 dashboard 的卡片选择器对话框中，需要向数组 `window.customCards` 添加一个描述它的对象。该对象的必填属性为 `type` 和 `name`（见下面示例）。
 
 ```js
 class ContentCardExample extends HTMLElement {
@@ -312,18 +341,77 @@ window.customCards = window.customCards || [];
 window.customCards.push({
   type: "content-card-example",
   name: "Content Card",
-  preview: false, // Optional - defaults to false
-  description: "A custom card made by me!", // Optional
+  preview: false, // 可选，默认为 false
+  description: "A custom card made by me!", // 可选
   documentationURL:
-    "https://developers.home-assistant.io/docs/frontend/custom-ui/custom-card", // Adds a help link in the frontend card editor
+    "https://developers.home-assistant.io/docs/frontend/custom-ui/custom-card", // 在 frontend 卡片编辑器中添加帮助链接
 });
+```
+
+### 为实体推荐你的卡片
+
+_自 Home Assistant 2026.6 起可用。_
+
+当用户在卡片选择器中选择一个实体时，Home Assistant 会显示适用于该实体的建议卡片列表。你的卡片可以在其 `window.customCards` 条目中定义 `getEntitySuggestion` 函数来加入此列表。建议的 custom cards 会出现在内置建议下方的 **Community** 部分。
+
+```js
+window.customCards.push({
+  type: "content-card-example",
+  name: "Content Card",
+  getEntitySuggestion: (hass, entityId) => {
+    // 如果不支持该实体，返回 null
+    const domain = entityId.split(".")[0];
+    if (domain !== "light") {
+      return null;
+    }
+    // 返回一个建议
+    return {
+      config: { type: "custom:content-card-example", entity: entityId },
+    };
+  },
+});
+```
+
+`getEntitySuggestion(hass, entityId)` 会被传入 `hass` 对象和所选 entity id。它返回：
+
+- 如果卡片不支持该实体，返回 `null`。
+- 单个建议，或一个建议数组，用于提供多种变体。
+
+仅当你的卡片对该实体确实有意义时才返回建议。使用 `hass` 对象检查其实体的 domain、device class 或 supported features。为每个实体都推荐你的卡片会让选择器过于杂乱，并导致用户选择错误的卡片。
+
+每个建议都是一个对象，包含：
+
+- `config` _(必填)_：用户选择该建议时要应用的卡片配置。必须包含你的 `type`（带 `custom:` 前缀）。
+- `label` _(可选)_：描述变体的简短标签。选择器会先显示卡片的 `name`，再接这个 label，因此只有返回多个建议时才设置它。
+
+```js
+getEntitySuggestion: (hass, entityId) => {
+  if (entityId.split(".")[0] !== "light") {
+    return null;
+  }
+  return [
+    {
+      label: "Compact",
+      config: { type: "custom:content-card-example", entity: entityId },
+    },
+    {
+      label: "Detailed",
+      config: {
+        type: "custom:content-card-example",
+        entity: entityId,
+        details: true,
+      },
+    },
+  ];
+},
 ```
 
 ### 使用内置表单编辑器
 
-除了提供自定义 editor element，对于配置较简单的 cards，还可以使用前端内置表单编辑器。做法是在 card 类中定义静态 `getConfigForm` 函数，它返回一个 form schema，用于描述配置表单结构。
+为图形编辑器配置的一种方式是为卡片提供一个 custom editor element；对于配置需求相对简单的卡片，另一种选择是使用内置的 frontend 表单编辑器。通过在卡片类中定义一个静态 `getConfigForm` 函数来实现，它返回一个定义配置表单形状的 form schema。
 
 示例：
+
 ```js
   static getConfigForm() {
     return {
@@ -381,37 +469,38 @@ window.customCards.push({
   }
 ```
 
-该函数最多返回一个包含 4 个 key 的对象：
+从此函数中，应返回一个最多包含 4 个 key 的对象：
 
-- `schema` _(required)_: schema 对象列表，每个表单字段一个，定义字段名称、selector 等属性。
-- `computeLabel` _(optional)_: 对每个字段调用，用于定义显示标签。若返回 `undefined`，Home Assistant 可能会对 `entity` 等通用字段使用已有翻译。
-- `computeHelper` _(optional)_: 对每个字段调用，用于定义显示在字段下方的辅助文本。
-- `assertConfig` _(optional)_: 每次配置更新时都会调用；若抛出 `Error`，可视化编辑器将被禁用。这可用于用户输入不兼容数据时禁用编辑器；后续若不再抛错，则会重新启用。
+- `schema` _(必填)_：这是一个 schema 对象列表，每个表单字段对应一个，定义字段的名称、selector 等各种属性。
+- `computeLabel` _(可选)_：此回调函数会对每个表单字段调用，允许卡片定义要显示的字段 label。如果为 `undefined`，Home Assistant 可能会为 `entity` 这类通用字段名应用已知的翻译，或者你也可以提供自己的翻译。
+- `computeHelper` _(可选)_：此回调函数会对每个表单字段调用，允许你为字段定义更长的 helper 文本，将显示在字段下方。
+- `assertConfig` _(可选)_：每次配置更新时，用户的配置都会传递给此回调函数。在此回调中抛出 `Error` 将使可视化编辑器被禁用。这可用于在用户输入不兼容数据时禁用可视化编辑器，比如对期望 string 的 selector 输入了一个 yaml 对象。如果此回调的后续执行未抛出错误，可视化编辑器将被重新启用。
 
-这个示例会生成如下配置表单：
-![Screenshot of the config form](/developers/img/en/frontend/dashboard-custom-card-config-form.png)
+此示例将产生以下配置表单：
 
-#### 表单 Schema 元素
+![配置表单截图](/img/en/frontend/dashboard-custom-card-config-form.png)
 
-表单 schema 可以包含单独控件、网格或扩展面板，常见选项如下：
+#### Form schema 元素
 
-控件：
-- `name` _(required)_: 控件名称。
-- `selector` _(optional)_: 控件的 selector 配置（可用选项参见 [selectors](https://www.home-assistant.io/docs/blueprint/selectors/)）
-- `type` _(optional)_: 若未定义 selector，可使用如 `float`、`boolean` 等原生类型，但更推荐 selectors。
+form schema 可以包含独立的控件、grid 或 expansion panel，配置选项如下：
 
-网格：
-- `type` _(required)_: `grid`
-- `name` _(required)_: 此 grid 在表单数据对象中的 key（见 `flatten`）
-- `schema` _(required)_: grid 中子控件列表
-- `flatten` _(optional)_: `true`/`false`，子控件数据是平铺到主字典，还是放入以 grid 名称命名的子字典
-- `column_min_width` _(optional)_: grid 单元格最小宽度的 CSS 值（例如 `200px`）
+Controls：
+- `name` _(必填)_：控件的名称。
+- `selector` _(可选)_：此控件的 selector 配置（可用选项请参见 [selectors](https://www.home-assistant.io/docs/blueprint/selectors/)）
+- `type` _(可选)_：如果未定义 selector，有 `float` 和 `boolean` 等原生表单类型，但建议使用 selectors。
 
-展开面板：
-- `type` _(required)_: `expandable`
-- `name` _(required)_: 此面板在表单数据对象中的 key（见 `flatten`）
-- `schema` _(required)_: expansion panel 中子控件列表
-- `title` _(optional)_: 面板标题
-- `flatten` _(optional)_: `true`/`false`，子控件数据是平铺到主字典，还是放入以面板名称命名的子字典
+Grids：
+- `type` _(必填)_：`grid`
+- `name` _(必填)_：在 form 数据对象中对应此 grid 的 key（参见 `flatten`）
+- `schema` _(必填)_：grid 中子控件的列表
+- `flatten` _(可选)_：`true`/`false`，指示子控件数据是否应展平到主数据字典中，还是放在以此 grid 命名的子字典下
+- `column_min_width` _(可选)_：grid 中单元格最小宽度的 CSS 属性（例如 `200px`）
 
-这不是全部可用选项，更多配置见 [ha-form/types.ts](https://github.com/home-assistant/frontend/blob/master/src/components/ha-form/types.ts)
+Expansion Panel：
+- `type` _(必填)_：`expandable`
+- `name` _(必填)_：在 form 数据对象中对应此 panel 的 key（参见 `flatten`）
+- `schema` _(必填)_：expansion panel 中子控件的列表
+- `title` _(可选)_：panel 上的标题
+- `flatten` _(可选)_：`true`/`false`，指示子控件数据是否应展平到主数据字典中，还是放在以此 panel 命名的子字典下
+
+这不是所有选项的完整列表，更多配置选项列于 [ha-form/types.ts](https://github.com/home-assistant/frontend/blob/master/src/components/ha-form/types.ts)

@@ -1,6 +1,6 @@
 ---
 title: "在配置流程中测试连接"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+sidebar_label: 🥉 test-before-configure
 related_rules:
   - config-flow
   - unique-config-entry
@@ -9,32 +9,30 @@ related_rules:
   - reauthentication-flow
   - reconfiguration-flow
 ---
-# 在配置流程中测试连接
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-除了非常易于使用之外，配置流也是让用户知道配置完成后某些功能将无法正常工作的好方法。
-这可以捕获以下问题:
-- DNS问题
+配置流程不仅非常易于使用，还是一种让用户在配置完成后立即知道某些设置无法正常工作的有效方式。
+它可以捕获以下问题：
+- DNS 问题
 - 防火墙问题
-- 凭证错误
-- IP 地址或端口错误
+- 错误的凭据
+- 错误的 IP 地址或端口
 - 不支持的设备
 
-一旦设置了集成，此类问题通常很难调试，因此最好尽早发现它们，这样用户就不会陷入无法正常工作的集成。
+一旦集成设置完成，这类问题往往很难排查，因此最好尽早捕获，避免用户被一个无法正常工作的集成困住。
 
-由于这改善了用户体验，因此需要在配置流程中测试连接。
+由于这改善了用户体验，在配置流程中测试连接是必需的。
 
-## 实施示例
+## 示例实现
 
-要验证用户输入，您可以像平常一样使用数据调用库并进行测试调用。
-如果调用失败，您可以向用户返回错误消息。
+要验证用户输入，你可以像往常一样使用数据调用你的库，并进行一次测试调用。
+如果调用失败，你可以向用户返回错误信息。
 
-在以下示例中，如果 `client.get_data()` 调用引发 `MyException`，用户将看到集成无法连接的错误消息。
+在下面的示例中，如果 `client.get_data()` 调用抛出 `MyException`，用户将看到一条集成无法连接的错误信息。
 
-ZZ保护0ZZ:
+`config_flow.py`:
 ```python {10-17} showLineNumbers
 class MyConfigFlow(ConfigFlow, domain=DOMAIN):
     """My config flow."""
@@ -65,14 +63,14 @@ class MyConfigFlow(ConfigFlow, domain=DOMAIN):
         )
 ```
 
-## 其他资源
+## 更多资源
 
-有关配置流的更多信息可以在 [config flow documentation](/developers/config_entries_config_flow_handler) 中找到。
+关于配置流程的更多信息，请参见[config flow 文档](/developers/core/integration/config_flow)。
 
-## 例外情况
+## 例外
 
-没有与设备或服务的连接（例如助手）的集成不需要在配置流中测试连接，并且不受此规则的约束。
-依赖于运行时自动发现的集成（如 Google Cast）也不受此规则的约束。
+不与设备或服务建立连接的集成（例如 helpers）无需在配置流程中测试连接，免于此规则。
+依赖运行时自动发现的集成（如 Google Cast）也免于此规则。
 
 ## 相关规则
 

@@ -1,62 +1,62 @@
 ---
-title: "安卓最佳实践"
-description: '我们应该遵循标准的开发原则，总体来说例如：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "Android 最佳实践"
 sidebar_label: "最佳实践"
 ---
-# 安卓最佳实践
 
-## 一般原则
+## 通用原则
 
-我们应该遵循标准的开发原则，总体来说例如：
+总体而言，我们应当遵循标准开发原则，例如：
 
-- **坚硬的**：单一职责、开放/封闭、里氏替换、接口隔离、依赖倒置。通过[Kotlin SOLID Principles Examples](https://medium.com/huawei-developers/kotlin-solid-principles-tutorial-examples-192bf8c049dd)了解更多信息
-- **吻**：保持简单，傻瓜。
-- **干**：不要重复自己
-- **社区基准**：遵循[NowInAndroid](https://github.com/android/nowinandroid)存储库中展示的实践。
+- **SOLID**: 单一职责、开闭原则、里氏替换、接口隔离、依赖倒置。了解更多请参阅 [Kotlin SOLID Principles Examples](https://medium.com/huawei-developers/kotlin-solid-principles-tutorial-examples-192bf8c049dd)
+- **KISS**: Keep It Simple, Stupid。
+- **DRY**: Don't Repeat Yourself
+- **社区指南**: 遵循 [NowInAndroid](https://github.com/android/nowinandroid) 仓库中展示的实践。
+- **保持直接**: 不要为了单个实现或假设性的未来需求而引入抽象。直接使用经过验证的库或 API，只有在出现第二个真实用例时才进行抽象，或者用于隐藏某模块内部的实现细节（例如，在 `common` 中定义一个 public 接口，其 `internal` 实现通过 DI 绑定）。同样，不要存储那些可以从现有状态推导出的值。
+- **先找根因再修复**: Bug 修复应说明实际原因以及如何复现。避免用猜测性的变通方法去修补症状。
 
 ## 文档
 
-代码中的文档应该随着代码库的发展而带来价值。请记住以下几点：
+代码中的文档应当具有价值，并随代码库一起演进。请注意以下几点：
 
-- **保持最新**：文档必须随着代码的更改而更新。
-- **平衡评论**：避免过度评论，但不要忘记在必要时进行评论。
-- **面向未来**：询问自己，*“我能理解我在 6 个月内做了什么？”*
+- **保持更新**: 文档必须随代码变更而更新。
+- **平衡注释**: 避免过度注释，但也不要忘记在必要时添加注释。
+- **面向未来**: 问自己，*“6 个月后我还看得懂自己做过的东西吗？”*
 
 :::info
-文档应该有所帮助，而不是被阻碍。
+文档应该提供帮助，而不是造成阻碍。
 :::
 
-## 记录
+## 日志记录
 
-日志记录很重要，但应严格使用。 正如 Jake Wharton 在他的 [Timber](https://github.com/JakeWharton/timber) 图书馆中所说：
+日志记录至关重要，但应谨慎使用。正如 Jake Wharton 在他的 [Timber](https://github.com/JakeWharton/timber) 库中所说：
 
-> 你登录生产环境时，会有一只小狗终止。
+> 每次在生产环境中记录一条日志，就有一只小狗死去。
 
-- 避免生产中过度记录。
-- 使用构造且有意义的日志消息。
-- 利用木材等工具有效管理日志记录。
+- 避免在生产环境中过度记录日志。
+- 使用结构化、有意义的日志消息。
+- 借助 Timber 等工具有效管理日志记录。
 
-## 时间和持续时间
+## 时间与时长
 
-使用时间、日期或持续时间时，避免使用原始类型。相反，使用强类型来防止单位混乱。
+在处理时间、日期或时长时，避免使用基本类型。取而代之，应使用强类型以避免单位混淆。
 
-:::note[Example]
+:::note[示例]
 
-#### ❌不要这样做
+#### ❌ 不要这样做
 
 ```kotlin
 const val THRESHOLD = 600000
 
 fun main() {
     val now = System.currentTimeMillis()
-    
+
     if (now > THRESHOLD) {
-        // Do something
+        // 执行某操作
     }
 }
 ```
 
-#### ✅这样做
+#### ✅ 应该这样做
 
 ```kotlin
 val THRESHOLD = Instant.ofEpochSecond(60)
@@ -65,7 +65,7 @@ fun main() {
     val now = Instant.now()
 
     if (now > THRESHOLD) {
-        // Do something
+        // 执行某操作
     }
 }
 ```
@@ -73,46 +73,46 @@ fun main() {
 :::
 
 :::warning
-如果必须使用基本类型，请确保变量名称包含单位（例如`THRESHOLD_MS`而不是`THRESHOLD`）以减少歧义。
+如果必须使用基本类型，请确保变量名中包含单位（例如，使用 `THRESHOLD_MS` 而非 `THRESHOLD`），以减少歧义。
 :::
 
-- 对日期、持续时间和时钟应用的逻辑相同。
-- 对于使用 `long`时间（例如，毫秒与秒）的 API，请加速将值转换为强类型，以最大程度地减少对非类型化单位的调用。
+- 对日期、时长和时间戳应用同样的逻辑。
+- 对于使用 `long` 表示时间戳的 API（例如，毫秒与秒的区别），应尽快将值转换为强类型，以尽量减少暴露于无类型单位的风险。
 
-## 随机性
+## 并发
 
-曼哈顿性很强烈，但需要仔细处理特区占地和补贴条件等问题。
+并发功能强大，但需要谨慎处理，以避免内存泄漏和竞态条件等问题。
 
-### 协程范围
+### Coroutine 作用域
 
-将您的协程与Android生命周期联系起来（例如`viewModelScope`或`lifecycleScope`）以防止内存泄漏。
+将你的协程绑定到 Android 生命周期（例如，`viewModelScope` 或 `lifecycleScope`），以防止内存泄漏。
 
-### 访问
+### 并发访问
 
-- 保证在协程外部访问的任何引用都是线程安全的。
-- 如果引用不安全，或者设置安全，或者不使用它。
-- 开发中存在的问题（如竞争条件）可能会随之而来，请仔细设计。
+- 确保在协程外部访问的任何引用都是线程安全的。
+- 如果某个引用不安全，要么使其安全，要么不要使用它。
+- 调试并发问题（例如，竞态条件）可能极其困难，因此请仔细设计。
 
-有关竞争条件的更多详细信息，请参阅[Race Condition](https://en.wikipedia.org/wiki/Race_condition#In_software)。
+关于竞态条件的更多细节，请参阅 [Race Condition](https://en.wikipedia.org/wiki/Race_condition#In_software)。
 
-## 使用强类型而不是字符串进行逻辑
+## 使用强类型而非字符串来控制逻辑
 
-使用字符串来存储和显示文本，而不是控制代码中的逻辑或。依赖字符串进行逻辑（例如输入字符串来目的地确定或）可能会引入拼写错误等错误，整理或重构代码变得更加困难。相反，请使用强类型（例如`sealed`类，或者如果需要，使用`enum`）来表示这些概念。为来自第三方的原始值或UI显示保留字符串。如果必须使用字符串，则满足它们的定义为`const val`（遵循我们的[codestyle](/developers/android/codestyle#avoid-magic-numbers-and-strings)）或将它们包装在强类型中，例如[inline value class](https://kotlinlang.org/docs/inline-classes.html)。
+字符串应用于存储和显示文本，而不是用于控制代码中的逻辑或行为。依赖字符串来控制逻辑——例如传递一个字符串来决定目标页面或行为——可能会引入拼写错误等错误，并使代码更难以追踪或重构。相反，请使用强类型（例如 `sealed` 类，或在必要时使用 `enum`）来表示这些概念。将字符串保留用于第三方来源的原始值或 UI 显示。如果必须使用字符串，请将其定义为 `const val`（遵循我们的 [编码风格](/developers/android/codestyle#avoid-magic-numbers-and-strings)），或将其包装在强类型中，例如 [inline value class](https://kotlinlang.org/docs/inline-classes.html)。
 
-:::note[Example]
+:::note[示例]
 
-#### ❌避免这种模式
+#### ❌ 避免这种模式
 
 ```kotlin
 fun newInstance(destination: String): Intent {
-    // Logic based on string value
+    // 基于字符串值的逻辑
     return Intent().apply {
         putExtra("destination", destination)
     }
 }
 ```
 
-#### ✅ 更喜欢这种方法
+#### ✅ 优先采用这种方案
 
 ```kotlin
 private const val DESTINATION_KEY = "destination"
@@ -133,23 +133,23 @@ fun newInstance(destination: Destination): Intent {
 fun onIntent(intent: Intent) {
     val destination = IntentCompat.getParcelableExtra(intent, DESTINATION_KEY, Destination::class.java)
     when (destination) {
-        Destination.General -> // Handle General
-        Destination.Notifications -> // Handle Notifications
-        Destination.Privacy -> // Handle Privacy
-        null -> // Handle missing destination
+        Destination.General -> // 处理 General
+        Destination.Notifications -> // 处理 Notifications
+        Destination.Privacy -> // 处理 Privacy
+        null -> // 处理缺失的 destination
     }
 }
 ```
 
 :::
 
-对目标使用强类型有助于防止错误、改进代码导航重构更加可靠。当您将 `sealed` 类与 `when` 一起使用时，编译器可能会丢失的情况，并且您的 IDE 可以快速找到特定目标的所有手段，从而使更新和维护变得更加容易。
+对目标页面使用强类型有助于防止错误、改善代码导航，并使重构更加可靠。使用 `sealed` 类配合 `when` 时，编译器可以捕获缺失的分支，IDE 也能快速定位某个特定目标的所有用法，从而使更新和维护更加轻松。
 
-### 为什么密封类比枚举更好
+### 为什么 sealed 类比 enum 更好
 
-密封类比枚举提供了更大的灵活性和安全性。使用密封类，您可以定义具有自己属性的子类，从而允许您根据散热器类型的需要提供附加数据。这使您的API具有更强的性能和易用性。
+Sealed 类比 enum 提供了更大的灵活性和安全性。使用 sealed 类，你可以定义带有自己属性的子类，从而为每种类型传递所需的数据。这使得你的 API 更具表达力和适应性。
 
-例如，如果`Notifications`目标需要`title`参数，请按以下方式定义：
+例如，如果 `Notifications` 目标需要一个 `title` 参数，可以这样定义：
 
 ```kotlin
 
@@ -165,65 +165,65 @@ sealed interface Destination : Parcelable {
 fun onIntent(intent: Intent) {
     val destination = IntentCompat.getParcelableExtra(intent, DESTINATION_KEY, Destination::class.java)
     when (destination) {
-        Destination.General -> // Handle General
+        Destination.General -> // 处理 General
         is Destination.Notifications -> {
             val title = destination.title
-            // Handle Notifications with title
+            // 使用 title 处理 Notifications
         }
-        Destination.Privacy -> // Handle Privacy
-        null -> // Handle missing destination
+        Destination.Privacy -> // 处理 Privacy
+        null -> // 处理缺失的 destination
     }
 }
 ```
 
 :::note
-当您将`when`与密封类一起使用时，请避免添加`else`分支。这确保了如果您添加新的情况，编译器将要求您处理它，从而使您的代码更安全且更易于维护。
+当你在 sealed 类上使用 `when` 时，请避免添加 `else` 分支。这样可以确保当你新增一个分支时，编译器会要求你处理它，使代码更安全、更易于维护。
 :::
 
-通过使用密封类，您可以安全地添加新的目标类型及其自己的必填字段，并且编译器将强制处理所有情况。与使用枚举或字符串进行逻辑控制相比，这种方法使您的代码更加健壮、可维护且不易出错。
+通过使用 sealed 类，你可以安全地添加带有各自必需字段的新目标类型，编译器会强制要求处理所有分支。这种方法比使用 enum 或字符串来控制逻辑更加健壮、更易维护，且不容易出错。
 
-在[Kotlin documentation](https://kotlinlang.org/docs/sealed-classes.html)上阅读有关密封修饰符的更多信息。
+有关 sealed 修饰符的更多信息，请参阅 [Kotlin 文档](https://kotlinlang.org/docs/sealed-classes.html)。
 
 ## 代码组织
 
-### 保持小班授课
+### 保持类小巧
 
-- 大类通常有太多的职责，使得它们更难以审查、测试和维护。
-- 以小班为目标，适当分离关注点和抽象。
+- 大型类往往承担了过多职责，导致难以审查、测试和维护。
+- 目标是小类，并实现适当的关注点分离和抽象。
 
-### 让你的函数小而有意义
+### 保持函数小巧且有意义
 
-- 任务应该集中于单一职责。
-- 函数的名称应该清楚地描述它的作用。如果很难命名，则该函数可能做了太多的事情。
-- 调用良好的小函数可以减少对文档的需求，净化代码不言自明。
+- 函数应当小巧，专注于单一职责。
+- 函数名应清晰描述其功能。如果很难命名，说明该函数可能做了太多事情。
+- 命名良好的小函数可以减少文档需求，使代码自解释。
 
 :::note
-命名很困难，但是较小的函数可以更轻松地选择有意义的名称。
+命名很困难，但更小的函数使你更容易选择有意义的名称。
 :::
 
-## 保持公关较小
+## 保持 PR 小巧
 
-- **为什么？** 较小的 PR 更容易审查、减少延迟并最大限度地减少失望感。
-- **怎么办？** 将大的重组划分为更小的逻辑块。
+- **为什么？** 较小的 PR 更易于审查、减少延迟并降低挫败感。
+- **怎么做？** 将大型变更拆分为小而可合并的步骤，使应用在每一步都能正常运行。如果重构的工作太大，无法通过一个小型 PR 一次性完成，请将新路径隐藏在 `WIPFeature` 对象的标志后面，这样你仍可以以小步合并，而用户则继续使用旧路径：在那里添加一个标志（通常仅在 debug 构建中通过 `BuildConfig.DEBUG` 启用），用它在新路径与旧路径之间切换，并在功能完全发布后将其移除。
 
-有关更多详细信息，请参阅[submit](/developers/android/submit)。
+更多细节请参阅 [submit](/developers/android/submit)。
 
-## 依赖注入（DI）
+## 依赖注入 (DI)
 
-我们使用依赖注入（DI）来帮助编写自定义、可测试和可的代码。通过使用 DI，我们可以将类相互依赖关系解耦，从而更容易地交换实现、编写单元测试和管理复杂的对象图。DI 还提高了代码的必然性并有助于实施单一职责原则。
+我们使用依赖注入 (DI) 来帮助编写模块化、可测试且可维护的代码。通过使用 DI，我们可以将类与其依赖项解耦，从而使切换实现、编写单元测试和管理复杂的对象图变得更加容易。DI 还能提高代码可读性，并帮助执行单一职责原则。
 
-### 在`@Named`上使用显式限定符注释
+### 使用显式限定注解而非 `@Named`
 
-当需要注入相同类型（或基本类型）的多个实现时，必须使用限定符来区分它们。虽然`@Named`注释是一种常见方法，但它依赖于字符串标识符，这可能容易出错且难以重构。使用自定义限定符注释代替`@Named`具有以下几个优点：
+当你需要注入同一类型的多个实现（或基本类型）时，必须使用限定符来区分它们。虽然 `@Named` 注解是一种常见方法，但它依赖于字符串标识符，容易出错且难以重构。使用自定义限定注解而非 `@Named` 具有多项优势：
 
-- **可发现性**：自定义限定符可以更轻松地查找代码库中使用特定依赖项的位置。
-- **可重构性**：重命名自定义注释既简单又安全，而更改字符串标识符则需要搜索所有字符串用法。
-- **类型安全**：在编译时检查自定义注释，降低字符串可能出现的拼写错误或不匹配的风险。
-- **报表**：自定义限定符使代码不再言明，更容易理解。
+- **可发现性**: 自定义限定符使在代码库中查找某个特定依赖项的使用位置更加容易。
+- **可重构性**: 重命名自定义注解简单且安全，而修改字符串标识符则需要搜索所有字符串使用位置。
+- **类型安全**: 自定义注解在编译时进行检查，减少了字符串出现拼写错误或匹配错误的可能性。
+- **清晰性**: 自定义限定符使代码更自解释、更易于理解。
 
-:::note[Example]
+:::note[示例]
 
-#### ❌不要这样做
+#### ❌ 不要这样做
 
 ```kotlin
 @Inject
@@ -231,7 +231,7 @@ fun onIntent(intent: Intent) {
 lateinit var keyChainRepository: KeyChainRepository
 ```
 
-#### ✅这样做
+#### ✅ 应该这样做
 
 ```kotlin
 @Inject
@@ -239,7 +239,7 @@ lateinit var keyChainRepository: KeyChainRepository
 lateinit var keyChainRepository: KeyChainRepository
 ```
 
-类似这样定义注释：
+定义注解如下：
 
 ```kotlin
 package io.homeassistant.companion.android.common.data.keychain
@@ -247,7 +247,7 @@ package io.homeassistant.companion.android.common.data.keychain
 import javax.inject.Qualifier
 
 /**
- * Qualifier for the [KeyChainRepository] used to select the key chain.
+ * [KeyChainRepository] 的限定符，用于选择 key chain。
  */
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
@@ -256,21 +256,23 @@ annotation class NamedKeyChain
 
 :::
 
-有关从`@Named("keyChainRepository")`迁移到`@NamedKeyChain`的实际示例，请参阅[this pull request](https://github.com/home-assistant/android/pull/5667)。
+有关从 `@Named("keyChainRepository")` 迁移到 `@NamedKeyChain` 的真实示例，请参阅 [这个 pull request](https://github.com/home-assistant/android/pull/5667)。
 
-## 快速失败
+## 快速失败 (Fail fast)
 
-开发问题很难。注意错误，即使是那些您认为不太可能发生的错误。始终致力于构建时而不是运行时捕获错误。初步使用 Kotlin 编译器功能，如果无法在编译时强制执行检查，请考虑添加 [lint rule](/developers/android/linter)。
+开发进度越深，调试问题就越困难。不要忽略错误，即使是你认为不太可能发生的错误。始终力求在构建时捕获错误，而不是在运行时。尽可能使用 Kotlin 编译器特性，如果无法在编译时强制进行检查，请考虑添加 [lint 规则](/developers/android/linter)。
 
-### 使用 Kotlin 编译器
+当同一个问题在审查中反复出现时，请将约定编码到工具中（自定义 [lint 规则](/developers/android/linter)、KTLint 覆盖、`FailFast` 检查或测试监听器），而不是依赖每个人记住它。
 
-Kotlin 编译器可以帮助您及早发现问题。例如，将`when` 符号与`sealed` 类/接口一起使用可确保处理所有情况。
+### 利用 Kotlin 编译器
+
+Kotlin 编译器可以帮助你尽早发现问题。例如，在 `sealed` 类/接口上使用 `when` 运算符可以确保所有分支都被处理。
 
 :::note
-设计类时请支持[composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance)。组合允许您从更简单、可重用的组件构建复杂的行为，而不是依赖严格的类层次结构，从而产生更灵活、可维护和可测试的代码。
+在设计类时，优先考虑[组合优于继承](https://en.wikipedia.org/wiki/Composition_over_inheritance)。组合允许你从更简单、可复用的组件构建复杂行为，而不是依赖于僵化的类层级，从而生成更灵活、更易于维护且更易于测试的代码。
 :::
 
-@@格式0@@
+**示例：**
 
 ```kotlin
 sealed interface Shape {
@@ -286,41 +288,41 @@ fun foo(shape: Shape) {
 }
 ```
 
-如果您添加一个实现`Shape`的新类，编译器将无法构建，您直到处理新的情况。当整个代码库使用该接口时，这尤其有用。请注意，这仅在不添加`else`分支时才有效。
+如果你添加了一个新的实现 `Shape` 的类，编译器将会构建失败，直到你处理该新分支为止。当接口在代码库中被广泛使用时，这一点特别有用。请注意，只有在不添加 `else` 分支时，这种机制才有效。
 
-### 不要默默地忽视异常
+### 不要静默忽略异常
 
-虽然捕获异常对于防止崩溃很重要，但默默地他们可能会隐藏隐藏层次的问题并使调试变得更加困难。例如，考虑一个需要使用 API 密钥进行初始化的第三方库。如果初始化失败并且在没有适当日志记录的情况下查询异常，那么在某些内容停止工作时确定根本原因可能会很困难。
+虽然捕获异常以防止崩溃很重要，但静默忽略它们可能会掩盖更深层次的问题，并使调试更加困难。例如，考虑一个需要用 API key 进行初始化的第三方库。如果初始化失败且异常被捕获但没有适当记录，那么当某些功能停止工作时，就很难识别根本原因。
 
-@@格式0@@
+**示例：**
 
 ```kotlin
 fun foo() {
-    
-    // Always catch the error and proceed with fallback value
+
+    // 始终捕获错误并继续执行回退值
     val value = try {
-        ExternalThirdPartyJavaAPI.value()    
+        ExternalThirdPartyJavaAPI.value()
     } catch (e: Exception) {
-        // Fortunately we log the error to help with troubleshooting
+        // 幸运的是我们记录了错误以便排查问题
         Timber.w(e, "Couldn't get ExternalThirdParty value, current state: ${ExternalThirdPartyJavaAPI.state()}")
         "fallback"
     }
 }
 ```
 
-正确的日志记录可确保用户和开发人员能够发现日志中的错误并有效报告问题。
+适当的日志记录可确保用户和开发者能够在日志中发现错误，并有效报告问题。
 
-要进一步改进开发过程中的错误处理，请使用 `FailFast` API。此 API 通过在发生错误时使 `debug` 风格的应用程序崩溃来应用攻击性编程原则，从而使问题在开发过程的早期更加明显。
+为了进一步改善开发过程中的错误处理，请使用 `FailFast` API。该 API 遵循进攻性编程原则，在发生错误时使 `debug` 风味（flavor）的应用崩溃，从而让问题在开发早期阶段更加可见。
 
-@@格式0@@
+**示例：**
 
 ```kotlin
 import io.homeassistant.companion.android.common.util.FailFast
 
 fun foo() {
 
-    // In case of a failure, this will print a message and stack trace to the logs. In debug builds, it
-    // will also crash the app, while in production it will use the fallback value instead of crashing.
+    // 如果发生失败，将在日志中打印消息和堆栈跟踪。在 debug 构建中，
+    // 它还会使应用崩溃；而在生产环境中，它将使用回退值而非崩溃。
     val value = FailFast.failOnCatch(
         message = { "Couldn't get ExternalThirdParty value, current state: ${ExternalThirdPartyJavaAPI.state()}" },
         fallback = "fallback",
@@ -330,24 +332,23 @@ fun foo() {
 }
 ```
 
-通过快速失败并清晰地记录错误，您可以更轻松地识别、
-在问题投入生产之前进行调试和修复。
+通过快速失败并清晰地记录错误，你可以在问题到达生产环境之前更容易地识别、调试并修复问题。
 
-当 FailFast API 被触发时，它会生成清晰的日志队列，易于发现和调查：
+当 FailFast API 被触发时，它会生成一条清晰可见的日志条目，便于发现和调查：
 
 ```log
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  ██████████████████████
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  !!! CRITICAL FAILURE: FAIL-FAST !!!
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  ██████████████████████
-2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  
+2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  An unrecoverable error has occurred, and the FailFast mechanism
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  has been triggered. The application cannot continue and will now exit.
-2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  
+2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  ACTION REQUIRED: This error must be investigated and resolved.
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  Review the accompanying stack trace for details.
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  ----------------------------------------------------------------
-2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  
-2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  
+2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E
+2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  io.homeassistant.companion.android.common.util.FailFastException: Couldn't get ExternalThirdParty value, current state: null
 2025-06-12 10:53:20.841 29743-29743 CrashFailFastHandler    io....stant.companion.android.debug  E  	at io.homeassistant.companion.android.developer.DevPlaygroundActivityKt.DevPlayGroundScreen$lambda$14$lambda$13$lambda$12(DevPlaygroundActivity.kt:80)
 ```

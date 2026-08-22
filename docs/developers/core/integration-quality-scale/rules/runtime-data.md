@@ -1,28 +1,26 @@
 ---
 title: "使用 ConfigEntry.runtime_data 存储运行时数据"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+sidebar_label: 🥉 runtime-data
 related_rules:
   - strict-typing
   - test-before-setup
 ---
-# 使用 ConfigEntry.runtime_data 存储运行时数据
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 原因
 
-`ConfigEntry` 对象具有可用于存储运行时数据的 `runtime_data` 属性。
-这对于存储无需持久化到配置存储、但在配置条目（config entry）生命周期内仍需使用的数据非常有用。
+`ConfigEntry` 对象有一个 `runtime_data` 属性，可用于存储运行时数据。
+这对于存储那些不需要持久化到配置文件存储、但在配置条目生命周期内所需的数据很有用。
 
-通过使用 `runtime_data`，我们可以为开发人员保持一致性，以一致的类型化方式存储运行时数据。
-由于增加了打字，我们可以使用工具来避免打字错误。
+通过使用 `runtime_data`，我们为开发者提供了一致且类型安全的方式来存储运行时数据。
+由于增加了类型标注，我们可以使用工具来避免类型错误。
 
-## 实施示例
+## 示例实现
 
-`ConfigEntry` 的类型可以通过放入 `runtime_data` 中的数据类型进行扩展。
-在以下示例中，我们使用 `MyClient` 扩展 `ConfigEntry` 类型，这意味着 `runtime_data` 属性的类型将为 `MyClient`。
+`ConfigEntry` 的类型可以通过放入 `runtime_data` 的数据类型进行扩展。
+在下面的示例中，我们使用 `MyClient` 扩展 `ConfigEntry` 类型，这意味着 `runtime_data` 属性将为 `MyClient` 类型。
 
-ZZ保护0ZZ:
+`__init__.py`:
 ```python {1,4,9} showLineNumbers
 type MyIntegrationConfigEntry = ConfigEntry[MyClient]
 
@@ -40,16 +38,16 @@ async def async_setup_entry(hass: HomeAssistant, entry: MyIntegrationConfigEntry
 ```
 
 :::info
-如果集成实现 `strict-typing`，则需要使用自定义类型的 `MyIntegrationConfigEntry`，并且必须始终使用。
+如果集成实现了 `strict-typing`，则必须使用自定义类型标注的 `MyIntegrationConfigEntry`，并在全局范围内使用。
 :::
 
-## 其他资源
+## 更多资源
 
-有关配置条目（config entry）及其生命周期的更多信息，请参阅 [config entry documentation](/developers/config_entries_index)。
+关于配置条目及其生命周期的更多信息，请参见[config entry 文档](/developers/config_entries_index)。
 
-## 例外情况
+## 例外
 
-这条规则没有例外。
+本规则没有例外。
 
 ## 相关规则
 

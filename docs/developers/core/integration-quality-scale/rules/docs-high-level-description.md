@@ -1,22 +1,21 @@
 ---
-title: "该文档包括集成品牌、产品或服务的高级描述"
-description: '集成的用户文档应提供集成品牌、产品或服务的高级描述。 此信息可能会帮助用户决定集成是否适合他们及其用例。 如果可能的话，文档还应包含品牌、产品或服务网站的链接，以获取更多信息。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "文档包含对集成品牌、产品或服务的高级描述"
+sidebar_label: 🥉 docs-high-level-description
 ---
-# 该文档包括集成品牌、产品或服务的高级描述
 
-## 推理
+## 原理说明
 
-集成的用户文档应提供集成品牌、产品或服务的高级描述。
-此信息可能会帮助用户决定集成是否适合他们及其用例。
-如果可能的话，文档还应包含品牌、产品或服务网站的链接，以获取更多信息。
+集成的用户文档应提供对集成品牌、产品或服务的高级描述。
+这些信息可能有助于用户判断集成是否适合他们及其使用场景。
+如果可能的话，文档还应包含指向品牌、产品或服务网站的链接，以便用户获取更多详细信息。
 
-## 实施示例
+## 示例实现
 
 ```markdown showLineNumbers
-The **my integration** {% term integration %} is used to integrate with the devices of [MyCompany](https://www.mycompany.com).
-They create various smart home appliances and devices and are known for their MyProduct.
+**my integration** {% term integration %} 用于与 [MyCompany](https://www.mycompany.com) 的设备进行集成。
+该公司生产各种智能家居电器和设备，以其 MyProduct 而闻名。
 ```
 
 ## 例外情况
 
-不与设备或服务集成的集成（例如内部集成）不能包含设备或服务的描述，因此可以豁免。
+不与设备或服务集成的集成（如内部集成）无法包含对设备或服务的描述，因此不受此规则约束。

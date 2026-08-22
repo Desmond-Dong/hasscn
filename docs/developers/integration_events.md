@@ -1,18 +1,16 @@
 ---
-title: "射击事件"
-description: '通常鼓励 集成 将事件发布为事件 实体(/developers/core/entity/event)反而。这种方法使用户更容易浏览和识别所有可用事件，从而增强了用户体验。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "触发事件"
 ---
-# 射击事件
 
-:::info 
-通常鼓励 集成 将事件发布为[事件 实体](/developers/core/entity/event)反而。这种方法使用户更容易浏览和识别所有可用事件，从而增强了用户体验。
+:::info
+集成一般被鼓励将 events 作为 [event entities](/developers/core/entity/event) 发布，而不是直接在 event bus 上发出 events。这种方法通过让用户更容易浏览和识别所有可用的 events 来提升用户体验。
 :::
 
-一些 集成 代表 设备 或具有事件的服务，例如检测到运动或按下瞬时按钮时。 集成 可以通过将它们作为 Home Assistant 中的事件触发来向用户提供这些。
+一些 integrations 表示具有 events 的 devices 或 services，比如检测到运动或按下短暂按钮时。integration 可以通过在 Home Assistant 中将其作为 events 发出，向用户提供这些 events。
 
-您的 集成 应触发 `<domain>_event` 类型的事件。例如，ZHA 集成 触发 `zha_event` 事件。
+你的 integration 应该发出类型为 `<domain>_event` 的 events。例如，ZHA integration 发出 `zha_event` events。
 
-如果事件与特定 device/service 相关，则应正确归因。通过将 `device_id` 属性添加到包含设备注册表中设备标识符的事件数据来执行此操作。
+如果该 event 与某个特定的 device/service 相关，应该进行正确的归属。方法是在 event data 中添加一个 `device_id` attribute，其中包含来自 device registry 的 device 标识符。
 
 ```
 event_data = {
@@ -22,14 +20,14 @@ event_data = {
 hass.bus.async_fire("mydomain_event", event_data)
 ```
 
-如果 设备 或服务仅触发事件，您需要[手动将其注册到设备注册表中](/developers/device_registry_index#manual-registration).
+如果一个 device 或 service 只发出 events，你需要 [手动在 device registry 中注册它](device_registry_index.md#manual-registration)。
 
-## 让用户可以访问事件
+## 让 events 对用户可用
 
-一个[设备触发器](/developers/device_automation_trigger)可以根据有效负载附加到特定事件，并使用户可以访问该事件。通过 设备 触发器，用户将能够查看 设备 的所有可用事件并在自动化中使用它。
+一个 [Device trigger](device_automation_trigger.md) 可以根据 payload 附加到特定 event 上，并让该 event 对用户可用。有了 device trigger，用户就能看到该 device 的所有可用 events，并在 automations 中使用它。
 
-## 不该做什么
+## 不要做的事
 
-事件相关代码不应成为 集成 的 实体 逻辑的一部分。您想要启用将 集成 事件从 `async_setup_entry` 内部 `__init__.py` 内部转换为 Home Assistant 事件的逻辑。
+与 event 相关的代码不应成为你 integration 的 entity logic 的一部分。你应该从 `__init__.py` 中的 `async_setup_entry` 内部启用将你的 integration events 转换为 Home Assistant events 的 logic。
 
-实体 状态不应代表事件。例如，当事件发生时，您不希望二进制传感器为 `on` 持续 30 秒。
+Entity state 不应代表 events。例如，你不应该在 event 发生时创建一个持续 30 秒处于 `on` 状态的 binary sensor。

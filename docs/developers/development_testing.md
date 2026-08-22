@@ -1,70 +1,60 @@
 ---
 title: "测试你的代码"
-description: '如开发规范(/developers/developmentguidelines)中所述，请检查所有代码，确认以下事项：。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
 ---
-# 测试你的代码
 
-如[开发规范](/developers/development_guidelines)中所述，请检查所有代码，确认以下事项：
+如[风格指南部分](development_guidelines.md)所述，所有代码都会进行检查，以验证以下内容：
 
-- 所有单元测试均通过
-- 所有代码都通过 lint 工具检查
+- 所有单元测试通过
+- 所有代码通过 linting 工具的检查
 
-本地测试使用 [pytest](https://docs.pytest.org/)，linter 则通过 [prek](https://prek.j178.dev/) 运行。执行 `script/setup` 时，它们会一并安装到[虚拟环境](/developers/development_environment)中。
+本地测试使用 [pytest](https://docs.pytest.org/) 进行，并使用 [prek](https://prek.j178.dev/) 来运行 linting 工具，它已在[虚拟环境](development_environment.mdx)中运行 `script/setup` 时安装。
 
-在运行测试前，需要先安装 Python 测试依赖。这可以通过 VS Code devcontainer 及相应任务完成。关于如何运行这些任务，请参阅[开发容器文档](/developers/development_environment#tasks)。
+在运行测试之前，需要先安装 Python 测试依赖。可以通过使用 VScode devcontainer 及相应的任务来实现。请查看 [devcontainer 文档](/developers/development_environment#tasks) 了解运行任务的指导。
 
-要在完整的代码库上运行我们的 linter，请运行以下命令：
+要在整个代码库上运行 linting 工具，请执行以下命令：
 
 ```shell
 prek run --all-files
 ```
 
-要运行完整测试套件，需要安装比 devcontainer 默认环境更多的依赖。请先激活虚拟环境，再执行以下命令安装全部依赖：
-
-```shell
-uv pip install -r requirements_test_all.txt
-```
-
-或者，在 Visual Studio Code 中启动 **Install all test requirements** 任务。
-
-要运行完整测试套件，请激活虚拟环境并执行以下命令：
+要启动测试并运行完整的测试套件，激活虚拟环境并运行以下命令：
 
 ```shell
 pytest tests
 ```
 
-或者，在 Visual Studio Code 中启动 **Pytest** 任务。
+或者，在 Visual Studio Code 中，启动 **Pytest** 任务。
 
-根据你的发行版或操作系统，可能还需要额外安装一些软件包：
+根据你的发行版/操作系统，可能需要安装额外的包：
 
-- Fedora：`sudo dnf -y install systemd-devel gcc-c++`
-- Ubuntu：`sudo apt-get install libudev-dev`
+- Fedora: `sudo dnf -y install systemd-devel gcc-c++`
+- Ubuntu: `sudo apt-get install libudev-dev`
 
 :::info Important
-在创建 PR 之前先运行 `pytest` 和 `prek`，可以避免很多来回修补。
-当提交更改时，`prek` 将被 git 自动调用。
+在创建 pull request 之前运行 `pytest` 和 `prek`，以避免令人烦恼的修复。
+`prek` 会在 git 提交更改时自动调用。
 :::
 
 :::note
-运行完整的 `pytest` 测试套件会花不少时间，因此作为提交 PR 的最低要求，至少请运行与本次改动相关的测试（下面会介绍具体方法）。创建 PR 后，在合并前 CI 也会运行完整测试套件。
+运行完整的 `pytest` 测试套件需要相当长的时间，因此作为 pull request 的最低要求，请至少运行与你的代码更改相关的测试（见下文了解如何操作）。完整的测试套件无论如何都会在创建 pull request 之后、合并之前由 CI 运行。
 :::
 
-运行 `pytest` 将针对本地可用的 Python 版本运行单元测试。我们在 CI 中针对所有支持的 Python 版本运行测试。
+运行 `pytest` 会在本地可用的 Python 版本上运行单元测试。我们会在 CI 中针对所有受支持的 Python 版本运行测试。
 
-### 向测试环境添加新的依赖项
+### 向测试环境添加新依赖
 
-如果你正在为某个集成编写测试，并且修改了依赖，请运行 `script/gen_requirements_all.py` 脚本来更新所有依赖文件。
-然后，你可以通过以下命令更新开发环境中的全部依赖：
+如果你正在为某个集成编写测试并更改了依赖项，请运行 `script/gen_requirements_all.py` 脚本来更新所有需求文件。
+接下来，可以通过运行以下命令更新开发环境中的所有依赖项：
 
 ```shell
-uv pip install -r requirements_test_all.txt
+uv pip install -r requirements_all.txt -r requirements_test.txt
 ```
 
-或者，在 Visual Studio Code 中启动 **Install all test requirements** 任务。
+或者，在 Visual Studio Code 中，启动 **Install all (test & production) Requirements** 任务。
 
-### 运行部分测试
+### 运行有限的测试套件
 
-你可以给 `pytest` 传递参数，只运行单个测试套件或测试文件。
+可以向 `pytest` 传递参数，以运行单个测试套件或测试文件。
 以下是一些有用的命令：
 
 ```shell
@@ -81,66 +71,65 @@ $ pytest tests/test_core.py --timeout 2
 $ pytest tests/test_core.py --duration=10
 ```
 
-如果你只想测试自己的集成，并生成覆盖率报告，推荐使用以下命令：
+如果你只想测试你的集成，并包含测试覆盖率报告，建议使用以下命令：
 
 ```shell
 pytest ./tests/components/<your_component>/ --cov=homeassistant.components.<your_component> --cov-report term-missing -vv
 ```
 
-或者，在 Visual Studio Code 中启动“代码覆盖率”任务。
+或者，在 Visual Studio Code 中，启动 **Code Coverage** 任务。
 
 ### 防止 linter 错误
 
-执行 `script/setup` 时，多个 linter 会被配置为在提交时自动运行。
+多个 linting 工具已配置为在尝试提交时自动运行，作为在[虚拟环境](development_environment.mdx)中运行 `script/setup` 的一部分。
 
-您还可以手动运行这些 linter：
+也可以手动运行这些 linting 工具：
 
 ```shell
 prek run --show-diff-on-failure
 ```
 
-或者，在 Visual Studio Code 中启动 **Prek** 任务。
+或者，在 Visual Studio Code 中，启动 **Prek** 任务。
 
-linter 也可以直接单独运行，你可以只检查某个文件：
+linting 工具也直接可用，可以对单个文件运行测试：
 
 ```shell
 ruff check homeassistant/core.py
 pylint homeassistant/core.py
 ```
 
-### 关于 PyLint 和 PEP8 检查的说明
+### 关于 PyLint 和 PEP8 验证的注意事项
 
-如果某个 PyLint 警告确实无法避免，请使用 `# pylint: disable=YOUR-ERROR-NAME` 注释来禁用该行的检查。一个典型例子是 PyLint 错误地报告某个对象缺少某个成员。
+如果无法避免某个 PyLint 警告，请添加注释，使用 `# pylint: disable=YOUR-ERROR-NAME` 禁用该行的 PyLint 检查。一个无法避免的示例是，当 PyLint 错误报告某个对象没有某个成员时。
 
 ### 为集成编写测试
 
-- 确保集成测试不要直接依赖任何集成内部实现细节。遵循这种模式，测试在面对集成内部改动时会更稳健。
-  - 如果集成支持配置条目，可使用 Core 接口 [`async_setup_component`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/setup.py#L44-L46) 或 [`hass.config_entries.async_setup`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/config_entries.py#L693) 来设置集成。
-  - 通过 Core 状态机 [`hass.states`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/core.py#L887) 断言实体状态。
-  - 通过 Core 服务注册表 [`hass.services`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/core.py#L1133) 调用服务操作。
-  - 通过[设备注册表](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/helpers/device_registry.py#L101)断言 `DeviceEntry` 状态。
-  - 通过[实体注册表](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/helpers/entity_registry.py#L120)断言 `RegistryEntry` 状态。
-  - 通过配置条目接口 [`hass.config_entries`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/config_entries.py#L570) 修改 `ConfigEntry`。
-  - 通过 [`ConfigEntry.state`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/config_entries.py#L169) 属性断言配置条目状态。
-  - 通过 `MockConfigEntry` 类模拟配置条目，参考 [`tests/common.py`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/tests/common.py#L658)。
+- 确保在集成的测试中不要与集成的内部细节交互。遵循此模式将使测试在面对集成变更时更加健壮。
+  - 使用核心接口，通过 [`async_setup_component`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/setup.py#L44-L46) 或（如果该集成支持 config entries）[`hass.config_entries.async_setup`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/config_entries.py#L693) 来设置集成。
+  - 通过核心 state machine [`hass.states`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/core.py#L887) 断言 entity 状态。
+  - 通过核心 service registry [`hass.services`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/core.py#L1133) 执行 service action 调用。
+  - 通过 [device registry](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/helpers/device_registry.py#L101) 断言 `DeviceEntry` 状态。
+  - 通过 [entity registry](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/helpers/entity_registry.py#L120) 断言 entity registry `RegistryEntry` 状态。
+  - 通过 config entries 接口 [`hass.config_entries`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/config_entries.py#L570) 修改 `ConfigEntry`。
+  - 通过 [`ConfigEntry.state`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/config_entries.py#L169) 属性断言 config entry 的状态。
+  - 通过 [`tests/common.py`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/tests/common.py#L658) 中的 `MockConfigEntry` 类来 mock 一个 config entry。
 
 ### 快照测试
 
-Home Assistant 支持快照测试（也称 approval testing），这类测试会把结果与已保存的参考值（快照）进行比较。
+Home Assistant 支持一种称为 snapshot testing（也称为 approval tests）的测试概念，即通过将值与存储的引用值（snapshot）进行断言的测试。
 
-快照测试不同于常规的功能测试，也不能替代功能测试，但它非常适合校验体量较大的输出。
-例如，在 Home Assistant 中，它们可以用于：
+snapshot 测试不同于常规（功能性）测试，也不能取代功能性测试，但对于测试较大的测试输出非常有用。在 Home Assistant 中，它们可以用于：
 
-- 确保实体状态输出符合预期并保持不变。
-- 确保注册表中的区域、配置、设备、实体或问题条目符合预期并持续保持一致。
-- 确保诊断转储的输出符合预期并保持不变。
+- 确保 entity 状态的输出符合预期并保持不变。
+- 确保 registry 中的 area、config、device、entity 或 issue entry 符合预期并保持不变。
+- 确保诊断 dump 的输出符合预期并保持不变。
 - 确保 FlowResult 符合预期并保持不变。
 
-还有更多具有大量输出的情况，例如 JSON、YAML 或 XML 结果。
+以及更多具有较大输出的情况，如 JSON、YAML 或 XML 结果。
 
-快照测试与常规测试的最大区别在于：结果需要先通过一种特殊模式运行测试并保存为快照。之后每次运行测试时，都会把当前结果与快照比较；如果结果不同，测试就会失败。
+snapshot 测试与常规测试的主要区别在于，结果是通过以特殊模式运行测试来捕获并创建 snapshot 的。随后测试的每次顺序运行都会将结果与 snapshot 进行比较。如果结果不同，测试将失败。
 
-Home Assistant 的快照测试构建在 [syrupy](https://github.com/tophat/syrupy) 之上，因此编写测试时也可以参考它的文档。下面是一个对实体状态输出进行快照断言的示例：
+Home Assistant 中的 snapshot testing 建立在 [Syrupy](https://github.com/tophat/syrupy) 之上，因此编写 Home Assistant 测试时可以适用其文档。以下是一个断言 entity 状态输出的 snapshot 测试：
 
 ```python
 # tests/components/example/test_sensor.py
@@ -157,22 +146,21 @@ async def test_sensor(
     assert state == snapshot
 ```
 
-第一次运行这个测试时，它会失败，因为快照文件还不存在。
-要创建（或更新）快照，请使用以下命令运行测试，并加上
-`--snapshot-update` 标志：
+首次运行此测试时，它会失败，因为不存在 snapshot。
+要创建（或更新）snapshot，请使用 `--snapshot-update` 标志运行测试：
 
 ```shell
 pytest tests/components/example/test_sensor.py --snapshot-update
 ```
 
-或者，在 Visual Studio Code 中启动 **Update syrupy snapshots** 任务。
+或者，在 Visual Studio Code 中，启动 **Update syrupy snapshots** 任务。
 
-这会在 `tests/components/example/snapshots` 中创建一个快照文件。快照文件会以测试文件命名，在本例中是 `test_sensor.ambr`，并且内容是可读的。该文件必须提交到仓库中。
+这会在 `tests/components/example/snapshots` 中创建一个 snapshot 文件。snapshot 文件以测试文件命名，在本例中为 `test_sensor.ambr`，并且是人工可读的。snapshot 文件必须提交到仓库中。
 
-当测试再次运行时（不带更新标志），它会把结果与已保存的快照进行比较；如果没有变化，测试就会通过。
+再次运行测试时（不带更新标志），会将结果与存储的 snapshot 进行比较，一切应该通过。
 
-当测试结果发生变化时，测试会失败，此时需要重新更新快照。
+当测试结果发生变化时，测试会失败，需要再次更新 snapshot。
 
-请谨慎使用快照测试。由于创建快照很容易，你可能会想把所有内容都改成快照断言；但请记住，它不能替代功能测试。
+请谨慎使用 snapshot testing！因为创建 snapshot 非常容易，容易让人倾向于对一切内容进行 snapshot 断言。然而，请记住，它不是功能性测试的替代品。
 
-例如，当你要测试设备不可用时实体是否会变为不可用，最好直接断言你真正关心的变化：也就是实体状态变成 `unavailable`。相比对整个实体状态做快照，这样的功能测试更清晰，也更能准确表达预期行为。
+例如，在测试 device 返回错误时 entity 是否会变为 unavailable，更好的做法是断言你期望的特定变更：断言该 entity 的状态变为 `unavailable`。这种功能性测试比使用 snapshot 断言该 entity 的完整状态要好，因为后者假设其按预期工作（在创建 snapshot 时）。

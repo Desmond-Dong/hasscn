@@ -1,36 +1,34 @@
 ---
-title: "意图匹配测试语法"
-description: '为了确保模板句子按预期工作，我们提供了一套完善的测试。该测试套件基于 YAML 文件，其中包含输入句子列表，以及期望匹配到的 intent 和 slots。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "Intent 匹配测试语法"
 sidebar_label: "测试语法"
 ---
-# 意图匹配测试语法
 
-为了确保模板句子按预期工作，我们提供了一套完善的测试。该测试套件基于 YAML 文件，其中包含输入句子列表，以及期望匹配到的 intent 和 slots。
+为确保 template sentences 按预期工作，我们拥有一个全面的 test suite。该 test suite 基于 YAML 文件，这些文件包含一组输入 sentences 以及预期匹配的 intent 和 slots。
 
-测试存储在 [GitHub](https://github.com/home-assistant/intents/tree/main/tests) 上，并按语言组织到 `tests/<language>/` 目录中：
+测试存储在 [GitHub](https://github.com/home-assistant/intents/tree/main/tests) 上，组织方式为每种语言在 `tests/<language>/` 下有一个文件目录：
 
-  - `_fixtures.yaml` - 测试期间可引用的虚拟实体和区域
-  - `<domain>_<intent>.yaml` - 某个[单一 intent](/developers/intent_builtin) 与 domain 的句子。这些文件应只测试在同名[匹配句子文件](/developers/voice/intent-recognition/template-sentence-syntax)中定义的句子。
+  - `_fixtures.yaml` - 测试期间可引用的伪造 entities 和 areas
+  - `<domain>_<intent>.yaml` - 针对单个 [intent](/developers/intent_builtin) 和 domain 的 sentences。这些文件应仅测试在 [match sentences file](/developers/voice/intent-recognition/template-sentence-syntax) 中同名的句子里定义的 sentences。
 
 ``` yaml
 # Example homeassistant_HassTurnOn.yaml
 language: "en"
 tests:
-  # 你可以有多个测试块，每个块都有不同的期望匹配数据
+  # You can have multiple blocks of tests, each with different expected match data
   - sentences:
-      # 可以一次测试多个句子
+      # Multiple sentences can be tested at once
       - "turn on the ceiling fan"
       - "turn the ceiling fan on"
-    # 期望的匹配数据
+    # Expected match data
     intent:
       name: "HassTurnOn"
       slots:
         name: "fan.ceiling"
 ```
 
-## Fixtures
+## 测试夹具
 
-当 Home Assistant 进行句子匹配时，它会提供一组可在句子中引用的区域和实体。对于测试，我们在 `_fixtures.yaml` 中定义这些内容。
+当 Home Assistant 匹配 sentences 时，它会提供一份可在句子中引用的 areas 和 entities 列表。对于测试，我们在 `_fixtures.yaml` 中定义这些。
 
 ```yaml
 # Example _fixtures.yaml for English
@@ -49,4 +47,4 @@ entities:
     area: "living_room"
 ```
 
-请确保 fixtures 不使用像 "garage door" 或 "curtains" 这样过于通用的名称。应改用像 "garage door left" 或 "curtains left" 这样的唯一名称。这样才能基于通用名称定义匹配句子，例如 "open the garage door"。
+请确保 fixtures 不要使用 "garage door" 或 "curtains" 这样泛泛的名称。取而代之，使用像 "garage door left" 或 "curtains left" 这样的唯一名称。这对于允许基于泛泛名称定义匹配句子（如 "open the garage door"）是必要的。

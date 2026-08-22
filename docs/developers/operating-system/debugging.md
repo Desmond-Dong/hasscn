@@ -1,12 +1,10 @@
 ---
-title: "调试 Home Assistant 操作系统"
-description: '本节不面向终端用户。终端用户应使用 SSH app（原 add-on） 通过 SSH 登录 Home Assistant。这里的内容仅适用于 Home Assistant 的开发者。如果你在使用这些选项，请不要寻求常规支持。 本页属于 Home Assistant 开发者文档。'
+title: "调试 Home Assistant Operating System"
 sidebar_label: 调试
 ---
-# 调试 Home Assistant 操作系统
 
 :::info
-本节不面向终端用户。终端用户应使用 [SSH app（原 add-on）] 通过 SSH 登录 Home Assistant。这里的内容仅适用于 Home Assistant 的**开发者**。如果你在使用这些选项，请不要寻求常规支持。
+本节不适用于终端用户。终端用户应使用 [SSH app（原 add-on）] 通过 SSH 连接 Home Assistant。本节面向 Home Assistant 的**开发者**。如果你正在使用这些选项，请不要寻求支持。
 :::
 
 [SSH app]: https://github.com/home-assistant/addons/tree/master/ssh
@@ -14,39 +12,39 @@ sidebar_label: 调试
 ## 启用对主机的 SSH 访问
 
 :::info
-通过 [SSH app] 提供的 SSH 访问（默认端口 22）仅授予有限权限，并且在输入 `login` 命令时会要求你输入用户名和密码。请按以下步骤启用一个独立于该 app 的 SSH 访问通道（端口 22222），它可直接以完整权限访问 Home Assistant OS（即“主机”）。
+通过 [SSH app] 的 SSH 访问（默认为端口 22）仅提供有限的权限，输入 'login' 命令时你需要输入用户名和密码。按照以下步骤启用一个独立的 SSH 访问端口 22222，它独立于 app 工作，并为你提供对 Home Assistant OS（"主机"）的直接访问，具有完全权限。
 :::
 
-1. 使用一个带有名为 `CONFIG` 分区（区分大小写）的 USB 驱动器，并将其格式化为 FAT、ext4 或 NTFS。创建一个 `authorized_keys` 文本文件（不带扩展名），其中按行写入你的公钥，每行一个，然后将其放到该 USB 驱动器 `CONFIG` 分区的根目录下。文件必须使用 POSIX 标准换行符（LF），不能使用 Windows 的换行符（CR LF），并且需要采用 ASCII 字符编码（也就是说，注释中不能包含特殊字符）。
+1. 使用一个包含名为 `CONFIG`（区分大小写）分区的 USB 驱动器，格式化为 FAT、ext4 或 NTFS。创建一个 `authorized_keys` 文本文件（不带文件扩展名），每行一个，包含你的公钥（多个则各占一行），并将其放在 USB 驱动器 `CONFIG` 分区的根目录中。该文件必须使用 POSIX 标准的换行控制字符（LF），而不是 Windows 的（CR LF），并且需要是 ASCII 字符编码（即在注释中不得包含任何特殊字符）。
 
-   如果你需要帮助生成密钥，请参见下方的 [Generating SSH Keys](#generating-ssh-keys) 章节。
+   如果你需要帮助生成密钥，请参见下面的 [生成 SSH 密钥](#generating-ssh-keys) 部分。
 
-1. 将 USB 驱动器连接到你的 Home Assistant OS 设备，然后通过 `ha os import` 命令显式导入其中内容（例如通过端口 22 登录 [SSH app] 后执行），或者保持 USB 驱动器插入并重启设备，系统会自动触发导入。
+1. 将 USB 驱动器连接到 Home Assistant OS 设备，然后通过 `ha os import` 命令明确导入驱动器内容（例如，通过 SSH 连接端口 22 上的 [SSH app]），或者在保留驱动器连接的情况下重启设备，这将自动触发导入。
 
 :::tip
-将公钥复制到 USB 驱动器根目录时，请务必将文件正确命名为 `authorized_keys`，不要带 `.pub` 扩展名。
+在将公钥复制到 USB 驱动器根目录时，请确保将文件正确命名为 `authorized_keys`，不带 `.pub` 文件扩展名。
 :::
 
-现在你应该可以通过端口 22222 以 root 身份通过 SSH 连接到设备。在 Mac/Linux 上，使用：
+你现在应该能够以 root 身份通过端口 22222 的 SSH 连接到设备。在 Mac/Linux 上使用：
 
 ```shell
 ssh root@homeassistant.local -p 22222
 ```
 
-如果你使用的是较旧的安装，或者修改过主机名，则可能需要相应调整上面的命令。你也可以直接使用设备的 IP 地址，而不是主机名。
+如果你的安装版本较旧或更改了主机名，可能需要相应调整上述命令。你也可以使用设备的 IP 地址代替主机名。
 
-登录后你将以 root 身份进入系统，工作目录为 `/root`。 [Home Assistant OS] 是 Docker 的宿主系统。关于 Supervisor 的信息，请参阅 [Supervisor Architecture] 文档。Supervisor 提供了一个 API，用于管理主机和正在运行的 Docker 容器。Home Assistant 本身以及所有已安装的 addons 都运行在各自独立的 Docker 容器中。
+你将以 root 身份登录，工作目录设置为 `/root`。[Home Assistant OS] 是 Docker 的 hypervisor。请参见 [Supervisor Architecture] 文档了解关于 Supervisor 的信息。Supervisor 提供了一个 API 来管理主机和运行 Docker 容器。Home Assistant 本身以及所有安装的 addons 都在单独的 Docker 容器中运行。
 
 [Home Assistant OS]: https://github.com/home-assistant/operating-system
 [Supervisor Architecture]: /architecture_index.md
 
 ## 禁用对主机的 SSH 访问
 
-1. 使用一个带有名为 `CONFIG` 分区（区分大小写）的 USB 驱动器，并将其格式化为 FAT、ext4 或 NTFS。从该分区根目录中删除现有的 `authorized_keys` 文件。
+1. 使用一个包含名为 `CONFIG`（区分大小写）分区的 USB 驱动器，格式化为 FAT、ext4 或 NTFS。从该分区的根目录中移除任何现有的 `authorized_keys` 文件。
 
-1. 当 Home Assistant OS 设备插着该驱动器重启时，所有现有 SSH 公钥都会被移除，同时端口 22222 上的 SSH 访问会被禁用。
+1. 当 Home Assistant OS 设备在插入该驱动器的情况下重启时，任何现有的 SSH 公钥都将被移除，端口 22222 上的 SSH 访问将被禁用。
 
-## 检查日志
+## 查看日志
 
 ```shell
 # Host OS 上 supervisor 服务的日志
@@ -69,8 +67,8 @@ docker exec -it homeassistant /bin/bash
 
 ### 生成 SSH 密钥
 
-Windows 上如何使用 Putty 生成和使用私钥/公钥的说明可见 [here][windows-keys]。请不要按照其中的 droplet 说明，而应按上文要求添加公钥。
+关于如何使用 Putty 生成并使用私钥/公钥的 Windows 说明，请参见[这里][windows-keys]。按照上述说明添加公钥（而不是 droplet 说明）。
 
-适用于 Mac、Windows 和 Linux 的替代说明可见 [here](https://docs.github.com/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)。请按照其中 *Generating a new SSH key* 一节的步骤操作（其他章节不适用于 Home Assistant，可忽略）。
+Mac、Windows 和 Linux 的替代说明请参见[这里](https://docs.github.com/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)。按照 *Generating a new SSH key* 下的步骤操作（其他部分不适用于 Home Assistant，可以忽略）。
 
-请务必复制你刚创建的 SSH 密钥对中的***公钥***。默认情况下，公钥文件名为 `id_ed25519.pub`（Ed25519 椭圆曲线算法）或 `id_rsa.pub`（较旧的 RSA 算法），也就是说它应带有 `.pub` 文件后缀。它会保存在与私钥相同的目录中（私钥默认名为 `id_ed25519` 或 `id_rsa`）。
+确保复制你刚刚创建的 SSH 密钥对的***公钥***。默认情况下，公钥文件名为 `id_ed25519.pub`（对于 Ed25519 椭圆曲线算法）或 `id_rsa.pub`（对于较旧的 RSA 算法），即它应该带有 `.pub` 文件名后缀。它保存在与私钥相同的文件夹中（私钥默认命名为 `id_ed25519` 或 `id_rsa`）。

@@ -1,41 +1,39 @@
 ---
-title: "提示和技巧"
-description: '本页整理了一些提示和技巧，帮助你更顺利地为 Home Assistant 做贡献。这里的内容并不完整，如果你发现其他尚未记录的经验，欢迎提交 PR 补充。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "技巧与窍门"
 ---
-# 提示和技巧
 
-本页整理了一些提示和技巧，帮助你更顺利地为 Home Assistant 做贡献。这里的内容并不完整，如果你发现其他尚未记录的经验，欢迎提交 PR 补充。
+本页提供一些可能对你有帮助的技巧和窍门，作为 Home Assistant 的贡献者。这里的列表绝不完整，如果你发现了其他未记录的技巧和窍门，请提交 PR 将它们添加到这里。
 
-## 提示和技巧
+## 技巧与窍门
 
 ### 保持 PR 简单
 
-关于 PR 的期望，请参阅[组件清单](/developers/creating_component_code_review#5-make-your-pull-request-as-small-as-possible)。
+有关 PR 的预期，请参阅[Component 检查清单](/developers/creating_component_code_review#5-make-your-pull-request-as-small-as-possible)。
 
-### Home Assistant 中测试包依赖项更改
+### 在 Home Assistant 中测试包依赖项的更改
 
-请参阅[API 库文档](/developers/api_lib_index#trying-your-library-inside-home-assistant)了解更多信息。
+有关更多信息，请参阅[API 库文档](/developers/api_lib_index#trying-your-library-inside-home-assistant)。
 
-### 在生产 Home Assistant 环境中测试 Core 集成更改
+### 在你生产环境的 Home Assistant 中测试 Core 集成更改
 
-要在生产 Home Assistant 环境中测试 Core 集成更改：
-1. 将集成文件夹复制到 `/config/custom_components` 中。
-2. 将 **version** 字段添加到 `manifest.json`（例如，`"version": "0.0.0"`）。
-3. 如果集成使用本地化字符串，请按照[自定义集成本地化](/developers/internationalization/custom_integration)中的说明，将 `strings.json` 复制到集成目录下的 `translations/en.json`。
+要在生产 Home Assistant 环境中测试 core 集成的更改：
+1. 将集成文件夹复制到 `/config/custom_components`。
+2. 在 `manifest.json` 中添加 **version** 字段（例如，`"version": "0.0.0"`）。
+3. 如果该集成使用了本地化的字符串，请按照[自定义集成本地化](/developers/internationalization/custom_integration)中的说明，将 `strings.json` 复制到集成文件夹下的 `translations/en.json`。
 4. 重启 Home Assistant。
 
-Home Assistant 会始终优先加载 `custom_components` 中的集成，而不是 Core 中自带的集成。测试完成后别忘了把它删除，否则你会一直停留在那个版本。
+Home Assistant 总是优先考虑 `custom_components` 中的集成而不是 core 集成。测试完成后，别忘了移除它，否则你将停留在该版本上。
 
-### 给集成添加配置流时，请注意前端缓存
+### 为集成添加 config flow 时，请注意前端
 
-Home Assistant 前端会积极使用缓存，因此第一次带着新改动启动 Home Assistant 时，你可能看不到该集成出现在集成列表中。请先检查日志，确认没有错误；如果没有，再对浏览器执行一次强制刷新后重试。很多情况下这就能解决问题。
+Home Assistant 前端会进行积极缓存，因此，当你首次使用新更改运行 Home Assistant 时，集成可能不会出现在集成列表中。请检查日志以确保没有错误，如果没有，请对浏览器窗口执行强制刷新（hard refresh），然后重试；在很多情况下，这就能解决问题。
 
-### 获得额外支持
+### 获取更多支持
 
-Home Assistant 的 `#developers` [Discord](https://www.home-assistant.io/join-chat/) 频道是一个很适合提问的地方。一个实用建议是：在提问前，先把你正在处理的代码提交到某个分支，并将该分支推送到公开可访问的位置，然后把链接附在问题中，这样愿意帮你的人就能直接看到你的代码。请尽量不要把大段代码直接贴到频道里，因为那样既难读，也会淹没其他问题和讨论。
+Home Assistant [Discord](https://www.home-assistant.io/join-chat/) 服务器上的 `#developers` 频道是提问的好地方。专业提示：在发布问题之前，将正在工作的代码推送到一个分支，并将该分支推到某个公开位置，然后将链接连同你的问题一起粘贴，这样帮助你的人就能看到你的代码。请不要将代码大片段粘贴到频道中，因为这样很难阅读，而且会掩盖其他问题/讨论。
 
-如果你发现开发者文档还有改进空间，欢迎直接提交 PR 更新。更多说明请参见下一条提示。
+如果你发现可以改进开发者文档的地方，请将它传递下去，提交 PR 来更新它们。有关更多详情，请查看下一个技巧。
 
-### 开发者文档中缺少信息
+### 开发者文档中缺失的信息
 
-Home Assistant 维护者一直在努力让开发者文档保持最新，但我们也依赖像你这样的贡献者来帮助纠正、改进并扩展现有内容。与 Home Assistant 一样，这套[文档也是开源的](https://github.com/home-assistant/developers.home-assistant)，欢迎提交 PR。若有疑问，也可以直接在 GitHub 中打开对应源文件进行在线编辑，不一定非要使用命令行。
+Home Assistant 维护者努力保持开发者文档的最新状态，但我们也依赖像你这样的贡献者来帮助纠正、改进和扩展现有的文档。与 Home Assistant 一样，[此文档是开源的](https://github.com/home-assistant/developers.home-assistant)，欢迎提交 PR。如有疑问，请点击左下角的 `Edit this page` 按钮，进入源文件并直接在 GitHub 上编辑该文件。无需命令行！

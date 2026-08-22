@@ -1,20 +1,18 @@
 ---
-title: "架构概述"
-description: 'Home Assistant 提供了一个用于家庭控制和家庭自动化的平台。 Home Assistant 不仅仅是一个应用程序：它是一个嵌入式系统，提供像其他消费者现成产品一样的体验：登录、配置和更新都通过易于使用的界面完成。 本页属于 Home Assistant 开发者文档。'
+title: "架构概览"
 ---
-# 架构概述
 
-Home Assistant 提供了一个用于家庭控制和家庭自动化的平台。 Home Assistant 不仅仅是一个应用程序：它是一个嵌入式系统，提供像其他消费者现成产品一样的体验：登录、配置和更新都通过易于使用的界面完成。
+Home Assistant 提供了一个家庭控制与家庭自动化平台。Home Assistant 不仅仅是一个应用程序：它是一个嵌入式系统，提供类似于其他消费级产品的体验：引导设置、配置和更新都通过易于使用的界面完成。
 
-- [操作系统](/developers/operating-system)提供通信的Linux环境来运行Supervisor和Core。
-- [Supervisor](/developers/supervisor)管理操作系统。
-- [Core](/developers/architecture/core)与用户、Supervisor以及物联网设备和服务进行交互。
+- [操作系统](operating-system.md) 提供了运行 Supervisor 和 Core 所需的最小 Linux 环境。
+- [Supervisor](supervisor.md) 管理系统。
+- [Core](architecture/core.md) 与用户、supervisor 和 IoT 设备及服务交互。
 
 <img
-src='/developers/img/en/architecture/full.svg'
-alt='家庭助理全图'
+  src='/img/en/architecture/full.svg'
+  alt='Home Assistant 全貌'
 />
 
-## 堆栈的运行部分
+## 运行部分堆栈
 
-用户对自动化平台的需求有不同的要求。这就是为什么只能运行部分 Home Assistant 堆栈的原因。想要了解更多信息，请参阅[安装说明](https://www.home-assistant.io/installation/).
+用户对家庭自动化平台有不同的需求。因此，可以只运行 Home Assistant 堆栈的一部分。更多信息请参见[安装说明](https://www.home-assistant.io/installation/)。

@@ -1,12 +1,10 @@
 ---
-title: "重大变化"
-description: 'Home Assistant 不仅会收集数据，还会将数据导出到各种服务。但并非所有服务都关心每一次状态变化。为了帮助这些服务过滤无关紧要的变更，你的实体集成可以添加“重大变化”支持。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "重要变更"
 ---
-# 重大变化
 
-Home Assistant 不仅会收集数据，还会将数据导出到各种服务。但并非所有服务都关心每一次状态变化。为了帮助这些服务过滤无关紧要的变更，你的实体集成可以添加“重大变化”支持。
+Home Assistant 不仅收集数据，还将数据导出到各种服务。并非所有这些服务都对每一次变更感兴趣。为了帮助这些服务过滤不重要的变更，你的 entity 集成可以添加重要变更支持。
 
-要添加此支持，请创建 `significant_change.py` 平台文件，并实现 `async_check_significant_change` 函数。
+此支持通过创建一个包含 `async_check_significant_change` 函数的 `significant_change.py` platform 文件来实现。
 
 ```python
 from typing import Any, Optional
@@ -23,16 +21,16 @@ def async_check_significant_change(
 ) -> bool | None:
 ```
 
-该函数接收上一次被认定为“重大变化”的状态，以及当前的新状态。它并不一定总是接收最近的两个已知状态。如果函数能够判断变化是否重大，应返回布尔值；如果无法判断，则应返回 `None`。
+该函数接收之前被认为是重要的 state 和新的 state。它传递的不仅仅是最近 2 个已知 state。函数应返回布尔值，表示是否重要，或者返回 `None` 表示函数无法判断。
 
-在判断变化是否重大时，请确保考虑所有已知属性。可使用设备类来区分不同的实体类型。
+在判断重要性时，务必考虑所有已知 attributes。使用 device classes 来区分 entity 类型。
 
-以下是一些不应视为重大变化的示例：
+以下是一些不重要的变更示例：
 
-- 电池电量下降 0.1%
+- 电池电量减少 0.1%
 - 温度传感器变化 0.1 摄氏度
-- 灯的亮度变化 2
+- 灯光亮度变化 2
 
 Home Assistant 将自动处理 `unknown` 和 `unavailable` 等情况。
 
-要为实体集成添加重大变化支持，请运行 `python3 -m script.scaffold significant_change`。
+要为 entity 集成添加重要 state 支持，运行 `python3 -m script.scaffold significant_change`。

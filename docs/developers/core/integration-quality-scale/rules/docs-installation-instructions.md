@@ -1,29 +1,28 @@
 ---
-title: "该文档提供了集成的分步安装说明，包括（如果需要）先决条件"
-description: '我们希望用户在设置集成时拥有流畅的体验。 这意味着文档应提供有关如何安装集成的清晰简洁的说明。 这包括安装集成所需的任何先决条件。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "文档提供了分步安装说明，包括（如需）先决条件"
+sidebar_label: 🥉 docs-installation-instructions
 ---
-# 该文档提供了集成的分步安装说明，包括（如果需要）先决条件
 
-## 推理
+## 原理说明
 
-我们希望用户在设置集成时拥有流畅的体验。
-这意味着文档应提供有关如何安装集成的清晰简洁的说明。
-这包括安装集成所需的任何先决条件。
+我们希望用户在设置集成时获得流畅的体验。
+这意味着文档应提供清晰简洁的安装说明。
+这包括安装集成所需的所有先决条件。
 
-## 实施示例
+## 示例实现
 
 ```markdown showLineNumbers
-## Prerequisites
+## 先决条件
 
-1. Open the app store and install the **MyProduct** app.
-2. Create an account.
-3. Add a device to the app.
-4. Open the app and go to the **Settings** page.
-5. Select **Expose API**.
+1. 打开应用商店并安装 **MyProduct** 应用。
+2. 创建账号。
+3. 在应用中添加一个设备。
+4. 打开应用并进入 **Settings** 页面。
+5. 选择 **Expose API**。
 
 {% include integrations/config_flow.md %}
 ```
 
 ## 例外情况
 
-这条规则没有例外。
+本规则没有例外。

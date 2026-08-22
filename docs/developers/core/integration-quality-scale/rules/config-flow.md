@@ -1,6 +1,6 @@
 ---
-title: "需要能够通过界面设置集成"
-description: 'import RelatedRules from ''./includes/relatedrules.jsx''。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
+title: "集成需要能够通过 UI 设置"
+sidebar_label: 🥉 config-flow
 related_rules:
   - test-before-configure
   - unique-config-entry
@@ -9,27 +9,26 @@ related_rules:
   - reauthentication-flow
   - reconfiguration-flow
 ---
-# 需要能够通过界面设置集成
-
 import RelatedRules from './_includes/related_rules.jsx'
 
-## 推理
+## 理由
 
-自 2018 年推出以来，配置流已经成为在 Home Assistant 中设置集成的标准方式。
-它能够为不同集成提供一致的用户体验，并引导用户逐步完成设置过程。
+自 2018 年推出以来，config flow 已成为在 Home Assistant 中设置集成的标准方式。
+它们在各个集成中提供一致的用户体验，并提供一种引导用户完成设置过程的方式。
 
-由于配置流带来了更好的用户体验，我们希望所有集成都能通过配置流完成设置。
+由于更好的用户体验，我们希望确保所有集成都能通过 config flow 设置。
 
-因为这是用户开始使用集成的入口，所以我们也应确保配置流足够友好、易于理解。
-这意味着要在合适的位置使用合适的工具，在需要时验证输入，并在 `strings.json` 中通过 `data_description` 为相关输入字段提供上下文。
+由于这是用户开始使用集成的入口点，我们应该确保 config flow 非常用户友好且易于理解。
+这意味着我们应该在合适的位置使用合适的 selectors，在需要的地方验证输入，并在 `strings.json` 中使用 `data_description` 来提供有关输入字段的上下文。
 
-集成应将建立连接所需的配置存储在 `ConfigEntry.data` 中，而用户可调整的设置应存储在 `ConfigEntry.options` 中。
+集成应将所有配置存储在 `ConfigEntry.data` 字段中，而所有连接不需要的设置应存储在 `ConfigEntry.options` 字段中。
 
-## 实施示例
+## 示例实现
 
-若要在集成中使用配置流，需要在集成目录中创建 `config_flow.py` 文件，并将 `manifest.json` 中的 `config_flow` 设置为 `true`。
-配置流中显示的文本则定义在 `strings.json` 文件中。
+要在集成中使用 config flow，你需要在集成文件夹中创建一个 `config_flow.py` 文件，并在 `manifest.json` 中将 `config_flow` 设置为 `true`。
+config flow 中显示的文本在 `strings.json` 文件中定义。
 
+`config_flow.py`:
 ```python
 class MyConfigFlow(ConfigFlow, domain=DOMAIN):
     """My config flow."""
@@ -51,6 +50,7 @@ class MyConfigFlow(ConfigFlow, domain=DOMAIN):
         )
 ```
 
+`strings.json`:
 ```json
 {
   "config": {
@@ -68,14 +68,14 @@ class MyConfigFlow(ConfigFlow, domain=DOMAIN):
 }
 ```
 
-## 其他资源
+## 附加资源
 
-有关配置流的更多信息，请参阅 [config flow documentation](/developers/config_entries_config_flow_handler)。
-有关配置流架构决策的更多信息，请参阅 [ADR-0010](https://github.com/home-assistant/architecture/blob/master/adr/0010-integration-configuration.md)。
+有关 config flows 的更多信息，请参阅[config flow 文档](/developers/core/integration/config_flow)。
+有关 config flows 架构决策的更多信息，请参阅 [ADR-0010](https://github.com/home-assistant/architecture/blob/master/adr/0010-integration-configuration.md)
 
-## 例外情况
+## 例外
 
-[ADR-0010](https://github.com/home-assistant/architecture/blob/master/adr/0010-integration-configuration.md) 中列出的集成不受此规则约束。
+在 [ADR-0010](https://github.com/home-assistant/architecture/blob/master/adr/0010-integration-configuration.md) 中豁免的集成不适用于此规则。
 
 ## 相关规则
 

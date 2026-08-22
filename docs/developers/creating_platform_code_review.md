@@ -1,38 +1,36 @@
 ---
-title: "创建平台的清单"
-description: '添加新平台时需要完成的检查清单。 本页属于 Home Assistant 开发者文档，适合查阅集成、前端、系统、语音与 API 相关实现说明。'
-sidebar_label: 平台检查表
+title: "创建平台的检查清单"
+sidebar_label: 平台检查清单
 ---
-# 创建平台的清单
 
-添加新平台时需要完成的检查清单。
+添加新 platform 时需要完成的事项清单。
 
 :::info
-并非所有现有平台都符合此清单中的要求，但这绝不是忽视这些要求的理由！
+并非所有现有的 platforms 都遵循本清单中的要求。这不能作为不遵循它们的理由！
 :::
 
-### 0. 通用
+### 0. Common
 
-1. 遵循我们的[开发指南](/developers/development_guidelines)
-2. 使用现有常量 [`const.py`](https://github.com/home-assistant/core/blob/dev/homeassistant/const.py)
-   - 只有在某个新常量会被广泛使用时，才将其添加到 `const.py` 中；否则请保留在平台级别
-   - 使用 `CONF_MONITORED_CONDITIONS`，不要使用 `CONF_MONITORED_VARIABLES`
+1. 遵循我们的 [Style guidelines](development_guidelines.md)
+2. 使用 [`const.py`](https://github.com/home-assistant/core/blob/dev/homeassistant/const.py) 中已有的常量
+   - 只有当常量被广泛使用时才将其添加到 `const.py` 中。否则请将其保留在 platform 级别
+   - 使用 `CONF_MONITORED_CONDITIONS` 代替 `CONF_MONITORED_VARIABLES`
 
-### 1. 外部依赖
+### 1. External requirements
 
-1. 在 [`manifest.json`](/developers/creating_integration_manifest) 中添加 `requirements`。`REQUIREMENTS` 常量已弃用。
-2. 依赖版本必须固定，例如：`"requirements": ['phue==0.8.1']`
-3. 我们不再希望依赖直接托管在 GitHub 上，请将其发布到 PyPI。
-4. 每个依赖都应满足[库要求](/developers/api_lib_index#basic-library-requirements)。
+1. Requirements 已添加到 [`manifest.json`](creating_integration_manifest.md)。`REQUIREMENTS` 常量已弃用。
+2. Requirement 版本应该被固定：`"requirements": ['phue==0.8.1']`
+3. 我们不再希望 requirements 托管在 GitHub 上。请上传到 PyPi。
+4. 每个 requirement 都满足 [library requirements](api_lib_index.md#basic-library-requirements)。
 
-### 2. 配置
+### 2. Configuration
 
-1. 如果平台支持直接配置，请添加合理的[配置校验](/developers/development_validation) schema
-2. 平台 schema 应从组件 schema 扩展
-   （例如，`hue.light.PLATFORM_SCHEMA` 扩展 `light.PLATFORM_SCHEMA`）
-3. 默认参数应在 voluptuous schema 中指定，而不是在 `setup_platform(...)` 中设置
-4. 您的 `PLATFORM_SCHEMA` 应尽可能使用 `homeassistant.const` 中的通用配置键
-5. 不要依赖用户在 `customize` 中添加内容来配置平台内部行为
+1. 如果 platform 可以直接设置，添加一个 voluptuous schema 用于 [configuration validation](development_validation.md)
+2. Voluptuous schema 扩展自 component 的 schema
+   （例如，`hue.light.PLATFORM_SCHEMA` 扩展自 `light.PLATFORM_SCHEMA`）
+3. 默认参数在 voluptuous schema 中指定，而不是在 `setup_platform(...)` 中
+4. 你的 `PLATFORM_SCHEMA` 应尽可能多地使用来自 `homeassistant.const` 的通用 config keys
+5. 永远不要依赖用户在 `customize` 中添加内容来配置你 platform 内部的行为。
 
 ```python
 import voluptuous as vol
@@ -53,47 +51,47 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 )
 ```
 
-### 3. 设置平台
+### 3. Setup platform
 
-1. 验证传入配置（如 `user`、`pass`、`host`）是否有效。
-2. 如果可能，请将调用集中在 `add_entities` 中。
-3. 如果平台提供额外服务，格式应为 `<domain of your integration>.<service action name>`。例如，如果您的集成域为 `awesome_sauce`，并且您正在编写灯光平台，那么可以在 `awesome_sauce` 域下注册服务操作。请确保您的服务操作[验证权限](/developers/auth_permissions#checking-permissions)。
+1. 验证传入的配置（user/pass/host 等）是否有效。
+2. 尽可能将你的 `add_entities` 调用分组。
+3. 如果 platform 添加了额外的 actions，格式应为 `<your integration's domain>.<service action name>`。因此，如果你的 integration domain 是 "awesome_sauce"，并且你正在制作一个 light platform，你会在 `awesome_sauce` domain 下注册 service actions。确保你的 service actions [verify permissions](auth_permissions.md#checking-permissions)。
 
-### 4. 实体
+### 4. Entity
 
-1. 从您要为其创建 UI 的集成实体类扩展。
+1. 继承你要为其构建 platform 的 integration 的 entity。
 
-    ```python
-    from homeassistant.components.light import Light
+   ```python
+   from homeassistant.components.light import Light
 
 
-    class HueLight(Light):
-        """Hue light component."""
-    ```
+   class HueLight(Light):
+       """Hue light component."""
+   ```
 
-2. 不要将 `hass` 作为参数传递给实体。实体添加到 Home Assistant 后，`hass` 会自动设置到实体上，因此您可以在实体内部通过 `self.hass` 访问它。
-3. 不要在构造函数中调用 `update()`，而应使用 `add_entities(devices, update_before_add=True)`。
-4. 不要在属性中执行任何 I/O 操作，而应在 `update()` 中缓存值。
-5. 处理时间时，状态和/或属性不应包含“自某事件发生以来经过了多久”这样的相对时间，而应存储 UTC 时间戳。
-6. 使用[实体生命周期回调](/developers/core/entity#lifecycle-hooks)来附加事件监听器或清理连接。
+2. 避免将 `hass` 作为参数传递给 entity。`hass` 将在 entity 被添加到 Home Assistant 时被设置到 entity 上。这意味着你可以在 entity 内部通过 `self.hass` 访问 `hass`。
+3. 不要在 constructor 中调用 `update()`，而是使用 `add_entities(devices, update_before_add=True)`。
+4. 不要在 properties 中进行任何 I/O。改为在 `update()` 内部缓存值。
+5. 处理时间时，state 和/或 attributes 不应包含某事发生以来的相对时间。相反，它应该存储 UTC timestamps。
+6. 利用 [entity lifecycle callbacks](core/entity.md#lifecycle-hooks) 来附加 event listeners 或清理 connections。
 
-### 5. 与设备/服务通信
+### 5. 与 devices/services 通信
 
-1. 所有 API 特定代码都必须放在托管于 PyPI 的第三方库中。Home Assistant 应只与对象交互，而不是直接调用 API。
+1. 所有与 API 相关的代码必须托管在 PyPi 上的第三方 library 的一部分。Home Assistant 应该只与 objects 交互，而不直接调用 API。
 
-    ```python
-    # bad
-    status = requests.get(url("/status"))
-    # good
-    from phue import Bridge
+   ```python
+   # bad
+   status = requests.get(url("/status"))
+   # good
+   from phue import Bridge
 
-    bridge = Bridge(...)
-    status = bridge.status()
-    ```
+   bridge = Bridge(...)
+   status = bridge.status()
+   ```
 
-    [发布自己的 PyPI 包的教程](https://towardsdatascience.com/how-to-open-source-your-first-python-package-e717444e1da0)
+   [发布你自己的 PyPI package 的教程](https://towardsdatascience.com/how-to-open-source-your-first-python-package-e717444e1da0)
 
-其他值得参考的 Python 包发布资源：
-    [Cookiecutter](https://cookiecutter.readthedocs.io/)  
-    [Flit](https://flit.readthedocs.io/)  
-    [Poetry](https://python-poetry.org/)  
+   其他值得注意的发布 python packages 的资源：
+   [Cookiecutter Project](https://cookiecutter.readthedocs.io/)
+   [flit](https://flit.readthedocs.io/)
+   [Poetry](https://python-poetry.org/)
