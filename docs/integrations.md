@@ -10,6 +10,8 @@ layout: doc
 
 本页面不包含Core内置集成，所有的集成采用[HACS](hacscn)一键添加的方式，如果你还未安装HACS，请先安装HACS，否则可能导致链接无法工作，本页面最佳浏览方式为电脑页面
 
+本页仅做集成收集与整理，方便大家查找和使用，与版权无关；如有任何问题（使用、Bug、侵权等），请前往集成原作者的仓库留言反馈
+
 :::
 
 
@@ -45,6 +47,8 @@ layout: doc
 | Midea Auto Cloud | [![Midea Auto Cloud](https://img.shields.io/badge/HACS-Midea%20Auto%20Cloud-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sususweet&repository=midea_auto_cloud&category=integration) | 支持通过美的云端接入美居设备，适用于美的/美居空调等设备，适合需要云接入能力的用户 |
 | VivoHomeBridge | [![VivoHomeBridge](https://img.shields.io/badge/HACS-VivoHomeBridge-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=vivo&repository=ha_vivohomebridge&category=integration) | 支持接入 vivo 智能家居生态设备，支持多种型号设备，适合国内用户 |
 | Heiman Home | [![Heiman Home](https://img.shields.io/badge/HACS-Heiman%20Home-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=heiman_home&category=integration) | 海曼智能家居云端接入，支持网关、传感器、开关、报警器等设备 |
+| Laifen | [![Laifen](https://img.shields.io/badge/HACS-Laifen-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=UrbanTechIO&repository=Laifen&category=integration) | 徕芬电动牙刷（Laifen Wave / Wave Pro）蓝牙接入，支持刷牙模式/震动强度/摆动速度调节、电量、刷牙计时及压力提醒等实体 |
+| Dreame Vacuum | [![Dreame Vacuum](https://img.shields.io/badge/HACS-Dreame%20Vacuum-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Tasshack&repository=dreame-vacuum&category=integration) | 追觅扫地机器人完整集成（含米家/MOVA 贴牌型号），支持实时与多层地图、房间清扫实体、分区清扫服务与耗材传感器，可完全替代官方 App |
 
 
 
@@ -158,6 +162,9 @@ layout: doc
 | HTML Card Pro | [![HTML Card Pro](https://img.shields.io/badge/HACS-HTML%20Card%20Pro-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=html-card-pro&category=plugin) | 高级 HTML 卡片组件，支持 AI 辅助设计、数据绑定、实时状态更新等功能 |
 | Skins Pro | [![Skins Pro](https://img.shields.io/badge/HACS-Skins%20Pro-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=Skins-Pro&category=plugin) | 新一代多皮肤仪表盘，一键安装即用，内置皮肤商店，支持中英双语、Kiosk 全屏、按区域/楼层分组、能源与安防页面等 |
 | Navbar Card | [![Navbar Card](https://img.shields.io/badge/HACS-Navbar%20Card-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=joseluis9595&repository=lovelace-navbar-card&category=plugin) | 响应式导航卡片，移动端显示为底部导航栏，桌面端显示为侧边导航栏，让多仪表盘切换更轻松 |
+| Fast Search Card | [![Fast Search Card](https://img.shields.io/badge/HACS-Fast%20Search%20Card-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=fastender&repository=Fast-Search-Card&category=plugin) | 搜索即控制的完整仪表盘卡片，自动按楼层/区域/标签组织设备，内置日历、待办、能源监控、音乐控制等，零遥测一行配置 |
+| Helios | [![Helios](https://img.shields.io/badge/HACS-Helios-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ReikanYsora&repository=Helios&category=plugin) | 2.5D 能源可视化卡片，将能源面板变成动态场景：太阳真实轨迹、实时发电/电网/电池流动、天气与阴影，自动读取已配置的能源面板，无需额外配置 |
+| Sensor Bar Card Plus | [![Sensor Bar Card Plus](https://img.shields.io/badge/HACS-Sensor%20Bar%20Card%20Plus-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=cdelaet&repository=sensor-bar-card-plus&category=plugin) | 高级传感器可视化卡片，支持渐变/分段填充、双向基线流、指针仪表、目标与峰值标记、动态量程等，适合能源监控与温湿度等数值展示 |
 
 ### 监控，门铃，门销
 
@@ -165,6 +172,12 @@ layout: doc
 |--|--|--|
 | HikConnect | [![HikConnect](https://img.shields.io/badge/HACS-HikConnect-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=tomasbedrich&repository=home-assistant-hikconnect&category=integration) | 海康威视 Hik-Connect 监控摄像头、门铃等设备接入，支持实时视频流、事件通知等功能 |
 | EZVIZ Cloud Push | [![EZVIZ Cloud Push](https://img.shields.io/badge/HACS-EZVIZ%20Cloud%20Push-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=ezviz_push&category=integration) | 萤石云信令推送集成，支持门铃/猫眼/摄像机/智能门锁接入，提供呼叫、报警、人脸识别、报警图片等丰富实体 |
+| Dahua | [![Dahua](https://img.shields.io/badge/HACS-Dahua-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=rroller&repository=dahua&category=integration) | 大华摄像头/门铃/NVR/DVR 接入（兼容 Amcrest、IMOU、Lorex 部分型号），支持移动侦测、报警事件、红外/白光/警笛控制、门铃按钮及实时画面 |
+
+### 打印机
+| 集成名称 | HACS 安装链接 | 相关说明 |
+|--|--|--|
+| HP Printers | [![HP Printers](https://img.shields.io/badge/HACS-HP__Printers-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=aljopro&repository=ha-hp-printers&category=integration) | HP 打印机本地集成，通过 LEDM 接口读取状态、页数计数、墨盒余量与真伪等信息，无需云端、无需账号凭据 |
 
 
 
