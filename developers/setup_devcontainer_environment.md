@@ -1,0 +1,127 @@
+开始开发最简单的方法是使用 Visual Studio Code 配合 [devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)。这种方式会创建一个带有必要工具的预配置开发环境，所有 Home Assistant 仓库都已启用。由于基于 Docker 的 devcontainer 概念提供了一层抽象，以下指南在某一点上会汇合。
+
+首先，安装 [Visual Studio Code](https://code.visualstudio.com/)，然后根据系统选择以下步骤。
+
+## Windows 设置
+
+:::tip
+**快速入门指南**
+
+* 安装 [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) 并启用 [systemd 支持](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/)。
+* 根据你选择的 WSL2 Linux 发行版安装 [Docker engine](https://docs.docker.com/engine/install/)。
+* 在 WSL2 内 fork 并 clone 所需的代码仓库。
+* [启动 devcontainer](#fork-the-repository-and-start-the-devcontainer)。
+
+:::
+
+### 安装 WSL2
+
+本节概述了 Windows 10（*2004 版本及以后*）和 Windows 11 的步骤。如果你仍在运行旧版本，请按这些[手动安装步骤](https://learn.microsoft.com/en-us/windows/wsl/install-manual)操作。
+
+1. 在 Windows 终端中运行以下命令，安装运行 WSL 所需的特性并安装默认的 Ubuntu 发行版：
+
+   ```batch
+   wsl --install
+   ```
+
+2. 检查 WSL 版本，如果版本已经是 2，跳过"设置 wsl 版本"步骤。
+
+   ```batch
+   wsl -l -v
+   ```
+
+3. 如有必要，将 WSL 版本设置为 2（*将 `<distro name>` 替换为已安装的发行版名称；参见上面的输出*）。
+
+   ```batch
+   wsl --set-version <distro name> 2
+   ```
+
+### 在 WSL2 中启用 systemd 支持
+
+由于 Docker engine 是作为 systemd 服务安装的，我们需要确保 WSL2 已启用 systemd 支持。
+
+1. 在 Windows 终端中仅输入 `wsl` 命令启动 WSL shell。
+
+2. 将以下内容添加到 `/etc/wsl.conf`；你需要以 root 权限打开该文件（*例如，`sudo nano /etc/wsl.conf`*）：
+
+   ```text
+   [boot]
+   systemd=true
+   ```
+
+3. 在 Windows 终端中运行以下命令关闭 WSL2：
+
+   ```batch
+   wsl --shutdown
+   ```
+
+4. 再次启动 WSL shell 并运行以下命令，检查 systemd 是否正在运行：
+
+   ```shell
+   systemctl list-units
+   ```
+
+### 按照"Linux 设置"操作
+
+从这里开始，你可以按照下面的[Linux 设置](#setup-on-linux)说明操作，注意所有步骤都必须在 WSL2 shell 内执行。选择安装 docker engine 的正确步骤时，请使用已安装的 WSL2 发行版（*默认为 Ubuntu*）。
+
+## Linux 设置
+
+:::tip
+**快速入门指南**
+
+* 根据你的 Linux 发行版安装 [Docker engine](https://docs.docker.com/engine/install/)。
+* Fork 并 clone 所需的代码仓库。
+* [启动 devcontainer](#fork-the-repository-and-start-the-devcontainer)。
+
+:::
+
+### 安装 Docker Engine
+
+由于这些说明因 Linux 发行版而异，我们仅提供大致概述。详细操作请遵循官方的 [Docker engine](https://docs.docker.com/engine/install/) 安装指南。
+
+1. 更新所有已安装的包。
+2. 为你的包管理器（*如 `yum` 或 `apt`*）添加 Docker 仓库。
+3. 更新包仓库的索引。
+4. 安装 Docker engine 包。
+5. 按照 [Docker Engine 的 Linux 安装后步骤](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) 允许非 root 用户使用 Docker。
+
+## macOS 设置
+
+:::tip
+**快速入门指南**
+
+* 安装 [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)。
+* Fork 并 clone 所需的代码仓库。
+* [启动 devcontainer](#fork-the-repository-and-start-the-devcontainer)。
+
+:::
+
+### 安装 Docker Desktop
+
+由于安装步骤已有详细记录且可能随时间变化，我们参考官方的 [在 Mac 上安装 Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) 指南。
+
+## Fork 仓库并启动 devcontainer
+
+由于这在我们不同的代码仓库间略有不同，以下是一份通用指南。
+
+1. 在 GitHub 上打开所需的代码仓库（*例如 [Home Assistant Core 仓库](https://github.com/home-assistant/core)*），点击 "fork"。
+
+2. Fork 创建后，复制你的 fork 的 URL 并将其 clone 到计算机上的本地目录。
+
+   ```shell
+   cd $HOME
+   git clone <URL>
+   ```
+
+3. 进入你的 fork 目录并从中启动 Visual Studio Code：
+
+   ```shell
+   cd <FORKNAME>
+   code .
+   ```
+
+4. Visual Studio Code 将自动检测到 devcontainer 并提示 "Reopen in Container"（*右下角*）——点击它。
+   <p class="img">
+     <img src="/img/en/development/reopen_in_container.png" />
+   </p>

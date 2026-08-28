@@ -1,0 +1,17 @@
+# mutesync
+
+The **mutesync** integration for Home Assistant connects to the [mütesync virtual button](https://mutesync.com/). This tray app pairs with popular video conferencing tools such as Zoom, Google Meet, Discord, and Teams.
+
+With this integration, Home Assistant can track when you're in a meeting and whether your mic is muted/unmuted.
+
+There is currently support for the following platforms within Home Assistant:
+
+* Binary sensor - mic muted/unmuted and meeting live/not-live
+
+:::note 配置
+此集成可通过 UI 配置。前往 **设置 > 设备与服务** 添加。
+:::
+
+Please note, when setting the integration, the UI will ask for "Host". This is
+the hostname or IP address of the machine you run MuteSync on (which is most
+likely your desktop computer).
