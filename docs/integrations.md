@@ -67,6 +67,7 @@ layout: doc
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | proxmoxve | [![proxmoxve](https://img.shields.io/badge/HACS-proxmoxve-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=dougiteixeira&repository=proxmoxve&category=integration) | Proxmox 虚拟化平台监控 |
+| Proxmox Extended Sensors | [![Proxmox Extended Sensors](https://img.shields.io/badge/HACS-Proxmox__Extended__Sensors-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Javisen&repository=proxmox_sensors&category=integration) | Proxmox VE/PBS 深度监控，支持集群状态、NVMe/硬盘温度与健康、CPU 温度、虚拟机/容器指标及备份管理，并提供官方中文文档 |
 | homeassistant-ssh | [![homeassistant-ssh](https://img.shields.io/badge/HACS-homeassistant--ssh-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=zhbjsh&repository=homeassistant-ssh&category=integration) | 通过 SSH 管理和监控 Linux |
 | esxi_stats | [![esxi_stats](https://img.shields.io/badge/HACS-esxi__stats-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=wxt9861&repository=esxi_stats&category=integration) | ESXi 服务器状态监控 |
 | Unraid | [![Unraid](https://img.shields.io/badge/HACS-Unraid-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=domalab&repository=ha-unraid&category=integration) | 集成 Unraid 服务器状态与监控，适合 NAS/家庭服务器用户 |
@@ -92,6 +93,7 @@ layout: doc
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | iPhoneDetect | [![iPhoneDetect](https://img.shields.io/badge/HACS-iPhoneDetect-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=mudape&repository=iphonedetect&category=integration) | 基于局域网检测 iPhone 是否在家，适合家庭成员自动离家/回家状态判断 |
+| Bermuda BLE Trilateration | [![Bermuda](https://img.shields.io/badge/HACS-Bermuda-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=agittins&repository=bermuda&category=integration) | 基于 ESPHome/Shelly 蓝牙代理的 BLE 三角定位，实现房间级在场检测与距离传感器，支持 iBeacon 与随机 MAC 设备 |
 
 ### 多媒体
 
@@ -139,6 +141,12 @@ layout: doc
 | 飞牛 NAS | [![fn_nas](https://img.shields.io/badge/HACS-飞牛__nas-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=anxms&repository=fn_nas&category=integration) | 飞牛 NAS 设备集成，支持状态监控与管理|
 | 绿联 | [![iYan UGNAS](https://img.shields.io/badge/HACS-绿联__NAS-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=flamestsui&repository=iyan_ugnas&category=integration) | 绿联设备集成，支持状态监控与管理 |
 
+### 网盘备份
+
+| 集成名称 | HACS 安装链接 | 相关说明 |
+|--|--|--|
+| Quark Cloud Drive | [![Quark Cloud Drive](https://img.shields.io/badge/HACS-Quark%20Cloud%20Drive-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=ha_quarkcloud&category=integration) | 夸克网盘集成，支持 HA 备份上云（备份代理）与网盘信息传感器（容量、会员、备份数等），扫码授权即用 |
+
 ### 编辑器工具
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
@@ -148,12 +156,15 @@ layout: doc
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | HTML Card Pro | [![HTML Card Pro](https://img.shields.io/badge/HACS-HTML%20Card%20Pro-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=html-card-pro&category=plugin) | 高级 HTML 卡片组件，支持 AI 辅助设计、数据绑定、实时状态更新等功能 |
+| Skins Pro | [![Skins Pro](https://img.shields.io/badge/HACS-Skins%20Pro-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=Skins-Pro&category=plugin) | 新一代多皮肤仪表盘，一键安装即用，内置皮肤商店，支持中英双语、Kiosk 全屏、按区域/楼层分组、能源与安防页面等 |
+| Navbar Card | [![Navbar Card](https://img.shields.io/badge/HACS-Navbar%20Card-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=joseluis9595&repository=lovelace-navbar-card&category=plugin) | 响应式导航卡片，移动端显示为底部导航栏，桌面端显示为侧边导航栏，让多仪表盘切换更轻松 |
 
 ### 监控，门铃，门销
 
 | 集成名称 | HACS 安装链接 | 相关说明 |
 |--|--|--|
 | HikConnect | [![HikConnect](https://img.shields.io/badge/HACS-HikConnect-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=tomasbedrich&repository=home-assistant-hikconnect&category=integration) | 海康威视 Hik-Connect 监控摄像头、门铃等设备接入，支持实时视频流、事件通知等功能 |
+| EZVIZ Cloud Push | [![EZVIZ Cloud Push](https://img.shields.io/badge/HACS-EZVIZ%20Cloud%20Push-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=ezviz_push&category=integration) | 萤石云信令推送集成，支持门铃/猫眼/摄像机/智能门锁接入，提供呼叫、报警、人脸识别、报警图片等丰富实体 |
 
 
 
