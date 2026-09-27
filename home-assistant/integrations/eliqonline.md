@@ -1,0 +1,34 @@
+# Eliqonline
+
+Integrate your [ELIQ Online](https://eliq.io/) smart meter information into Home Assistant. To get an [access token](https://my.eliq.io/user/settings/api) and the [Channel ID](https://my.eliq.io/user/settings/locations), log in to your account.
+
+To enable this sensor in your installation, add the following to your "`configuration.yaml`" file.
+:::tip
+更改配置后需要重启 Home Assistant。
+:::
+
+```yaml
+# Example configuration.yaml entry
+sensor:
+  - platform: eliqonline
+    access_token: ACCESS_TOKEN
+    channel_id: CHANNEL_ID
+```
+
+```yaml
+access_token:
+  description: The Access Token for your account.
+  required: true
+  type: string
+channel_id:
+  description: Channel ID (as integer) of your device.
+  required: true
+  type: integer
+name:
+  description: The name of the sensor, e.g., the city.
+  required: false
+  default: ELIQ Online
+  type: string
+```
+
+For details please check the [API documentation](https://eliq.zendesk.com/hc/en-us/articles/115002708449-API-Eliq-Online).

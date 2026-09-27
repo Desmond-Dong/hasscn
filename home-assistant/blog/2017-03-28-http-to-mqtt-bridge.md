@@ -1,0 +1,62 @@
+# HTTP to MQTT bridge
+
+The idea of creating [HTTP to MQTT bridge](https://github.com/petkov/http_to_mqtt) appeared when I was trying to integrate Google Assistant with my Home Assistant after watching [BRUH 自动化](https://youtu.be/087tQ7Ly7f4?t=265) video. Right now there is no MQTT 服务 available in [IFTTT](https://ifttt.com/about). Existing 集成 solution uses [Maker Webhooks](https://ifttt.com/maker_webhooks) which requires that your Home Assistant instance is publicly accessible, which I think brings some security concerns or simply not always possible to set up.
+
+The HTTP to MQTT bridge should fill that gap. The idea is to receive messages using HTTP requests and transfer them to your MQTT broker, which can be contacted by Home Assistant. The HTTP to MQTT bridge is written using Node.js with [Express](https://expressjs.com/) for the server part and [MQTT.js](https://www.npmjs.com/package/MQTT) for the client.
+
+<!--more-->
+
+The app could be hosted on any Node.js hosting. I prefer [Heroku: Cloud Application Platform](https://www.heroku.com/home) for its simplicity.
+
+### Bringing pieces together
+
+1. 配置 the Home Assistant [MQTT 触发器](/home-assistant/docs/automation/trigger/index.md#MQTT-触发器).
+2. 配置 [CloudMQTT](https://www.cloudmqtt.com/). Check this [video 教程](https://www.youtube.com/watch?v=VaWdvVVYU3A) for details.
+3. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/petkov/http_to_mqtt) HTTP to MQTT bridge app.
+4. Add the [配置 Variables](https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application) to your Heroku app mentioned here.
+
+* AUTH\_KEY: Can be any string, eg. `912ec803b2ce49e4a541068d495ab570`.
+* MQTT\_HOST: The host of your MQTT broker, eg. mqtts://k99.cloudmqtt.com:21234.
+* MQTT\_USER: MQTT username
+* MQTT\_PASS: MQTT 密码
+
+1. Create an IFTTT applet the same way as described in [BRUH 自动化](https://youtu.be/087tQ7Ly7f4?t=265) video.
+2. 配置 [Maker Webhooks](https://ifttt.com/maker_webhooks) 服务 with below parameters.
+
+* URL: `https://<app_name>.herokuapp.com/post/`
+* Method: `POST`
+* Content Type: `application/json`
+* Body: `{"topic":"<mqtt_topic>","message":"<mqtt_message>","key":"<AUTH_KEY>"}`
+
+### Subscribe to latest 版本
+
+Additionally you can make Heroku to 更新 the HTTP to MQTT bridge app to the latest available 版本 from the GitHub repository automatically. To do this follow the instruction on the [Heroku help page](https://devcenter.heroku.com/articles/github-integrations#automatic-deploys).
+
+### Improve response time
+
+After 30 minutes of inactivity Heroku will put your app into sleep mode. This will result in ~10 seconds response time. To prevent Heroku from putting your app into sleep mode, ping it every 10 minutes. You can do that by sending regular HTTP GET request to http://your\_app/keep\_alive/. But be careful. Heroku free quota is 550 hours per month. Without sleeping your app will be allowed to run only 22 days a month. Additionally the `keep_alive` method will send a simple MQTT message to prevent the broker from sleeping as well. The topic and message can be configured using Heroku environment variables `KEEP_ALIVE_TOPIC` and `KEEP_ALIVE_MESSAGE` and both are set to "keep\_alive" by default.
+
+You can even 配置 Home Assistant to ping HTTP to MQTT bridge every 10 minutes during daytime. Below is an example of how to do that:
+
+```yaml
+rest_command:
+  http_to_mqtt_keep_alive:
+    url: https://<your_app_address>/keep_alive/
+    method: get
+
+automation:
+  alias: "HTTP to MQTT keep alive"
+  trigger:
+    platform: time_pattern
+    minutes: "/10"
+  condition:
+    condition: time
+    after: "7:30:00"
+    before: "23:59:59"
+  action:
+    service: rest_command.http_to_mqtt_keep_alive
+```
+
+### Thanks
+
+Special thanks to Ben from [BRUH 自动化](https://www.youtube.com/channel/UCLecVrux63S6aYiErxdiy4w/featured) for awesome tutorials which inspired me to do this project.

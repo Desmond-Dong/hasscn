@@ -1,0 +1,41 @@
+# The Open Home
+
+<img src='/home-assistant/images/blog/2021-12-open-home/header.png' style='box-shadow:none;border:0'>
+
+The Open Home is our vision for the smart home. It defines the values that we put at the heart of every decision we make at Home Assistant. It's woven into our architecture, licensing, community and everything else.
+
+The Open Home is about **privacy**, **choice** and **sustainability**.
+
+*The original vision used "durability" instead of "sustainability". This value was changed as [part of our 10 year anniversary](https://www.youtube.com/watch?v=EmLV6lJLzSU\&t=3651s).*
+
+*If you prefer video, skip [to the end](#状态-of-the-open-home).*
+
+## Privacy
+
+Your home should be your safe space. A place where you can be your true self without having to bother about what the world thinks of you. A place where you don't need to act differently to avoid an algorithm categorizing your behavior.
+
+**Privacy** for the Open Home means that 设备 need to work locally. No one else needs to know if you 打开 a 灯光 bulb or change the thermostat.
+
+It is okay for a product to offer a cloud connection, but it should be extra and opt-in.
+
+## Choice
+
+设备 in your home gather data about itself and their surroundings. Your data. Vendors shouldn't be able to limit your access to your data or limit the interoperability of your 设备 with the rest of your smart home.
+
+**Choice** for the Open Home means that 设备 need to make the gathered data available through local APIs. This avoids vendor 门锁-in and allows users to create their own smart home with 设备 from different manufacturers.
+
+## Sustainability
+
+Humans emit CO<sub>2</sub> into the atmosphere, causing the 温控 to change and the world to heat up. One way we can all help with this is to ensure that our individual energy and waste footprint is as small as possible. Our homes represent a substantial part of this.
+
+For the Open Home, longevity of a 设备 should not be an afterthought. If there is one thing that technology firms are very good at, it is launching new products. However, maintaining the products and making sure they keep working is an afterthought for most. The result is that vendors can decide to no longer support your 设备, crippling it's features or even prevent it from working at all.
+
+As we 安装 more and more 设备 in our home, sustainability is becoming more and more important. We shouldn't have to buy everything new every couple of years because the manufacturer decided to move on.
+
+**Sustainability** for the Open Home means that 设备 are designed and built to keep working and use as little energy as possible. Not just this year, but for the next decade. If they outlive their original purpose, they should be able to be reused or repurposed for something else.
+
+## 状态 of the Open Home
+
+At the 状态 of the Open Home, we presented our vision and how we, together with our friends from 开源 and academia, are working towards achieving it.
+
+<lite-youtube videoid="6ZMXE5PXPqU" videotitle="状态 of the Open Home 2021" videoStartAt="512" posterquality="maxresdefault"></lite-youtube>

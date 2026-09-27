@@ -1,0 +1,50 @@
+# UniFi LED
+
+[UniFi LED](https://unifi-led.ui.com/) by [Ubiquiti Networks, inc.](https://www.ui.com/) is a system of controller managed LED light panels and dimmers.
+
+There is currently support for the following device type within Home Assistant:
+
+* [Light](#light)
+
+## Configuration
+
+To use the integration in your installation, add it to your "`configuration.yaml`" file.
+:::tip
+更改配置后需要重启 Home Assistant。
+:::
+
+```yaml
+# Example configuration.yaml entry
+light:
+  - platform: unifiled
+    host: IP_ADDRESS
+    username: USERNAME
+    password: PASSWORD
+```
+
+```yaml
+host:
+  description: IP address or hostname used to connect to the UniFi LED controller.
+  type: string
+  required: true
+  default: None
+port:
+  description: Port used to connect to the UniFi LED controller.
+  type: string
+  required: false
+  default: 20443
+username:
+  description: Username used to log into the UniFi LED controller.
+  type: string
+  required: true
+  default: None
+password:
+  description: Password used to log into the UniFi LED controller.
+  type: string
+  required: true
+  default: None
+```
+
+## Light
+
+The light panels output state and brightness are synchronized with Home Assistant.
