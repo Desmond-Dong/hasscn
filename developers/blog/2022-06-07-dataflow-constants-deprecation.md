@@ -1,0 +1,12 @@
+从 Home Assistant Core 2022.7 开始，所有用于 data entry flow result types 的 `RESULT_TYPE_*` 常量已被弃用：
+
+* `RESULT_TYPE_FORM`
+* `RESULT_TYPE_CREATE_ENTRY`
+* `RESULT_TYPE_ABORT`
+* `RESULT_TYPE_EXTERNAL_STEP`
+* `RESULT_TYPE_EXTERNAL_STEP_DONE`
+* `RESULT_TYPE_SHOW_PROGRESS`
+* `RESULT_TYPE_SHOW_PROGRESS_DONE`
+* `RESULT_TYPE_MENU`
+
+请改用新的 `FlowResultType` enum。
