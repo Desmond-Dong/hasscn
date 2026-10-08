@@ -64,6 +64,11 @@ Home Assistant OS 极速版重要服务器迁移到 `自架服务器`，不再�
 
 :::
 
+:::tip 2026年9月21日
+作为`全国唯一`受邀者，出席 `OpenHomeFoundation Summit 2026` [公众号推文](https://mp.weixin.qq.com/s/SIrpfMTtwuxvi_-S1i4Xxg)
+
+:::
+
 ---
 
 :::note
