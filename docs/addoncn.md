@@ -44,7 +44,7 @@ layout: doc
 4. 📋 **复制下方仓库地址，粘贴到输入框，点击添加** ➕
 
    ```text
-   https://gitee.com/desmond_GT/hassio-addons
+   https://gitcode.com/ha-china/ha-apps.git
    ```
 
 5. ✅ **现在，仓库中的所有加载项都可以在加载项商店中直接安装啦！**
@@ -55,7 +55,7 @@ layout: doc
 
 
 
-[![添加加载项到 Home Assistant](https://img.shields.io/badge/Home%20Assistant-Addons-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 
+[![添加加载项到 Home Assistant](https://img.shields.io/badge/Home%20Assistant-Addons-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitcode.com/ha-china/ha-apps.git) 
 
 
 

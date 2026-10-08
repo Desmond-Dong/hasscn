@@ -61,7 +61,7 @@ keywords: 'Home Assistant, Home Assistant 中国, 老王杂谈说, Home Assistan
 
 先添加仓库，再搜索安装：
 
-[![一键添加加载项仓库](https://img.shields.io/badge/Home%20Assistant-Addons-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons)
+[![一键添加加载项仓库](https://img.shields.io/badge/Home%20Assistant-Addons-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitcode.com/ha-china/ha-apps.git)
 
 然后在[![应用商店](https://img.shields.io/badge/Home%20Assistant-Store-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_store/)搜索 WebTunnel 安装：
 
