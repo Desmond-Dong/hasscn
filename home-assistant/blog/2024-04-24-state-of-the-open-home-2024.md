@@ -1,0 +1,23 @@
+# 胸怀更大：2024 年开放日状况
+
+我们最近举行了 [Open Home 2024 直播的状态](https://www.youtube.com/live/oa__fLArsFk?si=PzlfiHLUYE6uAEq3)，我们在会上透露了我们如何[更大](/home-assistant/blog/2018/09/17/thinking-big/) 思考如何确保智能家居的未来。在本次直播中，我们推出了 [开放家庭基金会](https://www.openhomefoundation.org/)，这是一个新的非营利组织，旨在为智能家居的基本原则（隐私、选择和可持续性）而奋斗，专注于为生活在其中的每个人提供服务。要了解有关开放之家基金会的更多信息，请阅读完整的[公告](https://www.openhomefoundation.org/博客/announcing-the-open-home-foundation/)。
+
+该直播深入探讨了 Home Assistant 的演变以及它目前如何达到估计 100 万的安装量。语音和硬件方面还有其他重大更新，包括我们即将推出的 Z-Wave 和语音助手硬件。第一个面板讨论的主角是 Open Home Foundation 合作项目 WLED、Zigbee2MQTT、Rhasspy 和 Z-Wave JS 的创始人。第二个面板全面概述了开放标准的状态，其中包括致力于 Zigbee、Z-Wave、Matter 和蓝牙的关键开源开发者。直播最后展望了开放式住宅的未来，包括宣布了充满令人兴奋的新功能的路线图。
+
+<lite-youtube videoid="oa__fLArsFk" videotitle="状态 of the Open Home 2024"></lite-youtube>
+
+<!--more-->
+
+完整章节列表：
+
+* 简介 ([0:00:11](https://www.youtube.com/watch?v=oa__fLArsFk\&t=11s))
+* 宣布开放家庭基金会 - Paulus Schoutsen ([0:02:36](https://www.youtube.com/watch?v=oa__fLArsFk\&t=156s))
+* 与 Open Home Foundation 合作者的面板 - WLED、Zigbee2MQTT、Rhasspy、Z-Wave JS ([0:18:31](https://www.youtube.com/watch?v=oa__fLArsFk\&t=1111s))
+* 声音 - 迈克尔·汉森 ([0:36:31](https://www.youtube.com/watch?v=oa__fLArsFk\&t=2191s))
+* Home Assistant - Franck Nijhof ([0:53:08](https://www.youtube.com/watch?v=oa__fLArsFk\&t=3188s))
+* 硬件 - Uwe Bernitt ([1:21:37](https://www.youtube.com/watch?v=oa__fLArsFk\&t=4897s))
+* 开放标准面板 - Zigbee、Z-Wave、Matter、蓝牙 ([1:40:21](https://www.youtube.com/watch?v=oa__fLArsFk\&t=6021s))
+* 未来 - 麦德琳娜 ([2:07:29](https://www.youtube.com/watch?v=oa__fLArsFk\&t=7649s))
+* 结束 ([2:37:33](https://www.youtube.com/watch?v=oa__fLArsFk\&t=9453s))
+
+**Open Home Foundation** 现在拥有并管理超过 240 个开源项目、标准、驱动程序和库，包括 Home Assistant - 保护这些项目免遭收购或被废弃。要了解有关开放之家基金会的更多信息，请访问：[www.openhomefoundation.org](https://www.openhomefoundation.org/)
