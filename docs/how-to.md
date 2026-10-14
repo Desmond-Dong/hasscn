@@ -34,7 +34,7 @@ description: 'Home Assistant OS 极速版与官方原版系统互转的完整教
 
 :::note 请注意
 
-🔄 迁移完成后，有可能会出现部分加载项需重新安装，而其他数据将保持不变。
+🔄 迁移完成后，有可能会出现部分应用需重新安装，而其他数据将保持不变。
 
 请运行以下命令（若命令执行成功，系统将自动重启；若失败，则不会对系统造成任何更改）：
 
@@ -92,11 +92,11 @@ curl -fsSL https://ota.hasscn.top/upgrade.sh | bash
 
 :::note 可能会出现的情况
 
-此问题在最新版的`upgrade.sh`里已经得到了极大的优化，可能不会出现这个问题，或者只有少量的加载项会有这个问题
+此问题在最新版的`upgrade.sh`里已经得到了极大的优化，可能不会出现这个问题，或者只有少量的应用会有这个问题
 
-🛠️ 最后，请删除这些加载项，并在加速源中重新安装即可。
+🛠️ 最后，请删除这些应用，并在加速源中重新安装即可。
 
-![加载项修复](./images/addons.png)
+![应用修复](./images/addons.png)
 
 :::
 
@@ -119,9 +119,9 @@ Official Website: https://www.hasscn.top
 ```
 ![mirrow](./images/mirrow.png)
 - 并且看到的官方商店变成了这样全中文的
-> 点击下面这个按钮，进入到你的加载项商店
+> 点击下面这个按钮，进入到你的应用商店
 
-[![加载项商店](https://img.shields.io/badge/Add--on%20Store-Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_store/)
+[![应用商店](https://img.shields.io/badge/App%20Store-Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_store/)
 
 ![商店截图](./images/store.png)
 

@@ -11,7 +11,7 @@ export const globalNav = [
         link: '/hacscn',
       },
       {
-        text: 'Home Assistant OS 加载项',
+        text: 'Home Assistant OS 应用',
         link: '/addoncn',
       },
       {
