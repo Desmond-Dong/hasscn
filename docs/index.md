@@ -50,10 +50,10 @@ features:
     details: 整理 ESPHome 中文教程与设备示例，帮助你低成本接入更多智能硬件。
     icon: 📟
     link: /esphome/
-  - title: 🧑‍💻 开发者文档
-    details: 汇总 Home Assistant 开发者中文文档，覆盖集成、前端、语音、系统与 API 开发。
+  - title: 🧑‍💻 贡献者
+    details: 帮助构建开放之家：代码、设计、文档、翻译或社区，无论你贡献什么，都从这里开始。
     icon: 🧑‍💻
-    link: /developers/
+    link: /contributors
 ---
 # Home Assistant 中文网 - 汉化资源、文档与安装指南 | 老王杂谈说
 
