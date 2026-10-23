@@ -8,7 +8,6 @@ import { globalNav } from './scripts/nav-config';
 import mdiIconPlugin from './scripts/remark-mdi-icon';
 import {
   companionSidebar,
-  developersSidebar,
   homeAssistantSidebar,
   musicAssistantSidebar,
 } from './scripts/sidebar-config';
@@ -37,7 +36,7 @@ export default defineConfig({
   globalStyles: path.join(__dirname, 'styles/index.css'),
 
   description:
-    'Home Assistant 中文网聚焦 Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。',
+    'Home Assistant 中文网聚焦 Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome与配套应用。',
 
   markdown: {
     remarkPlugins: [mdiIconPlugin],
@@ -59,7 +58,7 @@ export default defineConfig({
       llmsTxt: {
         name: 'llms.txt',
         onTitleGenerate: ({ title, description }) => {
-          return `# ${title}\n\n> ${description}\n\n本站聚焦 Home Assistant 中文内容、安装部署、本土化实践，以及 Music Assistant、ESPHome、配套应用与开发者文档。\n`;
+          return `# ${title}\n\n> ${description}\n\n本站聚焦 Home Assistant 中文内容、安装部署、本土化实践，以及 Music Assistant、ESPHome、配套应用。\n`;
         },
       },
       exclude: ({ page }) => {
@@ -104,7 +103,6 @@ export default defineConfig({
     // 多侧边栏配置
     sidebar: {
       ...homeAssistantSidebar,
-      '/developers/': developersSidebar,
       '/music-assistant/': musicAssistantSidebar,
       '/companion/': companionSidebar,
     },
@@ -154,7 +152,7 @@ export default defineConfig({
       {
         name: 'keywords',
         content:
-          'Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant 开发者文档,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理',
+          'Home Assistant,Home Assistant 中国,老王杂谈说,Home Assistant 中国社区,Home Assistant 中文,Music Assistant,ESPHome,Home Assistant Companion,Home Assistant 中文网,Home Assistant 中文站,Home Assistant OS 极速版,HAOS,智能家居,开源智能家居,IoT,家庭助理',
       },
     ],
     [
@@ -170,7 +168,7 @@ export default defineConfig({
       {
         property: 'og:description',
         content:
-          'Home Assistant 中文网聚焦 Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。',
+          'Home Assistant 中文网聚焦 Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome与配套应用。',
       },
     ],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -191,7 +189,7 @@ export default defineConfig({
       {
         name: 'twitter:description',
         content:
-          'Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome、配套应用与开发者文档。',
+          'Home Assistant 中国用户的安装部署、汉化资源、Music Assistant、ESPHome与配套应用。',
       },
     ],
     [

@@ -10,7 +10,6 @@ import {
 } from '@rspress/plugin-algolia/runtime';
 import { createElement } from 'react';
 import {
-  developersNav,
   globalNav,
   homeAssistantNav,
 } from '../scripts/nav-config';
@@ -22,10 +21,6 @@ export { LlmsViewOptions } from './LlmsViewOptions';
 function resolveNavByPathname(pathname: string) {
   if (pathname.startsWith('/home-assistant')) {
     return homeAssistantNav;
-  }
-
-  if (pathname.startsWith('/developers')) {
-    return developersNav;
   }
 
   return globalNav;
