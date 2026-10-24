@@ -1,0 +1,40 @@
+# Telldus Live
+
+The **Telldus Live** integration let you connect to the [Telldus Live](https://live.telldus.com) API. It's cloud platform that connects to your Tellstick Net or Tellstick ZNet connected gear at home.
+
+:::important
+You need a [Telldus Premium](https://telldus.com/en/telldus-premium/) subscription to access the Cloud API (https://telldus.com/en/important-announcement-english/).
+
+:::
+Local API supports only one device at this stage. Local API is only supported with the Znet Lite products, the older hardware (such as Tellstick Net) does not support local API.
+
+## Configuration
+
+To manually integrate your Telldus Live with Home Assistant, e.g., if your device is on another network or in another location, add the following section to your "`configuration.yaml`" file.
+:::tip
+更改配置后需要重启 Home Assistant。
+:::
+
+```yaml
+# Example configuration.yaml entry
+tellduslive:
+```
+
+```yaml
+host:
+  description: Host address to Tellstick Net or Tellstick ZNet for Local API, only useful when automatic discovery is not enabled.
+  required: false
+  type: string
+scan_interval:
+  description: Interval (in seconds) for polling the Telldus Live server (or the local server).
+  required: false
+  type: integer
+  default: 60
+```
+
+The integration will offer configuration through the Home Assistant user interface where it will let you associate it with your Telldus Live account.
+
+:::note
+If you are receiving the error message: "The path '/tellduslive/authorize' was not found", you have to switch to a web browser that allows HTTP connections. Firefox is known to work fine. Chrome is known to cause issues.
+
+:::
