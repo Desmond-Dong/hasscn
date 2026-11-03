@@ -1,0 +1,223 @@
+# Kaleidescape
+
+The **Kaleidescape** integration allows for the automation of [Kaleidescape](https://www.kaleidescape.com/) movie players.
+
+Ideas for automation include:
+
+* Playing and pausing a movie sets lighting scenes.
+* The start of movie credits turns up the lights.
+* A change in aspect ratio controls a projection masking system.
+* A change in video resolution controls a lens system or video scaler.
+
+## Supported Models
+
+This integration is intended for the automation of Kaleidescape players with a movie zone. This includes all Strato and Premier players. Strato players support auto-discovery in Home Assistant. Premier players must be added manually by adding an instance of this integration and specifying the IP address of the player.
+
+:::note 配置
+此集成可通过 UI 配置。前往 **设置 > 设备与服务** 添加。
+:::
+
+## Media player
+
+The Kaleidescape media player platform will create a [media player](/home-assistant/integrations/media_player/index.md) entity for the device. This entity will display the currently playing media and playback controls.
+
+## Remote
+
+The Kaleidescape remote platform will create a [Remote](/home-assistant/integrations/remote/index.md) entity for the device. This entity allows you to send the following commands via the [remote.send\_command](/home-assistant/integrations/remote/index.md) action.
+
+* `select`
+* `up`
+* `down`
+* `left`
+* `right`
+* `cancel`
+* `replay`
+* `scan_forward`
+* `scan_reverse`
+* `go_movie_covers`
+* `menu_toggle`
+
+A typical action might look like the example below, which sends a command to the device to *select* the currently highlighted item.
+
+```yaml
+action: remote.send_command
+target:
+  entity_id: remote.kaleidescape_theater
+data:
+  command:
+    - select
+```
+
+## Sensor
+
+The Kaleidescape sensor platform will create multiple [Sensor](/home-assistant/integrations/sensor/index.md) entities for the device. The follow sensors are provided:
+
+### Media Location
+
+The location in the current movie.
+
+* none
+* content
+* intermission
+* credits
+* disc\_menu
+
+### Play Status
+
+The play status of the current movie.
+
+* none
+* paused
+* playing
+* forward
+* reverse
+
+### Play Speed
+
+The playback speed of the current movie. An integer between 1 (normal) and 3 (fast).
+
+### Video Mode
+
+The video mode of the current movie.
+
+* none
+* 480i60\_4:3
+* 480i60\_16:9
+* 480p60\_4:3
+* 480p60\_16:9
+* 576i50\_4:3
+* 576i50\_16:9
+* 576p50\_4:3
+* 576p50\_16:9
+* 720p60\_ntsc\_hd
+* 720p50\_pal\_hd
+* 1080i60\_16:9
+* 1080i50\_16:9
+* 1080p60\_16:9
+* 1080p50\_16:9
+* 1080p24\_16:9
+* 480i60\_64:27
+* 576i50\_64:27
+* 1080i60\_64:27
+* 1080i50\_64:27
+* 1080p60\_64:27
+* 1080p50\_64:27
+* 1080p23976\_64:27
+* 1080p24\_64:27
+* 3840x2160p23976\_16:9
+* 3840x2160p23976\_64:27
+* 3840x2160p30\_16:9
+* 3840x2160p30\_64:27
+* 3840x2160p60\_16:9
+* 3840x2160p60\_64:27
+* 3840x2160p25\_16:9
+* 3840x2160p25\_64:27
+* 3840x2160p50\_16:9
+* 3840x2160p50\_64:27
+* 3840x2160p24\_16:9
+* 3840x2160p24\_64:27
+
+### Video Color EOTF
+
+The Electro-Optical Transfer Function standard of the current movie.
+
+* unknown
+* sdr
+* hdr
+* smtpest2084
+
+### Video Color Space
+
+The color space standard of the current movie.
+
+* default
+* rgb
+* bt601
+* bt709
+* bt2020
+
+### Video Color Depth
+
+The color depth standard of the current movie.
+
+* unknown
+* 24bit
+* 30bit
+* 36bit
+
+### Video Color Sampling
+
+The chroma color sampling standard of the current movie.
+
+* none
+* rgb
+* ycbcr422
+* ycbcr444
+* ycbcr420
+
+### Screen Mask Ratio
+
+The actual aspect ratio of the current movie.
+
+* none
+* 1.33
+* 1.66
+* 1.78
+* 1.85
+* 2.35
+
+### Screen Mask Top Trim Rel
+
+The top trim value, relative to the current Screen Mask Ratio. A percentage between -100% and +100%.
+
+### Screen Mask Bottom Trim Rel
+
+The bottom trim value, relative to the current Screen Mask Ratio. A percentage between -100% and +100%.
+
+### Screen Mask Conservative Ratio
+
+Has the same possible values as the Screen Mask Ratio, but represents a more conservative estimate of the image aspect ratio.
+
+### Screen Mask Top Mask Abs
+
+The position for the top mask in absolute terms, measured from the top of the screen. A percentage between -100% and +100%.
+
+### Screen Mask Bottom Mask Abs
+
+The position for the bottom mask in absolute terms, measured from the bottom of the screen. A percentage between -100% and +100%.
+
+### Cinemascape Mask
+
+The Cinemascape frame aspect ratio of the current movie.
+
+* 0
+* 133
+* 166
+* 178
+* 237
+* 240
+
+### Cinemascape Mode
+
+The Cinemascape mode of the current movie.
+
+* none
+* anamorphic
+* letterbox
+* native
+
+Additional details about the values provided by the sensors can be found in Kaleidescape's [Control Protocol Reference Manual](https://www.kaleidescape.com/wp-content/uploads/Kaleidescape-System-Control-Protocol-Reference-Manual.pdf).
+
+A typical automation might look like the example below, which turns up the lights when the *media\_location* sensor leaves the *content* state.
+
+```yaml
+- alias: "Kaleidescape theater lights up"
+  triggers:
+    - trigger: state
+      entity_id: sensor.kaleidescape_theater_media_location
+      from: content
+  actions:
+    - action: scene.turn_on
+      target:
+        entity_id: scene.theater_lights
+```

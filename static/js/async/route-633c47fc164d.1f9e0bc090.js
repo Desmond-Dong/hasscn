@@ -1,0 +1,1 @@
+"use strict";(self.rspackChunkhasscn_top=self.rspackChunkhasscn_top||[]).push([[49924],{55664(s,n,r){r.r(n);var c=r(74848);function e(){return(0,c.jsxs)("div",{style:{padding:"20px",background:"yellow",margin:"20px 0"},children:[(0,c.jsx)("h2",{children:"测试视频组件"}),(0,c.jsx)("p",{children:"如果你能看到这个黄色背景的框,说明组件工作正常!"})]})}r.d(n,{default:()=>e})}}]);

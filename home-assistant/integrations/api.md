@@ -1,0 +1,10 @@
+# Home Assistant API
+
+**Home Assistant API** 集成公开一个 RESTful API，并允许与无头运行的 Home Assistant 实例进行交互。此集成依赖于 [HTTP 集成](/home-assistant/integrations/http/index.md)。
+
+```yaml
+# 示例 configuration.yaml 条目
+api:
+```
+
+有关使用 API 的详细信息，请参阅"开发者"部分中的 [REST API](/home-assistant/developers/rest_api/)。
