@@ -6,11 +6,7 @@ import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { analyticsPlugin } from './scripts/analytics-plugin';
 import { globalNav } from './scripts/nav-config';
 import mdiIconPlugin from './scripts/remark-mdi-icon';
-import {
-  companionSidebar,
-  homeAssistantSidebar,
-  musicAssistantSidebar,
-} from './scripts/sidebar-config';
+import { companionSidebar, homeAssistantSidebar } from './scripts/sidebar-config';
 
 const llmsExcludedRoutes = new Set([
   '/403',
@@ -103,7 +99,6 @@ export default defineConfig({
     // 多侧边栏配置
     sidebar: {
       ...homeAssistantSidebar,
-      '/music-assistant/': musicAssistantSidebar,
       '/companion/': companionSidebar,
     },
 
