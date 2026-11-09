@@ -60,12 +60,17 @@ Home Assistant OS 极速版重要服务器迁移到 `自架服务器`，不再�
 :::
 
 :::tip 2026年3月10日
-举办中国第二届 `Home Assistant Community Day` [官网链接](https://newsletter.openhomefoundation.org/why-were-investing-in-the-human-touch/)
+举办 `Home Assistant 创始人见面会` [官网链接](https://newsletter.openhomefoundation.org/why-were-investing-in-the-human-touch/)
 
 :::
 
 :::tip 2026年9月21日
 作为`全国唯一`受邀者，出席 `OpenHomeFoundation Summit 2026` [公众号推文](https://mp.weixin.qq.com/s/SIrpfMTtwuxvi_-S1i4Xxg)
+
+:::
+
+:::tip 2026年11月7日
+举办中国第二届 `Home Assistant Community Day` [场地提供方新闻](https://sensereo.com/community/home-assistant-community-day-2026/) [公众号推文](https://mp.weixin.qq.com/s/YN3fNbdbcaUagpr6-k8D2A)
 
 :::
 
