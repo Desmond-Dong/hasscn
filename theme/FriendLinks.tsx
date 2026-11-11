@@ -1,6 +1,14 @@
 import { createElement } from 'react';
 import { friendLinks } from '../scripts/friend-links';
 
+/** 取站点索引字母：优先取名称首字母，中文名回退到域名首字母 */
+function letterOf(link: (typeof friendLinks)[number]) {
+  const m = link.name.match(/[a-z]/i);
+  if (m) return m[0].toUpperCase();
+  const host = new URL(link.url).hostname.replace(/^www\./, '');
+  return host.charAt(0).toUpperCase();
+}
+
 function FriendLinkCard(link: (typeof friendLinks)[number]) {
   const domain = new URL(link.url).hostname.replace(/^www\./, '');
   return createElement(
@@ -33,10 +41,20 @@ function FriendLinkCard(link: (typeof friendLinks)[number]) {
   );
 }
 
-export default function FriendLinks() {
+interface FriendLinksProps {
+  /** 只渲染指定字母分组的站点 */
+  letter: string;
+}
+
+export default function FriendLinks({ letter }: FriendLinksProps) {
+  const target = letter.toUpperCase();
+  const links = friendLinks
+    .filter((link) => letterOf(link) === target)
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   return createElement(
     'div',
     { className: 'friend-links' },
-    friendLinks.map((link) => FriendLinkCard(link)),
+    links.map((link) => FriendLinkCard(link)),
   );
 }
