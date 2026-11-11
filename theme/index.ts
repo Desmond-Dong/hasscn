@@ -47,7 +47,7 @@ function HomeLayout() {
         'div',
         { className: 'home-sponsors__inner' },
         createElement('p', { className: 'home-sponsors__eyebrow' }, 'Sponsor'),
-        createElement('h2', { className: 'home-sponsors__title' }, '赞助商信息'),
+        createElement('h2', { className: 'home-sponsors__title' }, '服务器赞助商信息'),
         createElement(
           'p',
           { className: 'home-sponsors__intro' },

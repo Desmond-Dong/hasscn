@@ -37,6 +37,10 @@ export const globalNav = [
     link: '/tunnel',
   },
   {
+    text: '友情链接',
+    link: '/friends',
+  },
+  {
     text: "OHF roadmap汉化",
     link: "/roadmap.html"
   },
