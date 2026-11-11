@@ -20,6 +20,12 @@ export const friendLinks: FriendLink[] = [
     url: 'https://www.chaihuo.org/',
   },
   {
+    name: '聪讯智能',
+    description: '智能照明控制、智能家居与酒店客房控制系统方案商。',
+    logo: '/friends/cxzncn-logo.png',
+    url: 'https://www.cxzncn.com/',
+  },
+  {
     name: 'Seeed Studio 矽递科技',
     description: '物联网硬件赋能者，为创客与工程师提供开源硬件与制造服务。',
     logo: '/friends/seeed-logo.png',
@@ -74,9 +80,33 @@ export const friendLinks: FriendLink[] = [
     url: 'https://cn.yeelight.com/',
   },
   {
+    name: 'Home Assistant',
+    description: '全球领先的开源智能家居平台，本站生态的核心。',
+    logo: '/friends/home-assistant-logo.svg',
+    url: 'https://www.home-assistant.io/',
+  },
+  {
+    name: 'LifeX 埃克思科技',
+    description: '专注智能控制产品研发与销售，探寻人与家居设备的更好交互。',
+    logo: '/friends/lifex360-logo.png',
+    url: 'http://www.lifex360.com/',
+  },
+  {
+    name: '乐式科技',
+    description: '专业家居商业照明解决方案，天猫与小米 IoT 平台服务商。',
+    logo: '/friends/lelight-logo.png',
+    url: 'http://www.lelight.cn/',
+  },
+  {
     name: 'Heffeix',
     description: '商业与家居智能化解决方案。',
     logo: '/friends/heffeix-logo.png',
     url: 'https://heffeix.com/',
+  },
+  {
+    name: 'Robustel 鲁邦通',
+    description: '工业物联网通信与边缘计算产品及行业解决方案提供商，国家工信部制造业单项冠军。',
+    logo: '/friends/robustel-logo.svg',
+    url: 'https://www.robustel.com.cn/',
   },
 ];
