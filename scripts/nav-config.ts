@@ -38,7 +38,7 @@ export const globalNav = [
   },
   {
     text: '友情链接',
-    link: '/friends',
+    link: '/links',
   },
   {
     text: "OHF roadmap汉化",
