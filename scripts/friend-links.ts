@@ -38,7 +38,7 @@ export const friendLinks: FriendLink[] = [
     url: 'https://www.shellyiot.cn/',
   },
   {
-    name: 'SONOFF 易微联',
+    name: 'SONOFF 松诺',
     description: '兼容 Wi-Fi、Zigbee 与 Matter 的智能家居设备。',
     logo: '/friends/sonoff-logo.png',
     url: 'https://sonoff.tech/',
