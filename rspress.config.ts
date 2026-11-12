@@ -1,8 +1,6 @@
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
-import { pluginAlgolia } from '@rspress/plugin-algolia';
-import { pluginLlms } from '@rspress/plugin-llms';
-import { pluginSitemap } from '@rspress/plugin-sitemap';
+import type { LlmsTxtContext } from '@rspress/core';
 import { analyticsPlugin } from './scripts/analytics-plugin';
 import { globalNav } from './scripts/nav-config';
 import mdiIconPlugin from './scripts/remark-mdi-icon';
@@ -17,6 +15,27 @@ const llmsExcludedRoutes = new Set([
   '/BilibiliVideo',
   '/TestVideo',
 ]);
+
+/** 生成 llms.txt：自定义头部 + 按导航分组的页面索引（排除指定路由） */
+function renderLlmsTxt(context: LlmsTxtContext): string {
+  const sections = context.sections
+    .map((section) => {
+      const pages = section.pages.filter((page) => {
+        const routePath = page.routePath.endsWith('/')
+          ? page.routePath.slice(0, -1)
+          : page.routePath;
+        return !llmsExcludedRoutes.has(routePath);
+      });
+      if (!pages.length) return '';
+      const lines = pages.map(
+        (page) => `- [${page.title}](${page.link})${page.description ? `: ${page.description}` : ''}`,
+      );
+      return `## ${section.title}\n\n${lines.join('\n')}`;
+    })
+    .filter(Boolean)
+    .join('\n\n');
+  return `# ${context.title}\n\n> ${context.description}\n\n本站聚焦 Home Assistant 中文内容、安装部署、本土化实践，以及 Music Assistant、ESPHome、配套应用。\n\n${sections}\n`;
+}
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -38,34 +57,23 @@ export default defineConfig({
     remarkPlugins: [mdiIconPlugin],
     link: {
       checkDeadLinks: false,
+      checkAnchors: false,
     },
   },
 
   search: false,
 
-  plugins: [
-    pluginSitemap({
-      siteUrl: 'https://www.hasscn.top',
-      defaultChangeFreq: 'monthly',
-      defaultPriority: '0.6',
-    }),
-    pluginAlgolia(),
-    pluginLlms({
-      llmsTxt: {
-        name: 'llms.txt',
-        onTitleGenerate: ({ title, description }) => {
-          return `# ${title}\n\n> ${description}\n\n本站聚焦 Home Assistant 中文内容、安装部署、本土化实践，以及 Music Assistant、ESPHome、配套应用。\n`;
-        },
-      },
-      exclude: ({ page }) => {
-        const routePath = page.routePath.endsWith('/')
-          ? page.routePath.slice(0, -1)
-          : page.routePath;
-        return llmsExcludedRoutes.has(routePath);
-      },
-    }),
-    analyticsPlugin(),
-  ],
+  plugins: [analyticsPlugin()],
+
+  sitemap: {
+    siteUrl: 'https://www.hasscn.top',
+    defaultPriority: '0.6',
+    defaultChangeFreq: 'monthly',
+  },
+
+  llms: {
+    llmsTxt: renderLlmsTxt,
+  },
 
   builderConfig: {
     html: {
