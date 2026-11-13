@@ -1,0 +1,31 @@
+> For AI agents: the complete documentation index is available at /llms.txt, the full documentation bundle is available at /llms-full.txt.
+
+# Pocket Casts
+
+The **Pocket Casts** integration lets you monitor how many unplayed episodes you have of your favorite podcasts at [Pocket Casts](https://play.pocketcasts.com/). This integration requires a [Pocket Casts + Plus](https://www.pocketcasts.com/plus/) subscription to work!
+
+## Configuration
+
+To enable this sensor, add the following lines to your "`configuration.yaml`" file.
+:::tip
+更改配置后需要重启 Home Assistant。
+:::
+
+```yaml
+# Example configuration.yaml entry
+sensor:
+  - platform: pocketcasts
+    username: YOUR_USERNAME
+    password: YOUR_PASSWORD
+```
+
+```yaml
+username:
+  description: The username to access the PocketCasts service.
+  required: true
+  type: string
+password:
+  description: The password for the given username.
+  required: true
+  type: string
+```
