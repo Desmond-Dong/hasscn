@@ -33,6 +33,10 @@ export const globalNav = [
     link: '/download',
   },
   {
+    text: '应用市场',
+    link: '/marketplace',
+  },
+  {
     text: '穿透服务',
     link: '/tunnel',
   },
