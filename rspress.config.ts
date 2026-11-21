@@ -75,6 +75,9 @@ export default defineConfig({
     llmsTxt: renderLlmsTxt,
   },
 
+  // 关闭实验性的浏览器 WebMCP API，避免其 SDK 打进客户端主包（index.*.js 体积暴涨）
+  webMcp: false,
+
   builderConfig: {
     html: {
       tags: [
