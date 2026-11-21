@@ -79,6 +79,12 @@ export default defineConfig({
   webMcp: false,
 
   builderConfig: {
+    resolve: {
+      alias: {
+        // 置空内置搜索索引数据：search/webMcp 均已关闭，避免 ~2.8MB 页面元数据进入客户端主包
+        'virtual-page-data': path.join(__dirname, 'scripts/empty-page-data.mjs'),
+      },
+    },
     html: {
       tags: [
         {
